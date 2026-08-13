@@ -3,12 +3,12 @@ import { defineTool } from "@lovable.dev/mcp-js";
 export default defineTool({
   name: "get_business_info",
   title: "Get business info",
-  description: "Return contact info, service area, and core details for Highlander Roofing & Construction.",
+  description: "Return contact info, service area, and core details for Highlander Building Services.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {
-      name: "Highlander Roofing & Construction, Inc.",
+      name: "Highlander Building Services, Inc.",
       phone: "(828) 524-7773",
       website: "https://highlandernc.com",
       city: "Franklin",

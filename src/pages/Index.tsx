@@ -42,9 +42,9 @@ const Index = () => {
       {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
         title="Roofing & Construction in Western NC | Highlander"
-        description="Highlander Roofing & Construction: roofing, repairs, metal roofs, gutters, and custom builds across Franklin, Highlands, Cashiers & Western NC."
+        description="Highlander Building Services: roofing, repairs, metal roofs, gutters, and custom builds across Franklin, Highlands, Cashiers & Western NC."
         path="/"
-        keywords="Highlander Roofing Services, Highlander Roofing, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
+        keywords="Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
         jsonLd={buildPageSchema({
           type: "home",
           reviews: customerReviews.map((review) => ({
@@ -65,8 +65,8 @@ const Index = () => {
         </section>
 
         <AnswerBlock
-          question="Who is Highlander Roofing & Construction?"
-          answer="Highlander Roofing Services, Inc. is a roofing and construction company based at 76 Creative Dr, Franklin, NC 28734, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction."
+          question="Who is Highlander Building Services?"
+          answer="Highlander Building Services, Inc. is a roofing and construction company based at 76 Creative Dr, Franklin, NC 28734, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction."
           points={[
             "Roofing, exteriors, and construction under one contractor",
             "Serving Western North Carolina mountain towns",

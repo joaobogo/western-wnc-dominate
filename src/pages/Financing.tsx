@@ -27,7 +27,7 @@ const Financing = () => {
   return (
     <>
       <SEOHead
-        title="Roof Financing Options in Western NC | Highlander Roofing"
+        title="Roof Financing Options in Western NC | Highlander Building Services"
         description="Affordable roof financing for Western NC homeowners. Low monthly payments, fast approval, no prepayment penalties. Don't delay protecting your home."
         path="/financing"
         jsonLd={breadcrumbSchema([
@@ -130,7 +130,7 @@ const Financing = () => {
                   ))}
                 </ul>
                 <p className="mt-6 text-xs text-muted-foreground font-body italic leading-relaxed">
-                  Financing availability, terms, and qualification are determined by the lender — not by Highlander Roofing &amp; Construction.
+                  Financing availability, terms, and qualification are determined by the lender — not by Highlander Building Services.
                   All financing is subject to credit approval. Specific program details will be provided by your project advisor and the
                   lender at the time of application.
                 </p>

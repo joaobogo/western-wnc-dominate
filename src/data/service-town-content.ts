@@ -42,7 +42,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Long-time Franklin homeowners weighing repair-vs-replace, families preparing a home for sale, and buyers who just closed and want a clean baseline before they move in.",
     proofNote:
       "Franklin is where we cut our teeth. The crew you meet at your estimate is the crew on your roof — same names, same trucks, year after year.",
-    metaTitle: "Roof Replacement in Franklin, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Full roof replacement in Franklin, NC from a locally based, team-led team. CertainTeed ShingleMaster Credentialed Contractor, licensed GC, free on-site assessment.",
     faqs: [
@@ -64,7 +64,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners with an active leak, anyone preparing for a home inspection, and second-home owners who just opened the house for the season and found a stain on the ceiling.",
     proofNote:
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
-    metaTitle: "Roof Repair in Franklin, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Honest roof repair in Franklin, NC. Local crews, same-day or next-day inspections, full photo documentation, and a straight answer on whether to repair or replace.",
     faqs: [
@@ -86,7 +86,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners building a forever roof, anyone re-roofing a home with a complex layout, and clients pairing a new addition or porch with a unified metal system.",
     proofNote:
       "We specify and install metal as a complete system — substrate, underlayment, panels, trims, and fasteners from compatible manufacturers — so the warranty actually holds together.",
-    metaTitle: "Metal Roofing in Franklin, NC | Highlander Roofing",
+    metaTitle: "Metal Roofing in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Standing seam and exposed-fastener metal roofing in Franklin, NC. Engineered for mountain weather, installed by a locally based, licensed contractor.",
     faqs: [
@@ -110,7 +110,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Second-home owners, club community residents, and homeowners replacing 20+ year shake or asphalt systems that no longer match the elevation they sit at.",
     proofNote:
       "Premium materials, full underlayment systems, and an team-led crew that documents the entire project so you can review the work without being on the mountain.",
-    metaTitle: "Roof Replacement in Highlands, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Highlands, NC | Highlander Building Services",
     metaDescription:
       "Premium roof replacement in Highlands, NC. Elevation-rated systems for second homes and mountain residences. Team-led, fully documented, licensed.",
     faqs: [
@@ -132,7 +132,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Owners of custom mountain homes, second-home owners specifying a true forever roof, and clients pairing a new addition or screened porch with a unified metal system.",
     proofNote:
       "Specified as a system, installed by the same crew that did the estimate, and documented in writing so the warranty path is clean.",
-    metaTitle: "Metal Roofing in Highlands, NC | Highlander Roofing",
+    metaTitle: "Metal Roofing in Highlands, NC | Highlander Building Services",
     metaDescription:
       "Standing seam metal roofing in Highlands, NC. Designed for mountain elevation, snow loading, and second-home reliability. Team-led installation.",
     faqs: [
@@ -176,7 +176,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners in Highlands country clubs and mountain estates who need more square footage without sacrificing the historic or rustic aesthetic of their property.",
     proofNote:
       "Licensed NC General Contractor with specialized experience in steep-slope foundations and heavy timber integration common on the Highlands Plateau.",
-    metaTitle: "Home Additions in Highlands, NC | Highlander Construction",
+    metaTitle: "Home Additions in Highlands, NC | Highlander Building Services",
     metaDescription:
       "Custom home additions and master suites in Highlands, NC. Design-build expertise for mountain homes. Licensed, insured, team-led.",
     faqs: [
@@ -222,7 +222,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Second-home owners, club community residents, and owners of aging shake or asphalt roofs that are losing the battle with persistent mountain moisture.",
     proofNote:
       "Premium underlayment from eave to ridge, full photo documentation, and an team-led crew that treats the home like the asset it is.",
-    metaTitle: "Roof Replacement in Cashiers, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Cashiers, NC | Highlander Building Services",
     metaDescription:
       "Full roof replacement in Cashiers, NC. Engineered for one of NC's wettest climates. Team-led, fully documented, licensed contractor.",
     faqs: [
@@ -244,7 +244,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Owners of mountain homes and second residences who want a forever roof, and clients unifying a main house and outbuilding under one metal system.",
     proofNote:
       "Designed and installed as a complete system — substrate, underlayment, panels, trims, and fasteners specified together so the warranty actually holds.",
-    metaTitle: "Metal Roofing in Cashiers, NC | Highlander Roofing",
+    metaTitle: "Metal Roofing in Cashiers, NC | Highlander Building Services",
     metaDescription:
       "Standing seam metal roofing in Cashiers, NC. Designed for extreme rainfall and mountain elevation. Team-led, fully warranted installation.",
     faqs: [
@@ -266,7 +266,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Second-home owners and custom-home owners who want a premium roof aesthetic that survives the climate rather than fights it.",
     proofNote:
       "We specify and install Brava as a complete system — including the trims, accessories, and warranty registration that most contractors skip — so the system lasts as long as the warranty claims.",
-    metaTitle: "Brava Synthetic Roofing in Cashiers, NC | Highlander Roofing",
+    metaTitle: "Brava Synthetic Roofing in Cashiers, NC | Highlander Building Services",
     metaDescription:
       "Brava synthetic shake and slate roofing in Cashiers, NC. Premium look, climate-grade durability. Team-led, licensed installation.",
     faqs: [
@@ -290,7 +290,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Long-time Sylva homeowners, families, and owners of rental or income properties who need the project planned around tenants and turnover.",
     proofNote:
       "Local crews, real scheduling, and an owner who will give you a straight answer on whether your roof actually needs replacement now or has another season in it.",
-    metaTitle: "Roof Replacement in Sylva, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Sylva, NC | Highlander Building Services",
     metaDescription:
       "Full roof replacement in Sylva, NC. Team-led, locally based, CertainTeed ShingleMaster Credentialed Contractor. Free on-site assessment and honest repair-vs-replace guidance.",
     faqs: [
@@ -312,7 +312,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners with an active leak, landlords with a tenant call, and anyone who needs honest guidance on whether to repair, replace, or just monitor.",
     proofNote:
       "Photo documentation of every repair, plain-English write-up, and a direct answer on whether your roof is worth investing more repair dollars into.",
-    metaTitle: "Roof Repair in Sylva, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Sylva, NC | Highlander Building Services",
     metaDescription:
       "Honest roof repair in Sylva, NC. same-day or next-day inspections, photo documentation, fair pricing, and a straight answer on repair-vs-replace.",
     faqs: [
@@ -334,7 +334,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners specifying a forever roof, anyone re-roofing a custom home, and clients pairing a main house with outbuildings or an addition under one unified system.",
     proofNote:
       "Specified as a system, installed by the same team-led crew that estimated the project, with the trim and detail work that protects the warranty.",
-    metaTitle: "Metal Roofing in Sylva, NC | Highlander Roofing",
+    metaTitle: "Metal Roofing in Sylva, NC | Highlander Building Services",
     metaDescription:
       "Standing seam and exposed-fastener metal roofing in Sylva, NC. Engineered for mountain weather, installed by a locally based licensed contractor.",
     faqs: [
@@ -357,7 +357,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners in historic districts, ridgetop estate owners, and Buncombe County residents who want a permanent, high-performance solution rather than a temporary fix.",
     proofNote:
       "We are experts in Asheville ARB submissions and historic district compliance. We handle the paperwork and the precision detailing so you don't have to.",
-    metaTitle: "Roof Replacement in Asheville, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Asheville, NC | Highlander Building Services",
     metaDescription:
       "Premium roof replacement for Asheville's historic and modern mountain homes. Expert Buncombe County crews, team-led, licensed GC.",
     faqs: [
@@ -379,7 +379,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners looking to add square footage, modernize older Buncombe County assets, or create specialized spaces like home studios or luxury outdoor rooms.",
     proofNote:
       "Licensed NC General Contractor with a deep portfolio of Asheville-area renovations and footprint expansions.",
-    metaTitle: "Home Additions in Asheville, NC | Highlander Construction",
+    metaTitle: "Home Additions in Asheville, NC | Highlander Building Services",
     metaDescription:
       "Custom home additions and structural modernizations in Asheville, NC. Design-build expertise for Buncombe County homeowners.",
     faqs: [
@@ -402,7 +402,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Established homeowners, retirement community residents, and anyone looking for a highly reliable, warrantied roof system in the Hendersonville area.",
     proofNote:
       "Locally based crews and thousands of documented successful projects across the Hendersonville plateau.",
-    metaTitle: "Roof Replacement in Hendersonville, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Hendersonville, NC | Highlander Building Services",
     metaDescription:
       "Reliable roof replacement for Hendersonville homes. Local crews, impact-resistant options, and team-led quality. Licensed & Insured.",
     faqs: [
@@ -424,7 +424,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners in historic Main Street areas, hillside residents in Haywood County, and families looking for a high-performance roof that respects their home's character.",
     proofNote:
       "Documented successful projects across Haywood County, featuring historic-district material matching and modern ventilation upgrades.",
-    metaTitle: "Roof Replacement in Waynesville, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Waynesville, NC | Highlander Building Services",
     metaDescription:
       "Premium roof replacement for Waynesville homes. Specialized in historic district care and mountain-grade performance. Licensed & Insured.",
     faqs: [
@@ -445,7 +445,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Families needing more space, owners of historic properties looking to modernize, and anyone adding specialized rooms like home offices or guest wings.",
     proofNote:
       "Licensed GC with local experience in structural footprints and steep-slope foundations throughout Haywood County.",
-    metaTitle: "Home Additions in Waynesville, NC | Highlander Construction",
+    metaTitle: "Home Additions in Waynesville, NC | Highlander Building Services",
     metaDescription:
       "Custom home additions and structural modernization in Waynesville, NC. Design-build expertise for mountain homes. Licensed & Insured.",
     faqs: [
@@ -467,7 +467,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners near Pisgah Forest, Brevard families, and residents of the surrounding rain-belt plateau needing the region's best moisture protection.",
     proofNote:
       "Team-led crews with specialized experience in high-moisture climate engineering and oversized gutter integration.",
-    metaTitle: "Roof Replacement in Brevard, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Brevard, NC | Highlander Building Services",
     metaDescription:
       "Moisture-ready roof replacement in Brevard, NC. Engineered for Transylvania County's extreme rainfall. Licensed contractor, team-led.",
     faqs: [
@@ -510,7 +510,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Vacation rental owners, cabin owners near the Smokies, and anyone looking for a low-maintenance 'forever' roof system.",
     proofNote:
       "Team-led crews with specialized expertise in metal-system design and fast-turnaround scheduling for rental properties.",
-    metaTitle: "Metal Roofing in Bryson City, NC | Highlander Roofing",
+    metaTitle: "Metal Roofing in Bryson City, NC | Highlander Building Services",
     metaDescription:
       "Premium metal roofing in Bryson City, NC. Ideal for cabins and vacation rentals. Sheds debris and moisture. Licensed & Insured.",
     faqs: [
@@ -532,7 +532,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Full-time residents, retirees building custom retreats, and vacation home owners needing a dependable local contractor.",
     proofNote:
       "Documented successful projects across Cherokee County, featuring high-quality shingle and metal systems.",
-    metaTitle: "Roof Replacement in Murphy, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Murphy, NC | Highlander Building Services",
     metaDescription:
       "Reliable roof replacement in Murphy, NC. Locally based crews, durable materials, and team-led quality. Licensed & Insured.",
     faqs: [
@@ -583,7 +583,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Owners with an active leak, second-home owners who found a stain on the season-open walkthrough, and property managers preparing a rental for a booked stay.",
     proofNote:
       "Every Highlands repair leaves with photos of what failed, what we did, and what's still on the clock. Nothing hidden, nothing padded.",
-    metaTitle: "Roof Repair in Highlands, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Highlands, NC | Highlander Building Services",
     metaDescription:
       "Fast, honest roof repair in Highlands, NC. Same-day/next-day plateau response, photo-documented scopes, and a straight answer on repair vs. replace.",
     faqs: [
@@ -651,7 +651,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Long-time Franklin homeowners weighing repair vs. replace, first-time buyers who need a straight condition report, and homeowners preparing a property for sale or refinance.",
     proofNote:
       "Same crew from estimate through cleanup. When you drive by Franklin roofs we did five and ten years ago, they still look right — that's the reference you should be asking for.",
-    metaTitle: "Roofing Services in Franklin, NC | Highlander Roofing",
+    metaTitle: "Roofing Services in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Franklin, NC roofing contractor — repairs, replacements, and metal systems from a local team-led team. CertainTeed ShingleMaster credentialed.",
     faqs: [
@@ -741,7 +741,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Owners with an active or intermittent leak, buyers who need a written repair scope during due diligence, and homeowners preparing a property for the upcoming season.",
     proofNote:
       "A repair on a Cashiers roof should look like it wasn't there. That's the bar we hold ourselves to.",
-    metaTitle: "Roof Repair in Cashiers, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Cashiers, NC | Highlander Building Services",
     metaDescription:
       "Precision roof repair in Cashiers, NC. Plateau-experienced crews, photo-documented scopes, and repairs that respect the home's design.",
     faqs: [
@@ -882,7 +882,7 @@ serviceTownContent.push(
       "Owners with an active leak, buyers working through an inspection response before closing, and property owners keeping a rental or family home in tight condition year-round.",
     proofNote:
       "Every Cullowhee repair leaves with photos of what failed, what we did, and what's still on the clock. Nothing hidden, nothing padded.",
-    metaTitle: "Roof Repair in Cullowhee, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Cullowhee, NC | Highlander Building Services",
     metaDescription:
       "Fast, honest roof repair in Cullowhee, NC. Same-week response, photo-documented scopes, and a straight answer on repair vs. replace.",
     faqs: [

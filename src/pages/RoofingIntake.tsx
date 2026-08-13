@@ -8,7 +8,7 @@ import RoofingIntakeForm from "@/components/intake/RoofingIntakeForm";
 const RoofingIntake = () => (
   <>
     <SEOHead
-      title="Request a Roof Assessment | Highlander Roofing"
+      title="Request a Roof Assessment | Highlander Building Services"
       description="Tell us about your roof. A Highlander project advisor responds within as soon as possible across Western North Carolina."
       path="/roofing-intake"
       noindex

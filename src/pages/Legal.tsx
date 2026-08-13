@@ -8,24 +8,24 @@ type LegalKind = "privacy" | "terms" | "accessibility";
 
 const META: Record<LegalKind, { title: string; description: string; path: string; eyebrow: string; heading: string; icon: typeof Shield }> = {
   privacy: {
-    title: "Privacy Policy | Highlander Roofing & Construction",
-    description: "How Highlander Roofing Services, Inc. collects, uses, and protects the information you share with us, including SMS/MMS, email, and call programs.",
+    title: "Privacy Policy | Highlander Building Services",
+    description: "How Highlander Building Services, Inc. collects, uses, and protects the information you share with us, including SMS/MMS, email, and call programs.",
     path: "/privacy",
     eyebrow: "Privacy",
     heading: "Privacy Policy",
     icon: Shield,
   },
   terms: {
-    title: "Terms of Service | Highlander Roofing & Construction",
-    description: "Terms & Conditions for Highlander Roofing Services, Inc., including SMS/MMS, email, and call program terms.",
+    title: "Terms of Service | Highlander Building Services",
+    description: "Terms & Conditions for Highlander Building Services, Inc., including SMS/MMS, email, and call program terms.",
     path: "/privacy-policy",
     eyebrow: "Legal",
     heading: "Terms & Conditions",
     icon: FileText,
   },
   accessibility: {
-    title: "Accessibility Statement | Highlander Roofing & Construction",
-    description: "Highlander Roofing & Construction is committed to providing a website that is accessible to all visitors across Western North Carolina.",
+    title: "Accessibility Statement | Highlander Building Services",
+    description: "Highlander Building Services is committed to providing a website that is accessible to all visitors across Western North Carolina.",
     path: "/accessibility",
     eyebrow: "Accessibility",
     heading: "Accessibility Statement",
@@ -39,7 +39,7 @@ function PrivacyBody() {
   return (
     <>
       <p>
-        <strong>Company Name:</strong> Highlander Roofing Services, Inc.<br />
+        <strong>Company Name:</strong> Highlander Building Services, Inc.<br />
         <strong>Website:</strong> <a href="https://highlandernc.com/">https://highlandernc.com/</a>
       </p>
       <h2>8.1 Scope</h2>
@@ -215,7 +215,7 @@ function PrivacyBody() {
 
       <h2>Contact Us</h2>
       <p>
-        Highlander Roofing Services, Inc.<br />
+        Highlander Building Services, Inc.<br />
         76 Creative Dr, Franklin, NC 28734<br />
         Phone: <a href="tel:+18285247773">(828) 524-7773</a><br />
         Email: <a href="mailto:luke@highlandernc.com">luke@highlandernc.com</a>
@@ -228,12 +228,12 @@ function TermsBody() {
   return (
     <>
       <p>
-        <strong>Company Name:</strong> Highlander Roofing Services, Inc.<br />
+        <strong>Company Name:</strong> Highlander Building Services, Inc.<br />
         <strong>Website:</strong> <a href="https://highlandernc.com/">https://highlandernc.com/</a>
       </p>
       <h2>1. Program Description and Acceptance of Terms</h2>
       <p>
-        Highlander Roofing Services, Inc. ("Company," "we," "our," or "us") operates one or more text
+        Highlander Building Services, Inc. ("Company," "we," "our," or "us") operates one or more text
         messaging, email, and call programs (collectively, the "Programs") to communicate with customers and
         prospects regarding our services. These Programs may include, without limitation:
       </p>
@@ -250,7 +250,7 @@ function TermsBody() {
         please do not enroll in any Program or use the Website.
       </p>
       <ul>
-        <li><strong>Program / Brand Name(s):</strong> "Highlander Roofing Services, Inc. Customer Communications"</li>
+        <li><strong>Program / Brand Name(s):</strong> "Highlander Building Services, Inc. Customer Communications"</li>
         <li><strong>Program Description:</strong> One-time and recurring communications by SMS, MMS, phone, and email related to service scheduling and support, post-project surveys (including NPS), feedback collection, and invitations to leave public reviews, as well as other service-related and, where permitted, limited promotional messages.</li>
       </ul>
 
@@ -306,7 +306,7 @@ function AccessibilityBody() {
   return (
     <>
       <p>
-        Highlander Roofing &amp; Construction is committed to making this website usable for every visitor across
+        Highlander Building Services is committed to making this website usable for every visitor across
         Western North Carolina, including people who rely on assistive technology. We want homeowners in Franklin,
         Highlands, Cashiers, Sylva, Asheville, and the surrounding mountain communities to be able to learn about
         our work and reach our team without barriers.

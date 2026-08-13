@@ -13,7 +13,7 @@ const Team = () => {
   return (
     <>
       <SEOHead
-        title="Meet the Team | Highlander Roofing Services"
+        title="Meet the Team | Highlander Building Services"
         description="Meet the Highlander team serving Franklin, Highlands, Cashiers, Sylva, and Western NC with consultations, project management, inspections, and repairs."
         path="/team"
         jsonLd={[
@@ -36,10 +36,10 @@ const Team = () => {
               The People Behind Highlander
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
-              Meet the Team Behind<br /><span className="text-[hsl(var(--gold-ink))]">Highlander Roofing Services</span>
+              Meet the Team Behind<br /><span className="text-[hsl(var(--gold-ink))]">Highlander Building Services</span>
             </h1>
             <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
-              Highlander Roofing Services is led by a local team committed to dependable workmanship, honest communication, and customer-focused service across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. From company leadership and sales to inspections, project management, repairs, and field coordination, each team member plays a role in helping homeowners protect and improve their properties.
+              Highlander Building Services is led by a local team committed to dependable workmanship, honest communication, and customer-focused service across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. From company leadership and sales to inspections, project management, repairs, and field coordination, each team member plays a role in helping homeowners protect and improve their properties.
             </p>
           </div>
         </section>
@@ -158,7 +158,7 @@ const Team = () => {
               <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                 Request an Estimate <ArrowRight className="w-5 h-5" />
               </Link>
-              <a href="tel:+18285247773" aria-label="Call Highlander Roofing & Construction at 828-524-7773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
+              <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
                 <Phone className="w-5 h-5" /> Call (828) 524-7773
               </a>
             </div>

@@ -11,7 +11,7 @@ import { ArrowRight, Compass } from "lucide-react";
 const ConstructionIntake = () => (
   <>
     <SEOHead
-      title="Start a Construction Project | Highlander Construction"
+      title="Start a Construction Project | Highlander Building Services"
       description="Additions, outdoor living, renovations, and custom builds across Western North Carolina. Share your project and a local advisor responds within 24 hours."
       path="/construction-intake"
       noindex

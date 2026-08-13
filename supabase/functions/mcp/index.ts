@@ -10,12 +10,12 @@ import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.2";
 var get_business_info_default = defineTool({
   name: "get_business_info",
   title: "Get business info",
-  description: "Return contact info, service area, and core details for Highlander Roofing & Construction.",
+  description: "Return contact info, service area, and core details for Highlander Building Services.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {
-      name: "Highlander Roofing & Construction, Inc.",
+      name: "Highlander Building Services, Inc.",
       phone: "(828) 524-7773",
       website: "https://highlandernc.com",
       city: "Franklin",
@@ -179,13 +179,13 @@ var fetch_page_default = defineTool5({
 var projectRef = "qflrlebkswerlbqbuslx";
 var mcp_default = defineMcp({
   name: "highlander-mcp",
-  title: "Highlander Roofing & Construction",
+  title: "Highlander Building Services",
   version: "0.1.0",
   auth: auth.oauth.issuer({
     issuer: `https://${projectRef}.supabase.co/auth/v1`,
     acceptedAudiences: "authenticated"
   }),
-  instructions: "Tools for Highlander Roofing & Construction (Western North Carolina). Use `get_business_info` for contact details and credentials, `list_services` and `list_service_areas` for what is offered and where, `search_site` to find pages (blog posts, service pages, town pages) by keyword, and `fetch_page` to read the HTML of a specific page.",
+  instructions: "Tools for Highlander Building Services (Western North Carolina). Use `get_business_info` for contact details and credentials, `list_services` and `list_service_areas` for what is offered and where, `search_site` to find pages (blog posts, service pages, town pages) by keyword, and `fetch_page` to read the HTML of a specific page.",
   tools: [get_business_info_default, list_services_default, list_service_areas_default, search_site_default, fetch_page_default]
 });
 

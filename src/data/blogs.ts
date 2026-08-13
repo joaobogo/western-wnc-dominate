@@ -778,7 +778,7 @@ Even if the answer to all of those is no, homeowners in the [Highlands service a
 
 ## How Highlander Can Help
 
-Highlander Roofing Services, Inc. is a local Western North Carolina contractor. We work on these mountain roofs every week, and we know how wind and hail behave on steep pitches, long valleys, and high-elevation exposures.
+Highlander Building Services, Inc. is a local Western North Carolina contractor. We work on these mountain roofs every week, and we know how wind and hail behave on steep pitches, long valleys, and high-elevation exposures.
 
 If you'd like a look after the July 28 storm, here's what that involves:
 
@@ -913,7 +913,7 @@ Every accurate metal roof quote in Western NC starts with an on-site measure —
     image: "/media/32f04b97-how-much-does-roof-cost-highlands-nc.webp",
     readTime: "6 min",
     town: "Highlands",
-    metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
+    metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Building Services",
     metaDescription: "Wondering about roof replacement costs in Highlands, NC? Here's what mountain homeowners actually pay and what factors affect your price.",
     content: `If you're a homeowner in Highlands, NC, you've probably wondered what a new roof actually costs at 4,100+ feet elevation. The honest answer: **it depends on scope** — several mountain-specific factors shape every proposal, and we price each roof from its real conditions rather than publishing a generic range.
 
@@ -943,7 +943,7 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
     date: "2026-02-10",
     image: "/media/28cc73b0-metal-vs-shingle-roof-western-nc.webp",
     readTime: "9 min",
-    metaTitle: "Metal vs Shingle Roof for WNC Homes | Highlander Roofing",
+    metaTitle: "Metal vs Shingle Roof for WNC Homes | Highlander Building Services",
     metaDescription: "Metal or shingle roof for your Western NC mountain home? Compare cost, durability, and weather performance to make the right choice.",
     content: `Choosing between a metal roof and asphalt shingles is one of the biggest decisions Western North Carolina homeowners face. Both are proven, code-compliant systems — but mountain elevation, ice, wind, and rainfall add factors that simply don't apply to flatland roofing. This guide walks through how each material actually performs on WNC homes so you can decide with clear expectations rather than sales copy.
 
@@ -1095,7 +1095,7 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
     date: "2026-02-05",
     image: "/media/12986d25-storm-damage-checklist-western-nc.webp",
     readTime: "5 min",
-    metaTitle: "Storm Damage Roof Checklist for WNC | Highlander Roofing",
+    metaTitle: "Storm Damage Roof Checklist for WNC | Highlander Building Services",
     metaDescription: "After a storm in Western NC, use this checklist to assess roof damage and protect your insurance claim. Free storm damage inspections available.",
     content: `Western North Carolina sees severe storms year-round — from summer thunderstorms to winter ice events. Here's what every homeowner should do after a storm.
 
@@ -1143,7 +1143,7 @@ We respond on a same-day or next-day basis for storm inspections across all of W
     image: "/media/07f56d37-best-roofing-materials-highlands-nc.webp",
     readTime: "9 min",
     town: "Highlands",
-    metaTitle: "Best Roofing Materials for Highlands, NC | Highlander Roofing",
+    metaTitle: "Best Roofing Materials for Highlands, NC | Highlander Building Services",
     metaDescription: "Which roofing materials perform best in Highlands, NC? Expert guide on shingles, metal, and specialty options for high-elevation mountain homes.",
     content: `Highlands sits above 4,100 feet with annual rainfall that regularly clears 80 inches, frequent freeze/thaw cycles, and winter ice events that would surprise most lowland contractors. Choosing the right roof here isn't about picking the fanciest material — it's about matching the assembly to the mountain. This guide walks through the materials that actually perform on Highlands homes, the ones we recommend against, and how to think about the decision if you're planning a new roof or a full replacement.
 
@@ -1304,7 +1304,7 @@ We're based in the mountains and we re-roof homes in Highlands, Cashiers, Sapphi
     category: "Insurance",
     date: "2026-01-20",
     image: "/media/da80e5f5-insurance-claim-roof-damage-nc.webp", readTime: "7 min",
-    metaTitle: "Roof Insurance Claim Guide for NC | Highlander Roofing",
+    metaTitle: "Roof Insurance Claim Guide for NC | Highlander Building Services",
     metaDescription: "How to file a roof damage insurance claim in North Carolina. Step-by-step process, documentation tips, and how a roofer can help maximize your claim.",
     content: `Filing a roof damage insurance claim in North Carolina doesn't have to be complicated — but mistakes can cost you thousands. Here's how to do it right.
 
@@ -1342,7 +1342,7 @@ Compare the insurance estimate with your contractor's estimate. If there's a sig
 
 ## How We Help
 
-Highlander Roofing assists WNC homeowners through the entire claims process — from initial documentation to adjuster meetings to final repairs. Call us for a free storm damage inspection.`,
+Highlander Building Services assists WNC homeowners through the entire claims process — from initial documentation to adjuster meetings to final repairs. Call us for a free storm damage inspection.`,
   },
   {
     slug: "spring-roof-maintenance-checklist-wnc",
@@ -1351,8 +1351,8 @@ Highlander Roofing assists WNC homeowners through the entire claims process — 
     category: "Maintenance",
     date: "2026-01-15",
     image: "/media/257fc75d-spring-roof-maintenance-checklist-wnc.webp", readTime: "5 min",
-    metaTitle: "Spring Roof Maintenance Checklist for WNC | Highlander Roofing",
-    metaDescription: "Spring roof maintenance checklist for Western NC homeowners. Prevent costly repairs after winter with these expert tips from Highlander Roofing.",
+    metaTitle: "Spring Roof Maintenance Checklist for WNC | Highlander Building Services",
+    metaDescription: "Spring roof maintenance checklist for Western NC homeowners. Prevent costly repairs after winter with these expert tips from Highlander Building Services.",
     content: `WNC winters are tough on roofs. Spring is the ideal time to catch issues before they become expensive problems. Here's your annual checklist.
 
 ## Exterior Inspection
@@ -1385,7 +1385,7 @@ Call (828) 524-7773 or request an inspection online. We serve all of Western NC.
     date: "2026-01-08",
     image: "/media/7f2154df-ice-dam-prevention-mountain-homes.webp", readTime: "5 min",
     town: "Highlands",
-    metaTitle: "Ice Dam Prevention for WNC Mountain Homes | Highlander Roofing",
+    metaTitle: "Ice Dam Prevention for WNC Mountain Homes | Highlander Building Services",
     metaDescription: "Prevent ice dams on your Western NC mountain home. Learn causes, prevention methods, and when to call a professional roofer.",
     content: `Ice dams are one of the most common — and expensive — roofing problems for WNC mountain homeowners. Understanding what causes them is the first step to prevention.
 
@@ -1429,7 +1429,7 @@ If you've had ice dams before, we can assess your roof and attic to identify the
     date: "2025-12-28",
     image: "/media/a0ffeed0-when-to-replace-roof-highlands.webp", readTime: "5 min",
     town: "Highlands",
-    metaTitle: "When to Replace Your Roof in Highlands, NC | Highlander Roofing",
+    metaTitle: "When to Replace Your Roof in Highlands, NC | Highlander Building Services",
     metaDescription: "5 signs your Highlands, NC roof needs replacement. Age, damage, and performance indicators from local roofing experts.",
     content: `Knowing when repair isn't enough — and replacement is the smarter investment — saves Highlands homeowners from escalating damage and costs.
 
@@ -1468,7 +1468,7 @@ We'll inspect your Highlands home, assess the full roof system, and give you an 
     category: "Construction",
     date: "2026-03-01",
     image: "/media/e1feb40c-mountain-home-addition-planning.webp", readTime: "8 min",
-    metaTitle: "WNC Home Addition Planning Guide | Highlander Construction",
+    metaTitle: "WNC Home Addition Planning Guide | Highlander Building Services",
     metaDescription: "Planning an addition in Western NC? Learn about terrain engineering, permitting, and structural integration from mountain building experts.",
     content: `Adding square footage to a mountain home is one of the most rewarding investments you can make — but it's also one of the most technically demanding. Unlike building on flat land, WNC additions require a deeper level of planning before the first board is cut.
 
@@ -1498,7 +1498,7 @@ Our Design branch exists to solve these hurdles before they become expensive cha
     category: "Construction",
     date: "2026-03-15",
     image: "/media/3315e77f-mountain-porch-deck-design-wnc.webp", readTime: "6 min",
-    metaTitle: "Porch & Deck Design for WNC Homes | Highlander Construction",
+    metaTitle: "Porch & Deck Design for WNC Homes | Highlander Building Services",
     metaDescription: "Expert tips for designing porches and decks in Western NC. Orientation, materials, and mountain-view optimization.",
     content: `Outdoor living in the Blue Ridge Mountains is about more than just square footage — it's about framing the view while protecting your investment from harsh seasonal changes.
 
@@ -1537,7 +1537,7 @@ Adding a suite or an extension shouldn't create a 'maze.' Our design guidance fo
     category: "Construction",
     date: "2026-02-25",
     image: "/media/4de6fb1a-outdoor-living-trends-wnc.webp", readTime: "6 min",
-    metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
+    metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Building Services",
     metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
 
     content: `Outdoor living is why we live in Western North Carolina. But a deck in Sylva needs to handle different conditions than one in Highlands. Here's how we design for mountain longevity.
@@ -1589,8 +1589,8 @@ If you're planning a project in WNC, don't just ask for a plan. It's the differe
     category: "Inspections",
     date: "2025-12-20",
     image: "/media/af2fc547-roof-inspection-what-to-expect.webp", readTime: "4 min",
-    metaTitle: "What to Expect During a Roof Inspection | Highlander Roofing WNC",
-    metaDescription: "What happens during a free roof inspection in Western NC? Learn what we check, how long it takes, and what you'll receive from Highlander Roofing.",
+    metaTitle: "What to Expect During a Roof Inspection | Highlander Building Services",
+    metaDescription: "What happens during a free roof inspection in Western NC? Learn what we check, how long it takes, and what you'll receive from Highlander Building Services.",
     content: `A professional roof inspection is the smartest first step for any roofing concern. Here's what our free inspections include.
 
 ## Before the Inspection
@@ -1635,7 +1635,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
     category: "Tips",
     date: "2025-12-12",
     image: "/media/e188b978-choosing-roofing-contractor-wnc.webp", readTime: "6 min",
-    metaTitle: "How to Choose a Roofing Contractor in WNC | Highlander Roofing",
+    metaTitle: "How to Choose a Roofing Contractor in WNC | Highlander Building Services",
     metaDescription: "Tips for choosing a trusted roofing contractor in Western NC. What to look for, red flags to avoid, and questions to ask before hiring.",
     content: `Choosing the wrong roofing contractor can cost you thousands — or worse, leave you with a roof that fails prematurely. Here's how to find the right one in WNC.
 
@@ -1678,7 +1678,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
     category: "Storm",
     date: "2025-12-05",
     image: "/media/56901d0d-emergency-roof-repair-wnc.webp", readTime: "5 min",
-    metaTitle: "Emergency Roof Repair in Western NC | Highlander Roofing",
+    metaTitle: "Emergency Roof Repair in Western NC | Highlander Building Services",
     metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 524-7773.",
     content: `When your roof is compromised — whether by a fallen tree, severe storm, or sudden leak — fast action prevents thousands in additional damage. Here's what to do.
 
@@ -1707,7 +1707,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 
 ## Our Response Commitment
 
-Highlander Roofing prioritizes emergency calls. We aim for same-day assessment when possible and prompt response for all emergency situations across Western NC.
+Highlander Building Services prioritizes emergency calls. We aim for same-day assessment when possible and prompt response for all emergency situations across Western NC.
 
 ## Call Direct: (828) 524-7773`,
   },
@@ -1719,7 +1719,7 @@ Highlander Roofing prioritizes emergency calls. We aim for same-day assessment w
     date: "2026-04-05",
     image: "/media/9b1198ab-mountain-roofing-maintenance-checklist.webp",
     readTime: "5 min",
-    metaTitle: "Mountain Roof Maintenance Checklist | Highlander Roofing",
+    metaTitle: "Mountain Roof Maintenance Checklist | Highlander Building Services",
     metaDescription: "A comprehensive maintenance checklist for WNC mountain roofs. Learn how to spot issues early and extend your roof's life.",
     content: `Mountain roofing isn't a 'set it and forget it' system. The higher you live, the more active you need to be with maintenance.
 
@@ -1794,8 +1794,8 @@ Don't pick materials based on looks alone. Let us help you select a palette that
     category: "Financing",
     date: "2025-11-28",
     image: "/media/a2b1b6c6-roof-financing-options-western-nc.webp", readTime: "5 min",
-    metaTitle: "Roof Financing Options in Western NC | Highlander Roofing",
-    metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Roofing.",
+    metaTitle: "Roof Financing Options in Western NC | Highlander Building Services",
+    metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Building Services.",
     content: `A new roof is one of the most important investments you'll make in your home — but that doesn't mean it has to strain your finances. Here's how WNC homeowners are making it work.
 
 ## Financing Options We Offer
@@ -1838,7 +1838,7 @@ During your free inspection, ask about financing. We'll provide a complete cost 
     category: "Maintenance",
     date: "2025-11-20",
     image: "/media/e994601b-vacation-rental-roof-maintenance-wnc.webp", readTime: "5 min",
-    metaTitle: "Vacation Rental Roof Maintenance in WNC | Highlander Roofing",
+    metaTitle: "Vacation Rental Roof Maintenance in WNC | Highlander Building Services",
     metaDescription: "Protect your WNC vacation rental investment with professional roof maintenance. Prevent leaks, avoid guest disruptions, maintain property value.",
     content: `In Western NC's booming vacation rental market, your roof isn't just protecting a building — it's protecting your income. A leak during peak season can mean refunds, bad reviews, and lost bookings.
 
@@ -1879,8 +1879,8 @@ A planned maintenance visit prevents an emergency repair — and the lost rental
     date: "2025-11-12",
     image: "/media/d38f214a-winter-roof-preparation-highlands.webp", readTime: "5 min",
     town: "Highlands",
-    metaTitle: "Winter Roof Preparation for Highlands, NC | Highlander Roofing",
-    metaDescription: "Prepare your Highlands, NC roof for winter. Expert winterization tips for mountain homes from Highlander Roofing.",
+    metaTitle: "Winter Roof Preparation for Highlands, NC | Highlander Building Services",
+    metaDescription: "Prepare your Highlands, NC roof for winter. Expert winterization tips for mountain homes from Highlander Building Services.",
     content: `Highlands winters bring heavy snow, ice, freezing rain, and sustained low temperatures that test every roof. Preparation before the first freeze is critical.
 
 ## Pre-Winter Checklist
@@ -1922,8 +1922,8 @@ Don't wait for the first storm. Call (828) 524-7773 to schedule a pre-winter roo
     category: "Commercial",
     date: "2025-11-05",
     image: "/media/a437168c-commercial-roof-maintenance-wnc.webp", readTime: "6 min",
-    metaTitle: "Commercial Roof Maintenance Programs in WNC | Highlander Roofing",
-    metaDescription: "Commercial roof maintenance programs for Western NC properties. Reduce costs, extend roof life, prevent emergencies. Highlander Roofing.",
+    metaTitle: "Commercial Roof Maintenance Programs in WNC | Highlander Building Services",
+    metaDescription: "Commercial roof maintenance programs for Western NC properties. Reduce costs, extend roof life, prevent emergencies. Highlander Building Services.",
     content: `If you manage commercial property in Western NC, your roof is your first line of defense against one of the wettest, windiest climates in the Southeast. Waiting for problems to appear costs 3x more than preventing them.
 
 ## The Business Case for Maintenance
@@ -1971,7 +1971,7 @@ Contact us for a customized maintenance proposal based on your property type, ro
     date: "2026-03-01",
     image: "/media/492dd83a-why-hire-one-company-roof-and-construction.webp", readTime: "5 min",
     metaTitle: "One Company for Roofing & Construction | Highlander",
-    metaDescription: "Why hiring one company for roofing, construction, and design saves time, money, and headaches. Highlander Roofing & Construction in WNC.",
+    metaDescription: "Why hiring one company for roofing, construction, and design saves time, money, and headaches. Highlander Building Services in WNC.",
     content: `When a project involves both roofing and structural work — additions, exterior renovations, or storm damage repairs — homeowners often hire separate contractors. That almost always creates problems.
 
 ## The Coordination Problem
@@ -2017,7 +2017,7 @@ We started as roofers and expanded into construction because our clients kept as
     category: "Construction",
     date: "2026-02-20",
     image: "/media/590c8be3-planning-home-addition-western-nc.webp", readTime: "7 min",
-    metaTitle: "Planning a Home Addition in Western NC | Highlander Construction",
+    metaTitle: "Planning a Home Addition in Western NC | Highlander Building Services",
     metaDescription: "What to know before building a home addition in Western NC. Terrain, weather, permits, and structural considerations for mountain homes.",
     content: `Home additions in Western North Carolina require planning that accounts for mountain-specific challenges. Terrain, weather exposure, soil conditions, and access constraints all affect design, timeline, and cost.
 
@@ -2176,7 +2176,7 @@ Highlander responds on a same-day or next-day basis for storm damage inspections
     category: "Materials",
     date: "2026-02-25",
     image: "/media/68ba216e-understanding-roof-ventilation-mountain-homes.webp", readTime: "6 min",
-    metaTitle: "Roof Ventilation for Mountain Homes | Highlander Roofing",
+    metaTitle: "Roof Ventilation for Mountain Homes | Highlander Building Services",
     metaDescription: "Why roof ventilation matters more at elevation. Ice dam prevention, energy efficiency, and attic moisture control for WNC mountain homes.",
     content: `Roof ventilation is more critical in mountain climates than anywhere else. The combination of temperature extremes, snow loads, and moisture creates conditions that punish poorly ventilated attics.
 
@@ -2753,7 +2753,7 @@ const batchPosts: BlogPost[] = [
     image: "/media/aae09641-roof-repair-franklin-nc.webp",
     readTime: "7 min",
     town: "Franklin",
-    metaTitle: "Roof Repair in Franklin, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Franklin, NC | Highlander Building Services",
     metaDescription: "Franklin, NC homeowners: how to spot small roof issues early, what repairs typically involve, and when to request an inspection.",
     content: `Franklin sits at the edge of the Cowee and Nantahala ranges, where summer thunderstorms, wind-driven rain, and heavy tree cover put roofs under real stress. Most of the roof repairs Highlander sees in Macon County start as small, quiet problems — a lifted shingle, a bit of exposed underlayment, a rusted pipe boot — that grow into interior damage over a season or two.
 
@@ -2794,7 +2794,7 @@ If you're seeing any of the signs above, [request an inspection](/request-inspec
     image: "/media/d4bd2654-roof-repair-highlands-nc.webp",
     readTime: "7 min",
     town: "Highlands",
-    metaTitle: "Roof Repair in Highlands, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Highlands, NC | Highlander Building Services",
     metaDescription: "Highlands, NC mountain homes see wind, freeze/thaw, and heavy rain. Here's what typically fails on these roofs and how we repair it.",
     content: `At just over 4,000 feet, Highlands puts more weather stress on a roof in a year than most Piedmont towns see in three. Wind loading on ridge lots, ice at the eaves, and heavy summer rain all shorten the useful life of shingles, flashings, and sealants. The good news: most of what we see on Highlands homes is repairable if it's caught in time.
 
@@ -2832,7 +2832,7 @@ We'll inspect the roof, document what we find with photos, and give you a writte
     image: "/media/84198e2c-roof-repair-cashiers-nc.webp",
     readTime: "7 min",
     town: "Cashiers",
-    metaTitle: "Roof Repair in Cashiers, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Cashiers, NC | Highlander Building Services",
     metaDescription: "Cashiers, NC roof repair guidance — leak sources, storm damage triage, and when to bring in a licensed WNC roofing contractor.",
     content: `The Cashiers plateau catches storms that funnel across from Sapphire and Lake Toxaway. Between summer downpours, occasional hail, and consistent wind loading, most Cashiers homes will need at least one meaningful roof repair between full replacements. Knowing what's minor and what needs prompt attention protects both your roof and your interior.
 
@@ -2870,7 +2870,7 @@ Learn more about [roof repair](/roofing/roof-repair), see when [roof replacement
     image: "/media/wnc-storm-tree-damage.jpg",
     readTime: "6 min",
     town: "Sylva",
-    metaTitle: "Roof Repair in Sylva, NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Sylva, NC | Highlander Building Services",
     metaDescription: "Sylva, NC roof repair guide — the warning signs that mean your roof needs a professional look before problems spread.",
     content: `A lot of Sylva's housing stock is old enough that original roofs are near the end of their useful life. That means many of the calls we get here start with, "It's not leaking yet, but…". Catching the early signs is the difference between a targeted repair and a full replacement.
 
@@ -2948,7 +2948,7 @@ Don't climb on a wet roof. Don't ignore a small drip hoping it stops — most ac
     date: "2026-07-06",
     image: "/media/wnc-storm-tree-damage.jpg",
     readTime: "8 min",
-    metaTitle: "Roof Leak Repair in Western NC | Highlander Roofing",
+    metaTitle: "Roof Leak Repair in Western NC | Highlander Building Services",
     metaDescription: "Roof leaks in Western NC: the real causes, the early warning signs, and what a proper leak repair looks like on a mountain home.",
     content: `A roof leak is a symptom, not a diagnosis. Repairing the visible drip without finding the actual source is the reason so many WNC homeowners see the "same" leak return year after year. Here's how we think about leak repair on Western North Carolina mountain homes.
 
@@ -3150,7 +3150,7 @@ Once you're through spring and summer, a fall check-in matters too. Our [fall ro
     image: "/media/wnc-roof-inspection.jpg",
     readTime: "7 min",
     town: "Franklin",
-    metaTitle: "Roof Replacement in Franklin, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription: "Franklin, NC roof replacement — how to know when repair is no longer enough and what a proper mountain-home replacement involves.",
     content: `There's a moment every roof reaches when patching stops making financial sense. For most Franklin homes, that's somewhere between year 18 and 25 for a standard asphalt system — but condition matters more than age.
 
@@ -3191,7 +3191,7 @@ Learn more about [roof replacement](/roofing/roof-replacement), see when [roof r
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "8 min",
     town: "Highlands",
-    metaTitle: "Roof Replacement in Highlands, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Highlands, NC | Highlander Building Services",
     metaDescription: "Highlands, NC roof replacement — planning around 4,000-ft weather, steep lots, and material decisions that fit mountain homes.",
     content: `A Highlands replacement isn't a lowland replacement scaled up. Access, weather windows, wind exposure, and the sheer volume of rain and freeze/thaw cycles all change how the work is planned and specified.
 
@@ -3231,7 +3231,7 @@ See our [roof replacement services](/roofing/roof-replacement), consider [metal 
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "7 min",
     town: "Cashiers",
-    metaTitle: "Roof Replacement in Cashiers, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Cashiers, NC | Highlander Building Services",
     metaDescription: "Cashiers, NC roof replacement — what to expect from timeline, materials, and process on plateau mountain homes.",
     content: `Cashiers roofs live in the middle of a storm corridor. Between plateau wind, summer rain, and occasional hail, most homes here need a proper replacement — not a patch — somewhere between year 18 and 25 for asphalt systems.
 
@@ -3271,7 +3271,7 @@ Read more about [roof replacement](/roofing/roof-replacement), [roof repair](/ro
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "7 min",
     town: "Sylva",
-    metaTitle: "Roof Replacement in Sylva, NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Sylva, NC | Highlander Building Services",
     metaDescription: "Sylva, NC roof replacement — materials that fit Jackson County homes, timing tips, and what to expect from the process.",
     content: `Sylva's housing stock includes a lot of homes with original roofs approaching or past their useful life. If you're planning a replacement, here's how we think through material choice, timing, and process on Jackson County projects.
 
@@ -3483,7 +3483,7 @@ See our [metal roofing services](/roofing/metal), consider full [roof replacemen
     image: "/media/wnc-metal-standing-seam.jpg",
     readTime: "7 min",
     town: "Highlands",
-    metaTitle: "Metal Roofing in Highlands, NC | Highlander Roofing",
+    metaTitle: "Metal Roofing in Highlands, NC | Highlander Building Services",
     metaDescription: "Metal roofing for Highlands, NC homes — how it performs against rain, wind, and elevation, and where it fits best.",
     content: `At 4,000+ feet, roofing systems face a different set of stresses than they do in lower elevations. Metal — especially standing seam — is one of the strongest answers for Highlands homes on exposed lots.
 
@@ -3607,7 +3607,7 @@ Learn more about our [gutters and water management](/roofing/gutters), [roof rep
     image: "/media/wnc-copper-gutters.jpg",
     readTime: "6 min",
     town: "Highlands",
-    metaTitle: "Seamless Gutters in Highlands, NC | Highlander Roofing",
+    metaTitle: "Seamless Gutters in Highlands, NC | Highlander Building Services",
     metaDescription: "Seamless gutters for Highlands, NC mountain homes — why they matter, how they're sized, and what to expect from installation.",
     content: `Highlands catches an outsized share of Southeast rainfall. A gutter system that moves that water quickly, cleanly, and away from the foundation is one of the highest-ROI details on a mountain home.
 

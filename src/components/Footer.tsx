@@ -174,7 +174,7 @@ const Footer = () => {
               <div className="relative">
                 <img 
                   src={logo} 
-                  alt="Highlander Roofing &amp; Construction logo" 
+                  alt="Highlander Building Services logo" 
                   className="h-[56px] md:h-[64px] w-auto transition-all duration-500 group-hover:scale-105" 
                   loading="lazy" 
                   decoding="async" 
@@ -350,7 +350,7 @@ const Footer = () => {
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-muted-foreground font-body tracking-wide">
-            <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>
+            <span>© {new Date().getFullYear()} Highlander Building Services.</span>
             <span className="hidden md:inline text-border">·</span>
             <span>NC General Contractor License #87234</span>
             <span className="hidden md:inline text-border">·</span>

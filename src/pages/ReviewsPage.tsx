@@ -85,7 +85,7 @@ const ReviewsPage = () => {
     <>
       <SEOHead
         title="Reviews & Reputation | What Clients Say About Highlander"
-        description="Read verified reviews from Highlander Roofing & Construction clients across Western North Carolina. 4.9★ average rating from 150+ reviews."
+        description="Read verified reviews from Highlander Building Services clients across Western North Carolina. 4.9★ average rating from 150+ reviews."
         path="/reviews"
         jsonLd={buildPageSchema({
           type: "reviews",

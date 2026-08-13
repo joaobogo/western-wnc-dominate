@@ -12,7 +12,7 @@ const bad = (name: string, ctx = {}) => {
 Deno.test("valid names pass", () => {
   ok("John Smith");
   ok("Mary-Ann O'Brien");
-  ok("Highlander Construction LLC");
+  ok("Highlander Building Services LLC");
   ok("Dr. Alan Reed Jr.");
   ok("Lane Patterson"); // ambiguous street word used as a first name
 });

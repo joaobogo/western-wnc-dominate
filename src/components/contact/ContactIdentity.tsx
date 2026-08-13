@@ -12,7 +12,7 @@ const ContactIdentity = () => (
           Who You're Calling
         </span>
         <h2 id="contact-identity-heading" className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">
-          Highlander Roofing Services, Inc.
+          Highlander Building Services, Inc.
         </h2>
         <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-6">
           A locally owned roofing and construction company based in Franklin, North Carolina, working across

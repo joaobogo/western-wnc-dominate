@@ -8,13 +8,13 @@ const LAST_UPDATED = "June 24, 2026";
 const WEBSITE_URL = "https://highlandernc.com/";
 const EMAIL = "luke@highlandernc.com";
 const ADDRESS = "76 Creative Dr, Franklin, NC 28734";
-const COMPANY = "Highlander Roofing Services, Inc.";
+const COMPANY = "Highlander Building Services, Inc.";
 // Sitewide customer phone. The RealWork template listed (828) 526-6421 —
 // see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
 const PHONE = "(828) 524-7773";
 const PHONE_TEL = "+18285247773";
 const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
-const PROGRAM = "Highlander Roofing Services, Inc. Customer Communications";
+const PROGRAM = "Highlander Building Services, Inc. Customer Communications";
 
 const TOC: { id: string; label: string }[] = [
   { id: "s1", label: "1. Program Description and Acceptance of Terms" },
@@ -43,8 +43,8 @@ const PrivacyPolicy = () => {
   return (
     <>
       <SEOHead
-        title="Privacy Policy & Terms | Highlander Roofing Services"
-        description="Privacy Policy, Terms & Conditions, SMS/MMS program disclosures, and cookie information for Highlander Roofing Services, Inc."
+        title="Privacy Policy & Terms | Highlander Building Services"
+        description="Privacy Policy, Terms & Conditions, SMS/MMS program disclosures, and cookie information for Highlander Building Services, Inc."
         path="/privacy-policy"
       />
       <Header />

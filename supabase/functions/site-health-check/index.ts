@@ -52,18 +52,18 @@ const CHECKS: Check[] = [
   {
     path: "/",
     label: "Homepage",
-    mustContain: ["Highlander Roofing", "828-524-7773", "</html>"],
+    mustContain: ["Highlander Building Services", "828-524-7773", "</html>"],
     mustNotContain: ["Lovable Generated Project"],
   },
   {
     path: "/roofing",
     label: "Roofing services hub",
-    mustContain: ["Highlander Roofing", "828-524-7773"],
+    mustContain: ["Highlander Building Services", "828-524-7773"],
   },
   {
     path: "/service-areas",
     label: "Service areas index",
-    mustContain: ["Highlander Roofing"],
+    mustContain: ["Highlander Building Services"],
   },
   {
     path: "/service-areas/highlands-nc",
@@ -78,12 +78,12 @@ const CHECKS: Check[] = [
   {
     path: "/blog",
     label: "Blog index",
-    mustContain: ["Highlander Roofing"],
+    mustContain: ["Highlander Building Services"],
   },
   {
     path: "/blog/highlands-nc-storm-damage-july-28-2026",
     label: "Latest storm-damage post",
-    mustContain: ["Highlander Roofing"],
+    mustContain: ["Highlander Building Services"],
   },
   {
     path: "/contact",

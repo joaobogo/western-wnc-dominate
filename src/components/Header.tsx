@@ -98,10 +98,10 @@ const Header = () => {
           scrolled ? "py-1.5 md:py-2" : "py-2 md:py-4"
         }`}
       >
-        <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center bg-transparent hover:bg-transparent">
+        <Link to="/" aria-label="Highlander Building Services — Home" className="flex items-center bg-transparent hover:bg-transparent">
           <img loading="eager" decoding="async"
             src={logo}
-            alt="Highlander Roofing & Construction logo"
+            alt="Highlander Building Services logo"
             width={1193}
             height={338}
             className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${

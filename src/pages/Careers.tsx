@@ -55,7 +55,7 @@ const Careers = () => {
     <>
       <SEOHead
         title="Careers | Join the Highlander Team in Western NC"
-        description="Join Highlander Roofing & Construction. Family-owned, locally run by WNC craftspeople, with year-round work and mountain-grade craftsmanship. Apply today."
+        description="Join Highlander Building Services. Family-owned, locally run by WNC craftspeople, with year-round work and mountain-grade craftsmanship. Apply today."
         path="/careers"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },

@@ -8,7 +8,7 @@ const FormConsent = ({ className = "" }: { className?: string }) => (
   <p
     className={`text-[12px] md:text-[12.5px] leading-relaxed text-muted-foreground font-body ${className}`}
   >
-    By submitting this form, you agree that Highlander Roofing Services, Inc.
+    By submitting this form, you agree that Highlander Building Services, Inc.
     may contact you by phone, text, or email about your inquiry, services,
     scheduling, project follow-up, and review requests. Message and data rates
     may apply. Reply <strong>STOP</strong> to opt out of text messages. Reply{" "}

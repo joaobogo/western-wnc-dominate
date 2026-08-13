@@ -42,7 +42,7 @@ const GivingBack = () => {
   return (
     <>
       <SEOHead
-        title="Community Involvement | Highlander Roofing Services"
+        title="Community Involvement | Highlander Building Services"
         description="How Highlander supports homeowners, local organizations, and communities in Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/giving-back"
         jsonLd={[
@@ -81,7 +81,7 @@ const GivingBack = () => {
                 <span className="text-[hsl(var(--gold-ink))]">We Call Home.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/95 font-body leading-relaxed max-w-2xl font-medium mb-8">
-                Highlander Roofing Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
+                Highlander Building Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
               </p>
             </motion.div>
           </div>

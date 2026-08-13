@@ -400,7 +400,7 @@ const StormDamage = () => {
                   </ul>
                   <div className="mt-6 pt-5 border-t border-border">
                     <p className="text-muted-foreground text-xs font-body italic">
-                      Note: Highlander Roofing provides documentation and contractor support for insurance claims. We do not act as public adjusters, and we never recommend filing claims for damage we have not verified.
+                      Note: Highlander Building Services provides documentation and contractor support for insurance claims. We do not act as public adjusters, and we never recommend filing claims for damage we have not verified.
                     </p>
                   </div>
                 </motion.div>

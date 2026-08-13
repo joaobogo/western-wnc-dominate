@@ -101,7 +101,7 @@ const TownPage = () => {
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={town.heroImage} 
-              alt={`Mountain home in Western North Carolina — Highlander Roofing & Construction service area: ${town.name}, ${town.state}`}
+              alt={`Mountain home in Western North Carolina — Highlander Building Services service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/75 md:via-black/35 md:to-transparent" />
@@ -118,7 +118,7 @@ const TownPage = () => {
             >
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
-                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Building Services</span>
                 <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} · {town.county}, {town.state}</span>
               </div>
             </motion.div>
@@ -194,7 +194,7 @@ const TownPage = () => {
 
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
-          answer={`Yes. Highlander Roofing Services, Inc. is based at 76 Creative Dr, Franklin, NC 28734 and works throughout ${town.name} and the rest of ${town.county} County. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for Western North Carolina mountain weather.`}
+          answer={`Yes. Highlander Building Services, Inc. is based at 76 Creative Dr, Franklin, NC 28734 and works throughout ${town.name} and the rest of ${town.county} County. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for Western North Carolina mountain weather.`}
           points={[
             `Local crews serving ${town.name}, ${town.state}`,
             "Call 828-524-7773 to reach the team directly",

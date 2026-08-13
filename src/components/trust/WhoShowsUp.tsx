@@ -114,7 +114,7 @@ const WhoShowsUp = ({
             <p className={`text-base md:text-lg leading-relaxed font-body mb-6 ${textMuted}`}>
               {town ? (
                 <>
-                  Highlander Roofing Services is owned and operated by{" "}
+                  Highlander Building Services is owned and operated by{" "}
                   <strong className={textMain}>Luke and Kristy Smith</strong>. For every{" "}
                   {town} project, you get a single named point of contact from inspection through
                   completion — backed by Western NC-based crews and a Franklin office that answers
@@ -122,7 +122,7 @@ const WhoShowsUp = ({
                 </>
               ) : (
                 <>
-                  Highlander Roofing Services is owned and operated by{" "}
+                  Highlander Building Services is owned and operated by{" "}
                   <strong className={textMain}>Luke and Kristy Smith</strong>. Every project gets a
                   single named point of contact from inspection through completion — backed by
                   Western NC-based crews and a Franklin office that answers the phone.
@@ -179,7 +179,7 @@ const WhoShowsUp = ({
                 <a
                   href="tel:+18285247773"
                   className="inline-flex items-center gap-2 text-sm font-heading font-bold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors"
-                  aria-label="Call Highlander Roofing at 828-524-7773"
+                  aria-label="Call Highlander Building Services at 828-524-7773"
                 >
                   <Phone className="w-4 h-4" />
                   (828) 524-7773

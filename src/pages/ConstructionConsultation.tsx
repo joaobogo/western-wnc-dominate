@@ -430,7 +430,7 @@ export default function ConstructionConsultation() {
   if (submitted) {
     return (
       <>
-        <SEOHead title="Consultation Requested | Highlander Construction" description="Your construction project consultation has been received." path="/construction/consultation" noindex />
+        <SEOHead title="Consultation Requested | Highlander Building Services" description="Your construction project consultation has been received." path="/construction/consultation" noindex />
         <Header />
         <main id="main-content" className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">

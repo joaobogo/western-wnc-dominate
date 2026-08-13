@@ -106,7 +106,7 @@ export const projectDetails: ProjectDetail[] = [
       highlanderDifference: "Custom panel fabrication eliminated field-cutting waste and ensured precision fit. Pre-project drone survey mapped every intersection. Staggered installation maintained weather protection throughout the 8-day project.",
     },
     seo: {
-      title: "Standing Seam Metal Roof — Highlands, NC | Highlander Roofing",
+      title: "Standing Seam Metal Roof — Highlands, NC | Highlander Building Services",
       description: "Custom dark bronze standing seam metal roof on a mountain estate in Highlands, NC. 3,200 sq ft, 12/12 pitch, 8 gable intersections. See the full project story.",
     },
   },
@@ -205,7 +205,7 @@ export const projectDetails: ProjectDetail[] = [
     result: "The completed cedar shake roof transformed the estate into one of the most visually striking properties in Highlands. The copper accents will develop a natural patina over time, deepening the roof's character. The preservative treatment and spaced sheathing system are designed to extend the cedar's lifespan well beyond typical mountain installations.",
     galleryImages: [cedar004, asphalt007, metal006],
     seo: {
-      title: "Cedar Shake Roof — Highlands Estate | Highlander Roofing",
+      title: "Cedar Shake Roof — Highlands Estate | Highlander Building Services",
       description: "Premium cedar shake installation on a luxury Highlands estate. Hand-selected cedar, copper ridge accents, 14-day phased installation. See the full project story.",
     },
   },

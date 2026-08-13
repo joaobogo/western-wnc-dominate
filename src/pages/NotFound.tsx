@@ -48,7 +48,7 @@ const NotFound = () => {
   return (
     <>
       <SEOHead
-        title="Page Not Found (404) | Highlander Roofing & Construction"
+        title="Page Not Found (404) | Highlander Building Services"
         description="The page you're looking for doesn't exist. Return to our homepage to explore roofing and construction services across Western NC."
         path={location.pathname}
         noindex

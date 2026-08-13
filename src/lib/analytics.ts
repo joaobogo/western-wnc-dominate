@@ -72,7 +72,7 @@ const getSessionId = () => {
 };
 
 /**
- * Main Analytics utility for Highlander Roofing & Construction.
+ * Main Analytics utility for Highlander Building Services.
  * Handles GA4, Meta Pixel, and internal database tracking.
  */
 export const trackEvent = async (type: EventType, options: TrackOptions = {}) => {

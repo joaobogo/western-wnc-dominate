@@ -42,7 +42,7 @@ const roofingData = {
   cta: "Explore Roofing",
   href: "/roofing",
   image: metalRoof,
-  imageAlt: "Standing seam metal roof on a Western North Carolina mountain home — Highlander Roofing & Construction",
+  imageAlt: "Standing seam metal roof on a Western North Carolina mountain home — Highlander Building Services",
 };
 
 const constructionData = {
@@ -67,7 +67,7 @@ const constructionData = {
   cta: "Explore Construction",
   href: "/construction",
   image: constructionImg,
-  imageAlt: "Construction project representing Highlander Roofing & Construction design-build services in Western North Carolina",
+  imageAlt: "Construction project representing Highlander Building Services design-build services in Western North Carolina",
 };
 
 const designData = {

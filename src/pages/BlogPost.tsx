@@ -42,7 +42,7 @@ const splitContentAtMidpoint = (content: string): [string, string] => {
 const authors: Record<string, { name: string; role: string; bio: string }> = {
   default: {
     name: "Highlander Editorial Team",
-    role: "Highlander Roofing & Construction",
+    role: "Highlander Building Services",
     bio: "Expert roofing and construction guidance from the team that builds in Western North Carolina's mountains every day.",
   },
 };
@@ -426,7 +426,7 @@ const BlogPostPage = () => {
                         </h2>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                           This article was written specifically for homeowners in {post.town} and the surrounding
-                          area. Highlander Roofing & Construction serves {post.town} and all of Western North Carolina
+                          area. Highlander Building Services serves {post.town} and all of Western North Carolina
                           with in-person consultations and local crews.
                         </p>
                         <Link

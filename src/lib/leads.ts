@@ -19,7 +19,7 @@ export { captureAttribution } from "@/lib/attribution";
 export type { Attribution } from "@/lib/attribution";
 
 export const CONSENT_TEXT =
-  "By submitting your information, you agree that Highlander Roofing Services, Inc. may contact you by phone, text, or email about your inquiry, services, scheduling, project follow-up, and review requests. Message and data rates may apply. Reply STOP to opt out of text messages. Reply HELP for help. See our Privacy Policy.";
+  "By submitting your information, you agree that Highlander Building Services, Inc. may contact you by phone, text, or email about your inquiry, services, scheduling, project follow-up, and review requests. Message and data rates may apply. Reply STOP to opt out of text messages. Reply HELP for help. See our Privacy Policy.";
 
 /** A single uploaded file attached to a lead. */
 export type LeadAttachment = {

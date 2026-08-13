@@ -39,7 +39,7 @@ export const services: ServiceData[] = [
       { question: "How much does a roof repair cost in WNC?", answer: "Repair pricing is scope-based — it depends on damage extent, materials, and accessibility. We provide a free on-site inspection and a transparent, itemized estimate before any work begins." },
       { question: "Can you repair just a section of my roof?", answer: "Absolutely. We specialize in targeted repairs that address the problem area without unnecessary full replacements. We'll always recommend the most cost-effective solution." },
     ],
-    metaTitle: "Roof Repair in Western NC | Highlander Roofing",
+    metaTitle: "Roof Repair in Western NC | Highlander Building Services",
     metaDescription: "Fast, reliable roof repair services across Highlands, Cashiers, Franklin, Sylva, and Western North Carolina. Free inspections. Licensed & insured since 2017.",
   },
   {
@@ -65,7 +65,7 @@ export const services: ServiceData[] = [
       { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend dimensional shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
       { question: "Do you offer financing for roof replacement?", answer: "Yes, we offer flexible financing options to make a new roof affordable. Ask us about payment plans during your free inspection." },
     ],
-    metaTitle: "Roof Replacement in Western NC | Highlander Roofing",
+    metaTitle: "Roof Replacement in Western NC | Highlander Building Services",
     metaDescription: "Full roof replacement for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. CertainTeed certified. Financing available. Free inspections.",
   },
   {
@@ -91,8 +91,8 @@ export const services: ServiceData[] = [
       { question: "How do I know if my roof has storm damage?", answer: "Signs include missing or lifted shingles, dents in metal flashing, granule loss, water stains on ceilings, and debris on the roof. We provide free storm damage inspections." },
       { question: "Do you handle the insurance process?", answer: "We assist with the entire process — from initial documentation to adjuster meetings to final repairs. Our team has extensive experience navigating roofing insurance claims in WNC." },
     ],
-    metaTitle: "Storm Damage Roof Repair in Western NC | Highlander Roofing",
-    metaDescription: "Emergency storm damage response across Western North Carolina. Insurance claim support, tarping, and fast repairs. Call Highlander Roofing — (828) 524-7773.",
+    metaTitle: "Storm Damage Roof Repair in Western NC | Highlander Building Services",
+    metaDescription: "Emergency storm damage response across Western North Carolina. Insurance claim support, tarping, and fast repairs. Call Highlander Building Services — (828) 524-7773.",
   },
   {
     slug: "metal-roofing",
@@ -117,15 +117,15 @@ export const services: ServiceData[] = [
       { question: "Can you install metal roofing over existing shingles?", answer: "In some cases, yes. We evaluate each roof individually. Installing over existing shingles can save on tear-off costs, but we'll only recommend it if it's the right solution for your home." },
       { question: "How does metal roofing handle snow in WNC?", answer: "Metal roofing sheds snow more efficiently than shingles, reducing ice dam risk. We install snow guards where needed to control snow slide and protect walkways below." },
     ],
-    metaTitle: "Metal Roofing Installation in Western NC | Highlander Roofing",
-    metaDescription: "Premium metal roofing for WNC mountain homes. 50+ year lifespan, energy efficient, wind resistant. Free inspection from Highlander Roofing.",
+    metaTitle: "Metal Roofing Installation in Western NC | Highlander Building Services",
+    metaDescription: "Premium metal roofing for WNC mountain homes. 50+ year lifespan, energy efficient, wind resistant. Free inspection from Highlander Building Services.",
   },
   {
     slug: "commercial-roofing",
     title: "Commercial Roofing",
     headline: "Commercial Roofing for WNC Properties",
     subheadline: "Inspections, repairs, replacements, and maintenance programs for property managers, facility managers, and business owners across Western North Carolina.",
-    description: "Commercial roofs have different demands — larger scale, stricter timelines, and compliance requirements. Highlander Roofing provides professional commercial roofing services tailored to WNC's property managers, HOAs, and business owners.",
+    description: "Commercial roofs have different demands — larger scale, stricter timelines, and compliance requirements. Highlander Building Services provides professional commercial roofing services tailored to WNC's property managers, HOAs, and business owners.",
     icon: Building2,
     division: "roofing",
     features: [
@@ -143,7 +143,7 @@ export const services: ServiceData[] = [
       { question: "Do you offer maintenance programs for commercial roofs?", answer: "Yes. Our preventative maintenance programs include bi-annual inspections, minor repairs, drainage checks, and detailed condition reports to extend your roof's lifespan and avoid costly emergencies." },
       { question: "Can you work around tenant schedules?", answer: "Absolutely. We coordinate work schedules to minimize disruption to tenants and business operations. We're experienced with occupied buildings and sensitive environments." },
     ],
-    metaTitle: "Commercial Roofing Services in Western NC | Highlander Roofing",
+    metaTitle: "Commercial Roofing Services in Western NC | Highlander Building Services",
     metaDescription: "Commercial roofing services for property managers, HOAs & businesses in Western NC. Inspections, repairs, maintenance programs. Licensed & insured.",
   },
   {
@@ -169,7 +169,7 @@ export const services: ServiceData[] = [
       { question: "Will maintenance really save money long-term?", answer: "Studies show preventative maintenance can extend roof life by 25–50% and reduce total lifecycle costs significantly by catching issues early before they require major repairs." },
       { question: "Can you maintain roofs installed by other contractors?", answer: "Yes. We service all commercial roofing systems regardless of who installed them. We'll assess current condition and create a maintenance plan tailored to your roof." },
     ],
-    metaTitle: "Commercial Roof Maintenance Programs | Highlander Roofing WNC",
+    metaTitle: "Commercial Roof Maintenance Programs | Highlander Building Services",
     metaDescription: "Preventative commercial roof maintenance in Western NC. Bi-annual inspections, condition reports, priority repairs. Protect your investment.",
   },
   {
@@ -195,7 +195,7 @@ export const services: ServiceData[] = [
       { question: "Do you install gutter guards?", answer: "Yes. We install micro-mesh and reverse-curve gutter guards that prevent leaves, pine needles, and debris from clogging your gutters — especially important in WNC's heavily wooded areas." },
       { question: "Can you repair existing gutters instead of replacing them?", answer: "Often, yes. We repair leaking seams, rehang sagging sections, and replace damaged segments. We'll recommend repair vs. replacement based on your gutter's age and overall condition." },
     ],
-    metaTitle: "Gutter Installation & Repair in Western NC | Highlander Roofing",
+    metaTitle: "Gutter Installation & Repair in Western NC | Highlander Building Services",
     metaDescription: "Seamless gutter installation, gutter guards, and repair for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. Licensed & insured.",
   },
   {
@@ -267,7 +267,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "Do you handle the permits?", answer: "Yes, we manage the entire permitting and inspection process with the county." },
     ],
-    metaTitle: "Home Additions in Western NC | Highlander Construction",
+    metaTitle: "Home Additions in Western NC | Highlander Building Services",
     metaDescription: "Expand your mountain home with professional additions. Guest suites, in-law apartments, and room extensions. Licensed GC in WNC.",
   },
   {

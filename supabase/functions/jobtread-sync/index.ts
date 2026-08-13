@@ -991,7 +991,7 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
 
 // ---------- JobTread Highlander org constants ----------
 // Discovered via Pave introspection against the live org
-// "Highlander Roofing Services Inc" (org id 22P5uYkUSP8F).
+// "Highlander Building Services, Inc." (org id 22P5uYkUSP8F).
 // Custom-field IDs are stable per JobTread org, so hardcoding here is safe
 // and avoids an extra API roundtrip on every sync.
 const JT_CF = {

@@ -13,13 +13,13 @@
     "server": {
       "name": "highlander-mcp",
       "version": "0.1.0",
-      "title": "Highlander Roofing & Construction"
+      "title": "Highlander Building Services"
     },
     "tools": [
       {
         "name": "get_business_info",
         "title": "Get business info",
-        "description": "Return contact info, service area, and core details for Highlander Roofing & Construction.",
+        "description": "Return contact info, service area, and core details for Highlander Building Services.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

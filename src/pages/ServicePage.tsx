@@ -32,7 +32,7 @@ const ServicePage = () => {
     return (
       <>
         <SEOHead
-          title="Service Not Found | Highlander Roofing"
+          title="Service Not Found | Highlander Building Services"
           description="The requested service page was not found. Browse all roofing and construction services."
           path={location.pathname}
           noindex

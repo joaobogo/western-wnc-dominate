@@ -299,7 +299,7 @@ function buildConstruction(t: TownData): Built {
     faqs: [
       {
         q: `Are you licensed to do general construction in ${t.county}?`,
-        a: `Yes. Highlander Roofing Services, Inc. is a licensed North Carolina general contractor. We pull the ${countyShort(t)} County permits and coordinate inspections for construction work the same way we do for roofing.`,
+        a: `Yes. Highlander Building Services, Inc. is a licensed North Carolina general contractor. We pull the ${countyShort(t)} County permits and coordinate inspections for construction work the same way we do for roofing.`,
       },
       {
         q: `Can one contract cover both the addition and the roof?`,
