@@ -96,12 +96,12 @@ const TownPage = () => {
             <TartanBackground opacity={0.03} />
           </div>
 
-          <div className="container-tight relative z-10 px-6 py-24 w-full">
+          <div className="container-tight relative z-10 px-6 py-10 md:py-24 w-full">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="mb-8 flex items-center gap-4"
+              className="mb-4 md:mb-8 flex items-center gap-4"
             >
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
@@ -141,7 +141,7 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.15 }}
-                className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
+                className="mb-6 md:mb-10 max-w-2xl line-clamp-3 md:line-clamp-none border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
               >
                 <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
                 {town.climateExposure}
@@ -163,16 +163,16 @@ const TownPage = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-black/40 backdrop-blur-lg">
+          <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 z-20 border-t border-white/10 bg-black/40 backdrop-blur-lg">
             <div className="container-tight px-4 sm:px-6 py-4 md:py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {[
                   { icon: MapPin, label: "Town", value: `${town.name}, ${town.state}` },
                   { icon: Home, label: "County", value: town.county },
                   { icon: Mountain, label: "Elevation", value: town.elevation },
-                  { icon: CloudLightning, label: "Local Exposure", value: town.styleTendency }
+                  { icon: CloudLightning, label: "Local Exposure", value: town.styleTendency, hideOnMobile: true }
                 ].map((stat, i) => (
-                  <div key={i} className="flex flex-col">
+                  <div key={i} className={`flex-col ${(stat as { hideOnMobile?: boolean }).hideOnMobile ? "hidden lg:flex" : "flex"}`}>
                     <span className="text-caption md:text-body-xs uppercase tracking-widest text-white/85 font-bold mb-1">{stat.label}</span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
                       <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />

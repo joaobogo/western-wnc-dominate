@@ -254,23 +254,28 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
     );
   }
 
-  const inputClasses = "field-input field-on-dark px-6 py-5 md:py-6";
-  const labelClasses = "field-label text-white mb-3 tracking-[0.18em]";
+  const inputClasses = "field-input field-on-dark px-4 py-3 md:px-6 md:py-6";
+  const labelClasses = "field-label text-white mb-2 md:mb-3 tracking-[0.18em]";
   const hintClasses = "text-dark-section-foreground text-body-sm md:text-body-sm font-body mt-3 leading-relaxed font-bold";
 
 
   return (
-    <section className="section-dark relative overflow-hidden interaction-quote" id="request-inspection">
+    <section className={`section-dark relative overflow-hidden interaction-quote ${isPage ? "!pt-0" : ""}`} id="request-inspection">
       <SectionDivider variant="tartan-trim" className="absolute top-0 left-0 right-0 z-20 opacity-30" />
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
       <GoldLine width="100%" centered delay={0} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
-      <div className={isPage ? "pt-24 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
+      <div className={isPage ? "pt-6 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
         <div className="container-tight">
           {isPage && (
-            <h1 className="text-2xl md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-6 md:mb-10">
-              Request your free roof inspection in Western North Carolina.
-            </h1>
+            <>
+              <h1 className="text-lg md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-2 md:mb-4">
+                Request your free roof inspection in Western North Carolina.
+              </h1>
+              <p className="text-white font-body font-semibold text-body-sm md:text-body mb-3 md:mb-10 leading-snug">
+                Two questions now, a written scope after we walk your property.
+              </p>
+            </>
           )}
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
 
@@ -339,14 +344,14 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
               transition={{ delay: 0.12, duration: 0.4, ease: HIGHLAND_EASE }}
               className={`lg:col-span-3 ${isPage ? "order-1 lg:order-2" : ""}`}
             >
-              <div className="bg-dark-section-foreground/[0.03] border border-dark-section-border rounded-none p-6 md:p-8 lg:p-10">
+              <div className="bg-dark-section-foreground/[0.03] border border-dark-section-border rounded-none p-4 md:p-8 lg:p-10">
                 {/* Slim progress indicator */}
-                <div className="mb-6">
+                <div className="mb-4 md:mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))]">
+                    <p className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] leading-tight">
                       Step {step} of 2 — {step === 1 ? "What you need" : "How we reach you"}
                     </p>
-                    <span className="text-white/70 text-body-xs font-body font-semibold">About a minute</span>
+                    <span className="hidden md:inline text-white/70 text-body-xs font-body font-semibold">About a minute</span>
                   </div>
                   <div className="h-1 w-full bg-white/10 overflow-hidden" role="progressbar" aria-valuemin={1} aria-valuemax={2} aria-valuenow={step} aria-label="Form progress">
                     <motion.div
@@ -361,7 +366,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 <FormSavedNote show={autosave.restored} tone="dark" className="mb-5" />
 
                 {step === 1 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div>
                     <div className="flex items-baseline justify-between gap-4 flex-wrap">
                       <span className={labelClasses}>What Do You Need Help With?</span>
@@ -384,7 +389,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                       </div>
                     )}
                     {showProjectChoices && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-1.5 md:gap-3">
                       {PROJECT_CHOICES.map((choice) => {
                         const active = formData.projectType === choice.value;
                         return (
@@ -393,15 +398,15 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                             type="button"
                             aria-pressed={active}
                             onClick={() => { setFormData({ ...formData, projectType: choice.value }); setProjectError(null); }}
-                            className={`flex items-center gap-3 px-4 py-4 text-left border transition-all duration-200 ${
+                            className={`flex items-center gap-2 md:gap-3 px-3 py-2 md:px-4 md:py-4 text-left border transition-all duration-200 ${
                               active
                                 ? "border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.16)]"
                                 : "border-white/20 bg-white/[0.06] hover:bg-white/[0.1]"
                             }`}
                           >
-                            <choice.icon className={`w-5 h-5 flex-shrink-0 ${active ? "text-[hsl(var(--gold-ink))]" : "text-white/70"}`} />
-                            <span className="text-white font-body font-bold text-body-sm md:text-body-sm">{choice.label}</span>
-                            {active && <CheckCircle className="w-4 h-4 ml-auto text-[hsl(var(--gold-ink))]" aria-hidden="true" />}
+                            <choice.icon className={`hidden md:block w-4 h-4 md:w-5 md:h-5 flex-shrink-0 ${active ? "text-[hsl(var(--gold-ink))]" : "text-white/70"}`} />
+                            <span className="text-white font-body font-bold text-caption md:text-body-sm leading-tight">{choice.label}</span>
+                            {active && <CheckCircle className="hidden md:block w-4 h-4 ml-auto text-[hsl(var(--gold-ink))]" aria-hidden="true" />}
                           </button>
                         );
                       })}
@@ -428,7 +433,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     <InlineFieldError className="text-[hsl(var(--gold-ink))]">{townError ?? undefined}</InlineFieldError>
                   </div>
 
-                  <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
+                  <div className="pt-1 md:pt-2 flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
                     <button
                       type="button"
                       onClick={goToStepTwo}
