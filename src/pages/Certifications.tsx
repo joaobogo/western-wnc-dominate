@@ -228,7 +228,6 @@ const Certifications = () => {
                 </motion.li>
               ))}
             </ul>
-            <CredentialCards variant="light" />
           </div>
         </section>
 
