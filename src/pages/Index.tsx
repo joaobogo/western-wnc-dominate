@@ -1,5 +1,5 @@
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -11,8 +11,6 @@ import ThreeDivisionPathway from "@/components/DualPathway";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
-import BuiltForWNC from "@/components/BuiltForWNC";
-import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
