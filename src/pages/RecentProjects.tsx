@@ -58,6 +58,15 @@ const completedProjects = [
 ];
 
 const RecentProjects = () => {
+  const materialFilters = useMemo(
+    () => ["All Work", ...Array.from(new Set(completedProjects.map((p) => p.type)))],
+    [],
+  );
+  const [material, setMaterial] = useState("All Work");
+  const visibleProjects = completedProjects.filter(
+    (p) => material === "All Work" || p.type === material,
+  );
+
   return (
     <>
       <SEOHead
