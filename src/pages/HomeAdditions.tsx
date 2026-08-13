@@ -15,6 +15,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
@@ -551,6 +552,11 @@ const HomeAdditions = () => {
           variant="band"
           className="mt-4"
         />
+
+        {/* CRO Prompt 33 — consultative construction sequence */}
+        <ProjectTypeSelector highlight="addition" />
+        <TimelineExpectations />
+        <BudgetRangeContext scopeLabel="home additions" />
 
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}

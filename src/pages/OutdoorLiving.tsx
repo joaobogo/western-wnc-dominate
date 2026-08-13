@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
@@ -486,6 +487,11 @@ const OutdoorLiving = () => {
           className="mt-4"
         />
 
+        {/* CRO Prompt 33 — consultative construction sequence */}
+        <ProjectTypeSelector highlight="outdoor-living" />
+        <TimelineExpectations />
+        <BudgetRangeContext scopeLabel="outdoor living projects" />
+
         <ConstructionClosingCTA
           headline={"The Best Room in Your\nHouse Doesn't Need Walls."}
           subheadline="Whether it's a covered porch for morning coffee, a screened room for summer evenings, or an outdoor kitchen for gathering — let's design the space you've been imagining."
@@ -500,7 +506,7 @@ const OutdoorLiving = () => {
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
             { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Outdoor living work in Highlands" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent porches and outdoor rooms" },
-            { label: "Request a Project Consultation", href: "/request-inspection", description: "Start the conversation" },
+            { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start the conversation" },
             { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />

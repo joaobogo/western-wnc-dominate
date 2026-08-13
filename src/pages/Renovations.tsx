@@ -15,6 +15,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
 
@@ -431,6 +432,11 @@ const Renovations = () => {
           variant="band"
           className="mt-4"
         />
+
+        {/* CRO Prompt 33 — consultative construction sequence */}
+        <ProjectTypeSelector highlight="renovation" />
+        <TimelineExpectations />
+        <BudgetRangeContext scopeLabel="renovations" />
 
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}

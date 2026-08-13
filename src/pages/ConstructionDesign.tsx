@@ -574,7 +574,7 @@ const ConstructionDesign = () => {
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Construction & Renovation FAQ", href: "/faq", description: "Answers to common planning questions" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
-            { label: "Request a Project Consultation", href: "/request-inspection", description: "Start with a design conversation" },
+            { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start with a design conversation" },
             { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
           ]}
         />

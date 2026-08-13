@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
@@ -490,6 +491,11 @@ const ConstructionDivision = () => {
         <WhoShowsUp />
 
         {/* ═══ CLOSING CTA ═══ */}
+        {/* CRO Prompt 33 — consultative construction sequence */}
+        <ProjectTypeSelector />
+        <TimelineExpectations />
+        <BudgetRangeContext scopeLabel="construction projects" />
+
         <ConstructionClosingCTA
           headline={"Your Home Deserves a Builder\nWho Treats It Like Their Own."}
           subheadline="Whether you're planning an addition, considering a renovation, or have a custom project in mind — let's have a straightforward conversation about what's possible."
@@ -504,7 +510,7 @@ const ConstructionDivision = () => {
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
-            { label: "Request a Project Consultation", href: "/request-inspection", description: "Start the conversation" },
+            { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start the conversation" },
             { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
