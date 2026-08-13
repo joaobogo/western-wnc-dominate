@@ -1857,9 +1857,20 @@ div[style*="Edit with Lovable"],
   .card-premium { padding: 1.5rem !important; }
 
   /* Section vertical rhythm — a touch tighter on small phones */
-  .section-padding {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
+  .section-padding,
+  .section-default {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .section-compact {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .section-feature {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
 
   /* Cap arbitrary large image heights so cards aren't half-screen tall */
