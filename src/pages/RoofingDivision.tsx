@@ -28,6 +28,7 @@ import RealWorkWidget from "@/components/RealWorkWidget";
 import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
+import RoofingPathFinder from "@/components/roofing/RoofingPathFinder";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -38,6 +39,7 @@ const roofingServices = [
     icon: Home,
     title: "Residential Roofing",
     slug: "/roofing/residential",
+    problem: "Your roof is near the end of its life and you need a replacement plan you can trust.",
     description: "Complete roof systems for mountain homes — from material selection through final walkthrough. Engineered for your elevation, exposure, and decades of WNC weather.",
     features: ["Full replacements", "New construction", "Re-roofing", "Ventilation design"],
   },
@@ -45,6 +47,7 @@ const roofingServices = [
     icon: Wrench,
     title: "Roof Repair",
     slug: "/roofing/roof-repair",
+    problem: "You have a leak, stain, or damaged section and need it stopped before it spreads.",
     description: "Targeted repairs that stop leaks and prevent escalation. We diagnose accurately, fix it right, and document everything.",
     features: ["Leak detection", "Flashing repair", "Shingle replacement", "Chimney seals"],
   },
@@ -52,6 +55,7 @@ const roofingServices = [
     icon: CloudLightning,
     title: "Storm Damage & Insurance",
     slug: "/roofing/storm-damage",
+    problem: "A storm hit your property and you need documented damage your insurer will accept.",
     description: "Rapid emergency response with full damage documentation, insurance coordination, and priority scheduling — not storm chasing.",
     features: ["Emergency tarping", "Insurance documentation", "Adjuster meetings", "Priority repairs"],
   },
@@ -59,6 +63,7 @@ const roofingServices = [
     icon: Building2,
     title: "Commercial Roofing",
     slug: "/roofing/commercial",
+    problem: "You manage a building or HOA and need a low-slope system kept watertight on schedule.",
     description: "Inspections, maintenance programs, and full-scope solutions for property managers, HOAs, and facility owners across Western NC.",
     features: ["Flat & low-slope systems", "TPO & EPDM", "Maintenance programs", "Multi-property"],
   },
@@ -66,6 +71,7 @@ const roofingServices = [
     icon: Layers,
     title: "Metal Roofing",
     slug: "/roofing/metal",
+    problem: "You want a roof that outlasts shingles in wind, snow, and mountain sun exposure.",
     description: "Standing seam and visually complex metal systems rated for 140mph winds and 50+ years of mountain performance. The premium choice.",
     features: ["Standing seam", "Concealed fastener", "Snow guards", "Custom colors"],
   },
@@ -73,6 +79,7 @@ const roofingServices = [
     icon: TreePine,
     title: "Specialty Roofing",
     slug: "/roofing/specialty",
+    problem: "Your home's character calls for cedar, slate, or copper — installed by people who detail it right.",
     description: "Cedar shake, slate, copper accents, and custom details for properties that demand distinctive craftsmanship and heritage character.",
     features: ["Cedar shake", "Slate systems", "Copper work", "Historic restoration"],
   },
@@ -551,6 +558,9 @@ const RoofingDivision = () => {
                       <h3 className="text-lg font-heading font-bold text-foreground mb-2.5 group-hover:text-primary transition-colors">
                         {service.title}
                       </h3>
+                      <p className="text-[13px] leading-relaxed font-body font-semibold text-foreground/85 mb-2">
+                        {service.problem}
+                      </p>
                       <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-5 flex-grow">
                         {service.description}
                       </p>
@@ -564,12 +574,48 @@ const RoofingDivision = () => {
                       </div>
 
                       <span className="inline-flex items-center gap-1.5 font-semibold text-sm text-primary group-hover:gap-2.5 transition-all font-body mt-auto">
-                        Explore Service <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        See {service.title} & Get an Estimate <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </Link>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── NOT SURE WHICH YOU NEED? ─── */}
+        <RoofingPathFinder />
+
+        {/* ─── MID-PAGE PRIMARY CTA BAND ─── */}
+        <section className="bg-primary text-primary-foreground tartan-dark">
+          <div className="container-tight py-10 md:py-12">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="max-w-xl">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold leading-tight mb-2">
+                  Get a Written Roof Assessment for Your Property.
+                </h2>
+                <p className="text-primary-foreground/90 font-body text-sm md:text-base">
+                  On-site evaluation, photo documentation, and a grouped-cost scope — so you know
+                  exactly what your roof needs before you spend anything.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                <Link
+                  to="/request-inspection"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                >
+                  Get My Written Estimate
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="tel:+18285247773"
+                  className="border border-primary-foreground/25 text-primary-foreground font-medium text-sm px-7 py-4 inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  (828) 524-7773
+                </a>
+              </div>
             </div>
           </div>
         </section>
