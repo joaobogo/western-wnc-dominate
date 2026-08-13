@@ -408,16 +408,73 @@ export function trackCtaClick(opts: {
   cta_type?: string | null;
   destination_url: string;
   town?: string | null;
+  /** Where on the page the CTA sits: above_fold | mid_page | page_bottom | sticky_bar | custom. */
+  cta_position?: string | null;
+  cta_viewport_pct?: number | null;
 }) {
   push({
     event: GTM_EVENTS.CTA_CLICK,
     cta_location: opts.cta_location,
     cta_text: opts.cta_text ?? null,
     cta_type: opts.cta_type ?? null,
+    cta_position: opts.cta_position ?? null,
+    cta_viewport_pct: opts.cta_viewport_pct ?? null,
     destination_url: opts.destination_url,
     town: opts.town ?? null,
     page_path: pagePath(),
     page_title: pageTitle(),
+  });
+}
+
+/* ---------- Gallery / project proof ---------- */
+
+/** A visitor opened a project card or lightbox in any gallery. */
+export function trackGalleryProjectOpen(opts: {
+  gallery: string;
+  project_title: string;
+  project_location?: string | null;
+  project_category?: string | null;
+  position: number;
+}) {
+  push({
+    event: GTM_EVENTS.GALLERY_PROJECT_OPEN,
+    gallery: opts.gallery,
+    project_title: opts.project_title,
+    project_location: opts.project_location ?? null,
+    project_category: opts.project_category ?? null,
+    cta_position: `gallery_item_${opts.position + 1}`,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+/** A CTA inside a gallery / project block was clicked. Also emits cta_click. */
+export function trackGalleryCtaClick(opts: {
+  gallery: string;
+  cta_text: string;
+  destination_url: string;
+  project_title?: string | null;
+  town?: string | null;
+  cta_position?: string | null;
+}) {
+  push({
+    event: GTM_EVENTS.GALLERY_CTA_CLICK,
+    gallery: opts.gallery,
+    cta_text: opts.cta_text,
+    destination_url: opts.destination_url,
+    project_title: opts.project_title ?? null,
+    town: opts.town ?? null,
+    cta_position: opts.cta_position ?? "gallery",
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+  trackCtaClick({
+    cta_location: opts.gallery,
+    cta_text: opts.cta_text,
+    cta_type: "gallery",
+    destination_url: opts.destination_url,
+    town: opts.town ?? null,
+    cta_position: opts.cta_position ?? "gallery",
   });
 }
 
