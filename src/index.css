@@ -424,7 +424,7 @@ img {
   }
 
   /* ──────────────────────────────────────
-     HEADING HIERARCHY — Cormorant Garamond
+     HEADING HIERARCHY — Playfair Display
      Tight tracking, design-led line-height
      ────────────────────────────────────── */
   h1 {
@@ -473,7 +473,7 @@ img {
      ────────────────────────────────────── */
   p {
     @apply font-body text-foreground/95;
-    max-width: 65ch; /* Slightly shorter line length for focus */
+    max-width: 68ch; /* Capped body measure — readable line length */
     font-size: 1.125rem;
     line-height: 1.7;
   }
@@ -490,7 +490,12 @@ img {
   /* Lead paragraph — opening statements, hero subtitles */
   .lead {
     @apply font-body text-xl md:text-2xl text-muted-foreground leading-relaxed;
-    max-width: 60ch;
+    max-width: 68ch;
+  }
+
+  /* Explicit measure utility for non-<p> body copy blocks */
+  .measure {
+    max-width: 68ch;
   }
 
   /* Selection color */
@@ -736,10 +741,10 @@ img {
      Strong, compact, confident
      ────────────────────────────────────── */
   .cta-text {
-    @apply text-[12px] font-body font-bold uppercase tracking-[0.12em];
+    @apply text-body-xs font-body font-bold uppercase tracking-[0.12em];
   }
   .cta-text-lg {
-    @apply text-[14px] font-body font-bold uppercase tracking-[0.1em];
+    @apply text-body-sm font-body font-bold uppercase tracking-[0.1em];
   }
 
   /* ──────────────────────────────────────
@@ -1192,7 +1197,7 @@ img {
     position: absolute;
     top: -0.2em;
     left: -0.05em;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 6em;
     line-height: 1;
     color: hsl(var(--highland-gold) / 0.06);

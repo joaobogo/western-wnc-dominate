@@ -183,10 +183,10 @@ const StormDamage = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">Roofing</span>
+                  <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Storm Damage</span>
+                <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Storm Damage</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -215,7 +215,7 @@ const StormDamage = () => {
                 </Link>
               </motion.div>
               {/* One-line reason to call instead of writing (CRO Prompt 12) */}
-              <p className="mt-3 text-[13px] md:text-[14px] font-body text-white/80 max-w-xl leading-snug">
+              <p className="mt-3 text-body-xs md:text-body-xs font-body text-white/80 max-w-xl leading-snug">
                 Storm damage moves fast — calling gets a real person who can prioritize your assessment and start the insurance documentation today.
               </p>
 
@@ -232,7 +232,7 @@ const StormDamage = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
-                  <div className="text-[11px] text-primary-foreground/85 font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
+                  <div className="text-caption text-primary-foreground/85 font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
                 </div>
               </motion.div>
             </div>
@@ -286,7 +286,7 @@ const StormDamage = () => {
                       <type.icon className="w-5 h-5 text-[hsl(var(--gold-ink))] dark:text-highland-gold" />
                     </div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] dark:group-hover:text-highland-gold transition-colors">{type.title}</h3>
-                    <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{type.detail}</p>
+                    <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{type.detail}</p>
                   </div>
                 </motion.div>
               ))}
@@ -312,7 +312,7 @@ const StormDamage = () => {
                     <span className="text-3xl font-heading font-bold text-border/60 select-none flex-shrink-0 w-8 group-hover:text-primary/15 transition-colors">{step.number}</span>
                     <div>
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{step.title}</h3>
-                      <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -360,7 +360,7 @@ const StormDamage = () => {
                     <step.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -394,7 +394,7 @@ const StormDamage = () => {
                     {insurancePoints.map((point) => (
                       <li key={point} className="flex items-start gap-3">
                         <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
-                        <span className="text-muted-foreground text-[13px] font-body leading-snug">{point}</span>
+                        <span className="text-muted-foreground text-body-xs font-body leading-snug">{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -415,7 +415,7 @@ const StormDamage = () => {
             <div className="mb-6 text-center">
               <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
               <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
-              <p className="text-muted-foreground text-[15px] font-body leading-relaxed">
+              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
                 If nothing is leaking right now, send four quick fields and we'll schedule an
                 inspection with photo documentation for your records or your claim.
               </p>
@@ -457,7 +457,7 @@ const StormDamage = () => {
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
-                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -480,7 +480,7 @@ const StormDamage = () => {
                       {repairVsReplace.replace.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
-                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -536,7 +536,7 @@ const StormDamage = () => {
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                    <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -560,7 +560,7 @@ const StormDamage = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

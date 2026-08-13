@@ -133,14 +133,14 @@ const RoofAssessmentQuiz = () => {
 
   const optionClass = "w-full text-left px-5 py-4 rounded-none border border-border hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-[hsl(var(--highland-gold)/0.03)] transition-all duration-200";
   const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
-  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
+  const labelClass = "block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   return (
     <section className="section-padding section-dark tartan-dark" id="roof-quiz">
       <div className="container-tight max-w-2xl">
         <div className="text-center mb-8">
           <ScrollReveal variant="fade">
-            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))] mb-3 block">Roof Assessment Tool</span>
+            <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))] mb-3 block">Roof Assessment Tool</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">
@@ -197,7 +197,7 @@ const RoofAssessmentQuiz = () => {
 
               {currentQuestion && (
                 <div>
-                  <p className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">
+                  <p className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">
                     Question {currentIndex} of 5
                   </p>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-6">{currentQuestion.question}</h3>
@@ -282,7 +282,7 @@ const RoofAssessmentQuiz = () => {
                         className={`h-full rounded-full ${result.level === "good" ? "bg-primary" : result.level === "caution" ? "bg-accent" : "bg-destructive"}`}
                       />
                     </div>
-                    <div className="flex justify-between mt-1.5 text-[10px] text-muted-foreground font-body">
+                    <div className="flex justify-between mt-1.5 text-caption text-muted-foreground font-body">
                       <span>Good</span><span>Needs Attention</span><span>Urgent</span>
                     </div>
                   </div>

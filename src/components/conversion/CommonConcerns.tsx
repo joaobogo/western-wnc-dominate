@@ -80,7 +80,7 @@ const CommonConcerns = ({
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">{c.concern}</h3>
-                <p className="text-[13px] md:text-sm leading-relaxed font-body text-muted-foreground">
+                <p className="text-body-xs md:text-sm leading-relaxed font-body text-muted-foreground">
                   {c.answer}
                 </p>
               </div>

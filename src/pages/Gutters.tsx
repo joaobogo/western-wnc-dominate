@@ -84,10 +84,10 @@ const Gutters = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-white" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Gutters</span>
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Gutters</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -200,7 +200,7 @@ const Gutters = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`g-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{f.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{f.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{f.a}</p>

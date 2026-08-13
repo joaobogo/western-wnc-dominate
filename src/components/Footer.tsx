@@ -92,7 +92,7 @@ const FooterLink = React.forwardRef<
   <Link
     ref={ref}
     to={to}
-    className="group text-[17px] text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-1.5 font-medium"
+    className="group text-body-sm text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-1.5 font-medium"
   >
     {children}
     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -147,7 +147,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/consultation"
-                className="group cta-gradient text-accent-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap uppercase tracking-[0.1em] shadow-lg min-h-[56px]"
+                className="group cta-gradient text-accent-foreground font-bold text-body-xs px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap uppercase tracking-[0.1em] shadow-lg min-h-[56px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Request a Quote</span>
@@ -155,7 +155,7 @@ const Footer = () => {
               </Link>
               <a
                 href="tel:+18285247773"
-                className="bg-secondary border-2 border-border text-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-secondary/80 hover:border-primary/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
+                className="bg-secondary border-2 border-border text-foreground font-bold text-body-xs px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-secondary/80 hover:border-primary/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
               >
                 <Phone className="w-4 h-4 text-primary" />
                 (828) 524-7773
@@ -200,15 +200,15 @@ const Footer = () => {
               <div className="space-y-4 pt-2 border-t border-border">
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
-                  <div className="text-[16px] text-foreground/80 font-body leading-relaxed">
-                    <span className="block font-bold text-foreground mb-0.5 text-[17px]">Franklin Office</span>
+                  <div className="text-body-sm text-foreground/80 font-body leading-relaxed">
+                    <span className="block font-bold text-foreground mb-0.5 text-body-sm">Franklin Office</span>
                     76 Creative Dr<br />
                     Franklin, NC 28734
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
-                  <div className="text-[15px] text-muted-foreground leading-relaxed">
+                  <div className="text-body-sm text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
                     Service area office — by appointment<br />
                     Sylva, NC 28779
@@ -216,7 +216,7 @@ const Footer = () => {
                 </div>
                 <div className="flex gap-3 pt-2 border-t border-border/60">
                   <Clock className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
-                  <div className="text-[15px] text-muted-foreground leading-relaxed">
+                  <div className="text-body-sm text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Office Hours</span>
                     Mon–Fri 8:00 AM – 5:00 PM<br />
                     <span className="text-primary font-semibold">Same-day emergency contact</span>
@@ -227,7 +227,7 @@ const Footer = () => {
 
             {/* Follow Highlander */}
             <div className="pt-6 mt-2 border-t border-border">
-              <span className="block text-[11px] font-body font-bold uppercase tracking-[0.2em] text-primary mb-3">
+              <span className="block text-caption font-body font-bold uppercase tracking-[0.2em] text-primary mb-3">
                 Follow Highlander
               </span>
               <SocialLinks variant="light" size="md" />
@@ -240,9 +240,9 @@ const Footer = () => {
                   <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white rounded-sm border border-border">
                     <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX" className="w-full h-full object-contain p-1" />
                   </div>
-                  <span className="text-[13px] font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
+                  <span className="text-body-xs font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
                 </div>
-                <span className="text-[12px] text-muted-foreground font-body leading-tight">Master Installer & Pro Accredited</span>
+                <span className="text-body-xs text-muted-foreground font-body leading-tight">Master Installer & Pro Accredited</span>
               </div>
               
               <div className="flex flex-col gap-2 group/cert">
@@ -250,25 +250,25 @@ const Footer = () => {
                   <div className="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
                     <Award className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed & Insured</span>
+                  <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed & Insured</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">NC Licensed General Contractor</span>
+                <span className="text-caption text-muted-foreground font-body leading-tight">NC Licensed General Contractor</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <img loading="lazy" decoding="async" src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-8 w-auto" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
+                  <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">CertainTeed Credentialed Contractor</span>
+                <span className="text-caption text-muted-foreground font-body leading-tight">CertainTeed Credentialed Contractor</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <Star className="w-5 h-5 text-primary" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">4.9★ Rated</span>
+                  <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">4.9★ Rated</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">Highest Rated in Franklin & Highlands</span>
+                <span className="text-caption text-muted-foreground font-body leading-tight">Highest Rated in Franklin & Highlands</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
@@ -276,9 +276,9 @@ const Footer = () => {
                   <div className="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
                     <Award className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Military Friendly</span>
+                  <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Military Friendly</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">Proudly supporting our veterans & active duty</span>
+                <span className="text-caption text-muted-foreground font-body leading-tight">Proudly supporting our veterans & active duty</span>
               </div>
             </div>
           </div>
@@ -330,7 +330,7 @@ const Footer = () => {
             </nav>
             <Link
               to="/service-areas"
-              className="mt-5 text-[13px] font-body font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5"
+              className="mt-5 text-body-xs font-body font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5"
             >
               View All Areas <ArrowRight className="w-3 h-3" />
             </Link>
@@ -349,7 +349,7 @@ const Footer = () => {
           }} 
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-muted-foreground font-body tracking-wide">
+          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-body-xs text-muted-foreground font-body tracking-wide">
             <span>© {new Date().getFullYear()} Highlander Building Services.</span>
             <span className="hidden md:inline text-border">·</span>
             <span>NC General Contractor License #87234</span>
@@ -357,8 +357,8 @@ const Footer = () => {
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/privacy-policy" className="text-[13px] text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
-            <Link to="/accessibility" className="text-[13px] text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
+            <Link to="/privacy-policy" className="text-body-xs text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
+            <Link to="/accessibility" className="text-body-xs text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>

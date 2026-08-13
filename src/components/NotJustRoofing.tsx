@@ -113,7 +113,7 @@ const NotJustRoofing = () => {
                     </div>
                     <div>
                       <h3 className="text-base font-heading font-bold text-foreground">{div.label}</h3>
-                      <p className="text-[10px] font-body font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                      <p className="text-caption font-body font-medium uppercase tracking-[0.12em] text-muted-foreground">
                         {div.tagline}
                       </p>
                     </div>
@@ -126,7 +126,7 @@ const NotJustRoofing = () => {
                         <span className={`block text-xl font-heading font-bold ${div.iconColor} leading-none mb-1`}>
                           {stat.value}
                         </span>
-                        <span className="text-[10px] font-body uppercase tracking-[0.1em] text-muted-foreground">
+                        <span className="text-caption font-body uppercase tracking-[0.1em] text-muted-foreground">
                           {stat.label}
                         </span>
                       </div>
@@ -147,7 +147,7 @@ const NotJustRoofing = () => {
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-10">
           <div className="flex items-center justify-center gap-3 text-muted-foreground">
             <Shield className="w-3.5 h-3.5" />
-            <span className="text-[11px] font-body font-medium uppercase tracking-[0.14em]">
+            <span className="text-caption font-body font-medium uppercase tracking-[0.14em]">
               Same Crews · Same Process · Same Warranty Protection
             </span>
             <Shield className="w-3.5 h-3.5" />

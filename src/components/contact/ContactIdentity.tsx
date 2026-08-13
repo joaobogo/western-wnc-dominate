@@ -8,7 +8,7 @@ const ContactIdentity = () => (
   <section className="section-padding bg-background border-t border-border" aria-labelledby="contact-identity-heading">
     <div className="container-tight grid lg:grid-cols-2 gap-8 lg:gap-14">
       <div>
-        <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] block mb-3">
+        <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] block mb-3">
           Who You're Calling
         </span>
         <h2 id="contact-identity-heading" className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">

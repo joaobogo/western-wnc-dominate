@@ -49,7 +49,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
           triggerRef.current?.focus();
         }
       }}
-      className={`relative text-[15px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+      className={`relative text-body-sm font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
         isActive(div.href)
           ? "text-heritage-charcoal bg-black/5"
           : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -107,7 +107,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 </div>
                 <span className="text-base font-heading font-bold text-foreground">{div.label} Division</span>
               </div>
-              <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground ml-[38px]">
+              <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground ml-[38px]">
                 {div.tagline}
               </p>
             </div>
@@ -128,8 +128,8 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                     }`}
                   >
                     <div>
-                      <span className="text-[16px] font-body font-bold block leading-tight">{item.label}</span>
-                      <span className="text-[14px] font-body text-muted-foreground leading-tight font-medium">{item.desc}</span>
+                      <span className="text-body-sm font-body font-bold block leading-tight">{item.label}</span>
+                      <span className="text-body-xs font-body text-muted-foreground leading-tight font-medium">{item.desc}</span>
                     </div>
                     <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                   </Link>
@@ -142,7 +142,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 to={div.href}
                 role="menuitem"
                 onClick={(e) => onViewAllClick(e, div.href)}
-                className={`flex items-center gap-1.5 px-3 py-3 text-[14px] font-body font-bold rounded-sm transition-colors ${
+                className={`flex items-center gap-1.5 px-3 py-3 text-body-xs font-body font-bold rounded-sm transition-colors ${
                   div.accent === "green" ? "text-primary hover:bg-primary/5" : "text-[hsl(var(--gold-ink))] hover:bg-accent/5"
                 }`}
               >

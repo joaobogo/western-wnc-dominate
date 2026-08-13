@@ -44,10 +44,10 @@ const AuditCard = ({ item }: { item: QAAuditItem }) => {
     <article className={`rounded-sm border p-5 ${style.card}`}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.path}</p>
+          <p className="text-caption font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.path}</p>
           <h3 className="mt-2 text-xl font-heading font-bold text-foreground">{item.name}</h3>
         </div>
-        <span className={`inline-flex items-center gap-2 rounded-sm px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] ${style.badge}`}>
+        <span className={`inline-flex items-center gap-2 rounded-sm px-3 py-1.5 text-caption font-semibold uppercase tracking-[0.12em] ${style.badge}`}>
           <Icon className="h-3.5 w-3.5" /> {style.label}
         </span>
       </div>

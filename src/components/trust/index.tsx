@@ -133,7 +133,7 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
         <h3 className={`font-heading font-bold text-sm mb-0.5 ${
           variant === "dark" ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"
         }`}>{cert.label}</h3>
-        <p className={`text-[11px] font-body tracking-wide ${
+        <p className={`text-caption font-body tracking-wide ${
           variant === "dark" ? "text-[hsl(var(--dark-section-foreground)/0.5)]" : "text-muted-foreground"
         }`}>{cert.detail}</p>
       </motion.div>
@@ -206,11 +206,11 @@ export const TrustPillarGrid = ({
             <h3 className={`font-heading font-semibold text-sm mb-2 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
               {p.title}
             </h3>
-            <p className={`text-[13px] leading-relaxed font-body mb-3 ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+            <p className={`text-body-xs leading-relaxed font-body mb-3 ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
               {p.short}
             </p>
             {showObjections && (
-              <div className={`text-[11px] font-body italic pt-3 border-t ${
+              <div className={`text-caption font-body italic pt-3 border-t ${
                 isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground"
               }`}>
                 Overcomes: "{p.overcomes}"
@@ -244,10 +244,10 @@ export const ReviewHighlight = ({ quote, name, location, project, outcome }: Rev
         <Star key={i} className="w-3.5 h-3.5 fill-accent text-[hsl(var(--gold-ink))]" />
       ))}
     </div>
-    <p className="text-foreground text-sm md:text-[15px] leading-relaxed mb-5 font-body">"{quote}"</p>
+    <p className="text-foreground text-sm md:text-body-sm leading-relaxed mb-5 font-body">"{quote}"</p>
     {outcome && (
       <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-5">
-        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
+        <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
         <p className="text-sm font-body font-medium text-foreground/80">{outcome}</p>
       </div>
     )}
@@ -295,7 +295,7 @@ export const StandardsCallout = ({
         <h3 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
           {title}
         </h3>
-        <p className={`text-[13px] font-body leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+        <p className={`text-body-xs font-body leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
           {description}
         </p>
       </div>

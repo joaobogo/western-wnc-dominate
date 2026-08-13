@@ -60,7 +60,7 @@ const TieredOffer = ({
           transition={{ duration: 0.45 }}
           className="bg-card border-2 border-[hsl(var(--gold-ink))]/40 rounded-sm p-6 md:p-8 shadow-lg"
         >
-          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
+          <span className="text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
             Ready now
           </span>
           <h3 className="font-heading font-bold text-foreground text-xl md:text-2xl mt-3 mb-2">
@@ -99,15 +99,15 @@ const TieredOffer = ({
             >
               <div className="flex items-center gap-2 mb-2">
                 <Icon className="w-4 h-4 text-primary" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   {tier}
                 </span>
               </div>
               <h3 className="font-heading font-semibold text-foreground text-base mb-1.5 group-hover:text-primary transition-colors">
                 {offer.label}
               </h3>
-              <p className="text-[13px] leading-relaxed font-body text-muted-foreground mb-3">{offer.description}</p>
-              <span className="text-primary text-[13px] font-body font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <p className="text-body-xs leading-relaxed font-body text-muted-foreground mb-3">{offer.description}</p>
+              <span className="text-primary text-body-xs font-body font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Continue <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </Link>

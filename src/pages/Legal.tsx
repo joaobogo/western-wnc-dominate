@@ -360,7 +360,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
             <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center">
               <Icon className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-primary">{meta.eyebrow}</span>
+            <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-primary">{meta.eyebrow}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-3 tracking-tight">
             {meta.heading}

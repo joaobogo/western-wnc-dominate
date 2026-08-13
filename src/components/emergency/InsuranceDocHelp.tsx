@@ -29,7 +29,7 @@ const InsuranceDocHelp = () => (
       <div className="mb-8 md:mb-10 max-w-2xl">
         <span className="eyebrow mb-3 block">Insurance Documentation</span>
         <h2 className="section-heading mb-3">We Document It So Your Claim Isn't Guesswork.</h2>
-        <p className="text-muted-foreground text-[15px] md:text-base font-body leading-relaxed">
+        <p className="text-muted-foreground text-body-sm md:text-base font-body leading-relaxed">
           Most denied or underpaid claims come down to thin documentation. We handle the paperwork
           side of a damage claim as carefully as the roof work itself. We are not adjusters and we
           don't decide your claim — we give you and your insurer the same clear evidence.
@@ -40,8 +40,8 @@ const InsuranceDocHelp = () => (
         {items.map((it) => (
           <div key={it.title} className="bg-card border border-border p-5 md:p-6">
             <it.icon className="w-5 h-5 text-primary mb-3" />
-            <h3 className="font-heading font-bold text-foreground text-[15px] mb-1.5">{it.title}</h3>
-            <p className="text-muted-foreground text-[13px] md:text-sm leading-relaxed font-body">
+            <h3 className="font-heading font-bold text-foreground text-body-sm mb-1.5">{it.title}</h3>
+            <p className="text-muted-foreground text-body-xs md:text-sm leading-relaxed font-body">
               {it.body}
             </p>
           </div>

@@ -37,13 +37,13 @@ const PageCloseCTA = ({
     <section aria-label="Next step" className="section-dark dark-surface border-t border-dark-section-foreground/10">
       <div className="section-padding">
         <div className="container-tight max-w-3xl text-center">
-          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block">
+          <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block">
             {eyebrow}
           </span>
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-4 leading-[1.15]">
             {heading}
           </h2>
-          <p className="text-dark-section-foreground/80 font-body text-[15px] md:text-[17px] leading-relaxed mb-8">
+          <p className="text-dark-section-foreground/80 font-body text-body-sm md:text-body-sm leading-relaxed mb-8">
             {body}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
@@ -66,7 +66,7 @@ const PageCloseCTA = ({
           </div>
           <CTAProofPoints tone="dark" className="mt-6" />
           {secondaryLabel && secondaryTo && (
-            <p className="mt-6 text-[14px] font-body">
+            <p className="mt-6 text-body-xs font-body">
               <Link to={secondaryTo} className="text-dark-section-foreground/70 underline hover:text-[hsl(var(--gold-ink))] transition-colors">
                 {secondaryLabel}
               </Link>

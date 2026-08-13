@@ -31,7 +31,7 @@ const CredibilityStrip = () => {
           {primary.map((item) => (
             <li key={item.label} className="flex items-center gap-2">
               <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              <span className="font-body text-[13px] md:text-sm font-semibold">{item.label}</span>
+              <span className="font-body text-body-xs md:text-sm font-semibold">{item.label}</span>
             </li>
           ))}
         </ul>
@@ -39,7 +39,7 @@ const CredibilityStrip = () => {
           {secondary.map((item) => (
             <li key={item.label} className="flex items-center gap-2">
               <item.icon className="w-3.5 h-3.5 text-primary-foreground/60" aria-hidden="true" />
-              <span className="font-body text-[12px] text-primary-foreground/80">{item.label}</span>
+              <span className="font-body text-body-xs text-primary-foreground/80">{item.label}</span>
             </li>
           ))}
         </ul>

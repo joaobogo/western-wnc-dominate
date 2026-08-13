@@ -22,7 +22,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
 
   return (
     <section className={`bg-primary rounded-sm p-6 md:p-8 ${className}`} aria-labelledby="project-location-cta">
-      <span className="inline-flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))] mb-3">
+      <span className="inline-flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))] mb-3">
         <MapPin className="w-3 h-3" /> {location}
       </span>
       <h2
@@ -61,7 +61,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
       </div>
 
       <div className="border-t border-primary-foreground/15 pt-5">
-        <p className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary-foreground/60 mb-3">
+        <p className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary-foreground/60 mb-3">
           Services on this project
         </p>
         <div className="flex flex-wrap gap-2">

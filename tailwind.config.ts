@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        heading: ['"Playfair Display"', 'Georgia', 'serif'],
         body: ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
@@ -22,6 +22,11 @@ export default {
         'display-xl': ['clamp(2.125rem, 5.5vw + 0.5rem, 6rem)', { lineHeight: '1.08', letterSpacing: '-0.025em', fontWeight: '700' }],
         'display-lg': ['clamp(1.875rem, 5vw + 0.35rem, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }],
         'display': ['clamp(1.625rem, 4vw + 0.25rem, 3.75rem)', { lineHeight: '1.12', letterSpacing: '-0.02em', fontWeight: '700' }],
+        /* Semantic heading aliases — h1–h4 */
+        'h1': ['clamp(2rem, 4.5vw + 0.4rem, 4.5rem)', { lineHeight: '1.06', letterSpacing: '-0.028em', fontWeight: '700' }],
+        'h2': ['clamp(1.625rem, 3.5vw + 0.25rem, 3.25rem)', { lineHeight: '1.12', letterSpacing: '-0.022em', fontWeight: '700' }],
+        'h3': ['clamp(1.375rem, 2.5vw + 0.25rem, 2.25rem)', { lineHeight: '1.18', letterSpacing: '-0.015em', fontWeight: '600' }],
+        'h4': ['clamp(1.1875rem, 1.8vw + 0.125rem, 1.625rem)', { lineHeight: '1.25', letterSpacing: '-0.008em', fontWeight: '600' }],
         /* Section headings */
         'heading-xl': ['clamp(1.625rem, 3.5vw + 0.25rem, 3.5rem)', { lineHeight: '1.15', letterSpacing: '-0.018em', fontWeight: '700' }],
         'heading-lg': ['clamp(1.5rem, 3vw + 0.25rem, 3rem)', { lineHeight: '1.18', letterSpacing: '-0.015em', fontWeight: '700' }],
@@ -32,6 +37,8 @@ export default {
         'body-lg': ['clamp(1.0625rem, 1vw + 0.75rem, 1.375rem)', { lineHeight: '1.65', letterSpacing: '0.015em' }],
         'body': ['clamp(1rem, 0.6vw + 0.85rem, 1.25rem)', { lineHeight: '1.7', letterSpacing: '0.015em' }],
         'body-sm': ['clamp(0.9375rem, 0.4vw + 0.85rem, 1.0625rem)', { lineHeight: '1.65', letterSpacing: '0.02em' }],
+        'body-xs': ['clamp(0.8125rem, 0.3vw + 0.75rem, 0.9375rem)', { lineHeight: '1.6', letterSpacing: '0.02em' }],
+        'caption': ['clamp(0.6875rem, 0.25vw + 0.625rem, 0.8125rem)', { lineHeight: '1.5', letterSpacing: '0.04em' }],
         /* Utility scale */
         'label': ['clamp(0.8125rem, 0.4vw + 0.7rem, 1rem)', { lineHeight: '1.4', letterSpacing: '0.06em', fontWeight: '700' }],
         'eyebrow-size': ['clamp(0.6875rem, 0.3vw + 0.6rem, 0.875rem)', { lineHeight: '1.3', letterSpacing: '0.25em', fontWeight: '800' }],

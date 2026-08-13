@@ -174,7 +174,7 @@ const ConstructionDesign = () => {
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 mb-5 text-white/95 text-[12px] font-body">
+              <div className="flex items-center gap-2 mb-5 text-white/95 text-body-xs font-body">
                 <Link to="/construction" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Construction</Link>
                 <ChevronRight className="w-3 h-3" />
                 <span className="text-[hsl(var(--gold-ink))]">Design Services</span>
@@ -184,7 +184,7 @@ const ConstructionDesign = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
-                className="text-3xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-white leading-[1.05] tracking-tight mb-7"
+                className="text-3xl md:text-5xl lg:text-display font-heading font-bold text-white leading-[1.05] tracking-tight mb-7"
               >
                 Design Services for Construction Projects in <span className="text-[hsl(var(--gold-ink))]">Western North Carolina.</span>
               </motion.h1>
@@ -193,7 +193,7 @@ const ConstructionDesign = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.25 }}
-                className="text-[17px] md:text-[20px] text-white/90 max-w-2xl mb-8 leading-relaxed font-body"
+                className="text-body-sm md:text-body text-white/90 max-w-2xl mb-8 leading-relaxed font-body"
               >
                 Serious construction projects start with a clear plan. Highlander's in-house design services help homeowners define scope, understand realistic budget ranges, prepare permit-ready drawings, and move confidently toward construction.
               </motion.p>
@@ -206,13 +206,13 @@ const ConstructionDesign = () => {
               >
                 <Link
                   to="/construction-intake"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
                 >
                   Plan Your Construction Project <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
-                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-white font-heading font-bold text-[15px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
+                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-white font-heading font-bold text-body-sm px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
                 >
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -225,7 +225,7 @@ const ConstructionDesign = () => {
                 className="flex items-center gap-3 pt-6 border-t border-white/15"
               >
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.6)]" />
-                <p className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.18em]">
+                <p className="text-body-xs md:text-body-xs font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.18em]">
                   Fixed fees · Defined deliverables · Real budget guidance before you build
                 </p>
               </motion.div>
@@ -266,11 +266,11 @@ const ConstructionDesign = () => {
                   {whyDesignFirst.map((item) => (
                     <li key={item} className="flex items-start gap-3 bg-card border border-border rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.25)] transition-colors">
                       <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground/85 text-[14.5px] font-body leading-relaxed">{item}</span>
+                      <span className="text-foreground/85 text-body-xs font-body leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-muted-foreground text-[13.5px] italic font-body">
+                <p className="mt-6 text-muted-foreground text-body-xs italic font-body">
                   Still exploring? You're welcome here. Phase 1 is built for homeowners who are still figuring out what to build and what it might cost.
                 </p>
               </ScrollReveal>
@@ -303,21 +303,21 @@ const ConstructionDesign = () => {
                     <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
                       <p.icon className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
                     </div>
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">{p.label}</div>
+                    <div className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">{p.label}</div>
                   </div>
 
-                  <h3 className="font-heading font-bold text-foreground text-xl md:text-[1.4rem] mb-3 leading-tight">{p.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-xl md:text-body-lg mb-3 leading-tight">{p.title}</h3>
 
                   <div className="mb-5">
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-1">Who it's for</div>
-                    <p className="text-foreground/80 text-[14px] font-body leading-relaxed">{p.forWho}</p>
+                    <div className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-1">Who it's for</div>
+                    <p className="text-foreground/80 text-body-xs font-body leading-relaxed">{p.forWho}</p>
                   </div>
 
                   <div className="mb-5 flex-1">
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-2">What you get</div>
+                    <div className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-2">What you get</div>
                     <ul className="space-y-1.5">
                       {p.deliverables.map((d) => (
-                        <li key={d} className="flex items-start gap-2 text-[13.5px] text-foreground/80 font-body">
+                        <li key={d} className="flex items-start gap-2 text-body-xs text-foreground/80 font-body">
                           <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                           <span>{d}</span>
                         </li>
@@ -327,13 +327,13 @@ const ConstructionDesign = () => {
 
                   <div className="border-t border-border pt-4 space-y-3">
                     <div>
-                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
+                      <div className="flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
                         <CheckCircle className="w-3 h-3" /> Best fit
                       </div>
-                      <p className="text-foreground/80 text-[13px] font-body leading-snug">{p.bestFit}</p>
+                      <p className="text-foreground/80 text-body-xs font-body leading-snug">{p.bestFit}</p>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
+                      <div className="flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
                         <Clock className="w-3 h-3" /> Timeline
                       </div>
                       <div className="font-heading font-bold text-foreground text-sm leading-tight">{p.timeline}</div>
@@ -342,7 +342,7 @@ const ConstructionDesign = () => {
 
                   <Link
                     to={p.ctaHref}
-                    className="mt-5 group/cta inline-flex items-center justify-center gap-2 w-full border border-[hsl(var(--highland-gold)/0.45)] bg-transparent text-foreground font-heading font-bold text-[12.5px] px-5 py-3 rounded-none uppercase tracking-[0.12em] hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold))] transition-all"
+                    className="mt-5 group/cta inline-flex items-center justify-center gap-2 w-full border border-[hsl(var(--highland-gold)/0.45)] bg-transparent text-foreground font-heading font-bold text-body-xs px-5 py-3 rounded-none uppercase tracking-[0.12em] hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold))] transition-all"
                   >
                     {p.ctaLabel} <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
                   </Link>
@@ -351,13 +351,13 @@ const ConstructionDesign = () => {
             </div>
 
             <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
-              <p className="text-foreground/80 text-[14.5px] font-body leading-relaxed">
+              <p className="text-foreground/80 text-body-xs font-body leading-relaxed">
                 <span className="font-heading font-bold text-foreground">Clients can stop after any phase and keep their deliverables.</span> Phases can also stack when a project needs to move from concept to permitting and construction documentation.
               </p>
             </div>
 
             <div className="max-w-3xl mx-auto mt-4 bg-secondary/40 border border-border p-5 md:p-6">
-              <p className="text-muted-foreground text-[14px] font-body leading-relaxed">
+              <p className="text-muted-foreground text-body-xs font-body leading-relaxed">
                 <span className="font-heading font-bold text-foreground">Pricing is determined by project scope.</span> The appropriate design phase depends on project type, readiness, and existing documentation. Fixed phase pricing and deliverables are reviewed and confirmed during the Design &amp; Consultation Agreement process — after Highlander reviews your project details.
               </p>
             </div>
@@ -371,14 +371,14 @@ const ConstructionDesign = () => {
               <ScrollReveal variant="fade">
                 <div className="text-center mb-10">
                   <span className="eyebrow text-[hsl(var(--gold-ink))] mb-3 block">Design-Build Advantage</span>
-                  <h2 className="text-2xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
+                  <h2 className="text-2xl md:text-4xl lg:text-heading-lg font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Design Fees Can Credit Back When You Build With Highlander.
                   </h2>
                   <div className="max-w-2xl mx-auto space-y-5 text-dark-section-foreground/85 text-base md:text-lg font-body leading-relaxed">
                     <p>
                       Clients who complete design with Highlander and move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion.
                     </p>
-                    <p className="text-dark-section-foreground/90 text-[14px] italic">
+                    <p className="text-dark-section-foreground/90 text-body-xs italic">
                       Final credit details are confirmed in your Design &amp; Consultation Agreement.
                     </p>
                   </div>
@@ -386,7 +386,7 @@ const ConstructionDesign = () => {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     to="/construction-intake"
-                    className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                    className="cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
                   >
                     Plan Your Construction Project <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -414,7 +414,7 @@ const ConstructionDesign = () => {
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))]" />
                   <ul className="space-y-3">
                     {fixedFeeBullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-foreground/85 text-[14.5px] font-body leading-relaxed">
+                      <li key={b} className="flex items-start gap-3 text-foreground/85 text-body-xs font-body leading-relaxed">
                         <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-1 flex-shrink-0" />
                         <span>{b}</span>
                       </li>
@@ -465,7 +465,7 @@ const ConstructionDesign = () => {
                   <div className="w-9 h-9 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.2)] flex items-center justify-center">
                     <w.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <span className="font-heading font-bold text-foreground text-[13.5px] leading-tight">{w.label}</span>
+                  <span className="font-heading font-bold text-foreground text-body-xs leading-tight">{w.label}</span>
                 </motion.div>
               ))}
             </div>
@@ -482,7 +482,7 @@ const ConstructionDesign = () => {
                   <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
                     <FileText className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">Already Have Plans?</span>
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">Already Have Plans?</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">
                   Send Them Over — We'll Tell You Where Your Project Stands.
@@ -497,7 +497,7 @@ const ConstructionDesign = () => {
                 </div>
                 <Link
                   to="/design-intake?mode=long"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
                 >
                   Send Your Plans <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -526,7 +526,7 @@ const ConstructionDesign = () => {
                     <span>{f.question}</span>
                     <ChevronRight className="w-4 h-4 text-[hsl(var(--gold-ink))] group-open:rotate-90 transition-transform flex-shrink-0" />
                   </summary>
-                  <p className="text-muted-foreground text-[14.5px] font-body leading-relaxed mt-3">{f.answer}</p>
+                  <p className="text-muted-foreground text-body-xs font-body leading-relaxed mt-3">{f.answer}</p>
                 </details>
               ))}
             </div>
@@ -547,18 +547,18 @@ const ConstructionDesign = () => {
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 <Link
                   to="/construction-intake"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
                 >
                   Plan Your Construction Project <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
-                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-dark-section-foreground font-heading font-bold text-[15px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
+                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-dark-section-foreground font-heading font-bold text-body-sm px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
                 >
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-[14px]">
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                 (828) 524-7773
               </a>

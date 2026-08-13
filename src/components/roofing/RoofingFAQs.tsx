@@ -102,7 +102,7 @@ const RoofingFAQs = ({
             <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
               <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                 <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                  <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                  <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-6 pr-2">
                   <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

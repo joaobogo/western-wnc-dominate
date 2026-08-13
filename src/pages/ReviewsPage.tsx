@@ -157,7 +157,7 @@ const ReviewsPage = () => {
                 >
                   <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5">{stat.value}</span>
                   <span className="text-sm font-heading font-semibold text-primary-foreground/85 mb-1">{stat.label}</span>
-                  <span className="text-[13px] text-primary-foreground/85 font-body tracking-wide font-bold">{stat.detail}</span>
+                  <span className="text-body-xs text-primary-foreground/85 font-body tracking-wide font-bold">{stat.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -202,7 +202,7 @@ const ReviewsPage = () => {
                 >
                   <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1.5 rounded-sm ${categoryColors[r.category]}`}>
+                    <span className={`text-caption md:text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1.5 rounded-sm ${categoryColors[r.category]}`}>
                       {categoryLabels[r.category]}
                     </span>
                     <div className="flex gap-0.5">
@@ -212,18 +212,18 @@ const ReviewsPage = () => {
                     </div>
                   </div>
                   <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" />
-                  <p className="text-foreground text-[16px] leading-relaxed mb-5 font-body font-medium">"{r.reviewBody}"</p>
+                  <p className="text-foreground text-body-sm leading-relaxed mb-5 font-body font-medium">"{r.reviewBody}"</p>
                   <div className="bg-secondary/70 rounded-sm px-4 py-3 mb-5">
-                    <p className="text-[12px] font-body font-bold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
-                    <p className="text-[15px] font-body font-bold text-foreground/80">{r.outcome}</p>
+                    <p className="text-body-xs font-body font-bold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
+                    <p className="text-body-sm font-body font-bold text-foreground/80">{r.outcome}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
                       {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-bold text-foreground text-[15px]">{r.authorName}</p>
-                      <p className="text-muted-foreground text-[13px] font-body font-semibold">{r.location} · {r.project}</p>
+                      <p className="font-bold text-foreground text-body-sm">{r.authorName}</p>
+                      <p className="text-muted-foreground text-body-xs font-body font-semibold">{r.location} · {r.project}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -268,7 +268,7 @@ const ReviewsPage = () => {
                   className="group bg-card border border-border rounded-sm p-5 md:p-6 hover:border-primary/15 hover:shadow-sm transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <span className={`text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[r.category]}`}>
+                    <span className={`text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[r.category]}`}>
                       {categoryLabels[r.category]}
                     </span>
                     <div className="flex gap-0.5">
@@ -277,15 +277,15 @@ const ReviewsPage = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-foreground/85 text-[15px] leading-relaxed mb-4 font-body font-bold">"{r.reviewBody}"</p>
-                  <p className="text-[12px] text-primary/70 font-body font-bold mb-4 leading-snug">{r.outcome}</p>
+                  <p className="text-foreground/85 text-body-sm leading-relaxed mb-4 font-body font-bold">"{r.reviewBody}"</p>
+                  <p className="text-body-xs text-primary/70 font-body font-bold mb-4 leading-snug">{r.outcome}</p>
                   <div className="flex items-center gap-2.5 pt-3 border-t border-border">
-                    <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
+                    <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-caption">
                       {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-bold text-foreground text-[14px]">{r.authorName}</p>
-                      <p className="text-muted-foreground text-[12px] font-body font-semibold">{r.location}</p>
+                      <p className="font-bold text-foreground text-body-xs">{r.authorName}</p>
+                      <p className="text-muted-foreground text-body-xs font-body font-semibold">{r.location}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -324,7 +324,7 @@ const ReviewsPage = () => {
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{theme.title}</h3>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed mb-4">{theme.description}</p>
                   <div className="border-t border-[hsl(var(--highland-gold)/0.08)] pt-3">
-                    <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[14px] italic font-body font-medium">
+                    <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-body-xs italic font-body font-medium">
                       "{theme.quote}"
                     </p>
                   </div>

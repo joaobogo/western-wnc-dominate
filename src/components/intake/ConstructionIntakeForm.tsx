@@ -276,10 +276,10 @@ const ConstructionIntakeForm = () => {
     <div>
       <div className="flex items-center justify-between mb-7">
         <div>
-          <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">
+          <p className="text-caption font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">
             Step {step + 1} of 4
           </p>
-          <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight">
+          <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight">
             {step === 0 && "Scope, readiness & timeline"}
             {step === 1 && "Plans, decision-makers & location"}
             {step === 2 && "Tell us about the project"}
@@ -440,7 +440,7 @@ const ConstructionIntakeForm = () => {
           <button
             type="button"
             onClick={back}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-[13px] font-body transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-body-xs font-body transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back
           </button>

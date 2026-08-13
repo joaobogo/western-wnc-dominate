@@ -46,7 +46,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
             onClose();
           }
         }}
-        className={`relative text-[15px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+        className={`relative text-body-sm font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
           isActive("/service-areas")
             ? "text-heritage-charcoal bg-black/5"
             : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -82,7 +82,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
               </div>
               <div className="px-5 pt-5 pb-3">
                 <span className="text-base font-heading font-bold text-foreground block">Service Areas</span>
-                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mt-1">
+                <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mt-1">
                   Western North Carolina Mountains
                 </p>
               </div>
@@ -113,7 +113,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                     {isActive(item.href) && (
                       <span aria-hidden="true" className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
                     )}
-                    <span className="text-[15px] font-body font-semibold leading-tight">{item.label}</span>
+                    <span className="text-body-sm font-body font-semibold leading-tight">{item.label}</span>
                     <ChevronRight aria-hidden="true" className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                   </Link>
                 ))}
@@ -122,7 +122,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                 <Link
                   to="/service-areas"
                   onClick={(e) => onViewAllClick(e, "/service-areas")}
-                  className="flex items-center gap-1.5 px-3 py-3 text-[14px] font-body font-bold rounded-sm transition-colors text-primary hover:bg-primary/5"
+                  className="flex items-center gap-1.5 px-3 py-3 text-body-xs font-body font-bold rounded-sm transition-colors text-primary hover:bg-primary/5"
                 >
                   View All Service Areas
                   <ArrowRight className="w-3 h-3 btn-arrow-icon" />

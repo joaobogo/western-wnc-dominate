@@ -54,12 +54,12 @@ const LeadConfirmationPanel = ({
 
       {items.length > 0 && (
         <div className={`mb-5 border ${card} p-5`}>
-          <p className={`mb-3 font-body text-[12px] font-bold uppercase tracking-[0.18em] ${gold}`}>
+          <p className={`mb-3 font-body text-body-xs font-bold uppercase tracking-[0.18em] ${gold}`}>
             What you sent us
           </p>
           <dl className="space-y-2">
             {items.map((item) => (
-              <div key={item.label} className="flex flex-wrap gap-x-2 text-[15px] font-body">
+              <div key={item.label} className="flex flex-wrap gap-x-2 text-body-sm font-body">
                 <dt className={`${muted}`}>{item.label}:</dt>
                 <dd className={`font-semibold ${text}`}>{item.value}</dd>
               </div>
@@ -69,15 +69,15 @@ const LeadConfirmationPanel = ({
       )}
 
       <div className={`mb-5 border ${card} p-5`}>
-        <p className={`mb-3 font-body text-[12px] font-bold uppercase tracking-[0.18em] ${gold}`}>
+        <p className={`mb-3 font-body text-body-xs font-bold uppercase tracking-[0.18em] ${gold}`}>
           Next step
         </p>
-        <p className={`font-body text-[15px] leading-relaxed ${text}`}>
+        <p className={`font-body text-body-sm leading-relaxed ${text}`}>
           A Highlander project advisor from our Franklin office reviews your details and calls you
           personally, typically within one business day. We'll talk through the property, the scope,
           and what an inspection would look like.
         </p>
-        <div className={`mt-4 flex flex-col gap-2 font-body text-[14px] ${muted}`}>
+        <div className={`mt-4 flex flex-col gap-2 font-body text-body-xs ${muted}`}>
           <span className="flex items-center gap-2">
             <Clock className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />
             Typically within one business day
@@ -96,7 +96,7 @@ const LeadConfirmationPanel = ({
               click_location: "confirmation_panel",
             })
           }
-          className="mt-5 inline-flex items-center gap-2 border border-[hsl(var(--highland-gold)/0.5)] px-5 py-3 font-body text-[15px] font-bold text-[hsl(var(--gold-ink))] transition-colors hover:bg-[hsl(var(--highland-gold)/0.1)]"
+          className="mt-5 inline-flex items-center gap-2 border border-[hsl(var(--highland-gold)/0.5)] px-5 py-3 font-body text-body-sm font-bold text-[hsl(var(--gold-ink))] transition-colors hover:bg-[hsl(var(--highland-gold)/0.1)]"
         >
           <Phone className="h-4 w-4" aria-hidden="true" />
           Rather talk now? (828) 524-7773
@@ -108,14 +108,14 @@ const LeadConfirmationPanel = ({
           to={project.path}
           className={`group border ${card} p-5 transition-colors hover:border-[hsl(var(--highland-gold)/0.5)]`}
         >
-          <span className={`mb-2 block font-body text-[11px] font-bold uppercase tracking-[0.18em] ${gold}`}>
+          <span className={`mb-2 block font-body text-caption font-bold uppercase tracking-[0.18em] ${gold}`}>
             See the work
           </span>
-          <span className={`block font-heading text-[17px] font-bold leading-snug ${text}`}>
+          <span className={`block font-heading text-body-sm font-bold leading-snug ${text}`}>
             {project.label}
           </span>
-          <span className={`mt-1 block font-body text-[13px] ${muted}`}>{project.description}</span>
-          <span className={`mt-3 inline-flex items-center gap-1 font-body text-[13px] font-bold ${gold}`}>
+          <span className={`mt-1 block font-body text-body-xs ${muted}`}>{project.description}</span>
+          <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
             View project <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </span>
         </Link>
@@ -124,14 +124,14 @@ const LeadConfirmationPanel = ({
           to={guide.path}
           className={`group border ${card} p-5 transition-colors hover:border-[hsl(var(--highland-gold)/0.5)]`}
         >
-          <span className={`mb-2 block font-body text-[11px] font-bold uppercase tracking-[0.18em] ${gold}`}>
+          <span className={`mb-2 block font-body text-caption font-bold uppercase tracking-[0.18em] ${gold}`}>
             While you wait
           </span>
-          <span className={`block font-heading text-[17px] font-bold leading-snug ${text}`}>
+          <span className={`block font-heading text-body-sm font-bold leading-snug ${text}`}>
             {guide.label}
           </span>
-          <span className={`mt-1 block font-body text-[13px] ${muted}`}>{guide.description}</span>
-          <span className={`mt-3 inline-flex items-center gap-1 font-body text-[13px] font-bold ${gold}`}>
+          <span className={`mt-1 block font-body text-body-xs ${muted}`}>{guide.description}</span>
+          <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
             Read the guide <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </span>
         </Link>

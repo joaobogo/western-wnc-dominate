@@ -32,7 +32,7 @@ const IntakeShell = ({
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="flex items-center gap-2 mb-5">
               <div className="h-px w-8 bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">
                 {eyebrow}
               </span>
             </div>
@@ -41,14 +41,14 @@ const IntakeShell = ({
               {title}
             </h1>
 
-            <p className="text-muted-foreground text-[15px] md:text-[16px] font-body leading-[1.75] mb-8 max-w-md">
+            <p className="text-muted-foreground text-body-sm md:text-body-sm font-body leading-[1.75] mb-8 max-w-md">
               {subhead}
             </p>
 
             {/* What to expect */}
             <div className="border-l-2 border-[hsl(var(--highland-gold)/0.35)] pl-5 mb-8 space-y-3">
               {sidebarBullets.map((b) => (
-                <p key={b} className="text-muted-foreground text-[13.5px] font-body leading-relaxed">
+                <p key={b} className="text-muted-foreground text-body-xs font-body leading-relaxed">
                   {b}
                 </p>
               ))}
@@ -62,7 +62,7 @@ const IntakeShell = ({
                 { icon: Clock,   text: "24-hr Storm Response" },
                 { icon: MapPin,  text: "8 WNC Counties" },
               ].map((t) => (
-                <div key={t.text} className="flex items-center gap-2 text-muted-foreground text-[12px] font-body">
+                <div key={t.text} className="flex items-center gap-2 text-muted-foreground text-body-xs font-body">
                   <t.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0" />
                   <span>{t.text}</span>
                 </div>
@@ -71,12 +71,12 @@ const IntakeShell = ({
 
             {/* Phone alt path */}
             <div className="mt-8 pt-6 border-t border-border/60">
-              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-muted-foreground mb-2">
+              <p className="text-caption font-body uppercase tracking-[0.18em] text-muted-foreground mb-2">
                 Prefer to talk?
               </p>
               <a
                 href="tel:+18285247773"
-                className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-semibold text-[14px]"
+                className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-semibold text-body-xs"
               >
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                 (828) 524-7773
@@ -90,25 +90,25 @@ const IntakeShell = ({
 
             {/* Cross-link to other intakes */}
             <div className="mt-6 pt-6 border-t border-border/60">
-              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-muted-foreground mb-3">
+              <p className="text-caption font-body uppercase tracking-[0.18em] text-muted-foreground mb-3">
                 Need a different form?
               </p>
               <div className="flex flex-col gap-2">
                 <Link
                   to="/roofing-intake"
-                  className="text-[13px] font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
+                  className="text-body-xs font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
                 >
                   Roofing Intake <ArrowRight className="w-3 h-3" />
                 </Link>
                 <Link
                   to="/construction-intake"
-                  className="text-[13px] font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
+                  className="text-body-xs font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
                 >
                   Construction Intake <ArrowRight className="w-3 h-3" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
-                  className="text-[13px] font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
+                  className="text-body-xs font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
                 >
                   Design Intake <ArrowRight className="w-3 h-3" />
                 </Link>

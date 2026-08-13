@@ -239,13 +239,13 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
             }`}>
               {service.stat}
             </span>
-            <span className="block text-[13px] md:text-[14px] font-body text-white uppercase tracking-[0.12em] mt-0.5 font-bold">
+            <span className="block text-body-xs md:text-body-xs font-body text-white uppercase tracking-[0.12em] mt-0.5 font-bold">
               {service.statLabel}
             </span>
           </div>
 
           {/* Division tag */}
-          <div className={`absolute top-3 right-3 text-[12px] font-body font-bold uppercase tracking-[0.15em] px-3 py-1.5 backdrop-blur-md ${
+          <div className={`absolute top-3 right-3 text-body-xs font-body font-bold uppercase tracking-[0.15em] px-3 py-1.5 backdrop-blur-md ${
             isGold
               ? "text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.25)] border border-[hsl(var(--highland-gold)/0.35)]"
               : "text-white bg-primary/40 border border-white/25"
@@ -281,7 +281,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
               <h3 className="text-base font-heading font-bold text-foreground leading-tight tracking-tight group-hover:text-foreground/90 transition-colors">
                 {service.title}
               </h3>
-              <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.18em] mt-1 block ${
+              <span className={`text-caption md:text-caption font-body font-bold uppercase tracking-[0.18em] mt-1 block ${
                 isGold ? "text-[hsl(var(--gold-ink))]" : "text-primary/80"
               }`}>
                 {service.tagline}
@@ -290,13 +290,13 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           </div>
 
           {/* Description */}
-          <p className="text-muted-foreground text-[13px] md:text-[13.5px] leading-[1.55] font-body mb-6 flex-1">
+          <p className="text-muted-foreground text-body-xs md:text-body-xs leading-[1.55] font-body mb-6 flex-1">
             {service.description}
           </p>
 
           {/* CTA row */}
           <div className="flex items-center justify-between pt-3 border-t border-border/60">
-            <span className={`inline-flex items-center gap-1.5 font-heading font-bold text-[14px] tracking-wide group-hover:gap-2.5 transition-all duration-300 ${
+            <span className={`inline-flex items-center gap-1.5 font-heading font-bold text-body-xs tracking-wide group-hover:gap-2.5 transition-all duration-300 ${
               isGold ? "text-[hsl(var(--gold-ink))]" : "text-primary"
             }`}>
               Explore <ArrowRight className="w-3 h-3" />
@@ -347,7 +347,7 @@ const ServicesGrid = () => {
               <div className="w-8 h-8 rounded-none bg-primary/8 flex items-center justify-center">
                 <HomeIcon className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.22em] text-primary/95">
+              <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.22em] text-primary/95">
                 Roofing Division
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
@@ -365,7 +365,7 @@ const ServicesGrid = () => {
               <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
                 <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
               </div>
-              <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold)/0.9)]">
+              <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold)/0.9)]">
                 Construction Division
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-[hsl(var(--highland-gold)/0.15)] to-transparent" />

@@ -103,7 +103,7 @@ const LocalProjectProof = ({
                         decoding="async"
                         className="w-full h-36 md:h-40 object-cover"
                       />
-                      <figcaption className="absolute bottom-0 left-0 bg-foreground/75 text-background text-[10px] font-body uppercase tracking-wider px-2 py-0.5">
+                      <figcaption className="absolute bottom-0 left-0 bg-foreground/75 text-background text-caption font-body uppercase tracking-wider px-2 py-0.5">
                         {img.label}
                       </figcaption>
                     </figure>
@@ -119,14 +119,14 @@ const LocalProjectProof = ({
                 />
               )}
               <div className="p-5">
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-body uppercase tracking-wider text-muted-foreground mb-2">
+                <span className="inline-flex items-center gap-1.5 text-caption font-body uppercase tracking-wider text-muted-foreground mb-2">
                   <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                   {proximity}
                 </span>
                 <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-[13px] text-muted-foreground mt-1 line-clamp-2">
+                <p className="text-body-xs text-muted-foreground mt-1 line-clamp-2">
                   {project.highlight}
                 </p>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">

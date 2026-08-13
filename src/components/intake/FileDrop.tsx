@@ -36,10 +36,10 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
         }`}
       >
         <Upload className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" aria-hidden="true" />
-        <p className="text-[13.5px] font-body font-semibold text-foreground/80">
+        <p className="text-body-xs font-body font-semibold text-foreground/80">
           Drop files or click to upload
         </p>
-        {helper && <p className="text-[11.5px] text-muted-foreground mt-1 font-body">{helper}</p>}
+        {helper && <p className="text-caption text-muted-foreground mt-1 font-body">{helper}</p>}
       </button>
       <input
         ref={inputRef}
@@ -59,8 +59,8 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
               {f.type.startsWith("image/")
                 ? <ImageIcon className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />
                 : <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />}
-              <span className="text-[12.5px] font-body text-foreground/80 truncate flex-1">{f.name}</span>
-              <span className="text-[11px] text-muted-foreground font-body">{(f.size / 1024 / 1024).toFixed(1)}MB</span>
+              <span className="text-body-xs font-body text-foreground/80 truncate flex-1">{f.name}</span>
+              <span className="text-caption text-muted-foreground font-body">{(f.size / 1024 / 1024).toFixed(1)}MB</span>
               <button
                 type="button"
                 aria-label={`Remove ${f.name}`}

@@ -69,7 +69,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
   return (
     <div className="border border-border bg-card px-6 py-7 shadow-sm rounded-sm">
       <div className="mb-5">
-        <div className="text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
+        <div className="text-caption font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
           Request an Estimate
         </div>
         <h2 className="font-heading text-2xl font-bold text-foreground">Get help with {serviceLabel.toLowerCase()}.</h2>
@@ -110,7 +110,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         }}
       >
         <div>
-          <label htmlFor={`${serviceLabel}-name`} className="mb-2 block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          <label htmlFor={`${serviceLabel}-name`} className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
             Name
           </label>
           <input
@@ -129,7 +129,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label htmlFor={`${serviceLabel}-phone`} className="mb-2 block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <label htmlFor={`${serviceLabel}-phone`} className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
               Phone
             </label>
             <input
@@ -146,7 +146,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
           </div>
           <div>
-            <label htmlFor={`${serviceLabel}-town`} className="mb-2 block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <label htmlFor={`${serviceLabel}-town`} className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
               Town
             </label>
             <input
@@ -165,7 +165,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         </div>
 
         <div>
-          <span className="mb-2 block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          <span className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
             Timing
           </span>
           <div className="grid gap-2 sm:grid-cols-2">

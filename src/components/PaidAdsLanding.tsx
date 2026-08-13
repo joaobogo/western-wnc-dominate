@@ -86,10 +86,10 @@ const PaidAdsLanding = ({
             <div className="grid gap-6 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-x-10 lg:gap-y-8 lg:pt-12">
               <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-1">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                  <div className="mb-3 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
+                  <div className="mb-3 text-caption font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
                     {eyebrow}
                   </div>
-                  <h1 className="max-w-3xl text-[30px] font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
+                  <h1 className="max-w-3xl text-heading-sm font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
                   <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground/90 md:mt-5 md:text-lg">
@@ -154,7 +154,7 @@ const PaidAdsLanding = ({
                 <div className="border border-border bg-secondary/50 px-6 py-6 rounded-sm">
                   <div className="mb-4 flex items-center gap-2 text-primary">
                     <Star className="h-4 w-4" />
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em]">Trust Snapshot</span>
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.2em]">Trust Snapshot</span>
                   </div>
                   <blockquote className="font-heading text-xl font-semibold leading-snug text-foreground">
                     “{testimonial.quote}”

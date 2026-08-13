@@ -17,7 +17,7 @@ export const Label = ({
   <label
     htmlFor={htmlFor}
     id={id}
-    className="block text-[14px] md:text-[15px] font-body font-bold text-foreground/90 mb-2 tracking-wide"
+    className="block text-body-xs md:text-body-sm font-body font-bold text-foreground/90 mb-2 tracking-wide"
   >
     {children}{" "}
     {required && (
@@ -30,7 +30,7 @@ export const Label = ({
 );
 
 export const Helper = ({ children }: { children: ReactNode }) => (
-  <p className="text-[13px] md:text-[14px] text-muted-foreground mt-1.5 font-body leading-snug">{children}</p>
+  <p className="text-body-xs md:text-body-xs text-muted-foreground mt-1.5 font-body leading-snug">{children}</p>
 );
 
 /** Inline, per-field validation message. Always rendered under the input. */
@@ -39,7 +39,7 @@ export const FieldError = ({ id, children }: { id?: string; children?: ReactNode
     <p
       id={id}
       role="alert"
-      className="text-[13px] md:text-[14px] text-destructive mt-1.5 font-body leading-snug"
+      className="text-body-xs md:text-body-xs text-destructive mt-1.5 font-body leading-snug"
     >
       {children}
     </p>
@@ -66,7 +66,7 @@ export const Input = ({ invalid, ...props }: InputProps) => (
     {...ergonomicDefaults(props.type)}
     {...props}
     aria-invalid={invalid || undefined}
-    className={`w-full bg-background border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
+    className={`w-full bg-background border rounded-none px-5 py-4 text-body-sm md:text-body font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
       invalid
         ? "border-destructive focus:border-destructive focus:ring-destructive/20"
         : "border-border focus:border-[hsl(var(--highland-gold))] focus:ring-[hsl(var(--highland-gold)/0.15)]"
@@ -79,14 +79,14 @@ export const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement
     autoCapitalize="sentences"
     enterKeyHint="enter"
     {...props}
-    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
+    className="w-full bg-background border border-border rounded-none px-5 py-4 text-body-sm md:text-body font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
   />
 );
 
 export const Select = (props: React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <select
     {...props}
-    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
+    className="w-full bg-background border border-border rounded-none px-5 py-4 text-body-sm md:text-body font-body text-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
   />
 );
 
@@ -127,8 +127,8 @@ export const ChipGroup = ({
                 : "border-border bg-background text-muted-foreground hover:border-foreground/30"
             }`}
           >
-            <div className="text-[15px] md:text-[16px] font-body font-bold leading-tight">{o.label}</div>
-            {o.sub && <div className="text-[11.5px] text-muted-foreground mt-0.5 font-body">{o.sub}</div>}
+            <div className="text-body-sm md:text-body-sm font-body font-bold leading-tight">{o.label}</div>
+            {o.sub && <div className="text-caption text-muted-foreground mt-0.5 font-body">{o.sub}</div>}
           </button>
         );
       })}
@@ -177,10 +177,10 @@ export const ProgressIndicator = ({
   return (
     <div className="w-full">
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/80">
+        <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-foreground/80">
           Step {current + 1} of {total}
         </span>
-        {label && <span className="text-[11px] font-body text-muted-foreground">{label}</span>}
+        {label && <span className="text-caption font-body text-muted-foreground">{label}</span>}
       </div>
       <div
         className="h-1 w-full rounded-full bg-border overflow-hidden"

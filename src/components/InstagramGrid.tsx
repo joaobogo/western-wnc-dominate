@@ -81,7 +81,7 @@ const InstagramGrid = () => {
               />
               {/* Cinematic hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0)] via-transparent to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.5)] transition-all duration-500 flex items-end justify-center pb-4">
-                <span className="text-white text-[11px] font-body font-semibold tracking-[0.12em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-3 group-hover:translate-y-0">
+                <span className="text-white text-caption font-body font-semibold tracking-[0.12em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-3 group-hover:translate-y-0">
                   {item.label}
                 </span>
               </div>

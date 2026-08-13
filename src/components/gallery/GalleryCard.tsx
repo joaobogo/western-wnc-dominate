@@ -56,7 +56,7 @@ const GalleryCard = ({
 
       {/* Category badge */}
       <div className="absolute top-4 left-4 z-10">
-        <span className="text-[10px] font-body font-bold uppercase tracking-[0.18em] px-3 py-1.5 bg-primary/95 text-primary-foreground backdrop-blur-md border border-white/10">
+        <span className="text-caption font-body font-bold uppercase tracking-[0.18em] px-3 py-1.5 bg-primary/95 text-primary-foreground backdrop-blur-md border border-white/10">
           {type}
         </span>
       </div>
@@ -65,7 +65,7 @@ const GalleryCard = ({
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary/10">
         <div className="px-6 py-3 border border-white/30 bg-black/20 backdrop-blur-md flex items-center gap-2">
            <Eye className="w-4 h-4 text-white" />
-           <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-white">View Project</span>
+           <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-white">View Project</span>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ const GalleryCard = ({
     <div className="p-6 md:p-8 relative z-10 flex flex-col flex-grow">
       <div className="flex items-center gap-2 mb-3">
         <MapPin className="w-3.5 h-3.5 text-primary" />
-        <span className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground">{location}</span>
+        <span className="text-body-xs font-body font-bold uppercase tracking-[0.15em] text-muted-foreground">{location}</span>
       </div>
       
       <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
@@ -90,7 +90,7 @@ const GalleryCard = ({
 
       <div className="mt-auto">
         <div className="flex items-center justify-between border-t border-border pt-5">
-        <div className="flex items-center gap-4 text-[11px] text-muted-foreground font-body font-bold uppercase tracking-wider">
+        <div className="flex items-center gap-4 text-caption text-muted-foreground font-body font-bold uppercase tracking-wider">
            {scope && <span className="flex items-center gap-1.5"><Ruler className="w-3.5 h-3.5" /> {scope}</span>}
            {duration && <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {duration}</span>}
         </div>
@@ -99,7 +99,7 @@ const GalleryCard = ({
 
       {highlight && (
         <div className="mt-5 p-3 bg-secondary/50 border-l-2 border-accent">
-          <p className="text-[12px] font-body font-bold text-foreground flex items-center gap-2 italic">
+          <p className="text-body-xs font-body font-bold text-foreground flex items-center gap-2 italic">
             "{highlight}"
           </p>
         </div>

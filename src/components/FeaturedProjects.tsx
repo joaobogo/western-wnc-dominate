@@ -134,14 +134,14 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
           {/* Category pill — top left */}
           <div className="absolute top-4 md:top-5 left-4 md:left-6 z-10">
-            <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-white bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-md border border-white/20 px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-500">
+            <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-white bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-md border border-white/20 px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-500">
               {project.category}
             </span>
           </div>
 
           {/* Elevation badge — top right */}
           <div className="absolute top-4 md:top-5 right-4 md:right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
-            <span className="text-[9px] font-body font-semibold tracking-[0.12em] text-[hsl(var(--gold-ink))] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+            <span className="text-caption font-body font-semibold tracking-[0.12em] text-[hsl(var(--gold-ink))] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
               ▲ {project.elevation}
             </span>
           </div>
@@ -151,7 +151,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             {/* Location */}
             <div className="flex items-center gap-1.5 mb-2.5">
               <MapPin className="w-2.5 h-2.5 text-[hsl(var(--gold-ink))]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {project.location}
               </span>
             </div>
@@ -165,7 +165,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
             {/* Outcome — reveal on hover */}
             <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
-              <p className="text-white text-[15px] md:text-[16px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] font-bold">
+              <p className="text-white text-body-sm md:text-body-sm font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] font-bold">
                 {project.outcome}
 
               </p>
@@ -219,7 +219,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
-              <p className="text-muted-foreground text-[15px] font-body max-w-md leading-relaxed">
+              <p className="text-muted-foreground text-body-sm font-body max-w-md leading-relaxed">
                 Real roofs at real elevations. Every project photographed on completion, documented, and warrantied.
               </p>
             </ScrollReveal>
@@ -232,7 +232,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
                 <button
                   key={f.value}
                   onClick={() => setActiveFilter(f.value)}
-                  className={`text-[10px] font-body font-bold uppercase tracking-[0.15em] px-5 py-2.5 rounded-none transition-all duration-300 ${
+                  className={`text-caption font-body font-bold uppercase tracking-[0.15em] px-5 py-2.5 rounded-none transition-all duration-300 ${
                     activeFilter === f.value
                       ? "bg-primary text-primary-foreground"
                       : "bg-transparent border border-border text-muted-foreground hover:border-foreground/20 hover:text-foreground"
@@ -272,12 +272,12 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
             to="/recent-projects"
-            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
+            className="group inline-flex items-center gap-2.5 font-heading font-bold text-body-xs tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
           >
             View the Full Portfolio
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[14px] text-foreground font-body font-semibold mt-3">
+          <p className="text-body-xs text-foreground font-body font-semibold mt-3">
             Mountain-proven across 8 WNC counties
           </p>
         </motion.div>

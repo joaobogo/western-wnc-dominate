@@ -59,7 +59,7 @@ const TrustAndProof = () => {
                 <cert.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-heading font-bold text-sm text-foreground mb-0.5">{cert.label}</h3>
-              <p className="text-[11px] text-muted-foreground font-body tracking-wide">{cert.detail}</p>
+              <p className="text-caption text-muted-foreground font-body tracking-wide">{cert.detail}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -77,7 +77,7 @@ const TrustAndProof = () => {
             </div>
             <div>
               <h3 className="font-heading font-semibold text-base text-foreground mb-0.5">Our Accountability Promise</h3>
-              <p className="text-[11px] text-muted-foreground font-body tracking-wide">Documented and delivered on every project</p>
+              <p className="text-caption text-muted-foreground font-body tracking-wide">Documented and delivered on every project</p>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ const TrustAndProof = () => {
                 className="flex items-start gap-3"
               >
                 <div className="w-5 h-5 rounded-none bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[10px] font-heading font-bold text-primary">{i + 1}</span>
+                  <span className="text-caption font-heading font-bold text-primary">{i + 1}</span>
                 </div>
                 <span className="text-muted-foreground text-sm font-body leading-relaxed font-bold">{point}</span>
               </motion.div>
@@ -107,7 +107,7 @@ const TrustAndProof = () => {
                 <h4 className="font-heading font-semibold text-sm text-foreground mb-1">
                   Full Warranty Package Included
                 </h4>
-                <p className="text-[13px] text-muted-foreground font-body leading-relaxed">
+                <p className="text-body-xs text-muted-foreground font-body leading-relaxed">
                   Every completed project includes manufacturer material warranty plus
                   Highlander's labor warranty — physically delivered at your final walkthrough, 
                   not buried in an email you'll never find.

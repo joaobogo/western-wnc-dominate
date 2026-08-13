@@ -185,7 +185,7 @@ const RecentProjects = () => {
                         height={600}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <span className="absolute top-3 left-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
+                      <span className="absolute top-3 left-3 text-caption font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
                         {p.type}
                       </span>
                     </div>

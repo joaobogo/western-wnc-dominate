@@ -122,11 +122,11 @@ const Siding = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
                       <Droplets className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
-                      <div className="text-[10px] font-bold uppercase tracking-wider">Moisture Proof</div>
+                      <div className="text-caption font-bold uppercase tracking-wider">Moisture Proof</div>
                     </div>
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
                       <Wind className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
-                      <div className="text-[10px] font-bold uppercase tracking-wider">Wind Rated</div>
+                      <div className="text-caption font-bold uppercase tracking-wider">Wind Rated</div>
                     </div>
                   </div>
                 </div>

@@ -91,7 +91,7 @@ const ProjectDetailPage = () => {
                   className="mb-6 flex items-center gap-3"
                 >
                   <div className="h-px w-8 bg-[hsl(var(--highland-gold)/0.4)]" />
-                  <span className="text-[10px] font-heading font-bold text-white tracking-[0.2em] uppercase">Highlander Project</span>
+                  <span className="text-caption font-heading font-bold text-white tracking-[0.2em] uppercase">Highlander Project</span>
                 </motion.div>
                 <nav className="flex items-center gap-2 text-white/85 text-sm font-body mb-4">
                   <Link to="/recent-projects" className="hover:text-white transition-colors flex items-center gap-1">
@@ -101,7 +101,7 @@ const ProjectDetailPage = () => {
                   <span className="text-white/90">{project.type}</span>
                 </nav>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
+                  <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
                   </span>
                   <span className="text-white/95 text-sm font-body flex items-center gap-1.5 font-medium">
@@ -217,7 +217,7 @@ const ProjectDetailPage = () => {
                 <TrustSidebar />
 
                 <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
-                   <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-3">Service Expertise</h4>
+                   <h4 className="text-caption md:text-body-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Service Expertise</h4>
                    <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
                       View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                    </Link>
@@ -255,15 +255,15 @@ const ProjectDetailPage = () => {
                 />
                 <div className="grid md:grid-cols-3 gap-5 mt-8">
                   <div className="bg-secondary/60 rounded-sm p-5">
-                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">What Changed</h4>
+                    <h4 className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">What Changed</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.whatChanged}</p>
                   </div>
                   <div className="bg-secondary/60 rounded-sm p-5">
-                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">Why It Mattered</h4>
+                    <h4 className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">Why It Mattered</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.whyItMattered}</p>
                   </div>
                   <div className="bg-secondary/60 rounded-sm p-5">
-                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">The Highlander Difference</h4>
+                    <h4 className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">The Highlander Difference</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.highlanderDifference}</p>
                   </div>
                 </div>
@@ -344,7 +344,7 @@ const ProjectDetailPage = () => {
                       to={`/blog/${post.slug}`}
                       className="group block p-6 bg-secondary/30 border border-border hover:border-primary/20 transition-all"
                     >
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-3 block">{post.category}</span>
+                      <span className="text-caption font-bold uppercase tracking-widest text-primary mb-3 block">{post.category}</span>
                       <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3">{post.title}</h4>
                       <span className="text-xs text-muted-foreground flex items-center gap-1">
                         Read Guidance <ArrowRight className="w-3 h-3" />
@@ -432,7 +432,7 @@ const ProjectDetailPage = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.5)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="absolute bottom-0 left-0 w-0 group-hover:w-1/2 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-transparent transition-all duration-700" />
                       </div>
-                      <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1 block">{rel.type}</span>
+                      <span className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1 block">{rel.type}</span>
                       <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors mb-1">{rel.title}</h3>
                       <p className="text-muted-foreground text-sm font-body flex items-center gap-1">
                         <MapPin className="w-3 h-3" /> {rel.location}
@@ -444,7 +444,7 @@ const ProjectDetailPage = () => {
               <div className="text-center mt-10">
                 <Link
                   to="/recent-projects"
-                  className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
+                  className="group inline-flex items-center gap-2 font-heading font-bold text-body-xs tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
                 >
                   View Full Portfolio <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>

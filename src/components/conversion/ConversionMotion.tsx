@@ -68,7 +68,7 @@ export const MultiStepForm = ({
                     : "hsl(var(--border))",
                 }}
                 transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-body font-bold"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-caption font-body font-bold"
               >
                 {i < currentStep ? (
                   <motion.div
@@ -97,10 +97,10 @@ export const MultiStepForm = ({
           ))}
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--gold-ink))]">
+          <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--gold-ink))]">
             Step {currentStep + 1} of {steps.length}
           </p>
-          <p className="text-[11px] text-muted-foreground font-body">{steps[currentStep].label}</p>
+          <p className="text-caption text-muted-foreground font-body">{steps[currentStep].label}</p>
         </div>
       </div>
 

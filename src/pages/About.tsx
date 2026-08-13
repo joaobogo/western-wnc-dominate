@@ -105,14 +105,14 @@ const About = () => {
             >
               <div className="h-10 md:h-12 w-px bg-white/30" />
               <div className="flex flex-col">
-                <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Heritage & Story</span>
+                <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Heritage & Story</span>
               </div>
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Franklin & Sylva, North Carolina</span>
+                <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
 
               {/* Slow fade-in (no curtain-reveal like Roofing/Construction) */}
@@ -126,7 +126,7 @@ const About = () => {
                 <span className="block text-[hsl(var(--gold-ink))]">Built by a Local Team.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-body md:text-body-lg text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
                 Highlander is family-owned and locally run by a team of people who call Western North Carolina home. The owners set the standard, and every team member, from leadership and consultants to inspectors, project managers, repair specialists, and crews, plays a role in delivering the craft, care, and local accountability your home deserves.
               </motion.p>
 
@@ -144,7 +144,7 @@ const About = () => {
                       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     }
                   }}
-                  className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[16px] md:text-[18px] px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg"
+                  className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-body-sm md:text-body px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg"
                 >
                   <span>Meet Our People</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -188,18 +188,18 @@ const About = () => {
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
                           <span className="font-heading font-bold text-2xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Highlander Leadership</span>
+                        <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Highlander Leadership</span>
                       </div>
                     )}
                   </div>
 
                   <div className="flex-1">
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-[16px] mb-4 uppercase tracking-wider">{person.role}</p>
-                    <p className="text-muted-foreground text-[18px] md:text-[20px] leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
+                    <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-body-sm mb-4 uppercase tracking-wider">{person.role}</p>
+                    <p className="text-muted-foreground text-body md:text-body leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
-                        <span key={cred} className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
+                        <span key={cred} className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
                           {cred}
                         </span>
                       ))}
@@ -212,7 +212,7 @@ const About = () => {
             <div className="text-center mb-16">
               <span className="eyebrow mb-3 block">Division Experts</span>
               <h2 className="section-heading">Your Project Specialists</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mt-4 font-body text-[17px] md:text-[19px] font-bold">
+              <p className="text-muted-foreground max-w-xl mx-auto mt-4 font-body text-body-sm md:text-body font-bold">
                 From first consultation to final inspection, these are the professionals leading our crews and coordinating your build.
               </p>
             </div>
@@ -235,18 +235,18 @@ const About = () => {
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
                           <span className="font-heading font-bold text-xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">In-House Specialist</span>
+                        <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">In-House Specialist</span>
                       </div>
                     )}
                   </div>
 
                   <div className="p-6">
                     <h3 className="text-lg font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-primary font-heading font-bold text-[15px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
-                    <p className="text-[16px] md:text-[18px] text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
+                    <p className="text-primary font-heading font-bold text-body-sm uppercase tracking-[0.15em] mb-4">{person.role}</p>
+                    <p className="text-body-sm md:text-body text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground">{person.specialty}</span>
+                      <span className="text-body-xs font-body font-bold uppercase tracking-wider text-muted-foreground">{person.specialty}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -326,7 +326,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Our Horizon — Western North Carolina</span>
+                <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>
@@ -439,7 +439,7 @@ const About = () => {
             <div className="bg-primary p-8 md:p-16 relative overflow-hidden text-center max-w-5xl mx-auto">
               <div className="absolute inset-0 tartan-dark opacity-[0.08]" />
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10">
-                <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-[11px] uppercase tracking-[0.25em] mb-6 block">Join the Team</span>
+                <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-caption uppercase tracking-[0.25em] mb-6 block">Join the Team</span>
                 <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
                   Build a Career <br className="md:hidden" /> <span className="text-[hsl(var(--gold-ink))] italic">on Higher Ground.</span>
                 </h2>
@@ -447,10 +447,10 @@ const About = () => {
                   We're always looking for skilled craftsmen and dedicated professionals who share our values. If you're local, honest, and take pride in your work, we want to hear from you.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-lg">
+                  <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-lg">
                     View Open Positions <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-[14px] flex items-center gap-2 transition-colors">
+                  <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
                     <Phone className="w-4 h-4" /> (828) 524-7773
                   </a>
                 </div>

@@ -25,7 +25,7 @@ const ConstructionIntake = () => (
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 mb-4">
               <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-              <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
+              <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
                 Planning a Construction Project?
               </span>
             </div>
@@ -40,7 +40,7 @@ const ConstructionIntake = () => (
             </p>
             <Link
               to="/construction/design"
-              className="group inline-flex items-center gap-2 text-[13px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] hover:opacity-80 transition-opacity"
+              className="group inline-flex items-center gap-2 text-body-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] hover:opacity-80 transition-opacity"
             >
               View the design phases
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

@@ -9,7 +9,7 @@ const FormSavedNote = ({ show, className = "", tone = "light" }: { show: boolean
   return (
     <p
       role="status"
-      className={`flex items-center gap-2 text-[12.5px] font-body ${
+      className={`flex items-center gap-2 text-body-xs font-body ${
         tone === "dark" ? "text-white/70" : "text-muted-foreground"
       } ${className}`}
     >

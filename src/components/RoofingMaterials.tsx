@@ -169,7 +169,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
                   {active.priceRange.split("").map((_, i) => (
                     <div key={i} className={`w-2.5 h-2.5 rounded-full ${i < active.priceRange.length ? "bg-primary/30" : "bg-border"}`} />
                   ))}
-                  <span className="text-[10px] text-muted-foreground ml-1.5 font-body">Investment Level</span>
+                  <span className="text-caption text-muted-foreground ml-1.5 font-body">Investment Level</span>
                 </div>
               </div>
             </div>
@@ -178,33 +178,33 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
             <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
               <div className="p-6 md:p-8 space-y-5">
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Visual Style</h4>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.visualStyle}</p>
+                  <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Visual Style</h4>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.visualStyle}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Durability</h4>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.durability}</p>
+                  <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Durability</h4>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.durability}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Expected Lifespan</h4>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.lifespan}</p>
+                  <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Expected Lifespan</h4>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.lifespan}</p>
                 </div>
               </div>
               <div className="p-6 md:p-8 space-y-5">
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Maintenance</h4>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.maintenance}</p>
+                  <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Maintenance</h4>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.maintenance}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Ideal Homeowner</h4>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.idealFor}</p>
+                  <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Ideal Homeowner</h4>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.idealFor}</p>
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5 mb-1.5">
                     <ThermometerSun className="w-3 h-3 text-primary/80" />
-                    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80">WNC Climate Performance</h4>
+                    <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80">WNC Climate Performance</h4>
                   </div>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.wncPerformance}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.wncPerformance}</p>
                 </div>
               </div>
             </div>
@@ -231,7 +231,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
               <button
                 key={mat.id}
                 onClick={() => setActiveId(mat.id)}
-                className={`text-[11px] font-body px-3 py-1 rounded-full transition-all ${
+                className={`text-caption font-body px-3 py-1 rounded-full transition-all ${
                   activeId === mat.id ? "bg-primary/10 text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
                 }`}
               >

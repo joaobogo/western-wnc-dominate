@@ -85,7 +85,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
               style={{ color: CREAM }}
             >
               <span className="text-lg font-heading tracking-[0.3em]">HIGHLANDER</span>
-              <span className="text-[10px] font-body uppercase tracking-[0.4em]" style={{ color: GOLD }}>
+              <span className="text-caption font-body uppercase tracking-[0.4em]" style={{ color: GOLD }}>
                 Roofing · Construction · Design
               </span>
             </motion.div>
@@ -330,22 +330,22 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 className="relative z-10 mt-4 sm:mt-6 flex flex-col items-center gap-2"
               >
                 <div className="flex items-center gap-3 sm:gap-4" style={{ color: CREAM }}>
-                  <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
+                  <span className="text-caption sm:text-body-xs font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
                     Roofing
                   </span>
                   <span className="w-1 h-1 rounded-full" style={{ background: GOLD }} />
-                  <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
+                  <span className="text-caption sm:text-body-xs font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
                     Construction
                   </span>
                   <span className="w-1 h-1 rounded-full" style={{ background: GOLD }} />
-                  <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
+                  <span className="text-caption sm:text-body-xs font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
                     Design
                   </span>
                 </div>
                 <motion.p
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                   transition={{ duration: 0.4, delay: 2.4, ease: EASE }}
-                  className="text-[9.5px] sm:text-[10.5px] font-body font-bold uppercase tracking-[0.4em]"
+                  className="text-caption sm:text-caption font-body font-bold uppercase tracking-[0.4em]"
                   style={{ color: GOLD }}
                 >
                   Western North Carolina · Since 2017

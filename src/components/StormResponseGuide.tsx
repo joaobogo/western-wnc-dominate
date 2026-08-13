@@ -94,7 +94,7 @@ const StormResponseGuide = () => {
                 <div className="flex items-center gap-2 mb-4">
                   <Camera className="w-4 h-4 text-primary" />
                   <h3 className="font-heading font-bold text-foreground text-sm uppercase tracking-wider">Exterior Signs</h3>
-                  <span className="text-[10px] text-muted-foreground font-body">(check from ground level)</span>
+                  <span className="text-caption text-muted-foreground font-body">(check from ground level)</span>
                 </div>
                 <div className="space-y-2.5">
                   {exteriorChecks.map((item) => (
@@ -192,7 +192,7 @@ const StormResponseGuide = () => {
 
                   {checkedItems.length > 0 && (
                     <div className="mb-6">
-                      <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-3">Issues You Identified</h4>
+                      <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-3">Issues You Identified</h4>
                       <div className="flex flex-wrap gap-2">
                         {checkedItems.map((item) => (
                           <span key={item.id} className={`inline-flex items-center gap-1.5 text-xs font-body font-medium px-3 py-1.5 rounded-sm border ${severityStyles[item.severity]}`}>
@@ -206,7 +206,7 @@ const StormResponseGuide = () => {
 
                   {/* Next Steps */}
                   <div className="bg-secondary/40 rounded-sm p-5 mb-6">
-                    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-3">Recommended Next Steps</h4>
+                    <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-3">Recommended Next Steps</h4>
                     <ol className="space-y-2.5 text-sm font-body text-muted-foreground">
                       <li className="flex items-start gap-2"><span className="w-5 h-5 bg-primary/10 text-primary text-xs font-bold rounded-full flex items-center justify-center flex-shrink-0">1</span> Document all damage with photos — exterior and interior</li>
                       <li className="flex items-start gap-2"><span className="w-5 h-5 bg-primary/10 text-primary text-xs font-bold rounded-full flex items-center justify-center flex-shrink-0">2</span> Do not make permanent repairs before insurance adjuster visits</li>

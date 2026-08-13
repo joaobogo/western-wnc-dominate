@@ -254,9 +254,9 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
     );
   }
 
-  const inputClasses = "w-full px-6 py-6 md:py-7 rounded-none text-white text-[20px] md:text-[22px] font-body placeholder:text-white/40 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.08] border border-white/20";
-  const labelClasses = "block text-[16px] md:text-[17px] font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
-  const hintClasses = "text-dark-section-foreground/95 text-[15px] md:text-[16px] font-body mt-3 leading-relaxed font-bold";
+  const inputClasses = "w-full px-6 py-6 md:py-7 rounded-none text-white text-body md:text-body-lg font-body placeholder:text-white/40 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.08] border border-white/20";
+  const labelClasses = "block text-body-sm md:text-body-sm font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
+  const hintClasses = "text-dark-section-foreground/95 text-body-sm md:text-body-sm font-body mt-3 leading-relaxed font-bold";
 
 
   return (
@@ -277,7 +277,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
             {/* Left — editorial trust content */}
             <div className={`lg:col-span-2 ${isPage ? "order-2 lg:order-1" : ""}`}>
               <ScrollReveal variant="fade">
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-4 block">
+                <span className="text-body-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-4 block">
                   Begin Your Project
                 </span>
               </ScrollReveal>
@@ -343,10 +343,10 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 {/* Slim progress indicator */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))]">
+                    <p className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))]">
                       Step {step} of 2 — {step === 1 ? "What you need" : "How we reach you"}
                     </p>
-                    <span className="text-white/70 text-[13px] font-body font-semibold">About a minute</span>
+                    <span className="text-white/70 text-body-xs font-body font-semibold">About a minute</span>
                   </div>
                   <div className="h-1 w-full bg-white/10 overflow-hidden" role="progressbar" aria-valuemin={1} aria-valuemax={2} aria-valuenow={step} aria-label="Form progress">
                     <motion.div
@@ -369,7 +369,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                         <button
                           type="button"
                           onClick={() => setShowProjectChoices(true)}
-                          className="text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity mb-3"
+                          className="text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity mb-3"
                         >
                           Change
                         </button>
@@ -378,7 +378,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     {!showProjectChoices && (
                       <div className="flex items-center gap-3 px-4 py-4 border border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.16)]">
                         <CheckCircle className="w-5 h-5 flex-shrink-0 text-[hsl(var(--gold-ink))]" />
-                        <span className="text-white font-body font-bold text-[16px] md:text-[17px]">
+                        <span className="text-white font-body font-bold text-body-sm md:text-body-sm">
                           {PROJECT_CHOICES.find((c) => c.value === formData.projectType)?.label ?? "Roof Repair or Leak"}
                         </span>
                       </div>
@@ -400,7 +400,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                             }`}
                           >
                             <choice.icon className={`w-5 h-5 flex-shrink-0 ${active ? "text-[hsl(var(--gold-ink))]" : "text-white/70"}`} />
-                            <span className="text-white font-body font-bold text-[16px] md:text-[17px]">{choice.label}</span>
+                            <span className="text-white font-body font-bold text-body-sm md:text-body-sm">{choice.label}</span>
                             {active && <CheckCircle className="w-4 h-4 ml-auto text-[hsl(var(--gold-ink))]" />}
                           </button>
                         );
@@ -488,12 +488,12 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     onClick={() => setShowDetails((v) => !v)}
                     aria-expanded={showDetails}
                     aria-controls="inspection-optional-details"
-                    className="inline-flex items-center gap-2 text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity"
+                    className="inline-flex items-center gap-2 text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity"
                   >
                     <ChevronDown className={`w-4 h-4 transition-transform ${showDetails ? "rotate-180" : ""}`} />
                     {showDetails ? "Hide extra details" : "Add details (optional)"}
                   </button>
-                  <p className="text-white/70 text-[13px] font-body mt-2">
+                  <p className="text-white/70 text-body-xs font-body mt-2">
                     Email, notes, address, timing, insurance and photos help us prepare — none of it is required.
                   </p>
 
@@ -584,12 +584,12 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                               id="attachments" type="file" multiple
                               accept={ACCEPTED_UPLOAD_TYPES}
                               onChange={(e) => { addFiles(e.target.files); e.target.value = ""; }}
-                              className="block w-full text-[15px] text-white font-body file:mr-4 file:py-3 file:px-5 file:border file:border-white/25 file:bg-white/[0.08] file:text-white file:font-body file:font-bold file:uppercase file:tracking-wide file:cursor-pointer"
+                              className="block w-full text-body-sm text-white font-body file:mr-4 file:py-3 file:px-5 file:border file:border-white/25 file:bg-white/[0.08] file:text-white file:font-body file:font-bold file:uppercase file:tracking-wide file:cursor-pointer"
                             />
                             {files.length > 0 && (
                               <ul className="mt-3 space-y-2">
                                 {files.map((f) => (
-                                  <li key={f.name} className="flex items-center justify-between gap-3 text-[14px] text-white font-body bg-white/[0.06] px-3 py-2">
+                                  <li key={f.name} className="flex items-center justify-between gap-3 text-body-xs text-white font-body bg-white/[0.06] px-3 py-2">
                                     <span className="inline-flex items-center gap-2 truncate">
                                       <Paperclip className="w-3.5 h-3.5 flex-shrink-0" />
                                       <span className="truncate">{f.name}</span>
@@ -601,7 +601,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                                 ))}
                               </ul>
                             )}
-                            {fileNotice && <p className="text-[hsl(var(--gold-ink))] text-[14px] font-body mt-2">{fileNotice}</p>}
+                            {fileNotice && <p className="text-[hsl(var(--gold-ink))] text-body-xs font-body mt-2">{fileNotice}</p>}
                           </div>
                         </div>
                       </motion.div>
@@ -649,7 +649,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 )}
 
                 {/* Bottom microcopy */}
-                <p className="text-center text-white text-[13px] font-body font-semibold mt-5 tracking-wide">
+                <p className="text-center text-white text-body-xs font-body font-semibold mt-5 tracking-wide">
                   No obligation · No sales pressure · Your information stays private
                 </p>
               </div>

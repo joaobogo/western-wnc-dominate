@@ -130,7 +130,7 @@ const BeforeAfterGallery = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
 
-              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/95 backdrop-blur-sm text-primary-foreground text-[12px] font-body font-bold uppercase tracking-[0.15em] px-3.5 py-2 rounded-sm z-10">
+              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/95 backdrop-blur-sm text-primary-foreground text-body-xs font-body font-bold uppercase tracking-[0.15em] px-3.5 py-2 rounded-sm z-10">
                 {projects[current].type}
               </div>
 
@@ -162,11 +162,11 @@ const BeforeAfterGallery = () => {
                     <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-1.5">
                       {projects[current].title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-white/95 text-[15px] mb-3 font-body font-medium">
+                    <div className="flex items-center gap-1.5 text-white/95 text-body-sm mb-3 font-body font-medium">
                       <MapPin className="w-3.5 h-3.5" />
                       {projects[current].location}
                     </div>
-                    <p className="text-white/90 text-[15px] md:text-base max-w-xl leading-relaxed font-body font-medium">
+                    <p className="text-white/90 text-body-sm md:text-base max-w-xl leading-relaxed font-body font-medium">
                       {projects[current].description}
                     </p>
                   </motion.div>

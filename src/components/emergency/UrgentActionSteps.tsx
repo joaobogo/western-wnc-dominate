@@ -56,7 +56,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
               <span className="shrink-0 w-6 h-6 bg-primary/10 text-primary font-heading font-bold text-xs flex items-center justify-center">
                 {i + 1}
               </span>
-              <span className="text-[14px] md:text-[15px] leading-snug font-body text-foreground/90">
+              <span className="text-body-xs md:text-body-sm leading-snug font-body text-foreground/90">
                 {s}
               </span>
             </li>
@@ -66,7 +66,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
         <div className="mt-5 bg-card border border-primary/30 px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex items-start gap-3 flex-1">
             <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-            <p className="text-[13px] md:text-sm font-body text-muted-foreground leading-snug">
+            <p className="text-body-xs md:text-sm font-body text-muted-foreground leading-snug">
               {c.expectation}
             </p>
           </div>

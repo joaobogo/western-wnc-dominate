@@ -46,7 +46,7 @@ const RequestInspection = () => {
         {/* PHONE ALTERNATIVE — visible immediately under the form */}
         <section className="bg-secondary border-b border-border py-6">
           <div className="container-tight flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
-            <p className="font-body font-semibold text-foreground text-[15px]">
+            <p className="font-body font-semibold text-foreground text-body-sm">
               Would rather talk it through? A Franklin-based team member answers.
             </p>
             <a
@@ -78,7 +78,7 @@ const RequestInspection = () => {
                     <s.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-lg mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground font-body text-[15px] leading-relaxed">{s.body}</p>
+                  <p className="text-muted-foreground font-body text-body-sm leading-relaxed">{s.body}</p>
                 </div>
               ))}
             </div>

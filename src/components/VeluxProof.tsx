@@ -61,14 +61,14 @@ const VeluxProof = () => {
             <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white shadow-sm border border-white/10">
               <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
             </div>
-            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
+            <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
               VELUX Certified Installer
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-5 text-balance">
             Manufacturer-accredited. Locally accountable.
           </h2>
-          <p className="text-dark-section-foreground/90 text-[18px] md:text-[22px] leading-relaxed font-bold">
+          <p className="text-dark-section-foreground/90 text-body md:text-body-lg leading-relaxed font-bold">
             A VELUX Certified Installer is a contractor trained and accredited by VELUX to install their skylights to specification. That accreditation is what unlocks VELUX's installation warranty, not just the product warranty.
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ const VeluxProof = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
                 What it means for you
               </span>
             </div>
@@ -98,7 +98,7 @@ const VeluxProof = () => {
                   <h3 className="text-base font-heading font-bold text-dark-section-foreground mb-1.5 leading-tight">
                     {b.title}
                   </h3>
-                  <p className="text-[16px] text-dark-section-foreground/95 leading-relaxed font-medium">{b.body}</p>
+                  <p className="text-body-sm text-dark-section-foreground/95 leading-relaxed font-medium">{b.body}</p>
                 </div>
               ))}
             </div>
@@ -115,7 +115,7 @@ const VeluxProof = () => {
             <div className="border border-[hsl(var(--highland-gold)/0.3)] bg-dark-section-foreground/[0.03] p-6 md:p-8 h-full flex flex-col">
               <div className="flex items-center gap-2 mb-1">
                 <ShieldCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
                   Skylight Warranty
                 </span>
               </div>
@@ -128,14 +128,14 @@ const VeluxProof = () => {
                     key={w.label}
                     className="flex items-baseline justify-between gap-4 pb-3 border-b border-dark-section-foreground/10 last:border-0 last:pb-0"
                   >
-                    <span className="text-[16px] text-dark-section-foreground/85 font-body font-medium">{w.label}</span>
-                    <span className="text-[16px] font-heading font-bold text-[hsl(var(--gold-ink))] whitespace-nowrap">
+                    <span className="text-body-sm text-dark-section-foreground/85 font-body font-medium">{w.label}</span>
+                    <span className="text-body-sm font-heading font-bold text-[hsl(var(--gold-ink))] whitespace-nowrap">
                       {w.value}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-[11px] text-dark-section-foreground/95 font-body leading-relaxed">
+              <p className="text-caption text-dark-section-foreground/95 font-body leading-relaxed">
                 Coverage reflects standard VELUX warranty terms on deck-mounted skylights. Highlander will review applicable product and workmanship details with you before construction begins; full terms documented at handoff.
               </p>
             </div>
@@ -152,7 +152,7 @@ const VeluxProof = () => {
         >
           <div className="max-w-xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">Schedule a skylight inspection.</h3>
-            <p className="text-dark-section-foreground/95 text-[17px] md:text-[20px] font-bold">
+            <p className="text-dark-section-foreground/95 text-body-sm md:text-body font-bold">
               Free, no-pressure assessment of your existing skylights: leak diagnosis, flashing review, and replacement recommendations in writing.
             </p>
           </div>
@@ -165,7 +165,7 @@ const VeluxProof = () => {
             </Link>
             <a
               href="tel:+18285247773"
-              className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold text-[14px] px-7 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-colors"
+              className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold text-body-xs px-7 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-colors"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" /> (828) 524-7773
             </a>

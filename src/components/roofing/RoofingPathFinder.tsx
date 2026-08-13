@@ -70,7 +70,7 @@ const RoofingPathFinder = () => {
               type="button"
               onClick={() => setActive(active === i ? null : i)}
               aria-pressed={active === i}
-              className={`text-left w-full bg-card border px-5 py-4 font-body text-[15px] transition-all ${
+              className={`text-left w-full bg-card border px-5 py-4 font-body text-body-sm transition-all ${
                 active === i
                   ? "border-primary/50 shadow-sm text-foreground"
                   : "border-border hover:border-primary/25 text-foreground/90"

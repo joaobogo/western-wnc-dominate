@@ -43,7 +43,7 @@ const MaterialComparison = () => (
           <thead>
             <tr className="border-b border-border">
               {["Material", "Best for", "Expected life", "Upside", "Tradeoff"].map((h) => (
-                <th key={h} scope="col" className="py-3 pr-5 text-[11px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                <th key={h} scope="col" className="py-3 pr-5 text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   {h}
                 </th>
               ))}
@@ -53,10 +53,10 @@ const MaterialComparison = () => (
             {rows.map((r) => (
               <tr key={r.material} className="border-b border-border align-top">
                 <th scope="row" className="py-5 pr-5 font-heading font-bold text-foreground text-sm w-[18%]">{r.material}</th>
-                <td className="py-5 pr-5 text-[13px] font-body text-muted-foreground w-[20%]">{r.best}</td>
-                <td className="py-5 pr-5 text-[13px] font-body text-muted-foreground w-[16%]">{r.lifespan}</td>
-                <td className="py-5 pr-5 text-[13px] font-body text-muted-foreground w-[23%]">{r.upside}</td>
-                <td className="py-5 text-[13px] font-body text-foreground/80 w-[23%]">{r.tradeoff}</td>
+                <td className="py-5 pr-5 text-body-xs font-body text-muted-foreground w-[20%]">{r.best}</td>
+                <td className="py-5 pr-5 text-body-xs font-body text-muted-foreground w-[16%]">{r.lifespan}</td>
+                <td className="py-5 pr-5 text-body-xs font-body text-muted-foreground w-[23%]">{r.upside}</td>
+                <td className="py-5 text-body-xs font-body text-foreground/80 w-[23%]">{r.tradeoff}</td>
               </tr>
             ))}
           </tbody>
@@ -68,10 +68,10 @@ const MaterialComparison = () => (
         {rows.map((r) => (
           <div key={r.material} className="bg-card border border-border rounded-sm p-5">
             <h3 className="font-heading font-bold text-foreground text-base mb-3">{r.material}</h3>
-            <dl className="space-y-2.5 text-[13px] font-body">
+            <dl className="space-y-2.5 text-body-xs font-body">
               {[["Best for", r.best], ["Expected life", r.lifespan], ["Upside", r.upside], ["Tradeoff", r.tradeoff]].map(([k, v]) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground font-semibold">{k}</dt>
+                  <dt className="text-caption uppercase tracking-[0.12em] text-muted-foreground font-semibold">{k}</dt>
                   <dd className="text-foreground/85 leading-relaxed">{v}</dd>
                 </div>
               ))}
@@ -80,7 +80,7 @@ const MaterialComparison = () => (
         ))}
       </div>
 
-      <p className="text-center text-muted-foreground text-[13px] font-body mt-8 max-w-xl mx-auto">
+      <p className="text-center text-muted-foreground text-body-xs font-body mt-8 max-w-xl mx-auto">
         Material coverage follows each manufacturer's published terms for the product line we specify, and your written scope names the exact product.
       </p>
     </div>

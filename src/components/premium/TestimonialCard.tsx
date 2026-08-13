@@ -67,7 +67,7 @@ export const TestimonialCard = ({
         <span
           className={cn(
             "font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-none",
-            isCompact ? "text-[8px] px-2 py-0.5" : "text-[9px]",
+            isCompact ? "text-caption px-2 py-0.5" : "text-caption",
             categoryColors[category],
           )}
         >
@@ -84,7 +84,7 @@ export const TestimonialCard = ({
       <p
         className={cn(
           "leading-[1.8] font-body relative z-10",
-          isCompact ? "text-[13px] line-clamp-4 mb-4" : "text-[15px] md:text-base mb-7",
+          isCompact ? "text-body-xs line-clamp-4 mb-4" : "text-body-sm md:text-base mb-7",
           isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-foreground",
         )}
       >
@@ -99,7 +99,7 @@ export const TestimonialCard = ({
             isDark ? "bg-[hsl(var(--dark-section-foreground)/0.04)]" : "bg-secondary/50",
           )}
         >
-          <p className={cn("text-[11px] font-body font-semibold uppercase tracking-[0.1em] mb-1", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
+          <p className={cn("text-caption font-body font-semibold uppercase tracking-[0.1em] mb-1", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
             Project Outcome
           </p>
           <p className={cn("text-sm font-body font-medium", isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-foreground/80")}>
@@ -110,7 +110,7 @@ export const TestimonialCard = ({
 
       {/* Compact outcome */}
       {outcome && isCompact && (
-        <p className={cn("text-[11px] font-body font-medium mb-4 leading-snug", isDark ? "text-[hsl(var(--highland-gold)/0.9)]" : "text-primary/80")}>
+        <p className={cn("text-caption font-body font-medium mb-4 leading-snug", isDark ? "text-[hsl(var(--highland-gold)/0.9)]" : "text-primary/80")}>
           {outcome}
         </p>
       )}
@@ -121,7 +121,7 @@ export const TestimonialCard = ({
           <div
             className={cn(
               "rounded-none flex items-center justify-center font-heading font-bold",
-              isCompact ? "w-8 h-8 text-[10px]" : "w-11 h-11 text-sm",
+              isCompact ? "w-8 h-8 text-caption" : "w-11 h-11 text-sm",
               isDark ? "bg-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--gold-ink))]" : "bg-primary/8 text-primary",
             )}
           >
@@ -131,13 +131,13 @@ export const TestimonialCard = ({
             <p className={cn("font-heading font-bold", isCompact ? "text-xs" : "text-sm", isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground")}>
               {name}
             </p>
-            <p className={cn("font-body", isCompact ? "text-[10px]" : "text-xs", isDark ? "text-[hsl(var(--dark-section-foreground)/0.4)]" : "text-muted-foreground")}>
+            <p className={cn("font-body", isCompact ? "text-caption" : "text-xs", isDark ? "text-[hsl(var(--dark-section-foreground)/0.4)]" : "text-muted-foreground")}>
               {location}
             </p>
           </div>
         </div>
         {project && !isCompact && (
-          <span className={cn("text-[10px] font-body font-medium max-w-[140px] text-right leading-tight", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
+          <span className={cn("text-caption font-body font-medium max-w-[140px] text-right leading-tight", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
             {project}
           </span>
         )}

@@ -150,7 +150,7 @@ const StickyMobileCTA = () => {
                       className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                     >
                       <Phone className="w-4 h-4" />
-                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">
                         {action.primaryLabel}
                       </span>
                     </a>
@@ -160,7 +160,7 @@ const StickyMobileCTA = () => {
                       className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                     >
                       <FileText className="w-4 h-4" />
-                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.06em]">Estimate</span>
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Estimate</span>
                     </Link>
                   </>
                 ) : (
@@ -174,7 +174,7 @@ const StickyMobileCTA = () => {
                       className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                     >
                       <FileText className="w-4 h-4" />
-                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
                     </Link>
                     <a
                       href={action.secondaryHref}
@@ -182,7 +182,7 @@ const StickyMobileCTA = () => {
                       className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                     >
                       <Phone className="w-4 h-4" />
-                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
                     </a>
                   </>
                 )}
@@ -221,7 +221,7 @@ const StickyMobileCTA = () => {
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
                     <div className="p-4 border-b border-border">
                       <p className="text-sm font-heading font-bold text-foreground mb-0.5">Ready to start?</p>
-                      <p className="text-[11px] text-muted-foreground font-body">Begin a project conversation with our team.</p>
+                      <p className="text-caption text-muted-foreground font-body">Begin a project conversation with our team.</p>
                     </div>
                     <div className="p-2 space-y-0.5">
                       <Link
@@ -233,7 +233,7 @@ const StickyMobileCTA = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Start a Project</p>
-                          <p className="text-[10px] text-muted-foreground font-body">No-obligation consultation</p>
+                          <p className="text-caption text-muted-foreground font-body">No-obligation consultation</p>
                         </div>
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" />
                       </Link>
@@ -246,7 +246,7 @@ const StickyMobileCTA = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Call Direct</p>
-                          <p className="text-[10px] text-muted-foreground font-body">(828) 524-7773</p>
+                          <p className="text-caption text-muted-foreground font-body">(828) 524-7773</p>
                         </div>
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" />
                       </a>

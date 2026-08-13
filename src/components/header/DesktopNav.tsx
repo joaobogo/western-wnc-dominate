@@ -59,7 +59,7 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
           key={link.label}
           to={link.href}
           {...preloadHandlers(link.href)}
-          className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+          className={`relative text-body-sm font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
             isActive(link.href)
               ? "text-heritage-charcoal bg-black/5"
               : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"

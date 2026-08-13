@@ -130,7 +130,7 @@ const LayoutsPlanning = () => {
                 className="flex items-center gap-4 mb-8"
               >
                 <div className="w-10 h-[1px] bg-[hsl(var(--highland-gold))]" />
-                <span className="text-[11px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Pre-Construction & Design Support</span>
+                <span className="text-caption font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Pre-Construction & Design Support</span>
               </motion.div>
 
               <motion.h1 
@@ -346,7 +346,7 @@ const LayoutsPlanning = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
                         <h3 className="font-heading font-bold text-lg">{point.title}</h3>
                       </div>
-                      <p className="text-[14px] text-muted-foreground leading-relaxed font-body">{point.desc}</p>
+                      <p className="text-body-xs text-muted-foreground leading-relaxed font-body">{point.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -370,8 +370,8 @@ const LayoutsPlanning = () => {
                           <step.icon className="w-4 h-4" />
                         </div>
                         <div>
-                          <h3 className="font-heading font-bold text-[16px] mb-1">{step.title}</h3>
-                          <p className="text-[13px] text-muted-foreground font-body leading-relaxed">{step.desc}</p>
+                          <h3 className="font-heading font-bold text-body-sm mb-1">{step.title}</h3>
+                          <p className="text-body-xs text-muted-foreground font-body leading-relaxed">{step.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -392,7 +392,7 @@ const LayoutsPlanning = () => {
               <ScrollReveal variant="fade">
                 <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-white/10 bg-white/5 backdrop-blur-sm">
                   <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Built for the Blue Ridge</span>
+                  <span className="text-caption font-bold uppercase tracking-widest">Built for the Blue Ridge</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-10 leading-[1.1]">
                   Planning for the <span className="text-[hsl(var(--gold-ink))]">Unique Physics</span> of the Mountains.

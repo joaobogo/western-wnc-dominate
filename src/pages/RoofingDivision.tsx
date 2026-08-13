@@ -314,21 +314,21 @@ const RoofingDivision = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                   <div className="flex flex-col">
-                    <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
+                    <span className="text-body-xs font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                    <span className="text-caption font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
                     <Home className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">
+                  <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">
                     Authority Since 2017
                   </span>
                 </div>
               </motion.div>
 
-              <h1 className="order-1 md:order-none mb-4 md:mb-8 text-[34px] md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight">
+              <h1 className="order-1 md:order-none mb-4 md:mb-8 text-heading md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight">
                 <span className="block overflow-hidden mb-2">
                   <motion.span
                     className="block"
@@ -355,7 +355,7 @@ const RoofingDivision = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1 }}
-                className="order-2 md:order-none text-[17px] md:text-[22px] text-primary-foreground/90 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
+                className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground/90 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
                 <span className="md:hidden">Wind, ice, and ridgeline exposure end mountain roofs early. We inspect, spec the right system, and put scope and price in writing first.</span>
                 <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.</span>
@@ -412,7 +412,7 @@ const RoofingDivision = () => {
                 >
                   <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />
                   <span className="text-xs font-heading font-semibold text-primary-foreground/85 mb-0.5">{item.label}</span>
-                  <span className="text-[10px] text-primary-foreground/95 font-body">{item.detail}</span>
+                  <span className="text-caption text-primary-foreground/95 font-body">{item.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -557,7 +557,7 @@ const RoofingDivision = () => {
                         <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center group-hover:bg-primary/14 transition-colors">
                           <service.icon className="w-5 h-5 text-primary" />
                         </div>
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-primary/80 group-hover:text-primary/80 transition-opacity">
+                        <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] text-primary/80 group-hover:text-primary/80 transition-opacity">
                           Roofing
                         </span>
                       </div>
@@ -565,16 +565,16 @@ const RoofingDivision = () => {
                       <h3 className="text-lg font-heading font-bold text-foreground mb-2.5 group-hover:text-primary transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-[13px] leading-relaxed font-body font-semibold text-foreground/85 mb-2">
+                      <p className="text-body-xs leading-relaxed font-body font-semibold text-foreground/85 mb-2">
                         {service.problem}
                       </p>
-                      <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-5 flex-grow">
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-5 flex-grow">
                         {service.description}
                       </p>
 
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {service.features.map((f) => (
-                          <span key={f} className="text-[10px] font-body font-medium text-primary/80 bg-primary/5 px-2 py-0.5 rounded-none">
+                          <span key={f} className="text-caption font-body font-medium text-primary/80 bg-primary/5 px-2 py-0.5 rounded-none">
                             {f}
                           </span>
                         ))}
@@ -671,7 +671,7 @@ const RoofingDivision = () => {
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">
+                    <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">
                       {item.detail}
                     </p>
                   </motion.div>
@@ -712,21 +712,21 @@ const RoofingDivision = () => {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-heading font-bold text-base text-foreground">{mat.name}</h3>
-                    <span className="text-[10px] font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-none">
+                    <span className="text-caption font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-none">
                       {mat.lifespan}
                     </span>
                   </div>
-                  <p className="text-muted-foreground text-[13px] font-body leading-relaxed mb-4">
+                  <p className="text-muted-foreground text-body-xs font-body leading-relaxed mb-4">
                     {mat.detail}
                   </p>
                   <div className="flex items-center gap-4 pt-3 border-t border-border/60">
                     <div>
-                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Brand</span>
+                      <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Brand</span>
                       <p className="text-xs font-body font-medium text-muted-foreground">{mat.brand}</p>
                     </div>
                     <div className="h-6 w-px bg-border" />
                     <div>
-                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Best For</span>
+                      <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Best For</span>
                       <p className="text-xs font-body font-medium text-muted-foreground">{mat.best}</p>
                     </div>
                   </div>
@@ -776,7 +776,7 @@ const RoofingDivision = () => {
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
                     {step.description}
                   </p>
                 </motion.div>
@@ -832,7 +832,7 @@ const RoofingDivision = () => {
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">
                         {factor.title}
                       </h3>
-                      <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
                         {factor.detail}
                       </p>
                     </div>
@@ -889,7 +889,7 @@ const RoofingDivision = () => {
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-xl text-foreground">Targeted Repair</h3>
-                      <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-primary/80">When it makes sense</span>
+                      <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] text-primary/80">When it makes sense</span>
                     </div>
                   </div>
                   <ul className="space-y-3 mb-6">
@@ -902,14 +902,14 @@ const RoofingDivision = () => {
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground text-[13px] font-body leading-relaxed">{item}</span>
+                        <span className="text-muted-foreground text-body-xs font-body leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="pt-5 border-t border-border">
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Typical range</span>
+                        <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Typical range</span>
                         <p className="text-lg font-heading font-bold text-foreground">Scope-based pricing</p>
                       </div>
                       <Link to="/roofing/roof-repair" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary font-body hover:gap-2.5 transition-all">
@@ -936,7 +936,7 @@ const RoofingDivision = () => {
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-xl text-foreground">Full Replacement</h3>
-                      <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold)/0.6)]">When it's time</span>
+                      <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold)/0.6)]">When it's time</span>
                     </div>
                   </div>
                   <ul className="space-y-3 mb-6">
@@ -949,14 +949,14 @@ const RoofingDivision = () => {
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <Target className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground text-[13px] font-body leading-relaxed">{item}</span>
+                        <span className="text-muted-foreground text-body-xs font-body leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="pt-5 border-t border-border">
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Typical range</span>
+                        <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Typical range</span>
                         <p className="text-lg font-heading font-bold text-foreground">Detailed grouped-cost proposal</p>
                       </div>
                       <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--gold-ink))] font-body hover:gap-2.5 transition-all">
@@ -1049,9 +1049,9 @@ const RoofingDivision = () => {
               >
                 <img width={1600} height={1067} decoding="async" src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute top-4 left-4 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
+                <div className="absolute top-4 left-4 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/85 mb-1 block">{galleryItems[0].category}</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 mb-1 block">{galleryItems[0].category}</span>
                   <h3 className="font-heading font-bold text-white text-lg md:text-xl">{galleryItems[0].title}</h3>
                 </div>
               </motion.div>
@@ -1069,7 +1069,7 @@ const RoofingDivision = () => {
                   >
                     <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute top-2 left-2 text-[8px] font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
+                    <div className="absolute top-2 left-2 text-caption font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
                     <div className="absolute bottom-0 left-0 right-0 p-3">
                       <h3 className="font-heading font-semibold text-white text-xs">{item.title}</h3>
                     </div>
@@ -1109,7 +1109,7 @@ const RoofingDivision = () => {
                     className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
                   >
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">
                         {faq.q}
                       </span>
                     </AccordionTrigger>

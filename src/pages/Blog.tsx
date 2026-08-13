@@ -112,14 +112,14 @@ const Blog = () => {
                 >
                   <div className="flex items-center gap-5 mb-8">
                     <div className="flex flex-col">
-                      <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
-                      <span className="text-[11px] md:text-[12px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em]">Knowledge Base</span>
+                      <span className="text-body-sm md:text-body font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
+                      <span className="text-caption md:text-body-xs font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em]">Knowledge Base</span>
                     </div>
                     <div className="h-px w-12 bg-white/20" />
                   </div>
                   <div className="flex items-center gap-3 mb-5">
                     <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                    <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Insights & Resources</span>
+                    <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Insights & Resources</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
                     Mountain-Specific<br />
@@ -158,7 +158,7 @@ const Blog = () => {
                         <seasonal.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <div>
-                        <p className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))]">{seasonal.season} Advisory</p>
+                        <p className="text-caption md:text-body-xs font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))]">{seasonal.season} Advisory</p>
                         <p className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium">Timely for WNC homeowners</p>
                       </div>
                     </div>
@@ -170,13 +170,13 @@ const Blog = () => {
                           to={`/blog/${post.slug}`}
                           className="group flex items-center justify-between py-2 border-b border-[hsl(var(--dark-section-foreground)/0.06)] last:border-0"
                         >
-                          <span className="text-[15px] text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors line-clamp-1 pr-2">{post.title}</span>
+                          <span className="text-body-sm text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors line-clamp-1 pr-2">{post.title}</span>
                           <ChevronRight className="w-3 h-3 text-[hsl(var(--dark-section-foreground)/0.2)] flex-shrink-0" />
                         </Link>
                       ))}
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 mt-4 text-[hsl(var(--dark-section-foreground)/0.5)] text-[13px] font-body font-bold">
+                  <div className="flex items-center gap-4 mt-4 text-[hsl(var(--dark-section-foreground)/0.5)] text-body-xs font-body font-bold">
                     <span>{blogPosts.length} articles</span>
                     <span>·</span>
                     <span>{categories.length - 1} categories</span>
@@ -223,7 +223,7 @@ const Blog = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.4)] to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 lg:p-12">
-                        <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
+                        <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
                           {heroFeatured.category}
                         </span>
                         <h2 className="font-heading font-bold text-[hsl(var(--dark-section-foreground))] text-2xl md:text-3xl mb-4 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
@@ -266,11 +266,11 @@ const Blog = () => {
                           </div>
                           <div className="p-5 md:p-6 flex-1">
                             <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3 flex-wrap">
-                              <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/15 text-primary">
+                              <span className="text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/15 text-primary">
                                 {post.category}
                               </span>
                               {isRecent(post.date) && (
-                                <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))]">
+                                <span className="text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))]">
                                   New
                                 </span>
                               )}
@@ -325,7 +325,7 @@ const Blog = () => {
                         <config.icon className="w-4 h-4 text-primary" />
                       </div>
                       <h3 className="font-heading font-semibold text-sm text-foreground mb-0.5">{config.label}</h3>
-                      <p className="text-[11px] text-muted-foreground font-body">{count} article{count !== 1 ? "s" : ""}</p>
+                      <p className="text-caption text-muted-foreground font-body">{count} article{count !== 1 ? "s" : ""}</p>
                     </motion.button>
                   );
                 })}
@@ -436,7 +436,7 @@ const Blog = () => {
                       key={order}
                       onClick={() => setSortOrder(order)}
                       aria-pressed={sortOrder === order}
-                      className={`px-3 py-1.5 text-[10px] font-body font-bold uppercase tracking-[0.14em] rounded-sm transition-all ${
+                      className={`px-3 py-1.5 text-caption font-body font-bold uppercase tracking-[0.14em] rounded-sm transition-all ${
                         sortOrder === order
                           ? "bg-primary text-primary-foreground"
                           : "text-muted-foreground hover:text-foreground"
@@ -487,11 +487,11 @@ const Blog = () => {
                         </div>
                         <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center bg-card">
                           <div className="flex items-center gap-2 mb-3">
-                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
+                            <span className="text-caption font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
                               {filtered[0].category}
                             </span>
                             {isRecent(filtered[0].date) && (
-                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
+                              <span className="text-caption font-body font-bold uppercase tracking-[0.18em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
                                 New
                               </span>
                             )}
@@ -533,11 +533,11 @@ const Blog = () => {
                         </div>
                         <div className="p-6 flex-1 flex flex-col bg-card">
                           <div className="flex items-center gap-2 mb-3">
-                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
+                            <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
                               {post.category}
                             </span>
                             {isRecent(post.date) && (
-                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
+                              <span className="text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
                                 New
                               </span>
                             )}
@@ -545,15 +545,15 @@ const Blog = () => {
                           <h3 className="font-heading font-bold text-foreground text-lg mb-3 group-hover:text-primary transition-colors leading-tight">
                             {post.title}
                           </h3>
-                          <p className="text-muted-foreground text-[13px] line-clamp-2 mb-5 leading-relaxed font-body">
+                          <p className="text-muted-foreground text-body-xs line-clamp-2 mb-5 leading-relaxed font-body">
                             {post.excerpt}
                           </p>
-                          <div className="mt-auto pt-4 border-t border-border flex items-center justify-between text-[11px] text-muted-foreground font-body">
+                          <div className="mt-auto pt-4 border-t border-border flex items-center justify-between text-caption text-muted-foreground font-body">
                             <span className="flex items-center gap-2">
                               <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {formatPostDate(post.date)}</span>
                               <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
                             </span>
-                            <span className="font-semibold text-primary group-hover:gap-1.5 transition-all flex items-center gap-1 uppercase tracking-wider text-[10px]">Read More <ArrowRight className="w-3 h-3" /></span>
+                            <span className="font-semibold text-primary group-hover:gap-1.5 transition-all flex items-center gap-1 uppercase tracking-wider text-caption">Read More <ArrowRight className="w-3 h-3" /></span>
                           </div>
                         </div>
                       </Link>
@@ -605,7 +605,7 @@ const Blog = () => {
                   Subscribe
                 </button>
               </form>
-              <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-[11px] mt-3 font-body">Unsubscribe anytime. We respect your inbox.</p>
+              <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-caption mt-3 font-body">Unsubscribe anytime. We respect your inbox.</p>
             </motion.div>
           </div>
         </section>

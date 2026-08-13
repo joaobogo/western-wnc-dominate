@@ -15,7 +15,7 @@ interface Props {
 const BlogMidArticleCTA = ({ cta, town }: Props) => (
   <aside className="my-10 border-l-2 border-[hsl(var(--highland-gold))] bg-secondary/50 rounded-sm p-5 md:p-6">
     {town && (
-      <span className="inline-flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.14em] text-muted-foreground mb-2">
+      <span className="inline-flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.14em] text-muted-foreground mb-2">
         <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" /> {town}, NC
       </span>
     )}

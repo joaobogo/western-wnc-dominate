@@ -50,7 +50,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.45)] via-transparent to-transparent" />
                 {o.badge && (
-                  <span className="absolute top-2 left-2 bg-[hsl(var(--heritage-charcoal)/0.78)] backdrop-blur-sm text-white text-[9.5px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-1 rounded-sm">
+                  <span className="absolute top-2 left-2 bg-[hsl(var(--heritage-charcoal)/0.78)] backdrop-blur-sm text-white text-caption font-body font-semibold uppercase tracking-[0.14em] px-2 py-1 rounded-sm">
                     {o.badge}
                   </span>
                 )}
@@ -63,7 +63,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
             )}
             <div className="p-4 bg-card">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[16px] md:text-[18px] font-heading font-bold text-foreground tracking-tight leading-tight">
+                <span className="text-body-sm md:text-body font-heading font-bold text-foreground tracking-tight leading-tight">
                   {o.label}
                 </span>
                 {!o.image && active && (
@@ -71,7 +71,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
                 )}
               </div>
               {o.sub && (
-                <p className="text-[11.5px] text-muted-foreground mt-1 font-body leading-snug">{o.sub}</p>
+                <p className="text-caption text-muted-foreground mt-1 font-body leading-snug">{o.sub}</p>
               )}
             </div>
           </button>

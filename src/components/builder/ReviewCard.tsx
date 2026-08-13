@@ -22,20 +22,20 @@ const ReviewCard = ({ rows, children }: Props) => {
           <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[hsl(var(--heritage-green))]">
             <Check className="w-3 h-3 text-white" strokeWidth={3} />
           </span>
-          <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--heritage-green))]">
+          <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--heritage-green))]">
             Your project brief
           </span>
         </div>
         <dl className="divide-y divide-[hsl(var(--heritage-green)/0.12)]">
           {filled.length === 0 && (
-            <div className="px-5 py-4 text-[12.5px] font-body text-foreground/80">No selections yet.</div>
+            <div className="px-5 py-4 text-body-xs font-body text-foreground/80">No selections yet.</div>
           )}
           {filled.map((r) => (
             <div key={r.label} className="px-5 py-3 grid grid-cols-[120px,1fr] sm:grid-cols-[160px,1fr] gap-3 items-start">
-              <dt className="text-[10.5px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground pt-0.5">
+              <dt className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground pt-0.5">
                 {r.label}
               </dt>
-              <dd className="text-[13px] font-body text-foreground/90 leading-snug">
+              <dd className="text-body-xs font-body text-foreground/90 leading-snug">
                 {Array.isArray(r.value) ? r.value.join(" · ") : r.value}
               </dd>
             </div>

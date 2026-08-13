@@ -85,7 +85,7 @@ const ProofStrip = () => {
                   className="group relative bg-card border border-border rounded-none p-5 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift overflow-hidden h-full spotlight-hover"
                 >
                   {/* Stat watermark */}
-                  <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
+                  <div className="absolute -right-1 -top-2 text-heading-lg font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
                     {pillar.stat}
                   </div>
 
@@ -100,7 +100,7 @@ const ProofStrip = () => {
                     <h3 className="text-sm font-heading font-bold text-foreground mb-2.5 leading-snug tracking-tight">
                       {pillar.title}
                     </h3>
-                    <p className="text-muted-foreground text-[15px] leading-[1.7] font-body mb-5">
+                    <p className="text-muted-foreground text-body-sm leading-[1.7] font-body mb-5">
                       {pillar.copy}
                     </p>
 
@@ -109,7 +109,7 @@ const ProofStrip = () => {
                         value={pillar.stat}
                         className="text-base font-heading font-bold text-[hsl(var(--gold-ink))] leading-none"
                       />
-                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-[0.12em]">
+                      <span className="text-caption font-body text-muted-foreground uppercase tracking-[0.12em]">
                         {pillar.statLabel}
                       </span>
                     </div>
