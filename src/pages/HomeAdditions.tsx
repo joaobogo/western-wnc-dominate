@@ -29,6 +29,7 @@ import proj3 from "@/assets/gallery/asphalt-006.webp";
 import proj4 from "@/assets/gallery/cedar-002.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -558,6 +559,7 @@ const HomeAdditions = () => {
         />
         <ServiceInternalLinks title="Home Additions" slug="additions" />
       </main>
+      <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

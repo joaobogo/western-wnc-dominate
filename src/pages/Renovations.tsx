@@ -25,6 +25,7 @@ import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -438,6 +439,7 @@ const Renovations = () => {
         />
         <ServiceInternalLinks title="Renovations" slug="renovations" />
       </main>
+      <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

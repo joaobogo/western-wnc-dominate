@@ -13,6 +13,7 @@ import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getDivisionTheme } from "@/lib/division-theme";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -217,6 +218,7 @@ const ServicePage = () => {
           </div>
         </section>
 
+        <TieredOffer context="service" />
         <CommonConcerns />
         {service.division !== "construction" && (
           <>

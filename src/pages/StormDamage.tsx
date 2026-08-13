@@ -19,6 +19,7 @@ import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostOfWaiting from "@/components/conversion/CostOfWaiting";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
@@ -589,6 +590,7 @@ const StormDamage = () => {
       </main>
       <RealWorkWidget />
         <CostOfWaiting variant="storm" />
+        <TieredOffer context="storm-damage" primaryLabel="Get My Storm Damage Assessed" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="storm damage" />
         <SchedulingReality serviceLabel="storm damage" />

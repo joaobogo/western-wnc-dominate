@@ -18,6 +18,7 @@ import heroImg from "@/assets/gallery/metal-006.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -501,6 +502,7 @@ const CommercialRoofing = () => {
         <ServiceInternalLinks title="Commercial Roofing" slug="commercial-roofing" />
       </main>
       <RealWorkWidget />
+        <TieredOffer context="commercial-roofing" primaryLabel="Get My Building Assessed" />
         <CommonConcerns />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">

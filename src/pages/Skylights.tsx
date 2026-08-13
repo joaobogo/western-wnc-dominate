@@ -17,6 +17,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -248,6 +249,7 @@ const Skylights = () => {
         <ServiceInternalLinks title="Skylights" slug="skylights" />
       </main>
 
+        <TieredOffer context="skylights" primaryLabel="Get My Skylight Assessed" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="skylight" />
         <SchedulingReality serviceLabel="skylight" />

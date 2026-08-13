@@ -27,6 +27,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -969,6 +970,7 @@ const ResidentialRoofing = () => {
       </main>
 
       <RealWorkWidget />
+        <TieredOffer context="residential-roofing" primaryLabel="Get My Roof Assessed" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="residential roofing" />
         <SchedulingReality serviceLabel="residential roofing" />
