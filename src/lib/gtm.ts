@@ -173,6 +173,44 @@ function resolveTown(el: Element | null): string | null {
   return null;
 }
 
+/* ---------- CTA position ----------
+ * Every cta_click carries WHERE on the page the click happened so CRO tests
+ * can compare hero vs mid-page vs closing CTA performance:
+ *   - `cta_position`: explicit `data-gtm-position` if present, otherwise a
+ *     fold bucket derived from the element's offset (above_fold / mid_page /
+ *     page_bottom / sticky_bar).
+ *   - `cta_viewport_pct`: how far down the document the CTA sits (0-100).
+ */
+export function resolveCtaPosition(el: Element | null): {
+  cta_position: string;
+  cta_viewport_pct: number | null;
+} {
+  if (!el || typeof window === "undefined") return { cta_position: "unknown", cta_viewport_pct: null };
+
+  let node: Element | null = el;
+  while (node) {
+    const explicit = node.getAttribute?.("data-gtm-position");
+    if (explicit) return { cta_position: explicit, cta_viewport_pct: null };
+    node = node.parentElement;
+  }
+
+  const rect = el.getBoundingClientRect();
+  const style = window.getComputedStyle(el);
+  if (style.position === "fixed" || el.closest("[data-sticky-cta]")) {
+    return { cta_position: "sticky_bar", cta_viewport_pct: null };
+  }
+
+  const docHeight = Math.max(document.documentElement.scrollHeight, 1);
+  const absoluteTop = rect.top + window.scrollY;
+  const pct = Math.min(100, Math.max(0, Math.round((absoluteTop / docHeight) * 100)));
+
+  let bucket = "mid_page";
+  if (absoluteTop < window.innerHeight) bucket = "above_fold";
+  else if (pct >= 80) bucket = "page_bottom";
+
+  return { cta_position: bucket, cta_viewport_pct: pct };
+}
+
 /* ---------- Town-scoped source attribution ----------
  * A visitor who taps a CTA inside a town FAQ block usually converts on the
  * next page (the form). We stash the originating context in sessionStorage so
