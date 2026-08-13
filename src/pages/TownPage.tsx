@@ -423,6 +423,9 @@ const TownPage = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a Western NC project advisor" },
           ]}
         />
+
+        {/* 8. CLOSING CTA BAND — town-mapped estimate + phone number */}
+        <TownEstimateCTA town={town} />
       </main>
       <ConversionTrustBlock variant="band" town={town.name} />
       <Footer />
