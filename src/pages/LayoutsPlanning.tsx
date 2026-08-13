@@ -82,7 +82,7 @@ const layoutFaqs = [
 
 const LayoutsPlanning = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <SEOHead 
         title="Design | Layouts & Preconstruction Support WNC"
         description="Professional layout support and project planning for Western North Carolina construction. Additions, porches, and outdoor living planned with intention."

@@ -53,7 +53,7 @@ const NotFound = () => {
         path={location.pathname}
         noindex
       />
-      <div className="flex min-h-screen items-center justify-center bg-muted">
+      <div className="flex min-h-dvh items-center justify-center bg-muted">
         <div className="mx-auto max-w-2xl px-6 py-16 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">404 · Page Not Found</p>
           <h1 className="mb-4 text-4xl font-bold">We couldn't find that page</h1>

@@ -468,7 +468,7 @@ export default function ConstructionConsultation() {
         ])}
       />
       <Header />
-      <main id="main-content" className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-screen">
+      <main id="main-content" className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-dvh">
         <div className="container-tight max-w-2xl">
           {/* Header */}
           <div className="text-center mb-8">
