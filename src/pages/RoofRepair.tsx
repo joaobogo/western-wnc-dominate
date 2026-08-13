@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import PageContext from "@/components/PageContext";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.webp";
@@ -120,7 +121,10 @@ const RoofRepair = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Roof Repair", url: "/roofing/roof-repair" }]} />
       <main id="main-content">
-        {/* ─── HERO ─── */}
+        <ServicePageTemplate
+          alternateSurfaces={false}
+          hero={
+            <>
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <HeroImage src={asphalt003} avifSrcSet={asphalt003Avif} webpSrcSet={asphalt003Webp} alt="Roof repair on a residential home in Western North Carolina" className="w-full h-full object-cover" />
@@ -189,22 +193,19 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
+            </>
+          }
+          quickAnswer={
+            <>
         <AnswerBlock
           question="What does roof repair cover, and when is repair the right call?"
           answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the whole roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander assesses the roof first and tells you plainly whether repair or replacement makes more sense."
           points={["Leak diagnosis before any work is quoted", "Flashing, penetrations, and storm damage repairs", "Honest repair-versus-replace recommendation"]}
         />
-
-        {/* ─── EMERGENCY-INTENT: WHAT TO DO RIGHT NOW ─── */}
-        <UrgentActionSteps variant="repair" />
-
-        {/* ─── PHOTO PROOF OF SIMILAR REPAIRS ─── */}
-        <RepairPhotoProof variant="repair" />
-
-        {/* ─── INSURANCE DOCUMENTATION HELP ─── */}
-        <InsuranceDocHelp />
-
-        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
+            </>
+          }
+          whatWeDo={
+            <>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-2xl">
             <div className="mb-6 text-center">
@@ -222,8 +223,6 @@ const RoofRepair = () => {
             />
           </div>
         </section>
-
-        {/* ─── OPENING STATEMENT — Clinical diagnostic style ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
@@ -248,8 +247,6 @@ const RoofRepair = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── COMMON PROBLEMS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -273,8 +270,6 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── WHY SMALL PROBLEMS BECOME BIG PROBLEMS ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
@@ -305,8 +300,6 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -326,8 +319,6 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── REPAIR PHILOSOPHY ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
@@ -351,8 +342,6 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -372,34 +361,6 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── REPAIR PROCESS ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Repair Process</span>
-              <h2 className="section-heading mb-4">How a Repair<br className="hidden md:block" /> Works With Highlander.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                A structured, transparent process from your first call to verified resolution. No guesswork, no surprises.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {processSteps.map((step, i) => (
-                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className={`group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift ${i === 4 ? 'md:col-start-1 lg:col-start-2' : ''}`}>
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
-                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
-                    <step.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── REPAIR VS. REPLACEMENT GUIDANCE ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -463,9 +424,10 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── FAQS ─── */}
-        {/* ─── ONGOING MAINTENANCE ─── */}
+            </>
+          }
+          whatsIncluded={
+            <>
         <section className="section-padding bg-muted/20">
           <div className="container-tight max-w-4xl">
             <div className="text-center mb-8">
@@ -492,7 +454,61 @@ const RoofRepair = () => {
             </ul>
           </div>
         </section>
+            </>
+          }
+          costContext={
+            <>
+        <CostOfWaiting variant="repair" />
+        <CostContextBlock serviceLabel="roof repair" />
+        <SchedulingReality serviceLabel="roof repair" />
+            </>
+          }
+          process={
+            <>
+        <UrgentActionSteps variant="repair" />
+        <RepairPhotoProof variant="repair" />
+        <InsuranceDocHelp />
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+              <span className="eyebrow mb-3 block">Repair Process</span>
+              <h2 className="section-heading mb-4">How a Repair<br className="hidden md:block" /> Works With Highlander.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                A structured, transparent process from your first call to verified resolution. No guesswork, no surprises.
+              </p>
+            </motion.div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {processSteps.map((step, i) => (
+                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className={`group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift ${i === 4 ? 'md:col-start-1 lg:col-start-2' : ''}`}>
+                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
+                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
+                    <step.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+            </>
+          }
+          proof={
+            <>
+        <WhoShowsUp />
+        <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
+        <CommonConcerns />
+        <section className="section-padding bg-muted/20">
+          <div className="container-tight">
+            <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
+          </div>
+        </section>
+        <ConversionTrustBlock variant="band" category="roofing" />
+            </>
+          }
+          faq={
+            <>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -516,21 +532,10 @@ const RoofRepair = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
-        <RealWorkWidget />
-        <CostOfWaiting variant="repair" />
-        <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="roof repair" />
-        <SchedulingReality serviceLabel="roof repair" />
-        <section className="section-padding bg-muted/20">
-          <div className="container-tight">
-            <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
-          </div>
-        </section>
-        <ConversionTrustBlock variant="band" category="roofing" />
+            </>
+          }
+          coverage={
+            <>
         <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"
@@ -545,8 +550,10 @@ const RoofRepair = () => {
           ]}
         />
         <ServiceInternalLinks title="Roof Repair" slug="roof-repair" />
-
-        {/* ─── CLOSING CTA ─── */}
+            </>
+          }
+          cta={
+            <>
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">
@@ -589,6 +596,14 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
+            </>
+          }
+          afterCta={
+            <>
+        <RealWorkWidget />
+            </>
+          }
+        />
       </main>
 
       <Footer />

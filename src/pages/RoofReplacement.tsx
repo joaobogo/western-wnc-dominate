@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import PageContext from "@/components/PageContext";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
@@ -180,7 +181,10 @@ const RoofReplacement = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Roof Replacement", url: "/roofing/roof-replacement" }]} />
       <main id="main-content">
-        {/* ─── HERO ─── */}
+        <ServicePageTemplate
+          alternateSurfaces={false}
+          hero={
+            <>
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <picture>
@@ -247,13 +251,19 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
+            </>
+          }
+          quickAnswer={
+            <>
         <AnswerBlock
           question="What is a roof replacement, and who needs one?"
           answer="A roof replacement removes the existing roof down to the deck, repairs damaged sheathing, and installs a new system — underlayment, flashing, ventilation, and finish material. Homeowners typically need one when the roof is at end of life, has widespread damage, or keeps failing after repeated repairs. Highlander replaces roofs on mountain homes throughout Western North Carolina."
           points={["Full tear-off with deck inspection and repair", "Underlayment, flashing, and ventilation rebuilt", "Asphalt, metal, and specialty systems available"]}
         />
-
-        {/* ─── OPENING STATEMENT ─── */}
+            </>
+          }
+          whatWeDo={
+            <>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
@@ -268,8 +278,6 @@ const RoofReplacement = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── SIGNS YOU NEED REPLACEMENT ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -293,54 +301,6 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-
-        <BuilderPromoBlock
-          variant="band"
-          preset="replacement"
-          title="Plan your full replacement in detail"
-          body="Optional guided builder for homeowners ready to specify materials, system features, and priorities. We use it to prepare a sharper proposal before we walk the roof."
-          ctaLabel="Build Your Replacement Scope"
-        />
-
-        {/* ─── RISKS OF WAITING ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-5xl">
-            <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
-                <span className="eyebrow mb-3 block">Why Timing Matters</span>
-                <h2 className="section-heading mb-5">The Real Cost<br /> of Waiting.</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
-                  Delaying a necessary replacement rarely saves money. In most cases, it increases total project cost, expands the scope of damage, and removes your ability to plan on your own terms.
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  The best time to replace a roof is before it fails — when you can choose materials deliberately, schedule around weather windows, and avoid emergency pricing.
-                </p>
-              </motion.div>
-
-              <div className="lg:col-span-3 space-y-4">
-                {risksOfWaiting.map((risk, i) => (
-                  <motion.div key={risk.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group flex gap-4 p-5 md:p-6 rounded-sm bg-card border border-border hover:border-primary/15 card-lift">
-                    <div className="w-10 h-10 rounded-sm bg-destructive/6 flex items-center justify-center flex-shrink-0 group-hover:bg-destructive/10 transition-colors">
-                      <risk.icon className="w-5 h-5 text-destructive/70" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-foreground transition-colors">{risk.title}</h3>
-                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{risk.detail}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <ConsultationCTA
-          heading="Not sure whether you're at repair or replacement?"
-          subline="A consultation gets you an honest read on your roof's remaining life and a written scope if replacement is the right call."
-          label="Book My Roof Assessment"
-        />
-
-        {/* ─── REPLACING THE ROOF THE RIGHT WAY ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
@@ -364,8 +324,17 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── MATERIALS GUIDANCE ─── */}
+            </>
+          }
+          whatsIncluded={
+            <>
+        <BuilderPromoBlock
+          variant="band"
+          preset="replacement"
+          title="Plan your full replacement in detail"
+          body="Optional guided builder for homeowners ready to specify materials, system features, and priorities. We use it to prepare a sharper proposal before we walk the roof."
+          ctaLabel="Build Your Replacement Scope"
+        />
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -402,36 +371,68 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── MATERIAL TRADEOFF COMPARISON ─── */}
         <MaterialComparison />
-
         <ConsultationCTA
           heading="Want the material call made for your specific roof?"
           subline="We spec by elevation, pitch, wind exposure, and how long you plan to hold the home — then put it in writing."
           label="Get My Material Recommendation"
         />
-
-        {/* ─── WRITTEN SCOPE ─── */}
         <WrittenScopeIncludes />
+            </>
+          }
+          costContext={
+            <>
+        <section className="section-padding bg-background">
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
+                <span className="eyebrow mb-3 block">Why Timing Matters</span>
+                <h2 className="section-heading mb-5">The Real Cost<br /> of Waiting.</h2>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
+                  Delaying a necessary replacement rarely saves money. In most cases, it increases total project cost, expands the scope of damage, and removes your ability to plan on your own terms.
+                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                  The best time to replace a roof is before it fails — when you can choose materials deliberately, schedule around weather windows, and avoid emergency pricing.
+                </p>
+              </motion.div>
 
-        {/* ─── COST DRIVERS ─── */}
+              <div className="lg:col-span-3 space-y-4">
+                {risksOfWaiting.map((risk, i) => (
+                  <motion.div key={risk.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group flex gap-4 p-5 md:p-6 rounded-sm bg-card border border-border hover:border-primary/15 card-lift">
+                    <div className="w-10 h-10 rounded-sm bg-destructive/6 flex items-center justify-center flex-shrink-0 group-hover:bg-destructive/10 transition-colors">
+                      <risk.icon className="w-5 h-5 text-destructive/70" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-foreground transition-colors">{risk.title}</h3>
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{risk.detail}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        <ConsultationCTA
+          heading="Not sure whether you're at repair or replacement?"
+          subline="A consultation gets you an honest read on your roof's remaining life and a written scope if replacement is the right call."
+          label="Book My Roof Assessment"
+        />
         <CostContextBlock serviceLabel="roof replacement" />
-
-        {/* ─── FINANCING ENTRY POINT ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <FinancingTeaser serviceLabel="roof replacement" />
           </div>
         </section>
-
         <ConsultationCTA
           heading="Get the number for your roof, not a range."
           subline="Written, grouped-cost proposal after an on-site assessment — with payment options reviewed at the same visit."
           label="Get My Written Estimate"
         />
-
-        {/* ─── TIMELINE & PROCESS ─── */}
+        <SchedulingReality serviceLabel="roof replacement" />
+            </>
+          }
+          process={
+            <>
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
@@ -454,8 +455,10 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── TRUST PROOF ─── */}
+            </>
+          }
+          proof={
+            <>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
@@ -474,8 +477,6 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── GALLERY ─── */}
         <section className="section-padding bg-secondary/30">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -502,21 +503,24 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── REVIEWS ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />
           </div>
         </section>
-
         <ConsultationCTA
           heading="See the work, then get your own scope."
           subline="We'll walk your roof, document conditions with photos, and hand you a written replacement plan."
           label="Book My Replacement Consultation"
         />
-
-        {/* ─── FAQS ─── */}
+        <WhoShowsUp />
+        <TieredOffer context="roof-replacement" primaryLabel="Get My Replacement Scope" />
+        <CommonConcerns />
+      <ConversionTrustBlock variant="band" category="roofing" />
+            </>
+          }
+          faq={
+            <>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -540,10 +544,28 @@ const RoofReplacement = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
+            </>
+          }
+          coverage={
+            <>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Residential Roofing Services", href: "/roofing/residential", description: "Materials and process overview" },
+            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal options" },
+            { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "Compare materials before you decide" },
+            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local climate and material guide" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Start your replacement estimate" }
+          ]}
+        />
+        <ServiceInternalLinks title="Roof Replacement" slug="roof-replacement" />
+            </>
+          }
+          cta={
+            <>
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">
@@ -587,27 +609,16 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
-      <RelatedLinks
-          eyebrow="Keep Exploring"
-          heading="Related pages you may find useful"
-          columns={2}
-          links={[
-            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
-            { label: "Residential Roofing Services", href: "/roofing/residential", description: "Materials and process overview" },
-            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal options" },
-            { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "Compare materials before you decide" },
-            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local climate and material guide" },
-            { label: "Request an Inspection", href: "/request-inspection", description: "Start your replacement estimate" }
-          ]}
+            </>
+          }
+          afterCta={
+            <>
+      <RealWorkWidget />
+            </>
+          }
         />
-        <ServiceInternalLinks title="Roof Replacement" slug="roof-replacement" />
       </main>
 
-      <RealWorkWidget />
-        <TieredOffer context="roof-replacement" primaryLabel="Get My Replacement Scope" />
-        <CommonConcerns />
-        <SchedulingReality serviceLabel="roof replacement" />
-      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

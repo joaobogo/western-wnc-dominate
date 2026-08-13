@@ -34,6 +34,7 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -173,813 +174,829 @@ const ResidentialRoofing = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Residential", url: "/roofing/residential" }]} />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async"
-              src={asphaltHero}
-              alt="Premium residential roof replacement on a mountain home in Western North Carolina"
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
-          </div>
-
-          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
-
-          <motion.div
-            className="absolute left-0 top-0 w-[2px] z-20"
-            style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }}
-            initial={{ height: "0%" }}
-            animate={{ height: "100%" }}
-            transition={{ duration: 2, delay: 0.5 }}
-          />
-
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
-            <div className="max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-col gap-6 mb-8"
-              >
-                <div className="inline-flex items-center gap-4">
-                  <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
-                  <div className="flex flex-col">
-                    <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                    <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
-                      <Home className="w-3.5 h-3.5 text-primary-foreground" />
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        hero={
+                  <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+                    <div className="absolute inset-0">
+                      <img width={1600} height={1067} decoding="async"
+                        src={asphaltHero}
+                        alt="Premium residential roof replacement on a mountain home in Western North Carolina"
+                        className="w-full h-full object-cover"
+                        loading="eager"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
                     </div>
-                    <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
-                      Roofing
-                    </span>
-                  </Link>
-                  <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                  <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
-                    Residential
-                  </span>
-                </div>
-              </motion.div>
 
-              <div className="overflow-hidden mb-2">
-                <motion.h1
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
-                >
-                  Your Home Deserves a Roof
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-8">
-                <motion.h2
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
-                >
-                  Built for These Mountains.
-                </motion.h2>
-              </div>
+                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 1 }}
-                className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm"
-              >
-                Complete residential roof replacement and repair for mountain homes across
-                Highlands, Cashiers, Franklin, Sylva & beyond. Certified installation.
-                Premium materials. Warranties you can count on.
-              </motion.p>
+                    <motion.div
+                      className="absolute left-0 top-0 w-[2px] z-20"
+                      style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }}
+                      initial={{ height: "0%" }}
+                      animate={{ height: "100%" }}
+                      transition={{ duration: 2, delay: 0.5 }}
+                    />
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-              >
-                <Link
-                  to="/consultation"
-                  className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Discuss Your Roof</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a
-                  href="tel:+18285247773"
-                  className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
-                >
-                  <Phone className="w-4 h-4" />
-                  (828) 524-7773
-                </a>
-              </motion.div>
+                    <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
+                      <div className="max-w-3xl">
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.8, delay: 0.3 }}
+                          className="flex flex-col gap-6 mb-8"
+                        >
+                          <div className="inline-flex items-center gap-4">
+                            <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
+                            <div className="flex flex-col">
+                              <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                              <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                              <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
+                                <Home className="w-3.5 h-3.5 text-primary-foreground" />
+                              </div>
+                              <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
+                                Roofing
+                              </span>
+                            </Link>
+                            <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
+                            <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
+                              Residential
+                            </span>
+                          </div>
+                        </motion.div>
 
-              {/* Trust micro-stats — unique to Residential */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
-                className="mt-10 flex items-center gap-6"
-              >
-                {[
-                  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
-                  { icon: ShieldCheck, label: "Licensed & Insured" },
-                  { icon: Star, label: "4.9★ Local Rating" },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-center gap-2">
-                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
-                    <span className="text-caption font-body text-primary-foreground/95 uppercase tracking-widest">{item.label}</span>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-        <AnswerBlock
-          question="What is residential roofing, and who is it for?"
-          answer="Residential roofing covers repair, replacement, and new roof systems on single-family mountain homes, cabins, and second homes. The right system depends on elevation, exposure, roof pitch, and how the home is used through the year. Highlander works with homeowners across Franklin, Highlands, Cashiers, Sylva, and nearby communities."
-          points={["Repairs, replacements, and full system upgrades", "Material guidance based on exposure and elevation", "Second-home and seasonal-property coordination"]}
-        />
-
-        {/* Local Markets Navigation — SEO Expansion */}
-        <section className="py-12 bg-background border-b border-border">
-          <div className="container-tight">
-             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex items-center gap-3">
-                   <div className="w-10 h-[1px] bg-primary/20" />
-                   <span className="text-caption font-bold uppercase tracking-widest text-muted-foreground">Serving Local Markets</span>
-                </div>
-                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                   {[
-                      { name: "Highlands", slug: "highlands-nc" },
-                      { name: "Cashiers", slug: "cashiers-nc" },
-                      { name: "Franklin", slug: "franklin-nc" },
-                      { name: "Sylva", slug: "sylva-nc" },
-                      { name: "Waynesville", slug: "waynesville-nc" }
-                   ].map(town => (
-                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
-                         {town.name}
-                      </Link>
-                   ))}
-                </div>
-                <Link to="/service-areas" className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase tracking-widest">
-                   All Areas <ArrowRight className="w-3 h-3" />
-                </Link>
-             </div>
-          </div>
-        </section>
-        {/* Dual-Division Hub Bridge */}
-        <section className="py-16 bg-secondary/30 border-b border-border">
-          <div className="container-tight">
-             <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                   <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Beyond Roofing Excellence</h3>
-                   <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
-                      Highlander’s project discipline extends into custom additions and renovations. If your roofing project is part of a larger home expansion, our construction team coordinates the entire structural envelope.
-                   </p>
-                   <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold uppercase tracking-widest text-caption hover:gap-3 transition-all">
-                      Explore Construction Division <ArrowRight className="w-4 h-4" />
-                   </Link>
-                </div>
-                <div className="bg-card border border-border p-8 rounded-sm">
-                   <h4 className="font-heading font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Compass className="w-5 h-5 text-primary" />
-                      Plan Before You Build
-                   </h4>
-                   <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
-                      Avoid surprises with our pre-construction support. We help Western North Carolina homeowners define layout, floor plans, and project scope before breaking ground.
-                   </p>
-                   <Link to="/layouts-planning" className="text-sm font-bold text-primary hover:underline">
-                      Design Support &rarr;
-                   </Link>
-                </div>
-             </div>
-          </div>
-        </section>
-
-        {/* ─── TRUST STRIP ─── */}
-        <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-5 md:py-6">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-              {[
-                { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
-                { icon: Shield, text: "Licensed & Insured" },
-                { icon: Clock, text: "Rapid Storm Response" },
-                { icon: Star, text: "4.7★ Google Rating" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-2">
-                  <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                  <span className="text-xs font-body font-medium text-primary-foreground/90">{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── OPENING STATEMENT — Editorial left-aligned with shield accent ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-5xl">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="lg:col-span-8"
-              >
-                <div className="w-10 h-[3px] mb-8 bg-[hsl(var(--heritage-green)/0.5)]" />
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6">
-                  A roof replacement is one of the most significant investments you'll make in your mountain home. It should be handled with the seriousness it deserves.
-                </h2>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
-                  At Highlander, residential roofing isn't a side service — it's our foundation. We've built our reputation one home at a time across Western North Carolina, earning trust through transparent communication, certified craftsmanship, and roofs that perform decade after decade at elevation.
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  Every residential project receives the same standard: site-specific material specification, manufacturer-certified installation, daily communication, and a warranty package you can hold in your hands.
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-4 flex flex-col gap-5"
-              >
-                {[
-                  { icon: ShieldCheck, label: "Licensed & Fully Insured", sub: "NC General Contractor" },
-                  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", sub: "Top 1% nationally" },
-                  { icon: Camera, label: "Documented Everything", sub: "Before, during & after" },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm">
-                    <div className="w-9 h-9 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-4.5 h-4.5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-heading font-bold text-foreground">{item.label}</p>
-                      <p className="text-caption text-muted-foreground font-body">{item.sub}</p>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── WHEN IT'S TIME FOR A NEW ROOF ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl mx-auto text-center mb-12 md:mb-14"
-            >
-              <span className="eyebrow mb-3 block">Know the Signs</span>
-              <h2 className="section-heading mb-4">
-                When It May Be Time<br className="hidden md:block" /> for a New Roof.
-              </h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                Some warning signs are obvious. Others are subtle. Here's what to look for —
-                and when to call a professional for an honest assessment.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {warningSignsData.map((sign, i) => (
-                <motion.div
-                  key={sign.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, duration: 0.45 }}
-                  className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift"
-                >
-                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
-                    <sign.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">
-                    {sign.title}
-                  </h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
-                    {sign.detail}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-10 text-center"
-            >
-              <Link
-                to="/consultation"
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors font-body"
-              >
-                Not sure? Let us assess your roof — no obligation
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ─── REPAIR VS. REPLACEMENT ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl mx-auto text-center mb-12"
-            >
-              <span className="eyebrow mb-3 block">Honest Guidance</span>
-              <h2 className="section-heading mb-4">
-                Repair or Replace?<br className="hidden md:block" /> We'll Help You Decide.
-              </h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                We never recommend a replacement when a repair will solve the problem.
-                And we'll document our reasoning so you can decide with confidence.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-5">
-              {repairVsReplace.map((option, i) => (
-                <motion.div
-                  key={option.type}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-card border border-border rounded-sm overflow-hidden"
-                >
-                  <div className={`h-[2px] w-full ${i === 0 ? 'bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.4)] to-[hsl(var(--heritage-green)/0)]' : 'bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0)]'}`} />
-                  <div className="p-6 md:p-7">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className={`w-10 h-10 rounded-sm flex items-center justify-center ${i === 0 ? 'bg-primary/8' : 'bg-[hsl(var(--highland-gold)/0.08)]'}`}>
-                        <option.icon className={`w-5 h-5 ${i === 0 ? 'text-primary' : 'text-[hsl(var(--gold-ink))]'}`} />
-                      </div>
-                      <h3 className="font-heading font-bold text-foreground text-lg">{option.type}</h3>
-                    </div>
-                    <ul className="space-y-3">
-                      {option.items.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/80' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
-                          <span className="text-muted-foreground text-body-xs font-body leading-snug">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── MATERIALS COMPARISON ─── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div
-            className="absolute top-0 left-0 w-full h-px"
-            style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }}
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-          />
-          <div className="px-6 md:px-10 lg:px-20 pt-12 md:pt-24 lg:pt-28 pb-4 md:pb-5 lg:pb-6">
-            <div className="container-tight">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="max-w-2xl mx-auto text-center mb-10 md:mb-14"
-              >
-                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Residential Materials</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
-                  Materials Specified for<br className="hidden md:block" /> Mountain Performance.
-                </h2>
-                <p className="text-dark-section-foreground text-base md:text-lg font-body font-medium leading-relaxed max-w-lg mx-auto">
-                  Every material we recommend has been proven in WNC conditions.
-                  Here's how the most popular residential options compare.
-                </p>
-              </motion.div>
-
-              <div className="space-y-5">
-                {materialsComparison.map((mat, i) => (
-                  <motion.div
-                    key={mat.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="group border border-dark-section-foreground/10 rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] bg-dark-section-foreground/[0.04] hover:bg-dark-section-foreground/[0.06] transition-all duration-300"
-                  >
-                    <div className="grid md:grid-cols-5 gap-0">
-                      {/* Image */}
-                      <div className="md:col-span-2 aspect-[16/10] md:aspect-auto">
-                        <img width={1600} height={1067} decoding="async"
-                          src={mat.image}
-                          alt={mat.name}
-                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                          loading="lazy"
-                        />
-                      </div>
-                      {/* Content */}
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                        <div className="flex items-center justify-between mb-3">
-                          <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--gold-ink))] transition-colors">
-                            {mat.name}
-                          </h3>
-                          <span className="text-caption font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">
-                            {mat.lifespan}
-                          </span>
+                        <div className="overflow-hidden mb-2">
+                          <motion.h1
+                            initial={{ y: "110%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
+                          >
+                            Your Home Deserves a Roof
+                          </motion.h1>
+                        </div>
+                        <div className="overflow-hidden mb-8">
+                          <motion.h2
+                            initial={{ y: "110%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
+                          >
+                            Built for These Mountains.
+                          </motion.h2>
                         </div>
 
-                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-body-xs font-body text-dark-section-foreground/95">
-                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Brand:</strong> {mat.brand}</span>
-                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Warranty:</strong> {mat.warranty}</span>
-                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Best For:</strong> {mat.best}</span>
-                        </div>
+                        <motion.p
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.7, delay: 1 }}
+                          className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm"
+                        >
+                          Complete residential roof replacement and repair for mountain homes across
+                          Highlands, Cashiers, Franklin, Sylva & beyond. Certified installation.
+                          Premium materials. Warranties you can count on.
+                        </motion.p>
 
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {mat.pros.map((pro) => (
-                            <li key={pro} className="flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
-                              <span className="text-dark-section-foreground/95 text-body-xs font-body font-medium">{pro}</span>
-                            </li>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.2 }}
+                          className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+                        >
+                          <Link
+                            to="/consultation"
+                            className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
+                          >
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                            <span className="relative">Discuss Your Roof</span>
+                            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                          <a
+                            href="tel:+18285247773"
+                            className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
+                          >
+                            <Phone className="w-4 h-4" />
+                            (828) 524-7773
+                          </a>
+                        </motion.div>
+
+                        {/* Trust micro-stats — unique to Residential */}
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.8, delay: 1.6 }}
+                          className="mt-10 flex items-center gap-6"
+                        >
+                          {[
+                            { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
+                            { icon: ShieldCheck, label: "Licensed & Insured" },
+                            { icon: Star, label: "4.9★ Local Rating" },
+                          ].map((item) => (
+                            <div key={item.label} className="flex items-center gap-2">
+                              <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
+                              <span className="text-caption font-body text-primary-foreground/95 uppercase tracking-widest">{item.label}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </motion.div>
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── MID CTA ─── */}
-        <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-5 md:py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5 text-primary-foreground">Need guidance on materials or timing?</h3>
-                <p className="text-primary-foreground text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
-              </div>
-              <div className="flex gap-3 flex-shrink-0">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Discuss Your Roof</span>
-                  <ArrowRight className="w-4 h-4 relative" />
-                </Link>
-                <a href="tel:+18285247773" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
-                  <Phone className="w-4 h-4" /> Call Direct
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── ROOFING STYLES ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl mx-auto text-center mb-12"
-            >
-              <span className="eyebrow mb-3 block">Roof Systems</span>
-              <h2 className="section-heading mb-4">
-                Choosing a Style That<br className="hidden md:block" /> Fits Your Home.
-              </h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                Your roof's shape affects its performance, cost, and appearance. Here are the
-                most common residential styles we install across WNC.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {roofStyles.map((style, i) => (
-                <motion.div
-                  key={style.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.07 }}
-                  className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <Landmark className="w-5 h-5 text-primary/80 group-hover:text-primary transition-colors" />
-                    <h3 className="font-heading font-bold text-foreground text-base group-hover:text-primary transition-colors">{style.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
-                    {style.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── RESIDENTIAL GALLERY ─── */}
-        <section className="section-padding bg-secondary/30">
-          <div className="container-tight">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"
-            >
-              <div>
-                <span className="eyebrow mb-3 block">Residential Portfolio</span>
-                <h2 className="section-heading">
-                  Recent Residential<br className="hidden md:block" /> Roofing Projects.
-                </h2>
-              </div>
-              <Link
-                to="/recent-projects"
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
-              >
-                Full Gallery
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {galleryItems.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, duration: 0.5 }}
-                  className="group relative aspect-[4/3] rounded-sm overflow-hidden"
-                >
-                  <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">
-                    {item.category}
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-heading font-semibold text-white text-sm">{item.title}</h3>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── PROCESS ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
-            >
-              <span className="eyebrow mb-3 block">Our Residential Process</span>
-              <h2 className="section-heading mb-4">
-                Six Steps to a Roof<br className="hidden md:block" /> You Can Trust.
-              </h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                A clear, structured process designed to remove uncertainty and deliver
-                confidence at every stage.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {processSteps.map((step, i) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.07, duration: 0.45 }}
-                  className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
-                >
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">
-                    {step.number}
-                  </span>
-                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
-                    <step.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── QUALITY CONTROL ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="lg:col-span-2"
-              >
-                <span className="eyebrow mb-3 block">Quality Assurance</span>
-                <h2 className="section-heading mb-5">
-                  Every Detail.<br /> Every Project.
-                </h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
-                  Quality control isn't an afterthought — it's built into every phase of installation.
-                  From the first decking inspection to the final cleanup, we follow a structured
-                  checklist that ensures nothing is missed.
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  These aren't suggestions — they're non-negotiable standards that apply to every
-                  residential roofing project, regardless of size or material.
-                </p>
-              </motion.div>
-
-              <div className="lg:col-span-3 space-y-3">
-                {qualityChecks.map((check, i) => (
-                  <motion.div
-                    key={check.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.4 }}
-                    className="group flex gap-4 p-5 rounded-sm bg-card border border-border hover:border-primary/15 card-lift"
-                  >
-                    <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors mt-0.5">
-                      <ShieldCheck className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-heading font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                        {check.title}
-                      </h3>
-                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
-                        {check.detail}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── FAQS ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-10 md:mb-14"
-            >
-              <span className="eyebrow mb-3 block">Residential Roofing FAQs</span>
-              <h2 className="section-heading mb-4">
-                Questions Homeowners<br className="hidden md:block" /> Ask Most Often.
-              </h2>
-            </motion.div>
-
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((faq, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.03, duration: 0.4 }}
-                >
-                  <AccordionItem
-                    value={`faq-${i}`}
-                    className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300"
-                  >
-                    <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">
-                        {faq.q}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-6 pr-2">
-                      <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                        {faq.a}
-                      </p>
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              ))}
-            </Accordion>
-          </div>
-        </section>
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div
-            className="absolute top-0 left-0 w-full h-px"
-            style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }}
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          />
-          <div className="section-padding">
-            <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">
-                    Talk With Our Team
-                  </span>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
-                    Your Mountain Home<br className="hidden md:block" /> Deserves Mountain-Grade<br className="hidden md:block" /> Protection.
-                  </h2>
-                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
-                    Whether you're planning ahead or responding to damage — the conversation
-                    starts with a local roofing expert who knows your neighborhood, your
-                    elevation, and your weather.
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                    <Link
-                      to="/consultation"
-                      className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
-                    >
-                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="relative">Schedule a Roofing Consultation</span>
-                      <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <a
-                      href="tel:+18285247773"
-                      className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
-                    >
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                      (828) 524-7773
-                    </a>
-                  </div>
-
-                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/15">
-                    {[
-                      { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Clock, text: "Rapid Response" },
-                      { icon: Star, text: "Financing Available" },
-                    ].map((item) => (
-                      <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                        <span className="text-dark-section-foreground text-sm font-body font-semibold">{item.text}</span>
+                  </section>
+        }
+        quickAnswer={
+                  <AnswerBlock
+                    question="What is residential roofing, and who is it for?"
+                    answer="Residential roofing covers repair, replacement, and new roof systems on single-family mountain homes, cabins, and second homes. The right system depends on elevation, exposure, roof pitch, and how the home is used through the year. Highlander works with homeowners across Franklin, Highlands, Cashiers, Sylva, and nearby communities."
+                    points={["Repairs, replacements, and full system upgrades", "Material guidance based on exposure and elevation", "Second-home and seasonal-property coordination"]}
+                  />
+        }
+        whatWeDo={
+          <>
+                    <section className="section-padding bg-background">
+                      <div className="container-tight max-w-5xl">
+                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+                          <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="lg:col-span-8"
+                          >
+                            <div className="w-10 h-[3px] mb-8 bg-[hsl(var(--heritage-green)/0.5)]" />
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6">
+                              A roof replacement is one of the most significant investments you'll make in your mountain home. It should be handled with the seriousness it deserves.
+                            </h2>
+                            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
+                              At Highlander, residential roofing isn't a side service — it's our foundation. We've built our reputation one home at a time across Western North Carolina, earning trust through transparent communication, certified craftsmanship, and roofs that perform decade after decade at elevation.
+                            </p>
+                            <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                              Every residential project receives the same standard: site-specific material specification, manufacturer-certified installation, daily communication, and a warranty package you can hold in your hands.
+                            </p>
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="lg:col-span-4 flex flex-col gap-5"
+                          >
+                            {[
+                              { icon: ShieldCheck, label: "Licensed & Fully Insured", sub: "NC General Contractor" },
+                              { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", sub: "Top 1% nationally" },
+                              { icon: Camera, label: "Documented Everything", sub: "Before, during & after" },
+                            ].map((item) => (
+                              <div key={item.label} className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm">
+                                <div className="w-9 h-9 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
+                                  <item.icon className="w-4.5 h-4.5 text-primary" />
+                                </div>
+                                <div>
+                                  <p className="text-sm font-heading font-bold text-foreground">{item.label}</p>
+                                  <p className="text-caption text-muted-foreground font-body">{item.sub}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </motion.div>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
-      <RelatedLinks
-          eyebrow="Keep Exploring"
-          heading="Related pages you may find useful"
-          columns={2}
-          links={[
-            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
-            { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Repair scope and timelines" },
-            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
-            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panels" },
-            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "How to choose for WNC weather" },
-            { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Local roofing coverage" },
-            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
-          ]}
-        />
-        <ServiceInternalLinks title="Residential Roofing" slug="residential-roofing" />
-      </main>
+                    </section>
 
-      <RealWorkWidget />
-        <TieredOffer context="residential-roofing" primaryLabel="Get My Roof Assessed" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="residential roofing" />
-        <SchedulingReality serviceLabel="residential roofing" />
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="roofing" heading="What homeowners say about our residential roofing work" />
-        </div>
-      </section>
-      <ConversionTrustBlock variant="band" category="roofing" />
+                    <section className="section-padding bg-secondary tartan-bg">
+                      <div className="container-tight">
+                        <motion.div
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="max-w-2xl mx-auto text-center mb-12 md:mb-14"
+                        >
+                          <span className="eyebrow mb-3 block">Know the Signs</span>
+                          <h2 className="section-heading mb-4">
+                            When It May Be Time<br className="hidden md:block" /> for a New Roof.
+                          </h2>
+                          <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                            Some warning signs are obvious. Others are subtle. Here's what to look for —
+                            and when to call a professional for an honest assessment.
+                          </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                          {warningSignsData.map((sign, i) => (
+                            <motion.div
+                              key={sign.title}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: i * 0.06, duration: 0.45 }}
+                              className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift"
+                            >
+                              <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
+                                <sign.icon className="w-5 h-5 text-primary" />
+                              </div>
+                              <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">
+                                {sign.title}
+                              </h3>
+                              <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
+                                {sign.detail}
+                              </p>
+                            </motion.div>
+                          ))}
+                        </div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="mt-10 text-center"
+                        >
+                          <Link
+                            to="/consultation"
+                            className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors font-body"
+                          >
+                            Not sure? Let us assess your roof — no obligation
+                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </motion.div>
+                      </div>
+                    </section>
+
+                    <section className="section-padding bg-background">
+                      <div className="container-tight max-w-5xl">
+                        <motion.div
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="max-w-2xl mx-auto text-center mb-12"
+                        >
+                          <span className="eyebrow mb-3 block">Honest Guidance</span>
+                          <h2 className="section-heading mb-4">
+                            Repair or Replace?<br className="hidden md:block" /> We'll Help You Decide.
+                          </h2>
+                          <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                            We never recommend a replacement when a repair will solve the problem.
+                            And we'll document our reasoning so you can decide with confidence.
+                          </p>
+                        </motion.div>
+
+                        <div className="grid md:grid-cols-2 gap-5">
+                          {repairVsReplace.map((option, i) => (
+                            <motion.div
+                              key={option.type}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: i * 0.1 }}
+                              className="bg-card border border-border rounded-sm overflow-hidden"
+                            >
+                              <div className={`h-[2px] w-full ${i === 0 ? 'bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.4)] to-[hsl(var(--heritage-green)/0)]' : 'bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0)]'}`} />
+                              <div className="p-6 md:p-7">
+                                <div className="flex items-center gap-3 mb-5">
+                                  <div className={`w-10 h-10 rounded-sm flex items-center justify-center ${i === 0 ? 'bg-primary/8' : 'bg-[hsl(var(--highland-gold)/0.08)]'}`}>
+                                    <option.icon className={`w-5 h-5 ${i === 0 ? 'text-primary' : 'text-[hsl(var(--gold-ink))]'}`} />
+                                  </div>
+                                  <h3 className="font-heading font-bold text-foreground text-lg">{option.type}</h3>
+                                </div>
+                                <ul className="space-y-3">
+                                  {option.items.map((item) => (
+                                    <li key={item} className="flex items-start gap-3">
+                                      <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/80' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
+                                      <span className="text-muted-foreground text-body-xs font-body leading-snug">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+          </>
+        }
+        whatsIncluded={
+          <>
+                    <section className="section-dark tartan-dark relative overflow-hidden">
+                      <motion.div
+                        className="absolute top-0 left-0 w-full h-px"
+                        style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }}
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2 }}
+                      />
+                      <div className="px-6 md:px-10 lg:px-20 pt-12 md:pt-24 lg:pt-28 pb-4 md:pb-5 lg:pb-6">
+                        <div className="container-tight">
+                          <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="max-w-2xl mx-auto text-center mb-10 md:mb-14"
+                          >
+                            <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Residential Materials</span>
+                            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
+                              Materials Specified for<br className="hidden md:block" /> Mountain Performance.
+                            </h2>
+                            <p className="text-dark-section-foreground text-base md:text-lg font-body font-medium leading-relaxed max-w-lg mx-auto">
+                              Every material we recommend has been proven in WNC conditions.
+                              Here's how the most popular residential options compare.
+                            </p>
+                          </motion.div>
+
+                          <div className="space-y-5">
+                            {materialsComparison.map((mat, i) => (
+                              <motion.div
+                                key={mat.name}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.08 }}
+                                className="group border border-dark-section-foreground/10 rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] bg-dark-section-foreground/[0.04] hover:bg-dark-section-foreground/[0.06] transition-all duration-300"
+                              >
+                                <div className="grid md:grid-cols-5 gap-0">
+                                  {/* Image */}
+                                  <div className="md:col-span-2 aspect-[16/10] md:aspect-auto">
+                                    <img width={1600} height={1067} decoding="async"
+                                      src={mat.image}
+                                      alt={mat.name}
+                                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                      loading="lazy"
+                                    />
+                                  </div>
+                                  {/* Content */}
+                                  <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                                    <div className="flex items-center justify-between mb-3">
+                                      <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--gold-ink))] transition-colors">
+                                        {mat.name}
+                                      </h3>
+                                      <span className="text-caption font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">
+                                        {mat.lifespan}
+                                      </span>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-body-xs font-body text-dark-section-foreground/95">
+                                      <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Brand:</strong> {mat.brand}</span>
+                                      <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Warranty:</strong> {mat.warranty}</span>
+                                      <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Best For:</strong> {mat.best}</span>
+                                    </div>
+
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                      {mat.pros.map((pro) => (
+                                        <li key={pro} className="flex items-start gap-2">
+                                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+                                          <span className="text-dark-section-foreground/95 text-body-xs font-body font-medium">{pro}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="bg-primary text-primary-foreground tartan-dark">
+                      <div className="container-tight px-5 md:px-8 py-5 md:py-6">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                          <div>
+                            <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5 text-primary-foreground">Need guidance on materials or timing?</h3>
+                            <p className="text-primary-foreground text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
+                          </div>
+                          <div className="flex gap-3 flex-shrink-0">
+                            <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
+                              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                              <span className="relative">Discuss Your Roof</span>
+                              <ArrowRight className="w-4 h-4 relative" />
+                            </Link>
+                            <a href="tel:+18285247773" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                              <Phone className="w-4 h-4" /> Call Direct
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="section-padding bg-background">
+                      <div className="container-tight">
+                        <motion.div
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="max-w-2xl mx-auto text-center mb-12"
+                        >
+                          <span className="eyebrow mb-3 block">Roof Systems</span>
+                          <h2 className="section-heading mb-4">
+                            Choosing a Style That<br className="hidden md:block" /> Fits Your Home.
+                          </h2>
+                          <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                            Your roof's shape affects its performance, cost, and appearance. Here are the
+                            most common residential styles we install across WNC.
+                          </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                          {roofStyles.map((style, i) => (
+                            <motion.div
+                              key={style.title}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: i * 0.07 }}
+                              className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
+                            >
+                              <div className="flex items-center gap-3 mb-3">
+                                <Landmark className="w-5 h-5 text-primary/80 group-hover:text-primary transition-colors" />
+                                <h3 className="font-heading font-bold text-foreground text-base group-hover:text-primary transition-colors">{style.title}</h3>
+                              </div>
+                              <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
+                                {style.description}
+                              </p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+          </>
+        }
+        costContext={
+                  <CostContextBlock serviceLabel="residential roofing" />
+        }
+        process={
+                  <section className="section-padding bg-background">
+                    <div className="container-tight">
+                      <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
+                      >
+                        <span className="eyebrow mb-3 block">Our Residential Process</span>
+                        <h2 className="section-heading mb-4">
+                          Six Steps to a Roof<br className="hidden md:block" /> You Can Trust.
+                        </h2>
+                        <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                          A clear, structured process designed to remove uncertainty and deliver
+                          confidence at every stage.
+                        </p>
+                      </motion.div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                        {processSteps.map((step, i) => (
+                          <motion.div
+                            key={step.number}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.07, duration: 0.45 }}
+                            className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
+                          >
+                            <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">
+                              {step.number}
+                            </span>
+                            <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
+                              <step.icon className="w-5 h-5 text-primary" />
+                            </div>
+                            <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
+                              {step.title}
+                            </h3>
+                            <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
+                              {step.description}
+                            </p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+        }
+        proof={
+          <>
+                    <section className="bg-primary text-primary-foreground tartan-dark">
+                      <div className="container-tight px-5 md:px-8 py-5 md:py-6">
+                        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+                          {[
+                            { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
+                            { icon: Shield, text: "Licensed & Insured" },
+                            { icon: Clock, text: "Rapid Storm Response" },
+                            { icon: Star, text: "4.7★ Google Rating" },
+                          ].map((item) => (
+                            <div key={item.text} className="flex items-center gap-2">
+                              <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                              <span className="text-xs font-body font-medium text-primary-foreground/90">{item.text}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="section-padding bg-secondary/30">
+                      <div className="container-tight">
+                        <motion.div
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"
+                        >
+                          <div>
+                            <span className="eyebrow mb-3 block">Residential Portfolio</span>
+                            <h2 className="section-heading">
+                              Recent Residential<br className="hidden md:block" /> Roofing Projects.
+                            </h2>
+                          </div>
+                          <Link
+                            to="/recent-projects"
+                            className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
+                          >
+                            Full Gallery
+                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {galleryItems.map((item, i) => (
+                            <motion.div
+                              key={item.title}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: i * 0.06, duration: 0.5 }}
+                              className="group relative aspect-[4/3] rounded-sm overflow-hidden"
+                            >
+                              <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                              <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">
+                                {item.category}
+                              </div>
+                              <div className="absolute bottom-0 left-0 right-0 p-4">
+                                <h3 className="font-heading font-semibold text-white text-sm">{item.title}</h3>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="section-padding bg-secondary tartan-bg">
+                      <div className="container-tight">
+                        <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="lg:col-span-2"
+                          >
+                            <span className="eyebrow mb-3 block">Quality Assurance</span>
+                            <h2 className="section-heading mb-5">
+                              Every Detail.<br /> Every Project.
+                            </h2>
+                            <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
+                              Quality control isn't an afterthought — it's built into every phase of installation.
+                              From the first decking inspection to the final cleanup, we follow a structured
+                              checklist that ensures nothing is missed.
+                            </p>
+                            <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                              These aren't suggestions — they're non-negotiable standards that apply to every
+                              residential roofing project, regardless of size or material.
+                            </p>
+                          </motion.div>
+
+                          <div className="lg:col-span-3 space-y-3">
+                            {qualityChecks.map((check, i) => (
+                              <motion.div
+                                key={check.title}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.06, duration: 0.4 }}
+                                className="group flex gap-4 p-5 rounded-sm bg-card border border-border hover:border-primary/15 card-lift"
+                              >
+                                <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors mt-0.5">
+                                  <ShieldCheck className="w-4 h-4 text-primary" />
+                                </div>
+                                <div>
+                                  <h3 className="text-sm font-heading font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                                    {check.title}
+                                  </h3>
+                                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
+                                    {check.detail}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <WhoShowsUp />
+
+                    <TieredOffer context="residential-roofing" primaryLabel="Get My Roof Assessed" />
+
+                    <CommonConcerns />
+
+                    <SchedulingReality serviceLabel="residential roofing" />
+
+                  <section className="section-padding bg-muted/20">
+                    <div className="container-tight">
+                      <AttributedReviews category="roofing" heading="What homeowners say about our residential roofing work" />
+                    </div>
+                  </section>
+
+                  <ConversionTrustBlock variant="band" category="roofing" />
+          </>
+        }
+        faq={
+                  <section className="section-padding bg-background">
+                    <div className="container-tight max-w-4xl">
+                      <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-10 md:mb-14"
+                      >
+                        <span className="eyebrow mb-3 block">Residential Roofing FAQs</span>
+                        <h2 className="section-heading mb-4">
+                          Questions Homeowners<br className="hidden md:block" /> Ask Most Often.
+                        </h2>
+                      </motion.div>
+
+                      <Accordion type="single" collapsible className="space-y-3">
+                        {faqs.map((faq, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 14 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.03, duration: 0.4 }}
+                          >
+                            <AccordionItem
+                              value={`faq-${i}`}
+                              className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300"
+                            >
+                              <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
+                                <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">
+                                  {faq.q}
+                                </span>
+                              </AccordionTrigger>
+                              <AccordionContent className="pb-6 pr-2">
+                                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                                  {faq.a}
+                                </p>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </motion.div>
+                        ))}
+                      </Accordion>
+                    </div>
+                  </section>
+        }
+        coverage={
+          <>
+                    <section className="py-12 bg-background border-b border-border">
+                      <div className="container-tight">
+                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div className="flex items-center gap-3">
+                               <div className="w-10 h-[1px] bg-primary/20" />
+                               <span className="text-caption font-bold uppercase tracking-widest text-muted-foreground">Serving Local Markets</span>
+                            </div>
+                            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                               {[
+                                  { name: "Highlands", slug: "highlands-nc" },
+                                  { name: "Cashiers", slug: "cashiers-nc" },
+                                  { name: "Franklin", slug: "franklin-nc" },
+                                  { name: "Sylva", slug: "sylva-nc" },
+                                  { name: "Waynesville", slug: "waynesville-nc" }
+                               ].map(town => (
+                                  <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
+                                     {town.name}
+                                  </Link>
+                               ))}
+                            </div>
+                            <Link to="/service-areas" className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase tracking-widest">
+                               All Areas <ArrowRight className="w-3 h-3" />
+                            </Link>
+                         </div>
+                      </div>
+                    </section>
+
+                    <section className="py-16 bg-secondary/30 border-b border-border">
+                      <div className="container-tight">
+                         <div className="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                               <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Beyond Roofing Excellence</h3>
+                               <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
+                                  Highlander’s project discipline extends into custom additions and renovations. If your roofing project is part of a larger home expansion, our construction team coordinates the entire structural envelope.
+                               </p>
+                               <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold uppercase tracking-widest text-caption hover:gap-3 transition-all">
+                                  Explore Construction Division <ArrowRight className="w-4 h-4" />
+                               </Link>
+                            </div>
+                            <div className="bg-card border border-border p-8 rounded-sm">
+                               <h4 className="font-heading font-bold text-foreground mb-4 flex items-center gap-2">
+                                  <Compass className="w-5 h-5 text-primary" />
+                                  Plan Before You Build
+                               </h4>
+                               <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
+                                  Avoid surprises with our pre-construction support. We help Western North Carolina homeowners define layout, floor plans, and project scope before breaking ground.
+                               </p>
+                               <Link to="/layouts-planning" className="text-sm font-bold text-primary hover:underline">
+                                  Design Support &rarr;
+                               </Link>
+                            </div>
+                         </div>
+                      </div>
+                    </section>
+
+                  <RelatedLinks
+                      eyebrow="Keep Exploring"
+                      heading="Related pages you may find useful"
+                      columns={2}
+                      links={[
+                        { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+                        { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Repair scope and timelines" },
+                        { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
+                        { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panels" },
+                        { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "How to choose for WNC weather" },
+                        { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Local roofing coverage" },
+                        { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
+                      ]}
+                    />
+
+                    <ServiceInternalLinks title="Residential Roofing" slug="residential-roofing" />
+          </>
+        }
+        cta={
+                  <section className="section-dark tartan-dark relative overflow-hidden">
+                    <motion.div
+                      className="absolute top-0 left-0 w-full h-px"
+                      style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }}
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                    <div className="section-padding">
+                      <div className="container-tight">
+                        <div className="max-w-3xl mx-auto text-center">
+                          <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                          >
+                            <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">
+                              Talk With Our Team
+                            </span>
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
+                              Your Mountain Home<br className="hidden md:block" /> Deserves Mountain-Grade<br className="hidden md:block" /> Protection.
+                            </h2>
+                            <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                              Whether you're planning ahead or responding to damage — the conversation
+                              starts with a local roofing expert who knows your neighborhood, your
+                              elevation, and your weather.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                              <Link
+                                to="/consultation"
+                                className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
+                              >
+                                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                                <span className="relative">Schedule a Roofing Consultation</span>
+                                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                              </Link>
+                              <a
+                                href="tel:+18285247773"
+                                className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
+                              >
+                                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
+                                (828) 524-7773
+                              </a>
+                            </div>
+
+                            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/15">
+                              {[
+                                { icon: Shield, text: "Licensed & Insured" },
+                                { icon: Award, text: "CertainTeed Certified" },
+                                { icon: Clock, text: "Rapid Response" },
+                                { icon: Star, text: "Financing Available" },
+                              ].map((item) => (
+                                <div key={item.text} className="flex items-center gap-2">
+                                  <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                                  <span className="text-dark-section-foreground text-sm font-body font-semibold">{item.text}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+        }
+        afterCta={
+                <RealWorkWidget />
+        }
+      />
       <Footer />
       <StickyMobileCTA />
     </>

@@ -27,6 +27,7 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -104,328 +105,342 @@ const SpecialtyRoofing = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]} />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Specialty cedar roof on a custom home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
-          </div>
-
-          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
-          <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2, delay: 0.5 }} />
-
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
-            <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
-                <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="flex flex-col">
-                    <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                    <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
-                  </div>
-                </Link>
-                <ChevronRight className="w-3 h-3 text-white/30" />
-                <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Specialty Roofing</span>
-              </motion.div>
-
-              <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Where Craft
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Meets Design.
-                </motion.h2>
-              </div>
-
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                Specialty roofing for custom homes, visually distinctive properties, and projects where precision and aesthetics matter as much as weather protection. Cedar, copper, standing seam, complex rooflines — built to be seen.
-              </motion.p>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden">
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Discuss Your Project</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a href="tel:+18285247773" className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
-                </a>
-              </motion.div>
-
-              {/* Material preview thumbnails — unique to Specialty */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1.5 }}
-                className="mt-10 flex gap-2"
-              >
-                {[cedar001, metal009, cedar002].map((img, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 1.7 + i * 0.15 }}
-                    className="w-16 h-16 md:w-20 md:h-20 rounded-sm overflow-hidden border border-white/15"
-                  >
-                    <img width={1600} height={1067} src={img} alt="Specialty roofing detail" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
-                  </motion.div>
-                ))}
-                <Link to="/recent-projects" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
-                  <span className="text-caption text-primary-foreground/95 font-body text-center leading-tight">View<br/>Portfolio</span>
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-        <AnswerBlock
-          question="What is specialty roofing?"
-          answer="Specialty roofing covers systems outside standard asphalt shingles — including slate, cedar, synthetic, and complex roof designs with unusual geometry or detailing. These roofs demand specific flashing, fastening, and ventilation approaches. Highlander installs and restores specialty roof systems on mountain homes across Western North Carolina."
-          points={["Slate, cedar, synthetic, and complex roof geometry", "Detail-driven flashing and ventilation work", "Restoration as well as new installation"]}
-        />
-
-        {/* ─── OPENING — Artisan editorial with generous whitespace ─── */}
-        <section className="py-20 md:py-28 bg-background">
-          <div className="container-tight max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)] mx-auto mb-8" />
-              <h2 className="text-2xl md:text-3xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
-                Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander's specialty roofing work serves homeowners, designers, and builders who demand more than standard installation. Complex rooflines, premium materials, custom metalwork, and the kind of precision that only matters when you care deeply about the outcome.
-              </p>
-              <div className="flex items-center justify-center gap-2 mt-10">
-                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
-                <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
-                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ─── COMPLEX ROOFLINES ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-              <span className="eyebrow mb-3 block">Complex Rooflines</span>
-              <h2 className="section-heading mb-4">Built for Geometry<br className="hidden md:block" /> That Demands Precision.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                Western North Carolina's custom homes feature some of the most demanding roof geometry in the Southeast. We thrive on the complexity.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {complexRooflines.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── PREMIUM MATERIALS ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Premium Materials</span>
-              <h2 className="section-heading mb-4">Materials That Define<br className="hidden md:block" /> Your Project's Aesthetic.</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {premiumMaterials.map((mat, i) => (
-                <motion.div key={mat.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
-                  <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center mb-4">
-                    <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{mat.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{mat.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── DESIGN DETAIL ─── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
-          <div className="section-padding">
-            <div className="container-tight">
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Detail Execution</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
-                  The Details That Separate<br className="hidden md:block" /> Good From Exceptional.
-                </h2>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                {detailExecution.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-dark-section-foreground/12 transition-colors">
-                    <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        hero={
+                  <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
+                    <div className="absolute inset-0">
+                      <img width={1600} height={1067} decoding="async" src={heroImg} alt="Specialty cedar roof on a custom home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
                     </div>
-                    <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{item.detail}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* ─── WHY HIGHER STANDARD ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-5xl">
-            <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
-                <span className="eyebrow mb-3 block">Higher Standard</span>
-                <h2 className="section-heading mb-5">Why Specialty Roofing<br /> Can't Be Standard Work.</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  The gap between standard roofing and specialty work isn't just about better materials — it's about a fundamentally different approach to planning, execution, and quality verification.
-                </p>
-              </motion.div>
+                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
+                    <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2, delay: 0.5 }} />
 
-              <div className="lg:col-span-3 space-y-3">
-                {whyHigherStandard.map((reason, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-card border border-border rounded-sm">
-                    <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-body-xs leading-snug font-body">{reason}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+                    <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
+                      <div className="max-w-3xl">
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
+                          <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                            <div className="flex flex-col">
+                              <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                              <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
+                            </div>
+                          </Link>
+                          <ChevronRight className="w-3 h-3 text-white/30" />
+                          <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Specialty Roofing</span>
+                        </motion.div>
 
-        {/* ─── GALLERY ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Specialty Portfolio</span>
-              <h2 className="section-heading">Craft in Context.</h2>
-            </motion.div>
+                        <div className="overflow-hidden mb-2">
+                          <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
+                            Where Craft
+                          </motion.h1>
+                        </div>
+                        <div className="overflow-hidden mb-8">
+                          <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
+                            Meets Design.
+                          </motion.h2>
+                        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {galleryImages.map((img, i) => (
-                <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white text-xs font-body font-medium tracking-wide">{img.label}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+                        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
+                          Specialty roofing for custom homes, visually distinctive properties, and projects where precision and aesthetics matter as much as weather protection. Cedar, copper, standing seam, complex rooflines — built to be seen.
+                        </motion.p>
 
-        {/* ─── PROCESS ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Specialty Process</span>
-              <h2 className="section-heading mb-4">How a Specialty Project<br className="hidden md:block" /> Comes Together.</h2>
-            </motion.div>
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                          <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden">
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                            <span className="relative">Discuss Your Project</span>
+                            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                          <a href="tel:+18285247773" className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                            <Phone className="w-4 h-4" /> (828) 524-7773
+                          </a>
+                        </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {processSteps.map((step, i) => (
-                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── FAQS ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Specialty Roofing FAQs</span>
-              <h2 className="section-heading mb-4">Questions About<br className="hidden md:block" /> Premium Roofing Work.</h2>
-            </motion.div>
-
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((faq, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
-                  <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300">
-                    <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-6 pr-2">
-                      <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              ))}
-            </Accordion>
-          </div>
-        </section>
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
-          <div className="section-padding">
-            <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center">
-                <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Start the Conversation</span>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
-                    Your Roof Should Be as Considered<br className="hidden md:block" /> as the Home Beneath It.
-                  </h2>
-                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
-                    If you're building, renovating, or reimagining a home where the roof is part of the design statement — let's talk about what's possible.
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                    <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
-                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="relative">Discuss Your Project</span>
-                      <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
-                    </a>
-                  </div>
-
-                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
-                    {[
-                      { icon: Gem, text: "Premium Material Specialists" },
-                      { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Mountain, text: "WNC Custom Home Experience" },
-                      { icon: Star, text: "Detail-Obsessed Crews" },
-                    ].map((item) => (
-                      <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
+                        {/* Material preview thumbnails — unique to Specialty */}
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 1, delay: 1.5 }}
+                          className="mt-10 flex gap-2"
+                        >
+                          {[cedar001, metal009, cedar002].map((img, i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.5, delay: 1.7 + i * 0.15 }}
+                              className="w-16 h-16 md:w-20 md:h-20 rounded-sm overflow-hidden border border-white/15"
+                            >
+                              <img width={1600} height={1067} src={img} alt="Specialty roofing detail" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
+                            </motion.div>
+                          ))}
+                          <Link to="/recent-projects" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
+                            <span className="text-caption text-primary-foreground/95 font-body text-center leading-tight">View<br/>Portfolio</span>
+                          </Link>
+                        </motion.div>
                       </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <ServiceInternalLinks title="Specialty Roofing" slug="specialty-roofing" />
-      </main>
-        <TieredOffer context="specialty-roofing" primaryLabel="Get My Roof Assessed" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="specialty roofing" />
-        <SchedulingReality serviceLabel="specialty roofing" />
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="roofing" heading="What homeowners say about our specialty roofing work" />
-        </div>
-      </section>
-      <ConversionTrustBlock variant="band" category="roofing" />
+                    </div>
+                  </section>
+        }
+        quickAnswer={
+                  <AnswerBlock
+                    question="What is specialty roofing?"
+                    answer="Specialty roofing covers systems outside standard asphalt shingles — including slate, cedar, synthetic, and complex roof designs with unusual geometry or detailing. These roofs demand specific flashing, fastening, and ventilation approaches. Highlander installs and restores specialty roof systems on mountain homes across Western North Carolina."
+                    points={["Slate, cedar, synthetic, and complex roof geometry", "Detail-driven flashing and ventilation work", "Restoration as well as new installation"]}
+                  />
+        }
+        whatWeDo={
+          <>
+                    <section className="py-20 md:py-28 bg-background">
+                      <div className="container-tight max-w-3xl">
+                        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+                          <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)] mx-auto mb-8" />
+                          <h2 className="text-2xl md:text-3xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
+                            Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
+                          </h2>
+                          <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
+                            Highlander's specialty roofing work serves homeowners, designers, and builders who demand more than standard installation. Complex rooflines, premium materials, custom metalwork, and the kind of precision that only matters when you care deeply about the outcome.
+                          </p>
+                          <div className="flex items-center justify-center gap-2 mt-10">
+                            <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+                            <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
+                            <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+                          </div>
+                        </motion.div>
+                      </div>
+                    </section>
+
+                    <section className="section-padding bg-secondary tartan-bg">
+                      <div className="container-tight">
+                        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+                          <span className="eyebrow mb-3 block">Complex Rooflines</span>
+                          <h2 className="section-heading mb-4">Built for Geometry<br className="hidden md:block" /> That Demands Precision.</h2>
+                          <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                            Western North Carolina's custom homes feature some of the most demanding roof geometry in the Southeast. We thrive on the complexity.
+                          </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                          {complexRooflines.map((item, i) => (
+                            <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                              <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{item.title}</h3>
+                              <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="section-dark tartan-dark relative overflow-hidden">
+                      <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+                      <div className="section-padding">
+                        <div className="container-tight">
+                          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
+                            <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Detail Execution</span>
+                            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
+                              The Details That Separate<br className="hidden md:block" /> Good From Exceptional.
+                            </h2>
+                          </motion.div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                            {detailExecution.map((item, i) => (
+                              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-dark-section-foreground/12 transition-colors">
+                                <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
+                                  <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                                </div>
+                                <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
+                                <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="section-padding bg-background">
+                      <div className="container-tight max-w-5xl">
+                        <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+                          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
+                            <span className="eyebrow mb-3 block">Higher Standard</span>
+                            <h2 className="section-heading mb-5">Why Specialty Roofing<br /> Can't Be Standard Work.</h2>
+                            <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                              The gap between standard roofing and specialty work isn't just about better materials — it's about a fundamentally different approach to planning, execution, and quality verification.
+                            </p>
+                          </motion.div>
+
+                          <div className="lg:col-span-3 space-y-3">
+                            {whyHigherStandard.map((reason, i) => (
+                              <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-card border border-border rounded-sm">
+                                <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-0.5 flex-shrink-0" />
+                                <span className="text-muted-foreground text-body-xs leading-snug font-body">{reason}</span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+          </>
+        }
+        whatsIncluded={
+                  <section className="section-padding bg-background">
+                    <div className="container-tight">
+                      <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+                        <span className="eyebrow mb-3 block">Premium Materials</span>
+                        <h2 className="section-heading mb-4">Materials That Define<br className="hidden md:block" /> Your Project's Aesthetic.</h2>
+                      </motion.div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                        {premiumMaterials.map((mat, i) => (
+                          <motion.div key={mat.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                            <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center mb-4">
+                              <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                            </div>
+                            <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{mat.title}</h3>
+                            <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{mat.detail}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+        }
+        costContext={
+                  <CostContextBlock serviceLabel="specialty roofing" />
+        }
+        process={
+                  <section className="section-padding bg-background">
+                    <div className="container-tight">
+                      <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+                        <span className="eyebrow mb-3 block">Specialty Process</span>
+                        <h2 className="section-heading mb-4">How a Specialty Project<br className="hidden md:block" /> Comes Together.</h2>
+                      </motion.div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                        {processSteps.map((step, i) => (
+                          <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                            <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
+                            <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
+                            <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+        }
+        proof={
+          <>
+                    <section className="section-padding bg-secondary tartan-bg">
+                      <div className="container-tight">
+                        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+                          <span className="eyebrow mb-3 block">Specialty Portfolio</span>
+                          <h2 className="section-heading">Craft in Context.</h2>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                          {galleryImages.map((img, i) => (
+                            <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
+                              <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                              <div className="absolute bottom-0 left-0 right-0 p-5">
+                                <p className="text-white text-xs font-body font-medium tracking-wide">{img.label}</p>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+
+                    <WhoShowsUp />
+
+                    <TieredOffer context="specialty-roofing" primaryLabel="Get My Roof Assessed" />
+
+                    <CommonConcerns />
+
+                    <SchedulingReality serviceLabel="specialty roofing" />
+
+                  <section className="section-padding bg-muted/20">
+                    <div className="container-tight">
+                      <AttributedReviews category="roofing" heading="What homeowners say about our specialty roofing work" />
+                    </div>
+                  </section>
+
+                  <ConversionTrustBlock variant="band" category="roofing" />
+          </>
+        }
+        faq={
+                  <section className="section-padding bg-secondary tartan-bg">
+                    <div className="container-tight max-w-4xl">
+                      <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+                        <span className="eyebrow mb-3 block">Specialty Roofing FAQs</span>
+                        <h2 className="section-heading mb-4">Questions About<br className="hidden md:block" /> Premium Roofing Work.</h2>
+                      </motion.div>
+
+                      <Accordion type="single" collapsible className="space-y-3">
+                        {faqs.map((faq, i) => (
+                          <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
+                            <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300">
+                              <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
+                                <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
+                              </AccordionTrigger>
+                              <AccordionContent className="pb-6 pr-2">
+                                <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </motion.div>
+                        ))}
+                      </Accordion>
+                    </div>
+                  </section>
+        }
+        coverage={
+                  <ServiceInternalLinks title="Specialty Roofing" slug="specialty-roofing" />
+        }
+        cta={
+                  <section className="section-dark tartan-dark relative overflow-hidden">
+                    <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+                    <div className="section-padding">
+                      <div className="container-tight">
+                        <div className="max-w-3xl mx-auto text-center">
+                          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Start the Conversation</span>
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
+                              Your Roof Should Be as Considered<br className="hidden md:block" /> as the Home Beneath It.
+                            </h2>
+                            <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                              If you're building, renovating, or reimagining a home where the roof is part of the design statement — let's talk about what's possible.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                              <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
+                                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                                <span className="relative">Discuss Your Project</span>
+                                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                              </Link>
+                              <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
+                                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
+                              </a>
+                            </div>
+
+                            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+                              {[
+                                { icon: Gem, text: "Premium Material Specialists" },
+                                { icon: Award, text: "CertainTeed Certified" },
+                                { icon: Mountain, text: "WNC Custom Home Experience" },
+                                { icon: Star, text: "Detail-Obsessed Crews" },
+                              ].map((item) => (
+                                <div key={item.text} className="flex items-center gap-2">
+                                  <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                                  <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+        }
+      />
       <Footer />
       <StickyMobileCTA />
     </>

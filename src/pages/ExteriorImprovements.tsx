@@ -15,6 +15,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TieredOffer from "@/components/conversion/TieredOffer";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
 const heroImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000";
@@ -110,8 +111,11 @@ const ExteriorImprovements = () => {
           { name: "Exterior Improvements", url: "/construction/exterior" },
         ]}
       />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        hero={
+          <>
+            {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImg} alt="Exterior renovation project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
@@ -180,13 +184,20 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
-        <AnswerBlock
+          </>
+        }
+        quickAnswer={
+          <>
+            <AnswerBlock
           question="What are exterior improvements?"
           answer="Exterior improvements bundle the work that protects and finishes the outside of a home — roofing, siding, gutters, trim, windows, doors, and outdoor structures. Handling them together keeps flashing details continuous and avoids gaps between separate trades. Highlander handles full exterior scopes across Western North Carolina."
           points={["Roofing, siding, gutters, and trim in one scope", "Continuous flashing detail between systems", "Single point of accountability for the exterior"]}
         />
-
-        {/* ─── OPENING — Protection-focused with left-aligned editorial ─── */}
+          </>
+        }
+        whatWeDo={
+          <>
+            {/* ─── OPENING — Protection-focused with left-aligned editorial ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
@@ -217,8 +228,11 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── SERVICE CATEGORIES ─── */}
+          </>
+        }
+        whatsIncluded={
+          <>
+            {/* ─── SERVICE CATEGORIES ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -239,8 +253,7 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── WEATHER RESILIENCE (dark) ─── */}
+            {/* ─── WEATHER RESILIENCE (dark) ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -269,55 +282,11 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── MID CTA ─── */}
-        <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to improve your home's exterior?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">Let's discuss what would make the biggest impact for your property.</p>
-              </div>
-              <div className="flex gap-3 flex-shrink-0">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative" />
-                </Link>
-                <a href="tel:+18285247773" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
-                  <Phone className="w-4 h-4" /> Call Direct
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── WHY HIGHLANDER ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-              <span className="eyebrow mb-3 block">Why Highlander</span>
-              <h2 className="section-heading mb-4">Exterior Work,<br className="hidden md:block" /> Construction Standards.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
-                Renovation isn't a side hustle for us. It's built on the same foundation of planning, quality, and accountability that defines every Highlander project.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {approachPillars.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── VALUE IMPACT (asymmetric) ─── */}
+          </>
+        }
+        costContext={
+          <>
+            {/* ─── VALUE IMPACT (asymmetric) ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
@@ -345,8 +314,11 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── PROCESS ─── */}
+          </>
+        }
+        process={
+          <>
+            {/* ─── PROCESS ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
@@ -368,8 +340,57 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
+          </>
+        }
+        proof={
+          <>
+            <TieredOffer context="exterior-improvements" primaryLabel="Get My Exterior Scoped" />
+            {/* ─── MID CTA ─── */}
+        <section className="bg-primary text-primary-foreground tartan-dark">
+          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to improve your home's exterior?</h3>
+                <p className="text-primary-foreground/85 text-sm font-body">Let's discuss what would make the biggest impact for your property.</p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <span className="relative">Schedule a Project Consultation</span>
+                  <ArrowRight className="w-4 h-4 relative" />
+                </Link>
+                <a href="tel:+18285247773" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                  <Phone className="w-4 h-4" /> Call Direct
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+            {/* ─── WHY HIGHLANDER ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+              <span className="eyebrow mb-3 block">Why Highlander</span>
+              <h2 className="section-heading mb-4">Exterior Work,<br className="hidden md:block" /> Construction Standards.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
+                Renovation isn't a side hustle for us. It's built on the same foundation of planning, quality, and accountability that defines every Highlander project.
+              </p>
+            </motion.div>
 
-        {/* ─── GALLERY ─── */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {approachPillars.map((item, i) => (
+                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
+                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+            {/* ─── GALLERY ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
@@ -399,8 +420,13 @@ const ExteriorImprovements = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── FAQs ─── */}
+            <WhoShowsUp />
+            <ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+        faq={
+          <>
+            {/* ─── FAQs ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -424,18 +450,19 @@ const ExteriorImprovements = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
+          </>
+        }
+        cta={
+          <>
+            {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA
           headline={"Your Home's Best Days\nDon't Have to Be Behind It."}
           subheadline="Whether it's siding that's seen better days, windows that don't perform anymore, or an exterior that needs protection — let's talk about what's possible."
           eyebrow="Transform Your Exterior"
         />
-        <TieredOffer context="exterior-improvements" primaryLabel="Get My Exterior Scoped" />
-      </main>
-      <ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+      />
       <Footer />
       <StickyMobileCTA />
     </>
