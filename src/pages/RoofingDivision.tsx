@@ -15,8 +15,6 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import TieredOffer from "@/components/conversion/TieredOffer";
-import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import roofingMobileHero from "@/assets/heroes/roofing-mobile.webp";
@@ -92,44 +90,6 @@ const roofingServices = [
   },
 ];
 
-const materials = [
-  {
-    name: "Dimensional Shingles",
-    brand: "CertainTeed Landmark PRO",
-    lifespan: "Long service life",
-    best: "Most residential projects",
-    detail: "Impact-resistant, algae-resistant, and available in 20+ color profiles. Our most-installed product for WNC homes.",
-  },
-  {
-    name: "Standing Seam Metal",
-    brand: "Custom-fabricated panels",
-    lifespan: "Premium long-term system",
-    best: "Premium & mountain estates",
-    detail: "Concealed fastener systems rated for 140mph wind uplift. Superior snow shedding, energy efficiency, and zero-maintenance longevity.",
-  },
-  {
-    name: "Cedar Shake",
-    brand: "Premium Western Red Cedar",
-    lifespan: "30–40 years",
-    best: "Estate & heritage homes",
-    detail: "Natural insulation, distinctive character, and mountain-appropriate aesthetics. Requires periodic maintenance but ages beautifully.",
-  },
-  {
-    name: "Flat/Low-Slope Systems",
-    brand: "TPO, EPDM, Modified Bitumen",
-    lifespan: "20–30 years",
-    best: "Commercial properties",
-    detail: "Single-ply and multi-ply systems for flat and low-slope applications. Energy-reflective options available.",
-  },
-];
-
-const climateFactors = [
-  { icon: Wind, title: "High-Altitude Wind", detail: "Ridge-top homes face sustained gusts that test every fastener and edge detail. We engineer for uplift resistance at elevation." },
-  { icon: Droplets, title: "Heavy Rainfall & Snow", detail: "60+ inches of annual rainfall plus significant snow loads require proper drainage, ice shield, and load-rated systems." },
-  { icon: Thermometer, title: "Temperature Extremes", detail: "Single-digit winters to 90°F summers — constant expansion and contraction demands materials and methods built for the swing." },
-  { icon: Mountain, title: "Steep Terrain Access", detail: "Mountain lots with limited access require logistics planning as careful as the roof work itself. Our crews are equipped for it." },
-];
-
 const galleryItems = [
   { image: metalRoof, title: "Standing Seam — Cashiers", category: "Metal" },
   { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
@@ -155,78 +115,6 @@ const trustSignals = [
   { icon: Shield, label: "Licensed General Contractor", detail: "State of North Carolina" },
   { icon: FileText, label: "Full Warranty Documentation", detail: "Material + labor coverage" },
   { icon: Clock, label: "Rapid Storm Response", detail: "Emergency priority service" },
-];
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Consultation & Assessment",
-    icon: Eye,
-    description: "We begin with a thorough on-site evaluation — measuring, photographing, and documenting every condition that will inform your proposal. No surprises, no guesswork.",
-  },
-  {
-    number: "02",
-    title: "Material Specification",
-    icon: Ruler,
-    description: "Based on your property's elevation, exposure, layout, and budget, we recommend materials engineered for your specific conditions — not pulled from a generic catalog.",
-  },
-  {
-    number: "03",
-    title: "Detailed Proposal & Timeline",
-    icon: ClipboardCheck,
-    description: "You receive a transparent, grouped-cost proposal with scope, materials, timeline, and warranty details. Everything documented. Everything explained.",
-  },
-  {
-    number: "04",
-    title: "Precision Installation",
-    icon: Hammer,
-    description: "Our certified crews install to manufacturer specification — every fastener pattern, every flashing detail, every ventilation calculation. No shortcuts at any elevation.",
-  },
-  {
-    number: "05",
-    title: "Quality Inspection & Walkthrough",
-    icon: CheckCircle,
-    description: "Before we call a project complete, we conduct a multi-point quality inspection. Then we walk the project with you so you see exactly what was done and why.",
-  },
-  {
-    number: "06",
-    title: "Warranty Package Delivery",
-    icon: BadgeCheck,
-    description: "You receive a physical warranty package — manufacturer and labor coverage, project photos, maintenance recommendations. Documentation you can hold in your hands.",
-  },
-];
-
-const whyHighlander = [
-  {
-    icon: Award,
-    title: "CertainTeed ShingleMaster Credentialed Contractor",
-    detail: "Fewer than 1% of roofing contractors hold this designation. It means factory-trained installation, enhanced warranties, and a commitment to quality that's been independently verified.",
-  },
-  {
-    icon: Mountain,
-    title: "Built for Mountain Conditions",
-    detail: "We don't apply coastal methods at 4,000 feet. Every specification accounts for WNC's unique wind loads, snow accumulation, temperature swings, and terrain challenges.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Communication as a Standard",
-    detail: "Daily project updates, named project contacts, clear timelines, and a phone that gets answered. Communication isn't a bonus — it's how we operate.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Long-Term Relationships, Not Transactions",
-    detail: "We're not a crew passing through. We live here, we build here, and your roof is our reputation. That reality shapes every decision we make on your property.",
-  },
-  {
-    icon: FileText,
-    title: "Documented Everything",
-    detail: "Before/after photos, material specifications, inspection checklists, warranty packages. Every project leaves a paper trail that protects you for decades.",
-  },
-  {
-    icon: Users,
-    title: "Our In-House Crews",
-    detail: "The people on your roof are Highlander employees — trained, certified, and accountable. The same standard on every project.",
-  },
 ];
 
 /* ═══════════════════════════════════════════
