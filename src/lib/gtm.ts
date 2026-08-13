@@ -37,6 +37,9 @@ export const GTM_EVENTS = {
   // Content engagement
   TOWN_FAQ_OPEN: "town_faq_open",
   TOWN_FAQ_CONVERSION_INTENT: "town_faq_conversion_intent",
+  // Gallery / project proof
+  GALLERY_PROJECT_OPEN: "gallery_project_open",
+  GALLERY_CTA_CLICK: "gallery_cta_click",
   SCROLL_DEPTH: "scroll_depth",
   SCROLL_75: "scroll_75",
   EXIT_INTENT_SHOWN: "exit_intent_shown",
