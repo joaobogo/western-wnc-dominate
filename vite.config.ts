@@ -81,6 +81,9 @@ export default defineConfig(({ mode }) => ({
     // across deploys. Route chunks (already lazy) then only carry app code.
     rollupOptions: {
       output: {
+        // Merge sub-12 KB chunks. Service pages were pulling 60+ JS files;
+        // request overhead on throttled mobile cost more than the bytes.
+        experimentalMinChunkSize: 12000,
         manualChunks: {
           "react-vendor": ["react", "react-dom", "react-router-dom"],
           "motion-vendor": ["framer-motion"],
