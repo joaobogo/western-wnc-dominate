@@ -379,6 +379,7 @@ export default function AdminLeads() {
         </div>
         <div className="flex items-center gap-4 text-sm">
           <button onClick={() => void fetchLeads()} className="underline">Refresh</button>
+          <Link to="/admin/dashboard" className="underline">Dashboard</Link>
           <Link to="/" className="underline">← Site</Link>
           <button onClick={signOut} className="underline">Sign out</button>
         </div>
