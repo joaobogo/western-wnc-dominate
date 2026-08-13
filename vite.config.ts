@@ -86,6 +86,10 @@ export default defineConfig(({ mode }) => ({
           "motion-vendor": ["framer-motion"],
           "query-vendor": ["@tanstack/react-query"],
           "form-vendor": ["react-hook-form", "@hookform/resolvers", "zod"],
+          // One icon chunk instead of ~300 single-icon files. Hundreds of
+          // tiny requests starve the connection on throttled mobile and push
+          // first paint out by seconds (CRO Prompt 40).
+          "icons-vendor": ["lucide-react"],
           "supabase-vendor": ["@supabase/supabase-js"],
         },
       },
