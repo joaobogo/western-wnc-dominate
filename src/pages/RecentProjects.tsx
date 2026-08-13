@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -7,6 +8,7 @@ import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
