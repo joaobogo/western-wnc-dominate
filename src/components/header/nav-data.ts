@@ -7,10 +7,24 @@ export interface DropdownItem {
   desc: string;
 }
 
+export interface DropdownColumn {
+  title: string;
+  items: DropdownItem[];
+}
+
+export interface FeaturedItem {
+  label: string;
+  href: string;
+  desc: string;
+  eyebrow: string;
+}
+
 export interface DivisionDropdown {
   label: string;
   href: string;
   items: DropdownItem[];
+  columns: DropdownColumn[];
+  featured: FeaturedItem;
   icon: typeof Shield;
   tagline: string;
   accent: "green" | "gold";
@@ -51,11 +65,73 @@ export const constructionItems: DropdownItem[] = [
   { label: "Construction Consultation", href: "/construction/consultation", desc: "Scope, schedule & budget review" },
 ];
 
+export const roofingColumns: DropdownColumn[] = [
+  {
+    title: "Roof Systems",
+    items: [
+      { label: "Residential Roofing", href: "/roofing/residential", desc: "Premium mountain home systems" },
+      { label: "Metal Roofing", href: "/roofing/metal", desc: "Standing seam built for the mountains" },
+      { label: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Composite slate & shake" },
+      { label: "Specialty Roofing", href: "/roofing/specialty", desc: "Cedar, copper & custom work" },
+    ],
+  },
+  {
+    title: "Repair & Storm",
+    items: [
+      { label: "Roof Replacement", href: "/roofing/roof-replacement", desc: "Full tear-off and reinstall" },
+      { label: "Roof Repair", href: "/roofing/roof-repair", desc: "Targeted damage restoration" },
+      { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & urgent work" },
+    ],
+  },
+  {
+    title: "Exterior & Commercial",
+    items: [
+      { label: "Seamless Gutters", href: "/roofing/gutters", desc: "Aluminum & copper, custom-fit" },
+      { label: "Skylights", href: "/roofing/skylights", desc: "VELUX Certified installation" },
+      { label: "Commercial Roofing", href: "/roofing/commercial", desc: "B2B systems for WNC properties" },
+    ],
+  },
+];
+
+export const constructionColumns: DropdownColumn[] = [
+  {
+    title: "Build & Expand",
+    items: [
+      { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
+      { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
+      { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
+    ],
+  },
+  {
+    title: "Renovate & Repair",
+    items: [
+      { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
+      { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
+      { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
+    ],
+  },
+  {
+    title: "Plan & Design",
+    items: [
+      { label: "Design & Planning", href: "/construction/design", desc: "In-house design for builds" },
+      { label: "Layout & Design Planning", href: "/layouts-planning", desc: "Floor plans & feasibility" },
+      { label: "Construction Consultation", href: "/construction/consultation", desc: "Scope, schedule & budget" },
+    ],
+  },
+];
+
 export const divisions: DivisionDropdown[] = [
   {
     label: "Roofing",
     href: "/roofing",
     items: roofingItems,
+    columns: roofingColumns,
+    featured: {
+      eyebrow: "Start here",
+      label: "Free Roof Inspection",
+      desc: "A credentialed crew on your roof, with photos and a written scope. Response within 24 hours.",
+      href: "/contact",
+    },
     icon: Shield,
     tagline: "CertainTeed ShingleMaster · Credentialed Contractor",
     accent: "green",
@@ -64,6 +140,13 @@ export const divisions: DivisionDropdown[] = [
     label: "Construction",
     href: "/construction",
     items: constructionItems,
+    columns: constructionColumns,
+    featured: {
+      eyebrow: "Start here",
+      label: "Plan Your Project",
+      desc: "Walk your scope, timeline, and budget with a licensed general contractor before drawings begin.",
+      href: "/construction/consultation",
+    },
     icon: Hammer,
     tagline: "Licensed General Contractor",
     accent: "gold",
@@ -81,6 +164,23 @@ export const townLinks = towns.map((t) => ({
   label: t.name,
   href: `/service-areas/${t.slug}`,
 }));
+
+/** Primary markets shown in the header dropdown; full list lives on /service-areas. */
+export const PRIMARY_MARKET_SLUGS = [
+  "highlands-nc",
+  "cashiers-nc",
+  "franklin-nc",
+  "sylva-nc",
+  "waynesville-nc",
+  "bryson-city-nc",
+  "asheville-nc",
+  "hendersonville-nc",
+] as const;
+
+export const primaryTownLinks = PRIMARY_MARKET_SLUGS.map((slug) => {
+  const t = towns.find((x) => x.slug === slug);
+  return { label: t?.name ?? slug, href: `/service-areas/${slug}`, county: t?.county ?? "" };
+}).filter((t) => t.label);
 
 export const townsByCounty: { county: string; towns: TownEntry[] }[] = (() => {
   const map = new Map<string, TownEntry[]>();
