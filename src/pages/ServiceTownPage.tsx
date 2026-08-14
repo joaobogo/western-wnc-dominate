@@ -50,7 +50,7 @@ const SERVICE_HERO_VARIANTS: Record<string, string> = {
   "synthetic-brava":
     "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=2000",
   "additions":
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000",
   "renovations":
     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000",
   "outdoor-living":
@@ -62,7 +62,7 @@ const SERVICE_HERO_VARIANTS: Record<string, string> = {
   "home-repairs":
     "https://images.unsplash.com/photo-1581091012184-5c8a7f5e4f7f?auto=format&fit=crop&q=80&w=2000",
   "roofing-construction":
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+    "https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&q=80&w=2000",
 };
 
 interface ServiceTownPageProps {

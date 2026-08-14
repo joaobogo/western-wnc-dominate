@@ -21,8 +21,8 @@ import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
-const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
-const expansionContextImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
+const heroImg = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000";
+const expansionContextImg = "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&q=80&w=1200";
 const structuralTieImg = "https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&q=80&w=1200";
 const mountainSiteImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 
@@ -281,7 +281,7 @@ const HomeAdditions = () => {
             {/* ─── EXPANSION TYPES ─── */}
         <section className="section-padding bg-background relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/3 h-full opacity-[0.03] pointer-events-none hidden lg:block">
-            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight">
