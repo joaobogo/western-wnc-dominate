@@ -9,7 +9,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { towns } from "@/data/towns";
-import veluxLogo from "@/assets/velux-certified-logo.jpg";
+import veluxLogo from "@/assets/logo-velux.png";
 import VeluxProof from "@/components/VeluxProof";
 import skylightsMobileHero from "@/assets/heroes/skylights-mobile.webp";
 import CTABlock from "@/components/CTABlock";
@@ -98,9 +98,7 @@ const Skylights = () => {
             <div className="container-tight relative z-10">
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-white">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-20 h-20 flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-sm border border-white/10">
-                    <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={80} height={80} className="w-full h-full object-contain p-2" />
-                  </div>
+                  <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={1181} height={393} className="h-7 md:h-8 w-auto flex-shrink-0" />
                   <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
                     VELUX Certified Installer
                   </span>
