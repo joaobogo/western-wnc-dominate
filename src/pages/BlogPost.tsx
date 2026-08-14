@@ -7,6 +7,7 @@ import {
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import { TrustSidebar } from "@/components/trust";
@@ -323,9 +324,16 @@ const BlogPostPage = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: post.title, url: `/blog/${post.slug}` },
+        ]}
+      />
       <main id="main-content">
         {/* ═══ HERO ═══ */}
-        <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden">
+        <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden pt-8 md:pt-12">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={post.image || "/media/wnc-town-overlook.jpg"} 
@@ -345,21 +353,6 @@ const BlogPostPage = () => {
                 <span className="text-caption font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Insight</span>
                 <div className="h-px w-12 bg-white/10" />
               </div>
-              {/* Breadcrumb — matches BreadcrumbList schema */}
-              <nav
-                aria-label="Breadcrumb"
-                className="flex flex-wrap items-center gap-2 text-white/70 text-sm font-body mb-6"
-              >
-                <Link to="/" className="hover:text-white transition-colors">Home</Link>
-                <span aria-hidden="true">/</span>
-                <Link to="/blog" className="hover:text-white transition-colors flex items-center gap-1">
-                  <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Blog
-                </Link>
-                <span aria-hidden="true">/</span>
-                <span aria-current="page" className="text-white/90 truncate max-w-[60vw]">
-                  {post.title}
-                </span>
-              </nav>
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-3 mb-5">

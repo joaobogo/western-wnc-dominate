@@ -199,36 +199,8 @@ const ResidentialRoofing = () => {
                       transition={{ duration: 0.4, delay: 0.3 }}
                     />
 
-                    <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
-                      <div className="max-w-3xl">
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.4, delay: 0.3 }}
-                          className="flex flex-col gap-6 mb-8"
-                        >
-                          <div className="inline-flex items-center gap-4">
-                            <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
-                            <div className="flex flex-col">
-                              <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                              <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                              <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
-                                <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
-                              </div>
-                              <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">
-                                Roofing
-                              </span>
-                            </Link>
-                            <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
-                            <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
-                              Residential
-                            </span>
-                          </div>
-                        </motion.div>
+                    <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-8 md:pt-12">
+                        <div className="max-w-3xl">
 
                         <div className="overflow-hidden mb-2">
                           <motion.h1

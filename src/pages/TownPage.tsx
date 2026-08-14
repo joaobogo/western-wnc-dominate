@@ -85,7 +85,7 @@ const TownPage = () => {
       />
       <main id="main-content">
         {/* 1. Premium Hero */}
-        <section className="dark-surface relative min-h-[90svh] flex flex-col items-center justify-center overflow-hidden">
+        <section className="dark-surface relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden pt-8 md:pt-12">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={town.heroImage} 
