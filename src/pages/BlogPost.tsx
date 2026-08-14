@@ -323,6 +323,13 @@ const BlogPostPage = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: post.title, url: `/blog/${post.slug}` },
+        ]}
+      />
       <main id="main-content">
         {/* ═══ HERO ═══ */}
         <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden">
