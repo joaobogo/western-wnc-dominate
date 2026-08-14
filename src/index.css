@@ -366,8 +366,8 @@ img {
   :root {
     /* Real measured mobile header: ~52px expanded, ~44px scrolled.
        Keep a small buffer so shadow + safe-area sit inside the offset. */
-    --header-h: 60px;
-    --header-h-md: 96px;
+    --header-h: 68px;
+    --header-h-md: 112px;
     --header-h-scrolled: 48px;
     --header-h-scrolled-md: 76px;
   }
