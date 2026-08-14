@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
@@ -18,11 +18,39 @@ interface Props {
 export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isActive, onViewAllClick, onOpen, onClose }: Props) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLAnchorElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [offsetLeft, setOffsetLeft] = useState(0);
   const menuId = `nav-${div.label.toLowerCase()}-menu`;
+
+  useLayoutEffect(() => {
+    if (!isOpen) return;
+    const reposition = () => {
+      const trigger = triggerRef.current;
+      const wrapper = wrapperRef.current;
+      if (!trigger || !wrapper) return;
+      const gutter = 16;
+      const vw = document.documentElement.clientWidth;
+      const panelWidth = Math.min(vw * 0.94, 1000);
+      const triggerRect = trigger.getBoundingClientRect();
+      const wrapperLeft = wrapper.getBoundingClientRect().left;
+      const centered = triggerRect.left + triggerRect.width / 2 - panelWidth / 2;
+      const maxLeft = Math.max(gutter, vw - gutter - panelWidth);
+      const clamped = Math.min(Math.max(centered, gutter), maxLeft);
+      setOffsetLeft(clamped - wrapperLeft);
+    };
+    reposition();
+    window.addEventListener("resize", reposition);
+    window.addEventListener("scroll", reposition, { passive: true });
+    return () => {
+      window.removeEventListener("resize", reposition);
+      window.removeEventListener("scroll", reposition);
+    };
+  }, [isOpen]);
 
   return (
   <div
     className="relative"
+    ref={wrapperRef}
     onMouseEnter={onEnter}
     onMouseLeave={onLeave}
     onFocus={onEnter}
@@ -75,7 +103,8 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 6, scale: 0.98 }}
           transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
-          className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5"
+          className="absolute top-full pt-2.5"
+          style={{ left: offsetLeft }}
           ref={panelRef}
           id={menuId}
           role="menu"
