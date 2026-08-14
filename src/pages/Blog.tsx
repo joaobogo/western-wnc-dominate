@@ -102,7 +102,7 @@ const Blog = () => {
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
           <MountainContours variant="dark" opacity={0.04} />
-          <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 md:px-8 lg:px-16">
+          <div className="relative z-10 pt-8 md:pt-12 pb-16 md:pb-20 md:px-8 lg:px-16">
             <div className="container-tight">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                 <motion.div
