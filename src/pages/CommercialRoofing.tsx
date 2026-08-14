@@ -158,15 +158,6 @@ const CommercialRoofing = () => {
 
                     <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-8 md:pt-12">
                       <div className="max-w-3xl">
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col gap-6 mb-8">
-                          <div className="inline-flex items-center gap-4">
-                            <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
-                            <div className="flex flex-col">
-                              <span className="text-body-xs font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                              <span className="text-caption font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Commercial Division</span>
-                            </div>
-                          </div>
-                        </motion.div>
 
                         <div className="overflow-hidden mb-2">
                           <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">

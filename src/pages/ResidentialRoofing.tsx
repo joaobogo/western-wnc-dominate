@@ -200,21 +200,7 @@ const ResidentialRoofing = () => {
                     />
 
                     <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-8 md:pt-12">
-                      <div className="max-w-3xl">
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.4, delay: 0.3 }}
-                          className="flex flex-col gap-6 mb-8"
-                        >
-                          <div className="inline-flex items-center gap-4">
-                            <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
-                            <div className="flex flex-col">
-                              <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                              <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
-                            </div>
-                          </div>
-                        </motion.div>
+                        <div className="max-w-3xl">
 
                         <div className="overflow-hidden mb-2">
                           <motion.h1
