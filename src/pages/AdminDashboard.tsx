@@ -317,7 +317,7 @@ export default function AdminDashboard() {
             {Object.values(EXPERIMENTS).map((e) => (
               <div key={e.id}>
                 <p className="font-semibold">
-                  {e.id} — {e.active ? "running" : "paused"}
+                  {e.id} — {e.status}
                 </p>
                 <p className="text-muted-foreground">{e.hypothesis}</p>
                 <p className="text-muted-foreground">

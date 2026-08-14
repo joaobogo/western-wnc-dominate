@@ -29,7 +29,7 @@ const RealWorkWidget = ({
   description = "Explore recent Highlander project activity, updates, and completed work across Western North Carolina.",
   className = "py-16 md:py-24 bg-background border-t border-border/60",
 }: RealWorkWidgetProps) => {
-  const outputRef = useRef<HTMLDivElement>(null);
+  const outputWrapRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
 
   /*
@@ -78,7 +78,7 @@ const RealWorkWidget = ({
 
     const checkReady = () => {
       if (cancelled) return false;
-      const output = outputRef.current;
+      const output = document.getElementById("rwl-output");
       if (output && output.children.length > 0) {
         setStatus("ready");
         return true;
@@ -116,7 +116,7 @@ const RealWorkWidget = ({
         // The plugin injects into its own containers anywhere in the document,
         // so patch every RealWork-owned root — never the rest of our UI.
         const roots = new Set<HTMLElement>();
-        if (outputRef.current) roots.add(outputRef.current);
+        if (outputWrapRef.current) roots.add(outputWrapRef.current);
         document
           .querySelectorAll<HTMLElement>('[id^="rwl"], [id^="rwlContentContainer"], [class*="rwl"]')
           .forEach((el) => roots.add(el));
@@ -164,14 +164,14 @@ const RealWorkWidget = ({
           <p className="text-muted-foreground text-lg leading-relaxed">{description}</p>
         </div>
 
-        <div className="relative w-full max-w-full overflow-x-hidden">
-          <div
-            id="rwl-output"
-            ref={outputRef}
-            className="min-h-[240px]"
-            aria-live="polite"
-            aria-busy={status === "loading"}
-          />
+        <div
+          className="relative w-full max-w-full overflow-x-hidden"
+          ref={outputWrapRef}
+          aria-live="polite"
+          aria-busy={status === "loading"}
+        >
+          {/* RealWork requires this container to be exactly <div id="rwl-output"></div> */}
+          <div id="rwl-output"></div>
 
           {status === "loading" && (
             <>
