@@ -333,7 +333,7 @@ const BlogPostPage = () => {
       />
       <main id="main-content">
         {/* ═══ HERO ═══ */}
-        <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden">
+        <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden pt-8 md:pt-12">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={post.image || "/media/wnc-town-overlook.jpg"} 
