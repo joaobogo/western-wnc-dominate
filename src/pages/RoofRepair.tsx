@@ -137,14 +137,6 @@ const RoofRepair = () => {
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-20 pt-24 md:pt-40">
             <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-4 md:mb-6">
-                <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">Roofing</span>
-                </Link>
-                <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
-                <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Repair</span>
-              </motion.div>
 
               <div className="overflow-hidden mb-3 md:mb-4">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
