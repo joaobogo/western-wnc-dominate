@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import HeaderOffset from "@/components/layout/HeaderOffset";
 import { breadcrumbSchema } from "@/components/SEOHead";
+import { cn } from "@/lib/utils";
 
 export interface BreadcrumbCrumb {
   name: string;
@@ -59,29 +60,28 @@ const PageBreadcrumbs = ({ items, className = "", emitSchema = true }: PageBread
     };
   }, [items, emitSchema]);
 
-  if (!items || items.length === 0) return null;
   return (
-    <HeaderOffset spacing="normal" className={className}>
+    <HeaderOffset spacing="tight" className={cn("py-2 border-b border-border/40 bg-background/50 backdrop-blur-sm", className)}>
       <Breadcrumb aria-label="Breadcrumb">
-        <BreadcrumbList>
+        <BreadcrumbList className="text-[11px] sm:text-xs tracking-wide uppercase font-medium">
           {items.map((c, i) => {
             const isLast = i === items.length - 1;
             return (
-              // The separator is itself an <li>, so it must be a sibling of the
-              // item — never nested inside it (invalid <li> inside <li>).
               <Fragment key={`${c.url}-${i}`}>
                 <BreadcrumbItem>
                   {isLast ? (
-                    <BreadcrumbPage className="truncate max-w-[60vw] sm:max-w-none">
+                    <BreadcrumbPage className="truncate max-w-[60vw] sm:max-w-none text-muted-foreground/70">
                       {c.name}
                     </BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink asChild>
-                      <Link to={c.url}>{c.name}</Link>
+                      <Link to={c.url} className="hover:text-[hsl(var(--heritage-green))] transition-colors">
+                        {c.name}
+                      </Link>
                     </BreadcrumbLink>
                   )}
                 </BreadcrumbItem>
-                {!isLast && <BreadcrumbSeparator />}
+                {!isLast && <BreadcrumbSeparator className="opacity-40" />}
               </Fragment>
             );
           })}
