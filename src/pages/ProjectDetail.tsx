@@ -93,13 +93,6 @@ const ProjectDetailPage = () => {
                   <div className="h-px w-8 bg-[hsl(var(--highland-gold)/0.4)]" />
                   <span className="text-caption font-heading font-bold text-white tracking-[0.2em] uppercase">Highlander Project</span>
                 </motion.div>
-                <nav className="flex items-center gap-2 text-white/85 text-sm font-body mb-4">
-                  <Link to="/recent-projects" className="hover:text-white transition-colors flex items-center gap-1">
-                    <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Projects
-                  </Link>
-                  <span>/</span>
-                  <span className="text-white/90">{project.type}</span>
-                </nav>
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
