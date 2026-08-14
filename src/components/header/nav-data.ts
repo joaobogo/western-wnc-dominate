@@ -163,7 +163,6 @@ export const secondaryLinks = [
 export const resourceLinks = [
   { label: "About Highlander", href: "/about" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Blog", href: "/blog" },
   { label: "Giving Back", href: "/giving-back" },
 ];
 
