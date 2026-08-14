@@ -155,6 +155,7 @@ export const divisions: DivisionDropdown[] = [
 
 export const secondaryLinks = [
   { label: "Projects", href: "/recent-projects" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
