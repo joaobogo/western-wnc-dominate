@@ -70,25 +70,15 @@ const Hero = () => {
       data-hero-variant={heroLayout.variant}
       data-gtm-experiment="home_hero_layout"
       data-gtm-variant={heroLayout.variant}
-      className={`dark-surface relative flex flex-col overflow-hidden ${
-        textLed ? "min-h-[88svh] md:min-h-[92svh]" : "min-h-[100svh]"
-      }`}
+      className={`dark-surface relative flex flex-col overflow-hidden min-h-[100svh]`}
     >
       {/* Text-led variant: solid brand panel carries the copy; photography is
           demoted to a supporting right-hand column on desktop and a short band
           on mobile, so the offer and CTA read before any image loads. */}
-      {textLed && (
-        <div aria-hidden="true" className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
-      )}
+      {/* Text-led variant overlay logic removed to allow image to cover whole hero */}
 
       {/* === BACKGROUND — static, no parallax for smooth scroll === */}
-      <div
-        className={
-          textLed
-            ? "absolute inset-x-0 top-0 h-[38svh] md:h-auto md:inset-y-0 md:left-[52%] md:right-0 overflow-hidden"
-            : "absolute inset-0"
-        }
-      >
+      <div className="absolute inset-0">
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (i > 0 && !extraLayersReady ? null : (
@@ -112,12 +102,7 @@ const Hero = () => {
         )))}
 
         {/* Seam blend — feathers the photo column into the copy panel */}
-        {textLed && (
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 z-[2] bg-gradient-to-b md:bg-gradient-to-r from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.35)] to-transparent"
-          />
-        )}
+        {/* Seam blend demoted as image is now full-width in all variants */}
 
         {/* Scrim tokens — side scrim behind left-anchored copy, hero scrim for headline legibility */}
         <div aria-hidden="true" className="absolute inset-0 bg-scrim-side opacity-50 md:opacity-35" />
@@ -220,12 +205,8 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div className={`relative z-10 flex-1 flex w-full ${
-        textLed ? "items-start pt-[38svh] md:pt-0" : "items-center md:items-end"
-      }`}>
-        <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header ${
-          textLed ? "pt-6 md:pt-24 pb-12 md:pb-20 md:max-w-[52%]" : "pb-10 md:pb-44"
-        }`}>
+      <div className={`relative z-10 flex-1 flex w-full items-center md:items-end`}>
+        <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header pb-10 md:pb-44`}>
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <div
