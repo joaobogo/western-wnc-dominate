@@ -71,7 +71,7 @@ const ProjectDetailPage = () => {
         ]}
       />
       <main id="main-content">
-        <section className="relative pt-20 md:pt-24">
+        <section className="relative pt-8 md:pt-12">
           <div className="relative h-[50vh] md:h-[65vh] overflow-hidden">
             <motion.img
               src={project.heroImage}
