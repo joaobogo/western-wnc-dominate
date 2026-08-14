@@ -166,14 +166,6 @@ const CommercialRoofing = () => {
                               <span className="text-caption font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Commercial Division</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                              <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">Roofing</span>
-                            </Link>
-                            <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
-                            <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Commercial</span>
-                          </div>
                         </motion.div>
 
                         <div className="overflow-hidden mb-2">
