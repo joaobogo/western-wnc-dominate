@@ -164,14 +164,14 @@ const RealWorkWidget = ({
           <p className="text-muted-foreground text-lg leading-relaxed">{description}</p>
         </div>
 
-        <div className="relative w-full max-w-full overflow-x-hidden">
-          <div
-            id="rwl-output"
-            ref={outputRef}
-            className="min-h-[240px]"
-            aria-live="polite"
-            aria-busy={status === "loading"}
-          />
+        <div
+          className="relative w-full max-w-full overflow-x-hidden"
+          ref={outputWrapRef}
+          aria-live="polite"
+          aria-busy={status === "loading"}
+        >
+          {/* RealWork requires this container to be exactly <div id="rwl-output"></div> */}
+          <div id="rwl-output"></div>
 
           {status === "loading" && (
             <>
