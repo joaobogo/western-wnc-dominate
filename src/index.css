@@ -66,10 +66,10 @@
     min-height: 52px !important;
   }
   [class*="px-14"], [class*="px-12"], [class*="px-10"] {
-    padding-left: 1.75rem !important;
-    padding-right: 1.75rem !important;
+    padding-left: 1.25rem !important; /* Slightly tighter on mobile to prevent overflow */
+    padding-right: 1.25rem !important;
   }
-  [class*="py-5"], [class*="py-6"] { padding-top: 0.9rem !important; padding-bottom: 0.9rem !important; }
+  [class*="py-5"], [class*="py-6"] { padding-top: 0.8rem !important; padding-bottom: 0.8rem !important; }
 
   /* ---------- Cards: slightly tighter interior padding ---------- */
   [class*="p-10"], [class*="p-12"] { padding: 1.5rem !important; }

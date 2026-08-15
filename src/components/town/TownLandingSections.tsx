@@ -29,15 +29,15 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
     <div className="container-tight relative z-10 px-6 py-8 md:py-10">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-center md:text-left">
-          <div className="w-12 h-12 shrink-0 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.4)] flex items-center justify-center">
+          <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.4)] flex items-center justify-center">
             <CloudLightning className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
           </div>
           <div>
-            <p className="text-caption uppercase tracking-[0.25em] font-bold text-[hsl(var(--gold-ink))] mb-1">
+            <p className="text-[10px] md:text-caption uppercase tracking-[0.2em] md:tracking-[0.25em] font-bold text-[hsl(var(--gold-ink))] mb-0.5 md:mb-1">
               Storm or Active Leak in {town.name}?
             </p>
-            <p className="font-heading font-bold text-lg md:text-xl leading-tight text-white">
-              Rapid response tarping, documentation & insurance-ready assessments.
+            <p className="font-heading font-bold text-base md:text-xl leading-tight text-white">
+              Rapid response tarping & insurance assessments.
             </p>
           </div>
         </div>
