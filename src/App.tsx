@@ -119,6 +119,8 @@ const App = () => (
           <UrlNormalizer />
           <ScrollToTop />
           <GTMRouteTracker />
+          <OrphanRedirectHandler />
+          <LegacyTownRedirect />
           <PaidLandingGate>
             <RecoveryPrompt />
           </PaidLandingGate>
