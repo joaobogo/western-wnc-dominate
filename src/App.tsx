@@ -120,7 +120,7 @@ const App = () => (
           <ScrollToTop />
           <GTMRouteTracker />
           <OrphanRedirectHandler />
-          <LegacyTownRedirect />
+
           <PaidLandingGate>
             <RecoveryPrompt />
           </PaidLandingGate>
