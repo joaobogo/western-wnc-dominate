@@ -36,7 +36,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
             <p className="text-caption uppercase tracking-[0.25em] font-bold text-[hsl(var(--gold-ink))] mb-1">
               Storm or Active Leak in {town.name}?
             </p>
-            <p className="font-heading font-bold text-lg md:text-xl leading-tight">
+            <p className="font-heading font-bold text-lg md:text-xl leading-tight text-white">
               Rapid response tarping, documentation & insurance-ready assessments.
             </p>
           </div>
