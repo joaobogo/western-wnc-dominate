@@ -166,7 +166,7 @@ const TownPage = () => {
             </div>
           </div>
 
-          <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 z-20 border-t border-white/10 bg-black/40 backdrop-blur-lg">
+          <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 z-20 border-t border-white/10 bg-black/60 backdrop-blur-xl">
             <div className="container-tight px-4 sm:px-6 py-4 md:py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {[
