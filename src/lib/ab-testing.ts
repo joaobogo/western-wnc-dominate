@@ -260,8 +260,6 @@ export function announceVariant(id: ExperimentId, variant: VariantKey) {
   // readout never mixes real exposure with placeholder control traffic.
   if (!def || def.status !== "running") return;
   announced.add(id);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const w = window as any;
   w.dataLayer = w.dataLayer || [];
   w.dataLayer.push({
     event: "experiment_view",
