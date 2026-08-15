@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { leadTierLabel, type LeadTierLabel } from "@/lib/lead-scoring";
 import { useInternalPageHead } from "@/components/SEOHead";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import { useToast } from "@/hooks/use-toast";
 
 type Lead = {
   id: string;
@@ -96,6 +97,7 @@ export default function AdminLeads() {
   useInternalPageHead("Lead dashboard", "Internal Highlander lead dashboard for reviewing and managing inbound requests.", "/admin/leads");
 
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [searchParams] = useSearchParams();
   const deepLinkId = searchParams.get("lead");
   const [checkingAuth, setCheckingAuth] = useState(true);
@@ -285,7 +287,11 @@ export default function AdminLeads() {
     const { error } = await supabase.from("leads").update({ status }).eq("id", id);
     setSavingStatus(false);
     if (error) {
-      alert(`Could not update status: ${error.message}`);
+      toast({
+        title: "Update Failed",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     setLeads((prev) => prev.map((l) => (l.id === id ? { ...l, status } : l)));
@@ -299,7 +305,11 @@ export default function AdminLeads() {
         body: { lead_id: id, force: true },
       });
       if (error) {
-        alert(`Resend failed: ${error.message}`);
+        toast({
+          title: "Resend Failed",
+          description: error.message,
+          variant: "destructive",
+        });
         return;
       }
       const { data: row } = await supabase
@@ -313,7 +323,16 @@ export default function AdminLeads() {
       }
       const result = data as { ok?: boolean; error?: string } | null;
       if (!result?.ok) {
-        alert(`JobTread not synced: ${result?.error || "check secrets"}`);
+        toast({
+          title: "Sync Warning",
+          description: result?.error || "JobTread not synced. Check edge function secrets.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Sync Successful",
+          description: "Lead sent to JobTread.",
+        });
       }
     } finally {
       setResending(null);

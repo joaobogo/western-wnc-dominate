@@ -243,7 +243,18 @@ export function getActiveExperiments(): Record<string, string> {
 
 /** Push the impression once per page view so GTM can attribute conversions. */
 export function announceVariant(id: ExperimentId, variant: VariantKey) {
-  if (typeof window === "undefined" || announced.has(id)) return;
+  if (typeof window === "undefined") return;
+  
+  // StrictMode or route-changes: Check if we already announced this in this session to avoid GTM bloat.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const w = window as any;
+  w.dataLayer = w.dataLayer || [];
+  const alreadyAnnounced = w.dataLayer.some(
+    (item: any) => item.event === "experiment_view" && item.experiment_id === id
+  );
+
+  if (alreadyAnnounced || announced.has(id)) return;
+  
   const def = EXPERIMENTS[id] as ExperimentDef | undefined;
   // Queued and concluded tests serve the control only — no impression, so the
   // readout never mixes real exposure with placeholder control traffic.
