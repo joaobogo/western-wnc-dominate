@@ -102,6 +102,9 @@ const blogRoutes: SitemapEntry[] = blogPosts.map((p) => {
   return entry;
 });
 
+// If there are slugs in the public sitemap that ARE NOT in blogPosts, they must
+// be removed. The generator already handles this by only sourcing from blogPosts.
+
 // De-duplicate by path (first wins) to guarantee no duplicate <url> entries.
 const seen = new Set<string>();
 const entries: SitemapEntry[] = [

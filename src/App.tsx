@@ -11,6 +11,7 @@ import RecoveryPrompt from "./components/recovery/RecoveryPrompt";
 import PaidLandingGate from "./components/system/PaidLandingGate";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
+import OrphanRedirectHandler from "./components/OrphanRedirectHandler";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/attribution";
 import { preloadLikelyRoutes } from "./lib/route-preload";
@@ -118,6 +119,8 @@ const App = () => (
           <UrlNormalizer />
           <ScrollToTop />
           <GTMRouteTracker />
+          <OrphanRedirectHandler />
+          <LegacyTownRedirect />
           <PaidLandingGate>
             <RecoveryPrompt />
           </PaidLandingGate>
