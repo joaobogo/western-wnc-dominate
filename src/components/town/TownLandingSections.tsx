@@ -305,6 +305,38 @@ const TownFAQAnswerLinks = ({
   );
 };
 
+export const TownFAQGutterChecklist = ({ town }: { town: TownData }) => (
+  <div className="mt-12 p-8 border border-primary/20 bg-secondary/30 rounded-none relative overflow-hidden group">
+    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+      <Mountain className="w-24 h-24 text-primary" />
+    </div>
+    <div className="relative z-10">
+      <span className="eyebrow mb-3 block text-primary">Mountain Maintenance Resource</span>
+      <h3 className="text-2xl font-heading font-bold text-foreground mb-4 leading-tight">
+        Gutter Season Is Coming: The Pre-Fall Checklist for {town.name} Homeowners
+      </h3>
+      <p className="text-muted-foreground text-base font-body leading-relaxed mb-6 max-w-2xl">
+        Don't wait for the first heavy mountain rain to test your drainage. We've compiled a 9-step checklist specifically for {town.county} properties to help you clear valleys, test downspouts, and protect your foundation before the leaves drop.
+      </p>
+      <div className="flex flex-wrap gap-4">
+        <Link
+          to="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners"
+          className="btn btn-primary btn-md"
+        >
+          Read the Full Checklist <ArrowRight className="w-4 h-4" aria-hidden="true" />
+        </Link>
+        <a
+          href="/Highlander_Pre-Fall_Gutter_Checklist.pdf"
+          target="_blank"
+          className="btn btn-secondary btn-md"
+        >
+          Download PDF Guide
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
 export const TownFAQ = ({
   town,
   faqs,

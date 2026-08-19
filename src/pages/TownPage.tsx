@@ -262,6 +262,10 @@ const TownPage = () => {
         {/* 6. TOWN-SPECIFIC FAQ */}
         <TownFAQ town={town} faqs={townFaqs} />
 
+        <div className="container-tight max-w-4xl pb-16 md:pb-24">
+          <TownFAQGutterChecklist town={town} />
+        </div>
+
         <InspectionForm />
 
         {/* 7. NEARBY COVERAGE */}
