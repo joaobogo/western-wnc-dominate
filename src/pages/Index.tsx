@@ -49,7 +49,7 @@ const Index = () => {
       <Header />
       <main id="main-content">
         {/* 1. Hero — The Highland standard */}
-        <section id="hero" className="min-h-[100svh]" data-hero-anchored="bottom">
+        <section id="hero" className="min-h-[100svh]">
           <Hero />
         </section>
 
