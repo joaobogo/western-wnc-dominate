@@ -98,13 +98,6 @@ export const blogPosts: BlogPost[] = [
 <h3>05 Evaluate the terrain and discharge points</h3>
 <p>Stand at each discharge point and follow the likely path of water. On a steep lot, runoff may cross a walkway, disappear beside a retaining wall, or pool against a lower foundation wall. Look for sediment fans, exposed roots, or persistent dampness.</p>
 
-<div class="my-10 p-8 border border-border rounded-xl bg-accent/10">
-  <h3 class="text-2xl font-bold mb-4">Download the Full Mountain Homeowner Guide</h3>
-  <p class="mb-6">Get the complete 12-page printable checklist and detailed mountain maintenance schedule as a PDF resource.</p>
-  <a href="/Highlander_Pre-Fall_Gutter_Checklist.pdf" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8">
-    Download PDF Checklist
-  </a>
-</div>
 
 <h2>DIY or Professional?</h2>
 <p>Ground-level observation is appropriate for nearly every homeowner. Elevated cleaning and repair are not. Mountain homes often combine upper stories, steep grades, limited ladder footing, and wet leaves. Those conditions change a routine task into a fall hazard. If the task requires a ladder on a slope or a multi-story reach, the risk often outweighs the chore.</p>
