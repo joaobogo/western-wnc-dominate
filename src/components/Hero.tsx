@@ -206,7 +206,7 @@ const Hero = () => {
 
       {/* === MAIN CONTENT === */}
       <div className={`relative z-20 flex-1 flex w-full items-center md:items-end`}>
-        <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header pb-10 md:pb-44 flex flex-col justify-end min-h-[inherit]`}>
+        <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header pb-12 md:pb-44 flex flex-col justify-end min-h-[inherit]`}>
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <div
