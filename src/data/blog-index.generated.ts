@@ -14,7 +14,7 @@ export const blogIndex: BlogIndexEntry[] = [
   {
     "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
     "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
-    "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall",
+    "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall ",
     "category": "Maintenance",
     "date": "2026-08-19",
     "town": "Highlands"

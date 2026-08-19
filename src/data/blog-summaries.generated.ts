@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
+    "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
+    "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
+    "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall and colder weather.",
+    "category": "Maintenance",
+    "date": "2026-08-19",
+    "readTime": "8 min"
+  },
+  {
     "id": "metal-roof-vs-shingle-roof-western-north-carolina",
     "slug": "metal-roof-vs-shingle-roof-western-north-carolina",
     "title": "Metal Roof vs Shingle Roof: Cost, Lifespan, and Comparison for Mountain Homes",
@@ -109,15 +118,6 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "How Cullowhee, NC homeowners can decide between a targeted roof repair and full replacement in Jackson County's mountain climate.",
     "category": "Replacement",
     "date": "2026-07-26",
-    "readTime": "7 min"
-  },
-  {
-    "id": "storm-damage-check-sylva-nc",
-    "slug": "storm-damage-check-sylva-nc",
-    "title": "What to Check After a Storm in Sylva, North Carolina",
-    "excerpt": "A safe, practical post storm checklist for Sylva, NC homeowners, plus when to call a local roofer for a professional evaluation.",
-    "category": "Storm Damage",
-    "date": "2026-07-25",
     "readTime": "7 min"
   }
 ];

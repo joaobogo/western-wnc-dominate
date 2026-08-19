@@ -194,7 +194,7 @@ const RoofingDivision = () => {
             transition={{ duration: 0.4, delay: 0.3 }}
           />
 
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-20 pt-24 md:pt-40">
+          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-20 pt-16 md:pt-40">
             <div className="max-w-3xl flex flex-col">
               <motion.div
                 initial={{ opacity: 0 }}
