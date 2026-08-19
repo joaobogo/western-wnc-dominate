@@ -185,7 +185,7 @@ const RecoveryPrompt = () => {
           <div>
             <h2 id="recovery-prompt-title" className="font-heading text-2xl text-foreground">Got it — we'll call you.</h2>
             <p className="mt-2 font-body text-body-sm text-muted-foreground">
-              A Highlander estimator will reach out during office hours. Need us sooner? Call {PHONE_DISPLAY}.
+              A Highlander team member will reach out during office hours. Need us sooner? Call {PHONE_DISPLAY}.
             </p>
             <button type="button" onClick={() => setOpen(false)} className="mt-5 font-body font-semibold text-body-sm underline">
               Back to the site
@@ -197,7 +197,7 @@ const RecoveryPrompt = () => {
               Want us to call you instead?
             </h2>
             <p className="mt-2 font-body text-body-sm text-muted-foreground">
-              Two fields. A local estimator calls you back — no forms to finish, no pressure.
+              Two fields. A Highlander team member calls you back — no forms to finish, no pressure.
             </p>
             <form onSubmit={submit} className="mt-5 space-y-3" noValidate>
               <div>
