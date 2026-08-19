@@ -86,7 +86,7 @@ const Skylights = () => {
           />
         }
         hero={
-          <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden hero-clears-header pb-14 md:pb-20">
+          <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden hero-clears-header pb-24 md:pb-32">
             <div className="absolute inset-0">
               <picture>
                 <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />
@@ -95,7 +95,7 @@ const Skylights = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.15)]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />
             </div>
-            <div className="container-tight relative z-10 pt-24 md:pt-40">
+            <div className="container-tight relative z-10">
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-white">
                 <div className="flex items-center gap-3 mb-5">
                   <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={1181} height={393} className="h-7 md:h-8 w-auto flex-shrink-0" />
