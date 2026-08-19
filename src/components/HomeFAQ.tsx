@@ -63,6 +63,15 @@ const faqs = [
     ),
     a: "Call (828) 524-7773, request an inspection, or reach us through our contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.",
   },
+  {
+    q: "When is the best time for gutter maintenance in the mountains?",
+    aNode: (
+      <>
+        A two-stage approach works best for wooded WNC properties. Schedule a baseline inspection and cleaning before heavy leaf fall begins, then a follow-up after the main canopy has dropped. For a complete guide and printable schedule, see our <Link to="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners" className="text-primary underline underline-offset-4 hover:no-underline">Pre-Fall Gutter Maintenance Checklist for Mountain Homeowners</Link>.
+      </>
+    ),
+    a: "A two-stage approach works best for wooded WNC properties: a baseline cleaning before heavy leaf fall, and a follow-up after the canopy drops.",
+  },
 ];
 
 const HomeFAQ = () => {

@@ -521,7 +521,7 @@ const RoofingDivision = () => {
                     Your Roof Protects Everything<br className="hidden md:block" /> That Matters. Plan It With<br className="hidden md:block" /> a Team That Knows.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
-                    Whether it's time for a replacement, a repair, or an honest second opinion —
+                    Whether it's time for a replacement, a repair, or seasonal maintenance —
                     let's build a plan that gives you confidence for the next 30 years.
                   </p>
 

@@ -12,6 +12,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
+    "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
+    "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall",
+    "category": "Maintenance",
+    "date": "2026-08-19",
+    "town": "Highlands"
+  },
+  {
     "slug": "metal-roof-vs-shingle-roof-western-north-carolina",
     "title": "Metal Roof vs Shingle Roof: Cost, Lifespan, and Comparison for Mountain Homes",
     "excerpt": "A detailed Western North Carolina comparison of standing seam metal, exposed-fastener panels, and dimensional asphalt shingles \\u2014 cost per square foot, real",
