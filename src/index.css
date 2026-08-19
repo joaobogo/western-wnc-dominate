@@ -96,10 +96,10 @@
    fixed header on phones. Cap those on <=640px so hero content sits
    closer to the header without touching desktop values. */
 @media (max-width: 640px) {
-  [class*="pt-48"]:not(main):not(body):not([data-header-offset]) { padding-top: 6.25rem !important; }
-  [class*="pt-40"]:not(main):not(body):not([data-header-offset]) { padding-top: 5.75rem !important; }
-  [class*="pt-32"]:not(main):not(body):not([data-header-offset]) { padding-top: 5.25rem !important; }
-  [class*="pt-24"]:not(main):not(body):not([data-header-offset]) { padding-top: 4.75rem !important; }
+  [class*="pt-48"]:not(main):not(body):not([data-header-offset]) { padding-top: 5.75rem !important; }
+  [class*="pt-40"]:not(main):not(body):not([data-header-offset]) { padding-top: 5.25rem !important; }
+  [class*="pt-32"]:not(main):not(body):not([data-header-offset]) { padding-top: 4.75rem !important; }
+  [class*="pt-24"]:not(main):not(body):not([data-header-offset]) { padding-top: 4.25rem !important; }
   [class*="pt-36"]:not(main):not(body) { padding-top: 5.5rem !important; }
   [class*="pt-32"]:not(main):not(body) { padding-top: 5.25rem !important; }
   [class*="pt-28"]:not(main):not(body) { padding-top: 4.75rem !important; }
