@@ -83,7 +83,7 @@ const ServiceAreas = () => {
           </div>
 
           <MountainContours variant="dark" opacity={0.05} />
-          <div className="relative z-10 w-full hero-clears-header pb-16 md:pb-24 px-5 md:px-8 lg:px-16 pt-8 md:pt-12">
+          <div className="relative z-10 w-full hero-clears-header pb-24 md:pb-32 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
                 <motion.div

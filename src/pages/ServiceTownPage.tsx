@@ -147,7 +147,7 @@ const ServiceTownPage = ({
       />
       <main id="main-content">
         {/* Hero */}
-        <section className="dark-surface relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden">
+        <section className="dark-surface relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={heroImage}
@@ -164,7 +164,7 @@ const ServiceTownPage = ({
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
           </div>
 
-          <div className="container-tight relative z-10 pt-24 md:pt-40 pb-20">
+          <div className="container-tight relative z-10 pb-20">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-6">
                 <MapPin className="w-4 h-4" aria-hidden="true" />
