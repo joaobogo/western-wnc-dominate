@@ -383,12 +383,17 @@ img {
   /* Every hero whose content stacks from the top automatically clears
      the header. Heroes that use `flex items-end` (bottom-anchored) are
      unaffected because their padding-top is intentionally minimal. */
+  /* Every hero whose content stacks from the top automatically clears
+     the header. Heroes that use `flex items-end` (bottom-anchored) are
+     unaffected because their padding-top is intentionally minimal. */
   main > section:first-of-type:not(.no-header-pad) {
+    padding-top: calc(var(--header-h) + 1.5rem);
     scroll-margin-top: var(--header-h);
   }
 
   @media (min-width: 768px) {
     main > section:first-of-type:not(.no-header-pad) {
+      padding-top: calc(var(--header-h-md) + 2rem);
       scroll-margin-top: var(--header-h-md);
     }
   }
