@@ -25,6 +25,7 @@ import {
   TownFAQ,
   TownEstimateCTA,
   TownCTAStrip,
+  TownFAQGutterChecklist,
 } from "@/components/town/TownLandingSections";
 import { getTownBySlug, getLocalRelevance, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
