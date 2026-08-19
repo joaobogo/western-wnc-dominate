@@ -73,7 +73,7 @@ const CountyPage = () => {
       />
       <main id="main-content">
         {/* 1. County Hero — Premium Mountain Visual */}
-        <section className="dark-surface relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
+        <section className="dark-surface relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={county.heroImage} 
@@ -85,7 +85,7 @@ const CountyPage = () => {
             <TartanBackground opacity={0.03} />
           </div>
 
-          <div className="container-tight relative z-10 px-6 pt-24 md:pt-40 pb-20 w-full">
+          <div className="container-tight relative z-10 px-6 pb-20 w-full">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}

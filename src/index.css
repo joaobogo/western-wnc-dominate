@@ -387,13 +387,13 @@ img {
      the header. Heroes that use `flex items-end` (bottom-anchored) are
      unaffected because their padding-top is intentionally minimal. */
   main > section:first-of-type:not(.no-header-pad) {
-    padding-top: calc(var(--header-h) + 1.5rem);
+    padding-top: calc(var(--header-h) + 2rem);
     scroll-margin-top: var(--header-h);
   }
 
   @media (min-width: 768px) {
     main > section:first-of-type:not(.no-header-pad) {
-      padding-top: calc(var(--header-h-md) + 2rem);
+      padding-top: calc(var(--header-h-md) + 3.5rem);
       scroll-margin-top: var(--header-h-md);
     }
   }
@@ -404,11 +404,11 @@ img {
      never collides with the fixed header. Pairs with `flex items-end`
      heroes (pushes content slightly down from the very top edge). */
   .hero-clears-header {
-    padding-top: calc(var(--header-h) + 4.5rem) !important;
+    padding-top: calc(var(--header-h) + 6rem) !important;
   }
   @media (min-width: 768px) {
     .hero-clears-header {
-      padding-top: calc(var(--header-h-md) + 6rem) !important;
+      padding-top: calc(var(--header-h-md) + 8rem) !important;
     }
   }
 
