@@ -146,6 +146,12 @@ img {
 
 @layer base {
   :root {
+    /* ── Forms: Fix white-on-white dropdown text in dark surface sections ── */
+    select option {
+      background-color: hsl(210 20% 12%); /* --ink */
+      color: hsl(42 18% 98%); /* --primary-foreground */
+    }
+
     /* ──────────────────────────────────────────────────────────────
        CONSOLIDATED TOKEN SCALE (single source of truth)
        surface        — page background
