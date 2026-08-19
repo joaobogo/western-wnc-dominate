@@ -148,7 +148,7 @@ const Gallery = () => {
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
           />
-          <div className="relative z-10 pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 lg:px-16">
+          <div className="relative z-10 hero-clears-header pb-12 md:pb-16 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
