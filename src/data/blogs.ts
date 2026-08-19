@@ -16,6 +16,7 @@ const financeCalcStock = "/media/wnc-town-overlook.jpg";
 const commercialRoofStock = "/media/wnc-town-overlook.jpg";
 const stormCloudsStock = "/media/wnc-town-overlook.jpg";
 const skylightStock = "/media/wnc-town-overlook.jpg";
+const gutterMaintenanceHero = "/media/wnc-town-overlook.jpg"; // Placeholder for specific hero if provided later
 
 export interface BlogFAQ {
   question: string;
@@ -41,6 +42,93 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
+    title: "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
+    excerpt:
+      "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall and colder weather.",
+    category: "Maintenance",
+    date: "2026-08-19",
+    image: gutterMaintenanceHero,
+    imageAlt:
+      "Western North Carolina mountain home surrounded by trees, showing clean gutters and downspouts prepared for fall leaf drop.",
+    readTime: "8 min",
+    metaTitle: "Pre-Fall Gutter Maintenance Checklist for Mountain Homes | WNC",
+    metaDescription:
+      "Expert pre-fall gutter maintenance checklist for Western North Carolina mountain homeowners. Learn how to clear debris, test drainage, and protect your foundation.",
+    town: "Highlands",
+    relatedServices: [
+      { label: "Gutter Services", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Inspection", path: "/request-inspection" },
+    ],
+    content: `
+<p class="lead">Before fall, mountain homeowners should clear roof valleys, gutters, and downspout openings; test water flow; repair loose or leaking sections; inspect fascia and soffits; route discharge at least 5 feet from the foundation when feasible; and repeat the check after the main leaf drop.</p>
+
+<div class="bg-muted p-6 rounded-lg my-8 border-l-4 border-primary">
+  <h3 class="text-xl font-bold mb-2 text-primary uppercase tracking-wider">The Short Answer</h3>
+  <p>In the mountains, gutters are not decorative trim. They are part of a connected water-management system that begins at the roof surface and ends only after runoff is safely carried away from the house. When any part of that path is blocked, loose, undersized, or pointed in the wrong direction, water finds another route — over the front edge, behind the gutter, into the fascia, down the siding, across a steep lot, or toward a crawlspace and foundation.</p>
+</div>
+
+<h2>Why Mountain Homes Need a Different Plan</h2>
+<p>That is why the best pre-fall gutter maintenance plan is more than a quick scoop-and-go cleaning. It is a controlled inspection of the entire path water takes across a mountain property. Mountain homes face unique challenges:</p>
+
+<ul>
+  <li><strong>Dense canopy:</strong> Leaves, pine needles, acorns, twigs, and fine organic material build up at outlets, valleys, and gutter-guard seams.</li>
+  <li><strong>Complex rooflines:</strong> Steep pitches, dormers, valleys, and long runs can concentrate water into a few high-volume collection points.</li>
+  <li><strong>Mountain terrain:</strong> A downspout can be clear and still fail if it discharges onto a slope that sends water back toward the structure.</li>
+  <li><strong>Freeze-thaw exposure:</strong> Trapped water, loose supports, and existing roof-heat issues can become more visible once temperatures begin to swing.</li>
+</ul>
+
+<h2>The Pre-Fall Gutter Checklist</h2>
+<p>Use this checklist once before heavy leaf fall to establish a clean baseline, then repeat the high-risk items after most leaves are down.</p>
+
+<h3>01 Begin with a ground-level water-path walk</h3>
+<p>Walk all sides of the house in daylight and map the system before touching a ladder. Identify every gutter run, inside and outside corner, downspout, extension, underground connection, splash block, valley discharge point, and low area near the foundation.</p>
+
+<h3>02 Inspect roof valleys and high-volume collection points</h3>
+<p>Valleys are natural funnels. A small obstruction where a valley meets the eave can force fast-moving water over the gutter even when the rest of the run is open. Pay special attention to splash marks on siding near roof-wall intersections.</p>
+
+<h3>03 Clear the gutter troughs and outlets</h3>
+<p>Remove leaves, pine needles, acorns, twigs, nests, shingle granules, and compacted organic matter. Begin near outlets, where a small plug can disable a long gutter run. Avoid pushing debris into the downspout; bag or bucket it out instead.</p>
+
+<h3>04 Flush each run and confirm downspouts are open</h3>
+<p>Where safe, use a low-pressure hose to test one section at a time. Water should move steadily toward the outlet, enter without backing up, and exit the downspout with no leaking joints. A downspout can pass a small trickle and still be restricted under storm flow.</p>
+
+<h3>05 Evaluate the terrain and discharge points</h3>
+<p>Stand at each discharge point and follow the likely path of water. On a steep lot, runoff may cross a walkway, disappear beside a retaining wall, or pool against a lower foundation wall. Look for sediment fans, exposed roots, or persistent dampness.</p>
+
+<div class="my-10 p-8 border border-border rounded-xl bg-accent/10">
+  <h3 class="text-2xl font-bold mb-4">Download the Full Mountain Homeowner Guide</h3>
+  <p class="mb-6">Get the complete 12-page printable checklist and detailed mountain maintenance schedule as a PDF resource.</p>
+  <a href="/Highlander_Pre-Fall_Gutter_Checklist.pdf" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8">
+    Download PDF Checklist
+  </a>
+</div>
+
+<h2>DIY or Professional?</h2>
+<p>Ground-level observation is appropriate for nearly every homeowner. Elevated cleaning and repair are not. Mountain homes often combine upper stories, steep grades, limited ladder footing, and wet leaves. Those conditions change a routine task into a fall hazard. If the task requires a ladder on a slope or a multi-story reach, the risk often outweighs the chore.</p>
+
+<p>Highlander helps mountain homeowners across Highlands, Cashiers, Franklin, and nearby Western North Carolina communities evaluate gutters, roof edges, downspouts, and drainage. <strong>Protect the water path before fall tests it.</strong></p>
+    `,
+    faqs: [
+      {
+        question: "When should mountain homeowners clean gutters for fall?",
+        answer:
+          "Use two timing points: one before heavy leaf fall to create a clean, tested baseline, and one after most nearby trees have dropped their leaves. Elevation and tree cover matter more than a fixed calendar date.",
+      },
+      {
+        question: "How often should gutters be cleaned in Western North Carolina?",
+        answer:
+          "Many wooded properties need at least a spring and fall inspection, with two visits during fall where debris loads are heavy. The best interval is evidence-based: record what each cleaning finds and shorten the schedule if outlets repeatedly pack.",
+      },
+      {
+        question: "Do gutter guards eliminate fall cleaning?",
+        answer:
+          "Gutter guards are useful when they match the debris mix and rainfall, but they are not maintenance-free. Pine needles can bridge openings, and fast valley flow can skate over some covers. They reduce frequency but do not replace the need for an annual inspection.",
+      },
+    ],
+  },
   {
     slug: "metal-roof-vs-shingle-roof-western-north-carolina",
     title: "Metal Roof vs Shingle Roof: Cost, Lifespan, and Comparison for Mountain Homes",
