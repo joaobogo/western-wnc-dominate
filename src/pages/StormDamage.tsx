@@ -204,8 +204,9 @@ const StormDamage = () => {
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on storm pages is the phone call (see page-cta-hierarchy.ts) */}
-                <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                <a href="tel:+18285247773" className="btn btn-primary btn-lg group relative">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <Phone className="w-4 h-4 relative" aria-hidden="true" /> <span className="relative">(828) 524-7773</span>
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
                   Get My Storm Damage Documented
