@@ -30,9 +30,9 @@ const FreeTools = () => {
         ])}
       />
       <Header />
-      <main id="main-content" className="pt-20 md:pt-28">
+      <main id="main-content">
         {/* Hero */}
-        <section className="section-padding bg-primary text-primary-foreground">
+        <section className="section-padding bg-primary text-primary-foreground hero-clears-header">
           <div className="container-tight text-center">
             <ScrollReveal>
               <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-[hsl(var(--gold-ink))] mb-3">Project Planning Tools</p>
