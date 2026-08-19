@@ -7,16 +7,17 @@
 # and enable "Deploy only the production branch" (or add edit/* below).
 
 [build]
-  command = "npm run build"
+  command = "npm install --legacy-peer-deps && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # Build every Lovable edit branch as a branch deploy too, so a new
 # edit/** branch never leaves the site stale.
 [context.branch-deploy]
-  command = "npm run build"
+  command = "npm install --legacy-peer-deps && npm run build"
 
 [[redirects]]
   from = "/*"
