@@ -199,7 +199,7 @@ const ResidentialRoofing = () => {
                       transition={{ duration: 0.4, delay: 0.3 }}
                     />
 
-                    <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-8 md:pt-12">
+                    <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 hero-clears-header pb-14 md:pb-20">
                         <div className="max-w-3xl">
 
                         <div className="overflow-hidden mb-2">
