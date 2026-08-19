@@ -135,7 +135,7 @@ const RoofRepair = () => {
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
           <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 0.4, delay: 0.3 }} />
 
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 hero-clears-header pb-10 md:pb-20">
+          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pt-24 md:pt-40 pb-10 md:pb-20">
             <div className="max-w-3xl">
 
               <div className="overflow-hidden mb-3 md:mb-4">
