@@ -404,11 +404,11 @@ img {
      never collides with the fixed header. Pairs with `flex items-end`
      heroes (pushes content slightly down from the very top edge). */
   .hero-clears-header {
-    padding-top: calc(var(--header-h) + 3.5rem) !important;
+    padding-top: calc(var(--header-h) + 4.5rem) !important;
   }
   @media (min-width: 768px) {
     .hero-clears-header {
-      padding-top: calc(var(--header-h-md) + 4.5rem) !important;
+      padding-top: calc(var(--header-h-md) + 6rem) !important;
     }
   }
 

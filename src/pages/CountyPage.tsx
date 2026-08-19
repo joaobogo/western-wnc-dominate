@@ -85,7 +85,7 @@ const CountyPage = () => {
             <TartanBackground opacity={0.03} />
           </div>
 
-          <div className="container-tight relative z-10 px-6 hero-clears-header pb-20 w-full">
+          <div className="container-tight relative z-10 px-6 pt-24 md:pt-40 pb-20 w-full">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
