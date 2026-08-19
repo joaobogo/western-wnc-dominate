@@ -65,7 +65,7 @@ const Careers = () => {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="section-padding section-dark pt-32 md:pt-48 relative overflow-hidden">
+        <section className="section-padding section-dark hero-clears-header relative overflow-hidden">
           <div className="absolute inset-0 tartan-dark opacity-[0.05]" />
           <div className="container-tight relative z-10">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">

@@ -95,7 +95,7 @@ const RecentProjects = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/75 to-secondary/40" />
             <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-secondary/60" />
           </div>
-          <div className="container-tight relative pt-40 md:pt-52 pb-14 md:pb-20">
+          <div className="container-tight relative hero-clears-header pb-14 md:pb-20 pt-8 md:pt-12">
             <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
               Project Activity · Western North Carolina
             </p>

@@ -127,7 +127,7 @@ const ConstructionDivision = () => {
           <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }} />
           <motion.div className="absolute right-0 bottom-0 w-[2px] z-20" style={{ background: "linear-gradient(to top, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "40%" }} transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }} />
 
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-24 pt-24 md:pt-40">
+          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 hero-clears-header pb-10 md:pb-24">
             <div className="max-w-3xl flex flex-col">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col gap-4 md:gap-8 mt-8 md:mt-0 mb-0 md:mb-10 order-4 md:order-none">
                 <div className="inline-flex items-center gap-4">
