@@ -97,12 +97,13 @@ const Index = () => {
           {/* 8. One closing CTA */}
           <PageCloseCTA
             context="homepage"
-            eyebrow="Next Step"
-            heading="Roof or build — start with one conversation"
-            body="Tell us what's going on and a Franklin-based advisor will follow up with a clear next step and a written scope. No obligation."
-            primaryLabel="Get My Written Estimate"
-            secondaryLabel="See Our Service Areas"
-            secondaryTo="/service-areas"
+            eyebrow="Gutter Season Resource"
+            heading="Is your mountain home ready for fall?"
+            body="Get the Pre-Fall Gutter Checklist for WNC homeowners or request an inspection to ensure your water-management system is clear and functional before the first heavy rain."
+            primaryLabel="Read the Gutter Checklist"
+            primaryTo="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners"
+            secondaryLabel="Get a Written Inspection Estimate"
+            secondaryTo="/request-inspection"
           />
         </Suspense>
 
