@@ -332,6 +332,10 @@ export const TownFAQ = ({
             question: `Is financing available for ${town.name} projects?`,
             answer: `Yes. Structured financing options are available for approved buyers on qualifying roofing and construction projects. Ask your project advisor during your consultation.`,
           },
+          {
+            question: `When should I clean my gutters in ${town.name}?`,
+            answer: `For ${town.name} properties, we recommend a two-stage fall schedule: one baseline cleaning before heavy leaf fall and a follow-up once the canopy is bare. Since elevation and tree species vary across ${town.county}, follow the trees rather than a fixed date.`,
+          },
         ];
 
   const handleOpen = (value: string) => {
