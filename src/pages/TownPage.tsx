@@ -98,7 +98,7 @@ const TownPage = () => {
             <TartanBackground opacity={0.03} />
           </div>
 
-          <div className="container-tight relative z-10 px-6 py-10 md:py-24 w-full">
+          <div className="container-tight relative z-10 px-6 py-10 md:py-24 pt-12 md:pt-24 w-full">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
