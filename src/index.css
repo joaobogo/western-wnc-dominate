@@ -397,6 +397,14 @@ img {
       scroll-margin-top: var(--header-h-md);
     }
   }
+
+  /* A wrapper around a full-bleed hero must never add its own top padding —
+     the hero handles header clearance internally, so outer padding shows up
+     as a blank strip between the header and the hero image. */
+  main > section:first-of-type:has(> .hero-clears-header),
+  main > section:first-of-type:has(> section.hero-clears-header) {
+    padding-top: 0 !important;
+  }
 }
 
 @layer utilities {
