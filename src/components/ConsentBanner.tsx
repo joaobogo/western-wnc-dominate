@@ -7,15 +7,16 @@ import {
 } from "@/lib/consent";
 
 /**
- * Lightweight consent notice. Renders only until the visitor decides, and is
- * mounted late so it never competes with the hero for paint budget.
+ * Lightweight consent notice. Renders as soon as React hydrates so visitors
+ * can opt in immediately and marketing/analytics pixels can fire without delay.
  */
 const ConsentBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (readConsent()) return;
-    const t = window.setTimeout(() => setVisible(true), 1200);
+    // Show immediately after the first paint to maximize opt-in velocity.
+    const t = window.setTimeout(() => setVisible(true), 50);
     return () => window.clearTimeout(t);
   }, []);
 
