@@ -104,17 +104,13 @@
     })(window);
     </script>
 
-    <!-- Google Tag Manager — deferred: fires on first interaction or 4s after load -->
+    <!-- Google Tag Manager — loaded immediately; storage remains denied until consent is granted -->
     <script>
     (function(w,d,i){
-      var loaded=false;
-      w.__loadGTM = function(){
-        if(loaded)return; loaded=true;
-        w.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-        var f=d.getElementsByTagName('script')[0], j=d.createElement('script');
-        j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
-        f.parentNode.insertBefore(j,f);
-      };
+      w.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName('script')[0], j=d.createElement('script');
+      j.async=true; j.defer=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+      f.parentNode.insertBefore(j,f);
     })(window,document,'GTM-W26D39LJ');
     </script>
     <!-- End Google Tag Manager -->
