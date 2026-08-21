@@ -261,15 +261,19 @@ div[style*="Edit with Lovable"],
     }());
     </script>
     <!-- End RealWork Labs Plugin Loader -->
-    <!-- Unified deferred-loader trigger: first interaction OR 5s after load -->
+    <!-- Immediate consent-aware third-party loader: fire as early as possible, gated by consent -->
     <script>
     (function(w){
-      var fired=false;
       function marketingOk(){ return !!(w.__hlConsent && w.__hlConsent.marketing); }
+      function functionalOk(){ return !!(w.__hlConsent && w.__hlConsent.functional); }
       function loadMarketing(){
         if(!marketingOk())return;
         try{ w.__loadFB && w.__loadFB(); }catch(e){}
         try{ w.__loadTT && w.__loadTT(); }catch(e){}
+      }
+      function loadFunctional(){
+        if(!functionalOk())return;
+        try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
       }
       // Called by the in-app consent banner once the visitor makes a choice.
       w.__hlApplyConsent = function(state){
@@ -280,20 +284,12 @@ div[style*="Edit with Lovable"],
           ad_personalization: state.marketing ? 'granted':'denied',
           analytics_storage: state.analytics ? 'granted':'denied'
         });
-        if(fired){ try{ w.__loadGTM && w.__loadGTM(); }catch(e){} loadMarketing(); }
-      };
-      function fire(){
-        if(fired)return; fired=true;
-        // GTM itself is consent-mode aware: it loads, but storage stays denied
-        // until the visitor opts in. Ad/social pixels are hard-gated.
-        try{ w.__loadGTM && w.__loadGTM(); }catch(e){}
         loadMarketing();
-        try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
-      }
-      ['pointerdown','keydown','scroll','touchstart','mousemove'].forEach(function(e){
-        w.addEventListener(e, fire, {passive:true, once:true});
-      });
-      w.addEventListener('load', function(){ setTimeout(fire, 5000); });
+        loadFunctional();
+      };
+      // Immediate attempt: if consent was already stored, load now.
+      loadMarketing();
+      loadFunctional();
     })(window);
     </script>
   </head>
