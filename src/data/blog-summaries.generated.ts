@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "western-north-carolina-mountain-roofing-guide",
+    "slug": "western-north-carolina-mountain-roofing-guide",
+    "title": "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
+    "excerpt": "Which roofing materials perform best in the Western North Carolina mountains, what replacement costs in 2026, and how to protect a mountain home from rain, moss, wind and freeze-thaw damage.",
+    "category": "Materials",
+    "date": "2026-08-25",
+    "readTime": "18 min"
+  },
+  {
     "id": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
     "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
     "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
@@ -108,15 +117,6 @@ export const blogSummaries: BlogSummary[] = [
     "title": "Common Roofing Problems in Cullowhee, North Carolina",
     "excerpt": "The roofing problems we most often find on Cullowhee, NC homes and what to do about them before they get worse.",
     "category": "Repair",
-    "date": "2026-07-26",
-    "readTime": "7 min"
-  },
-  {
-    "id": "roof-repair-vs-replacement-cullowhee-nc",
-    "slug": "roof-repair-vs-replacement-cullowhee-nc",
-    "title": "Roof Repair vs. Roof Replacement for Cullowhee Homeowners",
-    "excerpt": "How Cullowhee, NC homeowners can decide between a targeted roof repair and full replacement in Jackson County's mountain climate.",
-    "category": "Replacement",
     "date": "2026-07-26",
     "readTime": "7 min"
   }
