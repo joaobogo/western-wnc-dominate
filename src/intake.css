@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Highlander receptionist call sheet — internal tool.
+   Deliberately self-contained: no marketing design system, no dark mode. */
+
+:root {
+  --hl-green: #184613;
+  --hl-green-muted: #5c7f55;
+  --hl-cream: #fcf5df;
+  --hl-page: #f7f2e4;
+  --hl-brass: #c0913f;
+  --hl-ink: #12233a;
+  --hl-red: #a82c20;
+  --hl-grey-green: #9aa48f;
+  --hl-border: #dcd5bf;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--hl-page);
+    color: var(--hl-ink);
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Zilla Slab", Georgia, serif;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  input,
+  textarea {
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--hl-ink);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--hl-brass);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .hl-slab {
+    font-family: "Zilla Slab", Georgia, serif;
+    font-weight: 700;
+  }
+
+  .hl-card {
+    background: #fffdf6;
+    border: 1px solid var(--hl-border);
+    border-radius: 6px;
+  }
+
+  .hl-label {
+    color: var(--hl-brass);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hl-script {
+    color: var(--hl-brass);
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .hl-q {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--hl-ink);
+  }
+
+  /* Text inputs */
+  .hl-input {
+    width: 100%;
+    border: 1px solid var(--hl-border);
+    border-radius: 6px;
+    background: #fff;
+    padding: 10px 12px;
+    line-height: 1.4;
+  }
+  .hl-input::placeholder {
+    color: #9a9481;
+  }
+  .hl-input[data-invalid="true"] {
+    border-color: var(--hl-red);
+    background: #fdf3f2;
+  }
+
+  /* Choice buttons */
+  .hl-choice {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--hl-border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--hl-ink);
+    padding: 11px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease,
+      color 120ms ease;
+    min-height: 46px;
+  }
+  .hl-choice:hover {
+    border-color: var(--hl-green-muted);
+  }
+  .hl-choice[aria-pressed="true"] {
+    background: var(--hl-green);
+    border-color: var(--hl-green);
+    color: var(--hl-cream);
+  }
+  .hl-choice[data-tone="danger"] {
+    border-color: var(--hl-red);
+    color: var(--hl-red);
+  }
+  .hl-choice[data-tone="danger"][aria-pressed="true"] {
+    background: var(--hl-red);
+    border-color: var(--hl-red);
+    color: var(--hl-cream);
+  }
+  .hl-choice[data-tone="urgent"] {
+    border-left: 4px solid var(--hl-red);
+  }
+  .hl-choicegroup[data-invalid="true"] {
+    outline: 1px solid var(--hl-red);
+    outline-offset: 5px;
+    border-radius: 6px;
+  }
+
+  /* Buttons */
+  .hl-btn-primary {
+    background: var(--hl-green);
+    color: var(--hl-cream);
+    border: 1px solid var(--hl-green);
+    border-radius: 6px;
+    padding: 12px 26px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .hl-btn-primary:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .hl-btn-quiet {
+    background: transparent;
+    color: var(--hl-ink);
+    border: 1px solid var(--hl-border);
+    border-radius: 6px;
+    padding: 12px 22px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Toggle */
+  .hl-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--hl-border);
+    border-radius: 6px;
+    background: #fff;
+    padding: 10px 12px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+    color: var(--hl-ink);
+  }
+  .hl-track {
+    flex: none;
+    width: 38px;
+    height: 22px;
+    border-radius: 11px;
+    background: #cfc9b4;
+    position: relative;
+    transition: background-color 120ms ease;
+  }
+  .hl-toggle[aria-pressed="true"] .hl-track {
+    background: var(--hl-green);
+  }
+  .hl-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    transition: left 120ms ease;
+  }
+  .hl-toggle[aria-pressed="true"] .hl-knob {
+    left: 19px;
+  }
+
+  .hl-chip {
+    display: inline-block;
+    background: #fbf1d8;
+    border: 1px solid var(--hl-brass);
+    border-radius: 4px;
+    color: #6b5217;
+    font-size: 12.5px;
+    line-height: 1.35;
+    padding: 6px 9px;
+  }
+
+  .hl-bar {
+    height: 6px;
+    background: #e6e0cc;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .hl-bar > span {
+    display: block;
+    height: 100%;
+    background: var(--hl-green);
+    transition: width 160ms ease;
+  }
+
+  .hl-grade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 6px;
+    font-family: "Zilla Slab", Georgia, serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  .hl-grade-sm {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Zilla Slab", Georgia, serif;
+    font-weight: 700;
+  }
+}

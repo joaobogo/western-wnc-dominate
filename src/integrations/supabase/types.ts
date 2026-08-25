@@ -401,6 +401,123 @@ export type Database = {
           },
         ]
       }
+      intake_leads: {
+        Row: {
+          address: string | null
+          appointment: Json
+          best_time: string | null
+          breakdown: Json
+          budget_range: string | null
+          call_by: string | null
+          channel: string | null
+          created_at: string
+          details: string | null
+          email: string | null
+          first_name: string | null
+          flags: Json
+          gates: Json
+          grade: string
+          id: string
+          job_type: string | null
+          last_name: string | null
+          location_tier: string | null
+          not_offered: boolean
+          owner_contact: string | null
+          owner_name: string | null
+          payload: Json
+          phone: string | null
+          preferred_contact: string | null
+          property_type: string | null
+          relationship: string | null
+          score: number | null
+          score_version: string
+          source: string | null
+          source_detail: string | null
+          spoke_live: boolean
+          status: string
+          taken_by: string | null
+          timing: string | null
+          town: string | null
+          vendor_call: boolean
+        }
+        Insert: {
+          address?: string | null
+          appointment?: Json
+          best_time?: string | null
+          breakdown?: Json
+          budget_range?: string | null
+          call_by?: string | null
+          channel?: string | null
+          created_at?: string
+          details?: string | null
+          email?: string | null
+          first_name?: string | null
+          flags?: Json
+          gates?: Json
+          grade?: string
+          id?: string
+          job_type?: string | null
+          last_name?: string | null
+          location_tier?: string | null
+          not_offered?: boolean
+          owner_contact?: string | null
+          owner_name?: string | null
+          payload?: Json
+          phone?: string | null
+          preferred_contact?: string | null
+          property_type?: string | null
+          relationship?: string | null
+          score?: number | null
+          score_version?: string
+          source?: string | null
+          source_detail?: string | null
+          spoke_live?: boolean
+          status?: string
+          taken_by?: string | null
+          timing?: string | null
+          town?: string | null
+          vendor_call?: boolean
+        }
+        Update: {
+          address?: string | null
+          appointment?: Json
+          best_time?: string | null
+          breakdown?: Json
+          budget_range?: string | null
+          call_by?: string | null
+          channel?: string | null
+          created_at?: string
+          details?: string | null
+          email?: string | null
+          first_name?: string | null
+          flags?: Json
+          gates?: Json
+          grade?: string
+          id?: string
+          job_type?: string | null
+          last_name?: string | null
+          location_tier?: string | null
+          not_offered?: boolean
+          owner_contact?: string | null
+          owner_name?: string | null
+          payload?: Json
+          phone?: string | null
+          preferred_contact?: string | null
+          property_type?: string | null
+          relationship?: string | null
+          score?: number | null
+          score_version?: string
+          source?: string | null
+          source_detail?: string | null
+          spoke_live?: boolean
+          status?: string
+          taken_by?: string | null
+          timing?: string | null
+          town?: string | null
+          vendor_call?: boolean
+        }
+        Relationships: []
+      }
       internal_config: {
         Row: {
           created_at: string
