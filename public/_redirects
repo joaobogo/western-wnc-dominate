@@ -56,7 +56,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /portfolio                                                   /recent-projects                                   301!
 /our-work                                                    /recent-projects                                   301!
 /storm-center                                                /roofing/storm-damage                              301!
-/free-tools                                                  /roof-designer                                     301!
+/free-tools                                                  /404.html                                          410
 /privacy                                                     /privacy-policy                                    301!
 /terms                                                       /privacy-policy                                    301!
 /residential-roofing-services                                /roofing/residential                               301!
@@ -154,8 +154,10 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # ============================================================
 # Legacy /contact/[service]-service-area/[town] Hibu pattern
 # Preserve the final town slug at the edge; the service segment is discarded.
+# The hub fallback must stay AFTER the placeholder rule.
 # ============================================================
 /contact/:service/:town                                      /service-areas/:town                               301!
+/contact/*                                                   /service-areas                                     301!
 
 # ============================================================
 # Old receptionist intake URL → branded front-desk URL

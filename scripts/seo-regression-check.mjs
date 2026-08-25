@@ -53,7 +53,7 @@ if (!existsSync(redirectsPath)) {
     "/service-locations /service-areas 301!",
     "/service-locations/* /service-areas 301!",
     "/contact/:service/:town /service-areas/:town 301!",
-    "/free-tools /roof-designer 301!",
+    "/free-tools /404.html 410",
   ];
   for (const rule of requiredLegacyRules) {
     if (!activeRedirectRules.includes(rule)) fail(`Required legacy redirect missing or incorrect: ${rule}`);

@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
@@ -235,9 +235,7 @@ const App = () => (
 
           {/* Internal receptionist call sheet — unlisted, never prerendered */}
           <Route path="/front-desk/*" element={<IntakeApp />} />
-          {/* Old URL kept working */}
-          <Route path="/intake" element={<Navigate to="/front-desk" replace />} />
-          <Route path="/intake/queue/*" element={<Navigate to="/front-desk/queue" replace />} />
+          {/* Old /intake URLs are 301'd at the edge in public/_redirects */}
 
 
 

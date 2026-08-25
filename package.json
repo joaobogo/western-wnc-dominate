@@ -13,8 +13,8 @@
     "test:watch": "vitest",
     "predev": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts",
     "prebuild": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts",
-    "seo:check": "node scripts/seo-regression-check.mjs",
-    "postbuild": "node scripts/prerender.mjs && node scripts/seo-regression-check.mjs"
+    "seo:check": "node scripts/redirect-check.mjs && node scripts/seo-regression-check.mjs",
+    "postbuild": "node scripts/prerender.mjs && node scripts/redirect-check.mjs && node scripts/seo-regression-check.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
