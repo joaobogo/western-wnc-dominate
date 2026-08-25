@@ -198,13 +198,101 @@ export const useInternalPageHead = (title: string, description: string, path: st
   }, [title, description, path]);
 };
 
+/** Cities in the service footprint — emitted as schema.org City nodes. */
+const SERVED_CITIES: { name: string; region: string }[] = [
+  { name: "Franklin", region: "NC" },
+  { name: "Sylva", region: "NC" },
+  { name: "Highlands", region: "NC" },
+  { name: "Cashiers", region: "NC" },
+  { name: "Sapphire", region: "NC" },
+  { name: "Glenville", region: "NC" },
+  { name: "Lake Toxaway", region: "NC" },
+  { name: "Cullowhee", region: "NC" },
+  { name: "Dillsboro", region: "NC" },
+  { name: "Bryson City", region: "NC" },
+  { name: "Cherokee", region: "NC" },
+  { name: "Whittier", region: "NC" },
+  { name: "Scaly Mountain", region: "NC" },
+  { name: "Otto", region: "NC" },
+  { name: "Waynesville", region: "NC" },
+  { name: "Sky Valley", region: "GA" },
+  { name: "Clayton", region: "GA" },
+];
+
+/** Monday–Friday, 8:00–17:00 for every location. */
+const BUSINESS_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+];
+
+/** Verified public profiles used for sameAs on the business + organization nodes. */
+const FRANKLIN_GBP = "https://www.google.com/maps?cid=1442261483869937048";
+const SYLVA_GBP = "https://www.google.com/maps?cid=1690022713833215904";
+const PROFILE_URLS = [
+  FRANKLIN_GBP,
+  SYLVA_GBP,
+  "https://www.facebook.com/highlanderroof",
+  "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
+  "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
+  "https://www.linkedin.com/company/highlander-roofing-services-inc/",
+  "https://www.instagram.com/highlanderroofingservices/",
+];
+
+/** Franklin showroom — physical location node. */
+export const franklinLocationSchema = () => ({
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#franklin-showroom`,
+  name: `${SITE_NAME} — Franklin Showroom`,
+  url: BASE_URL,
+  image: DEFAULT_IMAGE,
+  telephone: "+1-828-524-7773",
+  parentOrganization: { "@id": `${BASE_URL}/#organization` },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "76 Creative Dr",
+    addressLocality: "Franklin",
+    addressRegion: "NC",
+    postalCode: "28734",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+  openingHoursSpecification: BUSINESS_HOURS,
+  sameAs: [FRANKLIN_GBP],
+});
+
+/** Sylva showroom — physical location node. */
+export const sylvaLocationSchema = () => ({
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#sylva-showroom`,
+  name: `${SITE_NAME} — Sylva Showroom`,
+  url: BASE_URL,
+  image: DEFAULT_IMAGE,
+  telephone: "+1-828-476-4000",
+  parentOrganization: { "@id": `${BASE_URL}/#organization` },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "28 Cross Stitch Mountain Rd",
+    addressLocality: "Sylva",
+    addressRegion: "NC",
+    postalCode: "28779",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 35.3585, longitude: -83.1812 },
+  openingHoursSpecification: BUSINESS_HOURS,
+  sameAs: [SYLVA_GBP],
+});
+
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
   name: SITE_NAME,
   legalName: "Highlander Building Services, Inc.",
-  alternateName: "Highlander Building Services",
+  alternateName: "Highlander Roofing Services",
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
   image: DEFAULT_IMAGE,
@@ -221,18 +309,14 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
-  areaServed: [
-    { "@type": "City", name: "Franklin", "@id": "https://en.wikipedia.org/wiki/Franklin,_North_Carolina" },
-    { "@type": "City", name: "Sylva" },
-    { "@type": "City", name: "Highlands" },
-    { "@type": "City", name: "Cashiers" },
-    { "@type": "City", name: "Brevard" },
-    { "@type": "City", name: "Waynesville" },
-    { "@type": "City", name: "Bryson City" },
-    { "@type": "City", name: "Cullowhee" },
-    { "@type": "City", name: "Dillsboro" },
-    { "@type": "AdministrativeArea", name: "Western North Carolina" },
-  ],
+  areaServed: SERVED_CITIES.map((c) => ({
+    "@type": "City",
+    name: c.name,
+    address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
+  })),
+  openingHoursSpecification: BUSINESS_HOURS,
+  department: [franklinLocationSchema(), sylvaLocationSchema()],
+  location: [{ "@id": `${BASE_URL}/#franklin-showroom` }, { "@id": `${BASE_URL}/#sylva-showroom` }],
   serviceArea: {
     "@type": "GeoCircle",
     geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
@@ -261,11 +345,7 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   currenciesAccepted: "USD",
   foundingDate: "2017",
   slogan: "Built for the Mountains. Built for Life.",
-  sameAs: [
-    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
-    "https://www.facebook.com/highlanderroof/reels/",
-    "https://www.instagram.com/highlanderroofingservices/",
-  ],
+  sameAs: PROFILE_URLS,
   ...overrides,
 });
 
@@ -293,11 +373,7 @@ export const organizationSchema = () => ({
     areaServed: "US-NC",
     availableLanguage: "English",
   },
-  sameAs: [
-    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
-    "https://www.facebook.com/highlanderroof/reels/",
-    "https://www.instagram.com/highlanderroofingservices/",
-  ],
+  sameAs: PROFILE_URLS,
 });
 
 export const websiteSchema = () => ({
@@ -351,11 +427,34 @@ export const webPageSchema = (page: {
   ...(page.primaryEntityId ? { mainEntity: { "@id": page.primaryEntityId } } : {}),
 });
 
-export const serviceSchema = (service: { name: string; description: string; url: string; areaServed?: string }) => ({
-  "@context": "https://schema.org", "@type": "Service", serviceType: service.name, name: service.name,
-  description: service.description, url: `${BASE_URL}${service.url}`,
+export const cityNode = (name: string, region = "NC") => ({
+  "@type": "City",
+  name,
+  address: { "@type": "PostalAddress", addressLocality: name, addressRegion: region, addressCountry: "US" },
+});
+
+export const serviceSchema = (service: {
+  name: string;
+  description: string;
+  url: string;
+  areaServed?: string;
+  areaServedCity?: { name: string; region?: string };
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}${service.url}#service`,
+  serviceType: service.name,
+  name: service.name,
+  description: service.description,
+  url: `${BASE_URL}${service.url}`,
   provider: { "@id": `${BASE_URL}/#business` },
-  areaServed: service.areaServed || "Western North Carolina",
+  areaServed: service.areaServedCity
+    ? cityNode(service.areaServedCity.name, service.areaServedCity.region || "NC")
+    : service.areaServed
+      ? (/north carolina|wnc|region|county/i.test(service.areaServed)
+          ? { "@type": "AdministrativeArea", name: service.areaServed }
+          : cityNode(service.areaServed))
+      : SERVED_CITIES.map((c) => cityNode(c.name, c.region)),
 });
 
 export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
@@ -579,14 +678,20 @@ export type PageSchemaInput =
 export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>[] => {
   switch (input.type) {
     case "home": {
-      const out: Record<string, unknown>[] = [
-        organizationSchema(),
-        websiteSchema(),
-        localBusinessSchema(),
+      // WebSite + Organization ship statically in index.html — don't duplicate them here.
+      // Ratings merge into the single #business node so the graph has one
+      // business entity rather than two nodes sharing an @id.
+      const ratings = input.reviews?.length
+        ? (() => {
+            const { "@context": _c, "@type": _t, "@id": _i, name: _n, url: _u, ...rest } =
+              aggregateReviewSchema(input.reviews, input.aggregate) as Record<string, unknown>;
+            return rest;
+          })()
+        : {};
+      return [
+        localBusinessSchema(ratings),
         breadcrumbSchema([{ name: "Home", url: "/" }]),
       ];
-      if (input.reviews?.length) out.push(aggregateReviewSchema(input.reviews, input.aggregate));
-      return out;
     }
 
     case "town": {
@@ -612,6 +717,14 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
           primaryEntityId: businessId,
         }),
       ];
+      out.push(
+        serviceSchema({
+          name: `Roofing & Construction Services in ${input.town.name}, ${input.town.state}`,
+          description: input.page?.description || input.town.description,
+          url: path,
+          areaServedCity: { name: input.town.name, region: input.town.state },
+        }),
+      );
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
       return out;
     }

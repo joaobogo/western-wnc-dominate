@@ -6,6 +6,8 @@ import SEOHead, {
   townSchema,
   breadcrumbSchema,
   faqSchema,
+  serviceSchema,
+  localBusinessSchema,
 } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -124,6 +126,13 @@ const ServiceTownPage = ({
             county: town.county,
             state: town.state,
             description: entry.intro,
+          }),
+          localBusinessSchema(),
+          serviceSchema({
+            name: `${entry.serviceLabel} in ${town.name}, ${town.state}`,
+            description: entry.metaDescription,
+            url: resolvedCanonical,
+            areaServedCity: { name: town.name, region: town.state },
           }),
           breadcrumbSchema([
             { name: "Home", url: "/" },
