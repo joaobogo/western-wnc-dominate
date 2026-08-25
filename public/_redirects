@@ -153,3 +153,7 @@
 # SPA fallback — must be last
 # ============================================================
 /*    /index.html   200
+
+# Legacy /service-locations → /service-areas
+/service-locations                                           /service-areas                                     301!
+/service-locations/*                                         /service-areas                                     301!

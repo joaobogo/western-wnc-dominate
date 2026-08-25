@@ -11,6 +11,7 @@ import RecoveryPrompt from "./components/recovery/RecoveryPrompt";
 import PaidLandingGate from "./components/system/PaidLandingGate";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
+import ServiceLocationsRedirect from "./components/ServiceLocationsRedirect";
 import OrphanRedirectHandler from "./components/OrphanRedirectHandler";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/attribution";
@@ -214,6 +215,9 @@ const App = () => (
           <Route path="/construction-services" element={<Navigate to="/construction" replace />} />
 
           {/* ─── Company ─── */}
+          {/* ─── Legacy /service-locations → /service-areas (301 at edge) ─── */}
+          <Route path="/service-locations" element={<ServiceLocationsRedirect />} />
+          <Route path="/service-locations/*" element={<ServiceLocationsRedirect />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
           <Route path="/service-areas/county/:slug" element={<CountyPage />} />
