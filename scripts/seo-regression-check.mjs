@@ -94,7 +94,7 @@ if (existsSync(seoHeadPath)) {
 // works standalone; enforced hard whenever a build exists.
 const HOME_TITLE = "Highlander Building Services | Western NC";
 const APP_ONLY_PREFIXES = [
-  "/admin", "/lp", "/.lovable", "/intake", "/consultation", "/roofing-intake",
+  "/admin", "/lp", "/.lovable", "/front-desk", "/consultation", "/roofing-intake",
   "/construction-intake", "/roofing-builder", "/construction-builder",
   "/design-intake", "/quote-flow", "/seo-monitoring", "/realwork-diagnostics",
 ];

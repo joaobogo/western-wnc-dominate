@@ -96,8 +96,8 @@ const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 const RealWorkDiagnostics = lazy(() => import("./pages/RealWorkDiagnostics"));
-// Internal receptionist call sheet (unlisted, noindex) — mounted at /intake/*
-const IntakeApp = lazy(() => import("./intake/App"));
+// Internal receptionist call sheet (unlisted, noindex) — mounted at /front-desk/*
+const IntakeApp = lazy(() => import("./front-desk/App"));
 
 
 
@@ -284,7 +284,7 @@ const App = () => (
           <Route path="/realwork-diagnostics" element={<RealWorkDiagnostics />} />
 
           {/* Internal receptionist call sheet — unlisted, never prerendered */}
-          <Route path="/intake/*" element={<IntakeApp />} />
+          <Route path="/front-desk/*" element={<IntakeApp />} />
 
 
           {/* Removed: /roof-designer, /free-tools, /seo-checklist, /internal-linking-qa, /keyword-map, /seo-launch-qa */}

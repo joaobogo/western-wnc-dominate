@@ -35,8 +35,8 @@ Disallow: /admin/
 Disallow: /lp/
 
 # Internal receptionist call sheet — unlisted internal tool.
-Disallow: /intake
-Disallow: /intake/
+Disallow: /front-desk
+Disallow: /front-desk/
 
 # ── Google Search ────────────────────────────────────────────────────────
 User-agent: Googlebot

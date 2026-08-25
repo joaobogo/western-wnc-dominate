@@ -4,17 +4,17 @@ import IntakeSheet from "./IntakeSheet";
 import Queue from "./Queue";
 import LeadView from "./LeadView";
 import { useInternalPageHead } from "@/components/SEOHead";
-import "../intake.css";
+import "../front-desk.css";
 
 /**
- * Internal receptionist call sheet. Mounted at /intake/* by the main router,
+ * Internal receptionist call sheet. Mounted at /front-desk/* by the main router,
  * so it uses relative route paths and no BrowserRouter of its own.
  */
 export default function IntakeApp() {
   useInternalPageHead(
     "Lead Intake | Highlander Building Services",
     "Internal lead intake call sheet for Highlander Building Services, Inc.",
-    "/intake",
+    "/front-desk",
   );
   return (
     <>
