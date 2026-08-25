@@ -26,8 +26,17 @@ export function Header() {
           aria-label={`${COMPANY.name} — open website in a new tab`}
           title="Open highlandernc.com"
         >
+          <img
+            src={logoCream}
+            alt={`${COMPANY.name} logo`}
+            width={1193}
+            height={338}
+            decoding="async"
+            className="h-9 w-auto sm:h-11 max-w-[220px] sm:max-w-none object-contain"
+          />
+        </a>
 
-        </Link>
+
 
 
         <nav className="flex items-center gap-4 text-[14px] font-semibold">
