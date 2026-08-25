@@ -304,7 +304,8 @@ export default function IntakeSheet() {
                   options={RELATIONSHIPS}
                   value={lead.relationship}
                   onChange={(v) => set("relationship", v)}
-                  columns={1}
+                  columns={2}
+
                   invalid={has("relationship")}
                 />
                 {notOwner && (
