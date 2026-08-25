@@ -1,11 +1,101 @@
-# Highlander Building Services Inc — internal lead intake tool
-#
-# This deployment serves ONLY the internal receptionist call sheet.
-# It is unlisted: reachable by direct URL, but never indexed or surfaced
-# in search results. The pages also carry <meta name="robots"
-# content="noindex, nofollow"> as a second layer of protection.
+# Highlander Building Services — robots.txt
+# Canonical host: https://highlandernc.com
+# Policy: allow crawling of every public, indexable page and every rendering
+# resource (CSS, JS, images, fonts). Only form-only funnels and internal
+# utilities are disallowed. noindex (via meta) — not robots.txt — is used to
+# keep individual pages out of the index.
 
+# ── Default: all crawlers ───────────────────────────────────────────────
 User-agent: *
-Disallow: /
+Allow: /
 
-# No sitemap is published for this deployment.
+# Explicitly allow rendering resources (belt-and-suspenders — Allow: / already covers these)
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+
+# NOTE: form-only funnels (/consultation, /quote-flow, /*-intake, /*-builder)
+# are intentionally NOT blocked here. They use <meta name="robots"
+# content="noindex,follow"> so Google can crawl the page and honor the
+# noindex directive. Blocking them in robots.txt would prevent Google from
+# ever seeing that directive and could leave stale URL-only entries in the
+# index. Same reasoning for internal /admin/ and SEO QA pages — they carry
+# noindex,nofollow via <meta>.
+
+# Paid landing pages: ad-only entry points, no organic value.
+Disallow: /admin/
+Disallow: /lp/
+
+# Internal receptionist call sheet — unlisted internal tool.
+Disallow: /intake
+Disallow: /intake/
+
+# ── Google Search ────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+# ── Google Images (product & project photos should surface in image search)
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Microsoft Bing ───────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+# ── Social preview crawlers ──────────────────────────────────────────────
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ── AI search discovery ─────────────────────────────────────────────────
+# OpenAI ChatGPT Search (search-time citations, separate from training).
+# Allowed so the site can appear in ChatGPT search results.
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity (search-time citations).
+User-agent: PerplexityBot
+Allow: /
+
+# ── AI answer engines & assistants ──────────────────────────────────────
+# Business decision: allow AI crawlers so Highlander can be cited in
+# AI Overviews, ChatGPT, Claude, and Perplexity answers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ── Canonical sitemap ───────────────────────────────────────────────────
+Sitemap: https://highlandernc.com/sitemap.xml

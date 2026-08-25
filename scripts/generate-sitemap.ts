@@ -9,6 +9,8 @@ import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
 import { counties } from "../src/data/counties";
 import { generatedServiceTownEntries } from "../src/data/service-town-generated";
+import { tier1FlatEntries, tier2FlatEntries } from "../src/data/service-town-slugs";
+import { projectDetails } from "../src/data/projects";
 
 const BASE_URL = "https://highlandernc.com";
 
@@ -94,6 +96,17 @@ const serviceTownRoutes: SitemapEntry[] = generatedServiceTownEntries.map((e) =>
   path: `/service-areas/${e.townSlug}/${e.serviceSlug}`,
 }));
 
+// Dynamic: flat-slug service×town pages ("/roofing-highlands-nc"). These are
+// real, self-canonical, indexable routes in src/App.tsx.
+const flatSlugRoutes: SitemapEntry[] = [...tier1FlatEntries, ...tier2FlatEntries].map((e) => ({
+  path: `/${e.flatSlug}`,
+}));
+
+// Dynamic: individual project case-study pages (/projects/{slug}).
+const projectRoutes: SitemapEntry[] = projectDetails.map((p) => ({
+  path: `/projects/${p.slug}`,
+}));
+
 // Dynamic: one entry per blog post. lastmod = post.date (authoritative,
 // page-specific). Skip lastmod if the date is unparseable.
 const blogRoutes: SitemapEntry[] = blogPosts.map((p) => {
@@ -113,6 +126,8 @@ const entries: SitemapEntry[] = [
   ...townRoutes,
   ...countyRoutes,
   ...serviceTownRoutes,
+  ...flatSlugRoutes,
+  ...projectRoutes,
   ...blogRoutes,
 ].filter((e) => {
   if (seen.has(e.path)) return false;
@@ -143,5 +158,5 @@ function generateSitemap(items: SitemapEntry[]) {
 
 writeFileSync(resolve("public/sitemap.xml"), generateSitemap(entries));
 console.log(
-  `sitemap.xml written (${entries.length} entries — ${staticRoutes.length} static, ${townRoutes.length} towns, ${countyRoutes.length} counties, ${serviceTownRoutes.length} service-town, ${blogRoutes.length} blog posts)`,
+  `sitemap.xml written (${entries.length} entries — ${staticRoutes.length} static, ${townRoutes.length} towns, ${countyRoutes.length} counties, ${serviceTownRoutes.length} service-town, ${flatSlugRoutes.length} flat-slug, ${projectRoutes.length} projects, ${blogRoutes.length} blog posts)`,
 );
