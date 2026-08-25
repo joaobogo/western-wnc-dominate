@@ -12,6 +12,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "western-north-carolina-mountain-roofing-guide",
+    "title": "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
+    "excerpt": "Which roofing materials perform best in the Western North Carolina mountains, what replacement costs in 2026, and how to protect a mountain home from rain, moss",
+    "category": "Materials",
+    "date": "2026-08-25",
+    "town": "Highlands"
+  },
+  {
     "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
     "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
     "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall ",
