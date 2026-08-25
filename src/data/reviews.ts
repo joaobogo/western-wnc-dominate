@@ -1,3 +1,4 @@
+import { REVIEW_SUMMARY } from "@/data/business";
 export interface CustomerReview {
   authorName: string;
   reviewBody: string;
@@ -10,10 +11,14 @@ export interface CustomerReview {
   featured?: boolean;
 }
 
+/**
+ * Live Google figures live in `src/data/business.ts` (BUSINESS.reviewSummary).
+ * Never re-type them here — the schema and the visible rating must agree.
+ */
 export const GOOGLE_REVIEW_AGGREGATE = {
-  ratingValue: 4.9,
-  reviewCount: 150,
-} as const;
+  ratingValue: REVIEW_SUMMARY.ratingValue,
+  reviewCount: REVIEW_SUMMARY.reviewCount,
+};
 
 export const customerReviews: CustomerReview[] = [
   {
