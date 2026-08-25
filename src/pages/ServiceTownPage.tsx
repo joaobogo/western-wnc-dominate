@@ -5,7 +5,9 @@ import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
 import SEOHead, {
   townSchema,
   breadcrumbSchema,
-  faqSchema, serviceSchema,} from "@/components/SEOHead";
+  faqSchema,
+  serviceSchema,
+} from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
