@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
@@ -47,6 +48,11 @@ const NotFound = () => {
 
   return (
     <>
+      {/* Signals a real 404 to prerenderers/crawlers instead of a 200 shell */}
+      <Helmet>
+        <meta name="prerender-status-code" content="404" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <SEOHead
         title="Page Not Found (404) | Highlander Building Services"
         description="The page you're looking for doesn't exist. Return to our homepage to explore roofing and construction services across Western NC."
