@@ -375,7 +375,7 @@ export default function IntakeSheet() {
                   options={TIMINGS}
                   value={lead.timing}
                   onChange={(v) => set("timing", v)}
-                  columns={1}
+                  columns={2}
                   invalid={has("timing")}
                 />
               </Question>
