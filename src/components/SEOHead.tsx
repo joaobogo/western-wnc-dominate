@@ -249,9 +249,13 @@ const geoPoint = (loc: BusinessLocation) => ({
   longitude: loc.geo.lng,
 });
 
-/** Physical showroom location node, generated from BUSINESS.locations. */
+/**
+ * Physical showroom node — the ONLY Place-type entities in the graph.
+ * Everything else (towns, counties, service pages) is modelled as
+ * `areaServed`, never as another LocalBusiness with an address.
+ */
 const locationSchema = (loc: BusinessLocation) => ({
-  "@type": "LocalBusiness",
+  "@type": ["RoofingContractor", "GeneralContractor", "LocalBusiness"],
   "@id": `${BASE_URL}/#${loc.id}-showroom`,
   name: `${SITE_NAME} — ${loc.name}`,
   url: BASE_URL,
@@ -261,14 +265,27 @@ const locationSchema = (loc: BusinessLocation) => ({
   address: postalAddress(loc),
   geo: geoPoint(loc),
   openingHoursSpecification: hoursSpec(loc),
-  sameAs: [`https://www.google.com/maps?cid=${loc.gbpCid}`],
+  hasMap: GBP_MAP_URL(loc.gbpCid),
+  sameAs: [GBP_MAP_URL(loc.gbpCid)],
 });
 
 /** Franklin showroom — physical location node. */
-export const franklinLocationSchema = () => locationSchema(FRANKLIN);
+export const franklinLocationSchema = () => ({ "@context": "https://schema.org", ...locationSchema(FRANKLIN) });
 
 /** Sylva showroom — physical location node. */
-export const sylvaLocationSchema = () => locationSchema(SYLVA);
+export const sylvaLocationSchema = () => ({ "@context": "https://schema.org", ...locationSchema(SYLVA) });
+
+/** Both showroom nodes — emit alongside the business node. */
+export const locationNodes = () => [franklinLocationSchema(), sylvaLocationSchema()];
+
+const AREA_SERVED = [
+  ...SERVED_CITIES.map((c) => ({
+    "@type": "City",
+    name: c.name,
+    address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
+  })),
+  ...BUSINESS.countiesServed.map((c) => ({ "@type": "AdministrativeArea", name: `${c.name}, ${c.region}` })),
+];
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
@@ -285,14 +302,12 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   description: BUSINESS.description,
   address: postalAddress(FRANKLIN),
   geo: geoPoint(FRANKLIN),
-  areaServed: SERVED_CITIES.map((c) => ({
-    "@type": "City",
-    name: c.name,
-    address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
-  })),
+  areaServed: AREA_SERVED,
   openingHoursSpecification: BUSINESS_HOURS,
-  department: BUSINESS.locations.map(locationSchema),
+  // Only the two real showrooms are Places; referenced by @id, defined by
+  // the location nodes that ship next to this one.
   location: BUSINESS.locations.map((loc) => ({ "@id": `${BASE_URL}/#${loc.id}-showroom` })),
+  ...(BUSINESS.priceRange ? { priceRange: BUSINESS.priceRange } : {}),
   serviceArea: {
     "@type": "GeoCircle",
     geoMidpoint: geoPoint(FRANKLIN),
@@ -324,6 +339,13 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   sameAs: PROFILE_URLS,
   ...overrides,
 });
+
+/** Business node + the two showroom Places — the sitewide identity bundle. */
+export const businessGraph = (overrides?: Record<string, unknown>) => [
+  localBusinessSchema(overrides),
+  ...locationNodes(),
+];
+
 
 export const organizationSchema = () => ({
   "@context": "https://schema.org",
