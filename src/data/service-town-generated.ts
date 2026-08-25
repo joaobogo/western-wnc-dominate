@@ -24,6 +24,7 @@ export const CORE_SERVICES = [
   "roof-replacement",
   "storm-damage",
   "construction",
+  "metal-roofing",
 ] as const;
 
 export type CoreService = (typeof CORE_SERVICES)[number];
@@ -34,6 +35,7 @@ const SERVICE_LABELS: Record<CoreService, string> = {
   "roof-replacement": "Roof Replacement",
   "storm-damage": "Storm Damage Roofing",
   construction: "Construction",
+  "metal-roofing": "Metal Roofing",
 };
 
 const SERVICE_PARENT_PATH: Record<CoreService, string> = {
@@ -42,6 +44,7 @@ const SERVICE_PARENT_PATH: Record<CoreService, string> = {
   "roof-replacement": "/roofing/roof-replacement",
   "storm-damage": "/roofing/storm-damage",
   construction: "/construction",
+  "metal-roofing": "/roofing/metal",
 };
 
 export const getServiceParentPath = (serviceSlug: string) =>
@@ -313,12 +316,78 @@ function buildConstruction(t: TownData): Built {
   };
 }
 
+
+/**
+ * Metal roofing. Written from the town's own recorded conditions in towns.ts —
+ * elevation band, climate exposure, housing profile, style tendency and
+ * neighborhoods. No invented projects, stats, warranties or certifications.
+ */
+function buildMetal(t: TownData): Built {
+  const band = elevationBand(t);
+  const b = bandLanguage[band];
+  const pitchLine =
+    band === "high"
+      ? `Steep pitches are the norm on ${t.name} rooflines, and steep is where metal earns its keep: snow and ice release instead of sitting at the eave, and there are no shingle courses for wind to get under.`
+      : band === "mid"
+        ? `${t.name} roofs run from moderate to steep, and metal suits both — on shallower runs the panel profile and seam height matter more than they do on a 12/12, so we specify them to the actual pitch we measure rather than to a catalog default.`
+        : `Pitches around ${t.name} vary widely across the valley, so panel profile, seam type, and minimum-slope rating get chosen after we measure your roof — a system that performs on a steep hillside build is not automatically right on a low-slope addition.`;
+  const mossLine = `North-facing slopes in ${countyShort(t)} County stay damp long after the rest of the roof has dried, and that is where moss and algae take hold on asphalt. A metal panel gives that growth far less to grip, and the smooth surface sheds the needle and leaf litter that wooded ${t.name} lots drop on a roof every autumn — the same debris that holds moisture against a shingle field and blocks valleys.`;
+  const iceLine =
+    band === "valley"
+      ? `Ice loading is lighter here than on the Plateau, but freeze-thaw still cycles through most winters, so we run high-temperature ice-and-water membrane at the eaves and valleys under every panel.`
+      : `Ice loading is a real design input at ${t.elevation}. We detail eaves and valleys with high-temperature ice-and-water membrane, size the drainage for what actually comes off a metal roof in a thaw, and discuss snow retention where a panel discharges over a walkway, drive, or entry.`;
+
+  return {
+    serviceLabel: "Metal Roofing",
+    h1: `Metal Roofing in ${t.name}, NC`,
+    intro: `Metal is the long-horizon roof for ${t.name}. At ${t.elevation} in ${t.county}, a properly installed standing-seam system stops being a covering and starts being part of the building envelope — which is exactly what this elevation asks for. We fabricate, install, and detail metal roofs for ${t.name} homes as complete assemblies, not as panels laid over whatever is underneath.`,
+    localContext: `${t.housingProfile} ${t.climateExposure} Across ${neighborhoodPhrase(t)}, the roofs we replace with metal are facing ${b.exposure}. ${mossLine} ${pitchLine} ${iceLine} Our baseline specification here includes ${b.detail}.`,
+    whoItsFor: `${t.name} owners who intend to keep the home and want to buy one more roof rather than three, owners on wooded or north-facing lots tired of moss, streaking, and debris-driven repairs, and second-home owners in ${countyShort(t)} County who want the lowest-maintenance envelope available while they are away.`,
+    proofNote: `${townLocalRelevance[t.slug] ?? t.marketAuthorityAngle} We fabricate panels to the roof we measured, install with our own crews under one project lead, and hand over a full photo package at completion.`,
+    metaTitle: `Metal Roofing in ${t.name}, NC | Highlander`,
+    metaDescription: `Standing-seam and metal roofing in ${t.name}, NC, specified for ${t.elevation} conditions — ice loading, wooded-lot debris, and north-slope moisture. Free on-site assessment.`,
+    sections: [
+      {
+        heading: `Why metal suits ${t.name} roofs`,
+        body: `The case for metal here is not style, it is exposure. ${mossLine} Panels are mechanically seamed rather than surface-fastened, so there is no exposed sealant clock running on your roof and no granule loss to measure. The local aesthetic is ${t.styleTendency.charAt(0).toLowerCase()}${t.styleTendency.slice(1)} and current finishes cover that range without looking industrial — matte darks read well against the ${countyShort(t)} County tree line, and standing-seam profiles suit both the traditional and the mountain-modern houses we work on around ${t.name}.`,
+      },
+      {
+        heading: `How we specify a ${t.name} metal roof`,
+        body: `We measure the roof before we recommend anything. Panel gauge, seam type, and clip spacing are chosen for your pitch and wind exposure; underlayment is high-temperature, because the assembly under a metal panel runs hotter than it does under asphalt; and valleys, sidewalls, chimneys, and every penetration are flashed in matching metal rather than caulked. ${pitchLine} ${iceLine} Ventilation gets corrected during the tear-off — a metal roof over a deck that cannot dry is still a roof that fails early.`,
+      },
+      {
+        heading: `Approvals, access, and what installation is like`,
+        body: `We pull the ${countyShort(t)} County permit and schedule the inspection. Where a ${t.name} property sits inside a community, club, or HOA with an architectural review board, we prepare the panel profile, gauge, and finish-color information those boards ask for and submit it before fabrication starts, so the schedule is not lost to a review cycle. Panels are fabricated to your measurements to reduce field cutting, staging is planned around the steep drives and wooded access common on ${countyShort(t)} County lots, and the site is cleaned and magnet-swept daily. A metal project takes longer on site than an asphalt replacement, and we give you a firm window in writing before we start.`,
+      },
+    ],
+    faqs: [
+      {
+        q: `How long does a metal roof last in ${t.name}?`,
+        a: `Longer than asphalt at this elevation — the practical limiting factors on a mechanically seamed system are the finish and the flashing details, not the panel itself. We tell you the manufacturer's stated coverage for the exact product we quote, in writing, and we do not add promises on top of it.`,
+      },
+      {
+        q: `Is metal worth the cost over dimensional shingle here?`,
+        a: `It depends on how long you plan to own the home. Metal costs more up front and asks less of you afterward, which pays off over a long ownership horizon, on steep pitches, and on wooded or north-facing ${t.name} lots where debris and moisture shorten a shingle roof's life. On a short horizon, heavy dimensional shingle is often the better financial call, and we will say so.`,
+      },
+      {
+        q: `Is a metal roof loud in heavy ${countyShort(t)} County rain?`,
+        a: `Not the way people expect. A metal roof over solid decking, underlayment, and an insulated attic sounds very different from bare panels on an open barn frame. Most ${t.name} homeowners notice it less than they anticipated.`,
+      },
+      {
+        q: `Will my community or HOA approve a metal roof?`,
+        a: `Many do, and finish and profile are usually what the review turns on. If your ${t.name} property is subject to an architectural review board, we assemble the profile, gauge, and color documentation for the submission and work to their requirements before we fabricate anything.`,
+      },
+    ],
+  };
+}
+
 const BUILDERS: Record<CoreService, (t: TownData) => Built> = {
   roofing: buildRoofing,
   "roof-repair": buildRepair,
   "roof-replacement": buildReplacement,
   "storm-damage": buildStorm,
   construction: buildConstruction,
+  "metal-roofing": buildMetal,
 };
 
 export interface GeneratedServiceTownEntry extends Built {
