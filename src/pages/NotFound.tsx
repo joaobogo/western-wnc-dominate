@@ -45,6 +45,17 @@ const NotFound = () => {
       });
   }, [location.hash, location.pathname, location.search]);
 
+  // Signal a real 404 to prerenderers/crawlers instead of a 200 shell
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "prerender-status-code";
+    meta.content = "404";
+    document.head.appendChild(meta);
+    return () => {
+      meta.remove();
+    };
+  }, []);
+
   return (
     <>
       <SEOHead
