@@ -204,3 +204,6 @@ export const SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
 export const FRANKLIN_STREET = FRANKLIN.streetAddress;
 export const FRANKLIN_NAP = napLine(FRANKLIN);
 export const SYLVA_NAP = napLine(SYLVA);
+
+/** Live Google rating figures — the only values allowed in review markup. */
+export const REVIEW_SUMMARY = BUSINESS.reviewSummary;

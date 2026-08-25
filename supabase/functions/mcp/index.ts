@@ -113,6 +113,7 @@ var SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
 var FRANKLIN_STREET = FRANKLIN.streetAddress;
 var FRANKLIN_NAP = napLine(FRANKLIN);
 var SYLVA_NAP = napLine(SYLVA);
+var REVIEW_SUMMARY = BUSINESS.reviewSummary;
 
 // src/lib/mcp/tools/get-business-info.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.2";
