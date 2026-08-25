@@ -301,9 +301,11 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
-  areaServed: SERVED_CITIES.map((c) => ({ "@type": "City", name: c.name, ...(c.region ? { addressRegion: c.region } : {}) })).concat([
-    { "@type": "City", name: "Western North Carolina" },
-  ] as never),
+  areaServed: SERVED_CITIES.map((c) => ({
+    "@type": "City",
+    name: c.name,
+    address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
+  })),
   openingHoursSpecification: BUSINESS_HOURS,
   department: [franklinLocationSchema(), sylvaLocationSchema()],
   location: [{ "@id": `${BASE_URL}/#franklin-showroom` }, { "@id": `${BASE_URL}/#sylva-showroom` }],
