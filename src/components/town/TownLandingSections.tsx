@@ -166,7 +166,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
       <div className="container-tight max-w-3xl text-center">
         <ScrollReveal variant="fade">
           <span className="text-caption uppercase tracking-[0.3em] font-bold text-[hsl(var(--gold-ink))] mb-6 block">
-            {town.name} · {town.county} County
+            {town.name} · {town.county}
           </span>
         </ScrollReveal>
         <HeadingReveal delay={0.1}>

@@ -21,7 +21,7 @@ export function getServiceTownFAQs(
   const fallbacks: SimpleFAQ[] = [
     {
       q: `Do you actually work in ${town.name}, NC?`,
-      a: `Yes — ${town.name} and the rest of ${town.county} County are inside our regular service footprint. Highlander crews are based in Western North Carolina, so ${service} in ${town.name} is scheduled by the same team that shows up on site.`,
+      a: `Yes — ${town.name} and the rest of ${town.county} are inside our regular service footprint. Highlander crews are based in Western North Carolina, so ${service} in ${town.name} is scheduled by the same team that shows up on site.`,
     },
     {
       q: `How soon can someone look at my ${town.name} project?`,
