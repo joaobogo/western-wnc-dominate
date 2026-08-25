@@ -24,7 +24,7 @@ import {
   TIMINGS,
   YES_NO,
 } from "./config";
-import { Choices, Question, Section, TextArea, TextField, Toggle } from "./ui";
+import { Choices, Question, Section, TextArea, TextField, Toggle, TownPicker } from "./ui";
 import { GradeTile, ScorePanel, StickyScoreBar } from "./ScorePanel";
 import { formatCallBy } from "./business-time";
 import {
@@ -269,29 +269,17 @@ export default function IntakeSheet() {
               />
             </Question>
 
-            <div className="mb-5" ref={refs.town}>
+            <div className="mb-5">
               <div className="hl-q">Town</div>
-              <div className="hl-label mt-3 mb-2">Core — Macon &amp; Jackson counties</div>
-              <Choices
-                options={[...CORE_TOWNS, CORE_OTHER]}
-                value={lead.town}
-                onChange={(v) => setLead((p) => ({ ...p, town: v, townOther: "" }))}
-                columns={4}
-                invalid={has("town")}
-              />
-              <div className="hl-label mt-4 mb-2">Neighboring counties</div>
-              <Choices
-                options={[...NEARBY_TOWNS, NEARBY_OTHER]}
-                value={lead.town}
-                onChange={(v) => setLead((p) => ({ ...p, town: v, townOther: "" }))}
-                columns={4}
-              />
-              <div className="mt-4 sm:max-w-[260px]">
-                <Choices
-                  options={[OUTSIDE_AREA]}
+              <div className="mt-2">
+                <TownPicker
+                  core={CORE_TOWNS}
+                  nearby={NEARBY_TOWNS}
+                  extras={[CORE_OTHER, NEARBY_OTHER, OUTSIDE_AREA]}
                   value={lead.town}
                   onChange={(v) => setLead((p) => ({ ...p, town: v, townOther: "" }))}
-                  columns={1}
+                  invalid={has("town")}
+                  groupRef={refs.town}
                 />
               </div>
               {townNeedsText && (
@@ -306,6 +294,7 @@ export default function IntakeSheet() {
               )}
             </div>
 
+
             <div ref={refs.relationship}>
               <Question
                 label="What's your relationship to the property?"
@@ -315,7 +304,8 @@ export default function IntakeSheet() {
                   options={RELATIONSHIPS}
                   value={lead.relationship}
                   onChange={(v) => set("relationship", v)}
-                  columns={1}
+                  columns={2}
+
                   invalid={has("relationship")}
                 />
                 {notOwner && (
@@ -385,7 +375,7 @@ export default function IntakeSheet() {
                   options={TIMINGS}
                   value={lead.timing}
                   onChange={(v) => set("timing", v)}
-                  columns={1}
+                  columns={2}
                   invalid={has("timing")}
                 />
               </Question>

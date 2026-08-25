@@ -1,5 +1,6 @@
-import type { ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import type { Option } from "./config";
+
 
 export function Section({
   title,
@@ -166,6 +167,125 @@ export function Choices({
   );
 }
 
+/**
+ * Compact, auto-width chips that wrap. Used where the option list is long
+ * (towns) so the sheet stays short instead of turning into a button wall.
+ */
+export function Pills({
+  options,
+  value,
+  onChange,
+  clearable = true,
+}: {
+  options: Option[];
+  value: string | null;
+  onChange: (id: string | null) => void;
+  clearable?: boolean;
+}) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {options.map((o) => {
+        const selected = value === o.id;
+        return (
+          <button
+            key={o.id}
+            type="button"
+            className="hl-pill"
+            aria-pressed={selected}
+            data-tone={o.tone}
+            onClick={() => onChange(selected && clearable ? null : o.id)}
+          >
+            {o.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * Town selection as a single type-to-filter field instead of ~30 stacked
+ * buttons. Typing narrows every group at once; clearing restores the groups.
+ */
+export function TownPicker({
+  core,
+  nearby,
+  extras,
+  value,
+  onChange,
+  invalid,
+  groupRef,
+}: {
+  core: Option[];
+  nearby: Option[];
+  extras: Option[];
+  value: string | null;
+  onChange: (id: string | null) => void;
+  invalid?: boolean;
+  groupRef?: React.Ref<HTMLDivElement>;
+}) {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+
+  const filter = (list: Option[]) =>
+    q ? list.filter((o) => o.label.toLowerCase().includes(q)) : list;
+
+  const coreHits = useMemo(() => filter(core), [core, q]);
+  const nearbyHits = useMemo(() => filter(nearby), [nearby, q]);
+  const noHits = q.length > 0 && coreHits.length === 0 && nearbyHits.length === 0;
+
+  return (
+    <div
+      ref={groupRef}
+      className="hl-choicegroup"
+      data-invalid={invalid ? "true" : undefined}
+    >
+      <input
+        className="hl-input"
+        type="text"
+        value={query}
+        placeholder="Type a town to filter…"
+        aria-label="Filter towns"
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key !== "Enter") return;
+          e.preventDefault();
+          // Enter picks the single remaining match — fastest path on a call.
+          const hits = [...coreHits, ...nearbyHits];
+          if (hits.length === 1) {
+            onChange(hits[0].id);
+            setQuery("");
+          }
+        }}
+      />
+
+      {coreHits.length > 0 && (
+        <div className="mt-3">
+          <div className="hl-label mb-1.5">Core — Macon &amp; Jackson counties</div>
+          <Pills options={coreHits} value={value} onChange={onChange} />
+        </div>
+      )}
+
+      {nearbyHits.length > 0 && (
+        <div className="mt-3">
+          <div className="hl-label mb-1.5">Neighboring counties</div>
+          <Pills options={nearbyHits} value={value} onChange={onChange} />
+        </div>
+      )}
+
+      {noHits && (
+        <p className="mt-3 text-[13.5px] hl-script">
+          No match — use “Other” or “Outside our area” below.
+        </p>
+      )}
+
+      <div className="mt-3">
+        <Pills options={extras} value={value} onChange={onChange} />
+      </div>
+    </div>
+  );
+}
+
 export function Toggle({
   label,
   value,
@@ -189,3 +309,4 @@ export function Toggle({
     </button>
   );
 }
+

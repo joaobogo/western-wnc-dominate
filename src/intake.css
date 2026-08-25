@@ -147,6 +147,42 @@
     border-radius: 6px;
   }
 
+  /* Compact wrapping chip — long option lists (towns) */
+  .hl-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--hl-border);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--hl-ink);
+    padding: 7px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    min-height: 36px;
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease,
+      color 120ms ease;
+  }
+  .hl-pill:hover {
+    border-color: var(--hl-green-muted);
+  }
+  .hl-pill[aria-pressed="true"] {
+    background: var(--hl-green);
+    border-color: var(--hl-green);
+    color: var(--hl-cream);
+  }
+  .hl-pill[data-tone="danger"] {
+    border-color: var(--hl-red);
+    color: var(--hl-red);
+  }
+  .hl-pill[data-tone="danger"][aria-pressed="true"] {
+    background: var(--hl-red);
+    border-color: var(--hl-red);
+    color: var(--hl-cream);
+  }
+
+
   /* Buttons */
   .hl-btn-primary {
     background: var(--hl-green);
