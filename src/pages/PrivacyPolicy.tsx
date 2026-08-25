@@ -7,15 +7,15 @@ import SEOHead from "@/components/SEOHead";
 
 const LAST_UPDATED = "June 24, 2026";
 const WEBSITE_URL = "https://highlandernc.com/";
-const EMAIL = "luke@highlandernc.com";
-const ADDRESS = `${FRANKLIN_NAP}`;
-const COMPANY = "Highlander Building Services, Inc.";
+const EMAIL = BUSINESS.email;
+const ADDRESS = FRANKLIN_NAP;
+const COMPANY = BUSINESS.legalName;
 // Sitewide customer phone. The RealWork template listed (828) 526-6421 —
 // see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
-const PHONE = `${PHONE_DISPLAY}`;
-const PHONE_TEL = "+18285247773";
+const PHONE = PHONE_DISPLAY;
+const PHONE_TEL = BUSINESS.primaryPhoneE164.replace(/-/g, "");
 const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
-const PROGRAM = "Highlander Building Services, Inc. Customer Communications";
+const PROGRAM = `${BUSINESS.legalName} Customer Communications`;
 
 const TOC: { id: string; label: string }[] = [
   { id: "s1", label: "1. Program Description and Acceptance of Terms" },
