@@ -34,6 +34,21 @@ export interface BusinessLocation {
   primary?: boolean;
 }
 
+/**
+ * Live Google review figures. These are the ONLY numbers allowed in
+ * `aggregateRating` markup, and they may only be emitted on /reviews, where
+ * the same figures are visible on the page. Update `lastVerified` whenever
+ * the owner refreshes the numbers from the Google Business Profile.
+ */
+export interface ReviewSummary {
+  ratingValue: number;
+  reviewCount: number;
+  source: string;
+  sourceUrl: string;
+  /** ISO date the figures were last read off Google. */
+  lastVerified: string;
+}
+
 export interface BusinessIdentity {
   brandName: string;
   legalName: string;
@@ -45,9 +60,20 @@ export interface BusinessIdentity {
   licenseNumber: string;
   slogan: string;
   description: string;
+  /**
+   * Schema.org priceRange. Left undefined until the owner approves a value —
+   * an unapproved price band is a claim we cannot support.
+   */
+  priceRange?: string;
+  reviewSummary: ReviewSummary;
   locations: BusinessLocation[];
   profiles: string[];
+  /** Counties named in `areaServed` alongside the served city list. */
+  countiesServed: { name: string; region: string }[];
+  /** Named people who can author content (schema.org Person). */
+  people: { slug: string; name: string; jobTitle: string }[];
 }
+
 
 const STANDARD_HOURS: BusinessHours[] = [
   {
