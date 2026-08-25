@@ -33,6 +33,7 @@ const EXCLUDED_PREFIXES = [
   "/lp",
   "/.lovable",
   "/front-desk",
+  "/intake",
   "/consultation",
   "/roofing-intake",
   "/construction-intake",

@@ -285,6 +285,9 @@ const App = () => (
 
           {/* Internal receptionist call sheet — unlisted, never prerendered */}
           <Route path="/front-desk/*" element={<IntakeApp />} />
+          {/* Old URL kept working */}
+          <Route path="/intake" element={<Navigate to="/front-desk" replace />} />
+          <Route path="/intake/queue/*" element={<Navigate to="/front-desk/queue" replace />} />
 
 
           {/* Removed: /roof-designer, /free-tools, /seo-checklist, /internal-linking-qa, /keyword-map, /seo-launch-qa */}
