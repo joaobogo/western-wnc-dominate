@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { ReactNode } from "react";
 import { Phone, Shield, Award, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -79,7 +80,7 @@ const IntakeShell = ({
                 className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-semibold text-body-xs"
               >
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
             </div>
 

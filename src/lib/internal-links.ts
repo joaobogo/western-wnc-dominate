@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 // Metadata-only index (Prompt 41): avoids pulling ~590 KB of article bodies
 // into every service and town page just to build related-link lists.
 import { blogIndex as blogPosts } from "@/data/blog-index.generated";
@@ -71,5 +72,5 @@ export const getServiceTownLinks = (limit = 4): RelatedLinkItem[] =>
 export const estimateLink: RelatedLinkItem = {
   label: "Get My Written Estimate",
   href: "/request-inspection",
-  description: "Written scope from a Western NC team — 828-524-7773.",
+  description: `Written scope from a Western NC team — ${PHONE_PLAIN}.`,
 };

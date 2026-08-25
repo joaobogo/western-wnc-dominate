@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
@@ -33,7 +34,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
         href="tel:+18285247773"
         className="btn btn-primary btn-md"
       >
-        <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+        <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
       </a>
       <Link
         to={cta.servicePath}

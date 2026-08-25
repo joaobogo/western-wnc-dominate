@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Phone, ArrowRight, Loader2, CheckCircle, AlertTriangle, Home, Hammer, CloudLightning, HelpCircle, Calendar, Shield } from "lucide-react";
@@ -353,7 +354,7 @@ export default function ChatbotWidget() {
 
       setExchangeCount(prev => prev + 1);
     } catch {
-      setMessages(prev => [...prev, { role: "assistant", content: "I'm having trouble connecting right now. Please call us at (828) 524-7773 and we'll be happy to help." }]);
+      setMessages(prev => [...prev, { role: "assistant", content: `I'm having trouble connecting right now. Please call us at ${PHONE_DISPLAY} and we'll be happy to help.` }]);
     }
     setIsLoading(false);
   }, [location.pathname, cards]);
@@ -543,7 +544,7 @@ export default function ChatbotWidget() {
               <div className="px-3 pb-2 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="font-body">Prefer to talk?</span>
                 <a href="tel:+18285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-[hsl(var(--gold-ink))] transition-colors">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>
             </div>

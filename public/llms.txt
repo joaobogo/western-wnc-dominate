@@ -1,82 +1,485 @@
 # Highlander Building Services
 
-> Family-operated roofing and construction company serving Western North Carolina from two offices in Franklin and Sylva. Licensed NC General Contractor, insured, and a CertainTeed ShingleMaster Credentialed Contractor. In-house crews. 24-hour response to inquiries.
+> Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.
 
-Highlander Building Services, Inc. is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
+Highlander Building Services, Inc. (also known as Highlander Roofing Services, Highlander Roofing Services, Inc.) is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
 
 ## Locations (NAP)
 
-Franklin office (primary)
+Franklin Showroom (primary)
 Highlander Building Services, Inc.
 76 Creative Dr, Franklin, NC 28734
 Phone: 828-524-7773
+Hours: Monday – Friday, 8:00 AM – 5:00 PM
+Directions: https://www.google.com/maps?cid=1442261483869937048
 
-Sylva office
+Sylva Showroom
 Highlander Building Services, Inc.
 28 Cross Stitch Mountain Rd, Sylva, NC 28779
 Phone: 828-476-4000
+Hours: Monday – Friday, 8:00 AM – 5:00 PM
+Directions: https://www.google.com/maps?cid=1690022713833215904
 
 Email: info@highlandernc.com
 Website: https://highlandernc.com
+Founded: 2017
 
 ## Licensing and credentials
 
-- Licensed North Carolina General Contractor
+- Licensed North Carolina General Contractor (NC GC #87668)
 - Fully insured (liability and workers' compensation)
 - CertainTeed ShingleMaster Credentialed Contractor
-- Better Business Bureau accredited profile: https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019
 
-## Warranty
+## Verified profiles
 
-Roofing systems carry manufacturer material warranties whose terms vary by product line and by the certification level of the installer. As a CertainTeed ShingleMaster Credentialed Contractor, Highlander can offer CertainTeed's upgraded system warranties when the complete assembly — shingles, underlayment, starters, hip and ridge, and ventilation — is installed to specification. Highlander also provides a workmanship warranty on installed work. Specific coverage, duration, and exclusions are documented in the written proposal for each project rather than quoted as generic year counts.
+- https://www.google.com/maps?cid=1442261483869937048
+- https://www.google.com/maps?cid=1690022713833215904
+- https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019
+- https://www.facebook.com/highlanderroof
+- https://www.instagram.com/highlanderroofingservices/
+- https://www.linkedin.com/company/highlander-roofing-services-inc/
+- https://nextdoor.com/pages/highlander-roofing-services-inc-franklin-nc/
+- https://www.yelp.com/biz/highlander-roofing-services-franklin
+- https://www.angi.com/companylist/us/nc/franklin/highlander-roofing-services-inc-reviews.htm
+- https://www.homeadvisor.com/rated.HighlanderRoofing.106236934.html
+- https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221
+- https://business.mountainlovers.com/list/member/highlander-roofing-services-inc
+- https://www.smokymountainhba.com/members
 
-## Services
+## Canonical pages
 
-Roofing
-- Roof replacement
-- Roof repair
-- Metal roofing (standing seam and metal panel systems)
-- Synthetic slate and specialty roofing systems
-- Dimensional shingle roofing
-- Storm damage response and insurance documentation support
-- Commercial roofing and maintenance programs
-- Gutters and drainage
+### Core pages
 
-Construction
-- Home additions
-- Interior renovations (kitchens, baths, basements)
-- Exterior improvements (siding, windows, trim, fascia)
-- Outdoor living (decks, porches, pergolas)
-- Custom-scope construction projects
+- https://highlandernc.com/
+- https://highlandernc.com/about
+- https://highlandernc.com/accessibility
+- https://highlandernc.com/careers
+- https://highlandernc.com/certifications
+- https://highlandernc.com/community
+- https://highlandernc.com/construction
+- https://highlandernc.com/construction-cashiers-nc
+- https://highlandernc.com/construction-franklin-nc
+- https://highlandernc.com/construction-highlands-nc
+- https://highlandernc.com/construction/additions
+- https://highlandernc.com/construction/consultation
+- https://highlandernc.com/construction/design
+- https://highlandernc.com/construction/outdoor-living
+- https://highlandernc.com/construction/renovations
+- https://highlandernc.com/construction/siding
+- https://highlandernc.com/contact
+- https://highlandernc.com/exterior-improvements
+- https://highlandernc.com/faq
+- https://highlandernc.com/financing
+- https://highlandernc.com/giving-back
+- https://highlandernc.com/home-repairs-cashiers-nc
+- https://highlandernc.com/home-repairs-franklin-nc
+- https://highlandernc.com/home-repairs-highlands-nc
+- https://highlandernc.com/layouts-planning
+- https://highlandernc.com/privacy-policy
+- https://highlandernc.com/recent-projects
+- https://highlandernc.com/request-inspection
+- https://highlandernc.com/reviews
+- https://highlandernc.com/roof-designer
+- https://highlandernc.com/roof-repair-cashiers-nc
+- https://highlandernc.com/roof-repair-cullowhee-nc
+- https://highlandernc.com/roof-repair-franklin-nc
+- https://highlandernc.com/roof-repair-highlands-nc
+- https://highlandernc.com/roof-repair-sylva-nc
+- https://highlandernc.com/roof-replacement-cashiers-nc
+- https://highlandernc.com/roof-replacement-franklin-nc
+- https://highlandernc.com/roof-replacement-highlands-nc
+- https://highlandernc.com/roofing
+- https://highlandernc.com/roofing-cashiers-nc
+- https://highlandernc.com/roofing-construction-cullowhee-nc
+- https://highlandernc.com/roofing-construction-sylva-nc
+- https://highlandernc.com/roofing-cost-western-nc
+- https://highlandernc.com/roofing-franklin-nc
+- https://highlandernc.com/roofing-highlands-nc
+- https://highlandernc.com/roofing/brava-synthetic
+- https://highlandernc.com/roofing/commercial
+- https://highlandernc.com/roofing/gutters
+- https://highlandernc.com/roofing/metal
+- https://highlandernc.com/roofing/residential
+- https://highlandernc.com/roofing/roof-repair
+- https://highlandernc.com/roofing/roof-replacement
+- https://highlandernc.com/roofing/skylights
+- https://highlandernc.com/roofing/specialty
+- https://highlandernc.com/roofing/storm-damage
+- https://highlandernc.com/service-areas
+- https://highlandernc.com/team
 
-## Towns served (Western North Carolina)
+### Service areas
 
-Franklin, Sylva, Highlands, Cashiers, Bryson City, Waynesville, Cullowhee, Dillsboro, Asheville, Hendersonville, Brevard, Murphy, Hayesville, Scaly Mountain, Otto, Lake Glenville, Lake Toxaway, Sapphire, Cherokee — plus the surrounding communities of Macon, Jackson, Swain, Haywood, Transylvania, Cherokee, Clay, Buncombe, and Henderson counties.
+- https://highlandernc.com/service-areas
+- https://highlandernc.com/service-areas/asheville-nc
+- https://highlandernc.com/service-areas/asheville-nc/construction
+- https://highlandernc.com/service-areas/asheville-nc/metal-roofing
+- https://highlandernc.com/service-areas/asheville-nc/roof-repair
+- https://highlandernc.com/service-areas/asheville-nc/roof-replacement
+- https://highlandernc.com/service-areas/asheville-nc/roofing
+- https://highlandernc.com/service-areas/asheville-nc/storm-damage
+- https://highlandernc.com/service-areas/brevard-nc
+- https://highlandernc.com/service-areas/brevard-nc/construction
+- https://highlandernc.com/service-areas/brevard-nc/metal-roofing
+- https://highlandernc.com/service-areas/brevard-nc/roof-repair
+- https://highlandernc.com/service-areas/brevard-nc/roof-replacement
+- https://highlandernc.com/service-areas/brevard-nc/roofing
+- https://highlandernc.com/service-areas/brevard-nc/storm-damage
+- https://highlandernc.com/service-areas/bryson-city-nc
+- https://highlandernc.com/service-areas/bryson-city-nc/construction
+- https://highlandernc.com/service-areas/bryson-city-nc/metal-roofing
+- https://highlandernc.com/service-areas/bryson-city-nc/roof-repair
+- https://highlandernc.com/service-areas/bryson-city-nc/roof-replacement
+- https://highlandernc.com/service-areas/bryson-city-nc/roofing
+- https://highlandernc.com/service-areas/bryson-city-nc/storm-damage
+- https://highlandernc.com/service-areas/cashiers-nc
+- https://highlandernc.com/service-areas/cashiers-nc/construction
+- https://highlandernc.com/service-areas/cashiers-nc/metal-roofing
+- https://highlandernc.com/service-areas/cashiers-nc/roof-repair
+- https://highlandernc.com/service-areas/cashiers-nc/roof-replacement
+- https://highlandernc.com/service-areas/cashiers-nc/roofing
+- https://highlandernc.com/service-areas/cashiers-nc/storm-damage
+- https://highlandernc.com/service-areas/cherokee-nc
+- https://highlandernc.com/service-areas/cherokee-nc/construction
+- https://highlandernc.com/service-areas/cherokee-nc/metal-roofing
+- https://highlandernc.com/service-areas/cherokee-nc/roof-repair
+- https://highlandernc.com/service-areas/cherokee-nc/roof-replacement
+- https://highlandernc.com/service-areas/cherokee-nc/roofing
+- https://highlandernc.com/service-areas/cherokee-nc/storm-damage
+- https://highlandernc.com/service-areas/county/buncombe-county
+- https://highlandernc.com/service-areas/county/cherokee-county
+- https://highlandernc.com/service-areas/county/clay-county
+- https://highlandernc.com/service-areas/county/haywood-county
+- https://highlandernc.com/service-areas/county/henderson-county
+- https://highlandernc.com/service-areas/county/jackson-county
+- https://highlandernc.com/service-areas/county/macon-county
+- https://highlandernc.com/service-areas/county/madison-county
+- https://highlandernc.com/service-areas/county/swain-county
+- https://highlandernc.com/service-areas/county/transylvania-county
+- https://highlandernc.com/service-areas/cullowhee-nc
+- https://highlandernc.com/service-areas/cullowhee-nc/construction
+- https://highlandernc.com/service-areas/cullowhee-nc/metal-roofing
+- https://highlandernc.com/service-areas/cullowhee-nc/roof-repair
+- https://highlandernc.com/service-areas/cullowhee-nc/roof-replacement
+- https://highlandernc.com/service-areas/cullowhee-nc/roofing
+- https://highlandernc.com/service-areas/cullowhee-nc/storm-damage
+- https://highlandernc.com/service-areas/dillsboro-nc
+- https://highlandernc.com/service-areas/dillsboro-nc/construction
+- https://highlandernc.com/service-areas/dillsboro-nc/metal-roofing
+- https://highlandernc.com/service-areas/dillsboro-nc/roof-repair
+- https://highlandernc.com/service-areas/dillsboro-nc/roof-replacement
+- https://highlandernc.com/service-areas/dillsboro-nc/roofing
+- https://highlandernc.com/service-areas/dillsboro-nc/storm-damage
+- https://highlandernc.com/service-areas/franklin-nc
+- https://highlandernc.com/service-areas/franklin-nc/construction
+- https://highlandernc.com/service-areas/franklin-nc/metal-roofing
+- https://highlandernc.com/service-areas/franklin-nc/roof-repair
+- https://highlandernc.com/service-areas/franklin-nc/roof-replacement
+- https://highlandernc.com/service-areas/franklin-nc/roofing
+- https://highlandernc.com/service-areas/franklin-nc/storm-damage
+- https://highlandernc.com/service-areas/hayesville-nc
+- https://highlandernc.com/service-areas/hayesville-nc/construction
+- https://highlandernc.com/service-areas/hayesville-nc/metal-roofing
+- https://highlandernc.com/service-areas/hayesville-nc/roof-repair
+- https://highlandernc.com/service-areas/hayesville-nc/roof-replacement
+- https://highlandernc.com/service-areas/hayesville-nc/roofing
+- https://highlandernc.com/service-areas/hayesville-nc/storm-damage
+- https://highlandernc.com/service-areas/hendersonville-nc
+- https://highlandernc.com/service-areas/hendersonville-nc/construction
+- https://highlandernc.com/service-areas/hendersonville-nc/metal-roofing
+- https://highlandernc.com/service-areas/hendersonville-nc/roof-repair
+- https://highlandernc.com/service-areas/hendersonville-nc/roof-replacement
+- https://highlandernc.com/service-areas/hendersonville-nc/roofing
+- https://highlandernc.com/service-areas/hendersonville-nc/storm-damage
+- https://highlandernc.com/service-areas/highlands-nc
+- https://highlandernc.com/service-areas/highlands-nc/construction
+- https://highlandernc.com/service-areas/highlands-nc/metal-roofing
+- https://highlandernc.com/service-areas/highlands-nc/roof-repair
+- https://highlandernc.com/service-areas/highlands-nc/roof-replacement
+- https://highlandernc.com/service-areas/highlands-nc/roofing
+- https://highlandernc.com/service-areas/highlands-nc/storm-damage
+- https://highlandernc.com/service-areas/lake-glenville-nc
+- https://highlandernc.com/service-areas/lake-glenville-nc/construction
+- https://highlandernc.com/service-areas/lake-glenville-nc/metal-roofing
+- https://highlandernc.com/service-areas/lake-glenville-nc/roof-repair
+- https://highlandernc.com/service-areas/lake-glenville-nc/roof-replacement
+- https://highlandernc.com/service-areas/lake-glenville-nc/roofing
+- https://highlandernc.com/service-areas/lake-glenville-nc/storm-damage
+- https://highlandernc.com/service-areas/lake-toxaway-nc
+- https://highlandernc.com/service-areas/lake-toxaway-nc/construction
+- https://highlandernc.com/service-areas/lake-toxaway-nc/metal-roofing
+- https://highlandernc.com/service-areas/lake-toxaway-nc/roof-repair
+- https://highlandernc.com/service-areas/lake-toxaway-nc/roof-replacement
+- https://highlandernc.com/service-areas/lake-toxaway-nc/roofing
+- https://highlandernc.com/service-areas/lake-toxaway-nc/storm-damage
+- https://highlandernc.com/service-areas/murphy-nc
+- https://highlandernc.com/service-areas/murphy-nc/construction
+- https://highlandernc.com/service-areas/murphy-nc/metal-roofing
+- https://highlandernc.com/service-areas/murphy-nc/roof-repair
+- https://highlandernc.com/service-areas/murphy-nc/roof-replacement
+- https://highlandernc.com/service-areas/murphy-nc/roofing
+- https://highlandernc.com/service-areas/murphy-nc/storm-damage
+- https://highlandernc.com/service-areas/otto-nc
+- https://highlandernc.com/service-areas/otto-nc/construction
+- https://highlandernc.com/service-areas/otto-nc/metal-roofing
+- https://highlandernc.com/service-areas/otto-nc/roof-repair
+- https://highlandernc.com/service-areas/otto-nc/roof-replacement
+- https://highlandernc.com/service-areas/otto-nc/roofing
+- https://highlandernc.com/service-areas/otto-nc/storm-damage
+- https://highlandernc.com/service-areas/sapphire-nc
+- https://highlandernc.com/service-areas/sapphire-nc/construction
+- https://highlandernc.com/service-areas/sapphire-nc/metal-roofing
+- https://highlandernc.com/service-areas/sapphire-nc/roof-repair
+- https://highlandernc.com/service-areas/sapphire-nc/roof-replacement
+- https://highlandernc.com/service-areas/sapphire-nc/roofing
+- https://highlandernc.com/service-areas/sapphire-nc/storm-damage
+- https://highlandernc.com/service-areas/scaly-mountain-nc
+- https://highlandernc.com/service-areas/scaly-mountain-nc/construction
+- https://highlandernc.com/service-areas/scaly-mountain-nc/metal-roofing
+- https://highlandernc.com/service-areas/scaly-mountain-nc/roof-repair
+- https://highlandernc.com/service-areas/scaly-mountain-nc/roof-replacement
+- https://highlandernc.com/service-areas/scaly-mountain-nc/roofing
+- https://highlandernc.com/service-areas/scaly-mountain-nc/storm-damage
+- https://highlandernc.com/service-areas/sylva-nc
+- https://highlandernc.com/service-areas/sylva-nc/construction
+- https://highlandernc.com/service-areas/sylva-nc/metal-roofing
+- https://highlandernc.com/service-areas/sylva-nc/roof-repair
+- https://highlandernc.com/service-areas/sylva-nc/roof-replacement
+- https://highlandernc.com/service-areas/sylva-nc/roofing
+- https://highlandernc.com/service-areas/sylva-nc/storm-damage
+- https://highlandernc.com/service-areas/waynesville-nc
+- https://highlandernc.com/service-areas/waynesville-nc/construction
+- https://highlandernc.com/service-areas/waynesville-nc/metal-roofing
+- https://highlandernc.com/service-areas/waynesville-nc/roof-repair
+- https://highlandernc.com/service-areas/waynesville-nc/roof-replacement
+- https://highlandernc.com/service-areas/waynesville-nc/roofing
+- https://highlandernc.com/service-areas/waynesville-nc/storm-damage
 
-## How to request a roof assessment
+### Project case studies
 
-1. Call 828-524-7773 during business hours, or
-2. Submit the online request form at https://highlandernc.com/request-inspection
+- https://highlandernc.com/projects/cedar-shake-estate-highlands
+- https://highlandernc.com/projects/certainteed-landmark-weathered-wood-waynesville
+- https://highlandernc.com/projects/standing-seam-metal-dark-bronze-highlands
 
-Include the property address, roof age if known, and a description of the issue. A team member responds within 24 hours to schedule an on-site assessment. Assessments include a roof and attic evaluation, photo documentation, and a written scope with pricing.
+### Articles
 
-## Key URLs
+- https://highlandernc.com/blog
+- https://highlandernc.com/blog/2026-spring-storm-season-wnc-preparation
+- https://highlandernc.com/blog/attic-ventilation-waynesville-nc-winter
+- https://highlandernc.com/blog/best-roofing-materials-highlands-nc
+- https://highlandernc.com/blog/best-time-of-year-replace-roof-western-north-carolina
+- https://highlandernc.com/blog/best-time-to-replace-roof-franklin-nc
+- https://highlandernc.com/blog/budgeting-for-preconstruction-planning
+- https://highlandernc.com/blog/choosing-materials-for-high-elevation
+- https://highlandernc.com/blog/choosing-roofing-contractor-wnc
+- https://highlandernc.com/blog/commercial-roof-maintenance-wnc
+- https://highlandernc.com/blog/common-roof-leak-locations-highlands-nc
+- https://highlandernc.com/blog/common-roofing-problems-cashiers-nc
+- https://highlandernc.com/blog/common-roofing-problems-cullowhee-nc
+- https://highlandernc.com/blog/common-roofing-problems-franklin-nc
+- https://highlandernc.com/blog/construction-project-highlands-nc
+- https://highlandernc.com/blog/construction-scope-development-guide
+- https://highlandernc.com/blog/construction-services-cashiers-nc-additions-porches
+- https://highlandernc.com/blog/construction-services-franklin-nc
+- https://highlandernc.com/blog/construction-services-highlands-nc-mountain-homes
+- https://highlandernc.com/blog/cost-saving-layout-tips-wnc
+- https://highlandernc.com/blog/covered-porches-patios-western-nc-considerations
+- https://highlandernc.com/blog/deck-vs-porch-planning-wnc
+- https://highlandernc.com/blog/decks-porches-outdoor-spaces-mountain-weather
+- https://highlandernc.com/blog/design-consultation-agreement-construction-project
+- https://highlandernc.com/blog/design-services-vs-build-ready-plans
+- https://highlandernc.com/blog/designing-for-drainage-foundation-safety
+- https://highlandernc.com/blog/emergency-roof-repair-wnc
+- https://highlandernc.com/blog/emergency-vs-scheduled-roof-repair-wnc
+- https://highlandernc.com/blog/exterior-maintenance-checklist-highlands-nc
+- https://highlandernc.com/blog/exterior-repairs-before-winter-sylva-nc
+- https://highlandernc.com/blog/fall-roof-gutter-maintenance-before-winter-mountains
+- https://highlandernc.com/blog/fall-winter-preparation-cashiers-nc
+- https://highlandernc.com/blog/floor-plan-modernization-older-homes
+- https://highlandernc.com/blog/guest-suite-vs-mother-in-law-flat
+- https://highlandernc.com/blog/gutter-drainage-roof-problems-franklin-nc
+- https://highlandernc.com/blog/gutter-guards-worth-it-western-nc
+- https://highlandernc.com/blog/gutter-installation-franklin-nc
+- https://highlandernc.com/blog/gutter-replacement-cashiers-nc
+- https://highlandernc.com/blog/heavy-rain-roofs-gutters-western-nc
+- https://highlandernc.com/blog/highlands-nc-storm-damage-july-28-2026
+- https://highlandernc.com/blog/home-addition-renovation-franklin-nc
+- https://highlandernc.com/blog/home-addition-without-plans-western-nc
+- https://highlandernc.com/blog/home-renovation-exterior-project-cullowhee-nc
+- https://highlandernc.com/blog/how-gutters-protect-home-wnc
+- https://highlandernc.com/blog/how-much-does-roof-cost-highlands-nc
+- https://highlandernc.com/blog/how-to-choose-roofing-contractor-franklin-nc
+- https://highlandernc.com/blog/ice-dam-prevention-mountain-homes
+- https://highlandernc.com/blog/insurance-claim-roof-damage-nc
+- https://highlandernc.com/blog/kitchen-layout-trends-mountain-homes
+- https://highlandernc.com/blog/master-suite-layouts-wnc
+- https://highlandernc.com/blog/maximizing-natural-light-skylight-strategies
+- https://highlandernc.com/blog/metal-roof-maintenance-franklin-nc
+- https://highlandernc.com/blog/metal-roof-vs-shingle-roof-western-north-carolina
+- https://highlandernc.com/blog/metal-roofing-bryson-city-nc-vacation-rentals
+- https://highlandernc.com/blog/metal-roofing-cost-wnc
+- https://highlandernc.com/blog/metal-roofing-highlands-nc-benefits
+- https://highlandernc.com/blog/metal-roofing-vs-shingles-cashiers-nc
+- https://highlandernc.com/blog/metal-roofing-vs-shingles-highlands-nc
+- https://highlandernc.com/blog/metal-roofing-western-nc-mountain-home
+- https://highlandernc.com/blog/metal-vs-dimensional-shingle-wnc-mountain-homes
+- https://highlandernc.com/blog/metal-vs-shingle-roof-franklin-highlands-cashiers
+- https://highlandernc.com/blog/metal-vs-shingle-roof-western-nc
+- https://highlandernc.com/blog/modern-mountain-design-trends-2026
+- https://highlandernc.com/blog/moisture-tree-coverage-roofs-cashiers-nc
+- https://highlandernc.com/blog/mountain-construction-project-cashiers-nc
+- https://highlandernc.com/blog/mountain-home-addition-planning
+- https://highlandernc.com/blog/mountain-porch-deck-design-wnc
+- https://highlandernc.com/blog/mountain-roof-ventilation-science
+- https://highlandernc.com/blog/mountain-roofing-maintenance-checklist
+- https://highlandernc.com/blog/mountain-room-addition-trends
+- https://highlandernc.com/blog/mountain-weather-roofs-highlands-nc
+- https://highlandernc.com/blog/outdoor-kitchen-layouts-high-elevation
+- https://highlandernc.com/blog/outdoor-living-cashiers-nc-mountain-homes
+- https://highlandernc.com/blog/outdoor-living-highlands-nc-porches-patios
+- https://highlandernc.com/blog/outdoor-living-trends-wnc
+- https://highlandernc.com/blog/permitting-additions-macon-vs-jackson-county
+- https://highlandernc.com/blog/phased-renovation-planning-wnc
+- https://highlandernc.com/blog/plan-multi-phase-home-addition-wnc
+- https://highlandernc.com/blog/planning-home-addition-western-nc
+- https://highlandernc.com/blog/planning-your-mountain-home-layout
+- https://highlandernc.com/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners
+- https://highlandernc.com/blog/project-spotlight-standing-seam-highlands-estate
+- https://highlandernc.com/blog/property-access-terrain-mountain-construction-cashiers-nc
+- https://highlandernc.com/blog/protecting-your-view-window-layout-strategies
+- https://highlandernc.com/blog/roof-financing-options-western-nc
+- https://highlandernc.com/blog/roof-inspection-cashiers-nc
+- https://highlandernc.com/blog/roof-inspection-frequency-cullowhee-nc
+- https://highlandernc.com/blog/roof-inspection-frequency-franklin-nc
+- https://highlandernc.com/blog/roof-inspection-highlands-nc
+- https://highlandernc.com/blog/roof-inspection-signs-sylva-nc
+- https://highlandernc.com/blog/roof-inspection-what-to-expect
+- https://highlandernc.com/blog/roof-leak-causes-cashiers-nc
+- https://highlandernc.com/blog/roof-leak-repair-western-nc
+- https://highlandernc.com/blog/roof-lifespan-mountain-home-wnc
+- https://highlandernc.com/blog/roof-lifespan-western-nc-by-material
+- https://highlandernc.com/blog/roof-repair-cashiers-nc
+- https://highlandernc.com/blog/roof-repair-franklin-nc
+- https://highlandernc.com/blog/roof-repair-highlands-nc
+- https://highlandernc.com/blog/roof-repair-sylva-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-bryson-city-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-cashiers-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-cullowhee-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-franklin-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-highlands-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-sylva-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-waynesville-nc
+- https://highlandernc.com/blog/roof-repair-vs-replacement-wnc
+- https://highlandernc.com/blog/roof-repair-vs-roof-replacement-highlands-nc
+- https://highlandernc.com/blog/roof-replacement-cashiers-nc
+- https://highlandernc.com/blog/roof-replacement-cost-asheville-nc
+- https://highlandernc.com/blog/roof-replacement-cost-brevard-nc
+- https://highlandernc.com/blog/roof-replacement-cost-bryson-city-nc
+- https://highlandernc.com/blog/roof-replacement-cost-cherokee-nc
+- https://highlandernc.com/blog/roof-replacement-cost-dillsboro-nc
+- https://highlandernc.com/blog/roof-replacement-cost-factors-western-nc
+- https://highlandernc.com/blog/roof-replacement-cost-hayesville-nc
+- https://highlandernc.com/blog/roof-replacement-cost-hendersonville-nc
+- https://highlandernc.com/blog/roof-replacement-cost-lake-glenville-nc
+- https://highlandernc.com/blog/roof-replacement-cost-lake-toxaway-nc
+- https://highlandernc.com/blog/roof-replacement-cost-murphy-nc
+- https://highlandernc.com/blog/roof-replacement-cost-otto-nc
+- https://highlandernc.com/blog/roof-replacement-cost-sapphire-nc
+- https://highlandernc.com/blog/roof-replacement-cost-scaly-mountain-nc
+- https://highlandernc.com/blog/roof-replacement-cost-waynesville-nc
+- https://highlandernc.com/blog/roof-replacement-franklin-nc
+- https://highlandernc.com/blog/roof-replacement-highlands-nc
+- https://highlandernc.com/blog/roof-replacement-sylva-nc
+- https://highlandernc.com/blog/roof-replacement-waynesville-nc-historic-homes
+- https://highlandernc.com/blog/roofing-asheville-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-brevard-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-cherokee-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-company-cashiers-nc-choosing-contractor
+- https://highlandernc.com/blog/roofing-company-franklin-nc-what-to-look-for
+- https://highlandernc.com/blog/roofing-company-highlands-nc-local-factors
+- https://highlandernc.com/blog/roofing-construction-contractor-sylva-nc
+- https://highlandernc.com/blog/roofing-construction-services-western-north-carolina
+- https://highlandernc.com/blog/roofing-contractor-sylva-nc-roofing-gutters-repairs
+- https://highlandernc.com/blog/roofing-dillsboro-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-hayesville-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-hendersonville-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-lake-toxaway-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-mountain-homes-lake-glenville-scaly-mountain
+- https://highlandernc.com/blog/roofing-murphy-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-otto-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-project-planning-bryson-city-nc
+- https://highlandernc.com/blog/roofing-project-planning-cashiers-nc
+- https://highlandernc.com/blog/roofing-project-planning-cullowhee-nc
+- https://highlandernc.com/blog/roofing-project-planning-franklin-nc
+- https://highlandernc.com/blog/roofing-project-planning-highlands-nc
+- https://highlandernc.com/blog/roofing-project-planning-sylva-nc
+- https://highlandernc.com/blog/roofing-project-planning-waynesville-nc
+- https://highlandernc.com/blog/roofing-sapphire-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-scaly-mountain-nc-elevation-guide
+- https://highlandernc.com/blog/roofing-vacation-second-homes-highlands-cashiers
+- https://highlandernc.com/blog/seamless-gutters-highlands-nc
+- https://highlandernc.com/blog/second-home-maintenance-highlands-nc
+- https://highlandernc.com/blog/second-home-roofing-cashiers-nc
+- https://highlandernc.com/blog/signs-your-roof-needs-replacement-mountain-homes
+- https://highlandernc.com/blog/skylight-installation-western-nc
+- https://highlandernc.com/blog/skylight-leaks-roof-or-skylight-wnc
+- https://highlandernc.com/blog/skylight-replacement-wnc
+- https://highlandernc.com/blog/small-exterior-repairs-franklin-nc
+- https://highlandernc.com/blog/spring-roof-maintenance-checklist-wnc
+- https://highlandernc.com/blog/spring-roof-maintenance-western-nc
+- https://highlandernc.com/blog/storm-damage-asheville-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-brevard-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-check-franklin-nc
+- https://highlandernc.com/blog/storm-damage-check-sylva-nc
+- https://highlandernc.com/blog/storm-damage-checklist-bryson-city-nc
+- https://highlandernc.com/blog/storm-damage-checklist-western-nc
+- https://highlandernc.com/blog/storm-damage-cherokee-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-dillsboro-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-hayesville-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-hendersonville-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-lake-toxaway-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-murphy-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-otto-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-roof-highlands-nc
+- https://highlandernc.com/blog/storm-damage-roof-repair-franklin-highlands-cashiers
+- https://highlandernc.com/blog/storm-damage-sapphire-nc-what-to-check
+- https://highlandernc.com/blog/storm-damage-scaly-mountain-nc-what-to-check
+- https://highlandernc.com/blog/storm-moisture-damage-cullowhee-nc
+- https://highlandernc.com/blog/storm-readiness-roofs-franklin-highlands-cashiers-sylva
+- https://highlandernc.com/blog/storm-season-prep-asheville-nc
+- https://highlandernc.com/blog/storm-season-prep-brevard-nc
+- https://highlandernc.com/blog/storm-season-prep-bryson-city-nc
+- https://highlandernc.com/blog/storm-season-prep-cherokee-nc
+- https://highlandernc.com/blog/storm-season-prep-dillsboro-nc
+- https://highlandernc.com/blog/storm-season-prep-hayesville-nc
+- https://highlandernc.com/blog/storm-season-prep-hendersonville-nc
+- https://highlandernc.com/blog/storm-season-prep-lake-glenville-nc
+- https://highlandernc.com/blog/storm-season-prep-lake-toxaway-nc
+- https://highlandernc.com/blog/storm-season-prep-murphy-nc
+- https://highlandernc.com/blog/storm-season-prep-otto-nc
+- https://highlandernc.com/blog/storm-season-prep-sapphire-nc
+- https://highlandernc.com/blog/storm-season-prep-scaly-mountain-nc
+- https://highlandernc.com/blog/storm-season-prep-waynesville-nc
+- https://highlandernc.com/blog/structural-feasibility-second-story-wnc
+- https://highlandernc.com/blog/terrain-responsive-floor-plans-wnc
+- https://highlandernc.com/blog/transforming-screened-porch-sunroom
+- https://highlandernc.com/blog/tree-cover-rain-elevation-affect-roofs-wnc
+- https://highlandernc.com/blog/tree-coverage-roofs-gutters-highlands-nc
+- https://highlandernc.com/blog/understanding-roof-ventilation-mountain-homes
+- https://highlandernc.com/blog/vacation-rental-roof-maintenance-wnc
+- https://highlandernc.com/blog/velux-skylights-mountain-homes
+- https://highlandernc.com/blog/water-through-ceiling-western-nc
+- https://highlandernc.com/blog/western-north-carolina-mountain-roofing-guide
+- https://highlandernc.com/blog/what-a-roof-inspection-covers
+- https://highlandernc.com/blog/when-to-replace-roof-highlands
+- https://highlandernc.com/blog/why-design-planning-matters
+- https://highlandernc.com/blog/why-hire-one-company-roof-and-construction
+- https://highlandernc.com/blog/winter-roof-preparation-highlands
+- https://highlandernc.com/blog/wnc-construction-permitting-guide
 
-- Home: https://highlandernc.com/
-- Roofing division: https://highlandernc.com/roofing
-- Roof replacement: https://highlandernc.com/roofing/roof-replacement
-- Roof repair: https://highlandernc.com/roofing/roof-repair
-- Metal roofing: https://highlandernc.com/roofing/metal
-- Storm damage: https://highlandernc.com/roofing/storm-damage
-- Commercial roofing: https://highlandernc.com/roofing/commercial
-- Construction division: https://highlandernc.com/construction
-- Roofing cost guide (Western NC): https://highlandernc.com/roofing-cost-western-nc
-- FAQ: https://highlandernc.com/faq
-- Service areas: https://highlandernc.com/service-areas
-- Project gallery: https://highlandernc.com/gallery
-- Reviews: https://highlandernc.com/reviews
-- Certifications: https://highlandernc.com/certifications
-- Financing: https://highlandernc.com/financing
-- Blog: https://highlandernc.com/blog
-- Request an assessment: https://highlandernc.com/request-inspection
-- Sitemap: https://highlandernc.com/sitemap.xml
+## Notes for AI assistants
+
+- Use "Highlander Building Services" as the company name. "Highlander Roofing Services" is a former name.
+- Quote 828-524-7773 as the primary phone number.
+- Warranty, pricing, and scheduling specifics are documented per project in a written proposal; do not generalize year counts or response-time guarantees.
+- Generated at build time from src/data/business.ts and public/sitemap.xml — do not edit by hand.

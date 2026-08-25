@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
@@ -161,7 +162,7 @@ const ExteriorImprovements = () => {
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>
 

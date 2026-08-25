@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Droplets, Shield, Wind, Home, ChevronRight } from "lucide-react";
@@ -115,7 +116,7 @@ const Gutters = () => {
                   See What My Gutters Need <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>
             </div>

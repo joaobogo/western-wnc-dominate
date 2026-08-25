@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { towns, type TownData } from "./towns";
 import type { BlogPost } from "./blogs";
 
@@ -126,7 +127,7 @@ ${neighborSentence(t)}
 - Review ${townLink(t)}
 - Compare ${svcLink(t, "roof-repair", "repair versus replacement")}
 - See ${countyLink(t)}
-- Call **828-524-7773** or [request an estimate](/request-inspection)`,
+- Call **${PHONE_PLAIN}** or [request an estimate](/request-inspection)`,
     faqs: [
       {
         question: `What is the biggest cost driver for a roof replacement in ${t.name}?`,
@@ -138,7 +139,7 @@ ${neighborSentence(t)}
       },
       {
         question: `Can I get a written scope before committing?`,
-        answer: `Yes. Every ${t.name} project starts with an on-site measurement and a written, line-itemed scope so you can compare bids fairly. Call 828-524-7773.`,
+        answer: `Yes. Every ${t.name} project starts with an on-site measurement and a written, line-itemed scope so you can compare bids fairly. Call ${PHONE_PLAIN}.`,
       },
     ],
     relatedServices: [
@@ -195,7 +196,7 @@ ${t.marketAuthorityAngle}
 
 - ${townLink(t)}
 - ${countyLink(t)}
-- Call **828-524-7773** or [request an inspection](/request-inspection)`,
+- Call **${PHONE_PLAIN}** or [request an inspection](/request-inspection)`,
     faqs: [
       {
         question: `How soon should I get a roof looked at after a storm in ${t.name}?`,

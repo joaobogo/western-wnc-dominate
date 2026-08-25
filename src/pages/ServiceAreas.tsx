@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight, Phone, Shield, Award, Mountain, Compass, Users, Star, CloudLightning, Clock } from "lucide-react";
@@ -307,7 +308,7 @@ const ServiceAreas = () => {
                   href="tel:+18285247773"
                   className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]"
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground text-sm font-bold uppercase tracking-wider">

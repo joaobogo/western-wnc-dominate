@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { trackEvent } from "@/lib/analytics";
@@ -361,7 +362,7 @@ const CostContextBlock = ({
               onClick={() => trackEvent("phone_click", { label: "Cost context call", elementId: "cost-context-call" })}
               className="btn btn-secondary btn-md w-full"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> 828-524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_PLAIN}
             </a>
           </div>
         </div>

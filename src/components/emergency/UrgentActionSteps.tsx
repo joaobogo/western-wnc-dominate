@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Phone, Clock, AlertTriangle } from "lucide-react";
 
 interface Props {
@@ -75,7 +76,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
             className="btn btn-primary btn-md shrink-0"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
-            (828) 524-7773
+            {PHONE_DISPLAY}
           </a>
         </div>
       </div>

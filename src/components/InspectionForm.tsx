@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useRef, useState } from "react";
 import { towns } from "@/data/towns";
 import { motion, AnimatePresence } from "framer-motion";
@@ -329,7 +330,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                   <p className="text-white text-base font-body font-bold mb-2">Prefer to talk directly?</p>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" />
-                    (828) 524-7773
+                    {PHONE_DISPLAY}
                   </a>
                   <p className="text-white text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
                 </div>
@@ -444,7 +445,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     </button>
                     <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
                       <Phone className="w-4 h-4" aria-hidden="true" />
-                      Or call (828) 524-7773
+                      Or call {PHONE_DISPLAY}
                     </a>
                   </div>
                   <p className="text-white/80 font-body text-body-xs">
@@ -650,7 +651,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                   </button>
                   <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" />
-                    Or call (828) 524-7773
+                    Or call {PHONE_DISPLAY}
                   </a>
                 </div>
                 <FormConsent className="mt-4 text-dark-section-foreground" />

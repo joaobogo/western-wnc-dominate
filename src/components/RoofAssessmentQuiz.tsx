@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCircle, XCircle, Shield } from "lucide-react";
@@ -293,7 +294,7 @@ const RoofAssessmentQuiz = () => {
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                     </a>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-md">
-                      Call (828) 524-7773
+                      Call {PHONE_DISPLAY}
                     </a>
                   </div>
                 </div>

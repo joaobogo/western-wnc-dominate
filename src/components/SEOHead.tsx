@@ -1,3 +1,4 @@
+import { BUSINESS, FRANKLIN, SYLVA, BusinessLocation } from "@/data/business";
 import { useEffect } from "react";
 
 interface SEOHeadProps {
@@ -12,7 +13,7 @@ interface SEOHeadProps {
   locale?: string;
 }
 
-const SITE_NAME = "Highlander Building Services";
+const SITE_NAME = BUSINESS.brandName;
 const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
 const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
@@ -95,10 +96,10 @@ const SEOHead = ({
     setMeta("name", "publisher", SITE_NAME);
     setMeta("name", "theme-color", "#1a4d2e");
     // Geo tags for local SEO
-    setMeta("name", "geo.region", "US-NC");
-    setMeta("name", "geo.placename", "Franklin, North Carolina");
-    setMeta("name", "geo.position", "35.1821;-83.3807");
-    setMeta("name", "ICBM", "35.1821, -83.3807");
+    setMeta("name", "geo.region", `US-${FRANKLIN.region}`);
+    setMeta("name", "geo.placename", `${FRANKLIN.locality}, North Carolina`);
+    setMeta("name", "geo.position", `${FRANKLIN.geo.lat};${FRANKLIN.geo.lng}`);
+    setMeta("name", "ICBM", `${FRANKLIN.geo.lat}, ${FRANKLIN.geo.lng}`);
 
     // Exactly one canonical element may exist — drop any extras the static
     // head or a previous route left behind, then self-reference this route.
@@ -219,107 +220,82 @@ const SERVED_CITIES: { name: string; region: string }[] = [
   { name: "Clayton", region: "GA" },
 ];
 
-/** Monday–Friday, 8:00–17:00 for every location. */
-const BUSINESS_HOURS = [
-  {
+/** Opening hours, derived from BUSINESS. */
+const hoursSpec = (loc: BusinessLocation) =>
+  loc.hours.map((h) => ({
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "08:00",
-    closes: "17:00",
-  },
-];
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  }));
+
+const BUSINESS_HOURS = hoursSpec(FRANKLIN);
 
 /** Verified public profiles used for sameAs on the business + organization nodes. */
-const FRANKLIN_GBP = "https://www.google.com/maps?cid=1442261483869937048";
-const SYLVA_GBP = "https://www.google.com/maps?cid=1690022713833215904";
-const PROFILE_URLS = [
-  FRANKLIN_GBP,
-  SYLVA_GBP,
-  "https://www.facebook.com/highlanderroof",
-  "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
-  "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
-  "https://www.linkedin.com/company/highlander-roofing-services-inc/",
-  "https://www.instagram.com/highlanderroofingservices/",
-];
+const PROFILE_URLS = BUSINESS.profiles;
+
+const postalAddress = (loc: BusinessLocation) => ({
+  "@type": "PostalAddress",
+  streetAddress: loc.streetAddress,
+  addressLocality: loc.locality,
+  addressRegion: loc.region,
+  postalCode: loc.postalCode,
+  addressCountry: "US",
+});
+
+const geoPoint = (loc: BusinessLocation) => ({
+  "@type": "GeoCoordinates",
+  latitude: loc.geo.lat,
+  longitude: loc.geo.lng,
+});
+
+/** Physical showroom location node, generated from BUSINESS.locations. */
+const locationSchema = (loc: BusinessLocation) => ({
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#${loc.id}-showroom`,
+  name: `${SITE_NAME} — ${loc.name}`,
+  url: BASE_URL,
+  image: DEFAULT_IMAGE,
+  telephone: loc.phoneE164,
+  parentOrganization: { "@id": `${BASE_URL}/#organization` },
+  address: postalAddress(loc),
+  geo: geoPoint(loc),
+  openingHoursSpecification: hoursSpec(loc),
+  sameAs: [`https://www.google.com/maps?cid=${loc.gbpCid}`],
+});
 
 /** Franklin showroom — physical location node. */
-export const franklinLocationSchema = () => ({
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#franklin-showroom`,
-  name: `${SITE_NAME} — Franklin Showroom`,
-  url: BASE_URL,
-  image: DEFAULT_IMAGE,
-  telephone: "+1-828-524-7773",
-  parentOrganization: { "@id": `${BASE_URL}/#organization` },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "76 Creative Dr",
-    addressLocality: "Franklin",
-    addressRegion: "NC",
-    postalCode: "28734",
-    addressCountry: "US",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
-  openingHoursSpecification: BUSINESS_HOURS,
-  sameAs: [FRANKLIN_GBP],
-});
+export const franklinLocationSchema = () => locationSchema(FRANKLIN);
 
 /** Sylva showroom — physical location node. */
-export const sylvaLocationSchema = () => ({
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#sylva-showroom`,
-  name: `${SITE_NAME} — Sylva Showroom`,
-  url: BASE_URL,
-  image: DEFAULT_IMAGE,
-  telephone: "+1-828-476-4000",
-  parentOrganization: { "@id": `${BASE_URL}/#organization` },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "28 Cross Stitch Mountain Rd",
-    addressLocality: "Sylva",
-    addressRegion: "NC",
-    postalCode: "28779",
-    addressCountry: "US",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 35.3585, longitude: -83.1812 },
-  openingHoursSpecification: BUSINESS_HOURS,
-  sameAs: [SYLVA_GBP],
-});
+export const sylvaLocationSchema = () => locationSchema(SYLVA);
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
   name: SITE_NAME,
-  legalName: "Highlander Building Services, Inc.",
-  alternateName: "Highlander Roofing Services",
+  legalName: BUSINESS.legalName,
+  alternateName: BUSINESS.alternateNames,
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
   image: DEFAULT_IMAGE,
-  telephone: "+1-828-524-7773",
-  email: "info@highlandernc.com",
-  description:
-    "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "76 Creative Dr",
-    addressLocality: "Franklin",
-    addressRegion: "NC",
-    postalCode: "28734",
-    addressCountry: "US",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+  telephone: BUSINESS.primaryPhoneE164,
+  email: BUSINESS.email,
+  description: BUSINESS.description,
+  address: postalAddress(FRANKLIN),
+  geo: geoPoint(FRANKLIN),
   areaServed: SERVED_CITIES.map((c) => ({
     "@type": "City",
     name: c.name,
     address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
   })),
   openingHoursSpecification: BUSINESS_HOURS,
-  department: [franklinLocationSchema(), sylvaLocationSchema()],
-  location: [{ "@id": `${BASE_URL}/#franklin-showroom` }, { "@id": `${BASE_URL}/#sylva-showroom` }],
+  department: BUSINESS.locations.map(locationSchema),
+  location: BUSINESS.locations.map((loc) => ({ "@id": `${BASE_URL}/#${loc.id}-showroom` })),
   serviceArea: {
     "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+    geoMidpoint: geoPoint(FRANKLIN),
     geoRadius: "80000",
   },
   hasOfferCatalog: {
@@ -343,8 +319,8 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     recognizedBy: { "@type": "Organization", name: "CertainTeed" },
   },
   currenciesAccepted: "USD",
-  foundingDate: "2017",
-  slogan: "Built for the Mountains. Built for Life.",
+  foundingDate: String(BUSINESS.foundingYear),
+  slogan: BUSINESS.slogan,
   sameAs: PROFILE_URLS,
   ...overrides,
 });
@@ -356,21 +332,17 @@ export const organizationSchema = () => ({
   name: SITE_NAME,
   url: BASE_URL,
   logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
-  legalName: "Highlander Building Services, Inc.",
-  telephone: "+1-828-524-7773",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "76 Creative Dr",
-    addressLocality: "Franklin",
-    addressRegion: "NC",
-    postalCode: "28734",
-    addressCountry: "US",
-  },
+  legalName: BUSINESS.legalName,
+  alternateName: BUSINESS.alternateNames,
+  telephone: BUSINESS.primaryPhoneE164,
+  email: BUSINESS.email,
+  foundingDate: String(BUSINESS.foundingYear),
+  address: postalAddress(FRANKLIN),
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-828-524-7773",
+    telephone: BUSINESS.primaryPhoneE164,
     contactType: "customer service",
-    areaServed: "US-NC",
+    areaServed: `US-${FRANKLIN.region}`,
     availableLanguage: "English",
   },
   sameAs: PROFILE_URLS,

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
@@ -58,7 +59,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
           href="tel:+18285247773"
           className="btn btn-secondary btn-md btn-on-dark"
         >
-          <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+          <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
         </a>
       </div>
 

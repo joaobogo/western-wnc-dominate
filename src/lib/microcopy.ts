@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY as BUSINESS_PHONE_DISPLAY, PHONE_TEL as BUSINESS_PHONE_TEL } from "@/data/business";
 /**
  * Brand-voice microcopy: "High Authority, Low Fluff".
  *
@@ -8,8 +9,8 @@
  *  - No hype, no unsupported warranty claims, no 24/7 promises.
  */
 
-export const PHONE_DISPLAY = "(828) 524-7773";
-export const PHONE_TEL = "+18285247773";
+export const PHONE_DISPLAY = BUSINESS_PHONE_DISPLAY;
+export const PHONE_TEL = BUSINESS_PHONE_TEL.replace("tel:", "");
 
 /** Appended to failures so a lead always has a way through. */
 export const CALL_FALLBACK = `Call ${PHONE_DISPLAY} and we'll take it from there.`;

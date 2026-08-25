@@ -1,3 +1,4 @@
+import { FRANKLIN_NAP } from "@/data/business";
 import { MapPin } from "lucide-react";
 
 /**
@@ -8,7 +9,7 @@ import { MapPin } from "lucide-react";
  * delayed until it is near the viewport to avoid blocking the page.
  */
 const MapEmbed = ({ className = "" }: { className?: string }) => {
-  const address = "76 Creative Dr, Franklin, NC 28734";
+  const address = `${FRANKLIN_NAP}`;
   const encoded = encodeURIComponent(address);
   const src = `https://www.google.com/maps?q=${encoded}&output=embed&z=14`;
 

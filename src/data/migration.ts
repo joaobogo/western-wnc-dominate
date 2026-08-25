@@ -1,3 +1,4 @@
+import { FRANKLIN_NAP, PHONE_DISPLAY } from "@/data/business";
 /**
  * SEO MIGRATION MAP — highlandernc.com → new site
  * Generated from full site crawl on 2026-02-23
@@ -170,9 +171,9 @@ export const seoChecklist = [
 export const brandAssets = {
   companyName: "Highlander Building Services, Inc.",
   tagline: "Expert Local Roofer",
-  phone: "(828) 524-7773",
+  phone: `${PHONE_DISPLAY}`,
   locations: [
-    { name: "Franklin, NC", address: "76 Creative Dr, Franklin, NC 28734" },
+    { name: "Franklin, NC", address: `${FRANKLIN_NAP}` },
     { name: "Sylva, NC", address: "28 Cross Stitch Mountain Road, Sylva, NC 28779" },
   ],
   certifications: [

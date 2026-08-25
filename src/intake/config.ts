@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 /**
  * Highlander receptionist call sheet — single tuning surface.
  * Every scoring number, option label and bucket lives here so the office can
@@ -9,7 +10,7 @@ export const SCORE_VERSION = "V1.0";
 export const COMPANY = {
   name: "Highlander Building Services Inc",
   serviceLine: "ROOFING • CONSTRUCTION • DESIGN",
-  phone: "828-524-7773",
+  phone: `${PHONE_PLAIN}`,
   web: "HIGHLANDERNC.COM",
 } as const;
 

@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import RelatedLinks from "@/components/RelatedLinks";
 import {
   getServiceBlogLinks,
@@ -33,7 +34,7 @@ const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInter
         ? {
             label: "Get My Project Scoped",
             href: "/construction/consultation",
-            description: "A working session on scope, feasibility, and budget range — 828-524-7773.",
+            description: `A working session on scope, feasibility, and budget range — ${PHONE_PLAIN}.`,
           }
         : estimateLink,
     ]}

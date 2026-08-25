@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -271,7 +272,7 @@ const RoofingDivision = () => {
                   className="btn btn-secondary btn-lg btn-on-dark group"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
-                  (828) 524-7773
+                  {PHONE_DISPLAY}
                 </a>
               </motion.div>
 
@@ -286,7 +287,7 @@ const RoofingDivision = () => {
           points={[
             "Repair, replacement, metal, and specialty roofing",
             "Storm damage inspections after mountain weather",
-            "Call 828-524-7773 to reach a roofing lead",
+            `Call ${PHONE_PLAIN} to reach a roofing lead`,
           ]}
         />
 
@@ -539,7 +540,7 @@ const RoofingDivision = () => {
                       className="btn btn-secondary btn-lg btn-on-dark group"
                     >
                       <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
-                      (828) 524-7773
+                      {PHONE_DISPLAY}
                     </a>
                   </div>
 

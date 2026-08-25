@@ -1,3 +1,5 @@
+import { BUSINESS, FRANKLIN, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import LocationCards from "@/components/LocationCards";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck } from "lucide-react";
@@ -143,7 +145,7 @@ const Footer = () => {
                 className="btn btn-secondary btn-md whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
             </div>
           </motion.div>
@@ -174,22 +176,22 @@ const Footer = () => {
               <div className="flex gap-3">
                 <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1" aria-hidden="true" />
                 <div className="text-body-sm text-foreground/85 font-body leading-relaxed">
-                  <span className="block font-bold text-foreground">Highlander Building Services, Inc.</span>
-                  76 Creative Dr<br />
-                  Franklin, NC 28734
+                  <span className="block font-bold text-foreground">{BUSINESS.legalName}</span>
+                  {FRANKLIN.streetAddress}<br />
+                  {FRANKLIN.locality}, {FRANKLIN.region} {FRANKLIN.postalCode}
                 </div>
               </div>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 className="flex items-center gap-3 min-h-[44px] font-heading font-bold text-body-lg text-foreground hover:text-primary transition-colors"
               >
-                <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
               <a
-                href="mailto:info@highlandernc.com"
+                href={`mailto:${BUSINESS.email}`}
                 className="flex items-center gap-3 min-h-[44px] text-body-sm font-body text-muted-foreground hover:text-primary transition-colors break-all"
               >
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" /> info@highlandernc.com
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" /> {BUSINESS.email}
               </a>
               <div className="flex gap-3 pt-4 border-t border-border">
                 <Clock className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -303,11 +305,11 @@ const Footer = () => {
 
       {/* Trust strip — legal identity, licensing, showrooms */}
       <div className="border-t border-border">
-        <div className="container-tight py-4">
+        <div className="container-tight py-6">
+          <LocationCards className="mb-4" />
           <p className="text-body-xs text-muted-foreground font-body leading-relaxed tracking-wide text-center md:text-left">
-            Highlander Building Services, Inc. (formerly Highlander Roofing Services) · NC General Contractor License #87234 · Fully insured · Franklin showroom: 76 Creative Dr, Franklin, NC 28734 ·{" "}
-            <a href="tel:+18285247773" className="hover:text-foreground transition-colors">(828) 524-7773</a> · Sylva showroom: 28 Cross Stitch Mountain Rd, Sylva, NC 28779 ·{" "}
-            <a href="tel:+18284764000" className="hover:text-foreground transition-colors">(828) 476-4000</a> · Est. 2017
+            {BUSINESS.legalName} (formerly {BUSINESS.alternateNames[0]}) · {BUSINESS.licenseNumber} · Fully insured · Est. {BUSINESS.foundingYear} ·{" "}
+            <a href={PHONE_TEL} className="hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
           </p>
         </div>
       </div>
@@ -324,9 +326,9 @@ const Footer = () => {
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-body-xs text-muted-foreground font-body tracking-wide">
-            <span>© {new Date().getFullYear()} Highlander Building Services.</span>
+            <span>© {new Date().getFullYear()} {BUSINESS.brandName}.</span>
             <span className="hidden md:inline text-border">·</span>
-            <span>NC General Contractor License #87234</span>
+            <span>{BUSINESS.licenseNumber}</span>
             <span className="hidden md:inline text-border">·</span>
             <span>Fully Insured</span>
           </div>

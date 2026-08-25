@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { AlertTriangle, Phone } from "lucide-react";
 
 /**
@@ -55,7 +56,7 @@ const FormErrorSummary = ({
               className={`inline-flex items-center gap-1.5 font-bold underline underline-offset-2 ${dark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`}
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              (828) 524-7773
+              {PHONE_DISPLAY}
             </a>
           </p>
         </div>

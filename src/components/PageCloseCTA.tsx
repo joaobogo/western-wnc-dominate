@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
@@ -61,7 +62,7 @@ const PageCloseCTA = ({
               className="border-2 border-dark-section-border text-dark-section-foreground font-body font-bold text-sm md:text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] transition-all min-h-[56px]"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              (828) 524-7773
+              {PHONE_DISPLAY}
             </a>
           </div>
           <CTAProofPoints tone="dark" className="mt-6" />

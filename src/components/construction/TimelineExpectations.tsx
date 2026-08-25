@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
 
@@ -82,9 +83,9 @@ const TimelineExpectations = ({
         <a
           href="tel:+18285247773"
           className="btn btn-secondary btn-md"
-          aria-label="Call Highlander at (828) 524-7773"
+          aria-label={`Call Highlander at ${PHONE_DISPLAY}`}
         >
-          <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> (828) 524-7773
+          <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}
         </a>
       </div>
     </div>

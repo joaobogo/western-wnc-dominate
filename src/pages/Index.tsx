@@ -1,3 +1,4 @@
+import { FRANKLIN_NAP, PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -58,11 +59,11 @@ const Index = () => {
 
         <AnswerBlock
           question="Who is Highlander Building Services?"
-          answer="Highlander Building Services, Inc. is a roofing and construction company based at 76 Creative Dr, Franklin, NC 28734, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction."
+          answer={`Highlander Building Services, Inc. is a roofing and construction company based at ${FRANKLIN_NAP}, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction.`}
           points={[
             "Roofing, exteriors, and construction under one contractor",
             "Serving Western North Carolina mountain towns",
-            "Call 828-524-7773 for a direct answer",
+            `Call ${PHONE_PLAIN} for a direct answer`,
             "Estimates scoped on site",
           ]}
         />

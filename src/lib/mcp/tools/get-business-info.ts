@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { defineTool } from "@lovable.dev/mcp-js";
 
 export default defineTool({
@@ -9,7 +10,7 @@ export default defineTool({
   handler: () => {
     const info = {
       name: "Highlander Building Services, Inc.",
-      phone: "(828) 524-7773",
+      phone: `${PHONE_DISPLAY}`,
       website: "https://highlandernc.com",
       city: "Franklin",
       region: "North Carolina",

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Home, HardHat, Phone, Sparkles } from "lucide-react";
@@ -128,7 +129,7 @@ const IntakeChooser = () => (
             className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--gold-ink))] font-heading font-semibold text-body-xs transition-colors"
           >
             <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-            (828) 524-7773
+            {PHONE_DISPLAY}
           </a>
         </div>
       </div>

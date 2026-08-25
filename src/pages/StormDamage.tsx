@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -206,7 +207,7 @@ const StormDamage = () => {
                 {/* Primary action on storm pages is the phone call (see page-cta-hierarchy.ts) */}
                 <a href="tel:+18285247773" className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <Phone className="w-4 h-4 relative" aria-hidden="true" /> <span className="relative">(828) 524-7773</span>
+                  <Phone className="w-4 h-4 relative" aria-hidden="true" /> <span className="relative">{PHONE_DISPLAY}</span>
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
                   Get My Storm Damage Documented
@@ -231,7 +232,7 @@ const StormDamage = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
-                  <div className="text-caption text-primary-foreground font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
+                  <div className="text-caption text-primary-foreground font-body uppercase tracking-wider">Call {PHONE_DISPLAY} for immediate storm assistance</div>
                 </div>
               </motion.div>
             </div>
@@ -347,7 +348,7 @@ const StormDamage = () => {
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   See What My Roof Needs
@@ -432,7 +433,7 @@ const StormDamage = () => {
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   Get My Storm Damage Documented
@@ -615,7 +616,7 @@ const StormDamage = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
-                      <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                      <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                     </a>
                     <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
                       Get My Storm Damage Documented

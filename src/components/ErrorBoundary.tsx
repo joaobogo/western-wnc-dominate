@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { Component, type ErrorInfo, type ReactNode } from "react";
 import { logError } from "@/lib/error-reporting";
 
@@ -111,7 +112,7 @@ export default class ErrorBoundary extends Component<Props, State> {
               : "The team has been notified. "}
             You can retry, head back to the homepage, or call us directly at{" "}
             <a href="tel:+18285247773" className="text-[hsl(var(--gold-ink))] font-semibold underline underline-offset-4">
-              828-524-7773
+              {PHONE_PLAIN}
             </a>
             .
           </p>

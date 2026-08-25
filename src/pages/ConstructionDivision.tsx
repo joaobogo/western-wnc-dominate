@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -163,7 +164,7 @@ const ConstructionDivision = () => {
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>
 
@@ -203,7 +204,7 @@ const ConstructionDivision = () => {
           points={[
             "Custom builds, additions, and renovations",
             "Outdoor living and exterior improvements",
-            "Call 828-524-7773 to discuss your project",
+            `Call ${PHONE_PLAIN} to discuss your project`,
           ]}
         />
 

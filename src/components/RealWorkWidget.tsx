@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { GalleryGridSkeleton, LoadingAnnouncement } from "@/components/states/Skeletons";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -205,7 +206,7 @@ const RealWorkWidget = ({
                   href="tel:+18285247773"
                   className="btn btn-secondary btn-sm"
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true" /> 828-524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_PLAIN}
                 </a>
               </div>
             </div>

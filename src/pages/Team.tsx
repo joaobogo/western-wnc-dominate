@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
@@ -163,8 +164,8 @@ const Team = () => {
               <Link to="/consultation" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+              <a href="tel:+18285247773" aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
+                <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
               </a>
             </div>
           </div>

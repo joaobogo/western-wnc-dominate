@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -451,7 +452,7 @@ const About = () => {
                     View Open Positions <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
-                    <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                    <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                   </a>
                 </div>
               </motion.div>

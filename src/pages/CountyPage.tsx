@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -126,7 +127,7 @@ const CountyPage = () => {
                     Start a {county.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
-                    <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
+                    <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
                   </a>
                 </div>
               </motion.div>
@@ -158,7 +159,7 @@ const CountyPage = () => {
           answer={`Yes. Highlander Building Services, Inc. works across ${county.name} County from our Franklin, NC base, covering roof repair, roof replacement, metal roofing, gutters, and construction projects for mountain homes and commercial buildings.`}
           points={[
             `Crews across ${county.name} County`,
-            "Call 828-524-7773 to talk with the team",
+            `Call ${PHONE_PLAIN} to talk with the team`,
             "Roofing and construction handled in-house",
           ]}
         />
@@ -396,7 +397,7 @@ const CountyPage = () => {
                 Start a {county.name} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark min-w-[240px]">
-                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
             </div>
           </div>

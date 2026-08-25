@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { motion } from "framer-motion";
@@ -283,12 +284,12 @@ const Hero = () => {
               </Link>
               <a
                 href="tel:+18285247773"
-                aria-label="Call Highlander Building Services at 828-524-7773"
+                aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
                 className="btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                <span className="md:hidden">Call · (828) 524-7773</span>
-                <span className="hidden md:inline">Call Highlander · (828) 524-7773</span>
+                <span className="md:hidden">Call · {PHONE_DISPLAY}</span>
+                <span className="hidden md:inline">Call Highlander · {PHONE_DISPLAY}</span>
               </a>
             </div>
 

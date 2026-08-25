@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 
@@ -30,7 +31,7 @@ const ConsultationCTA = ({ heading, subline, label = "Get My Replacement Scoped"
             className="btn btn-secondary btn-md btn-on-dark"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
-            828-524-7773
+            {PHONE_PLAIN}
           </a>
         </div>
       </div>

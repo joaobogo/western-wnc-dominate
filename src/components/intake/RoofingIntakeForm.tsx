@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useMemo, useState } from "react";
 import { trackFormStepComplete } from "@/lib/gtm";
 import { motion, AnimatePresence } from "framer-motion";
@@ -286,7 +287,7 @@ const RoofingIntakeForm = () => {
               </div>
               {data.timeline === "emergency" && (
                 <p className="text-body-xs font-body text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.25)] rounded-md px-4 py-3">
-                  Emergency response: complete the form and we'll call you directly — or dial <a className="underline font-semibold" href="tel:+18285247773">(828) 524-7773</a> now.
+                  Emergency response: complete the form and we'll call you directly — or dial <a className="underline font-semibold" href="tel:+18285247773">{PHONE_DISPLAY}</a> now.
                 </p>
               )}
             </>

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Clock, Award, Star } from "lucide-react";
@@ -49,7 +50,7 @@ const CardCapture = ({
           href="tel:+18285247773"
           className="btn btn-secondary btn-md"
         >
-          <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: 828-524-7773
+          <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: {PHONE_PLAIN}
         </a>
       </div>
     </div>
@@ -104,7 +105,7 @@ const EditorialCapture = ({
           href="tel:+18285247773"
           className="btn btn-secondary btn-lg"
         >
-          <Phone className="w-4 h-4 text-muted-foreground" aria-hidden="true" /> (828) 524-7773
+          <Phone className="w-4 h-4 text-muted-foreground" aria-hidden="true" /> {PHONE_DISPLAY}
         </a>
       </div>
       <div className="w-10 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />

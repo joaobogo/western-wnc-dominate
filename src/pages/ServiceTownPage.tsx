@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -243,7 +244,7 @@ const ServiceTownPage = ({
           answer={entry.intro}
           points={[
             `${entry.serviceLabel} in ${town.name} and across ${town.county}`,
-            "Call 828-524-7773 for a direct answer",
+            `Call ${PHONE_PLAIN} for a direct answer`,
             "Scoped on site by Highlander crews",
           ]}
         />
@@ -345,7 +346,7 @@ const ServiceTownPage = ({
                 Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]">
-                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
+                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
             </div>
           </div>

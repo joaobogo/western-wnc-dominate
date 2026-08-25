@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, Phone, X } from "lucide-react";
@@ -12,15 +13,15 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
   <div className="flex items-center gap-3">
     <a
       href="tel:+18285247773"
-      aria-label="Call Highlander Building Services at (828) 524-7773"
+      aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
       className="hidden sm:flex items-center gap-2 transition-all duration-300 text-body-sm font-body font-bold mr-1 text-heritage-charcoal/75 hover:text-heritage-charcoal whitespace-nowrap"
     >
       <Phone className="w-4 h-4" aria-hidden="true" />
-      <span>(828) 524-7773</span>
+      <span>{PHONE_DISPLAY}</span>
     </a>
     <a
       href="tel:+18285247773"
-      aria-label="Call (828) 524-7773"
+      aria-label={`Call ${PHONE_DISPLAY}`}
       className="sm:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
     >
       <Phone className="w-4 h-4" aria-hidden="true" />

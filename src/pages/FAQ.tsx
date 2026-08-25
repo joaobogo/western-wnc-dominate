@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -62,7 +63,7 @@ const categories: Category[] = [
     id: "emergency",
     label: "Emergency Roof Leaks",
     items: [
-      { q: "What counts as a roofing emergency?", a: "Active interior leaks, missing sections of roofing after a storm, tree impact, or any condition allowing water into your home. Call (828) 524-7773 and we'll prioritize your response." },
+      { q: "What counts as a roofing emergency?", a: `Active interior leaks, missing sections of roofing after a storm, tree impact, or any condition allowing water into your home. Call ${PHONE_DISPLAY} and we'll prioritize your response.` },
       { q: "Do you offer emergency tarping?", a: "Yes. When safe weather conditions allow, we can tarp a damaged roof to stop further water intrusion until permanent repairs can be completed." },
     ],
   },
@@ -194,7 +195,7 @@ const categories: Category[] = [
     id: "getting-started",
     label: "How to Start a Project",
     items: [
-      { q: "How do I get started with Highlander?", a: "The easiest path is to request a free inspection or consultation on our Request Inspection page, or call (828) 524-7773. A local team member will reach out — usually the same or next business day — to schedule an on-site visit and understand what you're planning." },
+      { q: "How do I get started with Highlander?", a: `The easiest path is to request a free inspection or consultation on our Request Inspection page, or call ${PHONE_DISPLAY}. A local team member will reach out — usually the same or next business day — to schedule an on-site visit and understand what you're planning.` },
       { q: "What should I have ready for the first conversation?", a: "Just the basics: the property address, what you're seeing or want to build, and your rough timing. If you already have plans, photos, or an insurance claim number, share those too — but none of it is required to get started." },
       { q: "What if I'm still early and just exploring ideas?", a: "That's a great time to reach out. Early conversations help us right-size the project, flag anything that could affect budget or timeline, and — if design work is needed — start you on the right phase." },
     ],
@@ -212,7 +213,7 @@ const categories: Category[] = [
     id: "contact",
     label: "Contacting Highlander",
     items: [
-      { q: "How do I get in touch?", a: "Call (828) 524-7773, request a free inspection or consultation online, or use the contact form on the Contact page. Someone from our local Western NC team will follow up personally." },
+      { q: "How do I get in touch?", a: `Call ${PHONE_DISPLAY}, request a free inspection or consultation online, or use the contact form on the Contact page. Someone from our local Western NC team will follow up personally.` },
       { q: "What are your hours?", a: "Our office is staffed during standard business hours, and we respond to storm and active-leak calls outside of hours when possible. The fastest response is usually a phone call — voicemails after hours are checked first thing." },
       { q: "Do you have showroom or office visits?", a: "Meetings are by appointment so a team member can give you their full attention. Reach out and we'll schedule a time that works for both of us." },
     ],
@@ -346,8 +347,8 @@ const FAQ = () => {
               <Link to="/consultation" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+              <a href="tel:+18285247773" aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
+                <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
               </a>
             </div>
           </div>
