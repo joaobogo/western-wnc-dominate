@@ -16,10 +16,10 @@ const ServiceTownProofPoints = ({ town, serviceLabel, proofNote }: Props) => {
   const points = [
     {
       icon: MapPin,
-      label: `Local to ${town.county} County`,
+      label: `Local to ${town.county}`,
       body:
         proofNote?.trim() ||
-        `Highlander crews work ${town.name} and the surrounding ${town.county} County roads regularly — the person who scopes your ${serviceLabel.toLowerCase()} is on site with the crew that does it.`,
+        `Highlander crews work ${town.name} and the surrounding ${town.county} roads regularly — the person who scopes your ${serviceLabel.toLowerCase()} is on site with the crew that does it.`,
     },
     {
       icon: ShieldCheck,
