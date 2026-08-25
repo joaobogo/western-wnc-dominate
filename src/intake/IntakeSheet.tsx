@@ -269,29 +269,17 @@ export default function IntakeSheet() {
               />
             </Question>
 
-            <div className="mb-5" ref={refs.town}>
+            <div className="mb-5">
               <div className="hl-q">Town</div>
-              <div className="hl-label mt-3 mb-2">Core — Macon &amp; Jackson counties</div>
-              <Choices
-                options={[...CORE_TOWNS, CORE_OTHER]}
-                value={lead.town}
-                onChange={(v) => setLead((p) => ({ ...p, town: v, townOther: "" }))}
-                columns={4}
-                invalid={has("town")}
-              />
-              <div className="hl-label mt-4 mb-2">Neighboring counties</div>
-              <Choices
-                options={[...NEARBY_TOWNS, NEARBY_OTHER]}
-                value={lead.town}
-                onChange={(v) => setLead((p) => ({ ...p, town: v, townOther: "" }))}
-                columns={4}
-              />
-              <div className="mt-4 sm:max-w-[260px]">
-                <Choices
-                  options={[OUTSIDE_AREA]}
+              <div className="mt-2">
+                <TownPicker
+                  core={CORE_TOWNS}
+                  nearby={NEARBY_TOWNS}
+                  extras={[CORE_OTHER, NEARBY_OTHER, OUTSIDE_AREA]}
                   value={lead.town}
                   onChange={(v) => setLead((p) => ({ ...p, town: v, townOther: "" }))}
-                  columns={1}
+                  invalid={has("town")}
+                  groupRef={refs.town}
                 />
               </div>
               {townNeedsText && (
@@ -305,6 +293,7 @@ export default function IntakeSheet() {
                 </div>
               )}
             </div>
+
 
             <div ref={refs.relationship}>
               <Question
