@@ -443,7 +443,9 @@ export const serviceSchema = (service: {
   areaServed: service.areaServedCity
     ? cityNode(service.areaServedCity.name, service.areaServedCity.region || "NC")
     : service.areaServed
-      ? cityNode(service.areaServed)
+      ? (/north carolina|wnc|region|county/i.test(service.areaServed)
+          ? { "@type": "AdministrativeArea", name: service.areaServed }
+          : cityNode(service.areaServed))
       : SERVED_CITIES.map((c) => cityNode(c.name, c.region)),
 });
 
@@ -668,9 +670,8 @@ export type PageSchemaInput =
 export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>[] => {
   switch (input.type) {
     case "home": {
+      // WebSite + Organization ship statically in index.html — don't duplicate them here.
       const out: Record<string, unknown>[] = [
-        organizationSchema(),
-        websiteSchema(),
         localBusinessSchema(),
         breadcrumbSchema([{ name: "Home", url: "/" }]),
       ];
