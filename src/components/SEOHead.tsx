@@ -671,12 +671,21 @@ export const contactPageSchema = (path: string) => ({
 // ============================================================
 
 export type PageSchemaInput =
-  | { type: "home"; reviews?: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
+  | { type: "home" }
   | {
       type: "town";
       town: TownSchemaInput;
       faqs?: { question: string; answer: string }[];
       page?: { title: string; description: string };
+      /** Optional service×town scoping, e.g. "Metal Roofing". */
+      service?: { name: string; description?: string; url?: string };
+      breadcrumbs?: { name: string; url: string }[];
+    }
+  | {
+      type: "county";
+      county: { name: string; state?: string; slug: string; description?: string };
+      page?: { title: string; description: string };
+      faqs?: { question: string; answer: string }[];
     }
   | {
       type: "service";
@@ -701,7 +710,7 @@ export type PageSchemaInput =
       article: Parameters<typeof articleSchema>[0];
       breadcrumbs: { name: string; url: string }[];
     }
-  | { type: "reviews"; reviews: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
+  | { type: "reviews"; reviews: ReviewInput[] }
   | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
   | {
       type: "tool";
@@ -718,30 +727,26 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
   switch (input.type) {
     case "home": {
       // WebSite + Organization ship statically in index.html — don't duplicate them here.
-      // Ratings merge into the single #business node so the graph has one
-      // business entity rather than two nodes sharing an @id.
-      const ratings = input.reviews?.length
-        ? (() => {
-            const { "@context": _c, "@type": _t, "@id": _i, name: _n, url: _u, ...rest } =
-              aggregateReviewSchema(input.reviews, input.aggregate) as Record<string, unknown>;
-            return rest;
-          })()
-        : {};
-      return [
-        localBusinessSchema(ratings),
-        breadcrumbSchema([{ name: "Home", url: "/" }]),
-      ];
+      // No aggregateRating here: ratings are only legal on /reviews, where the
+      // same figures are visible on the page.
+      return [...businessGraph(), breadcrumbSchema([{ name: "Home", url: "/" }])];
     }
 
     case "town": {
-      const path = `/service-areas/${input.town.slug}`;
+      const path = input.service?.url || `/service-areas/${input.town.slug}`;
       const breadcrumbId = `${BASE_URL}${path}#breadcrumb`;
-      const businessId = `${BASE_URL}${path}#business`;
+      const serviceName =
+        input.service?.name
+          ? `${input.service.name} in ${input.town.name}, ${input.town.state}`
+          : `Roofing & Construction Services in ${input.town.name}, ${input.town.state}`;
+      const description =
+        input.service?.description || input.page?.description || input.town.description;
+      const service = townServiceSchema(input.town, { url: path, name: serviceName, description });
       const out: Record<string, unknown>[] = [
-        townSchema(input.town),
-        localBusinessSchema(),
+        ...businessGraph(),
+        service,
         breadcrumbSchema(
-          [
+          input.breadcrumbs || [
             { name: "Home", url: "/" },
             { name: "Service Areas", url: "/service-areas" },
             { name: `${input.town.name}, ${input.town.state}`, url: path },
@@ -749,21 +754,44 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
           breadcrumbId,
         ),
         webPageSchema({
-          name: input.page?.title || `Roofing & Construction in ${input.town.name}, ${input.town.state}`,
-          description: input.page?.description || input.town.description,
+          name: input.page?.title || serviceName,
+          description,
           url: path,
           breadcrumbId,
-          primaryEntityId: businessId,
+          // mainEntity is the Service we actually describe — never a fake
+          // town-level business.
+          primaryEntityId: `${BASE_URL}${path}#service`,
         }),
       ];
-      out.push(
-        serviceSchema({
-          name: `Roofing & Construction Services in ${input.town.name}, ${input.town.state}`,
-          description: input.page?.description || input.town.description,
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
+    case "county": {
+      const state = input.county.state || "NC";
+      const path = `/service-areas/county/${input.county.slug}`;
+      const breadcrumbId = `${BASE_URL}${path}#breadcrumb`;
+      const name = `Roofing & Construction Services in ${input.county.name}, ${state}`;
+      const description = input.page?.description || input.county.description || BUSINESS.description;
+      const out: Record<string, unknown>[] = [
+        ...businessGraph(),
+        countyServiceSchema({ name: input.county.name, state }, { url: path, name, description }),
+        breadcrumbSchema(
+          [
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: `${input.county.name}, ${state}`, url: path },
+          ],
+          breadcrumbId,
+        ),
+        webPageSchema({
+          name: input.page?.title || name,
+          description,
           url: path,
-          areaServedCity: { name: input.town.name, region: input.town.state },
+          breadcrumbId,
+          primaryEntityId: `${BASE_URL}${path}#service`,
         }),
-      );
+      ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
       return out;
     }
@@ -771,7 +799,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "service": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
-        localBusinessSchema(),
+        ...businessGraph(),
         breadcrumbSchema(input.breadcrumbs),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
@@ -790,7 +818,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "commercial": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
-        localBusinessSchema(),
+        ...businessGraph(),
         breadcrumbSchema(input.breadcrumbs),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
@@ -801,10 +829,10 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
 
     case "reviews":
-      return [aggregateReviewSchema(input.reviews, input.aggregate)];
+      return [aggregateReviewSchema(input.reviews), ...locationNodes()];
 
     case "contact": {
-      const out: Record<string, unknown>[] = [contactPageSchema(input.path), localBusinessSchema()];
+      const out: Record<string, unknown>[] = [contactPageSchema(input.path), ...businessGraph()];
       if (input.breadcrumbs?.length) out.push(breadcrumbSchema(input.breadcrumbs));
       return out;
     }
@@ -819,4 +847,5 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return out;
     }
   }
+
 };
