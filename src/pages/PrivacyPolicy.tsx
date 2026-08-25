@@ -1,3 +1,4 @@
+import { FRANKLIN_NAP, PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { Mail, Phone, Shield } from "lucide-react";
 import Header from "@/components/Header";
@@ -7,11 +8,11 @@ import SEOHead from "@/components/SEOHead";
 const LAST_UPDATED = "June 24, 2026";
 const WEBSITE_URL = "https://highlandernc.com/";
 const EMAIL = "luke@highlandernc.com";
-const ADDRESS = "76 Creative Dr, Franklin, NC 28734";
+const ADDRESS = `${FRANKLIN_NAP}`;
 const COMPANY = "Highlander Building Services, Inc.";
 // Sitewide customer phone. The RealWork template listed (828) 526-6421 —
 // see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
-const PHONE = "(828) 524-7773";
+const PHONE = `${PHONE_DISPLAY}`;
 const PHONE_TEL = "+18285247773";
 const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
 const PROGRAM = "Highlander Building Services, Inc. Customer Communications";

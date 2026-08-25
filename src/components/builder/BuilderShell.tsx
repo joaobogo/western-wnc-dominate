@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, ArrowLeft, ChevronDown } from "lucide-react";
@@ -198,7 +199,7 @@ const BuilderShell = ({
               className="mt-4 inline-flex items-center gap-2 text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-body text-body-xs"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              Prefer to talk? (828) 524-7773
+              Prefer to talk? {PHONE_DISPLAY}
             </a>
           </aside>
         </div>

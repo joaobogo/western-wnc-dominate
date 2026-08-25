@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, BookOpen, ListChecks } from "lucide-react";
@@ -80,7 +81,7 @@ const TieredOffer = ({
               onClick={() => trackEvent("phone_click", { label: "Tiered offer call", elementId: `tiered-call-${context}` })}
               className="border-2 border-border text-foreground font-body font-bold text-sm px-7 py-4 inline-flex items-center justify-center gap-2 hover:bg-muted transition-all min-h-[56px]"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> Call Direct: 828-524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> Call Direct: {PHONE_PLAIN}
             </a>
           </div>
           <CTAProofPoints align="start" className="mt-6" />

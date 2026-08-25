@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, HelpCircle } from "lucide-react";
@@ -52,16 +53,16 @@ const faqs = [
   },
   {
     q: "What should I do if water is coming into my home?",
-    a: "Contain the water safely — move belongings, place a bucket under the drip, and if you can do so safely, take a photo of the affected area. Then call us at (828) 524-7773 during business hours and we'll schedule the fastest inspection we can arrange. For an active storm event, coordinate with your insurance carrier as well.",
+    a: `Contain the water safely — move belongings, place a bucket under the drip, and if you can do so safely, take a photo of the affected area. Then call us at ${PHONE_DISPLAY} during business hours and we'll schedule the fastest inspection we can arrange. For an active storm event, coordinate with your insurance carrier as well.`,
   },
   {
     q: "How do I request an inspection or quote?",
     aNode: (
       <>
-        Call (828) 524-7773, <Link to="/request-inspection" className="text-primary underline underline-offset-4 hover:no-underline">request an inspection</Link>, or reach us through our <Link to="/contact" className="text-primary underline underline-offset-4 hover:no-underline">contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
+        Call {PHONE_DISPLAY}, <Link to="/request-inspection" className="text-primary underline underline-offset-4 hover:no-underline">request an inspection</Link>, or reach us through our <Link to="/contact" className="text-primary underline underline-offset-4 hover:no-underline">contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
       </>
     ),
-    a: "Call (828) 524-7773, request an inspection, or reach us through our contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.",
+    a: `Call ${PHONE_DISPLAY}, request an inspection, or reach us through our contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.`,
   },
   {
     q: "When is the best time for gutter maintenance in the mountains?",
@@ -148,7 +149,7 @@ const HomeFAQ = () => {
             href="tel:+18285247773"
             className="btn btn-secondary btn-md group"
           >
-            <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> (828) 524-7773
+            <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}
           </a>
           <Link
             to="/faq"

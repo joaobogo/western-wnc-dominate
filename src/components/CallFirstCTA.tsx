@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { getCallReason } from "@/lib/urgent-intent";
@@ -46,11 +47,11 @@ const CallFirstCTA = ({
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
         <a
           href="tel:+18285247773"
-          aria-label="Call Highlander at (828) 524-7773"
+          aria-label={`Call Highlander at ${PHONE_DISPLAY}`}
           className="btn btn-primary btn-md md:text-body md:px-10"
         >
           <Phone className="w-4 h-4" aria-hidden="true" />
-          <span>Call (828) 524-7773</span>
+          <span>Call {PHONE_DISPLAY}</span>
         </a>
         {secondaryLabel && secondaryTo && (
           <Link

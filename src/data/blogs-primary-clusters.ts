@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { towns, townLocalRelevance, type TownData } from "./towns";
 import type { BlogPost } from "./blogs";
 
@@ -88,7 +89,7 @@ Ask for photographs of the actual failure, a written scope, and a clear statemen
 
 ${townLocalRelevance[t.slug] ?? t.marketAuthorityAngle}
 
-When you want a straight read on your roof, [request an estimate](/request-inspection) or call 828-524-7773 and we will document what we find — including the option of doing nothing if that is what the roof calls for.`;
+When you want a straight read on your roof, [request an estimate](/request-inspection) or call ${PHONE_PLAIN} and we will document what we find — including the option of doing nothing if that is what the roof calls for.`;
 
   return {
     slug: `roof-repair-vs-replacement-${t.slug}`,
@@ -144,7 +145,7 @@ Balanced intake and exhaust ventilation. Step-flashed sidewalls and chimneys ins
 
 ${townLocalRelevance[t.slug] ?? t.marketAuthorityAngle} Explore the [${t.county} hub](/service-areas/county/${countySlug(t)}) for permitting and coverage detail, or the [${t.name} overview](/service-areas/${t.slug}) for local project history.
 
-To get a written scope for your property, [request an estimate](/request-inspection) or call 828-524-7773.`;
+To get a written scope for your property, [request an estimate](/request-inspection) or call ${PHONE_PLAIN}.`;
 
   return {
     slug: `roofing-project-planning-${t.slug}`,

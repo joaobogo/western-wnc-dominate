@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, Compass, ArrowRight } from "lucide-react";
@@ -195,7 +196,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
               Don't see your town? If it's within our Western NC footprint, we
               likely serve it — call{" "}
               <a href="tel:+18285247773" className="text-primary font-semibold hover:underline not-italic">
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
               .
             </p>

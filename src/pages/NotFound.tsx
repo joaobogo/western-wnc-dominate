@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -70,7 +71,7 @@ const NotFound = () => {
           <h1 className="mb-4 text-4xl font-bold">We couldn't find that page</h1>
           <p className="mb-8 text-lg text-muted-foreground">
             The page you're looking for may have moved or no longer exists. Try one of the popular pages below, or call us at{" "}
-            <a href="tel:+18285247773" className="font-semibold text-primary underline">828-524-7773</a>.
+            <a href="tel:+18285247773" className="font-semibold text-primary underline">{PHONE_PLAIN}</a>.
           </p>
           <div className="grid grid-cols-1 gap-3 text-left sm:grid-cols-2">
             <a href="/" className="rounded-lg border bg-background p-4 hover:bg-accent">

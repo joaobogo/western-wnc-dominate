@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { Fragment, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Phone, ImageOff } from "lucide-react";
@@ -358,7 +359,7 @@ const RecentProjects = () => {
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-4 h-4" aria-hidden="true" /> 828-524-7773
+                <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_PLAIN}
               </a>
             </div>
           </div>

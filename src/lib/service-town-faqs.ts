@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import type { TownData } from "@/data/towns";
 
 export interface SimpleFAQ {
@@ -25,7 +26,7 @@ export function getServiceTownFAQs(
     },
     {
       q: `How soon can someone look at my ${town.name} project?`,
-      a: `Most ${town.name} assessments are on the calendar within about 48 hours of your call. Call (828) 524-7773 and we'll give you a real window for ${service} rather than a vague callback promise.`,
+      a: `Most ${town.name} assessments are on the calendar within about 48 hours of your call. Call ${PHONE_DISPLAY} and we'll give you a real window for ${service} rather than a vague callback promise.`,
     },
     {
       q: `What makes ${service} different in ${town.name}?`,

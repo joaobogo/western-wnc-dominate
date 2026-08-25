@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -253,7 +254,7 @@ const ResidentialRoofing = () => {
                             className="btn btn-secondary btn-lg btn-on-dark group"
                           >
                             <Phone className="w-4 h-4" aria-hidden="true" />
-                            (828) 524-7773
+                            {PHONE_DISPLAY}
                           </a>
                         </motion.div>
 
@@ -943,7 +944,7 @@ const ResidentialRoofing = () => {
                                 className="btn btn-secondary btn-lg btn-on-dark group"
                               >
                                 <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
-                                (828) 524-7773
+                                {PHONE_DISPLAY}
                               </a>
                             </div>
 

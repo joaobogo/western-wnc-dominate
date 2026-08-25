@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
@@ -142,7 +143,7 @@ const IntakeConfirmation = ({
           className="btn btn-secondary btn-sm"
         >
           <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-          (828) 524-7773
+          {PHONE_DISPLAY}
         </a>
         <Link
           to="/"

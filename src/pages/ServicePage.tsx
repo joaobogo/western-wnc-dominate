@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, useLocation, Link } from "react-router-dom";
@@ -124,7 +125,7 @@ const ServicePage = () => {
                   See What My Project Needs <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>
               <CTAProofLine tone="dark" align="start" className="mt-4" />
@@ -137,7 +138,7 @@ const ServicePage = () => {
           answer={service.description}
           points={[
             "Serving Franklin, Highlands, Cashiers, Sylva & Western NC",
-            "Call 828-524-7773 to talk with the team",
+            `Call ${PHONE_PLAIN} to talk with the team`,
             "Scoped on site before any work begins",
           ]}
         />

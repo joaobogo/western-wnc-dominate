@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import { towns, type TownData } from "@/data/towns";
 import { counties } from "@/data/counties";
 import { blogPosts, type BlogPost } from "@/data/blogs";
@@ -171,7 +172,7 @@ export const getServiceTownLinkWeb = (
         links: [
           { label: `${town.name} Service Area Overview`, href: `/service-areas/${town.slug}`, description: `Everything we do in ${town.name}.` },
           countyLink(town.county),
-          { label: "Get My Written Estimate", href: "/request-inspection", description: "Written scope from a Western NC team — 828-524-7773." },
+          { label: "Get My Written Estimate", href: "/request-inspection", description: `Written scope from a Western NC team — ${PHONE_PLAIN}.` },
         ].filter(Boolean) as RelatedLinkItem[],
       },
     ],

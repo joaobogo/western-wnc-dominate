@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -388,7 +389,7 @@ export const ReassuranceBlock = ({
                   : "border-dark-section-border text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.05)]"
               }`}
             >
-              <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+              <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
             </a>
           </div>
           <TrustBadgeStrip className={`mt-8 ${

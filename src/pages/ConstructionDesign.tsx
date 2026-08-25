@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -241,7 +242,7 @@ const ConstructionDesign = () => {
           points={[
             "Layouts, scope, and construction documents",
             "Budget guidance before the build starts",
-            "Call 828-524-7773 to start a design conversation",
+            `Call ${PHONE_PLAIN} to start a design conversation`,
           ]}
         />
 
@@ -562,7 +563,7 @@ const ConstructionDesign = () => {
               </div>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
             </div>
           </div>

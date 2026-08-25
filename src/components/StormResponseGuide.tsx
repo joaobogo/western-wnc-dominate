@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -222,7 +223,7 @@ const StormResponseGuide = () => {
                       <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                     </Link>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-md">
-                      <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+                      <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
                     </a>
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -79,7 +80,7 @@ const Siding = () => {
                   Get My Siding Scope & Price <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>
             </motion.div>
@@ -175,8 +176,8 @@ const Siding = () => {
               <Link to="/consultation" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+              <a href="tel:+18285247773" aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
+                <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm">

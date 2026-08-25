@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 /**
  * Brand-voice microcopy: "High Authority, Low Fluff".
  *
@@ -8,7 +9,7 @@
  *  - No hype, no unsupported warranty claims, no 24/7 promises.
  */
 
-export const PHONE_DISPLAY = "(828) 524-7773";
+export const PHONE_DISPLAY = `${PHONE_DISPLAY}`;
 export const PHONE_TEL = "+18285247773";
 
 /** Appended to failures so a lead always has a way through. */

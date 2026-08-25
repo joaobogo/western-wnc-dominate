@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -82,7 +83,7 @@ export const RoofingClosingCTA = ({
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
             </div>
 

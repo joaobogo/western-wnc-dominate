@@ -5,6 +5,91 @@
 // src/lib/mcp/index.ts
 import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.26.2";
 
+// src/data/business.ts
+var STANDARD_HOURS = [
+  {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+    label: "Monday \u2013 Friday, 8:00 AM \u2013 5:00 PM"
+  }
+];
+var GBP_MAP_URL = (cid) => `https://www.google.com/maps?cid=${cid}`;
+var FRANKLIN_CID = "1442261483869937048";
+var SYLVA_CID = "1690022713833215904";
+var BUSINESS = {
+  brandName: "Highlander Building Services",
+  legalName: "Highlander Building Services, Inc.",
+  alternateNames: ["Highlander Roofing Services", "Highlander Roofing Services, Inc."],
+  primaryPhoneE164: "+1-828-524-7773",
+  email: "info@highlandernc.com",
+  websiteUrl: "https://highlandernc.com",
+  foundingYear: 2017,
+  licenseNumber: "NC GC #87668",
+  slogan: "Built for the Mountains. Built for Life.",
+  description: "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
+  locations: [
+    {
+      id: "franklin",
+      name: "Franklin Showroom",
+      streetAddress: "76 Creative Dr",
+      locality: "Franklin",
+      region: "NC",
+      postalCode: "28734",
+      phoneE164: "+1-828-524-7773",
+      geo: { lat: 35.1821, lng: -83.3807 },
+      gbpCid: FRANKLIN_CID,
+      hours: STANDARD_HOURS,
+      primary: true
+    },
+    {
+      id: "sylva",
+      name: "Sylva Showroom",
+      streetAddress: "28 Cross Stitch Mountain Rd",
+      locality: "Sylva",
+      region: "NC",
+      postalCode: "28779",
+      phoneE164: "+1-828-476-4000",
+      geo: { lat: 35.3585, lng: -83.1812 },
+      gbpCid: SYLVA_CID,
+      hours: STANDARD_HOURS
+    }
+  ],
+  profiles: [
+    GBP_MAP_URL(FRANKLIN_CID),
+    GBP_MAP_URL(SYLVA_CID),
+    "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
+    "https://www.facebook.com/highlanderroof",
+    "https://www.instagram.com/highlanderroofingservices/",
+    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
+    "https://nextdoor.com/pages/highlander-roofing-services-inc-franklin-nc/",
+    "https://www.yelp.com/biz/highlander-roofing-services-franklin",
+    "https://www.angi.com/companylist/us/nc/franklin/highlander-roofing-services-inc-reviews.htm",
+    "https://www.homeadvisor.com/rated.HighlanderRoofing.106236934.html",
+    "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
+    "https://business.mountainlovers.com/list/member/highlander-roofing-services-inc",
+    "https://www.smokymountainhba.com/members"
+  ]
+};
+var FRANKLIN = BUSINESS.locations[0];
+var SYLVA = BUSINESS.locations[1];
+var formatPhoneDisplay = (e164) => {
+  const d = e164.replace(/\D/g, "").replace(/^1/, "");
+  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+};
+var formatPhonePlain = (e164) => e164.replace(/^\+1-/, "");
+var telHref = (e164) => `tel:+${e164.replace(/\D/g, "")}`;
+var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${loc.postalCode}`;
+var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
+var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
+var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
+var SYLVA_PHONE_DISPLAY = formatPhoneDisplay(SYLVA.phoneE164);
+var SYLVA_PHONE_PLAIN = formatPhonePlain(SYLVA.phoneE164);
+var SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
+var FRANKLIN_STREET = FRANKLIN.streetAddress;
+var FRANKLIN_NAP = napLine(FRANKLIN);
+var SYLVA_NAP = napLine(SYLVA);
+
 // src/lib/mcp/tools/get-business-info.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.2";
 var get_business_info_default = defineTool({
@@ -16,7 +101,7 @@ var get_business_info_default = defineTool({
   handler: () => {
     const info = {
       name: "Highlander Building Services, Inc.",
-      phone: "(828) 524-7773",
+      phone: `${PHONE_DISPLAY}`,
       website: "https://highlandernc.com",
       city: "Franklin",
       region: "North Carolina",

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -46,7 +47,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
             href="tel:+18285247773"
             className="btn btn-secondary btn-on-dark btn-md"
           >
-            <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+            <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
           </a>
           <Link
             to="/request-inspection"
@@ -148,7 +149,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
             href="tel:+18285247773"
             className="btn btn-secondary btn-lg"
           >
-            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
+            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
           </a>
         </div>
       </ScrollReveal>
@@ -433,7 +434,7 @@ export const TownFAQ = ({
             href="tel:+18285247773"
             className="inline-flex items-center gap-2 text-foreground font-heading font-bold text-sm uppercase tracking-widest hover:text-primary transition-colors min-h-[44px]"
           >
-            <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+            <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
           </a>
         </div>
       </div>
@@ -487,7 +488,7 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
                 href="tel:+18285247773"
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-6 border border-border font-heading font-bold text-body-xs uppercase tracking-[0.15em] text-foreground hover:border-primary hover:text-primary transition-colors"
               >
-                <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+                <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
             </div>
 
@@ -525,7 +526,7 @@ export const TownCTAStrip = ({ town }: { town: TownData }) => (
           href="tel:+18285247773"
           className="inline-flex items-center gap-2 font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:opacity-90"
         >
-          <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
+          <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
         </a>
         <div className="w-px h-3 bg-primary-foreground/20" />
         <Link

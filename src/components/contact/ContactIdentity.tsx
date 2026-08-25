@@ -1,3 +1,4 @@
+import { FRANKLIN_STREET, PHONE_DISPLAY } from "@/data/business";
 import { MapPin, Building2, Phone, Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import MapEmbed from "@/components/contact/MapEmbed";
@@ -32,14 +33,14 @@ const ContactIdentity = () => (
               <div>
                 <p className="text-sm font-heading font-semibold text-foreground">Franklin Office</p>
                 <address className="not-italic text-sm text-muted-foreground font-body">
-                  76 Creative Dr<br />Franklin, NC 28734
+                  {FRANKLIN_STREET}<br />Franklin, NC 28734
                 </address>
               </div>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <a href="tel:+18285247773" className="text-sm font-heading font-semibold text-foreground hover:text-primary">
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
             </li>
             <li className="flex items-start gap-3">

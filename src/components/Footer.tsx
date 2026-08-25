@@ -1,3 +1,4 @@
+import { FRANKLIN_NAP, FRANKLIN_STREET, PHONE_DISPLAY, SYLVA_NAP, SYLVA_PHONE_DISPLAY } from "@/data/business";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck } from "lucide-react";
@@ -143,7 +144,7 @@ const Footer = () => {
                 className="btn btn-secondary btn-md whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
             </div>
           </motion.div>
@@ -175,7 +176,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1" aria-hidden="true" />
                 <div className="text-body-sm text-foreground/85 font-body leading-relaxed">
                   <span className="block font-bold text-foreground">Highlander Building Services, Inc.</span>
-                  76 Creative Dr<br />
+                  {FRANKLIN_STREET}<br />
                   Franklin, NC 28734
                 </div>
               </div>
@@ -183,7 +184,7 @@ const Footer = () => {
                 href="tel:+18285247773"
                 className="flex items-center gap-3 min-h-[44px] font-heading font-bold text-body-lg text-foreground hover:text-primary transition-colors"
               >
-                <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
               <a
                 href="mailto:info@highlandernc.com"
@@ -305,9 +306,9 @@ const Footer = () => {
       <div className="border-t border-border">
         <div className="container-tight py-4">
           <p className="text-body-xs text-muted-foreground font-body leading-relaxed tracking-wide text-center md:text-left">
-            Highlander Building Services, Inc. (formerly Highlander Roofing Services) · NC General Contractor License #87234 · Fully insured · Franklin showroom: 76 Creative Dr, Franklin, NC 28734 ·{" "}
-            <a href="tel:+18285247773" className="hover:text-foreground transition-colors">(828) 524-7773</a> · Sylva showroom: 28 Cross Stitch Mountain Rd, Sylva, NC 28779 ·{" "}
-            <a href="tel:+18284764000" className="hover:text-foreground transition-colors">(828) 476-4000</a> · Est. 2017
+            Highlander Building Services, Inc. (formerly Highlander Roofing Services) · NC General Contractor License #87234 · Fully insured · Franklin showroom: {FRANKLIN_NAP} ·{" "}
+            <a href="tel:+18285247773" className="hover:text-foreground transition-colors">{PHONE_DISPLAY}</a> · Sylva showroom: {SYLVA_NAP} ·{" "}
+            <a href="tel:+18284764000" className="hover:text-foreground transition-colors">{SYLVA_PHONE_DISPLAY}</a> · Est. 2017
           </p>
         </div>
       </div>

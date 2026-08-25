@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, HelpCircle } from "lucide-react";
@@ -112,7 +113,7 @@ const RoofingPathFinder = () => {
             className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
-            Call (828) 524-7773
+            Call {PHONE_DISPLAY}
           </a>
         </div>
       </div>

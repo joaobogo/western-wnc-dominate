@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { projectDetails } from "@/data/projects";
 
 export interface TownStat {
@@ -528,7 +529,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "Do you handle emergency roof repair on the ridge?",
-        answer: "Yes. For active leaks or storm damage on Scaly Mountain, call (828) 524-7773 during business hours and we'll schedule the fastest inspection we can arrange, weather permitting.",
+        answer: `Yes. For active leaks or storm damage on Scaly Mountain, call ${PHONE_DISPLAY} during business hours and we'll schedule the fastest inspection we can arrange, weather permitting.`,
       },
     ],
   },

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
@@ -93,7 +94,7 @@ const PaidAdsLanding = ({
               </span>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" aria-hidden="true" />
-                (828) 524-7773
+                {PHONE_DISPLAY}
               </a>
             </div>
 
@@ -119,7 +120,7 @@ const PaidAdsLanding = ({
                   </a>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                     <Phone className="h-4 w-4" aria-hidden="true" />
-                    Call Direct: 828-524-7773
+                    Call Direct: {PHONE_PLAIN}
                   </a>
                 </motion.div>
               </div>
@@ -249,7 +250,7 @@ const PaidAdsLanding = ({
               </a>
               <a href="tel:+18285247773" className="btn btn-secondary btn-sm btn-on-dark">
                 <Phone className="h-4 w-4" aria-hidden="true" />
-                Call Direct: 828-524-7773
+                Call Direct: {PHONE_PLAIN}
               </a>
             </div>
           </div>
@@ -257,7 +258,7 @@ const PaidAdsLanding = ({
 
         <footer className="bg-background pb-28 pt-8 md:pb-10">
           <div className="container-tight flex flex-col gap-2 text-xs font-body text-muted-foreground md:flex-row md:items-center md:justify-between">
-            <span>© {new Date().getFullYear()} Highlander Building Services, Inc. · Franklin, NC · 828-524-7773</span>
+            <span>© {new Date().getFullYear()} Highlander Building Services, Inc. · Franklin, NC · {PHONE_PLAIN}</span>
             <span className="flex gap-4">
               <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
               <a href="/accessibility" className="hover:text-foreground transition-colors">Accessibility</a>
@@ -269,11 +270,11 @@ const PaidAdsLanding = ({
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur md:hidden">
           <a
               href="tel:+18285247773"
-              onClick={() => trackPhoneClick({ phone_number: "828-524-7773", link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
+              onClick={() => trackPhoneClick({ phone_number: `${PHONE_PLAIN}`, link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
               className="flex w-full items-center justify-center gap-2 bg-primary px-4 py-3 text-base font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
-              Call Direct: 828-524-7773
+              Call Direct: {PHONE_PLAIN}
           </a>
         </div>
       </main>

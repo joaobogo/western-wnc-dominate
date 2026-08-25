@@ -1,3 +1,4 @@
+import { PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { motion } from "framer-motion";
 import designHero from "@/assets/design-planning-hero.webp";
@@ -182,7 +183,7 @@ const LayoutsPlanning = () => {
           points={[
             "Layouts, floor plans, and scope definition",
             "Early site and feasibility review",
-            "Call 828-524-7773 to talk through your plan",
+            `Call ${PHONE_PLAIN} to talk through your plan`,
           ]}
         />
 

@@ -1,3 +1,4 @@
+import { BUSINESS, FRANKLIN_STREET, SYLVA } from "@/data/business";
 import { useEffect } from "react";
 
 interface SEOHeadProps {
@@ -249,11 +250,11 @@ export const franklinLocationSchema = () => ({
   name: `${SITE_NAME} — Franklin Showroom`,
   url: BASE_URL,
   image: DEFAULT_IMAGE,
-  telephone: "+1-828-524-7773",
+  telephone: `${BUSINESS.primaryPhoneE164}`,
   parentOrganization: { "@id": `${BASE_URL}/#organization` },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "76 Creative Dr",
+    streetAddress: `${FRANKLIN_STREET}`,
     addressLocality: "Franklin",
     addressRegion: "NC",
     postalCode: "28734",
@@ -271,11 +272,11 @@ export const sylvaLocationSchema = () => ({
   name: `${SITE_NAME} — Sylva Showroom`,
   url: BASE_URL,
   image: DEFAULT_IMAGE,
-  telephone: "+1-828-476-4000",
+  telephone: `${SYLVA.phoneE164}`,
   parentOrganization: { "@id": `${BASE_URL}/#organization` },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "28 Cross Stitch Mountain Rd",
+    streetAddress: `${SYLVA.streetAddress}`,
     addressLocality: "Sylva",
     addressRegion: "NC",
     postalCode: "28779",
@@ -296,13 +297,13 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
   image: DEFAULT_IMAGE,
-  telephone: "+1-828-524-7773",
+  telephone: `${BUSINESS.primaryPhoneE164}`,
   email: "info@highlandernc.com",
   description:
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "76 Creative Dr",
+    streetAddress: `${FRANKLIN_STREET}`,
     addressLocality: "Franklin",
     addressRegion: "NC",
     postalCode: "28734",
@@ -357,10 +358,10 @@ export const organizationSchema = () => ({
   url: BASE_URL,
   logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
   legalName: "Highlander Building Services, Inc.",
-  telephone: "+1-828-524-7773",
+  telephone: `${BUSINESS.primaryPhoneE164}`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "76 Creative Dr",
+    streetAddress: `${FRANKLIN_STREET}`,
     addressLocality: "Franklin",
     addressRegion: "NC",
     postalCode: "28734",
@@ -368,7 +369,7 @@ export const organizationSchema = () => ({
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-828-524-7773",
+    telephone: `${BUSINESS.primaryPhoneE164}`,
     contactType: "customer service",
     areaServed: "US-NC",
     availableLanguage: "English",

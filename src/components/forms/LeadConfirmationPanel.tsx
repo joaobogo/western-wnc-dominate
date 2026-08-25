@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Phone, ArrowRight, Clock, Shield } from "lucide-react";
@@ -107,7 +108,7 @@ const LeadConfirmationPanel = ({
           className="mt-5 inline-flex items-center gap-2 border border-[hsl(var(--highland-gold)/0.5)] px-5 py-3 font-body text-body-sm font-bold text-[hsl(var(--gold-ink))] transition-colors hover:bg-[hsl(var(--highland-gold)/0.1)]"
         >
           <Phone className="h-4 w-4" aria-hidden="true" />
-          Rather talk now? (828) 524-7773
+          Rather talk now? {PHONE_DISPLAY}
         </a>
       </div>
 

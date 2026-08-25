@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Calendar, FileText, Shield } from "lucide-react";
@@ -13,7 +14,7 @@ const pathways = [
     icon: Phone,
     title: "Speak with a Specialist Just for You",
     desc: "A direct conversation with a dedicated specialist. Not a call center, not a sales rep. Someone who listens to your project and gives you straight answers.",
-    action: "Call (828) 524-7773",
+    action: `Call ${PHONE_DISPLAY}`,
     href: "tel:+18285247773",
     external: true,
   },

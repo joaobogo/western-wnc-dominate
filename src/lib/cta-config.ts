@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 /**
  * Global CTA Architecture — Highlander Building Services
  * 
@@ -74,8 +75,8 @@ export const CTA = {
 
 /* ─── SECONDARY CTA LABELS ─── */
 export const CTA_SECONDARY = {
-  call: "(828) 524-7773",
-  callLabel: "Call Direct: 828-524-7773",
+  call: `${PHONE_DISPLAY}`,
+  callLabel: `Call Direct: ${PHONE_PLAIN}`,
 } as const;
 
 /* ─── SUPPORTING COPY — Page-specific ─── */

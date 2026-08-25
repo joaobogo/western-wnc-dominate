@@ -1,3 +1,4 @@
+import { FRANKLIN_NAP, PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import Section from "@/components/layout/Section";
@@ -159,7 +160,7 @@ const TownPage = () => {
                   Request an Inspection in {town.name} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
-                  <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
+                  <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>
 
@@ -191,10 +192,10 @@ const TownPage = () => {
 
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
-          answer={`Yes. Highlander Building Services, Inc. is based at 76 Creative Dr, Franklin, NC 28734 and works throughout ${town.name} and the rest of ${town.county}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
+          answer={`Yes. Highlander Building Services, Inc. is based at ${FRANKLIN_NAP} and works throughout ${town.name} and the rest of ${town.county}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
           points={[
             `Local crews serving ${town.name}, ${town.state}`,
-            "Call 828-524-7773 to reach the team directly",
+            `Call ${PHONE_PLAIN} to reach the team directly`,
             `${town.county} permitting and inspection experience`,
             "Estimates scoped in person, not over guesswork",
           ]}

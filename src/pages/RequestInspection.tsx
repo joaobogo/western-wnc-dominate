@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { Phone, ClipboardCheck, CalendarClock, FileCheck2 } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -53,7 +54,7 @@ const RequestInspection = () => {
               href="tel:+18285247773"
               className="btn btn-secondary btn-sm"
             >
-              <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: 828-524-7773
+              <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: {PHONE_PLAIN}
             </a>
           </div>
         </section>
@@ -95,7 +96,7 @@ const RequestInspection = () => {
               When you call Highlander, a member of our Western NC team picks up.
             </p>
             <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-              <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
+              <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
             </a>
             <p className="text-dark-section-muted text-sm mt-6">
               By submitting the form on this page you agree to our{" "}

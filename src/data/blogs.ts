@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import metalVsShingleHero from "@/assets/blog/metal-vs-shingle-wnc-hero.jpg";
 import stormHeroImg from "@/assets/blog/highlands-storm-july-28-hero.webp";
 import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection.webp";
@@ -94,7 +95,7 @@ This Western North Carolina roofing guide explains:
 - How to prevent leaks, moss, ice dams and storm damage
 - What to verify before hiring a roofing contractor
 
-> **Need a professional opinion on your roof?** Highlander Building Services provides roof inspections, repairs and replacements throughout Highlands, Cashiers, Franklin, Sylva and nearby mountain communities. Call **828-524-7773** or [request a mountain roof assessment](/contact).
+> **Need a professional opinion on your roof?** Highlander Building Services provides roof inspections, repairs and replacements throughout Highlands, Cashiers, Franklin, Sylva and nearby mountain communities. Call **${PHONE_PLAIN}** or [request a mountain roof assessment](/contact).
 
 ## Western North Carolina mountain roofing: the key facts
 
@@ -413,7 +414,7 @@ Highlander Building Services, Inc. provides roof inspections, roof repairs, stor
 
 With locations in Franklin and Sylva, we serve Highlands, Cashiers, Sapphire, Glenville, Lake Toxaway, Cullowhee, Dillsboro, Bryson City and surrounding communities.
 
-**Call 828-524-7773 or [request your roof assessment online](/contact).**
+**Call ${PHONE_PLAIN} or [request your roof assessment online](/contact).**
 `,
   },
   {
@@ -751,7 +752,7 @@ Metal roofing and asphalt shingles can both perform well on North Carolina mount
 
 For properties in Highlands, Cashiers, and communities across Western North Carolina, the comparison should account for what a generic comparison article overlooks: steep terrain, difficult access, heavy precipitation, wooded lots, shaded surfaces, valleys, chimneys, skylights, wind exposure, and complex design.
 
-The most useful next step is an evaluation of the actual property. Highlander can assess existing conditions, design, access, exposure, and project goals, then explain which roofing options make sense — without assuming one material is right for every home. Call 828-524-7773 or [request a roof inspection](/request-inspection).`,
+The most useful next step is an evaluation of the actual property. Highlander can assess existing conditions, design, access, exposure, and project goals, then explain which roofing options make sense — without assuming one material is right for every home. Call ${PHONE_PLAIN} or [request a roof inspection](/request-inspection).`,
   },
   {
     slug: "metal-roofing-bryson-city-nc-vacation-rentals",
@@ -1250,7 +1251,7 @@ You can read more about our approach to [storm damage roof repair](/roofing/stor
 
 If you're in Highlands, Cashiers, Franklin, or anywhere across Macon County and Western North Carolina and want your roof evaluated after the July 28 storm, we're glad to help.
 
-- **Call us:** 828-524-7773
+- **Call us:** ${PHONE_PLAIN}
 - **Request an inspection online:** [Request a roof inspection](/request-inspection)
 - **General questions:** [Get My Questions Answered](/contact)
 
@@ -1357,7 +1358,7 @@ Standing seam metal is a core system for us on WNC mountain homes. We fabricate 
 
 ## Get a Real Number for Your Home
 
-Every accurate metal roof quote in Western NC starts with an on-site measure — pitch, geometry, access, existing conditions, and wind exposure. We provide free inspections and transparent, line-itemed proposals for standing seam and, where it fits, exposed fastener systems. Call **828-524-7773** or request an inspection online to get started.`,
+Every accurate metal roof quote in Western NC starts with an on-site measure — pitch, geometry, access, existing conditions, and wind exposure. We provide free inspections and transparent, line-itemed proposals for standing seam and, where it fits, exposed fastener systems. Call **${PHONE_PLAIN}** or request an inspection online to get started.`,
   },
   {
     slug: "how-much-does-roof-cost-highlands-nc",
@@ -1586,7 +1587,7 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
 
 ## Free Storm Damage Inspections
 
-We respond on a same-day or next-day basis for storm inspections across all of Western NC. Call (828) 524-7773.`,
+We respond on a same-day or next-day basis for storm inspections across all of Western NC. Call ${PHONE_DISPLAY}.`,
   },
 
   {
@@ -1830,7 +1831,7 @@ Even if everything looks fine from the ground, an annual professional inspection
 
 ## Schedule Your Spring Inspection
 
-Call (828) 524-7773 or request an inspection online. We serve all of Western NC.`,
+Call ${PHONE_DISPLAY} or request an inspection online. We serve all of Western NC.`,
   },
   {
     slug: "ice-dam-prevention-mountain-homes",
@@ -1874,7 +1875,7 @@ Clogged gutters accelerate ice dam formation by trapping water at the roof edge.
 
 ## Get Professional Help
 
-If you've had ice dams before, we can assess your roof and attic to identify the root cause and install permanent solutions. Call (828) 524-7773.`,
+If you've had ice dams before, we can assess your roof and attic to identify the root cause and install permanent solutions. Call ${PHONE_DISPLAY}.`,
   },
   {
     slug: "when-to-replace-roof-highlands",
@@ -1914,7 +1915,7 @@ If damage affects more than 30% of the roof area, or if the roof is past 75% of 
 
 ## Free Replacement Assessment
 
-We'll inspect your Highlands home, assess the full roof system, and give you an honest recommendation. No pressure, no upsell. Call (828) 524-7773.`,
+We'll inspect your Highlands home, assess the full roof system, and give you an honest recommendation. No pressure, no upsell. Call ${PHONE_DISPLAY}.`,
   },
   {
     slug: "mountain-home-addition-planning",
@@ -2081,7 +2082,7 @@ You'll receive:
 
 ## Schedule Your Free Inspection
 
-Call (828) 524-7773 or submit our online form. We respond rapidly and serve all of Western NC.`,
+Call ${PHONE_DISPLAY} or submit our online form. We respond rapidly and serve all of Western NC.`,
   },
   {
     slug: "choosing-roofing-contractor-wnc",
@@ -2134,7 +2135,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
     date: "2025-12-05",
     image: "/media/56901d0d-emergency-roof-repair-wnc.webp", readTime: "5 min",
     metaTitle: "Emergency Roof Repair in Western NC | Highlander Building Services",
-    metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 524-7773.",
+    metaDescription: `Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call ${PHONE_DISPLAY}.`,
     content: `When your roof is compromised — whether by a fallen tree, severe storm, or sudden leak — fast action prevents thousands in additional damage. Here's what to do.
 
 ## Immediate Steps
@@ -2164,7 +2165,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 
 Highlander Building Services prioritizes emergency calls. We aim for same-day assessment when possible and prompt response for all emergency situations across Western NC.
 
-## Call Direct: (828) 524-7773`,
+## Call Direct: ${PHONE_DISPLAY}`,
   },
   {
     slug: "mountain-roofing-maintenance-checklist",
@@ -2324,7 +2325,7 @@ We understand that a rental roof emergency is a business emergency. We offer pri
 
 ## Protect Your Investment
 
-A planned maintenance visit prevents an emergency repair — and the lost rental income that comes with it. Call (828) 524-7773 for rental property roofing services.`,
+A planned maintenance visit prevents an emergency repair — and the lost rental income that comes with it. Call ${PHONE_DISPLAY} for rental property roofing services.`,
   },
   {
     slug: "winter-roof-preparation-highlands",
@@ -2368,7 +2369,7 @@ A planned maintenance visit prevents an emergency repair — and the lost rental
 
 ## Schedule Pre-Winter Inspection
 
-Don't wait for the first storm. Call (828) 524-7773 to schedule a pre-winter roof assessment for your Highlands home.`,
+Don't wait for the first storm. Call ${PHONE_DISPLAY} to schedule a pre-winter roof assessment for your Highlands home.`,
   },
   {
     slug: "commercial-roof-maintenance-wnc",
@@ -2415,7 +2416,7 @@ Don't wait for the first storm. Call (828) 524-7773 to schedule a pre-winter roo
 
 ## Get a Maintenance Proposal
 
-Contact us for a customized maintenance proposal based on your property type, roof system, and budget. Call (828) 524-7773 or request online.`,
+Contact us for a customized maintenance proposal based on your property type, roof system, and budget. Call ${PHONE_DISPLAY} or request online.`,
   },
   // ── Construction Insights ──
   {
@@ -2607,7 +2608,7 @@ Afternoon thunderstorms, flash flooding risk, humidity-driven moisture issues
 
 1. Stay safe — don't climb on your roof
 2. Document visible damage from the ground
-3. Call Highlander at (828) 524-7773 for a free storm inspection
+3. Call Highlander at ${PHONE_DISPLAY} for a free storm inspection
 4. File your insurance claim promptly
 5. Don't make permanent repairs until the adjuster has visited
 
@@ -2668,7 +2669,7 @@ In summer, an unventilated attic can reach 150°F+, radiating heat into living s
 
 ## Get a Ventilation Assessment
 
-During any roof inspection, we evaluate your attic ventilation system and recommend improvements. Call (828) 524-7773.`,
+During any roof inspection, we evaluate your attic ventilation system and recommend improvements. Call ${PHONE_DISPLAY}.`,
     relatedServices: [
       { label: "Residential Roofing", path: "/roofing/residential" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
@@ -3298,7 +3299,7 @@ Ceiling stains, damp attic insulation, or drips at recessed lights after heavy r
 After a serious storm, walk the property (safely) and check for: shingle fragments in the yard, dented metal fascia or gutters, damaged skylight domes, and any ceiling or attic moisture. Photograph anything that looks off before anyone touches the roof.
 
 ## When to Call Sooner Rather Than Later
-Active drips during rain, missing sections of roofing, or visible decking are prompt-response situations. During business hours we work to get eyes on it quickly and can install a temporary cover if needed. If water is actively coming into your home, call Highlander at 828-524-7773.
+Active drips during rain, missing sections of roofing, or visible decking are prompt-response situations. During business hours we work to get eyes on it quickly and can install a temporary cover if needed. If water is actively coming into your home, call Highlander at ${PHONE_PLAIN}.
 
 ## Repair, Not Replace, When Possible
 A good WNC roofer will tell you when a repair actually solves the problem. We'll only recommend a full replacement when the roof's condition or age makes repair uneconomical.
@@ -3365,7 +3366,7 @@ If any of the above sound familiar, [request an inspection](/request-inspection)
     metaDescription: "Active roof leak in Western NC? Here's the immediate checklist to protect your home and get a roofer on site quickly.",
     content: `Active ceiling leaks are stressful. The right sequence in the first hour protects your ceiling, your floors, and your electronics — and gives our team the best chance to find the source quickly.
 
-**If water is actively coming into your home, call Highlander at 828-524-7773.**
+**If water is actively coming into your home, call Highlander at ${PHONE_PLAIN}.**
 
 ## Step 1: Contain the Water
 Put a bucket under the drip. If the ceiling is bulging, gently puncture the low point with a screwdriver into the bucket — a controlled release is safer than an uncontrolled ceiling collapse.
@@ -3496,7 +3497,7 @@ Highlander is based in WNC and works these mountains year-round. We aren't follo
 ## Signs of an Actual Emergency
 Active water intrusion during rain. Missing sections of roofing after a storm. Sagging ceiling or visible decking from below. Any of these are prompt-response situations — call us during business hours and we'll work to get eyes on it quickly.
 
-**If water is actively coming into your home, call Highlander at 828-524-7773.**
+**If water is actively coming into your home, call Highlander at ${PHONE_PLAIN}.**
 
 ## Signs That Can Be Scheduled
 A small ceiling stain that isn't growing. A few lifted shingles. Granule loss in the gutters. Sagging or pulled gutters. These are real issues that need attention, but they can go on a scheduled inspection instead of a same-day call.

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -31,7 +32,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Get My Questions Answered | Roofing & Construction Quote in WNC"
-        description="Talk to Highlander Building Services in Western NC. Call, email, or request an estimate. Franklin office. Mon–Fri 8 AM – 5 PM. (828) 524-7773."
+        description={`Talk to Highlander Building Services in Western NC. Call, email, or request an estimate. Franklin office. Mon–Fri 8 AM – 5 PM. ${PHONE_DISPLAY}.`}
         path="/contact"
         jsonLd={buildPageSchema({
           type: "contact",
@@ -85,7 +86,7 @@ export default function Contact() {
                   >
                     <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <div>
-                      <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 524-7773</span>
+                      <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">{PHONE_DISPLAY}</span>
                       <span className="text-caption text-dark-section-muted font-body uppercase tracking-wider">Call Direct</span>
                     </div>
                   </a>
@@ -165,7 +166,7 @@ export default function Contact() {
                     >
                       <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
                       <div>
-                        <p className="text-sm font-heading font-semibold text-foreground">(828) 524-7773</p>
+                        <p className="text-sm font-heading font-semibold text-foreground">{PHONE_DISPLAY}</p>
                         <p className="text-caption text-muted-foreground font-body">Call — a real person answers</p>
                       </div>
                     </a>

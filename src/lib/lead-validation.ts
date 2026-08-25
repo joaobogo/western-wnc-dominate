@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { z } from "zod";
 import { towns } from "@/data/towns";
 
@@ -19,7 +20,7 @@ export type PhoneResult =
   | { ok: true; e164: string; national: string }
   | { ok: false; e164: null; error: string };
 
-const PHONE_HELP = "Enter a 10-digit US phone number, like (828) 524-7773.";
+const PHONE_HELP = `Enter a 10-digit US phone number, like ${PHONE_DISPLAY}.`;
 
 /** Normalizes loose user input into E.164 (+1XXXXXXXXXX) for US/CA numbers. */
 export function normalizePhoneE164(raw?: string | null): PhoneResult {

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from "@/data/business";
 import { Phone, ArrowRight, FileText, MessageSquare } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -303,7 +304,7 @@ const StickyMobileCTA = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Call Direct</p>
-                          <p className="text-caption text-muted-foreground font-body">(828) 524-7773</p>
+                          <p className="text-caption text-muted-foreground font-body">{PHONE_DISPLAY}</p>
                         </div>
                         <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true" />
                       </a>
