@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { COMPANY } from "./config";
+import logoCream from "@/assets/logo-cream.svg";
 
 export function Header() {
   const { pathname } = useLocation();
@@ -17,29 +18,17 @@ export function Header() {
       }}
     >
       <div className="mx-auto max-w-[1180px] px-4 py-3 flex items-center justify-between gap-4">
-        <div className="min-w-0">
-          <div
-            className="hl-slab leading-none"
-            style={{
-              color: "var(--hl-cream)",
-              fontSize: 22,
-              letterSpacing: "0.18em",
-              fontVariant: "small-caps",
-            }}
-          >
-            Highlander
-          </div>
-          <div
-            className="mt-1 truncate"
-            style={{
-              color: "var(--hl-brass)",
-              fontSize: 10.5,
-              letterSpacing: "0.16em",
-            }}
-          >
-            {COMPANY.serviceLine}
-          </div>
-        </div>
+        <Link to="/" className="min-w-0 flex items-center" aria-label={`${COMPANY.name} — call sheet`}>
+          <img
+            src={logoCream}
+            alt={`${COMPANY.name} logo`}
+            width={1193}
+            height={338}
+            decoding="async"
+            className="h-9 w-auto sm:h-11 max-w-[220px] sm:max-w-none object-contain"
+          />
+        </Link>
+
 
         <nav className="flex items-center gap-4 text-[14px] font-semibold">
           <Link to="/" style={linkStyle(pathname === "/")}>
