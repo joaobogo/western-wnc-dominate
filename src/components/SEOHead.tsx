@@ -1,4 +1,4 @@
-import { BUSINESS, FRANKLIN, SYLVA, BusinessLocation } from "@/data/business";
+import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation } from "@/data/business";
 import { useEffect } from "react";
 
 interface SEOHeadProps {
