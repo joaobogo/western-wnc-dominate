@@ -1,3 +1,7 @@
+http://highlandernc.com/*        https://highlandernc.com/:splat      301!
+http://www.highlandernc.com/*    https://highlandernc.com/:splat      301!
+https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
+
 # ============================================================
 # Legacy Hibu / old-site URL 301 redirects (edge-level)
 # Real 301s so Google consolidates signal to the canonical URL

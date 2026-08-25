@@ -20,6 +20,30 @@ const warnings = [];
 const fail = (msg) => failures.push(msg);
 const warn = (msg) => warnings.push(msg);
 
+// ---------- 0. Canonical host redirect checks ----------
+const redirectsPath = resolve("public/_redirects");
+const requiredHostRedirects = [
+  "http://highlandernc.com/* https://highlandernc.com/:splat 301!",
+  "http://www.highlandernc.com/* https://highlandernc.com/:splat 301!",
+  "https://www.highlandernc.com/* https://highlandernc.com/:splat 301!",
+];
+
+if (!existsSync(redirectsPath)) {
+  fail("public/_redirects missing.");
+} else {
+  const activeRedirectRules = readFileSync(redirectsPath, "utf8")
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(line => line && !line.startsWith("#"))
+    .map(line => line.split(/\s+/).join(" "));
+
+  requiredHostRedirects.forEach((requiredRule, index) => {
+    if (activeRedirectRules[index] !== requiredRule) {
+      fail(`Canonical host redirect rule ${index + 1} must be the ${index + 1}${index === 0 ? "st" : index === 1 ? "nd" : "rd"} active rule in public/_redirects: ${requiredRule}`);
+    }
+  });
+}
+
 // ---------- 1. index.html static-head checks ----------
 const indexHtml = readFileSync(resolve("index.html"), "utf8");
 
