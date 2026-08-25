@@ -13,7 +13,7 @@ interface SEOHeadProps {
   locale?: string;
 }
 
-const SITE_NAME = "Highlander Building Services";
+const SITE_NAME = BUSINESS.brandName;
 const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
 const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
