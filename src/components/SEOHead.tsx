@@ -96,10 +96,10 @@ const SEOHead = ({
     setMeta("name", "publisher", SITE_NAME);
     setMeta("name", "theme-color", "#1a4d2e");
     // Geo tags for local SEO
-    setMeta("name", "geo.region", "US-NC");
-    setMeta("name", "geo.placename", "Franklin, North Carolina");
-    setMeta("name", "geo.position", "35.1821;-83.3807");
-    setMeta("name", "ICBM", "35.1821, -83.3807");
+    setMeta("name", "geo.region", `US-${FRANKLIN.region}`);
+    setMeta("name", "geo.placename", `${FRANKLIN.locality}, North Carolina`);
+    setMeta("name", "geo.position", `${FRANKLIN.geo.lat};${FRANKLIN.geo.lng}`);
+    setMeta("name", "ICBM", `${FRANKLIN.geo.lat}, ${FRANKLIN.geo.lng}`);
 
     // Exactly one canonical element may exist — drop any extras the static
     // head or a previous route left behind, then self-reference this route.
