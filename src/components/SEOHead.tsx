@@ -230,8 +230,14 @@ const BUSINESS_HOURS = [
 ];
 
 /** Verified public profiles used for sameAs on the business + organization nodes. */
+const FRANKLIN_GBP = "https://www.google.com/maps?cid=1442261483869937048";
+const SYLVA_GBP = "https://www.google.com/maps?cid=1690022713833215904";
 const PROFILE_URLS = [
+  FRANKLIN_GBP,
+  SYLVA_GBP,
   "https://www.facebook.com/highlanderroof",
+  "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
+  "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
   "https://www.linkedin.com/company/highlander-roofing-services-inc/",
   "https://www.instagram.com/highlanderroofingservices/",
 ];
@@ -255,6 +261,7 @@ export const franklinLocationSchema = () => ({
   },
   geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
   openingHoursSpecification: BUSINESS_HOURS,
+  sameAs: [FRANKLIN_GBP],
 });
 
 /** Sylva showroom — physical location node. */
@@ -274,8 +281,9 @@ export const sylvaLocationSchema = () => ({
     postalCode: "28779",
     addressCountry: "US",
   },
-  geo: { "@type": "GeoCoordinates", latitude: 35.3734, longitude: -83.2254 },
+  geo: { "@type": "GeoCoordinates", latitude: 35.3585, longitude: -83.1812 },
   openingHoursSpecification: BUSINESS_HOURS,
+  sameAs: [SYLVA_GBP],
 });
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
