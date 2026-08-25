@@ -341,7 +341,7 @@ function buildMetal(t: TownData): Built {
     serviceLabel: "Metal Roofing",
     h1: `Metal Roofing in ${t.name}, NC`,
     intro: `Metal is the long-horizon roof for ${t.name}. At ${t.elevation} in ${t.county}, a properly installed standing-seam system stops being a covering and starts being part of the building envelope — which is exactly what this elevation asks for. We fabricate, install, and detail metal roofs for ${t.name} homes as complete assemblies, not as panels laid over whatever is underneath.`,
-    localContext: `${t.housingProfile} ${t.climateExposure} Across ${neighborhoodPhrase(t)}, the roofs we replace with metal are facing ${b.exposure}. ${mossLine} ${pitchLine} ${iceLine} Our baseline specification here includes ${b.detail}.`,
+    localContext: `${t.climateExposure} Across ${neighborhoodPhrase(t)}, the roofs we replace with metal are facing ${b.exposure}. ${mossLine} ${pitchLine} ${iceLine} Our baseline specification here includes ${b.detail}.`,
     whoItsFor: `${t.name} owners who intend to keep the home and want to buy one more roof rather than three, owners on wooded or north-facing lots tired of moss, streaking, and debris-driven repairs, and second-home owners in ${countyShort(t)} County who want the lowest-maintenance envelope available while they are away.`,
     proofNote: `${townLocalRelevance[t.slug] ?? t.marketAuthorityAngle} We fabricate panels to the roof we measured, install with our own crews under one project lead, and hand over a full photo package at completion.`,
     metaTitle: `Metal Roofing in ${t.name}, NC | Highlander`,
@@ -349,11 +349,11 @@ function buildMetal(t: TownData): Built {
     sections: [
       {
         heading: `Why metal suits ${t.name} roofs`,
-        body: `The case for metal here is not style, it is exposure. ${mossLine} Panels are mechanically seamed rather than surface-fastened, so there is no exposed sealant clock running on your roof and no granule loss to measure. The local aesthetic is ${t.styleTendency.charAt(0).toLowerCase()}${t.styleTendency.slice(1)} and current finishes cover that range without looking industrial — matte darks read well against the ${countyShort(t)} County tree line, and standing-seam profiles suit both the traditional and the mountain-modern houses we work on around ${t.name}.`,
+        body: `The case for metal here is not style, it is exposure: panels are mechanically seamed rather than surface-fastened, so there is no exposed sealant clock running on your roof and no granule loss to measure. The local aesthetic is ${t.styleTendency.charAt(0).toLowerCase()}${t.styleTendency.slice(1)} and current finishes cover that range without looking industrial — matte darks read well against the ${countyShort(t)} County tree line, and standing-seam profiles suit both the traditional and the mountain-modern houses we work on around ${t.name}.`,
       },
       {
         heading: `How we specify a ${t.name} metal roof`,
-        body: `We measure the roof before we recommend anything. Panel gauge, seam type, and clip spacing are chosen for your pitch and wind exposure; underlayment is high-temperature, because the assembly under a metal panel runs hotter than it does under asphalt; and valleys, sidewalls, chimneys, and every penetration are flashed in matching metal rather than caulked. ${pitchLine} ${iceLine} Ventilation gets corrected during the tear-off — a metal roof over a deck that cannot dry is still a roof that fails early.`,
+        body: `We measure the roof before we recommend anything. Panel gauge, seam type, and clip spacing are chosen for your pitch and wind exposure; underlayment is high-temperature, because the assembly under a metal panel runs hotter than it does under asphalt; and valleys, sidewalls, chimneys, and every penetration are flashed in matching metal rather than caulked. Ventilation gets corrected during the tear-off — a metal roof over a deck that cannot dry is still a roof that fails early.`,
       },
       {
         heading: `Approvals, access, and what installation is like`,
