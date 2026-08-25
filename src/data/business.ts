@@ -34,6 +34,21 @@ export interface BusinessLocation {
   primary?: boolean;
 }
 
+/**
+ * Live Google review figures. These are the ONLY numbers allowed in
+ * `aggregateRating` markup, and they may only be emitted on /reviews, where
+ * the same figures are visible on the page. Update `lastVerified` whenever
+ * the owner refreshes the numbers from the Google Business Profile.
+ */
+export interface ReviewSummary {
+  ratingValue: number;
+  reviewCount: number;
+  source: string;
+  sourceUrl: string;
+  /** ISO date the figures were last read off Google. */
+  lastVerified: string;
+}
+
 export interface BusinessIdentity {
   brandName: string;
   legalName: string;
@@ -45,9 +60,20 @@ export interface BusinessIdentity {
   licenseNumber: string;
   slogan: string;
   description: string;
+  /**
+   * Schema.org priceRange. Left undefined until the owner approves a value —
+   * an unapproved price band is a claim we cannot support.
+   */
+  priceRange?: string;
+  reviewSummary: ReviewSummary;
   locations: BusinessLocation[];
   profiles: string[];
+  /** Counties named in `areaServed` alongside the served city list. */
+  countiesServed: { name: string; region: string }[];
+  /** Named people who can author content (schema.org Person). */
+  people: { slug: string; name: string; jobTitle: string }[];
 }
+
 
 const STANDARD_HOURS: BusinessHours[] = [
   {
@@ -75,7 +101,32 @@ export const BUSINESS: BusinessIdentity = {
   slogan: "Built for the Mountains. Built for Life.",
   description:
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
+  // priceRange intentionally omitted — add only once the owner approves a band.
+  reviewSummary: {
+    ratingValue: 4.9,
+    reviewCount: 150,
+    source: "Google Business Profile",
+    sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
+    lastVerified: "2026-08-25",
+  },
+  countiesServed: [
+    { name: "Macon County", region: "NC" },
+    { name: "Jackson County", region: "NC" },
+    { name: "Swain County", region: "NC" },
+    { name: "Haywood County", region: "NC" },
+    { name: "Buncombe County", region: "NC" },
+    { name: "Henderson County", region: "NC" },
+    { name: "Transylvania County", region: "NC" },
+    { name: "Cherokee County", region: "NC" },
+    { name: "Madison County", region: "NC" },
+    { name: "Clay County", region: "NC" },
+  ],
+  people: [
+    { slug: "luke-smith", name: "Luke Smith", jobTitle: "Owner & Founder" },
+    { slug: "kristy-smith", name: "Kristy Smith", jobTitle: "Owner & Financial Manager" },
+  ],
   locations: [
+
     {
       id: "franklin",
       name: "Franklin Showroom",
@@ -153,3 +204,6 @@ export const SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
 export const FRANKLIN_STREET = FRANKLIN.streetAddress;
 export const FRANKLIN_NAP = napLine(FRANKLIN);
 export const SYLVA_NAP = napLine(SYLVA);
+
+/** Live Google rating figures — the only values allowed in review markup. */
+export const REVIEW_SUMMARY = BUSINESS.reviewSummary;

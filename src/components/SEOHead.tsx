@@ -1,4 +1,4 @@
-import { BUSINESS, FRANKLIN, SYLVA, BusinessLocation } from "@/data/business";
+import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation } from "@/data/business";
 import { useEffect } from "react";
 
 interface SEOHeadProps {
@@ -249,9 +249,13 @@ const geoPoint = (loc: BusinessLocation) => ({
   longitude: loc.geo.lng,
 });
 
-/** Physical showroom location node, generated from BUSINESS.locations. */
+/**
+ * Physical showroom node — the ONLY Place-type entities in the graph.
+ * Everything else (towns, counties, service pages) is modelled as
+ * `areaServed`, never as another LocalBusiness with an address.
+ */
 const locationSchema = (loc: BusinessLocation) => ({
-  "@type": "LocalBusiness",
+  "@type": ["RoofingContractor", "GeneralContractor", "LocalBusiness"],
   "@id": `${BASE_URL}/#${loc.id}-showroom`,
   name: `${SITE_NAME} — ${loc.name}`,
   url: BASE_URL,
@@ -261,14 +265,27 @@ const locationSchema = (loc: BusinessLocation) => ({
   address: postalAddress(loc),
   geo: geoPoint(loc),
   openingHoursSpecification: hoursSpec(loc),
-  sameAs: [`https://www.google.com/maps?cid=${loc.gbpCid}`],
+  hasMap: GBP_MAP_URL(loc.gbpCid),
+  sameAs: [GBP_MAP_URL(loc.gbpCid)],
 });
 
 /** Franklin showroom — physical location node. */
-export const franklinLocationSchema = () => locationSchema(FRANKLIN);
+export const franklinLocationSchema = () => ({ "@context": "https://schema.org", ...locationSchema(FRANKLIN) });
 
 /** Sylva showroom — physical location node. */
-export const sylvaLocationSchema = () => locationSchema(SYLVA);
+export const sylvaLocationSchema = () => ({ "@context": "https://schema.org", ...locationSchema(SYLVA) });
+
+/** Both showroom nodes — emit alongside the business node. */
+export const locationNodes = () => [franklinLocationSchema(), sylvaLocationSchema()];
+
+const AREA_SERVED = [
+  ...SERVED_CITIES.map((c) => ({
+    "@type": "City",
+    name: c.name,
+    address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
+  })),
+  ...BUSINESS.countiesServed.map((c) => ({ "@type": "AdministrativeArea", name: `${c.name}, ${c.region}` })),
+];
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
@@ -285,14 +302,12 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   description: BUSINESS.description,
   address: postalAddress(FRANKLIN),
   geo: geoPoint(FRANKLIN),
-  areaServed: SERVED_CITIES.map((c) => ({
-    "@type": "City",
-    name: c.name,
-    address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.region, addressCountry: "US" },
-  })),
+  areaServed: AREA_SERVED,
   openingHoursSpecification: BUSINESS_HOURS,
-  department: BUSINESS.locations.map(locationSchema),
+  // Only the two real showrooms are Places; referenced by @id, defined by
+  // the location nodes that ship next to this one.
   location: BUSINESS.locations.map((loc) => ({ "@id": `${BASE_URL}/#${loc.id}-showroom` })),
+  ...(BUSINESS.priceRange ? { priceRange: BUSINESS.priceRange } : {}),
   serviceArea: {
     "@type": "GeoCircle",
     geoMidpoint: geoPoint(FRANKLIN),
@@ -324,6 +339,13 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   sameAs: PROFILE_URLS,
   ...overrides,
 });
+
+/** Business node + the two showroom Places — the sitewide identity bundle. */
+export const businessGraph = (overrides?: Record<string, unknown>) => [
+  localBusinessSchema(overrides),
+  ...locationNodes(),
+];
+
 
 export const organizationSchema = () => ({
   "@context": "https://schema.org",
@@ -434,6 +456,29 @@ export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
   mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })),
 });
 
+const KNOWN_PEOPLE = BUSINESS.people;
+
+/**
+ * Author node. Prefers a real Person (owner or the team member who wrote the
+ * post); falls back to the Organization only when no person is credited.
+ */
+const authorNode = (author?: string) => {
+  const person = KNOWN_PEOPLE.find((p) => p.name === author || p.slug === author);
+  if (person) {
+    return {
+      "@type": "Person",
+      name: person.name,
+      jobTitle: person.jobTitle,
+      url: `${BASE_URL}/about#${person.slug}`,
+      worksFor: { "@id": `${BASE_URL}/#organization` },
+    };
+  }
+  if (author && author !== SITE_NAME) {
+    return { "@type": "Person", name: author, worksFor: { "@id": `${BASE_URL}/#organization` } };
+  }
+  return { "@type": "Organization", name: SITE_NAME, "@id": `${BASE_URL}/#organization` };
+};
+
 export const articleSchema = (article: { title: string; description: string; url: string; datePublished: string; dateModified?: string; image?: string; author?: string }) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -445,12 +490,12 @@ export const articleSchema = (article: { title: string; description: string; url
   datePublished: article.datePublished,
   dateModified: article.dateModified || article.datePublished,
   image: article.image || DEFAULT_IMAGE,
-  author: { "@type": "Organization", name: article.author || SITE_NAME, "@id": `${BASE_URL}/#organization` },
+  author: authorNode(article.author),
   publisher: { "@id": `${BASE_URL}/#organization` },
 });
 
 // ============================================================
-// Reusable Schema Templates — town, review, product, how-to,
+// Reusable Schema Templates — area, review, product, how-to,
 // plus a buildPageSchema() orchestrator that auto-bundles the
 // correct structured data for each page type.
 // ============================================================
@@ -466,31 +511,52 @@ export interface TownSchemaInput {
 }
 
 /**
- * Town-scoped LocalBusiness schema. Reuses base localBusinessSchema
- * and overrides name, address, areaServed, geo, and url for the town.
+ * A town is an area we serve, NOT a separate business. Towns are modelled as
+ * a `City` (contained in the county `AdministrativeArea`) used as `areaServed`
+ * on a Service node whose provider is the single `#business`.
  */
-export const townSchema = (town: TownSchemaInput) =>
-  localBusinessSchema({
-    "@id": `${BASE_URL}/service-areas/${town.slug}#business`,
-    name: `Highlander Building Services — ${town.name}, ${town.state}`,
-    url: `${BASE_URL}/service-areas/${town.slug}`,
-    description: town.description,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: town.name,
-      addressRegion: town.state,
-      addressCountry: "US",
-    },
-    areaServed: {
-      "@type": "City",
-      name: town.name,
-      containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` },
-    },
-    parentOrganization: { "@id": `${BASE_URL}/#business` },
-    ...(town.latitude && town.longitude
-      ? { geo: { "@type": "GeoCoordinates", latitude: town.latitude, longitude: town.longitude } }
-      : {}),
-  });
+export const townAreaNode = (town: TownSchemaInput) => ({
+  "@type": "City",
+  name: town.name,
+  address: { "@type": "PostalAddress", addressLocality: town.name, addressRegion: town.state, addressCountry: "US" },
+  containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` },
+  ...(town.latitude && town.longitude
+    ? { geo: { "@type": "GeoCoordinates", latitude: town.latitude, longitude: town.longitude } }
+    : {}),
+});
+
+/** Service node scoped to a single town. */
+export const townServiceSchema = (
+  town: TownSchemaInput,
+  opts: { url: string; name: string; description: string },
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}${opts.url}#service`,
+  serviceType: opts.name,
+  name: opts.name,
+  description: opts.description,
+  url: `${BASE_URL}${opts.url}`,
+  provider: { "@id": `${BASE_URL}/#business` },
+  areaServed: townAreaNode(town),
+});
+
+/** Service node scoped to a county. */
+export const countyServiceSchema = (
+  county: { name: string; state?: string },
+  opts: { url: string; name: string; description: string },
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}${opts.url}#service`,
+  serviceType: opts.name,
+  name: opts.name,
+  description: opts.description,
+  url: `${BASE_URL}${opts.url}`,
+  provider: { "@id": `${BASE_URL}/#business` },
+  areaServed: { "@type": "AdministrativeArea", name: `${county.name}, ${county.state || "NC"}` },
+});
+
 
 export interface ReviewInput {
   author: string;
@@ -512,23 +578,23 @@ export const reviewSchema = (review: ReviewInput) => ({
   ...(review.location ? { locationCreated: { "@type": "Place", name: review.location } } : {}),
 });
 
-/** AggregateRating + embedded Reviews for a reviews/testimonials page. */
-export const aggregateReviewSchema = (
-  reviews: ReviewInput[],
-  aggregate?: { ratingValue: number; reviewCount: number },
-) => {
-  const avg = aggregate?.ratingValue ?? (reviews.reduce((s, r) => s + r.rating, 0) / Math.max(reviews.length, 1));
-  const count = aggregate?.reviewCount ?? reviews.length;
+/**
+ * AggregateRating + embedded Reviews. ONLY legal on /reviews, where the same
+ * reviews and the same rating figure are visible on the page. The rating always
+ * comes from BUSINESS.reviewSummary (the live Google figure) — never a literal.
+ */
+export const aggregateReviewSchema = (reviews: ReviewInput[]) => {
+  const summary = BUSINESS.reviewSummary;
   return {
     "@context": "https://schema.org",
-    "@type": "RoofingContractor",
+    "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
     "@id": `${BASE_URL}/#business`,
     name: SITE_NAME,
     url: BASE_URL,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: Number(avg.toFixed(1)),
-      reviewCount: count,
+      ratingValue: summary.ratingValue,
+      reviewCount: summary.reviewCount,
       bestRating: 5,
       worstRating: 1,
     },
@@ -541,6 +607,7 @@ export const aggregateReviewSchema = (
     })),
   };
 };
+
 
 export interface ProductSchemaInput {
   name: string;
@@ -604,12 +671,21 @@ export const contactPageSchema = (path: string) => ({
 // ============================================================
 
 export type PageSchemaInput =
-  | { type: "home"; reviews?: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
+  | { type: "home" }
   | {
       type: "town";
       town: TownSchemaInput;
       faqs?: { question: string; answer: string }[];
       page?: { title: string; description: string };
+      /** Optional service×town scoping, e.g. "Metal Roofing". */
+      service?: { name: string; description?: string; url?: string };
+      breadcrumbs?: { name: string; url: string }[];
+    }
+  | {
+      type: "county";
+      county: { name: string; state?: string; slug: string; description?: string };
+      page?: { title: string; description: string };
+      faqs?: { question: string; answer: string }[];
     }
   | {
       type: "service";
@@ -634,7 +710,7 @@ export type PageSchemaInput =
       article: Parameters<typeof articleSchema>[0];
       breadcrumbs: { name: string; url: string }[];
     }
-  | { type: "reviews"; reviews: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
+  | { type: "reviews"; reviews: ReviewInput[] }
   | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
   | {
       type: "tool";
@@ -651,30 +727,26 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
   switch (input.type) {
     case "home": {
       // WebSite + Organization ship statically in index.html — don't duplicate them here.
-      // Ratings merge into the single #business node so the graph has one
-      // business entity rather than two nodes sharing an @id.
-      const ratings = input.reviews?.length
-        ? (() => {
-            const { "@context": _c, "@type": _t, "@id": _i, name: _n, url: _u, ...rest } =
-              aggregateReviewSchema(input.reviews, input.aggregate) as Record<string, unknown>;
-            return rest;
-          })()
-        : {};
-      return [
-        localBusinessSchema(ratings),
-        breadcrumbSchema([{ name: "Home", url: "/" }]),
-      ];
+      // No aggregateRating here: ratings are only legal on /reviews, where the
+      // same figures are visible on the page.
+      return [...businessGraph(), breadcrumbSchema([{ name: "Home", url: "/" }])];
     }
 
     case "town": {
-      const path = `/service-areas/${input.town.slug}`;
+      const path = input.service?.url || `/service-areas/${input.town.slug}`;
       const breadcrumbId = `${BASE_URL}${path}#breadcrumb`;
-      const businessId = `${BASE_URL}${path}#business`;
+      const serviceName =
+        input.service?.name
+          ? `${input.service.name} in ${input.town.name}, ${input.town.state}`
+          : `Roofing & Construction Services in ${input.town.name}, ${input.town.state}`;
+      const description =
+        input.service?.description || input.page?.description || input.town.description;
+      const service = townServiceSchema(input.town, { url: path, name: serviceName, description });
       const out: Record<string, unknown>[] = [
-        townSchema(input.town),
-        localBusinessSchema(),
+        ...businessGraph(),
+        service,
         breadcrumbSchema(
-          [
+          input.breadcrumbs || [
             { name: "Home", url: "/" },
             { name: "Service Areas", url: "/service-areas" },
             { name: `${input.town.name}, ${input.town.state}`, url: path },
@@ -682,21 +754,44 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
           breadcrumbId,
         ),
         webPageSchema({
-          name: input.page?.title || `Roofing & Construction in ${input.town.name}, ${input.town.state}`,
-          description: input.page?.description || input.town.description,
+          name: input.page?.title || serviceName,
+          description,
           url: path,
           breadcrumbId,
-          primaryEntityId: businessId,
+          // mainEntity is the Service we actually describe — never a fake
+          // town-level business.
+          primaryEntityId: `${BASE_URL}${path}#service`,
         }),
       ];
-      out.push(
-        serviceSchema({
-          name: `Roofing & Construction Services in ${input.town.name}, ${input.town.state}`,
-          description: input.page?.description || input.town.description,
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
+    case "county": {
+      const state = input.county.state || "NC";
+      const path = `/service-areas/county/${input.county.slug}`;
+      const breadcrumbId = `${BASE_URL}${path}#breadcrumb`;
+      const name = `Roofing & Construction Services in ${input.county.name}, ${state}`;
+      const description = input.page?.description || input.county.description || BUSINESS.description;
+      const out: Record<string, unknown>[] = [
+        ...businessGraph(),
+        countyServiceSchema({ name: input.county.name, state }, { url: path, name, description }),
+        breadcrumbSchema(
+          [
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: `${input.county.name}, ${state}`, url: path },
+          ],
+          breadcrumbId,
+        ),
+        webPageSchema({
+          name: input.page?.title || name,
+          description,
           url: path,
-          areaServedCity: { name: input.town.name, region: input.town.state },
+          breadcrumbId,
+          primaryEntityId: `${BASE_URL}${path}#service`,
         }),
-      );
+      ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
       return out;
     }
@@ -704,7 +799,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "service": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
-        localBusinessSchema(),
+        ...businessGraph(),
         breadcrumbSchema(input.breadcrumbs),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
@@ -723,7 +818,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "commercial": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
-        localBusinessSchema(),
+        ...businessGraph(),
         breadcrumbSchema(input.breadcrumbs),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
@@ -734,10 +829,10 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
 
     case "reviews":
-      return [aggregateReviewSchema(input.reviews, input.aggregate)];
+      return [aggregateReviewSchema(input.reviews), ...locationNodes()];
 
     case "contact": {
-      const out: Record<string, unknown>[] = [contactPageSchema(input.path), localBusinessSchema()];
+      const out: Record<string, unknown>[] = [contactPageSchema(input.path), ...businessGraph()];
       if (input.breadcrumbs?.length) out.push(breadcrumbSchema(input.breadcrumbs));
       return out;
     }
@@ -752,4 +847,5 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return out;
     }
   }
+
 };

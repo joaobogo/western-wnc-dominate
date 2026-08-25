@@ -28,6 +28,30 @@ var BUSINESS = {
   licenseNumber: "NC GC #87668",
   slogan: "Built for the Mountains. Built for Life.",
   description: "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
+  // priceRange intentionally omitted — add only once the owner approves a band.
+  reviewSummary: {
+    ratingValue: 4.9,
+    reviewCount: 150,
+    source: "Google Business Profile",
+    sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
+    lastVerified: "2026-08-25"
+  },
+  countiesServed: [
+    { name: "Macon County", region: "NC" },
+    { name: "Jackson County", region: "NC" },
+    { name: "Swain County", region: "NC" },
+    { name: "Haywood County", region: "NC" },
+    { name: "Buncombe County", region: "NC" },
+    { name: "Henderson County", region: "NC" },
+    { name: "Transylvania County", region: "NC" },
+    { name: "Cherokee County", region: "NC" },
+    { name: "Madison County", region: "NC" },
+    { name: "Clay County", region: "NC" }
+  ],
+  people: [
+    { slug: "luke-smith", name: "Luke Smith", jobTitle: "Owner & Founder" },
+    { slug: "kristy-smith", name: "Kristy Smith", jobTitle: "Owner & Financial Manager" }
+  ],
   locations: [
     {
       id: "franklin",
@@ -89,6 +113,7 @@ var SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
 var FRANKLIN_STREET = FRANKLIN.streetAddress;
 var FRANKLIN_NAP = napLine(FRANKLIN);
 var SYLVA_NAP = napLine(SYLVA);
+var REVIEW_SUMMARY = BUSINESS.reviewSummary;
 
 // src/lib/mcp/tools/get-business-info.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.2";

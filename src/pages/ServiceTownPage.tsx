@@ -4,11 +4,10 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
 import SEOHead, {
-  townSchema,
+  businessGraph,
+  townServiceSchema,
   breadcrumbSchema,
   faqSchema,
-  serviceSchema,
-  localBusinessSchema,
 } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -121,20 +120,23 @@ const ServiceTownPage = ({
         description={entry.metaDescription}
         path={resolvedCanonical}
         jsonLd={[
-          townSchema({
-            name: town.name,
-            slug: town.slug,
-            county: town.county,
-            state: town.state,
-            description: entry.intro,
-          }),
-          localBusinessSchema(),
-          serviceSchema({
-            name: `${entry.serviceLabel} in ${town.name}, ${town.state}`,
-            description: entry.metaDescription,
-            url: resolvedCanonical,
-            areaServedCity: { name: town.name, region: town.state },
-          }),
+          ...businessGraph(),
+          // A service in a town is a Service with areaServed — not another
+          // LocalBusiness with a made-up address.
+          townServiceSchema(
+            {
+              name: town.name,
+              slug: town.slug,
+              county: town.county,
+              state: town.state,
+              description: entry.intro,
+            },
+            {
+              url: resolvedCanonical,
+              name: `${entry.serviceLabel} in ${town.name}, ${town.state}`,
+              description: entry.metaDescription,
+            },
+          ),
           breadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Service Areas", url: "/service-areas" },

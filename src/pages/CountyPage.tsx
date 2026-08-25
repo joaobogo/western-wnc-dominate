@@ -52,17 +52,16 @@ const CountyPage = () => {
         description={county.metaDescription}
         path={`/service-areas/county/${county.slug}`}
         jsonLd={buildPageSchema({
-          type: "generic",
-          breadcrumbs: [
-            { name: "Home", url: "/" },
-            { name: "Service Areas", url: "/service-areas" },
-            { name: county.name, url: `/service-areas/county/${county.slug}` },
-          ],
-        }).concat(
-          county.faqs?.length
-            ? [faqSchema(county.faqs.map((f) => ({ question: f.q, answer: f.a })))]
-            : [],
-        )}
+          type: "county",
+          county: {
+            name: county.name,
+            state: "NC",
+            slug: county.slug,
+            description: county.metaDescription,
+          },
+          page: { title: county.metaTitle, description: county.metaDescription },
+          faqs: county.faqs?.map((f) => ({ question: f.q, answer: f.a })),
+        })}
       />
       <Header />
       <PageBreadcrumbs
