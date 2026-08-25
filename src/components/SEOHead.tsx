@@ -456,6 +456,29 @@ export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
   mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })),
 });
 
+const KNOWN_PEOPLE = BUSINESS.people;
+
+/**
+ * Author node. Prefers a real Person (owner or the team member who wrote the
+ * post); falls back to the Organization only when no person is credited.
+ */
+const authorNode = (author?: string) => {
+  const person = KNOWN_PEOPLE.find((p) => p.name === author || p.slug === author);
+  if (person) {
+    return {
+      "@type": "Person",
+      name: person.name,
+      jobTitle: person.jobTitle,
+      url: `${BASE_URL}/about#${person.slug}`,
+      worksFor: { "@id": `${BASE_URL}/#organization` },
+    };
+  }
+  if (author && author !== SITE_NAME) {
+    return { "@type": "Person", name: author, worksFor: { "@id": `${BASE_URL}/#organization` } };
+  }
+  return { "@type": "Organization", name: SITE_NAME, "@id": `${BASE_URL}/#organization` };
+};
+
 export const articleSchema = (article: { title: string; description: string; url: string; datePublished: string; dateModified?: string; image?: string; author?: string }) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -467,12 +490,12 @@ export const articleSchema = (article: { title: string; description: string; url
   datePublished: article.datePublished,
   dateModified: article.dateModified || article.datePublished,
   image: article.image || DEFAULT_IMAGE,
-  author: { "@type": "Organization", name: article.author || SITE_NAME, "@id": `${BASE_URL}/#organization` },
+  author: authorNode(article.author),
   publisher: { "@id": `${BASE_URL}/#organization` },
 });
 
 // ============================================================
-// Reusable Schema Templates — town, review, product, how-to,
+// Reusable Schema Templates — area, review, product, how-to,
 // plus a buildPageSchema() orchestrator that auto-bundles the
 // correct structured data for each page type.
 // ============================================================
@@ -488,31 +511,52 @@ export interface TownSchemaInput {
 }
 
 /**
- * Town-scoped LocalBusiness schema. Reuses base localBusinessSchema
- * and overrides name, address, areaServed, geo, and url for the town.
+ * A town is an area we serve, NOT a separate business. Towns are modelled as
+ * a `City` (contained in the county `AdministrativeArea`) used as `areaServed`
+ * on a Service node whose provider is the single `#business`.
  */
-export const townSchema = (town: TownSchemaInput) =>
-  localBusinessSchema({
-    "@id": `${BASE_URL}/service-areas/${town.slug}#business`,
-    name: `Highlander Building Services — ${town.name}, ${town.state}`,
-    url: `${BASE_URL}/service-areas/${town.slug}`,
-    description: town.description,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: town.name,
-      addressRegion: town.state,
-      addressCountry: "US",
-    },
-    areaServed: {
-      "@type": "City",
-      name: town.name,
-      containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` },
-    },
-    parentOrganization: { "@id": `${BASE_URL}/#business` },
-    ...(town.latitude && town.longitude
-      ? { geo: { "@type": "GeoCoordinates", latitude: town.latitude, longitude: town.longitude } }
-      : {}),
-  });
+export const townAreaNode = (town: TownSchemaInput) => ({
+  "@type": "City",
+  name: town.name,
+  address: { "@type": "PostalAddress", addressLocality: town.name, addressRegion: town.state, addressCountry: "US" },
+  containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` },
+  ...(town.latitude && town.longitude
+    ? { geo: { "@type": "GeoCoordinates", latitude: town.latitude, longitude: town.longitude } }
+    : {}),
+});
+
+/** Service node scoped to a single town. */
+export const townServiceSchema = (
+  town: TownSchemaInput,
+  opts: { url: string; name: string; description: string },
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}${opts.url}#service`,
+  serviceType: opts.name,
+  name: opts.name,
+  description: opts.description,
+  url: `${BASE_URL}${opts.url}`,
+  provider: { "@id": `${BASE_URL}/#business` },
+  areaServed: townAreaNode(town),
+});
+
+/** Service node scoped to a county. */
+export const countyServiceSchema = (
+  county: { name: string; state?: string },
+  opts: { url: string; name: string; description: string },
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}${opts.url}#service`,
+  serviceType: opts.name,
+  name: opts.name,
+  description: opts.description,
+  url: `${BASE_URL}${opts.url}`,
+  provider: { "@id": `${BASE_URL}/#business` },
+  areaServed: { "@type": "AdministrativeArea", name: `${county.name}, ${county.state || "NC"}` },
+});
+
 
 export interface ReviewInput {
   author: string;
