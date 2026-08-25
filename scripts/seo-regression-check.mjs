@@ -28,10 +28,11 @@ const requiredHostRedirects = [
   "https://www.highlandernc.com/* https://highlandernc.com/:splat 301!",
 ];
 
+let activeRedirectRules = [];
 if (!existsSync(redirectsPath)) {
   fail("public/_redirects missing.");
 } else {
-  const activeRedirectRules = readFileSync(redirectsPath, "utf8")
+  activeRedirectRules = readFileSync(redirectsPath, "utf8")
     .split(/\r?\n/)
     .map(line => line.trim())
     .filter(line => line && !line.startsWith("#"))
@@ -42,7 +43,40 @@ if (!existsSync(redirectsPath)) {
       fail(`Canonical host redirect rule ${index + 1} must be the ${index + 1}${index === 0 ? "st" : index === 1 ? "nd" : "rd"} active rule in public/_redirects: ${requiredRule}`);
     }
   });
+
+  const requiredLegacyRules = [
+    "/roof-inspection-services /request-inspection 301!",
+    "/residential-re-roof-specialists /roofing/roof-replacement 301!",
+    "/sylva-nc-showroom /service-areas/sylva-nc 301!",
+    "/sylva-nc-roofers-reroofing-repairs /service-areas/sylva-nc 301!",
+    "/contact-us_em /contact 301!",
+    "/service-locations /service-areas 301!",
+    "/service-locations/* /service-areas 301!",
+    "/contact/:service/:town /service-areas/:town 301!",
+    "/free-tools /roof-designer 301!",
+  ];
+  for (const rule of requiredLegacyRules) {
+    if (!activeRedirectRules.includes(rule)) fail(`Required legacy redirect missing or incorrect: ${rule}`);
+  }
+
+  const firstRewrite = activeRedirectRules.findIndex(rule => /\s200$/.test(rule));
+  if (firstRewrite >= 0) {
+    const lateRedirect = activeRedirectRules.slice(firstRewrite + 1).find(rule => /\s301!$/.test(rule));
+    if (lateRedirect) fail(`Legacy 301 appears after an SPA rewrite and will not reliably run: ${lateRedirect}`);
+  }
+  if (activeRedirectRules.some(rule => rule === "/* /index.html 200"))
+    fail("Global SPA fallback /* /index.html 200 creates soft 404s.");
+  if (activeRedirectRules.some(rule => rule === "/roof-designer / 301!" || rule === "/free-tools / 301!"))
+    fail("Tool URL redirects to the homepage, which search engines may treat as a soft 404.");
 }
+
+// Marketing redirects belong at the edge, not in the client router.
+const routerSource = readFileSync(resolve("src/App.tsx"), "utf8");
+const clientRedirects = [...routerSource.matchAll(/<Route\s+path="([^"]+)"[^\n]*<Navigate/g)]
+  .map(match => match[1])
+  .filter(path => !path.startsWith("/intake"));
+if (clientRedirects.length > 0)
+  fail(`Marketing <Navigate> aliases remain in App.tsx: ${clientRedirects.join(", ")}`);
 
 // ---------- 1. index.html static-head checks ----------
 const indexHtml = readFileSync(resolve("index.html"), "utf8");
