@@ -220,72 +220,55 @@ const SERVED_CITIES: { name: string; region: string }[] = [
   { name: "Clayton", region: "GA" },
 ];
 
-/** Monday–Friday, 8:00–17:00 for every location. */
-const BUSINESS_HOURS = [
-  {
+/** Opening hours, derived from BUSINESS. */
+const hoursSpec = (loc: BusinessLocation) =>
+  loc.hours.map((h) => ({
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "08:00",
-    closes: "17:00",
-  },
-];
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  }));
+
+const BUSINESS_HOURS = hoursSpec(FRANKLIN);
 
 /** Verified public profiles used for sameAs on the business + organization nodes. */
-const FRANKLIN_GBP = "https://www.google.com/maps?cid=1442261483869937048";
-const SYLVA_GBP = "https://www.google.com/maps?cid=1690022713833215904";
-const PROFILE_URLS = [
-  FRANKLIN_GBP,
-  SYLVA_GBP,
-  "https://www.facebook.com/highlanderroof",
-  "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
-  "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
-  "https://www.linkedin.com/company/highlander-roofing-services-inc/",
-  "https://www.instagram.com/highlanderroofingservices/",
-];
+const PROFILE_URLS = BUSINESS.profiles;
+
+const postalAddress = (loc: BusinessLocation) => ({
+  "@type": "PostalAddress",
+  streetAddress: loc.streetAddress,
+  addressLocality: loc.locality,
+  addressRegion: loc.region,
+  postalCode: loc.postalCode,
+  addressCountry: "US",
+});
+
+const geoPoint = (loc: BusinessLocation) => ({
+  "@type": "GeoCoordinates",
+  latitude: loc.geo.lat,
+  longitude: loc.geo.lng,
+});
+
+/** Physical showroom location node, generated from BUSINESS.locations. */
+const locationSchema = (loc: BusinessLocation) => ({
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#${loc.id}-showroom`,
+  name: `${SITE_NAME} — ${loc.name}`,
+  url: BASE_URL,
+  image: DEFAULT_IMAGE,
+  telephone: loc.phoneE164,
+  parentOrganization: { "@id": `${BASE_URL}/#organization` },
+  address: postalAddress(loc),
+  geo: geoPoint(loc),
+  openingHoursSpecification: hoursSpec(loc),
+  sameAs: [`https://www.google.com/maps?cid=${loc.gbpCid}`],
+});
 
 /** Franklin showroom — physical location node. */
-export const franklinLocationSchema = () => ({
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#franklin-showroom`,
-  name: `${SITE_NAME} — Franklin Showroom`,
-  url: BASE_URL,
-  image: DEFAULT_IMAGE,
-  telephone: `${BUSINESS.primaryPhoneE164}`,
-  parentOrganization: { "@id": `${BASE_URL}/#organization` },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: `${FRANKLIN_STREET}`,
-    addressLocality: "Franklin",
-    addressRegion: "NC",
-    postalCode: "28734",
-    addressCountry: "US",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
-  openingHoursSpecification: BUSINESS_HOURS,
-  sameAs: [FRANKLIN_GBP],
-});
+export const franklinLocationSchema = () => locationSchema(FRANKLIN);
 
 /** Sylva showroom — physical location node. */
-export const sylvaLocationSchema = () => ({
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#sylva-showroom`,
-  name: `${SITE_NAME} — Sylva Showroom`,
-  url: BASE_URL,
-  image: DEFAULT_IMAGE,
-  telephone: `${SYLVA.phoneE164}`,
-  parentOrganization: { "@id": `${BASE_URL}/#organization` },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: `${SYLVA.streetAddress}`,
-    addressLocality: "Sylva",
-    addressRegion: "NC",
-    postalCode: "28779",
-    addressCountry: "US",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 35.3585, longitude: -83.1812 },
-  openingHoursSpecification: BUSINESS_HOURS,
-  sameAs: [SYLVA_GBP],
-});
+export const sylvaLocationSchema = () => locationSchema(SYLVA);
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
