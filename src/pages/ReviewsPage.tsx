@@ -96,7 +96,6 @@ const ReviewsPage = () => {
             datePublished: review.datePublished,
             location: review.location,
           })),
-          aggregate: GOOGLE_REVIEW_AGGREGATE,
         })}
       />
       <Header />

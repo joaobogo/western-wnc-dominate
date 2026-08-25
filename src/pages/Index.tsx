@@ -35,17 +35,9 @@ const Index = () => {
         description="Highlander Building Services: roofing, repairs, metal roofs, gutters, and custom builds across Franklin, Highlands, Cashiers & Western NC."
         path="/"
         keywords="Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
-        jsonLd={buildPageSchema({
-          type: "home",
-          reviews: customerReviews.map((review) => ({
-            author: review.authorName,
-            rating: review.ratingValue,
-            body: review.reviewBody,
-            datePublished: review.datePublished,
-            location: review.location,
-            })),
-          aggregate: GOOGLE_REVIEW_AGGREGATE,
-        })}
+        // No aggregateRating here — rating markup is only emitted on /reviews,
+        // where the same live Google figure is visible on the page.
+        jsonLd={buildPageSchema({ type: "home" })}
       />
       <Header />
       <main id="main-content">
