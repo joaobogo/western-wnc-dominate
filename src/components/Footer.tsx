@@ -176,22 +176,22 @@ const Footer = () => {
               <div className="flex gap-3">
                 <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1" aria-hidden="true" />
                 <div className="text-body-sm text-foreground/85 font-body leading-relaxed">
-                  <span className="block font-bold text-foreground">Highlander Building Services, Inc.</span>
-                  {FRANKLIN_STREET}<br />
-                  Franklin, NC 28734
+                  <span className="block font-bold text-foreground">{BUSINESS.legalName}</span>
+                  {FRANKLIN.streetAddress}<br />
+                  {FRANKLIN.locality}, {FRANKLIN.region} {FRANKLIN.postalCode}
                 </div>
               </div>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 className="flex items-center gap-3 min-h-[44px] font-heading font-bold text-body-lg text-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
               <a
-                href="mailto:info@highlandernc.com"
+                href={`mailto:${BUSINESS.email}`}
                 className="flex items-center gap-3 min-h-[44px] text-body-sm font-body text-muted-foreground hover:text-primary transition-colors break-all"
               >
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" /> info@highlandernc.com
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" /> {BUSINESS.email}
               </a>
               <div className="flex gap-3 pt-4 border-t border-border">
                 <Clock className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" aria-hidden="true" />
