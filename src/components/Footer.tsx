@@ -301,6 +301,17 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Trust strip — legal identity, licensing, showrooms */}
+      <div className="border-t border-border">
+        <div className="container-tight py-4">
+          <p className="text-body-xs text-muted-foreground font-body leading-relaxed tracking-wide text-center md:text-left">
+            Highlander Building Services, Inc. (formerly Highlander Roofing Services) · NC General Contractor License #87234 · Fully insured · Franklin showroom: 76 Creative Dr, Franklin, NC 28734 ·{" "}
+            <a href="tel:+18285247773" className="hover:text-foreground transition-colors">(828) 524-7773</a> · Sylva showroom: 28 Cross Stitch Mountain Rd, Sylva, NC 28779 ·{" "}
+            <a href="tel:+18284764000" className="hover:text-foreground transition-colors">(828) 476-4000</a> · Est. 2017
+          </p>
+        </div>
+      </div>
+
       {/* Bottom bar — license + legal */}
       <div className="border-t border-border relative">
         <div 
