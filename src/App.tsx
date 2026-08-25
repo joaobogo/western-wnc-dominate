@@ -10,8 +10,6 @@ import GTMRouteTracker from "./components/GTMRouteTracker";
 import RecoveryPrompt from "./components/recovery/RecoveryPrompt";
 import PaidLandingGate from "./components/system/PaidLandingGate";
 import ErrorBoundary from "./components/ErrorBoundary";
-import LegacyTownRedirect from "./components/LegacyTownRedirect";
-import ServiceLocationsRedirect from "./components/ServiceLocationsRedirect";
 import OrphanRedirectHandler from "./components/OrphanRedirectHandler";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/attribution";
@@ -59,6 +57,7 @@ const Careers = lazy(() => import("./pages/Careers"));
 const RequestInspection = lazy(() => import("./pages/RequestInspection"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
+const RoofDesigner = lazy(() => import("./pages/RoofDesigner"));
 const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
 const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
 const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
@@ -149,15 +148,6 @@ const App = () => (
           <Route path="/roofing/gutters" element={<Gutters />} />
 
           {/* ─── Keyword aliases — roofing search intent → existing polished pages ─── */}
-          <Route path="/roofing/emergency-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
-          <Route path="/roofing/emergency-roof-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
-          <Route path="/roofing/leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/roofing/roof-leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/roofing/inspection" element={<Navigate to="/request-inspection" replace />} />
-          <Route path="/roofing/roof-inspection" element={<Navigate to="/request-inspection" replace />} />
-          <Route path="/roofing/asphalt" element={<Navigate to="/roofing/residential" replace />} />
-          <Route path="/roofing/asphalt-shingle" element={<Navigate to="/roofing/residential" replace />} />
-          <Route path="/roofing/shingle" element={<Navigate to="/roofing/residential" replace />} />
 
           {/* ─── Paid landing pages (kept for ad spend, excluded from nav) ─── */}
           <Route path="/lp/roof-replacement" element={<RoofReplacementAds />} />
@@ -173,54 +163,19 @@ const App = () => (
           {/* Redirects for retired construction routes */}
           <Route path="/construction/renovations" element={<Renovations />} />
           <Route path="/construction/siding" element={<Siding />} />
-          <Route path="/construction/exterior" element={<Navigate to="/construction/siding" replace />} />
-          <Route path="/construction/custom" element={<Navigate to="/construction" replace />} />
-          <Route path="/construction/flatwork" element={<Navigate to="/construction" replace />} />
 
           {/* ─── Keyword aliases — construction search intent → existing polished pages ─── */}
-          <Route path="/construction/garages" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/garage" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/in-law-suite" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/guest-suite" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/porches" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/screened-porch" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/sunrooms" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/sunroom" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/two-story-addition" element={<Navigate to="/construction/additions" replace />} />
-          <Route path="/construction/decks" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/deck" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/patios" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/patio" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/pergolas" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/pergola" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/outdoor-kitchen" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/fire-pit" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction/retaining-walls" element={<Navigate to="/construction/outdoor-living" replace />} />
 
           {/* ─── Gutter keyword aliases ─── */}
           <Route path="/exterior-improvements" element={<ExteriorImprovements />} />
-          <Route path="/gutters/seamless" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutters/guards" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutters/downspouts" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutters/copper" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutters/aluminum" element={<Navigate to="/roofing/gutters" replace />} />
 
           {/* ─── Layouts & Planning (Supporting Branch) ─── */}
           <Route path="/layouts-planning" element={<LayoutsPlanning />} />
 
           {/* ─── Legacy service routes → canonical division pages ─── */}
-          <Route path="/services" element={<Navigate to="/roofing" replace />} />
-          <Route path="/services/:slug" element={<Navigate to="/roofing" replace />} />
-          <Route path="/commercial-roofing" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/commercial-maintenance" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/gutters" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/outdoor-living" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/construction-services" element={<Navigate to="/construction" replace />} />
 
           {/* ─── Company ─── */}
           {/* ─── Legacy /service-locations → /service-areas (301 at edge) ─── */}
-          <Route path="/service-locations" element={<ServiceLocationsRedirect />} />
-          <Route path="/service-locations/*" element={<ServiceLocationsRedirect />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
           <Route path="/service-areas/county/:slug" element={<CountyPage />} />
@@ -263,19 +218,14 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/roofing-cost-western-nc" element={<RoofingCostWNC />} />
+          <Route path="/roof-designer" element={<RoofDesigner />} />
 
           
           <Route path="/certifications" element={<Certifications />} />
-          <Route path="/gallery" element={<Navigate to="/recent-projects" replace />} />
-          <Route path="/projects" element={<Navigate to="/recent-projects" replace />} />
-          <Route path="/project-gallery" element={<Navigate to="/recent-projects" replace />} />
-          <Route path="/portfolio" element={<Navigate to="/recent-projects" replace />} />
-          <Route path="/our-work" element={<Navigate to="/recent-projects" replace />} />
           <Route path="/recent-projects" element={<RecentProjects />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/financing" element={<Financing />} />
-          <Route path="/storm-center" element={<Navigate to="/roofing/storm-damage" replace />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/request-inspection" element={<RequestInspection />} />
 
@@ -290,9 +240,6 @@ const App = () => (
           <Route path="/intake/queue/*" element={<Navigate to="/front-desk/queue" replace />} />
 
 
-          {/* Removed: /roof-designer, /free-tools, /seo-checklist, /internal-linking-qa, /keyword-map, /seo-launch-qa */}
-          <Route path="/roof-designer" element={<Navigate to="/" replace />} />
-          <Route path="/free-tools" element={<Navigate to="/" replace />} />
 
           <Route path="/consultation" element={<IntakeChooser />} />
           <Route path="/roofing-intake" element={<RoofingIntake />} />
@@ -303,8 +250,6 @@ const App = () => (
           <Route path="/quote-flow" element={<QuoteFlow />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
-          <Route path="/terms" element={<Navigate to="/privacy-policy" replace />} />
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
@@ -312,82 +257,20 @@ const App = () => (
           <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
           {/* ─── Legacy WordPress backlink redirects (Hibu migration) ─── */}
           {/* Preserve SEO value from old highlandernc.com URLs. */}
-          <Route path="/residential-roofing-services" element={<Navigate to="/roofing/residential" replace />} />
-          <Route path="/roof-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/metal-roofs" element={<Navigate to="/roofing/metal" replace />} />
-          <Route path="/re-roof-specialists" element={<Navigate to="/roofing/roof-replacement" replace />} />
-          <Route path="/roof-maintenance-program" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/types-of-roofs-we-install" element={<Navigate to="/roofing" replace />} />
-          <Route path="/gutter-services" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutter-installation" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/seamless-gutters" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/seamless-gutter-installation" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/design/build-services" element={<Navigate to="/construction/design" replace />} />
-          <Route path="/design-build-services" element={<Navigate to="/construction/design" replace />} />
-          <Route path="/patio-installation" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/request-quote-form" element={<Navigate to="/request-inspection" replace />} />
-          <Route path="/request-quote-form-page" element={<Navigate to="/request-inspection" replace />} />
-          <Route path="/faqs" element={<Navigate to="/faq" replace />} />
-          <Route path="/highlands-nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
-          <Route path="/highlands--nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
-          <Route path="/the-benefits-of-metal-roof-installation-for-your-home" element={<Navigate to="/blog/metal-vs-shingle-roof-western-nc" replace />} />
-          <Route path="/why-asphalt-shingle-remains-the-most-popular-roofing-material" element={<Navigate to="/blog/best-roofing-materials-highlands-nc" replace />} />
           {/* ─── SEMrush-verified legacy URLs — high-intent service pages ─── */}
           {/* Residential */}
-          <Route path="/residential-roofing-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/residential-roofing-installation" element={<Navigate to="/roofing/roof-replacement" replace />} />
-          <Route path="/specialized-roofing-services" element={<Navigate to="/roofing/specialty" replace />} />
-          <Route path="/specialty-roof-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/types-of-roofs-we-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
           {/* Commercial */}
-          <Route path="/commercial-roofing-services" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/commercial-roofing-installation" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/commercial-roofing-repairs" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/tpo-installation" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/roof-coating-services" element={<Navigate to="/roofing/commercial" replace />} />
           {/* Metal */}
-          <Route path="/metal-roof-installation" element={<Navigate to="/roofing/metal" replace />} />
-          <Route path="/metal-roof-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
           {/* Slate / specialty */}
-          <Route path="/slate-roof-installation" element={<Navigate to="/roofing/specialty" replace />} />
-          <Route path="/slate-roof-repair" element={<Navigate to="/roofing/specialty" replace />} />
           {/* Waterproofing */}
-          <Route path="/roof-waterproofing" element={<Navigate to="/roofing/roof-repair" replace />} />
           {/* Gutters & guards */}
-          <Route path="/leaf-guard-installation" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutter-protection-installation" element={<Navigate to="/roofing/gutters" replace />} />
-          <Route path="/gutter-protection-systems" element={<Navigate to="/roofing/gutters" replace />} />
           {/* Outdoor / construction */}
-          <Route path="/gazebos-and-pergolas" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/patio-installation" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/deck-installation" element={<Navigate to="/construction/outdoor-living" replace />} />
-          <Route path="/outdoor-kitchens-and-grills" element={<Navigate to="/construction/outdoor-living" replace />} />
           {/* Skylight */}
-          <Route path="/skylight-installation" element={<Navigate to="/roofing/skylights" replace />} />
           {/* Additional commercial / replacement / asphalt legacy aliases */}
-          <Route path="/commercial-re-roof-specialists" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/asphalt-shingles-installation" element={<Navigate to="/roofing/residential" replace />} />
           {/* Root-level leak repair aliases (SEMrush intent) */}
-          <Route path="/roof-leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/roof-leak-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
-          <Route path="/emergency-roof-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
-          <Route path="/emergency-roofing" element={<Navigate to="/roofing/storm-damage" replace />} />
-          <Route path="/storm-damage-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
           {/* Contact town-specific pages → matching service area */}
-          <Route path="/contact-franklin-nc" element={<Navigate to="/service-areas/franklin-nc" replace />} />
-          <Route path="/contact-sylva-nc" element={<Navigate to="/service-areas/sylva-nc" replace />} />
-          <Route path="/contact-highlands-nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
-          <Route path="/contact-cashiers-nc" element={<Navigate to="/service-areas/cashiers-nc" replace />} />
-          <Route path="/contact-waynesville-nc" element={<Navigate to="/service-areas/waynesville-nc" replace />} />
-          <Route path="/contact-bryson-city-nc" element={<Navigate to="/service-areas/bryson-city-nc" replace />} />
-          <Route path="/contact-cullowhee-nc" element={<Navigate to="/service-areas/cullowhee-nc" replace />} />
-          <Route path="/contact-dillsboro-nc" element={<Navigate to="/service-areas/dillsboro-nc" replace />} />
           {/* Legacy Hibu /contact/[service]-service-area/[town] wildcard */}
-          <Route path="/contact/:pattern/:town" element={<LegacyTownRedirect />} />
-          <Route path="/contact/local-roofers-service-area/:town" element={<LegacyTownRedirect />} />
           {/* About/team legacy aliases (about-us already covered above; add extras) */}
-          <Route path="/our-team" element={<Navigate to="/team" replace />} />
-          <Route path="/testimonials" element={<Navigate to="/reviews" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
               </Routes>

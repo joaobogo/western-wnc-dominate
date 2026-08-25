@@ -25,7 +25,7 @@ interface SitemapEntry {
 // - excluded: <Navigate> redirects, /lp/* paid landing pages (noindex),
 //   /admin/*, /roofing-intake, /construction-intake, /*-builder,
 //   /design-intake, /quote-flow, /consultation, /request-quote-form*,
-//   /seo-monitoring, /roof-designer form, legacy /highlands-nc duplicate.
+//   /seo-monitoring and legacy /highlands-nc duplicate.
 // changefreq and priority are intentionally omitted — Google ignores them
 // and they would fabricate signals we can't back with real data.
 const staticRoutes: SitemapEntry[] = [
@@ -44,6 +44,7 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/financing" },
   { path: "/contact" },
   { path: "/request-inspection" },
+  { path: "/roof-designer" },
 
   // Roofing money pages
   { path: "/roofing" },
