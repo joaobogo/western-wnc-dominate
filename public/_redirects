@@ -150,6 +150,12 @@
 /contact/*                                                    /service-areas                                       301!
 
 # ============================================================
+# Old receptionist intake URL → branded front-desk URL
+# ============================================================
+/intake                                                      /front-desk                                        301!
+/intake/*                                                    /front-desk/:splat                                 301!
+
+# ============================================================
 # Legacy /service-locations → /service-areas (must stay above rewrites)
 # ============================================================
 /service-locations                                           /service-areas                                     301!

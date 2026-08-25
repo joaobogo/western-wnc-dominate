@@ -4,7 +4,7 @@ import IntakeSheet from "./IntakeSheet";
 import Queue from "./Queue";
 import LeadView from "./LeadView";
 import { useInternalPageHead } from "@/components/SEOHead";
-import "../front-desk.css";
+import "../intake.css";
 
 /**
  * Internal receptionist call sheet. Mounted at /front-desk/* by the main router,

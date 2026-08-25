@@ -97,7 +97,7 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 const RealWorkDiagnostics = lazy(() => import("./pages/RealWorkDiagnostics"));
 // Internal receptionist call sheet (unlisted, noindex) — mounted at /front-desk/*
-const IntakeApp = lazy(() => import("./front-desk/App"));
+const IntakeApp = lazy(() => import("./intake/App"));
 
 
 
