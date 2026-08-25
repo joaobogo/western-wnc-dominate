@@ -3194,7 +3194,7 @@ WNC is a temperate rainforest. Without aggressive ventilation, mountain humidity
 // Batch 2 — Roof Replacement & Metal Roofing (10 posts)
 // Batch 3 — Gutters, Skylights & Water Management (10 posts)
 // Rules: no GAF / Master Elite / Master Applicator, no "architect(ural)(ure)",
-// no 24/7, no 45-minute, no lifetime warranty, phone 828-524-7773 only,
+// no 24/7, no 45-minute, no lifetime warranty, primary phone only,
 // credential wording: CertainTeed ShingleMaster Credentialed Contractor.
 // ─────────────────────────────────────────────────────────────────────────────
 
