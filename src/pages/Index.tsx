@@ -12,7 +12,6 @@ import ThreeDivisionPathway from "@/components/DualPathway";
 
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
-import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
    the hero, trust strip and shell. Each fallback reserves height to keep CLS at 0. */

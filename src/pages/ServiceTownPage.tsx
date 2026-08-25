@@ -8,8 +8,6 @@ import SEOHead, {
   townServiceSchema,
   breadcrumbSchema,
   faqSchema,
-  serviceSchema,
-  localBusinessSchema,
 } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
