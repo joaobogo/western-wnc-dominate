@@ -198,13 +198,93 @@ export const useInternalPageHead = (title: string, description: string, path: st
   }, [title, description, path]);
 };
 
+/** Cities in the service footprint — emitted as schema.org City nodes. */
+const SERVED_CITIES: { name: string; region: string }[] = [
+  { name: "Franklin", region: "NC" },
+  { name: "Sylva", region: "NC" },
+  { name: "Highlands", region: "NC" },
+  { name: "Cashiers", region: "NC" },
+  { name: "Sapphire", region: "NC" },
+  { name: "Glenville", region: "NC" },
+  { name: "Lake Toxaway", region: "NC" },
+  { name: "Cullowhee", region: "NC" },
+  { name: "Dillsboro", region: "NC" },
+  { name: "Bryson City", region: "NC" },
+  { name: "Cherokee", region: "NC" },
+  { name: "Whittier", region: "NC" },
+  { name: "Scaly Mountain", region: "NC" },
+  { name: "Otto", region: "NC" },
+  { name: "Waynesville", region: "NC" },
+  { name: "Sky Valley", region: "GA" },
+  { name: "Clayton", region: "GA" },
+];
+
+/** Monday–Friday, 8:00–17:00 for every location. */
+const BUSINESS_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+];
+
+/** Verified public profiles used for sameAs on the business + organization nodes. */
+const PROFILE_URLS = [
+  "https://www.facebook.com/highlanderroof",
+  "https://www.linkedin.com/company/highlander-roofing-services-inc/",
+  "https://www.instagram.com/highlanderroofingservices/",
+];
+
+/** Franklin showroom — physical location node. */
+export const franklinLocationSchema = () => ({
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#franklin-showroom`,
+  name: `${SITE_NAME} — Franklin Showroom`,
+  url: BASE_URL,
+  image: DEFAULT_IMAGE,
+  telephone: "+1-828-524-7773",
+  parentOrganization: { "@id": `${BASE_URL}/#organization` },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "76 Creative Dr",
+    addressLocality: "Franklin",
+    addressRegion: "NC",
+    postalCode: "28734",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+  openingHoursSpecification: BUSINESS_HOURS,
+});
+
+/** Sylva showroom — physical location node. */
+export const sylvaLocationSchema = () => ({
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#sylva-showroom`,
+  name: `${SITE_NAME} — Sylva Showroom`,
+  url: BASE_URL,
+  image: DEFAULT_IMAGE,
+  telephone: "+1-828-476-4000",
+  parentOrganization: { "@id": `${BASE_URL}/#organization` },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "28 Cross Stitch Mountain Rd",
+    addressLocality: "Sylva",
+    addressRegion: "NC",
+    postalCode: "28779",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 35.3734, longitude: -83.2254 },
+  openingHoursSpecification: BUSINESS_HOURS,
+});
+
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
   name: SITE_NAME,
   legalName: "Highlander Building Services, Inc.",
-  alternateName: "Highlander Building Services",
+  alternateName: "Highlander Roofing Services",
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
   image: DEFAULT_IMAGE,
@@ -221,18 +301,12 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
-  areaServed: [
-    { "@type": "City", name: "Franklin", "@id": "https://en.wikipedia.org/wiki/Franklin,_North_Carolina" },
-    { "@type": "City", name: "Sylva" },
-    { "@type": "City", name: "Highlands" },
-    { "@type": "City", name: "Cashiers" },
-    { "@type": "City", name: "Brevard" },
-    { "@type": "City", name: "Waynesville" },
-    { "@type": "City", name: "Bryson City" },
-    { "@type": "City", name: "Cullowhee" },
-    { "@type": "City", name: "Dillsboro" },
-    { "@type": "AdministrativeArea", name: "Western North Carolina" },
-  ],
+  areaServed: SERVED_CITIES.map((c) => ({ "@type": "City", name: c.name, ...(c.region ? { addressRegion: c.region } : {}) })).concat([
+    { "@type": "City", name: "Western North Carolina" },
+  ] as never),
+  openingHoursSpecification: BUSINESS_HOURS,
+  department: [franklinLocationSchema(), sylvaLocationSchema()],
+  location: [{ "@id": `${BASE_URL}/#franklin-showroom` }, { "@id": `${BASE_URL}/#sylva-showroom` }],
   serviceArea: {
     "@type": "GeoCircle",
     geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
@@ -261,11 +335,7 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   currenciesAccepted: "USD",
   foundingDate: "2017",
   slogan: "Built for the Mountains. Built for Life.",
-  sameAs: [
-    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
-    "https://www.facebook.com/highlanderroof/reels/",
-    "https://www.instagram.com/highlanderroofingservices/",
-  ],
+  sameAs: PROFILE_URLS,
   ...overrides,
 });
 
@@ -293,11 +363,7 @@ export const organizationSchema = () => ({
     areaServed: "US-NC",
     availableLanguage: "English",
   },
-  sameAs: [
-    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
-    "https://www.facebook.com/highlanderroof/reels/",
-    "https://www.instagram.com/highlanderroofingservices/",
-  ],
+  sameAs: PROFILE_URLS,
 });
 
 export const websiteSchema = () => ({
