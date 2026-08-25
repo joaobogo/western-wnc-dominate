@@ -8,6 +8,8 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RelatedLinks from "@/components/RelatedLinks";
+import TrustStrip from "@/components/TrustStrip";
+import InspectionForm from "@/components/InspectionForm";
 
 type QA = { q: string; a: string };
 type Category = { id: string; label: string; items: QA[] };
@@ -266,6 +268,8 @@ const FAQ = () => {
           </div>
         </section>
 
+        <TrustStrip />
+
         {/* CATEGORY NAV */}
         <section className="bg-secondary border-y border-border sticky top-[var(--header-height,80px)] z-30">
           <div className="container-tight py-3 overflow-x-auto">
@@ -348,12 +352,15 @@ const FAQ = () => {
             </div>
           </div>
         </section>
+        <InspectionForm />
+
       <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"
           columns={2}
           links={[
             { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Roofing Cost Guide (2026)", href: "/roofing-cost-western-nc", description: "What a new roof costs in Western NC" },
             { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Repair scope and timelines" },
             { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
             { label: "Construction Division", href: "/construction", description: "Additions, renovations, and outdoor living" },
