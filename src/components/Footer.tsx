@@ -1,4 +1,4 @@
-import { BUSINESS, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { BUSINESS, FRANKLIN, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import LocationCards from "@/components/LocationCards";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -326,9 +326,9 @@ const Footer = () => {
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-body-xs text-muted-foreground font-body tracking-wide">
-            <span>© {new Date().getFullYear()} Highlander Building Services.</span>
+            <span>© {new Date().getFullYear()} {BUSINESS.brandName}.</span>
             <span className="hidden md:inline text-border">·</span>
-            <span>NC General Contractor License #87234</span>
+            <span>{BUSINESS.licenseNumber}</span>
             <span className="hidden md:inline text-border">·</span>
             <span>Fully Insured</span>
           </div>
