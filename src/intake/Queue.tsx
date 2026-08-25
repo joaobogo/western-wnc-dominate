@@ -125,7 +125,7 @@ export default function Queue() {
 
               <div className="min-w-0 flex-1">
                 <Link
-                  to={`/intake/queue/${r.id}`}
+                  to={`/front-desk/queue/${r.id}`}
                   className="hl-slab text-[17px] hover:underline"
                 >
                   {[r.first_name, r.last_name].filter(Boolean).join(" ") ||

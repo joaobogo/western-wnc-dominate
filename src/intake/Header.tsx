@@ -40,10 +40,10 @@ export function Header() {
 
 
         <nav className="flex items-center gap-4 text-[14px] font-semibold">
-          <Link to="/intake" style={linkStyle(pathname === "/intake")}>
+          <Link to="/front-desk" style={linkStyle(pathname === "/front-desk")}>
             Call sheet
           </Link>
-          <Link to="/intake/queue" style={linkStyle(pathname.startsWith("/intake/queue"))}>
+          <Link to="/front-desk/queue" style={linkStyle(pathname.startsWith("/front-desk/queue"))}>
             Queue
           </Link>
         </nav>
