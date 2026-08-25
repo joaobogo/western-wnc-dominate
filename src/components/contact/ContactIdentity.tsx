@@ -1,5 +1,6 @@
-import { FRANKLIN_STREET, PHONE_DISPLAY } from "@/data/business";
-import { MapPin, Building2, Phone, Mail, ArrowRight } from "lucide-react";
+import { BUSINESS, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import LocationCards from "@/components/LocationCards";
+import { Building2, Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import MapEmbed from "@/components/contact/MapEmbed";
 import OfficeHours from "@/components/contact/OfficeHours";
@@ -20,39 +21,26 @@ const ContactIdentity = () => (
             Where We Are
           </span>
           <h2 id="contact-identity-heading" className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">
-            Highlander Building Services, Inc.
+            {BUSINESS.legalName}
           </h2>
           <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-6">
             A locally owned roofing and construction company based in Franklin, North Carolina, working across
             Macon, Jackson, Haywood, Swain, Clay, Cherokee, and Transylvania counties with in-house crews.
           </p>
 
+          <LocationCards className="mb-8" />
+
           <ul className="space-y-4 mb-8">
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
-              <div>
-                <p className="text-sm font-heading font-semibold text-foreground">Franklin Office</p>
-                <address className="not-italic text-sm text-muted-foreground font-body">
-                  {FRANKLIN_STREET}<br />Franklin, NC 28734
-                </address>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
-              <a href="tel:+18285247773" className="text-sm font-heading font-semibold text-foreground hover:text-primary">
-                {PHONE_DISPLAY}
-              </a>
-            </li>
-            <li className="flex items-start gap-3">
               <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
-              <a href="mailto:info@highlandernc.com" className="text-sm font-body text-muted-foreground hover:text-primary">
-                info@highlandernc.com
+              <a href={`mailto:${BUSINESS.email}`} className="text-sm font-body text-muted-foreground hover:text-primary">
+                {BUSINESS.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Building2 className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <p className="text-sm text-muted-foreground font-body">
-                Licensed North Carolina general contractor · Fully insured · CertainTeed ShingleMaster credentialed
+                Licensed North Carolina general contractor ({BUSINESS.licenseNumber}) · Fully insured · CertainTeed ShingleMaster credentialed
               </p>
             </li>
           </ul>
@@ -93,7 +81,7 @@ const ContactIdentity = () => (
                 Browse All Towns
               </Link>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 className="btn btn-ghost btn-md"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
