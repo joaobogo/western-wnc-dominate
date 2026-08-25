@@ -151,6 +151,20 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /waynesville                                                 /service-areas/waynesville-nc                      301!
 /bryson-city                                                 /service-areas/bryson-city-nc                      301!
 
+# --- Hibu pages still indexed on www (confirmed live 2026-08-25) ---
+/commercial-maintenance-programs                             /roofing/commercial                                301!
+/clay-tile-repair                                            /roofing/specialty                                 301!
+/cedar-shake-installation                                    /roofing/specialty                                 301!
+/synthetic-roof-installation                                 /roofing/brava-synthetic                           301!
+/brava-roof-tiles-installation                               /roofing/brava-synthetic                           301!
+/roof-tear-off                                               /roofing/roof-replacement                          301!
+/roof-deck-installation                                      /roofing/roof-replacement                          301!
+/gutter-guard-installation                                   /roofing/gutters                                   301!
+/screened-and-covered-porches                                /construction/outdoor-living                       301!
+/retaining-walls                                             /construction/outdoor-living                       301!
+/custom-outdoor-living-design                                /construction/outdoor-living                       301!
+
+
 # ============================================================
 # Legacy /contact/[service]-service-area/[town] Hibu pattern
 # Preserve the final town slug at the edge; the service segment is discarded.
