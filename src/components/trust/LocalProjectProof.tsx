@@ -60,6 +60,8 @@ interface LocalProjectProofProps {
   town: { name: string; slug: string; county: string };
   category?: ProjectDetail["category"];
   heading?: string;
+  /** How many real projects to show. Never fabricates — caps at what exists. */
+  limit?: number;
   className?: string;
 }
 
@@ -67,9 +69,10 @@ const LocalProjectProof = ({
   town,
   category,
   heading,
+  limit = 2,
   className = "",
 }: LocalProjectProofProps) => {
-  const picks = pickLocalProjects(town, category);
+  const picks = pickLocalProjects(town, category, limit);
   if (!picks.length) return null;
 
   return (
@@ -80,7 +83,7 @@ const LocalProjectProof = ({
       <p className="text-sm text-muted-foreground mb-6">
         Real Highlander projects, labeled with the town where the work was actually done.
       </p>
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {picks.map(({ project, proximity }) => {
           const ba = project.beforeAfter;
           return (

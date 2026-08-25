@@ -305,7 +305,8 @@ const ServiceTownPage = ({
             <LocalProjectProof
               town={{ name: town.name, slug: town.slug, county: town.county }}
               category="roofing"
-              heading={`${entry.serviceLabel} work near ${town.name}`}
+              limit={3}
+              heading={`Recent work near ${town.name}`}
             />
             <AttributedReviews town={town.name} category="roofing" />
           </div>
