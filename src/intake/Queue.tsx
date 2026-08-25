@@ -73,7 +73,7 @@ export default function Queue() {
             type="button"
             className="hl-choice"
             aria-pressed={filter === f}
-            style={{ minWidth: 64 }}
+            style={{ width: 72, flex: "0 0 auto" }}
             onClick={() => setFilter(f)}
           >
             {f === "ALL" ? "All" : f}
