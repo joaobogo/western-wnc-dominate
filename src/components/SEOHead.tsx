@@ -671,12 +671,19 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
   switch (input.type) {
     case "home": {
       // WebSite + Organization ship statically in index.html — don't duplicate them here.
-      const out: Record<string, unknown>[] = [
-        localBusinessSchema(),
+      // Ratings merge into the single #business node so the graph has one
+      // business entity rather than two nodes sharing an @id.
+      const ratings = input.reviews?.length
+        ? (() => {
+            const { "@context": _c, "@type": _t, "@id": _i, name: _n, url: _u, ...rest } =
+              aggregateReviewSchema(input.reviews, input.aggregate) as Record<string, unknown>;
+            return rest;
+          })()
+        : {};
+      return [
+        localBusinessSchema(ratings),
         breadcrumbSchema([{ name: "Home", url: "/" }]),
       ];
-      if (input.reviews?.length) out.push(aggregateReviewSchema(input.reviews, input.aggregate));
-      return out;
     }
 
     case "town": {
