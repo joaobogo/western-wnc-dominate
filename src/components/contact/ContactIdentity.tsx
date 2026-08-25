@@ -1,6 +1,6 @@
-import { BUSINESS, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { BUSINESS, PHONE_TEL } from "@/data/business";
 import LocationCards from "@/components/LocationCards";
-import { Building2, Mail, ArrowRight } from "lucide-react";
+import { Building2, Mail, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import MapEmbed from "@/components/contact/MapEmbed";
 import OfficeHours from "@/components/contact/OfficeHours";
