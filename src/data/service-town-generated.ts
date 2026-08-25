@@ -357,7 +357,7 @@ function buildMetal(t: TownData): Built {
       },
       {
         heading: `Approvals, access, and what installation is like`,
-        body: `We pull the ${countyShort(t)} County permit and schedule the inspection. Where a ${t.name} property sits inside a community, club, or HOA with an architectural review board, we prepare the panel profile, gauge, and finish-color information those boards ask for and submit it before fabrication starts, so the schedule is not lost to a review cycle. Panels are fabricated to your measurements to reduce field cutting, staging is planned around the steep drives and wooded access common on ${countyShort(t)} County lots, and the site is cleaned and magnet-swept daily. A metal project takes longer on site than an asphalt replacement, and we give you a firm window in writing before we start.`,
+        body: `We pull the ${countyShort(t)} County permit and schedule the inspection. Where a ${t.name} property sits inside a community, club, or HOA with a design review board, we prepare the panel profile, gauge, and finish-color information those boards ask for and submit it before fabrication starts, so the schedule is not lost to a review cycle. Panels are fabricated to your measurements to reduce field cutting, staging is planned around the steep drives and wooded access common on ${countyShort(t)} County lots, and the site is cleaned and magnet-swept daily. A metal project takes longer on site than an asphalt replacement, and we give you a firm window in writing before we start.`,
       },
     ],
     faqs: [
@@ -375,7 +375,7 @@ function buildMetal(t: TownData): Built {
       },
       {
         q: `Will my community or HOA approve a metal roof?`,
-        a: `Many do, and finish and profile are usually what the review turns on. If your ${t.name} property is subject to an architectural review board, we assemble the profile, gauge, and color documentation for the submission and work to their requirements before we fabricate anything.`,
+        a: `Many do, and finish and profile are usually what the review turns on. If your ${t.name} property is subject to a design review board, we assemble the profile, gauge, and color documentation for the submission and work to their requirements before we fabricate anything.`,
       },
     ],
   };
