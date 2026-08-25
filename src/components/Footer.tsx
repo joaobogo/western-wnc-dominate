@@ -1,4 +1,5 @@
-import { FRANKLIN_NAP, FRANKLIN_STREET, PHONE_DISPLAY, SYLVA_NAP, SYLVA_PHONE_DISPLAY } from "@/data/business";
+import { BUSINESS, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import LocationCards from "@/components/LocationCards";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck } from "lucide-react";
