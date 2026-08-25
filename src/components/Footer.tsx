@@ -304,11 +304,11 @@ const Footer = () => {
 
       {/* Trust strip — legal identity, licensing, showrooms */}
       <div className="border-t border-border">
-        <div className="container-tight py-4">
+        <div className="container-tight py-6">
+          <LocationCards className="mb-4" />
           <p className="text-body-xs text-muted-foreground font-body leading-relaxed tracking-wide text-center md:text-left">
-            Highlander Building Services, Inc. (formerly Highlander Roofing Services) · NC General Contractor License #87234 · Fully insured · Franklin showroom: {FRANKLIN_NAP} ·{" "}
-            <a href="tel:+18285247773" className="hover:text-foreground transition-colors">{PHONE_DISPLAY}</a> · Sylva showroom: {SYLVA_NAP} ·{" "}
-            <a href="tel:+18284764000" className="hover:text-foreground transition-colors">{SYLVA_PHONE_DISPLAY}</a> · Est. 2017
+            {BUSINESS.legalName} (formerly {BUSINESS.alternateNames[0]}) · {BUSINESS.licenseNumber} · Fully insured · Est. {BUSINESS.foundingYear} ·{" "}
+            <a href={PHONE_TEL} className="hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
           </p>
         </div>
       </div>
