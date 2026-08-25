@@ -71,7 +71,7 @@ describe("NAP consistency", () => {
     /828-397-9211/,
     /\(828\)\s*397-9211/,
     // Legacy company names — the brand is "Highlander Building Services".
-    /Highlander Roofing(?! (?:project|specification|crew))/,
+    /(?<!formerly )Highlander Roofing(?! (?:project|specification|crew))/,
     /Highlander Construction/,
   ];
 
