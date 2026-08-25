@@ -5,8 +5,7 @@ import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
 import SEOHead, {
   townSchema,
   breadcrumbSchema,
-  faqSchema,
-} from "@/components/SEOHead";
+  faqSchema, serviceSchema,} from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -124,6 +123,12 @@ const ServiceTownPage = ({
             county: town.county,
             state: town.state,
             description: entry.intro,
+          }),
+          serviceSchema({
+            name: `${entry.serviceLabel} in ${town.name}, ${town.state}`,
+            description: entry.metaDescription,
+            url: resolvedCanonical,
+            areaServedCity: { name: town.name, region: town.state },
           }),
           breadcrumbSchema([
             { name: "Home", url: "/" },
