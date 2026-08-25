@@ -419,11 +419,32 @@ export const webPageSchema = (page: {
   ...(page.primaryEntityId ? { mainEntity: { "@id": page.primaryEntityId } } : {}),
 });
 
-export const serviceSchema = (service: { name: string; description: string; url: string; areaServed?: string }) => ({
-  "@context": "https://schema.org", "@type": "Service", serviceType: service.name, name: service.name,
-  description: service.description, url: `${BASE_URL}${service.url}`,
+export const cityNode = (name: string, region = "NC") => ({
+  "@type": "City",
+  name,
+  address: { "@type": "PostalAddress", addressLocality: name, addressRegion: region, addressCountry: "US" },
+});
+
+export const serviceSchema = (service: {
+  name: string;
+  description: string;
+  url: string;
+  areaServed?: string;
+  areaServedCity?: { name: string; region?: string };
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}${service.url}#service`,
+  serviceType: service.name,
+  name: service.name,
+  description: service.description,
+  url: `${BASE_URL}${service.url}`,
   provider: { "@id": `${BASE_URL}/#business` },
-  areaServed: service.areaServed || "Western North Carolina",
+  areaServed: service.areaServedCity
+    ? cityNode(service.areaServedCity.name, service.areaServedCity.region || "NC")
+    : service.areaServed
+      ? cityNode(service.areaServed)
+      : SERVED_CITIES.map((c) => cityNode(c.name, c.region)),
 });
 
 export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
@@ -680,6 +701,14 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
           primaryEntityId: businessId,
         }),
       ];
+      out.push(
+        serviceSchema({
+          name: `Roofing & Construction Services in ${input.town.name}, ${input.town.state}`,
+          description: input.page?.description || input.town.description,
+          url: path,
+          areaServedCity: { name: input.town.name, region: input.town.state },
+        }),
+      );
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
       return out;
     }
