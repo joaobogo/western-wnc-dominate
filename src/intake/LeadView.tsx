@@ -38,7 +38,7 @@ export default function LeadView() {
     return (
       <div className="mx-auto max-w-[720px] px-4 py-6">
         <p style={{ color: "var(--hl-red)" }}>{error}</p>
-        <Link to="/queue" className="hl-btn-quiet inline-block mt-4">
+        <Link to="/intake/queue" className="hl-btn-quiet inline-block mt-4">
           Back to queue
         </Link>
       </div>
@@ -53,7 +53,7 @@ export default function LeadView() {
 
   return (
     <div className="mx-auto max-w-[720px] px-4 py-5">
-      <Link to="/queue" className="hl-label hover:underline">
+      <Link to="/intake/queue" className="hl-label hover:underline">
         ← QUEUE
       </Link>
 

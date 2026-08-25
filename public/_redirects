@@ -150,10 +150,28 @@
 /contact/*                                                    /service-areas                                       301!
 
 # ============================================================
-# SPA fallback — must be last
+# Legacy /service-locations → /service-areas (must stay above rewrites)
 # ============================================================
-/*    /index.html   200
-
-# Legacy /service-locations → /service-areas
 /service-locations                                           /service-areas                                     301!
 /service-locations/*                                         /service-areas                                     301!
+
+# ============================================================
+# App-only rewrites — every public URL is now a real prerendered
+# file in dist, so there is NO global /* fallback. Only these
+# client-rendered app paths fall back to the SPA shell; anything
+# else falls through to dist/404.html with a real 404 status.
+# ============================================================
+/admin/*                 /index.html   200
+/lp/*                    /index.html   200
+/.lovable/*              /index.html   200
+/intake                  /index.html   200
+/intake/*                /index.html   200
+/consultation            /index.html   200
+/roofing-intake          /index.html   200
+/construction-intake     /index.html   200
+/roofing-builder         /index.html   200
+/construction-builder    /index.html   200
+/design-intake           /index.html   200
+/quote-flow              /index.html   200
+/seo-monitoring          /index.html   200
+/realwork-diagnostics    /index.html   200

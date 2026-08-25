@@ -89,6 +89,69 @@ if (existsSync(seoHeadPath)) {
   if (!/highlandernc\.com/.test(src)) warn("SEOHead.tsx missing canonical host reference.");
 }
 
+// ---------- 5. Prerender output checks (run after `npm run build`) ----------
+// Skipped when dist/ has not been built yet, so `npm run seo:check` still
+// works standalone; enforced hard whenever a build exists.
+const HOME_TITLE = "Highlander Building Services | Western NC";
+const APP_ONLY_PREFIXES = [
+  "/admin", "/lp", "/.lovable", "/intake", "/consultation", "/roofing-intake",
+  "/construction-intake", "/roofing-builder", "/construction-builder",
+  "/design-intake", "/quote-flow", "/seo-monitoring", "/realwork-diagnostics",
+];
+
+if (existsSync(resolve("dist/index.html"))) {
+  const xml = readFileSync(sitemapPath, "utf8");
+  const paths = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map(m => new URL(m[1]).pathname.replace(/\/+$/, "") || "/")
+    .filter(p => !APP_ONLY_PREFIXES.some(x => p === x || p.startsWith(`${x}/`)));
+
+  const fileFor = (p) => (p === "/" ? resolve("dist/index.html") : resolve(`dist${p}/index.html`));
+  const present = paths.filter(p => existsSync(fileFor(p)));
+  const coverage = paths.length ? present.length / paths.length : 0;
+  if (coverage < 0.95)
+    fail(`Prerender coverage ${(coverage * 100).toFixed(1)}% (${present.length}/${paths.length}) — below the 95% floor.`);
+
+  if (!existsSync(resolve("dist/404.html"))) fail("dist/404.html missing — NotFound was not prerendered.");
+
+  for (const p of present) {
+    const html = readFileSync(fileFor(p), "utf8");
+    const title = (html.match(/<title>([^<]*)<\/title>/i) || [, ""])[1].trim();
+    if (p !== "/" && title === HOME_TITLE)
+      fail(`Prerendered ${p} still carries the homepage <title>.`);
+
+    const canonicals = [...html.matchAll(/<link[^>]+rel="canonical"[^>]*href="([^"]+)"/gi)].map(m => m[1]);
+    const expected = p === "/" ? `${BASE}/` : `${BASE}${p}`;
+    if (canonicals.length !== 1)
+      fail(`Prerendered ${p} has ${canonicals.length} canonical tags (expected exactly 1).`);
+    else if (canonicals[0].replace(/\/+$/, "") !== expected.replace(/\/+$/, ""))
+      fail(`Prerendered ${p} canonical is ${canonicals[0]} (expected ${expected}).`);
+
+    const h1s = (html.match(/<h1[\s>]/gi) || []).length;
+    if (h1s > 1) fail(`Prerendered ${p} has ${h1s} <h1> elements (expected 1).`);
+  }
+
+  // Route audit: every public route in the router must be either prerendered
+  // or covered by an explicit SPA rewrite / 301 in public/_redirects.
+  const appSrc = readFileSync(resolve("src/App.tsx"), "utf8");
+  const redirects = readFileSync(resolve("public/_redirects"), "utf8");
+  const routeDecls = [...appSrc.matchAll(/<Route\s+path="([^"]+)"\s+element=\{(<[A-Za-z]+)/g)];
+  const staticPublicRoutes = routeDecls
+    .filter(([, , el]) => el !== "<Navigate")
+    .map(([, path]) => path)
+    .filter(p => p.startsWith("/") && !p.includes(":") && !p.includes("*"));
+
+  const rewriteCovered = (p) =>
+    APP_ONLY_PREFIXES.some(x => p === x || p.startsWith(`${x}/`)) ||
+    new RegExp(`^${p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s`, "m").test(redirects);
+
+  const uncovered = [...new Set(staticPublicRoutes)].filter(
+    p => !existsSync(fileFor(p.replace(/\/+$/, "") || "/")) && !rewriteCovered(p),
+  );
+  for (const p of uncovered)
+    fail(`Public route ${p} is neither prerendered nor covered by a rewrite/redirect.`);
+}
+
+
 // ---------- Report ----------
 for (const w of warnings) console.warn(`⚠  ${w}`);
 for (const f of failures) console.error(`✗  ${f}`);

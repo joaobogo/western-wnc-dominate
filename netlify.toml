@@ -7,7 +7,7 @@
 # and enable "Deploy only the production branch" (or add edit/* below).
 
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "npm install --legacy-peer-deps && npx playwright install --with-deps chromium && npm run build"
   publish = "dist"
 
 [build.environment]
@@ -17,9 +17,10 @@
 # Build every Lovable edit branch as a branch deploy too, so a new
 # edit/** branch never leaves the site stale.
 [context.branch-deploy]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "npm install --legacy-peer-deps && npx playwright install --with-deps chromium && npm run build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# NOTE: there is no global /* -> /index.html catch-all any more. Every public
+# URL ships as a real prerendered HTML file in dist (see scripts/prerender.mjs),
+# and unknown URLs fall through to dist/404.html with a real 404 status.
+# Scoped SPA rewrites for app-only paths live in public/_redirects, below the
+# 301! rules. Keep the two files in sync.
