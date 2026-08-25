@@ -70,7 +70,7 @@ const materials: Material[] = [
   },
   {
     name: "Synthetic slate and shake",
-    href: "/roofing/synthetic",
+    href: "/roofing/brava-synthetic",
     tier: "Upper tier — comparable to or above standing seam",
     lifespan: "Long-life composite system",
     body:
@@ -90,7 +90,7 @@ const materials: Material[] = [
   },
   {
     name: "Flat and low-slope (TPO)",
-    href: "/commercial-roofing",
+    href: "/roofing/commercial",
     tier: "Priced per square foot of membrane, not per roofing square",
     lifespan: "Service life tied to membrane thickness and detail quality",
     body:
@@ -479,7 +479,7 @@ const RoofingCostWNC = () => {
             { label: "Roofing Services Hub", href: "/roofing", description: "Every roofing service we offer" },
             { label: "Roof Replacement", href: "/roofing/roof-replacement", description: "Process, materials, and timeline" },
             { label: "Metal Roofing", href: "/roofing/metal", description: "Standing seam and exposed fastener" },
-            { label: "Synthetic Slate & Shake", href: "/roofing/synthetic", description: "Brava composite systems" },
+            { label: "Synthetic Slate & Shake", href: "/roofing/brava-synthetic", description: "Brava composite systems" },
             { label: "Roof Repair", href: "/roofing/roof-repair", description: "Leaks, flashing, and storm repairs" },
             { label: "Financing", href: "/financing", description: "Options for qualified homeowners" },
             { label: "All Questions Answered", href: "/faq", description: "The full FAQ hub" },
