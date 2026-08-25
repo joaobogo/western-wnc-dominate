@@ -18,7 +18,14 @@ export function Header() {
       }}
     >
       <div className="mx-auto max-w-[1180px] px-4 py-3 flex items-center justify-between gap-4">
-        <Link to="/" className="min-w-0 flex items-center" aria-label={`${COMPANY.name} — call sheet`}>
+        <a
+          href="https://highlandernc.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="min-w-0 flex items-center"
+          aria-label={`${COMPANY.name} — open website in a new tab`}
+          title="Open highlandernc.com"
+        >
           <img
             src={logoCream}
             alt={`${COMPANY.name} logo`}
@@ -27,7 +34,9 @@ export function Header() {
             decoding="async"
             className="h-9 w-auto sm:h-11 max-w-[220px] sm:max-w-none object-contain"
           />
-        </Link>
+        </a>
+
+
 
 
         <nav className="flex items-center gap-4 text-[14px] font-semibold">
