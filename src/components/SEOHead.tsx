@@ -578,23 +578,23 @@ export const reviewSchema = (review: ReviewInput) => ({
   ...(review.location ? { locationCreated: { "@type": "Place", name: review.location } } : {}),
 });
 
-/** AggregateRating + embedded Reviews for a reviews/testimonials page. */
-export const aggregateReviewSchema = (
-  reviews: ReviewInput[],
-  aggregate?: { ratingValue: number; reviewCount: number },
-) => {
-  const avg = aggregate?.ratingValue ?? (reviews.reduce((s, r) => s + r.rating, 0) / Math.max(reviews.length, 1));
-  const count = aggregate?.reviewCount ?? reviews.length;
+/**
+ * AggregateRating + embedded Reviews. ONLY legal on /reviews, where the same
+ * reviews and the same rating figure are visible on the page. The rating always
+ * comes from BUSINESS.reviewSummary (the live Google figure) — never a literal.
+ */
+export const aggregateReviewSchema = (reviews: ReviewInput[]) => {
+  const summary = BUSINESS.reviewSummary;
   return {
     "@context": "https://schema.org",
-    "@type": "RoofingContractor",
+    "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
     "@id": `${BASE_URL}/#business`,
     name: SITE_NAME,
     url: BASE_URL,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: Number(avg.toFixed(1)),
-      reviewCount: count,
+      ratingValue: summary.ratingValue,
+      reviewCount: summary.reviewCount,
       bestRating: 5,
       worstRating: 1,
     },
@@ -607,6 +607,7 @@ export const aggregateReviewSchema = (
     })),
   };
 };
+
 
 export interface ProductSchemaInput {
   name: string;
