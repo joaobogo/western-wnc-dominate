@@ -1,4 +1,4 @@
-import { FRANKLIN_NAP, PHONE_DISPLAY } from "@/data/business";
+import { BUSINESS, FRANKLIN_NAP, PHONE_DISPLAY } from "@/data/business";
 import { Link } from "react-router-dom";
 import { Mail, Phone, Shield } from "lucide-react";
 import Header from "@/components/Header";
