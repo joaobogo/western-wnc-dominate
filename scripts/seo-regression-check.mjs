@@ -9,7 +9,7 @@
  * but do not fail the build. Wire into CI via `npm run seo:check` after
  * `vite build`.
  */
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 const BASE = (process.argv.find(a => a.startsWith("--base=")) || "--base=https://highlandernc.com").split("=")[1];
@@ -157,7 +157,13 @@ const APP_ONLY_PREFIXES = [
   "/design-intake", "/quote-flow", "/seo-monitoring", "/realwork-diagnostics",
 ];
 
-if (existsSync(resolve("dist/index.html"))) {
+const distIndexPath = resolve("dist/index.html");
+const distIsCurrent =
+  existsSync(distIndexPath) &&
+  existsSync(sitemapPath) &&
+  statSync(distIndexPath).mtimeMs >= statSync(sitemapPath).mtimeMs;
+
+if (distIsCurrent) {
   const xml = readFileSync(sitemapPath, "utf8");
   const paths = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map(m => new URL(m[1]).pathname.replace(/\/+$/, "") || "/")
