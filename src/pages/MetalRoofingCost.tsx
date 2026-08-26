@@ -219,11 +219,11 @@ const MetalRoofingCost = () => (
       <RelatedLinks
         heading="Keep reading"
         links={[
-          { label: "Metal roofing in Western North Carolina", to: "/roofing/metal" },
-          { label: "Full Western NC roofing cost guide", to: "/roofing-cost-western-nc" },
-          { label: "Metal vs. shingle roofs in Western NC", to: "/blog/metal-vs-shingle-roof-western-nc" },
-          { label: "Roof replacement", to: "/roofing/roof-replacement" },
-          { label: "Financing options", to: "/financing" },
+          { label: "Metal roofing in Western North Carolina", href: "/roofing/metal" },
+          { label: "Full Western NC roofing cost guide", href: "/roofing-cost-western-nc" },
+          { label: "Metal vs. shingle roofs in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc" },
+          { label: "Roof replacement in Western NC", href: "/roofing/roof-replacement" },
+          { label: "Roof financing options", href: "/financing" },
         ]}
       />
     </main>
