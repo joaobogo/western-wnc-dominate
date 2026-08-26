@@ -20,6 +20,7 @@ import { getTownBySlug, towns } from "@/data/towns";
 import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
+  isServiceTownIndexable,
   tier1FlatEntries,
   tier2FlatEntries,
 } from "@/data/service-town-content";
@@ -119,6 +120,10 @@ const ServiceTownPage = ({
         title={entry.metaTitle}
         description={entry.metaDescription}
         path={resolvedCanonical}
+        // Templated coverage pages (town name swapped into a shared frame) are
+        // crawlable for their links but not indexable — only hand-written
+        // service × town pages compete in search.
+        noindex={isServiceTownIndexable(entry.townSlug, entry.serviceSlug) ? false : "follow"}
         jsonLd={[
           ...businessGraph(),
           // A service in a town is a Service with areaServed — not another
