@@ -33,7 +33,7 @@ describe("showroom (location) pages", () => {
       expect(showroom.metaTitle).toBe(
         `Roofing & Construction Showroom in ${showroom.location.locality}, ${showroom.location.region} | Highlander`,
       );
-      expect(showroom.metaDescription.length).toBeLessThanOrEqual(175);
+      expect(showroom.metaDescription.length).toBeLessThanOrEqual(160);
     });
   }
 
