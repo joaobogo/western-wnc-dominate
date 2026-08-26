@@ -62,6 +62,16 @@ const TownPage = () => {
   // Swain, and Haywood County markets; Franklin for everything else.
   const showroom = nearestShowroom(town.slug);
 
+  // Franklin is our home market and the homepage owns "roofing company franklin
+  // nc" — this page covers Franklin neighborhoods and links up to the homepage.
+  const isPrimaryTownPage = town.slug === "franklin-nc";
+
+  const leadParagraph = isPrimaryTownPage
+    ? `Highlander Building Services is the roofing company headquartered in ${town.name}, NC. This page covers the ${town.name} neighborhoods we work in every week — if you need a roofer here, our crews and showroom are minutes away.`
+    : `Highlander Building Services is a roofing company and licensed builder serving ${town.name}, NC. When ${town.county} homeowners need a roofer who understands ${town.name} elevation, weather, and permitting, our crews work out of the ${showroom.location.locality} showroom.`;
+
+
+
   return (
     <>
       <SEOHead
