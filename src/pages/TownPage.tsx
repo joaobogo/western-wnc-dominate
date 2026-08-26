@@ -58,6 +58,9 @@ const TownPage = () => {
   const townProof = getTownProofContent(town.slug);
   const townFaqs = getTownFAQs(town.slug, townProof?.faqs);
   const localRelevance = getLocalRelevance(town.slug);
+  // The showroom this town is actually served from — Sylva for the Jackson,
+  // Swain, and Haywood County markets; Franklin for everything else.
+  const showroom = nearestShowroom(town.slug);
 
   return (
     <>
