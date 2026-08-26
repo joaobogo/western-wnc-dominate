@@ -37,8 +37,7 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/reviews" },
   { path: "/recent-projects" },
   { path: "/careers" },
-  { path: "/community" },
-  { path: "/giving-back" },
+  { path: "/community" }, // /giving-back 301s here — one URL only
   { path: "/faq" },
   { path: "/roofing-cost-western-nc", changefreq: "monthly", priority: "0.8" },
   { path: "/roofing/metal/cost", changefreq: "monthly", priority: "0.8" },
@@ -109,11 +108,10 @@ const serviceTownRoutes: SitemapEntry[] = indexablePairs.map((e) => ({
   path: `/service-areas/${e.townSlug}/${e.serviceSlug}`,
 }));
 
-// Dynamic: flat-slug service×town pages ("/roofing-highlands-nc"). These are
-// real, self-canonical, indexable routes in src/App.tsx.
-const flatSlugRoutes: SitemapEntry[] = [...tier1FlatEntries, ...tier2FlatEntries]
-  .filter((e) => indexablePairKeys.has(`${e.townSlug}|${e.serviceSlug}`))
-  .map((e) => ({ path: `/${e.flatSlug}` }));
+// Flat-slug service×town URLs ("/roofing-highlands-nc") are legacy shapes that
+// render the SAME page as /service-areas/{town}/{service}. They 301 to the
+// nested URL in public/_redirects, so they are deliberately NOT in the sitemap.
+const flatSlugRoutes: SitemapEntry[] = [];
 
 // Dynamic: individual project case-study pages (/projects/{slug}).
 const projectRoutes: SitemapEntry[] = projectDetails.map((p) => ({
