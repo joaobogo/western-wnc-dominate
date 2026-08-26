@@ -1,4 +1,5 @@
-import { FRANKLIN_NAP, PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, napLine } from "@/data/business";
+import { nearestShowroom } from "@/data/showrooms";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import Section from "@/components/layout/Section";
@@ -57,6 +58,9 @@ const TownPage = () => {
   const townProof = getTownProofContent(town.slug);
   const townFaqs = getTownFAQs(town.slug, townProof?.faqs);
   const localRelevance = getLocalRelevance(town.slug);
+  // The showroom this town is actually served from — Sylva for the Jackson,
+  // Swain, and Haywood County markets; Franklin for everything else.
+  const showroom = nearestShowroom(town.slug);
 
   return (
     <>
@@ -192,7 +196,7 @@ const TownPage = () => {
 
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
-          answer={`Yes. Highlander Building Services, Inc. is based at ${FRANKLIN_NAP} and works throughout ${town.name} and the rest of ${town.county}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
+          answer={`Yes. Highlander Building Services, Inc. serves ${town.name} and the rest of ${town.county} from our ${showroom.location.locality} showroom at ${napLine(showroom.location)}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
           points={[
             `Local crews serving ${town.name}, ${town.state}`,
             `Call ${PHONE_PLAIN} to reach the team directly`,
@@ -200,6 +204,27 @@ const TownPage = () => {
             "Estimates scoped in person, not over guesswork",
           ]}
         />
+
+        {/* Nearest physical showroom — service-area pages point at a real building */}
+        <Section density="compact" width="wide">
+          <div className="flex flex-col gap-4 border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="eyebrow mb-1 text-muted-foreground">Nearest showroom</p>
+              <p className="font-body text-body font-semibold text-foreground">
+                {showroom.cardLabel} — {napLine(showroom.location)}
+              </p>
+              <p className="font-body text-body-sm text-muted-foreground">
+                Open {showroom.location.hours[0].label}. Walk in and see materials in person.
+              </p>
+            </div>
+            <Link to={showroom.path} className="btn btn-secondary shrink-0">
+              <span>Visit the {showroom.location.locality} showroom</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </Section>
+
+
 
         {/* 2. LOCAL CONDITIONS — what is specific to this town */}
         <Section density="default" className="bg-secondary/40 border-y border-border/60" containerClassName="grid lg:grid-cols-2 gap-12 items-start">

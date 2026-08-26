@@ -39,6 +39,8 @@ const CountyPage = lazy(() => import("./pages/CountyPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPost"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
+const Locations = lazy(() => import("./pages/Locations"));
+const LocationPage = lazy(() => import("./pages/LocationPage"));
 const About = lazy(() => import("./pages/About"));
 const GivingBack = lazy(() => import("./pages/GivingBack"));
 const Team = lazy(() => import("./pages/Team"));
@@ -176,6 +178,11 @@ const App = () => (
 
           {/* ─── Company ─── */}
           {/* ─── Legacy /service-locations → /service-areas (301 at edge) ─── */}
+          {/* ─── Physical showrooms (locations) — distinct from service areas ─── */}
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/locations/franklin-nc" element={<LocationPage slug="franklin-nc" />} />
+          <Route path="/locations/sylva-nc" element={<LocationPage slug="sylva-nc" />} />
+
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
           <Route path="/service-areas/county/:slug" element={<CountyPage />} />

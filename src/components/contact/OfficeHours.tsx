@@ -5,7 +5,7 @@ import { Clock, Calendar, Phone, MessageCircle } from "lucide-react";
  *
  * Mirrors the NAP and hours in the Footer so every surface stays consistent.
  * No promises beyond what the team can actually keep: calls during working
- * hours, messages returned, and weekend appointments by arrangement.
+ * hours, messages returned, and storm calls handled as fast as we can.
  */
 const OfficeHours = ({ className = "" }: { className?: string }) => {
   const HOURS = [
@@ -14,8 +14,8 @@ const OfficeHours = ({ className = "" }: { className?: string }) => {
     { day: "Wednesday", hours: "8:00 AM – 5:00 PM" },
     { day: "Thursday", hours: "8:00 AM – 5:00 PM" },
     { day: "Friday", hours: "8:00 AM – 5:00 PM" },
-    { day: "Saturday", hours: "By appointment" },
-    { day: "Sunday", hours: "By appointment" },
+    { day: "Saturday", hours: "Closed" },
+    { day: "Sunday", hours: "Closed" },
   ];
 
   return (
@@ -31,7 +31,7 @@ const OfficeHours = ({ className = "" }: { className?: string }) => {
         {HOURS.map((item) => (
           <div key={item.day} className="flex items-center justify-between text-body-sm font-body">
             <dt className="text-muted-foreground">{item.day}</dt>
-            <dd className={`font-semibold ${item.hours.includes("appointment") ? "text-[hsl(var(--gold-ink))]" : "text-foreground"}`}>
+            <dd className={`font-semibold ${item.hours === "Closed" ? "text-[hsl(var(--gold-ink))]" : "text-foreground"}`}>
               {item.hours}
             </dd>
           </div>

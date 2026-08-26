@@ -713,6 +713,18 @@ export type PageSchemaInput =
   | { type: "reviews"; reviews: ReviewInput[] }
   | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
   | {
+      /**
+       * Physical showroom page. mainEntity is the existing showroom Place node
+       * (`#<id>-showroom`) — never a second business entity.
+       */
+      type: "location";
+      locationId: BusinessLocation["id"];
+      path: string;
+      page: { title: string; description: string };
+      breadcrumbs: { name: string; url: string }[];
+      faqs?: { question: string; answer: string }[];
+    }
+  | {
       type: "tool";
       howTo: Parameters<typeof howToSchema>[0];
       breadcrumbs: { name: string; url: string }[];
@@ -840,6 +852,24 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "tool": {
       return [howToSchema(input.howTo), breadcrumbSchema(input.breadcrumbs)];
     }
+
+    case "location": {
+      const breadcrumbId = `${BASE_URL}${input.path}#breadcrumb`;
+      const out: Record<string, unknown>[] = [
+        ...businessGraph(),
+        breadcrumbSchema(input.breadcrumbs, breadcrumbId),
+        webPageSchema({
+          name: input.page.title,
+          description: input.page.description,
+          url: input.path,
+          breadcrumbId,
+          primaryEntityId: `${BASE_URL}/#${input.locationId}-showroom`,
+        }),
+      ];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
 
     case "generic": {
       const out: Record<string, unknown>[] = [breadcrumbSchema(input.breadcrumbs)];
