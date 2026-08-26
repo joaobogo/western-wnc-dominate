@@ -1,4 +1,5 @@
-import { FRANKLIN_NAP, PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, napLine } from "@/data/business";
+import { nearestShowroom } from "@/data/showrooms";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import Section from "@/components/layout/Section";
@@ -192,7 +193,7 @@ const TownPage = () => {
 
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
-          answer={`Yes. Highlander Building Services, Inc. is based at ${FRANKLIN_NAP} and works throughout ${town.name} and the rest of ${town.county}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
+          answer={`Yes. Highlander Building Services, Inc. serves ${town.name} and the rest of ${town.county} from our ${showroom.location.locality} showroom at ${napLine(showroom.location)}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
           points={[
             `Local crews serving ${town.name}, ${town.state}`,
             `Call ${PHONE_PLAIN} to reach the team directly`,
