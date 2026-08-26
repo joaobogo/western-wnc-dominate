@@ -483,6 +483,29 @@ const authorNode = (author?: string) => {
   return { "@type": "Organization", name: SITE_NAME, "@id": `${BASE_URL}/#organization` };
 };
 
+/**
+ * Person node for a named owner/team member. Only emit for real, named people
+ * whose role and community involvement we can verify.
+ */
+export const personSchema = (slug: string, extra?: { image?: string; description?: string; memberOf?: string[] }) => {
+  const person = KNOWN_PEOPLE.find((p) => p.slug === slug);
+  if (!person) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BASE_URL}/about#${person.slug}`,
+    name: person.name,
+    jobTitle: person.jobTitle,
+    url: `${BASE_URL}/about#${person.slug}`,
+    worksFor: { "@id": `${BASE_URL}/#organization` },
+    ...(extra?.image ? { image: extra.image } : {}),
+    ...(extra?.description ? { description: extra.description } : {}),
+    ...(extra?.memberOf?.length
+      ? { memberOf: extra.memberOf.map((name) => ({ "@type": "Organization", name })) }
+      : {}),
+  };
+};
+
 export const articleSchema = (article: { title: string; description: string; url: string; datePublished: string; dateModified?: string; image?: string; author?: string }) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",

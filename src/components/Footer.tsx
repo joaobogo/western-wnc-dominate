@@ -1,5 +1,6 @@
 import { BUSINESS, FRANKLIN, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import LocationCards from "@/components/LocationCards";
+import VerifiableTrustStrip from "@/components/trust/VerifiableTrustStrip";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck } from "lucide-react";
@@ -273,7 +274,7 @@ const Footer = () => {
               <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={1181} height={393} className="h-5 w-auto flex-shrink-0" />
               <span className="text-body-xs font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
             </div>
-            <span className="text-caption text-muted-foreground font-body leading-tight">Master Installer &amp; Pro Accredited</span>
+            <span className="text-caption text-muted-foreground font-body leading-tight">Certified skylight installer</span>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -306,12 +307,24 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Sitewide verifiable trust strip */}
+      <VerifiableTrustStrip />
+
       {/* Trust strip — legal identity, licensing, showrooms */}
       <div className="border-t border-border">
         <div className="container-tight py-6">
           <LocationCards className="mb-4" />
           <p className="text-body-xs text-muted-foreground font-body leading-relaxed tracking-wide text-center md:text-left">
-            {BUSINESS.legalName} (formerly {BUSINESS.alternateNames[0]}) · {BUSINESS.licenseNumber} · Fully insured · Est. {BUSINESS.foundingYear} ·{" "}
+            {BUSINESS.legalName} (formerly {BUSINESS.alternateNames[0]}) ·{" "}
+            <a
+              href={BUSINESS.licenseLookupUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="hover:text-foreground transition-colors underline underline-offset-2"
+            >
+              {BUSINESS.licenseNumber}
+            </a>{" "}
+            · Fully insured · Est. {BUSINESS.foundingYear} ·{" "}
             <a href={PHONE_TEL} className="hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
           </p>
         </div>

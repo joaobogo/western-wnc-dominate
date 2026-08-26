@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -108,7 +108,7 @@ const defaultSidebarItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
   { icon: Award, label: "CertainTeed Certified" },
   { icon: Clock, label: "Rapid Emergency Response" },
-  { icon: Star, label: "4.9★ Google · 150+ reviews" },
+  { icon: Star, label: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
 ];
 
 export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSidebarItem[] }) => (
@@ -140,7 +140,7 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
       { icon: Shield, text: "Licensed & Insured" },
       { icon: Clock, text: "Rapid Response" },
       { icon: Award, text: "CertainTeed Certified" },
-      { icon: Star, text: "4.9★ Google · 150+ reviews" },
+      { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
     ].map((item) => (
       <div key={item.text} className="flex items-center gap-2">
         <item.icon className="w-3.5 h-3.5 text-primary/80" />

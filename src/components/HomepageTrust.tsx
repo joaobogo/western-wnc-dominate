@@ -1,3 +1,4 @@
+import { REVIEW_STARS, REVIEW_COUNT, REVIEW_RATING, REVIEW_COUNT_LABEL, REVIEW_AS_OF } from "@/data/business";
 import { motion } from "framer-motion";
 import { Star, Shield, Award, MapPin, CheckCircle2, Quote, Mountain, Clock, Users, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -41,10 +42,10 @@ const reviewHighlights = [
 ];
 
 const proofPoints = [
-  { value: "4.9★", label: "Google Rating" },
+  { value: REVIEW_STARS, label: "Google Rating" },
   { value: "8", label: "WNC Counties" },
-  { value: "150+", label: "Verified Reviews" },
-  { value: "40+", label: "Years Combined Exp." },
+  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews" },
+  { value: "2017", label: "Family-Owned Since" },
 ];
 
 const localExpertise = [
@@ -153,8 +154,8 @@ const HomepageTrust = () => {
                 ))}
               </div>
               <div className="h-5 w-px bg-border" />
-              <span className="font-heading font-bold text-foreground text-lg">4.9</span>
-              <span className="text-muted-foreground text-xs font-body">on Google · 150+ reviews</span>
+              <span className="font-heading font-bold text-foreground text-lg">{REVIEW_RATING}</span>
+              <span className="text-muted-foreground text-xs font-body">on Google · {REVIEW_COUNT_LABEL} ({REVIEW_AS_OF})</span>
             </div>
           </motion.div>
 

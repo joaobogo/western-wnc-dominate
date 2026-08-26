@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Clock, Award, Star } from "lucide-react";
@@ -60,7 +60,7 @@ const CardCapture = ({
         { icon: Shield, text: "Licensed & Insured" },
         { icon: Clock, text: "Rapid Response" },
         { icon: Award, text: "CertainTeed Certified" },
-        { icon: Star, text: "4.9★ Google · 150+ reviews" },
+        { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
       ].map((item) => (
         <div key={item.text} className="flex items-center gap-1.5">
           <item.icon className="w-3 h-3 text-primary/80" />

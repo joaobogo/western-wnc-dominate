@@ -1,3 +1,4 @@
+import { REVIEW_RATING } from "@/data/business";
 export interface CountyFact {
   label: string;
   value: string;
@@ -32,7 +33,7 @@ export const counties: CountyData[] = [
     facts: [
       { label: "Dispatch", value: "Franklin Hub" },
       { label: "Credentials", value: "Licensed GC" },
-      { label: "Rating", value: "4.9/5 Stars" },
+      { label: "Rating", value: `${REVIEW_RATING}/5 on Google` },
       { label: "Coverage", value: "Full County" }
     ],
     housingContext: "Macon County features a unique blend of high-end mountain estates on the plateau and traditional single-family homes and farms in the valley.",
@@ -125,7 +126,7 @@ export const counties: CountyData[] = [
       { label: "Market Hub", value: "Asheville Region" },
       { label: "Specialty", value: "Historic + Modern" },
       { label: "Credentials", value: "Licensed GC" },
-      { label: "Rating", value: "4.9/5 Stars" }
+      { label: "Rating", value: `${REVIEW_RATING}/5 on Google` }
     ],
     housingContext: "Buncombe County features a high-density mix of historic urban estates, modern ridgetop home design, and rapidly growing residential suburbs.",
     climateRealities: "Buncombe's varied topography creates significant microclimates, from urban heat islands to high-wind exposure on the surrounding peaks.",
@@ -194,7 +195,7 @@ export const counties: CountyData[] = [
       { label: "Market Hub", value: "Murphy" },
       { label: "Primary Need", value: "Replacement" },
       { label: "Response", value: "Priority Support" },
-      { label: "Rating", value: "4.9/5 Stars" }
+      { label: "Rating", value: `${REVIEW_RATING}/5 on Google` }
     ],
     housingContext: "Cherokee County features a blend of traditional residential homes, seasonal cabins, and a growing influx of retirees building custom mountain retreats.",
     climateRealities: "Western humidity and valley wind patterns demand durable materials and high-quality flashing at all structural transitions.",

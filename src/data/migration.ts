@@ -190,7 +190,7 @@ export const brandAssets = {
     "Estimates Within a Week",
     "Licensed and Insured",
     "Quick Response Time",
-    "40+ Years Combined Experience",
+    "Family-Owned in Franklin Since 2017",
     "Family-Owned Since 2017",
   ],
   serviceCategories: [

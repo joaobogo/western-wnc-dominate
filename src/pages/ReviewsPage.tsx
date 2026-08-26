@@ -1,3 +1,4 @@
+import { REVIEW_STARS, REVIEW_COUNT, REVIEW_LINE_AS_OF, REVIEW_RATING } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,7 +12,8 @@ import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
-import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
+import { customerReviews, GOOGLE_REVIEW_AGGREGATE, reviewShowroom } from "@/data/reviews";
+import { BUSINESS, directionsUrl, REVIEW_AS_OF } from "@/data/business";
 import { AlertCircle, Camera, Link2, Mail } from "lucide-react";
 
 const fadeUp = {
@@ -70,22 +72,27 @@ const themes = [
 ];
 
 const trustMetrics = [
-  { value: "4.9★", label: "Average Rating", detail: "Google & Facebook" },
-  { value: "150+", label: "Verified Reviews", detail: "Across Platforms" },
-  { value: "98%", label: "Would Recommend", detail: "Client Survey" },
-  { value: "Zero", label: "Unresolved Complaints", detail: "BBB Record" },
+  { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
+  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews", detail: "Across Platforms" },
+  { value: "A+", label: "BBB Accredited", detail: `Since ${BUSINESS.bbbAccreditedSince}` },
+  { value: BUSINESS.licenseNumber.replace(/^\D+/, "#"), label: "NC GC License", detail: "Verifiable on the state lookup" },
 ];
 
 const ReviewsPage = () => {
   const [filter, setFilter] = useState("all");
   const featured = reviews.filter((r) => r.featured);
+  /** Reviews split by the showroom that served the job. */
+  const byShowroom = BUSINESS.locations.map((loc) => ({
+    loc,
+    items: reviews.filter((r) => reviewShowroom(r.location) === loc.id),
+  }));
   const filtered = filter === "all" ? reviews.filter((r) => !r.featured) : reviews.filter((r) => r.category === filter && !r.featured);
 
   return (
     <>
       <SEOHead
         title="Reviews & Reputation | What Clients Say About Highlander"
-        description="Read verified reviews from Highlander Building Services clients across Western North Carolina. 4.9★ average rating from 150+ reviews."
+        description={`Read verified reviews from Highlander Building Services clients across Western North Carolina. ${REVIEW_LINE_AS_OF}.`}
         path="/reviews"
         jsonLd={buildPageSchema({
           type: "reviews",
@@ -110,8 +117,8 @@ const ReviewsPage = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
-                  <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
-                  <span className="text-sm text-dark-section-muted font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
+                  <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">{REVIEW_RATING}</span>
+                  <span className="text-sm text-dark-section-muted font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews ({REVIEW_AS_OF})</span>
                 </div>
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                   Trust Is Earned.
@@ -139,6 +146,49 @@ const ReviewsPage = () => {
             </div>
           </div>
         </section>
+
+        {/* ── REVIEWS BY SHOWROOM ── */}
+        <section className="section-padding bg-background border-b border-border" id="by-location">
+          <div className="container-tight">
+            <div className="text-center mb-10">
+              <span className="eyebrow mb-3 block">By Location</span>
+              <h2 className="section-heading mb-3">Reviews from Both Showrooms</h2>
+              <p className="text-muted-foreground font-body max-w-2xl mx-auto">
+                Highlander runs two Google Business Profiles — Franklin and Sylva. Every review below is
+                attributed to the showroom that served the job. Combined rating: {REVIEW_STARS} ({REVIEW_AS_OF}).
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {byShowroom.map(({ loc, items }) => (
+                <div key={loc.id} className="border border-border bg-card p-6 md:p-8">
+                  <h3 className="font-heading font-bold text-xl mb-1">{loc.name}</h3>
+                  <p className="text-body-xs font-body text-muted-foreground mb-4">
+                    {loc.streetAddress}, {loc.locality}, {loc.region} {loc.postalCode}
+                  </p>
+                  <p className="font-heading font-bold text-body-sm text-foreground mb-4">
+                    {items.length} review{items.length === 1 ? "" : "s"} shown from this showroom
+                  </p>
+                  <ul className="space-y-3 mb-5">
+                    {items.slice(0, 3).map((r) => (
+                      <li key={r.authorName + r.datePublished} className="text-body-xs font-body text-muted-foreground leading-relaxed">
+                        <span className="font-bold text-foreground">{r.authorName}</span> · {r.location} — {r.project}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={directionsUrl(loc)}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-body-xs font-body font-bold text-primary hover:underline"
+                  >
+                    See this showroom's Google reviews
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/* ── TRUST METRICS ── */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground tartan-dark">

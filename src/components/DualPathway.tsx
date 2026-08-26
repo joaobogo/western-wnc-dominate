@@ -1,3 +1,4 @@
+import { REVIEW_STARS } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings, Compass } from "lucide-react";
@@ -34,7 +35,7 @@ const roofingData = {
   ],
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines.",
   stats: [
-    { value: "4.9★", label: "Google Rating" },
+    { value: REVIEW_STARS, label: "Google Rating" },
     { value: "Top 1%", label: " Nationally Certified" },
   ],
   services: [

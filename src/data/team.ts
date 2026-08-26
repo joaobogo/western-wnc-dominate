@@ -36,7 +36,7 @@ export const teamMembers: TeamMember[] = [
       { label: "Leading Highlander Locally", value: "Decades in Western NC" },
       { label: "Specialty", value: "Customer Relations & Company Leadership" },
       { label: "Favorite Part of the Job", value: "Helping homeowners protect their most valuable investment" },
-      { label: "Community Involvement", value: "Active in local organizations and community service initiatives" },
+      { label: "Community Involvement", value: "Franklin Daybreak Rotary — past president" },
     ],
   },
   {
@@ -53,7 +53,7 @@ export const teamMembers: TeamMember[] = [
     details: [
       { label: "Specialty", value: "Accounting & Financial Management" },
       { label: "Favorite Part of the Job", value: "Supporting the growth of a locally owned business" },
-      { label: "Community Involvement", value: "Rotary and local service organizations" },
+      { label: "Community Involvement", value: "Franklin Daybreak Rotary — past president" },
       { label: "Focus", value: "Operational Excellence & Customer Support" },
     ],
   },

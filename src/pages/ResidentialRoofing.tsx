@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -268,7 +268,7 @@ const ResidentialRoofing = () => {
                           {[
                             { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
                             { icon: ShieldCheck, label: "Licensed & Insured" },
-                            { icon: Star, label: "4.9★ Local Rating" },
+                            { icon: Star, label: `${REVIEW_STARS} Google rating` },
                           ].map((item) => (
                             <div key={item.label} className="flex items-center gap-2">
                               <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />

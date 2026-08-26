@@ -2,7 +2,7 @@ import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
-import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema, organizationSchema, personSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
@@ -19,6 +19,7 @@ const Team = () => {
         path="/team"
         jsonLd={[
           organizationSchema(),
+          ...[personSchema("luke-smith", { memberOf: ["Franklin Daybreak Rotary Club"] }), personSchema("kristy-smith", { memberOf: ["Franklin Daybreak Rotary Club"] })].filter(Boolean),
           breadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "About", url: "/about" },

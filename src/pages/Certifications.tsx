@@ -14,6 +14,8 @@ import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import VendorPartners from "@/components/VendorPartners";
+import VerifiableTrustStrip from "@/components/trust/VerifiableTrustStrip";
+import { BUSINESS } from "@/data/business";
 import {
   TrustPillarGrid,
   TrustBadgeStrip,
@@ -234,6 +236,36 @@ const Certifications = () => {
             </ul>
           </div>
         </section>
+
+        {/* ── LICENSE VERIFICATION ── */}
+        <section className="section-padding bg-background" id="license">
+          <div className="container-tight max-w-3xl text-center">
+            <span className="eyebrow mb-3 block">License Verification</span>
+            <h2 className="section-heading mb-4">{BUSINESS.licenseNumber}</h2>
+            <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-5" />
+            <p className="text-muted-foreground font-body leading-relaxed mb-6">
+              {BUSINESS.legalName} holds an active North Carolina General Contractor license.
+              You can confirm the license status yourself on the public NC Licensing Board lookup —
+              search the company name or license number.
+            </p>
+            <a
+              href={BUSINESS.licenseLookupUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="inline-flex items-center gap-2 font-body font-bold text-primary hover:underline"
+            >
+              Verify {BUSINESS.licenseNumber} with the NC Licensing Board
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
+            <p className="mt-6 text-body-xs font-body text-muted-foreground">
+              <a href={BUSINESS.bbbUrl} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-foreground underline underline-offset-2">
+                BBB A+ Accredited since {BUSINESS.bbbAccreditedSince}
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <VerifiableTrustStrip />
 
         {/* ── DETAILED CERTIFICATION BREAKDOWN ── */}
         <section className="section-padding bg-secondary tartan-bg">

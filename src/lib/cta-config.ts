@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_LINE_AS_OF } from "@/data/business";
 /**
  * Global CTA Architecture — Highlander Building Services
  * 
@@ -134,14 +134,14 @@ export const PROOF_CONTEXT = {
   /** Roofing: materials + weather + project proof */
   roofing: [
     "CertainTeed ShingleMaster Credentialed Contractor — Top 1%",
-    "500+ mountain roofs installed",
+    "Franklin & Sylva showrooms you can walk into",
     "Rapid storm response",
     "Full warranty documentation on every project",
   ],
   /** Construction: process + planning + finish quality */
   construction: [
     "Licensed General Contractor",
-    "In-house Highlander crews on every project",
+    "Highlander project manager on every job",
     "Design-build capable",
     "Written scope on every project",
   ],
@@ -149,7 +149,7 @@ export const PROOF_CONTEXT = {
   about: [
     "Family-owned, locally run since 2017",
     "20+ local team members behind every project",
-    "4.9★ average across Google & Facebook",
+    REVIEW_LINE_AS_OF,
     "2024 Best of Macon County",
   ],
   /** Gallery: transformation + visual proof */

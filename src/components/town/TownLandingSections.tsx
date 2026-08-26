@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, LICENSE_NUMBER, REVIEW_STARS, REVIEW_AS_OF } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -519,7 +519,7 @@ export const TownCTAStrip = ({ town }: { town: TownData }) => (
     <div className="container-tight px-6 py-5 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
       <p className="text-body-xs font-body text-center md:text-left text-primary-foreground">
         <span className="font-heading font-bold">Serving {town.name}, {town.state}</span>{" "}
-        · Roofing &amp; Construction · Licensed GC · 4.9★ Rated
+        · Roofing &amp; Construction · {LICENSE_NUMBER} · {REVIEW_STARS} Google ({REVIEW_AS_OF})
       </p>
       <div className="flex items-center gap-4">
         <a
