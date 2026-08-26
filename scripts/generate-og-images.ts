@@ -50,8 +50,19 @@ const townFor = (route: string) => {
   return route.startsWith("/service-areas/") ? towns.find((t) => t.slug === slug) : undefined;
 };
 
+/** Titles come out of prerendered HTML already entity-encoded — decode first. */
+const decodeEntities = (s: string) =>
+  s
+    .replace(/&amp;/g, "&")
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&middot;/g, "·");
+
 const escape = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  decodeEntities(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function cardHtml(title: string, subline: string) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>
