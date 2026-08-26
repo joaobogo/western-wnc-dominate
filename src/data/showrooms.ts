@@ -126,7 +126,7 @@ export const showrooms: Showroom[] = [
       "That matters when you are choosing a roof. Instead of scrolling color swatches on a phone, you can stand a bronze standing seam panel next to a weathered wood shingle board and see which one actually suits your house, your tree cover, and your elevation.",
     ],
     gettingHere: [
-      "Creative Drive sits in the commercial area just off the US 441 / US 64 corridor through Franklin, a few minutes from downtown.",
+      "The showroom sits in the commercial area just off the US 441 / US 64 corridor through Franklin, a few minutes from downtown.",
       "Coming from Highlands or Cashiers, follow US 64 west into Franklin and stay on it through town.",
       "Coming from Otto or the Georgia line, take US 441 north into Franklin.",
     ],
@@ -174,7 +174,7 @@ export const showrooms: Showroom[] = [
       "It is staffed the same way the Franklin office is: an estimator who knows the Tuckasegee valley, the wind exposure along the Blue Ridge Parkway corridor, and how much rain the Smokies side of the county actually gets.",
     ],
     gettingHere: [
-      "Cross Stitch Mountain Road runs off the main US 23 Business / US 74 corridor through Sylva, minutes from downtown.",
+      "The showroom is just off the main US 23 Business / US 74 corridor through Sylva, minutes from downtown.",
       "Coming from Waynesville or Asheville, take US 74 west and exit into Sylva.",
       "Coming from Bryson City or Cherokee, take US 74 east; from Cullowhee, follow NC 107 north into town.",
     ],
