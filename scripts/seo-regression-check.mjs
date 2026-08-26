@@ -150,7 +150,7 @@ if (existsSync(seoHeadPath)) {
 // ---------- 5. Prerender output checks (run after `npm run build`) ----------
 // Skipped when dist/ has not been built yet, so `npm run seo:check` still
 // works standalone; enforced hard whenever a build exists.
-const HOME_TITLE = "Highlander Building Services | Western NC";
+const HOME_TITLE = "Roofing Company in Franklin, NC | Highlander";
 const APP_ONLY_PREFIXES = [
   "/admin", "/lp", "/.lovable", "/front-desk", "/intake", "/consultation", "/roofing-intake",
   "/construction-intake", "/roofing-builder", "/construction-builder",
