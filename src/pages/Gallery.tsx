@@ -1,3 +1,4 @@
+import { REVIEW_STARS } from "@/data/business";
 import { Fragment, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MapPin, Calendar, Ruler, Eye, Camera, Filter } from "lucide-react";
@@ -198,7 +199,7 @@ const Gallery = () => {
               >
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[hsl(var(--dark-section-foreground)/0.08)]">
                   {[
-                    { value: "4.9★", label: "Google Rating" },
+                    { value: REVIEW_STARS, label: "Google Rating" },
                     { value: "8", label: "Counties Served" },
                     { value: "10y", label: "Labor Warranty" },
                     { value: "100%", label: "Owner-Inspected" },

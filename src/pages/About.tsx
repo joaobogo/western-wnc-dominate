@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -557,8 +557,8 @@ const About = () => {
             </motion.div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { stat: "4.9★", label: "Google Rating" },
-                { stat: "4.9★", label: "Average across Google & Facebook" },
+                { stat: REVIEW_STARS, label: "Google Rating" },
+                { stat: REVIEW_STARS, label: "Average across Google & Facebook" },
                 { stat: "Rapid", label: "Response time on every inquiry" },
                 { stat: "In-House", label: "Highlander employee crews" },
               ].map((item, i) => (

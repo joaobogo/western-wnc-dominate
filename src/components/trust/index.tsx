@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -25,10 +25,10 @@ export const credentials = [
 ];
 
 export const trustStats = [
-  { value: "4.9★", label: "Google Rating", detail: "Across Western NC" },
+  { value: REVIEW_STARS, label: "Google Rating", detail: "Across Western NC" },
   { value: "40+", label: "Years Combined Exp.", detail: "Roofing & Construction" },
   { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain" },
-  { value: "4.9★", label: "Average Rating", detail: "Google & Facebook" },
+  { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
 ];
 
 export const trustPillars = [

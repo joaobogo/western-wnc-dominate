@@ -1,3 +1,4 @@
+import { REVIEW_STARS, REVIEW_COUNT } from "@/data/business";
 import { motion } from "framer-motion";
 import { Star, Shield, Award, MapPin, CheckCircle2, Quote, Mountain, Clock, Users, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -41,9 +42,9 @@ const reviewHighlights = [
 ];
 
 const proofPoints = [
-  { value: "4.9★", label: "Google Rating" },
+  { value: REVIEW_STARS, label: "Google Rating" },
   { value: "8", label: "WNC Counties" },
-  { value: "150+", label: "Verified Reviews" },
+  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews" },
   { value: "40+", label: "Years Combined Exp." },
 ];
 

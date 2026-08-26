@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -577,7 +577,7 @@ const RoofRepair = () => {
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Clock, text: "Rapid Emergency Response" },
                       { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Star, text: "4.9★ Google · 150+ reviews" },
+                      { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />

@@ -1,3 +1,4 @@
+import { REVIEW_COUNT_LABEL } from "@/data/business";
 import { motion } from "framer-motion";
 import { Shield, Award, Star, MapPin, Clock, Phone, CheckCircle2, Mountain, Hammer, type LucideIcon } from "lucide-react";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
@@ -30,7 +31,7 @@ const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
   social: {
     items: [
       { icon: Star, text: "4.9★ Google Rating", stat: "4.9" },
-      { icon: CheckCircle2, text: "150+ Verified Reviews" },
+      { icon: CheckCircle2, text: REVIEW_COUNT_LABEL },
       { icon: Phone, text: "Rapid Response Guarantee" },
     ],
   },

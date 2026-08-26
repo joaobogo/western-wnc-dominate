@@ -1,3 +1,4 @@
+import { REVIEW_STARS, REVIEW_COUNT } from "@/data/business";
 import { motion } from "framer-motion";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldLine from "@/components/motion/GoldLine";
@@ -7,9 +8,9 @@ import { Shield, Award, Clock, Star, MapPin, CheckCircle2 } from "lucide-react";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const stats = [
-  { value: "150+", label: "Verified Reviews", detail: "From WNC Homeowners" },
+  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews", detail: "From WNC Homeowners" },
   { value: "40+", label: "Years Combined", detail: "Roofing & Construction" },
-  { value: "4.9★", label: "Google Reviews", detail: "Across 8 WNC Counties" },
+  { value: REVIEW_STARS, label: "Google Reviews", detail: "Across 8 WNC Counties" },
 ];
 
 const credentials = [

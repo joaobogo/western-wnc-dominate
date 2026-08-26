@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight, Phone, Shield, Award, Mountain, Compass, Users, Star, CloudLightning, Clock } from "lucide-react";
@@ -21,7 +21,7 @@ const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroFallbackAsset.url;
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const serviceStats = [
-  { value: "4.9★", label: "Google Rating", detail: "Verified reviews" },
+  { value: REVIEW_STARS, label: "Google Rating", detail: "Verified reviews" },
   { 
     value: "10+", 
     label: "Counties Served", 
@@ -36,7 +36,7 @@ const serviceStats = [
     ) 
   },
   { value: "Rapid", label: "Response Time", detail: "Emergency & Standard" },
-  { value: "4.9★", label: "Average Rating", detail: "150+ Verified Reviews" },
+  { value: REVIEW_STARS, label: "Average Rating", detail: REVIEW_COUNT_LABEL },
 ];
 
 const whyLocal = [

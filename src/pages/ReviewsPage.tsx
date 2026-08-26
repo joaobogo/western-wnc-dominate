@@ -1,3 +1,4 @@
+import { REVIEW_STARS, REVIEW_COUNT } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -70,8 +71,8 @@ const themes = [
 ];
 
 const trustMetrics = [
-  { value: "4.9★", label: "Average Rating", detail: "Google & Facebook" },
-  { value: "150+", label: "Verified Reviews", detail: "Across Platforms" },
+  { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
+  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews", detail: "Across Platforms" },
   { value: "98%", label: "Would Recommend", detail: "Client Survey" },
   { value: "Zero", label: "Unresolved Complaints", detail: "BBB Record" },
 ];
