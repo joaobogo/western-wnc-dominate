@@ -36,6 +36,33 @@ var BUSINESS = {
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
     lastVerified: "2026-08-25"
   },
+  // projectsCompleted intentionally omitted — awaiting a verifiable count.
+  credentials: [
+    {
+      label: "NC General Contractor License #87668",
+      detail: "Verify with the NC Licensing Board for General Contractors",
+      href: "https://portal.nclbgc.org/Public/Search"
+    },
+    {
+      label: "BBB A+ Accredited since 2020",
+      detail: "Better Business Bureau accredited business",
+      href: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019"
+    },
+    { label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Manufacturer-credentialed installation" },
+    { label: "VELUX Certified Installer", detail: "Skylight installation and flashing kits" },
+    { label: "Family-owned in Franklin since 2017", detail: "Showrooms in Franklin & Sylva" }
+  ],
+  licenseLookupUrl: "https://portal.nclbgc.org/Public/Search",
+  bbbUrl: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
+  bbbAccreditedSince: 2020,
+  press: [
+    {
+      outlet: "The Laurel Magazine",
+      label: "As featured in The Laurel Magazine (October 2024)",
+      date: "2024-10-01",
+      href: "https://www.thelaurelmagazine.com/"
+    }
+  ],
   countiesServed: [
     { name: "Macon County", region: "NC" },
     { name: "Jackson County", region: "NC" },
@@ -107,6 +134,18 @@ var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${l
 var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
+var REVIEW_RATING = BUSINESS.reviewSummary.ratingValue.toFixed(1);
+var REVIEW_STARS = `${REVIEW_RATING}\u2605`;
+var REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
+var REVIEW_COUNT_LABEL = `${REVIEW_COUNT}+ Google reviews`;
+var REVIEW_AS_OF = `as of ${(/* @__PURE__ */ new Date(
+  `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`
+)).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
+var REVIEW_LINE = `${REVIEW_STARS} \xB7 ${REVIEW_COUNT_LABEL}`;
+var REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
+var PROJECTS_STAT = BUSINESS.projectsCompleted ? `${BUSINESS.projectsCompleted}+` : null;
+var LICENSE_NUMBER = BUSINESS.licenseNumber;
+var CREDENTIALS = BUSINESS.credentials;
 var SYLVA_PHONE_DISPLAY = formatPhoneDisplay(SYLVA.phoneE164);
 var SYLVA_PHONE_PLAIN = formatPhonePlain(SYLVA.phoneE164);
 var SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
