@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { trackEvent, setSourceTown } from "@/lib/analytics";
-import { HIGHLAND_EASE, primaryTownLinks } from "./nav-data";
+import { HIGHLAND_EASE, primaryTownLinks, showroomLinks } from "./nav-data";
 
 interface Props {
   isOpen: boolean;
