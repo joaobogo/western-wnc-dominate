@@ -713,6 +713,18 @@ export type PageSchemaInput =
   | { type: "reviews"; reviews: ReviewInput[] }
   | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
   | {
+      /**
+       * Physical showroom page. mainEntity is the existing showroom Place node
+       * (`#<id>-showroom`) — never a second business entity.
+       */
+      type: "location";
+      locationId: BusinessLocation["id"];
+      path: string;
+      page: { title: string; description: string };
+      breadcrumbs: { name: string; url: string }[];
+      faqs?: { question: string; answer: string }[];
+    }
+  | {
       type: "tool";
       howTo: Parameters<typeof howToSchema>[0];
       breadcrumbs: { name: string; url: string }[];
