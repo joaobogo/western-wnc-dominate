@@ -23,6 +23,7 @@ import InspectionForm from "@/components/InspectionForm";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { metalSystems, metalCostAnswer, METAL_COST_YEAR } from "@/data/metal-roof-cost";
 
 type Material = {
   name: string;
@@ -159,8 +160,8 @@ const drivers = [
 
 const faqs = [
   {
-    q: "Why doesn't this page list dollar amounts per square?",
-    a: "Because a published number would be wrong for most of the homes we quote. Pitch, access, decking condition, elevation, and detail count move mountain roofing prices more than the material choice does. We would rather measure your roof and put a real number in writing than post an average that sets a false expectation.",
+    q: "Why doesn't this page list dollar amounts per square for every material?",
+    a: "Because a published number would be wrong for most of the homes we quote. Metal is the exception — homeowners ask for it constantly, so we publish real installed ranges per square on the metal roofing cost page. Pitch, access, decking condition, elevation, and detail count move mountain roofing prices more than the material choice does. We would rather measure your roof and put a real number in writing than post an average that sets a false expectation.",
   },
   {
     q: "What is the cheapest roofing option in Western North Carolina?",
@@ -303,6 +304,44 @@ const RoofingCostWNC = () => {
                 </motion.article>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* METAL COST — published ranges, deeper page linked */}
+        <section className="section-padding bg-background" id="metal-roofing-cost">
+          <div className="container-tight max-w-5xl">
+            <span className="text-caption font-body font-bold uppercase tracking-[0.3em] text-primary block mb-3">
+              Metal roofing
+            </span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+              Metal Roofing Cost in Western NC ({METAL_COST_YEAR})
+            </h2>
+            <p className="text-muted-foreground font-body leading-relaxed max-w-3xl mb-8">
+              {metalCostAnswer}
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {metalSystems.map((m) => (
+                <div key={m.name} className="border border-border bg-secondary/40 p-6">
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">{m.name}</h3>
+                  <p className="font-body font-bold text-primary mb-1">{m.rangePerSquare}</p>
+                  <p className="text-sm text-muted-foreground font-body mb-3">{m.rangePerSqFt}</p>
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                    Service life: {m.lifespan}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground font-body max-w-3xl leading-relaxed mb-6">
+              Mountain homes move inside those ranges on pitch, driveway access, engineered snow retention
+              over entries and drives, and decking found at tear-off.
+            </p>
+            <Link
+              to="/roofing/metal/cost"
+              className="inline-flex items-center gap-2 text-sm font-body font-bold text-primary hover:underline"
+            >
+              Read the full metal roofing cost guide for Western NC
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
         </section>
 
