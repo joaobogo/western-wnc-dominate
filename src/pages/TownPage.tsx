@@ -124,8 +124,18 @@ const TownPage = () => {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg"
               >
-                Roofing &amp; Construction in{" "}
-                <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span>
+                {isPrimaryTownPage ? (
+                  <>
+                    Roofing in{" "}
+                    <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span> Neighborhoods
+                    &amp; Nearby Communities
+                  </>
+                ) : (
+                  <>
+                    <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span> Roofing
+                    Contractor &amp; Builder
+                  </>
+                )}
               </motion.h1>
 
               <PageContext
@@ -138,9 +148,9 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="hidden md:block text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
+                className="text-body md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
               >
-                {town.description}
+                {leadParagraph}
               </motion.p>
 
               {/* One genuinely local roofing reality, above the fold */}
