@@ -45,7 +45,7 @@ const proofPoints = [
   { value: REVIEW_STARS, label: "Google Rating" },
   { value: "8", label: "WNC Counties" },
   { value: `${REVIEW_COUNT}+`, label: "Verified Reviews" },
-  { value: "40+", label: "Years Combined Exp." },
+  { value: "2017", label: "Family-Owned Since" },
 ];
 
 const localExpertise = [

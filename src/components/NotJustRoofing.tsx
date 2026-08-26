@@ -35,7 +35,7 @@ const divisions = [
     iconColor: "text-[hsl(var(--gold-ink))]",
     borderColor: "border-[hsl(var(--highland-gold)/0.12)] hover:border-[hsl(var(--highland-gold)/0.25)]",
     stats: [
-      { value: "40+", label: "Years Combined Exp." },
+      { value: "2017", label: "Family-Owned Since" },
       { value: "100%", label: "Licensed & Insured" },
     ],
     href: "/construction",

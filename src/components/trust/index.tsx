@@ -26,7 +26,7 @@ export const credentials = [
 
 export const trustStats = [
   { value: REVIEW_STARS, label: "Google Rating", detail: "Across Western NC" },
-  { value: "40+", label: "Years Combined Exp.", detail: "Roofing & Construction" },
+  { value: "2017", label: "Family-Owned Since", detail: "Franklin, NC" },
   { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain" },
   { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
 ];
