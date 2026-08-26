@@ -162,8 +162,15 @@ export const secondaryLinks = [
 /** Secondary destinations — footer + a single mobile "Resources" group, never top-level. */
 export const resourceLinks = [
   { label: "About Highlander", href: "/about" },
+  { label: "Our Showrooms", href: "/locations" },
   { label: "Reviews", href: "/reviews" },
   { label: "Giving Back", href: "/giving-back" },
+];
+
+/** Physical showroom pages — linked from the service-areas dropdown footer. */
+export const showroomLinks = [
+  { label: "Franklin Showroom", href: "/locations/franklin-nc" },
+  { label: "Sylva Showroom", href: "/locations/sylva-nc" },
 ];
 
 export const townLinks = towns.map((t) => ({
