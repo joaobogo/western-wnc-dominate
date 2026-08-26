@@ -255,7 +255,7 @@ const RoofingCostWNC = () => {
           <div className="container-tight max-w-4xl">
             <AnswerBlock
               question="How much does a new roof cost in Western North Carolina?"
-              answer="There is no single number, and any contractor who gives you one over the phone is guessing. In Western North Carolina the price of a roof is set by pitch, site access, decking condition, elevation, and detail count at least as much as by the material. Dimensional asphalt shingle is the least expensive complete system; exposed-fastener metal sits above it; standing seam metal, synthetic slate and shake, and cedar sit at the top. Highlander measures the roof on site and puts a grouped-cost, line-item number in writing — including a per-sheet decking rate agreed before tear-off — so the estimate you sign is the number you pay."
+              answer="A new roof in Western North Carolina is priced by pitch, site access, decking condition, elevation, and detail count as much as by material. Dimensional asphalt shingle is the least expensive complete system, exposed-fastener metal sits above it, and standing seam, synthetic slate, and cedar sit at the top. Highlander measures on site and writes a line-item number."
             />
           </div>
         </section>
