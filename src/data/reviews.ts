@@ -20,6 +20,21 @@ export const GOOGLE_REVIEW_AGGREGATE = {
   reviewCount: REVIEW_SUMMARY.reviewCount,
 };
 
+/** Towns served out of the Sylva showroom; everything else is Franklin. */
+const SYLVA_TOWNS = [
+  "sylva", "cullowhee", "dillsboro", "webster", "cherokee", "bryson city",
+  "whittier", "waynesville", "maggie valley", "clyde", "canton",
+];
+
+/**
+ * Attribute a review to the showroom that served it, so /reviews can show a
+ * per-location breakdown instead of one undifferentiated pile.
+ */
+export const reviewShowroom = (location: string): "franklin" | "sylva" => {
+  const town = location.split(",")[0].trim().toLowerCase();
+  return SYLVA_TOWNS.includes(town) ? "sylva" : "franklin";
+};
+
 export const customerReviews: CustomerReview[] = [
   {
     authorName: "Sarah M.",
