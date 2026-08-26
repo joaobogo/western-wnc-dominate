@@ -853,6 +853,24 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return [howToSchema(input.howTo), breadcrumbSchema(input.breadcrumbs)];
     }
 
+    case "location": {
+      const breadcrumbId = `${BASE_URL}${input.path}#breadcrumb`;
+      const out: Record<string, unknown>[] = [
+        ...businessGraph(),
+        breadcrumbSchema(input.breadcrumbs, breadcrumbId),
+        webPageSchema({
+          name: input.page.title,
+          description: input.page.description,
+          url: input.path,
+          breadcrumbId,
+          primaryEntityId: `${BASE_URL}/#${input.locationId}-showroom`,
+        }),
+      ];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
+
     case "generic": {
       const out: Record<string, unknown>[] = [breadcrumbSchema(input.breadcrumbs)];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
