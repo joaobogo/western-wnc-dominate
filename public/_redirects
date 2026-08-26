@@ -205,3 +205,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /quote-flow              /index.html   200
 /seo-monitoring          /index.html   200
 /realwork-diagnostics    /index.html   200
+
+# Per-route OG cards live at /og/<slug>.png (generated at build). Any route
+# without a generated card falls back to the sitewide social image.
+/og/*                    /og-image.jpg 200

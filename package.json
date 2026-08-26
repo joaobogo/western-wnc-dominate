@@ -14,7 +14,7 @@
     "predev": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts && bun scripts/generate-llms-txt.ts && bun scripts/generate-org-jsonld.ts",
     "prebuild": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts && bun scripts/generate-llms-txt.ts && bun scripts/generate-org-jsonld.ts",
     "seo:check": "node scripts/validate-schema.mjs && node scripts/redirect-check.mjs && node scripts/seo-regression-check.mjs",
-    "postbuild": "node scripts/prerender.mjs && node scripts/validate-schema.mjs && node scripts/redirect-check.mjs && node scripts/seo-regression-check.mjs"
+    "postbuild": "node scripts/prerender.mjs && bun scripts/generate-og-images.ts && node scripts/generate-llms-full.mjs && node scripts/indexnow-notify.mjs && node scripts/validate-schema.mjs && node scripts/redirect-check.mjs && node scripts/seo-regression-check.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
