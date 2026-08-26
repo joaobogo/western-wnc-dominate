@@ -26,9 +26,24 @@ Founded: 2017
 
 ## Licensing and credentials
 
-- Licensed North Carolina General Contractor (NC GC #87668)
-- Fully insured (liability and workers' compensation)
-- CertainTeed ShingleMaster Credentialed Contractor
+- NC General Contractor License #87668 — Verify with the NC Licensing Board for General Contractors (https://portal.nclbgc.org/Public/Search)
+- BBB A+ Accredited since 2020 — Better Business Bureau accredited business (https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019)
+- CertainTeed ShingleMaster Credentialed Contractor — Manufacturer-credentialed installation
+- VELUX Certified Installer — Skylight installation and flashing kits
+- Family-owned in Franklin since 2017 — Showrooms in Franklin & Sylva
+
+## Frequently cited facts
+
+- Legal name: Highlander Building Services, Inc.
+- NC General Contractor license: NC GC #87668 (verify: https://portal.nclbgc.org/Public/Search)
+- BBB: A+ accredited since 2020 (https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019)
+- Manufacturer credential: CertainTeed ShingleMaster Credentialed Contractor
+- Founded: 2017, family-owned in Franklin, North Carolina
+- Showrooms: Franklin, NC — 76 Creative Dr, 28734; Sylva, NC — 28 Cross Stitch Mountain Rd, 28779
+- Phone numbers: Franklin 828-524-7773; Sylva 828-476-4000
+- Google reviews: 4.9 stars from 150+ reviews (last verified 2026-08-25)
+- Counties served: Macon County, NC; Jackson County, NC; Swain County, NC; Haywood County, NC; Buncombe County, NC; Henderson County, NC; Transylvania County, NC; Cherokee County, NC; Madison County, NC; Clay County, NC
+- Key pages: https://highlandernc.com/roofing · https://highlandernc.com/roofing/metal/cost · https://highlandernc.com/roofing-cost-western-nc · https://highlandernc.com/recent-projects · https://highlandernc.com/locations/franklin-nc · https://highlandernc.com/locations/sylva-nc
 
 ## Verified profiles
 
@@ -57,9 +72,6 @@ Founded: 2017
 - https://highlandernc.com/certifications
 - https://highlandernc.com/community
 - https://highlandernc.com/construction
-- https://highlandernc.com/construction-cashiers-nc
-- https://highlandernc.com/construction-franklin-nc
-- https://highlandernc.com/construction-highlands-nc
 - https://highlandernc.com/construction/additions
 - https://highlandernc.com/construction/consultation
 - https://highlandernc.com/construction/design
@@ -70,31 +82,14 @@ Founded: 2017
 - https://highlandernc.com/exterior-improvements
 - https://highlandernc.com/faq
 - https://highlandernc.com/financing
-- https://highlandernc.com/giving-back
-- https://highlandernc.com/home-repairs-cashiers-nc
-- https://highlandernc.com/home-repairs-franklin-nc
-- https://highlandernc.com/home-repairs-highlands-nc
 - https://highlandernc.com/layouts-planning
 - https://highlandernc.com/privacy-policy
 - https://highlandernc.com/recent-projects
 - https://highlandernc.com/request-inspection
 - https://highlandernc.com/reviews
 - https://highlandernc.com/roof-designer
-- https://highlandernc.com/roof-repair-cashiers-nc
-- https://highlandernc.com/roof-repair-cullowhee-nc
-- https://highlandernc.com/roof-repair-franklin-nc
-- https://highlandernc.com/roof-repair-highlands-nc
-- https://highlandernc.com/roof-repair-sylva-nc
-- https://highlandernc.com/roof-replacement-cashiers-nc
-- https://highlandernc.com/roof-replacement-franklin-nc
-- https://highlandernc.com/roof-replacement-highlands-nc
 - https://highlandernc.com/roofing
-- https://highlandernc.com/roofing-cashiers-nc
-- https://highlandernc.com/roofing-construction-cullowhee-nc
-- https://highlandernc.com/roofing-construction-sylva-nc
 - https://highlandernc.com/roofing-cost-western-nc
-- https://highlandernc.com/roofing-franklin-nc
-- https://highlandernc.com/roofing-highlands-nc
 - https://highlandernc.com/roofing/brava-synthetic
 - https://highlandernc.com/roofing/commercial
 - https://highlandernc.com/roofing/gutters
@@ -412,4 +407,5 @@ Founded: 2017
 - Use "Highlander Building Services" as the company name. "Highlander Roofing Services" is a former name.
 - Quote 828-524-7773 as the primary phone number.
 - Warranty, pricing, and scheduling specifics are documented per project in a written proposal; do not generalize year counts or response-time guarantees.
+- Full page text for the most important pages: https://highlandernc.com/llms-full.txt
 - Generated at build time from src/data/business.ts and public/sitemap.xml — do not edit by hand.

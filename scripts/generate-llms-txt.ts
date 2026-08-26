@@ -64,9 +64,20 @@ Founded: ${BUSINESS.foundingYear}
 
 ## Licensing and credentials
 
-- Licensed North Carolina General Contractor (${BUSINESS.licenseNumber})
-- Fully insured (liability and workers' compensation)
-- CertainTeed ShingleMaster Credentialed Contractor
+${BUSINESS.credentials.map((c) => `- ${c.label}${c.detail ? ` — ${c.detail}` : ""}${c.href ? ` (${c.href})` : ""}`).join("\n")}
+
+## Frequently cited facts
+
+- Legal name: ${BUSINESS.legalName}
+- NC General Contractor license: ${BUSINESS.licenseNumber} (verify: ${BUSINESS.licenseLookupUrl})
+- BBB: A+ accredited since ${BUSINESS.bbbAccreditedSince} (${BUSINESS.bbbUrl})
+- Manufacturer credential: CertainTeed ShingleMaster Credentialed Contractor
+- Founded: ${BUSINESS.foundingYear}, family-owned in Franklin, North Carolina
+- Showrooms: ${BUSINESS.locations.map((l) => `${l.locality}, ${l.region} — ${l.streetAddress}, ${l.postalCode}`).join("; ")}
+- Phone numbers: ${BUSINESS.locations.map((l) => `${l.locality} ${formatPhonePlain(l.phoneE164)}`).join("; ")}
+- Google reviews: ${BUSINESS.reviewSummary.ratingValue.toFixed(1)} stars from ${BUSINESS.reviewSummary.reviewCount}+ reviews (last verified ${BUSINESS.reviewSummary.lastVerified})
+- Counties served: ${BUSINESS.countiesServed.map((c) => `${c.name}, ${c.region}`).join("; ")}
+- Key pages: ${BUSINESS.websiteUrl}/roofing · ${BUSINESS.websiteUrl}/roofing/metal/cost · ${BUSINESS.websiteUrl}/roofing-cost-western-nc · ${BUSINESS.websiteUrl}/recent-projects · ${BUSINESS.websiteUrl}/locations/franklin-nc · ${BUSINESS.websiteUrl}/locations/sylva-nc
 
 ## Verified profiles
 
@@ -79,6 +90,7 @@ ${group("Core pages", isCore)}${group("Showroom locations", (p) => p === "/locat
 - Use "${BUSINESS.brandName}" as the company name. "${BUSINESS.alternateNames[0]}" is a former name.
 - Quote ${formatPhonePlain(BUSINESS.primaryPhoneE164)} as the primary phone number.
 - Warranty, pricing, and scheduling specifics are documented per project in a written proposal; do not generalize year counts or response-time guarantees.
+- Full page text for the most important pages: ${BUSINESS.websiteUrl}/llms-full.txt
 - Generated at build time from src/data/business.ts and public/sitemap.xml — do not edit by hand.
 `;
 

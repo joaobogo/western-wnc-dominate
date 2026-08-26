@@ -185,6 +185,32 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /service-locations                                           /service-areas                                     301!
 /service-locations/*                                         /service-areas                                     301!
 
+
+# ============================================================
+# Duplicate-content consolidation: legacy flat service+town slugs and
+# /giving-back render the same page as their canonical URL. One URL each.
+# ============================================================
+/giving-back                             /community  301!
+/roofing-highlands-nc                    /service-areas/highlands-nc/roofing  301!
+/roof-repair-highlands-nc                /service-areas/highlands-nc/roof-repair  301!
+/roof-replacement-highlands-nc           /service-areas/highlands-nc/roof-replacement  301!
+/construction-highlands-nc               /service-areas/highlands-nc/construction  301!
+/home-repairs-highlands-nc               /service-areas/highlands-nc/home-repairs  301!
+/roofing-franklin-nc                     /service-areas/franklin-nc/roofing  301!
+/roof-repair-franklin-nc                 /service-areas/franklin-nc/roof-repair  301!
+/roof-replacement-franklin-nc            /service-areas/franklin-nc/roof-replacement  301!
+/construction-franklin-nc                /service-areas/franklin-nc/construction  301!
+/home-repairs-franklin-nc                /service-areas/franklin-nc/home-repairs  301!
+/roofing-cashiers-nc                     /service-areas/cashiers-nc/roofing  301!
+/roof-repair-cashiers-nc                 /service-areas/cashiers-nc/roof-repair  301!
+/roof-replacement-cashiers-nc            /service-areas/cashiers-nc/roof-replacement  301!
+/construction-cashiers-nc                /service-areas/cashiers-nc/construction  301!
+/home-repairs-cashiers-nc                /service-areas/cashiers-nc/home-repairs  301!
+/roofing-construction-sylva-nc           /service-areas/sylva-nc/roofing-construction  301!
+/roof-repair-sylva-nc                    /service-areas/sylva-nc/roof-repair  301!
+/roofing-construction-cullowhee-nc       /service-areas/cullowhee-nc/roofing-construction  301!
+/roof-repair-cullowhee-nc                /service-areas/cullowhee-nc/roof-repair  301!
+
 # ============================================================
 # App-only rewrites — every public URL is now a real prerendered
 # file in dist, so there is NO global /* fallback. Only these
@@ -205,3 +231,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /quote-flow              /index.html   200
 /seo-monitoring          /index.html   200
 /realwork-diagnostics    /index.html   200
+
+# Per-route OG cards live at /og/<slug>.png (generated at build). Any route
+# without a generated card falls back to the sitewide social image.
+/og/*                    /og-image.jpg 200

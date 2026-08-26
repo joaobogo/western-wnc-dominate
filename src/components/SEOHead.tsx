@@ -1,5 +1,6 @@
 import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation } from "@/data/business";
 import { useEffect } from "react";
+import { ogImageForPath, OG_FALLBACK } from "@/lib/og";
 
 interface SEOHeadProps {
   title: string;
@@ -21,7 +22,9 @@ const SITE_NAME = BUSINESS.brandName;
 const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
 const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
+const DEFAULT_IMAGE = `${BASE_URL}${OG_FALLBACK}`;
+/** Bing Webmaster Tools verification token — env-driven, optional. */
+const BING_VERIFICATION = (import.meta.env.VITE_BING_SITE_VERIFICATION as string | undefined)?.trim();
 const DEFAULT_IMAGE_WIDTH = "1200";
 const DEFAULT_IMAGE_HEIGHT = "630";
 const TWITTER_HANDLE = "@highlanderroof";
@@ -89,7 +92,9 @@ const SEOHead = ({
   const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
   const canonicalPath = normalizeCanonicalPath(path);
   const canonicalUrl = canonicalUrlFor(path);
-  const ogImage = image || DEFAULT_IMAGE;
+  // Per-route card generated at build (dist/og/<slug>.png); the /og/* rewrite
+  // serves /og-image.jpg for any route without one.
+  const ogImage = image || ogImageForPath(canonicalPath, BASE_URL);
 
   useEffect(() => {
     document.title = fullTitle;
@@ -99,6 +104,7 @@ const SEOHead = ({
     setMeta("name", "author", SITE_NAME);
     setMeta("name", "publisher", SITE_NAME);
     setMeta("name", "theme-color", "#1a4d2e");
+    if (BING_VERIFICATION) setMeta("name", "msvalidate.01", BING_VERIFICATION);
     // Geo tags for local SEO
     setMeta("name", "geo.region", `US-${FRANKLIN.region}`);
     setMeta("name", "geo.placename", `${FRANKLIN.locality}, North Carolina`);
@@ -152,6 +158,18 @@ const SEOHead = ({
     if (!noindex && !hasBusinessNode) {
       nodes.push(localBusinessSchema());
     }
+    // The business node references the two showrooms by @id; whenever that
+    // reference is in the graph the Place nodes must be defined too, or the
+    // graph ships dangling @id pointers.
+    const graphText = JSON.stringify(nodes);
+    const showroomRefsUsed = graphText.includes("-showroom");
+    const showroomNodesDefined = nodes.some(
+      (n) => typeof n["@id"] === "string" && (n["@id"] as string).endsWith("-showroom"),
+    );
+    if (showroomRefsUsed && !showroomNodesDefined) {
+      nodes.push(...(locationNodes() as Record<string, unknown>[]));
+    }
+
     if (!noindex && !serialized.includes("BreadcrumbList") && canonicalPath !== "/") {
       const segments = canonicalPath.split("/").filter(Boolean);
       const trail = [{ name: "Home", url: "/" }];

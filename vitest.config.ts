@@ -11,12 +11,21 @@ export default defineConfig({
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
   },
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-      // Lets tests import pure helpers out of Deno edge functions.
-      "npm:@supabase/supabase-js@2": "@supabase/supabase-js",
-      "@jobtread-sync": path.resolve(__dirname, "./supabase/functions/jobtread-sync/index.ts"),
-      "@chatbot-handler": path.resolve(__dirname, "./supabase/functions/chatbot/handler.ts"),
-    },
+    alias: [
+      { find: "@", replacement: path.resolve(__dirname, "./src") },
+      // Lets tests import pure helpers out of Deno edge functions, whatever
+      // version the function pins in its `npm:` specifier.
+      { find: /^npm:@supabase\/supabase-js(@.*)?$/, replacement: "@supabase/supabase-js" },
+      { find: /^npm:(.*?)(@\d[^/]*)?$/, replacement: "$1" },
+      {
+        find: "@jobtread-sync",
+        replacement: path.resolve(__dirname, "./supabase/functions/jobtread-sync/index.ts"),
+      },
+      {
+        find: "@chatbot-handler",
+        replacement: path.resolve(__dirname, "./supabase/functions/chatbot/handler.ts"),
+      },
+    ],
   },
+
 });
