@@ -46,6 +46,7 @@ const GivingBack = lazy(() => import("./pages/GivingBack"));
 const Team = lazy(() => import("./pages/Team"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const RoofingCostWNC = lazy(() => import("./pages/RoofingCostWNC"));
+const MetalRoofingCost = lazy(() => import("./pages/MetalRoofingCost"));
 const LayoutsPlanning = lazy(() => import("./pages/LayoutsPlanning"));
 
 
@@ -225,6 +226,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/roofing-cost-western-nc" element={<RoofingCostWNC />} />
+          <Route path="/roofing/metal/cost" element={<MetalRoofingCost />} />
           <Route path="/roof-designer" element={<RoofDesigner />} />
 
           

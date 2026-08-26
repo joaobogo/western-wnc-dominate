@@ -1269,6 +1269,7 @@ No pressure, no scare tactics — just a clear, professional read on your roof a
     metaTitle: "Metal Roof Cost in Western NC | Standing Seam vs. Exposed Fastener",
     metaDescription: "What does a metal roof cost in Western NC? Compare standing seam vs. exposed fastener pricing, and see how elevation and wind load shape your quote.",
     relatedServices: [
+      { label: "Metal Roofing Cost in Western NC (2026)", path: "/roofing/metal/cost" },
       { label: "Metal Roofing", path: "/roofing/specialty" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Request a Free Inspection", path: "/request-inspection" },
@@ -1536,6 +1537,7 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
       },
     ],
     relatedServices: [
+      { label: "Metal Roofing Cost in Western NC (2026)", path: "/roofing/metal/cost" },
       { label: "Standing Seam Metal Roofing", path: "/roofing/metal" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Residential Roofing", path: "/roofing/residential" },
@@ -3924,6 +3926,7 @@ See our [metal roofing services](/roofing/metal), consider full [roof replacemen
       { question: "Does a metal roof lower insurance?", answer: "Sometimes. Check with your carrier; impact and wind ratings sometimes trigger discounts." },
     ],
     relatedServices: [
+      { label: "Metal Roofing Cost in Western NC (2026)", path: "/roofing/metal/cost" },
       { label: "Metal Roofing", path: "/roofing/metal" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Request an Inspection", path: "/request-inspection" },

@@ -227,21 +227,21 @@ const Hero = () => {
             {/* Headline — single H1 revealed as three cinematic lines */}
             <h1 className={`mb-3 ${textLed ? "md:mb-6" : "md:mb-12"}`}>
               <span className="sr-only">
-                Roofing &amp; Construction Built for Western NC Mountain Homes
+                Roofing Company in Franklin, NC — Built for Western North Carolina Mountain Homes
               </span>
               <span aria-hidden="true" className="block">
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
                     className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
-                    Roofing &amp; Construction
+                    Roofing Company in Franklin, NC
                   </span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
                     className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
-                    Built for Western NC
+                    Built for Western North Carolina
                   </span>
                 </span>
                 <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">

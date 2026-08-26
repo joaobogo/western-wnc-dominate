@@ -150,7 +150,7 @@ if (existsSync(seoHeadPath)) {
 // ---------- 5. Prerender output checks (run after `npm run build`) ----------
 // Skipped when dist/ has not been built yet, so `npm run seo:check` still
 // works standalone; enforced hard whenever a build exists.
-const HOME_TITLE = "Highlander Building Services | Western NC";
+const HOME_TITLE = "Roofing Company in Franklin, NC | Highlander";
 const APP_ONLY_PREFIXES = [
   "/admin", "/lp", "/.lovable", "/front-desk", "/intake", "/consultation", "/roofing-intake",
   "/construction-intake", "/roofing-builder", "/construction-builder",
@@ -177,9 +177,19 @@ if (distIsCurrent) {
 
   if (!existsSync(resolve("dist/404.html"))) fail("dist/404.html missing — NotFound was not prerendered.");
 
+  // Two indexable pages must never share a <title> — duplicate titles are the
+  // clearest signal of templated pages competing with each other.
+  const titlesSeen = new Map();
+
   for (const p of present) {
     const html = readFileSync(fileFor(p), "utf8");
     const title = (html.match(/<title>([^<]*)<\/title>/i) || [, ""])[1].trim();
+    const robots = (html.match(/<meta[^>]+name="robots"[^>]+content="([^"]*)"/i) || [, ""])[1];
+    if (!/noindex/i.test(robots) && title) {
+      if (titlesSeen.has(title))
+        fail(`Duplicate <title> on indexable pages: "${title}" (${titlesSeen.get(title)} and ${p}).`);
+      else titlesSeen.set(title, p);
+    }
     if (p !== "/" && title === HOME_TITLE)
       fail(`Prerendered ${p} still carries the homepage <title>.`);
 

@@ -62,6 +62,16 @@ const TownPage = () => {
   // Swain, and Haywood County markets; Franklin for everything else.
   const showroom = nearestShowroom(town.slug);
 
+  // Franklin is our home market and the homepage owns "roofing company franklin
+  // nc" — this page covers Franklin neighborhoods and links up to the homepage.
+  const isPrimaryTownPage = town.slug === "franklin-nc";
+
+  const leadParagraph = isPrimaryTownPage
+    ? `Highlander Building Services is the roofing company headquartered in ${town.name}, NC. This page covers the ${town.name} neighborhoods we work in every week — if you need a roofer here, our crews and showroom are minutes away.`
+    : `Highlander Building Services is a roofing company and licensed builder serving ${town.name}, NC. When ${town.county} homeowners need a roofer who understands ${town.name} elevation, weather, and permitting, our crews work out of the ${showroom.location.locality} showroom.`;
+
+
+
   return (
     <>
       <SEOHead
@@ -124,8 +134,18 @@ const TownPage = () => {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg"
               >
-                Roofing &amp; Construction in{" "}
-                <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span>
+                {isPrimaryTownPage ? (
+                  <>
+                    Roofing in{" "}
+                    <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span> Neighborhoods
+                    &amp; Nearby Communities
+                  </>
+                ) : (
+                  <>
+                    <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span> Roofing
+                    Contractor &amp; Builder
+                  </>
+                )}
               </motion.h1>
 
               <PageContext
@@ -138,9 +158,9 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="hidden md:block text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
+                className="text-body md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
               >
-                {town.description}
+                {leadParagraph}
               </motion.p>
 
               {/* One genuinely local roofing reality, above the fold */}
@@ -193,6 +213,18 @@ const TownPage = () => {
             </div>
           </div>
         </section>
+
+        {isPrimaryTownPage && (
+          <Section density="compact" width="wide">
+            <p className="font-body text-body text-muted-foreground">
+              Looking for the main overview of our{" "}
+              <Link to="/" className="text-primary underline underline-offset-4">
+                roofing company in Franklin, NC
+              </Link>
+              ? Start on the homepage — this page goes neighborhood by neighborhood.
+            </p>
+          </Section>
+        )}
 
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}

@@ -8,7 +8,11 @@ interface SEOHeadProps {
   type?: "website" | "article";
   image?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
-  noindex?: boolean;
+  /**
+   * true → "noindex,nofollow" (utility pages).
+   * "follow" → "noindex,follow" (templated pages we still want crawled for links).
+   */
+  noindex?: boolean | "follow";
   keywords?: string;
   locale?: string;
 }
@@ -90,7 +94,7 @@ const SEOHead = ({
   useEffect(() => {
     document.title = fullTitle;
     setMeta("name", "description", description);
-    setMeta("name", "robots", noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
+    setMeta("name", "robots", noindex === "follow" ? "noindex,follow" : noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
     setMeta("name", "keywords", keywords || DEFAULT_KEYWORDS);
     setMeta("name", "author", SITE_NAME);
     setMeta("name", "publisher", SITE_NAME);

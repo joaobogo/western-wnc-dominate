@@ -176,6 +176,15 @@ const MetalRoofing = () => {
         costContext={
           <>
             <CostContextBlock serviceLabel="metal roofing" variant="roofing" />
+            <div className="container-tight pt-0 pb-4">
+              <p className="font-body text-body text-muted-foreground">
+                Want real numbers?{" "}
+                <Link to="/roofing/metal/cost" className="text-primary font-bold hover:underline">
+                  See metal roofing cost in Western NC (2026)
+                </Link>{" "}
+                — installed price per square for standing seam, exposed fastener, and metal shingles.
+              </p>
+            </div>
             <div className="container-tight pt-0 pb-8 md:pb-12">
               <FinancingTeaser serviceLabel="metal roofing" />
             </div>
@@ -257,6 +266,7 @@ const MetalRoofing = () => {
                 { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
                 { label: "Residential Roofing Services", href: "/roofing/residential", description: "Shingle, metal, and cedar options" },
                 { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Planning and material selection" },
+                { label: "Metal Roofing Cost in Western NC (2026)", href: "/roofing/metal/cost", description: "Installed price ranges per square" },
                 { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "How the two materials compare" },
                 { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local-climate-first material guide" },
                 { label: "Request an Inspection", href: "/request-inspection", description: "Talk metal specifics with an advisor" }
