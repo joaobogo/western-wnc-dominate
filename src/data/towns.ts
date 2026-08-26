@@ -141,7 +141,7 @@ export const towns: TownData[] = [
     description: "Our hometown market. Based in Franklin, we provide the region's fastest response times for family homes, valley farms, and ridge-top residences across Macon County.",
     features: ["Locally based crews", "Design", "Residential specialists", "Family-owned, team-driven"],
     metaTitle: "Roofing in Franklin, NC Neighborhoods & Nearby | Highlander",
-    metaDescription: "Roofing in Franklin, NC neighborhoods — Cartoogechaye, Iotla, Holly Springs and nearby Macon County. Local crews, showroom on Creative Dr. Licensed & insured.",
+    metaDescription: "Roofing in Franklin, NC neighborhoods — Cartoogechaye, Iotla, Holly Springs and nearby Macon County. Local crews, walk-in showroom in town. Licensed & insured.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
