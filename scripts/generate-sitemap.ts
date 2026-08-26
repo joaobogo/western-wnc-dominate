@@ -8,7 +8,7 @@ import { resolve } from "path";
 import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
 import { counties } from "../src/data/counties";
-import { generatedServiceTownEntries } from "../src/data/service-town-generated";
+import { indexableServiceTownPairs } from "../src/data/service-town-content";
 import { tier1FlatEntries, tier2FlatEntries } from "../src/data/service-town-slugs";
 import { projectDetails } from "../src/data/projects";
 
@@ -98,15 +98,21 @@ const countyRoutes: SitemapEntry[] = counties.map((c) => ({
 }));
 
 // Dynamic: service-town landing pages (/service-areas/{town}/{service}).
-const serviceTownRoutes: SitemapEntry[] = generatedServiceTownEntries.map((e) => ({
+// Only hand-written pairs are indexable; templated coverage pages render
+// noindex,follow and are deliberately excluded here.
+const indexablePairs = indexableServiceTownPairs();
+const indexablePairKeys = new Set(
+  indexablePairs.map((p) => `${p.townSlug}|${p.serviceSlug}`),
+);
+const serviceTownRoutes: SitemapEntry[] = indexablePairs.map((e) => ({
   path: `/service-areas/${e.townSlug}/${e.serviceSlug}`,
 }));
 
 // Dynamic: flat-slug service×town pages ("/roofing-highlands-nc"). These are
 // real, self-canonical, indexable routes in src/App.tsx.
-const flatSlugRoutes: SitemapEntry[] = [...tier1FlatEntries, ...tier2FlatEntries].map((e) => ({
-  path: `/${e.flatSlug}`,
-}));
+const flatSlugRoutes: SitemapEntry[] = [...tier1FlatEntries, ...tier2FlatEntries]
+  .filter((e) => indexablePairKeys.has(`${e.townSlug}|${e.serviceSlug}`))
+  .map((e) => ({ path: `/${e.flatSlug}` }));
 
 // Dynamic: individual project case-study pages (/projects/{slug}).
 const projectRoutes: SitemapEntry[] = projectDetails.map((p) => ({
