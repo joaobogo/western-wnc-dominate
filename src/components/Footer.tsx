@@ -47,6 +47,9 @@ const resourceLinks = [
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
+  { label: "Our Showrooms", href: "/locations" },
+  { label: "Franklin Showroom", href: "/locations/franklin-nc" },
+  { label: "Sylva Showroom", href: "/locations/sylva-nc" },
   { label: "Our Team", href: "/team" },
   { label: "Community", href: "/giving-back" },
   { label: "Work With Us", href: "/careers" },
@@ -198,7 +201,7 @@ const Footer = () => {
                 <div className="text-body-sm text-muted-foreground font-body leading-relaxed">
                   <span className="block font-bold text-foreground/85">Office Hours</span>
                   Mon–Fri 8:00 AM – 5:00 PM<br />
-                  Sat–Sun: by appointment
+                  Sat–Sun: closed
                 </div>
               </div>
             </address>

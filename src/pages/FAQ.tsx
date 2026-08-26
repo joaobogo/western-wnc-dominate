@@ -215,7 +215,7 @@ const categories: Category[] = [
     items: [
       { q: "How do I get in touch?", a: `Call ${PHONE_DISPLAY}, request a free inspection or consultation online, or use the contact form on the Contact page. Someone from our local Western NC team will follow up personally.` },
       { q: "What are your hours?", a: "Our office is staffed during standard business hours, and we respond to storm and active-leak calls outside of hours when possible. The fastest response is usually a phone call — voicemails after hours are checked first thing." },
-      { q: "Do you have showroom or office visits?", a: "Meetings are by appointment so a team member can give you their full attention. Reach out and we'll schedule a time that works for both of us." },
+      { q: "Do you have a showroom I can visit?", a: "Yes — two. Our Franklin and Sylva showrooms are both open Monday through Friday, 8:00 AM to 5:00 PM, with roofing, skylight, gutter, and siding samples on display. Walk in or call ahead so your estimator is on site when you arrive. Addresses and directions are on our Locations pages." },
     ],
   },
 ];
