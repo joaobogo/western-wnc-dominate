@@ -4,6 +4,7 @@ import { customerReviews, type CustomerReview } from "@/data/reviews";
 import { projectDetails } from "@/data/projects";
 import { towns } from "@/data/towns";
 import { counties } from "@/data/counties";
+import { BUSINESS, CREDENTIALS as BUSINESS_CREDENTIALS, REVIEW_LINE_AS_OF } from "@/data/business";
 
 /**
  * Proof block designed to sit directly beside or beneath a page's primary CTA.
@@ -54,12 +55,12 @@ interface ConversionTrustBlockProps {
   className?: string;
 }
 
-const CREDENTIALS = [
-  { icon: Shield, label: "Licensed NC General Contractor" },
-  { icon: BadgeCheck, label: "Fully insured" },
-  { icon: BadgeCheck, label: "CertainTeed ShingleMaster Credentialed" },
-  { icon: BadgeCheck, label: "HAAG Certified Inspector" },
-];
+/** Verifiable items only — sourced from BUSINESS.credentials. */
+const CREDENTIALS = BUSINESS_CREDENTIALS.map((c, i) => ({
+  icon: i === 0 ? Shield : BadgeCheck,
+  label: c.label,
+  href: c.href,
+}));
 
 const ConversionTrustBlock = ({
   category = "roofing",
@@ -72,9 +73,9 @@ const ConversionTrustBlock = ({
 
   if (variant === "band") {
     const items = [
-      { icon: Shield, label: "Licensed NC General Contractor", detail: "Fully insured, CertainTeed ShingleMaster Credentialed" },
-      { icon: Users, label: "In-house Highlander crews", detail: "No subcontracted install teams on your roof" },
-      { icon: Clock, label: "24-hour response", detail: "A person replies within one business day" },
+      { icon: Shield, label: BUSINESS.licenseNumber, detail: "Licensed NC General Contractor · fully insured" },
+      { icon: Users, label: `Family-owned in Franklin since ${BUSINESS.foundingYear}`, detail: "Showrooms in Franklin & Sylva" },
+      { icon: Star, label: REVIEW_LINE_AS_OF, detail: "Google Business Profile reviews" },
       { icon: MapPin, label: `${towns.length} WNC towns served`, detail: `Across ${counties.length} mountain counties` },
       project
         ? { icon: Hammer, label: `Recent: ${project.type}`, detail: `${project.location} · ${project.scope}` }
@@ -136,7 +137,13 @@ const ConversionTrustBlock = ({
           {CREDENTIALS.map((c) => (
             <li key={c.label} className="flex items-center gap-2 text-body-xs font-body text-muted-foreground">
               <c.icon className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-              {c.label}
+              {c.href ? (
+                <a href={c.href} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-foreground transition-colors underline underline-offset-2">
+                  {c.label}
+                </a>
+              ) : (
+                c.label
+              )}
             </li>
           ))}
         </ul>
