@@ -158,6 +158,18 @@ const SEOHead = ({
     if (!noindex && !hasBusinessNode) {
       nodes.push(localBusinessSchema());
     }
+    // The business node references the two showrooms by @id; whenever that
+    // reference is in the graph the Place nodes must be defined too, or the
+    // graph ships dangling @id pointers.
+    const graphText = JSON.stringify(nodes);
+    const showroomRefsUsed = graphText.includes("-showroom");
+    const showroomNodesDefined = nodes.some(
+      (n) => typeof n["@id"] === "string" && (n["@id"] as string).endsWith("-showroom"),
+    );
+    if (showroomRefsUsed && !showroomNodesDefined) {
+      nodes.push(...(locationNodes() as Record<string, unknown>[]));
+    }
+
     if (!noindex && !serialized.includes("BreadcrumbList") && canonicalPath !== "/") {
       const segments = canonicalPath.split("/").filter(Boolean);
       const trail = [{ name: "Home", url: "/" }];
