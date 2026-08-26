@@ -90,7 +90,7 @@ const galleryImages = [
 
 const whyHighlander = [
   { icon: Shield, title: "Roofing Expertise Built In", detail: "Every covered outdoor structure needs a roof. As a roofing company first, we handle porch, pavilion, and enclosure roofing with the same materials, techniques, and warranty as our primary roofing work." },
-  { icon: Users, title: "In-House Construction Crews", detail: "Our framing, decking, and finish crews are Highlander employees — not subcontracted labor. Accountability, communication, and consistent quality from start to finish." },
+  { icon: Users, title: "In-House Construction Crews", detail: "Framing, decking, and finish work runs under a Highlander project manager, with crews we know and hold to our standards from start to finish." },
   { icon: FileCheck, title: "Documented Scope & Pricing", detail: "Written proposals with transparent cost groupings, specified materials, defined timeline, and no vague allowances. You know exactly what you're getting before we mobilize." },
   { icon: Mountain, title: "WNC Terrain Experience", detail: "Steep lots, rock, variable soils, and complex drainage — we've built outdoor structures on the challenging terrain that defines Western North Carolina properties." },
 ];

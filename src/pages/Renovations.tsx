@@ -216,7 +216,7 @@ const Renovations = () => {
                 Renovation isn't about tearing things apart. It's the discipline of improving what exists while preserving what works — structure, character, and the investment you've already made.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander approaches renovation the way we approach every project: with documented scope, defined materials, honest timelines, and the same in-house crews who build our additions and install our roofs. The result is renovation work that feels intentional — not improvised.
+                Highlander approaches renovation the way we approach every project: with documented scope, defined materials, honest timelines, and the same crews and project managers who build our additions and install our roofs. The result is renovation work that feels intentional — not improvised.
               </p>
               <div className="flex items-center justify-center gap-2 mt-10">
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.15)]" />

@@ -1,3 +1,4 @@
+import { REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Award, Clock, Mountain, CheckCircle2 } from "lucide-react";
@@ -157,8 +158,8 @@ const CTABlock = () => {
         <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground text-body-xs font-body text-center md:text-left">
-              <span className="text-primary-foreground font-heading font-bold">4.9★ Rated.</span>{" "}
-              <span className="text-primary-foreground font-heading font-bold">4.9★ rated.</span>{" "}
+              <span className="text-primary-foreground font-heading font-bold">{`${REVIEW_STARS} rated.`}</span>{" "}
+              <span className="text-primary-foreground font-heading font-bold">{`${REVIEW_STARS} rated.`}</span>{" "}
               Roofing & Construction across Western NC since 2017.
             </p>
             <div className="flex items-center gap-4">

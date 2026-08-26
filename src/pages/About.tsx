@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_LINE_AS_OF } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -597,7 +597,7 @@ const About = () => {
                 <span className="text-primary-foreground/20">•</span>
                 <span>2024 Best of Macon County</span>
                 <span className="text-primary-foreground/20">•</span>
-                <span>4.9★ Average Rating</span>
+                <span>{REVIEW_LINE_AS_OF}</span>
               </div>
             </motion.div>
           </div>

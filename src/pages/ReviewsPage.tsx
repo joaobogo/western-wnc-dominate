@@ -1,4 +1,4 @@
-import { REVIEW_STARS, REVIEW_COUNT } from "@/data/business";
+import { REVIEW_STARS, REVIEW_COUNT, REVIEW_LINE_AS_OF, REVIEW_RATING } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -86,7 +86,7 @@ const ReviewsPage = () => {
     <>
       <SEOHead
         title="Reviews & Reputation | What Clients Say About Highlander"
-        description="Read verified reviews from Highlander Building Services clients across Western North Carolina. 4.9★ average rating from 150+ reviews."
+        description={`Read verified reviews from Highlander Building Services clients across Western North Carolina. ${REVIEW_LINE_AS_OF}.`}
         path="/reviews"
         jsonLd={buildPageSchema({
           type: "reviews",
@@ -111,7 +111,7 @@ const ReviewsPage = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
-                  <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
+                  <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">{REVIEW_RATING}</span>
                   <span className="text-sm text-dark-section-muted font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
                 </div>
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">

@@ -1,4 +1,4 @@
-import { REVIEW_COUNT_LABEL } from "@/data/business";
+import { REVIEW_COUNT_LABEL, REVIEW_STARS, REVIEW_AS_OF, REVIEW_RATING } from "@/data/business";
 import { motion } from "framer-motion";
 import { Shield, Award, Star, MapPin, Clock, Phone, CheckCircle2, Mountain, Hammer, type LucideIcon } from "lucide-react";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
@@ -30,15 +30,15 @@ const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
   },
   social: {
     items: [
-      { icon: Star, text: "4.9★ Google Rating", stat: "4.9" },
+      { icon: Star, text: `${REVIEW_STARS} Google rating (${REVIEW_AS_OF})`, stat: REVIEW_RATING },
       { icon: CheckCircle2, text: REVIEW_COUNT_LABEL },
-      { icon: Phone, text: "Rapid Response Guarantee" },
+      { icon: Phone, text: "Local advisor, business-hours response" },
     ],
   },
   stats: {
     items: [
       { icon: Hammer, text: "Team-Led Quality", stat: "100%" },
-      { icon: Clock, text: "40+ Years Combined Exp.", stat: "40+" },
+      { icon: Clock, text: "Family-owned in Franklin since 2017", stat: "2017" },
       { icon: Mountain, text: "8 WNC Counties Served", stat: "8" },
     ],
   },
