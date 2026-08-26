@@ -214,6 +214,18 @@ const TownPage = () => {
           </div>
         </section>
 
+        {isPrimaryTownPage && (
+          <Section density="compact" width="wide">
+            <p className="font-body text-body text-muted-foreground">
+              Looking for the main overview of our{" "}
+              <Link to="/" className="text-primary underline underline-offset-4">
+                roofing company in Franklin, NC
+              </Link>
+              ? Start on the homepage — this page goes neighborhood by neighborhood.
+            </p>
+          </Section>
+        )}
+
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
           answer={`Yes. Highlander Building Services, Inc. serves ${town.name} and the rest of ${town.county} from our ${showroom.location.locality} showroom at ${napLine(showroom.location)}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
