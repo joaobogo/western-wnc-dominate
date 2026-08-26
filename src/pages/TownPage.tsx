@@ -205,6 +205,27 @@ const TownPage = () => {
           ]}
         />
 
+        {/* Nearest physical showroom — service-area pages point at a real building */}
+        <Section density="compact" width="wide">
+          <div className="flex flex-col gap-4 border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="eyebrow mb-1 text-muted-foreground">Nearest showroom</p>
+              <p className="font-body text-body font-semibold text-foreground">
+                {showroom.cardLabel} — {napLine(showroom.location)}
+              </p>
+              <p className="font-body text-body-sm text-muted-foreground">
+                Open {showroom.location.hours[0].label}. Walk in and see materials in person.
+              </p>
+            </div>
+            <Link to={showroom.path} className="btn btn-secondary shrink-0">
+              <span>Visit the {showroom.location.locality} showroom</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </Section>
+
+
+
         {/* 2. LOCAL CONDITIONS — what is specific to this town */}
         <Section density="default" className="bg-secondary/40 border-y border-border/60" containerClassName="grid lg:grid-cols-2 gap-12 items-start">
           <ScrollReveal variant="fade">
