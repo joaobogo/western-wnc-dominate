@@ -57,6 +57,7 @@ const teamMembers = [
   pickMember("kyle-poindexter"),
   pickMember("alex-hurst"),
 ].map((m) => ({
+  slug: m.slug,
   name: m.name,
   role: m.role,
   specialty: m.details.find((d) => d.label === "Specialty")?.value ?? m.role,
