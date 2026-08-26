@@ -72,6 +72,11 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/exterior-improvements" },
   { path: "/layouts-planning" },
 
+  // Physical showroom (location) pages
+  { path: "/locations" },
+  { path: "/locations/franklin-nc" },
+  { path: "/locations/sylva-nc" },
+
   // Service Areas hub + blog hub
   { path: "/service-areas" },
   { path: "/blog" },

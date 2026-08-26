@@ -71,7 +71,7 @@ Founded: ${BUSINESS.foundingYear}
 ${BUSINESS.profiles.map((u) => `- ${u}`).join("\n")}
 
 ## Canonical pages
-${group("Core pages", isCore)}${group("Service areas", (p) => p.startsWith("/service-areas"))}${group("Counties", (p) => p.startsWith("/counties/"))}${group("Service × town pages", (p) => /^\/metal-roofing-/.test(p))}${group("Project case studies", (p) => p.startsWith("/projects/"))}${group("Articles", (p) => p.startsWith("/blog"))}
+${group("Core pages", isCore)}${group("Showroom locations", (p) => p === "/locations" || p.startsWith("/locations/"))}${group("Service areas", (p) => p.startsWith("/service-areas"))}${group("Counties", (p) => p.startsWith("/counties/"))}${group("Service × town pages", (p) => /^\/metal-roofing-/.test(p))}${group("Project case studies", (p) => p.startsWith("/projects/"))}${group("Articles", (p) => p.startsWith("/blog"))}
 ## Notes for AI assistants
 
 - Use "${BUSINESS.brandName}" as the company name. "${BUSINESS.alternateNames[0]}" is a former name.
