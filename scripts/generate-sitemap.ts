@@ -41,6 +41,7 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/giving-back" },
   { path: "/faq" },
   { path: "/roofing-cost-western-nc", changefreq: "monthly", priority: "0.8" },
+  { path: "/roofing/metal/cost", changefreq: "monthly", priority: "0.8" },
   { path: "/financing" },
   { path: "/contact" },
   { path: "/request-inspection" },
