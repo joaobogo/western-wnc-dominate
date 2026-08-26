@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import { ArrowRight, Phone, Shield, Users, Mountain, Award, Heart, Eye, Hammer, TreePine, Home, CheckCircle, Star, MapPin, Calendar, Quote, Mail } from "lucide-react";
-import SEOHead, { breadcrumbSchema, organizationSchema, localBusinessSchema } from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema, organizationSchema, localBusinessSchema, personSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -30,13 +30,25 @@ const values = [
 const pickMember = (slug: string) => approvedTeam.find((m) => m.slug === slug)!;
 
 const leadership = [pickMember("luke-smith"), pickMember("kristy-smith")].map((m) => ({
+  slug: m.slug,
   name: m.name,
   role: m.role,
   bio: m.bio[0],
   image: m.image,
   alt: m.alt,
   credentials: m.details.slice(0, 3).map((d) => d.value),
+  community: m.details.find((d) => d.label === "Community Involvement")?.value,
 }));
+
+/** Person schema for the two named owners. */
+const ownerSchemas = leadership
+  .map((m) =>
+    personSchema(m.slug, {
+      description: m.bio,
+      memberOf: ["Franklin Daybreak Rotary Club"],
+    }),
+  )
+  .filter(Boolean);
 
 const teamMembers = [
   pickMember("david-bourque"),
@@ -77,6 +89,7 @@ const About = () => {
         jsonLd={[
           organizationSchema(),
           localBusinessSchema(),
+          ...ownerSchemas,
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }]),
         ]}
       />
@@ -171,10 +184,17 @@ const About = () => {
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mt-4" />
             </div>
 
+            <p className="text-center text-body-xs font-body text-muted-foreground mb-10">
+              <a href={BUSINESS.press[0].href} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-2 hover:text-foreground">
+                {BUSINESS.press[0].label}
+              </a>
+            </p>
+
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 mb-24">
               {leadership.map((person, i) => (
                 <motion.div 
                   key={person.name}
+                  id={person.slug}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -198,6 +218,11 @@ const About = () => {
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
                     <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-body-sm mb-4 uppercase tracking-wider">{person.role}</p>
                     <p className="text-muted-foreground text-body md:text-body leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
+                    {person.community && (
+                      <p className="text-body-xs font-body text-muted-foreground mb-4">
+                        Community: {person.community}
+                      </p>
+                    )}
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
                         <span key={cred} className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
@@ -222,6 +247,7 @@ const About = () => {
               {teamMembers.map((person, i) => (
                 <motion.div 
                   key={person.name}
+                  id={person.slug}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
