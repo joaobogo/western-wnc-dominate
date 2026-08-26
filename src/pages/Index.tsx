@@ -1,4 +1,4 @@
-import { FRANKLIN_NAP, PHONE_PLAIN } from "@/data/business";
+import { FRANKLIN_NAP, PHONE_PLAIN, REVIEW_SUMMARY, BUSINESS } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -6,6 +6,7 @@ import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CredibilityStrip from "@/components/home/CredibilityStrip";
+import PriorityLocalLinks from "@/components/home/PriorityLocalLinks";
 import TartanBackground from "@/components/TartanBackground";
 
 import ThreeDivisionPathway from "@/components/DualPathway";
@@ -30,8 +31,8 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="Roofing & Construction in Western NC | Highlander"
-        description="Highlander Building Services: roofing, repairs, metal roofs, gutters, and custom builds across Franklin, Highlands, Cashiers & Western NC."
+        title="Roofing Company in Franklin, NC | Highlander"
+        description={`Roofing company in Franklin, NC serving Western North Carolina. ${REVIEW_SUMMARY.ratingValue} stars from ${REVIEW_SUMMARY.reviewCount} Google reviews, ${BUSINESS.licenseNumber}, CertainTeed ShingleMaster, Franklin & Sylva showrooms.`}
         path="/"
         keywords="Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
         // No aggregateRating here — rating markup is only emitted on /reviews,
@@ -82,6 +83,9 @@ const Index = () => {
 
           {/* 6. Local coverage (surface-raised) */}
           <ServiceAreaMap id="service-area" />
+
+          {/* 6b. Descriptive internal links into priority towns + showrooms */}
+          <PriorityLocalLinks />
 
           {/* 7. FAQ (light) */}
           <HomeFAQ />
