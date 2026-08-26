@@ -130,6 +130,17 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                   All Service Areas
                   <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
                 </Link>
+                {showroomLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={(e) => onViewAllClick(e, link.href)}
+                    className="flex items-center gap-1.5 px-3 py-2.5 text-body-xs font-body font-semibold rounded-sm transition-colors text-foreground hover:bg-primary/5"
+                  >
+                    Visit our {link.label}
+                    <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
+                  </Link>
+                ))}
               </div>
             </div>
           </motion.div>
