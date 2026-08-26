@@ -23,6 +23,12 @@ export interface ServiceTownEntry {
   faqs: { q: string; a: string }[];
   /** Long-form supporting sections (generated coverage pages). */
   sections?: GeneratedSection[];
+  /**
+   * True only for hand-written entries with genuinely unique local content.
+   * Generated coverage entries are templated with the town name swapped in,
+   * so they render with noindex,follow and stay out of the sitemap.
+   */
+  handwritten?: boolean;
 }
 
 const E = (e: ServiceTownEntry) => e;
@@ -906,6 +912,9 @@ for (let i = serviceTownContent.length - 1; i >= 0; i--) {
 //  fill combinations that don't already exist.
 // ─────────────────────────────────────────────────────────────
 {
+  // Everything defined above this point is hand-written and indexable.
+  for (const e of serviceTownContent) e.handwritten = true;
+
   const existing = new Set(
     serviceTownContent.map((e) => `${e.townSlug}|${e.serviceSlug}`),
   );
@@ -913,7 +922,7 @@ for (let i = serviceTownContent.length - 1; i >= 0; i--) {
     const key = `${g.townSlug}|${g.serviceSlug}`;
     if (existing.has(key)) continue;
     existing.add(key);
-    serviceTownContent.push(E(g));
+    serviceTownContent.push(E({ ...g, handwritten: false }));
   }
 }
 
@@ -933,3 +942,18 @@ export function getServiceTownEntriesForTown(townSlug: string) {
 export function getServiceTownEntriesForService(serviceSlug: string) {
   return serviceTownContent.filter((e) => e.serviceSlug === serviceSlug);
 }
+
+/**
+ * A service × town page is indexable only when it carries hand-written local
+ * content (local proof, town-specific FAQs, photos). Templated coverage pages
+ * render with noindex,follow and are excluded from the sitemap.
+ */
+export function isServiceTownIndexable(townSlug: string, serviceSlug: string) {
+  return getServiceTownEntry(townSlug, serviceSlug)?.handwritten === true;
+}
+
+/** Every indexable service × town pair, for sitemap generation. */
+export const indexableServiceTownPairs = () =>
+  serviceTownContent
+    .filter((e) => e.handwritten)
+    .map((e) => ({ townSlug: e.townSlug, serviceSlug: e.serviceSlug }));
