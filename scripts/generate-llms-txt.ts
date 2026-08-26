@@ -28,6 +28,8 @@ const group = (label: string, match: (p: string) => boolean, limit = 400) => {
 
 const isCore = (p: string) =>
   !p.startsWith("/blog") &&
+  p !== "/locations" &&
+  !p.startsWith("/locations/") &&
   !p.startsWith("/service-areas/") &&
   !p.startsWith("/counties/") &&
   !/^\/metal-roofing-/.test(p) &&
