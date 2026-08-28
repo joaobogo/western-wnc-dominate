@@ -68,6 +68,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
+      data-hero
       data-hero-variant={heroLayout.variant}
       data-gtm-experiment="home_hero_layout"
       data-gtm-variant={heroLayout.variant}
@@ -144,10 +145,11 @@ const Hero = () => {
 
       {/* === GOLD VERTICAL ACCENT — left edge === */}
       <motion.div
-        className="absolute left-0 top-0 w-[1.5px] z-20"
+        className="absolute left-0 top-0 w-[1.5px] h-[65%] z-20"
         style={{ background: 'linear-gradient(to bottom, hsl(var(--highland-gold) / 0.6), hsl(var(--highland-gold) / 0))' }}
-        initial={{ height: "0%" }}
-        animate={{ height: "65%" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+
         transition={{ duration: 0.4, delay: 0.2, ease: DRAMATIC_EASE }}
       />
 
@@ -169,8 +171,8 @@ const Hero = () => {
         <motion.div
           className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.04)] to-transparent"
           style={{ top: "61.8%" }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.4, ease: DRAMATIC_EASE }}
         />
       </div>
@@ -178,8 +180,8 @@ const Hero = () => {
       {/* === RIGHT EDGE — Elevation indicator === */}
       <div className={`absolute right-0 top-0 bottom-0 ${textLed ? "hidden" : "hidden xl:flex"} flex-col items-center justify-center z-10 pr-10`}>
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.25, duration: 0.4, ease: HIGHLAND_EASE }}
           className="flex flex-col items-center gap-5"
         >
@@ -313,8 +315,8 @@ const Hero = () => {
             {/* VELUX Certified Installer badge — desktop only; keeps mobile hero clean */}
             <motion.a
               href="/certifications"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.3, ease: HIGHLAND_EASE }}
               className="mt-4 md:mt-6 hidden md:inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
@@ -342,8 +344,8 @@ const Hero = () => {
 
       {/* === BOTTOM AUTHORITY BAR === */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.4, ease: HIGHLAND_EASE }}
         className="absolute bottom-0 left-0 right-0 z-20 hidden sm:block"
       >
@@ -351,8 +353,8 @@ const Hero = () => {
         <motion.div
           className="h-px w-full"
           style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.25, duration: 0.4, ease: DRAMATIC_EASE }}
         />
 
@@ -364,8 +366,8 @@ const Hero = () => {
                 {trustItems.map((item, i) => (
                   <motion.div
                     key={item.label}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.25 + i * 0.05, ease: HIGHLAND_EASE }}
                     className="flex items-center gap-2 text-primary-foreground text-body-xs md:text-base"
                   >
