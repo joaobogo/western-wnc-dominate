@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { onUserIntent } from "@/lib/third-party-intent";
 
 interface DeferMountProps {
   children: ReactNode;
@@ -24,19 +25,14 @@ const DeferMount = ({ children, idleDelay = 3500, reserveHeight, reserveClassNam
 
   useEffect(() => {
     if (ready) return;
-    let timer: number | undefined;
-    const go = () => setReady(true);
-    const events: (keyof WindowEventMap)[] = ["pointerdown", "keydown", "scroll", "touchstart"];
-    events.forEach((e) => window.addEventListener(e, go, { once: true, passive: true }));
-
-    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number })
-      .requestIdleCallback;
-    if (ric) ric(go, { timeout: idleDelay });
-    else timer = window.setTimeout(go, idleDelay);
-
+    let cancelled = false;
+    // Single shared definition of "intent": scroll past the hero, a click /
+    // keypress / touch, or 5 s idle after load (src/lib/third-party-intent.ts).
+    onUserIntent(() => {
+      if (!cancelled) setReady(true);
+    });
     return () => {
-      events.forEach((e) => window.removeEventListener(e, go));
-      if (timer) window.clearTimeout(timer);
+      cancelled = true;
     };
   }, [ready, idleDelay]);
 

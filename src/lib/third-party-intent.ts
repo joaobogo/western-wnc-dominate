@@ -81,7 +81,16 @@ function arm() {
 /** Run `cb` on the first sign of user intent (or after the idle fallback). */
 export function onUserIntent(cb: Cb) {
   if (typeof window === "undefined") return;
-  const w = window as Window & { __hlUserIntent?: boolean };
+  const w = window as Window & {
+    __hlUserIntent?: boolean;
+    __hlOnUserIntent?: (fn: Cb) => void;
+  };
+  // Prefer the gate installed in index.html so both entry points agree on
+  // what counts as intent (and only one set of listeners is ever attached).
+  if (typeof w.__hlOnUserIntent === "function") {
+    w.__hlOnUserIntent(cb);
+    return;
+  }
   if (fired || w.__hlUserIntent) {
     cb();
     return;
