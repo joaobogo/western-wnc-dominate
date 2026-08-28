@@ -287,9 +287,49 @@ div[style*="Edit with Lovable"],
     }());
     </script>
     <!-- End RealWork Labs Plugin Loader -->
-    <!-- Immediate consent-aware third-party loader: fire as early as possible, gated by consent -->
+    <!-- Consent-aware third-party loader, gated on user intent.
+         Performance budget: <=150 KB of third-party JS before first interaction.
+         GTM loads immediately; RealWork Labs (+ the Google Maps JS API it pulls),
+         the VELUX embed and the chatbot wait for scroll past the hero, a click /
+         keypress / touch, or 5 s of idle time. Mirrored in src/lib/third-party-intent.ts. -->
     <script>
     (function(w){
+      var d=w.document;
+      var intentQueue=[], intentFired=false, armed=false;
+      function heroDepth(){
+        var hero=d.querySelector('[data-hero], [data-hero-anchored], #hero');
+        if(hero) return hero.getBoundingClientRect().height * 0.6;
+        return Math.min(400, w.innerHeight * 0.6);
+      }
+      function fireIntent(){
+        if(intentFired)return; intentFired=true; w.__hlUserIntent=true;
+        w.removeEventListener('pointerdown',fireIntent);
+        w.removeEventListener('keydown',fireIntent);
+        w.removeEventListener('touchstart',fireIntent);
+        w.removeEventListener('scroll',onScroll);
+        var q=intentQueue.slice(); intentQueue.length=0;
+        q.forEach(function(fn){ try{ fn(); }catch(e){} });
+      }
+      function onScroll(){ if(w.scrollY > heroDepth()) fireIntent(); }
+      function arm(){
+        if(armed)return; armed=true;
+        w.addEventListener('pointerdown',fireIntent,{passive:true});
+        w.addEventListener('keydown',fireIntent);
+        w.addEventListener('touchstart',fireIntent,{passive:true});
+        w.addEventListener('scroll',onScroll,{passive:true});
+        var start=function(){ w.setTimeout(function(){
+          if(w.requestIdleCallback) w.requestIdleCallback(fireIntent,{timeout:2000});
+          else fireIntent();
+        }, 5000); };
+        if(d.readyState==='complete') start();
+        else w.addEventListener('load',start,{once:true});
+      }
+      // Exposed so React code shares one definition of "intent".
+      w.__hlOnUserIntent = function(fn){
+        if(intentFired || w.__hlUserIntent){ try{ fn(); }catch(e){} return; }
+        intentQueue.push(fn); arm();
+      };
+
       function marketingOk(){ return !!(w.__hlConsent && w.__hlConsent.marketing); }
       function functionalOk(){ return !!(w.__hlConsent && w.__hlConsent.functional); }
       function loadMarketing(){
@@ -299,7 +339,8 @@ div[style*="Edit with Lovable"],
       }
       function loadFunctional(){
         if(!functionalOk())return;
-        try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
+        // Never on initial load — RealWork pulls the Maps JS API with it.
+        w.__hlOnUserIntent(function(){ try{ w.__loadRWL && w.__loadRWL(); }catch(e){} });
       }
       // Called by the in-app consent banner once the visitor makes a choice.
       w.__hlApplyConsent = function(state){
@@ -310,14 +351,19 @@ div[style*="Edit with Lovable"],
           ad_personalization: state.marketing ? 'granted':'denied',
           analytics_storage: state.analytics ? 'granted':'denied'
         });
+        // Pixels are a marketing decision the visitor just made — deferring them
+        // to the next intent signal would drop conversions; they stay small.
         loadMarketing();
         loadFunctional();
       };
-      // Immediate attempt: if consent was already stored, load now.
+      // Stored consent from a previous visit: marketing pixels on load, heavy
+      // functional embeds still behind the intent gate.
       loadMarketing();
       loadFunctional();
+      arm();
     })(window);
     </script>
+
   </head>
 
   <body>
