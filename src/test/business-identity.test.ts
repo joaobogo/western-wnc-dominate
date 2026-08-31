@@ -15,7 +15,7 @@ import { BUSINESS, FRANKLIN, SYLVA, formatPhoneDisplay, napLine, telHref } from 
 const ROOT = resolve(__dirname, "../..");
 const SRC = join(ROOT, "src");
 
-const FORBIDDEN = ["Creative Dr", "Highlands Rd", "524-7773", "397-9211", "476-4000"];
+const FORBIDDEN = ["Highlands Road", "Highlands Rd", "524-7773", "397-9211", "476-4000"];
 
 const ALLOWED = new Set(["src/data/business.ts", "src/test/business-identity.test.ts"]);
 
@@ -54,7 +54,7 @@ describe("BUSINESS derived values", () => {
 
   it("keeps both showrooms with GBP-exact NAP lines", () => {
     expect(BUSINESS.locations).toHaveLength(2);
-    expect(napLine(FRANKLIN)).toBe("76 Creative Dr, Franklin, NC 28734");
+    expect(napLine(FRANKLIN)).toBe("1511 Highlands Road, Franklin, NC 28734");
     expect(napLine(SYLVA)).toBe("28 Cross Stitch Mountain Rd, Sylva, NC 28779");
     expect(FRANKLIN.gbpCid).toMatch(/^\d+$/);
     expect(SYLVA.gbpCid).toMatch(/^\d+$/);

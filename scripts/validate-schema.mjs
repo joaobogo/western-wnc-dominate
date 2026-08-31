@@ -24,7 +24,7 @@ const BASE = "https://highlandernc.com";
 const BUSINESS_ID = `${BASE}/#business`;
 
 /** Street addresses that are allowed to appear in a Place-type node. */
-const ALLOWED_STREETS = ["76 Creative Dr", "28 Cross Stitch Mountain Rd"];
+const ALLOWED_STREETS = ["1511 Highlands Road", "28 Cross Stitch Mountain Rd"];
 
 const PLACE_TYPES = new Set([
   "LocalBusiness",
