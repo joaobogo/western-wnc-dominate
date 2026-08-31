@@ -43,7 +43,7 @@ const rows = blogPosts.map((p) => ({
   date: p.date,
   words: wordCount(p.content) + wordCount(p.excerpt),
   category: p.category,
-  town: p.town || "",
+  town: (p.town || "").toLowerCase(),
   targetQuery: targetQuery(p),
   tokens: tokens(`${p.title} ${p.excerpt}`),
 }));
@@ -52,6 +52,9 @@ for (const r of rows) {
   let best = null;
   for (const o of rows) {
     if (o.slug === r.slug) continue;
+    // Never pair two posts written for different towns: same template, different
+    // geo intent. Those are the local cluster, not duplicates to merge.
+    if (r.town && o.town && r.town !== o.town) continue;
     const score = jaccard(r.tokens, o.tokens);
     if (!best || score > best.score) best = { slug: o.slug, title: o.title, score };
   }
