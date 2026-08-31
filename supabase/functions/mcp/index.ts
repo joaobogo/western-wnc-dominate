@@ -83,12 +83,12 @@ var BUSINESS = {
     {
       id: "franklin",
       name: "Franklin Showroom",
-      streetAddress: "76 Creative Dr",
+      streetAddress: "1511 Highlands Road",
       locality: "Franklin",
       region: "NC",
       postalCode: "28734",
       phoneE164: "+1-828-524-7773",
-      geo: { lat: 35.1821, lng: -83.3807 },
+      geo: { lat: 35.1626, lng: -83.3459 },
       gbpCid: FRANKLIN_CID,
       hours: STANDARD_HOURS,
       primary: true

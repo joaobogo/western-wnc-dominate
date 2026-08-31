@@ -187,12 +187,12 @@ export const BUSINESS: BusinessIdentity = {
     {
       id: "franklin",
       name: "Franklin Showroom",
-      streetAddress: "76 Creative Dr",
+      streetAddress: "1511 Highlands Road",
       locality: "Franklin",
       region: "NC",
       postalCode: "28734",
       phoneE164: "+1-828-524-7773",
-      geo: { lat: 35.1821, lng: -83.3807 },
+      geo: { lat: 35.1626, lng: -83.3459 },
       gbpCid: FRANKLIN_CID,
       hours: STANDARD_HOURS,
       primary: true,
@@ -244,7 +244,7 @@ export const formatPhonePlain = (e164: string) => e164.replace(/^\+1-/, "");
 /** "+1-828-524-7773" → "tel:+18285247773" */
 export const telHref = (e164: string) => `tel:+${e164.replace(/\D/g, "")}`;
 
-/** "76 Creative Dr, Franklin, NC 28734" — exact GBP NAP line. */
+/** "1511 Highlands Road, Franklin, NC 28734" — exact GBP NAP line. */
 export const napLine = (loc: BusinessLocation) =>
   `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${loc.postalCode}`;
 
