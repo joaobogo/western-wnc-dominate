@@ -73,6 +73,9 @@ for (const r of [...rows].sort((a, b) => b.overlapScore - a.overlapScore)) {
   if (seen.has(r.slug) || seen.has(r.overlapSlug)) continue;
   const other = rows.find((x) => x.slug === r.overlapSlug);
   if (!other) continue;
+  // Merge only within the same content category — a gutter post and a skylight
+  // post can share vocabulary without sharing search intent.
+  if (other.category !== r.category) continue;
   const [strong, weak] =
     other.words === r.words
       ? (new Date(r.date) <= new Date(other.date) ? [r, other] : [other, r])
