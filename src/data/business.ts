@@ -250,6 +250,39 @@ export const napLine = (loc: BusinessLocation) =>
 
 export const directionsUrl = (loc: BusinessLocation) => GBP_MAP_URL(loc.gbpCid);
 
+/** Direct "leave a review" link for a showroom's Google Business Profile. */
+export const gbpReviewUrl = (loc: BusinessLocation) =>
+  `https://search.google.com/local/writereview?placeid=&cid=${loc.gbpCid}`;
+
+/**
+ * The exact URL to paste into a Google Business Profile "Website" field.
+ *
+ * GBP traffic is otherwise attributed to `google / organic` in GA4, which makes
+ * it impossible to separate map-pack visits from classic organic. Tagging the
+ * profile link keeps both showrooms measurable per location.
+ *
+ * Franklin → https://highlandernc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=franklin
+ */
+export const gbpWebsiteUrl = (loc: BusinessLocation, path = "/") => {
+  const url = new URL(path, BUSINESS.websiteUrl);
+  url.searchParams.set("utm_source", "google");
+  url.searchParams.set("utm_medium", "organic");
+  url.searchParams.set("utm_campaign", "gbp");
+  url.searchParams.set("utm_content", loc.id);
+  return url.toString();
+};
+
+/** GBP "Appointment"/"Request a quote" link — same profile, separate CTA slot. */
+export const gbpBookingUrl = (loc: BusinessLocation) => {
+  const url = new URL("/contact", BUSINESS.websiteUrl);
+  url.searchParams.set("utm_source", "google");
+  url.searchParams.set("utm_medium", "organic");
+  url.searchParams.set("utm_campaign", "gbp_booking");
+  url.searchParams.set("utm_content", loc.id);
+  return url.toString();
+};
+
+
 export const PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 export const PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 export const PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
