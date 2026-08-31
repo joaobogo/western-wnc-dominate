@@ -63,7 +63,7 @@ The website should feel like a **high-end project consultation platform**, not a
 
 ### 2. Sticky Mobile CTA Bar
 - Fixed bottom bar on all interior pages
-- Left: Phone icon with "(828) 397-9211"
+- Left: Phone icon with "(828) 524-7773"
 - Right: "Get a Quote" button
 - Appears after scrolling past hero section
 - Storm pages: changes to "Emergency? Call Now" with amber accent
@@ -220,7 +220,7 @@ Based on project type selection:
 | Residential Roofing | "Get a Roofing Consultation" | "See Our Projects" | Expert, reassuring |
 | Roof Replacement | "Plan Your Roof Replacement" | "Estimate Your Cost" | Practical, helpful |
 | Roof Repair | "Request a Repair Assessment" | "Is It Repair or Replace?" | Calm, solution-oriented |
-| Storm Damage | "Call (828) 397-9211 Now" | "Document Your Damage" | Urgent but steady |
+| Storm Damage | "Call (828) 524-7773 Now" | "Document Your Damage" | Urgent but steady |
 | Home Additions | "Discuss Your Addition" | "See Addition Projects" | Aspirational, planning |
 | Outdoor Living | "Start Planning Your Space" | "Get Inspired" | Creative, inviting |
 | Construction Division | "Schedule a Project Consultation" | "See What We Build" | Professional, capable |

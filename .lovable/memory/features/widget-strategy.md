@@ -82,7 +82,7 @@ type: feature
 **Style:** Amber accent for urgency, checkmark animations, calm tone
 **Trust value:** Extremely high — helpful without being salesy during a stressful moment
 **SEO value:** Featured snippet for "what to do after storm damage roof"
-**Conversion:** Step 5 links to storm assessment form. Final CTA: "Need help? Call (828) 397-9211"
+**Conversion:** Step 5 links to storm assessment form. Final CTA: "Need help? Call (828) 524-7773"
 
 ---
 

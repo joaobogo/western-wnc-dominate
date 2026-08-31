@@ -149,7 +149,7 @@ some resources that might help:
 ```
 Bot: No rush at all. When you're ready, you can:
 
-• Call us directly at (828) 397-9211
+• Call us directly at (828) 524-7773
 • Fill out a consultation request on any service page
 • Come back here and pick up where we left off
 
@@ -175,7 +175,7 @@ Bot: I understand — let's get you help fast.
 
 For emergencies, the quickest way to reach our team is by phone:
 
-📞 **(828) 397-9211**
+📞 **(828) 524-7773**
 
 We have crews available for emergency response across Western NC.
 
@@ -244,7 +244,7 @@ coming in?
 ```
 Bot: Please call us right away:
 
-📞 **(828) 397-9211**
+📞 **(828) 524-7773**
 
 While you wait:
 • Place buckets or towels under any leaks
@@ -427,7 +427,7 @@ we'll want to do a thorough property assessment before discussing
 options.
 
 [Schedule a property assessment]
-[Call to discuss: (828) 397-9211]
+[Call to discuss: (828) 524-7773]
 [Email details to our commercial team]
 ```
 
@@ -614,7 +614,7 @@ Is there anything else I can help with?
 Bot: No problem at all. If anything changes or you have questions 
 down the road, we're always here.
 
-📞 (828) 397-9211
+📞 (828) 524-7773
 🌐 You can find us at any of our service pages
 
 Have a great day! 🏔️

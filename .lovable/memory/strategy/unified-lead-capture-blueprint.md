@@ -214,7 +214,7 @@ Welcome → Service Discovery → Division Router
 5. **Save/share option** — email or share with partner
 
 ### CTA Mapping by Tool Outcome Tier
-- **Urgent:** "Call (828) 397-9211" — phone is primary
+- **Urgent:** "Call (828) 524-7773" — phone is primary
 - **High intent:** "Schedule a Consultation" — direct booking
 - **Medium intent:** "Let's Discuss Your Options" — consultative
 - **Low intent:** "Here's What to Explore" — educational resources

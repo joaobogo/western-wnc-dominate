@@ -92,7 +92,7 @@ Storm Center Hub
 ```
 
 **Rules:**
-- Storm content ALWAYS includes phone number CTA (828) 397-9211
+- Storm content ALWAYS includes phone number CTA (828) 524-7773
 - Storm articles link to Storm Damage service page within first 3 paragraphs
 - Storm Center hub links to all storm articles + storm service page
 - Post-storm content links to seasonal maintenance for retention
@@ -228,7 +228,7 @@ Clusters must link TO each other, not just within:
 No matter where a user enters, within 2-3 clicks they should reach ONE of:
 1. **Request Inspection form** (roofing path)
 2. **Schedule Consultation** (construction path)
-3. **Call (828) 397-9211** (emergency/storm path)
+3. **Call (828) 524-7773** (emergency/storm path)
 4. **Quote flow** (ready-to-buy path)
 
 ### Reconvergence Rules:

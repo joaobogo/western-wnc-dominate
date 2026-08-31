@@ -121,7 +121,7 @@ Town factors:
 - Low: "Schedule a maintenance inspection to keep it healthy"
 - Medium: "A professional assessment will give you clarity — it's free"
 - High: "Don't wait — schedule a free inspection today"
-- Urgent: "Your roof needs attention. Call (828) 397-9211 or schedule below"
+- Urgent: "Your roof needs attention. Call (828) 524-7773 or schedule below"
 
 ---
 
@@ -216,7 +216,7 @@ Generated based on answers — items ranked by urgency:
 
 **Emergency (active water intrusion):**
 ```
-🔴 URGENT — Call us now: (828) 397-9211
+🔴 URGENT — Call us now: (828) 524-7773
 Active water intrusion can cause structural and mold damage quickly.
 Our emergency team can respond within hours.
 ```

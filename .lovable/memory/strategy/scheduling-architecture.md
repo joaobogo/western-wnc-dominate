@@ -153,7 +153,7 @@ Scheduling a consultation with Highlander should feel like the beginning of a **
 │ [Our process page]                              │
 │                                                 │
 │ Questions before the call?                      │
-│ 📞 (828) 397-9211                               │
+│ 📞 (828) 524-7773                               │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -194,7 +194,7 @@ Looking forward to talking with you.
 Warm regards,
 [Team member name]
 Highlander Roofing & Construction
-(828) 397-9211
+(828) 524-7773
 ```
 
 **Tone:** Warm, professional, personal. Not automated-sounding.
@@ -259,7 +259,7 @@ Don't hesitate to call or email if anything comes up.
 
 Best,
 [Team member name]
-(828) 397-9211
+(828) 524-7773
 ```
 
 ### Follow-Up — If No-Show
@@ -276,7 +276,7 @@ but weren't able to connect. No worries at all — things come up!
 Whenever you're ready, you can reschedule at a time that works 
 better: [reschedule link]
 
-Or just call us at (828) 397-9211 — we're happy to chat anytime.
+Or just call us at (828) 524-7773 — we're happy to chat anytime.
 
 [Team member name]
 Highlander Roofing & Construction

@@ -98,7 +98,7 @@ Transform Highlander's website from a contractor brochure into Western North Car
 - Recovery timelines and expectations
 
 ### Conversion
-- Phone CTA always visible: (828) 397-9211
+- Phone CTA always visible: (828) 524-7773
 - Emergency inspection request prominent
 - Insurance guidance as trust builder
 
@@ -224,7 +224,7 @@ FAQ Hub → Repair vs Replace → Material Guides → Planning Resources → Ins
 ### Reconvergence Points (within 2-3 clicks from any entry)
 1. **Request Inspection** — roofing path
 2. **Schedule Consultation** — construction path
-3. **Call (828) 397-9211** — emergency/storm path
+3. **Call (828) 524-7773** — emergency/storm path
 4. **Quote flow** — ready-to-buy path
 
 ### CTA Mapping by Content Type
@@ -232,7 +232,7 @@ FAQ Hub → Repair vs Replace → Material Guides → Planning Resources → Ins
 |---|---|---|
 | Education | Soft | "Have questions? We're happy to help." |
 | Materials | Medium | "Not sure which material? Let's discuss." |
-| Storm | Strong/Urgent | "Call (828) 397-9211 for emergency assessment" |
+| Storm | Strong/Urgent | "Call (828) 524-7773 for emergency assessment" |
 | Planning | Medium-Strong | "Ready to plan? Schedule a consultation." |
 | Project Proof | Strong | "Want results like this? Let's talk." |
 | Local/Town | Location-aware | "We serve [Town]. Schedule a local consultation." |

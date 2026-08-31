@@ -239,8 +239,8 @@ Breadcrumbs appear on every page except homepage. Schema markup for breadcrumbs 
 ### Meta Descriptions (<160 chars)
 | Page Type | Template |
 |-----------|---------|
-| Homepage | "WNC's trusted roofing & construction team. CertainTeed certified. 500+ projects. Free assessments in Franklin, Sylva & beyond. (828) 397-9211" |
-| Service | "[Service description]. Certified installers serving Western NC. Free estimate — call (828) 397-9211." |
+| Homepage | "WNC's trusted roofing & construction team. CertainTeed certified. 500+ projects. Free assessments in Franklin, Sylva & beyond. (828) 524-7773" |
+| Service | "[Service description]. Certified installers serving Western NC. Free estimate — call (828) 524-7773." |
 | Town | "Expert roofing & construction in [Town], NC. [X] local projects completed. Free assessment — schedule today." |
 | Blog | "[1-sentence summary]. Expert advice from Highlander Roofing & Construction." |
 
