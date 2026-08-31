@@ -38,7 +38,7 @@ A permanent, trusted resource hub that WNC homeowners bookmark and return to aft
 - Large cards with category badges, read time, excerpt
 
 ### 5. Emergency Contact Block
-- Phone number prominent: (828) 397-9211
+- Phone number prominent: (828) 524-7773
 - "We respond within 24-48 hours for storm assessments"
 - Not pushy — framed as community service
 
@@ -120,7 +120,7 @@ Storm Damage Service Page (deep dive on repair process)
 3. **Aftermath checklists** → "Request a professional assessment"
 4. **Insurance guides** → "We help document damage for claims"
 5. **Damage signs** → "Not sure? Let us take a look — no obligation"
-6. **Emergency guides** → Direct phone CTA: (828) 397-9211
+6. **Emergency guides** → Direct phone CTA: (828) 524-7773
 
 ## Internal Linking
 

@@ -43,7 +43,7 @@ Structured data makes the site machine-readable without being machine-written. E
     "logo": "https://highlanderroofingwnc.com/logo.png",
     "image": "https://highlanderroofingwnc.com/og-image.jpg",
     "description": "Western North Carolina's trusted roofing and construction company. CertainTeed Master Shingle Applicator serving Franklin, Sylva, and the Blue Ridge region.",
-    "telephone": "+1-828-397-9211",
+    "telephone": "+1-828-524-7773",
     "email": "info@highlanderroofingwnc.com",
     "address": [
       {
@@ -167,7 +167,7 @@ Structured data makes the site machine-readable without being machine-written. E
     "@type": "LocalBusiness",
     "name": "Highlander Roofing & Construction — Franklin, NC",
     "description": "Roofing and construction services in Franklin, NC. Serving Macon County with roof replacement, repair, additions, and renovations.",
-    "telephone": "+1-828-397-9211",
+    "telephone": "+1-828-524-7773",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Franklin",
@@ -297,10 +297,10 @@ Structured data makes the site machine-readable without being machine-written. E
   "mainEntity": {
     "@type": "Organization",
     "name": "Highlander Roofing & Construction",
-    "telephone": "+1-828-397-9211",
+    "telephone": "+1-828-524-7773",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-828-397-9211",
+      "telephone": "+1-828-524-7773",
       "contactType": "Sales",
       "availableLanguage": "English",
       "areaServed": "Western North Carolina"

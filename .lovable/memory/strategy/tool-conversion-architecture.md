@@ -26,7 +26,7 @@ Every interactive tool outcome must do THREE things:
 ### Replacement Readiness Assessment
 | Tier | Primary CTA | Secondary | Content |
 |---|---|---|---|
-| Urgent (71+) | "Your Roof Needs Attention — Call (828) 397-9211" | "Schedule Emergency Inspection" | → Storm Damage page |
+| Urgent (71+) | "Your Roof Needs Attention — Call (828) 524-7773" | "Schedule Emergency Inspection" | → Storm Damage page |
 | Planning (46-70) | "Start Planning Your Replacement" | "Estimate Your Cost →" | → Scope Estimator, → Materials guide |
 | Attention (21-45) | "Schedule a Professional Assessment" | "What to Watch For →" | → Maintenance checklist, → Blog |
 | Good shape (0-20) | "Keep It Healthy — Maintenance Tips" | "Schedule Annual Inspection" | → Maintenance articles |
@@ -48,7 +48,7 @@ Every interactive tool outcome must do THREE things:
 ### Storm Impact Assessment
 | Urgency | Primary CTA | Secondary | Content |
 |---|---|---|---|
-| Emergency | "📞 Call Now: (828) 397-9211" | "Submit Emergency Request" | — (phone is primary) |
+| Emergency | "📞 Call Now: (828) 524-7773" | "Submit Emergency Request" | — (phone is primary) |
 | High | "Schedule Storm Inspection — Free" | "Document Your Damage →" | → Insurance claims guide |
 | Moderate | "A Professional Inspection Is Smart" | "What Storm Damage Looks Like →" | → Storm Center articles |
 | Low | "Monitor and Stay Prepared" | "Download Storm Prep Checklist →" | → Maintenance content |
@@ -89,7 +89,7 @@ Every interactive tool outcome must do THREE things:
 |---|---|---|
 | Qualified lead | "Schedule a Consultation" → form or scheduling | "Leave your number — we'll call you" |
 | Information seeker | Relevant resource links | "I'm here if you have more questions" |
-| Frustrated/stuck | "Call (828) 397-9211 — real humans, real answers" | "Email us at [email]" |
+| Frustrated/stuck | "Call (828) 524-7773 — real humans, real answers" | "Email us at [email]" |
 
 ---
 

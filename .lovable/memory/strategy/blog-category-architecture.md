@@ -55,7 +55,7 @@ type: feature
 - **Themes:** Post-storm checklists, insurance claims process, emergency response, seasonal weather prep, ice dam prevention, wind damage assessment
 - **Design Direction:** Alert-style headers with amber accents. Urgent but calm tone. Clear action steps.
 - **Internal Linking:** → Storm damage service page, → Insurance claim guide, → Request inspection
-- **Conversion:** Strong — "Call (828) 397-9211 for emergency assessment"
+- **Conversion:** Strong — "Call (828) 524-7773 for emergency assessment"
 
 ### 5. Homeowner Guidance
 - **Audience:** Homeowners evaluating contractors, planning projects, managing budgets

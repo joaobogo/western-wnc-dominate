@@ -117,7 +117,7 @@ type: feature
 | Description | textarea | No | "What are you seeing?" | "Describe the damage — photos can be shared later." |
 
 **Submit:** "Request Storm Assessment"
-**Emergency callout:** If "Emergency" selected: "For active leaks, call us now: 📞 (828) 397-9211"
+**Emergency callout:** If "Emergency" selected: "For active leaks, call us now: 📞 (828) 524-7773"
 **Trust strip:** "✓ 24-hour response · ✓ Insurance documentation included · ✓ Free assessment"
 **Tone:** Calm, efficient, no-nonsense. "We'll get to you quickly."
 

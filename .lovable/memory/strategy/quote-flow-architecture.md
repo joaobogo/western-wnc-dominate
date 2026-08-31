@@ -115,7 +115,7 @@ Before the form, contextual entry copy based on where the user came from:
 **Conditional:** If "Active leak" selected, show:
 ```
 ⚡ For active emergencies, calling is the fastest path:
-📞 (828) 397-9211
+📞 (828) 524-7773
 We'll still process this form — but a call gets help moving immediately.
 ```
 
@@ -161,7 +161,7 @@ We'll still process this form — but a call gets help moving immediately.
 **Conditional for "urgent":**
 ```
 We prioritize urgent requests. If this is an emergency, please 
-also call: 📞 (828) 397-9211
+also call: 📞 (828) 524-7773
 ```
 
 **Follow-up question:**
@@ -283,7 +283,7 @@ Based on your [project type] in [town]:
 **Footer:**
 ```
 Questions before we reach out?
-📞 (828) 397-9211  ·  Available M-F, 8am-5pm
+📞 (828) 524-7773  ·  Available M-F, 8am-5pm
 ```
 
 ---

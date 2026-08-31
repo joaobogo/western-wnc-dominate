@@ -118,7 +118,7 @@ Every page should contain at least one WNC-relevant signal:
 ### NAP Consistency
 - **Name:** Highlander Roofing & Construction
 - **Address:** Franklin office + Sylva office (both listed)
-- **Phone:** (828) 397-9211
+- **Phone:** (828) 524-7773
 - Consistent across: website footer, Google Business Profile, directories, schema markup
 - No variations (no "Highlander Roofing" vs "Highlander Roofing & Construction LLC")
 

@@ -143,7 +143,7 @@ Bot: Storm damage can be stressful. Here's what I'd recommend:
 
 Want to schedule an emergency inspection? We typically respond 
 within 24 hours.
-[Schedule emergency inspection] [Call (828) 397-9211] [Learn about storm damage claims]
+[Schedule emergency inspection] [Call (828) 524-7773] [Learn about storm damage claims]
 
 → If other repair:
 Bot: Got it. A few things that'll help our team:
@@ -155,7 +155,7 @@ How urgent is this?
 Bot: For active leaks, the fastest way to get help is to call us 
 directly. Our team is available for emergencies.
 
-📞 (828) 397-9211
+📞 (828) 524-7773
 
 If you can't call right now, I can help you submit an emergency 
 request form.
@@ -175,7 +175,7 @@ First, is anyone in danger or is there structural damage to your home?
 → Emergency:
 Bot: Please call us right away or call 911 if there's immediate danger.
 
-📞 (828) 397-9211 — Highlander Emergency Line
+📞 (828) 524-7773 — Highlander Emergency Line
 
 Our team can be on-site quickly to assess and secure your property.
 
@@ -335,7 +335,7 @@ Do you have land already?
 ```
 Bot: That's a great question — I want to make sure you get the right 
 answer from our team. Would you like to:
-[Call us at (828) 397-9211] [Leave a message for our team] 
+[Call us at (828) 524-7773] [Leave a message for our team] 
 [Send us an email]
 ```
 
@@ -343,7 +343,7 @@ answer from our team. Would you like to:
 ```
 Bot: I understand this is important, and I want to make sure you get 
 the help you need. The fastest way to talk with someone is to call us 
-directly at (828) 397-9211. We're here to help.
+directly at (828) 524-7773. We're here to help.
 ```
 
 ### When user asks about pricing:
@@ -364,7 +364,7 @@ Want me to help you schedule one?
 Bot: Our office is currently closed (we're open M-F, 8am-5pm), but 
 I can still help! Leave your info and we'll reach out first thing.
 
-For emergencies, call (828) 397-9211 — we have an after-hours line.
+For emergencies, call (828) 524-7773 — we have an after-hours line.
 ```
 
 ---

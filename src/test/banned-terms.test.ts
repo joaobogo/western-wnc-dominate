@@ -67,7 +67,7 @@ describe("NAP consistency", () => {
     (f) => /\.(ts|tsx)$/.test(f) && !ALLOW_FILES.some((a) => f.endsWith(a)),
   );
   const STALE = [
-    /1511 Highlands (Road|Rd)/i,
+    /76 Creative (Dr|Drive)/i,
     /828-397-9211/,
     /\(828\)\s*397-9211/,
     // Legacy company names — the brand is "Highlander Building Services".

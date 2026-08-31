@@ -58,7 +58,7 @@ Every CTA is an invitation, not a demand. The language assumes intelligence, res
 - **Placement:** In-content, sidebars, card footers
 
 **Language options:**
-- "Call (828) 397-9211"
+- "Call (828) 524-7773"
 - "Use our Roof Cost Estimator"
 - "Download the Homeowner's Guide"
 - "Read the full case study"

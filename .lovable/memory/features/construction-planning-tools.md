@@ -332,7 +332,7 @@ Doesn't generate a "result" — instead packages everything into a structured co
 
 ### CTA
 "Your consultation prep is ready. Now let's schedule the conversation."
-[Schedule Consultation] [Call to Schedule: (828) 397-9211]
+[Schedule Consultation] [Call to Schedule: (828) 524-7773]
 
 ---
 

@@ -210,7 +210,7 @@ Every page must feel like its own experience while clearly belonging to one bran
 
 **Proof Style:** Trust-proximity. Credentials placed physically near the form to reduce submission anxiety. "24-hour response" promise.
 
-**CTA Style:** Form IS the CTA. Submit button: "Send Your Message." Below: "Or call (828) 397-9211 — we answer our own phone."
+**CTA Style:** Form IS the CTA. Submit button: "Send Your Message." Below: "Or call (828) 524-7773 — we answer our own phone."
 
 **Motion Style:** Almost none. Form fields with subtle focus animations. Trust badges fade in. The most utilitarian page — motion would slow down conversion.
 

@@ -19,7 +19,7 @@ Each post includes: **1 primary service page + 1 related service page + 1 CTA pa
 Approved: *Request an Inspection*, *Request a Quote*, *Call 828-524-7773* (`tel:+18285247773`), *Talk with Highlander about your roof*, *Plan Your Construction Project*, *Start With a Design Agreement*. Leak-urgent posts include: *"If water is actively coming into your home, call Highlander at 828-524-7773."*
 
 ### Accuracy (Prompt 9) — banned strings
-`828-397-9211`, `GAF`, `Master Elite`, `CertainTeed Master Applicator`, `free design consultation`, `design pricing`, `architect`, `architectural`, `architecture`, `24/7`, `45-minute`, `lifetime warranty`, unsupported warranty-year claims, fake reviews / projects / awards, placeholder text.
+`828-524-7773`, `GAF`, `Master Elite`, `CertainTeed Master Applicator`, `free design consultation`, `design pricing`, `architect`, `architectural`, `architecture`, `24/7`, `45-minute`, `lifetime warranty`, unsupported warranty-year claims, fake reviews / projects / awards, placeholder text.
 
 Approved credential wording: **CertainTeed ShingleMaster Credentialed Contractor**. Approved phone: **828-524-7773** / `tel:+18285247773`.
 

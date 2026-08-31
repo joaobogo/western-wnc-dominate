@@ -30,7 +30,7 @@ Transform Highlander's website from a brochure into a regional authority platfor
 - **Topics:** Storm damage response, seasonal weather prep, insurance claims process
 - **Tone:** Urgent but calm — "here's what to do"
 - **SEO Target:** "storm damage roof [town] nc", "ice dam prevention mountain homes"
-- **Conversion Path:** Emergency CTA → Call (828) 397-9211
+- **Conversion Path:** Emergency CTA → Call (828) 524-7773
 
 ### 4. Homeowner Guidance
 - **Purpose:** Build trust through helpful, non-salesy advice
