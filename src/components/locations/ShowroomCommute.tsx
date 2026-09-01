@@ -12,8 +12,12 @@ interface CommuteResult {
   polyline: string | null;
 }
 
+// The Google Maps JS API has no bundled types here; it is loaded at runtime.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type GoogleMaps = any;
+
 /** Loads the Maps JS API once, on demand — never on initial page load. */
-let mapsPromise: Promise<typeof google.maps> | null = null;
+let mapsPromise: Promise<GoogleMaps> | null = null;
 const loadMaps = () => {
   if (mapsPromise) return mapsPromise;
   mapsPromise = new Promise((resolve, reject) => {
@@ -24,7 +28,7 @@ const loadMaps = () => {
       return;
     }
     const cb = "__highlanderMapsReady";
-    (window as unknown as Record<string, unknown>)[cb] = () => resolve(google.maps);
+    (window as unknown as Record<string, unknown>)[cb] = () => resolve((window as unknown as { google: { maps: GoogleMaps } }).google.maps);
     const s = document.createElement("script");
     s.src = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=geometry&loading=async&callback=${cb}${
       channel ? `&channel=${channel}` : ""
@@ -84,7 +88,7 @@ const ShowroomCommute = ({
             strokeOpacity: 0.9,
             strokeWeight: 4,
           });
-          path.forEach((p) => bounds.extend(p));
+          path.forEach((p: unknown) => bounds.extend(p));
         }
         map.fitBounds(bounds, 48);
       } catch {
