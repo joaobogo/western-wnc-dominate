@@ -122,6 +122,12 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
           </div>
         </Section>
 
+        {/* Drive time from the visitor's address to this showroom */}
+        <Section density="default" width="wide" className="bg-secondary/30">
+          <ShowroomCommute location={loc} showroomSlug={showroom.slug} />
+        </Section>
+
+
         {/* On display */}
         <Section density="default" width="wide" className="bg-secondary/30">
           <span className="eyebrow mb-3 block">On Display</span>
