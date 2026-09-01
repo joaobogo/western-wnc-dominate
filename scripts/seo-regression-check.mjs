@@ -52,7 +52,7 @@ if (!existsSync(redirectsPath)) {
     "/contact-us_em /contact 301!",
     "/service-locations /service-areas 301!",
     "/service-locations/* /service-areas 301!",
-    "/contact/:service/:town /service-areas/:town 301!",
+    "/contact/roofing-company-service-area/franklin-nc /service-areas/franklin-nc 301!",
     "/free-tools /404.html 410",
   ];
   for (const rule of requiredLegacyRules) {
