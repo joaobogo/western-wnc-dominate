@@ -12,6 +12,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ShowroomIdentity from "@/components/locations/ShowroomIdentity";
 import ShowroomMap from "@/components/locations/ShowroomMap";
+import ShowroomCommute from "@/components/locations/ShowroomCommute";
 import { formatPhoneDisplay, telHref } from "@/data/business";
 import { showroomBySlug, showrooms } from "@/data/showrooms";
 
@@ -121,6 +122,12 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
             <ShowroomMap location={loc} />
           </div>
         </Section>
+
+        {/* Drive time from the visitor's address to this showroom */}
+        <Section density="default" width="wide" className="bg-secondary/30">
+          <ShowroomCommute location={loc} showroomSlug={showroom.slug} />
+        </Section>
+
 
         {/* On display */}
         <Section density="default" width="wide" className="bg-secondary/30">

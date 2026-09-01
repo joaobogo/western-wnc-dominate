@@ -4,3 +4,6 @@ verify_jwt = false
 
 [functions.site-health-check]
 verify_jwt = false
+
+[functions.commute-route]
+verify_jwt = false
