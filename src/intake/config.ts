@@ -163,16 +163,18 @@ export const BUDGETS: Option[] = [
 
 export const SOURCES: Option[] = [
   { id: "google", label: "Google" },
+  { id: "gbp", label: "Google Maps listing" },
   { id: "referral", label: "Referral" },
   { id: "past_customer", label: "Past customer" },
   { id: "social", label: "Facebook / Instagram" },
   { id: "yard_sign", label: "Yard sign / truck" },
   { id: "ad", label: "Ad or mailer" },
-  { id: "trade", label: "Realtor / architect / PM" },
+  { id: "trade", label: "Realtor / designer / PM" },
   { id: "other", label: "Other" },
 ];
 
-export const SOURCE_DETAIL_TRIGGERS = ["referral", "past_customer", "trade"];
+export const SOURCE_DETAIL_TRIGGERS = ["referral", "past_customer", "trade", "gbp"];
+
 
 /* ── 4. Office only ───────────────────────────────────────────── */
 export const CHANNELS: Option[] = [
