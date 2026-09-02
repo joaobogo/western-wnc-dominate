@@ -827,10 +827,15 @@ export function installGtmGlobalListeners() {
             cta_text: display,
           });
         }
+        trackGbpCall({
+          phone_number: display,
+          click_location: phoneLoc,
+        });
         notifyTeamsOfCall({
           phone_number: rawNumber || display,
           click_location: resolveClickLocation(anchor),
         });
+
       } else if (href.startsWith("mailto:")) {
         trackEmailClick({
           link_url: href,
