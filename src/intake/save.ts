@@ -1,6 +1,17 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
+import { getGbpTouch } from "@/lib/attribution";
+import { trackGbpLeadRecorded } from "@/lib/gtm";
 import { locationTier, townLabel, type LeadDraft, type ScoreResult } from "./scoring";
+
+/** "Franklin showroom" / "sylva" → the canonical listing id used in GA4. */
+function normalizeShowroom(detail: string | null | undefined): string | null {
+  const t = (detail ?? "").toLowerCase();
+  if (t.includes("franklin")) return "franklin";
+  if (t.includes("sylva")) return "sylva";
+  return null;
+}
+
 
 /** The generated types file does not know about the internal intake table. */
 export const db = supabase as unknown as SupabaseClient;
