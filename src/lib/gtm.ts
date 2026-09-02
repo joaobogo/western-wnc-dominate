@@ -45,9 +45,14 @@ export const GTM_EVENTS = {
   EXIT_INTENT_SHOWN: "exit_intent_shown",
   EXIT_INTENT_DISMISSED: "exit_intent_dismissed",
   EXIT_INTENT_CONVERSION: "exit_intent_conversion",
+  // Google Business Profile (map pack)
+  GBP_MAP_PACK_CLICK: "gbp_map_pack_click",
+  GBP_CALL: "gbp_call",
+  GBP_LEAD_RECORDED: "gbp_lead_recorded",
   // Partner widgets
   VELUX_QUOTE_CLICK: "velux_quote_click",
   // Chatbot
+
   CHATBOT_OPEN: "chatbot_open",
   CHATBOT_LEAD_SUBMIT: "chatbot_lead_submit",
   // Consent
