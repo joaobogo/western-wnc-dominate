@@ -3,8 +3,10 @@ import { useLocation } from "react-router-dom";
 import {
   installGtmGlobalListeners,
   startPageEngagement,
+  trackGbpMapPackClick,
 } from "@/lib/gtm";
 import { captureAttribution } from "@/lib/attribution";
+
 
 /**
  * SPA route tracker for Google Tag Manager (GTM-W26D39LJ).
