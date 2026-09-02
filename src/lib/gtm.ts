@@ -1,5 +1,7 @@
 import { getAnalyticsPageType, getTownSlugFromPath, isUrgentIntentPath } from "@/lib/urgent-intent";
 import { getActiveExperiments } from "@/lib/ab-testing";
+import { getGbpTouch } from "@/lib/attribution";
+
 /**
  * Google Tag Manager dataLayer helpers.
  *
@@ -45,9 +47,14 @@ export const GTM_EVENTS = {
   EXIT_INTENT_SHOWN: "exit_intent_shown",
   EXIT_INTENT_DISMISSED: "exit_intent_dismissed",
   EXIT_INTENT_CONVERSION: "exit_intent_conversion",
+  // Google Business Profile (map pack)
+  GBP_MAP_PACK_CLICK: "gbp_map_pack_click",
+  GBP_CALL: "gbp_call",
+  GBP_LEAD_RECORDED: "gbp_lead_recorded",
   // Partner widgets
   VELUX_QUOTE_CLICK: "velux_quote_click",
   // Chatbot
+
   CHATBOT_OPEN: "chatbot_open",
   CHATBOT_LEAD_SUBMIT: "chatbot_lead_submit",
   // Consent
@@ -310,6 +317,74 @@ export function trackPhoneClick(opts: {
     click_location: opts.click_location,
   });
 }
+
+/* ---------- Google Business Profile (map pack) ----------
+ * GBP arrivals and the calls they produce are published as their own events so
+ * GA4 can be marked as conversions and reconciled line-by-line with the monthly
+ * GBP performance export (website clicks, calls, direction requests).
+ */
+
+let gbpArrivalSent = false;
+
+/** Fires once per session when the visit came from a GBP listing. */
+export function trackGbpMapPackClick() {
+  if (gbpArrivalSent) return;
+  const touch = getGbpTouch();
+  if (!touch) return;
+  gbpArrivalSent = true;
+  push({
+    event: GTM_EVENTS.GBP_MAP_PACK_CLICK,
+    gbp_entry: touch.entry,
+    gbp_showroom: touch.showroom,
+    landing_page: touch.landing_page,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+    page_type: getAnalyticsPageType(currentPath()),
+    town: getTownSlugFromPath(currentPath()),
+  });
+}
+
+/** Fires on a phone click made by a visitor attributed to a GBP listing. */
+export function trackGbpCall(opts: { phone_number: string; click_location: string }) {
+  const touch = getGbpTouch();
+  if (!touch) return;
+  push({
+    event: GTM_EVENTS.GBP_CALL,
+    gbp_entry: touch.entry,
+    gbp_showroom: touch.showroom,
+    landing_page: touch.landing_page,
+    phone_number: opts.phone_number,
+    click_location: opts.click_location,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+    town: getTownSlugFromPath(currentPath()),
+  });
+}
+
+/**
+ * Fires when a GBP-sourced call is written to the intake queue, so a recorded
+ * lead — not just a click — is countable as a GA4 conversion.
+ */
+export function trackGbpLeadRecorded(opts: {
+  lead_id: string;
+  gbp_showroom: string | null;
+  gbp_entry: string | null;
+  grade: string;
+  score: number | null;
+  channel: string | null;
+}) {
+  push({
+    event: GTM_EVENTS.GBP_LEAD_RECORDED,
+    lead_id: opts.lead_id,
+    gbp_showroom: opts.gbp_showroom,
+    gbp_entry: opts.gbp_entry,
+    lead_grade: opts.grade,
+    lead_score: opts.score,
+    lead_channel: opts.channel,
+  });
+}
+
+
 
 export function trackEmailClick(opts: {
   link_url: string;
@@ -754,10 +829,15 @@ export function installGtmGlobalListeners() {
             cta_text: display,
           });
         }
+        trackGbpCall({
+          phone_number: display,
+          click_location: phoneLoc,
+        });
         notifyTeamsOfCall({
           phone_number: rawNumber || display,
           click_location: resolveClickLocation(anchor),
         });
+
       } else if (href.startsWith("mailto:")) {
         trackEmailClick({
           link_url: href,

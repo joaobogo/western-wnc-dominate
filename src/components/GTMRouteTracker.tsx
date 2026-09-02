@@ -3,8 +3,10 @@ import { useLocation } from "react-router-dom";
 import {
   installGtmGlobalListeners,
   startPageEngagement,
+  trackGbpMapPackClick,
 } from "@/lib/gtm";
 import { captureAttribution } from "@/lib/attribution";
+
 
 /**
  * SPA route tracker for Google Tag Manager (GTM-W26D39LJ).
@@ -31,7 +33,10 @@ const GTMRouteTracker = () => {
   // this only fills gaps or picks up a campaign link opened mid-session.
   useEffect(() => {
     captureAttribution();
+    // Map-pack arrival — self-guarded, so it fires at most once per session.
+    trackGbpMapPackClick();
   }, [pathname, search]);
+
 
   // Scroll-depth + engaged-time measurement, restarted on every route.
   useEffect(() => startPageEngagement(pathname + search), [pathname, search]);
