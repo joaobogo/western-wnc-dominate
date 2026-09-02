@@ -1,5 +1,7 @@
 import { getAnalyticsPageType, getTownSlugFromPath, isUrgentIntentPath } from "@/lib/urgent-intent";
 import { getActiveExperiments } from "@/lib/ab-testing";
+import { getGbpTouch } from "@/lib/attribution";
+
 /**
  * Google Tag Manager dataLayer helpers.
  *
