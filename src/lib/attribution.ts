@@ -157,3 +157,59 @@ export function currentPagePath(): string | null {
   if (typeof window === "undefined") return null;
   return window.location.pathname + window.location.search;
 }
+
+/* ---------- Google Business Profile (map pack) attribution ----------
+ * GBP traffic normally collapses into `google / organic` in GA4. The profile
+ * links are UTM-tagged per showroom (see `gbpWebsiteUrl` / `gbpBookingUrl` in
+ * src/data/business.ts), so a tagged arrival — or a raw Google Maps referrer —
+ * identifies a map-pack visit and which listing produced it.
+ */
+
+export type GbpTouch = {
+  /** "website" (profile website button) or "booking" (quote/appointment slot). */
+  entry: "website" | "booking" | "maps_referral";
+  /** Showroom listing that produced the visit: "franklin", "sylva", or null. */
+  showroom: string | null;
+  landing_page: string | null;
+  first_seen_at: string | null;
+};
+
+const MAPS_REFERRER = /(^|\.)google\.[a-z.]+$/i;
+
+/**
+ * Returns the GBP touch for this session, or null when the visit did not come
+ * from a Google Business Profile listing.
+ */
+export function getGbpTouch(): GbpTouch | null {
+  if (typeof window === "undefined") return null;
+  const a = getAttribution();
+
+  const campaign = (a.utm_campaign ?? "").toLowerCase();
+  if (a.utm_source === "google" && (campaign === "gbp" || campaign === "gbp_booking")) {
+    return {
+      entry: campaign === "gbp_booking" ? "booking" : "website",
+      showroom: a.utm_content,
+      landing_page: a.landing_page,
+      first_seen_at: a.first_seen_at,
+    };
+  }
+
+  // Untagged map-pack click: referred by a Google Maps surface with no campaign.
+  if (!a.utm_source && a.referrer) {
+    try {
+      const host = new URL(a.referrer).host;
+      if (host.startsWith("maps.") && MAPS_REFERRER.test(host)) {
+        return {
+          entry: "maps_referral",
+          showroom: null,
+          landing_page: a.landing_page,
+          first_seen_at: a.first_seen_at,
+        };
+      }
+    } catch {
+      /* unparseable referrer — not attributable to GBP */
+    }
+  }
+
+  return null;
+}
