@@ -37,6 +37,8 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getTownLinkWeb } from "@/lib/local-link-graph";
+import ShowroomCommute from "@/components/locations/ShowroomCommute";
+
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -255,6 +257,11 @@ const TownPage = () => {
             </Link>
           </div>
         </Section>
+
+        <Section density="compact" width="wide">
+          <ShowroomCommute location={showroom.location} showroomSlug={showroom.slug} />
+        </Section>
+
 
 
 
