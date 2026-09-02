@@ -13,6 +13,10 @@
 [build.environment]
   NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
+  # Browser-restricted Google Maps keys are intentionally shipped to the
+  # client. Disable only Netlify's heuristic smart detection so this public
+  # key does not fail deploys; standard environment-variable scanning remains.
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
 
 # Build every Lovable edit branch as a branch deploy too, so a new
 # edit/** branch never leaves the site stale.
