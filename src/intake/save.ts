@@ -87,6 +87,28 @@ export function toRow(lead: LeadDraft, result: ScoreResult) {
 
 export async function saveLead(lead: LeadDraft, result: ScoreResult) {
   const row = toRow(lead, result);
+
+  // Google Business Profile attribution. A receptionist marks the call as
+  // coming from the map listing; if the caller also browsed the site from a
+  // tagged GBP link, the session's own touch fills in the showroom.
+  const touch = getGbpTouch();
+  const isGbp = lead.source === "gbp" || !!touch;
+  const showroom = touch?.showroom ?? normalizeShowroom(lead.sourceDetail);
+  const gbp = isGbp
+    ? {
+        showroom,
+        entry: touch?.entry ?? "map_listing",
+        landing_page: touch?.landing_page ?? null,
+        first_seen_at: touch?.first_seen_at ?? null,
+      }
+    : null;
+
+  if (gbp) {
+    row.payload = { ...row.payload, gbp };
+    row.source = row.source ?? "gbp";
+    row.source_detail = row.source_detail ?? showroom;
+  }
+
   const { data, error } = await db
     .from(TABLE)
     .insert(row)
@@ -95,6 +117,19 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
 
   if (error) throw new Error(error.message);
 
+  // GA4 conversion signal: a recorded GBP lead, not just a click. Lets the
+  // monthly GBP export (calls / website clicks) reconcile against GA4.
+  if (gbp) {
+    trackGbpLeadRecorded({
+      lead_id: data.id as string,
+      gbp_showroom: gbp.showroom,
+      gbp_entry: gbp.entry,
+      grade: row.grade,
+      score: row.score,
+      channel: row.channel,
+    });
+  }
+
   // Fire-and-forget CRM hand-off; the lead is already safely stored.
   db.functions
     .invoke("send-to-jobtread", { body: { lead_id: data.id, ...row } })
@@ -102,3 +137,4 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
 
   return data.id as string;
 }
+

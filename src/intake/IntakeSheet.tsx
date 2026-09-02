@@ -402,10 +402,11 @@ export default function IntakeSheet() {
               {showSourceDetail && (
                 <div className="mt-3 sm:max-w-[360px]">
                   <TextField
-                    label="Who can we thank?"
+                    label={lead.source === "gbp" ? "Which listing — Franklin or Sylva?" : "Who can we thank?"}
                     value={lead.sourceDetail}
                     onChange={(v) => set("sourceDetail", v)}
                   />
+
                 </div>
               )}
             </Question>
