@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_LINE_AS_OF } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_LINE_AS_OF, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 /**
  * Global CTA Architecture — Highlander Building Services
  * 
