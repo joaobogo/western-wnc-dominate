@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
-import { customerReviews, GOOGLE_REVIEW_AGGREGATE, reviewShowroom } from "@/data/reviews";
+import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { BUSINESS, directionsUrl, REVIEW_AS_OF, FRANKLIN, SYLVA } from "@/data/business";
 
 const fadeUp = {
