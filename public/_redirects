@@ -610,14 +610,14 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /two-story-additions                                        /construction/additions                           301!
 /tpo-roof-repair                                            /roofing/commercial                               301!
 # Old CMS plumbing — gone for good.
-/feed                                                                                                         410!
-/comments/feed                                                                                                410!
-/index.php/feed                                                                                               410!
-/index.php/comments/feed                                                                                      410!
-/wp-login.php                                                                                                 410!
-/xmlrpc.php                                                                                                   410!
-/wp-admin                                                                                                     410!
-/index.php/wp-json                                                                                            410!
+/feed                                                       /404.html                                         410
+/comments/feed                                              /404.html                                         410
+/index.php/feed                                             /404.html                                         410
+/index.php/comments/feed                                    /404.html                                         410
+/wp-login.php                                               /404.html                                         410
+/xmlrpc.php                                                 /404.html                                         410
+/wp-admin                                                   /404.html                                         410
+/index.php/wp-json                                          /404.html                                         410
 
 # ============================================================
 # App-only rewrites — every public URL is now a real prerendered
