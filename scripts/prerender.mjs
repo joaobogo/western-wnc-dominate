@@ -35,14 +35,22 @@ const EXCLUDED_PREFIXES = [
   "/front-desk",
   "/intake",
   "/consultation",
-  "/roofing-intake",
-  "/construction-intake",
-  "/roofing-builder",
-  "/construction-builder",
-  "/design-intake",
   "/quote-flow",
   "/seo-monitoring",
   "/realwork-diagnostics",
+];
+
+/**
+ * Noindex funnel routes that are deliberately absent from sitemap.xml but must
+ * still be prerendered, so the server emits their own title, canonical, og:url
+ * and `noindex,nofollow` instead of falling back to the homepage shell.
+ */
+const NOINDEX_ROUTES = [
+  "/roofing-intake",
+  "/construction-intake",
+  "/design-intake",
+  "/roofing-builder",
+  "/construction-builder",
 ];
 
 const isExcluded = (p) =>
@@ -228,7 +236,7 @@ async function main() {
   // PRERENDER_LIMIT=n renders only the first n routes — for local smoke tests.
   const limit = Number(process.env.PRERENDER_LIMIT || 0);
   if (limit > 0) all = all.slice(0, limit);
-  const routes = [...all, "/__404"];
+  const routes = [...all, ...NOINDEX_ROUTES.filter((r) => !all.includes(r)), "/__404"];
   const blogRoutes = routes.filter((r) => r.startsWith("/blog/"));
   const coreRoutes = routes.filter((r) => !r.startsWith("/blog/"));
 

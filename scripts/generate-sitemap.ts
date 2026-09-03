@@ -66,7 +66,6 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/construction/renovations" },
   { path: "/construction/siding" },
   { path: "/construction/design" },
-  { path: "/construction/consultation" },
 
   // Gutter & exterior hubs
   { path: "/exterior-improvements" },
