@@ -143,7 +143,9 @@ function eastern(iso?: string | null): string {
 
 async function postToTeams(html: string) {
   if (!LOVABLE_API_KEY || !TEAMS_API_KEY) {
-    throw new Error("Microsoft Teams connection is not configured");
+    // No Teams connection linked: skip the notification instead of failing the run.
+    console.warn("Teams notification skipped: Microsoft Teams connection is not configured");
+    return;
   }
   const res = await fetch(
     `${TEAMS_GATEWAY}/teams/${TEAM_ID}/channels/${CHANNEL_ID}/messages`,
