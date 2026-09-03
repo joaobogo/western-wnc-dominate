@@ -221,25 +221,28 @@ const RoofingDivision = () => {
               </motion.div>
 
               <h1 className="order-1 md:order-none mb-4 md:mb-8 text-heading md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight">
-                <span className="block overflow-hidden mb-2">
-                  <motion.span
-                    className="block"
-                    initial={{ y: "110%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    Roofing Built for
-                  </motion.span>
-                </span>
-                <span className="block overflow-hidden">
-                  <motion.span
-                    className="block"
-                    initial={{ y: "110%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    Western NC <span className="text-[hsl(var(--gold-ink))]">Weather.</span>
-                  </motion.span>
+                <span className="sr-only">Roofing Built for Western NC Weather.</span>
+                <span aria-hidden="true" className="block">
+                  <span className="block overflow-hidden mb-2">
+                    <motion.span
+                      className="block"
+                      initial={{ y: "110%" }}
+                      animate={{ y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      Roofing Built for
+                    </motion.span>
+                  </span>
+                  <span className="block overflow-hidden">
+                    <motion.span
+                      className="block"
+                      initial={{ y: "110%" }}
+                      animate={{ y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      Western NC <span className="text-[hsl(var(--gold-ink))]">Weather.</span>
+                    </motion.span>
+                  </span>
                 </span>
               </h1>
 
