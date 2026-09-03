@@ -92,21 +92,10 @@ const ServiceTownPage = ({
   const heroImage = SERVICE_HERO_VARIANTS[serviceSlug] ?? town.heroImage;
   const urgent = isUrgentIntentPath(`/service-areas/${townSlug}/${serviceSlug}`);
 
-  // If this town+service is a Tier 1 pair, the flat URL is canonical
-  // regardless of which route the user arrived on.
-  const tier1 = tier1FlatEntries.find(
-    (t) => t.townSlug === townSlug && t.serviceSlug === serviceSlug,
-  );
-  const tier2 = tier2FlatEntries.find(
-    (t) => t.townSlug === townSlug && t.serviceSlug === serviceSlug,
-  );
+  // The flat slugs (e.g. /roofing-highlands-nc) 301 to this nested route, so
+  // the canonical must self-reference the URL that is actually served.
   const resolvedCanonical =
-    canonicalPath ??
-    (tier1
-      ? `/${tier1.flatSlug}`
-      : tier2
-        ? `/${tier2.flatSlug}`
-        : `/service-areas/${townSlug}/${serviceSlug}`);
+    canonicalPath ?? `/service-areas/${townSlug}/${serviceSlug}`;
 
   const relatedForTown = getServiceTownEntriesForTown(townSlug).filter(
     (e) => e.serviceSlug !== serviceSlug,
