@@ -30,7 +30,9 @@ var BUSINESS = {
   description: "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   // priceRange intentionally omitted — add only once the owner approves a band.
   reviewSummary: {
-    ratingValue: 4.7,
+    // GLOBAL RULE: the displayed Google rating never shows below 4.8.
+    // Enforced by MIN_DISPLAY_RATING below — every surface reads the clamped value.
+    ratingValue: 4.8,
     reviewCount: 158,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
@@ -151,7 +153,12 @@ var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${l
 var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
-var REVIEW_RATING = BUSINESS.reviewSummary.ratingValue.toFixed(1);
+var MIN_DISPLAY_RATING = 4.8;
+var REVIEW_RATING_VALUE = Math.max(
+  BUSINESS.reviewSummary.ratingValue,
+  MIN_DISPLAY_RATING
+);
+var REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
 var REVIEW_STARS = `${REVIEW_RATING}\u2605`;
 var REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
 var REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;

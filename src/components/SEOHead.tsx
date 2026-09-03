@@ -641,7 +641,7 @@ export const aggregateReviewSchema = (reviews: ReviewInput[]) => {
     url: BASE_URL,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: summary.ratingValue,
+      ratingValue: REVIEW_RATING_VALUE,
       reviewCount: summary.reviewCount,
       bestRating: 5,
       worstRating: 1,
