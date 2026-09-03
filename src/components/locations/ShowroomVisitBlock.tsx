@@ -41,7 +41,7 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
               href={telHref(location.phoneE164)}
               className="text-body-sm font-body font-semibold text-foreground hover:text-primary transition-colors"
             >
-              {PHONE_DISPLAY}
+              {formatPhoneDisplay(location.phoneE164)}
             </a>
           </div>
 
