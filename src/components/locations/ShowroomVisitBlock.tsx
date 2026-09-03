@@ -23,7 +23,7 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
         <div className="border border-border bg-card p-6 md:p-8">
           <span className="eyebrow mb-3 block">Visit us</span>
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
-            {BUSINESS.name} — {location.locality}
+            {BUSINESS.brandName} — {location.locality}
           </h2>
 
           <div className="flex items-start gap-3 mb-5">
@@ -63,7 +63,7 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
         <div className="relative overflow-hidden border border-border bg-card flex flex-col">
           <div className="aspect-video w-full relative flex-1">
             <iframe
-              title={`Map showing the ${BUSINESS.name} ${location.locality} showroom`}
+              title={`Map showing the ${BUSINESS.brandName} ${location.locality} showroom`}
               src={`https://www.google.com/maps?q=${encoded}&output=embed&z=14`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
