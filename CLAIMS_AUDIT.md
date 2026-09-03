@@ -37,7 +37,8 @@ document/logo/cert, or tell us to soften or remove the claim. Items marked
 
 | Claim | Location(s) | Status | Action Needed |
 |---|---|---|---|
-| "Best of Macon County" | Possible reference in About/blogs | Needs confirmation | Confirm year(s) won and provide award imagery |
+| "Best of Macon County" Franklin Press Readers' Choice (claimed 5x consecutive) | **GATED — renders nowhere** (`BUSINESS.awards`, `verified: false`) | Needs confirmation | Confirm exact years won + link to The Franklin Press Readers' Choice results page, then set `verified: true` and fill `years`/`href` in `src/data/business.ts`. It then appears automatically on the trust strip, About, and in LocalBusiness `award` schema. |
+| CertainTeed Master Shingle Applicator | **GATED — renders nowhere** (`BUSINESS.awards`, `verified: false`) | Needs proof | Confirm the credential (distinct from ShingleMaster) + CertainTeed locator/certificate URL, then set `verified: true`. |
 | BBB accreditation | Not currently claimed | Add only if accredited | Provide BBB rating + accreditation date |
 | Chamber of Commerce membership | Not currently claimed | Add only if active | Confirm which chamber(s): Franklin, Highlands, Cashiers, Sylva |
 | Angi / HomeAdvisor / Google ratings | "4.9★ average across Google & Facebook" — Contact, TownPage | Needs current screenshot/proof | Confirm current rating + total review count |
