@@ -181,7 +181,10 @@ export const brandAssets = {
     "VELUX Certified Installer",
     "Licensed NC General Contractor",
     "Fully Insured",
-    "5x Best of Macon County Reader's Choice Award",
+    // UNVERIFIED legacy claim carried over from the old site — do not publish.
+    // Verify with the owner, then set `verified: true` on the award in business.ts.
+    // "5x Best of Macon County Reader's Choice Award",
+
     "BBB Accredited",
   ],
   keyDifferentiators: [
