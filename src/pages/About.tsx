@@ -633,8 +633,13 @@ const About = () => {
                 <span className="text-primary-foreground/20">•</span>
                 <span>20+ Local Professionals</span>
                 <span className="text-primary-foreground/20">•</span>
-                <span>2024 Best of Macon County</span>
-                <span className="text-primary-foreground/20">•</span>
+                {maconAward && (
+                  <>
+                    <span>{awardLabel(maconAward)}</span>
+                    <span className="text-primary-foreground/20">•</span>
+                  </>
+                )}
+
                 <span>{REVIEW_LINE_AS_OF}</span>
               </div>
             </motion.div>
