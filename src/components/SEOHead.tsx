@@ -758,7 +758,7 @@ export type PageSchemaInput =
       article: Parameters<typeof articleSchema>[0];
       breadcrumbs: { name: string; url: string }[];
     }
-  | { type: "reviews"; reviews: ReviewInput[] }
+  | { type: "reviews"; reviews?: ReviewInput[] }
   | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
   | {
       /**
@@ -889,7 +889,8 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
 
     case "reviews":
-      return [aggregateReviewSchema(input.reviews), ...locationNodes()];
+      // No aggregateRating or Review markup per current policy — reviews are read on Google.
+      return [...businessGraph()];
 
     case "contact": {
       const out: Record<string, unknown>[] = [contactPageSchema(input.path), ...businessGraph()];
