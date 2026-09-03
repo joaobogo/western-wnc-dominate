@@ -1,4 +1,4 @@
-import { REVIEW_SUMMARY } from "@/data/business";
+import { REVIEW_SUMMARY, REVIEW_RATING_VALUE } from "@/data/business";
 export interface CustomerReview {
   authorName: string;
   reviewBody: string;
