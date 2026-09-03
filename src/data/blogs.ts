@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, FRANKLIN, napLine } from "@/data/business";
 import metalVsShingleHero from "@/assets/blog/metal-vs-shingle-wnc-hero.jpg";
 import stormHeroImg from "@/assets/blog/highlands-storm-july-28-hero.webp";
 import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection.webp";
@@ -202,7 +202,7 @@ Most of what matters cannot be seen from the ground. All of it is easier and che
 
 Highlander Building Services roofs Western North Carolina mountain homes — Franklin, Sylva, Highlands, Cashiers and the surrounding communities. We walk the roof, we document what we find, and you get it in writing whether or not there is work to do.
 
-Call [${PHONE_DISPLAY}](tel:${PHONE_PLAIN}) or [request an inspection](/request-inspection). Franklin showroom: 1511 Highlands Road, Monday–Friday, 8:00–5:00.
+Call [${PHONE_DISPLAY}](tel:${PHONE_PLAIN}) or [request an inspection](/request-inspection). Franklin showroom: ${napLine(FRANKLIN)} — Monday–Friday, 8:00–5:00.
 
 Related reading: [Roof Repair](/roofing/roof-repair) · [Roof Replacement](/roofing/roof-replacement) · [Metal Roofing](/roofing/metal) · [Roofing Costs in Western NC](/roofing-cost-western-nc) · [Service Areas](/service-areas)`,
   },
