@@ -21,8 +21,6 @@ import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
   isServiceTownIndexable,
-  tier1FlatEntries,
-  tier2FlatEntries,
 } from "@/data/service-town-content";
 import { blogPosts } from "@/data/blogs";
 import { getServiceParentPath } from "@/data/service-town-generated";
