@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "wnc-storm-season-roof-damage",
+    "slug": "wnc-storm-season-roof-damage",
+    "title": "What a Western North Carolina Storm Season Does to Your Roof",
+    "excerpt": "Wind breaks the sealant bond before it takes a shingle away, and hail either fractures the mat or it does not. A plain accounting of what a WNC summer does to a mountain roof, what you can check from the ground, and what cannot be seen without someone walking it.",
+    "category": "Storm Damage",
+    "date": "2026-09-08",
+    "readTime": "14 min"
+  },
+  {
     "id": "western-north-carolina-mountain-roofing-guide",
     "slug": "western-north-carolina-mountain-roofing-guide",
     "title": "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
@@ -108,15 +117,6 @@ export const blogSummaries: BlogSummary[] = [
     "title": "How Often Should Cullowhee Homeowners Inspect Their Roof?",
     "excerpt": "How often Cullowhee, NC homeowners should schedule a roof inspection and what a good inspection actually covers.",
     "category": "Inspection",
-    "date": "2026-07-26",
-    "readTime": "7 min"
-  },
-  {
-    "id": "common-roofing-problems-cullowhee-nc",
-    "slug": "common-roofing-problems-cullowhee-nc",
-    "title": "Common Roofing Problems in Cullowhee, North Carolina",
-    "excerpt": "The roofing problems we most often find on Cullowhee, NC homes and what to do about them before they get worse.",
-    "category": "Repair",
     "date": "2026-07-26",
     "readTime": "7 min"
   }
