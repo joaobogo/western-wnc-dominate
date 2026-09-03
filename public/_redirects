@@ -556,6 +556,62 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /roofing-construction-cullowhee-nc       /service-areas/cullowhee-nc/roofing-construction  301!
 /roof-repair-cullowhee-nc                /service-areas/cullowhee-nc/roof-repair  301!
 
+
+# ============================================================
+# Legacy WordPress/Hibu-era pages (recovered from the archived old site
+# and site: index). Real 301s so age and links flow to the new URL.
+# ============================================================
+/about-highlander-roofing                                   /about                                            301!
+/asphalt-shingle-roofs                                      /roofing/residential                              301!
+/cedar-shingle-roofs                                        /roofing/specialty                                301!
+/cedar-shingle-roofs-popup                                  /roofing/specialty                                301!
+/synthetic-roofs                                            /roofing/brava-synthetic                          301!
+/roofrepairs                                                /roofing/roof-repair                              301!
+/newroof                                                    /roofing/roof-replacement                         301!
+/roof-ventilation-services                                  /roofing/roof-replacement                         301!
+/gutters-services                                           /roofing/gutters                                  301!
+/roofing-and-gutter-services                                /roofing/gutters                                  301!
+/maintenanceprogram                                         /roofing/commercial                               301!
+/franklin-nc-roofers-reroofing-repairs                      /service-areas/franklin-nc                        301!
+/reroofing-repairs-franklin-nc                              /service-areas/franklin-nc                        301!
+/reroofing-repairs-sylva-nc                                 /service-areas/sylva-nc                           301!
+/waynesville-nc-roofers-reroofing-repairs                   /service-areas/waynesville-nc                     301!
+/clayton-ga-roofers-reroofing-repairs                       /service-areas                                    301!
+/reroofing-repairs-clayton-ga                               /service-areas                                    301!
+/franklin-nc-roofing-showroom                               /locations/franklin-nc                            301!
+/sylva-nc-roofing-showroom                                  /locations/sylva-nc                               301!
+/roofing-showroom                                           /locations                                        301!
+/highlander-roofing-gallery                                 /recent-projects                                  301!
+/highlander-roofing-gallery_em                              /recent-projects                                  301!
+/gallery-cedar-roof-cashiers-nc                             /recent-projects                                  301!
+/gallery-metal-roof-franklin-nc                             /recent-projects                                  301!
+/gallery-metal-roof-highlands-home-on-lake-sequoya          /recent-projects                                  301!
+/gallery-metal-wood-shingle-roof-glenville-nc               /recent-projects                                  301!
+/gallery-shingle-roof-cashiers-nc                           /recent-projects                                  301!
+/gallery-shingle-roof-cashiers-nc-2                         /recent-projects                                  301!
+/gallery-shingle-roof-church-franklin-nc                    /recent-projects                                  301!
+/shingle-roof-at-trillium-ridge                             /recent-projects                                  301!
+/project                                                    /recent-projects                                  301!
+/index.php/project-gallery                                  /recent-projects                                  301!
+/index.php/our-services                                     /roofing                                          301!
+/index.php/contact-us                                       /contact                                          301!
+/contact-us_fb                                              /contact                                          301!
+/contact-us_gl                                              /contact                                          301!
+/testimonials-and-customer-reviews                          /reviews                                          301!
+/home_em                                                    /                                                 301!
+/thank-you                                                  /contact                                          301!
+/engineering-services                                       /construction/design                              301!
+
+# Old CMS plumbing — gone for good.
+/feed                                                                                                         410!
+/comments/feed                                                                                                410!
+/index.php/feed                                                                                               410!
+/index.php/comments/feed                                                                                      410!
+/wp-login.php                                                                                                 410!
+/xmlrpc.php                                                                                                   410!
+/wp-admin                                                                                                     410!
+/index.php/wp-json                                                                                            410!
+
 # ============================================================
 # App-only rewrites — every public URL is now a real prerendered
 # file in dist, so there is NO global /* fallback. Only these
