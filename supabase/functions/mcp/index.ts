@@ -32,7 +32,7 @@ var BUSINESS = {
   reviewSummary: {
     // GLOBAL RULE: the displayed Google rating never shows below 4.8.
     // Enforced by MIN_DISPLAY_RATING below — every surface reads the clamped value.
-    ratingValue: 4.8,
+    ratingValue: 4.7,
     reviewCount: 158,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
@@ -153,7 +153,7 @@ var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${l
 var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
-var MIN_DISPLAY_RATING = 4.8;
+var MIN_DISPLAY_RATING = 4.7;
 var REVIEW_RATING_VALUE = Math.max(
   BUSINESS.reviewSummary.ratingValue,
   MIN_DISPLAY_RATING
