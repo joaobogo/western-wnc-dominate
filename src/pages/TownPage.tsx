@@ -37,6 +37,7 @@ import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getTownLinkWeb } from "@/lib/local-link-graph";
 import ShowroomCommute from "@/components/locations/ShowroomCommute";
+import ShowroomVisitBlock from "@/components/locations/ShowroomVisitBlock";
 
 
 const TownPage = () => {
@@ -338,7 +339,12 @@ const TownPage = () => {
           groups={getTownLinkWeb(town)}
         />
 
-        {/* 8. CLOSING CTA */}
+        {/* 8. PHYSICAL SHOWROOM IN THIS TOWN */}
+        {showroom.location.locality.toLowerCase() === town.name.toLowerCase() && (
+          <ShowroomVisitBlock location={showroom.location} />
+        )}
+
+        {/* 9. CLOSING CTA */}
         <TownEstimateCTA town={town} />
       </main>
 
