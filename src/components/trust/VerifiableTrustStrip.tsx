@@ -1,4 +1,4 @@
-import { CREDENTIALS } from "@/data/business";
+import { CREDENTIALS, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 import { ShieldCheck, Award, BadgeCheck, Home, Wrench, ExternalLink } from "lucide-react";
 
 /**
@@ -21,6 +21,12 @@ interface Props {
 
 const VerifiableTrustStrip = ({ tone = "default", className = "" }: Props) => {
   const dark = tone === "dark";
+  // Verified awards join the strip automatically; unverified ones render nowhere.
+  const items = [
+    ...CREDENTIALS,
+    ...VERIFIED_AWARDS.map((a) => ({ label: awardLabel(a), detail: a.detail, href: a.href })),
+  ];
+
 
   return (
     <section
@@ -28,8 +34,8 @@ const VerifiableTrustStrip = ({ tone = "default", className = "" }: Props) => {
       className={`border-y ${dark ? "border-primary-foreground/10 bg-primary text-primary-foreground" : "border-border bg-secondary/40"} ${className}`}
     >
       <div className="container-tight px-6 md:px-10 py-6 md:py-8">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-6">
-          {CREDENTIALS.map((c, i) => {
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-6">
+          {items.map((c, i) => {
             const Icon = ICONS[i % ICONS.length];
             const body = (
               <>

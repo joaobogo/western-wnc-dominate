@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_LINE_AS_OF } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_LINE_AS_OF, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -73,13 +73,23 @@ const craftsmanshipPrinciples = [
   { title: "Long-Term Accountability", detail: "We're here after the project ends. Warranty support, maintenance guidance, and a team you can actually reach." },
 ];
 
+const maconAward = VERIFIED_AWARDS.find((a) => a.id === "best-of-macon-county");
+
 const milestones = [
   { year: "2017", event: "Founded in Franklin, NC", detail: "Started with a truck, a ladder, and a commitment to doing roofing right in these mountains." },
   { year: "2019", event: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Earned the industry's highest installer certification, awarded to the top 1% nationally." },
   { year: "2021", event: "Second Office in Sylva", detail: "Expanded into Jackson County to better serve the western reaches of our service area." },
   { year: "2022", event: "Construction Division Launched", detail: "Client demand drove expansion into additions, renovations, and outdoor living builds." },
-  { year: "2024", event: "Best of Macon County", detail: "Voted Reader's Choice. The recognition that matters most because it comes from our neighbors." },
+  // Award milestone renders only once the owner verifies it (see CLAIMS_AUDIT.md).
+  ...(maconAward
+    ? [{
+        year: `${maconAward.years?.[maconAward.years.length - 1] ?? ""}`,
+        event: maconAward.label,
+        detail: "Voted Reader's Choice. The recognition that matters most because it comes from our neighbors.",
+      }]
+    : []),
 ];
+
 
 const About = () => {
   return (
@@ -623,8 +633,13 @@ const About = () => {
                 <span className="text-primary-foreground/20">•</span>
                 <span>20+ Local Professionals</span>
                 <span className="text-primary-foreground/20">•</span>
-                <span>2024 Best of Macon County</span>
-                <span className="text-primary-foreground/20">•</span>
+                {maconAward && (
+                  <>
+                    <span>{awardLabel(maconAward)}</span>
+                    <span className="text-primary-foreground/20">•</span>
+                  </>
+                )}
+
                 <span>{REVIEW_LINE_AS_OF}</span>
               </div>
             </motion.div>

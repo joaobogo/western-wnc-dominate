@@ -57,6 +57,26 @@ export interface Credential {
   href?: string;
 }
 
+/**
+ * A local award or recognition.
+ *
+ * `verified: false` means the claim is UNCONFIRMED — it renders nowhere on the
+ * site and never enters schema.org markup. Flip to `true` only once the owner
+ * supplies the award year(s) and a public source (newspaper results page,
+ * certificate, manufacturer locator). See CLAIMS_AUDIT.md.
+ */
+export interface Award {
+  id: string;
+  /** Public-facing label, e.g. "5x Best of Macon County Readers' Choice". */
+  label: string;
+  detail?: string;
+  /** Years won, newest last. */
+  years?: number[];
+  /** Public proof URL — required before `verified` may be true. */
+  href?: string;
+  verified: boolean;
+}
+
 /** Press / editorial mentions we can link to. */
 export interface PressMention {
   outlet: string;
@@ -64,6 +84,7 @@ export interface PressMention {
   date: string;
   href: string;
 }
+
 
 export interface BusinessIdentity {
   brandName: string;
@@ -95,6 +116,9 @@ export interface BusinessIdentity {
   bbbUrl: string;
   bbbAccreditedSince: number;
   press: PressMention[];
+  /** Local awards. Only entries with `verified: true` are ever rendered. */
+  awards: Award[];
+
   locations: BusinessLocation[];
   profiles: string[];
   /** Counties named in `areaServed` alongside the served city list. */
@@ -166,7 +190,25 @@ export const BUSINESS: BusinessIdentity = {
       href: "https://www.thelaurelmagazine.com/",
     },
   ],
+  awards: [
+    {
+      id: "best-of-macon-county",
+      label: "Best of Macon County — The Franklin Press Readers' Choice",
+      detail: "Voted by Macon County readers",
+      // years: [2020, 2021, 2022, 2023, 2024], // uncomment once confirmed
+      // href: "", // The Franklin Press Readers' Choice results page
+      verified: false,
+    },
+    {
+      id: "certainteed-master-shingle-applicator",
+      label: "CertainTeed Master Shingle Applicator",
+      detail: "Manufacturer installer credential",
+      // href: "", // CertainTeed contractor locator profile
+      verified: false,
+    },
+  ],
   countiesServed: [
+
     { name: "Macon County", region: "NC" },
     { name: "Jackson County", region: "NC" },
     { name: "Swain County", region: "NC" },
@@ -312,6 +354,24 @@ export const PROJECTS_STAT = BUSINESS.projectsCompleted
 
 export const LICENSE_NUMBER = BUSINESS.licenseNumber;
 export const CREDENTIALS = BUSINESS.credentials;
+
+/**
+ * Awards cleared for public display. Empty until the owner confirms proof —
+ * every award surface (About, trust strip, location pages, schema) reads this,
+ * so an unverified award silently renders nowhere.
+ */
+export const VERIFIED_AWARDS = BUSINESS.awards.filter((a) => a.verified);
+
+/** Short label for an award, e.g. "5x Best of Macon County (2020–2024)". */
+export const awardLabel = (a: { label: string; years?: number[] }) => {
+  if (!a.years?.length) return a.label;
+  const sorted = [...a.years].sort((x, y) => x - y);
+  const span =
+    sorted.length > 1 ? `${sorted[0]}\u2013${sorted[sorted.length - 1]}` : `${sorted[0]}`;
+  const times = sorted.length > 1 ? `${sorted.length}x ` : "";
+  return `${times}${a.label} (${span})`;
+};
+
 
 export const SYLVA_PHONE_DISPLAY = formatPhoneDisplay(SYLVA.phoneE164);
 export const SYLVA_PHONE_PLAIN = formatPhonePlain(SYLVA.phoneE164);
