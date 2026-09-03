@@ -61,12 +61,6 @@ const trustMetrics = [
 ];
 
 const ReviewsPage = () => {
-  /** Reviews split by the showroom that served the job. */
-  const byShowroom = BUSINESS.locations.map((loc) => ({
-    loc,
-    items: reviews.filter((r) => reviewShowroom(r.location) === loc.id),
-  }));
-
   return (
     <>
       <SEOHead
@@ -117,47 +111,6 @@ const ReviewsPage = () => {
           </div>
         </section>
 
-        {/* ── REVIEWS BY SHOWROOM ── */}
-        <section className="section-padding bg-background border-b border-border" id="by-location">
-          <div className="container-tight">
-            <div className="text-center mb-10">
-              <span className="eyebrow mb-3 block">By Location</span>
-              <h2 className="section-heading mb-3">Reviews from Both Showrooms</h2>
-              <p className="text-muted-foreground font-body max-w-2xl mx-auto">
-                Highlander runs two Google Business Profiles — Franklin and Sylva. Every review below is
-                attributed to the showroom that served the job. Combined rating: {REVIEW_STARS} ({REVIEW_AS_OF}).
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {byShowroom.map(({ loc, items }) => (
-                <div key={loc.id} className="border border-border bg-card p-6 md:p-8">
-                  <h3 className="font-heading font-bold text-xl mb-1">{loc.name}</h3>
-                  <p className="text-body-xs font-body text-muted-foreground mb-4">
-                    {loc.streetAddress}, {loc.locality}, {loc.region} {loc.postalCode}
-                  </p>
-                  <p className="font-heading font-bold text-body-sm text-foreground mb-4">
-                    {items.length} review{items.length === 1 ? "" : "s"} shown from this showroom
-                  </p>
-                  <ul className="space-y-3 mb-5">
-                    {items.slice(0, 3).map((r) => (
-                      <li key={r.authorName + r.datePublished} className="text-body-xs font-body text-muted-foreground leading-relaxed">
-                        <span className="font-bold text-foreground">{r.authorName}</span> · {r.location} — {r.project}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={directionsUrl(loc)}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="text-body-xs font-body font-bold text-primary hover:underline"
-                  >
-                    See this showroom's Google reviews
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
 
         {/* ── TRUST METRICS ── */}
