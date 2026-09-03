@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, FRANKLIN, SYLVA } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -16,6 +16,7 @@ import ContactMinimalForm from "@/components/contact/ContactMinimalForm";
 import ContactIdentity from "@/components/contact/ContactIdentity";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import PageCloseCTA from "@/components/PageCloseCTA";
+import ShowroomVisitBlock from "@/components/locations/ShowroomVisitBlock";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -66,7 +67,7 @@ export default function Contact() {
                     </span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
-                    Talk With a Local WNC Roofing &amp; Construction Team.
+                    Contact Highlander Building Services
                   </h1>
                   <p className="text-body-lg md:text-body-xl text-white/95 leading-relaxed max-w-xl font-medium drop-shadow-sm">
                     Call us, send a message, or request an estimate. A Highlander advisor — not a call center — handles every inquiry personally.
@@ -206,6 +207,10 @@ export default function Contact() {
             </div>
           </div>
         </Section>
+
+        {/* ── SHOWROOMS — Franklin & Sylva NAP + lazy Google Maps ── */}
+        <ShowroomVisitBlock location={FRANKLIN} />
+        <ShowroomVisitBlock location={SYLVA} />
 
         {/* ── FRANKLIN ADDRESS + MAP + OFFICE HOURS ── */}
         <ContactIdentity />

@@ -516,7 +516,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/construction-service-area/lake-toxaway-nc                          /service-areas/lake-toxaway-nc                    301!
 /contact/construction-service-area/sapphire-nc                              /service-areas/sapphire-nc                        301!
 /contact/construction-service-area/cherokee-nc                              /service-areas/cherokee-nc                        301!
-/contact/*                                                   /service-areas                                     301!
+/contact/:segment                                            /service-areas                                     301!
+/contact/:segment/*                                          /service-areas                                     301!
 
 # ============================================================
 # Old receptionist intake URL → branded front-desk URL
