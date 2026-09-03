@@ -5,7 +5,6 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import RoofCostEstimator from "@/components/RoofCostEstimator";
 import RoofAssessmentQuiz from "@/components/RoofAssessmentQuiz";
-import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import StormResponseGuide from "@/components/StormResponseGuide";
 import {
   RepairVsReplaceGuide,
@@ -71,16 +70,6 @@ const FreeTools = () => {
           </div>
         </section>
 
-        {/* Guides */}
-        <section className="section-padding bg-secondary">
-          <div className="container-tight">
-            <div className="grid md:grid-cols-2 gap-8">
-              <GuideLeadMagnet variant="inline" guide="storm" />
-              <GuideLeadMagnet variant="inline" guide="maintenance" />
-            </div>
-          </div>
-        </section>
-
         {/* Construction Fit */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-2xl">
@@ -98,12 +87,6 @@ const FreeTools = () => {
           </div>
         </section>
 
-        {/* Checklist Guide */}
-        <section className="section-padding bg-secondary">
-          <div className="container-tight max-w-lg">
-            <GuideLeadMagnet variant="inline" guide="checklist" />
-          </div>
-        </section>
       </main>
       <PageCloseCTA eyebrow="Next Step" heading="Ready for a real set of eyes on your roof?" body="Tools are a starting point. A Highlander advisor can review your property and give you a clear, written scope." secondaryLabel="See the towns we serve" secondaryTo="/service-areas" context="free-tools" />
       <Footer />

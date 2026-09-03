@@ -9,7 +9,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import { TrustSidebar } from "@/components/trust";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 import { projectDetails } from "@/data/projects";
@@ -50,9 +49,6 @@ const authors: Record<string, { name: string; role: string; bio: string }> = {
 };
 
 /* ─── Helpers ─── */
-const getGuideType = (category: string): "storm" | "maintenance" | "checklist" =>
-  category === "Storm" ? "storm" : category === "Maintenance" ? "maintenance" : "checklist";
-
 const getCategoryColor = (category: string) => {
   const map: Record<string, string> = {
     Storm: "bg-accent/15 text-[hsl(var(--gold-ink))]",
