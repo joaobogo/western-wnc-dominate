@@ -68,7 +68,9 @@ async function gh(path: string) {
 
 async function postToTeams(html: string) {
   if (!LOVABLE_API_KEY || !TEAMS_API_KEY) {
-    throw new Error("Microsoft Teams connection is not configured");
+    // No Teams connection linked: skip the notification instead of failing the run.
+    console.warn("Teams notification skipped: Microsoft Teams connection is not configured");
+    return;
   }
   const res = await fetch(
     `${TEAMS_GATEWAY}/teams/${TEAM_ID}/channels/${CHANNEL_ID}/messages`,
@@ -261,6 +263,17 @@ Deno.serve(async (req) => {
   try {
     const body = await req.json().catch(() => ({} as Record<string, unknown>));
     const dryRun = body?.dry_run === true;
+
+    // Without a linked GitHub connection there is nothing to compare against.
+    // Skip quietly (200) instead of throwing a 502 on every scheduled run.
+    if (!LOVABLE_API_KEY || !GITHUB_API_KEY) {
+      console.warn("deploy-drift-check skipped: GitHub connection is not configured");
+      return new Response(
+        JSON.stringify({ ok: true, skipped: "github_not_configured" }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
 
     const [live, source] = await Promise.all([
       readLiveBuild(),
