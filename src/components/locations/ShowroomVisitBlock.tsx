@@ -2,7 +2,7 @@ import { Clock, MapPin, Phone } from "lucide-react";
 import Section from "@/components/layout/Section";
 import {
   BUSINESS,
-  PHONE_DISPLAY,
+  formatPhoneDisplay,
   napLine,
   telHref,
   type BusinessLocation,
@@ -38,7 +38,7 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
           <div className="flex items-start gap-3 mb-5">
             <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
             <a
-              href={telHref("+1-828-524-7773")}
+              href={telHref(location.phoneE164)}
               className="text-body-sm font-body font-semibold text-foreground hover:text-primary transition-colors"
             >
               {PHONE_DISPLAY}
