@@ -77,8 +77,11 @@ const GivingBack = () => {
                 <span className="text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Community Involvement</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 tracking-tight">
-                Built for the Community<br />
-                <span className="text-[hsl(var(--gold-ink))]">We Call Home.</span>
+                <span className="sr-only">Built for the Community We Call Home.</span>
+                <span aria-hidden="true" className="block">
+                  Built for the Community<br />
+                  <span className="text-[hsl(var(--gold-ink))]">We Call Home.</span>
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-white/95 font-body leading-relaxed max-w-2xl font-medium mb-8">
                 Highlander Building Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.

@@ -148,8 +148,11 @@ const About = () => {
                 transition={{ duration: 0.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
-                <span className="block text-[hsl(var(--dark-section-foreground))] mb-2">Elevating WNC Standards.</span>
-                <span className="block text-[hsl(var(--gold-ink))]">Built by a Local Team.</span>
+                <span className="sr-only">Elevating WNC Standards. Built by a Local Team.</span>
+                <span aria-hidden="true" className="block">
+                  <span className="block text-[hsl(var(--dark-section-foreground))] mb-2">Elevating WNC Standards.</span>
+                  <span className="block text-[hsl(var(--gold-ink))]">Built by a Local Team.</span>
+                </span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body md:text-body-lg text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">

@@ -176,8 +176,11 @@ const Certifications = () => {
             <motion.div {...fadeUp} className="max-w-3xl">
               <span className="eyebrow mb-4 block text-[hsl(var(--gold-ink))]">Credentials & Standards</span>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
-                Credentials That Mean<br />
-                <span className="text-[hsl(var(--gold-ink))]">Something to Your Project.</span>
+                <span className="sr-only">Credentials That Mean Something to Your Project.</span>
+                <span aria-hidden="true" className="block">
+                  Credentials That Mean<br />
+                  <span className="text-[hsl(var(--gold-ink))]">Something to Your Project.</span>
+                </span>
               </h1>
               <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
               <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-2xl font-medium drop-shadow-sm">

@@ -123,9 +123,12 @@ const Blog = () => {
                     <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Insights & Resources</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
-                    Mountain-Specific<br />
-                    Knowledge You Can<br />
-                    <span className="text-[hsl(var(--gold-ink))]">Actually Use.</span>
+                    <span className="sr-only">Mountain-Specific Knowledge You Can Actually Use.</span>
+                    <span aria-hidden="true" className="block">
+                      Mountain-Specific<br />
+                      Knowledge You Can<br />
+                      <span className="text-[hsl(var(--gold-ink))]">Actually Use.</span>
+                    </span>
                   </h1>
                   <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
                   <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg mb-8 font-medium drop-shadow-sm">

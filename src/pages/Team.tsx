@@ -38,7 +38,10 @@ const Team = () => {
               The People Behind Highlander
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
-              Meet the Team Behind<br /><span className="text-[hsl(var(--gold-ink))]">Highlander Building Services</span>
+              <span className="sr-only">Meet the Team Behind Highlander Building Services</span>
+              <span aria-hidden="true" className="block">
+                Meet the Team Behind<br /><span className="text-[hsl(var(--gold-ink))]">Highlander Building Services</span>
+              </span>
             </h1>
             <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
               Highlander Building Services is led by a local team committed to dependable workmanship, honest communication, and customer-focused service across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. From company leadership and sales to inspections, project management, repairs, and field coordination, each team member plays a role in helping homeowners protect and improve their properties.
