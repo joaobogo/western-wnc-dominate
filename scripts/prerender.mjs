@@ -110,12 +110,14 @@ function startServer() {
 
 // ------------------------------------------------------------ post-process
 function postProcess(html, route) {
+  // Trailing-slash form — matches the URL the server serves, the sitemap and
+  // og:url, so a crawler never follows a redirect from the canonical.
   const canonical =
     route === "/__404"
       ? null
       : route === "/"
         ? `${BASE_URL}/`
-        : `${BASE_URL}${route.toLowerCase().replace(/\/+$/, "")}`;
+        : `${BASE_URL}${route.toLowerCase().replace(/\/+$/, "")}/`;
 
   // Exactly one canonical, self-referencing.
   const canonicalTag = canonical
