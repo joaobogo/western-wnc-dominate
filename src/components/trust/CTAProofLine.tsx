@@ -21,7 +21,7 @@ const CTAProofLine = ({ area, tone = "light", align = "center", className = "" }
   const text = tone === "dark" ? "text-dark-section-foreground" : "text-muted-foreground";
 
   const items = [
-    { icon: Star, label: `${ratingValue}★ Google · ${reviewCount}+ reviews`, strong: true },
+    { icon: Star, label: `${ratingValue}★ Google · ${reviewCount} reviews`, strong: true },
     { icon: ShieldCheck, label: "Licensed & insured · family-owned since 2017" },
     { icon: MapPin, label: area ? `Franklin-based crews serving ${area}` : "Franklin-based crews across 9 WNC counties" },
   ];

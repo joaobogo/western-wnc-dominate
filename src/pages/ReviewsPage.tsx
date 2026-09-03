@@ -73,7 +73,7 @@ const themes = [
 
 const trustMetrics = [
   { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
-  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews", detail: "Across Platforms" },
+  { value: `${REVIEW_COUNT}`, label: "Verified Reviews", detail: "Across Platforms" },
   { value: "A+", label: "BBB Accredited", detail: `Since ${BUSINESS.bbbAccreditedSince}` },
   { value: BUSINESS.licenseNumber.replace(/^\D+/, "#"), label: "NC GC License", detail: "Verifiable on the state lookup" },
 ];
@@ -118,7 +118,7 @@ const ReviewsPage = () => {
                     <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
                   <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">{REVIEW_RATING}</span>
-                  <span className="text-sm text-dark-section-muted font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews ({REVIEW_AS_OF})</span>
+                  <span className="text-sm text-dark-section-muted font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount} verified reviews ({REVIEW_AS_OF})</span>
                 </div>
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                   Trust Is Earned.
@@ -235,7 +235,7 @@ const ReviewsPage = () => {
                 </div>
                 <div className="h-4 w-px bg-border" />
                  <span className="font-bold text-foreground text-base">{GOOGLE_REVIEW_AGGREGATE.ratingValue}</span>
-                 <span className="text-muted-foreground text-base font-body font-medium">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Verified Reviews</span>
+                 <span className="text-muted-foreground text-base font-body font-medium">from {GOOGLE_REVIEW_AGGREGATE.reviewCount} Verified Reviews</span>
               </motion.div>
             </motion.div>
 

@@ -7,7 +7,7 @@ import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 const HeroTrustLine = ({ className = "" }: { className?: string }) => {
   const { ratingValue, reviewCount } = GOOGLE_REVIEW_AGGREGATE;
   const items = [
-    `${ratingValue}★ Google · ${reviewCount}+ reviews`,
+    `${ratingValue}★ Google · ${reviewCount} reviews`,
     "Licensed & insured",
     "Crews based in Franklin, NC",
   ];

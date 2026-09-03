@@ -52,7 +52,7 @@ const Reviews = () => {
                 </div>
                 <div className="h-5 w-px bg-border hidden sm:block" />
                 <span className="font-heading font-bold text-foreground text-lg">{GOOGLE_REVIEW_AGGREGATE.ratingValue}</span>
-                <span className="text-muted-foreground text-xs sm:text-sm font-body">{GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
+                <span className="text-muted-foreground text-xs sm:text-sm font-body">{GOOGLE_REVIEW_AGGREGATE.reviewCount} verified reviews</span>
               </div>
             </div>
           </ScrollReveal>
