@@ -358,7 +358,10 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   currenciesAccepted: "USD",
   foundingDate: String(BUSINESS.foundingYear),
   slogan: BUSINESS.slogan,
+  // Awards enter markup only when owner-verified (see CLAIMS_AUDIT.md).
+  ...(VERIFIED_AWARDS.length ? { award: VERIFIED_AWARDS.map(awardLabel) } : {}),
   sameAs: PROFILE_URLS,
+
   ...overrides,
 });
 
