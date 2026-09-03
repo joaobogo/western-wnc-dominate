@@ -73,13 +73,23 @@ const craftsmanshipPrinciples = [
   { title: "Long-Term Accountability", detail: "We're here after the project ends. Warranty support, maintenance guidance, and a team you can actually reach." },
 ];
 
+const maconAward = VERIFIED_AWARDS.find((a) => a.id === "best-of-macon-county");
+
 const milestones = [
   { year: "2017", event: "Founded in Franklin, NC", detail: "Started with a truck, a ladder, and a commitment to doing roofing right in these mountains." },
   { year: "2019", event: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Earned the industry's highest installer certification, awarded to the top 1% nationally." },
   { year: "2021", event: "Second Office in Sylva", detail: "Expanded into Jackson County to better serve the western reaches of our service area." },
   { year: "2022", event: "Construction Division Launched", detail: "Client demand drove expansion into additions, renovations, and outdoor living builds." },
-  { year: "2024", event: "Best of Macon County", detail: "Voted Reader's Choice. The recognition that matters most because it comes from our neighbors." },
+  // Award milestone renders only once the owner verifies it (see CLAIMS_AUDIT.md).
+  ...(maconAward
+    ? [{
+        year: `${maconAward.years?.[maconAward.years.length - 1] ?? ""}`,
+        event: maconAward.label,
+        detail: "Voted Reader's Choice. The recognition that matters most because it comes from our neighbors.",
+      }]
+    : []),
 ];
+
 
 const About = () => {
   return (
