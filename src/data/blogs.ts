@@ -207,8 +207,6 @@ Call [${PHONE_DISPLAY}](tel:${PHONE_PLAIN}) or [request an inspection](/request-
 Related reading: [Roof Repair](/roofing/roof-repair) · [Roof Replacement](/roofing/roof-replacement) · [Metal Roofing](/roofing/metal) · [Roofing Costs in Western NC](/roofing-cost-western-nc) · [Service Areas](/service-areas)`,
   },
   {
-
-  {
     slug: "western-north-carolina-mountain-roofing-guide",
     title: "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
     excerpt:
