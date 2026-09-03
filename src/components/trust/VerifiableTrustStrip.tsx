@@ -1,4 +1,4 @@
-import { CREDENTIALS } from "@/data/business";
+import { CREDENTIALS, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 import { ShieldCheck, Award, BadgeCheck, Home, Wrench, ExternalLink } from "lucide-react";
 
 /**
