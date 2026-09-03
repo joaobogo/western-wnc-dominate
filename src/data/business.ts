@@ -57,6 +57,26 @@ export interface Credential {
   href?: string;
 }
 
+/**
+ * A local award or recognition.
+ *
+ * `verified: false` means the claim is UNCONFIRMED — it renders nowhere on the
+ * site and never enters schema.org markup. Flip to `true` only once the owner
+ * supplies the award year(s) and a public source (newspaper results page,
+ * certificate, manufacturer locator). See CLAIMS_AUDIT.md.
+ */
+export interface Award {
+  id: string;
+  /** Public-facing label, e.g. "5x Best of Macon County Readers' Choice". */
+  label: string;
+  detail?: string;
+  /** Years won, newest last. */
+  years?: number[];
+  /** Public proof URL — required before `verified` may be true. */
+  href?: string;
+  verified: boolean;
+}
+
 /** Press / editorial mentions we can link to. */
 export interface PressMention {
   outlet: string;
@@ -64,6 +84,7 @@ export interface PressMention {
   date: string;
   href: string;
 }
+
 
 export interface BusinessIdentity {
   brandName: string;
