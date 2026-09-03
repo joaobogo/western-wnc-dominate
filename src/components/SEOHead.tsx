@@ -1,6 +1,7 @@
 import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation, VERIFIED_AWARDS, awardLabel, REVIEW_RATING_VALUE } from "@/data/business";
 import { useEffect } from "react";
 import { ogImageForPath, OG_FALLBACK } from "@/lib/og";
+import { normalizeTitle, normalizeDescription } from "@/lib/seo-length";
 
 interface SEOHeadProps {
   title: string;
@@ -85,7 +86,7 @@ export const canonicalUrlFor = (rawPath: string): string => {
 
 const SEOHead = ({
   title,
-  description,
+  description: rawDescription,
   path,
   type = "website",
   image,
@@ -94,7 +95,11 @@ const SEOHead = ({
   keywords,
   locale = "en_US",
 }: SEOHeadProps) => {
-  const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
+  // SERP length guardrails: ≤60 char titles, ≤155 char descriptions.
+  const fullTitle = normalizeTitle(
+    title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`,
+  );
+  const description = normalizeDescription(rawDescription);
   const canonicalPath = normalizeCanonicalPath(path);
   const canonicalUrl = canonicalUrlFor(path);
   // Per-route card generated at build (dist/og/<slug>.png); the /og/* rewrite
