@@ -68,6 +68,14 @@ export const constructionFAQLibrary: FAQ[] = [
   // ── VALUE & INVESTMENT ──
   { q: "Will construction work increase my home's value?", a: "Well-designed, well-executed construction work consistently increases home value. Additions typically return 50–70% of cost at resale. Exterior renovations return 60–80%. Beyond financial return, quality construction eliminates the need to move and the associated costs and disruption — often the most valuable return of all.", categories: ["division", "additions", "renovations"] },
   { q: "How does Highlander's pricing compare to other contractors?", a: "We're not the cheapest option — and we're transparent about why. Our pricing reflects in-house crews, detailed project management, specified materials, documented quality checkpoints, and the planning discipline that prevents the cost overruns that make 'cheap' contractors expensive. We compete on value delivered, not price quoted.", categories: ["division"] },
+
+  // ── JSON-LD MATCHED FAQS (visible on /construction) ──
+  { q: "What types of construction projects does Highlander handle?", a: "We specialize in residential additions, renovations, structural upgrades, exterior improvements, outdoor living spaces, and custom project work.", categories: ["division"] },
+  { q: "Do you handle roofing, construction, and design on the same project?", a: "Yes — and this is one of our key advantages. When a project involves roof work, structural changes, and design planning, having one company manage all three eliminates coordination gaps and protects design integrity from first sketch to final walkthrough.", categories: ["division"] },
+  { q: "Do you handle permits and inspections?", a: "Yes. Permit acquisition, code compliance, and inspection scheduling are part of our standard project management.", categories: ["division"] },
+  { q: "How do you price construction projects?", a: "We provide detailed, grouped-cost proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees.", categories: ["division"] },
+  { q: "Can you work with my designer or project lead?", a: "Absolutely. We regularly collaborate with designers, project planners, and engineering professionals across Western North Carolina.", categories: ["division"] },
+  { q: "What sets Highlander apart from other contractors in WNC?", a: "Three things: planning depth, in-house crews, and communication standards.", categories: ["division"] },
 ];
 
 /** Filter FAQs by category */
