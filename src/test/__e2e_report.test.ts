@@ -58,11 +58,6 @@ const samples: Record<string, any> = {
     phone: "8285554444", property_town: "Brevard", property_state: "NC",
     service_category: "roofing", project_type: "repair", timeline: "emergency",
   },
-  "GuideLeadMagnet": {
-    source: "guide_lead_magnet", lead_type: "guide_download", full_name: "Pat Nguyen",
-    email: "pat@example.com", property_town: "Waynesville", property_state: "NC",
-    service_category: "roofing", timeline: "exploring",
-  },
   "Careers (job application)": {
     source: "careers_application", lead_type: "job_application", full_name: "Luis Alvarez",
     phone: "8285555555", project_type: "crew_lead", project_description: "8 years roofing.",
