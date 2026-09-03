@@ -1,4 +1,4 @@
-import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation, VERIFIED_AWARDS, awardLabel } from "@/data/business";
+import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation, VERIFIED_AWARDS, awardLabel, REVIEW_RATING_VALUE } from "@/data/business";
 import { useEffect } from "react";
 import { ogImageForPath, OG_FALLBACK } from "@/lib/og";
 
