@@ -1,10 +1,8 @@
 import { REVIEW_STARS, REVIEW_COUNT, REVIEW_LINE_AS_OF, REVIEW_RATING } from "@/data/business";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  Star, Quote, ArrowRight, Phone, CheckCircle, MessageSquare,
-  Hammer, Clock, Heart, Shield, Users, ThumbsUp, Award,
+  Star, Quote, ArrowRight, MessageSquare,
+  Hammer, Clock, Heart,
 } from "lucide-react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -13,8 +11,7 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE, reviewShowroom } from "@/data/reviews";
-import { BUSINESS, directionsUrl, REVIEW_AS_OF } from "@/data/business";
-import { AlertCircle, Camera, Link2, Mail } from "lucide-react";
+import { BUSINESS, directionsUrl, REVIEW_AS_OF, FRANKLIN, SYLVA } from "@/data/business";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -26,21 +23,6 @@ const fadeUp = {
 /* ── Review Data ── */
 
 const reviews = customerReviews;
-
-const categoryLabels: Record<string, string> = {
-  all: "All Reviews",
-  roofing: "Roofing",
-  construction: "Construction",
-  storm: "Storm & Insurance",
-  commercial: "Commercial",
-};
-
-const categoryColors: Record<string, string> = {
-  roofing: "bg-primary/10 text-primary",
-  construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
-  storm: "bg-destructive/10 text-alert-ink",
-  commercial: "bg-secondary text-muted-foreground",
-};
 
 /* ── Recurring Themes ── */
 
@@ -79,14 +61,11 @@ const trustMetrics = [
 ];
 
 const ReviewsPage = () => {
-  const [filter, setFilter] = useState("all");
-  const featured = reviews.filter((r) => r.featured);
   /** Reviews split by the showroom that served the job. */
   const byShowroom = BUSINESS.locations.map((loc) => ({
     loc,
     items: reviews.filter((r) => reviewShowroom(r.location) === loc.id),
   }));
-  const filtered = filter === "all" ? reviews.filter((r) => !r.featured) : reviews.filter((r) => r.category === filter && !r.featured);
 
   return (
     <>
@@ -94,16 +73,7 @@ const ReviewsPage = () => {
         title="Reviews & Reputation | What Clients Say About Highlander"
         description={`Read verified reviews from Highlander Building Services clients across Western North Carolina. ${REVIEW_LINE_AS_OF}.`}
         path="/reviews"
-        jsonLd={buildPageSchema({
-          type: "reviews",
-          reviews: reviews.map((review) => ({
-            author: review.authorName,
-            rating: review.ratingValue,
-            body: review.reviewBody,
-            datePublished: review.datePublished,
-            location: review.location,
-          })),
-        })}
+        jsonLd={buildPageSchema({ type: "reviews" })}
       />
       <Header />
       <main id="main-content">
@@ -214,134 +184,55 @@ const ReviewsPage = () => {
           <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
         </section>
 
-        {/* ── FEATURED REVIEWS ── */}
+        {/* ── GOOGLE REVIEWS PLACEHOLDER ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-14">
-              <span className="eyebrow mb-3 block">Featured Reviews</span>
+              <span className="eyebrow mb-3 block">Verified Reviews</span>
               <h2 className="section-heading mb-4">What Our Clients Say</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
+            </motion.div>
+
+            <div className="max-w-2xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="inline-flex items-center gap-3 px-5 py-2.5 bg-card border border-border rounded-sm"
+                transition={{ duration: 0.4 }}
+                className="relative bg-card border border-border rounded-sm p-7 md:p-8 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-flat transition-all duration-300 text-center"
               >
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                  ))}
+                <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
+                <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4">
+                  Read verified reviews on Google
+                </h3>
+                <p className="text-muted-foreground font-body text-body-sm leading-relaxed mb-6">
+                  We don't host reviews on this page. See what homeowners and property managers across Western North Carolina say about us directly on our Franklin and Sylva Google Business Profiles.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href={directionsUrl(FRANKLIN)}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="btn btn-secondary btn-md inline-flex items-center gap-2"
+                  >
+                    Franklin Google reviews
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
+                  <a
+                    href={directionsUrl(SYLVA)}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="btn btn-secondary btn-md inline-flex items-center gap-2"
+                  >
+                    Sylva Google reviews
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
                 </div>
-                <div className="h-4 w-px bg-border" />
-                 <span className="font-bold text-foreground text-base">{GOOGLE_REVIEW_AGGREGATE.ratingValue}</span>
-                 <span className="text-muted-foreground text-base font-body font-medium">from {GOOGLE_REVIEW_AGGREGATE.reviewCount} Verified Reviews</span>
               </motion.div>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-3 gap-5 mb-5">
-              {featured.map((r, i) => (
-                <motion.div
-                  key={r.authorName}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
-                  className="relative bg-card border border-border rounded-sm p-7 md:p-8 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-flat transition-all duration-300"
-                >
-                  <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`text-caption md:text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1.5 rounded-sm ${categoryColors[r.category]}`}>
-                      {categoryLabels[r.category]}
-                    </span>
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, si) => (
-                        <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                      ))}
-                    </div>
-                  </div>
-                  <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" aria-hidden="true" />
-                  <p className="text-foreground text-body-sm leading-relaxed mb-5 font-body font-medium">"{r.reviewBody}"</p>
-                  <div className="bg-secondary/70 rounded-sm px-4 py-3 mb-5">
-                    <p className="text-body-xs font-body font-bold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
-                    <p className="text-body-sm font-body font-bold text-foreground/80">{r.outcome}</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
-                      {r.authorName.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground text-body-sm">{r.authorName}</p>
-                      <p className="text-muted-foreground text-body-xs font-body font-semibold">{r.location} · {r.project}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
 
-        {/* ── CATEGORIZED REVIEWS ── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div {...fadeUp} className="text-center mb-10">
-              <span className="eyebrow mb-3 block">By Project Type</span>
-              <h2 className="section-heading mb-4">Reviews by Category</h2>
-              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
-            </motion.div>
-
-            <div className="flex flex-wrap gap-2 justify-center mb-10">
-              {Object.entries(categoryLabels).map(([value, label]) => (
-                <button
-                  key={value}
-                  onClick={() => setFilter(value)}
-                  className={`px-5 py-2 rounded-sm text-sm font-semibold transition-all ${
-                    filter === value
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-[hsl(var(--highland-gold)/0.2)]"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filtered.map((r, i) => (
-                <motion.div
-                  key={r.authorName + r.project}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, duration: 0.4 }}
-                  className="group bg-card border border-border rounded-sm p-5 md:p-6 hover:border-primary/15 hover:shadow-flat transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[r.category]}`}>
-                      {categoryLabels[r.category]}
-                    </span>
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, si) => (
-                        <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-foreground/85 text-body-sm leading-relaxed mb-4 font-body font-bold">"{r.reviewBody}"</p>
-                  <p className="text-body-xs text-primary/70 font-body font-bold mb-4 leading-snug">{r.outcome}</p>
-                  <div className="flex items-center gap-2.5 pt-3 border-t border-border">
-                    <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-caption">
-                      {r.authorName.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground text-body-xs">{r.authorName}</p>
-                      <p className="text-muted-foreground text-body-xs font-body font-semibold">{r.location}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ── RECURRING THEMES ── */}
         <section className="section-padding section-dark tartan-dark">
@@ -390,42 +281,6 @@ const ReviewsPage = () => {
           ctaText="Get My Questions Answered"
         />
 
-        {/* ── INTERNAL: REVIEW CONTENT TO CONFIRM ── */}
-        <section className="bg-secondary border-t border-border">
-          <div className="container-tight section-padding max-w-4xl">
-            <div className="card-premium p-8 md:p-10">
-              <div className="flex items-start gap-4 mb-6">
-                <AlertCircle className="w-6 h-6 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" />
-                <div>
-                  <span className="eyebrow block mb-2">For the Highlander Team — Pre-Launch</span>
-                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
-                    Review Content to Confirm Before Launch
-                  </h2>
-                </div>
-              </div>
-              <p className="text-muted-foreground font-body mb-6">
-                The review excerpts shown above are placeholders representing the kind of feedback Highlander clients commonly share. Before launch, please confirm or replace them with approved review content directly from Google, Facebook, or other verified sources. We do not invent reviews.
-              </p>
-              <p className="font-heading font-bold text-foreground mb-3">To finalize this page, please provide:</p>
-              <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground/85 font-body mb-6">
-                {[
-                  { icon: Link2, text: "Google Business Profile review link" },
-                  { icon: Mail, text: "6–12 approved review excerpts (verbatim from Google or Facebook)" },
-                  { icon: Camera, text: "Permission to display customer names, initials, or town" },
-                  { icon: AlertCircle, text: "Confirmation of current review counts and average ratings" },
-                ].map(({ icon: Icon, text }) => (
-                  <li key={text} className="flex items-start gap-2">
-                    <Icon className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-muted-foreground italic">
-                Once approved content is provided, placeholder reviews and aggregate counts will be replaced with verified Google/Facebook content and structured-data schema will be updated to match.
-              </p>
-            </div>
-          </div>
-        </section>
       </main>
       <PageCloseCTA eyebrow="Next Step" heading="Ready to become our next review?" body="Tell us about your property and we'll follow up personally with a clear next step." secondaryLabel="See recent projects" secondaryTo="/recent-projects" context="reviews" />
       <Footer />
