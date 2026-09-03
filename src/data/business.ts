@@ -116,6 +116,9 @@ export interface BusinessIdentity {
   bbbUrl: string;
   bbbAccreditedSince: number;
   press: PressMention[];
+  /** Local awards. Only entries with `verified: true` are ever rendered. */
+  awards: Award[];
+
   locations: BusinessLocation[];
   profiles: string[];
   /** Counties named in `areaServed` alongside the served city list. */
