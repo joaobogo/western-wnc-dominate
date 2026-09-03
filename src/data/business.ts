@@ -355,6 +355,24 @@ export const PROJECTS_STAT = BUSINESS.projectsCompleted
 export const LICENSE_NUMBER = BUSINESS.licenseNumber;
 export const CREDENTIALS = BUSINESS.credentials;
 
+/**
+ * Awards cleared for public display. Empty until the owner confirms proof —
+ * every award surface (About, trust strip, location pages, schema) reads this,
+ * so an unverified award silently renders nowhere.
+ */
+export const VERIFIED_AWARDS = BUSINESS.awards.filter((a) => a.verified);
+
+/** Short label for an award, e.g. "5x Best of Macon County (2020–2024)". */
+export const awardLabel = (a: { label: string; years?: number[] }) => {
+  if (!a.years?.length) return a.label;
+  const sorted = [...a.years].sort((x, y) => x - y);
+  const span =
+    sorted.length > 1 ? `${sorted[0]}\u2013${sorted[sorted.length - 1]}` : `${sorted[0]}`;
+  const times = sorted.length > 1 ? `${sorted.length}x ` : "";
+  return `${times}${a.label} (${span})`;
+};
+
+
 export const SYLVA_PHONE_DISPLAY = formatPhoneDisplay(SYLVA.phoneE164);
 export const SYLVA_PHONE_PLAIN = formatPhonePlain(SYLVA.phoneE164);
 export const SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);

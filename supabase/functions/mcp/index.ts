@@ -163,6 +163,7 @@ var REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
 var PROJECTS_STAT = BUSINESS.projectsCompleted ? `${BUSINESS.projectsCompleted}+` : null;
 var LICENSE_NUMBER = BUSINESS.licenseNumber;
 var CREDENTIALS = BUSINESS.credentials;
+var VERIFIED_AWARDS = BUSINESS.awards.filter((a) => a.verified);
 var SYLVA_PHONE_DISPLAY = formatPhoneDisplay(SYLVA.phoneE164);
 var SYLVA_PHONE_PLAIN = formatPhonePlain(SYLVA.phoneE164);
 var SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
