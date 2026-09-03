@@ -63,6 +63,23 @@ var BUSINESS = {
       href: "https://www.thelaurelmagazine.com/"
     }
   ],
+  awards: [
+    {
+      id: "best-of-macon-county",
+      label: "Best of Macon County \u2014 The Franklin Press Readers' Choice",
+      detail: "Voted by Macon County readers",
+      // years: [2020, 2021, 2022, 2023, 2024], // uncomment once confirmed
+      // href: "", // The Franklin Press Readers' Choice results page
+      verified: false
+    },
+    {
+      id: "certainteed-master-shingle-applicator",
+      label: "CertainTeed Master Shingle Applicator",
+      detail: "Manufacturer installer credential",
+      // href: "", // CertainTeed contractor locator profile
+      verified: false
+    }
+  ],
   countiesServed: [
     { name: "Macon County", region: "NC" },
     { name: "Jackson County", region: "NC" },
