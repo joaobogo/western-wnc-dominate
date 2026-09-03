@@ -156,8 +156,7 @@ export const BUSINESS: BusinessIdentity = {
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   // priceRange intentionally omitted — add only once the owner approves a band.
   reviewSummary: {
-    // GLOBAL RULE: the displayed Google rating never shows below 4.8.
-    // Enforced by MIN_DISPLAY_RATING below — every surface reads the clamped value.
+    // Single source of truth for every rating badge and JSON-LD node.
     ratingValue: 4.7,
     reviewCount: 158,
     source: "Google Business Profile",
@@ -334,17 +333,13 @@ export const PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
 /* ── Review proof — the ONLY source for star ratings and review counts ── */
 
 /**
- * GLOBAL RULE: no surface may display a Google rating below 4.8.
- * Every export below is clamped to this floor, so a lower stored value can
- * never leak into copy, badges, or schema.
+ * GLOBAL RULE: the rating is stored once, in BUSINESS.reviewSummary, and is
+ * never re-typed or adjusted. Rendered badges and JSON-LD read this value so
+ * server HTML and the hydrated app always agree.
  */
-export const MIN_DISPLAY_RATING = 4.8;
 
-/** Clamped rating used everywhere, e.g. 4.7 */
-export const REVIEW_RATING_VALUE = Math.max(
-  BUSINESS.reviewSummary.ratingValue,
-  MIN_DISPLAY_RATING,
-);
+/** Single source of truth for the displayed rating, e.g. 4.7 */
+export const REVIEW_RATING_VALUE = BUSINESS.reviewSummary.ratingValue;
 /** "4.7" */
 export const REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
 /** "4.7\u2605" */
