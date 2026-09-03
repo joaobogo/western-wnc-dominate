@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_LINE_AS_OF } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_LINE_AS_OF, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
