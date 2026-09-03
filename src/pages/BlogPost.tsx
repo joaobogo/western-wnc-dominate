@@ -228,7 +228,30 @@ const renderContent = (content: string) => {
         />
       ); return; }
     flushList();
+    // Inline figure: ![alt](src) or ![alt](src "caption")
+    const figure = line.trim().match(/^!\[([^\]]*)\]\(([^\s)]+)(?:\s+"([^"]*)")?\)$/);
+    if (figure) {
+      const [, alt, src, caption] = figure;
+      nodes.push(
+        <figure key={i} className="my-8">
+          <img
+            src={src}
+            alt={alt}
+            width={1600}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            className="w-full rounded-sm border border-border"
+          />
+          {caption && (
+            <figcaption className="mt-3 text-caption text-muted-foreground">{caption}</figcaption>
+          )}
+        </figure>,
+      );
+      return;
+    }
     if (line.startsWith("> ")) {
+
       nodes.push(
         <blockquote
           key={i}
