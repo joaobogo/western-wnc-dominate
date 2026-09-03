@@ -27,7 +27,7 @@ const CTAProofPoints = ({
   const items = [
     {
       icon: Star,
-      label: `${ratingValue}★ Google · ${reviewCount}+ reviews`,
+      label: `${ratingValue}★ Google · ${reviewCount} reviews`,
     },
     { icon: ShieldCheck, label: "Licensed and insured" },
     { icon: MapPin, label: `Crews based in Franklin, serving ${area}` },

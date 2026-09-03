@@ -44,7 +44,7 @@ const reviewHighlights = [
 const proofPoints = [
   { value: REVIEW_STARS, label: "Google Rating" },
   { value: "8", label: "WNC Counties" },
-  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews" },
+  { value: `${REVIEW_COUNT}`, label: "Verified Reviews" },
   { value: "2017", label: "Family-Owned Since" },
 ];
 

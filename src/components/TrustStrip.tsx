@@ -8,7 +8,7 @@ import { Shield, Award, Clock, Star, MapPin, CheckCircle2 } from "lucide-react";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const stats = [
-  { value: `${REVIEW_COUNT}+`, label: "Verified Reviews", detail: "From WNC Homeowners" },
+  { value: `${REVIEW_COUNT}`, label: "Verified Reviews", detail: "From WNC Homeowners" },
   { value: "2017", label: "Family-Owned Since", detail: "Franklin, NC" },
   { value: REVIEW_STARS, label: "Google Reviews", detail: "Across 8 WNC Counties" },
 ];

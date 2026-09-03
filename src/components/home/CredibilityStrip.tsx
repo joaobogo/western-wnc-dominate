@@ -13,7 +13,7 @@ const CredibilityStrip = () => {
     {
       icon: Star,
       label: `${ratingValue}★ Google`,
-      detail: `${reviewCount}+ verified homeowner reviews`,
+      detail: `${reviewCount} verified homeowner reviews`,
     },
     {
       icon: ShieldCheck,
