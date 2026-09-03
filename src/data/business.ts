@@ -289,21 +289,21 @@ export const PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
 
 /* ── Review proof — the ONLY source for star ratings and review counts ── */
 
-/** "4.9" */
+/** "4.7" */
 export const REVIEW_RATING = BUSINESS.reviewSummary.ratingValue.toFixed(1);
-/** "4.9\u2605" */
+/** "4.7\u2605" */
 export const REVIEW_STARS = `${REVIEW_RATING}\u2605`;
-/** 150 */
+/** 158 */
 export const REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
-/** "150+ Google reviews" */
-export const REVIEW_COUNT_LABEL = `${REVIEW_COUNT}+ Google reviews`;
-/** "as of August 2026" — always shown next to a rating. */
+/** "158 Google reviews" */
+export const REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
+/** "as of September 2026" — always shown next to a rating. */
 export const REVIEW_AS_OF = `as of ${new Date(
   `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`,
 ).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
-/** "4.9\u2605 \u00b7 150+ Google reviews" */
+/** "4.7\u2605 \u00b7 158 Google reviews" */
 export const REVIEW_LINE = `${REVIEW_STARS} \u00b7 ${REVIEW_COUNT_LABEL}`;
-/** "4.9\u2605 \u00b7 150+ Google reviews (as of August 2026)" */
+/** "4.7\u2605 \u00b7 158 Google reviews (as of September 2026)" */
 export const REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
 /** null until the owner confirms a real lifetime project count. */
 export const PROJECTS_STAT = BUSINESS.projectsCompleted

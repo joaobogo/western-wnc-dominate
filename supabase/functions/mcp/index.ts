@@ -137,7 +137,7 @@ var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
 var REVIEW_RATING = BUSINESS.reviewSummary.ratingValue.toFixed(1);
 var REVIEW_STARS = `${REVIEW_RATING}\u2605`;
 var REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
-var REVIEW_COUNT_LABEL = `${REVIEW_COUNT}+ Google reviews`;
+var REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
 var REVIEW_AS_OF = `as of ${(/* @__PURE__ */ new Date(
   `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`
 )).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
