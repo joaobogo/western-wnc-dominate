@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_STARS } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -549,7 +549,7 @@ const RoofingDivision = () => {
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
                       { icon: Clock, text: "Rapid Response" },
-                      { icon: Star, text: "4.7★ Google Rating" },
+                      { icon: Star, text: `${REVIEW_STARS} Google Rating` },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
