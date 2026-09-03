@@ -28,7 +28,7 @@ const IntakeChooser = () => (
           Which conversation should we start with?
         </h1>
         <p className="text-muted-foreground max-w-xl mx-auto mb-12 font-body text-body-sm leading-relaxed">
-          Two intake paths so the right advisor reaches out with the right questions.
+          Pick the closest match and the right advisor reaches out with the right questions.
         </p>
 
         <div className="grid md:grid-cols-3 gap-5">

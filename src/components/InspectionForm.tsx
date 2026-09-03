@@ -663,6 +663,16 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                   No obligation · No sales pressure · Your information stays private
                 </p>
               </div>
+              {isPage && (
+                <p className="text-center mt-4">
+                  <Link
+                    to="/consultation"
+                    className="text-white/70 hover:text-[hsl(var(--gold-ink))] font-body text-body-xs underline underline-offset-2 transition-colors"
+                  >
+                    Planning a build or remodel instead? Start here
+                  </Link>
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
