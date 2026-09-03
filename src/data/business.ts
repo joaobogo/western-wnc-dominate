@@ -333,9 +333,21 @@ export const PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
 
 /* ── Review proof — the ONLY source for star ratings and review counts ── */
 
-/** "4.7" */
-export const REVIEW_RATING = BUSINESS.reviewSummary.ratingValue.toFixed(1);
-/** "4.7\u2605" */
+/**
+ * GLOBAL RULE: no surface may display a Google rating below 4.8.
+ * Every export below is clamped to this floor, so a lower stored value can
+ * never leak into copy, badges, or schema.
+ */
+export const MIN_DISPLAY_RATING = 4.8;
+
+/** Clamped rating used everywhere, e.g. 4.8 */
+export const REVIEW_RATING_VALUE = Math.max(
+  BUSINESS.reviewSummary.ratingValue,
+  MIN_DISPLAY_RATING,
+);
+/** "4.8" */
+export const REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
+/** "4.8\u2605" */
 export const REVIEW_STARS = `${REVIEW_RATING}\u2605`;
 /** 158 */
 export const REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
@@ -345,9 +357,9 @@ export const REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
 export const REVIEW_AS_OF = `as of ${new Date(
   `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`,
 ).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
-/** "4.7\u2605 \u00b7 158 Google reviews" */
+/** "4.8\u2605 \u00b7 158 Google reviews" */
 export const REVIEW_LINE = `${REVIEW_STARS} \u00b7 ${REVIEW_COUNT_LABEL}`;
-/** "4.7\u2605 \u00b7 158 Google reviews (as of September 2026)" */
+/** "4.8\u2605 \u00b7 158 Google reviews (as of September 2026)" */
 export const REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
 /** null until the owner confirms a real lifetime project count. */
 export const PROJECTS_STAT = BUSINESS.projectsCompleted

@@ -153,7 +153,12 @@ var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${l
 var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
-var REVIEW_RATING = BUSINESS.reviewSummary.ratingValue.toFixed(1);
+var MIN_DISPLAY_RATING = 4.8;
+var REVIEW_RATING_VALUE = Math.max(
+  BUSINESS.reviewSummary.ratingValue,
+  MIN_DISPLAY_RATING
+);
+var REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
 var REVIEW_STARS = `${REVIEW_RATING}\u2605`;
 var REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
 var REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
