@@ -652,7 +652,7 @@ const ResidentialRoofing = () => {
                             { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
                             { icon: Shield, text: "Licensed & Insured" },
                             { icon: Clock, text: "Rapid Storm Response" },
-                            { icon: Star, text: "4.7★ Google Rating" },
+                            { icon: Star, text: `${REVIEW_STARS} Google Rating` },
                           ].map((item) => (
                             <div key={item.text} className="flex items-center gap-2">
                               <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
