@@ -5,8 +5,6 @@ import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection
 
 import wncRoofingGuideHero from "@/assets/blog/wnc-mountain-roofing-guide-hero.jpg";
 import stormSeasonHero from "@/assets/blog/wnc-storm-season-roof-hero.jpg";
-import stormSeasonHail from "@/assets/blog/wnc-storm-season-hail-granules.jpg";
-import stormSeasonFlashing from "@/assets/blog/wnc-storm-season-chimney-flashing.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
