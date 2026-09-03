@@ -99,7 +99,7 @@ const ExteriorImprovements = () => {
       <SEOHead
         title="Exterior Improvements in WNC | Siding & Windows"
         description="Exterior renovations for Western NC homes: siding replacement, window upgrades, structural repair, and full envelope work by in-house crews."
-        path="/construction/exterior"
+        path="/exterior-improvements"
         jsonLd={[
           serviceSchema({ name: "Exterior Improvements", description: "Exterior renovations and structural upgrades for Western North Carolina homes.", url: "/construction/exterior" }),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Exterior Improvements", url: "/construction/exterior" }]),

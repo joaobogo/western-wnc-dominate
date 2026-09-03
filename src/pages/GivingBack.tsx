@@ -44,7 +44,7 @@ const GivingBack = () => {
       <SEOHead
         title="Community Involvement | Highlander Building Services"
         description="How Highlander supports homeowners, local organizations, and communities in Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
-        path="/giving-back"
+        path="/community"
         jsonLd={[
           organizationSchema(),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Community", url: "/giving-back" }]),

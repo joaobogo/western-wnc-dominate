@@ -73,9 +73,14 @@ export const normalizeCanonicalPath = (rawPath: string): string => {
   return path || "/";
 };
 
+/**
+ * Absolute canonical URL for a route. The server serves the trailing-slash
+ * form of every path, so the canonical (and og:url, which mirrors it) uses
+ * that shape — the URL in the sitemap resolves with no redirect hop.
+ */
 export const canonicalUrlFor = (rawPath: string): string => {
   const path = normalizeCanonicalPath(rawPath);
-  return path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
+  return path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}/`;
 };
 
 const SEOHead = ({

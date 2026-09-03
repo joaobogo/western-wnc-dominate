@@ -149,11 +149,16 @@ const entries: SitemapEntry[] = [
   return true;
 });
 
+// The server serves the trailing-slash form of every route, so the sitemap,
+// the canonical tag and og:url all use that shape — no redirect hops.
+const withTrailingSlash = (path: string) =>
+  path === "/" ? "/" : `${path.replace(/\/+$/, "")}/`;
+
 function generateSitemap(items: SitemapEntry[]) {
   const urls = items.map((e) =>
     [
       `  <url>`,
-      `    <loc>${BASE_URL}${e.path}</loc>`,
+      `    <loc>${BASE_URL}${withTrailingSlash(e.path)}</loc>`,
       e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       `  </url>`,
     ]
