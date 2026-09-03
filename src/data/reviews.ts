@@ -16,7 +16,7 @@ export interface CustomerReview {
  * Never re-type them here — the schema and the visible rating must agree.
  */
 export const GOOGLE_REVIEW_AGGREGATE = {
-  ratingValue: REVIEW_SUMMARY.ratingValue,
+  ratingValue: REVIEW_RATING_VALUE,
   reviewCount: REVIEW_SUMMARY.reviewCount,
 };
 
