@@ -144,7 +144,7 @@ ${neighborSentence(t)}
     ],
     relatedServices: [
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Metal Roofing", path: "/roofing/metal-roofing" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
       { label: `${t.name} Service Area`, path: `/service-areas/${t.slug}` },
     ],
   };

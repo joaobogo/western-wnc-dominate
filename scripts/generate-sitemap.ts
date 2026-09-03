@@ -8,7 +8,7 @@ import { resolve } from "path";
 import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
 import { counties } from "../src/data/counties";
-import { indexableServiceTownPairs } from "../src/data/service-town-content";
+import { serviceTownContent } from "../src/data/service-town-content";
 import { tier1FlatEntries, tier2FlatEntries } from "../src/data/service-town-slugs";
 import { projectDetails } from "../src/data/projects";
 
@@ -98,9 +98,12 @@ const countyRoutes: SitemapEntry[] = counties.map((c) => ({
 }));
 
 // Dynamic: service-town landing pages (/service-areas/{town}/{service}).
-// Only hand-written pairs are indexable; templated coverage pages render
-// noindex,follow and are deliberately excluded here.
-const indexablePairs = indexableServiceTownPairs();
+// Every pair the client router renders is listed so the build prerenders it
+// and the server returns HTTP 200 instead of a 404.
+const indexablePairs = serviceTownContent.map((e) => ({
+  townSlug: e.townSlug,
+  serviceSlug: e.serviceSlug,
+}));
 const indexablePairKeys = new Set(
   indexablePairs.map((p) => `${p.townSlug}|${p.serviceSlug}`),
 );

@@ -644,3 +644,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # Per-route OG cards live at /og/<slug>.png (generated at build). Any route
 # without a generated card falls back to the sitewide social image.
 /og/*                    /og-image.jpg 200
+
+# Wrong-shape internal URLs corrected 2026-09 (client route existed only in old links)
+/roofing/metal-roofing                                       /roofing/metal                                     301!
+/residential-roofing                                         /roofing/residential                               301!
+/roof-repair                                                 /roofing/roof-repair                               301!
