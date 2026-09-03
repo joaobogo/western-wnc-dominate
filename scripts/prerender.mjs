@@ -181,9 +181,15 @@ async function renderRoute(context, route) {
       [HOME_TITLE, route === "/"],
       { timeout: PAGE_TIMEOUT_MS },
     );
+    // SEOHead injects its JSON-LD in an effect — make sure it landed before we
+    // snapshot, otherwise the page ships without its structured data.
+    await page
+      .waitForSelector("script[data-seo-ld]", { state: "attached", timeout: 15_000 })
+      .catch(() => {});
     await page
       .waitForLoadState("networkidle", { timeout: 5_000 })
       .catch(() => {});
+
 
     const html = await page.evaluate(() => document.documentElement.outerHTML);
     const out = outPathFor(route);
