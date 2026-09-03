@@ -21,6 +21,12 @@ interface Props {
 
 const VerifiableTrustStrip = ({ tone = "default", className = "" }: Props) => {
   const dark = tone === "dark";
+  // Verified awards join the strip automatically; unverified ones render nowhere.
+  const items = [
+    ...CREDENTIALS,
+    ...VERIFIED_AWARDS.map((a) => ({ label: awardLabel(a), detail: a.detail, href: a.href })),
+  ];
+
 
   return (
     <section
