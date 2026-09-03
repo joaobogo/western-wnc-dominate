@@ -10,11 +10,9 @@ const WEBSITE_URL = "https://highlandernc.com/";
 const EMAIL = BUSINESS.email;
 const ADDRESS = FRANKLIN_NAP;
 const COMPANY = BUSINESS.legalName;
-// Sitewide customer phone. The RealWork template listed (828) 526-6421 —
-// see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
+// Sitewide customer phone.
 const PHONE = PHONE_DISPLAY;
 const PHONE_TEL = BUSINESS.primaryPhoneE164.replace(/-/g, "");
-const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
 const PROGRAM = `${BUSINESS.legalName} Customer Communications`;
 
 const TOC: { id: string; label: string }[] = [
