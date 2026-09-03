@@ -132,11 +132,11 @@ export const BUSINESS: BusinessIdentity = {
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   // priceRange intentionally omitted — add only once the owner approves a band.
   reviewSummary: {
-    ratingValue: 4.9,
-    reviewCount: 150,
+    ratingValue: 4.7,
+    reviewCount: 158,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-08-25",
+    lastVerified: "2026-09-03",
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [
