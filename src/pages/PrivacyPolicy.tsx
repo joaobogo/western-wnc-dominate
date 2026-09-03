@@ -227,17 +227,8 @@ const PrivacyPolicy = () => {
               <li>Mailing Address: {ADDRESS}</li>
             </ul>
             <p>You may also reply HELP to any text message for assistance.</p>
-            <div
-              role="note"
-              className="not-prose my-4 p-4 border border-highland-gold/60 bg-highland-gold/10 text-[hsl(var(--gold-ink))] rounded-sm text-sm leading-relaxed"
-            >
-              <strong className="font-semibold">Needs Client Input — phone number:</strong>{" "}
-              The RealWork Privacy Policy template lists {REALWORK_TEMPLATE_PHONE} as the
-              contact number. This page currently shows the sitewide customer phone{" "}
-              {PHONE}. Highlander should confirm which number the Privacy Policy should
-              display and, if different from the sitewide sales phone, we will keep the
-              legal/support number here without changing the sitewide contact.
-            </div>
+
+
 
             <h2 id="s7">7. Link to Privacy Policy</h2>
             <p>
