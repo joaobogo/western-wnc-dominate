@@ -131,13 +131,16 @@ const validatePage = (label, route, nodes, expectRating) => {
     if (!defined.has(ref)) errors.push(`${where}: dangling @id reference "${ref}" is never defined.`);
   }
 
-  // 4 — ratings live on /reviews only
+  // 4 — no aggregateRating or Review markup anywhere (reviews are read on Google)
   const hasRating = nodes.some((n) => n.aggregateRating);
-  if (hasRating && !expectRating) {
-    errors.push(`${where}: aggregateRating emitted on a page that does not display reviews.`);
+  const hasReviewNodes = nodes.some((n) =>
+    typesOf(n).some((t) => t === "Review"),
+  );
+  if (hasRating) {
+    errors.push(`${where}: aggregateRating must not be emitted on any page.`);
   }
-  if (!hasRating && expectRating) {
-    errors.push(`${where}: expected aggregateRating on the reviews page but found none.`);
+  if (hasReviewNodes) {
+    errors.push(`${where}: Review markup must not be emitted on any page.`);
   }
 };
 
