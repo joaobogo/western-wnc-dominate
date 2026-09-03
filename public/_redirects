@@ -602,6 +602,13 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /thank-you                                                  /contact                                          301!
 /engineering-services                                       /construction/design                              301!
 
+/area-projects-map                                          /recent-projects                                  301!
+/asphalt-shingle-repair                                     /roofing/roof-repair                              301!
+/chimney-flashing-repair                                    /roofing/roof-repair                              301!
+/gable-vent-installation                                    /roofing/roof-replacement                         301!
+/roof-deck-repair                                           /roofing/roof-repair                              301!
+/two-story-additions                                        /construction/additions                           301!
+/tpo-roof-repair                                            /roofing/commercial                               301!
 # Old CMS plumbing — gone for good.
 /feed                                                                                                         410!
 /comments/feed                                                                                                410!
