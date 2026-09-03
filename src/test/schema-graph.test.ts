@@ -55,14 +55,13 @@ describe("structured data graph", () => {
     expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
   });
 
-  it("reviews page rating comes from BUSINESS.reviewSummary", () => {
+  it("never emits aggregateRating or Review markup on /reviews either", () => {
     const nodes = buildPageSchema({
       type: "reviews",
       reviews: [{ author: "A", rating: 5, body: "Great", datePublished: "2025-01-01" }],
     });
-    const rated = nodes.find((n) => "aggregateRating" in n) as Record<string, any>;
-    expect(rated.aggregateRating.ratingValue).toBe(BUSINESS.reviewSummary.ratingValue);
-    expect(rated.aggregateRating.reviewCount).toBe(BUSINESS.reviewSummary.reviewCount);
+    expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
+    expect(nodes.some((n) => "review" in n)).toBe(false);
   });
 
   it("business node points at both showrooms and omits department", () => {
