@@ -150,8 +150,10 @@ export const PROOF_CONTEXT = {
     "Family-owned, locally run since 2017",
     "20+ local team members behind every project",
     REVIEW_LINE_AS_OF,
-    "2024 Best of Macon County",
+    // Awards appear only after owner verification (CLAIMS_AUDIT.md).
+    ...VERIFIED_AWARDS.map(awardLabel),
   ],
+
   /** Gallery: transformation + visual proof */
   gallery: [
     "Every project owner-inspected",
