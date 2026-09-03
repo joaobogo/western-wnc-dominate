@@ -5,6 +5,8 @@ import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection
 
 import wncRoofingGuideHero from "@/assets/blog/wnc-mountain-roofing-guide-hero.jpg";
 import stormSeasonHero from "@/assets/blog/wnc-storm-season-roof-hero.jpg";
+import stormSeasonHail from "@/assets/blog/wnc-storm-season-hail-granules.jpg";
+import stormSeasonFlashing from "@/assets/blog/wnc-storm-season-chimney-flashing.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -129,6 +131,8 @@ The way this is properly assessed is not by eyeballing it. An inspector marks ou
 
 The other half of the job happens on the ground. Hail that hit your roof also hit everything else, and those surfaces are the corroborating record: dents in gutters and downspouts, marks on the utility junction box, dings on deck boards and fence rails, and — the most reliable of all — flattened fins on the air-conditioner condenser. Those surfaces establish the hail's size, hardness and direction. A report that examines the roof and ignores the condenser is half a report.
 
+![Hail damage to asphalt shingles showing granule loss and exposed mat on a Western North Carolina roof](${stormSeasonHail} "Displaced granules with exposed bitumen. The dark spots are the damage; the granules in the gutter are only the symptom.")
+
 ## What you can genuinely check from the ground
 
 You do not need to get on the roof. You should not get on the roof. Steep mountain pitches and wet leaf litter are a bad combination, and every fall we hear about someone who found that out.
@@ -159,6 +163,8 @@ This is the honest part of the list, and it is why ground inspection is a first 
 - **Decking condition beneath the shingles.** Soft or delaminated sheathing tells you water has been getting in for some time.
 - **Underlayment and the state of the valleys.** Where two roof planes meet, the water volume is highest and the margin for error is smallest.
 - **Pipe boot condition.** The rubber collars around plumbing vents dry out, split and fail on a predictable schedule — and they are one of the most common sources of a leak that has nothing to do with the shingles at all.
+
+![Displaced chimney flashing on a Sylva NC roof after storm damage](${stormSeasonFlashing} "Flashing that has lifted at a chimney. This one was visible from the ground — most are not.")
 
 ## The timing problem nobody mentions until it is too late
 
