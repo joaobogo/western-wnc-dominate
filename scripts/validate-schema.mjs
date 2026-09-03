@@ -8,7 +8,7 @@
  *  1. exactly one node carries @id https://highlandernc.com/#business
  *  2. no LocalBusiness-ish node has an address other than the two showrooms
  *  3. every @id referenced by another node is defined somewhere in the page graph
- *  4. aggregateRating only appears on /reviews
+ *  4. aggregateRating and Review markup are not emitted on any page
  *
  * Also pings the LinkedIn company URL and warns (does not fail) on 404 so a
  * dead sameAs never ships silently.
@@ -39,7 +39,7 @@ const PAGES = [
   { label: "town page", route: "/service-areas/highlands-nc" },
   { label: "service page", route: "/roofing" },
   { label: "blog post", route: "/blog/best-roofing-materials-highlands-nc" },
-  { label: "reviews", route: "/reviews", expectRating: true },
+  { label: "reviews", route: "/reviews", expectRating: false },
 ];
 
 const errors = [];
