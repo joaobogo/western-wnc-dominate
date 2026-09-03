@@ -479,7 +479,6 @@ const ConstructionDivision = () => {
           category="division"
           heading="Common Questions."
           eyebrow="Construction FAQs"
-          maxItems={10}
         />
 
         <BuilderPromoBlock mode="construction" variant="band" />
