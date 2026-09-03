@@ -153,7 +153,7 @@ var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${l
 var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
-var MIN_DISPLAY_RATING = 4.7;
+var MIN_DISPLAY_RATING = 4.8;
 var REVIEW_RATING_VALUE = Math.max(
   BUSINESS.reviewSummary.ratingValue,
   MIN_DISPLAY_RATING

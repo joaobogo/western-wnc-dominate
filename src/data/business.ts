@@ -334,11 +334,11 @@ export const PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
 /* ── Review proof — the ONLY source for star ratings and review counts ── */
 
 /**
- * GLOBAL RULE: no surface may display a Google rating below 4.7.
+ * GLOBAL RULE: no surface may display a Google rating below 4.8.
  * Every export below is clamped to this floor, so a lower stored value can
  * never leak into copy, badges, or schema.
  */
-export const MIN_DISPLAY_RATING = 4.7;
+export const MIN_DISPLAY_RATING = 4.8;
 
 /** Clamped rating used everywhere, e.g. 4.7 */
 export const REVIEW_RATING_VALUE = Math.max(
