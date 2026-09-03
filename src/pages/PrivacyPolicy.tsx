@@ -10,11 +10,9 @@ const WEBSITE_URL = "https://highlandernc.com/";
 const EMAIL = BUSINESS.email;
 const ADDRESS = FRANKLIN_NAP;
 const COMPANY = BUSINESS.legalName;
-// Sitewide customer phone. The RealWork template listed (828) 526-6421 —
-// see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
+// Sitewide customer phone.
 const PHONE = PHONE_DISPLAY;
 const PHONE_TEL = BUSINESS.primaryPhoneE164.replace(/-/g, "");
-const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
 const PROGRAM = `${BUSINESS.legalName} Customer Communications`;
 
 const TOC: { id: string; label: string }[] = [
@@ -227,17 +225,8 @@ const PrivacyPolicy = () => {
               <li>Mailing Address: {ADDRESS}</li>
             </ul>
             <p>You may also reply HELP to any text message for assistance.</p>
-            <div
-              role="note"
-              className="not-prose my-4 p-4 border border-highland-gold/60 bg-highland-gold/10 text-[hsl(var(--gold-ink))] rounded-sm text-sm leading-relaxed"
-            >
-              <strong className="font-semibold">Needs Client Input — phone number:</strong>{" "}
-              The RealWork Privacy Policy template lists {REALWORK_TEMPLATE_PHONE} as the
-              contact number. This page currently shows the sitewide customer phone{" "}
-              {PHONE}. Highlander should confirm which number the Privacy Policy should
-              display and, if different from the sitewide sales phone, we will keep the
-              legal/support number here without changing the sitewide contact.
-            </div>
+
+
 
             <h2 id="s7">7. Link to Privacy Policy</h2>
             <p>
