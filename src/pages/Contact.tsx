@@ -66,7 +66,7 @@ export default function Contact() {
                     </span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
-                    Talk With a Local WNC Roofing &amp; Construction Team.
+                    Contact Highlander Building Services
                   </h1>
                   <p className="text-body-lg md:text-body-xl text-white/95 leading-relaxed max-w-xl font-medium drop-shadow-sm">
                     Call us, send a message, or request an estimate. A Highlander advisor — not a call center — handles every inquiry personally.
