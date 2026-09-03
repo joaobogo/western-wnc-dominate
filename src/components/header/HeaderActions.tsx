@@ -27,7 +27,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
       <Phone className="w-4 h-4" aria-hidden="true" />
     </a>
     <Link
-      to="/consultation"
+      to="/request-inspection"
       className="btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
     >
       <span className="relative z-10">Get My <span className="hidden sm:inline">Written </span>Estimate</span>

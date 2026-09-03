@@ -1,5 +1,6 @@
 import { PHONE_DISPLAY } from "@/data/business";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { towns } from "@/data/towns";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X, Home, Wrench, Layers, CloudLightning, Hammer, Building2, TreePine, HelpCircle } from "lucide-react";
@@ -663,6 +664,16 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                   No obligation · No sales pressure · Your information stays private
                 </p>
               </div>
+              {isPage && (
+                <p className="text-center mt-4">
+                  <Link
+                    to="/consultation"
+                    className="text-white/70 hover:text-[hsl(var(--gold-ink))] font-body text-body-xs underline underline-offset-2 transition-colors"
+                  >
+                    Planning a build or remodel instead? Start here
+                  </Link>
+                </p>
+              )}
             </motion.div>
           </div>
         </div>

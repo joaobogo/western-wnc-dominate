@@ -236,7 +236,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
           {/* Primary CTA pinned to the bottom of the panel */}
           <div className="border-t border-black/10 bg-white px-4 py-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
             <Link
-              to="/consultation"
+              to="/request-inspection"
               onClick={onClose}
               className="btn btn-primary btn-md"
             >
