@@ -46,6 +46,168 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "wnc-storm-season-roof-damage",
+    title: "What a Western North Carolina Storm Season Does to Your Roof",
+    excerpt:
+      "Wind breaks the sealant bond before it takes a shingle away, and hail either fractures the mat or it does not. A plain accounting of what a WNC summer does to a mountain roof, what you can check from the ground, and what cannot be seen without someone walking it.",
+    category: "Storm Damage",
+    date: "2026-09-08",
+    image: stormSeasonHero,
+    imageAlt:
+      "Wind-lifted asphalt shingle tabs on a Franklin NC mountain home roof after summer storm damage",
+    readTime: "14 min",
+    metaTitle: "WNC Storm Season Roof Damage: What to Check | Highlander",
+    metaDescription:
+      "How mountain wind and hail damage roofs in Western North Carolina, what homeowners can check from the ground, what needs a roof walk, and the NC insurance notice clock.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Storm Damage Repair", path: "/roofing/storm-damage" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roof Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      { question: "How big does hail have to be to damage a roof?", answer: "Hail generally needs to reach about 1 inch in diameter to damage a three-tab shingle and about 1.25 inches for a laminated dimensional shingle. Below those sizes, on a shingle in reasonable condition, marking is usually cosmetic rather than functional." },
+      { question: "Are granules in my gutter proof of hail damage?", answer: "No. Granule loss is also produced by ordinary weathering, foot traffic, limb abrasion, lichen growth and backed-out fasteners. Functional hail damage means a fractured mat, a puncture, or granule displacement that exposes the bitumen underneath." },
+      { question: "Can wind damage a roof without removing shingles?", answer: "Yes, and that is the usual case. Wind breaks the factory sealant bond first. A tab that has unsealed but not yet lifted looks identical to a healthy one from the ground, and the adhesive does not re-bond once it lets go." },
+      { question: "Why does a ridge-line house take worse wind than a valley house?", answer: "Published wind speeds are baseline figures for open, level terrain. Ridges, gaps and escarpments accelerate wind, which is why ASCE 7 requires mountainous terrain to be examined for topographic speed-up. Two homes four miles apart in Macon County do not see the same storm." },
+      { question: "How long do I have to file a storm damage insurance claim in North Carolina?", answer: "North Carolina allows three years from the inception of the loss to bring suit against an insurer, under N.C.G.S. section 1-52(12). The more urgent deadline is the policy's own prompt notice requirement, commonly 30 to 60 days from the damage or its discovery." },
+      { question: "Should I get on the roof myself to check for damage?", answer: "No. Steep mountain pitches and wet leaf litter are dangerous. Everything useful for a homeowner can be checked from the ground, a window, or a ladder with both feet on it, and the rest needs a trained inspector on the roof." },
+    ],
+    content: `By the second week of September, the worst of it is usually over. The afternoon cells that build over the Nantahala and drift east lose their energy, the air dries out, and the mountains settle into the stretch of clear weather that makes people move here in the first place.
+
+That is exactly when roof damage goes unnoticed.
+
+A roof that took a beating in June and July does not announce it in September. It waits. The failures that a summer of wind and hail sets in motion are mostly invisible from the driveway, and they tend to surface in January — during the first sustained cold rain, or under the weight of wet snow, when the temperature is in the thirties and nobody is available.
+
+This is a plain accounting of what a Western North Carolina storm season actually does to a roof, what you can check yourself from the ground, and what genuinely cannot be seen without someone walking it.
+
+## Our wind is not the wind in the forecast
+
+There is a detail about mountain roofs that catches people out, and it is worth starting there.
+
+Wind speeds published for a region are baseline figures for open, level terrain. Our terrain is neither. Ridges, gaps and escarpments accelerate wind as it is forced over and around them — the same reason a river runs faster through a narrow chute. Engineers account for this with a topographic factor, and the national wind-load standard, ASCE 7, specifically requires that mountainous terrain and gorges be examined for unusual wind conditions, because wind crossing a ridge or funnelling through a gap can substantially exceed the mapped value for that area.
+
+The practical translation: two houses four miles apart in Macon County, one in a sheltered cove off Cartoogechaye Creek and one on an exposed shoulder above Highlands, do not see the same storm. The ridge-line house can take gusts meaningfully stronger than the valley house from the identical cell. Above roughly 3,500 feet, site-specific assessment stops being academic.
+
+If your house sits on a knob, at the head of a gap, or on the windward side of a ridge, it is not being paranoid to assume your roof aged faster this summer than your neighbour's down in the valley. How we work in this market is set out on our [Franklin service area page](/service-areas/franklin-nc) and for the higher elevations on our [Highlands page](/service-areas/highlands-nc).
+
+## What wind actually does, and why it hides
+
+The common assumption is that wind damage means missing shingles. Missing shingles are the *end* of the process, not the beginning, and most roofs never get that far.
+
+An asphalt shingle is held down two ways: nails through the top, and a strip of factory-applied adhesive that bonds each shingle to the one below it. That sealant strip is what makes a roof a continuous surface instead of a stack of loose tiles. It is the part that fails first.
+
+Here is the sequence. Wind moving across a roof creates a pressure differential — lower pressure above the shingle than below it. That differential works at the sealant bond. Once a corner of the bond lets go, the tab lifts slightly. A lifted tab presents more surface area to the wind, which produces more force, which lifts it further. The damage compounds on itself. First creasing, then folding and tearing, and finally — in the highest-load zones, which are the eaves, hips and ridges — separation.
+
+Three things about this matter to you as a homeowner.
+
+**First, unsealing is progressive and it does not heal.** A shingle that unsealed in a June storm does not re-bond in September. The adhesive is a one-time cure. That tab is now loose going into winter, and every subsequent wind event starts from a worse position than the last.
+
+**Second, this happens well below the speeds people expect.** Shingles carry wind ratings from laboratory testing — under the older fan-based standard, ASTM D3161, Class A passes at 60 mph, Class D at 90, Class F at 110. The newer uplift-based standard, ASTM D7158 in its current editions, rates Class D, G and H against ultimate design wind speeds of roughly 115, 150 and 190 mph. Those numbers look reassuring, and they are more limited than they appear.
+
+ASTM D3161 states plainly that "the results of this test do not directly correlate to wind speeds experienced in service." ASTM D7158 carries a different and, for us, more pointed limitation: its ratings assume a mean roof height no greater than 60 feet, standard exposure categories, and **no topographic speed-up effects**. That last assumption is precisely the one a mountain site breaks. A shingle rated for a given wind speed was rated on the presumption that it is not sitting on a ridge — which is where a good many of our roofs sit.
+
+**Third, age is the multiplier.** University of Florida research, funded through the Southeast Region Research Initiative managed by Oak Ridge National Laboratory for the U.S. Department of Homeland Security, found that shingles tend to remain sealed through roughly the first four to five years of service, after which the frequency of unsealing trends upward. A twelve-year-old roof and a three-year-old roof did not have the same summer.
+
+There is a piece of good news buried in the mechanics, and it is the reason a proper inspection is worth something. Wind damage leaves permanent physical evidence. Laboratory work by Haag Research found creases on every shingle that unbonded during wind testing — including new, pliable ones, though on those the creases "required very close inspection and tactile manipulation" to detect. Nothing is erased. But the evidence is a crease found by close inspection and by running a hand along the shingle — it is not something you can see from the yard with a pair of binoculars.
+
+## Hail: the size that matters, and the damage that is real
+
+Hail is where most of the confusion — and most of the bad-faith sales — lives.
+
+The research-backed thresholds are specific. Hail generally needs to reach **1 inch in diameter to damage a three-tab shingle, and 1¼ inches for a laminated dimensional shingle**. Below that, on a shingle in reasonable condition, you are usually looking at cosmetic marking rather than functional harm.
+
+Real hail damage is one of three things: a **bruise**, meaning an actual fracture in the reinforcing mat beneath the surface; a **puncture**; or **granule displacement sufficient to expose the underlying bitumen**. That word "sufficient" is the one that gets abused. Granule loss that does not expose meaningful bitumen is an aesthetic condition, not functional damage — and that distinction is exactly what claims are argued over.
+
+**Granules in your gutter are not, by themselves, evidence of hail damage.** They are also produced by ordinary weathering, foot traffic, tree limb abrasion, bird activity, lichen growth and backed-out fasteners. Every roof sheds some granules. Anyone who knocks on your door, points at your downspout and tells you that alone proves you need a full replacement is skipping several steps.
+
+A bruise is the serious one, because it is felt more than seen. The mat is fractured under a surface that may still look intact. That fracture is where the roof will eventually fail — but it might be two winters from now, long past any sensible claim window.
+
+The way this is properly assessed is not by eyeballing it. An inspector marks out a **test square** — 100 square feet, usually 10 by 10 — on each slope of the roof, north, south, east and west, and inspects it closely by sight and by touch, counting damaged shingles and extrapolating across the slope. Directional damage tells you where the hail came from. Valleys and ridges, where shingles are less supported underneath, get assessed separately.
+
+The other half of the job happens on the ground. Hail that hit your roof also hit everything else, and those surfaces are the corroborating record: dents in gutters and downspouts, marks on the utility junction box, dings on deck boards and fence rails, and — the most reliable of all — flattened fins on the air-conditioner condenser. Those surfaces establish the hail's size, hardness and direction. A report that examines the roof and ignores the condenser is half a report.
+
+## What you can genuinely check from the ground
+
+You do not need to get on the roof. You should not get on the roof. Steep mountain pitches and wet leaf litter are a bad combination, and every fall we hear about someone who found that out.
+
+Everything on this list can be done from the ground, from a window, or from a ladder with both feet on it.
+
+**Walk the full perimeter of the house and look up.** You are looking for tabs that sit proud of the plane of the roof, a shadow line where there should be none, or a row that reads as uneven against the ridge. Do this in low sun — early morning or the hour before dusk. Raking light shows lifted edges that midday sun flattens out completely.
+
+**Look at the north slope specifically.** It stays damp longest and it is where moss, lichen and accelerated granule loss show up first.
+
+**Check the ground for debris.** Not granules — shingle *fragments*. Any piece of asphalt shingle in the flowerbed came off your roof, and it means the roof is already past the unsealing stage.
+
+**Look at every metal transition.** Flashing at chimneys, in valleys, around skylights and where a lower roof meets a wall is where most leaks actually start. You are looking for metal that has lifted, separated at a seam, or shifted out of line. Displaced flashing is one of the few genuinely serious problems that is often visible from the ground.
+
+**Check the condenser and the gutters.** Dents and dings, as above. Sagging or overflowing gutters are their own problem — see [seamless gutters](/roofing/gutters).
+
+**Then go inside and look at the ceilings — all of them.** Closets, the spare room nobody uses, the garage ceiling. A brown ring the size of a saucer is a mature leak, not a new one. Water travels along rafters before it drops.
+
+**Look in the attic on a bright day, with the lights off.** Daylight through the decking is a hole. Dark staining on the underside of the sheathing, or on the rafters, is a leak that has been running for a while. Damp or compressed insulation in one spot marks where water has been landing.
+
+## What cannot be seen from the ground, at all
+
+This is the honest part of the list, and it is why ground inspection is a first step rather than an answer.
+
+- **Sealant bond failure.** The single most consequential form of wind damage cannot be seen from below. A tab that has unsealed but not yet lifted looks identical to a healthy one. It is found by hand, on the roof.
+- **Mat bruising from hail.** A fracture under an intact surface. Found by touch.
+- **Fastener condition.** Nails that have backed out, or were overdriven or underdriven at installation, are invisible from the ground and are a common point of failure.
+- **Decking condition beneath the shingles.** Soft or delaminated sheathing tells you water has been getting in for some time.
+- **Underlayment and the state of the valleys.** Where two roof planes meet, the water volume is highest and the margin for error is smallest.
+- **Pipe boot condition.** The rubber collars around plumbing vents dry out, split and fail on a predictable schedule — and they are one of the most common sources of a leak that has nothing to do with the shingles at all.
+
+## The timing problem nobody mentions until it is too late
+
+If this summer did damage your roof, there is a clock running, and it is shorter than most people assume.
+
+North Carolina gives you **three years from the inception of the loss** — not from the date your claim is denied — to bring suit against an insurer, under N.C.G.S. § 1-52(12) and the standard policy provisions at § 58-44-16. That distinction is the whole point. The clock starts on the day of the storm, not on the day you find out the answer is no. An insurer cannot shorten that period by writing a tighter deadline into your policy.
+
+The number that matters more is in the policy itself. Most homeowner policies require **prompt notice of loss** — commonly 30 to 60 days from the damage or from when you discovered it, though carriers vary and some ask for notice within days. Miss the notice window and the three-year statute is largely academic, because the claim can be denied on the notice provision alone.
+
+On the insurer's side, North Carolina requires acknowledgement of a claim within **30 days** of receiving notice (§ 58-3-100(c)). There is no fixed deadline for finishing the investigation — the standard is reasonableness: insurers must maintain reasonable standards for prompt investigation and must affirm or deny coverage within a reasonable time after proof of loss (§ 58-63-15(11)). Once loss is agreed in writing or set by appraisal award, payment is due within **60 days** (§ 58-44-16).
+
+Two things follow from this.
+
+**A dated inspection report is worth having even if you do nothing with it.** It establishes the condition of the roof, and the date, in a form that is much harder to argue with later than your recollection. If a leak appears in February, the question of whether it originated in a July storm is answered by a document, not a conversation.
+
+**Do not wait for the leak to file.** The damage and the leak can be separated by six months, and the notice window closes in the interval. Our [storm damage repair](/roofing/storm-damage) page explains how we document a claim.
+
+## When to call, and what to expect
+
+Reasonable triggers for a post-summer assessment:
+
+- Your roof is **eight years old or more** and you have not had it looked at in two seasons.
+- You are on a **ridge, knob, gap or exposed shoulder**, particularly above 3,500 feet.
+- You found **any** shingle fragment on the ground.
+- You have **dents on the condenser, gutters or deck boards**.
+- There was a **confirmed hail event** at your address this summer.
+- You are **selling or buying** in the next twelve months, where an undocumented roof becomes a negotiating problem.
+- There is **any interior staining**, however old it looks.
+
+What a real assessment involves: someone on the roof, not in the driveway. Test squares on each slope. Flashing, valleys, boots and fasteners checked individually. The ground-level corroborating surfaces documented. Photographs of what was actually found. And a written finding you can hand to an insurer or a buyer.
+
+What it should not involve: a replacement quote produced before anyone has been on the roof, pressure to sign something the same day, or an offer to handle your insurance claim in exchange for the work. If someone leads with your deductible, that is the conversation ending.
+
+## The short version
+
+A Western North Carolina summer works on a roof in ways that are specific, progressive, and mostly hidden. Wind breaks the sealant bond before it takes any shingle away, and the damage compounds with every subsequent storm. Hail either fractures the mat or it does not — and granules in the gutter do not settle that question either way. Our terrain means the wind at your house is not the wind in the regional forecast, and a ridge-line roof ages faster than a valley roof from the same cell.
+
+Most of what matters cannot be seen from the ground. All of it is easier and cheaper to deal with in September than in January.
+
+## Get your roof assessed before fall booking fills
+
+Highlander Building Services roofs Western North Carolina mountain homes — Franklin, Sylva, Highlands, Cashiers and the surrounding communities. We walk the roof, we document what we find, and you get it in writing whether or not there is work to do.
+
+Call [${PHONE_DISPLAY}](tel:${PHONE_PLAIN}) or [request an inspection](/request-inspection). Franklin showroom: 1511 Highlands Road, Monday–Friday, 8:00–5:00.
+
+Related reading: [Roof Repair](/roofing/roof-repair) · [Roof Replacement](/roofing/roof-replacement) · [Metal Roofing](/roofing/metal) · [Roofing Costs in Western NC](/roofing-cost-western-nc) · [Service Areas](/service-areas)`,
+  },
+  {
+
+  {
     slug: "western-north-carolina-mountain-roofing-guide",
     title: "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
     excerpt:
