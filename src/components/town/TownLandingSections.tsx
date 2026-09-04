@@ -64,16 +64,9 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
 /* ─────────────────────────────────────────────────────────────
  *  2. SERVICES GRID — town-personalized service cards w/ CTAs
  * ────────────────────────────────────────────────────────── */
-/** Short lead phrase from a town's climateExposure note, e.g. "Extreme high-altitude weather". */
-const exposureLead = (town: TownData) => {
-  const raw = (town.climateExposure || "").split(":")[0].trim().replace(/\.$/, "");
-  return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
-};
-
-/** Detail clause after the colon in climateExposure, lower-cased and de-punctuated. */
-const exposureDetail = (town: TownData) => {
-  const parts = (town.climateExposure || "").split(":");
-  const raw = (parts[1] || "").trim().replace(/\.$/, "");
+/** The town's local-exposure note, lower-cased and stripped of its trailing period. */
+const exposureNote = (town: TownData) => {
+  const raw = (town.climateExposure || "").trim().replace(/\.$/, "");
   return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
 };
 
@@ -88,9 +81,9 @@ const services = [
     icon: Home, label: "Roof Replacement",
     desc: (t: TownData) => {
       const base = `Full tear-off and re-installs engineered for ${t.name}'s wind, snow, and UV exposure.`;
-      const lead = exposureLead(t);
-      return t.elevation && lead
-        ? `${base} At ${t.elevation}, we spec ${t.name} tear-offs around ${lead}.`
+      const note = exposureNote(t);
+      return t.elevation && t.county && note
+        ? `${base} ${t.name} sits at ${t.elevation} in ${t.county} — ${note}.`
         : base;
     },
     href: "/roofing/roof-replacement",
@@ -109,9 +102,8 @@ const services = [
     icon: Zap, label: "Metal Roofing",
     desc: (t: TownData) => {
       const base = `Standing-seam systems built for high-elevation ${t.name} homes and long ownership horizons.`;
-      const detail = exposureDetail(t);
-      return t.elevation && detail
-        ? `${base} At ${t.elevation}, ${t.name} panels and fasteners are chosen for ${detail}.`
+      return t.elevation
+        ? `${base} Panel gauge, clip spacing, and fastener choices are matched to ${t.name}'s ${t.elevation} exposure.`
         : base;
     },
     href: "/roofing/metal",
@@ -120,9 +112,8 @@ const services = [
     icon: CloudLightning, label: "Storm Damage",
     desc: (t: TownData) => {
       const base = "Insurance documentation, emergency tarping, and full storm restoration.";
-      const lead = exposureLead(t);
-      return t.county && lead
-        ? `${base} In ${t.name} and the rest of ${t.county}, that means documenting ${lead} the way carriers expect.`
+      return t.county
+        ? `${base} We document ${t.name} storm losses across ${t.county} the way carriers expect them recorded.`
         : base;
     },
     href: "/roofing/storm-damage",
@@ -141,11 +132,11 @@ const services = [
     icon: Ruler, label: "Outdoor Living",
     desc: (t: TownData) => {
       const base = "Decks, covered porches, and pergolas designed for mountain views and weather.";
-      const lead = exposureLead(t);
-      return lead && t.county
-        ? `${base} ${t.name} builds in ${t.county} are detailed for ${lead}, not flatland conditions.`
+      return t.county && t.elevation
+        ? `${base} ${t.name} builds in ${t.county} are detailed for ${t.elevation} weather, not flatland conditions.`
         : base;
     },
+
     href: "/construction/outdoor-living",
   },
 ];
