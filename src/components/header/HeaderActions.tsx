@@ -7,9 +7,10 @@ import { HIGHLAND_EASE } from "./nav-data";
 interface Props {
   mobileOpen: boolean;
   setMobileOpen: (v: boolean) => void;
+  menuButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
-export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
+export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Props) => (
   <div className="flex items-center gap-3">
     <a
       href="tel:+18285247773"
@@ -34,6 +35,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
     </Link>
     <button
+      ref={menuButtonRef}
       onClick={() => setMobileOpen(!mobileOpen)}
       className="lg:hidden flex items-center justify-center w-10 h-10 rounded-sm text-heritage-charcoal hover:bg-black/5 active:scale-90 transition-all duration-300"
       aria-label={mobileOpen ? "Close menu" : "Open menu"}
