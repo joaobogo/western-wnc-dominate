@@ -6,36 +6,49 @@ import { cn } from "@/lib/utils";
 
 const Accordion = AccordionPrimitive.Root;
 
+const AccordionItemContext = React.createContext<string | null>(null);
+
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn("border-b accordion-premium", className)}
-    {...props}
-  />
-));
+>(({ className, children, ...props }, ref) => {
+  const itemId = React.useId().replace(/:/g, "");
+  return (
+    <AccordionItemContext.Provider value={itemId}>
+      <AccordionPrimitive.Item
+        ref={ref}
+        className={cn("border-b accordion-premium", className)}
+        {...props}
+      >
+        {children}
+      </AccordionPrimitive.Item>
+    </AccordionItemContext.Provider>
+  );
+});
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:no-underline",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground/60 accordion-chevron" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+>(({ className, children, ...props }, ref) => {
+  const itemId = React.useContext(AccordionItemContext);
+  return (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        aria-controls={itemId ?? undefined}
+        className={cn(
+          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:no-underline",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+        <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground/60 accordion-chevron" aria-hidden="true" />
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+});
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 /**
@@ -48,21 +61,25 @@ AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    forceMount
-    /* Radix defaults this to role="region", which registers every FAQ answer
-       as a page landmark and produces duplicate-landmark warnings when the
-       same question appears in more than one accordion. "group" keeps the
-       trigger association without polluting the landmark map. */
-    role="group"
-    className="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=closed]:invisible data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-    {...props}
-  >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
-  </AccordionPrimitive.Content>
-));
+>(({ className, children, ...props }, ref) => {
+  const itemId = React.useContext(AccordionItemContext);
+  return (
+    <AccordionPrimitive.Content
+      ref={ref}
+      forceMount
+      id={itemId ?? undefined}
+      /* Radix defaults this to role="region", which registers every FAQ answer
+         as a page landmark and produces duplicate-landmark warnings when the
+         same question appears in more than one accordion. "group" keeps the
+         trigger association without polluting the landmark map. */
+      role="group"
+      className="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=closed]:invisible data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      {...props}
+    >
+      <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    </AccordionPrimitive.Content>
+  );
+});
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
