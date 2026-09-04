@@ -64,38 +64,85 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
 /* ─────────────────────────────────────────────────────────────
  *  2. SERVICES GRID — town-personalized service cards w/ CTAs
  * ────────────────────────────────────────────────────────── */
+/** The town's local-exposure note, lower-cased and stripped of its trailing period. */
+const possessive = (name: string) => (name.endsWith("s") ? `${name}'` : `${name}'s`);
+
+const exposureNote = (town: TownData) => {
+  const raw = (town.climateExposure || "").trim().replace(/\.$/, "");
+  return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
+};
+
+/**
+ * Each card keeps its shared base sentence, plus one town-specific sentence
+ * built only from data that already exists on the town record
+ * (county, elevation, local exposure note). Cards with no available detail
+ * fall back to the base sentence alone.
+ */
 const services = [
   {
     icon: Home, label: "Roof Replacement",
-    desc: (t: string) => `Full tear-off and re-installs engineered for ${t}'s wind, snow, and UV exposure.`,
+    desc: (t: TownData) => {
+      const base = `Full tear-off and re-installs engineered for ${t.name}'s wind, snow, and UV exposure.`;
+      const note = exposureNote(t);
+      return t.elevation && t.county && note
+        ? `${base} ${t.name} sits at ${t.elevation} in ${t.county} — ${note}.`
+        : base;
+    },
     href: "/roofing/roof-replacement",
   },
   {
     icon: Wrench, label: "Roof Repair",
-    desc: (t: string) => `Targeted leak, flashing, and boot repairs — often same-week in the ${t} area.`,
+    desc: (t: TownData) => {
+      const base = `Targeted leak, flashing, and boot repairs — often same-week in the ${t.name} area.`;
+      return t.county
+        ? `${base} Our crews work ${t.county} routinely, so ${t.name} calls don't wait on an out-of-area truck.`
+        : base;
+    },
     href: "/roofing/roof-repair",
   },
   {
     icon: Zap, label: "Metal Roofing",
-    desc: (t: string) => `Standing-seam systems built for high-elevation ${t} homes and long ownership horizons.`,
+    desc: (t: TownData) => {
+      const base = `Standing-seam systems built for high-elevation ${t.name} homes and long ownership horizons.`;
+      return t.elevation
+        ? `${base} Panel gauge, clip spacing, and fastener choices are matched to ${possessive(t.name)} ${t.elevation} exposure.`
+        : base;
+    },
     href: "/roofing/metal",
   },
   {
     icon: CloudLightning, label: "Storm Damage",
-    desc: () => "Insurance documentation, emergency tarping, and full storm restoration.",
+    desc: (t: TownData) => {
+      const base = "Insurance documentation, emergency tarping, and full storm restoration.";
+      return t.county
+        ? `${base} We document ${t.name} storm losses across ${t.county} the way carriers expect them recorded.`
+        : base;
+    },
     href: "/roofing/storm-damage",
   },
   {
     icon: Hammer, label: "Additions & Renovations",
-    desc: (t: string) => `Licensed general contractor work — master suites, kitchens, and full ${t} home renovations.`,
+    desc: (t: TownData) => {
+      const base = `Licensed general contractor work — master suites, kitchens, and full ${t.name} home renovations.`;
+      return t.elevation
+        ? `${base} ${t.name} additions are framed and sealed for the same ${t.elevation} exposure your roof already handles.`
+        : base;
+    },
     href: "/construction/additions",
   },
   {
     icon: Ruler, label: "Outdoor Living",
-    desc: () => "Decks, covered porches, and pergolas designed for mountain views and weather.",
+    desc: (t: TownData) => {
+      const base = "Decks, covered porches, and pergolas designed for mountain views and weather.";
+      return t.county && t.elevation
+        ? `${base} ${t.name} builds in ${t.county} are detailed for ${t.elevation} weather, not flatland conditions.`
+        : base;
+    },
+
     href: "/construction/outdoor-living",
   },
 ];
+
 
 export const TownServicesGrid = ({ town }: { town: TownData }) => (
   <section className="section-padding bg-background relative overflow-hidden">
@@ -128,7 +175,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
                 <s.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-heading font-bold text-xl text-foreground mb-3 leading-tight">{s.label}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8">{s.desc(town.name)}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8">{s.desc(town)}</p>
               <span className="mt-auto text-primary font-heading font-bold text-body-xs uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-3 transition-all">
                 Explore <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </span>
