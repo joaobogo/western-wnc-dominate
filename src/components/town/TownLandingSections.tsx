@@ -182,7 +182,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
                 <s.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-heading font-bold text-xl text-foreground mb-3 leading-tight">{s.label}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8">{s.desc(town.name)}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8">{s.desc(town)}</p>
               <span className="mt-auto text-primary font-heading font-bold text-body-xs uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-3 transition-all">
                 Explore <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </span>
