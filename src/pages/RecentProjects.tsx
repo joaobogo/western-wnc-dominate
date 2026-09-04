@@ -7,6 +7,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import RealWorkWidget from "@/components/RealWorkWidget";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
@@ -297,6 +298,9 @@ const RecentProjects = () => {
           </div>
         </section>
 
+
+        {/* RealWork Labs — Recent Project Updates (vendor widget target: #rwl-output) */}
+        <RealWorkWidget />
 
         <section className="py-16 md:py-24 bg-background">
           <div className="container-tight">

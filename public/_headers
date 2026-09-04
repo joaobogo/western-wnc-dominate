@@ -1,6 +1,6 @@
 # Sitewide security headers. Applied by Lovable/Netlify-style hosting.
 # CSP is intentionally not enforced yet — the site depends on GTM, Google Ads,
-# Meta Pixel, TikTok Pixel, LinkedIn Insight, VELUX, JobTread,
+# Meta Pixel, TikTok Pixel, LinkedIn Insight, RealWork Labs, VELUX, JobTread,
 # chatbot edge functions, Google Fonts/Maps, and the Supabase project.
 # Start with the report-only policy below, watch the console for violations,
 # then copy the same value to `Content-Security-Policy` to enforce it.
@@ -20,7 +20,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(self), interest-cohort=(), browsing-topics=()
   X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://veluxsolutions.com https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://connect.facebook.net https://analytics.tiktok.com https://snap.licdn.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://veluxsolutions.com https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://analytics.google.com https://*.google.com https://*.doubleclick.net https://analytics.tiktok.com https://maps.googleapis.com; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; form-action 'self'; object-src 'none'
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://veluxsolutions.com https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://connect.facebook.net https://analytics.tiktok.com https://snap.licdn.com https://app.realworklabs.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://veluxsolutions.com https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://analytics.google.com https://*.google.com https://*.doubleclick.net https://analytics.tiktok.com https://app.realworklabs.com https://maps.googleapis.com; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com https://app.realworklabs.com; base-uri 'self'; form-action 'self'; object-src 'none'
 
 # Long-cache hashed Vite build assets
 /assets/*

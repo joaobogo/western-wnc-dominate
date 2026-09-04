@@ -329,6 +329,21 @@ div[style*="Edit with Lovable"],
     })(window);
     </script>
 
+    <!-- RealWork Labs — installed per vendor instructions (support@realworklabs.com, 2026-06-24): sitewide loader, #rwl-output on /recent-projects -->
+    <script type="text/javascript">
+    (function(){
+                 var d = document, t = 'script',
+                     o = d.createElement(t),
+                     s = d.getElementsByTagName(t)[0];
+                     o.src = 'https://app.realworklabs.com/static/plugin/loader.js?v=' + new Date().getTime();
+                     window.addEventListener('rwlPluginReady', function () {
+                         window.rwlPlugin.init('https://app.realworklabs.com', 'SxCxaBpYsO_fVnK0');
+                    }, false);
+                    s.parentNode.insertBefore(o, s);
+    
+                }());
+    </script>
+
   </head>
 
   <body>
@@ -344,6 +359,7 @@ div[style*="Edit with Lovable"],
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
+    <div id="rwl-neighborhood"></div>
     <noscript><img height="1" width="1" style="display:none" alt=""
     src="https://www.facebook.com/tr?id=1300176212241296&ev=PageView&noscript=1"
     /></noscript>

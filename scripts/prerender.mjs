@@ -56,6 +56,7 @@ const BLOCKED_HOSTS = [
   "analytics.tiktok.com",
   "snap.licdn.com",
   "maps.googleapis.com",
+  "app.realworklabs.com",
   "veluxsolutions.com",
   "supabase.co",
   "fonts.googleapis.com",
