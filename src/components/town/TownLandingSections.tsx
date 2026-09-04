@@ -64,38 +64,92 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
 /* ─────────────────────────────────────────────────────────────
  *  2. SERVICES GRID — town-personalized service cards w/ CTAs
  * ────────────────────────────────────────────────────────── */
+/** Short lead phrase from a town's climateExposure note, e.g. "Extreme high-altitude weather". */
+const exposureLead = (town: TownData) => {
+  const raw = (town.climateExposure || "").split(":")[0].trim().replace(/\.$/, "");
+  return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
+};
+
+/** Detail clause after the colon in climateExposure, lower-cased and de-punctuated. */
+const exposureDetail = (town: TownData) => {
+  const parts = (town.climateExposure || "").split(":");
+  const raw = (parts[1] || "").trim().replace(/\.$/, "");
+  return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
+};
+
+/**
+ * Each card keeps its shared base sentence, plus one town-specific sentence
+ * built only from data that already exists on the town record
+ * (county, elevation, local exposure note). Cards with no available detail
+ * fall back to the base sentence alone.
+ */
 const services = [
   {
     icon: Home, label: "Roof Replacement",
-    desc: (t: string) => `Full tear-off and re-installs engineered for ${t}'s wind, snow, and UV exposure.`,
+    desc: (t: TownData) => {
+      const base = `Full tear-off and re-installs engineered for ${t.name}'s wind, snow, and UV exposure.`;
+      const lead = exposureLead(t);
+      return t.elevation && lead
+        ? `${base} At ${t.elevation}, we spec ${t.name} tear-offs around ${lead}.`
+        : base;
+    },
     href: "/roofing/roof-replacement",
   },
   {
     icon: Wrench, label: "Roof Repair",
-    desc: (t: string) => `Targeted leak, flashing, and boot repairs — often same-week in the ${t} area.`,
+    desc: (t: TownData) => {
+      const base = `Targeted leak, flashing, and boot repairs — often same-week in the ${t.name} area.`;
+      return t.county
+        ? `${base} Our crews work ${t.county} routinely, so ${t.name} calls don't wait on an out-of-area truck.`
+        : base;
+    },
     href: "/roofing/roof-repair",
   },
   {
     icon: Zap, label: "Metal Roofing",
-    desc: (t: string) => `Standing-seam systems built for high-elevation ${t} homes and long ownership horizons.`,
+    desc: (t: TownData) => {
+      const base = `Standing-seam systems built for high-elevation ${t.name} homes and long ownership horizons.`;
+      const detail = exposureDetail(t);
+      return t.elevation && detail
+        ? `${base} At ${t.elevation}, ${t.name} panels and fasteners are chosen for ${detail}.`
+        : base;
+    },
     href: "/roofing/metal",
   },
   {
     icon: CloudLightning, label: "Storm Damage",
-    desc: () => "Insurance documentation, emergency tarping, and full storm restoration.",
+    desc: (t: TownData) => {
+      const base = "Insurance documentation, emergency tarping, and full storm restoration.";
+      const lead = exposureLead(t);
+      return t.county && lead
+        ? `${base} In ${t.name} and the rest of ${t.county}, that means documenting ${lead} the way carriers expect.`
+        : base;
+    },
     href: "/roofing/storm-damage",
   },
   {
     icon: Hammer, label: "Additions & Renovations",
-    desc: (t: string) => `Licensed general contractor work — master suites, kitchens, and full ${t} home renovations.`,
+    desc: (t: TownData) => {
+      const base = `Licensed general contractor work — master suites, kitchens, and full ${t.name} home renovations.`;
+      return t.elevation
+        ? `${base} ${t.name} additions are framed and sealed for the same ${t.elevation} exposure your roof already handles.`
+        : base;
+    },
     href: "/construction/additions",
   },
   {
     icon: Ruler, label: "Outdoor Living",
-    desc: () => "Decks, covered porches, and pergolas designed for mountain views and weather.",
+    desc: (t: TownData) => {
+      const base = "Decks, covered porches, and pergolas designed for mountain views and weather.";
+      const lead = exposureLead(t);
+      return lead && t.county
+        ? `${base} ${t.name} builds in ${t.county} are detailed for ${lead}, not flatland conditions.`
+        : base;
+    },
     href: "/construction/outdoor-living",
   },
 ];
+
 
 export const TownServicesGrid = ({ town }: { town: TownData }) => (
   <section className="section-padding bg-background relative overflow-hidden">
