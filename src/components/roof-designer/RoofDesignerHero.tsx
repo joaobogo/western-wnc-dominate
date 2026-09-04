@@ -172,9 +172,9 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
                   <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Upload className="w-6 h-6 text-primary" aria-hidden="true" />
                   </div>
-                  <p className="text-xl font-semibold text-foreground mb-2">
+                  <h2 className="text-xl font-semibold text-foreground mb-2">
                     Upload Your Home Photo
-                  </p>
+                  </h2>
                   <p className="text-muted-foreground mb-6">
                     Drag & drop or click to browse · JPG, PNG, HEIC · Max 10MB
                   </p>

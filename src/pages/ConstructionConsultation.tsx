@@ -543,7 +543,7 @@ export default function ConstructionConsultation() {
                 >
                   <div className="space-y-5">
                     <div>
-                      <h3 className="font-heading text-lg font-semibold text-foreground">{currentStep.question}</h3>
+                      <h2 className="font-heading text-lg font-semibold text-foreground">{currentStep.question}</h2>
                       <p className="text-sm text-muted-foreground font-body mt-1.5 leading-relaxed">{currentStep.hint}</p>
                     </div>
                     {currentStep.content}

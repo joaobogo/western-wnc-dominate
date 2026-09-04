@@ -185,7 +185,7 @@ const CountyPage = () => {
                         <Home className="w-6 h-6" aria-hidden="true" />
                       </div>
                       <div>
-                        <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Housing Profile</h4>
+                        <h3 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Housing Profile</h3>
                         <p className="text-muted-foreground leading-relaxed font-body">{county.housingContext}</p>
                       </div>
                     </div>
@@ -195,7 +195,7 @@ const CountyPage = () => {
                         <Wind className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       </div>
                       <div>
-                        <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Realities</h4>
+                        <h3 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Realities</h3>
                         <p className="text-muted-foreground leading-relaxed font-body">{county.climateRealities}</p>
                       </div>
                     </div>
@@ -205,10 +205,10 @@ const CountyPage = () => {
 
               <div className="relative">
                 <div className="bg-secondary p-8 border border-border relative z-10 shadow-flat">
-                  <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
+                  <h3 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
                     <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     {county.name} Communities
-                  </h4>
+                  </h3>
                   <div className="grid gap-4">
                     {countyTowns.map((town) => (
                       <Link 
