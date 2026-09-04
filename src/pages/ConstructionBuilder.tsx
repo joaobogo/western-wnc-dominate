@@ -346,7 +346,8 @@ const ConstructionBuilder = () => {
           switchLabel="Switch to roofing builder"
           summary={<ScopeSummary rows={summaryRows} />}
         >
-          <AnimatePresence mode="wait">
+          <form onSubmit={(e) => { e.preventDefault(); void next(); }} noValidate>
+            <AnimatePresence mode="wait">
             <motion.div
               key={step}
               initial={{ opacity: 0, y: 10 }}
@@ -466,6 +467,7 @@ const ConstructionBuilder = () => {
           </AnimatePresence>
 
           <BuilderControls
+            submitButton
             step={step}
             total={TOTAL}
             canNext={stepValid}
@@ -474,6 +476,7 @@ const ConstructionBuilder = () => {
             onNext={next}
             finalLabel="Send project brief"
           />
+          </form>
         </BuilderShell>
       </main>
       <Footer />

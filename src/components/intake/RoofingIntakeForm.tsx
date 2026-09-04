@@ -248,7 +248,7 @@ const RoofingIntakeForm = () => {
   }
 
   return (
-    <div>
+    <form onSubmit={(e) => { e.preventDefault(); step < 3 ? next() : void submit(); }} noValidate>
       <div className="flex items-center justify-between mb-7">
         <div>
           <p className="text-caption font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">
@@ -409,18 +409,16 @@ const RoofingIntakeForm = () => {
 
         {step < 3 ? (
           <button
-            type="button"
+            type="submit"
             disabled={!stepValid}
-            onClick={next}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-raised"
           >
             Continue <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>
         ) : (
           <button
-            type="button"
+            type="submit"
             disabled={submitting}
-            onClick={submit}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-raised"
           >
             {submitting ? <><Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" /> Sending…</> : <>Get My Roof Assessed <ArrowRight className="w-4 h-4" aria-hidden="true" /></>}
@@ -428,7 +426,7 @@ const RoofingIntakeForm = () => {
         )}
       </div>
       {step === 3 && <FormConsent className="mt-4" />}
-    </div>
+    </form>
   );
 };
 
