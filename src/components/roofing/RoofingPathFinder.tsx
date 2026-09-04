@@ -1,7 +1,7 @@
 import { PHONE_DISPLAY } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, HelpCircle } from "lucide-react";
+import { ArrowRight, Phone, HelpCircle, Palette } from "lucide-react";
 
 type Option = {
   symptom: string;
@@ -115,6 +115,17 @@ const RoofingPathFinder = () => {
             <Phone className="w-4 h-4" aria-hidden="true" />
             Call {PHONE_DISPLAY}
           </a>
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-8 flex items-center justify-center gap-2 text-sm font-body text-muted-foreground">
+          <Palette className="w-4 h-4 text-primary" aria-hidden="true" />
+          <span>Want to see a new roof on your home first?</span>
+          <Link
+            to="/roof-designer"
+            className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
+          >
+            Try the Roof Designer <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
