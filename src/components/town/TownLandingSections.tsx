@@ -65,6 +65,8 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
  *  2. SERVICES GRID — town-personalized service cards w/ CTAs
  * ────────────────────────────────────────────────────────── */
 /** The town's local-exposure note, lower-cased and stripped of its trailing period. */
+const possessive = (name: string) => (name.endsWith("s") ? `${name}'` : `${name}'s`);
+
 const exposureNote = (town: TownData) => {
   const raw = (town.climateExposure || "").trim().replace(/\.$/, "");
   return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
@@ -103,7 +105,7 @@ const services = [
     desc: (t: TownData) => {
       const base = `Standing-seam systems built for high-elevation ${t.name} homes and long ownership horizons.`;
       return t.elevation
-        ? `${base} Panel gauge, clip spacing, and fastener choices are matched to ${t.name}'s ${t.elevation} exposure.`
+        ? `${base} Panel gauge, clip spacing, and fastener choices are matched to ${possessive(t.name)} ${t.elevation} exposure.`
         : base;
     },
     href: "/roofing/metal",
