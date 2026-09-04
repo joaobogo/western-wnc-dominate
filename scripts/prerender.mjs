@@ -51,6 +51,8 @@ const NOINDEX_ROUTES = [
   "/design-intake",
   "/roofing-builder",
   "/construction-builder",
+  // Removed from sitemap.xml (it carries noindex) but still publicly reachable.
+  "/construction/consultation",
 ];
 
 const isExcluded = (p) =>
