@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Wind breaks the sealant bond before it takes a shingle away, and hail either fractures the mat or it does not. A plain accounting of what a WNC summer does to a mountain roof, what you can check from the ground, and what cannot be seen without someone walking it.",
     category: "Storm Damage",
-    date: "2026-09-08",
+    date: "2026-09-04",
     image: stormSeasonHero,
     imageAlt:
       "Wind-lifted asphalt shingle tabs on a Franklin NC mountain home roof after summer storm damage",
