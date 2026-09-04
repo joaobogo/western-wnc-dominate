@@ -152,6 +152,16 @@ function postProcess(html, route) {
     },
   );
 
+  // The inline loaders in index.html (GTM, RealWork Labs) insert their
+  // <script src> tags at runtime; those inserted tags were being frozen into
+  // the snapshot, so every visitor's browser loaded each vendor twice — once
+  // from the static tag, once from the inline snippet. Strip any script whose
+  // host is a blocked third party; the snippet re-adds it on the real page.
+  html = html.replace(
+    /<script\b[^>]*\bsrc="https?:\/\/([^/"]+)[^"]*"[^>]*>\s*<\/script>\s*/gi,
+    (m, host) => (BLOCKED_HOSTS.some((h) => host === h || host.endsWith(`.${h}`)) ? "" : m),
+  );
+
   if (!/<html[^>]*\slang=/i.test(html)) {
     html = html.replace(/<html/i, '<html lang="en"');
   }
