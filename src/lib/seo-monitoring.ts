@@ -154,8 +154,8 @@ export const auditMonitoringPage = (doc: Document, route: AuditRoute): Monitorin
   const title = doc.title.trim();
   const robots = (doc.querySelector('meta[name="robots"]') as HTMLMetaElement | null)?.content?.trim() || "";
   const canonical = (doc.querySelector('link[rel="canonical"]') as HTMLLinkElement | null)?.href?.trim() || "";
-  // Canonicals are emitted in the trailing-slash form the server serves.
-  const expectedCanonical = `${window.location.origin}${route.path === "/" ? "/" : `${route.path.replace(/\/+$/, "")}/`}`;
+  // Canonicals use the sitewide URL shape: no trailing slash (homepage excepted).
+  const expectedCanonical = `${window.location.origin}${route.path === "/" ? "/" : route.path.replace(/\/+$/, "")}`;
   const issues: MonitoringIssue[] = [];
 
   if (/404|not found/i.test(title)) {

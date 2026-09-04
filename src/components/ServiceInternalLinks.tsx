@@ -24,12 +24,21 @@ const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInter
     columns={2}
     links={[
       ...getServiceBlogLinks(title, slug, 3),
-      ...getServiceTownLinks(4),
+      ...getServiceTownLinks(title, 4),
       {
         label: "All Service Areas",
         href: "/service-areas",
         description: "Every Western North Carolina town we cover.",
       },
+      ...(intent === "estimate"
+        ? [
+            {
+              label: "Virtual Roof Designer",
+              href: "/roof-designer",
+              description: "Upload a photo of your home and preview roofing materials and colors before you decide.",
+            },
+          ]
+        : []),
       intent === "consultation"
         ? {
             label: "Get My Project Scoped",

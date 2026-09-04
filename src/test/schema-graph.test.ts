@@ -56,12 +56,12 @@ describe("structured data graph", () => {
   });
 
   it("never emits aggregateRating or Review markup on /reviews either", () => {
-    const nodes = buildPageSchema({
-      type: "reviews",
-      reviews: [{ author: "A", rating: 5, body: "Great", datePublished: "2025-01-01" }],
-    });
+    // The review-schema helpers were removed entirely; the reviews page graph is
+    // the plain business graph, so nothing here can carry a rating or Review node.
+    const nodes = buildPageSchema({ type: "reviews" });
     expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
     expect(nodes.some((n) => "review" in n)).toBe(false);
+    expect(nodes.some((n) => JSON.stringify(n).includes('"Review"'))).toBe(false);
   });
 
   it("business node points at both showrooms and omits department", () => {

@@ -32,7 +32,7 @@ import cedar005 from "@/assets/gallery/cedar-005.webp";
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
-  { icon: Wrench, title: "Roof Repairs", desc: "Storm response, leak repair, and detail work that protects your home long-term.", img: repairImg, href: "/roof-repair" },
+  { icon: Wrench, title: "Roof Repairs", desc: "Storm response, leak repair, and detail work that protects your home long-term.", img: repairImg, href: "/roofing/roof-repair" },
   { icon: HardHat, title: "Construction", desc: "Additions, renovations, and full-scope building from a licensed general contractor.", img: constructionImg, href: "/construction" },
   { icon: Droplets, title: "Gutters", desc: "Seamless gutters and exterior water management built for WNC weather patterns.", img: metalImg, href: "/exterior-improvements" },
   { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: cedarImg, href: "/construction/outdoor-living" },
@@ -365,7 +365,7 @@ const RecentProjects = () => {
           </div>
         </section>
       </main>
-      <PageCloseCTA eyebrow="Next Step" heading="Ready to start your own project?" body="Tell us about your property and a Highlander advisor will follow up with scope, materials, and timing." secondaryLabel="Browse the full gallery" secondaryTo="/gallery" context="recent-projects" />
+      <PageCloseCTA eyebrow="Next Step" heading="Ready to start your own project?" body="Tell us about your property and a Highlander advisor will follow up with scope, materials, and timing." secondaryLabel="Read homeowner reviews" secondaryTo="/reviews" context="recent-projects" />
       <Footer />
       <StickyMobileCTA />
     </>

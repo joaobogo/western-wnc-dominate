@@ -20,10 +20,10 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
-const heroImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=2000";
-const specialtyContextImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
-const detailOversightImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
-const complexityImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000";
+const heroImg = "/media/wnc-mountain-home-exterior.webp";
+const specialtyContextImg = "/media/wnc-ridge-elevation-home.webp";
+const detailOversightImg = "/media/wnc-construction-framing.webp";
+const complexityImg = "/media/wnc-mountain-home-exterior.webp";
 
 import proj1 from "@/assets/gallery/metal-003.webp";
 import proj2 from "@/assets/gallery/asphalt-002.webp";

@@ -2,14 +2,17 @@
 // Writes public/sitemap.xml sourced from src/data/{blogs,towns}.ts plus the
 // curated list of indexable static routes below. Redirects, /lp/* paid
 // landing pages, form-only funnels, and admin routes are intentionally excluded.
+//
+// The sitemap lists ONLY indexable URLs. The list of routes that must exist as
+// prerendered HTML (a superset: noindex coverage pages, county hubs, funnel
+// steps) is public/prerender-manifest.json, written by
+// scripts/generate-prerender-manifest.ts immediately after this script.
 
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
-import { counties } from "../src/data/counties";
-import { serviceTownContent } from "../src/data/service-town-content";
-import { tier1FlatEntries, tier2FlatEntries } from "../src/data/service-town-slugs";
+import { indexableServiceTownPairs } from "../src/data/service-town-content";
 import { projectDetails } from "../src/data/projects";
 
 const BASE_URL = "https://highlandernc.com";
@@ -91,21 +94,17 @@ const townRoutes: SitemapEntry[] = towns.map((t) => ({
   path: `/service-areas/${t.slug}`,
 }));
 
-// Dynamic: county hub pages (/service-areas/county/{slug}).
-const countyRoutes: SitemapEntry[] = counties.map((c) => ({
-  path: `/service-areas/county/${c.slug}`,
-}));
+// County hub pages (/service-areas/county/{slug}) render noindex,follow — they
+// are internal link hubs, not ranking targets — so they are NOT in the sitemap.
+// They are still prerendered via public/prerender-manifest.json.
+const countyRoutes: SitemapEntry[] = [];
 
 // Dynamic: service-town landing pages (/service-areas/{town}/{service}).
-// Every pair the client router renders is listed so the build prerenders it
-// and the server returns HTTP 200 instead of a 404.
-const indexablePairs = serviceTownContent.map((e) => ({
-  townSlug: e.townSlug,
-  serviceSlug: e.serviceSlug,
-}));
-const indexablePairKeys = new Set(
-  indexablePairs.map((p) => `${p.townSlug}|${p.serviceSlug}`),
-);
+// Only hand-written pairs are indexable and listed here. The generated
+// coverage pages render noindex,follow; they are still prerendered (so an
+// internal link returns a 200) via public/prerender-manifest.json, but a
+// noindex URL must never be submitted in the sitemap.
+const indexablePairs = indexableServiceTownPairs();
 const serviceTownRoutes: SitemapEntry[] = indexablePairs.map((e) => ({
   path: `/service-areas/${e.townSlug}/${e.serviceSlug}`,
 }));
@@ -122,12 +121,16 @@ const projectRoutes: SitemapEntry[] = projectDetails.map((p) => ({
 
 // Dynamic: one entry per blog post. lastmod = post.date (authoritative,
 // page-specific). Skip lastmod if the date is unparseable.
-const blogRoutes: SitemapEntry[] = blogPosts.map((p) => {
-  const d = new Date(p.date);
-  const entry: SitemapEntry = { path: `/blog/${p.slug}` };
-  if (!isNaN(d.getTime())) entry.lastmod = d.toISOString().slice(0, 10);
-  return entry;
-});
+// Posts folded into a survivor (canonicalTo set, P3.5) render noindex with a
+// canonical to the survivor and are NOT listed here.
+const blogRoutes: SitemapEntry[] = blogPosts
+  .filter((p) => !p.canonicalTo)
+  .map((p) => {
+    const d = new Date(p.date);
+    const entry: SitemapEntry = { path: `/blog/${p.slug}` };
+    if (!isNaN(d.getTime())) entry.lastmod = d.toISOString().slice(0, 10);
+    return entry;
+  });
 
 // If there are slugs in the public sitemap that ARE NOT in blogPosts, they must
 // be removed. The generator already handles this by only sourcing from blogPosts.
@@ -148,16 +151,18 @@ const entries: SitemapEntry[] = [
   return true;
 });
 
-// The server serves the trailing-slash form of every route, so the sitemap,
-// the canonical tag and og:url all use that shape — no redirect hops.
-const withTrailingSlash = (path: string) =>
-  path === "/" ? "/" : `${path.replace(/\/+$/, "")}/`;
+// One URL shape sitewide: NO trailing slash (the homepage is always "/").
+// Internal links, UrlNormalizer, the canonical tag, og:url and the prerendered
+// file names (dist/<route>.html) all use this shape, so the sitemap must too —
+// a crawler never follows a redirect from a sitemap URL or a canonical.
+const withoutTrailingSlash = (path: string) =>
+  path === "/" ? "/" : path.replace(/\/+$/, "");
 
 function generateSitemap(items: SitemapEntry[]) {
   const urls = items.map((e) =>
     [
       `  <url>`,
-      `    <loc>${BASE_URL}${withTrailingSlash(e.path)}</loc>`,
+      `    <loc>${BASE_URL}${withoutTrailingSlash(e.path)}</loc>`,
       e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       `  </url>`,
     ]

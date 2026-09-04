@@ -1,8 +1,9 @@
 import { PHONE_PLAIN } from "@/data/business";
 import { towns, type TownData } from "@/data/towns";
 import { counties } from "@/data/counties";
-import { blogPosts, type BlogPost } from "@/data/blogs";
-import { getServiceTownEntriesForTown } from "@/data/service-town-content";
+import { linkableBlogPosts, type BlogPost } from "@/data/blogs";
+import { getServiceTownEntriesForTown, serviceTownHref } from "@/data/service-town-content";
+import { projectDetails, type ProjectDetail } from "@/data/projects";
 import type { RelatedLinkItem } from "@/components/RelatedLinks";
 import { countySlug } from "@/lib/internal-links";
 
@@ -58,12 +59,15 @@ const townLink = (t: TownData): RelatedLinkItem => ({
   description: `${t.county} · ${t.elevation}`,
 });
 
+// Link equity goes to pages we want ranked: an indexable service × town page
+// links to itself, a noindex one (generated coverage page, or a hand-written
+// page outside the map-pack radius) sends the link to its parent division page.
 const serviceTownLinks = (townSlug: string, exclude?: string): RelatedLinkItem[] =>
   getServiceTownEntriesForTown(townSlug)
     .filter((e) => e.serviceSlug !== exclude)
     .map((e) => ({
       label: e.h1.replace(/\s+\|.*$/, ""),
-      href: `/service-areas/${townSlug}/${e.serviceSlug}`,
+      href: serviceTownHref(townSlug, e.serviceSlug),
       description: e.metaDescription?.slice(0, 110),
     }));
 
@@ -75,13 +79,54 @@ const blogLink = (p: BlogPost): RelatedLinkItem => ({
 
 /** Blog posts tied to a town, then to its county neighbors, then general. */
 export const getLocalBlogLinks = (town: TownData, limit = 4): RelatedLinkItem[] => {
-  const local = blogPosts.filter((p) => p.town === town.name);
+  const local = linkableBlogPosts().filter((p) => p.town === town.name);
   const neighborNames = getNeighborTowns(town.slug).map((t) => t.name);
-  const neighborly = blogPosts.filter(
+  const neighborly = linkableBlogPosts().filter(
     (p) => p.town && neighborNames.includes(p.town) && !local.includes(p),
   );
-  const general = blogPosts.filter((p) => !p.town);
+  const general = linkableBlogPosts().filter((p) => !p.town);
   return [...local, ...neighborly, ...general].slice(0, limit).map(blogLink);
+};
+
+/**
+ * P4.1 — every core town page links to at least one real project. The nearest
+ * completed project is chosen (in town → neighbouring town → same county →
+ * anywhere) and always labelled with its true location; nothing is relocated.
+ */
+export const nearestProjectLink = (town: TownData): RelatedLinkItem | null => {
+  const inTown = (p: ProjectDetail) => p.location.startsWith(`${town.name},`);
+  const neighborNames = getNeighborTowns(town.slug).map((t) => t.name);
+  const isNeighbor = (p: ProjectDetail) => neighborNames.some((n) => p.location.startsWith(`${n},`));
+  const project =
+    projectDetails.find(inTown) ??
+    projectDetails.find(isNeighbor) ??
+    projectDetails.find((p) => p.county === town.county) ??
+    projectDetails[0];
+  if (!project) return null;
+  return {
+    label: `${project.title} — ${project.location}`,
+    href: `/projects/${project.slug}`,
+    description: inTown(project)
+      ? `Completed in ${town.name}. ${project.highlight || project.summary.slice(0, 100)}`
+      : `Nearest completed project to ${town.name} — ${project.location}.`,
+  };
+};
+
+/**
+ * P4.1 — related posts chosen by walking FORWARD through publication order
+ * from the current post (wrapping around) within the posts that share its
+ * town or category. Every post in a cluster is then linked from the posts
+ * before it, instead of the first four posts soaking up every inbound link.
+ */
+export const relatedPostsRing = (post: BlogPost, limit: number): BlogPost[] => {
+  const all = linkableBlogPosts();
+  const pool = all.filter(
+    (p) => p.slug !== post.slug && (p.town === post.town || p.category === post.category),
+  );
+  if (pool.length <= limit) return pool;
+  const idx = all.findIndex((p) => p.slug === post.slug);
+  const distance = (p: BlogPost) => (all.indexOf(p) - idx + all.length) % all.length;
+  return [...pool].sort((a, b) => distance(a) - distance(b)).slice(0, limit);
 };
 
 const countyLink = (county: string): RelatedLinkItem | null => {
@@ -126,6 +171,10 @@ export const getTownLinkWeb = (town: TownData): LinkGroup[] =>
         links: getLocalBlogLinks(town, 4),
       },
       {
+        title: `Recent Work Near ${town.name}`,
+        links: [nearestProjectLink(town)].filter(Boolean) as RelatedLinkItem[],
+      },
+      {
         title: "Regional Coverage",
         links: [
           countyLink(town.county),
@@ -149,7 +198,7 @@ export const getServiceTownLinkWeb = (
     .filter((t) => getServiceTownEntriesForTown(t.slug).some((e) => e.serviceSlug === serviceSlug))
     .map((t) => ({
       label: `${serviceLabel} in ${t.name}, NC`,
-      href: `/service-areas/${t.slug}/${serviceSlug}`,
+      href: serviceTownHref(t.slug, serviceSlug),
       description: `${t.county} · ${t.elevation}`,
     }));
 
@@ -214,10 +263,7 @@ export const getCountyLinkWeb = (countyName: string, townNames: string[]): LinkG
 /** Cross-link web for a blog post, weighted to its town when it has one. */
 export const getBlogLocalLinkWeb = (post: BlogPost): LinkGroup[] => {
   const town = towns.find((t) => t.name === post.town);
-  const related = blogPosts
-    .filter((p) => p.slug !== post.slug && (p.town === post.town || p.category === post.category))
-    .slice(0, 4)
-    .map(blogLink);
+  const related = relatedPostsRing(post, 4).map(blogLink);
 
   if (!town) {
     return dedupe([

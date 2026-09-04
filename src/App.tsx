@@ -14,7 +14,6 @@ import OrphanRedirectHandler from "./components/OrphanRedirectHandler";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/attribution";
 import { preloadLikelyRoutes } from "./lib/route-preload";
-import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-slugs";
 
 // Chat widget is below-the-fold, non-critical UI — keep it out of the first load.
 const ChatbotWidget = lazy(() => import("./components/chatbot/ChatbotWidget"));
@@ -189,39 +188,13 @@ const App = () => (
           <Route path="/service-areas/county/:slug" element={<CountyPage />} />
           <Route path="/service-areas/:townSlug/:serviceSlug" element={<ServiceTownPage />} />
 
-          {/* ─── Tier 1 flat-slug commercial pages (Highlands / Franklin / Cashiers × 5 services) ─── */}
-          {tier1FlatEntries.map((t) => (
-            <Route
-              key={t.flatSlug}
-              path={`/${t.flatSlug}`}
-              element={
-                <ServiceTownPage
-                  townSlug={t.townSlug}
-                  serviceSlug={t.serviceSlug}
-                  canonicalPath={`/${t.flatSlug}`}
-                />
-              }
-            />
-          ))}
-
-          {/* ─── Tier 2 flat-slug pages (Sylva / Cullowhee) ─── */}
-          {tier2FlatEntries.map((t) => (
-            <Route
-              key={t.flatSlug}
-              path={`/${t.flatSlug}`}
-              element={
-                <ServiceTownPage
-                  townSlug={t.townSlug}
-                  serviceSlug={t.serviceSlug}
-                  canonicalPath={`/${t.flatSlug}`}
-                />
-              }
-            />
-          ))}
+          {/* Legacy flat service×town slugs (/roofing-highlands-nc, /roof-repair-sylva-nc, …)
+              are 301'd at the edge to /service-areas/<town>/<service> in public/_redirects.
+              They deliberately have NO client route: one URL per page. */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/giving-back" element={<GivingBack />} />
+          {/* /giving-back is a 301 to /community in public/_redirects — no client route. */}
           <Route path="/community" element={<GivingBack />} />
           <Route path="/team" element={<Team />} />
           <Route path="/faq" element={<FAQ />} />

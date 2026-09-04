@@ -2,6 +2,26 @@ http://highlandernc.com/*        https://highlandernc.com/:splat      301!
 http://www.highlandernc.com/*    https://highlandernc.com/:splat      301!
 https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 
+# Trailing slashes: NOT handled here on purpose. The CDN normalises the
+# trailing slash BEFORE matching rules (a `/*/ /:splat 301!` rule would match
+# nothing, and `/x/ /x 301!` loops — see docs.netlify.com redirect options),
+# so the slash-less URL shape comes from the asset layout instead: prerender
+# writes dist/<route>.html, which the host serves at /<route> with a 200 and
+# redirects /<route>/ to /<route> (pretty URLs, on by default).
+
+# ============================================================
+# Legacy URLs verified by scripts/seo-regression-check.mjs against
+# scripts/fixtures/legacy-urls-from-gsc.txt (P1.1, 2026-09-04).
+# Exact rules live here, above every wildcard, so nothing can shadow them.
+# ============================================================
+/contact/seamless-gutters-service-area/cashiers-nc           /service-areas/cashiers-nc                        301!
+/page-sitemap.xml                                            /sitemap.xml                                      301!
+/sitemap_index.xml                                           /sitemap.xml                                      301!
+# WordPress REST plumbing (wp-json and every sub-path) — gone for good
+/wp-json                                                     /404.html                                         410
+/wp-json/*                                                   /404.html                                         410
+/index.php/wp-json/*                                         /404.html                                         410
+
 # ============================================================
 # Legacy Hibu / old-site URL 301 redirects (edge-level)
 # Real 301s so Google consolidates signal to the canonical URL
@@ -554,8 +574,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /home-repairs-cashiers-nc                /service-areas/cashiers-nc/home-repairs  301!
 /roofing-construction-sylva-nc           /service-areas/sylva-nc/roofing-construction  301!
 /roof-repair-sylva-nc                    /service-areas/sylva-nc/roof-repair  301!
-/roofing-construction-cullowhee-nc       /service-areas/cullowhee-nc/roofing-construction  301!
-/roof-repair-cullowhee-nc                /service-areas/cullowhee-nc/roof-repair  301!
+/roofing-construction-cullowhee-nc       /service-areas/cullowhee-nc  301!
+/roof-repair-cullowhee-nc                /service-areas/cullowhee-nc  301!
 
 
 # ============================================================
@@ -577,8 +597,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /reroofing-repairs-franklin-nc                              /service-areas/franklin-nc                        301!
 /reroofing-repairs-sylva-nc                                 /service-areas/sylva-nc                           301!
 /waynesville-nc-roofers-reroofing-repairs                   /service-areas/waynesville-nc                     301!
-/clayton-ga-roofers-reroofing-repairs                       /service-areas                                    301!
-/reroofing-repairs-clayton-ga                               /service-areas                                    301!
+/clayton-ga-roofers-reroofing-repairs                       /roofing                                          301!
+/reroofing-repairs-clayton-ga                               /roofing                                          301!
 /franklin-nc-roofing-showroom                               /locations/franklin-nc                            301!
 /sylva-nc-roofing-showroom                                  /locations/sylva-nc                               301!
 /roofing-showroom                                           /locations                                        301!

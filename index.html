@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#184613" />
     <meta name="format-detection" content="telephone=yes" />
     <title>Roofing Company in Franklin, NC | Highlander</title>
-    <meta name="description" content="Roofing company in Franklin, NC serving Western North Carolina. 4.7 stars from 158 Google reviews, NC GC #87668, CertainTeed ShingleMaster, Franklin & Sylva showrooms.">
+    <meta name="description" content="Local roofers in Franklin, NC serving Highlands, Cashiers, Sylva & Western NC. Roof replacement, repair, metal roofing, storm damage. 4.8★ · 158 Google reviews.">
     <meta name="author" content="Highlander Building Services" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="geo.region" content="US-NC" />
@@ -122,7 +122,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Highlander Building Services" />
     <meta property="og:title" content="Roofing Company in Franklin, NC | Highlander Building Services">
-    <meta property="og:description" content="Roofing company in Franklin, NC serving Western North Carolina. 4.7 stars from 158 Google reviews, NC GC #87668, CertainTeed ShingleMaster, Franklin &amp; Sylva showrooms.">
+    <meta property="og:description" content="Local roofers in Franklin, NC serving Highlands, Cashiers, Sylva &amp; Western NC. Roof replacement, repair, metal roofing, storm damage. 4.8★ · 158 Google reviews.">
     <meta property="og:url" content="https://highlandernc.com/" />
     <meta property="og:image" content="https://highlandernc.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -132,7 +132,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@highlanderroof" />
     <meta name="twitter:title" content="Roofing Company in Franklin, NC | Highlander Building Services">
-    <meta name="twitter:description" content="Roofing company in Franklin, NC serving Western North Carolina. 4.7 stars from 158 Google reviews, NC GC #87668, CertainTeed ShingleMaster, Franklin &amp; Sylva showrooms.">
+    <meta name="twitter:description" content="Local roofers in Franklin, NC serving Highlands, Cashiers, Sylva &amp; Western NC. Roof replacement, repair, metal roofing, storm damage. 4.8★ · 158 Google reviews.">
     <meta name="twitter:image" content="https://highlandernc.com/og-image.jpg" />
     <meta name="twitter:image:alt" content="Highlander Building Services — Western North Carolina" />
 
@@ -295,21 +295,27 @@ div[style*="Edit with Lovable"],
     <script>
     (function(w){
       var d=w.document;
-      var intentQueue=[], intentFired=false, armed=false;
+      // Two queues (P5.1): `intentQueue` fires on interaction OR after 5 s of
+      // idle time; `strictQueue` fires on a real interaction only. RealWork
+      // Labs + the Google Maps JS API (~400 KB) sit in the strict queue — they
+      // render below the hero, so a scroll that reaches them is what loads
+      // them, and a visitor who never interacts never pays for them.
+      var intentQueue=[], strictQueue=[], intentFired=false, idleFired=false, armed=false;
       function heroDepth(){
         var hero=d.querySelector('[data-hero], [data-hero-anchored], #hero');
         if(hero) return hero.getBoundingClientRect().height * 0.6;
         return Math.min(400, w.innerHeight * 0.6);
       }
+      function flush(list){ var q=list.slice(); list.length=0; q.forEach(function(fn){ try{ fn(); }catch(e){} }); }
       function fireIntent(){
         if(intentFired)return; intentFired=true; w.__hlUserIntent=true;
         w.removeEventListener('pointerdown',fireIntent);
         w.removeEventListener('keydown',fireIntent);
         w.removeEventListener('touchstart',fireIntent);
         w.removeEventListener('scroll',onScroll);
-        var q=intentQueue.slice(); intentQueue.length=0;
-        q.forEach(function(fn){ try{ fn(); }catch(e){} });
+        flush(intentQueue); flush(strictQueue);
       }
+      function fireIdle(){ if(intentFired||idleFired)return; idleFired=true; flush(intentQueue); }
       function onScroll(){ if(w.scrollY > heroDepth()) fireIntent(); }
       function arm(){
         if(armed)return; armed=true;
@@ -318,16 +324,21 @@ div[style*="Edit with Lovable"],
         w.addEventListener('touchstart',fireIntent,{passive:true});
         w.addEventListener('scroll',onScroll,{passive:true});
         var start=function(){ w.setTimeout(function(){
-          if(w.requestIdleCallback) w.requestIdleCallback(fireIntent,{timeout:2000});
-          else fireIntent();
+          if(w.requestIdleCallback) w.requestIdleCallback(fireIdle,{timeout:2000});
+          else fireIdle();
         }, 5000); };
         if(d.readyState==='complete') start();
         else w.addEventListener('load',start,{once:true});
       }
       // Exposed so React code shares one definition of "intent".
       w.__hlOnUserIntent = function(fn){
-        if(intentFired || w.__hlUserIntent){ try{ fn(); }catch(e){} return; }
+        if(intentFired || idleFired || w.__hlUserIntent){ try{ fn(); }catch(e){} return; }
         intentQueue.push(fn); arm();
+      };
+      // Interaction only — never the idle timer.
+      w.__hlOnStrictIntent = function(fn){
+        if(intentFired || w.__hlUserIntent){ try{ fn(); }catch(e){} return; }
+        strictQueue.push(fn); arm();
       };
 
       function marketingOk(){ return !!(w.__hlConsent && w.__hlConsent.marketing); }
@@ -339,8 +350,10 @@ div[style*="Edit with Lovable"],
       }
       function loadFunctional(){
         if(!functionalOk())return;
-        // Never on initial load — RealWork pulls the Maps JS API with it.
-        w.__hlOnUserIntent(function(){ try{ w.__loadRWL && w.__loadRWL(); }catch(e){} });
+        // Never on initial load and never on the idle timer — RealWork pulls
+        // the Maps JS API with it. <RealWorkWidget /> also loads it on demand
+        // when its own section scrolls into view.
+        w.__hlOnStrictIntent(function(){ try{ w.__loadRWL && w.__loadRWL(); }catch(e){} });
       }
       // Called by the in-app consent banner once the visitor makes a choice.
       w.__hlApplyConsent = function(state){

@@ -1,90 +1,59 @@
 import { PHONE_DISPLAY } from "@/data/business";
+import { homeFaqs } from "@/data/home-faqs";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, HelpCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { faqSchema } from "@/components/SEOHead";
+import type { ReactNode } from "react";
 
-const faqs = [
-  {
-    q: "What roofing services does Highlander provide in Western North Carolina?",
-    aNode: (
-      <>
-        Highlander provides a full range of <Link to="/roofing" className="text-primary underline underline-offset-4 hover:no-underline">roofing services across Western NC</Link> — including <Link to="/roofing/roof-repair" className="text-primary underline underline-offset-4 hover:no-underline">roof repair</Link>, <Link to="/roofing/roof-replacement" className="text-primary underline underline-offset-4 hover:no-underline">roof replacement</Link>, <Link to="/roofing/metal" className="text-primary underline underline-offset-4 hover:no-underline">metal roofing</Link>, <Link to="/roofing/gutters" className="text-primary underline underline-offset-4 hover:no-underline">gutters</Link>, <Link to="/roofing/skylights" className="text-primary underline underline-offset-4 hover:no-underline">skylights</Link>, and storm damage response. Every system is specified for mountain elevation, wind exposure, and moisture conditions.
-      </>
-    ),
-    a: "Highlander provides a full range of roofing services across Western NC — including roof repair, roof replacement, metal roofing, gutters, skylights, and storm damage response. Every system is specified for mountain elevation, wind exposure, and moisture conditions.",
-  },
-  {
-    q: "Does Highlander provide both roof repair and roof replacement?",
-    aNode: (
-      <>
-        Yes. Our crews handle everything from a single leak or failed pipe boot on a <Link to="/roofing/residential" className="text-primary underline underline-offset-4 hover:no-underline">residential roof</Link> to full tear-off and <Link to="/roofing/roof-replacement" className="text-primary underline underline-offset-4 hover:no-underline">roof replacement for mountain homes</Link>. We diagnose the actual problem first — if a targeted <Link to="/roofing/roof-repair" className="text-primary underline underline-offset-4 hover:no-underline">roof repair in Western North Carolina</Link> will protect the home, that's what we recommend rather than a replacement you don't need.
-      </>
-    ),
-    a: "Yes. Our crews handle everything from a single leak or failed pipe boot to full tear-off and roof replacement for mountain homes. We diagnose the actual problem first — if a targeted roof repair will protect the home, that's what we recommend rather than a replacement you don't need.",
-  },
-  {
-    q: "Does Highlander install metal roofing?",
-    aNode: (
-      <>
-        Yes. <Link to="/roofing/metal" className="text-primary underline underline-offset-4 hover:no-underline">Metal roofing options</Link> are among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading. For a deeper comparison, see our guide to <Link to="/blog/metal-vs-shingle-roof-western-nc" className="text-primary underline underline-offset-4 hover:no-underline">metal vs. shingle roofs in Western NC</Link>.
-      </>
-    ),
-    a: "Yes. Metal roofing is among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading.",
-  },
-  {
-    q: "Does Highlander serve Franklin, Highlands, Cashiers, and Sylva?",
-    aNode: (
-      <>
-        Yes. Franklin is our home base, and we regularly work in <Link to="/service-areas/highlands-nc" className="text-primary underline underline-offset-4 hover:no-underline">Highlands</Link>, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville. See our <Link to="/blog/best-roofing-materials-highlands-nc" className="text-primary underline underline-offset-4 hover:no-underline">guide to the best roofing materials for Highlands NC</Link> for a local material breakdown.
-      </>
-    ),
-    a: "Yes. Franklin is our home base, and we regularly work in Highlands, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville.",
-  },
-  {
-    q: "Can Highlander help with construction and design services?",
-    aNode: (
-      <>
-        Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. Explore our <Link to="/construction" className="text-primary underline underline-offset-4 hover:no-underline">construction and design services</Link>, including <Link to="/construction/design" className="text-primary underline underline-offset-4 hover:no-underline">in-house design</Link> (floor plans, elevations, material planning) and <Link to="/construction/outdoor-living" className="text-primary underline underline-offset-4 hover:no-underline">outdoor living projects</Link>.
-      </>
-    ),
-    a: "Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. We handle construction, in-house design, home additions, renovations, and outdoor living projects.",
-  },
-  {
-    q: "What should I do if water is coming into my home?",
-    a: `Contain the water safely — move belongings, place a bucket under the drip, and if you can do so safely, take a photo of the affected area. Then call us at ${PHONE_DISPLAY} during business hours and we'll schedule the fastest inspection we can arrange. For an active storm event, coordinate with your insurance carrier as well.`,
-  },
-  {
-    q: "How do I request an inspection or quote?",
-    aNode: (
-      <>
-        Call {PHONE_DISPLAY}, <Link to="/request-inspection" className="text-primary underline underline-offset-4 hover:no-underline">request an inspection</Link>, or reach us through our <Link to="/contact" className="text-primary underline underline-offset-4 hover:no-underline">contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
-      </>
-    ),
-    a: `Call ${PHONE_DISPLAY}, request an inspection, or reach us through our contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.`,
-  },
-  {
-    q: "When is the best time for gutter maintenance in the mountains?",
-    aNode: (
-      <>
-        A two-stage approach works best for wooded WNC properties. Schedule a baseline inspection and cleaning before heavy leaf fall begins, then a follow-up after the main canopy has dropped. For a complete guide and printable schedule, see our <Link to="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners" className="text-primary underline underline-offset-4 hover:no-underline">Pre-Fall Gutter Maintenance Checklist for Mountain Homeowners</Link>.
-      </>
-    ),
-    a: "A two-stage approach works best for wooded WNC properties: a baseline cleaning before heavy leaf fall, and a follow-up after the canopy drops.",
-  },
-];
+/**
+ * Richer, linked versions of the plain answers in src/data/home-faqs.ts, keyed
+ * by the exact question text. The question list and the plain answers (used for
+ * the FAQPage JSON-LD that src/pages/Index.tsx passes to SEOHead) live in that
+ * data file — this component only renders them. No JSON-LD is emitted here.
+ */
+const linkClass = "text-primary underline underline-offset-4 hover:no-underline";
+const richAnswers: Record<string, ReactNode> = {
+  "What roofing services does Highlander provide in Western North Carolina?": (
+    <>
+      Highlander provides a full range of <Link to="/roofing" className={linkClass}>roofing services across Western NC</Link> — including <Link to="/roofing/roof-repair" className={linkClass}>roof repair</Link>, <Link to="/roofing/roof-replacement" className={linkClass}>roof replacement</Link>, <Link to="/roofing/metal" className={linkClass}>metal roofing</Link>, <Link to="/roofing/gutters" className={linkClass}>gutters</Link>, <Link to="/roofing/skylights" className={linkClass}>skylights</Link>, and storm damage response. Every system is specified for mountain elevation, wind exposure, and moisture conditions.
+    </>
+  ),
+  "Does Highlander provide both roof repair and roof replacement?": (
+    <>
+      Yes. Our crews handle everything from a single leak or failed pipe boot on a <Link to="/roofing/residential" className={linkClass}>residential roof</Link> to full tear-off and <Link to="/roofing/roof-replacement" className={linkClass}>roof replacement for mountain homes</Link>. We diagnose the actual problem first — if a targeted <Link to="/roofing/roof-repair" className={linkClass}>roof repair in Western North Carolina</Link> will protect the home, that's what we recommend rather than a replacement you don't need.
+    </>
+  ),
+  "Does Highlander install metal roofing?": (
+    <>
+      Yes. <Link to="/roofing/metal" className={linkClass}>Metal roofing options</Link> are among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading. For a deeper comparison, see our guide to <Link to="/blog/metal-vs-shingle-roof-western-nc" className={linkClass}>metal vs. shingle roofs in Western NC</Link>.
+    </>
+  ),
+  "Does Highlander serve Franklin, Highlands, Cashiers, and Sylva?": (
+    <>
+      Yes. Franklin is our home base, and we regularly work in <Link to="/service-areas/highlands-nc" className={linkClass}>Highlands</Link>, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville. See our <Link to="/blog/best-roofing-materials-highlands-nc" className={linkClass}>guide to the best roofing materials for Highlands NC</Link> for a local material breakdown.
+    </>
+  ),
+  "Can Highlander help with construction and design services?": (
+    <>
+      Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. Explore our <Link to="/construction" className={linkClass}>construction and design services</Link>, including <Link to="/construction/design" className={linkClass}>in-house design</Link> (floor plans, elevations, material planning) and <Link to="/construction/outdoor-living" className={linkClass}>outdoor living projects</Link>.
+    </>
+  ),
+  "How do I request an inspection or quote?": (
+    <>
+      Call {PHONE_DISPLAY}, <Link to="/request-inspection" className={linkClass}>request an inspection</Link>, or reach us through our <Link to="/contact" className={linkClass}>contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
+    </>
+  ),
+  "When is the best time for gutter maintenance in the mountains?": (
+    <>
+      A two-stage approach works best for wooded WNC properties. Schedule a baseline inspection and cleaning before heavy leaf fall begins, then a follow-up after the main canopy has dropped. For a complete guide and printable schedule, see our <Link to="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners" className={linkClass}>Pre-Fall Gutter Maintenance Checklist for Mountain Homeowners</Link>.
+    </>
+  ),
+};
 
 const HomeFAQ = () => {
   return (
     <section id="faq" className="section-padding bg-background relative overflow-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))),
-        }}
-      />
-
       <div className="container-tight max-w-4xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -111,7 +80,7 @@ const HomeFAQ = () => {
           className="bg-card border border-border rounded-sm p-2 md:p-4 shadow-flat"
         >
           <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, i) => (
+            {homeFaqs.map((faq, i) => (
               <AccordionItem
                 key={faq.q}
                 value={`faq-${i}`}
@@ -124,7 +93,7 @@ const HomeFAQ = () => {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base font-body leading-relaxed pb-5 px-3 md:px-4 pl-10 md:pl-11">
-                  {faq.aNode ?? faq.a}
+                  {richAnswers[faq.q] ?? faq.a}
                 </AccordionContent>
               </AccordionItem>
             ))}

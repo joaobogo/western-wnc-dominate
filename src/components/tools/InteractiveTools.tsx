@@ -325,11 +325,11 @@ const FIT_QUESTIONS = [
 
 const FIT_RESULTS: Record<string, { service: string; path: string; desc: string }> = {
   "small-modernize": { service: "Renovations", path: "/construction/renovations", desc: "A targeted renovation sounds right. We'll assess the space and discuss finish options." },
-  "small-exterior": { service: "Exterior Improvements", path: "/construction/exterior", desc: "Exterior updates can transform how your home looks and performs." },
+  "small-exterior": { service: "Exterior Improvements", path: "/exterior-improvements", desc: "Exterior updates can transform how your home looks and performs." },
   "medium-space": { service: "Home Additions", path: "/construction/additions", desc: "A moderate expansion — we'll help you plan the right addition for your property." },
   "medium-outdoor": { service: "Outdoor Living", path: "/construction/outdoor-living", desc: "Covered porches, decks, and outdoor structures designed for mountain living." },
   "large-space": { service: "Home Additions", path: "/construction/additions", desc: "A major addition. Let's discuss design, structural, and permitting considerations." },
-  "default": { service: "Custom Projects", path: "/construction/custom", desc: "Your project sounds unique. Let's have a conversation about what you're envisioning." },
+  "default": { service: "Custom Projects", path: "/construction", desc: "Your project sounds unique. Let's have a conversation about what you're envisioning." },
 };
 
 export function ConstructionFitGuide() {

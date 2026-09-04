@@ -15,7 +15,7 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
 import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
-import { blogPosts } from "@/data/blogs";
+import { linkableBlogPosts } from "@/data/blogs";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,7 +40,7 @@ const categoryConfig: Record<string, { icon: typeof BookOpen; label: string; des
   Spotlight: { icon: Mountain, label: "Project Spotlights", description: "Deep dives into completed projects — materials, process, and results", color: "primary" },
 };
 
-const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
+const categories = ["All", ...Array.from(new Set(linkableBlogPosts().map((p) => p.category)))];
 
 const byNewest = (a: { date: string }, b: { date: string }) =>
   new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -68,7 +68,7 @@ const Blog = () => {
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
   const seasonal = useMemo(getSeasonalContext, []);
 
-  const filtered = blogPosts
+  const filtered = linkableBlogPosts()
     .filter((p) => activeCategory === "All" || p.category === activeCategory)
     .filter(
       (p) =>
@@ -79,12 +79,12 @@ const Blog = () => {
     .slice()
     .sort((a, b) => (sortOrder === "newest" ? byNewest(a, b) : byNewest(b, a)));
 
-  const featuredPosts = blogPosts.slice().sort(byNewest).slice(0, 5);
+  const featuredPosts = linkableBlogPosts().slice().sort(byNewest).slice(0, 5);
   const heroFeatured = featuredPosts[0];
   const sideFeatured = featuredPosts.slice(1);
-  const stormPosts = blogPosts.filter((p) => p.category === "Storm" || p.category === "Maintenance").sort(byNewest).slice(0, 4);
-  const localPosts = blogPosts.filter((p) => p.town).sort(byNewest).slice(0, 4);
-  const seasonalPosts = blogPosts.filter((p) => seasonal.categories.includes(p.category)).sort(byNewest).slice(0, 3);
+  const stormPosts = linkableBlogPosts().filter((p) => p.category === "Storm" || p.category === "Maintenance").sort(byNewest).slice(0, 4);
+  const localPosts = linkableBlogPosts().filter((p) => p.town).sort(byNewest).slice(0, 4);
+  const seasonalPosts = linkableBlogPosts().filter((p) => seasonal.categories.includes(p.category)).sort(byNewest).slice(0, 3);
   const showFeatured = activeCategory === "All" && !searchQuery;
 
   return (
@@ -181,7 +181,7 @@ const Blog = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-4 mt-4 text-dark-section-muted text-body-xs font-body font-bold">
-                    <span>{blogPosts.length} articles</span>
+                    <span>{linkableBlogPosts().length} articles</span>
                     <span>·</span>
                     <span>{categories.length - 1} categories</span>
                     <span>·</span>
@@ -311,7 +311,7 @@ const Blog = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 {categories.filter((c) => c !== "All").map((cat, i) => {
                   const config = categoryConfig[cat] || { icon: BookOpen, label: cat, description: "", color: "primary" };
-                  const count = blogPosts.filter((p) => p.category === cat).length;
+                  const count = linkableBlogPosts().filter((p) => p.category === cat).length;
                   return (
                     <motion.button
                       key={cat}

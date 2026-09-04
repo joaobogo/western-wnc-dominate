@@ -8,6 +8,16 @@ interface TownServiceSectionsProps {
   town: TownData;
 }
 
+/**
+ * Town data strings are written as standalone sentences ("Heavy valley
+ * moisture, trapped fog, and persistent humidity that accelerate…"). When one
+ * is stitched into the middle of a frame sentence it must lose its final full
+ * stop and its capital, otherwise the page reads "…systems. demands a higher
+ * caliber…" (the P3.3 copy defect). Proper nouns inside the string are kept.
+ */
+const asClause = (sentence: string) =>
+  sentence.trim().replace(/[.!?]+$/, "").replace(/^./, (c) => c.toLowerCase());
+
 const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
   return (
     <section className="section-padding bg-background relative overflow-hidden">
@@ -21,7 +31,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
               </div>
               <h2 className="text-3xl font-heading font-bold mb-6 text-foreground leading-tight">Roofing in <br />{town.name}</h2>
               <p className="text-muted-foreground font-body leading-relaxed mb-10 text-sm">
-                {town.name}'s specific {town.climateExposure.toLowerCase()} demands a higher caliber of roofing expertise. We design and install roofing systems that aren't just functional, but built to withstand the unique pressures of {town.name}'s elevation.
+                In {town.name}, a roof has to handle {asClause(town.climateExposure)}. That demands a higher caliber of roofing expertise: we design and install roofing systems that aren't just functional, but built to withstand the unique pressures of {town.name}'s elevation.
               </p>
               <Link 
                 to={`/service-areas/${town.slug}/roof-replacement`}

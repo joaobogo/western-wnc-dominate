@@ -1,5 +1,6 @@
 import { PHONE_PLAIN } from "@/data/business";
 import { towns, townLocalRelevance, type TownData } from "./towns";
+import { serviceTownHref } from "./service-town-content";
 import type { BlogPost } from "./blogs";
 
 /**
@@ -43,10 +44,10 @@ const hoods = (t: TownData) => {
 };
 
 const links = (t: TownData) => [
-  { label: `Roofing in ${t.name}`, path: `/service-areas/${t.slug}/roofing` },
-  { label: `Roof Repair in ${t.name}`, path: `/service-areas/${t.slug}/roof-repair` },
-  { label: `Roof Replacement in ${t.name}`, path: `/service-areas/${t.slug}/roof-replacement` },
-  { label: `Storm Damage in ${t.name}`, path: `/service-areas/${t.slug}/storm-damage` },
+  { label: `Roofing in ${t.name}`, path: `${serviceTownHref(t.slug, "roofing")}` },
+  { label: `Roof Repair in ${t.name}`, path: `${serviceTownHref(t.slug, "roof-repair")}` },
+  { label: `Roof Replacement in ${t.name}`, path: `${serviceTownHref(t.slug, "roof-replacement")}` },
+  { label: `Storm Damage in ${t.name}`, path: `${serviceTownHref(t.slug, "storm-damage")}` },
   { label: `${t.county} Service Hub`, path: `/service-areas/county/${countySlug(t)}` },
   { label: `${t.name} Service Area`, path: `/service-areas/${t.slug}` },
   { label: "Get My Written Estimate", path: "/request-inspection" },
@@ -68,7 +69,7 @@ ${t.climateExposure}
 
 A properly scoped repair on a roof in this condition buys real years. We document what we find with photographs and write the scope so you can see exactly what is being corrected.
 
-[Roof repair in ${t.name}](/service-areas/${t.slug}/roof-repair) is usually the lower-risk starting point when those four conditions hold.
+[Roof repair in ${t.name}](${serviceTownHref(t.slug, "roof-repair")}) is usually the lower-risk starting point when those four conditions hold.
 
 ## When replacement is the more honest answer
 
@@ -77,7 +78,7 @@ A properly scoped repair on a roof in this condition buys real years. We documen
 - Ventilation was never balanced, so the covering aged from beneath.
 - The roof has already been laid over once.
 
-At that point additional repairs are spending money on an assembly that has stopped protecting the structure. [Roof replacement in ${t.name}](/service-areas/${t.slug}/roof-replacement) lets us correct decking, ventilation, flashing, and drainage in one pass instead of chasing symptoms.
+At that point additional repairs are spending money on an assembly that has stopped protecting the structure. [Roof replacement in ${t.name}](${serviceTownHref(t.slug, "roof-replacement")}) lets us correct decking, ventilation, flashing, and drainage in one pass instead of chasing symptoms.
 
 ## What ${countyShort(t)} County conditions change
 
@@ -132,9 +133,9 @@ ${t.name} sits at ${t.elevation} in ${t.county}, and scheduling here is a real c
 
 ## Matching the service to the problem
 
-- Active leaks and isolated damage: [roof repair in ${t.name}](/service-areas/${t.slug}/roof-repair).
-- End-of-life assemblies: [roof replacement in ${t.name}](/service-areas/${t.slug}/roof-replacement).
-- Wind, hail, or tree impact: [storm damage response in ${t.name}](/service-areas/${t.slug}/storm-damage).
+- Active leaks and isolated damage: [roof repair in ${t.name}](${serviceTownHref(t.slug, "roof-repair")}).
+- End-of-life assemblies: [roof replacement in ${t.name}](${serviceTownHref(t.slug, "roof-replacement")}).
+- Wind, hail, or tree impact: [storm damage response in ${t.name}](${serviceTownHref(t.slug, "storm-damage")}).
 - Additions, porches, and exterior renovation: [construction in ${t.name}](/service-areas/${t.slug}/construction).
 
 ## Details that decide the outcome

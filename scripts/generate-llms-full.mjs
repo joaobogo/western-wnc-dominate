@@ -39,8 +39,9 @@ export const IMPORTANT_ROUTES = [
   "/service-areas/bryson-city-nc",
 ];
 
+// Prerendered pages live at dist/<route>.html (see scripts/prerender.mjs outPathFor).
 const fileFor = (route) =>
-  route === "/" ? join(DIST, "index.html") : join(DIST, route.replace(/^\//, ""), "index.html");
+  route === "/" ? join(DIST, "index.html") : join(DIST, `${route.replace(/^\//, "").replace(/\/+$/, "")}.html`);
 
 /** Very small HTML → text extraction: drop non-content nodes, unwrap tags. */
 function htmlToText(html) {

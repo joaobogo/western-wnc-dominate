@@ -14,7 +14,7 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { getServiceTownEntriesForService } from "@/data/service-town-content";
+import { getServiceTownEntriesForService, isServiceTownIndexable, serviceTownHref } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -37,7 +37,11 @@ const faqs = [
 ];
 
 const MetalRoofing = () => {
-  const pairings = getServiceTownEntriesForService("metal-roofing");
+  // Only towns whose metal-roofing page is indexable get a card — a noindex
+  // page would just link back to this division page.
+  const pairings = getServiceTownEntriesForService("metal-roofing").filter((p) =>
+    isServiceTownIndexable(p.townSlug, p.serviceSlug),
+  );
   return (
     <>
       <SEOHead
@@ -248,7 +252,7 @@ const MetalRoofing = () => {
                       const t = getTownBySlug(p.townSlug);
                       if (!t) return null;
                       return (
-                        <Link key={p.townSlug} to={`/service-areas/${p.townSlug}/metal-roofing`} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
+                        <Link key={p.townSlug} to={serviceTownHref(p.townSlug, "metal-roofing")} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
                           <div className="text-sm text-[hsl(var(--gold-ink))] mb-1">{t.county}</div>
                           <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">Metal Roofing in {t.name}, NC</div>
                         </Link>

@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 src/data/blog-summaries.generated.ts
+
+# Lighthouse CI reports (npm run perf:check)
+.lighthouseci/

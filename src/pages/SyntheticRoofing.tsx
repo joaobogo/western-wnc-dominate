@@ -13,7 +13,7 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { getServiceTownEntriesForService } from "@/data/service-town-content";
+import { getServiceTownEntriesForService, isServiceTownIndexable, serviceTownHref } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
@@ -33,7 +33,11 @@ const faqs = [
 ];
 
 const SyntheticRoofing = () => {
-  const pairings = getServiceTownEntriesForService("synthetic-brava");
+  // Only towns whose Brava page is indexable get a card — a noindex page would
+  // just link back to this division page.
+  const pairings = getServiceTownEntriesForService("synthetic-brava").filter((p) =>
+    isServiceTownIndexable(p.townSlug, p.serviceSlug),
+  );
   return (
     <>
       <SEOHead
@@ -218,7 +222,7 @@ const SyntheticRoofing = () => {
                       const t = getTownBySlug(p.townSlug);
                       if (!t) return null;
                       return (
-                        <Link key={p.townSlug} to={`/service-areas/${p.townSlug}/synthetic-brava`} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
+                        <Link key={p.townSlug} to={serviceTownHref(p.townSlug, "synthetic-brava")} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
                           <div className="text-sm text-[hsl(var(--gold-ink))] mb-1">{t.county}</div>
                           <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">Brava Synthetic Roofing in {t.name}, NC</div>
                         </Link>

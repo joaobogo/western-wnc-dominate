@@ -25,6 +25,12 @@ export default defineConfig({
         find: "@chatbot-handler",
         replacement: path.resolve(__dirname, "./supabase/functions/chatbot/handler.ts"),
       },
+      // Shared Netlify _redirects engine used by scripts/redirect-check.mjs and
+      // the legacy-URL resolution check in scripts/seo-regression-check.mjs.
+      {
+        find: "@redirect-rules",
+        replacement: path.resolve(__dirname, "./scripts/lib/redirect-rules.mjs"),
+      },
     ],
   },
 

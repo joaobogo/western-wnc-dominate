@@ -11,6 +11,8 @@
  */
 import { readFileSync, existsSync, statSync } from "node:fs";
 import { resolve } from "node:path";
+import { createHash } from "node:crypto";
+import { runLegacyUrlCheck, loadRedirectRules } from "./lib/redirect-rules.mjs";
 
 const BASE = (process.argv.find(a => a.startsWith("--base=")) || "--base=https://highlandernc.com").split("=")[1];
 const CANONICAL_HOST = new URL(BASE).host;
@@ -131,11 +133,32 @@ else {
     if (u.protocol !== "https:") fail(`Non-HTTPS sitemap URL: ${loc}`);
     if (u.host !== CANONICAL_HOST) fail(`Non-canonical host in sitemap: ${loc} (expected ${CANONICAL_HOST}).`);
     if (u.search) fail(`Sitemap URL contains query params: ${loc}`);
+    // One URL shape sitewide: no trailing slash (homepage excepted).
+    if (u.pathname !== "/" && u.pathname.endsWith("/")) fail(`Sitemap URL ends with a trailing slash: ${loc}`);
     // Utility routes must not be in sitemap
     const bad = ["/consultation", "/quote-flow", "/roofing-intake", "/construction-intake", "/design-intake", "/admin", "/lp/"];
     if (bad.some(b => u.pathname.startsWith(b))) fail(`Noindex/utility URL in sitemap: ${loc}`);
     if (seen.has(loc)) fail(`Duplicate sitemap URL: ${loc}`);
     seen.add(loc);
+  }
+
+  // Every sitemap URL must be in the prerender manifest, otherwise the build
+  // would ask Google to index a URL that never becomes a real HTML file.
+  const manifestPath = resolve("public/prerender-manifest.json");
+  if (!existsSync(manifestPath)) {
+    fail("public/prerender-manifest.json missing — run `bun scripts/generate-prerender-manifest.ts` (prebuild does this after generate-sitemap).");
+  } else {
+    let manifestRoutes = new Set();
+    try {
+      manifestRoutes = new Set(JSON.parse(readFileSync(manifestPath, "utf8")).routes.map(p => p.replace(/\/+$/, "") || "/"));
+    } catch (e) {
+      fail(`public/prerender-manifest.json unreadable: ${e.message}`);
+    }
+    for (const loc of locs) {
+      let p;
+      try { p = new URL(loc).pathname.replace(/\/+$/, "") || "/"; } catch { continue; }
+      if (manifestRoutes.size && !manifestRoutes.has(p)) fail(`Sitemap URL ${p} is not in public/prerender-manifest.json.`);
+    }
   }
 }
 
@@ -145,6 +168,21 @@ if (existsSync(seoHeadPath)) {
   const src = readFileSync(seoHeadPath, "utf8");
   if (!/canonical/i.test(src)) warn("SEOHead.tsx has no canonical logic.");
   if (!/highlandernc\.com/.test(src)) warn("SEOHead.tsx missing canonical host reference.");
+}
+
+// ---------- 4b. Google review links ----------
+// Each showroom's BusinessLocation.reviewUrl must be the real "Ask for reviews"
+// URL from the Business Profile. A REPLACE_WITH_… placeholder is allowed (the
+// link falls back to the profile's Maps page) but the build must say so loudly.
+{
+  const businessSrc = readFileSync(resolve("src/data/business.ts"), "utf8");
+  const reviewUrls = [...businessSrc.matchAll(/reviewUrl:\s*"([^"]*)"/g)].map(m => m[1]);
+  if (reviewUrls.length < 2) fail("src/data/business.ts: expected a reviewUrl on both showroom locations.");
+  for (const url of reviewUrls) {
+    if (/^REPLACE_WITH_/.test(url) || !/^https:\/\//.test(url)) {
+      warn(`Google review link not set yet (${url}) — paste the "Ask for reviews" URL from the Business Profile into BUSINESS.locations[].reviewUrl in src/data/business.ts. Until then the link opens the profile's Maps page.`);
+    }
+  }
 }
 
 // ---------- 5. Prerender output checks (run after `npm run build`) ----------
@@ -169,7 +207,8 @@ if (distIsCurrent) {
     .map(m => new URL(m[1]).pathname.replace(/\/+$/, "") || "/")
     .filter(p => !APP_ONLY_PREFIXES.some(x => p === x || p.startsWith(`${x}/`)));
 
-  const fileFor = (p) => (p === "/" ? resolve("dist/index.html") : resolve(`dist${p}/index.html`));
+  // Prerendered pages live at dist/<route>.html (see scripts/prerender.mjs outPathFor).
+  const fileFor = (p) => (p === "/" ? resolve("dist/index.html") : resolve(`dist${p.replace(/\/+$/, "")}.html`));
   const present = paths.filter(p => existsSync(fileFor(p)));
   const coverage = paths.length ? present.length / paths.length : 0;
   if (coverage < 0.95)
@@ -185,6 +224,9 @@ if (distIsCurrent) {
     const html = readFileSync(fileFor(p), "utf8");
     const title = (html.match(/<title>([^<]*)<\/title>/i) || [, ""])[1].trim();
     const robots = (html.match(/<meta[^>]+name="robots"[^>]+content="([^"]*)"/i) || [, ""])[1];
+    // A sitemap URL is a promise that the page is indexable; noindex on it is a
+    // contradictory signal (the page belongs in the prerender manifest only).
+    if (/noindex/i.test(robots)) fail(`Sitemap URL ${p} renders <meta name="robots" content="${robots}"> — remove it from the sitemap (keep it in the prerender manifest).`);
     if (!/noindex/i.test(robots) && title) {
       if (titlesSeen.has(title))
         fail(`Duplicate <title> on indexable pages: "${title}" (${titlesSeen.get(title)} and ${p}).`);
@@ -197,11 +239,43 @@ if (distIsCurrent) {
     const expected = p === "/" ? `${BASE}/` : `${BASE}${p}`;
     if (canonicals.length !== 1)
       fail(`Prerendered ${p} has ${canonicals.length} canonical tags (expected exactly 1).`);
-    else if (canonicals[0].replace(/\/+$/, "") !== expected.replace(/\/+$/, ""))
-      fail(`Prerendered ${p} canonical is ${canonicals[0]} (expected ${expected}).`);
+    else {
+      // Exact match: the canonical must be self-referencing AND carry the sitewide
+      // URL shape (no trailing slash, homepage excepted).
+      if (canonicals[0] !== expected)
+        fail(`Prerendered ${p} canonical is ${canonicals[0]} (expected ${expected}).`);
+      if (p !== "/" && canonicals[0].endsWith("/"))
+        fail(`Prerendered ${p} canonical ends with a trailing slash: ${canonicals[0]}`);
+    }
+
+    // Internal <a href> links must use the same shape — a trailing slash here
+    // means every click (and every crawl of that link) pays a 301.
+    const slashLinks = [...html.matchAll(/<a\s[^>]*?href="((?:https?:\/\/(?:www\.)?highlandernc\.com)?\/[^"?#]*\/)(?:[?#][^"]*)?"/gi)]
+      .map(m => m[1])
+      .filter(href => href.replace(/^https?:\/\/(?:www\.)?highlandernc\.com/, "") !== "/");
+    for (const href of [...new Set(slashLinks)])
+      fail(`Prerendered ${p} links to ${href} with a trailing slash.`);
 
     const h1s = (html.match(/<h1[\s>]/gi) || []).length;
     if (h1s > 1) fail(`Prerendered ${p} has ${h1s} <h1> elements (expected 1).`);
+
+    // Images: every content <img src> must be self-hosted (no images.unsplash.com
+    // or any other third-party host — LCP, privacy and honesty all suffer
+    // otherwise), and every local /path must exist in dist so no hero ever 404s.
+    // <noscript> blocks are skipped: they hold the Meta Pixel / GTM tracking
+    // pixels, which are tags, not images (and must not be touched here).
+    const contentHtml = html.replace(/<noscript[\s\S]*?<\/noscript>/gi, "");
+    for (const m of contentHtml.matchAll(/<img\b[^>]*?\ssrc="([^"]+)"/gi)) {
+      const src = m[1];
+      if (/^https?:\/\//i.test(src)) {
+        let host = "";
+        try { host = new URL(src).host; } catch { host = src; }
+        if (host !== CANONICAL_HOST) fail(`Prerendered ${p} loads an <img> from an external host: ${src}`);
+      } else if (src.startsWith("/") && !src.startsWith("//")) {
+        const localPath = src.split(/[?#]/)[0];
+        if (!existsSync(resolve(`dist${localPath}`))) fail(`Prerendered ${p} references a missing image: ${localPath}`);
+      }
+    }
   }
 
   // Route audit: every public route in the router must be either prerendered
@@ -223,8 +297,60 @@ if (distIsCurrent) {
   );
   for (const p of uncovered)
     fail(`Public route ${p} is neither prerendered nor covered by a rewrite/redirect.`);
+
+  // One page, one URL: two sitemap URLs must never ship byte-identical <main>
+  // content (the flat service×town slugs and /giving-back used to do exactly
+  // this before they became edge 301s).
+  const mainHashes = new Map();
+  for (const p of present) {
+    const html = readFileSync(fileFor(p), "utf8");
+    const main = html.match(/<main[\s\S]*?<\/main>/i);
+    if (!main) continue;
+    const key = createHash("sha1").update(main[0]).digest("hex");
+    if (mainHashes.has(key)) fail(`Duplicate page content: ${mainHashes.get(key)} and ${p} render byte-identical <main>.`);
+    else mainHashes.set(key, p);
+  }
 }
 
+// ---------- 5b. Route / redirect exclusivity ----------
+// A path is EITHER a client route (200) OR an edge 301 source — never both.
+// When both exist the SPA can render a duplicate of the redirect target.
+{
+  const appSrc = readFileSync(resolve("src/App.tsx"), "utf8");
+  const staticRoutes = [...appSrc.matchAll(/<Route\s+path="([^"]+)"\s+element=\{(<[A-Za-z]+)/g)]
+    .filter(([, , el]) => el !== "<Navigate")
+    .map(([, p]) => p)
+    .filter(p => p.startsWith("/") && !p.includes(":") && !p.includes("*"));
+  const redirectSources = new Set(
+    loadRedirectRules(resolve("public/_redirects"))
+      .filter(r => !r.malformed && !r.host && [301, 302, 303, 307, 308].includes(r.status))
+      .map(r => r.from.replace(/\/+$/, "") || "/"),
+  );
+  for (const p of new Set(staticRoutes)) {
+    if (redirectSources.has(p.replace(/\/+$/, "") || "/"))
+      fail(`Path ${p} is both a <Route> in src/App.tsx and a 301 source in public/_redirects — remove one.`);
+  }
+}
+
+
+// ---------- 6. Legacy URL resolution ----------
+// Every URL Google served for this domain that is not part of the current site
+// (scripts/fixtures/legacy-urls-from-gsc.txt) must resolve, exactly as Netlify
+// resolves it, to ONE 301 that lands on a live page. Chains, dead ends and
+// hub fallbacks fail the build. Engine + classification: scripts/lib/redirect-rules.mjs.
+const legacyFixture = resolve("scripts/fixtures/legacy-urls-from-gsc.txt");
+if (!existsSync(legacyFixture)) {
+  fail("scripts/fixtures/legacy-urls-from-gsc.txt missing — legacy URL resolution check cannot run.");
+} else {
+  const legacy = runLegacyUrlCheck({ fixturePath: legacyFixture });
+  console.log(legacy.text);
+  if (legacy.nonOk.length > 0) {
+    fail(
+      `Legacy URL resolution: ${legacy.nonOk.length} of ${legacy.counts.total} path(s) are not OK ` +
+        `(CHAIN ${legacy.counts.CHAIN}, DEAD ${legacy.counts.DEAD}, HUB-FALLBACK ${legacy.counts["HUB-FALLBACK"]}) — see table above.`,
+    );
+  }
+}
 
 // ---------- Report ----------
 for (const w of warnings) console.warn(`⚠  ${w}`);

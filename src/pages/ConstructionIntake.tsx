@@ -29,9 +29,10 @@ const ConstructionIntake = () => (
                 Planning a Construction Project?
               </span>
             </div>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-5 text-balance">
+            {/* IntakeShell renders the page's single <h1>; this intro heading is an <h2> with the same styling (P6.1 rule 3). */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-5 text-balance">
               Serious projects start with design.
-            </h1>
+            </h2>
             <p className="text-foreground/85 text-base md:text-lg font-body leading-relaxed mb-4">
               If you are planning an addition, garage, porch, outdoor living space, remodel, or new construction project, Highlander may recommend starting with a paid <Link to="/construction/design" className="text-primary font-semibold hover:underline">Design &amp; Consultation Agreement</Link>. This helps define the scope, create useful drawings, understand realistic budget ranges, and prepare the project for estimating, permitting, and construction.
             </p>

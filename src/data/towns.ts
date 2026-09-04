@@ -1,3 +1,8 @@
+import { FRANKLIN, SYLVA, type BusinessLocation } from "@/data/business";
+
+/** Showroom street name without the leading house number — the address itself lives only in business.ts (guarded by business-identity.test.ts). */
+const streetName = (loc: BusinessLocation) => loc.streetAddress.replace(/^\d+\s+/, "");
+
 export interface TownData {
   slug: string;
   name: string;
@@ -9,7 +14,13 @@ export interface TownData {
   features: string[];
   metaTitle: string;
   metaDescription: string;
-  
+  /**
+   * Optional hand-written page <h1> (P3.6 on-page targeting for the core
+   * towns). When absent, TownPage renders its default "<Town>, NC Roofing
+   * Contractor & Builder" heading.
+   */
+  h1?: string;
+
   // VARIABLE LOCALITY ELEMENTS
   housingProfile: string;
   climateExposure: string;
@@ -100,7 +111,9 @@ export const towns: TownData[] = [
     population: "~1,100 (Full-time)",
     description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic systems designed for the plateau's unique exposure.",
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
-    metaTitle: "Roofing & Construction in Highlands, NC | Highlander",
+    // 59 chars so the service differentiator survives the 60-char title guard.
+    metaTitle: "Roofers in Highlands, NC | Metal & Cedar Roofs | Highlander",
+    h1: "Roofers in Highlands, NC — Roofing Built for 4,000 ft",
     metaDescription: "Highlander serves Highlands, NC with roofing, roof repair, roof replacement, gutters, skylights, construction, and design services for mountain homes across Western North Carolina.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
     climateExposure: "Extreme high-altitude weather: 80+ inches of rain, heavy ice loading, and high UV levels that test standard roofing systems.",
@@ -120,7 +133,9 @@ export const towns: TownData[] = [
     elevation: "3,484 ft",
     description: "Cashiers sits in a temperate rainforest zone, demanding superior moisture management. Our systems are engineered to handle 80+ inches of rain while maintaining the high-end rustic aesthetic of the plateau.",
     features: ["Design", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
-    metaTitle: "Roofing & Construction in Cashiers, NC | Highlander",
+    // 58 chars so the service differentiator survives the 60-char title guard.
+    metaTitle: "Roofers in Cashiers, NC | Replacement & Metal | Highlander",
+    h1: "Roofers in Cashiers, NC — Roofs Built for 80 Inches of Rain",
     metaDescription: "Waterproofing-focused roofing and construction for Cashiers, NC estates. Moisture-resistant materials and engineered decks. Licensed & insured.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates across the Cashiers Plateau.",
     climateExposure: "Temperate rainforest conditions: Persistent moisture, 80+ inches of rain, and low-visibility fog that require advanced drainage.",
@@ -140,7 +155,10 @@ export const towns: TownData[] = [
     elevation: "2,119 ft",
     description: "Our hometown market. Based in Franklin, we provide the region's fastest response times for family homes, valley farms, and ridge-top residences across Macon County.",
     features: ["Locally based crews", "Design", "Residential specialists", "Family-owned, team-driven"],
-    metaTitle: "Roofing in Franklin, NC Neighborhoods & Nearby | Highlander",
+    // 59 chars: fits the 60-char guard intact. The longer "Roof Replacement, Repair & Metal"
+    // middle was dropped by normalizeTitle, which left this page with the homepage's title.
+    metaTitle: "Roofers in Franklin, NC | Replacement & Repair | Highlander",
+    h1: `Roofers in Franklin, NC — Local Crews, Walk-In Showroom on ${streetName(FRANKLIN)}`,
     metaDescription: "Roofing in Franklin, NC neighborhoods — Cartoogechaye, Iotla, Holly Springs and nearby Macon County. Local crews, walk-in showroom in town. Licensed & insured.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River valley.",
@@ -160,10 +178,12 @@ export const towns: TownData[] = [
     elevation: "2,037 ft",
     description: "From historic downtown renovations to commercial maintenance programs, our Sylva operations serve as a critical hub for Jackson County's diverse roofing and construction needs.",
     features: ["Historic home expertise", "Commercial maintenance", "Jackson County hub", "Rental property service"],
-    metaTitle: "Roofing Contractor in Sylva, NC | Highlander",
+    // 56 chars so the service differentiator survives the 60-char title guard.
+    metaTitle: "Roofers in Sylva, NC | Repair & Replacement | Highlander",
+    h1: `Roofers in Sylva, NC — Showroom on ${streetName(SYLVA)}`,
     metaDescription: "Expert roofing and construction for Sylva, NC's historic homes and Jackson County properties. Preservation and renovation focus. Licensed & insured.",
     housingProfile: "Historic downtown homes, university rentals, and hillside residential properties across the Sylva valley.",
-    climateExposure: "Heavy valley moisture traps and fog create persistent humidity that accelerates biological growth on aging roof systems.",
+    climateExposure: "Heavy valley moisture, trapped fog, and persistent humidity that accelerate biological growth on aging roof systems.",
     localVibe: "A mix of vibrant historic downtown character and modern growth driven by commerce and university regionalism.",
     constructionContext: "We specialize in modernizing older downtown homes into open-concept floor plans while meticulously preserving historic exterior aesthetics.",
     serviceDemandMix: ["Commercial Roof Maintenance", "Algae-Resistant Systems", "Historic Home Renovations", "Commercial Roof Replacement"],
@@ -289,7 +309,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Impact-Resistant Shingles", "Exterior Siding Updates", "Deck Safety Repairs", "Residential Replacements"],
     styleTendency: "Classic Southern Appalachian styles including brick ranch, colonial revival, and modern craftsman.",
     notableNeighborhoods: ["Druid Hills", "Laurel Park", "Champion Hills", "Flat Rock area"],
-    marketAuthorityAngle: "Hendersonville homeowners value longevity. we specify systems and build additions that are designed to last for decades, not just years.",
+    marketAuthorityAngle: "Hendersonville homeowners value longevity. We specify systems and build additions that are designed to last for decades, not just years.",
     heroImage: "/media/wnc-dimensional-shingle-roof.jpg"
   },
   {

@@ -14,7 +14,7 @@ const pillars = [
     icon: Gem,
     number: "01",
     title: "No Shortcuts at Any Elevation",
-    copy: "Every fastener, cut, and flashing detail is installed by full-time crews who've built their careers on WNC ridgelines. The people on your property are the same Highlander team who completed our last 500 projects.",
+    copy: "Every fastener, cut, and flashing detail is installed by full-time crews who've built their careers on WNC ridgelines. The people on your property are the same full-time Highlander crews you will see on every job.",
     detail: "Material-specific training · CertainTeed Master certification · Owner-inspected walkthroughs",
   },
   {

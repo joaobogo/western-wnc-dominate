@@ -1,4 +1,4 @@
-import { blogPosts } from "./blogs";
+import { linkableBlogPosts } from "./blogs";
 import { towns } from "./towns";
 
 /**
@@ -7,16 +7,16 @@ import { towns } from "./towns";
  */
 export const getRelevantBlogsForTown = (townName: string) => {
   const town = towns.find(t => t.name === townName);
-  if (!town) return blogPosts.slice(0, 3);
+  if (!town) return linkableBlogPosts().slice(0, 3);
 
   // 1. Direct matches
-  const directMatches = blogPosts.filter(b => b.town === town.name);
+  const directMatches = linkableBlogPosts().filter(b => b.town === town.name);
   
   // 2. Thematic/Environmental matches
   const elevationValue = parseInt(town.elevation.replace(/[^0-9]/g, ''));
   const isHighElevation = elevationValue > 3000;
   
-  const thematicMatches = blogPosts.filter(b => {
+  const thematicMatches = linkableBlogPosts().filter(b => {
     if (directMatches.find(dm => dm.slug === b.slug)) return false;
 
     // Elevation relevance
@@ -36,7 +36,7 @@ export const getRelevantBlogsForTown = (townName: string) => {
 
   // 3. High-authority general fallback
   const fallbacks = ["storm-damage-checklist-western-nc", "metal-vs-shingle-roof-western-nc", "insurance-claim-roof-damage-nc"];
-  const fallbackPosts = blogPosts.filter(b => 
+  const fallbackPosts = linkableBlogPosts().filter(b => 
     fallbacks.includes(b.slug) && !combined.find(c => c.slug === b.slug)
   );
 
@@ -51,6 +51,6 @@ export const getRelevantBlogsForTown = (townName: string) => {
   if (uniquePosts.length >= 3) return uniquePosts;
 
   // 4. Ultimate safety slice
-  const safety = blogPosts.filter(b => !uniquePosts.find(f => f?.slug === b.slug)).slice(0, 3 - uniquePosts.length);
+  const safety = linkableBlogPosts().filter(b => !uniquePosts.find(f => f?.slug === b.slug)).slice(0, 3 - uniquePosts.length);
   return [...uniquePosts, ...safety] as any[];
 };

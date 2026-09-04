@@ -306,7 +306,7 @@ const ConstructionBuilder = () => {
           <div className="max-w-2xl mx-auto px-6">
             <IntakeConfirmation
               title="Your project brief is in good hands."
-              body="A Highlander project advisor will personally review your scope brief and reach out within as soon as possible."
+              body="A Highlander project advisor will personally review your scope brief and reach out as soon as possible."
               nextSteps={[
                 "Your advisor reviews the brief and matches you to the right Highlander team lead.",
                 "We confirm scope on a brief call and schedule an on-site walkthrough.",
@@ -440,7 +440,7 @@ const ConstructionBuilder = () => {
                   <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     Review & send
                   </h2>
-                  <p className="text-muted-foreground text-body-xs font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">A named advisor reviews your brief and responds as soon as possible.</p>
                   <ReviewCard rows={summaryRows}>
                     <div className="pt-1">
                       <p className="text-caption font-body font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Your contact</p>

@@ -9,7 +9,7 @@ const RoofingIntake = () => (
   <>
     <SEOHead
       title="Request a Roof Assessment | Highlander Building Services"
-      description="Tell us about your roof. A Highlander project advisor responds within as soon as possible across Western North Carolina."
+      description="Tell us about your roof. A Highlander project advisor responds as soon as possible across Western North Carolina."
       path="/roofing-intake"
       noindex
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing Intake", url: "/roofing-intake" }])}
@@ -19,7 +19,7 @@ const RoofingIntake = () => (
       <IntakeShell
         eyebrow="Roofing Intake"
         title="Request a roof assessment."
-        subhead="Replacement, repair, storm, metal, or synthetic — start with a few details and a Highlander advisor responds within as soon as possible. No call centers, no high-pressure quotes."
+        subhead="Replacement, repair, storm, metal, or synthetic — start with a few details and a Highlander advisor responds as soon as possible. No call centers, no high-pressure quotes."
         sidebarBullets={[
           "Team-led team, local crews, written scope before any work begins.",
           "CertainTeed ShingleMaster Credentialed Contractor and Licensed General Contractor.",

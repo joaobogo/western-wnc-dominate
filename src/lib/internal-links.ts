@@ -1,7 +1,10 @@
 import { PHONE_PLAIN } from "@/data/business";
 // Metadata-only index (Prompt 41): avoids pulling ~590 KB of article bodies
 // into every service and town page just to build related-link lists.
-import { blogIndex as blogPosts } from "@/data/blog-index.generated";
+import { blogIndex } from "@/data/blog-index.generated";
+
+// Folded posts (canonicalTo set, P3.5) never appear in link blocks.
+const blogPosts = blogIndex.filter((p) => !p.canonicalTo);
 import { counties } from "@/data/counties";
 import { towns } from "@/data/towns";
 import type { RelatedLinkItem } from "@/components/RelatedLinks";
@@ -61,13 +64,22 @@ export const getServiceBlogLinks = (
   }));
 };
 
-/** Top town landing pages to link from a service page. */
-export const getServiceTownLinks = (limit = 4): RelatedLinkItem[] =>
-  towns.slice(0, limit).map((t) => ({
-    label: `${t.name}, NC`,
-    href: `/service-areas/${t.slug}`,
-    description: `Local crews serving ${t.name} in ${t.county}.`,
-  }));
+/** The four core markets every service page must link to (P4.1 rule set). */
+const CORE_TOWN_SLUGS = ["franklin-nc", "highlands-nc", "cashiers-nc", "sylva-nc"];
+
+/**
+ * Core town landing pages to link from a service page. The anchor reads
+ * "<service> in <Town>" so the town page earns the service+location phrase.
+ */
+export const getServiceTownLinks = (serviceTitle: string, limit = 4): RelatedLinkItem[] =>
+  CORE_TOWN_SLUGS.map((slug) => towns.find((t) => t.slug === slug))
+    .filter((t): t is (typeof towns)[number] => !!t)
+    .slice(0, limit)
+    .map((t) => ({
+      label: `${serviceTitle} in ${t.name}`,
+      href: `/service-areas/${t.slug}`,
+      description: `${t.name}, NC · ${t.county} · ${t.elevation}`,
+    }));
 
 export const estimateLink: RelatedLinkItem = {
   label: "Get My Written Estimate",

@@ -8,6 +8,7 @@ type EventType =
   | "lead_capture"
   | "page_view"
   | "phone_click"
+  | "review_link_click"
   | "client_error";
 
 interface TrackOptions {
@@ -16,6 +17,24 @@ interface TrackOptions {
   metadata?: Record<string, any>;
   value?: number;
 }
+
+/**
+ * Resolves once the page has fired `load` and the main thread has gone idle
+ * (or after 3 s, whichever comes first). Used to keep the backend client and
+ * the first analytics write out of the critical rendering window (P5.1).
+ */
+const whenLoadedAndIdle = (): Promise<void> =>
+  new Promise((resolve) => {
+    if (typeof window === "undefined") return resolve();
+    const idle = () => {
+      const ric = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void })
+        .requestIdleCallback;
+      if (ric) ric(() => resolve(), { timeout: 3000 });
+      else window.setTimeout(resolve, 1000);
+    };
+    if (document.readyState === "complete") idle();
+    else window.addEventListener("load", idle, { once: true });
+  });
 
 // Session management
 const SESSION_KEY = "hl_analytics_session_id";
@@ -96,8 +115,12 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
   };
 
   // 1. Internal Tracking (Supabase)
+  // P5.1: the backend client (~215 KB) is pulled in only after the page has
+  // finished loading and the main thread is idle, so the first event of a
+  // visit never competes with the LCP image and the route chunk. Nothing is
+  // dropped — the event data is captured now and sent a moment later.
   try {
-    void import("@/integrations/supabase/client").then(({ supabase }) =>
+    void whenLoadedAndIdle().then(() => import("@/integrations/supabase/client")).then(({ supabase }) =>
       supabase
         .from("conversion_events")
         .insert({

@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
+import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { BUSINESS, directionsUrl, REVIEW_AS_OF, FRANKLIN, SYLVA } from "@/data/business";
 
@@ -87,6 +88,11 @@ const ReviewsPage = () => {
                   Read what our clients say — the homeowners, property managers, and businesses who've
                   experienced our work firsthand.
                 </p>
+                {/* Leave a review — one link per showroom profile, Franklin first */}
+                <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6">
+                  <LeaveReviewLink location={FRANKLIN} className="text-[hsl(var(--gold-ink))]" />
+                  <LeaveReviewLink location={SYLVA} className="text-[hsl(var(--gold-ink))]" />
+                </div>
               </motion.div>
               {/* Featured pull-quote — unique to Reviews hero */}
               <motion.div

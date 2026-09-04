@@ -1,7 +1,9 @@
-import { FRANKLIN_NAP, PHONE_PLAIN, REVIEW_SUMMARY, BUSINESS } from "@/data/business";
+import { FRANKLIN_NAP, PHONE_PLAIN, REVIEW_LINE, FRANKLIN, SYLVA, napLine } from "@/data/business";
+import { Link } from "react-router-dom";
+import { homeFaqs } from "@/data/home-faqs";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { lazy, Suspense } from "react";
-import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema, faqSchema } from "@/components/SEOHead";
 import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -23,21 +25,33 @@ const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
 const PageCloseCTA = lazy(() => import("@/components/PageCloseCTA"));
 const Footer = lazy(() => import("@/components/Footer"));
 
+// data-prerender-pending: scripts/prerender.mjs waits until every placeholder
+// has been replaced, so the snapshot always carries the lazy sections' SEO
+// content (FAQ questions, town + footer links) — see P3.7.
 const SectionFallback = ({ h = 480 }: { h?: number }) => (
-  <div style={{ minHeight: h }} aria-hidden="true" />
+  <div style={{ minHeight: h }} aria-hidden="true" data-prerender-pending="" />
 );
 
 const Index = () => {
   return (
     <>
       <SEOHead
-        title="Roofing Company in Franklin, NC | Highlander"
-        description={`Roofing company in Franklin, NC serving Western North Carolina. ${REVIEW_SUMMARY.ratingValue} stars from ${REVIEW_SUMMARY.reviewCount} Google reviews, ${BUSINESS.licenseNumber}, CertainTeed ShingleMaster, Franklin & Sylva showrooms.`}
+        title="Roofers in Franklin, NC | Highlander Building Services"
+        // P3.6 — the rating comes from REVIEW_LINE (single source), never typed.
+        // "Western NC" and "&" keep the whole line under the 160-char guard so
+        // normalizeDescription never trims the review sentence off the end.
+        description={`Local roofers in Franklin, NC serving Highlands, Cashiers, Sylva & Western NC. Roof replacement, repair, metal roofing, storm damage. ${REVIEW_LINE}.`}
         path="/"
         keywords="Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
         // No aggregateRating here — rating markup is only emitted on /reviews,
         // where the same live Google figure is visible on the page.
-        jsonLd={buildPageSchema({ type: "home" })}
+        // The homepage FAQPage rides in the same SEOHead graph (not a second
+        // <script> inside HomeFAQ) so prerender's single data-seo-ld node
+        // carries every schema for the page; the questions are visible below.
+        jsonLd={[
+          ...buildPageSchema({ type: "home" }),
+          faqSchema(homeFaqs.map((f) => ({ question: f.q, answer: f.a }))),
+        ]}
       />
       <Header />
       <main id="main-content">
@@ -51,7 +65,7 @@ const Index = () => {
 
         <AnswerBlock
           question="Who is Highlander Building Services?"
-          answer={`Highlander Building Services, Inc. is a roofing and construction company based at ${FRANKLIN_NAP}, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction.`}
+          answer={`Highlander Building Services, Inc. is a roofing and construction company based at ${FRANKLIN_NAP}. Our roofers in Franklin, NC handle roof repair, roof replacement, metal roofing, gutters, and custom construction, and we are the roofing company serving Highlands, Cashiers and Sylva from two walk-in showrooms.`}
           points={[
             "Roofing, exteriors, and construction under one contractor",
             "Serving Western North Carolina mountain towns",
@@ -59,6 +73,22 @@ const Index = () => {
             "Estimates scoped on site",
           ]}
         />
+
+        {/* Two showrooms — NAP lines from business.ts, each linking to its location page (P3.6) */}
+        <section aria-labelledby="two-showrooms" className="bg-background border-y border-border/40">
+          <div className="container-tight px-6 py-8 md:py-10 grid gap-4 md:grid-cols-[auto_1fr] md:items-center">
+            <h2 id="two-showrooms" className="eyebrow text-primary">Two showrooms</h2>
+            <ul className="flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-8 font-body text-body-sm text-foreground/90">
+              {[FRANKLIN, SYLVA].map((loc) => (
+                <li key={loc.id}>
+                  <Link to={`/locations/${loc.id}-nc`} className="hover:text-primary underline-offset-4 hover:underline">
+                    {napLine(loc)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <div className="relative overflow-hidden bg-background">
           <TartanBackground opacity={0.02} />

@@ -1,4 +1,7 @@
-import { blogIndex as blogPosts } from "@/data/blog-index.generated";
+import { blogIndex } from "@/data/blog-index.generated";
+
+// Folded posts (canonicalTo set, P3.5) never appear in link blocks.
+const blogPosts = blogIndex.filter((p) => !p.canonicalTo);
 import { projectDetails } from "@/data/projects";
 
 export type LeadCategory = "roofing" | "construction";

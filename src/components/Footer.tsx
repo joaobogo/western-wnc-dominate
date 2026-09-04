@@ -9,20 +9,22 @@ import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
+import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
 import { towns } from "@/data/towns";
 
+// P4.2 — the ten roofing division pages, each anchor naming its service;
+// "Western NC" appears once in the column. Intake tools stay out of the footer.
 const roofingLinks = [
-  { label: "Residential Roofing", href: "/roofing/residential" },
+  { label: "Residential Roofing in Western NC", href: "/roofing/residential" },
   { label: "Roof Replacement", href: "/roofing/roof-replacement" },
   { label: "Roof Repair", href: "/roofing/roof-repair" },
   { label: "Metal Roofing", href: "/roofing/metal" },
-  { label: "Brava / Synthetic", href: "/roofing/brava-synthetic" },
+  { label: "Synthetic Roofing (Brava)", href: "/roofing/brava-synthetic" },
   { label: "Specialty Roofing", href: "/roofing/specialty" },
   { label: "Seamless Gutters", href: "/roofing/gutters" },
-  { label: "Skylights", href: "/roofing/skylights" },
-  { label: "Storm Damage", href: "/roofing/storm-damage" },
+  { label: "Skylight Installation", href: "/roofing/skylights" },
+  { label: "Storm Damage Roofing", href: "/roofing/storm-damage" },
   { label: "Commercial Roofing", href: "/roofing/commercial" },
-  { label: "Build Your Roof", href: "/roofing-builder" },
 ];
 
 const constructionLinks = [
@@ -58,18 +60,19 @@ const companyLinks = [
 ];
 
 
-// Tier 1 — primary authority markets (premium residential focus)
+// Tier 1 (P4.2) — the four core markets we are ranking for, then the two showrooms.
 const tier1Areas = [
+  { label: "Franklin", href: "/service-areas/franklin-nc" },
   { label: "Highlands", href: "/service-areas/highlands-nc" },
   { label: "Cashiers", href: "/service-areas/cashiers-nc" },
-  { label: "Asheville", href: "/service-areas/asheville-nc" },
-  { label: "Hendersonville", href: "/service-areas/hendersonville-nc" },
-  { label: "Franklin", href: "/service-areas/franklin-nc" },
   { label: "Sylva", href: "/service-areas/sylva-nc" },
+  { label: "Franklin Showroom", href: "/locations/franklin-nc" },
+  { label: "Sylva Showroom", href: "/locations/sylva-nc" },
 ];
 
-// Tier 2 — every remaining town we serve, generated from the town data so the
-// footer link map stays complete for crawlers as new markets are added.
+// Tier 2 — every remaining town page (all indexable), generated from the town
+// data so the footer link map stays complete for crawlers as new markets are
+// added. County hubs and noindex service×town pages are never linked here.
 const tier1Slugs = new Set(tier1Areas.map((a) => a.href));
 const tier2Areas = towns
   .map((t) => ({ label: t.name, href: `/service-areas/${t.slug}` }))
@@ -236,6 +239,11 @@ const Footer = () => {
             <h4 className="eyebrow text-primary mt-8 mb-4">Resources</h4>
             <nav aria-label="Resources links" className="flex flex-col gap-1">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
+              <LeaveReviewLink
+                location={FRANKLIN}
+                label="Leave a Google review"
+                className="text-body-sm text-foreground/90 hover:text-primary no-underline hover:underline py-1.5"
+              />
             </nav>
           </div>
 

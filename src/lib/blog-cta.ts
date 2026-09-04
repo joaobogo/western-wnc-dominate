@@ -34,7 +34,7 @@ const RULES: Record<string, Rule> = {
     callFirst: true,
   },
   Maintenance: {
-    servicePath: "/roofing/repair",
+    servicePath: "/roofing/roof-repair",
     serviceLabel: "Roof Repair",
     midHeadline: (w) => `Not sure what your roof needs${w}?`,
     midBody:
@@ -69,7 +69,7 @@ const RULES: Record<string, Rule> = {
     callFirst: true,
   },
   Materials: {
-    servicePath: "/roofing/replacement",
+    servicePath: "/roofing/roof-replacement",
     serviceLabel: "Roof Replacement",
     midHeadline: (w) => `Deciding between materials${w}?`,
     midBody:
@@ -81,7 +81,7 @@ const RULES: Record<string, Rule> = {
     callFirst: false,
   },
   Replacement: {
-    servicePath: "/roofing/replacement",
+    servicePath: "/roofing/roof-replacement",
     serviceLabel: "Roof Replacement",
     midHeadline: (w) => `Planning a roof replacement${w}?`,
     midBody:
@@ -92,7 +92,7 @@ const RULES: Record<string, Rule> = {
     callFirst: false,
   },
   Cost: {
-    servicePath: "/roofing/replacement",
+    servicePath: "/roofing/roof-replacement",
     serviceLabel: "Roof Replacement",
     midHeadline: (w) => `Want real numbers for your roof${w}?`,
     midBody:
@@ -114,7 +114,7 @@ const RULES: Record<string, Rule> = {
     callFirst: false,
   },
   Commercial: {
-    servicePath: "/commercial-roofing",
+    servicePath: "/roofing/commercial",
     serviceLabel: "Commercial Roofing",
     midHeadline: (w) => `Managing a commercial roof${w}?`,
     midBody:

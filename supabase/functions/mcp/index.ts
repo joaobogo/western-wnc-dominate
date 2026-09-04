@@ -31,11 +31,11 @@ var BUSINESS = {
   // priceRange intentionally omitted — add only once the owner approves a band.
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
-    ratingValue: 4.7,
+    ratingValue: 4.8,
     reviewCount: 158,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-09-03"
+    lastVerified: "2026-09-04"
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [

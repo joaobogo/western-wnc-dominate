@@ -93,7 +93,7 @@ const ServicePage = () => {
 
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">
-            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2000" alt={service.title} className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" src="/media/wnc-dimensional-shingle-roof.webp" alt={service.title} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -245,7 +245,7 @@ const ServicePage = () => {
           columns={2}
           links={[
             ...getServiceBlogLinks(service.title, resolvedSlug, 3),
-            ...getServiceTownLinks(4),
+            ...getServiceTownLinks(service.title, 4),
             { label: "All Service Areas", href: "/service-areas", description: "Every Western North Carolina town we cover." },
             estimateLink,
           ]}

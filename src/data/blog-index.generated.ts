@@ -8,6 +8,8 @@ export interface BlogIndexEntry {
   category: string;
   date: string;
   town: string;
+  /** Survivor slug when this post is folded into another (P3.5); absent otherwise. */
+  canonicalTo?: string;
 }
 
 export const blogIndex: BlogIndexEntry[] = [

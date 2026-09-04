@@ -1,3 +1,4 @@
+import { HERO_SIZES, mediaSrcSet } from "@/lib/media-srcset";
 import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link, Navigate } from "react-router-dom";
@@ -21,8 +22,9 @@ import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
   isServiceTownIndexable,
+  serviceTownHref,
 } from "@/data/service-town-content";
-import { blogPosts } from "@/data/blogs";
+import { linkableBlogPosts } from "@/data/blogs";
 import { getServiceParentPath } from "@/data/service-town-generated";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import CallFirstCTA from "@/components/CallFirstCTA";
@@ -36,46 +38,20 @@ import RelatedLinks from "@/components/RelatedLinks";
 import ServiceTownProofPoints from "@/components/servicetown/ServiceTownProofPoints";
 import { getServiceTownFAQs } from "@/lib/service-town-faqs";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
+import { resolveServiceTownHero } from "@/lib/service-town-hero";
 
-// Per-service hero overrides so the same town's services don't all show the
-// identical photo. Each image is a regionally-themed mountain/home stock
-// photo — alt text remains region-honest ("Western North Carolina").
-// Replace with real Highlander project photos before launch.
-const SERVICE_HERO_VARIANTS: Record<string, string> = {
-  "roof-replacement":
-    "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2000",
-  "roof-repair":
-    "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=2000",
-  "metal-roofing":
-    "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=2000",
-  "synthetic-brava":
-    "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=2000",
-  "additions":
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000",
-  "renovations":
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000",
-  "outdoor-living":
-    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000",
-  "roofing":
-    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80&w=2000",
-  "construction":
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000",
-  "home-repairs":
-    "https://images.unsplash.com/photo-1581091012184-5c8a7f5e4f7f?auto=format&fit=crop&q=80&w=2000",
-  "roofing-construction":
-    "https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&q=80&w=2000",
-};
+// Hero images come from real data (src/lib/service-town-hero.ts): a Highlander
+// project in this town or county when one exists, else the town's own
+// self-hosted image, else one regional fallback — never a third-party stock host.
 
 interface ServiceTownPageProps {
   townSlug?: string;
   serviceSlug?: string;
-  canonicalPath?: string;
 }
 
 const ServiceTownPage = ({
   townSlug: propTownSlug,
   serviceSlug: propServiceSlug,
-  canonicalPath,
 }: ServiceTownPageProps = {}) => {
   const params = useParams();
   const townSlug = propTownSlug ?? params.townSlug ?? "";
@@ -87,13 +63,13 @@ const ServiceTownPage = ({
     return <Navigate to={town ? `/service-areas/${town.slug}` : "/service-areas"} replace />;
   }
 
-  const heroImage = SERVICE_HERO_VARIANTS[serviceSlug] ?? town.heroImage;
+  const hero = resolveServiceTownHero(town, serviceSlug, entry.serviceLabel);
   const urgent = isUrgentIntentPath(`/service-areas/${townSlug}/${serviceSlug}`);
 
-  // The flat slugs (e.g. /roofing-highlands-nc) 301 to this nested route, so
-  // the canonical must self-reference the URL that is actually served.
-  const resolvedCanonical =
-    canonicalPath ?? `/service-areas/${townSlug}/${serviceSlug}`;
+  // One URL per page: the legacy flat slugs (e.g. /roofing-highlands-nc) 301 to
+  // this nested route at the edge, so the canonical always self-references the
+  // nested URL that is actually served.
+  const resolvedCanonical = `/service-areas/${townSlug}/${serviceSlug}`;
 
   const relatedForTown = getServiceTownEntriesForTown(townSlug).filter(
     (e) => e.serviceSlug !== serviceSlug,
@@ -111,6 +87,9 @@ const ServiceTownPage = ({
         // crawlable for their links but not indexable — only hand-written
         // service × town pages compete in search.
         noindex={isServiceTownIndexable(entry.townSlug, entry.serviceSlug) ? false : "follow"}
+        preloadImage={hero.src}
+        preloadImageSrcSet={mediaSrcSet(hero.src)}
+        preloadImageSizes={HERO_SIZES}
         jsonLd={[
           ...businessGraph(),
           // A service in a town is a Service with areaServed — not another
@@ -153,9 +132,17 @@ const ServiceTownPage = ({
         {/* Hero */}
         <section className="dark-surface relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src={heroImage}
-              alt={`${entry.serviceLabel} on a mountain home in Western North Carolina — Highlander Building Services service area: ${town.name}, ${town.state}`}
+            <img
+              width={hero.width}
+              height={hero.height}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              src={hero.src}
+              srcSet={mediaSrcSet(hero.src)}
+              sizes={HERO_SIZES}
+              alt={hero.alt}
+              data-hero-source={hero.source}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
@@ -290,7 +277,7 @@ const ServiceTownPage = ({
                 {entry.serviceLabel} in {town.name}
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Tell us the basics. A project advisor responds within as soon as possible — most {town.name} assessments are on the calendar inside 48 hours.
+                Tell us the basics. A project advisor responds the same business day — most {town.name} assessments are on the calendar within 48 hours.
               </p>
               <InspectionForm />
             </aside>
@@ -360,7 +347,7 @@ const ServiceTownPage = ({
               </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {blogPosts
+              {linkableBlogPosts()
                 .filter(b => b.category.toLowerCase().includes(entry.serviceLabel.toLowerCase().split(' ')[0]) || b.town === town.name)
                 .slice(0, 3)
                 .map((post) => (
@@ -397,7 +384,7 @@ const ServiceTownPage = ({
                 {relatedForTown.map((r) => (
                   <Link
                     key={r.serviceSlug}
-                    to={`/service-areas/${town.slug}/${r.serviceSlug}`}
+                    to={serviceTownHref(town.slug, r.serviceSlug)}
                     className="border border-border rounded-lg p-5 hover:border-accent transition-colors group"
                   >
                     <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-1 text-sm">

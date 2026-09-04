@@ -3,6 +3,7 @@ import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, Searc
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import DeployCheckPanel from "@/components/seo/DeployCheckPanel";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -397,6 +398,8 @@ const SEOMonitoring = () => {
             </section>
 
             <AlertCenter items={activeAlerts} />
+            {/* P6.2 — what the current deploy serves for 12 fixed URLs, graded against seo:check */}
+            <DeployCheckPanel />
             <PriorityMonitoringPanel summary={prioritySummary} />
 
             {weeklyNarrative.highlights.length > 0 && (

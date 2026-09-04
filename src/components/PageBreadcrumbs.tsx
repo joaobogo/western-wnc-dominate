@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import {
   Breadcrumb,
@@ -9,7 +9,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import HeaderOffset from "@/components/layout/HeaderOffset";
-import { breadcrumbSchema } from "@/components/SEOHead";
 import { cn } from "@/lib/utils";
 
 export interface BreadcrumbCrumb {
@@ -19,47 +18,22 @@ export interface BreadcrumbCrumb {
 
 /**
  * Reusable, mobile-friendly visible breadcrumbs.
- * Pass the SAME `items` array to both this component and
- * `buildPageSchema({... breadcrumbs: items })` so the visible
- * trail and the BreadcrumbList JSON-LD stay in sync.
+ *
+ * This component renders the VISIBLE trail only. The matching BreadcrumbList
+ * JSON-LD is emitted by SEOHead through `buildPageSchema({ ...breadcrumbs })`
+ * on every page type, so pass the SAME `items` array to both and the trail and
+ * the schema stay in sync. (It used to inject its own <script> as a fallback;
+ * that path never fired on any prerendered page and JSON-LD outside SEOHead is
+ * no longer allowed — one data-seo-ld node per page.)
  *
  * The last item is treated as the current page (no link).
  */
 interface PageBreadcrumbsProps {
   items: BreadcrumbCrumb[];
   className?: string;
-  /**
-   * When true (default), emits a BreadcrumbList JSON-LD script into
-   * <head> matching the visible trail. Set false only if the page
-   * already ships an equivalent BreadcrumbList via buildPageSchema()
-   * to avoid duplicate schema.
-   */
-  emitSchema?: boolean;
 }
 
-const SCHEMA_SCRIPT_ID = "ld-breadcrumbs";
-
-const PageBreadcrumbs = ({ items, className = "", emitSchema = true }: PageBreadcrumbsProps) => {
-  useEffect(() => {
-    if (!emitSchema || !items || items.length === 0) return;
-    // Avoid duplicate BreadcrumbList nodes when the page already ships one
-    // through SEOHead/buildPageSchema.
-    const pageLd = document.querySelector('script[data-seo-ld]');
-    if (pageLd?.textContent?.includes("BreadcrumbList")) return;
-    let el = document.getElementById(SCHEMA_SCRIPT_ID) as HTMLScriptElement | null;
-    if (!el) {
-      el = document.createElement("script");
-      el.type = "application/ld+json";
-      el.id = SCHEMA_SCRIPT_ID;
-      document.head.appendChild(el);
-    }
-    el.textContent = JSON.stringify(breadcrumbSchema(items));
-    return () => {
-      const existing = document.getElementById(SCHEMA_SCRIPT_ID);
-      if (existing) existing.remove();
-    };
-  }, [items, emitSchema]);
-
+const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
   return (
     <HeaderOffset spacing="tight" className={cn("py-2 border-b border-border/40 bg-background/50 backdrop-blur-sm", className)}>
       <Breadcrumb aria-label="Breadcrumb">

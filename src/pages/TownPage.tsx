@@ -1,3 +1,4 @@
+import { HERO_SIZES, mediaSrcSet, mediaWebp } from "@/lib/media-srcset";
 import { PHONE_DISPLAY, PHONE_PLAIN, napLine } from "@/data/business";
 import { nearestShowroom } from "@/data/showrooms";
 import CTAProofLine from "@/components/trust/CTAProofLine";
@@ -58,7 +59,10 @@ const TownPage = () => {
   }
 
   const townProof = getTownProofContent(town.slug);
-  const townFaqs = getTownFAQs(town.slug, townProof?.faqs);
+  // Authored FAQs first, then generated ones — capped at six so the town page
+  // stays inside its 1,500–2,200-word budget (P3.4). The FAQPage schema below
+  // uses the same list, so visible questions and markup always match.
+  const townFaqs = getTownFAQs(town.slug, townProof?.faqs).slice(0, 6);
   const localRelevance = getLocalRelevance(town.slug);
   // The showroom this town is actually served from — Sylva for the Jackson,
   // Swain, and Haywood County markets; Franklin for everything else.
@@ -105,8 +109,10 @@ const TownPage = () => {
         {/* 1. Premium Hero */}
         <section className="dark-surface relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src={town.heroImage} 
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async"
+              src={mediaWebp(town.heroImage)}
+              srcSet={mediaSrcSet(town.heroImage)}
+              sizes={HERO_SIZES}
               alt={`Mountain home in Western North Carolina — Highlander Building Services service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"
             />
@@ -136,7 +142,19 @@ const TownPage = () => {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg"
               >
-                {isPrimaryTownPage ? (
+                {town.h1 ? (
+                  // Hand-written heading (core towns, P3.6): "Roofers in <Town>, NC — <hook>".
+                  // The town name stays gold; the hook after the dash reads as the subline.
+                  (() => {
+                    const [lead, ...rest] = town.h1.split(" — ");
+                    return (
+                      <>
+                        <span className="text-[hsl(var(--gold-ink))]">{lead}</span>
+                        {rest.length > 0 && <> — {rest.join(" — ")}</>}
+                      </>
+                    );
+                  })()
+                ) : isPrimaryTownPage ? (
                   <>
                     Roofing in{" "}
                     <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span> Neighborhoods
@@ -259,7 +277,7 @@ const TownPage = () => {
         </Section>
 
         <Section density="compact" width="wide">
-          <ShowroomCommute location={showroom.location} showroomSlug={showroom.slug} />
+          <ShowroomCommute location={showroom.location} showroomSlug={showroom.slug} originHint={town.name} />
         </Section>
 
 
@@ -317,7 +335,7 @@ const TownPage = () => {
           <TownProofBlock town={town} content={townProof} />
         ) : (
           <div className="container-rhythm max-w-7xl pt-8 md:pt-12">
-            <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
+            <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" strictTown limit={3} />
           </div>
         )}
 
@@ -328,7 +346,7 @@ const TownPage = () => {
         {/* 6. TOWN-SPECIFIC FAQ */}
         <TownFAQ town={town} faqs={townFaqs} />
 
-        <InspectionForm />
+        <InspectionForm townName={town.name} county={town.county} />
 
         {/* 7. NEARBY COVERAGE */}
         <NearbyTowns currentTown={town} />

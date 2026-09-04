@@ -13,6 +13,7 @@ import AnswerBlock from "@/components/seo/AnswerBlock";
 import ShowroomIdentity from "@/components/locations/ShowroomIdentity";
 import ShowroomMap from "@/components/locations/ShowroomMap";
 import ShowroomCommute from "@/components/locations/ShowroomCommute";
+import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
 import { formatPhoneDisplay, telHref } from "@/data/business";
 import { showroomBySlug, showrooms } from "@/data/showrooms";
 
@@ -107,6 +108,9 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
               <span className="eyebrow mb-3 block">Visit Us</span>
               <h2 className="section-heading mb-6">The {loc.locality} showroom at a glance</h2>
               <ShowroomIdentity showroom={showroom} />
+              <div className="mt-4">
+                <LeaveReviewLink location={loc} className="text-body-sm" />
+              </div>
               <div className="mt-8">
                 <h3 className="mb-3 font-heading text-lg font-bold text-foreground">Getting here</h3>
                 <ul className="space-y-2">

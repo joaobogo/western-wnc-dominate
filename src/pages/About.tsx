@@ -12,8 +12,8 @@ import teamPhoto from "@/assets/team-photo.webp";
 import { ScrollReveal } from "@/components/motion";
 import { teamMembers as approvedTeam } from "@/data/team";
 
-const storyImg = "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1920"; // Smoky Mountains focused picture
-const heritageImg = "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80&w=1200";
+const storyImg = "/media/wnc-valley-fog-sunrise.webp"; // Smoky Mountains focused picture
+const heritageImg = "/media/wnc-town-overlook.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -178,7 +178,7 @@ const About = () => {
                   <span>Meet Our People</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </button>
-                <Link to="/giving-back" className="btn btn-secondary btn-lg group">
+                <Link to="/community" className="btn btn-secondary btn-lg group">
                   Community Impact <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </motion.div>
@@ -332,7 +332,7 @@ const About = () => {
                 <p className="text-muted-foreground leading-relaxed font-bold">
                   We're different. We live here. Our kids go to school here. When we put a roof on
                   your home, we drive past it every day. That accountability isn't a policy.
-                  it's a way of life.
+                  It's a way of life.
                 </p>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE, delay: 0.15 }}>
@@ -679,7 +679,7 @@ const About = () => {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src =
-                        "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1200";
+                        "/media/wnc-valley-fog-sunrise.webp";
                     }}
                   />
                 </div>

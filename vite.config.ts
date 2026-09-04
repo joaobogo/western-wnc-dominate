@@ -77,6 +77,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    // P5.1 — the HTML entry (src/main.tsx, ~8 KB) must be the only script the
+    // browser fetches before first paint. Vite otherwise emits a
+    // <link rel="modulepreload"> for every chunk in the entry's static graph,
+    // which after chunk merging meant ~1 MB of vendors, page chunks and data
+    // downloading alongside the render-blocking CSS and the LCP image.
+    // Dynamic imports still preload their own dependencies when they run.
+    modulePreload: {
+      resolveDependencies: (_filename, deps, { hostType }) => (hostType === "html" ? [] : deps),
+    },
     // Split heavy vendors so the main app chunk stays small and cacheable
     // across deploys. Route chunks (already lazy) then only carry app code.
     rollupOptions: {
@@ -84,16 +93,28 @@ export default defineConfig(({ mode }) => ({
         // Merge sub-12 KB chunks. Service pages were pulling 60+ JS files;
         // request overhead on throttled mobile cost more than the bytes.
         experimentalMinChunkSize: 12000,
-        manualChunks: {
-          "react-vendor": ["react", "react-dom", "react-router-dom"],
-          "motion-vendor": ["framer-motion"],
-          "query-vendor": ["@tanstack/react-query"],
-          "form-vendor": ["react-hook-form", "@hookform/resolvers", "zod"],
-          // One icon chunk instead of ~300 single-icon files. Hundreds of
-          // tiny requests starve the connection on throttled mobile and push
-          // first paint out by seconds (CRO Prompt 40).
-          "icons-vendor": ["lucide-react"],
-          "supabase-vendor": ["@supabase/supabase-js"],
+        manualChunks(id) {
+          const p = id.split("\\").join("/");
+          if (p.includes("/node_modules/")) {
+            if (/\/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(p)) return "react-vendor";
+            if (p.includes("/node_modules/framer-motion/")) return "motion-vendor";
+            if (p.includes("/node_modules/@tanstack/react-query")) return "query-vendor";
+            if (/\/node_modules\/(react-hook-form|@hookform\/resolvers|zod)\//.test(p)) return "form-vendor";
+            // One icon chunk instead of ~300 single-icon files. Hundreds of
+            // tiny requests starve the connection on throttled mobile and push
+            // first paint out by seconds (CRO Prompt 40).
+            if (p.includes("/node_modules/lucide-react/")) return "icons-vendor";
+            if (p.includes("/node_modules/@supabase/")) return "supabase-vendor";
+            return undefined;
+          }
+          // P5.1 — keep the big content tables out of chunks the eager App
+          // graph needs. App → RecoveryPrompt → lead-validation imports towns.ts;
+          // Rollup was merging towns with the 300 KB service×town content into
+          // one shared chunk, so every page downloaded it up front.
+          if (/\/src\/data\/(service-town-content|service-town-generated|service-town-slugs|town-faqs-generated)\.ts$/.test(p)) return "service-town-data";
+          if (/\/src\/data\/blogs(-[a-z-]+)?\.ts$/.test(p)) return "blogs-data";
+          if (/\/src\/data\/(towns|counties|business)\.ts$/.test(p)) return "towns-data";
+          return undefined;
         },
       },
     },

@@ -30,6 +30,14 @@ export interface BusinessLocation {
   geo: { lat: number; lng: number };
   /** Google Business Profile CID (numeric). */
   gbpCid: string;
+  /**
+   * Direct "write a review" link copied from the Business Profile →
+   * "Ask for reviews" screen (a https://g.page/r/…/review or
+   * https://search.google.com/local/writereview?placeid=… URL). Until the
+   * owner pastes it, the value is a REPLACE_WITH_… placeholder: gbpReviewUrl()
+   * then falls back to the profile's Maps URL and the build prints a warning.
+   */
+  reviewUrl: string;
   hours: BusinessHours[];
   primary?: boolean;
 }
@@ -157,11 +165,12 @@ export const BUSINESS: BusinessIdentity = {
   // priceRange intentionally omitted — add only once the owner approves a band.
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
-    ratingValue: 4.7,
+    // Owner-confirmed 2026-09-04 (João): Google shows 4.8.
+    ratingValue: 4.8,
     reviewCount: 158,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-09-03",
+    lastVerified: "2026-09-04",
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [
@@ -237,6 +246,7 @@ export const BUSINESS: BusinessIdentity = {
       phoneE164: "+1-828-524-7773",
       geo: { lat: 35.1626, lng: -83.3459 },
       gbpCid: FRANKLIN_CID,
+      reviewUrl: "REPLACE_WITH_FRANKLIN_REVIEW_LINK",
       hours: STANDARD_HOURS,
       primary: true,
     },
@@ -250,6 +260,7 @@ export const BUSINESS: BusinessIdentity = {
       phoneE164: "+1-828-476-4000",
       geo: { lat: 35.3585, lng: -83.1812 },
       gbpCid: SYLVA_CID,
+      reviewUrl: "REPLACE_WITH_SYLVA_REVIEW_LINK",
       hours: STANDARD_HOURS,
     },
   ],
@@ -293,9 +304,21 @@ export const napLine = (loc: BusinessLocation) =>
 
 export const directionsUrl = (loc: BusinessLocation) => GBP_MAP_URL(loc.gbpCid);
 
-/** Direct "leave a review" link for a showroom's Google Business Profile. */
+/** A reviewUrl that has not been pasted from the Business Profile yet. */
+export const isReviewUrlPlaceholder = (loc: BusinessLocation) =>
+  /^REPLACE_WITH_/.test(loc.reviewUrl) || !/^https:\/\//.test(loc.reviewUrl);
+
+/**
+ * Direct "leave a review" link for a showroom's Google Business Profile —
+ * the exact URL from the profile's "Ask for reviews" screen (loc.reviewUrl).
+ * The old `writereview?placeid=&cid=` form had an empty placeid and did not
+ * open the review dialog reliably. While the value is still a placeholder the
+ * link falls back to the profile's Maps page (which carries its own "Write a
+ * review" button) so nothing broken ever ships; scripts/seo-regression-check.mjs
+ * warns until the real link is in place.
+ */
 export const gbpReviewUrl = (loc: BusinessLocation) =>
-  `https://search.google.com/local/writereview?placeid=&cid=${loc.gbpCid}`;
+  isReviewUrlPlaceholder(loc) ? GBP_MAP_URL(loc.gbpCid) : loc.reviewUrl;
 
 /**
  * The exact URL to paste into a Google Business Profile "Website" field.
@@ -304,13 +327,25 @@ export const gbpReviewUrl = (loc: BusinessLocation) =>
  * it impossible to separate map-pack visits from classic organic. Tagging the
  * profile link keeps both showrooms measurable per location.
  *
- * Franklin → https://highlandernc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=franklin
+ * The value MUST match what is configured on the live profile — Search Console
+ * reports the profile URL exactly as configured, so a mismatch loses the
+ * ability to measure the map pack. The live Franklin profile uses
+ * `utm_campaign=gbp_profile`; `utm_content` carries the location id.
+ *
+ * Franklin → https://highlandernc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_profile&utm_content=franklin
+ * Sylva    → https://highlandernc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_profile&utm_content=sylva
+ *
+ * The canonical never carries these params (normalizeCanonicalPath strips the
+ * query) and GTM's container load records the tagged first pageview; later SPA
+ * navigations drop the query naturally.
  */
+export const GBP_PROFILE_CAMPAIGN = "gbp_profile";
+
 export const gbpWebsiteUrl = (loc: BusinessLocation, path = "/") => {
   const url = new URL(path, BUSINESS.websiteUrl);
   url.searchParams.set("utm_source", "google");
   url.searchParams.set("utm_medium", "organic");
-  url.searchParams.set("utm_campaign", "gbp");
+  url.searchParams.set("utm_campaign", GBP_PROFILE_CAMPAIGN);
   url.searchParams.set("utm_content", loc.id);
   return url.toString();
 };

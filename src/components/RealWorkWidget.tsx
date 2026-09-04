@@ -31,6 +31,7 @@ const RealWorkWidget = ({
   className = "py-16 md:py-24 bg-background border-t border-border/60",
 }: RealWorkWidgetProps) => {
   const outputWrapRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
 
   /*
@@ -133,24 +134,51 @@ const RealWorkWidget = ({
     startObserver();
     schedulePatch();
 
-    window.__loadRWL?.();
-    initialize();
-    window.addEventListener("rwlPluginReady", initialize, false);
-
-    const timeoutId = window.setTimeout(() => {
-      if (!cancelled && !checkReady()) setStatus("error");
-    }, 15000);
+    // P5.1: the RealWork loader pulls the Google Maps JS API (~375 KB) with it.
+    // Mounting used to start it immediately on every page that renders this
+    // widget — including the homepage, below the fold, before any interaction.
+    // Now it starts when the section is about to scroll into view, or on the
+    // visitor's first real interaction (shared strict-intent gate in
+    // index.html), whichever happens first.
+    let started = false;
+    let timeoutId = 0;
+    let io: IntersectionObserver | null = null;
+    const start = () => {
+      if (started || cancelled) return;
+      started = true;
+      if (io) io.disconnect();
+      window.__loadRWL?.();
+      initialize();
+      window.addEventListener("rwlPluginReady", initialize, false);
+      timeoutId = window.setTimeout(() => {
+        if (!cancelled && !checkReady()) setStatus("error");
+      }, 15000);
+    };
+    const w = window as Window & { __hlOnStrictIntent?: (fn: () => void) => void };
+    if (w.__hlOnStrictIntent) w.__hlOnStrictIntent(start);
+    if ("IntersectionObserver" in window && sectionRef.current) {
+      io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) start();
+        },
+        { rootMargin: "600px 0px" },
+      );
+      io.observe(sectionRef.current);
+    } else if (!w.__hlOnStrictIntent) {
+      start();
+    }
 
     return () => {
       cancelled = true;
-      window.clearTimeout(timeoutId);
+      if (timeoutId) window.clearTimeout(timeoutId);
+      if (io) io.disconnect();
       if (observer) observer.disconnect();
       window.removeEventListener("rwlPluginReady", initialize);
     };
   }, []);
 
   return (
-    <section className={className} aria-labelledby="realwork-project-updates-heading">
+    <section ref={sectionRef} className={className} aria-labelledby="realwork-project-updates-heading">
       <div className="container-tight">
         <div className="max-w-3xl mb-10">
           <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">

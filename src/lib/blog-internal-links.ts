@@ -1,5 +1,5 @@
 import type { BlogPost } from "@/data/blogs";
-import { blogPosts } from "@/data/blogs";
+import { linkableBlogPosts } from "@/data/blogs";
 import { projectDetails, type ProjectDetail } from "@/data/projects";
 
 export interface InternalLink {
@@ -83,15 +83,22 @@ const pickServicePage = (post: BlogPost): InternalLink => {
   };
 };
 
+/**
+ * P4.1 — prefer same town / different category, then same town, then same
+ * category; within each tier walk BACKWARDS through publication order from the
+ * current post (wrapping). The "Keep Reading" ring in local-link-graph.ts walks
+ * forwards, so together every post is linked from the posts on both sides of
+ * it instead of the first match hoarding the inbound links.
+ */
 const pickRelatedBlog = (post: BlogPost): InternalLink | null => {
-  const sameTown = blogPosts.find(
-    (p) => p.slug !== post.slug && p.town === post.town && p.category !== post.category,
-  );
-  const fallback =
-    sameTown ||
-    blogPosts.find((p) => p.slug !== post.slug && p.town === post.town) ||
-    blogPosts.find((p) => p.slug !== post.slug && p.category === post.category) ||
-    blogPosts.find((p) => p.slug !== post.slug);
+  const all = linkableBlogPosts();
+  const idx = all.findIndex((p) => p.slug === post.slug);
+  const tier = (p: BlogPost) =>
+    p.town === post.town && p.category !== post.category ? 0 : p.town === post.town ? 1 : p.category === post.category ? 2 : 3;
+  const behind = (p: BlogPost) => (idx - all.indexOf(p) + all.length) % all.length;
+  const fallback = all
+    .filter((p) => p.slug !== post.slug)
+    .sort((a, b) => tier(a) - tier(b) || behind(a) - behind(b))[0];
   if (!fallback) return null;
   return {
     label: fallback.title,

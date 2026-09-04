@@ -17,6 +17,10 @@ import constructionImg from "@/assets/division-construction-v2.webp";
 // NOTE: Temporary Design Division image. Client to provide final approved
 // Design Division image before launch.
 import designImg from "@/assets/division-design.webp";
+// P5.1: responsive renditions — the 800×500 card boxes were downloading the 1600px masters (190–240 KB each) on phones.
+import metalRoofSet from "@/assets/gallery/metal-005.webp?w=480;800;1200&format=webp&as=srcset";
+import constructionImgSet from "@/assets/division-construction-v2.webp?w=480;800;1200&format=webp&as=srcset";
+import designImgSet from "@/assets/division-design.webp?w=480;800;1200&format=webp&as=srcset";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -49,6 +53,7 @@ const roofingData = {
   cta: "Explore Roofing",
   href: "/roofing",
   image: metalRoof,
+  imageSrcSet: metalRoofSet,
   imageAlt: "Standing seam metal roof on a Western North Carolina mountain home — Highlander Building Services",
 };
 
@@ -80,6 +85,7 @@ const constructionData = {
   cta: "Explore Construction",
   href: "/construction",
   image: constructionImg,
+  imageSrcSet: constructionImgSet,
   imageAlt: "Construction project representing Highlander Building Services design-build services in Western North Carolina",
 };
 
@@ -111,6 +117,7 @@ const designData = {
   cta: "Explore Design Services",
   href: "/layouts-planning",
   image: designImg,
+  imageSrcSet: designImgSet,
   imageAlt: "Design plans and 3D views for a custom WNC mountain home — Highlander Design Division",
 };
 
@@ -143,6 +150,8 @@ const DivisionCard = ({ data, accent, index }: {
       <div className="relative h-48 md:h-56 overflow-hidden">
         <img
           src={data.image}
+          srcSet={data.imageSrcSet}
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           alt={data.imageAlt ?? data.title}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
           loading="lazy"

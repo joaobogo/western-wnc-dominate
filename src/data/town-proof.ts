@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 import { projectDetails } from "@/data/projects";
 
 export interface TownStat {
@@ -341,7 +341,7 @@ const townProofMap: Record<string, TownProofContent> = {
     jobHighlights: [
       {
         title: "Biltmore Forest historic restoration",
-        summary: "Asheville's historic districts require meticulous material matching and ARB coordination. we specialize in modernizing performance without losing historic soul.",
+        summary: "Asheville's historic districts require meticulous material matching and ARB coordination. We specialize in modernizing performance without losing historic soul.",
         proof: "Copper flashing details, synthetic slate systems, and historic trim matching",
         image: "/media/wnc-storm-tree-damage.jpg",
       },
@@ -440,7 +440,7 @@ const townProofMap: Record<string, TownProofContent> = {
     stats: [
       { label: "Hub", value: "Cherokee Co.", detail: "Fast response for the far west" },
       { label: "Response", value: "Local", detail: "Crews staged for Western NC service" },
-      { label: "Rating", value: "5.0 Stars", detail: "Trusted by Murphy families and rental owners" },
+      { label: "Rating", value: `${REVIEW_RATING} Stars`, detail: "Trusted by Murphy families and rental owners" },
     ],
     jobHighlights: [
       {
@@ -472,7 +472,7 @@ const townProofMap: Record<string, TownProofContent> = {
     stats: [
       { label: "Market", value: "Lake Life", detail: "High-end vacation and retirement homes" },
       { label: "Climate", value: "Humidity", detail: "Lake-proximate moisture management" },
-      { label: "Rating", value: "5.0 Stars", detail: "Trusted for lakefront asset protection" },
+      { label: "Rating", value: `${REVIEW_RATING} Stars`, detail: "Trusted for lakefront asset protection" },
     ],
     jobHighlights: [
       {

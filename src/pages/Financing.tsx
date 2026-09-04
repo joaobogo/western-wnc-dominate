@@ -42,7 +42,7 @@ const Financing = () => {
         <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=2000" 
+              src="/media/wnc-metal-standing-seam.webp" 
               alt="Beautiful mountain home with premium roofing"
               className="w-full h-full object-cover"
             />

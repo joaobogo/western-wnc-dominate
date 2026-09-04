@@ -56,9 +56,15 @@ function townFromQuery(): string {
 interface InspectionFormProps {
   /** "page" = dedicated conversion page: tight top spacing, form first on mobile. */
   variant?: "section" | "page";
+  /**
+   * Town + county the form sits on (town pages). Makes the intro copy specific
+   * to the page instead of the same 67 words repeating on 145 pages (P3.4).
+   */
+  townName?: string;
+  county?: string;
 }
 
-const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
+const InspectionForm = ({ variant = "section", townName, county }: InspectionFormProps) => {
   const isPage = variant === "page";
   // Where the visitor came from, e.g. ?context=town_faq_cta
   const contextFromQuery = (): string | null => {
@@ -297,10 +303,9 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
               )}
               <ScrollReveal variant="rise-subtle" delay={0.25}>
                 <p className="text-white font-body text-lg md:text-xl leading-relaxed mb-10 font-bold drop-shadow-md">
-                  Share a few details about your property and what you're looking to accomplish. 
-                  A Highlander advisor — someone who knows these mountains, these materials, and these 
-                  building conditions — will review everything and follow up personally to discuss 
-                  scope, timing, and next steps.
+                  {townName
+                    ? `Share a few details about your ${townName} property and what you're looking to accomplish. A Highlander advisor who works ${county ?? "this part of Western North Carolina"} every week will review everything and follow up personally to discuss scope, timing, and next steps.`
+                    : "Share a few details about your property and what you're looking to accomplish. A Highlander advisor — someone who knows these mountains, these materials, and these building conditions — will review everything and follow up personally to discuss scope, timing, and next steps."}
                 </p>
               </ScrollReveal>
               <div className="space-y-5">
@@ -449,8 +454,9 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     </a>
                   </div>
                   <p className="text-white/80 font-body text-body-xs">
-                    Next step is just your name and phone. After you send it, a Highlander advisor
-                    calls you personally — typically within one business day.
+                    {townName
+                      ? `Next step is just your name and phone. A Highlander advisor calls you back about your ${townName} project personally — typically within one business day.`
+                      : "Next step is just your name and phone. After you send it, a Highlander advisor calls you personally — typically within one business day."}
                   </p>
                 </form>
                 )}

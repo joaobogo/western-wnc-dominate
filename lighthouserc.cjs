@@ -1,24 +1,39 @@
 /**
- * Lighthouse CI — mobile emulation, run against the prerendered `dist` output.
+ * Lighthouse CI — mobile emulation against the prerendered `dist` output.
  *
- * Gates (Netlify build):
- *   • performance < 0.80 → warn  (this file's assertions)
- *   • performance < 0.60 → fail  (scripts/lhci-gate.mjs, exits non-zero)
- *   • > 150 KB of third-party JS before first interaction → fail (same gate)
+ * P5.1 performance budget on the five money pages:
+ *   • homepage, Franklin + Highlands town pages, roof-replacement division
+ *     page, one blog post
+ *   • LCP ≤ 2.5 s · CLS ≤ 0.1 · TBT ≤ 300 ms · performance ≥ 0.85 → FAIL
  *
- * Chrome comes from the Playwright Chromium the Netlify build already installs
- * for prerendering; CHROME_PATH is resolved in scripts/lhci-gate.mjs.
+ * The pages are served by scripts/serve-dist.mjs, which resolves clean URLs
+ * exactly like Netlify does (/service-areas/franklin-nc → …/franklin-nc.html),
+ * so the audited URL is the one Google sees.
+ *
+ * Chrome comes from the Playwright Chromium the build already installs for
+ * prerendering; CHROME_PATH is resolved in scripts/lhci-gate.mjs. A fixed
+ * --user-data-dir avoids chrome-launcher's temp-profile cleanup, which fails
+ * with EPERM on Windows and aborts the run (Lighthouse still clears the
+ * profile's cache and storage at the start of every run).
  */
+const os = require("os");
+const path = require("path");
+
+const PORT = 4173;
+const ORIGIN = `http://localhost:${PORT}`;
+const PROFILE_DIR = path.join(os.tmpdir(), "hl-lhci-chrome-profile");
+
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: "./dist",
-      // Prerendered directory-index HTML — LHCI serves these as clean URLs.
+      startServerCommand: `node scripts/serve-dist.mjs --port ${PORT}`,
+      startServerReadyPattern: "serve-dist:",
       url: [
-        "http://localhost/index.html",
-        "http://localhost/roofing/metal/index.html",
-        "http://localhost/service-areas/highlands-nc/index.html",
-        "http://localhost/blog/wnc-mountain-roofing-guide/index.html",
+        `${ORIGIN}/`,
+        `${ORIGIN}/service-areas/franklin-nc`,
+        `${ORIGIN}/service-areas/highlands-nc`,
+        `${ORIGIN}/roofing/roof-replacement`,
+        `${ORIGIN}/blog/western-north-carolina-mountain-roofing-guide`,
       ],
       numberOfRuns: 3,
       settings: {
@@ -34,16 +49,16 @@ module.exports = {
         },
         emulatedUserAgent:
           "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36",
-        chromeFlags: "--no-sandbox --disable-dev-shm-usage --headless=new",
+        chromeFlags: `--no-sandbox --disable-dev-shm-usage --headless=new --user-data-dir=${PROFILE_DIR}`,
       },
     },
     assert: {
+      // Median of the three runs is asserted; any breach fails the run.
       assertions: {
-        // Warn band — the build stays green, the log carries the signal.
-        "categories:performance": ["warn", { minScore: 0.8 }],
-        "largest-contentful-paint": ["warn", { maxNumericValue: 2500 }],
-        "cumulative-layout-shift": ["warn", { maxNumericValue: 0.05 }],
-        "total-blocking-time": ["warn", { maxNumericValue: 200 }],
+        "categories:performance": ["error", { minScore: 0.85, aggregationMethod: "median" }],
+        "largest-contentful-paint": ["error", { maxNumericValue: 2500, aggregationMethod: "median" }],
+        "cumulative-layout-shift": ["error", { maxNumericValue: 0.1, aggregationMethod: "median" }],
+        "total-blocking-time": ["error", { maxNumericValue: 300, aggregationMethod: "median" }],
         "unused-javascript": ["warn", { maxNumericValue: 150000 }],
         "third-party-summary": "off",
       },

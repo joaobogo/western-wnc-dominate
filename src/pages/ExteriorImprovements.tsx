@@ -21,7 +21,7 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
-const heroImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000";
+const heroImg = "/media/wnc-mountain-home-exterior.webp";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
 import proj2 from "@/assets/gallery/metal-010.webp";
 import proj3 from "@/assets/gallery/cedar-005.webp";
@@ -101,8 +101,8 @@ const ExteriorImprovements = () => {
         description="Exterior renovations for Western NC homes: siding replacement, window upgrades, structural repair, and full envelope work by in-house crews."
         path="/exterior-improvements"
         jsonLd={[
-          serviceSchema({ name: "Exterior Improvements", description: "Exterior renovations and structural upgrades for Western North Carolina homes.", url: "/construction/exterior" }),
-          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Exterior Improvements", url: "/construction/exterior" }]),
+          serviceSchema({ name: "Exterior Improvements", description: "Exterior renovations and structural upgrades for Western North Carolina homes.", url: "/exterior-improvements" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Exterior Improvements", url: "/exterior-improvements" }]),
           faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
         ]}
       />
@@ -111,7 +111,7 @@ const ExteriorImprovements = () => {
         items={[
           { name: "Home", url: "/" },
           { name: "Construction", url: "/construction" },
-          { name: "Exterior Improvements", url: "/construction/exterior" },
+          { name: "Exterior Improvements", url: "/exterior-improvements" },
         ]}
       />
       <ServicePageTemplate

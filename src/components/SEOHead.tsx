@@ -1,4 +1,4 @@
-import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation, VERIFIED_AWARDS, awardLabel, REVIEW_RATING_VALUE } from "@/data/business";
+import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 import { useEffect } from "react";
 import { ogImageForPath, OG_FALLBACK } from "@/lib/og";
 import { normalizeTitle, normalizeDescription } from "@/lib/seo-length";
@@ -17,6 +17,25 @@ interface SEOHeadProps {
   noindex?: boolean | "follow";
   keywords?: string;
   locale?: string;
+  /**
+   * The page's LCP image (hero). Emits <link rel="preload" as="image"
+   * fetchpriority="high"> so the browser starts the download before the
+   * route chunk renders the <img>. Same-origin paths only.
+   */
+  preloadImage?: string;
+  /**
+   * Responsive candidates for `preloadImage` (P5.1). Emitted as
+   * imagesrcset/imagesizes so a phone preloads the 640px rendition instead of
+   * the 1600px master — and never both.
+   */
+  preloadImageSrcSet?: string;
+  preloadImageSizes?: string;
+  /**
+   * Point the canonical (and og:url) at ANOTHER page — for a post folded into
+   * a surviving post (BlogPost.canonicalTo). Pair with noindex="follow".
+   * Defaults to a self-referencing canonical built from `path`.
+   */
+  canonicalPath?: string;
 }
 
 const SITE_NAME = BUSINESS.brandName;
@@ -75,13 +94,15 @@ export const normalizeCanonicalPath = (rawPath: string): string => {
 };
 
 /**
- * Absolute canonical URL for a route. The server serves the trailing-slash
- * form of every path, so the canonical (and og:url, which mirrors it) uses
- * that shape — the URL in the sitemap resolves with no redirect hop.
+ * Absolute canonical URL for a route: https://highlandernc.com/<path> with NO
+ * trailing slash (the homepage is always "https://highlandernc.com/"). This is
+ * the one URL shape sitewide — internal links, UrlNormalizer, the sitemap, the
+ * prerendered file names (dist/<route>.html) and og:url (which mirrors the
+ * canonical) all use it, so no crawler ever follows a redirect from a canonical.
  */
 export const canonicalUrlFor = (rawPath: string): string => {
   const path = normalizeCanonicalPath(rawPath);
-  return path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}/`;
+  return path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
 };
 
 const SEOHead = ({
@@ -94,14 +115,18 @@ const SEOHead = ({
   noindex = false,
   keywords,
   locale = "en_US",
+  preloadImage,
+  preloadImageSrcSet,
+  preloadImageSizes = "100vw",
+  canonicalPath: canonicalOverride,
 }: SEOHeadProps) => {
   // SERP length guardrails: ≤60 char titles, ≤155 char descriptions.
   const fullTitle = normalizeTitle(
     title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`,
   );
   const description = normalizeDescription(rawDescription);
-  const canonicalPath = normalizeCanonicalPath(path);
-  const canonicalUrl = canonicalUrlFor(path);
+  const canonicalPath = normalizeCanonicalPath(canonicalOverride ?? path);
+  const canonicalUrl = canonicalUrlFor(canonicalOverride ?? path);
   // Per-route card generated at build (dist/og/<slug>.png); the /og/* rewrite
   // serves /og-image.jpg for any route without one.
   const ogImage = image || ogImageForPath(canonicalPath, BASE_URL);
@@ -130,6 +155,23 @@ const SEOHead = ({
     let link = canonicalLinks[0] ?? null;
     if (!link) { link = document.createElement("link"); link.setAttribute("rel", "canonical"); document.head.appendChild(link); }
     link.setAttribute("href", canonicalUrl);
+
+    // LCP image preload — exactly one, owned by this route (data-seo-preload),
+    // replaced on navigation and removed when the route has no hero.
+    document.querySelectorAll('link[data-seo-preload]').forEach((el) => el.remove());
+    if (preloadImage) {
+      const pre = document.createElement("link");
+      pre.setAttribute("rel", "preload");
+      pre.setAttribute("as", "image");
+      pre.setAttribute("href", preloadImage);
+      if (preloadImageSrcSet) {
+        pre.setAttribute("imagesrcset", preloadImageSrcSet);
+        pre.setAttribute("imagesizes", preloadImageSizes);
+      }
+      pre.setAttribute("fetchpriority", "high");
+      pre.setAttribute("data-seo-preload", "true");
+      document.head.appendChild(pre);
+    }
 
     setMeta("property", "og:type", type);
     setMeta("property", "og:title", fullTitle);
@@ -203,7 +245,7 @@ const SEOHead = ({
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, keywords, locale]);
+  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, keywords, locale, preloadImage, preloadImageSrcSet, preloadImageSizes]);
 
   return null;
 };
@@ -616,55 +658,15 @@ export const countyServiceSchema = (
 });
 
 
-export interface ReviewInput {
-  author: string;
-  rating: number;       // 1-5
-  body: string;
-  datePublished: string; // ISO YYYY-MM-DD
-  location?: string;
-}
-
-/** Single Review schema (use inside an itemReviewed wrapper if standalone). */
-export const reviewSchema = (review: ReviewInput) => ({
-  "@context": "https://schema.org",
-  "@type": "Review",
-  reviewRating: { "@type": "Rating", ratingValue: review.rating, bestRating: 5, worstRating: 1 },
-  author: { "@type": "Person", name: review.author },
-  reviewBody: review.body,
-  datePublished: review.datePublished,
-  itemReviewed: { "@type": "RoofingContractor", name: SITE_NAME, "@id": `${BASE_URL}/#business` },
-  ...(review.location ? { locationCreated: { "@type": "Place", name: review.location } } : {}),
-});
-
-/**
- * AggregateRating + embedded Reviews. ONLY legal on /reviews, where the same
- * reviews and the same rating figure are visible on the page. The rating always
- * comes from BUSINESS.reviewSummary (the live Google figure) — never a literal.
+/*
+ * REVIEW MARKUP POLICY: no aggregateRating and no Review nodes are emitted on
+ * any page. The rating is shown as visible text (BUSINESS.reviewSummary) and
+ * reviews are read on Google. Self-serving review markup is ineligible for rich
+ * results and a policy risk; scripts/validate-schema.mjs fails the build if it
+ * ever appears on a route other than /reviews, and /reviews currently emits
+ * only businessGraph(). The former reviewSchema()/aggregateReviewSchema()
+ * helpers were removed so nothing in the codebase can produce that markup.
  */
-export const aggregateReviewSchema = (reviews: ReviewInput[]) => {
-  const summary = BUSINESS.reviewSummary;
-  return {
-    "@context": "https://schema.org",
-    "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
-    "@id": `${BASE_URL}/#business`,
-    name: SITE_NAME,
-    url: BASE_URL,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: REVIEW_RATING_VALUE,
-      reviewCount: summary.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    review: reviews.map((r) => ({
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-      author: { "@type": "Person", name: r.author },
-      reviewBody: r.body,
-      datePublished: r.datePublished,
-    })),
-  };
-};
 
 
 export interface ProductSchemaInput {
@@ -768,7 +770,7 @@ export type PageSchemaInput =
       article: Parameters<typeof articleSchema>[0];
       breadcrumbs: { name: string; url: string }[];
     }
-  | { type: "reviews"; reviews?: ReviewInput[] }
+  | { type: "reviews" }
   | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
   | {
       /**

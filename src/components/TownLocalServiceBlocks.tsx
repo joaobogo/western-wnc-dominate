@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Home, Wrench, Layers, CloudRain, Sun, Hammer, Compass, Trees, Mountain } from "lucide-react";
 import type { TownData } from "@/data/towns";
+import { serviceTownHref } from "@/data/service-town-content";
+
+/** "Scaly Mountain mountain homes" reads badly — towns whose name already ends in Mountain get plain "homes". */
+const homesIn = (name: string) => (/mountain$/i.test(name.trim()) ? `${name} homes` : `${name} mountain homes`);
 
 interface Props {
   town: TownData;
@@ -9,31 +13,41 @@ interface Props {
 
 type LinkBlock = {
   title: string;
+  /** One short, town-specific line. The service itself is explained on the division page the card links to. */
   body: string;
   href: string;
   icon: typeof Home;
 };
 
+/**
+ * P3.4: each card is one sentence + a link to the division page that owns the
+ * generic explanation (/roofing/*, /construction/*). The town page keeps only
+ * the town-specific hook (elevation, county, housing stock), which is what a
+ * town page is for — the generic WNC copy was repeating across 19 town pages.
+ */
 const TownLocalServiceBlocks = ({ town }: Props) => {
   const t = town.name;
+  const county = town.county.replace(/ County$/, "");
 
+  // Cards point at the town's own indexable sub-page when it has one (core
+  // towns), otherwise at the division page — same rule as every link block.
   const roofingCore: LinkBlock[] = [
     {
       title: `Roof repair in ${t}, NC`,
-      body: `Leak diagnosis, flashing repair, and targeted fixes for ${t} homes. If a repair will genuinely protect the house, that's what we recommend — not a replacement you don't need.`,
-      href: "/roofing/roof-repair",
+      body: `Leak and flashing repairs in ${t} and across ${county} County — a repair when a repair is the right call.`,
+      href: serviceTownHref(town.slug, "roof-repair"),
       icon: Wrench,
     },
     {
-      title: `Roof replacement for ${t} mountain homes`,
-      body: `Full tear-off and reinstall for ${t}, NC homeowners, specified for wind, ice, and moisture exposure at ${town.elevation}.`,
-      href: "/roofing/roof-replacement",
+      title: `Roof replacement for ${homesIn(t)}`,
+      body: `Specified for the wind, ice, and moisture ${t} sees at ${town.elevation}.`,
+      href: serviceTownHref(town.slug, "roof-replacement"),
       icon: Layers,
     },
     {
       title: `Metal roofing in ${t}, NC`,
-      body: `Standing seam and metal panel systems installed for ${t} residences, sized for elevation-driven wind, snow, and ice loading.`,
-      href: "/roofing/metal",
+      body: `Standing-seam systems sized for ${t}'s elevation-driven wind and snow loading.`,
+      href: serviceTownHref(town.slug, "metal-roofing"),
       icon: Home,
     },
   ];
@@ -41,13 +55,13 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
   const waterBlocks: LinkBlock[] = [
     {
       title: `Gutter installation in ${t}, NC`,
-      body: `Seamless gutters, oversized downspouts, and drainage routing built for the rainfall totals ${t} homes actually see.`,
+      body: `Gutters and downspouts sized for the rainfall ${t} homes actually get.`,
       href: "/roofing/gutters",
       icon: CloudRain,
     },
     {
       title: `Skylights & daylighting`,
-      body: `Skylight replacement and re-flashing for ${t} homes where aging skylight units — not the roof itself — are the leak source.`,
+      body: `Skylight replacement and re-flashing for ${t} homes.`,
       href: "/roofing/skylights",
       icon: Sun,
     },
@@ -56,19 +70,19 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
   const constructionBlocks: LinkBlock[] = [
     {
       title: `Construction company in ${t}, NC`,
-      body: `Licensed North Carolina General Contractor covering home additions, renovations, and exterior construction for ${t} homeowners.`,
+      body: `Licensed NC General Contractor for additions and renovations in ${t}.`,
       href: "/construction",
       icon: Hammer,
     },
     {
       title: `Design services for ${t} projects`,
-      body: `In-house floor plans, elevations, and material planning that flow straight into the build under one accountable team.`,
+      body: `Floor plans and elevations drawn for ${t} lots at ${town.elevation}.`,
       href: "/construction/design",
       icon: Compass,
     },
     {
       title: `Outdoor living projects in ${t}`,
-      body: `Screened porches, decks, and outdoor rooms designed to extend how ${t} mountain homes are actually used.`,
+      body: `Porches, decks, and outdoor rooms for ${homesIn(t)}.`,
       href: "/construction/outdoor-living",
       icon: Trees,
     },
@@ -85,11 +99,15 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               Roofing services in {t}, NC
             </h2>
             <p className="text-lg text-muted-foreground font-body leading-relaxed">
-              Highlander is a full-service{" "}
+              Every roofing service Highlander offers is available in {t} — the full list lives on the{" "}
               <Link to="/roofing" className="text-primary underline underline-offset-4 hover:no-underline">
-                roofing company serving {t}, NC
-              </Link>{" "}
-              and the surrounding Western North Carolina mountains — repair, replacement, metal roofing, gutters, and skylights, all installed by the same crew you'll meet on site.
+                roofing division page
+              </Link>
+              ; below is what matters most for {county} County homes. Start with{" "}
+              <Link to={serviceTownHref(town.slug, "roof-replacement")} className="text-primary underline underline-offset-4 hover:no-underline">roof replacement in {t}</Link>,{" "}
+              <Link to={serviceTownHref(town.slug, "roof-repair")} className="text-primary underline underline-offset-4 hover:no-underline">roof repair in {t}</Link>,{" "}
+              <Link to={serviceTownHref(town.slug, "metal-roofing")} className="text-primary underline underline-offset-4 hover:no-underline">metal roofing in {t}</Link>, or{" "}
+              <Link to={serviceTownHref(town.slug, "storm-damage")} className="text-primary underline underline-offset-4 hover:no-underline">storm damage roofing in {t}</Link>.
             </p>
           </div>
         </div>
@@ -101,7 +119,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               Roof repair, roof replacement & metal roofing
             </h3>
             <p className="text-muted-foreground font-body leading-relaxed">
-              Three of the most common questions {t} homeowners ask us. Each answer is a real project pathway, not a checkbox.
+              The three calls we get most often from {t}.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -118,7 +136,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               Gutters, skylights & exterior water management
             </h3>
             <p className="text-muted-foreground font-body leading-relaxed">
-              In {t}, most roof problems are actually water problems — gutter capacity, flashing detail, and skylight condition. We treat them as one system.
+              In {t}, most roof problems are water problems — we treat gutters, flashing, and skylights as one system.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -135,11 +153,11 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               Construction, design services & outdoor living
             </h3>
             <p className="text-muted-foreground font-body leading-relaxed">
-              Highlander is a licensed North Carolina General Contractor as well as a{" "}
-              <Link to="/roofing" className="text-primary underline underline-offset-4 hover:no-underline">
-                roofing contractor in {t}, NC
-              </Link>
-              . Home additions, renovations, in-house design, and outdoor living all run through the same team, with the same warranty discipline.
+              The same licensed team handles construction in {t} — see the{" "}
+              <Link to="/construction" className="text-primary underline underline-offset-4 hover:no-underline">
+                construction division page
+              </Link>{" "}
+              for how additions, renovations, design, and outdoor living work.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -165,9 +183,6 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
                 {t} sits at roughly {town.elevation} in {town.county}. {town.climateExposure}
               </p>
               <p>{town.constructionContext}</p>
-              <p>
-                That's why our specifications for {t} homes are calibrated for real elevation, real rainfall, and real ownership horizons — not generic mountain-town templates.
-              </p>
             </div>
           </div>
         </div>

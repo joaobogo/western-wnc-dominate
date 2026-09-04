@@ -202,7 +202,7 @@ const Renovations = () => {
           <>
             <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
-            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200" alt="Interior detail" className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="lazy" decoding="async" src="/media/wnc-construction-framing.webp" alt="Interior detail" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-3xl">

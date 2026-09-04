@@ -19,7 +19,11 @@ import { ogSlug } from "../src/lib/og";
 const DIST = resolve("dist");
 const OUT_DIR = join(DIST, "og");
 
-/** Every prerendered page: dist/**\/index.html. */
+/**
+ * Every prerendered page: dist/index.html is "/", every other dist/**\/<name>.html
+ * is "/<path>/<name>" (see scripts/prerender.mjs outPathFor). dist/404.html is
+ * the not-found page and gets no card.
+ */
 function prerenderedRoutes(): string[] {
   const routes: string[] = [];
   const walk = (dir: string, prefix: string) => {
@@ -29,7 +33,9 @@ function prerenderedRoutes(): string[] {
         if (["assets", "og"].includes(entry)) continue;
         walk(full, `${prefix}/${entry}`);
       } else if (entry === "index.html") {
-        routes.push(prefix || "/");
+        if (prefix === "") routes.push("/");
+      } else if (entry.endsWith(".html") && !(prefix === "" && entry === "404.html")) {
+        routes.push(`${prefix}/${entry.slice(0, -".html".length)}`);
       }
     }
   };
@@ -38,7 +44,7 @@ function prerenderedRoutes(): string[] {
 }
 
 const titleOf = (route: string): string => {
-  const file = route === "/" ? join(DIST, "index.html") : join(DIST, route.slice(1), "index.html");
+  const file = route === "/" ? join(DIST, "index.html") : join(DIST, `${route.slice(1)}.html`);
   if (!existsSync(file)) return BUSINESS.brandName;
   const m = readFileSync(file, "utf8").match(/<title>([^<]*)<\/title>/i);
   return (m?.[1] ?? BUSINESS.brandName).replace(/\s*\|\s*Highlander.*$/i, "").trim();

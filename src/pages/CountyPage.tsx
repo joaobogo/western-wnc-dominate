@@ -51,6 +51,10 @@ const CountyPage = () => {
         title={county.metaTitle}
         description={county.metaDescription}
         path={`/service-areas/county/${county.slug}`}
+        // County hubs exist to route crawlers and visitors to town pages; they
+        // do not compete in search themselves (noindex,follow, out of the
+        // sitemap, still prerendered — P3.1).
+        noindex="follow"
         jsonLd={buildPageSchema({
           type: "county",
           county: {
@@ -154,10 +158,10 @@ const CountyPage = () => {
         </section>
 
         <AnswerBlock
-          question={`Does Highlander serve ${county.name} County, North Carolina?`}
-          answer={`Yes. Highlander Building Services, Inc. works across ${county.name} County from our Franklin, NC base, covering roof repair, roof replacement, metal roofing, gutters, and construction projects for mountain homes and commercial buildings.`}
+          question={`Does Highlander serve ${county.name}, North Carolina?`}
+          answer={`Yes. Highlander Building Services, Inc. works across ${county.name} from our Franklin, NC base, covering roof repair, roof replacement, metal roofing, gutters, and construction projects for mountain homes and commercial buildings.`}
           points={[
-            `Crews across ${county.name} County`,
+            `Crews across ${county.name}`,
             `Call ${PHONE_PLAIN} to talk with the team`,
             "Roofing and construction handled in-house",
           ]}

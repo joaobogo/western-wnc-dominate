@@ -164,7 +164,7 @@ export const resourceLinks = [
   { label: "About Highlander", href: "/about" },
   { label: "Our Showrooms", href: "/locations" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Giving Back", href: "/giving-back" },
+  { label: "Giving Back", href: "/community" },
 ];
 
 /** Physical showroom pages — linked from the service-areas dropdown footer. */

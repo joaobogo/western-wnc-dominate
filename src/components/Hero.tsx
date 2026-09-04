@@ -11,6 +11,12 @@ import heroImageAvifSet from "@/assets/hero-roofing.webp?w=640;960;1280;1600&for
 import heroImageWebpSet from "@/assets/hero-roofing.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import heroLayer2Avif from "@/assets/gallery/metal-010.webp?format=avif";
 import heroLayer3Avif from "@/assets/gallery/asphalt-hero.webp?format=avif";
+// P5.1: the cross-fade layers were shipping the 1600px masters (260 KB+) to
+// phones — responsive sets let a 412px viewport pick the 640px rendition.
+import heroLayer2AvifSet from "@/assets/gallery/metal-010.webp?w=640;960;1280;1600&format=avif&as=srcset";
+import heroLayer2WebpSet from "@/assets/gallery/metal-010.webp?w=640;960;1280;1600&format=webp&as=srcset";
+import heroLayer3AvifSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=avif&as=srcset";
+import heroLayer3WebpSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import veluxLogo from "@/assets/logo-velux.png";
 import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
@@ -59,6 +65,8 @@ const Hero = () => {
 
   const layers = [heroImage, heroLayer2, heroLayer3];
   const layersAvif = [heroImageAvif, heroLayer2Avif, heroLayer3Avif];
+  const layersAvifSet = [heroImageAvifSet, heroLayer2AvifSet, heroLayer3AvifSet];
+  const layersWebpSet = [heroImageWebpSet, heroLayer2WebpSet, heroLayer3WebpSet];
   const layerAlts = [
     "Premium mountain home roof in Western North Carolina",
     "Standing seam metal roof on a WNC residence",
@@ -92,8 +100,8 @@ const Hero = () => {
             width={1600}
             height={1067}
             priority={i === 0}
-            avifSrcSet={i === 0 ? heroImageAvifSet : undefined}
-            webpSrcSet={i === 0 ? heroImageWebpSet : undefined}
+            avifSrcSet={layersAvifSet[i]}
+            webpSrcSet={layersWebpSet[i]}
             className="absolute inset-0 w-full h-full object-cover object-[58%_18%] md:object-center"
             style={{
               opacity: layer === i ? 1 : 0,

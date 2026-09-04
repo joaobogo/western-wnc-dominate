@@ -21,10 +21,13 @@ interface CommuteResult {
 const ShowroomCommute = ({
   location,
   showroomSlug,
+  originHint,
   className = "",
 }: {
   location: BusinessLocation;
   showroomSlug: string;
+  /** Town the visitor is on (town pages) — makes the helper line page-specific instead of one shared paragraph. */
+  originHint?: string;
   className?: string;
 }) => {
   const [address, setAddress] = useState("");
@@ -62,7 +65,9 @@ const ShowroomCommute = ({
         How far are you from the {location.locality} showroom?
       </h2>
       <p className="mb-6 max-w-2xl font-body text-body-sm text-muted-foreground">
-        Enter your street address, town or ZIP code and we will show the driving time and route to{" "}
+        {originHint
+          ? `Enter your ${originHint} street address or ZIP code and we will show the driving time and route from ${originHint} to `
+          : "Enter your street address, town or ZIP code and we will show the driving time and route to "}
         {napLine(location)}.
       </p>
 

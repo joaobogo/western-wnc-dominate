@@ -1,5 +1,3 @@
-import { createRoot, hydrateRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
 import { installGlobalErrorHandlers } from "./lib/error-reporting";
 import { preloadRouteHero } from "./lib/hero-preload";
@@ -33,12 +31,19 @@ window.addEventListener("unhandledrejection", (event) => {
   maybeReloadForStaleChunk(String(event?.reason?.message || event?.reason || ""));
 });
 
-// Prerendered routes ship real markup inside #root — hydrate on top of it so
-// crawlers get static HTML and users still get the full SPA. Non-prerendered
-// (app-only) routes fall back to a fresh client render.
-const container = document.getElementById("root")!;
-if (container.firstElementChild) {
-  hydrateRoot(container, <App />);
+// P5.1 — paint first, boot second. This entry chunk stays tiny (stylesheet,
+// error handlers, hero preload). React, framer-motion and the route chunk live
+// in ./bootstrap, imported one animation frame + one macrotask later, so the
+// browser commits the prerendered markup before any of that work runs.
+// Lighthouse measured the opposite order before: first paint waited behind
+// the whole JS boot (observed FCP ≈ 1.8–3 s unthrottled, 12–25 s simulated).
+// Nothing visual or behavioural changes; hydration starts roughly one frame
+// later than it used to.
+const boot = () => {
+  void import("./bootstrap");
+};
+if (typeof requestAnimationFrame === "function") {
+  requestAnimationFrame(() => window.setTimeout(boot, 0));
 } else {
-  createRoot(container).render(<App />);
+  boot();
 }

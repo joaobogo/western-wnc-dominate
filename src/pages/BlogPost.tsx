@@ -1,3 +1,4 @@
+import { HERO_SIZES, mediaSrcSet, mediaWebp } from "@/lib/media-srcset";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -10,7 +11,7 @@ import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustSidebar } from "@/components/trust";
-import { getBlogBySlug, blogPosts } from "@/data/blogs";
+import { getBlogBySlug, blogPosts, linkableBlogPosts } from "@/data/blogs";
 import { projectDetails } from "@/data/projects";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { getBlogInternalLinks } from "@/lib/blog-internal-links";
@@ -302,11 +303,11 @@ const BlogPostPage = () => {
   const [contentTop, contentBottom] = splitContentAtMidpoint(post.content);
   const readMinutes = estimateReadTime(post.content);
   const toc = buildToc(post.content);
-  const relatedPosts = blogPosts
+  const relatedPosts = linkableBlogPosts()
     .filter((p) => p.slug !== slug && (p.category === post.category || p.town === post.town))
     .slice(0, 3);
   if (relatedPosts.length < 3) {
-    const extra = blogPosts.filter((p) => p.slug !== slug && !relatedPosts.find((r) => r.slug === p.slug)).slice(0, 3 - relatedPosts.length);
+    const extra = linkableBlogPosts().filter((p) => p.slug !== slug && !relatedPosts.find((r) => r.slug === p.slug)).slice(0, 3 - relatedPosts.length);
     relatedPosts.push(...extra);
   }
 
@@ -322,6 +323,10 @@ const BlogPostPage = () => {
         title={post.title}
         description={post.excerpt}
         path={`/blog/${post.slug}`}
+        // Folded post (P3.5 consolidation): canonical → the survivor, noindex,follow,
+        // route stays live. Unset for every post until João confirms the clusters.
+        canonicalPath={post.canonicalTo ? `/blog/${post.canonicalTo}` : undefined}
+        noindex={post.canonicalTo ? "follow" : false}
         type="article"
         jsonLd={buildPageSchema({
           type: "blog",
@@ -354,9 +359,10 @@ const BlogPostPage = () => {
         {/* ═══ HERO ═══ */}
         <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden pt-8 md:pt-12">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src={post.image || "/media/wnc-town-overlook.jpg"} 
-
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async"
+              src={mediaWebp(post.image || "/media/wnc-town-overlook.jpg")}
+              srcSet={mediaSrcSet(post.image || "/media/wnc-town-overlook.jpg")}
+              sizes={HERO_SIZES}
               alt={post.imageAlt || post.title}
               className="w-full h-full object-cover"
             />

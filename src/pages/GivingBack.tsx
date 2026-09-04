@@ -47,17 +47,17 @@ const GivingBack = () => {
         path="/community"
         jsonLd={[
           organizationSchema(),
-          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Community", url: "/giving-back" }]),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Community", url: "/community" }]),
         ]}
       />
       <Header />
-      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Community", url: "/giving-back" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Community", url: "/community" }]} />
       <main id="main-content">
         {/* ── HERO ── */}
         <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async"
-              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
+              src="/media/wnc-town-overlook.webp"
               alt="Western North Carolina mountain community landscape"
               className="w-full h-full object-cover opacity-80"
             />

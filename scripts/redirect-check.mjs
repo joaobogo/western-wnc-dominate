@@ -8,10 +8,15 @@
  *     a static file in public/, or an external/absolute URL.
  *  4. Known-good spot checks (e.g. the Hibu /contact/... town pattern).
  *
+ * Rule parsing and matching live in scripts/lib/redirect-rules.mjs so this
+ * script and the legacy-URL resolution check share ONE implementation of
+ * "what would Netlify do with this path".
+ *
  * Usage: node scripts/redirect-check.mjs
  */
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
+import { loadRedirectRules, applyRule } from "./lib/redirect-rules.mjs";
 
 const failures = [];
 const fail = (m) => failures.push(m);
@@ -22,20 +27,9 @@ if (!existsSync(redirectsPath)) {
   process.exit(1);
 }
 
-const lines = readFileSync(redirectsPath, "utf8").split(/\r?\n/);
-const rules = [];
-lines.forEach((raw, i) => {
-  const line = raw.trim();
-  if (!line || line.startsWith("#")) return;
-  const parts = line.split(/\s+/);
-  if (parts.length < 2) {
-    fail(`Line ${i + 1}: malformed rule "${line}"`);
-    return;
-  }
-  const [from, to, statusRaw] = parts;
-  const status = (statusRaw || "301").replace("!", "");
-  rules.push({ from, to, status: Number(status), force: (statusRaw || "").endsWith("!"), line: i + 1 });
-});
+const parsed = loadRedirectRules(redirectsPath);
+for (const r of parsed.filter(r => r.malformed)) fail(`Line ${r.line}: malformed rule "${r.from}"`);
+const rules = parsed.filter(r => !r.malformed);
 
 // ---------- 1. ordering ----------
 const firstRewrite = rules.findIndex(r => r.status === 200);
@@ -99,43 +93,19 @@ for (const r of rules) {
 }
 
 // ---------- 4. spot checks ----------
-const applyRule = (path) => {
-  for (const r of rules) {
-    if (/^https?:\/\//.test(r.from)) continue;
-    if (r.from.endsWith("/*")) {
-      const base = r.from.slice(0, -2);
-      if (path === base || path.startsWith(base + "/")) {
-        return { rule: r, to: r.to.replace(":splat", path.slice(base.length + 1)) };
-      }
-      continue;
-    }
-    if (r.from.includes(":")) {
-      const names = [];
-      const re = new RegExp("^" + r.from.replace(/:[^/]+/g, (m) => { names.push(m.slice(1)); return "([^/]+)"; }) + "$");
-      const m = path.match(re);
-      if (m) {
-        let to = r.to;
-        names.forEach((n, i) => { to = to.replace(":" + n, m[i + 1]); });
-        return { rule: r, to };
-      }
-      continue;
-    }
-    if (r.from === path) return { rule: r, to: r.to };
-  }
-  return null;
-};
-
 const spotChecks = [
   ["/contact/roofing-company-service-area/franklin-nc", "/service-areas/franklin-nc", 301],
   ["/contact/anything-else", "/service-areas", 301],
+  ["/contact/anything-else/deeper", "/service-areas", 301],
   ["/service-locations", "/service-areas", 301],
   ["/service-locations/highlands-nc", "/service-areas", 301],
   ["/free-tools", "/404.html", 410],
   ["/contact-us_em", "/contact", 301],
   ["/sylva-nc-showroom", "/service-areas/sylva-nc", 301],
+  ["/intake/call-sheet", "/front-desk/call-sheet", 301],
 ];
 for (const [from, expected, status] of spotChecks) {
-  const res = applyRule(from);
+  const res = applyRule(rules, from);
   if (!res) fail(`Spot check: ${from} matches no rule (expected ${expected}).`);
   else if (res.to !== expected || res.rule.status !== status) {
     fail(`Spot check: ${from} → ${res.to} (${res.rule.status}); expected ${expected} (${status}).`);
@@ -143,7 +113,7 @@ for (const [from, expected, status] of spotChecks) {
 }
 
 // /blog must never be caught by a legacy catch-all
-const blogHit = applyRule("/blog/western-north-carolina-mountain-roofing-guide");
+const blogHit = applyRule(rules, "/blog/western-north-carolina-mountain-roofing-guide");
 if (blogHit && blogHit.rule.status !== 200) {
   fail(`/blog/* must not be redirected (matched line ${blogHit.rule.line}).`);
 }

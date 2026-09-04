@@ -68,7 +68,7 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                 Serving the <span className="text-primary italic">{currentTown.county}</span> Corridor.
               </h2>
               <p className="text-muted-foreground mt-4 font-body leading-relaxed">
-                Highlander Building Services maintains local crews throughout Western North Carolina. If you're near {currentTown.name}, we're likely in your neighborhood this week.
+                Crews based in Franklin and Sylva cover {currentTown.county} and the towns around {currentTown.name} at {currentTown.elevation} — if you're nearby, we're likely in your neighborhood this week.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -96,8 +96,11 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                     {town.name}
                   </h3>
                 </div>
+                {/* A short fact line from towns.ts instead of the town's full intro
+                    sentence — that sentence belongs on the town's own page and was
+                    being repeated on 30–70 other pages (P3.4 boilerplate). */}
                 <p className="text-muted-foreground text-body-xs font-body leading-relaxed mb-6 line-clamp-2">
-                  {town.description.split('.')[0]}.
+                  {town.county} · {town.elevation}
                 </p>
                 <span className="mt-auto text-primary text-body-xs font-heading font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
                   Service Details <ArrowRight className="w-4 h-4" aria-hidden="true" />

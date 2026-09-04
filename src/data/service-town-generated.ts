@@ -349,7 +349,7 @@ function buildMetal(t: TownData): Built {
     sections: [
       {
         heading: `Why metal suits ${t.name} roofs`,
-        body: `The case for metal here is not style, it is exposure: panels are mechanically seamed rather than surface-fastened, so there is no exposed sealant clock running on your roof and no granule loss to measure. The local aesthetic is ${t.styleTendency.charAt(0).toLowerCase()}${t.styleTendency.slice(1)} and current finishes cover that range without looking industrial — matte darks read well against the ${countyShort(t)} County tree line, and standing-seam profiles suit both the traditional and the mountain-modern houses we work on around ${t.name}.`,
+        body: `The case for metal here is not style, it is exposure: panels are mechanically seamed rather than surface-fastened, so there is no exposed sealant clock running on your roof and no granule loss to measure. The local aesthetic is ${t.styleTendency.charAt(0).toLowerCase()}${t.styleTendency.slice(1).replace(/[.!?]+$/, "")}, and current finishes cover that range without looking industrial — matte darks read well against the ${countyShort(t)} County tree line, and standing-seam profiles suit both the traditional and the mountain-modern houses we work on around ${t.name}.`,
       },
       {
         heading: `How we specify a ${t.name} metal roof`,

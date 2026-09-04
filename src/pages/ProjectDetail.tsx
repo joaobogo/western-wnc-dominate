@@ -13,7 +13,7 @@ import { ReassuranceBlock, TrustSidebar } from "@/components/trust";
 import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
 import { getProjectBySlug, projectDetails } from "@/data/projects";
 import ProjectLocationCTA from "@/components/projects/ProjectLocationCTA";
-import { blogPosts } from "@/data/blogs";
+import { linkableBlogPosts } from "@/data/blogs";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
@@ -244,7 +244,7 @@ const ProjectDetailPage = () => {
                   <h4 className="font-heading font-semibold text-sm text-foreground mb-4">Project Details</h4>
                   <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-4" />
                   <div className="space-y-3 text-sm">
-                    <div className="flex justify-between"><span className="text-muted-foreground">Location</span><Link to={`/service-areas/${project.location.toLowerCase().replace(', nc', '').replace(' ', '-')}`} className="font-medium text-primary hover:underline">{project.location}</Link></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Location</span><Link to={`/service-areas/${project.location.split(',')[0].toLowerCase().trim().replace(/\s+/g, '-')}-nc`} className="font-medium text-primary hover:underline">{project.location}</Link></div>
                     <div className="flex justify-between"><span className="text-muted-foreground">County</span><span className="font-medium text-foreground">{project.county}</span></div>
                     {project.elevation && <div className="flex justify-between"><span className="text-muted-foreground">Elevation</span><span className="font-medium text-foreground">{project.elevation}</span></div>}
                     <div className="flex justify-between"><span className="text-muted-foreground">Scope</span><span className="font-medium text-foreground">{project.scope}</span></div>
@@ -345,7 +345,7 @@ const ProjectDetailPage = () => {
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {blogPosts
+                {linkableBlogPosts()
                   .filter(b => b.category.toLowerCase().includes(project.type.toLowerCase()) || 
                              (project.location.includes(b.town || "") && b.town !== undefined) ||
                              b.category === (project.category === "roofing" ? "Materials" : "Construction"))

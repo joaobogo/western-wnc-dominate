@@ -147,8 +147,8 @@ export const auditRenderedPage = (doc: Document, page: AuditRoute, win?: Window)
   const { parsed, errors } = parseJsonLd(doc);
   const schemaTypes = getSchemaTypes(parsed);
   const breadcrumbSchemaPresent = schemaTypes.includes("BreadcrumbList");
-  // Canonicals are emitted in the trailing-slash form the server serves.
-  const expectedCanonical = `${window.location.origin}${page.path === "/" ? "/" : `${page.path.replace(/\/+$/, "")}/`}`;
+  // Canonicals use the sitewide URL shape: no trailing slash (homepage excepted).
+  const expectedCanonical = `${window.location.origin}${page.path === "/" ? "/" : page.path.replace(/\/+$/, "")}`;
   const images = Array.from(doc.images);
   const eagerImageCount = images.filter((image) => (image.getAttribute("loading") || "eager") !== "lazy").length;
 

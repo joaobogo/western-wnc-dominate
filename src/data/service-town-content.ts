@@ -29,6 +29,15 @@ export interface ServiceTownEntry {
    * so they render with noindex,follow and stay out of the sitemap.
    */
   handwritten?: boolean;
+  /**
+   * Explicit indexability switch (default true). A hand-written page is
+   * indexable only when handwritten === true AND indexable !== false. Set to
+   * false for towns outside the map-pack radius that cannot realistically
+   * rank (GSC 90-day data, P3.1): the page still renders and is prerendered,
+   * carries noindex,follow and its self-canonical, but leaves the sitemap and
+   * internal links point at the parent division page instead.
+   */
+  indexable?: boolean;
 }
 
 const E = (e: ServiceTownEntry) => e;
@@ -352,6 +361,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── ASHEVILLE ───────────
   E({
     townSlug: "asheville-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roof-replacement",
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Asheville, NC",
@@ -374,6 +384,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   }),
   E({
     townSlug: "asheville-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "additions",
     serviceLabel: "Home Additions",
     h1: "Home Additions & Modernization in Asheville, NC",
@@ -397,6 +408,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── HENDERSONVILLE ───────────
   E({
     townSlug: "hendersonville-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roof-replacement",
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Hendersonville, NC",
@@ -412,13 +424,14 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Reliable roof replacement for Hendersonville homes. Local crews, impact-resistant options, and team-led quality. Licensed & Insured.",
     faqs: [
-      { q: "Do you work in Hendersonville retirement communities?", a: "Yes. we are familiar with the scheduling and staging requirements of many Hendersonville-area active adult and retirement communities." },
+      { q: "Do you work in Hendersonville retirement communities?", a: "Yes. We are familiar with the scheduling and staging requirements of many Hendersonville-area active adult and retirement communities." },
       { q: "Why should I choose impact-resistant shingles in Hendersonville?", a: "Hendersonville is a hail-prone corridor. Class 4 shingles are designed to survive these events and often provide insurance discounts." },
     ],
   }),
   // ─────────── WAYNESVILLE ───────────
   E({
     townSlug: "waynesville-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roof-replacement",
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Waynesville, NC",
@@ -440,6 +453,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   }),
   E({
     townSlug: "waynesville-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "additions",
     serviceLabel: "Home Additions",
     h1: "Home Additions in Waynesville, NC",
@@ -462,6 +476,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── BREVARD ───────────
   E({
     townSlug: "brevard-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roof-replacement",
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Brevard, NC",
@@ -483,6 +498,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   }),
   E({
     townSlug: "brevard-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "outdoor-living",
     serviceLabel: "Outdoor Living",
     h1: "Outdoor Living & Decks in Brevard, NC",
@@ -505,6 +521,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── BRYSON CITY ───────────
   E({
     townSlug: "bryson-city-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "metal-roofing",
     serviceLabel: "Metal Roofing",
     h1: "Metal Roofing in Bryson City, NC",
@@ -527,6 +544,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── MURPHY ───────────
   E({
     townSlug: "murphy-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roof-replacement",
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Murphy, NC",
@@ -855,6 +873,7 @@ serviceTownContent.push(
   }),
   E({
     townSlug: "cullowhee-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roofing-construction",
     serviceLabel: "Roofing & Construction",
     h1: "Roofing and Construction Services in Cullowhee, NC",
@@ -877,6 +896,7 @@ serviceTownContent.push(
   }),
   E({
     townSlug: "cullowhee-nc",
+    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
     serviceSlug: "roof-repair",
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Cullowhee, NC",
@@ -943,17 +963,57 @@ export function getServiceTownEntriesForService(serviceSlug: string) {
   return serviceTownContent.filter((e) => e.serviceSlug === serviceSlug);
 }
 
+/** The one rule for "does this service × town page compete in search?". */
+const entryIsIndexable = (e: ServiceTownEntry | undefined) =>
+  !!e && e.handwritten === true && e.indexable !== false;
+
 /**
  * A service × town page is indexable only when it carries hand-written local
- * content (local proof, town-specific FAQs, photos). Templated coverage pages
- * render with noindex,follow and are excluded from the sitemap.
+ * content (local proof, town-specific FAQs, photos) AND is not switched off
+ * with `indexable: false` (towns outside the map-pack radius). Everything else
+ * renders with noindex,follow and is excluded from the sitemap.
  */
 export function isServiceTownIndexable(townSlug: string, serviceSlug: string) {
-  return getServiceTownEntry(townSlug, serviceSlug)?.handwritten === true;
+  return entryIsIndexable(getServiceTownEntry(townSlug, serviceSlug));
 }
 
 /** Every indexable service × town pair, for sitemap generation. */
 export const indexableServiceTownPairs = () =>
   serviceTownContent
-    .filter((e) => e.handwritten)
+    .filter(entryIsIndexable)
     .map((e) => ({ townSlug: e.townSlug, serviceSlug: e.serviceSlug }));
+
+/**
+ * Parent division page for each service slug — where link equity goes when a
+ * service × town page is noindex (there is no point pointing internal links at
+ * a page we do not want ranked).
+ */
+export const DIVISION_PAGE_FOR_SERVICE: Record<string, string> = {
+  roofing: "/roofing",
+  "roof-repair": "/roofing/roof-repair",
+  "roof-replacement": "/roofing/roof-replacement",
+  "metal-roofing": "/roofing/metal",
+  "storm-damage": "/roofing/storm-damage",
+  gutters: "/roofing/gutters",
+  skylights: "/roofing/skylights",
+  "synthetic-brava": "/roofing/brava-synthetic",
+  "home-repairs": "/roofing/roof-repair",
+  "roofing-construction": "/roofing",
+  construction: "/construction",
+  additions: "/construction/additions",
+  "outdoor-living": "/construction/outdoor-living",
+  renovations: "/construction/renovations",
+  siding: "/construction/siding",
+};
+
+/**
+ * Internal link target for a service in a town: the nested page when it is
+ * indexable, otherwise the parent division page. Use this for every link
+ * rendered on an indexable page (town grids, nearby-town blocks, link webs,
+ * division pages, blog blocks). The noindex page itself stays reachable at its
+ * own URL and keeps its self-canonical.
+ */
+export function serviceTownHref(townSlug: string, serviceSlug: string) {
+  if (isServiceTownIndexable(townSlug, serviceSlug)) return `/service-areas/${townSlug}/${serviceSlug}`;
+  return DIVISION_PAGE_FOR_SERVICE[serviceSlug] ?? `/service-areas/${townSlug}`;
+}

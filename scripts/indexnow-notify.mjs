@@ -26,9 +26,23 @@ const IS_PRODUCTION =
   process.env.INDEXNOW_FORCE === "1" ||
   (process.env.CONTEXT === "production" && process.env.NETLIFY === "true");
 
-/** route → sha256 of the prerendered <body> markup. */
+/**
+ * route → sha256 of the prerendered markup. Prerendered pages live at
+ * dist/index.html ("/") and dist/**\/<name>.html ("/<path>/<name>"); dist/404.html
+ * is the not-found page and is never submitted.
+ */
 function buildManifest() {
   const manifest = {};
+  const hashOf = (full) =>
+    createHash("sha256")
+      .update(
+        readFileSync(full, "utf8")
+          // Volatile per-build markers must not count as content changes.
+          .replace(/<meta name="prerendered-at"[^>]*>/g, "")
+          .replace(/\/assets\/[^"']+/g, ""),
+      )
+      .digest("hex")
+      .slice(0, 32);
   const walk = (dir, prefix) => {
     for (const entry of readdirSync(dir)) {
       const full = join(dir, entry);
@@ -36,11 +50,9 @@ function buildManifest() {
         if (["assets", "og"].includes(entry)) continue;
         walk(full, `${prefix}/${entry}`);
       } else if (entry === "index.html") {
-        const html = readFileSync(full, "utf8")
-          // Volatile per-build markers must not count as content changes.
-          .replace(/<meta name="prerendered-at"[^>]*>/g, "")
-          .replace(/\/assets\/[^"']+/g, "");
-        manifest[prefix || "/"] = createHash("sha256").update(html).digest("hex").slice(0, 32);
+        if (prefix === "") manifest["/"] = hashOf(full);
+      } else if (entry.endsWith(".html") && !(prefix === "" && entry === "404.html")) {
+        manifest[`${prefix}/${entry.slice(0, -".html".length)}`] = hashOf(full);
       }
     }
   };

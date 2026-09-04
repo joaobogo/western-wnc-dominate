@@ -63,7 +63,16 @@ interface LocalProjectProofProps {
   /** How many real projects to show. Never fabricates — caps at what exists. */
   limit?: number;
   className?: string;
+  /**
+   * Town pages (P3.6): show ONLY projects done in this town. When fewer than
+   * `limit` exist, the gap is filled with an honest "send us your address"
+   * line instead of work from other towns or stock imagery.
+   */
+  strictTown?: boolean;
 }
+
+/** Copy shown when a town has fewer real projects than the block can hold. */
+const NEAREST_ROOF_LINE = "Send us your address and we'll show you the nearest roof we've done";
 
 const LocalProjectProof = ({
   town,
@@ -71,18 +80,33 @@ const LocalProjectProof = ({
   heading,
   limit = 2,
   className = "",
+  strictTown = false,
 }: LocalProjectProofProps) => {
-  const picks = pickLocalProjects(town, category, limit);
-  if (!picks.length) return null;
+  const all = pickLocalProjects(town, category, strictTown ? 50 : limit);
+  const picks = strictTown ? all.filter((p) => p.proximity === `In ${town.name}`).slice(0, limit) : all;
+  const short = strictTown && picks.length < limit;
+  if (!picks.length && !short) return null;
 
   return (
     <section className={className} aria-label={`Recent work near ${town.name}`}>
       <h2 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-1">
-        {heading ?? `Recent work near ${town.name}`}
+        {heading ?? (strictTown ? `Recent ${town.name} projects` : `Recent work near ${town.name}`)}
       </h2>
       <p className="text-sm text-muted-foreground mb-6">
-        Real Highlander projects, labeled with the town where the work was actually done.
+        {strictTown
+          ? `Real Highlander projects completed in ${town.name} — nothing relocated, nothing staged.`
+          : "Real Highlander projects, labeled with the town where the work was actually done."}
       </p>
+      {short && (
+        <p className="mb-6 font-body text-body text-foreground" data-nearest-roof-line>
+          {picks.length ? `We have more ${town.name} work than fits here. ` : ""}
+          <Link to="/request-inspection" className="text-primary underline underline-offset-4 hover:no-underline">
+            {NEAREST_ROOF_LINE}
+          </Link>
+          .
+        </p>
+      )}
+      {picks.length > 0 && (
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {picks.map(({ project, proximity }) => {
           const ba = project.beforeAfter;
@@ -144,6 +168,7 @@ const LocalProjectProof = ({
           );
         })}
       </div>
+      )}
     </section>
   );
 };

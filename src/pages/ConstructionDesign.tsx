@@ -32,7 +32,7 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
  * amounts, "starting at", or "typical fee range" copy on this page.
  */
 
-const heroImg = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000";
+const heroImg = "/media/wnc-construction-framing.webp";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 

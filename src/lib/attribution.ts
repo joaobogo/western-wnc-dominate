@@ -185,7 +185,9 @@ export function getGbpTouch(): GbpTouch | null {
   const a = getAttribution();
 
   const campaign = (a.utm_campaign ?? "").toLowerCase();
-  if (a.utm_source === "google" && (campaign === "gbp" || campaign === "gbp_booking")) {
+  // "gbp_profile" is what the live profiles use (see gbpWebsiteUrl); "gbp" is the
+  // previous tag, still honoured for links that were pasted before the change.
+  if (a.utm_source === "google" && (campaign === "gbp_profile" || campaign === "gbp" || campaign === "gbp_booking")) {
     return {
       entry: campaign === "gbp_booking" ? "booking" : "website",
       showroom: a.utm_content,

@@ -80,7 +80,7 @@ export const counties: CountyData[] = [
       { label: "Market Focus", value: "Vacation Rentals" },
       { label: "Top Material", value: "Metal Roofing" },
       { label: "Response", value: "Priority Support" },
-      { label: "Rating", value: "5.0/5 Stars" }
+      { label: "Rating", value: `${REVIEW_RATING}/5 Stars` }
     ],
     housingContext: "Swain County is dominated by high-traffic vacation rentals, mountain cabins, and riverside residences that require high-durability, low-maintenance finishes.",
     climateRealities: "High humidity from the Smoky Mountains and sudden afternoon deluges demand superior flashing details and mold-resistant roofing systems.",
@@ -149,7 +149,7 @@ export const counties: CountyData[] = [
       { label: "Regional Center", value: "Hendersonville" },
       { label: "Service", value: "Dual Division" },
       { label: "Status", value: "Active Local Crew" },
-      { label: "Rating", value: "5.0/5 Stars" }
+      { label: "Rating", value: `${REVIEW_RATING}/5 Stars` }
     ],
     housingContext: "Henderson County is characterized by established retirement communities, historic downtown residential districts, and new multi-generational developments.",
     climateRealities: "The Hendersonville plateau experiences significant afternoon thunderhead development and localized hail events that test roof integrity year-round.",
@@ -242,7 +242,7 @@ export const counties: CountyData[] = [
       { label: "Regional Hub", value: "Hayesville" },
       { label: "Specialty", value: "Lakefront Life" },
       { label: "Response", value: "Priority Support" },
-      { label: "Rating", value: "5.0/5 Stars" }
+      { label: "Rating", value: `${REVIEW_RATING}/5 Stars` }
     ],
     housingContext: "Clay County centers on high-end lakefront residences, vacation rentals, and stable rural communities around Hayesville.",
     climateRealities: "Lake-effect humidity and seasonal storms across the Chatuge basin demand moisture-resistant materials and superior ventilation.",

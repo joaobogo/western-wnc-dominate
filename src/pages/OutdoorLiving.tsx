@@ -22,10 +22,10 @@ import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
-const heroImg = "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80&w=2000";
-const porchContextImg = "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&q=80&w=1600";
-const timberFrameImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=1200";
-const terrainSlopeImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
+const heroImg = "/media/wnc-forest-cabin-roof.webp";
+const porchContextImg = "/media/wnc-mountain-home-exterior.webp";
+const timberFrameImg = "/media/wnc-mountain-home-exterior.webp";
+const terrainSlopeImg = "/media/wnc-ridge-elevation-home.webp";
 
 import proj1 from "@/assets/gallery/cedar-001.webp";
 import proj2 from "@/assets/gallery/metal-006.webp";
@@ -209,7 +209,7 @@ const OutdoorLiving = () => {
             {/* ─── OPENING — Experiential with generous whitespace ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none">
-            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="lazy" decoding="async" src="/media/wnc-mountain-home-exterior.webp" alt="Timber frame detail" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-3xl">

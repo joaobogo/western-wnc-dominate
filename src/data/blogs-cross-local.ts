@@ -1,5 +1,6 @@
 import { PHONE_PLAIN } from "@/data/business";
 import { towns, type TownData } from "./towns";
+import { serviceTownHref } from "./service-town-content";
 import type { BlogPost } from "./blogs";
 
 /**
@@ -62,7 +63,7 @@ const countySlugOf = (t: TownData) =>
   t.county.toLowerCase().trim().replace(/\s+/g, "-");
 const townLink = (t: TownData) => `[${t.name}, NC roofing and construction](/service-areas/${t.slug})`;
 const svcLink = (t: TownData, svc: string, label: string) =>
-  `[${label} in ${t.name}](/service-areas/${t.slug}/${svc})`;
+  `[${label} in ${t.name}](${serviceTownHref(t.slug, svc)})`;
 const countyLink = (t: TownData) =>
   `[${t.county} coverage](/service-areas/county/${countySlugOf(t)})`;
 const neighborSentence = (t: TownData) => {

@@ -45,6 +45,13 @@ export interface BlogPost {
   faqs?: BlogFAQ[];
   relatedServices?: Array<{ label: string; path: string }>;
   relatedProjects?: string[]; // project slugs
+  /**
+   * Slug of the surviving post this one is folded into (P3.5 blog consolidation).
+   * When set: the page still renders at its own URL, but emits
+   * <link rel="canonical"> to /blog/<canonicalTo>, robots noindex,follow, and is
+   * excluded from the sitemap and from every internal-link block.
+   */
+  canonicalTo?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -681,7 +688,7 @@ With locations in Franklin and Sylva, we serve Highlands, Cashiers, Sapphire, Gl
     town: "Highlands",
     relatedServices: [
       { label: "Metal Roofing", path: "/roofing/metal" },
-      { label: "Shingle Roofing", path: "/roofing/shingle" },
+      { label: "Shingle Roofing", path: "/roofing/residential" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Request a Roof Inspection", path: "/request-inspection" },
     ],
@@ -2134,7 +2141,7 @@ In WNC, your deck's orientation determines whether you can use it at 2 PM in Jul
 High moisture and UV at elevation can destroy standard wood decks. We recommend composite materials or thermally modified wood that withstands the 40-degree temperature swings common in Jackson and Macon counties.`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Decks & Porches", path: "/construction/decks-porches" }
+      { label: "Decks & Porches", path: "/construction/outdoor-living" }
     ],
   },
   {
@@ -2628,7 +2635,7 @@ We started as roofers and expanded into construction because our clients kept as
     relatedServices: [
       { label: "Construction Division", path: "/construction" },
       { label: "Home Additions", path: "/construction/additions" },
-      { label: "Exterior Improvements", path: "/construction/exterior" },
+      { label: "Exterior Improvements", path: "/exterior-improvements" },
     ],
     faqs: [
       { question: "Can Highlander handle both my roof and my addition?", answer: "Yes. We're a licensed NC General Contractor with dedicated roofing and construction crews. One contract, one timeline, one warranty." },
@@ -2682,7 +2689,7 @@ Mountain additions are priced from the actual scope — complexity, access, fini
     town: "Franklin",
     relatedServices: [
       { label: "Home Additions", path: "/construction/additions" },
-      { label: "Custom Projects", path: "/construction/custom" },
+      { label: "Custom Projects", path: "/construction" },
     ],
     faqs: [
       { question: "How long does a home addition take in WNC?", answer: "Most additions take 8-16 weeks depending on size, complexity, and weather. Larger additions with significant foundation work may take longer." },
@@ -2786,7 +2793,6 @@ Afternoon thunderstorms, flash flooding risk, humidity-driven moisture issues
 Highlander responds on a same-day or next-day basis for storm damage inspections across all of Western NC. We provide detailed documentation that supports your insurance claim.`,
     relatedServices: [
       { label: "Storm Damage Roofing", path: "/roofing/storm-damage" },
-      { label: "Storm Center", path: "/storm-center" },
     ],
     faqs: [
       { question: "Does Highlander offer emergency tarping?", answer: "Yes. We provide emergency tarping to prevent further damage while you wait for insurance assessment and permanent repairs." },
@@ -5527,9 +5533,9 @@ Clear answers to those questions tend to make the right decision obvious.
 
 Some roofs only need a focused repair. Some roofs are better served by replacement. The way to know which situation you are in is a careful look at the entire roofing system rather than a guess based on a stain or a single missing shingle.
 
-Highlander Building Services focuses on practical recommendations, local mountain experience, quality workmanship, and long term protection for homes across Highlands, Cashiers, Franklin, and the surrounding Western North Carolina communities. Whether the right answer for your home is a targeted [roof repair](/roofing/roof-repair), a full [roof replacement](/roofing/roof-replacement), or a broader [construction](/construction) or [exterior](/construction/exterior) update, we will walk you through the reasoning before we ever touch the roof.
+Highlander Building Services focuses on practical recommendations, local mountain experience, quality workmanship, and long term protection for homes across Highlands, Cashiers, Franklin, and the surrounding Western North Carolina communities. Whether the right answer for your home is a targeted [roof repair](/roofing/roof-repair), a full [roof replacement](/roofing/roof-replacement), or a broader [construction](/construction) or [exterior](/construction/siding) update, we will walk you through the reasoning before we ever touch the roof.
 
-You can also see recent work in our [project gallery](/gallery) or read more about our [roofing services](/roofing) and [service area in Highlands, NC](/service-areas/highlands-nc).
+You can also see recent work in our [recent projects](/recent-projects) or read more about our [roofing services](/roofing) and [service area in Highlands, NC](/service-areas/highlands-nc).
 
 ### Not Sure Whether You Need a Repair or Replacement?
 
@@ -5787,7 +5793,7 @@ const highlandsClusterPosts: BlogPost[] = [
     ],
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
-      { label: "Exterior Construction", path: "/construction/exterior" },
+      { label: "Exterior Construction", path: "/construction/siding" },
       { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
@@ -6044,7 +6050,7 @@ const franklinClusterPosts: BlogPost[] = [
     ],
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
-      { label: "Exterior Construction", path: "/construction/exterior" },
+      { label: "Exterior Construction", path: "/construction/siding" },
       { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
@@ -6251,7 +6257,7 @@ const cashiersClusterPosts: BlogPost[] = [
     ],
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
-      { label: "Exterior Construction", path: "/construction/exterior" },
+      { label: "Exterior Construction", path: "/construction/siding" },
       { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
@@ -6327,7 +6333,7 @@ const cashiersClusterPosts: BlogPost[] = [
     ],
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
-      { label: "Exterior Construction", path: "/construction/exterior" },
+      { label: "Exterior Construction", path: "/construction/siding" },
       { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
@@ -6566,7 +6572,7 @@ const cullowheeClusterPosts: BlogPost[] = [
     ],
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
-      { label: "Exterior Construction", path: "/construction/exterior" },
+      { label: "Exterior Construction", path: "/construction/siding" },
       { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
@@ -6637,3 +6643,7 @@ export const getRelatedBlogs = (slug: string, limit = 3) => {
   }
   return related;
 };
+
+/** A post that is not folded into another one (P3.5). Link blocks and the sitemap use only these. */
+export const isLinkableBlogPost = (p: BlogPost) => !p.canonicalTo;
+export const linkableBlogPosts = () => blogPosts.filter(isLinkableBlogPost);

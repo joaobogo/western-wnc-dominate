@@ -23,11 +23,11 @@ export function getProjectServiceTags(type: string, category: "roofing" | "const
   if (t.includes("metal")) tags.push({ label: "Metal Roofing", path: "/roofing/metal" });
   if (t.includes("asphalt") || t.includes("shingle")) tags.push({ label: "Shingle Roofing", path: "/roofing/residential" });
   if (t.includes("cedar")) tags.push({ label: "Cedar & Specialty Roofing", path: "/roofing/residential" });
-  if (t.includes("commercial")) tags.push({ label: "Commercial Roofing", path: "/commercial-roofing" });
+  if (t.includes("commercial")) tags.push({ label: "Commercial Roofing", path: "/roofing/commercial" });
   if (t.includes("gutter")) tags.push({ label: "Gutters", path: "/roofing/gutters" });
-  if (t.includes("repair") || t.includes("storm")) tags.push({ label: "Roof Repair", path: "/roofing/repair" });
+  if (t.includes("repair") || t.includes("storm")) tags.push({ label: "Roof Repair", path: "/roofing/roof-repair" });
 
-  tags.push({ label: "Roof Replacement", path: "/roofing/replacement" });
+  tags.push({ label: "Roof Replacement", path: "/roofing/roof-replacement" });
 
   // De-dupe by path, keep first three.
   const seen = new Set<string>();

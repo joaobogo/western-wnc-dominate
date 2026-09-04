@@ -59,7 +59,7 @@ const CTABlock = () => {
               {/* Subtext — calm authority */}
               <ScrollReveal variant="rise-subtle" delay={0.3}>
                 <p className="text-dark-section-muted text-body-sm md:text-body-sm max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
-                  Tell us about your property. A project advisor — not a call center — responds within as soon as possible with a clear next step.
+                  Tell us about your property. A project advisor — not a call center — responds as soon as possible with a clear next step.
                 </p>
               </ScrollReveal>
 
