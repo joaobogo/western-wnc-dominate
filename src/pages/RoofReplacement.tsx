@@ -32,7 +32,6 @@ import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import replacementMobileHero from "@/assets/heroes/replacement-mobile.webp";
 import RelatedLinks from "@/components/RelatedLinks";
-import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -614,7 +613,6 @@ const RoofReplacement = () => {
           }
           afterCta={
             <>
-      <RealWorkWidget />
             </>
           }
         />

@@ -9,7 +9,6 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import RealWorkWidget from "@/components/RealWorkWidget";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 import { trackGalleryProjectOpen } from "@/lib/gtm";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
@@ -298,8 +297,6 @@ const RecentProjects = () => {
           </div>
         </section>
 
-        {/* RealWork Labs — Recent Project Updates (live widget target: #rwl-output) */}
-        <RealWorkWidget />
 
         <section className="py-16 md:py-24 bg-background">
           <div className="container-tight">

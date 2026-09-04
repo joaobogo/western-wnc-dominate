@@ -21,7 +21,6 @@ import heroImg from "@/assets/gallery/asphalt-005.webp";
 import heroImgAvif from "@/assets/gallery/asphalt-005.webp?w=640;960;1280;1600&format=avif&as=srcset";
 import heroImgWebp from "@/assets/gallery/asphalt-005.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
-import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -646,7 +645,6 @@ const StormDamage = () => {
           }
           afterCta={
             <>
-      <RealWorkWidget />
             </>
           }
         />

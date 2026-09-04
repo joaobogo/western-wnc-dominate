@@ -18,7 +18,6 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import heroImg from "@/assets/gallery/metal-006.webp";
-import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -508,9 +507,6 @@ const CommercialRoofing = () => {
                       </div>
                     </div>
                   </section>
-        }
-        afterCta={
-                <RealWorkWidget />
         }
       />
       <Footer />

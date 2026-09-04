@@ -13,7 +13,6 @@ import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { towns } from "@/data/towns";
 import serviceAreasHeroAsset from "@/assets/service-areas-hero-smokies.jpg.asset.json";
 import serviceAreasHeroFallbackAsset from "@/assets/service-areas-hero.jpg.asset.json";
-import RealWorkWidget from "@/components/RealWorkWidget";
 const SERVICE_AREAS_HERO = serviceAreasHeroAsset.url;
 const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroFallbackAsset.url;
 
@@ -323,7 +322,6 @@ const ServiceAreas = () => {
           </div>
         </section>
       </main>
-      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

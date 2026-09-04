@@ -51,7 +51,6 @@ import proj2 from "@/assets/gallery/cedar-002.webp";
 import proj3 from "@/assets/gallery/metal-008.webp";
 import proj4 from "@/assets/gallery/asphalt-004.webp";
 import RelatedLinks from "@/components/RelatedLinks";
-import RealWorkWidget from "@/components/RealWorkWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import FinancingTeaser from "@/components/conversion/FinancingTeaser";
@@ -513,7 +512,6 @@ const ConstructionDivision = () => {
         <TieredOffer context="construction-division" primaryLabel="Get My Build Planned" primaryTo="/construction-intake" primaryDescription="A working session on scope, feasibility, and budget range — then a written project scope." />
       </main>
 
-      <RealWorkWidget />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />
