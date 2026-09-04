@@ -18,7 +18,7 @@ export const blogSummaries: BlogSummary[] = [
     "title": "What a Western North Carolina Storm Season Does to Your Roof",
     "excerpt": "Wind breaks the sealant bond before it takes a shingle away, and hail either fractures the mat or it does not. A plain accounting of what a WNC summer does to a mountain roof, what you can check from the ground, and what cannot be seen without someone walking it.",
     "category": "Storm Damage",
-    "date": "2026-09-08",
+    "date": "2026-09-04",
     "readTime": "14 min"
   },
   {
