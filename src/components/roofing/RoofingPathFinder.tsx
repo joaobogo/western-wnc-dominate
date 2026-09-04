@@ -1,7 +1,7 @@
 import { PHONE_DISPLAY } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, HelpCircle } from "lucide-react";
+import { ArrowRight, Phone, HelpCircle, Palette } from "lucide-react";
 
 type Option = {
   symptom: string;

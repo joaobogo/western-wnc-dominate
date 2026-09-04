@@ -52,7 +52,7 @@ const companyLinks = [
   { label: "Franklin Showroom", href: "/locations/franklin-nc" },
   { label: "Sylva Showroom", href: "/locations/sylva-nc" },
   { label: "Our Team", href: "/team" },
-  { label: "Community", href: "/giving-back" },
+  { label: "Community", href: "/community" },
   { label: "Work With Us", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];

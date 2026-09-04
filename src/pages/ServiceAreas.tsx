@@ -31,9 +31,10 @@ const serviceStats = [
         <Link to="/service-areas/county/jackson-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Jackson</Link> · 
         <Link to="/service-areas/county/buncombe-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Buncombe</Link> · 
         <Link to="/service-areas/county/henderson-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Henderson</Link> ·
-        <Link to="/service-areas/county/transylvania-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Transylvania</Link>
+        <Link to="/service-areas/county/transylvania-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Transylvania</Link> ·
+        <Link to="/service-areas/county/madison-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Madison</Link>
       </span>
-    ) 
+    )
   },
   { value: "Rapid", label: "Response Time", detail: "Emergency & Standard" },
   { value: REVIEW_STARS, label: "Average Rating", detail: REVIEW_COUNT_LABEL },
