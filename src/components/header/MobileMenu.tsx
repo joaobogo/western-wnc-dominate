@@ -15,10 +15,49 @@ interface Props {
   isActive: (href: string) => boolean;
   onViewAllClick: (e: React.MouseEvent, href: string) => void;
   serviceAreasBtnRef: React.RefObject<HTMLButtonElement>;
+  /** The hamburger button — focus returns here when the drawer closes. */
+  triggerRef?: React.RefObject<HTMLButtonElement>;
 }
 
-export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onViewAllClick, serviceAreasBtnRef }: Props) => {
+export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onViewAllClick, serviceAreasBtnRef, triggerRef }: Props) => {
   const panelRef = useRef<HTMLDivElement>(null);
+
+  // Everything behind the dialog is made inert so keyboard users cannot tab
+  // into visually covered content. The header (which owns the panel and the
+  // trigger) stays interactive.
+  useEffect(() => {
+    if (!open) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+    const headerEl = panel.closest("header");
+    const backdrop = Array.from(document.body.children).filter(
+      (el) => el !== headerEl && !el.contains(panel)
+    ) as HTMLElement[];
+    backdrop.forEach((el) => {
+      el.setAttribute("data-menu-inert", "true");
+      el.setAttribute("inert", "");
+      el.setAttribute("aria-hidden", "true");
+    });
+    return () => {
+      backdrop.forEach((el) => {
+        if (el.getAttribute("data-menu-inert") !== "true") return;
+        el.removeAttribute("data-menu-inert");
+        el.removeAttribute("inert");
+        el.removeAttribute("aria-hidden");
+      });
+    };
+  }, [open]);
+
+  // Focus returns to the hamburger trigger after the drawer closes.
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (open) {
+      wasOpen.current = true;
+    } else if (wasOpen.current) {
+      wasOpen.current = false;
+      triggerRef?.current?.focus();
+    }
+  }, [open, triggerRef]);
 
   // Focus trap + Escape close while the drawer is open.
   useEffect(() => {
@@ -50,7 +89,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
       if (e.shiftKey && (active === first || !panel.contains(active))) {
         e.preventDefault();
         last.focus();
-      } else if (!e.shiftKey && active === last) {
+      } else if (!e.shiftKey && (active === last || !panel.contains(active))) {
         e.preventDefault();
         first.focus();
       }

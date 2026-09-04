@@ -22,6 +22,7 @@ const Header = () => {
   const serviceAreasTriggerRef = useRef<HTMLAnchorElement>(null);
   const serviceAreasPanelRef = useRef<HTMLDivElement>(null);
   const mobileServiceAreasBtnRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuBtnRef = useRef<HTMLButtonElement>(null);
 
   // Close open desktop dropdown on Escape and restore focus to its trigger.
   useEffect(() => {
@@ -125,7 +126,7 @@ const Header = () => {
           serviceAreasPanelRef={serviceAreasPanelRef}
         />
 
-        <HeaderActions mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+        <HeaderActions mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} menuButtonRef={mobileMenuBtnRef} />
       </div>
 
       <MobileMenu
@@ -136,6 +137,7 @@ const Header = () => {
         isActive={isActive}
         onViewAllClick={handleViewAllClick}
         serviceAreasBtnRef={mobileServiceAreasBtnRef}
+        triggerRef={mobileMenuBtnRef}
       />
     </motion.header>
   );
