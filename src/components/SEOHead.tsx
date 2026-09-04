@@ -289,7 +289,7 @@ const geoPoint = (loc: BusinessLocation) => ({
 const locationSchema = (loc: BusinessLocation) => ({
   "@type": ["RoofingContractor", "GeneralContractor", "LocalBusiness"],
   "@id": `${BASE_URL}/#${loc.id}-showroom`,
-  name: `${SITE_NAME} — ${loc.name}`,
+  name: `${BUSINESS.legalName} — ${loc.name}`,
   url: BASE_URL,
   image: DEFAULT_IMAGE,
   telephone: loc.phoneE164,
@@ -323,7 +323,7 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
-  name: SITE_NAME,
+  name: BUSINESS.legalName,
   legalName: BUSINESS.legalName,
   alternateName: BUSINESS.alternateNames,
   url: BASE_URL,
