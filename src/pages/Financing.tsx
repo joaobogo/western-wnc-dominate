@@ -97,7 +97,7 @@ const Financing = () => {
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <b.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">{b.title}</h3>
+                  <h2 className="font-heading font-semibold text-foreground mb-2">{b.title}</h2>
                   <p className="text-muted-foreground text-sm font-bold">{b.description}</p>
                 </div>
               ))}
@@ -108,15 +108,15 @@ const Financing = () => {
               <ol className="space-y-4">
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                  <div><h4 className="font-bold text-foreground">Request a Consultation</h4><p className="text-muted-foreground text-sm font-bold">Tell us about your roofing or construction project. We provide a written, itemized estimate so you know the real scope and cost.</p></div>
+                  <div><h3 className="font-bold text-foreground">Request a Consultation</h3><p className="text-muted-foreground text-sm font-bold">Tell us about your roofing or construction project. We provide a written, itemized estimate so you know the real scope and cost.</p></div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
-                  <div><h4 className="font-bold text-foreground">Mention Financing</h4><p className="text-muted-foreground text-sm font-bold">Let your advisor know you'd like to explore financing. They'll explain the options currently available and what each one involves.</p></div>
+                  <div><h3 className="font-bold text-foreground">Mention Financing</h3><p className="text-muted-foreground text-sm font-bold">Let your advisor know you'd like to explore financing. They'll explain the options currently available and what each one involves.</p></div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-                  <div><h4 className="font-bold text-foreground">Move Forward When You're Ready</h4><p className="text-muted-foreground text-sm font-bold">Once your financing path is clear, we schedule the work. No pressure to commit before you understand the full picture.</p></div>
+                  <div><h3 className="font-bold text-foreground">Move Forward When You're Ready</h3><p className="text-muted-foreground text-sm font-bold">Once your financing path is clear, we schedule the work. No pressure to commit before you understand the full picture.</p></div>
                 </li>
               </ol>
 
