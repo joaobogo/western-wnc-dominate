@@ -54,7 +54,9 @@ export function preloadLikelyRoutes() {
   if (conn?.saveData) return;
   if (conn?.effectiveType && /2g/.test(conn.effectiveType)) return;
 
-  const queue = ["/roofing", "/construction", "/request-inspection"];
+  // /request-inspection is intentionally excluded: its chunk pulls the backend
+  // client (~215 KB), which marketing visitors should never download.
+  const queue = ["/roofing", "/construction"];
   const idle = (window as unknown as {
     requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void;
   }).requestIdleCallback;

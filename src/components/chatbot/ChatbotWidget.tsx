@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Phone, ArrowRight, Loader2, CheckCircle, AlertTriangle, Home, Hammer, CloudLightning, HelpCircle, Calendar, Shield } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { submitLead, logChatbotConversation } from "@/lib/leads";
 import { trackChatbotOpen } from "@/lib/gtm";
@@ -89,6 +88,7 @@ function LeadCaptureCard({
     setSubmitting(true);
     // Mirror into legacy table for back-compat
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
       await supabase.from("consultation_requests").insert({
         name, phone: phone || null, email: email || null,
         town: town.trim() || null,

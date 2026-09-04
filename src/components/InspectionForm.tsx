@@ -305,7 +305,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
               </ScrollReveal>
               <div className="space-y-5">
                 {[
-                  { icon: Clock, text: "Personal response rapidly — not an auto-reply" },
+                  { icon: Clock, text: "A real person replies fast — never an auto-reply" },
                   { icon: MapPin, text: "We serve every community in Western North Carolina" },
                   { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor certified" },
                   { icon: Shield, text: "Licensed GC · Fully insured · Written scope on every estimate" },
