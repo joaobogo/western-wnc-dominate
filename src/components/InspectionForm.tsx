@@ -368,7 +368,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 <FormSavedNote show={autosave.restored} tone="dark" className="mb-5" />
 
                 {step === 1 && (
-                <div className="space-y-4 md:space-y-6">
+                <form noValidate onSubmit={(e) => { e.preventDefault(); goToStepTwo(); }} className="space-y-4 md:space-y-6">
                   <div>
                     <div className="flex items-baseline justify-between gap-4 flex-wrap">
                       <span className={labelClasses}>What Do You Need Help With?</span>
@@ -437,8 +437,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
 
                   <div className="pt-1 md:pt-2 flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
                     <button
-                      type="button"
-                      onClick={goToStepTwo}
+                      type="submit"
                       className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 md:px-10 rounded-none inline-flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide"
                     >
                       <span className="relative z-10">Continue — Last Step</span>
@@ -453,11 +452,11 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     Next step is just your name and phone. After you send it, a Highlander advisor
                     calls you personally — typically within one business day.
                   </p>
-                </div>
+                </form>
                 )}
 
                 {step === 2 && (
-                <>
+                <form noValidate onSubmit={(e) => { e.preventDefault(); void handleSubmit(); }}>
                 <div className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
@@ -626,7 +625,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 <CTAProofPoints tone="dark" align="start" className="mt-4" />
                 <div className="mt-8 pt-6 border-t border-dark-section-border flex flex-col sm:flex-row sm:items-center gap-4">
                   <button
-                    onClick={handleSubmit}
+                    type="submit"
                     disabled={isSubmitting}
                     className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 md:px-10 rounded-none inline-flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide disabled:opacity-60"
                   >
@@ -656,7 +655,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                   </a>
                 </div>
                 <FormConsent className="mt-4 text-dark-section-foreground" />
-                </>
+                </form>
                 )}
 
                 {/* Bottom microcopy */}
