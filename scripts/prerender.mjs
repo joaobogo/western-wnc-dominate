@@ -39,7 +39,6 @@ const EXCLUDED_PREFIXES = [
   "/consultation",
   "/quote-flow",
   "/seo-monitoring",
-  "/realwork-diagnostics",
 ];
 
 // The noindex funnel routes that used to be listed here (NOINDEX_ROUTES) now
@@ -56,7 +55,6 @@ const BLOCKED_HOSTS = [
   "connect.facebook.net",
   "analytics.tiktok.com",
   "snap.licdn.com",
-  "app.realworklabs.com",
   "maps.googleapis.com",
   "veluxsolutions.com",
   "supabase.co",

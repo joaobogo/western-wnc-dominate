@@ -94,7 +94,6 @@
 /careers
 /request-inspection
 /seo-monitoring
-/realwork-diagnostics
 /front-desk/*
 /intake
 /intake/queue/*

@@ -228,7 +228,7 @@ export function resolveUrl(rules, input, opts = {}) {
 const APP_ONLY_PREFIXES = [
   "/admin", "/lp", "/.lovable", "/front-desk", "/intake", "/consultation", "/roofing-intake",
   "/construction-intake", "/roofing-builder", "/construction-builder", "/design-intake",
-  "/quote-flow", "/seo-monitoring", "/realwork-diagnostics",
+  "/quote-flow", "/seo-monitoring",
 ];
 export const isAppOnly = (p) => APP_ONLY_PREFIXES.some((x) => p === x || p.startsWith(`${x}/`));
 

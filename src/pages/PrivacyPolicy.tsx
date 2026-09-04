@@ -360,11 +360,6 @@ const PrivacyPolicy = () => {
                 Professional-network measurement tools (for example, the LinkedIn Insight
                 Tag) to measure campaign performance and audience insights on LinkedIn.
               </li>
-              <li>
-                Review-request and reputation tools (for example, RealWork Labs) that help
-                us send post-project survey and review invitations and display recent
-                project activity on the Website.
-              </li>
             </ul>
             <p>
               Some of these technologies may be operated by third parties and may collect
@@ -476,8 +471,7 @@ const PrivacyPolicy = () => {
               Analytics, Google Ads (including conversion tracking and, if enabled,
               remarketing audiences), Google Tag Manager (used to load and manage
               measurement and advertising tags), Meta Pixel, the LinkedIn Insight Tag,
-              TikTok Pixel, call-tracking providers, and review-request tools such as
-              RealWork Labs). These providers may set cookies or
+              TikTok Pixel, and call-tracking providers). These providers may set cookies or
               similar technologies and collect information about your interactions with the
               Website to provide measurement, analytics, and advertising services. Information
               collected through these tools may be combined with other information collected

@@ -192,7 +192,7 @@ const HOME_TITLE = "Roofing Company in Franklin, NC | Highlander";
 const APP_ONLY_PREFIXES = [
   "/admin", "/lp", "/.lovable", "/front-desk", "/intake", "/consultation", "/roofing-intake",
   "/construction-intake", "/roofing-builder", "/construction-builder",
-  "/design-intake", "/quote-flow", "/seo-monitoring", "/realwork-diagnostics",
+  "/design-intake", "/quote-flow", "/seo-monitoring",
 ];
 
 const distIndexPath = resolve("dist/index.html");

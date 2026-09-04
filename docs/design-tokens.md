@@ -27,7 +27,7 @@ Single source of truth: `src/index.css` (`:root` / `.dark`), surfaced to Tailwin
 ## Duplicates removed in this audit
 
 - Hardcoded Tailwind palette tones (`red-500/600/900/50`, `amber-100…950`, `green-50…700`, `emerald-*`) across
-  `StormDamage`, `StormCenter`, `StormResponseGuide`, `AdminLeads`, `PrivacyPolicy`, `RealWorkDiagnostics`,
+  `StormDamage`, `StormCenter`, `StormResponseGuide`, `AdminLeads`, `PrivacyPolicy`,
   `InteractiveTools`, `ui/toast` → mapped to `alert` (critical), `highland-gold` / `gold-ink` (warning),
   `primary` (positive).
 - Hex literals in `SiteLoader.tsx` (`#184613`, `#2D9123`, `#F7F3EA`, `#0a1f08`) and `LayoutsPlanning.tsx` (`#fff`)

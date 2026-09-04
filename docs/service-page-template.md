@@ -17,7 +17,7 @@ All service pages share one skeleton, defined by
 10. `cta` — one closing CTA, always last
 
 `beforeHero` holds breadcrumbs / page context. `afterCta` holds non-content
-widgets only (RealWorkWidget, sticky bars).
+widgets only (sticky bars).
 
 ## Rules
 

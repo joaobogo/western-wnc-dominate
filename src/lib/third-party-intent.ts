@@ -3,8 +3,8 @@
  *
  * Performance budget: ≤150 KB of third-party JS may be transferred before the
  * visitor's first interaction (enforced in CI by scripts/lhci-gate.mjs). GTM
- * stays on initial load — everything heavier (RealWork Labs + the Google Maps
- * JS API it depends on, the VELUX embed, the chatbot) waits for one of:
+ * stays on initial load — everything heavier (the VELUX embed, the chatbot)
+ * waits for one of:
  *
  *   • a scroll past the hero (or 400 px on pages without one)
  *   • any click / keypress / touch

@@ -3,7 +3,7 @@
  *
  * Categories:
  *   • essential   — always on (site chrome, security). Not stored.
- *   • functional  — RealWork Labs project widget, VELUX skylight embed.
+ *   • functional  — VELUX skylight embed.
  *   • analytics   — GTM / GA4 measurement storage.
  *   • marketing   — Meta Pixel, TikTok Pixel, ad storage.
  *
@@ -26,7 +26,6 @@ export interface ConsentState {
 type W = Window & {
   __hlConsent?: ConsentState | null;
   __hlApplyConsent?: (state: ConsentState) => void;
-  __loadRWL?: () => void;
 };
 
 export function readConsent(): ConsentState | null {

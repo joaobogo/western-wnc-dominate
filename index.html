@@ -244,62 +244,16 @@ div[style*="Edit with Lovable"],
     };
     </script>
     <!-- TikTok Pixel Code End -->
-    <!-- RealWork Labs Plugin Loader (sitewide, loaded once) -->
-    <script type="text/javascript">
-    (function(){
-      var HOST='https://app.realworklabs.com';
-      var KEY='SxCxaBpYsO_fVnK0';
-      var MAPS_KEY='AIzaSyDe_QvLwfkNqtQ5v-Nn0ISVMag_N5faWVY';
-      var mapsCallbacks=[];
-      function onMapsReady(cb){
-        if(window.google && window.google.maps){ cb(); return; }
-        mapsCallbacks.push(cb);
-        if(window.__rwlMapsRequested)return; window.__rwlMapsRequested=true;
-        window.__rwlGoogleMapsReady=function(){
-          var queue=mapsCallbacks.slice(); mapsCallbacks.length=0;
-          queue.forEach(function(fn){ try{ fn(); }catch(e){} });
-        };
-        var d=document, t='script', o=d.createElement(t), s=d.getElementsByTagName(t)[0];
-        o.async=true;
-        o.defer=true;
-        o.id='rwl-google-maps';
-        o.src='https://maps.googleapis.com/maps/api/js?key='+MAPS_KEY+'&libraries=places,visualization&v=quarterly&callback=__rwlGoogleMapsReady';
-        o.onerror=function(){ window.__rwlGoogleMapsReady(); };
-        s.parentNode.insertBefore(o,s);
-      }
-      window.__loadRWL = function(){
-        if(window.__rwlLoaderRequested)return; window.__rwlLoaderRequested=true;
-        onMapsReady(function(){
-          var d=document, t='script', o=d.createElement(t), s=d.getElementsByTagName(t)[0];
-          o.async=true;
-          o.id='rwl-loader';
-          o.src=HOST+'/static/plugin/loader.js?v='+new Date().getTime();
-          window.addEventListener('rwlPluginReady', function(){
-            if(window.rwlPlugin && typeof window.rwlPlugin.init === 'function') {
-              window.rwlPlugin.init(HOST, KEY);
-            }
-          }, false);
-          s.parentNode.insertBefore(o,s);
-        });
-      };
-      // No eager call — RealWork (and its Google Maps dependency) is started by the
-      // unified deferred trigger below, or on demand by <RealWorkWidget />.
-    }());
-    </script>
-    <!-- End RealWork Labs Plugin Loader -->
     <!-- Consent-aware third-party loader, gated on user intent.
          Performance budget: <=150 KB of third-party JS before first interaction.
-         GTM loads immediately; RealWork Labs (+ the Google Maps JS API it pulls),
-         the VELUX embed and the chatbot wait for scroll past the hero, a click /
+         GTM loads immediately; the VELUX embed and the chatbot wait for scroll past the hero, a click /
          keypress / touch, or 5 s of idle time. Mirrored in src/lib/third-party-intent.ts. -->
     <script>
     (function(w){
       var d=w.document;
       // Two queues (P5.1): `intentQueue` fires on interaction OR after 5 s of
-      // idle time; `strictQueue` fires on a real interaction only. RealWork
-      // Labs + the Google Maps JS API (~400 KB) sit in the strict queue — they
-      // render below the hero, so a scroll that reaches them is what loads
-      // them, and a visitor who never interacts never pays for them.
+      // idle time; `strictQueue` fires on a real interaction only, for embeds
+      // that must never load for a visitor who does not interact.
       var intentQueue=[], strictQueue=[], intentFired=false, idleFired=false, armed=false;
       function heroDepth(){
         var hero=d.querySelector('[data-hero], [data-hero-anchored], #hero');
@@ -349,11 +303,9 @@ div[style*="Edit with Lovable"],
         try{ w.__loadTT && w.__loadTT(); }catch(e){}
       }
       function loadFunctional(){
+        // Functional embeds (VELUX) are mounted by their own components behind
+        // the same intent gate; nothing sitewide loads here any more.
         if(!functionalOk())return;
-        // Never on initial load and never on the idle timer — RealWork pulls
-        // the Maps JS API with it. <RealWorkWidget /> also loads it on demand
-        // when its own section scrolls into view.
-        w.__hlOnStrictIntent(function(){ try{ w.__loadRWL && w.__loadRWL(); }catch(e){} });
       }
       // Called by the in-app consent banner once the visitor makes a choice.
       w.__hlApplyConsent = function(state){
@@ -392,7 +344,6 @@ div[style*="Edit with Lovable"],
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
-    <div id="rwl-neighborhood"></div>
     <noscript><img height="1" width="1" style="display:none" alt=""
     src="https://www.facebook.com/tr?id=1300176212241296&ev=PageView&noscript=1"
     /></noscript>
