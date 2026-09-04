@@ -569,7 +569,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /synthetic-roofs                                            /roofing/brava-synthetic                          301!
 /roofrepairs                                                /roofing/roof-repair                              301!
 /newroof                                                    /roofing/roof-replacement                         301!
-/roof-ventilation-services                                  /roofing/roof-replacement                         301!
+/roof-ventilation-services                                  /roofing/roof-repair                                      301!
 /gutters-services                                           /roofing/gutters                                  301!
 /roofing-and-gutter-services                                /roofing/gutters                                  301!
 /maintenanceprogram                                         /roofing/commercial                               301!
