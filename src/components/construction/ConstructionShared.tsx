@@ -29,11 +29,11 @@ export const ConstructionMidCTA = ({
   <section className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-10 md:py-12">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div>
+        <div className="min-w-0 lg:flex-1">
           <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">{headline}</h3>
           <p className="text-primary-foreground text-base md:text-lg font-body">{subheadline}</p>
         </div>
-        <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
+        <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:max-w-2xl lg:justify-end">
           <Link to={ctaLink} className="btn btn-primary btn-md group relative">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative">{ctaText}</span>
