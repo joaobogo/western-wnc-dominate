@@ -52,6 +52,13 @@ export interface BlogPost {
    * excluded from the sitemap and from every internal-link block.
    */
   canonicalTo?: string;
+  /**
+   * Indexation control (Task 7, 7 Sep 2026 work order). Defaults to true.
+   * `false` → robots "noindex,follow", still reachable and linked, not in the
+   * sitemap. Use a 301 (public/_redirects) rather than canonicalTo when a
+   * post is folded into another one.
+   */
+  indexable?: boolean;
 }
 
 export const blogPosts: BlogPost[] = [

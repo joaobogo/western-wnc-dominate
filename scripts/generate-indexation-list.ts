@@ -1,0 +1,147 @@
+/**
+ * Task 7 (7 Sep 2026 work order) — one list of every page with its current
+ * indexation state, grouped by section, in a form the owner can mark up and
+ * hand back for a bulk flip.
+ *
+ *   bun scripts/generate-indexation-list.ts   → docs/indexation-list.md
+ *
+ * "indexable" here means exactly what the build enforces: the URL is in
+ * public/sitemap.xml and renders robots index,follow. Everything else is
+ * prerendered with noindex,follow (reachable, linked, not submitted).
+ *
+ * To flip pages: put an "x" in the Flip column (or send the URLs back), then
+ * set `indexable: false` on the matching town / blog post / service×town
+ * entry, or `indexable: true` to switch one back on. Sitemap and manifest
+ * regenerate on the next build; seo:check fails if they ever disagree.
+ */
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { resolve } from "path";
+import { towns } from "../src/data/towns";
+import { blogPosts } from "../src/data/blogs";
+import { counties } from "../src/data/counties";
+import { serviceTownContent, isServiceTownIndexable } from "../src/data/service-town-content";
+import { projectDetails } from "../src/data/projects";
+
+const xml = readFileSync(resolve("public/sitemap.xml"), "utf8");
+const inSitemap = new Set(
+  [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname.replace(/\/+$/, "") || "/"),
+);
+const manifest = JSON.parse(readFileSync(resolve("public/prerender-manifest.json"), "utf8")) as { routes: string[] };
+const prerendered = new Set(manifest.routes.map((r) => r.replace(/\/+$/, "") || "/"));
+
+type Row = { url: string; indexable: boolean; note: string };
+const yes = (b: boolean) => (b ? "yes" : "no");
+const table = (rows: Row[]) =>
+  [
+    "| Flip? | URL | Indexable today | Notes |",
+    "|---|---|---|---|",
+    ...rows.map((r) => `|  | ${r.url} | ${yes(r.indexable)} | ${r.note} |`),
+  ].join("\n");
+
+const townSlugs = new Set(towns.map((t) => t.slug));
+const isTownUrl = (u: string) => /^\/service-areas\/[a-z0-9-]+-nc$/.test(u) && townSlugs.has(u.split("/")[2]);
+const isServiceTownUrl = (u: string) => /^\/service-areas\/[a-z0-9-]+-nc\/[a-z0-9-]+$/.test(u);
+const isBlogUrl = (u: string) => u.startsWith("/blog/");
+const isProjectUrl = (u: string) => u.startsWith("/projects/");
+const isCountyUrl = (u: string) => u.startsWith("/service-areas/county/");
+
+// Core pages = every sitemap URL that is not a town, service×town, blog, project or county page.
+const core: Row[] = [...inSitemap]
+  .filter((u) => !isTownUrl(u) && !isServiceTownUrl(u) && !isBlogUrl(u) && !isProjectUrl(u) && !isCountyUrl(u))
+  .sort()
+  .map((u) => ({ url: u, indexable: true, note: "static route" }));
+
+const townRows: Row[] = towns.map((t) => ({
+  url: `/service-areas/${t.slug}`,
+  indexable: t.indexable !== false && inSitemap.has(`/service-areas/${t.slug}`),
+  note: `${t.county} · ${t.elevation}${["franklin-nc", "highlands-nc", "cashiers-nc", "sylva-nc"].includes(t.slug) ? " · core market" : ""}`,
+}));
+
+const serviceTownRows: Row[] = serviceTownContent
+  .map((e) => {
+    const url = `/service-areas/${e.townSlug}/${e.serviceSlug}`;
+    const indexable = isServiceTownIndexable(e.townSlug, e.serviceSlug);
+    const handwritten = (e as { handwritten?: boolean }).handwritten;
+    return {
+      url,
+      indexable,
+      note: indexable
+        ? "hand-written, inside the map-pack radius"
+        : handwritten
+          ? "hand-written but switched off (indexable: false — outside the map-pack radius)"
+          : "generated coverage page (noindex,follow; links resolve to the division page)",
+    };
+  })
+  .sort((a, b) => a.url.localeCompare(b.url));
+
+const countyRows: Row[] = counties.map((c) => ({
+  url: `/service-areas/county/${c.slug}`,
+  indexable: false,
+  note: "county hub — internal link hub, noindex,follow by design",
+}));
+
+const projectRows: Row[] = projectDetails
+  .map((p) => ({ url: `/projects/${p.slug}`, indexable: inSitemap.has(`/projects/${p.slug}`), note: p.location }))
+  .sort((a, b) => a.url.localeCompare(b.url));
+
+const blogRows: Row[] = [...blogPosts]
+  .sort((a, b) => (a.date < b.date ? 1 : -1))
+  .map((p) => ({
+    url: `/blog/${p.slug}`,
+    indexable: !p.canonicalTo && p.indexable !== false && inSitemap.has(`/blog/${p.slug}`),
+    note: [p.date, p.town ? `town: ${p.town}` : "regional", p.category || "", p.canonicalTo ? `folded into /blog/${p.canonicalTo}` : ""]
+      .filter(Boolean)
+      .join(" · "),
+  }));
+
+const funnelRows: Row[] = [...prerendered]
+  .filter((u) => !inSitemap.has(u) && !isTownUrl(u) && !isServiceTownUrl(u) && !isBlogUrl(u) && !isCountyUrl(u) && u !== "/")
+  .sort()
+  .map((u) => ({ url: u, indexable: false, note: "funnel / utility route — noindex by design" }));
+
+const all = [...core, ...townRows, ...serviceTownRows, ...countyRows, ...projectRows, ...blogRows, ...funnelRows];
+const indexableCount = all.filter((r) => r.indexable).length;
+
+const md = `# Indexation list — highlandernc.com
+
+Generated by \`bun scripts/generate-indexation-list.ts\` from the data files, public/sitemap.xml and
+public/prerender-manifest.json. **${indexableCount} indexable URLs** (= sitemap) · ${all.length - indexableCount} prerendered
+with noindex,follow · ${all.length} pages total.
+
+How to use: put an **x** in the Flip column for every page whose state should change, hand the file back,
+and the change is applied in bulk (\`indexable: false\` / \`true\` on the town, blog post or service×town entry).
+The sitemap and prerender manifest regenerate on the next build; \`npm run seo:check\` fails if a noindex URL
+ever appears in the sitemap or a sitemap URL is missing from the manifest.
+
+## Core pages (${core.length})
+
+${table(core)}
+
+## Town pages (${townRows.length} — ${townRows.filter((r) => r.indexable).length} indexable)
+
+${table(townRows)}
+
+## Service × town pages (${serviceTownRows.length} — ${serviceTownRows.filter((r) => r.indexable).length} indexable)
+
+${table(serviceTownRows)}
+
+## County hubs (${countyRows.length} — all noindex,follow)
+
+${table(countyRows)}
+
+## Project pages (${projectRows.length})
+
+${table(projectRows)}
+
+## Blog posts (${blogRows.length} — ${blogRows.filter((r) => r.indexable).length} indexable)
+
+${table(blogRows)}
+
+## Funnel and utility routes (${funnelRows.length} — noindex by design)
+
+${table(funnelRows)}
+`;
+
+mkdirSync(resolve("docs"), { recursive: true });
+writeFileSync(resolve("docs/indexation-list.md"), md);
+console.log(`indexation list: ${all.length} pages (${indexableCount} indexable) → docs/indexation-list.md`);

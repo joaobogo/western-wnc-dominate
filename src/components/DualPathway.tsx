@@ -72,7 +72,6 @@ const constructionData = {
   description: "Additions, outdoor living, and whole-home renovations. We treat every construction project with the same structural precision as our roofing division, ensuring your investment is built to last in the WNC environment.",
   stats: [
     { value: "GC", label: " Licensed Contractor" },
-    { value: "5/5", label: " Client Satisfaction" },
   ],
   services: [
     { icon: PlusSquare, name: "Mountain Additions" },
@@ -103,7 +102,6 @@ const designData = {
   ],
   description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and protect design integrity end-to-end.",
   stats: [
-    { value: "100%", label: " Pre-Con Clarity" },
     { value: "Site", label: " Optimized Plans" },
   ],
   services: [

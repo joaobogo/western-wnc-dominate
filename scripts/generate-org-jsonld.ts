@@ -18,7 +18,7 @@ const org = {
   "@id": `${BASE}/#organization`,
   name: BUSINESS.brandName,
   legalName: BUSINESS.legalName,
-  alternateName: BUSINESS.alternateNames,
+  ...(BUSINESS.alternateNames.length ? { alternateName: BUSINESS.alternateNames } : {}),
   url: `${BASE}/`,
   logo: `${BASE}/og-image.jpg`,
   telephone: BUSINESS.primaryPhoneE164,

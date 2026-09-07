@@ -21,6 +21,8 @@ import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { serviceTownContent, isServiceTownIndexable } from "../src/data/service-town-content";
 import { counties } from "../src/data/counties";
+import { towns } from "../src/data/towns";
+import { blogPosts } from "../src/data/blogs";
 
 const OUT = resolve("public/prerender-manifest.json");
 
@@ -58,9 +60,15 @@ const coverageRoutes = serviceTownContent
 // 3. county hubs (noindex,follow — never in the sitemap, always prerendered)
 const countyRoutes = counties.map((c) => `/service-areas/county/${c.slug}`);
 
+// 4. every town page and every blog post, whatever its indexable flag (Task 7):
+//    a page switched to noindex,follow must still exist as HTML for visitors
+//    and for crawlers following internal links — only the sitemap drops it.
+const townRoutes = towns.map((t) => `/service-areas/${t.slug}`);
+const blogRoutes = blogPosts.map((p) => `/blog/${p.slug}`);
+
 const seen = new Set<string>();
 const routes: string[] = [];
-for (const r of [...sitemapRoutes, ...coverageRoutes, ...countyRoutes, ...NOINDEX_ROUTES]) {
+for (const r of [...sitemapRoutes, ...coverageRoutes, ...countyRoutes, ...townRoutes, ...blogRoutes, ...NOINDEX_ROUTES]) {
   const p = normalize(r);
   if (seen.has(p)) continue;
   seen.add(p);
@@ -75,6 +83,8 @@ const manifest = {
     sitemap: sitemapRoutes.length,
     coverageNoindex: coverageRoutes.filter((r) => !sitemapRoutes.includes(r)).length,
     counties: countyRoutes.filter((r) => !sitemapRoutes.includes(r)).length,
+    noindexTowns: townRoutes.filter((r) => !sitemapRoutes.includes(r)).length,
+    noindexBlogPosts: blogRoutes.filter((r) => !sitemapRoutes.includes(r)).length,
     noindexFunnels: NOINDEX_ROUTES.filter((r) => !sitemapRoutes.includes(r)).length,
     total: routes.length,
   },

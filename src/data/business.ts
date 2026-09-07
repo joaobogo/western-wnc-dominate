@@ -38,6 +38,9 @@ export interface BusinessLocation {
    * then falls back to the profile's Maps URL and the build prints a warning.
    */
   reviewUrl: string;
+  /** This location's own Google Business Profile figures (Task 3, 7 Sep 2026 work order). */
+  googleRating?: number;
+  googleReviewCount?: number;
   hours: BusinessHours[];
   primary?: boolean;
 }
@@ -153,7 +156,8 @@ const SYLVA_CID = "1690022713833215904";
 export const BUSINESS: BusinessIdentity = {
   brandName: "Highlander Building Services",
   legalName: "Highlander Building Services, Inc.",
-  alternateNames: ["Highlander Roofing Services", "Highlander Roofing Services, Inc."],
+  // Former names are deliberately NOT published as metadata (7 Sep 2026 work order, rule 1).
+  alternateNames: [],
   primaryPhoneE164: "+1-828-524-7773",
   email: "info@highlandernc.com",
   websiteUrl: "https://highlandernc.com",
@@ -162,7 +166,7 @@ export const BUSINESS: BusinessIdentity = {
   slogan: "Built for the Mountains. Built for Life.",
   description:
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
-  // priceRange intentionally omitted — add only once the owner approves a band.
+  priceRange: "$$", // set per the 7 Sep 2026 work order (Task 6)
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
     // Owner-confirmed 2026-09-04 (João): Google shows 4.8.
@@ -247,6 +251,8 @@ export const BUSINESS: BusinessIdentity = {
       geo: { lat: 35.1626, lng: -83.3459 },
       gbpCid: FRANKLIN_CID,
       reviewUrl: "REPLACE_WITH_FRANKLIN_REVIEW_LINK",
+      googleRating: 4.8,
+      googleReviewCount: 158,
       hours: STANDARD_HOURS,
       primary: true,
     },
@@ -261,6 +267,8 @@ export const BUSINESS: BusinessIdentity = {
       geo: { lat: 35.3585, lng: -83.1812 },
       gbpCid: SYLVA_CID,
       reviewUrl: "REPLACE_WITH_SYLVA_REVIEW_LINK",
+      googleRating: 5.0,
+      googleReviewCount: 26,
       hours: STANDARD_HOURS,
     },
   ],

@@ -84,6 +84,8 @@ const TownPage = () => {
         title={town.metaTitle}
         description={town.metaDescription}
         path={`/service-areas/${town.slug}`}
+        // Task 7: towns switched off with `indexable: false` render noindex,follow.
+        noindex={town.indexable === false ? "follow" : false}
         jsonLd={buildPageSchema({
           type: "town",
           town: {

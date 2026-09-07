@@ -4,6 +4,8 @@
     "sitemap": 302,
     "coverageNoindex": 100,
     "counties": 10,
+    "noindexTowns": 0,
+    "noindexBlogPosts": 0,
     "noindexFunnels": 6,
     "total": 418
   },

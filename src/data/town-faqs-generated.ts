@@ -58,7 +58,7 @@ export const buildTownFAQs = (town: TownData): TownFAQItem[] => {
   // 4. Repair vs. replacement decision — high-intent
   faqs.push({
     question: `Should I repair or replace my roof in ${town.name}?`,
-    answer: `If the damage is localized and the deck is sound, ${secondary.toLowerCase()} is usually the right call. Once you're seeing widespread granule loss, repeat leaks in multiple areas, or failed flashing across the roof, replacement costs less over the life of the home — especially given ${town.climateExposure.toLowerCase().replace(/\.$/, "")}. We tell you which one you're looking at during the inspection.`,
+    answer: `If the damage is localized and the deck is sound, ${secondary.toLowerCase()} is usually the right call. Once you're seeing widespread granule loss, repeat leaks in multiple areas, or failed flashing across the roof, replacement costs less over the life of the home — especially given ${town.climateExposure.replace(/[.!?]+$/, "").replace(/^./, (c) => c.toLowerCase())}. We tell you which one you're looking at during the inspection.`,
   });
 
   // 5. Construction division mapping

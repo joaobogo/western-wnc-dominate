@@ -108,9 +108,9 @@ describe("NAP consistency", () => {
 describe("rebrand guard", () => {
   const OLD_NAME = /Highlander Roofing/;
   const ALLOWED_LINE = [
-    /alternateNames?\s*[:=]/, // the declaration in business.ts / generated JSON key
-    /^\s*"Highlander Roofing Services(?:, Inc\.)?",?\s*$/, // alternateName array items (index.html)
-    /also known as|former name|formerly /i, // llms.txt + the one deliberate footer line
+    // 7 Sep 2026 work order, rule 1: the former name may appear ONLY in the one
+    // deliberate "formerly" footer line — never in titles, meta or metadata.
+    /formerly /i,
     /https?:\/\/[^\s"']*highlander[-_]?roofing/i, // external profile URLs (allowed place c)
     /\/\/|^\s*\*|\/\*/, // code comments
   ];
@@ -133,7 +133,7 @@ describe("rebrand guard", () => {
     expect(files).toContain("public/llms.txt");
   });
 
-  it('uses "Highlander Roofing" only in alternateNames, the "formerly" line and profile URLs', () => {
+  it('uses "Highlander Roofing" only in the "formerly" footer line and external profile URLs', () => {
     const hits: string[] = [];
     for (const f of files) {
       readFileSync(f, "utf8")
@@ -147,9 +147,10 @@ describe("rebrand guard", () => {
     expect(hits).toEqual([]);
   });
 
-  it("business.ts keeps the old name as an alternateName (same-entity signal for Google)", () => {
+  it("business.ts publishes no former name as metadata (7 Sep 2026 work order, rule 1)", () => {
     const src = readFileSync("src/data/business.ts", "utf8");
-    expect(src).toMatch(/alternateNames:\s*\[\s*"Highlander Roofing Services"/);
+    expect(src).toMatch(/alternateNames:\s*\[\s*\]/);
     expect(src).toMatch(/brandName:\s*"Highlander Building Services"/);
+    expect(readFileSync("index.html", "utf8")).not.toMatch(/alternateName/);
   });
 });

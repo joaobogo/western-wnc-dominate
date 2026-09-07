@@ -50,7 +50,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Franklin, NC",
     intro:
-      "Franklin is our home market. Our crews, trucks, and material yards are minutes from most jobs in town — so replacement projects move on schedule and the same team-led team is on-site from tear-off to final inspection.",
+      "Franklin is our home market. Our crews, trucks, and material yards are minutes from most jobs in town — so replacement projects move on schedule and the same team is on-site from tear-off to final inspection.",
     localContext:
       "Most Franklin roofs we replace are 20–30 year asphalt systems on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies and aging underlayment are the two most common reasons homes here need a full replacement rather than another patch.",
     whoItsFor:
@@ -59,7 +59,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Franklin is where we cut our teeth. The crew you meet at your estimate is the crew on your roof — same names, same trucks, year after year.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Full roof replacement in Franklin, NC from a locally based, team-led team. CertainTeed ShingleMaster Credentialed Contractor, licensed GC, free on-site assessment.",
+      "Full roof replacement in Franklin, NC from a locally based team. CertainTeed ShingleMaster Credentialed Contractor, licensed GC, free on-site assessment.",
     faqs: [
       { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
       { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
@@ -124,7 +124,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Second-home owners, club community residents, and homeowners replacing 20+ year shake or asphalt systems that no longer match the elevation they sit at.",
     proofNote:
-      "Premium materials, full underlayment systems, and an team-led crew that documents the entire project so you can review the work without being on the mountain.",
+      "Premium materials, full underlayment systems, and a team-led crew that documents the entire project so you can review the work without being on the mountain.",
     metaTitle: "Roof Replacement in Highlands, NC | Highlander Building Services",
     metaDescription:
       "Premium roof replacement in Highlands, NC. Elevation-rated systems for second homes and mountain residences. Team-led, fully documented, licensed.",
@@ -236,7 +236,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Second-home owners, club community residents, and owners of aging shake or asphalt roofs that are losing the battle with persistent mountain moisture.",
     proofNote:
-      "Premium underlayment from eave to ridge, full photo documentation, and an team-led crew that treats the home like the asset it is.",
+      "Premium underlayment from eave to ridge, full photo documentation, and a team-led crew that treats the home like the asset it is.",
     metaTitle: "Roof Replacement in Cashiers, NC | Highlander Building Services",
     metaDescription:
       "Full roof replacement in Cashiers, NC. Engineered for one of NC's wettest climates. Team-led, fully documented, licensed contractor.",
@@ -677,7 +677,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Same crew from estimate through cleanup. When you drive by Franklin roofs we did five and ten years ago, they still look right — that's the reference you should be asking for.",
     metaTitle: "Roofing Services in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Franklin, NC roofing contractor — repairs, replacements, and metal systems from a local team-led team. CertainTeed ShingleMaster credentialed.",
+      "Franklin, NC roofing contractor — repairs, replacements, and metal systems from a local team. CertainTeed ShingleMaster credentialed.",
     faqs: [
       { q: "Are you actually based in Franklin?", a: "Yes. Our shop, yard, and office are in Macon County. When you call, you're reaching the people who will be on your roof." },
       { q: "What roofing warranty do you offer in Franklin?", a: "Manufacturer material warranty plus a Highlander workmanship warranty. Both are put in writing and handed to you at project close-out." },

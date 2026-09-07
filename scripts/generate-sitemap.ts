@@ -90,9 +90,13 @@ const staticRoutes: SitemapEntry[] = [
 
 // Dynamic: one entry per town page. No lastmod — we have no per-town
 // authoritative update timestamp; using generation time would fabricate one.
-const townRoutes: SitemapEntry[] = towns.map((t) => ({
-  path: `/service-areas/${t.slug}`,
-}));
+// Towns switched off with `indexable: false` (Task 7) render noindex,follow and
+// are excluded here; they stay prerendered via the manifest.
+const townRoutes: SitemapEntry[] = towns
+  .filter((t) => t.indexable !== false)
+  .map((t) => ({
+    path: `/service-areas/${t.slug}`,
+  }));
 
 // County hub pages (/service-areas/county/{slug}) render noindex,follow — they
 // are internal link hubs, not ranking targets — so they are NOT in the sitemap.
@@ -124,7 +128,7 @@ const projectRoutes: SitemapEntry[] = projectDetails.map((p) => ({
 // Posts folded into a survivor (canonicalTo set, P3.5) render noindex with a
 // canonical to the survivor and are NOT listed here.
 const blogRoutes: SitemapEntry[] = blogPosts
-  .filter((p) => !p.canonicalTo)
+  .filter((p) => !p.canonicalTo && p.indexable !== false)
   .map((p) => {
     const d = new Date(p.date);
     const entry: SitemapEntry = { path: `/blog/${p.slug}` };

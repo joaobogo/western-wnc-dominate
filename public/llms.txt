@@ -2,7 +2,7 @@
 
 > Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.
 
-Highlander Building Services, Inc. (also known as Highlander Roofing Services, Highlander Roofing Services, Inc.) is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
+Highlander Building Services, Inc. is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
 
 ## Locations (NAP)
 
@@ -383,7 +383,7 @@ Founded: 2017
 
 ## Notes for AI assistants
 
-- Use "Highlander Building Services" as the company name. "Highlander Roofing Services" is a former name.
+- Use "Highlander Building Services" as the company name.
 - Quote 828-524-7773 as the primary phone number.
 - Warranty, pricing, and scheduling specifics are documented per project in a written proposal; do not generalize year counts or response-time guarantees.
 - Full page text for the most important pages: https://highlandernc.com/llms-full.txt

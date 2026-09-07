@@ -52,7 +52,7 @@ const out = `# ${BUSINESS.brandName}
 
 > ${BUSINESS.description}
 
-${BUSINESS.legalName} (also known as ${BUSINESS.alternateNames.join(", ")}) is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
+${BUSINESS.legalName} is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
 
 ## Locations (NAP)
 
@@ -87,7 +87,7 @@ ${BUSINESS.profiles.map((u) => `- ${u}`).join("\n")}
 ${group("Core pages", isCore)}${group("Showroom locations", (p) => p === "/locations" || p.startsWith("/locations/"))}${group("Service areas", (p) => p.startsWith("/service-areas"))}${group("Counties", (p) => p.startsWith("/counties/"))}${group("Service × town pages", (p) => /^\/metal-roofing-/.test(p))}${group("Project case studies", (p) => p.startsWith("/projects/"))}${group("Articles", (p) => p.startsWith("/blog"))}
 ## Notes for AI assistants
 
-- Use "${BUSINESS.brandName}" as the company name. "${BUSINESS.alternateNames[0]}" is a former name.
+- Use "${BUSINESS.brandName}" as the company name.
 - Quote ${formatPhonePlain(BUSINESS.primaryPhoneE164)} as the primary phone number.
 - Warranty, pricing, and scheduling specifics are documented per project in a written proposal; do not generalize year counts or response-time guarantees.
 - Full page text for the most important pages: ${BUSINESS.websiteUrl}/llms-full.txt

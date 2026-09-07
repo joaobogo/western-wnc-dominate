@@ -172,14 +172,19 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
 {
   const details = [];
   for (const [route, h] of headOf) {
-    if (h.h1s !== 1) details.push(`${route} — ${h.h1s} <h1>`);
-    if (h.canonicals.length !== 1) details.push(`${route} — ${h.canonicals.length} canonical link(s)`);
+    const file = rel(fileFor(route));
+    if (!h.title) details.push(`${file} — empty <title>`);
+    if (!h.description) details.push(`${file} — empty meta description`);
+    if (h.h1s !== 1) details.push(`${file} — ${h.h1s} <h1>`);
+    if (h.canonicals.length !== 1) details.push(`${file} — ${h.canonicals.length} canonical link(s)`);
     const expected = route === "/" ? `${BASE}/` : `${BASE}${route}`;
-    if (h.canonicals.length === 1 && h.canonicals[0] !== expected && !h.noindex) {
-      details.push(`${route} — canonical ${h.canonicals[0]} is not self-referencing (expected ${expected})`);
+    // A page that renders content while pointing its canonical elsewhere must
+    // be a 301 instead (7 Sep 2026 work order, Task 2 / Task 10.5) — no exemptions.
+    if (h.canonicals.length === 1 && h.canonicals[0] !== expected) {
+      details.push(`${file} — canonical ${h.canonicals[0]} is not self-referencing (expected ${expected}); make it a 301 instead`);
     }
   }
-  rule(3, `Every prerendered page: one <h1>, one canonical, self-referencing (${headOf.size} pages)`, details);
+  rule(3, `Every prerendered page: non-empty title + description, one <h1>, one self-referencing canonical (${headOf.size} pages)`, details);
 }
 
 // ----------------------------------------------------------------- rule 4
@@ -205,6 +210,9 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
     { name: "project-count literal", re: /\b\d{2,5}\+?\s+(?:completed\s+|finished\s+)?(?:projects|roofs installed|roofs replaced)\b/i },
   ];
   if (rating) patterns.push({ name: `the current rating ${rating} typed by hand`, re: new RegExp(`(?<![\\d.])${rating.replace(".", "\\.")}(?![\\d])\\s*(?:★|stars?|/5)`, "i") });
+  // Task 10.2: any literal 4.x that reads as a rating — "4.9 Google Rating",
+  // "rated 4.8", "4.9 rating", "4.8 (158 reviews)" — regardless of which value.
+  patterns.push({ name: "literal 4.x used as a rating", re: /(?:\brated\s+4\.\d\b|(?<![\d.])4\.\d(?![\d])\s*(?:\(?\s*\d+\s*(?:google\s+)?reviews?|google\s+rating|rating\b|-?\s?rated\b))/i });
   if (count) patterns.push({ name: `the current review count ${count} typed by hand`, re: new RegExp(`\\b${count}\\b[^\\n]{0,12}\\breviews?\\b`, "i") });
   const files = walkSrc(path.join(ROOT, "src")).filter(
     (f) =>
@@ -238,9 +246,9 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
   const OLD = ["Highlander", "Roofing"].join(" ");
   const OLD_NAME = new RegExp(OLD);
   const ALLOWED_LINE = [
-    /alternateNames?\s*[:=]/, // the declaration in business.ts / generated JSON key
-    new RegExp(`^\\s*"${OLD} Services(?:, Inc\\.)?",?\\s*$`), // alternateName array items (index.html)
-    /also known as|former name|formerly /i, // llms.txt + the one deliberate footer line
+    // 7 Sep 2026 work order, rule 1: the former name may appear ONLY in the one
+    // deliberate "formerly" line (footer) — never in metadata.
+    /formerly /i,
     /https?:\/\/[^\s"']*highlander[-_]?roofing/i, // external profile URLs
     /\/\/|^\s*\*|\/\*/, // code comments
   ];

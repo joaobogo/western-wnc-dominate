@@ -326,7 +326,7 @@ const BlogPostPage = () => {
         // Folded post (P3.5 consolidation): canonical → the survivor, noindex,follow,
         // route stays live. Unset for every post until João confirms the clusters.
         canonicalPath={post.canonicalTo ? `/blog/${post.canonicalTo}` : undefined}
-        noindex={post.canonicalTo ? "follow" : false}
+        noindex={post.canonicalTo || post.indexable === false ? "follow" : false}
         type="article"
         jsonLd={buildPageSchema({
           type: "blog",

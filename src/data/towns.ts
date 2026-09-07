@@ -20,6 +20,12 @@ export interface TownData {
    * Contractor & Builder" heading.
    */
   h1?: string;
+  /**
+   * Indexation control (Task 7, 7 Sep 2026 work order). Defaults to true.
+   * `false` → the page renders robots "noindex,follow", stays reachable and
+   * linked, and is left out of sitemap.xml (it is still prerendered).
+   */
+  indexable?: boolean;
 
   // VARIABLE LOCALITY ELEMENTS
   housingProfile: string;
@@ -45,7 +51,7 @@ export const townLocalRelevance: Record<string, string> = {
   "cashiers-nc":
     "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
   "franklin-nc":
-    "Based in Franklin, Highlander Building Services serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen on a same-day or next-day basis and the same team-led team is on site from first call to final walkthrough.",
+    "Based in Franklin, Highlander Building Services serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen on a same-day or next-day basis and the same team is on site from first call to final walkthrough.",
   "sylva-nc":
     "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
   "bryson-city-nc":
@@ -121,7 +127,7 @@ export const towns: TownData[] = [
     constructionContext: "We specialize in 'mountain rooms' — high-end screened porches with fireplaces — that capture valley views while shielding from heavy plateau rain.",
     serviceDemandMix: ["Standing Seam Metal Roofing", "Brava Synthetic Shake", "Luxury Master Suite Additions", "Storm Damage Recovery"],
     styleTendency: "Traditional mountain rustic with heavy timber accents, natural stone, and premium shake/slate aesthetics.",
-    notableNeighborhoods: ["Wildcat Cliffs", "Highlands Country Club", "Cullasaja Club", "Mounttop"],
+    notableNeighborhoods: ["Wildcat Cliffs", "Highlands Country Club", "Cullasaja Club", "Mountaintop"],
     marketAuthorityAngle: "Highlands estates require commercial-grade flashing details and high-velocity wind ratings. We build to the standard the Plateau demands.",
     heroImage: "/media/wnc-town-overlook.jpg"
   },
@@ -161,7 +167,7 @@ export const towns: TownData[] = [
     h1: `Roofers in Franklin, NC — Local Crews, Walk-In Showroom on ${streetName(FRANKLIN)}`,
     metaDescription: "Roofing in Franklin, NC neighborhoods — Cartoogechaye, Iotla, Holly Springs and nearby Macon County. Local crews, walk-in showroom in town. Licensed & insured.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
-    climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River valley.",
+    climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
     constructionContext: "We specialize in expanding primary residences — adding garage apartments, master suites, or full interior kitchen and bath transformations.",
     serviceDemandMix: ["Dimensional Asphalt Roofing", "Residential Repairs", "Master Suite Additions", "Interior Renovations"],

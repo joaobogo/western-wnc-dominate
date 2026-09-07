@@ -323,7 +323,8 @@ const Footer = () => {
         <div className="container-tight py-6">
           <LocationCards className="mb-4" />
           <p className="text-body-xs text-muted-foreground font-body leading-relaxed tracking-wide text-center md:text-left">
-            {BUSINESS.legalName} (formerly {BUSINESS.alternateNames[0]}) ·{" "}
+            {/* The ONE deliberate former-name mention on the site (P2.5; 7 Sep 2026 work order rule 1). Never emitted as metadata. */}
+            {BUSINESS.legalName} (formerly Highlander Roofing Services) ·{" "}
             <a
               href={BUSINESS.licenseLookupUrl}
               target="_blank"
