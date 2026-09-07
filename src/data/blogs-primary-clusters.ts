@@ -175,6 +175,14 @@ To get a written scope for your property, [request an estimate](/request-inspect
   };
 }
 
+// Task 9 (7 Sep 2026 work order): the town-swapped variants below were folded
+// into the Highlands article of each series; their URLs 301 in public/_redirects.
+const FOLDED_REPAIR_OR_REPLACE = new Set(["bryson-city-nc", "waynesville-nc"]);
+const PROJECT_PLANNING_SURVIVOR = "highlands-nc";
+
 export const primaryClusterBlogPosts: BlogPost[] = towns
   .filter((t) => (PRIMARY_CLUSTER_TOWNS as readonly string[]).includes(t.slug))
-  .flatMap((t) => [repairOrReplacePost(t), servicePlanningPost(t)]);
+  .flatMap((t) => [
+    ...(FOLDED_REPAIR_OR_REPLACE.has(t.slug) ? [] : [repairOrReplacePost(t)]),
+    ...(t.slug === PROJECT_PLANNING_SURVIVOR ? [servicePlanningPost(t)] : []),
+  ]);
