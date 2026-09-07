@@ -1,5 +1,13 @@
 import { Star, Quote } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import { customerReviews, type CustomerReview } from "@/data/reviews";
+
+/** Small deterministic hash so each page shows a different pair of real reviews (site audit m6). */
+const hash = (s: string) => {
+  let h = 2166136261;
+  for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
+  return h;
+};
 
 type ReviewCategory = CustomerReview["category"];
 
@@ -11,10 +19,10 @@ const firstName = (author: string) => author.split(/[\s&]/)[0];
  * then featured, then most recent.
  */
 export const pickAttributedReviews = (
-  opts: { town?: string; category?: ReviewCategory } = {},
+  opts: { town?: string; category?: ReviewCategory; seed?: string } = {},
   limit = 2,
 ): CustomerReview[] => {
-  const { town, category } = opts;
+  const { town, category, seed } = opts;
   const score = (r: CustomerReview) => {
     let s = 0;
     if (town && r.location.toLowerCase().startsWith(town.toLowerCase())) s += 4;
@@ -26,7 +34,9 @@ export const pickAttributedReviews = (
     .sort(
       (a, b) =>
         score(b) - score(a) ||
-        new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
+        (seed
+          ? hash(seed + a.authorName) - hash(seed + b.authorName)
+          : new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()),
     )
     .slice(0, limit);
 };
@@ -46,7 +56,8 @@ const AttributedReviews = ({
   tone = "light",
   className = "",
 }: AttributedReviewsProps) => {
-  const reviews = pickAttributedReviews({ town, category });
+  const { pathname } = useLocation();
+  const reviews = pickAttributedReviews({ town, category, seed: pathname });
   if (!reviews.length) return null;
 
   const isDark = tone === "dark";

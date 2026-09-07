@@ -318,7 +318,7 @@ const ResidentialRoofing = () => {
                           >
                             {[
                               { icon: ShieldCheck, label: "Licensed & Fully Insured", sub: "NC General Contractor" },
-                              { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", sub: "Top 1% nationally" },
+                              { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", sub: "Credentialed installer" },
                               { icon: Camera, label: "Documented Everything", sub: "Before, during & after" },
                             ].map((item) => (
                               <div key={item.label} className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm">

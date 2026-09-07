@@ -1,4 +1,3 @@
-import { GalleryGridSkeleton, LoadingAnnouncement } from "@/components/states/Skeletons";
 import { useEffect, useRef, useState } from "react";
 
 const REALWORK_HOST = "https://app.realworklabs.com";
@@ -78,7 +77,8 @@ const RealWorkWidget = ({
     const checkReady = () => {
       if (cancelled) return false;
       const output = document.getElementById("rwl-output");
-      if (output && output.children.length > 0) {
+      // An empty iframe from the vendor is not "ready" — wait for rendered height (site audit M1).
+      if (output && output.children.length > 0 && output.getBoundingClientRect().height > 80) {
         setStatus("ready");
         return true;
       }
@@ -136,13 +136,21 @@ const RealWorkWidget = ({
     // its #rwl-output target and patches the injected markup for accessibility.
     initialize();
     window.addEventListener("rwlPluginReady", initialize, false);
+    const poll = window.setInterval(() => {
+      if (cancelled || checkReady()) window.clearInterval(poll);
+    }, 1000);
     const timeoutId = window.setTimeout(() => {
-      if (!cancelled && !checkReady()) setStatus("error");
-    }, 20000);
+      window.clearInterval(poll);
+      if (!cancelled && !checkReady()) {
+        console.error("[RealWork] project feed did not render within 12 s — check that the RealWork account has published items.");
+        setStatus("error");
+      }
+    }, 12000);
 
     return () => {
       cancelled = true;
       window.clearTimeout(timeoutId);
+      window.clearInterval(poll);
       if (observer) observer.disconnect();
       window.removeEventListener("rwlPluginReady", initialize);
     };
@@ -153,7 +161,15 @@ const RealWorkWidget = ({
   if (status === "error") return null;
 
   return (
-    <section ref={sectionRef} className={className} aria-labelledby="realwork-project-updates-heading">
+    // Until the vendor has rendered real cards the section takes no vertical space —
+    // no dangling label, no spinner (site audit M1). #rwl-output stays in the DOM
+    // at full width so the plugin can mount into it.
+    <section
+      ref={sectionRef}
+      className={status === "ready" ? className : "h-0 overflow-hidden"}
+      aria-labelledby="realwork-project-updates-heading"
+      aria-hidden={status !== "ready"}
+    >
       <div className="container-tight">
         <div className="max-w-3xl mb-10">
           <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
@@ -176,13 +192,6 @@ const RealWorkWidget = ({
         >
           {/* RealWork requires this container to be exactly <div id="rwl-output"></div> */}
           <div id="rwl-output"></div>
-
-          {status === "loading" && (
-            <>
-              <LoadingAnnouncement label="Loading recent project updates" />
-              <GalleryGridSkeleton count={3} />
-            </>
-          )}
         </div>
       </div>
     </section>

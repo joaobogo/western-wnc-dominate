@@ -40,7 +40,7 @@ const roofingData = {
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines.",
   stats: [
     { value: REVIEW_STARS, label: "Google Rating" },
-    { value: "Top 1%", label: " Nationally Certified" },
+    { value: "CertainTeed", label: " ShingleMaster Credentialed" },
   ],
   services: [
     { icon: Layers, name: "Full Roof Replacements" },

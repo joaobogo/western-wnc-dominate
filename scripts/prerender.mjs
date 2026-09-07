@@ -162,6 +162,23 @@ function postProcess(html, route) {
     (m, host) => (BLOCKED_HOSTS.some((h) => host === h || host.endsWith(`.${h}`)) ? "" : m),
   );
 
+  // Scroll-reveal animations (framer-motion `initial={{ opacity: 0, y: 16 }}`)
+  // were frozen into the snapshot for anything that had not scrolled into the
+  // prerender viewport, so a real visitor saw blank space until JavaScript ran
+  // and the reveal fired (site audit 2026-09-07, M2). Emit the settled state:
+  // visible and un-shifted. After hydration framer-motion re-applies its own
+  // initial state to off-screen elements and animates them in on scroll.
+  html = html.replace(
+    /style="([^"]*)"/g,
+    (m, style) => {
+      if (!/opacity:\s*0(?![.\d])/.test(style) || !/translate[XY]\(/.test(style)) return m;
+      const settled = style
+        .replace(/opacity:\s*0(?![.\d])/, "opacity: 1")
+        .replace(/transform:\s*[^;"]*translate[XY]\([^;"]*/, "transform: none");
+      return `style="${settled}"`;
+    },
+  );
+
   if (!/<html[^>]*\slang=/i.test(html)) {
     html = html.replace(/<html/i, '<html lang="en"');
   }

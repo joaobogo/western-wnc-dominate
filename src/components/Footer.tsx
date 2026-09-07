@@ -86,7 +86,7 @@ const FooterLink = React.forwardRef<
   <Link
     ref={ref}
     to={to}
-    className="group text-body-sm text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-1.5 font-medium"
+    className="group text-body-sm text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-2.5 md:py-1.5 font-medium"
   >
     {children}
     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-hidden="true" />
@@ -242,7 +242,7 @@ const Footer = () => {
               <LeaveReviewLink
                 location={FRANKLIN}
                 label="Leave a Google review"
-                className="text-body-sm text-foreground/90 hover:text-primary no-underline hover:underline py-1.5"
+                className="text-body-sm text-foreground/90 hover:text-primary no-underline hover:underline py-2.5 md:py-1.5"
               />
             </nav>
           </div>
@@ -260,7 +260,7 @@ const Footer = () => {
                 <Link
                   key={l.href}
                   to={l.href}
-                  className="text-body-xs font-body text-muted-foreground hover:text-primary transition-colors py-1"
+                  className="text-body-xs font-body text-muted-foreground hover:text-primary transition-colors py-2.5 md:py-1"
                 >
                   {l.label}
                 </Link>
@@ -334,7 +334,7 @@ const Footer = () => {
               {BUSINESS.licenseNumber}
             </a>{" "}
             · Fully insured · Est. {BUSINESS.foundingYear} ·{" "}
-            <a href={PHONE_TEL} className="hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
+            <a href={PHONE_TEL} className="inline-flex items-center min-h-[44px] md:min-h-0 hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
           </p>
         </div>
       </div>

@@ -100,7 +100,7 @@ export const teamMembers: TeamMember[] = [
     image: robertImg,
     alt: "Robert Harrison, Commercial Roofing Specialist & Inspector at Highlander Building Services",
     bio: [
-      "With more than 40 years of experience in the roofing industry, Robert brings a wealth of knowledge and expertise to Highlander Building Services. Before relocating to the mountains of Western North Carolina, he successfully owned and operated his own roofing company in Florida, gaining extensive experience across a wide range of residential and commercial roofing systems.",
+      "With more than 40 years of experience in the roofing industry, Robert brings a wealth of knowledge and expertise to Highlander Building Services. Before relocating to the mountains of Western North Carolina, he successfully owned and operated his own roofing company in Florida, gaining extensive experience across residential and commercial roofing systems.",
       "Today, Robert serves as Highlander's commercial roofing expert, safety coordinator, and roof inspection specialist. Whether evaluating complex commercial roofing projects, conducting detailed roof inspections, or helping maintain safety standards across job sites, Robert's experience provides tremendous value to both customers and the company.",
       "His decades of industry knowledge make him a trusted resource for property owners seeking professional evaluations and expert guidance.",
     ],

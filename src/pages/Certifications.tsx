@@ -34,7 +34,7 @@ const certifications = [
   {
     icon: Award,
     title: "CertainTeed ShingleMaster Credentialed Contractor",
-    badge: "Top 1% Nationally",
+    badge: "Credentialed Contractor",
     image: badgeCertainteedMaster,
     description: "This is the highest credential CertainTeed offers to roofing contractors. It means our installers have been trained, tested, and certified to install CertainTeed roofing systems to the manufacturer's exact specifications — unlocking the strongest warranty coverage available.",
     whatItMeans: [

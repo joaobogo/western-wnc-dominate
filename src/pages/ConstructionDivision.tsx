@@ -248,7 +248,7 @@ const ConstructionDivision = () => {
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { value: REVIEW_STARS, label: "Google Rating" },
-                      { value: "Top 1%", label: "CertainTeed Certified" },
+                      { value: "CertainTeed", label: "ShingleMaster Credentialed" },
                       { value: `${REVIEW_COUNT}`, label: "Verified Reviews" },
                       { value: "Rapid", label: "Response Time" },
                     ].map((stat, i) => (

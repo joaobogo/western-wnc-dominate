@@ -111,7 +111,7 @@ const faqs = [
 ];
 
 const trustSignals = [
-  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Top 1% nationally" },
+  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Credentialed installer" },
   { icon: Shield, label: "Licensed General Contractor", detail: "State of North Carolina" },
   { icon: FileText, label: "Full Warranty Documentation", detail: "Material + labor coverage" },
   { icon: Clock, label: "Rapid Storm Response", detail: "Emergency priority service" },

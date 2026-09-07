@@ -95,7 +95,7 @@ const About = () => {
   return (
     <>
       <SEOHead
-        title="About Highlander Building Services"
+        title="About Highlander: Roofers and Builders in Franklin, NC"
         description="Meet Highlander Building Services, a premium roofing and construction company serving Western North Carolina. Licensed, certified, locally owned."
         path="/about"
         jsonLd={[

@@ -10,7 +10,7 @@ export const SOCIAL_LINKS = [
   {
     label: "Visit Highlander Building Services on Facebook",
     short: "Facebook",
-    href: "https://www.facebook.com/highlanderroof/reels/",
+    href: "https://www.facebook.com/highlanderroof",
     icon: Facebook,
   },
   {

@@ -133,7 +133,7 @@ export const CTA_EYEBROW = {
 export const PROOF_CONTEXT = {
   /** Roofing: materials + weather + project proof */
   roofing: [
-    "CertainTeed ShingleMaster Credentialed Contractor — Top 1%",
+    "CertainTeed ShingleMaster Credentialed Contractor",
     "Franklin & Sylva showrooms you can walk into",
     "Rapid storm response",
     "Full warranty documentation on every project",

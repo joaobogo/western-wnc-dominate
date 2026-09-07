@@ -187,7 +187,7 @@ export const towns: TownData[] = [
     // 56 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Sylva, NC | Repair & Replacement | Highlander",
     h1: `Roofers in Sylva, NC — Showroom on ${streetName(SYLVA)}`,
-    metaDescription: "Expert roofing and construction for Sylva, NC's historic homes and Jackson County properties. Preservation and renovation focus. Licensed & insured.",
+    metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Sylva, NC homes and Jackson County properties, from our staffed Sylva showroom.",
     housingProfile: "Historic downtown homes, university rentals, and hillside residential properties across the Sylva valley.",
     climateExposure: "Heavy valley moisture, trapped fog, and persistent humidity that accelerate biological growth on aging roof systems.",
     localVibe: "A mix of vibrant historic downtown character and modern growth driven by commerce and university regionalism.",
@@ -227,7 +227,7 @@ export const towns: TownData[] = [
     description: "Serving Waynesville's historic districts and established Haywood County neighborhoods with expert roofing modernization and whole-home additions.",
     features: ["Historic district care", "Whole-home renovations", "Haywood County authority", "Structural modernization"],
     metaTitle: "Roofing Contractor in Waynesville, NC | Highlander",
-    metaDescription: "Professional roofing and construction for Waynesville's historic districts and hillside developments. Haywood County expertise. Licensed & Insured.",
+    metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Waynesville, NC homes. Franklin-based crews serving Haywood County.",
     housingProfile: "Historic district estates, mid-century residential neighborhoods, and newer hillside builds in Haywood County.",
     climateExposure: "Regular freeze-thaw cycles and winter snow accumulation that test attic ventilation and older roof deck integrity.",
     localVibe: "One of WNC's most established residential markets, featuring deep historic roots and a growing modern residential base.",

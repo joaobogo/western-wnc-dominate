@@ -29,7 +29,7 @@ const RoofReplacementAds = () => (
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
     trustStats={[
       { value: REVIEW_STARS, label: "Google Rating", detail: "5-star roofing service" },
-      { value: "Top 1%", label: "Certification", detail: "CertainTeed ShingleMaster Credentialed Contractor level" },
+      { value: "CertainTeed", label: "ShingleMaster", detail: "CertainTeed ShingleMaster Credentialed Contractor" },
       { value: "2–5", label: "Typical install days", detail: "Most residential projects" },
       { value: "Warranty", label: "Protected work", detail: "Manufacturer plus Highlander labor coverage" },
     ]}

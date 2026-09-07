@@ -241,14 +241,14 @@ const Hero = () => {
                   <span
                     className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
-                    Roofing Company in Franklin, NC
+                    Roofing Company in Franklin, NC{" "}
                   </span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
                     className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
-                    Built for Western North Carolina
+                    Built for Western North Carolina{" "}
                   </span>
                 </span>
                 <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">
