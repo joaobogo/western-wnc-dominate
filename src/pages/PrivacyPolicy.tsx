@@ -467,8 +467,10 @@ const PrivacyPolicy = () => {
               cookies, certain features of the Website may not function properly.
             </p>
             <p>
-              If the Website presents a cookie banner or preference center, you can use it to
-              manage certain categories of cookies where available.
+              The analytics and advertising tools described in Section 8.5.2 are active by
+              default when you visit. The cookie notice shown on your first visit lets you opt
+              out; your choice is stored in your browser and honored on return visits. Clearing
+              your browser storage shows the notice again.
             </p>
             <h4>8.5.2 Analytics and Advertising Tools</h4>
             <p>

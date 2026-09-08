@@ -166,6 +166,17 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
       ...enrichedMetadata,
     });
   }
+
+  // 4. TikTok Pixel — standard SubmitForm on a completed lead form (phone taps
+  // are handled in gtm.ts so they are not double-counted here).
+  if (type === "form_submit" && typeof window !== "undefined" && (window as any).ttq?.track) {
+    (window as any).ttq.track("SubmitForm", {
+      content_name: label || type,
+      content_category: "conversion",
+      value: value,
+      currency: "USD",
+    });
+  }
 };
 
 /**

@@ -1,6 +1,7 @@
 import { getAnalyticsPageType, getTownSlugFromPath, isUrgentIntentPath } from "@/lib/urgent-intent";
 import { getActiveExperiments } from "@/lib/ab-testing";
 import { getGbpTouch } from "@/lib/attribution";
+import { pixelPhoneClick } from "@/lib/pixels";
 
 /**
  * Google Tag Manager dataLayer helpers.
@@ -315,6 +316,12 @@ export function trackPhoneClick(opts: {
     page_path: pagePath(),
     page_title: pageTitle(),
     click_location: opts.click_location,
+  });
+  // Meta / TikTok are loaded outside GTM — hand them the call intent directly.
+  pixelPhoneClick({
+    phone_number: opts.phone_number,
+    click_location: opts.click_location,
+    page_path: pagePath(),
   });
 }
 

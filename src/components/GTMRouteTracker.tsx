@@ -64,6 +64,17 @@ const GTMRouteTracker = () => {
       page_location: window.location.href,
       page_title: document.title,
     });
+    // Meta and TikTok load outside GTM, so hand them the SPA page change directly.
+    try {
+      w.fbq?.("track", "PageView");
+    } catch {
+      /* pixel blocked or opted out */
+    }
+    try {
+      w.ttq?.page?.();
+    } catch {
+      /* pixel blocked or opted out */
+    }
   }, [pathname, search]);
 
   return null;

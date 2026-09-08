@@ -7,8 +7,9 @@
  *   • analytics   — GTM / GA4 measurement storage.
  *   • marketing   — Meta Pixel, TikTok Pixel, ad storage.
  *
- * Defaults live in index.html (Consent Mode v2, everything denied until the
- * visitor chooses). This module is the single writer of that state.
+ * Defaults live in index.html (Consent Mode v2, opt-out model: every category
+ * is granted on load and only an explicit "Opt out" from the cookie notice
+ * turns analytics/marketing off). This module is the single writer of that state.
  */
 
 import { trackConsentUpdate } from "./gtm";
@@ -38,16 +39,17 @@ export function readConsent(): ConsentState | null {
   }
 }
 
+/** Opt-out model: a category is allowed unless the visitor explicitly turned it off. */
 export function hasConsent(category: keyof Omit<ConsentState, "decidedAt">): boolean {
-  return !!readConsent()?.[category];
+  return readConsent()?.[category] !== false;
 }
 
 /** Persist a decision, update Consent Mode, and release gated loaders. */
 export function saveConsent(choice: Partial<Omit<ConsentState, "decidedAt">>): ConsentState {
   const state: ConsentState = {
     functional: choice.functional ?? true,
-    analytics: choice.analytics ?? false,
-    marketing: choice.marketing ?? false,
+    analytics: choice.analytics ?? true,
+    marketing: choice.marketing ?? true,
     decidedAt: new Date().toISOString(),
   };
   try {

@@ -82,7 +82,11 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" /></noscript>
 
-    <!-- Consent Mode v2 defaults — set BEFORE any tag loads. -->
+    <!-- Consent Mode v2 defaults — set BEFORE any tag loads.
+         Opt-out model (US-only audience): every category is GRANTED on first load so
+         GTM, GA4, Google Ads, Meta and TikTok record the visit from the first pixel.
+         A stored "Opt out" from the banner (hl_consent_v1 with analytics/marketing === false)
+         is the only thing that flips a category to denied. -->
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ window.dataLayer.push(arguments); }
@@ -90,21 +94,23 @@
       var stored=null;
       try{ stored = JSON.parse(w.localStorage.getItem('hl_consent_v1') || 'null'); }catch(e){}
       w.__hlConsent = stored;
-      var analytics = stored && stored.analytics ? 'granted' : 'denied';
-      var marketing = stored && stored.marketing ? 'granted' : 'denied';
+      var analytics = stored && stored.analytics === false ? 'denied' : 'granted';
+      var marketing = stored && stored.marketing === false ? 'denied' : 'granted';
       gtag('consent','default',{
         ad_storage: marketing,
         ad_user_data: marketing,
         ad_personalization: marketing,
         analytics_storage: analytics,
         functionality_storage: 'granted',
-        security_storage: 'granted',
-        wait_for_update: 500
+        personalization_storage: 'granted',
+        security_storage: 'granted'
       });
+      // Keeps gclid / ad-click data alive across pages even when a browser blocks cookies.
+      gtag('set','url_passthrough', true);
     })(window);
     </script>
 
-    <!-- Google Tag Manager — loaded immediately; storage remains denied until consent is granted -->
+    <!-- Google Tag Manager — loaded immediately with storage granted (see the Consent Mode block above) -->
     <script>
     (function(w,d,i){
       w.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
@@ -208,7 +214,7 @@ div[style*="Edit with Lovable"],
   z-index: -9999 !important;
 }
 </style>
-    <!-- Meta Pixel — stub queues immediately; network fetch deferred to interaction/post-load -->
+    <!-- Meta Pixel — stub queues init + PageView; fbevents.js is fetched on load by the gate below (unless the visitor opted out) -->
     <script>
     (function(f){
       if(f.fbq)return;
@@ -291,36 +297,36 @@ div[style*="Edit with Lovable"],
         strictQueue.push(fn); arm();
       };
 
-      function marketingOk(){ return !!(w.__hlConsent && w.__hlConsent.marketing); }
-      function functionalOk(){ return !!(w.__hlConsent && w.__hlConsent.functional); }
+      // Opt-out model: the pixels run unless the visitor has explicitly opted out.
+      function marketingOk(){ return !(w.__hlConsent && w.__hlConsent.marketing === false); }
       function loadMarketing(){
         if(!marketingOk())return;
         try{ w.__loadFB && w.__loadFB(); }catch(e){}
         try{ w.__loadTT && w.__loadTT(); }catch(e){}
       }
-      function loadFunctional(){
-        // Functional embeds (VELUX) are mounted by their own components behind
-        // the same intent gate; nothing sitewide loads here any more.
-        if(!functionalOk())return;
-      }
-      // Called by the in-app consent banner once the visitor makes a choice.
+      // Called by the in-app cookie notice once the visitor makes a choice.
       w.__hlApplyConsent = function(state){
         w.__hlConsent = state;
+        var ads = state.marketing === false ? 'denied' : 'granted';
         gtag('consent','update',{
-          ad_storage: state.marketing ? 'granted':'denied',
-          ad_user_data: state.marketing ? 'granted':'denied',
-          ad_personalization: state.marketing ? 'granted':'denied',
-          analytics_storage: state.analytics ? 'granted':'denied'
+          ad_storage: ads,
+          ad_user_data: ads,
+          ad_personalization: ads,
+          analytics_storage: state.analytics === false ? 'denied' : 'granted'
         });
-        // Pixels are a marketing decision the visitor just made — deferring them
-        // to the next intent signal would drop conversions; they stay small.
+        if(state.marketing === false){
+          // Real opt-out: Meta and TikTok stop sending for the rest of the session.
+          try{ w.fbq && w.fbq('consent','revoke'); }catch(e){}
+          try{ w.ttq && w.ttq.revokeConsent && w.ttq.revokeConsent(); }catch(e){}
+          return;
+        }
+        try{ w.fbq && w.fbq('consent','grant'); }catch(e){}
+        try{ w.ttq && w.ttq.grantConsent && w.ttq.grantConsent(); }catch(e){}
         loadMarketing();
-        loadFunctional();
       };
-      // Stored consent from a previous visit: marketing pixels on load, heavy
-      // functional embeds still behind the intent gate.
+      // Marketing pixels fire on load, before any interaction, so even a bounce
+      // is measured. Heavy functional embeds (VELUX, maps) stay behind the intent gate.
       loadMarketing();
-      loadFunctional();
       arm();
     })(window);
     </script>

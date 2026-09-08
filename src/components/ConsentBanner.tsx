@@ -7,8 +7,9 @@ import {
 } from "@/lib/consent";
 
 /**
- * Lightweight consent notice. Renders as soon as React hydrates so visitors
- * can opt in immediately and marketing/analytics pixels can fire without delay.
+ * Lightweight cookie notice (opt-out model). Measurement and advertising tags
+ * already run from the first paint; this tells the visitor and offers a real
+ * opt-out that is honored for the rest of the session and on return visits.
  */
 const ConsentBanner = () => {
   const [visible, setVisible] = useState(false);
@@ -32,8 +33,8 @@ const ConsentBanner = () => {
         We use a few cookies
       </p>
       <p className="text-sm text-muted-foreground mb-4">
-        Measurement and advertising cookies stay off until you allow them. Details are in
-        our{" "}
+        We use cookies to measure how the site is used and to improve our advertising. You
+        can opt out any time. Details are in our{" "}
         <Link to="/privacy-policy" className="underline underline-offset-2">
           privacy policy
         </Link>
@@ -48,7 +49,7 @@ const ConsentBanner = () => {
           }}
           className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition"
         >
-          Allow all
+          Got it
         </button>
         <button
           type="button"
@@ -58,7 +59,7 @@ const ConsentBanner = () => {
           }}
           className="px-4 py-2 rounded-md border border-border text-sm font-medium hover:bg-muted transition"
         >
-          Essential only
+          Opt out
         </button>
       </div>
     </div>
