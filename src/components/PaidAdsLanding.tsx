@@ -1,12 +1,13 @@
 import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackPhoneClick } from "@/lib/gtm";
-import logo from "@/assets/logo.svg";
+// The hero sits on a dark scrim, so the cream mark is the legible one.
+import logo from "@/assets/logo-cream.svg";
 
 interface PaidAdsLandingProps {
   title: string;
@@ -92,10 +93,13 @@ const PaidAdsLanding = ({
 
           <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
             <div className="flex items-center justify-between border-b border-dark-section-border pb-3">
-              <span className="flex items-center gap-2">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))]"
+                aria-label="Highlander Building Services, Inc. — home"
+              >
                 <img src={logo} alt="Highlander Building Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
-                <span className="sr-only">Highlander Building Services, Inc.</span>
-              </span>
+              </Link>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 {PHONE_DISPLAY}

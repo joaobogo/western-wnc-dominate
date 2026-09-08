@@ -1,6 +1,7 @@
-import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Clock, Award, Star, type LucideIcon } from "lucide-react";
 
@@ -54,7 +55,10 @@ export const RoofingClosingCTA = ({
   eyebrow = "Your Roof, Our Expertise",
   ctaText = "See What My Roof Needs",
   ctaLink = "/consultation",
-}: Omit<RoofingCTAProps, "variant">) => (
+}: Omit<RoofingCTAProps, "variant">) => {
+  // Money pages lead with the phone (João, 2026-09-08); cost guides stay form-first.
+  const callIsPrimary = getPagePrimaryAction(useLocation().pathname).intent === "call";
+  return (
   <section className="section-dark tartan-dark relative overflow-hidden">
     <motion.div
       className="absolute top-0 left-0 w-full h-px"
@@ -76,14 +80,15 @@ export const RoofingClosingCTA = ({
               {subheadline}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <Link to={ctaLink} className="btn btn-primary btn-lg group relative">
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-10 ${callIsPrimary ? "sm:flex-row-reverse" : ""}`}>
+              <Link to={ctaLink} className={`btn btn-lg group relative ${callIsPrimary ? "btn-secondary btn-on-dark" : "btn-primary"}`}>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">{ctaText}</span>
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" /> {PHONE_DISPLAY}
+              <a href={PHONE_TEL} className={`btn btn-lg group ${callIsPrimary ? "btn-primary" : "btn-secondary btn-on-dark"}`}>
+                <Phone className={`w-4 h-4 ${callIsPrimary ? "" : "text-[hsl(var(--highland-gold)/0.9)]"}`} aria-hidden="true" />{" "}
+                {callIsPrimary ? `Call ${PHONE_DISPLAY}` : PHONE_DISPLAY}
               </a>
             </div>
 
@@ -93,7 +98,8 @@ export const RoofingClosingCTA = ({
       </div>
     </div>
   </section>
-);
+  );
+};
 
 /* ═══════════════════════════════════════════
    TRUST SIDEBAR (for sidebar layouts)

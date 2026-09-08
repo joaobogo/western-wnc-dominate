@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, FRANKLIN, SYLVA } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL, FRANKLIN, SYLVA } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -120,6 +120,18 @@ export default function Contact() {
               </h2>
               <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
                 Keep it short: who you are, how to reach you, where the property is, and what you need. A Highlander advisor reviews it and calls you back to discuss next steps.
+              </p>
+              {/* Call escape hatch — most conversions here are calls, so the
+                  phone is offered before the form, not only after it. */}
+              <p className="text-sm font-body text-muted-foreground mb-5">
+                Prefer to talk?{" "}
+                <a
+                  href={PHONE_TEL}
+                  className="font-semibold text-foreground underline underline-offset-2 hover:text-[hsl(var(--gold-ink))] transition-colors"
+                >
+                  Call {PHONE_DISPLAY}
+                </a>{" "}
+                — {FRANKLIN.hours[0].label}.
               </p>
               <ContactMinimalForm />
             </div>

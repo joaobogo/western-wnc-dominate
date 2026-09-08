@@ -1,5 +1,6 @@
-import { REVIEW_STARS } from "@/data/business";
-import { Link } from "react-router-dom";
+import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
+import { Link, useLocation } from "react-router-dom";
+import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Award, Clock, Mountain, CheckCircle2 } from "lucide-react";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
@@ -21,6 +22,11 @@ const promises = [
 ];
 
 const CTABlock = () => {
+  // Money pages lead with the phone (João, 2026-09-08). The estimate path is
+  // never removed — it just becomes the secondary button.
+  const { pathname } = useLocation();
+  const callIsPrimary = getPagePrimaryAction(pathname).intent === "call";
+
   return (
     <section className="relative overflow-hidden">
       {/* ═══ PART 1: Emotional Close (Dark) ═══ */}
@@ -66,22 +72,45 @@ const CTABlock = () => {
               {/* CTA Buttons */}
               <ScrollReveal variant="rise" delay={0.4}>
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 md:mb-16">
-                  <Link
-                    to="/consultation"
-                    onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
-                    className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-base md:text-lg px-10 md:px-16 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-floating min-h-[60px]"
-                  >
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                    <span className="relative">Start Your Project</span>
-                    <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
-                  </Link>
-                  <a
-                    href="tel:+18285247773"
-                    className="btn btn-secondary btn-lg btn-on-dark group md:text-lg md:px-12 md:py-5"
-                  >
-                    <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                    Speak With a Project Advisor
-                  </a>
+                  {callIsPrimary ? (
+                    <>
+                      <a
+                        href={PHONE_TEL}
+                        className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-base md:text-lg px-10 md:px-16 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-floating min-h-[60px]"
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        <Phone className="w-4 h-4 relative" aria-hidden="true" />
+                        <span className="relative">Call {PHONE_DISPLAY}</span>
+                      </a>
+                      <Link
+                        to="/consultation"
+                        onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
+                        className="btn btn-secondary btn-lg btn-on-dark group md:text-lg md:px-12 md:py-5"
+                      >
+                        Start Your Project
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        to="/consultation"
+                        onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
+                        className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-base md:text-lg px-10 md:px-16 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-floating min-h-[60px]"
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        <span className="relative">Start Your Project</span>
+                        <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
+                      </Link>
+                      <a
+                        href={PHONE_TEL}
+                        className="btn btn-secondary btn-lg btn-on-dark group md:text-lg md:px-12 md:py-5"
+                      >
+                        <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
+                        Speak With a Project Advisor
+                      </a>
+                    </>
+                  )}
                 </div>
                 <CTAProofPoints tone="dark" className="-mt-6 mb-12 md:mb-14" />
               </ScrollReveal>
@@ -158,7 +187,6 @@ const CTABlock = () => {
         <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground text-body-xs font-body text-center md:text-left">
-              <span className="text-primary-foreground font-heading font-bold">{`${REVIEW_STARS} rated.`}</span>{" "}
               <span className="text-primary-foreground font-heading font-bold">{`${REVIEW_STARS} rated.`}</span>{" "}
               Roofing & Construction across Western NC since 2017.
             </p>

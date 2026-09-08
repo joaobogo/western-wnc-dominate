@@ -1,8 +1,14 @@
-import { PHONE_DISPLAY } from "@/data/business";
-import { Link } from "react-router-dom";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
+import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
+
+const PRIMARY_BTN =
+  "cta-gradient text-accent-foreground font-body font-bold text-sm md:text-base px-8 md:px-12 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 transition-all uppercase tracking-[0.1em] min-h-[56px]";
+const SECONDARY_BTN =
+  "border-2 border-dark-section-border text-dark-section-foreground font-body font-bold text-sm md:text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] transition-all min-h-[56px]";
 
 type Props = {
   /** Short line above the headline, e.g. "Storm Response". */
@@ -34,6 +40,35 @@ const PageCloseCTA = ({
   secondaryTo,
   context,
 }: Props) => {
+  // Money pages lead with the phone (João, 2026-09-08). Both paths always
+  // render — only which one carries the primary treatment changes.
+  const { pathname } = useLocation();
+  const callIsPrimary = getPagePrimaryAction(pathname).intent === "call";
+
+  const formCta = (
+    <Link
+      key="form"
+      to={primaryTo}
+      onClick={() => trackEvent("cta_click", { label: primaryLabel, elementId: `page-close-cta-${context}` })}
+      className={callIsPrimary ? SECONDARY_BTN : PRIMARY_BTN}
+    >
+      {primaryLabel}
+      <ArrowRight className="w-4 h-4" aria-hidden="true" />
+    </Link>
+  );
+
+  const callCta = (
+    <a
+      key="call"
+      href={PHONE_TEL}
+      onClick={() => trackEvent("phone_click", { label: "Phone CTA", elementId: `page-close-call-${context}` })}
+      className={callIsPrimary ? PRIMARY_BTN : SECONDARY_BTN}
+    >
+      <Phone className={`w-4 h-4 ${callIsPrimary ? "" : "text-[hsl(var(--gold-ink))]"}`} aria-hidden="true" />
+      {callIsPrimary ? `Call ${PHONE_DISPLAY}` : PHONE_DISPLAY}
+    </a>
+  );
+
   return (
     <section aria-label="Next step" className="section-dark dark-surface border-t border-dark-section-border">
       <div className="section-padding">
@@ -48,22 +83,7 @@ const PageCloseCTA = ({
             {body}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
-            <Link
-              to={primaryTo}
-              onClick={() => trackEvent("cta_click", { label: primaryLabel, elementId: `page-close-cta-${context}` })}
-              className="cta-gradient text-accent-foreground font-body font-bold text-sm md:text-base px-8 md:px-12 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 transition-all uppercase tracking-[0.1em] min-h-[56px]"
-            >
-              {primaryLabel}
-              <ArrowRight className="w-4 h-4" aria-hidden="true" />
-            </Link>
-            <a
-              href="tel:+18285247773"
-              onClick={() => trackEvent("phone_click", { label: "Phone CTA", elementId: `page-close-call-${context}` })}
-              className="border-2 border-dark-section-border text-dark-section-foreground font-body font-bold text-sm md:text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] transition-all min-h-[56px]"
-            >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              {PHONE_DISPLAY}
-            </a>
+            {callIsPrimary ? [callCta, formCta] : [formCta, callCta]}
           </div>
           <CTAProofPoints tone="dark" className="mt-6" />
           {secondaryLabel && secondaryTo && (
