@@ -81,9 +81,13 @@ const PaidAdsLanding = ({
         <section className="relative overflow-hidden section-dark">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImage} alt={heroAlt} className="h-full w-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/97 via-background/92 to-background/70" />
-            <div className="absolute inset-0 bg-background/45 md:bg-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+            {/* Dark scrim. The hero content uses the dark-section tokens (near-white
+                text, gold accents), so the photo must sit under a dark wash, not the
+                white one that used to be here — `from-background/97` also silently
+                failed to compile, leaving light text on an unscrimmed photo. */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--dark-section)/0.94)] via-[hsl(var(--dark-section)/0.8)] to-[hsl(var(--dark-section)/0.45)]" />
+            <div className="absolute inset-0 bg-[hsl(var(--dark-section)/0.4)] md:bg-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--dark-section)/0.9)] via-transparent to-[hsl(var(--dark-section)/0.55)]" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">

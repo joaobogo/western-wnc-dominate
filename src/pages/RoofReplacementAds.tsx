@@ -1,4 +1,4 @@
-import { REVIEW_STARS } from "@/data/business";
+import { REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import PaidAdsLanding from "@/components/PaidAdsLanding";
 import heroImg from "@/assets/gallery/asphalt-008.webp";
 
@@ -28,7 +28,7 @@ const RoofReplacementAds = () => (
     }}
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
     trustStats={[
-      { value: REVIEW_STARS, label: "Google Rating", detail: "5-star roofing service" },
+      { value: REVIEW_STARS, label: "Google Rating", detail: REVIEW_COUNT_LABEL },
       { value: "CertainTeed", label: "ShingleMaster", detail: "CertainTeed ShingleMaster Credentialed Contractor" },
       { value: "2–5", label: "Typical install days", detail: "Most residential projects" },
       { value: "Warranty", label: "Protected work", detail: "Manufacturer plus Highlander labor coverage" },

@@ -1,4 +1,4 @@
-import { REVIEW_STARS } from "@/data/business";
+import { REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import PaidAdsLanding from "@/components/PaidAdsLanding";
 import heroImg from "@/assets/gallery/asphalt-005.webp";
 
@@ -29,7 +29,7 @@ const StormDamageAds = () => (
     urgencyOptions={["Emergency today", "Rapid response", "This week", "Just need answers"]}
     trustStats={[
       { value: "Rapid", label: "Storm response", detail: "Same-day help for urgent leak situations" },
-      { value: REVIEW_STARS, label: "Google Rating", detail: "Over 50+ local reviews" },
+      { value: REVIEW_STARS, label: "Google Rating", detail: REVIEW_COUNT_LABEL },
       { value: "Local", label: "WNC team", detail: "Not out-of-town storm chasers" },
       { value: REVIEW_STARS, label: "Client rating", detail: "Built on responsiveness and follow-through" },
     ]}
