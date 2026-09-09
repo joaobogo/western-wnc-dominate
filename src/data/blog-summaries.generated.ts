@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "gutter-size-western-nc-mountain-homes",
+    "slug": "gutter-size-western-nc-mountain-homes",
+    "title": "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
+    "excerpt": "Gutter capacity ratings assume one inch of rain per hour. Highlands is designed for 11.3. A licensed WNC contractor walks through gutter and downspout sizing using NOAA rainfall data for our towns.",
+    "category": "Gutters",
+    "date": "2026-09-09",
+    "readTime": "9 min"
+  },
+  {
     "id": "wnc-storm-season-roof-damage",
     "slug": "wnc-storm-season-roof-damage",
     "title": "What a Western North Carolina Storm Season Does to Your Roof",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Construction",
     "date": "2026-07-26",
     "readTime": "8 min"
-  },
-  {
-    "id": "roof-inspection-frequency-cullowhee-nc",
-    "slug": "roof-inspection-frequency-cullowhee-nc",
-    "title": "How Often Should Cullowhee Homeowners Inspect Their Roof?",
-    "excerpt": "How often Cullowhee, NC homeowners should schedule a roof inspection and what a good inspection actually covers.",
-    "category": "Inspection",
-    "date": "2026-07-26",
-    "readTime": "7 min"
   }
 ];
