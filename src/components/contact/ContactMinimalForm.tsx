@@ -158,7 +158,7 @@ const ContactMinimalForm = () => {
   const labelClasses = "field-label";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" data-hide-sticky>
+    <form noValidate onSubmit={handleSubmit} className="space-y-5" data-hide-sticky>
       <FormErrorSummary message={submitError} issues={issues} className="mt-0 mb-2" />
       <FormSavedNote show={autosave.restored} className="mb-2" />
 

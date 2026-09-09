@@ -79,6 +79,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
       </div>
 
       <form
+        noValidate
         className="space-y-4"
         onSubmit={async (event) => {
           event.preventDefault();
