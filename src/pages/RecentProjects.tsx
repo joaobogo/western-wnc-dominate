@@ -1,7 +1,6 @@
-import { PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Fragment, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Phone, ImageOff } from "lucide-react";
+import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, ImageOff } from "lucide-react";
 import EmptyState from "@/components/states/EmptyState";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -343,25 +342,6 @@ const RecentProjects = () => {
               <Link to="/service-areas" className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--heritage-green))] hover:gap-3 transition-all">
                 View All Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="bg-[hsl(var(--heritage-green))] text-white">
-          <div className="container-tight py-16 md:py-20 text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Ready to Talk About Your Project?</h2>
-            <p className="text-white/95 text-lg mb-8 max-w-2xl mx-auto">
-              Tell Highlander what you are planning, where the property is located, and what kind of help
-              you need. Our team will help you determine the right next step.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/contact" className="btn btn-primary btn-md">
-                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </Link>
-              <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_PLAIN}
-              </a>
             </div>
           </div>
         </section>
