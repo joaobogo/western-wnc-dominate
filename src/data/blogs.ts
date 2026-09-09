@@ -3921,6 +3921,8 @@ Constant wetting accelerates shingle granule loss. Water sits longer in valleys 
 ## What It Does to Gutters
 Undersized gutters overflow. Loose fasteners fail under water weight. Downspouts that dump water at the foundation cause soil erosion and, eventually, foundation moisture problems.
 
+If yours overflow when they are clean, that is a sizing problem, not a cleaning one. See [how to size gutters for our rainfall](/blog/gutter-size-western-nc-mountain-homes).
+
 ## Design for the Actual Rainfall
 Six-inch seamless gutters and adequate downspout count aren't a luxury on WNC homes — they're the baseline. Kickout flashings where roofs meet walls are non-negotiable.
 
@@ -4467,7 +4469,7 @@ Cove hardwoods drop steady debris. Consider gutter guards as part of the same in
 If you're planning [a roof replacement](/roofing/roof-replacement), doing gutters at the same time is efficient and gives you a coordinated system.
 
 ## Ready to Plan?
-Learn more about our [gutter services](/roofing/gutters), [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [how heavy rain impacts WNC roofs and gutters](/blog/heavy-rain-roofs-gutters-western-nc).`,
+Learn more about our [gutter services](/roofing/gutters), [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [how heavy rain impacts WNC roofs and gutters](/blog/heavy-rain-roofs-gutters-western-nc) and [why 5-inch gutters overflow here](/blog/gutter-size-western-nc-mountain-homes).`,
     faqs: [
       { question: "Can I upgrade my existing gutters to seamless without a full replacement?", answer: "Yes — seamless replacement is a common standalone project, no roof work required." },
     ],
@@ -4504,7 +4506,7 @@ Seamless aluminum runs formed on site. Hidden hangers with structural screws. Co
 If your roof is also aging, consider [replacement together with the roof](/roofing/roof-replacement) — access is set up, and the two systems get coordinated warranties. If the roof is fine, gutter-only replacement is straightforward.
 
 ## Ready?
-See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair) if there's related damage, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [signs it's time to upgrade gutter guards in WNC](/blog/gutter-guards-worth-it-western-nc).`,
+See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair) if there's related damage, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [signs it's time to upgrade gutter guards in WNC](/blog/gutter-guards-worth-it-western-nc) and [what size gutters your roof actually needs](/blog/gutter-size-western-nc-mountain-homes).`,
     faqs: [
       { question: "Do you match gutter color to existing trim?", answer: "Yes — aluminum comes in a wide color range and we match to your fascia and trim." },
     ],
@@ -4526,6 +4528,8 @@ See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair)
     metaTitle: "Are Gutter Guards Worth It in Western NC? | Highlander",
     metaDescription: "Gutter guards in Western NC — an honest look at where they earn their cost, where they don't, and what to install if you go this route.",
     content: `Gutter guards are one of the more marketed home upgrades. Here's an honest read on where they actually pay off for Western NC mountain homes and where they don't.
+
+One thing to settle first: guards do not fix an undersized gutter. If water goes over the edge on a clean run, read [why 5-inch gutters overflow in Western NC](/blog/gutter-size-western-nc-mountain-homes) before spending on guards.
 
 ## Where Guards Pay Off
 **Wooded lots** with steady leaf and needle drop. **Two-story or steep-roof homes** where cleaning is difficult or unsafe. **Second homes** where seasonal absence means missed cleanings.
