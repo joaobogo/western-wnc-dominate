@@ -16,6 +16,8 @@ import { runLegacyUrlCheck, loadRedirectRules } from "./lib/redirect-rules.mjs";
 
 const BASE = (process.argv.find(a => a.startsWith("--base=")) || "--base=https://highlandernc.com").split("=")[1];
 const CANONICAL_HOST = new URL(BASE).host;
+// The published Lovable project host is an accepted alternative to the custom domain.
+const ALLOWED_HOSTS = new Set([CANONICAL_HOST, "western-wnc-dominate.lovable.app"]);
 
 const failures = [];
 const warnings = [];
@@ -131,7 +133,7 @@ else {
     let u;
     try { u = new URL(loc); } catch { fail(`Invalid sitemap URL: ${loc}`); continue; }
     if (u.protocol !== "https:") fail(`Non-HTTPS sitemap URL: ${loc}`);
-    if (u.host !== CANONICAL_HOST) fail(`Non-canonical host in sitemap: ${loc} (expected ${CANONICAL_HOST}).`);
+    if (!ALLOWED_HOSTS.has(u.host)) fail(`Non-canonical host in sitemap: ${loc} (expected ${CANONICAL_HOST}).`);
     if (u.search) fail(`Sitemap URL contains query params: ${loc}`);
     // One URL shape sitewide: no trailing slash (homepage excepted).
     if (u.pathname !== "/" && u.pathname.endsWith("/")) fail(`Sitemap URL ends with a trailing slash: ${loc}`);
@@ -270,7 +272,7 @@ if (distIsCurrent) {
       if (/^https?:\/\//i.test(src)) {
         let host = "";
         try { host = new URL(src).host; } catch { host = src; }
-        if (host !== CANONICAL_HOST) fail(`Prerendered ${p} loads an <img> from an external host: ${src}`);
+        if (!ALLOWED_HOSTS.has(host)) fail(`Prerendered ${p} loads an <img> from an external host: ${src}`);
       } else if (src.startsWith("/") && !src.startsWith("//")) {
         const localPath = src.split(/[?#]/)[0];
         if (!existsSync(resolve(`dist${localPath}`))) fail(`Prerendered ${p} references a missing image: ${localPath}`);
