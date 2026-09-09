@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "gutter-size-western-nc-mountain-homes",
+    "title": "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
+    "excerpt": "Gutter capacity ratings assume one inch of rain per hour. Highlands is designed for 11.3. A licensed WNC contractor walks through gutter and downspout sizing us",
+    "category": "Gutters",
+    "date": "2026-09-09",
+    "town": "Highlands"
+  },
+  {
     "slug": "wnc-storm-season-roof-damage",
     "title": "What a Western North Carolina Storm Season Does to Your Roof",
     "excerpt": "Wind breaks the sealant bond before it takes a shingle away, and hail either fractures the mat or it does not. A plain accounting of what a WNC summer does to a",

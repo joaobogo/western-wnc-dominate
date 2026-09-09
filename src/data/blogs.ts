@@ -7,6 +7,7 @@ import wncRoofingGuideHero from "@/assets/blog/wnc-mountain-roofing-guide-hero.j
 import stormSeasonHero from "@/assets/blog/wnc-storm-season-roof-hero.jpg";
 import stormSeasonHail from "@/assets/blog/wnc-storm-season-hail-granules.jpg";
 import stormSeasonFlashing from "@/assets/blog/wnc-storm-season-chimney-flashing.jpg";
+import gutterSizingHero from "@/assets/blog/gutter-size-western-nc-mountain-homes.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -62,6 +63,206 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "gutter-size-western-nc-mountain-homes",
+    title: "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
+    excerpt:
+      "Gutter capacity ratings assume one inch of rain per hour. Highlands is designed for 11.3. A licensed WNC contractor walks through gutter and downspout sizing using NOAA rainfall data for our towns.",
+    category: "Gutters",
+    date: "2026-09-09",
+    image: gutterSizingHero,
+    imageAlt:
+      "Rainwater overflowing the front edge of an undersized gutter on a Western North Carolina mountain home",
+    readTime: "9 min",
+    metaTitle: "Why 5-Inch Gutters Overflow in Western NC | Highlander",
+    metaDescription:
+      "Gutter capacity ratings assume 1 inch of rain per hour. Highlands gets 11.3. A licensed WNC contractor explains gutter sizing with real NOAA data.",
+    town: "Highlands",
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+    faqs: [
+      { question: "Are 6-inch gutters worth the money in Western North Carolina?", answer: "On most homes here, yes, and the price difference between 5-inch and 6-inch is small relative to the job. The stronger case is above 3,000 feet, on roofs steeper than 8/12, and anywhere a valley concentrates flow. Below about 2,500 feet on a simple, modestly pitched roof with adequate downspouts, 5-inch can be perfectly correct." },
+      { question: "My gutters are clean and they still overflow. Why?", answer: "Almost always capacity, either the trough, the downspout, or a valley delivering more water to one section than it can carry. Clean gutters that overflow are a sizing symptom, not a maintenance one." },
+      { question: "Will gutter guards fix overflow?", answer: "No, and they can make it worse. A guard manages debris. It does nothing for capacity, and some designs reduce the opening water can enter through. If the system is undersized, a guard puts a lid on the problem." },
+      { question: "How many downspouts do I need?", answer: "Divide the roof area draining to each run by the capacity figure for the downspout size you are using. As a working rule here, one downspout per thirty to forty feet of run, and never more than fifty feet on one." },
+      { question: "Does roof pitch really change the gutter size?", answer: "Yes. A 12/12 roof is treated as collecting thirty percent more than a flat one. Steep roofs also throw water further out, so gutter positioning matters as much as size." },
+      { question: "How often should gutters be cleaned with pine on the property?", answer: "Twice at minimum, once after the needle drop in early autumn and once after the hardwoods finish. On an oak-heavy lot a third pass in winter is worth it, because oaks hold their leaves." },
+    ],
+    content: `Every autumn we get the same call. The gutters were cleaned last month. There is nothing in them. And in a hard afternoon rain, water still comes over the front edge in a sheet.
+
+The homeowner assumes it is a clog. Usually it is not.
+
+**In most of these cases the gutter is doing exactly what it was built to do. It was simply never built for the amount of rain that falls here.**
+
+This is the part of the job almost nobody explains, so here is the whole thing: the numbers, where they come from, and how to check your own house.
+
+## The number nobody mentions
+
+Search for gutter sizes and you will find the same figure repeated on dozens of sites. A 5-inch gutter handles about 5,520 square feet of roof.
+
+That number has a condition attached to it, and the condition is almost always deleted.
+
+**It assumes one inch of rain per hour.**
+
+One inch an hour is a steady, soaking rain. It is not a Western North Carolina thunderstorm in September, and it is not what the mountains do when a tropical system stalls against the Blue Ridge escarpment.
+
+There is a second problem with that figure. In the plumbing code's gutter table, 5,520 square feet is the value for a **7-inch** semicircular gutter. It has been copied across the internet and relabelled as 5-inch K-style, with the rainfall condition stripped out along the way.
+
+## What actually falls here
+
+These are the design rainfall intensities for our towns, taken from NOAA Atlas 14, the dataset engineers use for drainage design. Both columns describe a 100-year storm. The difference is how long a burst you measure.
+
+| Town | Elevation | 100-yr, 60-min | 100-yr, 5-min |
+|---|---|---|---|
+| Franklin | 2,047 ft | 3.13 in/hr | **8.87 in/hr** |
+| Sylva | 2,080 ft | 3.19 in/hr | **9.02 in/hr** |
+| Waynesville | 2,697 ft | 3.26 in/hr | **9.23 in/hr** |
+| Cashiers | 3,484 ft | 4.02 in/hr | **11.4 in/hr** |
+| Highlands | 4,118 ft | 3.98 in/hr | **11.3 in/hr** |
+
+*Source: NOAA Atlas 14, Volume 2 Version 3, partial-duration series, mean estimates.*
+
+For scale, the sheet metal industry's standard specifies 9.3 in/hr for Chicago. **Highlands and Cashiers sit more than 20 percent above that.**
+
+### Why the five-minute number is the one that matters
+
+A flat commercial roof with drains has a little storage. Water can pond an inch deep while the drains catch up, so an hour-long average is a fair way to size it.
+
+An open gutter has no storage at all. It is a trough a few inches deep hanging in the air. Whatever the roof sheds in the next five minutes either goes down the downspout or over the edge.
+
+The plumbing code sizes on the 100-year, **60-minute** rate. The sheet metal standard, SMACNA, using capacity work done by NIST, sizes on the 100-year, **5-minute** rate. Both are legitimate. The five-minute basis is the conservative one, and for a hanging gutter it is the one that reflects what actually happens.
+
+This is not a fringe opinion. A 2021 review published by IIBEC, the building envelope institute, found that the code's hourly figures have gone essentially unchanged since 1995 while short-duration rainfall intensities have risen. The 100-year, 5-minute intensity has climbed roughly 1 inch per hour on average since the 1930s. The review's conclusion was blunt: the plumbing codes "truly represent a minimum standard."
+
+The code itself leaves the door open. It permits sizing from "other rainfall rates determined from approved local weather data." NOAA Atlas 14 is exactly that.
+
+## The twelve miles that change everything
+
+Franklin averages **54.15 inches** of rain a year. Highlands averages **84.50 inches**.
+
+*Source: NOAA NCEI Climate Normals, 1991 to 2020. Stations USC00313228 and USC00314055.*
+
+Those towns are twelve road miles apart. The difference is two thousand feet of elevation and the orographic lift that comes with it: air forced up the escarpment, cooled, and wrung out. NOAA's State Climate Summary for North Carolina puts it plainly. Southwestern North Carolina is "one of the wettest locations in the Southeast, receiving more than 90 inches of precipitation annually in a few locations."
+
+**A gutter system that is comfortably adequate in Franklin can be undersized on the plateau.** Same house, same roof, same crew, different mountain. It is one of the reasons [roofing in Highlands at 4,118 feet](/service-areas/highlands-nc) is a different job from the same work in [our Franklin service area](/service-areas/franklin-nc).
+
+## What this means for your roof
+
+Here is the same code table converted for local rainfall. These are semicircular gutters at the code's minimum slope, and the figure is how much **horizontally projected roof area** one gutter can serve.
+
+| Town | 5-inch, code basis | 6-inch, code basis | 5-inch, 5-min basis | 6-inch, 5-min basis |
+|---|---|---|---|---|
+| Franklin | 799 sq ft | 1,227 sq ft | **282 sq ft** | **433 sq ft** |
+| Sylva | 784 sq ft | 1,204 sq ft | **277 sq ft** | **426 sq ft** |
+| Waynesville | 767 sq ft | 1,178 sq ft | **271 sq ft** | **416 sq ft** |
+| Cashiers | 622 sq ft | 955 sq ft | **219 sq ft** | **337 sq ft** |
+| Highlands | 628 sq ft | 965 sq ft | **221 sq ft** | **340 sq ft** |
+
+*Derived from IPC Table 1106.6 at 1/16 in/ft slope, divided by the NOAA design intensity for each town.*
+
+Compare that with the 5,520 square feet floating around online.
+
+**A note on profile.** The code's table covers semicircular gutters only. K-style, the profile on most homes here, is not in it, which is precisely why the K-style numbers you find online are unsourced. A 6-inch K-style does carry meaningfully more than a 5-inch. If a contractor quotes you a specific square-footage rating for a K-style gutter, ask which standard it comes from. There is not a good answer.
+
+### Steep roofs collect more
+
+A steeper roof presents a larger effective catchment to wind-driven rain, so the sizing method applies a multiplier.
+
+| Roof pitch | Multiplier |
+|---|---|
+| Flat to 3/12 | 1.00 |
+| 4/12 to 5/12 | 1.05 |
+| 6/12 to 8/12 | 1.10 |
+| 9/12 to 11/12 | 1.20 |
+| 12/12 | 1.30 |
+
+Mountain houses are steep. A 12/12 gable, common on the plateau, adds thirty percent to the load before a drop has fallen.
+
+### Hanging the gutter steeper helps less than you would think
+
+Capacity rises with the **square root** of slope. Double the fall and you gain about 41 percent, not 100. Worth doing. Not a substitute for the right size.
+
+Worth knowing too: the code table's flattest column is 1/16 inch per foot. Common installation practice is closer to a quarter inch of fall per ten feet, which is less than half that. So the numbers above are, if anything, generous.
+
+## The downspout is usually the real bottleneck
+
+We find this more often than undersized gutters. A properly sized trough emptying into a 2x3 downspout at one corner will still back up, because the trough was never the constraint.
+
+| Downspout | Franklin (8.87 in/hr) | Highlands (11.3 in/hr) |
+|---|---|---|
+| 2 x 3 rectangular | 625 sq ft | 490 sq ft |
+| 3 x 4 rectangular | 1,489 sq ft | 1,169 sq ft |
+| 3-inch round | 992 sq ft | 779 sq ft |
+| 4-inch round | 2,074 sq ft | 1,628 sq ft |
+
+*Derived from IPC Tables 1106.2(2) and 1106.2(1).*
+
+A 3x4 downspout carries roughly **2.4 times** what a 2x3 carries. On most homes here it is the single cheapest capacity upgrade available, and it is the first thing we look at during [gutter installation and replacement in Western NC](/roofing/gutters).
+
+Two further points from the sheet metal standard. Fifty feet is a practical maximum length of gutter served by one downspout, and cross sections under 7 square inches should be reserved for small areas. A 2x3 downspout is 6 square inches.
+
+**Valleys deserve their own attention.** Where two roof planes meet, the water from both arrives at one short section of gutter. That section is not carrying its own length. It is carrying half a roof. It is the most common overflow point we see, and it is almost never a clog. It shows up constantly in the [drainage problems we see in Franklin](/blog/gutter-drainage-roof-problems-franklin-nc).
+
+## Then the leaves arrive
+
+Sizing is half the story. The other half is that our gutters spend part of the year partly full.
+
+**We get two debris seasons, not one.**
+
+Eastern white pine sheds an entire year of needles at once in the autumn. Iowa State Extension and Clemson both describe this as normal, and it runs earlier than hardwood leaf fall. Pine needles are the harder problem. They pass straight through coarse guards, then mat into something like felt in the bottom of the trough.
+
+Then the hardwoods come down the mountain in waves. NC State's foliage forecast puts peak color above 4,000 feet in early to mid October, with the lower elevations following over the following few weeks.
+
+### November is the month it all lands at once
+
+Highlands' wettest month of the year is **November**, at 8.17 inches on the 1991 to 2020 normals. December is essentially tied.
+
+So the wettest month is also the month the gutters are fullest of leaves, on the roofs with the steepest pitches, in the towns with the highest rainfall intensity in the region. That is the compound risk, and it is why a system that coped all summer suddenly fails in late autumn. It is also worth reading [what heavy rain does to a roof](/blog/heavy-rain-roofs-gutters-western-nc) before you decide the gutters are the only issue.
+
+## How to tell if yours are undersized
+
+You do not need a contractor to run through this list.
+
+- **Water sheets over the front edge in heavy rain and the gutter is clean.** The clearest single sign.
+- **It only overflows at a valley or an inside corner.** Concentrated flow, undersized section.
+- **You have 2x3 downspouts on a house over about 2,000 square feet.** Very common, rarely adequate here.
+- **One downspout serves a run longer than about forty feet.**
+- **Splash staining on siding, or a trench in the mulch below the drip line.** Water has been going over the edge for a while.
+- **Fascia is soft, or there is peeling paint behind the gutter.** Overflow running back against the board.
+- **Basement or crawlspace dampness on the same wall every time.** Follow it up. It usually ends at a gutter.
+- **Your house is above 3,000 feet with 5-inch gutters.** Worth a proper look regardless of symptoms.
+
+**A quick way to check the size.** Measure the width of the flat back of the gutter, or the coil it was formed from. Five-inch K-style is formed from roughly 11.75-inch coil, six-inch from about 15-inch.
+
+Guards do not change any of this, which is the honest answer to [whether gutter guards are worth it here](/blog/gutter-guards-worth-it-western-nc).
+
+## What to ask before you accept a quote
+
+Any competent gutter contractor can answer these. The answers tell you a great deal.
+
+1. **What roof area is each downspout carrying?** They should be able to give you a number per elevation, not for the whole house.
+2. **What rainfall intensity did you size for?** If the answer is a shrug, or "the standard size," they have not sized anything.
+3. **What size are the downspouts, and how many?** More downspouts beats a bigger trough almost every time.
+4. **What are you doing at the valleys?**
+5. **Where does the water go once it lands?** A correctly sized system that discharges against the foundation has moved the problem, not solved it.
+6. **What hanger spacing, and screwed or nailed?** Wet leaves and ice are heavy. Twenty-four inches is reasonable here. Thirty-six is not.
+
+## The short version
+
+Gutter capacity is not one number. It depends on how much roof drains into it, how steep that roof is, how many downspouts carry it away, and how hard it rains where the house actually stands.
+
+In Western North Carolina the last of those is the one that gets ignored, and it is the one that varies most. Twelve miles and two thousand feet separate a 54-inch-a-year town from an 84-inch-a-year town.
+
+If your gutters are clean and still going over the edge, the system is telling you something specific. It is worth measuring before autumn does the testing for you.
+
+Highlander Building Services, Inc. is a licensed North Carolina general contractor serving Franklin, Highlands, Cashiers, Sylva and the surrounding Western North Carolina mountains from showrooms in Franklin and Sylva. If you want a gutter system sized to your actual roof and your actual elevation, [request an assessment](/request-inspection) or call ${PHONE_DISPLAY}.
+
+**Sources:** NOAA Atlas 14 Volume 2 Version 3 | NOAA NCEI Climate Normals 1991 to 2020 | NOAA State Climate Summaries, North Carolina | International Plumbing Code Tables 1106.2 and 1106.6 (2018 NC Plumbing Code, based on 2015 IPC) | SMACNA Architectural Sheet Metal Manual, gutter and downspout sizing | IIBEC, "Rainfall Intensity Changes Over Time: Have the Codes Kept Pace?" (2021) | NC State University College of Natural Resources fall foliage forecast | National Park Service, Great Smoky Mountains National Park | Iowa State University Extension and Clemson HGIC on seasonal needle drop`,
+  },
   {
     slug: "wnc-storm-season-roof-damage",
     title: "What a Western North Carolina Storm Season Does to Your Roof",
@@ -3720,6 +3921,8 @@ Constant wetting accelerates shingle granule loss. Water sits longer in valleys 
 ## What It Does to Gutters
 Undersized gutters overflow. Loose fasteners fail under water weight. Downspouts that dump water at the foundation cause soil erosion and, eventually, foundation moisture problems.
 
+If yours overflow when they are clean, that is a sizing problem, not a cleaning one. See [how to size gutters for our rainfall](/blog/gutter-size-western-nc-mountain-homes).
+
 ## Design for the Actual Rainfall
 Six-inch seamless gutters and adequate downspout count aren't a luxury on WNC homes — they're the baseline. Kickout flashings where roofs meet walls are non-negotiable.
 
@@ -4266,7 +4469,7 @@ Cove hardwoods drop steady debris. Consider gutter guards as part of the same in
 If you're planning [a roof replacement](/roofing/roof-replacement), doing gutters at the same time is efficient and gives you a coordinated system.
 
 ## Ready to Plan?
-Learn more about our [gutter services](/roofing/gutters), [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [how heavy rain impacts WNC roofs and gutters](/blog/heavy-rain-roofs-gutters-western-nc).`,
+Learn more about our [gutter services](/roofing/gutters), [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [how heavy rain impacts WNC roofs and gutters](/blog/heavy-rain-roofs-gutters-western-nc) and [why 5-inch gutters overflow here](/blog/gutter-size-western-nc-mountain-homes).`,
     faqs: [
       { question: "Can I upgrade my existing gutters to seamless without a full replacement?", answer: "Yes — seamless replacement is a common standalone project, no roof work required." },
     ],
@@ -4303,7 +4506,7 @@ Seamless aluminum runs formed on site. Hidden hangers with structural screws. Co
 If your roof is also aging, consider [replacement together with the roof](/roofing/roof-replacement) — access is set up, and the two systems get coordinated warranties. If the roof is fine, gutter-only replacement is straightforward.
 
 ## Ready?
-See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair) if there's related damage, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [signs it's time to upgrade gutter guards in WNC](/blog/gutter-guards-worth-it-western-nc).`,
+See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair) if there's related damage, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [signs it's time to upgrade gutter guards in WNC](/blog/gutter-guards-worth-it-western-nc) and [what size gutters your roof actually needs](/blog/gutter-size-western-nc-mountain-homes).`,
     faqs: [
       { question: "Do you match gutter color to existing trim?", answer: "Yes — aluminum comes in a wide color range and we match to your fascia and trim." },
     ],
@@ -4325,6 +4528,8 @@ See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair)
     metaTitle: "Are Gutter Guards Worth It in Western NC? | Highlander",
     metaDescription: "Gutter guards in Western NC — an honest look at where they earn their cost, where they don't, and what to install if you go this route.",
     content: `Gutter guards are one of the more marketed home upgrades. Here's an honest read on where they actually pay off for Western NC mountain homes and where they don't.
+
+One thing to settle first: guards do not fix an undersized gutter. If water goes over the edge on a clean run, read [why 5-inch gutters overflow in Western NC](/blog/gutter-size-western-nc-mountain-homes) before spending on guards.
 
 ## Where Guards Pay Off
 **Wooded lots** with steady leaf and needle drop. **Two-story or steep-roof homes** where cleaning is difficult or unsafe. **Second homes** where seasonal absence means missed cleanings.
