@@ -342,7 +342,7 @@ const TownPage = () => {
         )}
 
         <div className="container-rhythm max-w-7xl pt-8 md:pt-12">
-          <AttributedReviews town={town.name} category="roofing" />
+          <AttributedReviews town={town.name} />
         </div>
 
         {/* 6. TOWN-SPECIFIC FAQ */}

@@ -136,9 +136,15 @@ describe("rebrand guard", () => {
   it('uses "Highlander Roofing" only in the "formerly" footer line and external profile URLs', () => {
     const hits: string[] = [];
     for (const f of files) {
+      // Published customer reviews are quoted VERBATIM. Several name the former
+      // trading name because that is what the customer wrote; editing them would
+      // falsify a real review. The exemption is deliberately narrow — only a
+      // review body line (`text: "..."`), not metadata or headings in that file.
+      const verbatimQuote = /src[\\/]data[\\/]reviews\.ts$/.test(f) ? /^\s*text:\s*"/ : null;
       readFileSync(f, "utf8")
         .split("\n")
         .forEach((line, i) => {
+          if (verbatimQuote?.test(line)) return;
           if (!OLD_NAME.test(line)) return;
           if (ALLOWED_LINE.some((re) => re.test(line))) return;
           hits.push(`${f}:${i + 1}: ${line.trim().slice(0, 140)}`);

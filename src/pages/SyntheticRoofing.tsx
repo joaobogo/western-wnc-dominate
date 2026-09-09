@@ -175,7 +175,7 @@ const SyntheticRoofing = () => {
           <>
             <TieredOffer context="synthetic-roofing" primaryLabel="Get My Synthetic Roof Scoped" />
             <div className="container-tight pt-16 md:pt-20">
-              <AttributedReviews category="roofing" heading="What homeowners say about our synthetic roofing work" />
+              <AttributedReviews services={["roof-replacement"]} heading="What homeowners say about our synthetic roofing work" />
             </div>
             <BuilderPromoBlock
               variant="band"

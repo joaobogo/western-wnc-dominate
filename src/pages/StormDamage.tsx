@@ -556,7 +556,7 @@ const StormDamage = () => {
         <TieredOffer context="storm-damage" primaryLabel="Get My Storm Damage Assessed" />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
-          <AttributedReviews category="storm" heading="What homeowners say about our storm damage work" />
+          <AttributedReviews services={["storm-damage"]} heading="What homeowners say about our storm damage work" />
         </div>
       </section>
       <ConversionTrustBlock variant="band" category="storm" />

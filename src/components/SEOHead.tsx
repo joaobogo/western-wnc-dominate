@@ -1,4 +1,5 @@
 import { BUSINESS, FRANKLIN, SYLVA, GBP_MAP_URL, BusinessLocation, VERIFIED_AWARDS, awardLabel } from "@/data/business";
+import { REVIEWS } from "@/data/reviews";
 import { useEffect } from "react";
 import { ogImageForPath, OG_FALLBACK } from "@/lib/og";
 import { normalizeTitle, normalizeDescription } from "@/lib/seo-length";
@@ -419,6 +420,26 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
 });
 
 /** Business node + the two showroom Places — the sitewide identity bundle. */
+/**
+ * Review nodes for the published reviews rendered on /reviews.
+ *
+ * Every field comes straight from src/data/reviews.ts, so the markup can never
+ * describe a review the page does not show. `itemReviewed` points at the
+ * existing #business node rather than creating a second business entity.
+ */
+export const reviewNodes = () =>
+  REVIEWS.map((r) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": `${BASE_URL}/reviews#${r.id}`,
+    itemReviewed: { "@id": `${BASE_URL}/#business` },
+    author: { "@type": "Person", name: r.name },
+    reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+    datePublished: r.date,
+    reviewBody: r.text,
+    publisher: { "@type": "Organization", name: r.source },
+  }));
+
 export const businessGraph = (overrides?: Record<string, unknown>) => [
   localBusinessSchema(overrides),
   ...locationNodes(),
@@ -902,8 +923,11 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
 
     case "reviews":
-      // No aggregateRating or Review markup per current policy — reviews are read on Google.
-      return [...businessGraph()];
+      // Review nodes for the reviews actually rendered on this page, attached to
+      // the existing #business entity. No aggregateRating here: the visible
+      // 4.8 / 158 covers ALL Google reviews, not just these ten, so emitting it
+      // alongside them would markup a rating the page does not itself show.
+      return [...businessGraph(), ...reviewNodes()];
 
     case "contact": {
       const out: Record<string, unknown>[] = [contactPageSchema(input.path), ...businessGraph()];

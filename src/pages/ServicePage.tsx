@@ -234,7 +234,7 @@ const ServicePage = () => {
         )}
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews
-            category={service.division === "construction" ? "construction" : "roofing"}
+            services={service.division === "construction" ? [] : ["roof-replacement", "roof-repair", "metal-roofing", "gutters"]}
             heading={`What homeowners say about our ${service.title.toLowerCase()} work`}
           />
         </div>

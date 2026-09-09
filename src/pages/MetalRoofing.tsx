@@ -204,7 +204,7 @@ const MetalRoofing = () => {
           <>
             <TieredOffer context="metal-roofing" primaryLabel="Get My Metal Roof Priced" />
             <div className="container-tight pt-16 md:pt-20">
-              <AttributedReviews category="roofing" heading="What homeowners say about our metal roofing work" />
+              <AttributedReviews services={["metal-roofing"]} heading="What homeowners say about our metal roofing work" />
             </div>
             <WhoShowsUp />
             <BuilderPromoBlock

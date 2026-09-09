@@ -360,7 +360,7 @@ const SpecialtyRoofing = () => {
 
                   <section className="section-padding bg-muted/20">
                     <div className="container-tight">
-                      <AttributedReviews category="roofing" heading="What homeowners say about our specialty roofing work" />
+                      <AttributedReviews services={["metal-roofing"]} heading="What homeowners say about our specialty roofing work" />
                     </div>
                   </section>
 

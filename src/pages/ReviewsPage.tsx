@@ -11,7 +11,8 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
-import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
+import { GOOGLE_REVIEW_AGGREGATE, REVIEWS } from "@/data/reviews";
+import ReviewsExplorer from "@/components/reviews/ReviewsExplorer";
 import { BUSINESS, directionsUrl, REVIEW_AS_OF, FRANKLIN, SYLVA } from "@/data/business";
 
 const fadeUp = {
@@ -23,30 +24,28 @@ const fadeUp = {
 
 /* ── Recurring Themes ── */
 
+const PULL_QUOTE = REVIEWS.find((r) => r.id === "zary-m-2024") ?? REVIEWS[0];
+
 const themes = [
   {
     icon: MessageSquare,
     title: "Communication",
     description: "Clients consistently highlight clear, proactive communication — daily updates, named contacts, and no unanswered calls.",
-    quote: "We always knew exactly what was happening and who to call.",
   },
   {
     icon: Hammer,
     title: "Workmanship",
     description: "Meticulous installation quality is the most frequently praised aspect. Clients notice the difference between average and Highlander-standard work.",
-    quote: "The craftsmanship is outstanding — same attention to detail on everything.",
   },
   {
     icon: Clock,
     title: "Reliability",
     description: "Showing up when promised, finishing on schedule, and doing what was agreed — clients consistently mention reliability as a standout trait.",
-    quote: "They finished ahead of schedule. That never happens with contractors.",
   },
   {
     icon: Heart,
     title: "Professionalism",
     description: "Clean job sites, respectful crews, honest assessments, and documentation at every phase. Clients feel respected throughout the process.",
-    quote: "From inspection to walkthrough, everything was documented and clear.",
   },
 ];
 
@@ -104,9 +103,11 @@ const ReviewsPage = () => {
                 <div className="border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-5">
                   <Quote className="w-4 h-4 text-[hsl(var(--highland-gold)/0.2)] mb-2 rotate-180" aria-hidden="true" />
                   <p className="text-[hsl(var(--dark-section-foreground))] text-base font-body italic leading-relaxed">
-                    "After three bad experiences with other contractors, Highlander changed everything completely."
+                    "{PULL_QUOTE.text}"
                   </p>
-                  <p className="text-sm text-[hsl(var(--highland-gold)/0.7)] font-body font-bold mt-2">— Karen W., Waynesville, NC</p>
+                  <p className="text-sm text-[hsl(var(--highland-gold)/0.7)] font-body font-bold mt-2">
+                    — {PULL_QUOTE.name}, via {PULL_QUOTE.source}
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -139,15 +140,24 @@ const ReviewsPage = () => {
           <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
         </section>
 
-        {/* ── GOOGLE REVIEWS PLACEHOLDER ── */}
+        {/* ── PUBLISHED REVIEWS — real, verbatim, each linked to its source ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-14">
-              <span className="eyebrow mb-3 block">Verified Reviews</span>
+              <span className="eyebrow mb-3 block">Published Reviews</span>
               <h2 className="section-heading mb-4">What Our Clients Say</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
+              <p className="text-muted-foreground font-body text-body-sm max-w-2xl mx-auto leading-relaxed">
+                Every review below is quoted word for word from where the customer published it. Nothing here is written by us.
+              </p>
             </motion.div>
 
+            <ReviewsExplorer />
+          </div>
+        </section>
+
+        <section className="pb-16 md:pb-20 bg-background">
+          <div className="container-tight">
             <div className="max-w-2xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
@@ -158,10 +168,10 @@ const ReviewsPage = () => {
               >
                 <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
                 <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4">
-                  Read verified reviews on Google
+                  Read every review at the source
                 </h3>
                 <p className="text-muted-foreground font-body text-body-sm leading-relaxed mb-6">
-                  We don't host reviews on this page. See what homeowners and property managers across Western North Carolina say about us directly on our Franklin and Sylva Google Business Profiles.
+                  The reviews above are published customer reviews, quoted word for word, each linked to where it appears. For the complete set, visit our Franklin and Sylva Google Business Profiles.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
@@ -220,7 +230,6 @@ const ReviewsPage = () => {
                   <p className="text-dark-section-muted text-sm leading-relaxed mb-4">{theme.description}</p>
                   <div className="border-t border-[hsl(var(--highland-gold)/0.08)] pt-3">
                     <p className="text-dark-section-muted text-body-xs italic font-body font-medium">
-                      "{theme.quote}"
                     </p>
                   </div>
                 </motion.div>

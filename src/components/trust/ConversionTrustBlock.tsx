@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Shield, Star, Clock, BadgeCheck, ArrowRight, Users, MapPin, Hammer } from "lucide-react";
-import { customerReviews, type CustomerReview } from "@/data/reviews";
+import { REVIEWS, reviewDateLabel, type Review, type ServiceTag } from "@/data/reviews";
 import { projectDetails } from "@/data/projects";
 import { towns } from "@/data/towns";
 import { counties } from "@/data/counties";
@@ -20,18 +20,26 @@ export type TrustCategory = "roofing" | "construction" | "storm" | "commercial";
 const RESPONSE_PROMISE = "Every inquiry gets a personal reply within 24 hours — most the same business day.";
 
 /** Reviews that reference warranty terms are excluded: unverified claim surface. */
-const safeReviews = customerReviews.filter((r) => !/warrant/i.test(r.reviewBody));
+const safeReviews = REVIEWS.filter((r) => !/warrant/i.test(r.text));
 
-function pickReview(category: TrustCategory, town?: string): CustomerReview | undefined {
+/** Which published-review tags each page category counts as relevant. */
+const CATEGORY_TAGS: Record<TrustCategory, ServiceTag[]> = {
+  roofing: ["roof-replacement", "roof-repair", "metal-roofing", "gutters"],
+  construction: [],
+  storm: ["storm-damage"],
+  commercial: ["commercial"],
+};
+
+function pickReview(category: TrustCategory, town?: string): Review | undefined {
+  const tags = CATEGORY_TAGS[category];
   const inTown = town
-    ? safeReviews.filter((r) => r.location.toLowerCase().startsWith(town.toLowerCase()))
+    ? safeReviews.filter((r) => r.town?.toLowerCase() === town.toLowerCase())
     : [];
+  // Only ever return a review that genuinely matches the page — no filler.
   return (
-    inTown.find((r) => r.category === category) ||
+    inTown.find((r) => r.service.some((s) => tags.includes(s))) ||
     inTown[0] ||
-    safeReviews.find((r) => r.category === category) ||
-    safeReviews.find((r) => r.featured) ||
-    safeReviews[0]
+    safeReviews.find((r) => r.service.some((s) => tags.includes(s)))
   );
 }
 
@@ -150,16 +158,25 @@ const ConversionTrustBlock = ({
 
         {review && (
           <figure className="border-t border-border pt-4">
-            <div className="flex gap-0.5 mb-2" role="img" aria-label={`${review.ratingValue} out of 5 stars`}>
-              {Array.from({ length: 5 }).map((_, i) => (
+            <div className="flex gap-0.5 mb-2" role="img" aria-label={`${review.rating} out of 5 stars`}>
+              {Array.from({ length: review.rating }).map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               ))}
             </div>
-            <blockquote className="text-body-xs font-body leading-relaxed text-foreground/85">
-              "{review.reviewBody.length > 190 ? `${review.reviewBody.slice(0, 190).trim()}…` : review.reviewBody}"
+            {/* Clamped in CSS only — the full published text stays in the DOM. */}
+            <blockquote className="text-body-xs font-body leading-relaxed text-foreground/85 line-clamp-5">
+              {review.text}
             </blockquote>
             <figcaption className="mt-2 text-caption font-body text-muted-foreground">
-              {review.authorName} · {review.location} · {review.project}
+              {review.name} · {reviewDateLabel(review)} ·{" "}
+              <a
+                href={review.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-foreground transition-colors"
+              >
+                via {review.source}
+              </a>
             </figcaption>
           </figure>
         )}

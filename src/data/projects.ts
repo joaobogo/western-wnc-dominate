@@ -91,11 +91,6 @@ export const projectDetails: ProjectDetail[] = [
     ],
     result: "The completed installation transformed the property's curb appeal and eliminated the chronic leak issues. The 24-gauge Kynar 500 panels carry a manufacturer color warranty and are engineered for the UV intensity and temperature swings at 4,100 feet. The homeowner reported zero issues through their first full winter season.",
     galleryImages: [metal005, metal006, metal008, metal003],
-    testimonial: {
-      quote: "We've used Highlander for two properties now. Their standing seam metal work is exceptional and they genuinely understand the mountain climate challenges. Five stars every time.",
-      name: "Linda K.",
-      location: "Cashiers, NC",
-    },
     beforeAfter: {
       before: metal009,
       after: metal005,
@@ -147,11 +142,6 @@ export const projectDetails: ProjectDetail[] = [
     ],
     result: "The Weathered Wood color perfectly complements the home's mountain setting, and the dimensional profile is a dramatic visual upgrade from the flat 3-tab shingles. The SureStart PLUS™ warranty provides both material and workmanship coverage directly from CertainTeed — a tier only available through certified ShingleMaster Credentialed Contractors.",
     galleryImages: [asphaltHero, asphalt007, asphalt006, asphalt008],
-    testimonial: {
-      quote: "After three bad experiences with other contractors, we were skeptical. Highlander changed that completely. James came out personally, gave an honest assessment — no pressure, no upselling. The install crew was clean, fast, and meticulous.",
-      name: "Karen W.",
-      location: "Waynesville, NC",
-    },
     beforeAfter: {
       before: asphalt003,
       after: asphaltHero,

@@ -505,7 +505,7 @@ const RoofReplacement = () => {
         </section>
         <section className="section-padding bg-background">
           <div className="container-tight">
-            <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />
+            <AttributedReviews services={["roof-replacement"]} heading="What homeowners say about our roof replacement work" />
           </div>
         </section>
         <ConsultationCTA

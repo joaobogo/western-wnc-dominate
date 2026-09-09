@@ -49,11 +49,7 @@ const StormDamageAds = () => (
       "Licensed and insured local company",
       "Honest scopes built around actual storm conditions",
     ]}
-    testimonial={{
-      quote: "They got out quickly, documented everything clearly, and helped us make a smart decision without pushing a bigger job than we needed.",
-      name: "Sarah M.",
-      location: "Sylva, NC",
-    }}
+    reviewId="willard-armes-2024"
     faqs={[
       {
         question: "How fast can you respond after a storm?",

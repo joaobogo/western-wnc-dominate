@@ -49,11 +49,7 @@ const RoofReplacementAds = () => (
       "Manufacturer-aligned installation standards",
       "Communication designed for homeowners making a major purchase",
     ]}
-    testimonial={{
-      quote: "Their proposal was the first one that actually explained what we were buying. The crew was organized, the communication was strong, and the finished roof looks excellent.",
-      name: "Karen W.",
-      location: "Waynesville, NC",
-    }}
+    reviewId="nate-yoder-2023"
     faqs={[
       {
         question: "How do I know it is time to replace instead of keep repairing?",

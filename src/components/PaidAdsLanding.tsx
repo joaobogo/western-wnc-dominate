@@ -1,4 +1,5 @@
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
+import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -31,7 +32,8 @@ interface PaidAdsLandingProps {
   highlights: string[];
   quickSteps: Array<{ title: string; detail: string }>;
   trustBullets: string[];
-  testimonial: { quote: string; name: string; location: string };
+  /** id of a published review in src/data/reviews.ts. Never free text. */
+  reviewId: string;
   faqs: Array<{ question: string; answer: string }>;
 }
 
@@ -52,9 +54,10 @@ const PaidAdsLanding = ({
   highlights,
   quickSteps,
   trustBullets,
-  testimonial,
+  reviewId,
   faqs,
 }: PaidAdsLandingProps) => {
+  const review = REVIEWS.find((r) => r.id === reviewId) ?? REVIEWS[0];
   const [searchParams] = useSearchParams();
   const variant = adVariants?.[searchParams.get("v") ?? ""];
   const headline = variant?.headline ?? defaultHeadline;
@@ -183,12 +186,21 @@ const PaidAdsLanding = ({
                     <Star className="h-4 w-4" aria-hidden="true" />
                     <span className="text-caption font-body font-semibold uppercase tracking-[0.2em]">Trust Snapshot</span>
                   </div>
-                  <blockquote className="font-heading text-xl font-semibold leading-snug text-foreground">
-                    “{testimonial.quote}”
+                  {/* Real published review, clamped in CSS only. */}
+                  <blockquote className="font-heading text-xl font-semibold leading-snug text-foreground line-clamp-6">
+                    “{review.text}”
                   </blockquote>
-                  <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground font-body">
+                  <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground font-body">
                     <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
-                    {testimonial.name} · {testimonial.location}
+                    {review.name} · {reviewDateLabel(review)} ·{" "}
+                    <a
+                      href={review.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-foreground transition-colors"
+                    >
+                      via {review.source}
+                    </a>
                   </div>
                   <div className="mt-6 space-y-3 border-t border-border pt-5">
                     {trustBullets.map((bullet) => (

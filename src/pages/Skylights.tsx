@@ -183,7 +183,7 @@ const Skylights = () => {
             <WhoShowsUp />
             <section className="section-padding bg-muted/20">
               <div className="container-tight">
-                <AttributedReviews category="roofing" heading="What homeowners say about our skylight work" />
+                <AttributedReviews services={["roof-repair"]} heading="What homeowners say about our skylight work" />
               </div>
             </section>
             <ConversionTrustBlock variant="band" category="roofing" />

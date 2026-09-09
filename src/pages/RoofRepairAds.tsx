@@ -48,11 +48,7 @@ const RoofRepairAds = () => (
       "Licensed and insured local team",
       "Written scopes so you know exactly what is included",
     ]}
-    testimonial={{
-      quote: "They found the real leak source in one visit after two other contractors guessed wrong. The repair was clean, quick, and fully explained.",
-      name: "Mark T.",
-      location: "Franklin, NC",
-    }}
+    reviewId="jh-dillsboro-2019"
     faqs={[
       {
         question: "Can you fix a leak without replacing the whole roof?",

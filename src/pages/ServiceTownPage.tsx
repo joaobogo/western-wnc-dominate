@@ -290,7 +290,7 @@ const ServiceTownPage = ({
               limit={3}
               heading={`Recent work near ${town.name}`}
             />
-            <AttributedReviews town={town.name} category="roofing" />
+            <AttributedReviews town={town.name} />
           </div>
         </section>
 

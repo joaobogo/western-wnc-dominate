@@ -252,6 +252,11 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
     /https?:\/\/[^\s"']*highlander[-_]?roofing/i, // external profile URLs
     /\/\/|^\s*\*|\/\*/, // code comments
   ];
+  // Published customer reviews are quoted VERBATIM. Several name the former
+  // trading name because that is what the customer wrote at the time; editing
+  // them would falsify a real review. Provenance for every one of them is
+  // enforced separately by scripts/check-reviews.ts.
+  const VERBATIM_QUOTE_FILE = /src[\\/]data[\\/]reviews\.ts$/;
   const roots = ["src", "scripts", "supabase/functions"].map((d) => path.join(ROOT, d)).filter(existsSync);
   const files = [...roots.flatMap((d) => walkSrc(d)), path.join(ROOT, "index.html"), path.join(ROOT, "public/llms.txt")].filter(
     (f) =>
@@ -264,9 +269,14 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
   );
   const details = [];
   for (const f of files) {
+    // In the reviews data file the exemption is narrow: only a line that is a
+    // review body (`text: "..."`). Metadata, headings and comments in that file
+    // are still held to the rule.
+    const quoteExempt = VERBATIM_QUOTE_FILE.test(f) ? /^\s*text:\s*"/ : null;
     readFileSync(f, "utf8")
       .split("\n")
       .forEach((line, i) => {
+        if (quoteExempt?.test(line)) return;
         if (OLD_NAME.test(line) && !ALLOWED_LINE.some((re) => re.test(line))) details.push(`${rel(f)}:${i + 1} — ${line.trim().slice(0, 110)}`);
       });
   }

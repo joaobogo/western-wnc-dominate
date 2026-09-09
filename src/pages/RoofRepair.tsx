@@ -493,7 +493,7 @@ const RoofRepair = () => {
         <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
-            <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
+            <AttributedReviews services={["roof-repair", "storm-damage"]} heading="What homeowners say about our roof repair work" />
           </div>
         </section>
         <ConversionTrustBlock variant="band" category="roofing" />

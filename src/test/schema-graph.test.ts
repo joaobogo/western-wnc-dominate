@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { buildPageSchema, localBusinessSchema, businessGraph } from "@/components/SEOHead";
 import { BUSINESS } from "@/data/business";
+import { REVIEWS } from "@/data/reviews";
 
 const BUSINESS_ID = "https://highlandernc.com/#business";
 const ALLOWED_STREETS = BUSINESS.locations.map((l) => l.streetAddress);
@@ -55,13 +56,37 @@ describe("structured data graph", () => {
     expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
   });
 
-  it("never emits aggregateRating or Review markup on /reviews either", () => {
-    // The review-schema helpers were removed entirely; the reviews page graph is
-    // the plain business graph, so nothing here can carry a rating or Review node.
+  it("emits one Review node per published review on /reviews, and no aggregateRating", () => {
     const nodes = buildPageSchema({ type: "reviews" });
+    const reviewNodes = nodes.filter((n) => (n as Record<string, unknown>)["@type"] === "Review");
+
+    // One node per review actually rendered on the page — never more, never invented.
+    expect(reviewNodes).toHaveLength(REVIEWS.length);
+
+    // The visible 4.8 / 158 covers ALL Google reviews, not just these ten, so
+    // aggregateRating must not ride along with them.
     expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
-    expect(nodes.some((n) => "review" in n)).toBe(false);
-    expect(nodes.some((n) => JSON.stringify(n).includes('"Review"'))).toBe(false);
+
+    for (const r of REVIEWS) {
+      const node = reviewNodes.find(
+        (n) => (n as Record<string, unknown>)["@id"] === `https://highlandernc.com/reviews#${r.id}`,
+      ) as Record<string, any> | undefined;
+      expect(node, `missing Review node for ${r.id}`).toBeDefined();
+      // Schema must quote the review verbatim — no truncation, no rewriting.
+      expect(node!.reviewBody).toBe(r.text);
+      expect(node!.author.name).toBe(r.name);
+      expect(node!.reviewRating.ratingValue).toBe(r.rating);
+      expect(node!.datePublished).toBe(r.date);
+      expect(node!.itemReviewed["@id"]).toBe("https://highlandernc.com/#business");
+    }
+  });
+
+  it("every published review carries a traceable source", () => {
+    for (const r of REVIEWS) {
+      expect(r.source?.trim(), `${r.id} has no source`).toBeTruthy();
+      expect(r.sourceUrl, `${r.id} has no absolute sourceUrl`).toMatch(/^https:\/\//);
+      expect(r.text.trim().length, `${r.id} has empty text`).toBeGreaterThan(20);
+    }
   });
 
   it("business node points at both showrooms and omits department", () => {
