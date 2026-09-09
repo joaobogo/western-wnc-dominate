@@ -15,7 +15,7 @@ import { towns } from "../src/data/towns";
 import { indexableServiceTownPairs } from "../src/data/service-town-content";
 import { projectDetails } from "../src/data/projects";
 
-const BASE_URL = "https://highlandernc.com";
+const BASE_URL = "https://western-wnc-dominate.lovable.app";
 
 interface SitemapEntry {
   path: string;
