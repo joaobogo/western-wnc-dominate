@@ -56,7 +56,7 @@ const ContactMinimalForm = () => {
     email: form.email,
     phone: form.phone,
     town: form.town,
-    require: { name: true, email: true, phone: true, town: true },
+    require: { name: true, email: false, phone: true, town: true },
   });
 
   const autosave = useFormAutosave("contact-minimal-form", form, {
@@ -168,16 +168,18 @@ const ContactMinimalForm = () => {
         </label>
         <input
           id="cm-name"
+          required
           {...fieldAttrs.name}
           value={form.name}
           onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
           onBlur={() => contact.blur("name")}
           aria-invalid={Boolean(contact.errorFor("name")) || undefined}
+          aria-describedby={contact.errorFor("name") ? "cm-name-error" : undefined}
           placeholder="Full name"
           className={inputClasses}
           maxLength={100}
         />
-        <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
+        <InlineFieldError id="cm-name-error">{contact.errorFor("name")}</InlineFieldError>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-5">
@@ -187,20 +189,22 @@ const ContactMinimalForm = () => {
           </label>
           <input
             id="cm-phone"
+            required
             {...fieldAttrs.phone}
             value={form.phone}
             onChange={(e) => setForm((p) => ({ ...p, phone: contact.formatPhoneInput(e.target.value) }))}
             onBlur={() => contact.blur("phone")}
             aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+          aria-describedby={contact.errorFor("phone") ? "cm-phone-error" : undefined}
             placeholder="(828) 555-0123"
             className={inputClasses}
             maxLength={20}
           />
-          <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
+          <InlineFieldError id="cm-phone-error">{contact.errorFor("phone")}</InlineFieldError>
         </div>
         <div>
           <label htmlFor="cm-email" className={labelClasses}>
-            Email <span className="text-alert">*</span>
+            Email <span className="font-normal normal-case tracking-normal opacity-70">(optional)</span>
           </label>
           <input
             id="cm-email"
@@ -209,11 +213,12 @@ const ContactMinimalForm = () => {
             onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
             onBlur={() => contact.blur("email")}
             aria-invalid={Boolean(contact.errorFor("email")) || undefined}
+          aria-describedby={contact.errorFor("email") ? "cm-email-error" : undefined}
             placeholder="you@email.com"
             className={inputClasses}
             maxLength={255}
           />
-          <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
+          <InlineFieldError id="cm-email-error">{contact.errorFor("email")}</InlineFieldError>
         </div>
       </div>
 
@@ -223,16 +228,18 @@ const ContactMinimalForm = () => {
         </label>
         <input
           id="cm-town"
+          required
           {...fieldAttrs.address}
           value={form.town}
           onChange={(e) => setForm((p) => ({ ...p, town: e.target.value }))}
           onBlur={() => contact.blur("town")}
           aria-invalid={Boolean(contact.errorFor("town")) || undefined}
+          aria-describedby={contact.errorFor("town") ? "cm-town-error" : undefined}
           placeholder="e.g. Highlands, Cashiers, Franklin, or full address"
           className={inputClasses}
           maxLength={150}
         />
-        <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
+        <InlineFieldError id="cm-town-error">{contact.errorFor("town")}</InlineFieldError>
       </div>
 
       <div>

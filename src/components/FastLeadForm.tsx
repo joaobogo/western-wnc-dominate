@@ -122,10 +122,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             onChange={(event) => setFormData({ ...formData, name: event.target.value })}
             onBlur={() => contact.blur("name")}
             aria-invalid={Boolean(contact.errorFor("name")) || undefined}
+            aria-describedby={contact.errorFor("name") ? `${serviceLabel}-name-error` : undefined}
             className={fieldClass(Boolean(contact.errorFor("name")))}
             placeholder="e.g. John and Mary Davidson"
           />
-          <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
+          <InlineFieldError id={`${serviceLabel}-name-error`}>{contact.errorFor("name")}</InlineFieldError>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -141,10 +142,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
               onChange={(event) => setFormData({ ...formData, phone: contact.formatPhoneInput(event.target.value) })}
               onBlur={() => contact.blur("phone")}
               aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+            aria-describedby={contact.errorFor("phone") ? `${serviceLabel}-phone-error` : undefined}
               className={fieldClass(Boolean(contact.errorFor("phone")))}
               placeholder="(828) 555-0123"
             />
-            <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
+            <InlineFieldError id={`${serviceLabel}-phone-error`}>{contact.errorFor("phone")}</InlineFieldError>
           </div>
           <div>
             <label htmlFor={`${serviceLabel}-town`} className="field-label">
@@ -158,10 +160,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
               onChange={(event) => setFormData({ ...formData, town: event.target.value })}
               onBlur={() => contact.blur("town")}
               aria-invalid={Boolean(contact.errorFor("town")) || undefined}
+            aria-describedby={contact.errorFor("town") ? `${serviceLabel}-town-error` : undefined}
               className={fieldClass(Boolean(contact.errorFor("town")))}
               placeholder="Franklin, Highlands, Sylva…"
             />
-            <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
+            <InlineFieldError id={`${serviceLabel}-town-error`}>{contact.errorFor("town")}</InlineFieldError>
           </div>
         </div>
 
