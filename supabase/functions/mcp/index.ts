@@ -111,7 +111,7 @@ var BUSINESS = {
       phoneE164: "+1-828-524-7773",
       geo: { lat: 35.1626, lng: -83.3459 },
       gbpCid: FRANKLIN_CID,
-      reviewUrl: "REPLACE_WITH_FRANKLIN_REVIEW_LINK",
+      reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
       googleRating: 4.8,
       googleReviewCount: 158,
       hours: STANDARD_HOURS,
@@ -127,7 +127,7 @@ var BUSINESS = {
       phoneE164: "+1-828-476-4000",
       geo: { lat: 35.3585, lng: -83.1812 },
       gbpCid: SYLVA_CID,
-      reviewUrl: "REPLACE_WITH_SYLVA_REVIEW_LINK",
+      reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzRXuBmttWYgR8QpnoWftXl8",
       googleRating: 5,
       googleReviewCount: 26,
       hours: STANDARD_HOURS
