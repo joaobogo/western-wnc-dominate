@@ -365,8 +365,8 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
-  // Task 6 (7 Sep 2026 work order): the entity is named by its brand; legalName carries the Inc.
-  name: BUSINESS.brandName,
+  // Name must match the footer and the showroom child entities exactly.
+  name: BUSINESS.legalName,
   legalName: BUSINESS.legalName,
   ...(BUSINESS.alternateNames.length ? { alternateName: BUSINESS.alternateNames } : {}),
   url: BASE_URL,
