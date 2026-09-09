@@ -19,7 +19,7 @@ import SectionDivider from "@/components/SectionDivider";
 /* Below-the-fold homepage sections — code-split so the first load only ships
    the hero, trust strip and shell. Each fallback reserves height to keep CLS at 0. */
 const FeaturedProjects = lazy(() => import("@/components/FeaturedProjects"));
-const AttributedReviews = lazy(() => import("@/components/trust/AttributedReviews"));
+const ReviewsCarousel = lazy(() => import("@/components/reviews/ReviewsCarousel"));
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
 const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
 const PageCloseCTA = lazy(() => import("@/components/PageCloseCTA"));
@@ -108,7 +108,11 @@ const Index = () => {
             width="tight"
             className="bg-[hsl(var(--dark-section))] text-dark-section-foreground"
           >
-            <AttributedReviews heading="What Western NC homeowners say" tone="dark" />
+            <ReviewsCarousel
+              heading="What Western NC homeowners say"
+              subheading="Published customer reviews, quoted word for word. Every one links to its source."
+              tone="dark"
+            />
           </Section>
 
           {/* 6. Local coverage (surface-raised) */}
