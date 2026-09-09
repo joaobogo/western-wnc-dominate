@@ -2,7 +2,371 @@
 // To take ownership, delete this banner line; the plugin then leaves the file alone.
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
+// src/lib/mcp/index.ts
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.26.2";
+
+// src/data/business.ts
+var STANDARD_HOURS = [
+  {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+    label: "Monday \u2013 Friday, 8:00 AM \u2013 5:00 PM"
+  }
+];
+var GBP_MAP_URL = (cid) => `https://www.google.com/maps?cid=${cid}`;
+var FRANKLIN_CID = "1442261483869937048";
+var SYLVA_CID = "1690022713833215904";
+var BUSINESS = {
+  brandName: "Highlander Building Services",
+  legalName: "Highlander Building Services, Inc.",
+  // Former names are deliberately NOT published as metadata (7 Sep 2026 work order, rule 1).
+  alternateNames: [],
+  primaryPhoneE164: "+1-828-524-7773",
+  email: "info@highlandernc.com",
+  websiteUrl: "https://highlandernc.com",
+  foundingYear: 2017,
+  licenseNumber: "NC GC #87668",
+  slogan: "Built for the Mountains. Built for Life.",
+  description: "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
+  priceRange: "$$",
+  // set per the 7 Sep 2026 work order (Task 6)
+  reviewSummary: {
+    // Single source of truth for every rating badge and JSON-LD node.
+    // Owner-confirmed 2026-09-04 (João): Google shows 4.8.
+    ratingValue: 4.8,
+    reviewCount: 158,
+    source: "Google Business Profile",
+    sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
+    lastVerified: "2026-09-04"
+  },
+  // projectsCompleted intentionally omitted — awaiting a verifiable count.
+  credentials: [
+    {
+      label: "NC General Contractor License #87668",
+      detail: "Verify with the NC Licensing Board for General Contractors",
+      href: "https://portal.nclbgc.org/Public/Search"
+    },
+    {
+      label: "BBB A+ Accredited since 2020",
+      detail: "Better Business Bureau accredited business",
+      href: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019"
+    },
+    { label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Manufacturer-credentialed installation" },
+    { label: "VELUX Certified Installer", detail: "Skylight installation and flashing kits" },
+    { label: "Family-owned in Franklin since 2017", detail: "Showrooms in Franklin & Sylva" }
+  ],
+  licenseLookupUrl: "https://portal.nclbgc.org/Public/Search",
+  bbbUrl: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
+  bbbAccreditedSince: 2020,
+  press: [
+    {
+      outlet: "The Laurel Magazine",
+      label: "As featured in The Laurel Magazine (October 2024)",
+      date: "2024-10-01",
+      href: "https://www.thelaurelmagazine.com/"
+    }
+  ],
+  awards: [
+    {
+      id: "best-of-macon-county",
+      label: "Best of Macon County \u2014 The Franklin Press Readers' Choice",
+      detail: "Voted by Macon County readers",
+      // years: [2020, 2021, 2022, 2023, 2024], // uncomment once confirmed
+      // href: "", // The Franklin Press Readers' Choice results page
+      verified: false
+    },
+    {
+      id: "certainteed-master-shingle-applicator",
+      label: "CertainTeed Master Shingle Applicator",
+      detail: "Manufacturer installer credential",
+      // href: "", // CertainTeed contractor locator profile
+      verified: false
+    }
+  ],
+  countiesServed: [
+    { name: "Macon County", region: "NC" },
+    { name: "Jackson County", region: "NC" },
+    { name: "Swain County", region: "NC" },
+    { name: "Haywood County", region: "NC" },
+    { name: "Buncombe County", region: "NC" },
+    { name: "Henderson County", region: "NC" },
+    { name: "Transylvania County", region: "NC" },
+    { name: "Cherokee County", region: "NC" },
+    { name: "Madison County", region: "NC" },
+    { name: "Clay County", region: "NC" }
+  ],
+  people: [
+    { slug: "luke-smith", name: "Luke Smith", jobTitle: "Owner & Founder" },
+    { slug: "kristy-smith", name: "Kristy Smith", jobTitle: "Owner & Financial Manager" }
+  ],
+  locations: [
+    {
+      id: "franklin",
+      name: "Franklin Showroom",
+      streetAddress: "1511 Highlands Road",
+      locality: "Franklin",
+      region: "NC",
+      postalCode: "28734",
+      phoneE164: "+1-828-524-7773",
+      geo: { lat: 35.1626, lng: -83.3459 },
+      gbpCid: FRANKLIN_CID,
+      reviewUrl: "REPLACE_WITH_FRANKLIN_REVIEW_LINK",
+      googleRating: 4.8,
+      googleReviewCount: 158,
+      hours: STANDARD_HOURS,
+      primary: true
+    },
+    {
+      id: "sylva",
+      name: "Sylva Showroom",
+      streetAddress: "28 Cross Stitch Mountain Rd",
+      locality: "Sylva",
+      region: "NC",
+      postalCode: "28779",
+      phoneE164: "+1-828-476-4000",
+      geo: { lat: 35.3585, lng: -83.1812 },
+      gbpCid: SYLVA_CID,
+      reviewUrl: "REPLACE_WITH_SYLVA_REVIEW_LINK",
+      googleRating: 5,
+      googleReviewCount: 26,
+      hours: STANDARD_HOURS
+    }
+  ],
+  profiles: [
+    GBP_MAP_URL(FRANKLIN_CID),
+    GBP_MAP_URL(SYLVA_CID),
+    "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
+    "https://www.facebook.com/highlanderroof",
+    "https://www.instagram.com/highlanderroofingservices/",
+    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
+    "https://nextdoor.com/pages/highlander-roofing-services-inc-franklin-nc/",
+    "https://www.yelp.com/biz/highlander-roofing-services-franklin",
+    "https://www.angi.com/companylist/us/nc/franklin/highlander-roofing-services-inc-reviews.htm",
+    "https://www.homeadvisor.com/rated.HighlanderRoofing.106236934.html",
+    "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
+    "https://business.mountainlovers.com/list/member/highlander-roofing-services-inc",
+    "https://www.smokymountainhba.com/members"
+  ]
+};
+var FRANKLIN = BUSINESS.locations[0];
+var SYLVA = BUSINESS.locations[1];
+var formatPhoneDisplay = (e164) => {
+  const d = e164.replace(/\D/g, "").replace(/^1/, "");
+  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+};
+var formatPhonePlain = (e164) => e164.replace(/^\+1-/, "");
+var telHref = (e164) => `tel:+${e164.replace(/\D/g, "")}`;
+var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${loc.postalCode}`;
+var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
+var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
+var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
+var REVIEW_RATING_VALUE = BUSINESS.reviewSummary.ratingValue;
+var REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
+var REVIEW_STARS = `${REVIEW_RATING}\u2605`;
+var REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
+var REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
+var REVIEW_AS_OF = `as of ${(/* @__PURE__ */ new Date(
+  `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`
+)).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
+var REVIEW_LINE = `${REVIEW_STARS} \xB7 ${REVIEW_COUNT_LABEL}`;
+var REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
+var PROJECTS_STAT = BUSINESS.projectsCompleted ? `${BUSINESS.projectsCompleted}+` : null;
+var LICENSE_NUMBER = BUSINESS.licenseNumber;
+var CREDENTIALS = BUSINESS.credentials;
+var VERIFIED_AWARDS = BUSINESS.awards.filter((a) => a.verified);
+var SYLVA_PHONE_DISPLAY = formatPhoneDisplay(SYLVA.phoneE164);
+var SYLVA_PHONE_PLAIN = formatPhonePlain(SYLVA.phoneE164);
+var SYLVA_PHONE_TEL = telHref(SYLVA.phoneE164);
+var FRANKLIN_STREET = FRANKLIN.streetAddress;
+var FRANKLIN_NAP = napLine(FRANKLIN);
+var SYLVA_NAP = napLine(SYLVA);
+var REVIEW_SUMMARY = BUSINESS.reviewSummary;
+
+// src/lib/mcp/tools/get-business-info.ts
+import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.2";
+var get_business_info_default = defineTool({
+  name: "get_business_info",
+  title: "Get business info",
+  description: "Return contact info, service area, and core details for Highlander Building Services.",
+  inputSchema: {},
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  handler: () => {
+    const info = {
+      name: "Highlander Building Services, Inc.",
+      phone: `${PHONE_DISPLAY}`,
+      website: "https://highlandernc.com",
+      city: "Franklin",
+      region: "North Carolina",
+      country: "US",
+      service_area: "Western North Carolina \u2014 Macon, Jackson, Swain, Haywood, Transylvania, Henderson, Buncombe, Cherokee, and Clay counties.",
+      divisions: ["Roofing", "Construction"],
+      credentials: [
+        "CertainTeed ShingleMaster Credentialed Contractor",
+        "Licensed General Contractor (NC)"
+      ],
+      positioning: "Premium local roofing and construction team serving Western NC mountain homes since founding. Team-led, mountain-specialized crews."
+    };
+    return {
+      content: [{ type: "text", text: JSON.stringify(info, null, 2) }],
+      structuredContent: info
+    };
+  }
+});
+
+// src/lib/mcp/tools/list-services.ts
+import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.26.2";
+var services = [
+  { slug: "roof-replacement", title: "Roof Replacement", division: "roofing", url: "https://highlandernc.com/roofing/roof-replacement" },
+  { slug: "roof-repair", title: "Roof Repair", division: "roofing", url: "https://highlandernc.com/roofing/roof-repair" },
+  { slug: "residential", title: "Residential Roofing", division: "roofing", url: "https://highlandernc.com/roofing/residential" },
+  { slug: "metal", title: "Metal Roofing", division: "roofing", url: "https://highlandernc.com/roofing/metal" },
+  { slug: "brava-synthetic", title: "Brava Synthetic Roofing", division: "roofing", url: "https://highlandernc.com/roofing/brava-synthetic" },
+  { slug: "storm-damage", title: "Storm Damage Roofing", division: "roofing", url: "https://highlandernc.com/roofing/storm-damage" },
+  { slug: "commercial", title: "Commercial Roofing", division: "roofing", url: "https://highlandernc.com/roofing/commercial" },
+  { slug: "specialty", title: "Specialty Roofing", division: "roofing", url: "https://highlandernc.com/roofing/specialty" },
+  { slug: "skylights", title: "Skylights", division: "roofing", url: "https://highlandernc.com/roofing/skylights" },
+  { slug: "gutters", title: "Gutters", division: "roofing", url: "https://highlandernc.com/roofing/gutters" },
+  { slug: "additions", title: "Home Additions", division: "construction", url: "https://highlandernc.com/construction/additions" },
+  { slug: "renovations", title: "Renovations", division: "construction", url: "https://highlandernc.com/construction/renovations" },
+  { slug: "exterior", title: "Exterior Improvements", division: "construction", url: "https://highlandernc.com/construction/exterior" },
+  { slug: "outdoor-living", title: "Outdoor Living", division: "construction", url: "https://highlandernc.com/construction/outdoor-living" },
+  { slug: "custom", title: "Custom Construction", division: "construction", url: "https://highlandernc.com/construction/custom" }
+];
+var list_services_default = defineTool2({
+  name: "list_services",
+  title: "List services",
+  description: "List all roofing and construction services Highlander offers, with URLs to each service page.",
+  inputSchema: {},
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  handler: () => ({
+    content: [{ type: "text", text: JSON.stringify(services, null, 2) }],
+    structuredContent: { services }
+  })
+});
+
+// src/lib/mcp/tools/list-service-areas.ts
+import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.26.2";
+var towns = [
+  { slug: "franklin-nc", name: "Franklin", county: "Macon" },
+  { slug: "highlands-nc", name: "Highlands", county: "Macon" },
+  { slug: "cashiers-nc", name: "Cashiers", county: "Jackson" },
+  { slug: "sylva-nc", name: "Sylva", county: "Jackson" },
+  { slug: "cullowhee-nc", name: "Cullowhee", county: "Jackson" },
+  { slug: "dillsboro-nc", name: "Dillsboro", county: "Jackson" },
+  { slug: "bryson-city-nc", name: "Bryson City", county: "Swain" },
+  { slug: "waynesville-nc", name: "Waynesville", county: "Haywood" },
+  { slug: "brevard-nc", name: "Brevard", county: "Transylvania" },
+  { slug: "hendersonville-nc", name: "Hendersonville", county: "Henderson" },
+  { slug: "asheville-nc", name: "Asheville", county: "Buncombe" },
+  { slug: "murphy-nc", name: "Murphy", county: "Cherokee" },
+  { slug: "hayesville-nc", name: "Hayesville", county: "Clay" },
+  { slug: "scaly-mountain-nc", name: "Scaly Mountain", county: "Macon" },
+  { slug: "otto-nc", name: "Otto", county: "Macon" },
+  { slug: "lake-glenville-nc", name: "Lake Glenville", county: "Jackson" },
+  { slug: "lake-toxaway-nc", name: "Lake Toxaway", county: "Transylvania" },
+  { slug: "sapphire-nc", name: "Sapphire", county: "Jackson" },
+  { slug: "cherokee-nc", name: "Cherokee", county: "Swain" }
+];
+var list_service_areas_default = defineTool3({
+  name: "list_service_areas",
+  title: "List service areas",
+  description: "List Western North Carolina towns Highlander serves, with URLs to each town's local page.",
+  inputSchema: {},
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  handler: () => {
+    const withUrls = towns.map((t) => ({
+      ...t,
+      url: `https://highlandernc.com/service-areas/${t.slug}`
+    }));
+    return {
+      content: [{ type: "text", text: JSON.stringify(withUrls, null, 2) }],
+      structuredContent: { towns: withUrls }
+    };
+  }
+});
+
+// src/lib/mcp/tools/search-site.ts
+import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.26.2";
+import { z } from "npm:zod@^4.4.3";
+var SITEMAP_URL = "https://highlandernc.com/sitemap.xml";
+var search_site_default = defineTool4({
+  name: "search_site",
+  title: "Search site",
+  description: "Case-insensitive keyword search across Highlander's site URLs (pulled from sitemap.xml). Returns matching page URLs. Useful for finding blog posts, service pages, and town pages by topic.",
+  inputSchema: {
+    query: z.string().min(1).describe("Keyword or phrase to match against page URLs, e.g. 'metal roofing highlands'."),
+    limit: z.number().int().min(1).max(50).optional().describe("Max results to return (default 15).")
+  },
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
+  handler: async ({ query, limit }) => {
+    const res = await fetch(SITEMAP_URL, { headers: { Accept: "application/xml" } });
+    if (!res.ok) {
+      return { content: [{ type: "text", text: `Failed to fetch sitemap: ${res.status}` }], isError: true };
+    }
+    const xml = await res.text();
+    const urls = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g)).map((m) => m[1]);
+    const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+    const matches = urls.filter((u) => {
+      const l = u.toLowerCase();
+      return terms.every((t) => l.includes(t));
+    }).slice(0, limit ?? 15);
+    return {
+      content: [{ type: "text", text: matches.length ? matches.join("\n") : "No matching pages." }],
+      structuredContent: { query, matches }
+    };
+  }
+});
+
+// src/lib/mcp/tools/fetch-page.ts
+import { defineTool as defineTool5 } from "npm:@lovable.dev/mcp-js@0.26.2";
+import { z as z2 } from "npm:zod@^4.4.3";
+var ALLOWED_HOST = "highlandernc.com";
+var fetch_page_default = defineTool5({
+  name: "fetch_page",
+  title: "Fetch page",
+  description: "Fetch the raw HTML of a page on the Highlander site. Only URLs on highlandernc.com are allowed. Use search_site first to find URLs.",
+  inputSchema: {
+    url: z2.string().url().describe("Full https URL on the Highlander site.")
+  },
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
+  handler: async ({ url }) => {
+    let parsed;
+    try {
+      parsed = new URL(url);
+    } catch {
+      return { content: [{ type: "text", text: "Invalid URL." }], isError: true };
+    }
+    if (parsed.protocol !== "https:" || parsed.hostname !== ALLOWED_HOST) {
+      return {
+        content: [{ type: "text", text: `Only https URLs on ${ALLOWED_HOST} are allowed.` }],
+        isError: true
+      };
+    }
+    const res = await fetch(parsed.toString());
+    if (!res.ok) {
+      return { content: [{ type: "text", text: `Fetch failed: ${res.status}` }], isError: true };
+    }
+    const html = await res.text();
+    const capped = html.length > 2e5 ? html.slice(0, 2e5) + "\n\n[truncated]" : html;
+    return { content: [{ type: "text", text: capped }] };
+  }
+});
+
+// src/lib/mcp/index.ts
+var projectRef = "qflrlebkswerlbqbuslx";
+var mcp_default = defineMcp({
+  name: "highlander-mcp",
+  title: "Highlander Building Services",
+  version: "0.1.0",
+  auth: auth.oauth.issuer({
+    issuer: `https://${projectRef}.supabase.co/auth/v1`,
+    acceptedAudiences: "authenticated"
+  }),
+  instructions: "Tools for Highlander Building Services (Western North Carolina). Use `get_business_info` for contact details and credentials, `list_services` and `list_service_areas` for what is offered and where, `search_site` to find pages (blog posts, service pages, town pages) by keyword, and `fetch_page` to read the HTML of a specific page.",
+  tools: [get_business_info_default, list_services_default, list_service_areas_default, search_site_default, fetch_page_default]
+});
+
 // lovable-mcp-supabase-entry.ts
-import mcp from "npm:C:\\Users\\bmadu\\OneDrive\\Desktop\\Claude\\western-wnc-dominate\\src\\lib\\mcp\\index.ts";
 import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.26.2/stacks/supabase";
-Deno.serve(createSupabaseHandler(mcp, { functionName: "mcp" }));
+Deno.serve(createSupabaseHandler(mcp_default, { functionName: "mcp" }));
