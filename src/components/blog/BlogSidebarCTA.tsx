@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Shield } from "lucide-react";
 import { trackCtaClick } from "@/lib/gtm";
@@ -20,7 +20,7 @@ const BlogSidebarCTA = ({ cta, town }: Props) => (
       Photos, findings, and a written scope — no pressure to buy anything.
     </p>
     <a
-      href="tel:+18285247773"
+      href={PHONE_TEL}
       className="btn btn-primary btn-sm w-full mb-2.5"
     >
       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}

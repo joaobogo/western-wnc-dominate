@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, MapPin, Phone, UserCircle } from "lucide-react";
@@ -178,7 +178,7 @@ const WhoShowsUp = ({
                 </Link>
                 <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground/40" />
                 <a
-                  href="tel:+18285247773"
+                  href={PHONE_TEL}
                   className="inline-flex items-center gap-2 text-sm font-heading font-bold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors"
                   aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
                 >

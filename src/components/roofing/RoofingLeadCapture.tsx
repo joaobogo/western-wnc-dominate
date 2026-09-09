@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Clock, Award, Star } from "lucide-react";
@@ -47,7 +47,7 @@ const CardCapture = ({
           <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
         </Link>
         <a
-          href="tel:+18285247773"
+          href={PHONE_TEL}
           className="btn btn-secondary btn-md"
         >
           <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: {PHONE_PLAIN}
@@ -102,7 +102,7 @@ const EditorialCapture = ({
           <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
         </Link>
         <a
-          href="tel:+18285247773"
+          href={PHONE_TEL}
           className="btn btn-secondary btn-lg"
         >
           <Phone className="w-4 h-4 text-muted-foreground" aria-hidden="true" /> {PHONE_DISPLAY}

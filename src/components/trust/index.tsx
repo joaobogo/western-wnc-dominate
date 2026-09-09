@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -382,7 +382,7 @@ export const ReassuranceBlock = ({
               {ctaText} <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               className={`border font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 transition-colors ${
                 isPrimary
                   ? "border-dark-section-border text-primary-foreground hover:bg-primary-foreground/10"

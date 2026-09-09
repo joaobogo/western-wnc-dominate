@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -100,7 +100,7 @@ const PaidAdsLanding = ({
               >
                 <img src={logo} alt="Highlander Building Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
               </Link>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-primary-foreground transition-colors">
+              <a href={PHONE_TEL} className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 {PHONE_DISPLAY}
               </a>
@@ -126,7 +126,7 @@ const PaidAdsLanding = ({
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
-                  <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
+                  <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
                     <Phone className="h-4 w-4" aria-hidden="true" />
                     Call Direct: {PHONE_PLAIN}
                   </a>
@@ -256,7 +256,7 @@ const PaidAdsLanding = ({
                 {ctaLabel}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
-              <a href="tel:+18285247773" className="btn btn-secondary btn-sm btn-on-dark">
+              <a href={PHONE_TEL} className="btn btn-secondary btn-sm btn-on-dark">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 Call Direct: {PHONE_PLAIN}
               </a>
@@ -277,8 +277,8 @@ const PaidAdsLanding = ({
         {/* Sticky mobile call bar — one action only; the form already sits above the fold. */}
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur md:hidden">
           <a
-              href="tel:+18285247773"
-              onClick={() => trackPhoneClick({ phone_number: `${PHONE_PLAIN}`, link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
+              href={PHONE_TEL}
+              onClick={() => trackPhoneClick({ phone_number: `${PHONE_PLAIN}`, link_url: PHONE_TEL, click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
               className="flex w-full items-center justify-center gap-2 bg-primary px-4 py-3 text-base font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />

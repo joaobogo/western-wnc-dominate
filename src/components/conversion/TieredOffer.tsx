@@ -1,4 +1,4 @@
-import { PHONE_PLAIN } from "@/data/business";
+import { PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, BookOpen, ListChecks } from "lucide-react";
@@ -77,7 +77,7 @@ const TieredOffer = ({
               {primaryLabel} <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               onClick={() => trackEvent("phone_click", { label: "Tiered offer call", elementId: `tiered-call-${context}` })}
               className="border-2 border-border text-foreground font-body font-bold text-sm px-7 py-4 inline-flex items-center justify-center gap-2 hover:bg-muted transition-all min-h-[56px]"
             >

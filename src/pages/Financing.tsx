@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, DollarSign, Shield, Clock, AlertCircle, MessageSquare, Hammer } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -63,7 +63,7 @@ const Financing = () => {
                 <Link to="/contact" className="btn btn-primary btn-md">
                   See My Financing Options <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
-                <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
+                <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>

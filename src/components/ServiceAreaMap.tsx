@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, Compass, ArrowRight } from "lucide-react";
@@ -195,7 +195,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             <p className="text-xs text-muted-foreground mt-4 font-body italic">
               Don't see your town? If it's within our Western NC footprint, we
               likely serve it — call{" "}
-              <a href="tel:+18285247773" className="text-primary font-semibold hover:underline not-italic">
+              <a href={PHONE_TEL} className="text-primary font-semibold hover:underline not-italic">
                 {PHONE_DISPLAY}
               </a>
               .

@@ -1,4 +1,4 @@
-import { PHONE_PLAIN } from "@/data/business";
+import { PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 
@@ -27,7 +27,7 @@ const ConsultationCTA = ({ heading, subline, label = "Get My Replacement Scoped"
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="btn btn-secondary btn-md btn-on-dark"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />

@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { Phone, ClipboardCheck, CalendarClock, FileCheck2 } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -51,7 +51,7 @@ const RequestInspection = () => {
               Would rather talk it through? A Franklin-based team member answers.
             </p>
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               className="btn btn-secondary btn-sm"
             >
               <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: {PHONE_PLAIN}
@@ -95,7 +95,7 @@ const RequestInspection = () => {
             <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
               When you call Highlander, a member of our Western NC team picks up.
             </p>
-            <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
+            <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
               <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
             </a>
             <p className="text-dark-section-muted text-sm mt-6">

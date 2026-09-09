@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { motion } from "framer-motion";
@@ -290,7 +290,7 @@ const Hero = () => {
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
               </Link>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
                 className="btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
               >

@@ -82,7 +82,7 @@ export default function Contact() {
                   className="flex w-full max-w-full flex-col gap-3 lg:w-auto lg:items-end lg:flex-shrink-0"
                 >
                   <a
-                    href="tel:+18285247773"
+                    href={PHONE_TEL}
                     className="btn btn-secondary btn-md group"
                   >
                     <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
@@ -174,7 +174,7 @@ export default function Contact() {
                   </h3>
                   <div className="space-y-3">
                     <a
-                      href="tel:+18285247773"
+                      href={PHONE_TEL}
                       className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all"
                     >
                       <Phone className="w-4 h-4 text-primary" aria-hidden="true" />

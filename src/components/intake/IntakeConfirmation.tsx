@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
@@ -139,7 +139,7 @@ const IntakeConfirmation = ({
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
-          href="tel:+18285247773"
+          href={PHONE_TEL}
           className="btn btn-secondary btn-sm"
         >
           <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />

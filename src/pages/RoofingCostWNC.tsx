@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -238,7 +238,7 @@ const RoofingCostWNC = () => {
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
                 className="btn btn-secondary btn-md btn-on-dark"
               >

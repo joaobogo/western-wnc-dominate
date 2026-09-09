@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Phone } from "lucide-react";
@@ -150,7 +150,7 @@ const TrustedMaterials = () => {
               Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               className="btn btn-secondary btn-md btn-on-dark"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" aria-hidden="true" /> {PHONE_DISPLAY}

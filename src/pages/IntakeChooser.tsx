@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Home, HardHat, Phone, Sparkles } from "lucide-react";
@@ -125,7 +125,7 @@ const IntakeChooser = () => (
         <div className="mt-10 pt-8 border-t border-border max-w-md mx-auto">
           <p className="text-body-xs font-body text-muted-foreground mb-2">Quick question or general inquiry?</p>
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--gold-ink))] font-heading font-semibold text-body-xs transition-colors"
           >
             <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />

@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Phone, ArrowRight, Clock, Shield } from "lucide-react";
@@ -97,11 +97,11 @@ const LeadConfirmationPanel = ({
           </span>
         </div>
         <a
-          href="tel:+18285247773"
+          href={PHONE_TEL}
           onClick={() =>
             trackPhoneClick({
               phone_number: "+18285247773",
-              link_url: "tel:+18285247773",
+              link_url: PHONE_TEL,
               click_location: "confirmation_panel",
             })
           }

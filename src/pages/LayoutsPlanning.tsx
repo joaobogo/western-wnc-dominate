@@ -1,4 +1,4 @@
-import { PHONE_PLAIN } from "@/data/business";
+import { PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { motion } from "framer-motion";
 import designHero from "@/assets/design-planning-hero.webp";
@@ -448,7 +448,7 @@ const LayoutsPlanning = () => {
                 Quick Inquiry <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <div className="w-1.5 h-1.5 rounded-full bg-border hidden sm:block" />
-              <a href="tel:+18285247773" className="text-sm font-bold flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
+              <a href={PHONE_TEL} className="text-sm font-bold flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
                 Call the Office <Phone className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>

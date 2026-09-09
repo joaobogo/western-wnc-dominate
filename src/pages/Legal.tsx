@@ -1,4 +1,4 @@
-import { FRANKLIN_NAP, PHONE_DISPLAY } from "@/data/business";
+import { FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { Mail, Phone, Shield, FileText, Accessibility as AccessibilityIcon } from "lucide-react";
 import Header from "@/components/Header";
@@ -218,7 +218,7 @@ function PrivacyBody() {
       <p>
         Highlander Building Services, Inc.<br />
         {FRANKLIN_NAP}<br />
-        Phone: <a href="tel:+18285247773">{PHONE_DISPLAY}</a><br />
+        Phone: <a href={PHONE_TEL}>{PHONE_DISPLAY}</a><br />
         Email: <a href="mailto:luke@highlandernc.com">luke@highlandernc.com</a>
       </p>
     </>
@@ -291,7 +291,7 @@ function TermsBody() {
       <h2>6. Customer Support and Contact Information</h2>
       <p>If you have questions about these Terms or any Program, or if you need help, please contact us:</p>
       <ul>
-        <li>Phone: <a href="tel:+18285247773">{PHONE_DISPLAY}</a></li>
+        <li>Phone: <a href={PHONE_TEL}>{PHONE_DISPLAY}</a></li>
         <li>Email: <a href="mailto:luke@highlandernc.com">luke@highlandernc.com</a></li>
         <li>Mailing Address: {FRANKLIN_NAP}</li>
       </ul>
@@ -334,7 +334,7 @@ function AccessibilityBody() {
       <h2>Tell Us What's Not Working</h2>
       <p>
         If you encounter a page, form, or feature that is difficult to use with assistive technology, please let us
-        know so we can fix it and help you directly in the meantime. Call <a href="tel:+18285247773">{PHONE_DISPLAY}</a> or
+        know so we can fix it and help you directly in the meantime. Call <a href={PHONE_TEL}>{PHONE_DISPLAY}</a> or
         email <a href="mailto:info@highlandernc.com">info@highlandernc.com</a>. We respond promptly.
       </p>
     </>
@@ -377,7 +377,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
             <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><FileText className="w-4 h-4" aria-hidden="true" /> Terms of Service</Link>
             <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><AccessibilityIcon className="w-4 h-4" aria-hidden="true" /> Accessibility</Link>
             <span className="text-border">·</span>
-            <a href="tel:+18285247773" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}</a>
+            <a href={PHONE_TEL} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}</a>
             <a href="mailto:info@highlandernc.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Mail className="w-4 h-4" aria-hidden="true" /> info@highlandernc.com</a>
           </div>
         </div>

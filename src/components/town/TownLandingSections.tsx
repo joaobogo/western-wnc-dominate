@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, LICENSE_NUMBER, REVIEW_STARS, REVIEW_AS_OF } from "@/data/business";
+import { LICENSE_NUMBER, PHONE_DISPLAY, PHONE_TEL, REVIEW_AS_OF, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -44,7 +44,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
         </div>
         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="btn btn-secondary btn-on-dark btn-md"
           >
             <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
@@ -193,7 +193,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
             Start Your {town.name} Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="btn btn-secondary btn-lg"
           >
             <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
@@ -237,7 +237,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
               Request a {town.name} Consultation <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               className="btn btn-secondary btn-lg btn-on-dark"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> Call Direct
@@ -446,7 +446,7 @@ export const TownFAQ = ({
             Still have questions? Talk with our team <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="inline-flex items-center gap-2 text-foreground font-heading font-bold text-sm uppercase tracking-widest hover:text-primary transition-colors min-h-[44px]"
           >
             <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
@@ -500,7 +500,7 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
                 Get my written estimate in {town.name} <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-6 border border-border font-heading font-bold text-body-xs uppercase tracking-[0.15em] text-foreground hover:border-primary hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
@@ -538,7 +538,7 @@ export const TownCTAStrip = ({ town }: { town: TownData }) => (
       </p>
       <div className="flex items-center gap-4">
         <a
-          href="tel:+18285247773"
+          href={PHONE_TEL}
           className="inline-flex items-center gap-2 font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:opacity-90"
         >
           <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}

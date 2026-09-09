@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -347,7 +347,7 @@ const FAQ = () => {
               <Link to="/consultation" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
+              <a href={PHONE_TEL} aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
                 <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
               </a>
             </div>

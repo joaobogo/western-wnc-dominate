@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
@@ -154,7 +154,7 @@ const CustomConstruction = () => {
                   <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
-                <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
+                <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark group">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>
@@ -342,7 +342,7 @@ const CustomConstruction = () => {
                   <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                 </Link>
-                <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
+                <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
                   <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
                 </a>
               </div>

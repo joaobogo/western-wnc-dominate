@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -561,7 +561,7 @@ const ConstructionDesign = () => {
                   Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
+              <a href={PHONE_TEL} className="inline-flex items-center gap-2.5 text-dark-section-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 {PHONE_DISPLAY}
               </a>

@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
@@ -56,7 +56,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
           Request a Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
         <a
-          href="tel:+18285247773"
+          href={PHONE_TEL}
           className="btn btn-secondary btn-md btn-on-dark"
         >
           <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}

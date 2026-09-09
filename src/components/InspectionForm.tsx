@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { towns } from "@/data/towns";
@@ -334,7 +334,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
               <ScrollReveal variant="fade" delay={0.5}>
                 <div className="mt-8 pt-8 border-t border-dark-section-border">
                   <p className="text-white text-base font-body font-bold mb-2">Prefer to talk directly?</p>
-                  <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--gold-ink))] transition-colors">
+                  <a href={PHONE_TEL} className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" />
                     {PHONE_DISPLAY}
                   </a>
@@ -448,7 +448,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                       <span className="relative z-10">Continue — Last Step</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                     </button>
-                    <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
+                    <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
                       <Phone className="w-4 h-4" aria-hidden="true" />
                       Or call {PHONE_DISPLAY}
                     </a>
@@ -655,7 +655,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                     <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                     Back
                   </button>
-                  <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
+                  <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" />
                     Or call {PHONE_DISPLAY}
                   </a>

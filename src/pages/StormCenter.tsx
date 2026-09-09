@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -128,7 +128,7 @@ const StormCenter = () => {
                   Storm Assessment Line
                 </span>
                 <a
-                  href="tel:+18285247773"
+                  href={PHONE_TEL}
                   className="btn btn-primary btn-lg"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}

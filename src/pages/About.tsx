@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_LINE_AS_OF, VERIFIED_AWARDS, awardLabel } from "@/data/business";
+import { awardLabel, PHONE_DISPLAY, PHONE_TEL, REVIEW_LINE_AS_OF, REVIEW_STARS, VERIFIED_AWARDS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -492,7 +492,7 @@ const About = () => {
                   <Link to="/careers" className="btn btn-primary btn-lg">
                     View Open Positions <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
+                  <a href={PHONE_TEL} className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                   </a>
                 </div>

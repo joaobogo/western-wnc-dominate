@@ -148,7 +148,7 @@ const Footer = () => {
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <a
-                href="tel:+18285247773"
+                href={PHONE_TEL}
                 className="btn btn-secondary btn-md whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-primary" aria-hidden="true" />

@@ -1,3 +1,4 @@
+import { PHONE_TEL } from "@/data/business";
 import { isUrgentIntentPath } from "@/lib/urgent-intent";
 
 /**
@@ -23,7 +24,7 @@ export interface PagePrimaryAction {
   secondaryHref: string;
 }
 
-const PHONE_HREF = "tel:+18285247773";
+const PHONE_HREF = PHONE_TEL;
 
 const callFirst = (pageKey: string, label = "Call Direct"): PagePrimaryAction => ({
   pageKey,

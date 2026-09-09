@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -129,7 +129,7 @@ const CountyPage = () => {
                   <Link to="/consultation" className="btn btn-primary btn-lg md:text-body-sm min-w-[320px]">
                     Start a {county.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
+                  <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
                     <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
                   </a>
                 </div>
@@ -399,7 +399,7 @@ const CountyPage = () => {
               <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
                 Start a {county.name} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark min-w-[240px]">
+              <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark min-w-[240px]">
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
             </div>

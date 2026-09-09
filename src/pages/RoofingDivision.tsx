@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_STARS } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -270,7 +270,7 @@ const RoofingDivision = () => {
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a
-                  href="tel:+18285247773"
+                  href={PHONE_TEL}
                   className="btn btn-secondary btn-lg btn-on-dark group"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
@@ -545,7 +545,7 @@ const RoofingDivision = () => {
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                     <a
-                      href="tel:+18285247773"
+                      href={PHONE_TEL}
                       className="btn btn-secondary btn-lg btn-on-dark group"
                     >
                       <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />

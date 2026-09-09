@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
@@ -22,7 +22,7 @@ export const FinalCTA = ({
   primaryLabel = "Get My Written Estimate",
   primaryHref = "/consultation",
   phone = `${PHONE_DISPLAY}`,
-  telHref = "tel:+18285247773",
+  telHref = PHONE_TEL,
   className = "",
 }: Props) => (
   <section className={`section-padding bg-primary text-primary-foreground ${className}`}>

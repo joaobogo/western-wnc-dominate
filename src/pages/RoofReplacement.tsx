@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -227,7 +227,7 @@ const RoofReplacement = () => {
                    <span className="relative">See What My Roof Needs</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
-                <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
+                <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark group">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>
@@ -586,7 +586,7 @@ const RoofReplacement = () => {
                       <span className="relative">Get My Written Estimate</span>
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
-                    <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
+                    <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark group">
                       <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" /> {PHONE_DISPLAY}
                     </a>
                   </div>

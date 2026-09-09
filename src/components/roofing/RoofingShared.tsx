@@ -38,7 +38,7 @@ export const RoofingMidCTA = ({
             <span className="relative">{ctaText}</span>
             <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
           </Link>
-          <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
+          <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
             <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
           </a>
           <CTAProofLine tone="dark" align="center" className="basis-full lg:justify-end" />

@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { AlertTriangle, Phone } from "lucide-react";
 
 /**
@@ -52,7 +52,7 @@ const FormErrorSummary = ({
           <p className={`mt-3 text-body-xs md:text-body-xs font-body ${dark ? "text-white/85" : "text-muted-foreground"}`}>
             Prefer to skip the form?{" "}
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               className={`inline-flex items-center gap-1.5 font-bold underline underline-offset-2 ${dark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`}
             >
               <Phone className="w-4 h-4" aria-hidden="true" />

@@ -1,5 +1,5 @@
 import { HERO_SIZES, mediaSrcSet } from "@/lib/media-srcset";
-import { PHONE_DISPLAY, PHONE_PLAIN } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -326,7 +326,7 @@ const ServiceTownPage = ({
               <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
                 Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
-              <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]">
+              <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]">
                 <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
               </a>
             </div>

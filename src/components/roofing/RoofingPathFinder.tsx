@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, HelpCircle, Palette } from "lucide-react";
@@ -109,7 +109,7 @@ const RoofingPathFinder = () => {
           <HelpCircle className="w-4 h-4 text-primary" aria-hidden="true" />
           <span>Still unsure?</span>
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />

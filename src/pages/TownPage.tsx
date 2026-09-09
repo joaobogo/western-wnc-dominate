@@ -1,5 +1,5 @@
 import { HERO_SIZES, mediaSrcSet, mediaWebp } from "@/lib/media-srcset";
-import { PHONE_DISPLAY, PHONE_PLAIN, napLine } from "@/data/business";
+import { PHONE_DISPLAY, napLine, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { nearestShowroom } from "@/data/showrooms";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -205,7 +205,7 @@ const TownPage = () => {
                 <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-body-sm min-w-[300px]">
                   Request an Inspection in {town.name} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
-                <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
+                <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
                   <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </motion.div>

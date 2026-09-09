@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, ArrowLeft, ChevronDown } from "lucide-react";
@@ -195,7 +195,7 @@ const BuilderShell = ({
               {summary}
             </div>
             <a
-              href="tel:+18285247773"
+              href={PHONE_TEL}
               className="mt-4 inline-flex items-center gap-2 text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-body text-body-xs"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />

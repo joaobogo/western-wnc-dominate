@@ -1,4 +1,4 @@
-import { PHONE_PLAIN } from "@/data/business";
+import { PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { AlertTriangle, Phone, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,7 @@ export default function ErrorState({
             <Link to="/contact" className="btn btn-secondary btn-sm">
               Get My Questions Answered
             </Link>
-            <a href="tel:+18285247773" className="btn btn-secondary btn-sm">
+            <a href={PHONE_TEL} className="btn btn-secondary btn-sm">
               <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_PLAIN}
             </a>
           </>

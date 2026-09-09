@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { motion } from "framer-motion";
 import { Phone, ClipboardList, MessageSquare, ArrowRight } from "lucide-react";
 
@@ -25,7 +25,7 @@ const CHANNELS: Channel[] = [
     body: "Best for active leaks, storm damage, and anything you'd rather explain out loud.",
     next: "A Highlander team member picks up or calls you back — no call center, no phone tree.",
     action: `${PHONE_DISPLAY}`,
-    href: "tel:+18285247773",
+    href: PHONE_TEL,
     primary: true,
   },
   {

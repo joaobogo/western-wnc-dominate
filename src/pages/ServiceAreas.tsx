@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight, Phone, Shield, Award, Mountain, Compass, Users, Star, CloudLightning, Clock } from "lucide-react";
@@ -305,7 +305,7 @@ const ServiceAreas = () => {
                   <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                 </Link>
                 <a
-                  href="tel:+18285247773"
+                  href={PHONE_TEL}
                   className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}

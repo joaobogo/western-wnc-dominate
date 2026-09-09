@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
@@ -31,7 +31,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
     <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-[60ch]">{cta.closeBody}</p>
     <div className="flex flex-col sm:flex-row gap-3">
       <a
-        href="tel:+18285247773"
+        href={PHONE_TEL}
         className="btn btn-primary btn-md"
       >
         <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}

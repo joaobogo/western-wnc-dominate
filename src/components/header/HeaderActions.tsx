@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, Phone, X } from "lucide-react";
@@ -13,7 +13,7 @@ interface Props {
 export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Props) => (
   <div className="flex items-center gap-3">
     <a
-      href="tel:+18285247773"
+      href={PHONE_TEL}
       aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
       className="hidden sm:flex items-center gap-2 transition-all duration-300 text-body-sm font-body font-bold mr-1 text-heritage-charcoal/75 hover:text-heritage-charcoal whitespace-nowrap"
     >
@@ -21,7 +21,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Prop
       <span>{PHONE_DISPLAY}</span>
     </a>
     <a
-      href="tel:+18285247773"
+      href={PHONE_TEL}
       aria-label={`Call ${PHONE_DISPLAY}`}
       className="sm:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
     >

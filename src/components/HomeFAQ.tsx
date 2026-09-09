@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { homeFaqs } from "@/data/home-faqs";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -115,7 +115,7 @@ const HomeFAQ = () => {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="btn btn-secondary btn-md group"
           >
             <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}

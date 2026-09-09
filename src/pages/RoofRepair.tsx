@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -152,7 +152,7 @@ const RoofRepair = () => {
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on repair pages is the phone call (see page-cta-hierarchy.ts) */}
-                <a href="tel:+18285247773" className="btn btn-primary btn-lg group relative">
+                <a href={PHONE_TEL} className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <Phone className="w-4 h-4 relative" aria-hidden="true" /> <span className="relative">{PHONE_DISPLAY}</span>
                 </a>
@@ -303,7 +303,7 @@ const RoofRepair = () => {
                 <p className="text-primary-foreground text-sm font-body">The sooner it's assessed, the less it costs to fix. Call us or schedule online.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
-                <a href="tel:+18285247773" className="btn btn-primary btn-md">
+                <a href={PHONE_TEL} className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
@@ -345,7 +345,7 @@ const RoofRepair = () => {
                 <p className="text-primary-foreground text-sm font-body">We diagnose accurately and recommend honestly — repair or replace, you'll know why.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
-                <a href="tel:+18285247773" className="btn btn-primary btn-md">
+                <a href={PHONE_TEL} className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
@@ -562,7 +562,7 @@ const RoofRepair = () => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                    <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
+                    <a href={PHONE_TEL} className="btn btn-primary btn-lg group">
                       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                     </a>
                     <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">

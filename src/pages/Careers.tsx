@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, CheckCircle, Upload, Send, Users, ShieldCheck, Mountain, HardHat, Briefcase } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -127,7 +127,7 @@ const Careers = () => {
                   <p className="text-sm text-muted-foreground font-body mb-6">
                     Call our Franklin office directly to discuss current crew openings or subcontracting opportunities.
                   </p>
-                  <a href="tel:+18285247773" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--gold-ink))] transition-colors">
+                  <a href={PHONE_TEL} className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                   </a>
                 </div>

@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -125,7 +125,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
         >
           {/* Persistent call button pinned to the top of the panel */}
           <a
-            href="tel:+18285247773"
+            href={PHONE_TEL}
             className="flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold font-body text-body-xs uppercase tracking-[0.08em] min-h-[52px] px-4 active:scale-[0.99] transition-transform"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
