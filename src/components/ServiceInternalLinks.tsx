@@ -30,15 +30,6 @@ const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInter
         href: "/service-areas",
         description: "Every Western North Carolina town we cover.",
       },
-      ...(intent === "estimate"
-        ? [
-            {
-              label: "Virtual Roof Designer",
-              href: "/roof-designer",
-              description: "Upload a photo of your home and preview roofing materials and colors before you decide.",
-            },
-          ]
-        : []),
       intent === "consultation"
         ? {
             label: "Get My Project Scoped",

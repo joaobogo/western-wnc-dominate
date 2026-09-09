@@ -69,7 +69,6 @@ const staticRoutes: AuditRoute[] = [
   { path: "/financing", label: "Financing", pageType: "company" },
   { path: "/request-inspection", label: "Request Inspection", pageType: "tool" },
   { path: "/free-tools", label: "Free Tools", pageType: "tool" },
-  { path: "/roof-designer", label: "Roof Designer", pageType: "tool" },
   { path: "/storm-center", label: "Storm Center", pageType: "tool" },
   { path: "/contact", label: "Contact", pageType: "company" },
   { path: "/lp/roof-repair", label: "Paid Ads: Roof Repair", pageType: "landing" },

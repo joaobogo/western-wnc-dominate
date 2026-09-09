@@ -398,13 +398,6 @@ const RoofingDivision = () => {
               </h2>
             </div>
             <Link
-              to="/roof-designer"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
-            >
-              Visualize Your Roof
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-            <Link
               to="/recent-projects"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
             >

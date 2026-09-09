@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 245,
+    "sitemap": 244,
     "coverageNoindex": 100,
     "counties": 10,
     "noindexTowns": 0,
     "noindexBlogPosts": 0,
     "noindexFunnels": 6,
-    "total": 361
+    "total": 360
   },
   "routes": [
     "/",
@@ -24,7 +24,6 @@
     "/financing",
     "/contact",
     "/request-inspection",
-    "/roof-designer",
     "/roofing",
     "/roofing/roof-replacement",
     "/roofing/roof-repair",

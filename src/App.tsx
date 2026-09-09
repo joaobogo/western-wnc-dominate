@@ -59,7 +59,6 @@ const Careers = lazy(() => import("./pages/Careers"));
 const RequestInspection = lazy(() => import("./pages/RequestInspection"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
-const RoofDesigner = lazy(() => import("./pages/RoofDesigner"));
 const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
 const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
 const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
@@ -199,7 +198,6 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/roofing-cost-western-nc" element={<RoofingCostWNC />} />
           <Route path="/roofing/metal/cost" element={<MetalRoofingCost />} />
-          <Route path="/roof-designer" element={<RoofDesigner />} />
 
           
           <Route path="/certifications" element={<Certifications />} />

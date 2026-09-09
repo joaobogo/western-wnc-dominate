@@ -47,7 +47,6 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/financing" },
   { path: "/contact" },
   { path: "/request-inspection" },
-  { path: "/roof-designer" },
 
   // Roofing money pages
   { path: "/roofing" },

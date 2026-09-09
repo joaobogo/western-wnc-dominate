@@ -76,6 +76,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /portfolio                                                   /recent-projects                                   301!
 /our-work                                                    /recent-projects                                   301!
 /storm-center                                                /roofing/storm-damage                              301!
+/roof-designer                                               /roofing                                           301!
 /free-tools                                                  /404.html                                          410
 /privacy                                                     /privacy-policy                                    301!
 /terms                                                       /privacy-policy                                    301!
