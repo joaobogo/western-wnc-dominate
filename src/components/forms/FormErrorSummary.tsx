@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { AlertTriangle, Phone } from "lucide-react";
 
@@ -7,6 +8,10 @@ import { AlertTriangle, Phone } from "lucide-react";
  * Shown when a submit attempt is blocked by validation or fails in transit.
  * It never clears what the visitor typed — it just names what to fix and
  * always offers the phone as a guaranteed fallback path to a human.
+ *
+ * On appearing it scrolls itself into view and takes focus, so someone who
+ * hit submit at the bottom of a long form on a phone is never left staring
+ * at a button that seemingly did nothing.
  */
 const FormErrorSummary = ({
   message,
@@ -23,11 +28,25 @@ const FormErrorSummary = ({
   className?: string;
 }) => {
   const unique = Array.from(new Set(issues.filter(Boolean)));
-  if (!message && unique.length === 0) return null;
+  const shown = Boolean(message) || unique.length > 0;
+  const ref = useRef<HTMLDivElement>(null);
+  const signature = `${message ?? ""}|${unique.join("|")}`;
+
+  useEffect(() => {
+    if (!shown) return;
+    const el = ref.current;
+    if (!el) return;
+    el.focus({ preventScroll: true });
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [shown, signature]);
+
+  if (!shown) return null;
 
   const dark = tone === "dark";
   return (
     <div
+      ref={ref}
+      tabIndex={-1}
       role="alert"
       aria-live="assertive"
       className={`mt-5 border p-4 md:p-5 ${

@@ -431,13 +431,14 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                       value={formData.town}
                       onChange={(e) => { setFormData({ ...formData, town: e.target.value }); if (townError) setTownError(null); }}
                       aria-invalid={Boolean(townError) || undefined}
+                      aria-describedby={townError ? "insp-town-error" : undefined}
                       className={inputClasses}
                       placeholder="Highlands, Cashiers, Franklin…"
                     />
                     <datalist id="hl-town-options">
                       {towns.map((t) => <option key={t.slug} value={`${t.name}, ${t.state}`} />)}
                     </datalist>
-                    <InlineFieldError className="text-[hsl(var(--gold-ink))]">{townError ?? undefined}</InlineFieldError>
+                    <InlineFieldError id="insp-town-error" className="text-[hsl(var(--gold-ink))]">{townError ?? undefined}</InlineFieldError>
                   </div>
 
                   <div className="pt-1 md:pt-2 flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
@@ -474,24 +475,26 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         onBlur={() => contact.blur("name")}
                         aria-invalid={Boolean(contact.errorFor("name")) || undefined}
+                        aria-describedby={contact.errorFor("name") ? "insp-name-error" : undefined}
                         className={inputClasses}
                         placeholder="e.g. John and Mary Davidson"
                       />
-                      <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("name")}</InlineFieldError>
+                      <InlineFieldError id="insp-name-error" className="text-[hsl(var(--gold-ink))]">{contact.errorFor("name")}</InlineFieldError>
                     </div>
                     <div>
                       <label htmlFor="phone" className={labelClasses}>Phone</label>
                       <input
-                        id="phone" type="tel" maxLength={20}
+                        id="phone" type="tel" required maxLength={20}
                         {...fieldAttrs.phone}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: contact.formatPhoneInput(e.target.value) })}
                         onBlur={() => contact.blur("phone")}
                         aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+                        aria-describedby={contact.errorFor("phone") ? "insp-phone-error" : undefined}
                         className={inputClasses}
                         placeholder="(828) 555-0123"
                       />
-                      <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("phone")}</InlineFieldError>
+                      <InlineFieldError id="insp-phone-error" className="text-[hsl(var(--gold-ink))]">{contact.errorFor("phone")}</InlineFieldError>
                       <p className={hintClasses}>Name and phone are all we need to get you scheduled.</p>
                     </div>
                   </div>
@@ -533,10 +536,11 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               onBlur={() => contact.blur("email")}
                               aria-invalid={Boolean(contact.errorFor("email")) || undefined}
+                        aria-describedby={contact.errorFor("email") ? "insp-email-error" : undefined}
                               className={inputClasses}
                               placeholder="you@email.com"
                             />
-                            <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
+                            <InlineFieldError id="insp-email-error" className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
                           </div>
                           <div>
                             <label htmlFor="details" className={labelClasses}>Briefly, What's Going On?</label>
@@ -560,7 +564,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                               className={inputClasses}
                               placeholder="e.g. 120 Chestnut St, Highlands, NC"
                             />
-                            <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("address")}</InlineFieldError>
+                            <InlineFieldError id="insp-address-error" className="text-[hsl(var(--gold-ink))]">{contact.errorFor("address")}</InlineFieldError>
                           </div>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
