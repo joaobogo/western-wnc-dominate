@@ -136,7 +136,7 @@ An open gutter has no storage at all. It is a trough a few inches deep hanging i
 
 The plumbing code sizes on the 100-year, **60-minute** rate. The sheet metal standard, SMACNA, using capacity work done by NIST, sizes on the 100-year, **5-minute** rate. Both are legitimate. The five-minute basis is the conservative one, and for a hanging gutter it is the one that reflects what actually happens.
 
-This is not a fringe opinion. A 2021 review published by IIBEC, the building envelope institute, found that the code's hourly figures have gone essentially unchanged since 1995 while short-duration rainfall intensities have risen. The 100-year, 5-minute intensity has climbed roughly 1 inch per hour on average since the 1930s. The review's conclusion was blunt: the plumbing codes "truly represent a minimum standard."
+This is not a fringe opinion. A 2021 technical paper published by IIBEC, the building envelope institute, found that the code's hourly figures have gone essentially unchanged since 1995 while short-duration rainfall intensities have risen. The 100-year, 5-minute intensity has climbed roughly 1 inch per hour on average since the 1930s. The paper's conclusion was blunt: the plumbing codes "truly represent a minimum standard."
 
 The code itself leaves the door open. It permits sizing from "other rainfall rates determined from approved local weather data." NOAA Atlas 14 is exactly that.
 
