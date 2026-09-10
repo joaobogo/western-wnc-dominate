@@ -252,15 +252,6 @@ const App = () => (
               </Routes>
             </ErrorBoundary>
           </Suspense>
-          <PaidLandingGate>
-            <ErrorBoundary boundary="chatbot" fallback={() => null}>
-              <Suspense fallback={null}>
-                <DeferMount>
-                  <ChatbotWidget />
-                </DeferMount>
-              </Suspense>
-            </ErrorBoundary>
-          </PaidLandingGate>
           <ErrorBoundary boundary="consent" fallback={() => null}>
             <Suspense fallback={null}>
               <ConsentBanner />
