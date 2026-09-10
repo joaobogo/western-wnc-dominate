@@ -104,8 +104,8 @@ const Header = () => {
           <img loading="eager" decoding="async"
             src={logoCompact.url}
             alt="Highlander Building Services logo"
-            width={1024}
-            height={1024}
+            width={160}
+            height={160}
             className={`w-auto block sm:hidden transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled ? "h-[44px]" : "h-[52px]"
             }`}
