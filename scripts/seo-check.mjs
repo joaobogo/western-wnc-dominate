@@ -39,6 +39,10 @@ import {
 const ROOT = process.cwd();
 const DIST = path.resolve(ROOT, "dist");
 const BASE = "https://highlandernc.com";
+// The sitemap is generated for whichever host the site is served from: the
+// canonical custom domain, or the Lovable project host before the domain is
+// pointed at the new build. Both are valid — anything else is not.
+const SITEMAP_HOSTS = [BASE, "https://western-wnc-dominate.lovable.app"];
 const rel = (p) => path.relative(ROOT, p).split(path.sep).join("/");
 
 // ----------------------------------------------------------------- report
