@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.svg";
+import logoCompact from "@/assets/logo-compact-transparent.png.asset.json";
 import { HIGHLAND_EASE } from "./header/nav-data";
 import { DesktopNav } from "./header/DesktopNav";
 import { HeaderActions } from "./header/HeaderActions";
