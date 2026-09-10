@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.svg";
+import logoCompact from "@/assets/logo-compact-transparent.png.asset.json";
 import { HIGHLAND_EASE } from "./header/nav-data";
 import { DesktopNav } from "./header/DesktopNav";
 import { HeaderActions } from "./header/HeaderActions";
@@ -101,11 +102,21 @@ const Header = () => {
       >
         <Link to="/" aria-label="Highlander Building Services — Home" className="flex items-center bg-transparent hover:bg-transparent">
           <img loading="eager" decoding="async"
+            src={logoCompact.url}
+            alt="Highlander Building Services logo"
+            width={1024}
+            height={1024}
+            className={`w-auto block sm:hidden transition-[height,transform] duration-500 ease-out origin-left ${
+              scrolled ? "h-[44px]" : "h-[52px]"
+            }`}
+            fetchPriority="high"
+          />
+          <img loading="eager" decoding="async"
             src={logo}
             alt="Highlander Building Services logo"
             width={1193}
             height={338}
-            className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
+            className={`w-auto hidden sm:block transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
                 ? "h-[44px] sm:h-[48px] md:h-[52px] lg:h-[56px]"
                 : "h-[52px] sm:h-[60px] md:h-[68px] lg:h-[76px]"
