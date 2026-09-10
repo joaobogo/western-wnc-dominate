@@ -39,6 +39,10 @@ import {
 const ROOT = process.cwd();
 const DIST = path.resolve(ROOT, "dist");
 const BASE = "https://highlandernc.com";
+// The sitemap is generated for whichever host the site is served from: the
+// canonical custom domain, or the Lovable project host before the domain is
+// pointed at the new build. Both are valid — anything else is not.
+const SITEMAP_HOSTS = [BASE, "https://western-wnc-dominate.lovable.app"];
 const rel = (p) => path.relative(ROOT, p).split(path.sep).join("/");
 
 // ----------------------------------------------------------------- report
@@ -137,8 +141,9 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
   const details = [];
   const locs = [...readFileSync(path.join(ROOT, "public/sitemap.xml"), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
   for (const loc of locs) {
-    if (!loc.startsWith(`${BASE}/`)) details.push(`${loc} — host is not ${BASE}`);
-    if (loc !== `${BASE}/` && loc.endsWith("/")) details.push(`${loc} — trailing slash`);
+    const host = SITEMAP_HOSTS.find((h) => loc.startsWith(`${h}/`));
+    if (!host) details.push(`${loc} — host is not one of ${SITEMAP_HOSTS.join(", ")}`);
+    if (loc !== `${host}/` && loc.endsWith("/")) details.push(`${loc} — trailing slash`);
     let p;
     try {
       p = new URL(loc).pathname.replace(/\/+$/, "") || "/";

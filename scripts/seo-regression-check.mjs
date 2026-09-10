@@ -275,6 +275,9 @@ if (distIsCurrent) {
         if (!ALLOWED_HOSTS.has(host)) fail(`Prerendered ${p} loads an <img> from an external host: ${src}`);
       } else if (src.startsWith("/") && !src.startsWith("//")) {
         const localPath = src.split(/[?#]/)[0];
+        // /__l5e/ paths are managed assets served from the platform CDN at the
+        // site origin — they are never emitted into dist/, so skip them.
+        if (localPath.startsWith("/__l5e/")) continue;
         if (!existsSync(resolve(`dist${localPath}`))) fail(`Prerendered ${p} references a missing image: ${localPath}`);
       }
     }
