@@ -15,13 +15,10 @@ import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/attribution";
 import { preloadLikelyRoutes } from "./lib/route-preload";
 
-// Chat widget is below-the-fold, non-critical UI — keep it out of the first load.
-const ChatbotWidget = lazy(() => import("./components/chatbot/ChatbotWidget"));
 // Toast layers only matter after an interaction — keep them off the critical path.
 const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
 const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
 // Consent notice is non-critical chrome — mounted lazily, renders only until decided.
-import DeferMount from "./components/system/DeferMount";
 const ConsentBanner = lazy(() => import("./components/ConsentBanner"));
 
 // Initialize tracking pixels
@@ -252,15 +249,6 @@ const App = () => (
               </Routes>
             </ErrorBoundary>
           </Suspense>
-          <PaidLandingGate>
-            <ErrorBoundary boundary="chatbot" fallback={() => null}>
-              <Suspense fallback={null}>
-                <DeferMount>
-                  <ChatbotWidget />
-                </DeferMount>
-              </Suspense>
-            </ErrorBoundary>
-          </PaidLandingGate>
           <ErrorBoundary boundary="consent" fallback={() => null}>
             <Suspense fallback={null}>
               <ConsentBanner />
