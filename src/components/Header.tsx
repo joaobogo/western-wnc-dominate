@@ -101,13 +101,11 @@ const Header = () => {
       >
         <Link to="/" aria-label="Highlander Building Services — Home" className="flex items-center bg-transparent hover:bg-transparent">
           <img loading="eager" decoding="async"
-            src="/icon-192.png"
-            alt="Highlander Building Services mark"
-            width={192}
-            height={192}
-            className={`w-auto block sm:hidden transition-[height,transform] duration-500 ease-out origin-left ${
-              scrolled ? "h-[44px]" : "h-[52px]"
-            }`}
+            src={logo}
+            alt="Highlander Building Services logo"
+            width={1193}
+            height={338}
+            className="block sm:hidden w-[108px] h-auto object-contain"
             fetchPriority="high"
           />
           <img loading="eager" decoding="async"
