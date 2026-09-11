@@ -55,6 +55,17 @@ export type IntakeRow = {
   score_version: string;
   status: string;
   payload: Record<string, unknown>;
+  jobtread_synced: boolean;
+  jobtread_sync_status: string;
+  jobtread_id: string | null;
+  jobtread_last_attempt_at: string | null;
+  jobtread_error_message: string | null;
+  jobtread_retry_count: number;
+  jobtread_payload: Record<string, unknown> | null;
+  idempotency_key: string | null;
+  jobtread_next_retry_at: string | null;
+  jobtread_exhausted_at: string | null;
+  jobtread_alerted: boolean;
 };
 
 export function toRow(lead: LeadDraft, result: ScoreResult) {
@@ -99,6 +110,7 @@ export function toRow(lead: LeadDraft, result: ScoreResult) {
 export async function saveLead(lead: LeadDraft, result: ScoreResult) {
   const row = toRow(lead, result);
   const leadId = crypto.randomUUID();
+  const idempotencyKey = crypto.randomUUID();
 
   // Google Business Profile attribution. A receptionist marks the call as
   // coming from the map listing; if the caller also browsed the site from a
@@ -123,7 +135,15 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
 
   const { error } = await db
     .from(TABLE)
-    .insert({ id: leadId, ...row });
+    .insert({
+      id: leadId,
+      ...row,
+      jobtread_synced: false,
+      jobtread_sync_status: "pending",
+      jobtread_retry_count: 0,
+      jobtread_alerted: false,
+      idempotency_key: idempotencyKey,
+    });
 
   if (error) throw new Error(error.message);
 
@@ -140,10 +160,13 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
     });
   }
 
-  // Fire-and-forget CRM hand-off; the lead is already safely stored.
+  // Fire-and-forget CRM hand-off; the lead is already safely stored. The
+  // sync function owns status, retry, and idempotency updates.
   db.functions
-    .invoke("send-to-jobtread", { body: { lead_id: leadId, ...row } })
-    .catch((err) => console.error("send-to-jobtread failed:", err));
+    .invoke("jobtread-sync", {
+      body: { intake_lead_id: leadId, idempotency_key: idempotencyKey },
+    })
+    .catch((err) => console.error("jobtread-sync failed:", err));
 
   return leadId;
 }

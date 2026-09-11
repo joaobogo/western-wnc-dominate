@@ -26,6 +26,7 @@ const TABLES: Array<{ table: string; idKey: string }> = [
   { table: "chatbot_conversations", idKey: "chatbot_conversation_id" },
   { table: "consultation_requests", idKey: "consultation_request_id" },
   { table: "designer_leads", idKey: "designer_lead_id" },
+  { table: "intake_leads", idKey: "intake_lead_id" },
 ];
 
 Deno.serve(async (req) => {

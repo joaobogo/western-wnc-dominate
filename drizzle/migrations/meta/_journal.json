@@ -8,6 +8,13 @@
       "when": 1789141490668,
       "tag": "0000_allow_unlisted_intake_lead_submissions",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789144206234,
+      "tag": "0001_secure_intake_jobtread_sync",
+      "breakpoints": true
     }
   ]
 }

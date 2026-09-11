@@ -418,7 +418,18 @@ export type Database = {
           gates: Json
           grade: string
           id: string
+          idempotency_key: string | null
           job_type: string | null
+          jobtread_alerted: boolean
+          jobtread_error_message: string | null
+          jobtread_exhausted_at: string | null
+          jobtread_id: string | null
+          jobtread_last_attempt_at: string | null
+          jobtread_next_retry_at: string | null
+          jobtread_payload: Json | null
+          jobtread_retry_count: number
+          jobtread_sync_status: string
+          jobtread_synced: boolean
           last_name: string | null
           location_tier: string | null
           not_offered: boolean
@@ -456,7 +467,18 @@ export type Database = {
           gates?: Json
           grade?: string
           id?: string
+          idempotency_key?: string | null
           job_type?: string | null
+          jobtread_alerted?: boolean
+          jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
+          jobtread_id?: string | null
+          jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
+          jobtread_payload?: Json | null
+          jobtread_retry_count?: number
+          jobtread_sync_status?: string
+          jobtread_synced?: boolean
           last_name?: string | null
           location_tier?: string | null
           not_offered?: boolean
@@ -494,7 +516,18 @@ export type Database = {
           gates?: Json
           grade?: string
           id?: string
+          idempotency_key?: string | null
           job_type?: string | null
+          jobtread_alerted?: boolean
+          jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
+          jobtread_id?: string | null
+          jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
+          jobtread_payload?: Json | null
+          jobtread_retry_count?: number
+          jobtread_sync_status?: string
+          jobtread_synced?: boolean
           last_name?: string | null
           location_tier?: string | null
           not_offered?: boolean

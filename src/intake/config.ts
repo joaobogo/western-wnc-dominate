@@ -5,7 +5,7 @@ import { PHONE_PLAIN } from "@/data/business";
  * adjust the model without touching component code.
  */
 
-export const SCORE_VERSION = "V1.0";
+export const SCORE_VERSION = "V1.1";
 
 export const COMPANY = {
   name: "Highlander Building Services Inc",
@@ -121,21 +121,21 @@ export const PROPERTY_TYPES: Option[] = [
 /* ── 3. What & when ───────────────────────────────────────────── */
 export const JOB_TYPES: Option[] = [
   { id: "roof_replacement", label: "Roof replacement or new roof", points: 30 },
-  { id: "new_build", label: "New home or custom build", points: 30 },
-  { id: "addition_remodel", label: "Addition or remodel", points: 26 },
-  {
-    id: "storm_insurance",
-    label: "Storm damage or insurance claim",
-    points: 24,
-  },
+  { id: "addition_remodel", label: "Addition or remodel", points: 30 },
+  { id: "roof_repair", label: "Roof repair or leak", points: 22 },
   {
     id: "exterior",
     label: "Exterior: siding, deck, porch, windows",
-    points: 16,
+    points: 21,
   },
-  { id: "roof_repair", label: "Roof repair or leak", points: 14 },
+  { id: "gutters", label: "Gutters only", points: 20 },
+  {
+    id: "storm_insurance",
+    label: "Storm damage or insurance claim",
+    points: 14,
+  },
+  { id: "new_build", label: "New home or custom build", points: 12 },
   { id: "inspection", label: "Inspection or not sure yet", points: 10 },
-  { id: "gutters", label: "Gutters only", points: 6 },
 ];
 
 export const TIMINGS: Option[] = [
