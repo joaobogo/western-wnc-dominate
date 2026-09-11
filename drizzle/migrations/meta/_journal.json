@@ -15,6 +15,13 @@
       "when": 1789144206234,
       "tag": "0001_secure_intake_jobtread_sync",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789144519550,
+      "tag": "0002_remove_legacy_open_intake_policy",
+      "breakpoints": true
     }
   ]
 }

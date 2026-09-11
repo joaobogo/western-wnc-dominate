@@ -26,7 +26,7 @@ describe("front-desk scoring V1.1", () => {
       phone: "8285551234",
       email: "jane@example.com",
       preferredContact: "call",
-      preferredTime: "morning",
+      bestTime: "morning",
       jobType: "roof_replacement",
       timing: "emergency",
       relationship: "owner",
