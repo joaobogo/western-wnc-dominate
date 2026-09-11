@@ -83,6 +83,18 @@ check("SPA route change must push virtual_page_view", tracker.includes('event: "
 check("SPA route change must send a Meta PageView", /fbq\?\.\("track", "PageView"\)/.test(tracker));
 check("SPA route change must send a TikTok page view", tracker.includes("ttq?.page?.()"));
 
+const headerActions = read("src/components/header/HeaderActions.tsx");
+check(
+  "desktop header estimate CTA tracking is missing",
+  headerActions.includes('data-gtm-cta="request_inspection"') && headerActions.includes('data-gtm-location="header"'),
+);
+
+const mobileMenu = read("src/components/header/MobileMenu.tsx");
+check(
+  "mobile menu estimate CTA tracking is missing",
+  mobileMenu.includes('data-gtm-cta="request_inspection"') && mobileMenu.includes('data-gtm-location="mobile_menu"'),
+);
+
 const analytics = read("src/lib/analytics.ts");
 check("form_submit must still reach the Meta pixel", /^\s*\(window as any\)\.fbq\(/m.test(analytics) || /fbq\("track"/.test(analytics) || /fbq\(\"track\"/.test(analytics));
 

@@ -34,6 +34,8 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Prop
     </a>
     <Link
       to="/request-inspection"
+      data-gtm-cta="request_inspection"
+      data-gtm-location="header"
       className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
     >
       <span className="relative z-10">Get My <span className="hidden sm:inline">Written </span>Estimate</span>
