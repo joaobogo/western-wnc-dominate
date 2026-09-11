@@ -124,6 +124,14 @@ export default function LeadView() {
         <Row label="CHANNEL" value={row.channel} />
         <Row label="TAKEN BY" value={row.taken_by} />
         <Row label="STATUS" value={row.status} />
+        <Row
+          label="JOBTREAD"
+          value={row.jobtread_sync_status === "success" ? "Synced" : row.jobtread_sync_status === "exhausted" ? "Needs attention" : "Queued for sync"}
+        />
+        <Row label="CRM RECORD" value={row.jobtread_id} />
+        {row.jobtread_error_message && (
+          <Row label="SYNC NOTE" value={row.jobtread_error_message} />
+        )}
         <Row label="RECEIVED" value={formatCallBy(new Date(row.created_at))} />
         <Row label="SCORING" value={row.score_version} />
       </div>

@@ -142,6 +142,9 @@ export default function Queue() {
                     ? `${overdue ? "Overdue — was due " : "Call by "}${formatCallBy(new Date(r.call_by))}`
                     : "No call-back required"}
                 </div>
+                <div className="text-[12px] mt-0.5" style={{ color: "#4b5563" }}>
+                  JobTread: {r.jobtread_sync_status === "success" ? "Synced" : r.jobtread_sync_status === "exhausted" ? "Needs attention" : "Queued"}
+                </div>
               </div>
 
               {r.status === "contacted" ? (

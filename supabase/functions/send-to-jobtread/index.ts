@@ -1,19 +1,10 @@
-// send-to-jobtread — stub.
-//
-// Called once after every receptionist call-sheet insert with the lead row's
-// payload. For now it only logs and returns 200 so the intake flow never blocks
-// on the CRM.
-//
-// ─────────────────────────────────────────────────────────────────────────────
-// TODO (developer): call the JobTread API here.
-//   - The grant key is stored as the secret JOBTREAD_GRANT_KEY.
-//     const grantKey = Deno.env.get("JOBTREAD_GRANT_KEY");
-//   - Map `payload` onto a JobTread Contact + Location + Job and POST it.
-//   - On failure, return a non-2xx so the caller can log the sync error.
-// Do not add any other JobTread behaviour until that mapping is agreed.
-// ─────────────────────────────────────────────────────────────────────────────
-
+// Backward-compatible receptionist handoff. The canonical mapper, safeguards,
+// status updates, and retry schedule all live in jobtread-sync.
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
+
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
+const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -31,14 +22,36 @@ Deno.serve(async (req) => {
   }
 
   const record = (body ?? {}) as Record<string, unknown>;
-  console.log("send-to-jobtread received lead", {
-    lead_id: record.lead_id ?? null,
-    grade: record.grade ?? null,
-    keys: Object.keys(record),
-  });
+  const leadId = String(record.intake_lead_id ?? record.lead_id ?? "");
+  if (!UUID_RE.test(leadId)) {
+    return new Response(JSON.stringify({ error: "A valid intake_lead_id is required" }), {
+      status: 400,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
 
-  return new Response(
-    JSON.stringify({ ok: true, forwarded: false, reason: "JobTread call not implemented yet" }),
-    { headers: { ...corsHeaders, "Content-Type": "application/json" } },
-  );
+  if (!SUPABASE_URL || !SERVICE_ROLE) {
+    return new Response(JSON.stringify({ ok: false, error: "sync_config_missing" }), {
+      status: 503,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  const response = await fetch(`${SUPABASE_URL}/functions/v1/jobtread-sync`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${SERVICE_ROLE}`,
+      apikey: SERVICE_ROLE,
+    },
+    body: JSON.stringify({
+      intake_lead_id: leadId,
+      idempotency_key: record.idempotency_key ?? null,
+    }),
+  });
+  const responseBody = await response.text();
+  return new Response(responseBody, {
+    status: response.status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
 });

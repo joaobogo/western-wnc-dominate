@@ -222,6 +222,43 @@ function humanizeValue(value: any): string {
   return String(value);
 }
 
+export function normalizeIntakeLead(row: LeadRow): LeadRow {
+  const payload = row.payload && typeof row.payload === "object" ? row.payload : {};
+  const appointment = row.appointment && typeof row.appointment === "object" ? row.appointment : {};
+  const scoreSummary = {
+    lead_score: row.score ?? null,
+    lead_grade: row.grade ?? null,
+    score_version: row.score_version ?? null,
+    score_breakdown: row.breakdown ?? {},
+    score_gates: row.gates ?? [],
+    score_flags: row.flags ?? [],
+    call_by: row.call_by ?? null,
+    receptionist: row.taken_by ?? null,
+    source_detail: row.source_detail ?? null,
+    location_tier: row.location_tier ?? null,
+    relationship: row.relationship ?? null,
+    owner_name: row.owner_name ?? null,
+    owner_contact: row.owner_contact ?? null,
+    appointment,
+  };
+
+  return {
+    ...row,
+    name: row.name ?? ([row.first_name, row.last_name].filter(Boolean).join(" ") || null),
+    property_town: row.property_town ?? row.town ?? null,
+    property_address: row.property_address ?? row.address ?? null,
+    project_description: row.project_description ?? row.details ?? null,
+    service_category: row.service_category ?? row.job_type ?? null,
+    project_type: row.project_type ?? row.job_type ?? null,
+    urgency: row.urgency ?? row.timing ?? null,
+    timeline: row.timeline ?? row.timing ?? null,
+    budget: row.budget ?? row.budget_range ?? null,
+    preferred_contact_method: row.preferred_contact_method ?? row.preferred_contact ?? null,
+    source: row.source ?? "front_desk",
+    metadata: { ...payload, ...scoreSummary },
+  };
+}
+
 function flattenFormAnswers(
   metadata: any,
   prefix = "",
@@ -483,6 +520,16 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   section("Timeline/Urgency");
   kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
   kv("Timeline", timelineValue);
+  if (has(meta.lead_score)) kv("Lead Score", `${meta.lead_score}/100`);
+  if (has(meta.lead_grade)) kv("Lead Grade", meta.lead_grade);
+  if (has(meta.score_version)) kv("Score Version", meta.score_version);
+  if (meta.score_breakdown && typeof meta.score_breakdown === "object") {
+    kv("Score Breakdown", meta.score_breakdown);
+  }
+  if (has(meta.call_by)) kv("Call By", meta.call_by);
+  if (has(meta.receptionist)) kv("Taken By", meta.receptionist);
+  if (Array.isArray(meta.score_gates) && meta.score_gates.length) kv("Score Gates", meta.score_gates);
+  if (Array.isArray(meta.score_flags) && meta.score_flags.length) kv("Score Flags", meta.score_flags);
   if (isRoofingCategory) {
     lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
   }
@@ -1544,9 +1591,10 @@ Deno.serve(async (req) => {
   const convId: string | undefined = body.chatbot_conversation_id;
   const consultId: string | undefined = body.consultation_request_id;
   const designerId: string | undefined = body.designer_lead_id;
+  const intakeLeadId: string | undefined = body.intake_lead_id;
 
-  if (!leadId && !convId && !consultId && !designerId) {
-    return new Response(JSON.stringify({ error: "lead_id, chatbot_conversation_id, consultation_request_id, or designer_lead_id required" }), {
+  if (!leadId && !convId && !consultId && !designerId && !intakeLeadId) {
+    return new Response(JSON.stringify({ error: "lead_id, chatbot_conversation_id, consultation_request_id, designer_lead_id, or intake_lead_id required" }), {
       status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
@@ -1561,11 +1609,18 @@ Deno.serve(async (req) => {
     ? "chatbot_conversations"
     : consultId
     ? "consultation_requests"
+    : intakeLeadId
+    ? "intake_leads"
     : "designer_leads";
-  const id = (leadId ?? convId ?? consultId ?? designerId)!;
+  const id = leadId ?? convId ?? consultId ?? intakeLeadId ?? designerId;
+  if (!id) {
+    return new Response(JSON.stringify({ error: "A valid record id is required" }), {
+      status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
   const kind: "lead" | "chatbot" =
     convId ? "chatbot" : "lead";
-  const supportsPayloadCol = table === "leads" || table === "consultation_requests" || table === "designer_leads";
+  const supportsPayloadCol = table === "leads" || table === "consultation_requests" || table === "designer_leads" || table === "intake_leads";
   const { data: row, error: fetchErr } = await admin
     .from(table)
     .select("*")
@@ -1594,12 +1649,15 @@ Deno.serve(async (req) => {
 
   // consultation_requests uses `town` instead of `property_town` — normalize
   // a couple of aliases so the payload builder emits the same shape.
-  const normalized = {
+  const normalizedBase = {
     ...row,
     property_town: row.property_town ?? row.town ?? null,
     project_description: row.project_description ?? row.description ?? null,
     source: row.source ?? row.source_form ?? table,
   };
+  const normalized = table === "intake_leads"
+    ? normalizeIntakeLead(normalizedBase)
+    : normalizedBase;
   // Sign attachment URLs with the service role so the CRM note carries real,
   // openable links. Failures are reported inside the note, never fatal.
   let attachmentInfo: AttachmentInfo = { files: [], failures: [] };
