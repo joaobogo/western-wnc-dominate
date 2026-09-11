@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, Phone } from "lucide-react";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import InlineFieldError from "@/components/forms/InlineFieldError";
@@ -111,6 +112,18 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         }}
       >
         <FormErrorSummary message={submitError} issues={issues} className="mt-0" />
+        {/* Call escape hatch above the first field — calls are the primary
+            conversion, so the phone is offered before the form, not after. */}
+        <p className="text-sm font-body text-muted-foreground">
+          Prefer to talk?{" "}
+          <a
+            href={PHONE_TEL}
+            className="inline-flex min-h-[44px] items-center gap-1.5 font-semibold text-foreground underline underline-offset-2 hover:text-[hsl(var(--gold-ink))] transition-colors"
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            Call {PHONE_DISPLAY}
+          </a>
+        </p>
         <div>
           <label htmlFor={`${serviceLabel}-name`} className="field-label">
             Name
@@ -173,7 +186,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           <span className="field-label">
             Timing
           </span>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-2">
             {urgencyOptions.map((option) => {
               const selected = formData.urgency === option;
               return (
@@ -192,8 +205,10 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         </div>
 
         <FormSavedNote show={autosave.restored} />
-        <WhatHappensNext />
-        <FormConsent />
+        {/* Submit sits directly under the inputs. It used to come after the
+            "what happens next" note and the consent paragraph, which pushed it
+            ~850px below the last field — off-screen on a phone with the
+            keyboard open (mobile audit F1). The legal copy now follows it. */}
         <motion.button
           whileTap={{ scale: 0.98 }}
           type="submit"
@@ -214,6 +229,8 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             </>
           )}
         </motion.button>
+        <WhatHappensNext />
+        <FormConsent />
       </form>
 
       <div className="mt-5 border-t border-border pt-4">

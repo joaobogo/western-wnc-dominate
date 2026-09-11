@@ -95,8 +95,10 @@ const FooterLink = React.forwardRef<
 FooterLink.displayName = "FooterLink";
 
 const Footer = () => {
+  // pb on phones clears the 72px sticky call bar + the iOS home indicator, so
+  // the last footer links are never hidden behind it (mobile audit F11).
   return (
-    <footer className="bg-white text-foreground relative overflow-hidden border-t border-border">
+    <footer className="bg-white text-foreground relative overflow-hidden border-t border-border pb-[calc(72px+env(safe-area-inset-bottom,0px))] md:pb-0">
       {/* Background Tartan Watermark — Ultra subtle */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ 
         backgroundImage: "url('/tartan.png')",

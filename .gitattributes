@@ -1,0 +1,14 @@
+# The repo is LF-only. Lovable writes LF; tooling on Windows can silently
+# rewrite whole files to CRLF, which turns the next Lovable push into a
+# whole-file diff and a painful merge. Normalise on the way in.
+* text=auto eol=lf
+
+# Binary assets must never be touched.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.woff2 binary
+*.ico binary
+*.pdf binary

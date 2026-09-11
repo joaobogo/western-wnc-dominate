@@ -281,7 +281,7 @@ const Hero = () => {
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
                 data-gtm-variant={heroCta.variant}
-                className="btn btn-primary btn-lg group md:text-base md:px-14 md:py-5 relative md:tracking-[0.1em] md:min-h-[60px] whitespace-nowrap"
+                className="hero-cta-estimate order-2 md:order-none btn btn-primary btn-lg group md:text-base md:px-14 md:py-5 relative md:tracking-[0.1em] md:min-h-[60px] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">
@@ -292,7 +292,7 @@ const Hero = () => {
               <a
                 href={PHONE_TEL}
                 aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
-                className="btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
+                className="hero-cta-call order-1 md:order-none btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 <span className="md:hidden">Call · {PHONE_DISPLAY}</span>

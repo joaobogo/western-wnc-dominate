@@ -185,7 +185,25 @@ const TownPage = () => {
                 {leadParagraph}
               </motion.p>
 
-              {/* One genuinely local roofing reality, above the fold */}
+              {/* Mobile audit F4: the call action sat at y~780 on a 375x667
+                  screen — below the fold, with only the header icon above it.
+                  The CTAs now come before the "local reality" block, the call
+                  leads on phones, and both buttons are full width. */}
+              <motion.div 
+                initial={{ opacity: 0, y: 16 }} 
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="mb-6 md:mb-0 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6"
+              >
+                <a href={PHONE_TEL} className="hero-cta-call order-1 sm:order-2 btn btn-secondary btn-lg btn-on-dark w-full sm:w-auto md:text-body-sm sm:min-w-[240px]">
+                  <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> Call {PHONE_DISPLAY}
+                </a>
+                <Link to="/request-inspection" className="hero-cta-estimate order-2 sm:order-1 btn btn-primary btn-lg w-full sm:w-auto md:text-body-sm sm:min-w-[300px]">
+                  Request an Inspection <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </Link>
+              </motion.div>
+
+              {/* One genuinely local roofing reality, below the CTAs on phones */}
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -196,19 +214,6 @@ const TownPage = () => {
                 {town.climateExposure}
               </motion.p>
               
-              <motion.div 
-                initial={{ opacity: 0, y: 16 }} 
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="flex flex-col sm:flex-row gap-4 md:gap-6"
-              >
-                <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-body-sm min-w-[300px]">
-                  Request an Inspection in {town.name} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </Link>
-                <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
-                  <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {PHONE_DISPLAY}
-                </a>
-              </motion.div>
 
               <CTAProofLine tone="dark" align="start" area={`${town.name} and ${town.county}`} className="mt-4" />
             </div>

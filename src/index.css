@@ -766,6 +766,29 @@ img {
     transform: scale(0.98);
   }
 
+  /* Mobile call-first hero (mobile audit F7).
+     80%+ of traffic is on phones and calls are the primary conversion, so
+     below md the CALL button carries the primary treatment and leads; the
+     estimate becomes the outlined secondary. Desktop keeps estimate-first. */
+  @media (max-width: 767px) {
+    .hero-cta-call.btn-secondary {
+      background: linear-gradient(135deg, hsl(38 95% 58%), hsl(32 90% 48%));
+      color: hsl(var(--accent-foreground));
+      border-color: hsl(var(--highland-gold) / 0.35);
+      box-shadow: 0 8px 24px -6px hsl(var(--highland-gold) / 0.45);
+    }
+    .hero-cta-call.btn-secondary svg {
+      color: hsl(var(--accent-foreground));
+    }
+    .hero-cta-estimate.btn-primary {
+      background: none;
+      background-color: transparent;
+      color: hsl(var(--dark-section-foreground));
+      border-color: hsl(var(--dark-section-border));
+      box-shadow: none;
+    }
+  }
+
   /* Secondary — outlined. Supporting action next to a primary. */
   .btn-secondary {
     @apply bg-transparent text-[hsl(var(--primary))];

@@ -10,8 +10,10 @@ import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-/** Intake / form-first routes already show a primary form above the fold —
- *  the sticky bar would duplicate their CTAs, so it stays hidden there. */
+/** Dedicated multi-step funnels: the form IS the page, so the bar would just
+ *  duplicate their CTAs. /contact and /request-inspection are NOT in this list
+ *  — they are landing destinations, and the mobile audit (F2) measured 4.5
+ *  screens on /contact with no call action on screen. */
 const INTAKE_ROUTES = [
   "/consultation",
   "/roofing-intake",
@@ -20,8 +22,6 @@ const INTAKE_ROUTES = [
   "/construction-builder",
   "/design-intake",
   "/quote-flow",
-  "/request-inspection",
-  "/contact",
 ];
 
 const StickyMobileCTA = () => {
@@ -58,8 +58,12 @@ const StickyMobileCTA = () => {
         "[data-hero], [data-hero-anchored], #hero",
       );
       if (hero) {
-        const { bottom } = hero.getBoundingClientRect();
-        setScrolled(bottom <= 0);
+        // The hero is tall, so its CALL button scrolls away long before the
+        // hero itself does — leaving 240-350px with no way to call on a phone
+        // (mobile audit F3). Reveal as soon as that button is gone.
+        const heroCall = hero.querySelector<HTMLElement>('a[href^="tel:"]');
+        const anchor = heroCall ?? hero;
+        setScrolled(anchor.getBoundingClientRect().bottom <= 0);
         return;
       }
       setScrolled(window.scrollY > Math.max(window.innerHeight * 0.9, 640));

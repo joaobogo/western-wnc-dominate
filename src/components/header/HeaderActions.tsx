@@ -20,16 +20,21 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Prop
       <Phone className="w-4 h-4" aria-hidden="true" />
       <span>{PHONE_DISPLAY}</span>
     </a>
+    {/* Phones showed an icon-only phone button, so the number was never on
+        screen (mobile audit F7). It is now a pill with the number. The estimate
+        button moves to >=sm to make room at 375px — the estimate path stays
+        one tap away in the menu and in the sticky call bar. */}
     <a
       href={PHONE_TEL}
       aria-label={`Call ${PHONE_DISPLAY}`}
-      className="sm:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
+      className="sm:hidden inline-flex items-center gap-1.5 min-h-[44px] px-3 rounded-sm bg-primary text-primary-foreground font-body font-bold text-sm whitespace-nowrap active:scale-95 transition-transform"
     >
-      <Phone className="w-4 h-4" aria-hidden="true" />
+      <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+      <span>{PHONE_DISPLAY}</span>
     </a>
     <Link
       to="/request-inspection"
-      className="btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
+      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
     >
       <span className="relative z-10">Get My <span className="hidden sm:inline">Written </span>Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
