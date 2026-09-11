@@ -98,6 +98,7 @@ export function toRow(lead: LeadDraft, result: ScoreResult) {
 
 export async function saveLead(lead: LeadDraft, result: ScoreResult) {
   const row = toRow(lead, result);
+  const leadId = crypto.randomUUID();
 
   // Google Business Profile attribution. A receptionist marks the call as
   // coming from the map listing; if the caller also browsed the site from a
@@ -120,11 +121,9 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
     row.source_detail = row.source_detail ?? showroom;
   }
 
-  const { data, error } = await db
+  const { error } = await db
     .from(TABLE)
-    .insert(row)
-    .select("id")
-    .single();
+    .insert({ id: leadId, ...row });
 
   if (error) throw new Error(error.message);
 
@@ -132,7 +131,7 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
   // monthly GBP export (calls / website clicks) reconcile against GA4.
   if (gbp) {
     trackGbpLeadRecorded({
-      lead_id: data.id as string,
+      lead_id: leadId,
       gbp_showroom: gbp.showroom,
       gbp_entry: gbp.entry,
       grade: row.grade,
@@ -143,9 +142,9 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
 
   // Fire-and-forget CRM hand-off; the lead is already safely stored.
   db.functions
-    .invoke("send-to-jobtread", { body: { lead_id: data.id, ...row } })
+    .invoke("send-to-jobtread", { body: { lead_id: leadId, ...row } })
     .catch((err) => console.error("send-to-jobtread failed:", err));
 
-  return data.id as string;
+  return leadId;
 }
 

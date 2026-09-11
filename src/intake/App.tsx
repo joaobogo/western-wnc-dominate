@@ -12,8 +12,8 @@ import "../intake.css";
  * Internal receptionist call sheet. Mounted at /front-desk/* by the main router,
  * so it uses relative route paths and no BrowserRouter of its own.
  *
- * Lead records are admin-only at the database level, so the app requires a
- * signed-in admin session before it renders anything.
+ * The call sheet is available to anyone with its unlisted URL. Lead records
+ * and queue controls remain admin-only at the database level.
  */
 export default function IntakeApp() {
   useInternalPageHead(
@@ -24,7 +24,8 @@ export default function IntakeApp() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const [state, setState] = useState<"checking" | "allowed" | "denied">("checking");
+  const [adminState, setAdminState] = useState<"checking" | "allowed" | "denied">("checking");
+  const isQueueRoute = location.pathname.startsWith("/front-desk/queue");
 
   useEffect(() => {
     let mounted = true;
@@ -32,8 +33,7 @@ export default function IntakeApp() {
     const evaluate = async (session: Awaited<ReturnType<typeof supabase.auth.getSession>>["data"]["session"]) => {
       if (!mounted) return;
       if (!session) {
-        setState("denied");
-        navigate(`/admin/login?next=${encodeURIComponent(location.pathname)}`, { replace: true });
+        setAdminState("denied");
         return;
       }
       const { data: allowed } = await supabase.rpc("has_role", {
@@ -41,7 +41,7 @@ export default function IntakeApp() {
         _role: "admin",
       });
       if (!mounted) return;
-      setState(allowed ? "allowed" : "denied");
+      setAdminState(allowed ? "allowed" : "denied");
     };
 
     supabase.auth.getSession().then(({ data }) => evaluate(data.session));
@@ -55,11 +55,17 @@ export default function IntakeApp() {
     };
   }, [navigate, location.pathname]);
 
-  if (state !== "allowed") {
+  useEffect(() => {
+    if (isQueueRoute && adminState === "denied") {
+      navigate(`/admin/login?next=${encodeURIComponent(location.pathname)}`, { replace: true });
+    }
+  }, [adminState, isQueueRoute, location.pathname, navigate]);
+
+  if (isQueueRoute && adminState !== "allowed") {
     return (
       <main className="min-h-dvh flex items-center justify-center p-6">
         <p className="text-sm text-muted-foreground">
-          {state === "checking" ? "Checking access…" : "Highlander team sign-in required."}
+          {adminState === "checking" ? "Checking access…" : "Highlander team sign-in required."}
         </p>
       </main>
     );
@@ -67,7 +73,7 @@ export default function IntakeApp() {
 
   return (
     <>
-      <Header />
+      <Header showQueue={adminState === "allowed"} />
       <main>
         <Routes>
           <Route path="/" element={<IntakeSheet />} />

@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789141490668,
+      "tag": "0000_allow_unlisted_intake_lead_submissions",
+      "breakpoints": true
+    }
+  ]
+}

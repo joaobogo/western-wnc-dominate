@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { COMPANY } from "./config";
 import logoCream from "@/assets/logo-cream.svg";
 
-export function Header() {
+export function Header({ showQueue }: { showQueue: boolean }) {
   const { pathname } = useLocation();
   const linkStyle = (active: boolean) => ({
     color: "var(--hl-cream)",
@@ -43,9 +43,11 @@ export function Header() {
           <Link to="/front-desk" style={linkStyle(pathname === "/front-desk")}>
             Call sheet
           </Link>
-          <Link to="/front-desk/queue" style={linkStyle(pathname.startsWith("/front-desk/queue"))}>
-            Queue
-          </Link>
+          {showQueue && (
+            <Link to="/front-desk/queue" style={linkStyle(pathname.startsWith("/front-desk/queue"))}>
+              Queue
+            </Link>
+          )}
         </nav>
       </div>
     </header>
