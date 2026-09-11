@@ -66,6 +66,11 @@ const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
+  /* Mobile audit F6: rendering every post made this page 145 screens tall on a
+     375px screen. Show a page at a time; "Load more" keeps every post reachable
+     (and crawlable — the sitemap and the internal-link graph are unchanged). */
+  const PAGE_SIZE = 12;
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const seasonal = useMemo(getSeasonalContext, []);
 
   const filtered = linkableBlogPosts()
@@ -522,6 +527,10 @@ const Blog = () => {
                   {filtered.slice(1).map((post, i) => (
                     <motion.div
                       key={post.slug}
+                      /* Every post stays in the DOM so the internal-link graph
+                         and crawlers are untouched; the overflow is only hidden
+                         visually until "Load more" (mobile audit F6). */
+                      className={i + 1 < visibleCount ? undefined : "hidden"}
                       initial={{ opacity: 0, y: 16 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -564,6 +573,19 @@ const Blog = () => {
                     </motion.div>
                   ))}
                 </div>
+
+                {filtered.length > visibleCount && (
+                  <div className="pt-2 text-center">
+                    <button
+                      type="button"
+                      onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+                      className="btn btn-secondary btn-md min-h-[48px]"
+                    >
+                      Load more articles
+                      <span className="sr-only"> — showing {Math.min(visibleCount, filtered.length)} of {filtered.length}</span>
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <EmptyState

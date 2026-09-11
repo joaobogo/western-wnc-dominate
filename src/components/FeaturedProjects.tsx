@@ -12,6 +12,20 @@ import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.webp";
+// Mobile audit F5: phones were being sent the 1800px masters (up to 550KB)
+// for a 334px-wide slot. Responsive sets let a phone pick the 480px rendition.
+import metalRoofAvif from "@/assets/gallery/metal-005.webp?w=480;800;1200&format=avif&as=srcset";
+import metalRoofWebp from "@/assets/gallery/metal-005.webp?w=480;800;1200&format=webp&as=srcset";
+import cedarRoofAvif from "@/assets/gallery/cedar-005.webp?w=480;800;1200&format=avif&as=srcset";
+import cedarRoofWebp from "@/assets/gallery/cedar-005.webp?w=480;800;1200&format=webp&as=srcset";
+import asphaltRoofAvif from "@/assets/gallery/asphalt-hero.webp?w=480;800;1200&format=avif&as=srcset";
+import asphaltRoofWebp from "@/assets/gallery/asphalt-hero.webp?w=480;800;1200&format=webp&as=srcset";
+import metalCabinAvif from "@/assets/gallery/metal-006.webp?w=480;800;1200&format=avif&as=srcset";
+import metalCabinWebp from "@/assets/gallery/metal-006.webp?w=480;800;1200&format=webp&as=srcset";
+import asphaltLargeAvif from "@/assets/gallery/asphalt-006.webp?w=480;800;1200&format=avif&as=srcset";
+import asphaltLargeWebp from "@/assets/gallery/asphalt-006.webp?w=480;800;1200&format=webp&as=srcset";
+import cedarDetailAvif from "@/assets/gallery/cedar-001.webp?w=480;800;1200&format=avif&as=srcset";
+import cedarDetailWebp from "@/assets/gallery/cedar-001.webp?w=480;800;1200&format=webp&as=srcset";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -115,6 +129,13 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         <div className={`relative overflow-hidden bg-muted ${
           isHero ? "aspect-project md:aspect-hero" : isWide ? "aspect-panorama" : "aspect-project"
         }`}>
+          <picture>
+            {SRCSETS.get(project.image) && (
+              <>
+                <source type="image/avif" srcSet={SRCSETS.get(project.image)!.avif} sizes={IMG_SIZES} />
+                <source type="image/webp" srcSet={SRCSETS.get(project.image)!.webp} sizes={IMG_SIZES} />
+              </>
+            )}
           <img width={1200} height={900}
             src={project.image}
             alt={`${project.title} — ${project.category} project by Highlander Building Services in ${project.location ?? "Western North Carolina"}`}
@@ -122,6 +143,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             loading="lazy"
             decoding="async"
           />
+          </picture>
 
           {/* Scrim token — text-over-image legibility */}
           <div aria-hidden="true" className="absolute inset-0 bg-scrim-bottom opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
@@ -180,6 +202,18 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
     </motion.div>
   );
 };
+
+/** One card fills the width on phones, ~half on tablets, ~a third on desktop. */
+const IMG_SIZES = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw";
+
+const SRCSETS = new Map<string, { avif: string; webp: string }>([
+  [metalRoof, { avif: metalRoofAvif, webp: metalRoofWebp }],
+  [cedarRoof, { avif: cedarRoofAvif, webp: cedarRoofWebp }],
+  [asphaltRoof, { avif: asphaltRoofAvif, webp: asphaltRoofWebp }],
+  [metalCabin, { avif: metalCabinAvif, webp: metalCabinWebp }],
+  [asphaltLarge, { avif: asphaltLargeAvif, webp: asphaltLargeWebp }],
+  [cedarDetail, { avif: cedarDetailAvif, webp: cedarDetailWebp }],
+]);
 
 export const FeaturedProjects = ({ location }: { location?: string }) => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -269,7 +303,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
             to="/recent-projects"
-            className="group inline-flex items-center gap-2.5 font-heading font-bold text-body-xs tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
+            className="group inline-flex min-h-[44px] items-center gap-2.5 font-heading font-bold text-body-xs tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
           >
             View the Full Portfolio
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

@@ -88,7 +88,7 @@ const PageCloseCTA = ({
           <CTAProofPoints tone="dark" className="mt-6" />
           {secondaryLabel && secondaryTo && (
             <p className="mt-6 text-body-xs font-body">
-              <Link to={secondaryTo} className="text-dark-section-muted underline hover:text-[hsl(var(--gold-ink))] transition-colors">
+              <Link to={secondaryTo} className="inline-flex min-h-[44px] items-center text-dark-section-muted underline hover:text-[hsl(var(--gold-ink))] transition-colors">
                 {secondaryLabel}
               </Link>
             </p>

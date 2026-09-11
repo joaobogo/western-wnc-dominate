@@ -210,7 +210,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
           </p>
           <Link
             to="/service-areas"
-            className="group inline-flex items-center gap-2 text-sm font-body font-bold text-primary uppercase tracking-wider hover:gap-3 transition-all"
+            className="group inline-flex min-h-[44px] items-center gap-2 text-sm font-body font-bold text-primary uppercase tracking-wider hover:gap-3 transition-all"
           >
             View Full Service Territory
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

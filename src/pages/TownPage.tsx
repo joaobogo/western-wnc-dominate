@@ -337,6 +337,11 @@ const TownPage = () => {
 
         <TownCTAStrip town={town} />
 
+        {/* Mobile audit F6: the intake sat ~16,000px (24 screens) down on a
+            375px screen. It now follows the first CTA strip; TownEstimateCTA
+            still closes the page as the second chance. */}
+        <InspectionForm townName={town.name} county={town.county} />
+
         {/* 5. TWO LOCAL PROOF POINTS — local work, then local voices */}
         {townProof ? (
           <TownProofBlock town={town} content={townProof} />
@@ -352,8 +357,6 @@ const TownPage = () => {
 
         {/* 6. TOWN-SPECIFIC FAQ */}
         <TownFAQ town={town} faqs={townFaqs} />
-
-        <InspectionForm townName={town.name} county={town.county} />
 
         {/* 7. NEARBY COVERAGE */}
         <NearbyTowns currentTown={town} />

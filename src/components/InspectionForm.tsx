@@ -273,14 +273,14 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
       <GoldLine width="100%" centered delay={0} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
-      <div className={isPage ? "pt-6 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
+      <div className={isPage ? "pt-4 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
         <div className="container-tight">
           {isPage && (
             <>
-              <h1 className="text-lg md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-2 md:mb-4">
+              <h1 className="text-[22px] md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-1.5 md:mb-4">
                 Request your free roof inspection in Western North Carolina.
               </h1>
-              <p className="text-white font-body font-semibold text-body-sm md:text-body mb-3 md:mb-10 leading-snug">
+              <p className="text-white font-body font-semibold text-body-sm md:text-body mb-2 md:mb-10 leading-snug">
                 Two questions now, a written scope after we walk your property.
               </p>
             </>
