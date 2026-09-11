@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Anyone with the call sheet can create intake leads" ON public.intake_leads;
