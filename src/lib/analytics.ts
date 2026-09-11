@@ -119,7 +119,22 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
   // finished loading and the main thread is idle, so the first event of a
   // visit never competes with the LCP image and the route chunk. Nothing is
   // dropped — the event data is captured now and sent a moment later.
+  // Mobile audit F14: the team's own browsing and any QA pass writes rows to
+  // conversion_events, which skews internal numbers. Set
+  // localStorage.hl_internal = "1" in a browser to keep that browser out of the
+  // internal table. Deliberately does NOT touch GA4/Meta/TikTok/Ads — the
+  // standing rule is that nothing may weaken the pixels.
+  let isInternal = false;
   try {
+    isInternal = typeof window !== "undefined" && window.localStorage.getItem("hl_internal") === "1";
+  } catch {
+    /* private mode */
+  }
+
+  // NOTE: this guard wraps ONLY the Supabase insert. GA4, Meta, TikTok and Ads
+  // below must keep firing for everyone — never early-return from this function.
+  try {
+    if (!isInternal)
     void whenLoadedAndIdle().then(() => import("@/integrations/supabase/client")).then(({ supabase }) =>
       supabase
         .from("conversion_events")
