@@ -57,7 +57,7 @@ export default function IntakeApp() {
 
   useEffect(() => {
     if (isQueueRoute && adminState === "denied") {
-      navigate(`/admin/login?next=${encodeURIComponent(location.pathname)}`, { replace: true });
+      navigate("/front-desk", { replace: true });
     }
   }, [adminState, isQueueRoute, location.pathname, navigate]);
 
