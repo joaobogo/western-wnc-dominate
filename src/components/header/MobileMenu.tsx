@@ -276,6 +276,8 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
           <div className="border-t border-black/10 bg-white px-4 py-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
             <Link
               to="/request-inspection"
+              data-gtm-cta="request_inspection"
+              data-gtm-location="mobile_menu"
               onClick={onClose}
               className="btn btn-primary btn-md"
             >
