@@ -32,8 +32,8 @@ export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Get My Questions Answered | Roofing & Construction Quote in WNC"
-        description={`Talk to Highlander Building Services in Western NC. Call, email, or request an estimate. Franklin office. Mon–Fri 8 AM – 5 PM. ${PHONE_DISPLAY}.`}
+        title="Roofing & Construction Estimates in Western NC | Highlander"
+        description={`Contact Highlander for roofing and construction in Western NC. Call, email, or request an on-site estimate through our showrooms. ${PHONE_DISPLAY}.`}
         path="/contact"
         jsonLd={buildPageSchema({
           type: "contact",

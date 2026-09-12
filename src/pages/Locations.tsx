@@ -16,9 +16,9 @@ import { showrooms } from "@/data/showrooms";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const TITLE = "Our Showrooms in Franklin & Sylva, NC | Highlander Building Services";
+const TITLE = "Roofing & Construction Showrooms in Franklin & Sylva, NC";
 const DESCRIPTION =
-  "Two Western North Carolina showrooms — Franklin and Sylva. See metal, shingle, and composite roofing samples in person, Monday through Friday, 8 AM to 5 PM.";
+  "Visit Highlander’s Franklin and Sylva showrooms for roofing materials and construction planning across Western North Carolina. Open weekdays, 8 AM to 5 PM.";
 
 /**
  * Locations hub. Lists the two physical showrooms with full NAP and links to

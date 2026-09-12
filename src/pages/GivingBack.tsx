@@ -42,8 +42,8 @@ const GivingBack = () => {
   return (
     <>
       <SEOHead
-        title="Community Involvement | Highlander Building Services"
-        description="How Highlander supports homeowners, local organizations, and communities in Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
+        title="Roofing & Construction Community Work | Highlander"
+        description="See how Highlander’s roofing and construction team supports homeowners and local organizations across Franklin, Highlands, Cashiers, Sylva, and Western NC."
         path="/community"
         jsonLd={[
           organizationSchema(),
