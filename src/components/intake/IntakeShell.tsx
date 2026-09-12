@@ -29,8 +29,8 @@ const IntakeShell = ({
     <section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-          {/* === Brand / trust column === */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28">
+          {/* === Brand header — stays above the form on every width === */}
+          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
             <div className="flex items-center gap-2 mb-5">
               <div className="h-px w-8 bg-[hsl(var(--highland-gold))]" />
               <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">
@@ -42,10 +42,39 @@ const IntakeShell = ({
               {title}
             </h1>
 
-            <p className="text-muted-foreground text-body-sm md:text-body-sm font-body leading-[1.75] mb-8 max-w-md">
+            <p className="text-muted-foreground text-body-sm md:text-body-sm font-body leading-[1.75] mb-5 lg:mb-8 max-w-md">
               {subhead}
             </p>
 
+            {/* Phone alt path — right under the intro so it is one thumb away
+                before the form (mobile re-audit M-2). */}
+            <a
+              href={PHONE_TEL}
+              className="inline-flex min-h-[44px] items-center gap-2.5 text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-semibold text-body-sm"
+            >
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
+              Prefer to talk? {PHONE_DISPLAY}
+            </a>
+          </div>
+
+          {/* === Form column — second on phones, right column on desktop === */}
+          <div className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2" data-hide-sticky>
+            <div className="bg-card border border-border rounded-lg shadow-flat p-5 md:p-9 relative overflow-hidden">
+              {/* Highland Heritage Accent */}
+              <div 
+                className="absolute top-0 left-0 right-0 h-1 opacity-[0.25]" 
+                style={{ 
+                  backgroundImage: "url('/tartan.png')",
+                  backgroundSize: "80px auto",
+                  backgroundRepeat: "repeat"
+                }} 
+              />
+              {children}
+            </div>
+          </div>
+
+          {/* === Supporting detail — below the form on phones, under the header on desktop === */}
+          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
             {/* What to expect */}
             <div className="border-l-2 border-[hsl(var(--highland-gold)/0.35)] pl-5 mb-8 space-y-3">
               {sidebarBullets.map((b) => (
@@ -68,20 +97,6 @@ const IntakeShell = ({
                   <span>{t.text}</span>
                 </div>
               ))}
-            </div>
-
-            {/* Phone alt path */}
-            <div className="mt-8 pt-6 border-t border-border/60">
-              <p className="text-caption font-body uppercase tracking-[0.18em] text-muted-foreground mb-2">
-                Prefer to talk?
-              </p>
-              <a
-                href={PHONE_TEL}
-                className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-semibold text-body-xs"
-              >
-                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                {PHONE_DISPLAY}
-              </a>
             </div>
 
             {/* Proof next to the CTA: photo, credentials, local review, response time */}
@@ -116,22 +131,6 @@ const IntakeShell = ({
               </div>
             </div>
 
-          </div>
-
-          {/* === Form column === */}
-          <div className="lg:col-span-7" data-hide-sticky>
-            <div className="bg-card border border-border rounded-lg shadow-flat p-6 md:p-9 relative overflow-hidden">
-              {/* Highland Heritage Accent */}
-              <div 
-                className="absolute top-0 left-0 right-0 h-1 opacity-[0.25]" 
-                style={{ 
-                  backgroundImage: "url('/tartan.png')",
-                  backgroundSize: "80px auto",
-                  backgroundRepeat: "repeat"
-                }} 
-              />
-              {children}
-            </div>
           </div>
         </div>
       </div>

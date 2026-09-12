@@ -1,4 +1,5 @@
 import { Fragment, useMemo, useState } from "react";
+import GalleryImage from "@/components/media/GalleryImage";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, ImageOff } from "lucide-react";
 import EmptyState from "@/components/states/EmptyState";
@@ -86,7 +87,7 @@ const RecentProjects = () => {
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img width={1600} height={900} loading="eager" decoding="async"
+            <GalleryImage width={1600} height={900} loading="eager" decoding="async" sizes="100vw"
               src={heroImg}
               alt="Standing seam metal roof on a mountain home built by Highlander Building Services in Western North Carolina"
               fetchPriority="high"
@@ -137,7 +138,8 @@ const RecentProjects = () => {
               {categoryCards.map((card) => (
                 <Link key={card.title} to={card.href} className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift">
                   <div className="aspect-project overflow-hidden bg-secondary">
-                    <img
+                    <GalleryImage
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       src={card.img}
                       alt={`${card.title} — Highlander Building Services`}
                       loading="lazy"
@@ -218,7 +220,8 @@ const RecentProjects = () => {
                 const CardInner = (
                   <>
                     <div className={`overflow-hidden bg-secondary relative ${wide ? "aspect-[16/9]" : "aspect-project"}`}>
-                      <img
+                      <GalleryImage
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         src={p.image}
                         alt={`${p.title} — ${p.location}`}
                         loading="lazy"

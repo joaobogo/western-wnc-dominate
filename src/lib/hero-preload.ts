@@ -23,7 +23,14 @@ export function preloadRouteHero(pathname = window.location.pathname) {
   const srcSet = HERO_BY_PATH[key];
   if (!srcSet) return;
 
+  // The prerendered HTML already carries the <link> this inserted at snapshot
+  // time — which is ideal (the preload scanner sees it before any JS). Adding
+  // a second one fetched the hero twice at different sizes (mobile re-audit
+  // L-4). Skip if one is already in the document.
+  if (document.querySelector('link[rel="preload"][as="image"][data-hero-preload]')) return;
+
   const link = document.createElement("link");
+  link.setAttribute("data-hero-preload", "true");
   link.rel = "preload";
   link.as = "image";
   link.type = "image/avif";

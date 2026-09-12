@@ -15,7 +15,9 @@ import { towns } from "../src/data/towns";
 import { indexableServiceTownPairs } from "../src/data/service-town-content";
 import { projectDetails } from "../src/data/projects";
 
-const BASE_URL = "https://western-wnc-dominate.lovable.app";
+// The canonical host. The domain is pointed at this build; never the Lovable
+// preview host — Search Console cannot use a sitemap on another origin.
+const BASE_URL = "https://highlandernc.com";
 
 interface SitemapEntry {
   path: string;

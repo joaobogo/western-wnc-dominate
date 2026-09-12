@@ -789,6 +789,30 @@ img {
     }
   }
 
+  /* Cookie strip on phones (mobile re-audit H-1): anchored above the 72px
+     sticky call bar so CALL is never covered. When the bar hides itself (a form
+     is on screen) the strip drops to the bottom edge. Desktop keeps the card. */
+  @media (max-width: 767px) {
+    .consent-strip {
+      bottom: calc(72px + 8px + env(safe-area-inset-bottom, 0px));
+      max-height: 96px;
+    }
+    body[data-sticky-bar="hidden"] .consent-strip {
+      bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  /* Inline tel: links inside copy get a 44px tap target without changing the
+     line box (mobile re-audit L-2). Buttons and anything with its own height
+     are excluded. */
+  p a[href^="tel:"]:not(.btn):not([class*="min-h-"]),
+  li a[href^="tel:"]:not(.btn):not([class*="min-h-"]),
+  address a[href^="tel:"]:not(.btn):not([class*="min-h-"]) {
+    display: inline-block;
+    padding-block: 13px;
+    margin-block: -13px;
+  }
+
   /* Secondary — outlined. Supporting action next to a primary. */
   .btn-secondary {
     @apply bg-transparent text-[hsl(var(--primary))];

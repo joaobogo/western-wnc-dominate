@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import GalleryImage from "@/components/media/GalleryImage";
 import { motion } from "framer-motion";
 import {
   ArrowRight, ArrowLeft, Phone, MapPin, Calendar, Ruler, Mountain,
@@ -403,7 +404,7 @@ const ProjectDetailPage = () => {
                   transition={{ delay: i * 0.08 }}
                   className="aspect-[4/3] rounded-sm overflow-hidden group"
                 >
-                  <img width={1600} height={1067} decoding="async"
+                  <GalleryImage width={1600} height={1067} decoding="async" sizes="(max-width: 640px) 100vw, 50vw"
                     src={img}
                     alt={`${project.title} — view ${i + 1}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -434,7 +435,7 @@ const ProjectDetailPage = () => {
                   >
                     <Link to={`/projects/${rel.slug}`} className="group block">
                       <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
-                        <img width={1600} height={1067} decoding="async"
+                        <GalleryImage width={1600} height={1067} decoding="async" sizes="(max-width: 640px) 100vw, 33vw"
                           src={rel.heroImage}
                           alt={rel.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

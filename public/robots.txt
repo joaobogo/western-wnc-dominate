@@ -1,5 +1,5 @@
 # Highlander Building Services — robots.txt
-# Canonical host: https://western-wnc-dominate.lovable.app
+# Canonical host: https://highlandernc.com
 # Policy: allow crawling of every public, indexable page and every rendering
 # resource (CSS, JS, images, fonts). Only form-only funnels and internal
 # utilities are disallowed. noindex (via meta) — not robots.txt — is used to
@@ -100,4 +100,4 @@ User-agent: CCBot
 Allow: /
 
 # ── Canonical sitemap ───────────────────────────────────────────────────
-Sitemap: https://western-wnc-dominate.lovable.app/sitemap.xml
+Sitemap: https://highlandernc.com/sitemap.xml

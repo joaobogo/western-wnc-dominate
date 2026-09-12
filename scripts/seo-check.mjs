@@ -39,10 +39,10 @@ import {
 const ROOT = process.cwd();
 const DIST = path.resolve(ROOT, "dist");
 const BASE = "https://highlandernc.com";
-// The sitemap is generated for whichever host the site is served from: the
-// canonical custom domain, or the Lovable project host before the domain is
-// pointed at the new build. Both are valid — anything else is not.
-const SITEMAP_HOSTS = [BASE, "https://western-wnc-dominate.lovable.app"];
+// Only the canonical host. The Lovable preview host used to be tolerated here
+// and that let a sitemap on the wrong origin ship on 2026-09-11 (mobile
+// re-audit H-2): Search Console silently ignores it.
+const SITEMAP_HOSTS = [BASE];
 const rel = (p) => path.relative(ROOT, p).split(path.sep).join("/");
 
 // ----------------------------------------------------------------- report
@@ -239,6 +239,16 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
         }
       }
     });
+  }
+  // index.html cannot import business.ts, so its <meta> fallbacks are literals.
+  // They must match the source of truth exactly — on 2026-09-11 a hand edit
+  // shipped "4.7★" while business.ts said 4.8 (mobile re-audit).
+  {
+    const html = readFileSync(path.join(ROOT, "index.html"), "utf8");
+    const ratings = [...html.matchAll(/(\d\.\d)★/g)].map((m) => m[1]);
+    const counts = [...html.matchAll(/(\d{2,4})\s+Google reviews/gi)].map((m) => m[1]);
+    for (const r of new Set(ratings)) if (rating && r !== rating) details.push(`index.html — rating "${r}★" does not match business.ts (${rating})`);
+    for (const c of new Set(counts)) if (count && c !== count) details.push(`index.html — review count "${c}" does not match business.ts (${count})`);
   }
   rule(5, `No rating / review-count / project-count literals outside src/data/business.ts (${files.length} files scanned)`, details);
 }

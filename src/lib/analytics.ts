@@ -160,9 +160,11 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
   }
 
   // 2. Google Analytics (GA4)
+  // client_error is diagnostics, not a conversion — reporting it under the
+  // "conversion" category inflated conversion counts (mobile re-audit H-3).
   if (typeof window !== "undefined" && (window as any).gtag) {
     (window as any).gtag("event", type, {
-      event_category: "conversion",
+      event_category: type === "client_error" ? "error" : "conversion",
       event_label: label || elementId || type,
       value: value,
       page_path: path,
@@ -170,8 +172,8 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
     });
   }
 
-  // 3. Meta Pixel
-  if (typeof window !== "undefined" && (window as any).fbq) {
+  // 3. Meta Pixel — never for client errors; those are not marketing events.
+  if (type !== "client_error" && typeof window !== "undefined" && (window as any).fbq) {
     const fbEvent = type === "form_submit" ? "Lead" : "Custom";
     (window as any).fbq("track", fbEvent, {
       content_name: label || type,

@@ -14,6 +14,12 @@
  * Not covered here, by design: GA4 (G-TYYM63MNYR) and Google Ads
  * (AW-18087272930) are loaded BY the GTM container at runtime, not from our
  * source, so they cannot be asserted statically. Verify those in GTM.
+ *
+ * Meta note (confirmed live, 12 Sep 2026): pixel 1300176212241296 is configured
+ * for the Conversions API Gateway (OpenBridge). PageView and later events leave
+ * the browser as POST …ecs.us-east-2.on.aws/events, NOT as the classic
+ * facebook.com/tr beacon. "No facebook.com/tr request" is therefore NOT a
+ * regression. Verify delivery in Events Manager → Test Events.
  */
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";

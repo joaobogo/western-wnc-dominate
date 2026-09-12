@@ -38,10 +38,10 @@ export default {
         'body': ['clamp(1rem, 0.6vw + 0.85rem, 1.25rem)', { lineHeight: '1.7', letterSpacing: '0.015em' }],
         'body-sm': ['clamp(0.9375rem, 0.4vw + 0.85rem, 1.0625rem)', { lineHeight: '1.65', letterSpacing: '0.02em' }],
         'body-xs': ['clamp(0.8125rem, 0.3vw + 0.75rem, 0.9375rem)', { lineHeight: '1.6', letterSpacing: '0.02em' }],
-        'caption': ['clamp(0.6875rem, 0.25vw + 0.625rem, 0.8125rem)', { lineHeight: '1.5', letterSpacing: '0.04em' }],
+        'caption': ['clamp(0.75rem, 0.25vw + 0.625rem, 0.8125rem)', { lineHeight: '1.5', letterSpacing: '0.04em' }],
         /* Utility scale */
         'label': ['clamp(0.8125rem, 0.4vw + 0.7rem, 1rem)', { lineHeight: '1.4', letterSpacing: '0.06em', fontWeight: '700' }],
-        'eyebrow-size': ['clamp(0.6875rem, 0.3vw + 0.6rem, 0.875rem)', { lineHeight: '1.3', letterSpacing: '0.25em', fontWeight: '800' }],
+        'eyebrow-size': ['clamp(0.75rem, 0.3vw + 0.6rem, 0.875rem)', { lineHeight: '1.3', letterSpacing: '0.25em', fontWeight: '800' }],
         'stat': ['clamp(2.5rem, 6vw, 5.5rem)', { lineHeight: '1', letterSpacing: '-0.035em', fontWeight: '700' }],
         'stat-sm': ['clamp(2rem, 4.5vw, 3.5rem)', { lineHeight: '1', letterSpacing: '-0.025em', fontWeight: '700' }],
       },

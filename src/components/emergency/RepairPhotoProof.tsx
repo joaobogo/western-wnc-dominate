@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GalleryImage from "@/components/media/GalleryImage";
 import { ArrowRight } from "lucide-react";
 import asphalt003 from "@/assets/gallery/asphalt-003.webp";
 import asphalt005 from "@/assets/gallery/asphalt-005.webp";
@@ -50,7 +51,8 @@ const RepairPhotoProof = ({ variant }: Props) => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {s.items.map((it) => (
             <figure key={it.title} className="bg-card border border-border overflow-hidden">
-              <img
+              <GalleryImage
+                sizes="(max-width: 1024px) 50vw, 25vw"
                 src={it.image}
                 alt={it.alt}
                 loading="lazy"

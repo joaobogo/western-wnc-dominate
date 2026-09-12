@@ -26,13 +26,23 @@ export interface PagePrimaryAction {
 
 const PHONE_HREF = PHONE_TEL;
 
-const callFirst = (pageKey: string, label = "Call Direct"): PagePrimaryAction => ({
+/** Where the ESTIMATE action lands. A roofing visitor tapping ESTIMATE used to
+ *  go to the /consultation chooser and then 2.7 screens of preamble before the
+ *  first question (mobile re-audit M-2). Send them to the matching intake. */
+const ROOFING_INTAKE = "/roofing-intake";
+const CONSTRUCTION_INTAKE = "/construction-intake";
+
+const callFirst = (
+  pageKey: string,
+  label = "Call Direct",
+  estimateHref = ROOFING_INTAKE,
+): PagePrimaryAction => ({
   pageKey,
   intent: "call",
   primaryLabel: label,
   primaryHref: PHONE_HREF,
   secondaryLabel: "Get My Written Estimate",
-  secondaryHref: "/consultation",
+  secondaryHref: estimateHref,
 });
 
 const formFirst = (
@@ -89,13 +99,16 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   if (/^\/[a-z0-9-]+-(roofing|roof-repair|roof-replacement|metal-roofing)-[a-z0-9-]+$/.test(path)) {
     return callFirst("town_service");
   }
-  if (path.startsWith("/construction")) return callFirst("construction");
+  if (path.startsWith("/construction")) return callFirst("construction", "Call Direct", CONSTRUCTION_INTAKE);
   if (path.startsWith("/roofing")) return callFirst("roofing");
   if (path.startsWith("/blog")) return formFirst("blog", "Get My Questions Answered");
   if (path.startsWith("/projects") || path.startsWith("/recent-projects") || path.startsWith("/gallery")) {
     return formFirst("gallery", "Get My Project Scoped");
   }
-  if (path === "/") return formFirst("home", "Get My Written Estimate");
+  // Home: the hero and header already lead with the call on phones; the bar and
+  // the closing CTAs now agree (mobile re-audit M-1 — home was the one page
+  // where the bar showed ESTIMATE filled and CALL outlined).
+  if (path === "/") return callFirst("home");
 
   return formFirst("general");
 }

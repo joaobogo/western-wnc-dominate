@@ -58,15 +58,27 @@ const StickyMobileCTA = () => {
         "[data-hero], [data-hero-anchored], #hero",
       );
       if (hero) {
-        // The hero is tall, so its CALL button scrolls away long before the
-        // hero itself does — leaving 240-350px with no way to call on a phone
-        // (mobile audit F3). Reveal as soon as that button is gone.
         const heroCall = hero.querySelector<HTMLElement>('a[href^="tel:"]');
-        const anchor = heroCall ?? hero;
-        setScrolled(anchor.getBoundingClientRect().bottom <= 0);
+        if (heroCall) {
+          // Show the bar whenever the hero's CALL button is not on screen —
+          // scrolled above the top (audit F3) OR still below the fold, as on a
+          // 375x553 iPhone SE Safari viewport where 47 of 89 routes put that
+          // button at y 554–667 (re-audit M-3). Either way, a call action must
+          // be reachable without hunting.
+          const r = heroCall.getBoundingClientRect();
+          const onScreen = r.bottom > 0 && r.top < window.innerHeight;
+          setScrolled(!onScreen);
+          return;
+        }
+        // A hero with no call button (about, reviews, projects…): the header
+        // phone was the only call CTA on the first screen (re-audit L-5). Show
+        // the bar from load; the data-hide-sticky observer still steps it aside
+        // over any form.
+        setScrolled(true);
         return;
       }
-      setScrolled(window.scrollY > Math.max(window.innerHeight * 0.9, 640));
+      // No marked hero at all: same reasoning — show from load.
+      setScrolled(true);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

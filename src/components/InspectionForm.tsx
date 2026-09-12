@@ -273,7 +273,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
       <GoldLine width="100%" centered delay={0} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
-      <div className={isPage ? "pt-4 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
+      <div className={isPage ? "pt-3 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
         <div className="container-tight">
           {isPage && (
             <>
@@ -351,10 +351,10 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
               transition={{ delay: 0.12, duration: 0.4, ease: HIGHLAND_EASE }}
               className={`lg:col-span-3 ${isPage ? "order-1 lg:order-2" : ""}`}
             >
-              <div className="bg-dark-section-foreground/[0.03] border border-dark-section-border rounded-none p-4 md:p-8 lg:p-10">
+              <div className="bg-dark-section-foreground/[0.03] border border-dark-section-border rounded-none p-3 md:p-8 lg:p-10" data-hide-sticky>
                 {/* Slim progress indicator */}
-                <div className="mb-4 md:mb-6">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="mb-3 md:mb-6">
+                  <div className="flex items-center justify-between mb-1.5">
                     <p className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] leading-tight">
                       Step {step} of 2 — {step === 1 ? "What you need" : "How we reach you"}
                     </p>
@@ -373,7 +373,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                 <FormSavedNote show={autosave.restored} tone="dark" className="mb-5" />
 
                 {step === 1 && (
-                <form noValidate onSubmit={(e) => { e.preventDefault(); goToStepTwo(); }} className="space-y-4 md:space-y-6">
+                <form noValidate onSubmit={(e) => { e.preventDefault(); goToStepTwo(); }} className="space-y-3 md:space-y-6">
                   <div>
                     <div className="flex items-baseline justify-between gap-4 flex-wrap">
                       <span className={labelClasses}>What Do You Need Help With?</span>
@@ -441,10 +441,10 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                     <InlineFieldError id="insp-town-error" className="text-[hsl(var(--gold-ink))]">{townError ?? undefined}</InlineFieldError>
                   </div>
 
-                  <div className="pt-1 md:pt-2 flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
+                  <div className="pt-0.5 md:pt-2 flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
                     <button
                       type="submit"
-                      className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 md:px-10 rounded-none inline-flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide"
+                      className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 md:py-4 md:px-10 min-h-[48px] rounded-none inline-flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide"
                     >
                       <span className="relative z-10">Continue — Last Step</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />

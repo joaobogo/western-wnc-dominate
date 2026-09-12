@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import GalleryImage from "@/components/media/GalleryImage";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -73,7 +74,7 @@ const InstagramGrid = () => {
               variants={itemVariants}
               className="group relative aspect-crew rounded-none overflow-hidden cursor-pointer"
             >
-              <img width={1000} height={1000} decoding="async"
+              <GalleryImage width={1000} height={1000} decoding="async" sizes="(max-width: 640px) 50vw, 33vw"
                 src={item.image}
                 alt={item.label}
                 className="w-full h-full object-cover img-zoom-dramatic"

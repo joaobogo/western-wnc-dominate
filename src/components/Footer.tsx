@@ -1,9 +1,9 @@
 import { BUSINESS, FRANKLIN, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import LocationCards from "@/components/LocationCards";
 import VerifiableTrustStrip from "@/components/trust/VerifiableTrustStrip";
-import React from "react";
+import React, { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck, ChevronDown } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
 import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import { motion } from "framer-motion";
@@ -93,6 +93,51 @@ const FooterLink = React.forwardRef<
   </Link>
 ));
 FooterLink.displayName = "FooterLink";
+
+/**
+ * A footer link group. Expanded on desktop; on phones it collapses behind a
+ * 44px header after mount (mobile re-audit M-4). Links are hidden, never
+ * removed, so the prerendered HTML and the crawlable link graph are unchanged.
+ */
+const FooterGroup = ({
+  title,
+  label,
+  children,
+  navClassName = "flex-col gap-1",
+  className = "",
+}: {
+  title: string;
+  label: string;
+  children: React.ReactNode;
+  navClassName?: string;
+  className?: string;
+}) => {
+  const [open, setOpen] = useState(true);
+  const id = useId();
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 767px)").matches) setOpen(false);
+  }, []);
+  return (
+    <div className={className}>
+      <h4 className="eyebrow text-primary mb-2 md:mb-4">
+        <button
+          type="button"
+          className="md:hidden flex w-full min-h-[44px] items-center justify-between text-left"
+          aria-expanded={open}
+          aria-controls={id}
+          onClick={() => setOpen((o) => !o)}
+        >
+          {title}
+          <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+        </button>
+        <span className="hidden md:inline">{title}</span>
+      </h4>
+      <nav id={id} aria-label={label} className={`${open ? "flex" : "hidden md:flex"} ${navClassName} mb-4 md:mb-0`}>
+        {children}
+      </nav>
+    </div>
+  );
+};
 
 const Footer = () => {
   // pb on phones clears the 72px sticky call bar + the iOS home indicator, so
@@ -220,44 +265,35 @@ const Footer = () => {
 
           {/* Column 2 — Services */}
           <div>
-            <h4 className="eyebrow text-primary mb-4">Roofing</h4>
-            <nav aria-label="Roofing links" className="flex flex-col gap-1">
+            <FooterGroup title="Roofing" label="Roofing links">
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
-            </nav>
-
-            <h4 className="eyebrow text-primary mt-8 mb-4">Construction</h4>
-            <nav aria-label="Construction links" className="flex flex-col gap-1">
+            </FooterGroup>
+            <FooterGroup title="Construction" label="Construction links" className="md:mt-8">
               {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
-            </nav>
+            </FooterGroup>
           </div>
 
           {/* Column 3 — Company & Resources */}
           <div>
-            <h4 className="eyebrow text-primary mb-4">Company</h4>
-            <nav aria-label="Company links" className="flex flex-col gap-1">
+            <FooterGroup title="Company" label="Company links">
               {companyLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
-            </nav>
-
-            <h4 className="eyebrow text-primary mt-8 mb-4">Resources</h4>
-            <nav aria-label="Resources links" className="flex flex-col gap-1">
+            </FooterGroup>
+            <FooterGroup title="Resources" label="Resources links" className="md:mt-8">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
               <LeaveReviewLink
                 location={FRANKLIN}
                 label="Leave a Google review"
                 className="text-body-sm text-foreground/90 hover:text-primary no-underline hover:underline py-2.5 md:py-1.5"
               />
-            </nav>
+            </FooterGroup>
           </div>
 
           {/* Column 4 — Primary markets */}
           <div>
-            <h4 className="eyebrow text-primary mb-4">Primary Markets</h4>
-            <nav aria-label="Primary markets" className="flex flex-col gap-1">
+            <FooterGroup title="Primary Markets" label="Primary markets">
               {tier1Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
-            </nav>
-
-            <h4 className="eyebrow text-primary mt-8 mb-3">Also Serving</h4>
-            <nav aria-label="Additional service areas" className="flex flex-wrap gap-x-3 gap-y-1">
+            </FooterGroup>
+            <FooterGroup title="Also Serving" label="Additional service areas" className="md:mt-8" navClassName="flex-wrap gap-x-3 gap-y-1">
               {tier2Areas.map((l) => (
                 <Link
                   key={l.href}
@@ -267,7 +303,7 @@ const Footer = () => {
                   {l.label}
                 </Link>
               ))}
-            </nav>
+            </FooterGroup>
             <Link
               to="/service-areas"
               className="mt-5 min-h-[44px] text-body-xs font-body font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5"

@@ -17,7 +17,7 @@ import { runLegacyUrlCheck, loadRedirectRules } from "./lib/redirect-rules.mjs";
 const BASE = (process.argv.find(a => a.startsWith("--base=")) || "--base=https://highlandernc.com").split("=")[1];
 const CANONICAL_HOST = new URL(BASE).host;
 // The published Lovable project host is an accepted alternative to the custom domain.
-const ALLOWED_HOSTS = new Set([CANONICAL_HOST, "western-wnc-dominate.lovable.app"]);
+const ALLOWED_HOSTS = new Set([CANONICAL_HOST]);
 
 const failures = [];
 const warnings = [];
