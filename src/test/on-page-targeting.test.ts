@@ -9,19 +9,21 @@ const CORE = ["franklin-nc", "highlands-nc", "cashiers-nc", "sylva-nc"];
 const town = (slug: string) => towns.find((t) => t.slug === slug)!;
 
 describe("homepage head (P3.6)", () => {
-  const description = `Local roofers in Franklin, NC serving Highlands, Cashiers, Sylva & Western NC. Roof replacement, repair, metal roofing, storm damage. ${REVIEW_LINE}.`;
+  const title = "Roofing & Construction in Franklin, NC | Highlander";
+  const description = `Roofing in Franklin, Highlands, Cashiers, Sylva and Western NC, with construction for additions, renovations and outdoor living. ${REVIEW_LINE}.`;
 
   it("description survives the 160-char guard with the rating line intact", () => {
     expect(description.length).toBeLessThanOrEqual(160);
     expect(normalizeDescription(description)).toBe(description);
     expect(normalizeDescription(description)).toContain(REVIEW_LINE);
-    expect(description).toContain("roofers in Franklin, NC");
+    expect(description.startsWith("Roofing in Franklin")).toBe(true);
+    expect(description).toContain("construction");
   });
 
   it("title fits the 60-char guard and keeps the primary keyword first", () => {
-    const rendered = normalizeTitle("Roofers in Franklin, NC | Highlander Building Services");
+    const rendered = normalizeTitle(title);
     expect(rendered.length).toBeLessThanOrEqual(60);
-    expect(rendered.startsWith("Roofers in Franklin, NC")).toBe(true);
+    expect(rendered.startsWith("Roofing & Construction in Franklin, NC")).toBe(true);
   });
 
   it("both showroom NAP lines come from business.ts", () => {

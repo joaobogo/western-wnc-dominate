@@ -53,8 +53,8 @@ const ServiceAreas = () => {
   return (
     <>
       <SEOHead
-        title="Service Areas | Roofing & Construction Across Western NC"
-        description="Highlander Building Services serves Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, rapid response."
+        title="Roofing & Construction Service Areas in Western NC"
+        description="Roofing and construction across Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, rapid response."
         path="/service-areas"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }])}
       />

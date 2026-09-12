@@ -72,8 +72,8 @@ const RecentProjects = () => {
   return (
     <>
       <SEOHead
-        title="Recent Projects | Highlander Building Services"
-        description="See recent Highlander Building Services projects and service updates across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
+        title="Roofing & Construction Projects in Western NC | Highlander"
+        description="See Highlander roofing and construction projects across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/recent-projects"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },

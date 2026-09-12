@@ -60,8 +60,8 @@ const ReviewsPage = () => {
   return (
     <>
       <SEOHead
-        title="Reviews & Reputation | What Clients Say About Highlander"
-        description={`Read verified reviews from Highlander Building Services clients across Western North Carolina. ${REVIEW_LINE_AS_OF}.`}
+        title="Roofing & Construction Reviews in Western NC | Highlander"
+        description={`Read verified reviews from Highlander roofing and construction clients across Western North Carolina. ${REVIEW_LINE_AS_OF}.`}
         path="/reviews"
         jsonLd={buildPageSchema({ type: "reviews" })}
       />

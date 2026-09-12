@@ -119,7 +119,7 @@ export const showrooms: Showroom[] = [
     cardLabel: "Franklin Showroom",
     h1: "Roofing & Construction Showroom in Franklin, NC",
     metaTitle: "Roofing & Construction Showroom in Franklin, NC | Highlander",
-    metaDescription: `Visit our Franklin showroom at ${napLine(FRANKLIN)}. Metal, shingle, and composite roofing samples on display. Call ${formatPhoneDisplay(FRANKLIN.phoneE164)}.`,
+    metaDescription: `Visit our Franklin roofing and construction showroom at ${napLine(FRANKLIN)}. Compare materials and discuss your project. Call ${formatPhoneDisplay(FRANKLIN.phoneE164)}.`,
     answer: `The Highlander Building Services showroom in Franklin is at ${napLine(FRANKLIN)}, open Monday through Friday, 8:00 AM to 5:00 PM. It is our main office for Macon County and the Highlands–Cashiers plateau, where you can see metal panels, dimensional shingles, Brava composite shake, and VELUX skylights in person and meet the estimator who will handle your project.`,
     intro: [
       "Franklin is where Highlander started and where our main office still runs. It is a working showroom attached to a working construction company — the same building where scopes get written, crews get dispatched, and material orders get staged before they head up the mountain.",
@@ -167,7 +167,7 @@ export const showrooms: Showroom[] = [
     cardLabel: "Sylva Showroom",
     h1: "Roofing & Construction Showroom in Sylva, NC",
     metaTitle: "Roofing & Construction Showroom in Sylva, NC | Highlander",
-    metaDescription: `Visit our Sylva showroom at ${napLine(SYLVA)}. See metal, shingle, and composite roofing in person. Call ${formatPhoneDisplay(SYLVA.phoneE164)}.`,
+    metaDescription: `Visit our Sylva roofing and construction showroom at ${napLine(SYLVA)}. Compare materials and discuss your project. Call ${formatPhoneDisplay(SYLVA.phoneE164)}.`,
     answer: `The Highlander Building Services showroom in Sylva is at ${napLine(SYLVA)}, open Monday through Friday, 8:00 AM to 5:00 PM. It is our Jackson County base for Sylva, Dillsboro, Cullowhee, Bryson City, Cherokee, and Waynesville, with metal panels, shingle boards, Brava composite samples, and VELUX skylights on display.`,
     intro: [
       "The Sylva showroom put a full materials display inside Jackson County, so homeowners in Sylva, Dillsboro, Cullowhee, and Bryson City no longer have to drive over to Franklin to see what they are buying.",

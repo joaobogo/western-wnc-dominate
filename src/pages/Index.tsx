@@ -36,11 +36,11 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="Roofers in Franklin, NC | Highlander Building Services"
+        title="Roofing & Construction in Franklin, NC | Highlander"
         // P3.6 — the rating comes from REVIEW_LINE (single source), never typed.
         // "Western NC" and "&" keep the whole line under the 160-char guard so
         // normalizeDescription never trims the review sentence off the end.
-        description={`Local roofers in Franklin, NC serving Highlands, Cashiers, Sylva & Western NC. Roof replacement, repair, metal roofing, storm damage. ${REVIEW_LINE}.`}
+        description={`Roofing in Franklin, Highlands, Cashiers, Sylva and Western NC, with construction for additions, renovations and outdoor living. ${REVIEW_LINE}.`}
         path="/"
         keywords="Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
         // No aggregateRating here — rating markup is only emitted on /reviews,

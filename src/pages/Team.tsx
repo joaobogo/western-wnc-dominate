@@ -14,8 +14,8 @@ const Team = () => {
   return (
     <>
       <SEOHead
-        title="Meet the Team | Highlander Building Services"
-        description="Meet the Highlander team serving Franklin, Highlands, Cashiers, Sylva, and Western NC with consultations, project management, inspections, and repairs."
+        title="Roofing & Construction Team in Western NC | Highlander"
+        description="Meet the Highlander roofing and construction team serving Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/team"
         jsonLd={[
           organizationSchema(),
