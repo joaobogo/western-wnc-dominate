@@ -29,7 +29,7 @@ const Financing = () => {
     <>
       <SEOHead
         title="Roof Financing Options in Western NC | Highlander Building Services"
-        description="Affordable roof financing for Western NC homeowners. Low monthly payments, fast approval, no prepayment penalties. Don't delay protecting your home."
+        description="Explore roofing and construction financing options, request a written estimate, and ask our team about available plans for your project."
         path="/financing"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },

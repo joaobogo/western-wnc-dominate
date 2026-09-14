@@ -105,8 +105,7 @@ const LayoutsPlanning = () => {
           {/* Blueprint background image — mountain-home construction drawings */}
           <img width={1600} height={1067} decoding="async" loading="lazy"
             src={designHero}
-            alt=""
-            aria-hidden="true"
+            alt="Mountain home design plans and layout drawings for preconstruction planning"
             className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none select-none"
           />
           {/* Readability gradient — darker at left where text sits */}
