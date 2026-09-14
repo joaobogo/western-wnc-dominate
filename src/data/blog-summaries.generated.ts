@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "roof-inspection-after-storm-western-nc",
+    "slug": "roof-inspection-after-storm-western-nc",
+    "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
+    "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready records.",
+    "category": "Inspections",
+    "date": "2026-09-14",
+    "readTime": "8 min"
+  },
+  {
     "id": "gutter-size-western-nc-mountain-homes",
     "slug": "gutter-size-western-nc-mountain-homes",
     "title": "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm Damage",
     "date": "2026-07-26",
     "readTime": "7 min"
-  },
-  {
-    "id": "home-renovation-exterior-project-cullowhee-nc",
-    "slug": "home-renovation-exterior-project-cullowhee-nc",
-    "title": "Planning a Home Renovation or Exterior Project in Cullowhee",
-    "excerpt": "What Cullowhee, NC homeowners should know before starting a renovation or exterior project — planning, budget, and choosing the right team.",
-    "category": "Construction",
-    "date": "2026-07-26",
-    "readTime": "8 min"
   }
 ];

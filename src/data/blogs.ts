@@ -8,6 +8,7 @@ import stormSeasonHero from "@/assets/blog/wnc-storm-season-roof-hero.jpg";
 import stormSeasonHail from "@/assets/blog/wnc-storm-season-hail-granules.jpg";
 import stormSeasonFlashing from "@/assets/blog/wnc-storm-season-chimney-flashing.jpg";
 import gutterSizingHero from "@/assets/blog/gutter-size-western-nc-mountain-homes.jpg";
+import roofInspectionAfterStormHero from "@/assets/blog/roof-inspection-after-storm-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -63,6 +64,128 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "roof-inspection-after-storm-western-nc",
+    title: "48 to 72 Hour Roof Inspection for Western NC Homeowners",
+    excerpt:
+      "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready records.",
+    category: "Inspections",
+    date: "2026-09-14",
+    image: roofInspectionAfterStormHero,
+    imageAlt:
+      "Roof inspector documenting dimensional shingle storm damage at a Western North Carolina mountain home",
+    readTime: "8 min",
+    metaTitle: "Roof Inspection After a Storm in Western NC | Highlander",
+    metaDescription:
+      "Inspect and document roof damage after a Western NC storm with ground checks, attic signs, insurance-ready photos, safety guidance, and next steps.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Storm Damage Repair", path: "/roofing/storm-damage" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      { question: "How do I get my roof inspected after a storm?", answer: "Start with a ground-level walkthrough and photos, then call a licensed local contractor to inspect the roof surface directly. Stay off wet, steep, mossy, icy, or visibly damaged roofing." },
+      { question: "Should I get a roof inspection after a hurricane or severe storm?", answer: "Yes. Wind, hail, and driven rain can lift flashing, loosen shingles, or introduce attic moisture even when the roof looks normal from the street." },
+      { question: "How do you document storm damage to a roof?", answer: "Use timestamped wide photos, close-ups with scale, video, a written contractor report, receipts for temporary protection, and an official record of the storm date." },
+      { question: "When should you schedule a roof inspection after a storm?", answer: "Begin a safe ground check once immediate hazards have passed, notify your insurer promptly when you see damage, and arrange a licensed contractor inspection as soon as practical." },
+      { question: "Does Highlander offer storm damage inspections?", answer: "Yes. Highlander Building Services, Inc. inspects storm-damaged roofs across Western North Carolina and provides documented findings and written repair recommendations." },
+    ],
+    content: `Inspect from the ground first, photograph everything you see, and stay off a roof that looks wet, steep, or damaged. If shingles are missing, gutters are dented, or you spot granules pooled in your downspouts, call a licensed contractor and your insurer within the next day or two. Speed matters here almost as much as accuracy, since insurers weigh how quickly damage gets documented.
+
+## Step-by-Step Ground-Level Inspection Checklist
+
+You don’t need to touch a ladder to catch most storm damage. A ground-level inspection with binoculars or a zoom lens reveals the majority of what an adjuster will ask about later, and it keeps you off a roof that might not hold your weight.
+
+Work through the property in this order:
+
+1. Walk the full perimeter of the house, then check from upstairs windows at different angles.
+2. Scan roof planes for missing, lifted, or curled shingles, plus displaced ridge caps or visible holes.
+3. Look at valleys for debris buildup, since trapped leaves and branches trap water against the deck.
+4. Check gutters and downspouts for granules, dents, or sagging sections pulled loose from the fascia.
+5. Inspect soffits, fascia boards, and siding near the roofline for matching impact damage.
+6. Photograph each plane wide, then move in close on individual damage points, placing a coin or tape measure in frame for scale.
+
+Label each photo by location (front slope, north valley, east gutter) so nothing gets mixed up later.
+
+## What Different Storms Do to a Roof
+
+Wind, hail, rain, and falling debris each leave a distinct signature on a roof, and knowing the difference helps you explain what happened when the adjuster asks.
+
+- **Wind** tends to lift tabs and strip shingles from ridges and edges first, since that’s where uplift pressure is strongest.
+- **Hail** leaves dings and pockmarks clustered in patches, with granule loss concentrated around each impact point rather than spread evenly.
+- **Heavy rain and ponding** show up as blocked valleys and, later, soft spots in the decking where underlayment stayed wet too long.
+- **Falling branches and debris** cause punctures, torn flashing, and localized decking damage right where the object landed.
+
+Matching the pattern to the storm type is not just academic. An [inspection covering roofing materials, flashings, and drainage](https://www.nachi.org/documents2012/How%5Fto%5FPerform%5FRoof%5FInspections%5FTHIRD%5FEDITION-revd-Dec-2013.pdf) gives an adjuster a clear line between fresh storm damage and ordinary wear, which is exactly the distinction that decides a claim.
+
+## How to Document Roof Damage for Your Insurance Claim
+
+Photos win claims. Video backs them up. Here is the workflow that holds up best with adjusters:
+
+- Shoot a wide photo of each roof plane before you shoot any close-ups, so the context is clear.
+- Take close-ups of every damage point with a ruler or coin in frame for scale.
+- Record a narrated video walkthrough of the exterior and, if safe, the attic.
+- Note the exact storm date and time, and check it against [NOAA/NHC storm records](https://www.nhc.noaa.gov/aboutsshws.php) to confirm the event.
+- Save any pre-storm photos of your roof. Contractor reports that separate old wear from fresh damage using before-and-after images tend to [carry more weight in adjuster negotiations](https://kpostcompany.com/conducting-a-roof-inspection-after-a-major-storm/).
+- Keep every receipt for emergency tarping or temporary repairs; insurers often reimburse those costs separately.
+
+**Pro Tip:** *Check your car, mailbox, and any outdoor equipment for dings or hail marks. [Ground-level impact evidence](https://cleanroofing.com/storm-damage-roof-inspection/) like this often corroborates roof damage even when the roof itself looks fine from the driveway.*
+
+## When Not to Climb on Your Roof
+
+Some roofs simply are not safe to walk, storm or no storm. A wet, mossy, icy, or steeply pitched roof turns a five-minute look into a trip to the emergency room, and tile and wood shake surfaces can crack under normal foot traffic even without storm damage weakening them further.
+
+- Skip the roof entirely if it is wet, icy, mossy, tiled, or visibly sagging.
+- Watch for contractors knocking on doors right after a storm. Verify license, insurance, and references before signing anything.
+- Photograph any emergency tarping and save the receipt, as insurers often reimburse reasonable temporary repairs.
+- Never attempt structural repairs yourself, even if it looks like “just a board.”
+- If you see downed power lines or a partial collapse, back away and call emergency services first. Everything else waits.
+
+## Checking the Attic for Hidden Leaks
+
+The roof surface tells half the story. The attic tells the rest, often before a ceiling stain ever shows up downstairs.
+
+1. Bring a flashlight into the attic and look for wet insulation, dark streaks on framing, or daylight coming through the decking.
+2. Check upper-floor ceilings for new stains, peeling paint, or drywall that sags slightly when touched.
+3. Pay attention to where staining appears, not just that it appears. Water tends to travel along framing and deck seams before showing up at a ceiling, so the stain’s location can point a contractor back to the actual entry point on the roof.
+4. Call a structural engineer or licensed contractor immediately if you see sagging framing or structural members that are wet to the touch. That is beyond a homeowner fix.
+
+## Your Timeline for Inspection, Documentation, and Insurance Claims
+
+Timing shapes how smoothly a claim moves. A roof checked within 48 to 72 hours after the storm, with photos and video already saved, gives you the strongest starting position. Arrange a licensed contractor inspection as soon as practical so the report can clearly connect the observed damage with the specific storm date.
+
+- Contact your insurer as soon as you have documented visible damage. Most companies want notice promptly.
+- Get a written contractor estimate before agreeing to any repairs, and hand a copy to your adjuster.
+- Organize every photo, video, and receipt carefully so nothing gets lost between the first call and the final settlement.
+- Expect the adjuster visit to move faster when you hand over an itemized report with clear photos rather than a stack of loose images. Contractors who classify findings by urgency, urgent leaks, moderate shingle loss, and minor granule wear, tend to move claims along faster because the adjuster is not guessing at priority.
+
+## Highlander’s Approach to Storm Damage Inspections
+
+Highlander Building Services, Inc. works on roofs across Western North Carolina’s steep terrain and hard mountain weather, from Bryson City to Highlands. A proper contractor report should include dated photos, a written scope of the damage, a recommended remedy, and a cost range, not a vague verbal estimate scribbled on a business card.
+
+Before you hire anyone, ask to see a [sample inspection report](/blog/what-a-roof-inspection-covers) and confirm license and insurance in writing. That single request weeds out most of the storm-chasing outfits that show up after a bad weather week and disappear once the check clears.
+
+## Getting an Inspection, Tarping, and Repairs Handled
+
+If you have already found lifted shingles, a soft spot in the attic decking, or granules piling up in your gutters, the next call matters more than the next Google search. Some contractors offer storm-response inspections that produce a documented report built for insurance, not just a verbal walk-through.
+
+When you call, ask what a normal roofing contractor visit should always include: proof of license and insurance, a sample report format, an estimated repair timeline, and a written price before any work starts. That is the standard Highlander works to on every [storm damage response call](/roofing/storm-damage) across the region, and it is why homeowners keep the report even after repairs are done, since it becomes the record an adjuster references if questions come up later.
+
+Have your storm date, any pre-storm photos, and your insurance contact ready when Highlander arrives. If your roof needs more than a repair, Highlander also handles full [roof replacement](/roofing/roof-replacement) for homes where storm damage has finally caught up with an aging roof. Reach out to schedule an inspection and get a written scope before anyone touches a shingle.
+
+## Where to Verify Storm and Inspection Guidance
+
+For confirming storm events, NOAA’s National Hurricane Center maintains official tracking data insurers recognize. For inspection standards and homeowner checklists, the [Owens Corning storm damage guide](https://www.owenscorning.com/en-us/roofing/blog/roof-storm-damage-checklist) and this [step-by-step homeowner checklist](https://coastalroofingfla.com/storm-damage-roof-inspection-checklist-for-homeowners) offer solid supplemental reference points. Check your county’s building department for contractor licensing verification before hiring anyone.
+
+## Sources
+
+- [NHC: About Saffir-Simpson Hurricane Wind Scale](https://www.nhc.noaa.gov/aboutsshws.php)
+- [How to Perform Roof Inspections (InterNACHI document)](https://www.nachi.org/documents2012/How%5Fto%5FPerform%5FRoof%5FInspections%5FTHIRD%5FEDITION-revd-Dec-2013.pdf)
+- [Roof Storm Damage Checklist: Owens Corning](https://www.owenscorning.com/en-us/roofing/blog/roof-storm-damage-checklist)
+- [Storm Damage Roof Inspection: Complete Step-by-Step Guide: Clean Roofing](https://cleanroofing.com/storm-damage-roof-inspection/)`,
+  },
   {
     slug: "gutter-size-western-nc-mountain-homes",
     title: "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
