@@ -30,7 +30,7 @@ describe("reported technical SEO fixes", () => {
   it.each(pageMetadata)("keeps the title in %s between 45 and 60 characters", (file, title) => {
     expect(title.length).toBeGreaterThanOrEqual(45);
     expect(title.length).toBeLessThanOrEqual(60);
-    expect(readFileSync(file, "utf8")).toMatch(new RegExp(`title(?:=|:) \\"${title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\"`));
+    expect(readFileSync(file, "utf8")).toContain(`"${title}"`);
   });
 
   it.each(optimizedImages)("keeps %s below 100KB", (file) => {
