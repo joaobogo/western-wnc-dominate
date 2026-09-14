@@ -18,6 +18,7 @@ import heroLayer2WebpSet from "@/assets/gallery/metal-010.webp?w=640;960;1280;16
 import heroLayer3AvifSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=avif&as=srcset";
 import heroLayer3WebpSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import veluxLogo from "@/assets/logo-velux.png";
+import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png";
 import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -30,7 +31,7 @@ const DRAMATIC_EASE = [0.16, 1, 0.3, 1] as any;
 
 const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
-  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
+  { icon: Award, label: "CertainTeed ShingleMaster Premier Credentialed" },
   { icon: HardHat, label: "Licensed General Contractor" },
   { icon: Clock, label: "WNC · Since 2017" },
 ];
@@ -271,7 +272,7 @@ const Hero = () => {
                 <span className="block">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva — with a written scope and price before any work starts.</span>
               )}
               <span className={textLed ? "hidden" : "hidden md:inline"}>Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
-              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed · Insured · CertainTeed ShingleMaster</span>
+              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed · Insured · CertainTeed ShingleMaster Premier</span>
             </p>
 
 
@@ -317,32 +318,58 @@ const Hero = () => {
               <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Crews Based in Franklin, NC</span>
             </motion.div>
 
-            {/* VELUX Certified Installer badge — desktop only; keeps mobile hero clean */}
-            <motion.a
-              href="/certifications"
+            {/* Manufacturer credentials */}
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.3, ease: HIGHLAND_EASE }}
-              className="mt-4 md:mt-6 hidden md:inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
+              className="mt-4 md:mt-6 flex w-fit max-w-full flex-col gap-2"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                src={veluxLogo}
-                alt="VELUX Certified Installer"
-                width={1181}
-                height={393}
-                className="h-6 md:h-7 w-auto flex-shrink-0"
-              />
-              <div className="flex flex-col leading-tight text-left">
-                <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--gold-ink))]">
-                  VELUX Certified
+              <Link
+                to="/certifications"
+                className="inline-flex max-w-full items-center gap-2.5 md:gap-3 bg-primary-foreground/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 hover:bg-primary-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
+              >
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={veluxLogo}
+                  alt="VELUX Certified Installer"
+                  width={1181}
+                  height={393}
+                  className="h-6 md:h-7 w-auto flex-shrink-0"
+                />
+                <span className="flex flex-col leading-tight text-left">
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--gold-ink))]">
+                    VELUX Certified
+                  </span>
+                  <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground">
+                    Skylight Installer · Pro Accredited
+                  </span>
                 </span>
-                <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground">
-                  Skylight Installer · Pro Accredited
+              </Link>
+              <Link
+                to="/certifications"
+                className="inline-flex max-w-full items-center gap-2.5 md:gap-3 bg-primary-foreground/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] px-2 md:px-3 py-1.5 md:py-2 hover:bg-primary-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
+              >
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={certainteedPremierBadge}
+                  alt="CertainTeed ShingleMaster Premier Credentialed"
+                  width={560}
+                  height={531}
+                  className="h-11 md:h-14 w-auto flex-shrink-0"
+                />
+                <span className="flex min-w-0 flex-col leading-tight text-left">
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] md:tracking-[0.16em] text-[hsl(var(--gold-ink))]">
+                    CertainTeed Premier
+                  </span>
+                  <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground">
+                    ShingleMaster Premier Credentialed
+                  </span>
                 </span>
-              </div>
-            </motion.a>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>

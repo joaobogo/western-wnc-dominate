@@ -4,7 +4,7 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
-import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
+import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png";
 import badgeJamesHardie from "@/assets/badge-james-hardie.png";
 import badgeHaag from "@/assets/badge-haag.png";
 import badgeVelux from "@/assets/logo-velux.png";
@@ -33,28 +33,15 @@ const fadeUp = {
 const certifications = [
   {
     icon: Award,
-    title: "CertainTeed ShingleMaster Credentialed Contractor",
-    badge: "Credentialed Contractor",
-    image: badgeCertainteedMaster,
-    description: "This is the highest credential CertainTeed offers to roofing contractors. It means our installers have been trained, tested, and certified to install CertainTeed roofing systems to the manufacturer's exact specifications — unlocking the strongest warranty coverage available.",
+    title: "CertainTeed ShingleMaster Premier Credentialed",
+    badge: "Premier Credentialed",
+    image: certainteedPremierBadge,
+    description: "Highlander holds CertainTeed ShingleMaster Premier credentials. The credential reflects manufacturer training and installation standards and provides access to enhanced CertainTeed warranty options on eligible roof systems.",
     whatItMeans: [
-      "Access to CertainTeed's highest warranty tiers — SureStart PLUS™",
-      "Factory-trained installation crews certified by the manufacturer",
-      "Annual recertification required — credentials can't go stale",
-      "Less than 1% of roofing contractors nationally hold this designation",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "CertainTeed ShingleMaster™ Credentialed Contractor",
-    badge: "Credentialed",
-    image: badgeCertainteedMaster,
-    description: "Highlander is a CertainTeed ShingleMaster Credentialed Contractor — a designation awarded to roofing companies that meet CertainTeed's standards for installation quality, business practices, and ongoing manufacturer training. It unlocks the strongest CertainTeed warranty options available to homeowners.",
-    whatItMeans: [
-      "Eligible to offer CertainTeed's extended SureStart PLUS™ warranty coverage",
-      "Verified business standing, insurance, and customer references",
-      "Crews trained to CertainTeed's documented installation specifications",
-      "Ongoing recertification keeps the credential current — not a one-time stamp",
+      "Manufacturer training for CertainTeed roofing system installation",
+      "Access to enhanced manufacturer warranty options on eligible systems",
+      "Warranty eligibility depends on the selected products and complete roof assembly",
+      "Project-specific coverage is reviewed in writing before installation",
     ],
   },
   {
@@ -101,8 +88,9 @@ const certifications = [
 /** Aligned badge row (Design Prompt 20): one plain-language line per credential. */
 const badgeRow: { image?: string; name: string; plain: string }[] = [
   {
-    name: "CertainTeed ShingleMaster",
-    plain: "Factory-certified installers, which is what unlocks the longest CertainTeed warranty coverage on your roof.",
+    image: certainteedPremierBadge,
+    name: "CertainTeed ShingleMaster Premier",
+    plain: "Manufacturer-credentialed installation with enhanced warranty options available on eligible roof systems.",
   },
   {
     image: badgeVelux,
@@ -163,7 +151,7 @@ const Certifications = () => {
     <>
       <SEOHead
         title="Roofing Certifications in Franklin, NC | Highlander"
-        description="Highlander credentials explained: CertainTeed ShingleMaster Credentialed Contractor, licensed NC general contractor, and full insurance coverage."
+        description="Highlander credentials explained: CertainTeed ShingleMaster Premier, licensed NC general contractor, and full insurance coverage."
         path="/certifications"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }])}
       />

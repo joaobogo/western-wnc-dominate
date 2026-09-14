@@ -188,7 +188,10 @@ export const BUSINESS: BusinessIdentity = {
       detail: "Better Business Bureau accredited business",
       href: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
     },
-    { label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Manufacturer-credentialed installation" },
+    {
+      label: "CertainTeed ShingleMaster Premier Credentialed",
+      detail: "Access to enhanced manufacturer warranty options; eligibility and terms vary by roof system and project",
+    },
     { label: "VELUX Certified Installer", detail: "Skylight installation and flashing kits" },
     { label: "Family-owned in Franklin since 2017", detail: "Showrooms in Franklin & Sylva" },
   ],
