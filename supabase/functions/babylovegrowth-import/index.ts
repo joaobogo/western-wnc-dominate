@@ -1,8 +1,12 @@
-import { createClient, corsHeaders } from "npm:@supabase/supabase-js@2";
+import { createClient } from "npm:@supabase/supabase-js@2";
 
 const API_BASE = "https://api.babylovegrowth.ai/api/integrations";
 const PAGE_SIZE = 50;
 const MAX_PAGES = 20;
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
 
 type RecordValue = Record<string, unknown>;
 
