@@ -18,7 +18,7 @@ const CredibilityStrip = () => {
     {
       icon: ShieldCheck,
       label: "Licensed & insured",
-      detail: "NC general contractor · CertainTeed ShingleMaster",
+      detail: "NC general contractor · CertainTeed ShingleMaster Premier",
     },
     {
       icon: MapPin,
