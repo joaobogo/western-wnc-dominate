@@ -25,7 +25,7 @@ const META: Record<LegalKind, { title: string; description: string; path: string
     icon: FileText,
   },
   accessibility: {
-    title: "Accessibility Statement | Highlander Building Services",
+    title: "Accessibility Statement | Western North Carolina Support",
     description: "Highlander Building Services is committed to providing a website that is accessible to all visitors across Western North Carolina.",
     path: "/accessibility",
     eyebrow: "Accessibility",

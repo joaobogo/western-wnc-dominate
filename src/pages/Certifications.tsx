@@ -162,7 +162,7 @@ const Certifications = () => {
   return (
     <>
       <SEOHead
-        title="Certifications & Credentials | Licensed & Insured"
+        title="Roofing Certifications in Franklin, NC | Highlander"
         description="Highlander credentials explained: CertainTeed ShingleMaster Credentialed Contractor, licensed NC general contractor, and full insurance coverage."
         path="/certifications"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }])}
