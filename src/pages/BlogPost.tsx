@@ -320,8 +320,8 @@ const BlogPostPage = () => {
   return (
     <>
       <SEOHead
-        title={post.title}
-        description={post.excerpt}
+        title={post.metaTitle}
+        description={post.metaDescription}
         path={`/blog/${post.slug}`}
         // Folded post (P3.5 consolidation): canonical → the survivor, noindex,follow,
         // route stays live. Unset for every post until João confirms the clusters.

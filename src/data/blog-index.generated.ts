@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "roof-inspection-after-storm-western-nc",
+    "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
+    "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready recor",
+    "category": "Inspections",
+    "date": "2026-09-14",
+    "town": "Franklin"
+  },
+  {
     "slug": "gutter-size-western-nc-mountain-homes",
     "title": "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
     "excerpt": "Gutter capacity ratings assume one inch of rain per hour. Highlands is designed for 11.3. A licensed WNC contractor walks through gutter and downspout sizing us",
