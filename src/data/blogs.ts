@@ -2757,7 +2757,7 @@ Don't pick materials based on looks alone. Let us help you select a palette that
     category: "Financing",
     date: "2025-11-28",
     image: "/media/a2b1b6c6-roof-financing-options-western-nc.webp", readTime: "5 min",
-    metaTitle: "Roof Financing Options in Western NC | Highlander Building Services",
+    metaTitle: "How Roof Financing Works in Western NC | Highlander",
     metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Building Services.",
     content: `A new roof is one of the most important investments you'll make in your home — but that doesn't mean it has to strain your finances. Here's how WNC homeowners are making it work.
 
