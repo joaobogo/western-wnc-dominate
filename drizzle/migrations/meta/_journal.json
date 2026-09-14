@@ -22,6 +22,13 @@
       "when": 1789144519550,
       "tag": "0002_remove_legacy_open_intake_policy",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789397053371,
+      "tag": "0003_create_blog_drafts",
+      "breakpoints": true
     }
   ]
 }

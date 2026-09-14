@@ -14,6 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_drafts: {
+        Row: {
+          content_html: string | null
+          content_markdown: string | null
+          created_at: string
+          excerpt: string | null
+          faq_json_ld: Json | null
+          hero_image_url: string | null
+          id: string
+          imported_at: string
+          json_ld: Json | null
+          keywords: Json
+          language_code: string | null
+          meta_description: string | null
+          organization_website: string | null
+          review_status: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          reviewer_notes: string | null
+          seed_keyword: string | null
+          slug: string | null
+          source: string
+          source_article_id: string
+          source_created_at: string | null
+          source_payload: Json
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content_html?: string | null
+          content_markdown?: string | null
+          created_at?: string
+          excerpt?: string | null
+          faq_json_ld?: Json | null
+          hero_image_url?: string | null
+          id?: string
+          imported_at?: string
+          json_ld?: Json | null
+          keywords?: Json
+          language_code?: string | null
+          meta_description?: string | null
+          organization_website?: string | null
+          review_status?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          reviewer_notes?: string | null
+          seed_keyword?: string | null
+          slug?: string | null
+          source?: string
+          source_article_id: string
+          source_created_at?: string | null
+          source_payload?: Json
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content_html?: string | null
+          content_markdown?: string | null
+          created_at?: string
+          excerpt?: string | null
+          faq_json_ld?: Json | null
+          hero_image_url?: string | null
+          id?: string
+          imported_at?: string
+          json_ld?: Json | null
+          keywords?: Json
+          language_code?: string | null
+          meta_description?: string | null
+          organization_website?: string | null
+          review_status?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          reviewer_notes?: string | null
+          seed_keyword?: string | null
+          slug?: string | null
+          source?: string
+          source_article_id?: string
+          source_created_at?: string | null
+          source_payload?: Json
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       chatbot_conversations: {
         Row: {
           consent_given: boolean | null
