@@ -5,7 +5,7 @@ import React, { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck, ChevronDown } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
-import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png.asset.json";
+import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
@@ -325,7 +325,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
-              <img loading="lazy" decoding="async" src={certainteedPremierBadge.url} alt="CertainTeed ShingleMaster Premier Credentialed" width={560} height={536} className="h-14 w-auto" />
+              <img loading="lazy" decoding="async" src={certainteedPremierBadge} alt="CertainTeed ShingleMaster Premier Credentialed" width={560} height={531} className="h-14 w-auto" />
               <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Premier</span>
             </div>
             <span className="text-caption text-muted-foreground font-body leading-tight">CertainTeed ShingleMaster Premier Credentialed</span>

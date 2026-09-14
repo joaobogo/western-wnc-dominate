@@ -18,7 +18,7 @@ import heroLayer2WebpSet from "@/assets/gallery/metal-010.webp?w=640;960;1280;16
 import heroLayer3AvifSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=avif&as=srcset";
 import heroLayer3WebpSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import veluxLogo from "@/assets/logo-velux.png";
-import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png.asset.json";
+import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png";
 import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -354,10 +354,10 @@ const Hero = () => {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src={certainteedPremierBadge.url}
+                  src={certainteedPremierBadge}
                   alt="CertainTeed ShingleMaster Premier Credentialed"
                   width={560}
-                  height={536}
+                  height={531}
                   className="h-11 md:h-14 w-auto flex-shrink-0"
                 />
                 <span className="flex min-w-0 flex-col leading-tight text-left">
