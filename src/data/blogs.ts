@@ -3832,7 +3832,7 @@ Learn more about [roof repair](/roofing/roof-repair), see when [roof replacement
     image: "/media/wnc-storm-tree-damage.jpg",
     readTime: "6 min",
     town: "Sylva",
-    metaTitle: "Sylva, NC Roof Repair: Signs to Watch For | Highlander",
+    metaTitle: "Sylva Roof Warning Signs: When Repair Is Needed | Highlander",
     metaDescription: "Sylva, NC roof repair guide — the warning signs that mean your roof needs a professional look before problems spread.",
     content: `A lot of Sylva's housing stock is old enough that original roofs are near the end of their useful life. That means many of the calls we get here start with, "It's not leaking yet, but…". Catching the early signs is the difference between a targeted repair and a full replacement.
 
