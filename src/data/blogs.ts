@@ -3715,7 +3715,7 @@ const batchPosts: BlogPost[] = [
     image: "/media/aae09641-roof-repair-franklin-nc.webp",
     readTime: "7 min",
     town: "Franklin",
-    metaTitle: "Roof Repair in Franklin, NC | Highlander Building Services",
+    metaTitle: "Franklin, NC Roof Repair: Before Problems Grow | Highlander",
     metaDescription: "Franklin, NC homeowners: how to spot small roof issues early, what repairs typically involve, and when to request an inspection.",
     content: `Franklin sits at the edge of the Cowee and Nantahala ranges, where summer thunderstorms, wind-driven rain, and heavy tree cover put roofs under real stress. Most of the roof repairs Highlander sees in Macon County start as small, quiet problems — a lifted shingle, a bit of exposed underlayment, a rusted pipe boot — that grow into interior damage over a season or two.
 
@@ -3756,7 +3756,7 @@ If you're seeing any of the signs above, [request an inspection](/request-inspec
     image: "/media/d4bd2654-roof-repair-highlands-nc.webp",
     readTime: "7 min",
     town: "Highlands",
-    metaTitle: "Roof Repair in Highlands, NC | Highlander Building Services",
+    metaTitle: "Highlands, NC Roof Repair: Common Issues | Highlander",
     metaDescription: "Highlands, NC mountain homes see wind, freeze/thaw, and heavy rain. Here's what typically fails on these roofs and how we repair it.",
     content: `At just over 4,000 feet, Highlands puts more weather stress on a roof in a year than most Piedmont towns see in three. Wind loading on ridge lots, ice at the eaves, and heavy summer rain all shorten the useful life of shingles, flashings, and sealants. The good news: most of what we see on Highlands homes is repairable if it's caught in time.
 
@@ -3794,7 +3794,7 @@ We'll inspect the roof, document what we find with photos, and give you a writte
     image: "/media/84198e2c-roof-repair-cashiers-nc.webp",
     readTime: "7 min",
     town: "Cashiers",
-    metaTitle: "Roof Repair in Cashiers, NC | Highlander Building Services",
+    metaTitle: "Cashiers, NC Roof Repair: Leaks & Storm Damage | Highlander",
     metaDescription: "Cashiers, NC roof repair guidance — leak sources, storm damage triage, and when to bring in a licensed WNC roofing contractor.",
     content: `The Cashiers plateau catches storms that funnel across from Sapphire and Lake Toxaway. Between summer downpours, occasional hail, and consistent wind loading, most Cashiers homes will need at least one meaningful roof repair between full replacements. Knowing what's minor and what needs prompt attention protects both your roof and your interior.
 
@@ -3832,7 +3832,7 @@ Learn more about [roof repair](/roofing/roof-repair), see when [roof replacement
     image: "/media/wnc-storm-tree-damage.jpg",
     readTime: "6 min",
     town: "Sylva",
-    metaTitle: "Roof Repair in Sylva, NC | Highlander Building Services",
+    metaTitle: "Sylva, NC Roof Repair: Signs to Watch For | Highlander",
     metaDescription: "Sylva, NC roof repair guide — the warning signs that mean your roof needs a professional look before problems spread.",
     content: `A lot of Sylva's housing stock is old enough that original roofs are near the end of their useful life. That means many of the calls we get here start with, "It's not leaking yet, but…". Catching the early signs is the difference between a targeted repair and a full replacement.
 
@@ -4114,7 +4114,7 @@ Once you're through spring and summer, a fall check-in matters too. Our [fall ro
     image: "/media/wnc-roof-inspection.jpg",
     readTime: "7 min",
     town: "Franklin",
-    metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
+    metaTitle: "Franklin, NC Roof Replacement: When It's Time | Highlander",
     metaDescription: "Franklin, NC roof replacement — how to know when repair is no longer enough and what a proper mountain-home replacement involves.",
     content: `There's a moment every roof reaches when patching stops making financial sense. For most Franklin homes, that's somewhere between year 18 and 25 for a standard asphalt system — but condition matters more than age.
 
@@ -4155,7 +4155,7 @@ Learn more about [roof replacement](/roofing/roof-replacement), see when [roof r
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "8 min",
     town: "Highlands",
-    metaTitle: "Roof Replacement in Highlands, NC | Highlander Building Services",
+    metaTitle: "Highlands, NC Roof Replacement Planning | Highlander",
     metaDescription: "Highlands, NC roof replacement — planning around 4,000-ft weather, steep lots, and material decisions that fit mountain homes.",
     content: `A Highlands replacement isn't a lowland replacement scaled up. Access, weather windows, wind exposure, and the sheer volume of rain and freeze/thaw cycles all change how the work is planned and specified.
 
@@ -4195,7 +4195,7 @@ See our [roof replacement services](/roofing/roof-replacement), consider [metal 
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "7 min",
     town: "Cashiers",
-    metaTitle: "Roof Replacement in Cashiers, NC | Highlander Building Services",
+    metaTitle: "Cashiers, NC Roof Replacement: What to Expect | Highlander",
     metaDescription: "Cashiers, NC roof replacement — what to expect from timeline, materials, and process on plateau mountain homes.",
     content: `Cashiers roofs live in the middle of a storm corridor. Between plateau wind, summer rain, and occasional hail, most homes here need a proper replacement — not a patch — somewhere between year 18 and 25 for asphalt systems.
 
@@ -4235,7 +4235,7 @@ Read more about [roof replacement](/roofing/roof-replacement), [roof repair](/ro
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "7 min",
     town: "Sylva",
-    metaTitle: "Roof Replacement in Sylva, NC | Highlander Building Services",
+    metaTitle: "Sylva, NC Roof Replacement: Materials & Timing | Highlander",
     metaDescription: "Sylva, NC roof replacement — materials that fit Jackson County homes, timing tips, and what to expect from the process.",
     content: `Sylva's housing stock includes a lot of homes with original roofs approaching or past their useful life. If you're planning a replacement, here's how we think through material choice, timing, and process on Jackson County projects.
 
@@ -4448,7 +4448,7 @@ See our [metal roofing services](/roofing/metal), consider full [roof replacemen
     image: "/media/wnc-metal-standing-seam.jpg",
     readTime: "7 min",
     town: "Highlands",
-    metaTitle: "Metal Roofing in Highlands, NC | Highlander Building Services",
+    metaTitle: "Metal Roofing Benefits in Highlands, NC | Highlander",
     metaDescription: "Metal roofing for Highlands, NC homes — how it performs against rain, wind, and elevation, and where it fits best.",
     content: `At 4,000+ feet, roofing systems face a different set of stresses than they do in lower elevations. Metal — especially standing seam — is one of the strongest answers for Highlands homes on exposed lots.
 
@@ -4933,7 +4933,7 @@ const batch4And5Posts: BlogPost[] = [
     image: "/media/wnc-winter-ice-dam.jpg",
     readTime: "7 min",
     town: "Franklin",
-    metaTitle: "Construction Services in Franklin, NC | Highlander",
+    metaTitle: "Construction in Franklin, NC: Before You Start | Highlander",
     metaDescription: "Planning an addition, porch, or remodel in Franklin, NC? Here's how Highlander's design team and construction division approach mountain projects.",
     content: `Franklin homeowners planning an addition, porch, or larger remodel often start with a sketch, a Pinterest board, or a vague sense that "we need more space." Highlander's construction division works with Macon County homeowners at exactly that stage — before drawings exist — to help shape a workable project.
 
@@ -4971,7 +4971,7 @@ Home additions, porches, decks, outdoor living spaces, and full remodels — coo
     image: "/media/514073f1-construction-services-highlands-nc-mountain-homes.webp",
     readTime: "7 min",
     town: "Highlands",
-    metaTitle: "Construction Services in Highlands, NC | Highlander",
+    metaTitle: "Construction for Highlands, NC Mountain Homes | Highlander",
     metaDescription: "Additions, porches, and construction projects for Highlands, NC mountain homes. In-house design team, elevation-savvy planning, single project team.",
     content: `Highlands homes are rarely simple. Steep lots, complex rooflines, and a mix of original structure and past additions mean construction work here needs a team that understands mountain sites — not just floor plans.
 
@@ -5008,7 +5008,7 @@ Roofing, framing, exterior details, and interior work stay under one project tea
     image: "/media/wnc-winter-ice-dam.jpg",
     readTime: "7 min",
     town: "Cashiers",
-    metaTitle: "Construction Services in Cashiers, NC | Highlander",
+    metaTitle: "Cashiers, NC Additions & Porches: Planning | Highlander",
     metaDescription: "Cashiers, NC construction: additions, porches, and outdoor living planning with in-house design services and a single project team.",
     content: `Cashiers homeowners often want the same things: more usable space, a real outdoor room, and construction that respects the mountain setting. Highlander plans and builds those projects with an in-house design team so the drawings and the build come from the same place.
 
