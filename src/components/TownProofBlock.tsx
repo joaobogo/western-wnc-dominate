@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, MapPin, Shield, Star } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ArrowRight, CheckCircle2, MapPin, Shield } from "lucide-react";
 import type { TownData } from "@/data/towns";
 import type { TownProofContent } from "@/data/town-proof";
 
@@ -11,6 +10,10 @@ interface TownProofBlockProps {
 }
 
 const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
+  // 15 Sep 2026 SEO audit: only job highlights backed by a documented project
+  // page are shown. Hand-written highlights with stock photos and no project
+  // link read as unverifiable claims, which costs more than an empty card.
+  const highlights = content.jobHighlights.filter((h) => h.projectSlug);
   return (
     <section className="section-padding bg-secondary/60">
       <div className="container-tight">
@@ -50,15 +53,16 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="lg:col-span-5"
+            className={highlights.length ? "lg:col-span-5" : "lg:col-span-8"}
           >
+            {highlights.length > 0 ? (
             <div className="border border-border bg-card rounded-sm px-6 py-6 md:px-7 md:py-7 h-full">
               <div className="flex items-center gap-2 mb-5 text-primary">
                 <MapPin className="w-4 h-4" aria-hidden="true" />
                 <span className="font-body text-xs uppercase tracking-[0.18em]">Job Highlights in {town.name}</span>
               </div>
               <div className="space-y-5">
-                {content.jobHighlights.map((highlight) => (
+                {highlights.map((highlight) => (
                   <div key={highlight.title} className="border-b border-border/70 pb-5 last:border-b-0 last:pb-0">
                     <div className="flex flex-col md:flex-row gap-5">
                       {highlight.image && (
@@ -93,8 +97,22 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                 ))}
               </div>
             </div>
+            ) : (
+            <div className="border border-border bg-card rounded-sm px-6 py-6 md:px-7 md:py-7 h-full">
+              <div className="flex items-center gap-2 mb-3 text-primary">
+                <Shield className="w-4 h-4" aria-hidden="true" />
+                <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
+              </div>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                Every {town.name} project still includes the same warranty standards, documentation discipline, and mountain-specific install details. Documented {town.name} projects are added here as they are published.
+              </p>
+            </div>
+            )}
           </motion.div>
 
+          {/* Town FAQs render once, further down the page (TownFAQ + FAQPage schema).
+              The duplicate accordion that used to sit here was removed 15 Sep 2026. */}
+          {highlights.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,34 +121,16 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
             className="lg:col-span-3"
           >
             <div className="border border-border bg-card rounded-sm px-6 py-6 md:px-7 md:py-7 h-full">
-              <div className="flex items-center gap-2 mb-4 text-[hsl(var(--gold-ink))]">
-                <Star className="w-4 h-4" aria-hidden="true" />
-                <span className="font-body text-xs uppercase tracking-[0.18em]">Town FAQs</span>
+              <div className="flex items-center gap-2 mb-2 text-primary">
+                <Shield className="w-4 h-4" aria-hidden="true" />
+                <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
               </div>
-              <Accordion type="single" collapsible className="space-y-2">
-                {content.faqs.map((faq, index) => (
-                  <AccordionItem key={faq.question} value={`town-faq-${index}`} className="border border-border rounded-sm px-4 bg-secondary/30">
-                    <AccordionTrigger className="py-4 gap-4 text-left">
-                      <span className="font-heading font-semibold text-sm text-foreground leading-snug">{faq.question}</span>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-4">
-                      <p className="text-sm text-muted-foreground font-body leading-relaxed">{faq.answer}</p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-
-              <div className="mt-6 border border-border rounded-sm px-4 py-4 bg-background/70">
-                <div className="flex items-center gap-2 mb-2 text-primary">
-                  <Shield className="w-4 h-4" aria-hidden="true" />
-                  <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
-                </div>
-                <p className="text-xs text-muted-foreground font-body leading-relaxed">
-                  Every {town.name} project still includes the same warranty standards, documentation discipline, and mountain-specific install details.
-                </p>
-              </div>
+              <p className="text-xs text-muted-foreground font-body leading-relaxed">
+                Every {town.name} project still includes the same warranty standards, documentation discipline, and mountain-specific install details.
+              </p>
             </div>
           </motion.div>
+          )}
         </div>
       </div>
     </section>

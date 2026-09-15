@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 245,
+    "sitemap": 247,
     "coverageNoindex": 100,
     "counties": 10,
     "noindexTowns": 0,
     "noindexBlogPosts": 0,
     "noindexFunnels": 6,
-    "total": 361
+    "total": 363
   },
   "routes": [
     "/",
@@ -38,6 +38,9 @@
     "/construction",
     "/construction/additions",
     "/construction/outdoor-living",
+    "/construction/outdoor-living/patios",
+    "/construction/outdoor-living/outdoor-kitchens",
+    "/construction/outdoor-living/hardscape",
     "/construction/renovations",
     "/construction/siding",
     "/construction/design",
@@ -103,7 +106,6 @@
     "/blog/wnc-storm-season-roof-damage",
     "/blog/western-north-carolina-mountain-roofing-guide",
     "/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners",
-    "/blog/metal-roof-vs-shingle-roof-western-north-carolina",
     "/blog/roof-repair-vs-replacement-highlands-nc",
     "/blog/roofing-project-planning-highlands-nc",
     "/blog/metal-vs-dimensional-shingle-wnc-mountain-homes",

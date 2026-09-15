@@ -58,15 +58,6 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "8 min"
   },
   {
-    "id": "metal-roof-vs-shingle-roof-western-north-carolina",
-    "slug": "metal-roof-vs-shingle-roof-western-north-carolina",
-    "title": "Metal Roof vs Shingle Roof: Cost, Lifespan, and Comparison for Mountain Homes",
-    "excerpt": "A detailed Western North Carolina comparison of standing seam metal, exposed-fastener panels, and dimensional asphalt shingles \\u2014 cost per square foot, realistic lifespan, and how each performs in mountain rain, wind, snow, and shade.",
-    "category": "Materials",
-    "date": "2026-08-12",
-    "readTime": "14 min"
-  },
-  {
     "id": "attic-ventilation-waynesville-nc-winter",
     "slug": "attic-ventilation-waynesville-nc-winter",
     "title": "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
@@ -119,5 +110,14 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm Damage",
     "date": "2026-07-26",
     "readTime": "7 min"
+  },
+  {
+    "id": "home-renovation-exterior-project-cullowhee-nc",
+    "slug": "home-renovation-exterior-project-cullowhee-nc",
+    "title": "Planning a Home Renovation or Exterior Project in Cullowhee",
+    "excerpt": "What Cullowhee, NC homeowners should know before starting a renovation or exterior project — planning, budget, and choosing the right team.",
+    "category": "Construction",
+    "date": "2026-07-26",
+    "readTime": "8 min"
   }
 ];

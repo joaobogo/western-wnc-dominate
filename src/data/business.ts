@@ -105,6 +105,8 @@ export interface BusinessIdentity {
   email: string;
   websiteUrl: string;
   foundingYear: number;
+  /** ISO incorporation date (BBB profile: incorporated 21 Jun 2017). */
+  foundingDate: string;
   licenseNumber: string;
   slogan: string;
   description: string;
@@ -156,12 +158,18 @@ const SYLVA_CID = "1690022713833215904";
 export const BUSINESS: BusinessIdentity = {
   brandName: "Highlander Building Services",
   legalName: "Highlander Building Services, Inc.",
-  // Former names are deliberately NOT published as metadata (7 Sep 2026 work order, rule 1).
-  alternateNames: [],
+  // 15 Sep 2026 SEO audit (Critical A): every external profile, the Google
+  // reviews and 119 of 122 brand clicks still use the former trading name, so
+  // Google and the AI engines were treating the two names as two businesses.
+  // alternateName in the Organization schema is the machine-readable form of
+  // the footer's "formerly" line and ties the entity back together. It is
+  // metadata only — copy, titles and meta descriptions still use the new name.
+  alternateNames: ["Highlander Roofing Services", "Highlander Roofing Services, Inc."],
   primaryPhoneE164: "+1-828-524-7773",
   email: "info@highlandernc.com",
   websiteUrl: "https://highlandernc.com",
   foundingYear: 2017,
+  foundingDate: "2017-06-21",
   licenseNumber: "NC GC #87668",
   slogan: "Built for the Mountains. Built for Life.",
   description:
@@ -286,6 +294,7 @@ export const BUSINESS: BusinessIdentity = {
     "https://www.yelp.com/biz/highlander-roofing-services-franklin",
     "https://www.angi.com/companylist/us/nc/franklin/highlander-roofing-services-inc-reviews.htm",
     "https://www.homeadvisor.com/rated.HighlanderRoofing.106236934.html",
+    "https://www.buildzoom.com/contractor/highlander-roofing-services-inc",
     "https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221",
     "https://business.mountainlovers.com/list/member/highlander-roofing-services-inc",
     "https://www.smokymountainhba.com/members",

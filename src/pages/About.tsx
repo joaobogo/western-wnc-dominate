@@ -91,6 +91,38 @@ const milestones = [
 ];
 
 
+/**
+ * Company facts rendered on the About page. Every value is read from
+ * src/data/business.ts so the About page, the footer, the schema and llms.txt
+ * can never disagree about who the company is.
+ */
+const credentialLabel = (re: RegExp) => BUSINESS.credentials.find((c) => re.test(c.label));
+const bbb = credentialLabel(/bbb/i);
+const foundedLabel = new Date(`${BUSINESS.foundingDate}T12:00:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+const companyFacts: { label: string; value: string; href?: string; linkLabel?: string }[] = [
+  {
+    label: "Company",
+    value: BUSINESS.alternateNames.length ? `${BUSINESS.legalName} (formerly ${BUSINESS.alternateNames[0]})` : BUSINESS.legalName,
+  },
+  { label: "Founded", value: `${foundedLabel} in ${BUSINESS.locations[0].locality}, ${BUSINESS.locations[0].region}` },
+  { label: "Owners", value: BUSINESS.people.map((p) => `${p.name} (${p.jobTitle})`).join(" · ") },
+  { label: "License", value: BUSINESS.licenseNumber, href: BUSINESS.licenseLookupUrl, linkLabel: "Verify with the NC Licensing Board" },
+  ...(bbb ? [{ label: "Better Business Bureau", value: bbb.label, href: BUSINESS.bbbUrl, linkLabel: "View profile" }] : []),
+  {
+    label: "Manufacturer credentials",
+    value: BUSINESS.credentials
+      .filter((c) => /certainteed|velux/i.test(c.label))
+      .map((c) => c.label)
+      .join(" · "),
+  },
+  {
+    label: "Showrooms",
+    value: BUSINESS.locations.map((l) => `${l.name}: ${l.streetAddress}, ${l.locality}, ${l.region} ${l.postalCode}`).join(" · "),
+  },
+  { label: "Counties served", value: BUSINESS.countiesServed.map((c) => c.name).join(", ") },
+  { label: "Google reviews", value: REVIEW_LINE_AS_OF },
+];
+
 const About = () => {
   return (
     <>
@@ -345,8 +377,8 @@ const About = () => {
                   construction, and design projects across Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Ownership sets the standard. A licensed NC General Contractor and CertainTeed Master
-                  Shingle Applicator approves every scope, and the local team carries that standard
+                  Ownership sets the standard. A licensed NC General Contractor holding CertainTeed's
+                  ShingleMaster Premier credential approves every scope, and the local team carries that standard
                   through every estimate, install, inspection, and final walkthrough.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -357,6 +389,27 @@ const About = () => {
               </motion.div>
             </div>
             
+            {/* Company facts — the verifiable identity data in one place, all read
+                from src/data/business.ts (15 Sep 2026 SEO audit, AI visibility §1). */}
+            <dl className="mt-14 grid gap-x-10 gap-y-7 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-3">
+              {companyFacts.map((fact) => (
+                <div key={fact.label}>
+                  <dt className="mb-1.5 text-caption font-bold uppercase tracking-widest text-[hsl(var(--gold-ink))]">{fact.label}</dt>
+                  <dd className="text-sm leading-relaxed text-foreground font-body">
+                    {fact.value}
+                    {fact.href && (
+                      <>
+                        {" "}
+                        <a href={fact.href} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline underline-offset-4">
+                          {fact.linkLabel}
+                        </a>
+                      </>
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
             <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}

@@ -97,7 +97,7 @@ export function pickGuideLink(opts: { town?: string | null }): ConfirmationLink 
         ) ?? blogPosts.find((p) => normalize(p.town) === town)
       : undefined) ??
     blogPosts.find(
-      (p) => p.slug === "metal-roof-vs-shingle-roof-western-north-carolina",
+      (p) => p.slug === "metal-vs-shingle-roof-western-nc",
     ) ??
     blogPosts[0];
 

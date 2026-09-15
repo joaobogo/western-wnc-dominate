@@ -64,13 +64,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
 /* ─────────────────────────────────────────────────────────────
  *  2. SERVICES GRID — town-personalized service cards w/ CTAs
  * ────────────────────────────────────────────────────────── */
-/** The town's local-exposure note, lower-cased and stripped of its trailing period. */
 const possessive = (name: string) => (name.endsWith("s") ? `${name}'` : `${name}'s`);
-
-const exposureNote = (town: TownData) => {
-  const raw = (town.climateExposure || "").trim().replace(/\.$/, "");
-  return raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : "";
-};
 
 /**
  * Each card keeps its shared base sentence, plus one town-specific sentence
@@ -83,9 +77,10 @@ const services = [
     icon: Home, label: "Roof Replacement",
     desc: (t: TownData) => {
       const base = `Full tear-off and re-installs engineered for ${t.name}'s wind, snow, and UV exposure.`;
-      const note = exposureNote(t);
-      return t.elevation && t.county && note
-        ? `${base} ${t.name} sits at ${t.elevation} in ${t.county} — ${note}.`
+      // The town's exposure sentence is already quoted in the hero; the card
+      // adds elevation and county only (15 Sep 2026 SEO audit: no repeats).
+      return t.elevation && t.county
+        ? `${base} ${t.name} sits at ${t.elevation} in ${t.county}, so underlayment, fastening, and tear-off timing are planned for that exposure.`
         : base;
     },
     href: "/roofing/roof-replacement",

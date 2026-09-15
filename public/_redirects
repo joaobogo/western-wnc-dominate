@@ -51,13 +51,13 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /construction/two-story-addition                             /construction/additions                            301!
 /construction/decks                                          /construction/outdoor-living                       301!
 /construction/deck                                           /construction/outdoor-living                       301!
-/construction/patios                                         /construction/outdoor-living                       301!
-/construction/patio                                          /construction/outdoor-living                       301!
+/construction/patios                                         /construction/outdoor-living/patios                301!
+/construction/patio                                          /construction/outdoor-living/patios                301!
 /construction/pergolas                                       /construction/outdoor-living                       301!
 /construction/pergola                                        /construction/outdoor-living                       301!
-/construction/outdoor-kitchen                                /construction/outdoor-living                       301!
-/construction/fire-pit                                       /construction/outdoor-living                       301!
-/construction/retaining-walls                                /construction/outdoor-living                       301!
+/construction/outdoor-kitchen                                /construction/outdoor-living/outdoor-kitchens      301!
+/construction/fire-pit                                       /construction/outdoor-living/outdoor-kitchens      301!
+/construction/retaining-walls                                /construction/outdoor-living/hardscape             301!
 /gutters/seamless                                            /roofing/gutters                                   301!
 /gutters/guards                                              /roofing/gutters                                   301!
 /gutters/downspouts                                          /roofing/gutters                                   301!
@@ -93,7 +93,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /seamless-gutter-installation                                /roofing/gutters                                   301!
 /design/build-services                                       /construction/design                               301!
 /design-build-services                                       /construction/design                               301!
-/patio-installation                                          /construction/outdoor-living                       301!
+/patio-installation                                          /construction/outdoor-living/patios                301!
 /request-quote-form                                          /request-inspection                                301!
 /request-quote-form-page                                     /request-inspection                                301!
 /faqs                                                        /faq                                               301!
@@ -112,7 +112,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /tpo-installation                                            /roofing/commercial                                301!
 /roof-coating-services                                       /roofing/commercial                                301!
 /metal-roof-installation                                     /roofing/metal                                     301!
-/metal-roof-repair                                           /roofing/roof-repair                               301!
+/metal-roof-repair                                           /roofing/metal                                     301!
 /slate-roof-installation                                     /roofing/specialty                                 301!
 /slate-roof-repair                                           /roofing/specialty                                 301!
 /roof-waterproofing                                          /roofing/roof-repair                               301!
@@ -121,7 +121,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /gutter-protection-systems                                   /roofing/gutters                                   301!
 /gazebos-and-pergolas                                        /construction/outdoor-living                       301!
 /deck-installation                                           /construction/outdoor-living                       301!
-/outdoor-kitchens-and-grills                                 /construction/outdoor-living                       301!
+/outdoor-kitchens-and-grills                                 /construction/outdoor-living/outdoor-kitchens      301!
 /skylight-installation                                       /roofing/skylights                                 301!
 /commercial-re-roof-specialists                              /roofing/commercial                                301!
 /asphalt-shingles-installation                               /roofing/residential                               301!
@@ -142,7 +142,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact-dillsboro-nc                                        /service-areas/dillsboro-nc                        301!
 /our-team                                                    /team                                              301!
 /testimonials                                                /reviews                                           301!
-/fire-pits-and-fireplaces                                    /construction/outdoor-living                       301!
+/fire-pits-and-fireplaces                                    /construction/outdoor-living/outdoor-kitchens      301!
 /sunrooms                                                    /construction/additions                            301!
 /vapor-barrier-installation                                  /roofing/roof-repair                               301!
 /aluminum-gutter-installation-services                       /roofing/gutters                                   301!
@@ -184,9 +184,22 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /roof-deck-installation                                      /roofing/roof-replacement                          301!
 /gutter-guard-installation                                   /roofing/gutters                                   301!
 /screened-and-covered-porches                                /construction/outdoor-living                       301!
-/retaining-walls                                             /construction/outdoor-living                       301!
+/retaining-walls                                             /construction/outdoor-living/hardscape             301!
 /custom-outdoor-living-design                                /construction/outdoor-living                       301!
 
+
+# ============================================================
+# 15 Sep 2026 SEO audit — old-site URLs still in Google's index with no rule
+# ============================================================
+/walkways                                                    /construction/outdoor-living/hardscape             301!
+/water-features-and-fountains                                /construction/outdoor-living/hardscape             301!
+/cedar-shake-repair                                          /roofing/specialty                                 301!
+/roof-moss-removal                                           /roofing/roof-repair                               301!
+/leak-detection-services                                     /roofing/roof-repair                               301!
+/gable-vent-repair                                           /roofing/roof-repair                               301!
+/garages                                                     /construction/additions                            301!
+# Duplicate comparison post folded into the better-ranking one (audit: consolidate before you write)
+/blog/metal-roof-vs-shingle-roof-western-north-carolina      /blog/metal-vs-shingle-roof-western-nc             301!
 
 # ============================================================
 # Legacy /contact/[service]-service-area/[town] Hibu pattern

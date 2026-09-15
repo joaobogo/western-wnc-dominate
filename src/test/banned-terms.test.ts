@@ -109,8 +109,11 @@ describe("rebrand guard", () => {
   const OLD_NAME = /Highlander Roofing/;
   const ALLOWED_LINE = [
     // 7 Sep 2026 work order, rule 1: the former name may appear ONLY in the one
-    // deliberate "formerly" footer line — never in titles, meta or metadata.
+    // deliberate "formerly" footer line — never in titles or meta copy.
+    // 15 Sep 2026 SEO audit (Critical A): schema.org alternateName (allowed
+    // place a) is the one structured exception, fed from BUSINESS.alternateNames.
     /formerly /i,
+    /\balternateNames?\b/, // allowed place (a): BUSINESS.alternateNames + its JSON-LD copy
     /https?:\/\/[^\s"']*highlander[-_]?roofing/i, // external profile URLs (allowed place c)
     /\/\/|^\s*\*|\/\*/, // code comments
   ];
@@ -153,10 +156,19 @@ describe("rebrand guard", () => {
     expect(hits).toEqual([]);
   });
 
-  it("business.ts publishes no former name as metadata (7 Sep 2026 work order, rule 1)", () => {
+  it("former name is published ONLY as schema alternateName (15 Sep 2026 SEO audit, Critical A)", () => {
+    // 7 Sep 2026 work order, rule 1 kept the former name out of metadata. The
+    // 15 Sep 2026 SEO audit found the entity split across the two names
+    // (every external profile and 119 of 122 brand clicks use the old one), so
+    // alternateName is now the single structured place it is allowed. Brand
+    // name, titles and meta copy still use the new name only.
     const src = readFileSync("src/data/business.ts", "utf8");
-    expect(src).toMatch(/alternateNames:\s*\[\s*\]/);
+    expect(src).toMatch(/alternateNames:\s*\["Highlander Roofing Services"/);
     expect(src).toMatch(/brandName:\s*"Highlander Building Services"/);
-    expect(readFileSync("index.html", "utf8")).not.toMatch(/alternateName/);
+    const html = readFileSync("index.html", "utf8");
+    expect(html).toMatch(/"alternateName": \[ "Highlander Roofing Services"/);
+    // Never in the <title> or the meta description.
+    expect(html.match(/<title>[^<]*<\/title>/)?.[0] ?? "").not.toMatch(OLD_NAME);
+    expect(html.match(/<meta name="description"[^>]*>/)?.[0] ?? "").not.toMatch(OLD_NAME);
   });
 });

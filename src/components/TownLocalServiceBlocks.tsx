@@ -179,8 +179,9 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               Why mountain homes in {t} need the right roof and exterior system
             </h3>
             <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
+              {/* The town's exposure sentence is quoted once, in the hero (15 Sep 2026 SEO audit: no repeats). */}
               <p>
-                {t} sits at roughly {town.elevation} in {town.county}. {town.climateExposure}
+                {t} sits at roughly {town.elevation} in {town.county}. Pitch, exposure, site access and the county permitting office all change how a roof or an exterior project is detailed here, which is why every {t} scope is written after a site visit rather than from a template.
               </p>
               <p>{town.constructionContext}</p>
             </div>

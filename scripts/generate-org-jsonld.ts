@@ -23,7 +23,10 @@ const org = {
   logo: `${BASE}/og-image.jpg`,
   telephone: BUSINESS.primaryPhoneE164,
   email: BUSINESS.email,
-  foundingDate: String(BUSINESS.foundingYear),
+  foundingDate: BUSINESS.foundingDate,
+  founder: BUSINESS.people
+    .filter((p) => /founder/i.test(p.jobTitle))
+    .map((p) => ({ "@type": "Person", name: p.name, jobTitle: p.jobTitle })),
   address: {
     "@type": "PostalAddress",
     streetAddress: FRANKLIN.streetAddress,
@@ -45,6 +48,10 @@ if (!html.includes(START) || !html.includes(END)) {
 const block = `${START}
     <script type="application/ld+json">
 ${JSON.stringify(org, null, 2)
+  // Keep the alternateName array on one line so the rebrand guards
+  // (scripts/seo-check.mjs rule 6, src/test/banned-terms.test.ts) can see the
+  // key and the former name together.
+  .replace(/"alternateName": \[[^\]]*\]/, (m) => m.replace(/\s+/g, " "))
   .split("\n")
   .map((l) => `    ${l}`)
   .join("\n")}

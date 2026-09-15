@@ -34,6 +34,7 @@ import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import RoofingPathFinder from "@/components/roofing/RoofingPathFinder";
 import RoofingIntentRouter from "@/components/roofing/RoofingIntentRouter";
 import HeroTrustLine from "@/components/hero/HeroTrustLine";
+import { towns } from "@/data/towns";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -145,6 +146,16 @@ const RooflineSVG = ({ className = "" }: { className?: string }) => (
 /* ═══════════════════════════════════════════
    PAGE COMPONENT
    ═══════════════════════════════════════════ */
+/** Towns we publish a page for, grouped by county in the order the town data lists them. */
+const wncCounties = Object.entries(
+  towns
+    .filter((t) => t.indexable !== false)
+    .reduce<Record<string, typeof towns>>((acc, t) => {
+      (acc[t.county] ||= []).push(t);
+      return acc;
+    }, {}),
+);
+
 const RoofingDivision = () => {
   return (
     <>
@@ -491,6 +502,44 @@ const RoofingDivision = () => {
         </Section>
 
         <WhoShowsUp />
+
+        {/* ─── ROOFING ACROSS WESTERN NC (15 Sep 2026 SEO audit) ───
+            "roofing company western north carolina", "roof repair western north
+            carolina" and "storm damage roof repair western north carolina" sit at
+            positions 8–15 on this hub with almost no clicks. A visible list of the
+            counties and towns we actually drive to, linked to the town pages,
+            gives those queries something concrete to land on. */}
+        <Section density="default" className="bg-secondary/40 border-t border-border/60">
+          <div className="max-w-2xl mb-8 md:mb-10">
+            <span className="eyebrow mb-3 block">Service Area</span>
+            <h2 className="section-heading mb-4">Roofing across Western North Carolina.</h2>
+            <p className="text-muted-foreground font-body leading-relaxed">
+              Crews are based in Franklin and Sylva, and we roof homes across {wncCounties.length} counties in the Western NC mountains. Pick your town for local conditions, drive times, and how we schedule work there.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {wncCounties.map(([county, list]) => (
+              <div key={county} className="border border-border bg-card rounded-sm px-5 py-5">
+                <h3 className="font-heading font-bold text-foreground mb-3">{county}</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {list.map((t) => (
+                    <li key={t.slug}>
+                      <Link
+                        to={`/service-areas/${t.slug}`}
+                        className="inline-flex min-h-[44px] items-center border border-border bg-background px-3 text-sm font-semibold text-primary hover:border-primary/40 transition-colors"
+                      >
+                        {t.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-muted-foreground font-body">
+            Not listed? <Link to="/service-areas" className="text-primary font-semibold underline underline-offset-4">See the full service area</Link> or call {PHONE_DISPLAY} — if we can reach it from Franklin or Sylva in a normal working day, we roof it.
+          </p>
+        </Section>
 
         <VeluxWidget
           heading="VELUX Skylights, Installed by a Certified Roofer"

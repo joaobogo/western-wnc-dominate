@@ -297,8 +297,14 @@ const TownPage = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">
               What roofs face in <span className="text-primary italic">{town.name}</span>
             </h2>
+            {/* 15 Sep 2026 SEO audit: the hero already quotes town.climateExposure
+                verbatim, so this section leads with the town description and
+                housing profile instead of repeating the same sentence. */}
             <p className="text-lg text-muted-foreground leading-relaxed font-body mb-6">
-              {town.climateExposure}
+              {town.description}
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed font-body mb-6">
+              {town.housingProfile}
             </p>
             {localRelevance && (
               <p className="text-base text-muted-foreground leading-relaxed font-body">

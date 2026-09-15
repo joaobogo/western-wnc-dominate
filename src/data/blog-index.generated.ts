@@ -54,14 +54,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Highlands"
   },
   {
-    "slug": "metal-roof-vs-shingle-roof-western-north-carolina",
-    "title": "Metal Roof vs Shingle Roof: Cost, Lifespan, and Comparison for Mountain Homes",
-    "excerpt": "A detailed Western North Carolina comparison of standing seam metal, exposed-fastener panels, and dimensional asphalt shingles \\u2014 cost per square foot, real",
-    "category": "Materials",
-    "date": "2026-08-12",
-    "town": "Highlands"
-  },
-  {
     "slug": "attic-ventilation-waynesville-nc-winter",
     "title": "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
     "excerpt": "Ice at the eaves, damp insulation, and premature shingle wear in Haywood County usually trace back to one thing — an unbalanced attic. Here is how to diagnose a",

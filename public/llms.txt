@@ -57,6 +57,7 @@ Founded: 2017
 - https://www.yelp.com/biz/highlander-roofing-services-franklin
 - https://www.angi.com/companylist/us/nc/franklin/highlander-roofing-services-inc-reviews.htm
 - https://www.homeadvisor.com/rated.HighlanderRoofing.106236934.html
+- https://www.buildzoom.com/contractor/highlander-roofing-services-inc
 - https://business.cashiersareachamber.com/member-directory/Details/highlander-roofing-services-3458221
 - https://business.mountainlovers.com/list/member/highlander-roofing-services-inc
 - https://www.smokymountainhba.com/members
@@ -75,6 +76,9 @@ Founded: 2017
 - https://highlandernc.com/construction/additions
 - https://highlandernc.com/construction/design
 - https://highlandernc.com/construction/outdoor-living
+- https://highlandernc.com/construction/outdoor-living/hardscape
+- https://highlandernc.com/construction/outdoor-living/outdoor-kitchens
+- https://highlandernc.com/construction/outdoor-living/patios
 - https://highlandernc.com/construction/renovations
 - https://highlandernc.com/construction/siding
 - https://highlandernc.com/contact
@@ -218,7 +222,6 @@ Founded: 2017
 - https://highlandernc.com/blog/master-suite-layouts-wnc
 - https://highlandernc.com/blog/maximizing-natural-light-skylight-strategies
 - https://highlandernc.com/blog/metal-roof-maintenance-franklin-nc
-- https://highlandernc.com/blog/metal-roof-vs-shingle-roof-western-north-carolina
 - https://highlandernc.com/blog/metal-roofing-bryson-city-nc-vacation-rentals
 - https://highlandernc.com/blog/metal-roofing-cost-wnc
 - https://highlandernc.com/blog/metal-roofing-highlands-nc-benefits

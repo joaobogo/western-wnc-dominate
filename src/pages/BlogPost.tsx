@@ -311,11 +311,17 @@ const BlogPostPage = () => {
     relatedPosts.push(...extra);
   }
 
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+  // Date-only ISO strings parse as UTC midnight, which renders a day early in
+  // US time zones (and in the prerender). Anchor them to local noon instead.
+  const localDate = (iso: string) => new Date(/T/.test(iso) ? iso : `${iso}T12:00:00`);
+  const formattedDate = localDate(post.date).toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
   });
+  const formattedUpdated = post.updated
+    ? localDate(post.updated).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
+    : null;
 
   return (
     <>
@@ -335,7 +341,7 @@ const BlogPostPage = () => {
             description: post.excerpt,
             url: `/blog/${post.slug}`,
             datePublished: post.date,
-            dateModified: post.date,
+            dateModified: post.updated ?? post.date,
             image: post.image,
             author: "Highlander Team",
           },
@@ -386,6 +392,7 @@ const BlogPostPage = () => {
                 </span>
                 <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" aria-hidden="true" /> {formattedDate}
+                  {formattedUpdated && <span className="ml-2 font-normal text-white/70">· Updated {formattedUpdated}</span>}
                 </span>
                 <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
                   <Clock className="w-4 h-4" aria-hidden="true" /> {readMinutes} min read

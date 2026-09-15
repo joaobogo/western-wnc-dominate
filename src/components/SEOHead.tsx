@@ -16,6 +16,7 @@ interface SEOHeadProps {
    * "follow" → "noindex,follow" (templated pages we still want crawled for links).
    */
   noindex?: boolean | "follow";
+  /** @deprecated No longer emitted — the keywords meta tag was removed 15 Sep 2026. */
   keywords?: string;
   locale?: string;
   /**
@@ -49,9 +50,6 @@ const BING_VERIFICATION = (import.meta.env.VITE_BING_SITE_VERIFICATION as string
 const DEFAULT_IMAGE_WIDTH = "1200";
 const DEFAULT_IMAGE_HEIGHT = "630";
 const TWITTER_HANDLE = "@highlanderroof";
-const DEFAULT_KEYWORDS =
-  "Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roofing contractor near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing Sylva NC, storm damage roof WNC, mountain home construction, home additions WNC";
-
 const setMeta = (attr: string, key: string, content: string) => {
   let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
   if (!el) {
@@ -114,7 +112,6 @@ const SEOHead = ({
   image,
   jsonLd,
   noindex = false,
-  keywords,
   locale = "en_US",
   preloadImage,
   preloadImageSrcSet,
@@ -136,7 +133,6 @@ const SEOHead = ({
     document.title = fullTitle;
     setMeta("name", "description", description);
     setMeta("name", "robots", noindex === "follow" ? "noindex,follow" : noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
-    setMeta("name", "keywords", keywords || DEFAULT_KEYWORDS);
     setMeta("name", "author", SITE_NAME);
     setMeta("name", "publisher", SITE_NAME);
     setMeta("name", "theme-color", "#1a4d2e");
@@ -246,7 +242,7 @@ const SEOHead = ({
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, keywords, locale, preloadImage, preloadImageSrcSet, preloadImageSizes]);
+  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, locale, preloadImage, preloadImageSrcSet, preloadImageSizes]);
 
   return null;
 };
@@ -308,6 +304,34 @@ const BUSINESS_HOURS = hoursSpec(FRANKLIN);
 
 /** Verified public profiles used for sameAs on the business + organization nodes. */
 const PROFILE_URLS = BUSINESS.profiles;
+
+/**
+ * Credentials the business can prove (src/data/business.ts `credentials`):
+ * the NC GC license and the manufacturer accreditations. BBB accreditation and
+ * "family-owned since" are trust items, not credentials, so they stay out.
+ */
+const CREDENTIAL_NODES = BUSINESS.credentials
+  .filter((c) => /license|certainteed|velux/i.test(c.label))
+  .map((c) => {
+    const isLicense = /license/i.test(c.label);
+    const recognizedBy = isLicense
+      ? "North Carolina Licensing Board for General Contractors"
+      : /certainteed/i.test(c.label)
+        ? "CertainTeed"
+        : "VELUX";
+    return {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: isLicense ? "license" : "certification",
+      name: c.label,
+      recognizedBy: { "@type": "Organization", name: recognizedBy },
+      ...(c.href ? { url: c.href } : {}),
+    };
+  });
+
+/** Owners named as founders (src/data/business.ts `people`, jobTitle carries "Founder"). */
+const FOUNDER_NODES = BUSINESS.people
+  .filter((p) => /founder/i.test(p.jobTitle))
+  .map((p) => ({ "@type": "Person", name: p.name, jobTitle: p.jobTitle }));
 
 const postalAddress = (loc: BusinessLocation) => ({
   "@type": "PostalAddress",
@@ -403,14 +427,10 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Outdoor Living Spaces" } },
     ],
   },
-  hasCredential: {
-    "@type": "EducationalOccupationalCredential",
-    credentialCategory: "certification",
-    name: "CertainTeed ShingleMaster Credentialed Contractor",
-    recognizedBy: { "@type": "Organization", name: "CertainTeed" },
-  },
+  hasCredential: CREDENTIAL_NODES,
+  founder: FOUNDER_NODES,
   currenciesAccepted: "USD",
-  foundingDate: String(BUSINESS.foundingYear),
+  foundingDate: BUSINESS.foundingDate,
   slogan: BUSINESS.slogan,
   // Awards enter markup only when owner-verified (see CLAIMS_AUDIT.md).
   ...(VERIFIED_AWARDS.length ? { award: VERIFIED_AWARDS.map(awardLabel) } : {}),
@@ -457,7 +477,9 @@ export const organizationSchema = () => ({
   ...(BUSINESS.alternateNames.length ? { alternateName: BUSINESS.alternateNames } : {}),
   telephone: BUSINESS.primaryPhoneE164,
   email: BUSINESS.email,
-  foundingDate: String(BUSINESS.foundingYear),
+  foundingDate: BUSINESS.foundingDate,
+  founder: FOUNDER_NODES,
+  hasCredential: CREDENTIAL_NODES,
   address: postalAddress(FRANKLIN),
   contactPoint: {
     "@type": "ContactPoint",

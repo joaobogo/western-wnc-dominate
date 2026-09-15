@@ -262,8 +262,11 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
   const OLD_NAME = new RegExp(OLD);
   const ALLOWED_LINE = [
     // 7 Sep 2026 work order, rule 1: the former name may appear ONLY in the one
-    // deliberate "formerly" line (footer) — never in metadata.
+    // deliberate "formerly" line (footer). 15 Sep 2026 SEO audit (Critical A)
+    // added one structured exception: schema.org alternateName, fed from
+    // BUSINESS.alternateNames, so search and AI engines merge the two names.
     /formerly /i,
+    /\balternateNames?\b/,
     /https?:\/\/[^\s"']*highlander[-_]?roofing/i, // external profile URLs
     /\/\/|^\s*\*|\/\*/, // code comments
   ];

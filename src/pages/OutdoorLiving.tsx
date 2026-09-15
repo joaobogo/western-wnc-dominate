@@ -38,6 +38,7 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import { OUTDOOR_SUBPAGES } from "@/data/outdoor-living-subpages";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -278,6 +279,26 @@ const OutdoorLiving = () => {
                   <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Dedicated pages for the three outdoor-living services people search for by name (15 Sep 2026 SEO audit) */}
+            <div className="mt-10 md:mt-12">
+              <p className="text-caption font-bold uppercase tracking-widest text-[hsl(var(--gold-ink))] mb-4">Go deeper</p>
+              <div className="grid gap-4 md:grid-cols-3">
+                {OUTDOOR_SUBPAGES.map((sub) => (
+                  <Link
+                    key={sub.slug}
+                    to={sub.path}
+                    className="group border border-border bg-card rounded-sm p-5 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors"
+                  >
+                    <h3 className="font-heading font-bold text-foreground mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{sub.crumb}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">{sub.answer.points[0]}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                      Read more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
