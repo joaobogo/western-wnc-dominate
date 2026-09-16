@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "roof-valley-leak-western-nc",
+    "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
+    "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
+    "category": "Maintenance",
+    "date": "2026-09-16",
+    "town": "Franklin"
+  },
+  {
     "slug": "roof-inspection-after-storm-western-nc",
     "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
     "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready recor",
