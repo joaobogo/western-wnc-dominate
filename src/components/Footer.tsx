@@ -75,8 +75,6 @@ const tier1Areas = [
 // added. County hubs and noindex service×town pages are never linked here.
 const tier1Slugs = new Set(tier1Areas.map((a) => a.href));
 const tier2Areas = towns
-  // Non-indexable towns (H3) are not linked from the sitewide footer.
-  .filter((t) => t.indexable !== false)
   .map((t) => ({ label: t.name, href: `/service-areas/${t.slug}` }))
   .filter((t) => !tier1Slugs.has(t.href))
   .sort((a, b) => a.label.localeCompare(b.label));

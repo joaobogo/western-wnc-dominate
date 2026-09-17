@@ -27,8 +27,6 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
-import ServiceSubtopics from "@/components/service/ServiceSubtopics";
-import { metalSubtopics } from "@/data/service-subtopics";
 
 const faqs = [
   { q: "How long does a metal roof last in Western NC?", a: "A properly specified and installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues at flashings and terminations — not panel failures." },
@@ -68,13 +66,6 @@ const MetalRoofing = () => {
       />
       <Header />
       <ServicePageTemplate
-        subtopics={
-          <ServiceSubtopics
-            heading="Installation and repair"
-            intro="Metal roofing splits into two jobs that need different work and different pricing."
-            items={metalSubtopics}
-          />
-        }
         alternateSurfaces={false}
         beforeHero={
           <PageBreadcrumbs

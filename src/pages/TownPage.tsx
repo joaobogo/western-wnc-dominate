@@ -216,15 +216,6 @@ const TownPage = () => {
               
 
               <CTAProofLine tone="dark" align="start" area={`${town.name} and ${town.county}`} className="mt-4" />
-
-              {/* T12: the price question is the one every town page gets asked. */}
-              <p className="mt-4 text-body-sm font-body text-white/85">
-                Wondering what a roof costs here?{" "}
-                <Link to="/roofing-cost-western-nc" className="font-semibold text-[hsl(var(--gold-ink))] underline underline-offset-4">
-                  See 2026 Western NC price ranges
-                </Link>
-                .
-              </p>
             </div>
           </div>
 

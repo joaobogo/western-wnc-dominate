@@ -16,8 +16,6 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import StormResponseGuide from "@/components/StormResponseGuide";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
-import ServiceSubtopics from "@/components/service/ServiceSubtopics";
-import { stormSubtopics } from "@/data/service-subtopics";
 
 import heroImg from "@/assets/gallery/asphalt-005.webp";
 import heroImgAvif from "@/assets/gallery/asphalt-005.webp?w=640;960;1280;1600&format=avif&as=srcset";
@@ -159,7 +157,7 @@ const StormDamage = () => {
   return (
     <>
       <SEOHead
-        title="Storm Damage Roof Repair WNC — Emergency Tarping & Claims"
+        title="Storm Damage Roof Repair in Western NC"
         description="Rapid storm response across Western North Carolina. Professional damage assessment, insurance documentation, and honest guidance from a trusted local team."
         path="/roofing/storm-damage"
         jsonLd={[
@@ -172,13 +170,6 @@ const StormDamage = () => {
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Storm Damage", url: "/roofing/storm-damage" }]} />
       <main id="main-content">
         <ServicePageTemplate
-          subtopics={
-            <ServiceSubtopics
-              heading="From the storm to the settled claim"
-              intro="Storm work runs in a sequence. Each stage has its own scope, and you should know which one you are in."
-              items={stormSubtopics}
-            />
-          }
           alternateSurfaces={false}
           hero={
             <>

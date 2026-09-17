@@ -25,10 +25,6 @@ import RelatedLinks from "@/components/RelatedLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { metalSystems, metalCostAnswer, METAL_COST_YEAR } from "@/data/metal-roof-cost";
 
-// T13 (15 Sep 2026 SEO spec): the ranges carry a visible review date. Bump this
-// whenever the figures in src/data/metal-roof-cost.ts are re-checked — quarterly.
-const COST_UPDATED = "September 2026";
-
 type Material = {
   name: string;
   href: string;
@@ -227,7 +223,7 @@ const RoofingCostWNC = () => {
           />
           <div className="container-tight relative z-10">
             <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
-              2026 Cost Guide · Updated {COST_UPDATED}
+              2026 Cost Guide
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-4xl">
               What a New Roof Costs in{" "}

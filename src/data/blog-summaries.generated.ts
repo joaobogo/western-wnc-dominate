@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "skylight-leak-repair-western-nc",
+    "slug": "skylight-leak-repair-western-nc",
+    "title": "Skylight Leak Repair for Western NC Mountain Homes",
+    "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
+    "category": "Maintenance",
+    "date": "2026-09-17",
+    "readTime": "9 min"
+  },
+  {
     "id": "roof-valley-leak-western-nc",
     "slug": "roof-valley-leak-western-nc",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
@@ -20,24 +29,6 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Maintenance",
     "date": "2026-09-16",
     "readTime": "10 min"
-  },
-  {
-    "id": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
-    "slug": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
-    "title": "Brava Synthetic vs Cedar Shake vs Natural Slate for Mountain Homes",
-    "excerpt": "Three ways to get a textured, high-end roof on a Western NC home — compared on weight, lifespan, maintenance, fire and what each one asks of the structure.",
-    "category": "Materials",
-    "date": "2026-09-15",
-    "readTime": "9 min"
-  },
-  {
-    "id": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "title": "Standing Seam vs Exposed-Fastener Metal Roofing for Mountain Homes",
-    "excerpt": "The two metal systems are not the same product at different prices. Here is how they differ on cost, fasteners, movement, wind, repairability and look.",
-    "category": "Materials",
-    "date": "2026-09-15",
-    "readTime": "9 min"
   },
   {
     "id": "roof-inspection-after-storm-western-nc",
@@ -101,6 +92,15 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Replacement",
     "date": "2026-08-02",
     "readTime": "8 min"
+  },
+  {
+    "id": "storm-damage-checklist-bryson-city-nc",
+    "slug": "storm-damage-checklist-bryson-city-nc",
+    "title": "After a Storm in Bryson City: A Ground-Level Roof Checklist",
+    "excerpt": "Swain County storms move fast and leave subtle damage. Here is what a Bryson City homeowner can safely check from the ground, what to photograph, and when to bring in a professional.",
+    "category": "Storm",
+    "date": "2026-08-02",
+    "readTime": "6 min"
   },
   {
     "id": "metal-roofing-bryson-city-nc-vacation-rentals",

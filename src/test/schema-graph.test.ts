@@ -56,15 +56,29 @@ describe("structured data graph", () => {
     expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
   });
 
-  it("emits NO review markup on /reviews (15 Sep 2026 SEO spec, T8)", () => {
+  it("emits one Review node per published review on /reviews, and no aggregateRating", () => {
     const nodes = buildPageSchema({ type: "reviews" });
+    const reviewNodes = nodes.filter((n) => (n as Record<string, unknown>)["@type"] === "Review");
 
-    // Every review on this page was collected on Google. Google's
-    // structured-data policy forbids marking up reviews gathered on a
-    // third-party site, so the page emits the business graph and nothing else.
-    expect(nodes.some((n) => (n as Record<string, unknown>)["@type"] === "Review")).toBe(false);
+    // One node per review actually rendered on the page — never more, never invented.
+    expect(reviewNodes).toHaveLength(REVIEWS.length);
+
+    // The visible 4.8 / 158 covers ALL Google reviews, not just these ten, so
+    // aggregateRating must not ride along with them.
     expect(nodes.some((n) => "aggregateRating" in n)).toBe(false);
-    expect(nodes.some((n) => String((n as Record<string, unknown>)["@id"]).endsWith("#business"))).toBe(true);
+
+    for (const r of REVIEWS) {
+      const node = reviewNodes.find(
+        (n) => (n as Record<string, unknown>)["@id"] === `https://highlandernc.com/reviews#${r.id}`,
+      ) as Record<string, any> | undefined;
+      expect(node, `missing Review node for ${r.id}`).toBeDefined();
+      // Schema must quote the review verbatim — no truncation, no rewriting.
+      expect(node!.reviewBody).toBe(r.text);
+      expect(node!.author.name).toBe(r.name);
+      expect(node!.reviewRating.ratingValue).toBe(r.rating);
+      expect(node!.datePublished).toBe(r.date);
+      expect(node!.itemReviewed["@id"]).toBe("https://highlandernc.com/#business");
+    }
   });
 
   it("every published review carries a traceable source", () => {

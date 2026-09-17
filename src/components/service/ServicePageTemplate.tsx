@@ -17,7 +17,6 @@ export const SERVICE_SECTION_ORDER = [
   "quickAnswer",
   "whatWeDo",
   "whatsIncluded",
-  "subtopics",
   "costContext",
   "process",
   "proof",

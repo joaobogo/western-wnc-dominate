@@ -358,10 +358,7 @@ const SERVICE_RULES = [
   ["/construction/outdoor-living", ["deck", "decks", "decking", "porch", "porches", "patio", "patios", "outdoor", "retaining", "pergola", "pergolas", "screened", "sunroom", "sunrooms"]],
   ["/construction/renovations", ["renovation", "renovations", "remodel", "remodeling", "remodels", "kitchen", "kitchens", "bathroom", "bathrooms"]],
   ["/construction/design", ["design", "designs", "engineering", "plans", "planning", "layout", "layouts", "architect", "architectural"]],
-  // "contractor" is deliberately absent: on a roofing-led site "roofing
-  // contractor" is the common phrase, and listing it here sent every
-  // /roofing-contractor-* legacy URL to the construction division.
-  ["/construction", ["construction", "builder", "builders", "custom", "garage", "garages", "carport", "carports"]],
+  ["/construction", ["construction", "contractor", "contractors", "builder", "builders", "custom", "garage", "garages", "carport", "carports"]],
   ["/roofing", ["roofing", "roofer", "roofers", "roof", "roofs"]],
 ];
 
@@ -445,11 +442,7 @@ export function suggestDestination(path, ctx) {
   if (GONE_RE.test(p)) return { to: "/404.html", status: 410, reason: "old CMS plumbing" };
   const tokens = tokenize(p);
   const town = findTown(tokens, ctx.townSlugs);
-  // A noindex page is not a destination worth suggesting: classify() already
-  // refuses to LAND a legacy URL on one, so it must not ask for one either
-  // (towns switched off by H3 keep their page but leave the index).
-  const indexablePage = (path) => ctx.isLive(path) && !ctx.noindexPages?.has(path);
-  const townPage = town && indexablePage(`/service-areas/${town}`) ? `/service-areas/${town}` : null;
+  const townPage = town && ctx.isLive(`/service-areas/${town}`) ? `/service-areas/${town}` : null;
 
   // "/service-locations", "/service-areas", "/service-area" = the towns-served hub itself.
   if (/(^|\/)service-(locations?|areas?)(\/|$)/.test(p) && !town) {
@@ -472,18 +465,14 @@ export function suggestDestination(path, ctx) {
   if (town && service) {
     const st = SERVICE_TOWN_SLUG[service];
     const nested = st ? `/service-areas/${town}/${st}` : null;
-    if (nested && ctx.indexablePairs.has(`${town}|${st}`) && indexablePage(nested)) {
+    if (nested && ctx.indexablePairs.has(`${town}|${st}`) && ctx.isLive(nested)) {
       return { to: nested, status: 301, reason: "town + service (indexable hand-written page)" };
     }
     if (townPage) return { to: townPage, status: 301, reason: "town + service (no indexable page → town)" };
   }
   if (townPage) return { to: townPage, status: 301, reason: "town" };
 
-  // The article heuristic must not see the old /contact/<service>-service-area/
-  // <town> doorway shape: those URLs are long and full of stop words, so they
-  // look like articles and used to be sent to an unrelated blog post. A doorway
-  // URL's intent is the service, which the next branch resolves.
-  if (!isContactPattern && looksLikeArticle(tokens)) {
+  if (looksLikeArticle(tokens)) {
     const post = closestBlogPost(tokens, ctx.blogSlugs, ctx.townSlugs);
     if (post && ctx.isLive(post)) return { to: post, status: 301, reason: "article-style slug → closest blog post" };
   }

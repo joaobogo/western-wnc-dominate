@@ -172,14 +172,8 @@ export const BUSINESS: BusinessIdentity = {
   foundingDate: "2017-06-21",
   licenseNumber: "NC GC #87668",
   slogan: "Built for the Mountains. Built for Life.",
-  // T7 (15 Sep 2026 SEO spec): ONE canonical entity description, used verbatim
-  // in the Organization schema, llms.txt, the About page and both Google
-  // Business Profile descriptions. Every fact is verifiable: the licence number
-  // and credentials are in the footer, the incorporation date is on the BBB
-  // profile, both addresses are in `locations` below. Do not add a claim here
-  // that cannot be checked from a public record — answer engines cross-check.
   description:
-    "Highlander Building Services, Inc. is a licensed roofing contractor and North Carolina General Contractor (license #87668), founded in 2017 by Luke and Kristy Smith and based at 1511 Highlands Road in Franklin, North Carolina, with a second showroom in Sylva. The company installs standing seam and exposed-fastener metal roofing, CertainTeed shingle systems, cedar shake and Brava synthetic roofing, seamless gutters, skylights, additions and outdoor living spaces for mountain homes across Western North Carolina.",
+    "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   priceRange: "$$", // set per the 7 Sep 2026 work order (Task 6)
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.

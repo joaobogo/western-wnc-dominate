@@ -5,8 +5,7 @@
   Google recrawls them and records their 301s faster. Every URL here
   redirects; none is canonical. Submit it in Search Console next to
   sitemap.xml, leave it 4-6 weeks, then delete this file and remove it from
-  Search Console. It is listed in robots.txt so Google can discover it; remove
-  that line together with this file.
+  Search Console. It is deliberately NOT referenced from robots.txt.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://highlandernc.com/gallery</loc></url>

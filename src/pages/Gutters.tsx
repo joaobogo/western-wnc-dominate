@@ -14,8 +14,6 @@ import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import RelatedLinks from "@/components/RelatedLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
-import ServiceSubtopics from "@/components/service/ServiceSubtopics";
-import { gutterSubtopics } from "@/data/service-subtopics";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -39,8 +37,8 @@ const Gutters = () => {
   return (
     <>
       <SEOHead
-        title="Seamless Gutters & Gutter Guards in Western NC | Highlander"
-        description="Seamless 5-inch and 6-inch gutters, micro-mesh guards, copper and repairs across Western NC. Sized for plateau rainfall, not a catalogue average."
+        title="Seamless Gutter Installation in Western NC | Highlander"
+        description="Gutter installation, seamless gutters, replacement, and drainage support for homes in Franklin, Highlands, Cashiers, Sylva, and Western NC."
         path="/roofing/gutters"
         jsonLd={buildPageSchema({
           type: "service",
@@ -60,13 +58,6 @@ const Gutters = () => {
       />
       <Header />
       <ServicePageTemplate
-        subtopics={
-          <ServiceSubtopics
-            heading="Every gutter job we take"
-            intro="The old site had a separate page for each of these. They are one service, and this is what each part of it involves."
-            items={gutterSubtopics}
-          />
-        }
         alternateSurfaces={false}
         beforeHero={
         <PageBreadcrumbs

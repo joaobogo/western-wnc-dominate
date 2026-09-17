@@ -90,13 +90,7 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-SearchBot
-Allow: /
-
 User-agent: Claude-Web
-Allow: /
-
-User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
@@ -107,7 +101,3 @@ Allow: /
 
 # ── Canonical sitemap ───────────────────────────────────────────────────
 Sitemap: https://highlandernc.com/sitemap.xml
-# Temporary migration sitemap (15 Sep 2026 SEO spec, T3): the old-site URLs
-# still in Google's index, listed so they are recrawled and their 301s recorded.
-# DELETE this line and public/sitemap-legacy.xml after 6 weeks (from 27 Oct 2026).
-Sitemap: https://highlandernc.com/sitemap-legacy.xml

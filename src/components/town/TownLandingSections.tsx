@@ -64,6 +64,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
 /* ─────────────────────────────────────────────────────────────
  *  2. SERVICES GRID — town-personalized service cards w/ CTAs
  * ────────────────────────────────────────────────────────── */
+const possessive = (name: string) => (name.endsWith("s") ? `${name}'` : `${name}'s`);
 
 /**
  * Each card keeps its shared base sentence, plus one town-specific sentence
@@ -98,8 +99,9 @@ const services = [
     icon: Zap, label: "Metal Roofing",
     desc: (t: TownData) => {
       const base = `Standing-seam systems built for high-elevation ${t.name} homes and long ownership horizons.`;
-      // Elevation is stated once, in the local-conditions section (T10).
-      return `${base} Panel gauge, clip spacing, and fastener choices are set against the exposure we measure on site.`;
+      return t.elevation
+        ? `${base} Panel gauge, clip spacing, and fastener choices are matched to ${possessive(t.name)} ${t.elevation} exposure.`
+        : base;
     },
     href: "/roofing/metal",
   },
@@ -117,7 +119,9 @@ const services = [
     icon: Hammer, label: "Additions & Renovations",
     desc: (t: TownData) => {
       const base = `Licensed general contractor work — master suites, kitchens, and full ${t.name} home renovations.`;
-      return `${base} Additions are framed, flashed and sealed to the same standard as the roof they tie into.`;
+      return t.elevation
+        ? `${base} ${t.name} additions are framed and sealed for the same ${t.elevation} exposure your roof already handles.`
+        : base;
     },
     href: "/construction/additions",
   },
@@ -125,8 +129,8 @@ const services = [
     icon: Ruler, label: "Outdoor Living",
     desc: (t: TownData) => {
       const base = "Decks, covered porches, and pergolas designed for mountain views and weather.";
-      return t.county
-        ? `${base} ${t.name} builds carry ${t.county} permits and the footing and drainage detail a sloped lot needs.`
+      return t.county && t.elevation
+        ? `${base} ${t.name} builds in ${t.county} are detailed for ${t.elevation} weather, not flatland conditions.`
         : base;
     },
 
