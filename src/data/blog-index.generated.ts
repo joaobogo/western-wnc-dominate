@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "roof-valley-leak-western-nc",
+    "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
+    "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
+    "category": "Maintenance",
+    "date": "2026-09-16",
+    "town": "Franklin"
+  },
+  {
     "slug": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
     "title": "Brava Synthetic vs Cedar Shake vs Natural Slate for Mountain Homes",
     "excerpt": "Three ways to get a textured, high-end roof on a Western NC home — compared on weight, lifespan, maintenance, fire and what each one asks of the structure.",

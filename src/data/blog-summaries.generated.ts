@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "roof-valley-leak-western-nc",
+    "slug": "roof-valley-leak-western-nc",
+    "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
+    "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
+    "category": "Maintenance",
+    "date": "2026-09-16",
+    "readTime": "10 min"
+  },
+  {
     "id": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
     "slug": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
     "title": "Brava Synthetic vs Cedar Shake vs Natural Slate for Mountain Homes",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm",
     "date": "2026-07-29",
     "readTime": "9 min"
-  },
-  {
-    "id": "home-renovation-exterior-project-cullowhee-nc",
-    "slug": "home-renovation-exterior-project-cullowhee-nc",
-    "title": "Planning a Home Renovation or Exterior Project in Cullowhee",
-    "excerpt": "What Cullowhee, NC homeowners should know before starting a renovation or exterior project — planning, budget, and choosing the right team.",
-    "category": "Construction",
-    "date": "2026-07-26",
-    "readTime": "8 min"
   }
 ];
