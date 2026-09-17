@@ -16,6 +16,8 @@ import PageContext from "@/components/PageContext";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
+import ServiceSubtopics from "@/components/service/ServiceSubtopics";
+import { roofRepairSubtopics } from "@/data/service-subtopics";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.webp";
@@ -109,7 +111,7 @@ const RoofRepair = () => {
   return (
     <>
       <SEOHead
-        title="Roof Repair in Western NC | Leak Diagnosis & Repair"
+        title="Roof Repair in Western NC — Leaks, Flashing, Storm Damage"
         description="Targeted roof repairs across Western North Carolina. We diagnose the real cause, complete the fix correctly, and document the work with photos."
         path="/roofing/roof-repair"
         jsonLd={[
@@ -122,6 +124,13 @@ const RoofRepair = () => {
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Roof Repair", url: "/roofing/roof-repair" }]} />
       <main id="main-content">
         <ServicePageTemplate
+          subtopics={
+            <ServiceSubtopics
+              heading="What a roof repair actually covers"
+              intro="Leaks, flashing, ventilation and moss are different problems with different fixes. Here is how we approach each one."
+              items={roofRepairSubtopics}
+            />
+          }
           alternateSurfaces={false}
           hero={
             <>

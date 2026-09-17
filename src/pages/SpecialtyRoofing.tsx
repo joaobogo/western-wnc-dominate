@@ -29,6 +29,8 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
+import ServiceSubtopics from "@/components/service/ServiceSubtopics";
+import { specialtySubtopics } from "@/data/service-subtopics";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -107,6 +109,13 @@ const SpecialtyRoofing = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]} />
       <ServicePageTemplate
+        subtopics={
+          <ServiceSubtopics
+            heading="Specialty systems we install and repair"
+            intro="Slate, cedar, tile and synthetic each behave differently in the mountains, and each is priced and detailed differently."
+            items={specialtySubtopics}
+          />
+        }
         alternateSurfaces={false}
         hero={
                   <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">

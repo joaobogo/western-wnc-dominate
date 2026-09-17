@@ -51,10 +51,11 @@ const CountyPage = () => {
         title={county.metaTitle}
         description={county.metaDescription}
         path={`/service-areas/county/${county.slug}`}
-        // County hubs exist to route crawlers and visitors to town pages; they
-        // do not compete in search themselves (noindex,follow, out of the
-        // sitemap, still prerendered — P3.1).
-        noindex="follow"
+        // T2 (15 Sep 2026 SEO spec): county hubs are now indexable. They are the
+        // 301 destination for the doorway URLs of ~30 small communities that have
+        // no page of their own, and a noindex target would throw that equity away.
+        // Counties H3 dropped stay noindex,follow — reachable, out of the index.
+        noindex={county.indexable === false ? "follow" : false}
         jsonLd={buildPageSchema({
           type: "county",
           county: {

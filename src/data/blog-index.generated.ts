@@ -14,12 +14,20 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
-    "slug": "roof-valley-leak-western-nc",
-    "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
-    "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
-    "category": "Maintenance",
-    "date": "2026-09-16",
-    "town": "Franklin"
+    "slug": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
+    "title": "Brava Synthetic vs Cedar Shake vs Natural Slate for Mountain Homes",
+    "excerpt": "Three ways to get a textured, high-end roof on a Western NC home — compared on weight, lifespan, maintenance, fire and what each one asks of the structure.",
+    "category": "Materials",
+    "date": "2026-09-15",
+    "town": ""
+  },
+  {
+    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    "title": "Standing Seam vs Exposed-Fastener Metal Roofing for Mountain Homes",
+    "excerpt": "The two metal systems are not the same product at different prices. Here is how they differ on cost, fasteners, movement, wind, repairability and look.",
+    "category": "Materials",
+    "date": "2026-09-15",
+    "town": ""
   },
   {
     "slug": "roof-inspection-after-storm-western-nc",
@@ -78,14 +86,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Waynesville"
   },
   {
-    "slug": "storm-damage-checklist-bryson-city-nc",
-    "title": "After a Storm in Bryson City: A Ground-Level Roof Checklist",
-    "excerpt": "Swain County storms move fast and leave subtle damage. Here is what a Bryson City homeowner can safely check from the ground, what to photograph, and when to br",
-    "category": "Storm",
-    "date": "2026-08-02",
-    "town": "Bryson City"
-  },
-  {
     "slug": "metal-roofing-bryson-city-nc-vacation-rentals",
     "title": "Metal Roofing for Bryson City Vacation Rentals: What Owners Should Know",
     "excerpt": "Bryson City rental cabins take heavy rain, heavy guest turnover, and very little downtime. Here is how standing seam metal changes the maintenance math for shor",
@@ -100,14 +100,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "category": "Storm",
     "date": "2026-07-29",
     "town": "Highlands"
-  },
-  {
-    "slug": "storm-moisture-damage-cullowhee-nc",
-    "title": "Storm and Moisture Damage Cullowhee Homeowners Should Watch For",
-    "excerpt": "The storm and moisture damage patterns Cullowhee, NC homeowners should watch for and when to schedule a professional inspection.",
-    "category": "Storm Damage",
-    "date": "2026-07-26",
-    "town": "Cullowhee"
   },
   {
     "slug": "home-renovation-exterior-project-cullowhee-nc",
@@ -126,28 +118,12 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Cullowhee"
   },
   {
-    "slug": "common-roofing-problems-cullowhee-nc",
-    "title": "Common Roofing Problems in Cullowhee, North Carolina",
-    "excerpt": "The roofing problems we most often find on Cullowhee, NC homes and what to do about them before they get worse.",
-    "category": "Repair",
-    "date": "2026-07-26",
-    "town": "Cullowhee"
-  },
-  {
     "slug": "roof-repair-vs-replacement-cullowhee-nc",
     "title": "Roof Repair vs. Roof Replacement for Cullowhee Homeowners",
     "excerpt": "How Cullowhee, NC homeowners can decide between a targeted roof repair and full replacement in Jackson County's mountain climate.",
     "category": "Replacement",
     "date": "2026-07-26",
     "town": "Cullowhee"
-  },
-  {
-    "slug": "storm-damage-check-sylva-nc",
-    "title": "What to Check After a Storm in Sylva, North Carolina",
-    "excerpt": "A safe, practical post storm checklist for Sylva, NC homeowners, plus when to call a local roofer for a professional evaluation.",
-    "category": "Storm Damage",
-    "date": "2026-07-25",
-    "town": "Sylva"
   },
   {
     "slug": "exterior-repairs-before-winter-sylva-nc",
@@ -246,14 +222,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Cashiers"
   },
   {
-    "slug": "common-roofing-problems-cashiers-nc",
-    "title": "Common Roofing Problems in Cashiers Mountain Homes",
-    "excerpt": "The roofing problems we most often find on Cashiers, NC mountain homes and what elevation, weather, and tree cover do to a roof.",
-    "category": "Repair",
-    "date": "2026-07-24",
-    "town": "Cashiers"
-  },
-  {
     "slug": "roof-repair-vs-replacement-cashiers-nc",
     "title": "Roof Repair vs. Roof Replacement: How Cashiers Homeowners Know the Difference",
     "excerpt": "How Cashiers, NC homeowners can tell when a targeted roof repair is enough and when a full replacement protects the home better.",
@@ -310,20 +278,12 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Franklin"
   },
   {
-    "slug": "storm-damage-check-franklin-nc",
-    "title": "What to Check After High Winds or Heavy Rain in Franklin",
-    "excerpt": "A safe, practical checklist for Franklin, NC homeowners after high winds or heavy rain, plus when to call a roofer for a professional evaluation.",
-    "category": "Storm Damage",
-    "date": "2026-07-23",
-    "town": "Franklin"
-  },
-  {
-    "slug": "common-roofing-problems-franklin-nc",
-    "title": "Common Roofing Problems Found in Franklin, North Carolina",
-    "excerpt": "The roofing problems we most often find on Franklin, NC homes and what mountain conditions do to a roof over time.",
+    "slug": "common-roofing-problems-western-nc",
+    "title": "Why Roofs Fail Early in Western North Carolina",
+    "excerpt": "Flashing, vent boots, debris, wind uplift, loose fasteners, drainage and underlayment — the seven failures behind almost every early roof replacement here.",
     "category": "Repair",
     "date": "2026-07-23",
-    "town": "Franklin"
+    "town": ""
   },
   {
     "slug": "roof-inspection-frequency-franklin-nc",
@@ -390,14 +350,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Highlands"
   },
   {
-    "slug": "storm-damage-roof-highlands-nc",
-    "title": "What Highlands Homeowners Should Check After a Severe Storm",
-    "excerpt": "A practical, safety first checklist for evaluating your Highlands, NC roof and property after a major storm, plus when to call a roofer.",
-    "category": "Storm Damage",
-    "date": "2026-07-22",
-    "town": "Highlands"
-  },
-  {
     "slug": "metal-roofing-vs-shingles-highlands-nc",
     "title": "Metal Roofing vs. Shingles for Highlands Mountain Homes",
     "excerpt": "A local roofer's comparison of standing seam metal and quality shingle systems on Highlands, NC homes — cost, life, style, and mountain performance.",
@@ -444,14 +396,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "category": "Seasonal",
     "date": "2026-07-20",
     "town": ""
-  },
-  {
-    "slug": "storm-readiness-roofs-franklin-highlands-cashiers-sylva",
-    "title": "Storm Readiness for Roofs in Franklin, Highlands, Cashiers, and Sylva",
-    "excerpt": "Practical storm readiness for roofs across Franklin, Highlands, Cashiers, and Sylva — before and after WNC weather events.",
-    "category": "Seasonal",
-    "date": "2026-07-20",
-    "town": "Highlands"
   },
   {
     "slug": "roofing-mountain-homes-lake-glenville-scaly-mountain",
@@ -774,14 +718,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "storm-damage-roof-repair-franklin-highlands-cashiers",
-    "title": "Storm Damage Roof Repair in Franklin, Highlands, and Cashiers",
-    "excerpt": "What storm damage actually looks like on WNC roofs — and how Franklin, Highlands, and Cashiers homeowners should approach repair and documentation.",
-    "category": "Storm",
-    "date": "2026-07-06",
-    "town": "Highlands"
-  },
-  {
     "slug": "roof-leak-repair-western-nc",
     "title": "Roof Leak Repair in Western North Carolina: Causes, Warning Signs, and Next Steps",
     "excerpt": "The most common causes of roof leaks on Western NC mountain homes, and how to plan repair without over- or under-scoping.",
@@ -1011,14 +947,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
     "category": "Construction",
     "date": "2026-03-20",
-    "town": ""
-  },
-  {
-    "slug": "2026-spring-storm-season-wnc-preparation",
-    "title": "2026 Spring Storm Season: What WNC Homeowners Should Prepare For",
-    "excerpt": "Early forecasts suggest an active spring storm season for Western North Carolina. Here's how to prepare your roof and home.",
-    "category": "Storm",
-    "date": "2026-03-15",
     "town": ""
   },
   {

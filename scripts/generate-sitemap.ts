@@ -12,6 +12,7 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
+import { counties } from "../src/data/counties";
 import { indexableServiceTownPairs } from "../src/data/service-town-content";
 import { projectDetails } from "../src/data/projects";
 
@@ -102,10 +103,12 @@ const townRoutes: SitemapEntry[] = towns
     path: `/service-areas/${t.slug}`,
   }));
 
-// County hub pages (/service-areas/county/{slug}) render noindex,follow — they
-// are internal link hubs, not ranking targets — so they are NOT in the sitemap.
-// They are still prerendered via public/prerender-manifest.json.
-const countyRoutes: SitemapEntry[] = [];
+// County hub pages (/service-areas/county/{slug}). Indexable since 15 Sep 2026
+// (SEO spec T2) because the doorway URLs of communities without their own page
+// now 301 here. Counties dropped by H3 carry indexable: false and stay out.
+const countyRoutes: SitemapEntry[] = counties
+  .filter((c) => c.indexable !== false)
+  .map((c) => ({ path: `/service-areas/county/${c.slug}` }));
 
 // Dynamic: service-town landing pages (/service-areas/{town}/{service}).
 // Only hand-written pairs are indexable and listed here. The generated

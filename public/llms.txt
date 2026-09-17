@@ -1,6 +1,6 @@
 # Highlander Building Services
 
-> Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.
+> Highlander Building Services, Inc. is a licensed roofing contractor and North Carolina General Contractor (license #87668), founded in 2017 by Luke and Kristy Smith and based at 1511 Highlands Road in Franklin, North Carolina, with a second showroom in Sylva. The company installs standing seam and exposed-fastener metal roofing, CertainTeed shingle systems, cedar shake and Brava synthetic roofing, seamless gutters, skylights, additions and outdoor living spaces for mountain homes across Western North Carolina.
 
 Highlander Building Services, Inc. is built for the Western North Carolina mountain climate — elevation, freeze-thaw cycling, wind-driven rain, and heavy tree canopy. Roofing is the primary division (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary division (additions, renovations, exteriors, outdoor living, custom projects).
 
@@ -115,7 +115,6 @@ Founded: 2017
 ### Service areas
 
 - https://highlandernc.com/service-areas
-- https://highlandernc.com/service-areas/asheville-nc
 - https://highlandernc.com/service-areas/brevard-nc
 - https://highlandernc.com/service-areas/bryson-city-nc
 - https://highlandernc.com/service-areas/cashiers-nc
@@ -127,6 +126,14 @@ Founded: 2017
 - https://highlandernc.com/service-areas/cashiers-nc/roofing
 - https://highlandernc.com/service-areas/cashiers-nc/synthetic-brava
 - https://highlandernc.com/service-areas/cherokee-nc
+- https://highlandernc.com/service-areas/county/cherokee-county
+- https://highlandernc.com/service-areas/county/clay-county
+- https://highlandernc.com/service-areas/county/haywood-county
+- https://highlandernc.com/service-areas/county/jackson-county
+- https://highlandernc.com/service-areas/county/macon-county
+- https://highlandernc.com/service-areas/county/madison-county
+- https://highlandernc.com/service-areas/county/swain-county
+- https://highlandernc.com/service-areas/county/transylvania-county
 - https://highlandernc.com/service-areas/cullowhee-nc
 - https://highlandernc.com/service-areas/dillsboro-nc
 - https://highlandernc.com/service-areas/franklin-nc
@@ -137,7 +144,6 @@ Founded: 2017
 - https://highlandernc.com/service-areas/franklin-nc/roof-replacement
 - https://highlandernc.com/service-areas/franklin-nc/roofing
 - https://highlandernc.com/service-areas/hayesville-nc
-- https://highlandernc.com/service-areas/hendersonville-nc
 - https://highlandernc.com/service-areas/highlands-nc
 - https://highlandernc.com/service-areas/highlands-nc/additions
 - https://highlandernc.com/service-areas/highlands-nc/construction
@@ -170,19 +176,17 @@ Founded: 2017
 ### Articles
 
 - https://highlandernc.com/blog
-- https://highlandernc.com/blog/2026-spring-storm-season-wnc-preparation
 - https://highlandernc.com/blog/attic-ventilation-waynesville-nc-winter
 - https://highlandernc.com/blog/best-roofing-materials-highlands-nc
 - https://highlandernc.com/blog/best-time-of-year-replace-roof-western-north-carolina
 - https://highlandernc.com/blog/best-time-to-replace-roof-franklin-nc
+- https://highlandernc.com/blog/brava-synthetic-vs-cedar-shake-vs-slate-wnc
 - https://highlandernc.com/blog/budgeting-for-preconstruction-planning
 - https://highlandernc.com/blog/choosing-materials-for-high-elevation
 - https://highlandernc.com/blog/choosing-roofing-contractor-wnc
 - https://highlandernc.com/blog/commercial-roof-maintenance-wnc
 - https://highlandernc.com/blog/common-roof-leak-locations-highlands-nc
-- https://highlandernc.com/blog/common-roofing-problems-cashiers-nc
-- https://highlandernc.com/blog/common-roofing-problems-cullowhee-nc
-- https://highlandernc.com/blog/common-roofing-problems-franklin-nc
+- https://highlandernc.com/blog/common-roofing-problems-western-nc
 - https://highlandernc.com/blog/construction-project-highlands-nc
 - https://highlandernc.com/blog/construction-scope-development-guide
 - https://highlandernc.com/blog/construction-services-cashiers-nc-additions-porches
@@ -302,14 +306,8 @@ Founded: 2017
 - https://highlandernc.com/blog/small-exterior-repairs-franklin-nc
 - https://highlandernc.com/blog/spring-roof-maintenance-checklist-wnc
 - https://highlandernc.com/blog/spring-roof-maintenance-western-nc
-- https://highlandernc.com/blog/storm-damage-check-franklin-nc
-- https://highlandernc.com/blog/storm-damage-check-sylva-nc
-- https://highlandernc.com/blog/storm-damage-checklist-bryson-city-nc
+- https://highlandernc.com/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc
 - https://highlandernc.com/blog/storm-damage-checklist-western-nc
-- https://highlandernc.com/blog/storm-damage-roof-highlands-nc
-- https://highlandernc.com/blog/storm-damage-roof-repair-franklin-highlands-cashiers
-- https://highlandernc.com/blog/storm-moisture-damage-cullowhee-nc
-- https://highlandernc.com/blog/storm-readiness-roofs-franklin-highlands-cashiers-sylva
 - https://highlandernc.com/blog/structural-feasibility-second-story-wnc
 - https://highlandernc.com/blog/terrain-responsive-floor-plans-wnc
 - https://highlandernc.com/blog/transforming-screened-porch-sunroom

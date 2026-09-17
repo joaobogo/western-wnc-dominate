@@ -13,13 +13,22 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
-    "id": "roof-valley-leak-western-nc",
-    "slug": "roof-valley-leak-western-nc",
-    "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
-    "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
-    "category": "Maintenance",
-    "date": "2026-09-16",
-    "readTime": "10 min"
+    "id": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
+    "slug": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
+    "title": "Brava Synthetic vs Cedar Shake vs Natural Slate for Mountain Homes",
+    "excerpt": "Three ways to get a textured, high-end roof on a Western NC home — compared on weight, lifespan, maintenance, fire and what each one asks of the structure.",
+    "category": "Materials",
+    "date": "2026-09-15",
+    "readTime": "9 min"
+  },
+  {
+    "id": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    "title": "Standing Seam vs Exposed-Fastener Metal Roofing for Mountain Homes",
+    "excerpt": "The two metal systems are not the same product at different prices. Here is how they differ on cost, fasteners, movement, wind, repairability and look.",
+    "category": "Materials",
+    "date": "2026-09-15",
+    "readTime": "9 min"
   },
   {
     "id": "roof-inspection-after-storm-western-nc",
@@ -85,15 +94,6 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "8 min"
   },
   {
-    "id": "storm-damage-checklist-bryson-city-nc",
-    "slug": "storm-damage-checklist-bryson-city-nc",
-    "title": "After a Storm in Bryson City: A Ground-Level Roof Checklist",
-    "excerpt": "Swain County storms move fast and leave subtle damage. Here is what a Bryson City homeowner can safely check from the ground, what to photograph, and when to bring in a professional.",
-    "category": "Storm",
-    "date": "2026-08-02",
-    "readTime": "6 min"
-  },
-  {
     "id": "metal-roofing-bryson-city-nc-vacation-rentals",
     "slug": "metal-roofing-bryson-city-nc-vacation-rentals",
     "title": "Metal Roofing for Bryson City Vacation Rentals: What Owners Should Know",
@@ -112,12 +112,12 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "storm-moisture-damage-cullowhee-nc",
-    "slug": "storm-moisture-damage-cullowhee-nc",
-    "title": "Storm and Moisture Damage Cullowhee Homeowners Should Watch For",
-    "excerpt": "The storm and moisture damage patterns Cullowhee, NC homeowners should watch for and when to schedule a professional inspection.",
-    "category": "Storm Damage",
+    "id": "home-renovation-exterior-project-cullowhee-nc",
+    "slug": "home-renovation-exterior-project-cullowhee-nc",
+    "title": "Planning a Home Renovation or Exterior Project in Cullowhee",
+    "excerpt": "What Cullowhee, NC homeowners should know before starting a renovation or exterior project — planning, budget, and choosing the right team.",
+    "category": "Construction",
     "date": "2026-07-26",
-    "readTime": "7 min"
+    "readTime": "8 min"
   }
 ];

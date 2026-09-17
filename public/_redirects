@@ -14,6 +14,9 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # scripts/fixtures/legacy-urls-from-gsc.txt (P1.1, 2026-09-04).
 # Exact rules live here, above every wildcard, so nothing can shadow them.
 # ============================================================
+# H3 (15 Sep 2026): Asheville and Hendersonville were dropped as markets. Their
+# town pages are noindex, so their legacy doorway URLs go to the SERVICE page
+# the old URL named rather than to a page we no longer want indexed.
 /contact/seamless-gutters-service-area/cashiers-nc           /service-areas/cashiers-nc                        301!
 /page-sitemap.xml                                            /sitemap.xml                                      301!
 /sitemap_index.xml                                           /sitemap.xml                                      301!
@@ -134,8 +137,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact-sylva-nc                                            /service-areas/sylva-nc                            301!
 /contact-highlands-nc                                        /service-areas/highlands-nc                        301!
 /contact-cashiers-nc                                         /service-areas/cashiers-nc                         301!
-/contact-asheville-nc                                        /service-areas/asheville-nc                        301!
-/asheville-nc-location                                       /service-areas/asheville-nc                        301!
+/contact-asheville-nc                                        /service-areas                                     301!
+/asheville-nc-location                                       /locations                                         301!
 /contact-waynesville-nc                                      /service-areas/waynesville-nc                      301!
 /contact-bryson-city-nc                                      /service-areas/bryson-city-nc                      301!
 /contact-cullowhee-nc                                        /service-areas/cullowhee-nc                        301!
@@ -189,6 +192,23 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 
 
 # ============================================================
+# 15 Sep 2026 SEO spec, T15 — town-swapped blog series folded into pillars.
+# Each of these ranked for a town variant of the same question; one strong
+# guide is cited more often than eight thin ones.
+# ============================================================
+/blog/storm-damage-checklist-bryson-city-nc                 /blog/storm-damage-checklist-western-nc           301!
+/blog/storm-damage-roof-repair-franklin-highlands-cashiers  /blog/storm-damage-checklist-western-nc           301!
+/blog/storm-damage-roof-highlands-nc                        /blog/storm-damage-checklist-western-nc           301!
+/blog/storm-damage-check-franklin-nc                        /blog/storm-damage-checklist-western-nc           301!
+/blog/storm-damage-check-sylva-nc                           /blog/storm-damage-checklist-western-nc           301!
+/blog/storm-readiness-roofs-franklin-highlands-cashiers-sylva  /blog/storm-damage-checklist-western-nc           301!
+/blog/storm-moisture-damage-cullowhee-nc                    /blog/storm-damage-checklist-western-nc           301!
+/blog/common-roofing-problems-franklin-nc                   /blog/common-roofing-problems-western-nc          301!
+/blog/common-roofing-problems-cashiers-nc                   /blog/common-roofing-problems-western-nc          301!
+/blog/common-roofing-problems-cullowhee-nc                  /blog/common-roofing-problems-western-nc          301!
+/blog/2026-spring-storm-season-wnc-preparation              /blog/wnc-storm-season-roof-damage                301!
+
+# ============================================================
 # 15 Sep 2026 SEO audit — old-site URLs still in Google's index with no rule
 # ============================================================
 /walkways                                                    /construction/outdoor-living/hardscape             301!
@@ -216,8 +236,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/service-area/waynesville-nc                                        /service-areas/waynesville-nc                     301!
 /contact/service-area/cullowhee-nc                                          /service-areas/cullowhee-nc                       301!
 /contact/service-area/dillsboro-nc                                          /service-areas/dillsboro-nc                       301!
-/contact/service-area/asheville-nc                                          /service-areas/asheville-nc                       301!
-/contact/service-area/hendersonville-nc                                     /service-areas/hendersonville-nc                  301!
+/contact/service-area/asheville-nc                                          /service-areas                                    301!
+/contact/service-area/hendersonville-nc                                     /service-areas                               301!
 /contact/service-area/brevard-nc                                            /service-areas/brevard-nc                         301!
 /contact/service-area/murphy-nc                                             /service-areas/murphy-nc                          301!
 /contact/service-area/hayesville-nc                                         /service-areas/hayesville-nc                      301!
@@ -235,8 +255,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/local-roofer-service-area/waynesville-nc                           /service-areas/waynesville-nc                     301!
 /contact/local-roofer-service-area/cullowhee-nc                             /service-areas/cullowhee-nc                       301!
 /contact/local-roofer-service-area/dillsboro-nc                             /service-areas/dillsboro-nc                       301!
-/contact/local-roofer-service-area/asheville-nc                             /service-areas/asheville-nc                       301!
-/contact/local-roofer-service-area/hendersonville-nc                        /service-areas/hendersonville-nc                  301!
+/contact/local-roofer-service-area/asheville-nc              /roofing                                         301!
+/contact/local-roofer-service-area/hendersonville-nc         /roofing                                         301!
 /contact/local-roofer-service-area/brevard-nc                               /service-areas/brevard-nc                         301!
 /contact/local-roofer-service-area/murphy-nc                                /service-areas/murphy-nc                          301!
 /contact/local-roofer-service-area/hayesville-nc                            /service-areas/hayesville-nc                      301!
@@ -254,8 +274,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/local-roofers-service-area/waynesville-nc                          /service-areas/waynesville-nc                     301!
 /contact/local-roofers-service-area/cullowhee-nc                            /service-areas/cullowhee-nc                       301!
 /contact/local-roofers-service-area/dillsboro-nc                            /service-areas/dillsboro-nc                       301!
-/contact/local-roofers-service-area/asheville-nc                            /service-areas/asheville-nc                       301!
-/contact/local-roofers-service-area/hendersonville-nc                       /service-areas/hendersonville-nc                  301!
+/contact/local-roofers-service-area/asheville-nc             /roofing                                         301!
+/contact/local-roofers-service-area/hendersonville-nc        /roofing                                         301!
 /contact/local-roofers-service-area/brevard-nc                              /service-areas/brevard-nc                         301!
 /contact/local-roofers-service-area/murphy-nc                               /service-areas/murphy-nc                          301!
 /contact/local-roofers-service-area/hayesville-nc                           /service-areas/hayesville-nc                      301!
@@ -273,8 +293,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofer-service-area/waynesville-nc                                 /service-areas/waynesville-nc                     301!
 /contact/roofer-service-area/cullowhee-nc                                   /service-areas/cullowhee-nc                       301!
 /contact/roofer-service-area/dillsboro-nc                                   /service-areas/dillsboro-nc                       301!
-/contact/roofer-service-area/asheville-nc                                   /service-areas/asheville-nc                       301!
-/contact/roofer-service-area/hendersonville-nc                              /service-areas/hendersonville-nc                  301!
+/contact/roofer-service-area/asheville-nc                    /roofing                                         301!
+/contact/roofer-service-area/hendersonville-nc               /roofing                                         301!
 /contact/roofer-service-area/brevard-nc                                     /service-areas/brevard-nc                         301!
 /contact/roofer-service-area/murphy-nc                                      /service-areas/murphy-nc                          301!
 /contact/roofer-service-area/hayesville-nc                                  /service-areas/hayesville-nc                      301!
@@ -292,8 +312,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofers-service-area/waynesville-nc                                /service-areas/waynesville-nc                     301!
 /contact/roofers-service-area/cullowhee-nc                                  /service-areas/cullowhee-nc                       301!
 /contact/roofers-service-area/dillsboro-nc                                  /service-areas/dillsboro-nc                       301!
-/contact/roofers-service-area/asheville-nc                                  /service-areas/asheville-nc                       301!
-/contact/roofers-service-area/hendersonville-nc                             /service-areas/hendersonville-nc                  301!
+/contact/roofers-service-area/asheville-nc                   /roofing                                         301!
+/contact/roofers-service-area/hendersonville-nc              /roofing                                         301!
 /contact/roofers-service-area/brevard-nc                                    /service-areas/brevard-nc                         301!
 /contact/roofers-service-area/murphy-nc                                     /service-areas/murphy-nc                          301!
 /contact/roofers-service-area/hayesville-nc                                 /service-areas/hayesville-nc                      301!
@@ -311,8 +331,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofing-service-area/waynesville-nc                                /service-areas/waynesville-nc                     301!
 /contact/roofing-service-area/cullowhee-nc                                  /service-areas/cullowhee-nc                       301!
 /contact/roofing-service-area/dillsboro-nc                                  /service-areas/dillsboro-nc                       301!
-/contact/roofing-service-area/asheville-nc                                  /service-areas/asheville-nc                       301!
-/contact/roofing-service-area/hendersonville-nc                             /service-areas/hendersonville-nc                  301!
+/contact/roofing-service-area/asheville-nc                   /roofing                                         301!
+/contact/roofing-service-area/hendersonville-nc              /roofing                                         301!
 /contact/roofing-service-area/brevard-nc                                    /service-areas/brevard-nc                         301!
 /contact/roofing-service-area/murphy-nc                                     /service-areas/murphy-nc                          301!
 /contact/roofing-service-area/hayesville-nc                                 /service-areas/hayesville-nc                      301!
@@ -330,8 +350,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofing-company-service-area/waynesville-nc                        /service-areas/waynesville-nc                     301!
 /contact/roofing-company-service-area/cullowhee-nc                          /service-areas/cullowhee-nc                       301!
 /contact/roofing-company-service-area/dillsboro-nc                          /service-areas/dillsboro-nc                       301!
-/contact/roofing-company-service-area/asheville-nc                          /service-areas/asheville-nc                       301!
-/contact/roofing-company-service-area/hendersonville-nc                     /service-areas/hendersonville-nc                  301!
+/contact/roofing-company-service-area/asheville-nc           /roofing                                         301!
+/contact/roofing-company-service-area/hendersonville-nc      /roofing                                         301!
 /contact/roofing-company-service-area/brevard-nc                            /service-areas/brevard-nc                         301!
 /contact/roofing-company-service-area/murphy-nc                             /service-areas/murphy-nc                          301!
 /contact/roofing-company-service-area/hayesville-nc                         /service-areas/hayesville-nc                      301!
@@ -349,8 +369,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofing-companies-service-area/waynesville-nc                      /service-areas/waynesville-nc                     301!
 /contact/roofing-companies-service-area/cullowhee-nc                        /service-areas/cullowhee-nc                       301!
 /contact/roofing-companies-service-area/dillsboro-nc                        /service-areas/dillsboro-nc                       301!
-/contact/roofing-companies-service-area/asheville-nc                        /service-areas/asheville-nc                       301!
-/contact/roofing-companies-service-area/hendersonville-nc                   /service-areas/hendersonville-nc                  301!
+/contact/roofing-companies-service-area/asheville-nc         /roofing                                         301!
+/contact/roofing-companies-service-area/hendersonville-nc    /roofing                                         301!
 /contact/roofing-companies-service-area/brevard-nc                          /service-areas/brevard-nc                         301!
 /contact/roofing-companies-service-area/murphy-nc                           /service-areas/murphy-nc                          301!
 /contact/roofing-companies-service-area/hayesville-nc                       /service-areas/hayesville-nc                      301!
@@ -368,8 +388,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofing-contractor-service-area/waynesville-nc                     /service-areas/waynesville-nc                     301!
 /contact/roofing-contractor-service-area/cullowhee-nc                       /service-areas/cullowhee-nc                       301!
 /contact/roofing-contractor-service-area/dillsboro-nc                       /service-areas/dillsboro-nc                       301!
-/contact/roofing-contractor-service-area/asheville-nc                       /service-areas/asheville-nc                       301!
-/contact/roofing-contractor-service-area/hendersonville-nc                  /service-areas/hendersonville-nc                  301!
+/contact/roofing-contractor-service-area/asheville-nc        /roofing                                         301!
+/contact/roofing-contractor-service-area/hendersonville-nc   /roofing                                         301!
 /contact/roofing-contractor-service-area/brevard-nc                         /service-areas/brevard-nc                         301!
 /contact/roofing-contractor-service-area/murphy-nc                          /service-areas/murphy-nc                          301!
 /contact/roofing-contractor-service-area/hayesville-nc                      /service-areas/hayesville-nc                      301!
@@ -387,8 +407,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roofing-contractors-service-area/waynesville-nc                    /service-areas/waynesville-nc                     301!
 /contact/roofing-contractors-service-area/cullowhee-nc                      /service-areas/cullowhee-nc                       301!
 /contact/roofing-contractors-service-area/dillsboro-nc                      /service-areas/dillsboro-nc                       301!
-/contact/roofing-contractors-service-area/asheville-nc                      /service-areas/asheville-nc                       301!
-/contact/roofing-contractors-service-area/hendersonville-nc                 /service-areas/hendersonville-nc                  301!
+/contact/roofing-contractors-service-area/asheville-nc       /roofing                                         301!
+/contact/roofing-contractors-service-area/hendersonville-nc  /roofing                                         301!
 /contact/roofing-contractors-service-area/brevard-nc                        /service-areas/brevard-nc                         301!
 /contact/roofing-contractors-service-area/murphy-nc                         /service-areas/murphy-nc                          301!
 /contact/roofing-contractors-service-area/hayesville-nc                     /service-areas/hayesville-nc                      301!
@@ -406,8 +426,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/metal-roofing-service-area/waynesville-nc                          /service-areas/waynesville-nc                     301!
 /contact/metal-roofing-service-area/cullowhee-nc                            /service-areas/cullowhee-nc                       301!
 /contact/metal-roofing-service-area/dillsboro-nc                            /service-areas/dillsboro-nc                       301!
-/contact/metal-roofing-service-area/asheville-nc                            /service-areas/asheville-nc                       301!
-/contact/metal-roofing-service-area/hendersonville-nc                       /service-areas/hendersonville-nc                  301!
+/contact/metal-roofing-service-area/asheville-nc             /roofing/metal                                   301!
+/contact/metal-roofing-service-area/hendersonville-nc        /roofing/metal                                   301!
 /contact/metal-roofing-service-area/brevard-nc                              /service-areas/brevard-nc                         301!
 /contact/metal-roofing-service-area/murphy-nc                               /service-areas/murphy-nc                          301!
 /contact/metal-roofing-service-area/hayesville-nc                           /service-areas/hayesville-nc                      301!
@@ -425,8 +445,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roof-repair-service-area/waynesville-nc                            /service-areas/waynesville-nc                     301!
 /contact/roof-repair-service-area/cullowhee-nc                              /service-areas/cullowhee-nc                       301!
 /contact/roof-repair-service-area/dillsboro-nc                              /service-areas/dillsboro-nc                       301!
-/contact/roof-repair-service-area/asheville-nc                              /service-areas/asheville-nc                       301!
-/contact/roof-repair-service-area/hendersonville-nc                         /service-areas/hendersonville-nc                  301!
+/contact/roof-repair-service-area/asheville-nc               /roofing/roof-repair                             301!
+/contact/roof-repair-service-area/hendersonville-nc          /roofing/roof-repair                             301!
 /contact/roof-repair-service-area/brevard-nc                                /service-areas/brevard-nc                         301!
 /contact/roof-repair-service-area/murphy-nc                                 /service-areas/murphy-nc                          301!
 /contact/roof-repair-service-area/hayesville-nc                             /service-areas/hayesville-nc                      301!
@@ -444,8 +464,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/roof-replacement-service-area/waynesville-nc                       /service-areas/waynesville-nc                     301!
 /contact/roof-replacement-service-area/cullowhee-nc                         /service-areas/cullowhee-nc                       301!
 /contact/roof-replacement-service-area/dillsboro-nc                         /service-areas/dillsboro-nc                       301!
-/contact/roof-replacement-service-area/asheville-nc                         /service-areas/asheville-nc                       301!
-/contact/roof-replacement-service-area/hendersonville-nc                    /service-areas/hendersonville-nc                  301!
+/contact/roof-replacement-service-area/asheville-nc          /roofing/roof-replacement                        301!
+/contact/roof-replacement-service-area/hendersonville-nc     /roofing/roof-replacement                        301!
 /contact/roof-replacement-service-area/brevard-nc                           /service-areas/brevard-nc                         301!
 /contact/roof-replacement-service-area/murphy-nc                            /service-areas/murphy-nc                          301!
 /contact/roof-replacement-service-area/hayesville-nc                        /service-areas/hayesville-nc                      301!
@@ -463,8 +483,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/storm-damage-repair-service-area/waynesville-nc                    /service-areas/waynesville-nc                     301!
 /contact/storm-damage-repair-service-area/cullowhee-nc                      /service-areas/cullowhee-nc                       301!
 /contact/storm-damage-repair-service-area/dillsboro-nc                      /service-areas/dillsboro-nc                       301!
-/contact/storm-damage-repair-service-area/asheville-nc                      /service-areas/asheville-nc                       301!
-/contact/storm-damage-repair-service-area/hendersonville-nc                 /service-areas/hendersonville-nc                  301!
+/contact/storm-damage-repair-service-area/asheville-nc       /roofing                                         301!
+/contact/storm-damage-repair-service-area/hendersonville-nc  /roofing                                         301!
 /contact/storm-damage-repair-service-area/brevard-nc                        /service-areas/brevard-nc                         301!
 /contact/storm-damage-repair-service-area/murphy-nc                         /service-areas/murphy-nc                          301!
 /contact/storm-damage-repair-service-area/hayesville-nc                     /service-areas/hayesville-nc                      301!
@@ -482,8 +502,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/commercial-roofing-service-area/waynesville-nc                     /service-areas/waynesville-nc                     301!
 /contact/commercial-roofing-service-area/cullowhee-nc                       /service-areas/cullowhee-nc                       301!
 /contact/commercial-roofing-service-area/dillsboro-nc                       /service-areas/dillsboro-nc                       301!
-/contact/commercial-roofing-service-area/asheville-nc                       /service-areas/asheville-nc                       301!
-/contact/commercial-roofing-service-area/hendersonville-nc                  /service-areas/hendersonville-nc                  301!
+/contact/commercial-roofing-service-area/asheville-nc        /roofing/commercial                              301!
+/contact/commercial-roofing-service-area/hendersonville-nc   /roofing/commercial                              301!
 /contact/commercial-roofing-service-area/brevard-nc                         /service-areas/brevard-nc                         301!
 /contact/commercial-roofing-service-area/murphy-nc                          /service-areas/murphy-nc                          301!
 /contact/commercial-roofing-service-area/hayesville-nc                      /service-areas/hayesville-nc                      301!
@@ -501,8 +521,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/gutter-service-area/waynesville-nc                                 /service-areas/waynesville-nc                     301!
 /contact/gutter-service-area/cullowhee-nc                                   /service-areas/cullowhee-nc                       301!
 /contact/gutter-service-area/dillsboro-nc                                   /service-areas/dillsboro-nc                       301!
-/contact/gutter-service-area/asheville-nc                                   /service-areas/asheville-nc                       301!
-/contact/gutter-service-area/hendersonville-nc                              /service-areas/hendersonville-nc                  301!
+/contact/gutter-service-area/asheville-nc                    /roofing/gutters                                 301!
+/contact/gutter-service-area/hendersonville-nc               /roofing/gutters                                 301!
 /contact/gutter-service-area/brevard-nc                                     /service-areas/brevard-nc                         301!
 /contact/gutter-service-area/murphy-nc                                      /service-areas/murphy-nc                          301!
 /contact/gutter-service-area/hayesville-nc                                  /service-areas/hayesville-nc                      301!
@@ -520,8 +540,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/siding-service-area/waynesville-nc                                 /service-areas/waynesville-nc                     301!
 /contact/siding-service-area/cullowhee-nc                                   /service-areas/cullowhee-nc                       301!
 /contact/siding-service-area/dillsboro-nc                                   /service-areas/dillsboro-nc                       301!
-/contact/siding-service-area/asheville-nc                                   /service-areas/asheville-nc                       301!
-/contact/siding-service-area/hendersonville-nc                              /service-areas/hendersonville-nc                  301!
+/contact/siding-service-area/asheville-nc                    /construction/siding                             301!
+/contact/siding-service-area/hendersonville-nc               /construction/siding                             301!
 /contact/siding-service-area/brevard-nc                                     /service-areas/brevard-nc                         301!
 /contact/siding-service-area/murphy-nc                                      /service-areas/murphy-nc                          301!
 /contact/siding-service-area/hayesville-nc                                  /service-areas/hayesville-nc                      301!
@@ -539,8 +559,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/construction-service-area/waynesville-nc                           /service-areas/waynesville-nc                     301!
 /contact/construction-service-area/cullowhee-nc                             /service-areas/cullowhee-nc                       301!
 /contact/construction-service-area/dillsboro-nc                             /service-areas/dillsboro-nc                       301!
-/contact/construction-service-area/asheville-nc                             /service-areas/asheville-nc                       301!
-/contact/construction-service-area/hendersonville-nc                        /service-areas/hendersonville-nc                  301!
+/contact/construction-service-area/asheville-nc              /construction                                    301!
+/contact/construction-service-area/hendersonville-nc         /construction                                    301!
 /contact/construction-service-area/brevard-nc                               /service-areas/brevard-nc                         301!
 /contact/construction-service-area/murphy-nc                                /service-areas/murphy-nc                          301!
 /contact/construction-service-area/hayesville-nc                            /service-areas/hayesville-nc                      301!
@@ -550,6 +570,57 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/construction-service-area/lake-toxaway-nc                          /service-areas/lake-toxaway-nc                    301!
 /contact/construction-service-area/sapphire-nc                              /service-areas/sapphire-nc                        301!
 /contact/construction-service-area/cherokee-nc                              /service-areas/cherokee-nc                        301!
+
+# ============================================================
+# 15 Sep 2026 SEO spec, T2 — doorway URLs for communities with no page of
+# their own. The :segment placeholder stands in for the service part of the
+# old Hibu pattern (/contact/<service>-service-area/<place>), so one rule
+# covers all 18 service variants. These must stay ABOVE the /contact/:segment/*
+# hub fallback. If a placeholder ever fails to match at the edge, the request
+# falls through to that fallback — i.e. back to today's behaviour, never a 404.
+# ============================================================
+# Macon County communities
+/contact/:segment/aquone                                     /service-areas/county/macon-county                301!
+/contact/:segment/burningtown                                /service-areas/county/macon-county                301!
+/contact/:segment/cartoogechaye                              /service-areas/county/macon-county                301!
+/contact/:segment/cowee                                      /service-areas/county/macon-county                301!
+/contact/:segment/cullasaja                                  /service-areas/county/macon-county                301!
+/contact/:segment/etna                                       /service-areas/county/macon-county                301!
+/contact/:segment/gay                                        /service-areas/county/macon-county                301!
+/contact/:segment/gneiss                                     /service-areas/county/macon-county                301!
+/contact/:segment/holly-springs                              /service-areas/county/macon-county                301!
+/contact/:segment/iotla                                      /service-areas/county/macon-county                301!
+/contact/:segment/kyle                                       /service-areas/county/macon-county                301!
+/contact/:segment/leatherman                                 /service-areas/county/macon-county                301!
+/contact/:segment/nantahala                                  /service-areas/county/macon-county                301!
+/contact/:segment/oak-grove                                  /service-areas/county/macon-county                301!
+/contact/:segment/prentiss                                   /service-areas/county/macon-county                301!
+/contact/:segment/pumpkintown                                /service-areas/county/macon-county                301!
+/contact/:segment/rainbow-springs                            /service-areas/county/macon-county                301!
+/contact/:segment/topton                                     /service-areas/county/macon-county                301!
+/contact/:segment/wests-mill                                 /service-areas/county/macon-county                301!
+# Jackson County communities
+/contact/:segment/dean                                       /service-areas/county/jackson-county              301!
+/contact/:segment/greens-creek                               /service-areas/county/jackson-county              301!
+/contact/:segment/norton                                     /service-areas/county/jackson-county              301!
+/contact/:segment/savannah                                   /service-areas/county/jackson-county              301!
+/contact/:segment/whittier                                   /service-areas/county/jackson-county              301!
+# Cherokee County communities
+/contact/:segment/andrews                                    /service-areas/county/cherokee-county             301!
+# Haywood County — nearest town page
+/contact/:segment/canton                                     /service-areas/waynesville-nc                     301!
+/contact/:segment/clyde                                      /service-areas/waynesville-nc                     301!
+/contact/:segment/hazelwood                                  /service-areas/waynesville-nc                     301!
+/contact/:segment/lake-junaluska                             /service-areas/waynesville-nc                     301!
+/contact/:segment/maggie-valley                              /service-areas/waynesville-nc                     301!
+# Graham/Swain — nearest town page
+/contact/:segment/robbinsville                               /service-areas/bryson-city-nc                     301!
+# out of state or genuinely unserved
+/contact/:segment/blairsville-ga                             /service-areas                                    301!
+/contact/:segment/hiawassee-ga                               /service-areas                                    301!
+/contact/:segment/stecoah                                    /service-areas                                    301!
+/contact/:segment/walhalla-sc                                /service-areas                                    301!
+
 /contact/:segment                                            /service-areas                                     301!
 /contact/:segment/*                                          /service-areas                                     301!
 

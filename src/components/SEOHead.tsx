@@ -18,6 +18,8 @@ interface SEOHeadProps {
   noindex?: boolean | "follow";
   /** @deprecated No longer emitted — the keywords meta tag was removed 15 Sep 2026. */
   keywords?: string;
+  /** Coordinates for pages that ARE a place (home, contact, the two showrooms). */
+  geo?: { lat: number; lng: number; region: string; placename: string };
   locale?: string;
   /**
    * The page's LCP image (hero). Emits <link rel="preload" as="image"
@@ -41,7 +43,11 @@ interface SEOHeadProps {
 }
 
 const SITE_NAME = BUSINESS.brandName;
-const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
+// H1 (15 Sep 2026): the public name is the full legal name. normalizeTitle()
+// collapses it to "Highlander" only on titles that would otherwise exceed 60
+// characters, so the brand stops colliding with Highlands NC, Highland Roofing
+// Company and Hiller Highlands wherever there is room to spell it out.
+const BRAND_SUFFIX = BUSINESS.brandName;
 const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
 const DEFAULT_IMAGE = `${BASE_URL}${OG_FALLBACK}`;
@@ -50,6 +56,11 @@ const BING_VERIFICATION = (import.meta.env.VITE_BING_SITE_VERIFICATION as string
 const DEFAULT_IMAGE_WIDTH = "1200";
 const DEFAULT_IMAGE_HEIGHT = "630";
 const TWITTER_HANDLE = "@highlanderroof";
+/** Remove a meta tag if a previous route left one behind (SPA navigation). */
+const removeMeta = (attr: string, key: string) => {
+  document.querySelector(`meta[${attr}="${key}"]`)?.remove();
+};
+
 const setMeta = (attr: string, key: string, content: string) => {
   let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
   if (!el) {
@@ -117,6 +128,7 @@ const SEOHead = ({
   preloadImageSrcSet,
   preloadImageSizes = "100vw",
   canonicalPath: canonicalOverride,
+  geo,
 }: SEOHeadProps) => {
   // SERP length guardrails: ≤60 char titles, ≤155 char descriptions.
   const fullTitle = normalizeTitle(
@@ -138,10 +150,17 @@ const SEOHead = ({
     setMeta("name", "theme-color", "#1a4d2e");
     if (BING_VERIFICATION) setMeta("name", "msvalidate.01", BING_VERIFICATION);
     // Geo tags for local SEO
-    setMeta("name", "geo.region", `US-${FRANKLIN.region}`);
-    setMeta("name", "geo.placename", `${FRANKLIN.locality}, North Carolina`);
-    setMeta("name", "geo.position", `${FRANKLIN.geo.lat};${FRANKLIN.geo.lng}`);
-    setMeta("name", "ICBM", `${FRANKLIN.geo.lat}, ${FRANKLIN.geo.lng}`);
+    // T6 (15 Sep 2026 SEO spec): geo meta is emitted ONLY by pages that pass
+    // their own coordinates. Stamping the Franklin showroom onto every page —
+    // including town pages 60 miles away — contradicted the page's own subject.
+    if (geo) {
+      setMeta("name", "geo.region", `US-${geo.region}`);
+      setMeta("name", "geo.placename", geo.placename);
+      setMeta("name", "geo.position", `${geo.lat};${geo.lng}`);
+      setMeta("name", "ICBM", `${geo.lat}, ${geo.lng}`);
+    } else {
+      for (const k of ["geo.region", "geo.placename", "geo.position", "ICBM"]) removeMeta("name", k);
+    }
 
     // Exactly one canonical element may exist — drop any extras the static
     // head or a previous route left behind, then self-reference this route.
@@ -242,7 +261,7 @@ const SEOHead = ({
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, locale, preloadImage, preloadImageSrcSet, preloadImageSizes]);
+  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, geo, locale, preloadImage, preloadImageSrcSet, preloadImageSizes]);
 
   return null;
 };
@@ -349,6 +368,22 @@ const geoPoint = (loc: BusinessLocation) => ({
 });
 
 /**
+ * Towns and counties each showroom serves, named as places rather than as
+ * separate business entities (T8, 15 Sep 2026 SEO spec).
+ */
+const SHOWROOM_AREA_SERVED: Record<string, { "@type": string; name: string }[]> = {
+  franklin: [
+    "Franklin, NC", "Highlands, NC", "Cashiers, NC", "Scaly Mountain, NC", "Otto, NC",
+    "Sapphire, NC", "Lake Glenville, NC", "Lake Toxaway, NC", "Hayesville, NC", "Murphy, NC",
+    "Macon County, NC", "Clay County, NC", "Cherokee County, NC",
+  ].map((name) => ({ "@type": "Place", name })),
+  sylva: [
+    "Sylva, NC", "Cullowhee, NC", "Dillsboro, NC", "Waynesville, NC", "Bryson City, NC",
+    "Cherokee, NC", "Brevard, NC", "Jackson County, NC", "Haywood County, NC", "Swain County, NC",
+  ].map((name) => ({ "@type": "Place", name })),
+};
+
+/**
  * Physical showroom node — the ONLY Place-type entities in the graph.
  * Everything else (towns, counties, service pages) is modelled as
  * `areaServed`, never as another LocalBusiness with an address.
@@ -365,6 +400,9 @@ const locationSchema = (loc: BusinessLocation) => ({
   geo: geoPoint(loc),
   openingHoursSpecification: hoursSpec(loc),
   hasMap: GBP_MAP_URL(loc.gbpCid),
+  // The towns each showroom actually dispatches to (nearestShowroom in
+  // src/data/towns.ts is the same mapping the site uses for drive times).
+  areaServed: SHOWROOM_AREA_SERVED[loc.id] ?? [],
   sameAs: [GBP_MAP_URL(loc.gbpCid)],
 });
 
@@ -945,11 +983,12 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
 
     case "reviews":
-      // Review nodes for the reviews actually rendered on this page, attached to
-      // the existing #business entity. No aggregateRating here: the visible
-      // 4.8 / 158 covers ALL Google reviews, not just these ten, so emitting it
-      // alongside them would markup a rating the page does not itself show.
-      return [...businessGraph(), ...reviewNodes()];
+      // T8 (15 Sep 2026 SEO spec): NO review markup on this page. Every review
+      // shown here was collected on Google, and Google's structured-data policy
+      // forbids marking up reviews gathered on a third-party site — self-serving
+      // review markup is a manual-action risk. The reviews stay visible for
+      // readers; only the JSON-LD goes. aggregateRating was never emitted.
+      return businessGraph();
 
     case "contact": {
       const out: Record<string, unknown>[] = [contactPageSchema(input.path), ...businessGraph()];

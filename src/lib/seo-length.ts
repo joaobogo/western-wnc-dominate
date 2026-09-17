@@ -26,7 +26,13 @@ const BRAND_LONG_PATTERNS = [
   /Highlander Building Services/gi,
 ];
 
-/** Collapse any long brand form in a title down to the short "Highlander". */
+/**
+ * Collapse any long brand form in a title down to the short "Highlander".
+ *
+ * Applied ONLY when the title would otherwise break the 60-character budget
+ * (H1, 15 Sep 2026): the full name disambiguates the brand from Highlands NC
+ * and from Highland Roofing Company, so it is kept wherever there is room.
+ */
 const shortenBrand = (title: string): string => {
   let out = title;
   for (const pattern of BRAND_LONG_PATTERNS) out = out.replace(pattern, BRAND_SHORT);
@@ -47,7 +53,12 @@ const cutAtWord = (text: string, max: number): string => {
  * Middle segments are dropped before the leading keyword is ever shortened.
  */
 export const normalizeTitle = (rawTitle: string, max = TITLE_MAX): string => {
-  const title = shortenBrand(rawTitle || "").trim();
+  // The full brand name is kept whenever the title fits inside the budget with
+  // it (H1, 15 Sep 2026). Only a title that would overflow gets collapsed to
+  // the short form, and only then are middle segments dropped.
+  const raw = (rawTitle || "").replace(/\s{2,}/g, " ").trim();
+  if (raw.length <= max) return raw;
+  const title = shortenBrand(raw);
   if (title.length <= max) return title;
 
   const segments = title.split(/\s*\|\s*/).filter(Boolean);

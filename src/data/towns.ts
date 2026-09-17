@@ -118,7 +118,7 @@ export const towns: TownData[] = [
     description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic systems designed for the plateau's unique exposure.",
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
     // 59 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Highlands, NC | Metal & Cedar Roofs | Highlander",
+    metaTitle: "Roofers in Highlands, NC | Highlander Building Services",
     h1: "Roofers in Highlands, NC — Roofing Built for 4,000 ft",
     metaDescription: "Highlander serves Highlands, NC with roofing, roof repair, roof replacement, gutters, skylights, construction, and design services for mountain homes across Western North Carolina.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
@@ -140,7 +140,7 @@ export const towns: TownData[] = [
     description: "Cashiers sits in a temperate rainforest zone, demanding superior moisture management. Our systems are engineered to handle 80+ inches of rain while maintaining the high-end rustic aesthetic of the plateau.",
     features: ["Design", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
     // 58 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Cashiers, NC | Replacement & Metal | Highlander",
+    metaTitle: "Roofers in Cashiers, NC | Highlander Building Services",
     h1: "Roofers in Cashiers, NC — Roofs Built for 80 Inches of Rain",
     metaDescription: "Waterproofing-focused roofing and construction for Cashiers, NC estates. Moisture-resistant materials and engineered decks. Licensed & insured.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates across the Cashiers Plateau.",
@@ -163,7 +163,7 @@ export const towns: TownData[] = [
     features: ["Locally based crews", "Design", "Residential specialists", "Family-owned, team-driven"],
     // 59 chars: fits the 60-char guard intact. The longer "Roof Replacement, Repair & Metal"
     // middle was dropped by normalizeTitle, which left this page with the homepage's title.
-    metaTitle: "Roofers in Franklin, NC | Replacement & Repair | Highlander",
+    metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
     h1: `Roofers in Franklin, NC — Local Crews, Walk-In Showroom on ${streetName(FRANKLIN)}`,
     metaDescription: "Roofing in Franklin, NC neighborhoods — Cartoogechaye, Iotla, Holly Springs and nearby Macon County. Local crews, walk-in showroom in town. Licensed & insured.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
@@ -185,7 +185,7 @@ export const towns: TownData[] = [
     description: "From historic downtown renovations to commercial maintenance programs, our Sylva operations serve as a critical hub for Jackson County's diverse roofing and construction needs.",
     features: ["Historic home expertise", "Commercial maintenance", "Jackson County hub", "Rental property service"],
     // 56 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Sylva, NC | Repair & Replacement | Highlander",
+    metaTitle: "Roofers in Sylva, NC | Highlander Building Services",
     h1: `Roofers in Sylva, NC — Showroom on ${streetName(SYLVA)}`,
     metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Sylva, NC homes and Jackson County properties, from our staffed Sylva showroom.",
     housingProfile: "Historic downtown homes, university rentals, and hillside residential properties across the Sylva valley.",
@@ -206,7 +206,7 @@ export const towns: TownData[] = [
     elevation: "1,752 ft",
     description: "The gateway to the Smokies. We specialize in fast-turnaround roofing and deck expansions for vacation rental owners who need reliability between guest stays.",
     features: ["Vacation rental focus", "Fast turnaround work", "Smoky Mountain experts", "Deck safety upgrades"],
-    metaTitle: "Roofing Contractor in Bryson City, NC | Highlander",
+    metaTitle: "Bryson City, NC Roofing | Highlander Building Services",
     metaDescription: "Durable roofing and construction for Bryson City homes and vacation rentals. Specialized services for the gateway to the Smokies. Licensed & Insured.",
     housingProfile: "Log cabins, high-traffic vacation rentals, and traditional mountain bungalows.",
     climateExposure: "Sudden Smoky Mountain deluges and high humidity that require superior flashing at all wood-to-metal transitions.",
@@ -226,7 +226,7 @@ export const towns: TownData[] = [
     elevation: "2,753 ft",
     description: "Serving Waynesville's historic districts and established Haywood County neighborhoods with expert roofing modernization and whole-home additions.",
     features: ["Historic district care", "Whole-home renovations", "Haywood County authority", "Structural modernization"],
-    metaTitle: "Roofing Contractor in Waynesville, NC | Highlander",
+    metaTitle: "Waynesville, NC Roofing | Highlander Building Services",
     metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Waynesville, NC homes. Franklin-based crews serving Haywood County.",
     housingProfile: "Historic district estates, mid-century residential neighborhoods, and newer hillside builds in Haywood County.",
     climateExposure: "Regular freeze-thaw cycles and winter snow accumulation that test attic ventilation and older roof deck integrity.",
@@ -246,7 +246,7 @@ export const towns: TownData[] = [
     elevation: "2,100 ft",
     description: "Home to WCU, our Cullowhee services prioritize fast, budget-conscious solutions for student housing, local staff residences, and multi-unit rental assets.",
     features: ["Student housing timing", "Rental property repairs", "Budget-conscious plans", "Reliable maintenance"],
-    metaTitle: "Roofing Contractor in Cullowhee, NC | Highlander",
+    metaTitle: "Cullowhee, NC Roofing | Highlander Building Services",
     metaDescription: "Reliable roofing and construction for Cullowhee student housing and residential properties. Fast response for WCU area landlords. Licensed & Insured.",
     housingProfile: "Multi-unit rentals, student housing, and faculty residences near WCU.",
     climateExposure: "Heavy valley fog and humidity typical of the Tuckasegee basin that accelerate biological growth.",
@@ -266,7 +266,7 @@ export const towns: TownData[] = [
     elevation: "2,041 ft",
     description: "A historic village where precision matters. We provide preservation-sensitive roofing and construction for Dillsboro's unique cottages and tourism properties.",
     features: ["Historic village care", "Precision flashing", "Tourism-ready cleanup", "Mountain cottage charm"],
-    metaTitle: "Roofing Contractor in Dillsboro, NC | Highlander",
+    metaTitle: "Dillsboro, NC Roofing | Highlander Building Services",
     metaDescription: "Preservation-sensitive roofing and construction for Dillsboro. Expert care for historic mountain cottages and village properties. Licensed & Insured.",
     housingProfile: "Historic village cottages, artisan shops, and riverfront residences in Dillsboro.",
     climateExposure: "River-proximate moisture and valley fog that demand algae-resistant materials and precise flashing.",
@@ -279,6 +279,12 @@ export const towns: TownData[] = [
     heroImage: "/media/wnc-cedar-slate-roof.jpg"
   },
   {
+    // H3 (15 Sep 2026 SEO spec): the owner confirmed crews do not sell into this
+    // market. 0 clicks on 2,452 / 626 impressions, an hour-plus from either
+    // showroom. The page stays reachable (noindex,follow) so existing links and
+    // redirects still resolve, but it leaves the sitemap and stops diluting the
+    // local signal for the towns we do sell in.
+    indexable: false,
     slug: "asheville-nc",
     name: "Asheville",
     county: "Buncombe County",
@@ -299,6 +305,12 @@ export const towns: TownData[] = [
     heroImage: "/media/wnc-storm-clouds-ridge.jpg"
   },
   {
+    // H3 (15 Sep 2026 SEO spec): the owner confirmed crews do not sell into this
+    // market. 0 clicks on 2,452 / 626 impressions, an hour-plus from either
+    // showroom. The page stays reachable (noindex,follow) so existing links and
+    // redirects still resolve, but it leaves the sitemap and stops diluting the
+    // local signal for the towns we do sell in.
+    indexable: false,
     slug: "hendersonville-nc",
     name: "Hendersonville",
     county: "Henderson County",
@@ -326,7 +338,7 @@ export const towns: TownData[] = [
     elevation: "2,231 ft",
     description: "The gateway to Pisgah Forest. We specialize in moisture-resistant roofing and outdoor living expansions for Brevard's active, outdoor-centric homeowners.",
     features: ["Moisture management", "Outdoor living focus", "Pisgah area experts", "Gutter optimization"],
-    metaTitle: "Roofing Contractor in Brevard, NC | Highlander",
+    metaTitle: "Brevard, NC Roofing | Highlander Building Services",
     metaDescription: "Expert roofing and construction for Brevard and the Land of Waterfalls. Specialized in moisture management and outdoor living. Licensed & Insured.",
     housingProfile: "Traditional mountain bungalows, outdoor-centric residential neighborhoods, and ridgetop retreats near Pisgah.",
     climateExposure: "Persistent humidity and record-setting rainfall that require double-underlayment and oversized gutter systems.",
@@ -346,7 +358,7 @@ export const towns: TownData[] = [
     elevation: "1,604 ft",
     description: "Serving the far west with reliable roofing and construction. We focus on durability and local accountability for Murphy's growing residential market.",
     features: ["Local crew presence", "Fast turnaround", "Residential specialists", "Vacation home care"],
-    metaTitle: "Roofing Contractor in Murphy, NC | Highlander",
+    metaTitle: "Murphy, NC Roofing | Highlander Building Services",
     metaDescription: "Reliable roofing and construction for Murphy and Cherokee County. Locally based crews, durable materials, and honest service. Licensed & Insured.",
     housingProfile: "Traditional family homes, retirement retreats, and high-traffic vacation rentals.",
     climateExposure: "Heavy seasonal humidity and wind-driven rain that require high-quality underlayment and precise flashing details.",
@@ -366,7 +378,7 @@ export const towns: TownData[] = [
     elevation: "1,893 ft",
     description: "Serving Clay County and the Lake Chatuge area with premium roofing and lakefront residential construction. We build for longevity and lake-life durability.",
     features: ["Lake Chatuge experts", "Clay County focus", "Lakefront construction", "Durable roof systems"],
-    metaTitle: "Roofing Contractor in Hayesville, NC | Highlander",
+    metaTitle: "Hayesville, NC Roofing | Highlander Building Services",
     metaDescription: "Professional roofing and construction for Hayesville and Clay County. Specialized in lakefront homes and mountain residences. Licensed & Insured.",
     housingProfile: "Lakefront vacation homes, rural residential properties, and retirement retreats.",
     climateExposure: "Lake-effect humidity and seasonal wind patterns across the Chatuge basin.",
@@ -386,7 +398,7 @@ export const towns: TownData[] = [
     elevation: "3,700 ft",
     description: "Scaly Mountain sits between Franklin and Highlands at roughly 3,700 feet — real elevation, real wind, real freeze-thaw. We serve full-time residents and cabin owners with roofing and exterior work built for the ridge.",
     features: ["High-elevation systems", "Cabin roof repair", "Metal roofing focus", "Storm response"],
-    metaTitle: "Roofing Contractor in Scaly Mountain, NC | Highlander",
+    metaTitle: "Scaly Mountain, NC Roofing | Highlander Building Services",
     metaDescription: "Highlander serves Scaly Mountain, NC with roofing, roof repair, roof replacement, metal roofing, gutters, skylights, construction, and design services built for high-elevation Macon County homes.",
     housingProfile: "Ridgetop cabins, four-season mountain homes, and small full-time residences along NC-106 between Franklin and Highlands.",
     climateExposure: "High-elevation exposure with heavy wind, ice loading, and rapid freeze-thaw cycles that punish underlayment, flashing, and fastener choices.",
@@ -406,7 +418,7 @@ export const towns: TownData[] = [
     elevation: "2,050 ft",
     description: "Otto is a Little Tennessee valley community just south of Franklin — family homes, hillside builds, and small farms that need roofing and construction work grounded in Macon County reality.",
     features: ["Franklin-adjacent crews", "Family home focus", "Roof repair & replacement", "Design and additions"],
-    metaTitle: "Roofing Contractor in Otto, NC | Highlander",
+    metaTitle: "Otto, NC Roofing | Highlander Building Services",
     metaDescription: "Highlander serves Otto, NC with roofing, roof repair, roof replacement, metal roofing, gutters, construction, and design services from our nearby Franklin base in Macon County.",
     housingProfile: "Valley family homes, hillside residences, and rural properties along the US-441 corridor south of Franklin.",
     climateExposure: "Valley moisture and wind funneling through the Little Tennessee corridor that stress ridge caps, valleys, and gutter capacity.",
@@ -426,7 +438,7 @@ export const towns: TownData[] = [
     elevation: "3,494 ft",
     description: "Lake Glenville — often referred to as Glenville, NC — is the highest major lake east of the Mississippi. Steep lots, premium lake homes, and Plateau rainfall drive every roofing and exterior decision here.",
     features: ["Lakefront specialists", "Standing seam metal", "Gutter capacity upgrades", "Design & construction"],
-    metaTitle: "Roofing Contractor in Lake Glenville, NC | Highlander",
+    metaTitle: "Lake Glenville, NC Roofing | Highlander Building Services",
     metaDescription: "Highlander serves Lake Glenville / Glenville, NC with roofing, roof repair, roof replacement, metal roofing, gutters, skylights, and construction and design services built for Jackson County lakefront homes.",
     housingProfile: "Lakefront estates, steep-lot cabins, and long-term second-home properties around Lake Glenville and the Highway 107 corridor.",
     climateExposure: "Plateau elevation with 70+ inches of rainfall, persistent fog, and ice loading that demand oversized drainage and high-temperature underlayment.",
@@ -446,7 +458,7 @@ export const towns: TownData[] = [
     elevation: "3,010 ft",
     description: "Lake Toxaway is the largest private lake in North Carolina and one of Transylvania County's most established estate communities. Homes here are built for view, water, and long-term ownership.",
     features: ["Estate lake homes", "Premium metal & synthetic", "In-house design", "Outdoor living"],
-    metaTitle: "Roofing & Construction in Lake Toxaway, NC | Highlander",
+    metaTitle: "Lake Toxaway, NC Roofing | Highlander Building Services",
     metaDescription: "Highlander serves Lake Toxaway, NC with premium roofing, roof replacement, metal roofing, gutter systems, in-house design services, home additions, and outdoor living work for Transylvania County lakefront estates.",
     housingProfile: "Established lakefront estates, timber-frame lodges, and long-tenured second homes around North Carolina's largest private lake.",
     climateExposure: "High rainfall totals, lake-generated humidity, and localized wind events that make oversized drainage and premium flashing standard, not optional.",
@@ -466,7 +478,7 @@ export const towns: TownData[] = [
     elevation: "3,376 ft",
     description: "Sapphire and the Sapphire Valley resort area sit on the eastern edge of the Highlands-Cashiers Plateau. Elevation, rainfall, and wooded lots make roofing and moisture management the primary discipline here.",
     features: ["Plateau-edge specialists", "Metal & synthetic roofing", "Skylights & gutters", "Design and construction"],
-    metaTitle: "Roofing & Construction in Sapphire, NC | Highlander",
+    metaTitle: "Sapphire, NC Roofing | Highlander Building Services",
     metaDescription: "Highlander serves Sapphire, NC with roofing, roof repair, roof replacement, metal roofing, skylights, gutters, and construction and design services built for Jackson County Plateau homes.",
     housingProfile: "Resort-community homes, private-club residences, and second homes across Sapphire Valley and the surrounding Plateau ridges.",
     climateExposure: "Plateau elevation with heavy rain, ice loading, and wooded-lot moisture that demands algae-resistant materials, proper ventilation, and oversized gutters.",
@@ -486,7 +498,7 @@ export const towns: TownData[] = [
     elevation: "2,001 ft",
     description: "Cherokee, NC — the Qualla Boundary and surrounding Swain County corridor — combines full-time family homes, riverfront residences, and high-use tourism properties along the Oconaluftee River.",
     features: ["River-valley moisture", "Metal roofing focus", "Rental-property fit", "Fast turnaround"],
-    metaTitle: "Roofing Contractor in Cherokee, NC | Highlander",
+    metaTitle: "Cherokee, NC Roofing | Highlander Building Services",
     metaDescription: "Highlander serves Cherokee, NC with roofing, roof repair, roof replacement, metal roofing, gutters, and construction services built for Swain County river-valley homes and tourism properties.",
     housingProfile: "Family homes, riverfront residences, and short-term-rental properties throughout the Qualla Boundary and Swain County corridor.",
     climateExposure: "Oconaluftee river-valley humidity, sudden Smoky Mountain rainfall, and biological growth pressure on aging roof systems.",
