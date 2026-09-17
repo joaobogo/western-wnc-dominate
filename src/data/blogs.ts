@@ -10,6 +10,7 @@ import stormSeasonFlashing from "@/assets/blog/wnc-storm-season-chimney-flashing
 import gutterSizingHero from "@/assets/blog/gutter-size-western-nc-mountain-homes.jpg";
 import roofInspectionAfterStormHero from "@/assets/blog/roof-inspection-after-storm-western-nc.jpg";
 import roofValleyLeakHero from "@/assets/blog/roof-valley-leak-western-nc.jpg";
+import skylightLeakRepairHero from "@/assets/blog/skylight-leak-repair-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -1701,6 +1702,148 @@ Elevation, weather exposure, material transport, and skilled labor demand all pu
 ## Next Step: A Written Estimate
 
 The best way to know your actual cost is an on-site inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
+  },
+  {
+    slug: "skylight-leak-repair-western-nc",
+    title: "Skylight Leak Repair for Western NC Mountain Homes",
+    excerpt:
+      "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
+    category: "Maintenance",
+    date: "2026-09-17",
+    image: skylightLeakRepairHero,
+    imageAlt:
+      "Roofing professional documenting skylight flashing from a stabilized ladder at a Western North Carolina mountain home",
+    readTime: "9 min",
+    metaTitle: "Skylight Leak Repair in Western NC | Highlander",
+    metaDescription:
+      "Diagnose skylight leaks and condensation, recognize flashing failures, and learn when Western NC mountain homes need professional skylight repair.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Skylight Services", path: "/roofing/skylights" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Storm Damage Repair", path: "/roofing/storm-damage" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      { question: "Can a leaking skylight be repaired?", answer: "Many skylight leaks can be repaired when the frame and glass remain sound. The correct work may involve replacing failed flashing, correcting drainage, sealing an air leak in the shaft, or replacing a worn gasket. A damaged frame or failed insulated glass unit may require replacement." },
+      { question: "How can I tell condensation from a skylight leak?", answer: "Condensation often appears during cold weather without rain and forms on the room-facing glass or frame. Water intrusion usually appears during or after rain and may stain the shaft, ceiling, or roof decking. An inspection can confirm the source when the pattern is unclear." },
+      { question: "Should I seal a leaking skylight myself?", answer: "Homeowners can document moisture, check indoor humidity, and contain interior water from a safe position. Work on steep, wet, icy, mossy, or damaged roofing should be left to a qualified professional because surface sealant can hide a failed flashing assembly without correcting it." },
+      { question: "When does a skylight need replacement instead of repair?", answer: "Replacement may be appropriate when the insulated glass seal has failed, the frame is cracked or distorted, the unit is near the end of its service life, or recurring leaks continue after the surrounding roof and flashing have been evaluated." },
+      { question: "Does Highlander inspect skylight leaks?", answer: "Yes. Highlander Building Services, Inc. evaluates skylights, flashing, nearby roofing, and interior moisture paths across Western North Carolina and provides documented findings with a written repair scope." },
+    ],
+    content: `Water near a skylight does not always mean the skylight itself has failed. Condensation can form when warm indoor air reaches cold glass or an under-insulated shaft. Rain can also enter through damaged flashing, nearby shingles, an upslope roof detail, or a failed skylight seal. The timing and location of the moisture help separate those causes.
+
+Start indoors and stay off the roof. Record whether the water appears during rain, snow melt, or cold dry weather. Photograph the glass, frame, shaft, ceiling stain, and any accessible attic evidence. If the pattern remains unclear, a roofing professional can inspect the skylight and the surrounding roof as one drainage system instead of applying sealant to the first visible gap.
+
+## Is It a Skylight Leak or Condensation?
+
+Condensation and rainwater can leave similar stains, but their patterns are different.
+
+**Condensation is more likely when:**
+
+- Moisture appears on cold mornings without rain.
+- Droplets form across the inside face of the glass or metal frame.
+- The room has high humidity from cooking, bathing, plants, or an unvented appliance.
+- The skylight shaft feels colder than the surrounding ceiling.
+- The moisture improves after ventilation or dehumidification.
+
+**Water intrusion is more likely when:**
+
+- Drips appear during rain or shortly afterward.
+- Staining begins at one corner of the shaft or follows a framing line.
+- The same area becomes wet after wind-driven rain.
+- Shingles, flashing, or sealant near the skylight look displaced from the ground.
+- The attic shows a water trail on the roof deck above the ceiling stain.
+
+A small hygrometer can help track indoor relative humidity. The [CDC's mold guidance](https://www.cdc.gov/mold-health/about/index.html) recommends keeping humidity no higher than 50 percent when possible. That reduces condensation risk, but it does not rule out a roof leak.
+
+## Common Causes of Water Around a Skylight
+
+### Failed or Incorrect Flashing
+
+Skylight flashing directs roof runoff around the opening. Step flashing, head flashing, sill flashing, and the roofing underlayment must overlap in the correct order. Exposed fasteners, short laps, corrosion, storm movement, or an incorrect flashing kit can let water reach the roof deck.
+
+Surface sealant may slow an isolated entry point, but it cannot rebuild an incorrectly layered assembly. Recurring moisture after earlier caulk or roof cement is a strong reason to inspect the complete flashing system.
+
+### Condensation in the Skylight Shaft
+
+An unsealed or poorly insulated shaft can become a cold surface inside the home. Warm humid air rises into the opening, cools, and releases moisture onto glass, drywall, framing, or trim. The [Department of Energy's Building America guidance for skylight shafts](https://basc.pnnl.gov/resource-guides/skylight-shaft-walls) explains the importance of insulation and air sealing around the shaft.
+
+Correcting this condition may involve air sealing, insulation, bathroom or kitchen ventilation, and indoor humidity control. Roof sealant will not solve moisture generated inside the home.
+
+### Failed Insulated Glass or Worn Gaskets
+
+Fog or haze trapped between panes usually indicates a failed insulated glass seal. Moisture on the room side can be wiped away; moisture between panes cannot. Operable skylights may also develop worn gaskets or weatherstripping that allow air or rain to enter around the sash.
+
+The glass, sash, and frame should be evaluated together. Depending on the model and age, a matched replacement part may be available, or replacing the unit may be more practical.
+
+### Nearby Roof Damage
+
+Water can travel along decking and framing before it appears beside a skylight. A damaged shingle, clogged valley, sidewall transition, vent, chimney, or branch impact upslope may be the actual source. This is why a [roof leak assessment](/roofing/roof-repair) should include the surrounding roof plane, not only the skylight perimeter.
+
+### Debris and Drainage Problems
+
+Leaves, needles, moss, and shingle granules can hold water against flashing or block designed drainage paths. Western North Carolina homes under dense hardwood and pine cover need more frequent ground-level observation after leaf drop and storms. Debris should be removed only when it can be reached safely with the correct equipment.
+
+## How to Diagnose the Source Safely
+
+Use a simple sequence before scheduling repairs:
+
+1. **Record the weather.** Note whether the moisture appeared during rain, after snow melt, or on a cold dry morning.
+2. **Dry and observe the interior.** Wipe the room-facing glass and frame, then check whether moisture returns without precipitation.
+3. **Measure indoor humidity.** Compare readings before and after running exhaust fans or a dehumidifier.
+4. **Photograph the moisture path.** Capture the glass, frame, shaft corners, ceiling stain, and accessible attic decking.
+5. **Inspect from the ground.** Use binoculars or a zoom lens to look for lifted shingles, debris, damaged flashing, or previous patches.
+6. **Call for an inspection if the source is unclear.** A contractor can trace the highest visible moisture point and evaluate the complete roof opening.
+
+Do not climb onto a wet, steep, icy, mossy, or damaged roof. Do not conduct a garden-hose test from the roof. Controlled water testing can force water beneath otherwise sound materials when it is done incorrectly and is best handled by a qualified contractor.
+
+If water is active indoors, move belongings, place a container beneath the drip when safe, and keep away from wet electrical fixtures, sagging drywall, or compromised framing.
+
+## What a Professional Skylight Repair May Include
+
+The repair should match the cause rather than cover every joint with sealant. Depending on the inspection findings, the written scope may include:
+
+- Removing roofing around the unit to expose flashing and underlayment.
+- Replacing a damaged or incompatible flashing kit.
+- Repairing wet or deteriorated roof decking.
+- Reinstalling dimensional shingles with correct laps and fastener placement.
+- Replacing a matched gasket, sash, insulated glass unit, or complete skylight.
+- Air sealing and insulating the shaft where interior condensation is the cause.
+- Repairing a nearby roof feature that is sending water toward the opening.
+
+A sound repair should preserve designed drainage paths, including weep openings. Caulking over those paths can trap water inside the frame and create a new leak.
+
+## Repair or Replace the Skylight?
+
+Repair is often reasonable when the glass and frame remain sound, the leak is isolated to serviceable flashing or a replaceable gasket, and the surrounding deck is dry. Replacement becomes more likely when the frame is cracked, the insulated glass seal has failed, the unit is difficult to match, or the roof opening has a history of repeated repairs.
+
+The age and condition of the surrounding roof also matter. If a roof replacement is already planned, coordinating the skylight work can avoid disturbing new shingles later. The [skylight replacement guide](/blog/skylight-replacement-wnc) explains the signs that a complete unit has reached the practical end of its service life.
+
+## Why Mountain Weather Changes the Repair
+
+Western North Carolina roofs face wind-driven rain, shaded moisture, rapid temperature changes, leaf and needle buildup, and repeated freeze-thaw cycles at higher elevations. Steep roof planes can move a large volume of water toward a skylight, while tree cover keeps debris and flashing damp longer after a storm.
+
+A repair should account for roof pitch, roofing material, exposure, nearby valleys, snow movement, and the manufacturer's flashing requirements. Details suitable for a low-slope home in a milder climate may not manage runoff the same way on a steep mountain roof.
+
+## Preventing Future Skylight Problems
+
+Most prevention can be handled without stepping onto the roof:
+
+- Watch the skylight during rain and on cold dry mornings so you recognize the pattern.
+- Keep indoor humidity controlled with working kitchen and bathroom exhaust fans.
+- Check the attic after prolonged rain for new staining or damp insulation.
+- Review the skylight and nearby roof from the ground after major storms and leaf drop.
+- Keep dated photographs so changes are easy to compare.
+- Schedule an inspection when staining returns, fog appears between panes, or previous sealant begins to crack.
+
+## When to Call a Roofing Professional
+
+Call a qualified roofer when water returns after a previous patch, flashing appears damaged, the glass is fogged between panes, the roof deck feels soft, or access requires stepping onto a steep or wet roof. Those conditions need a physical inspection and a repair plan based on the moisture source.
+
+Highlander Building Services, Inc. evaluates skylight leaks and surrounding roof systems throughout Western North Carolina. An inspection can document the likely entry point, roof and flashing condition, interior moisture path, and whether a targeted repair or [skylight replacement](/roofing/skylights) is the practical next step.
+
+If water is entering now, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. The goal is a clear written scope based on what failed, not another temporary surface patch.`,
   },
   {
     slug: "standing-seam-vs-exposed-fastener-metal-roof-wnc",

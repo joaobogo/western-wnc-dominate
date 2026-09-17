@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "skylight-leak-repair-western-nc",
+    "title": "Skylight Leak Repair for Western NC Mountain Homes",
+    "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
+    "category": "Maintenance",
+    "date": "2026-09-17",
+    "town": "Franklin"
+  },
+  {
     "slug": "roof-valley-leak-western-nc",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
     "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",

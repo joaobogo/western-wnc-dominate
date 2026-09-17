@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "skylight-leak-repair-western-nc",
+    "slug": "skylight-leak-repair-western-nc",
+    "title": "Skylight Leak Repair for Western NC Mountain Homes",
+    "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
+    "category": "Maintenance",
+    "date": "2026-09-17",
+    "readTime": "9 min"
+  },
+  {
     "id": "roof-valley-leak-western-nc",
     "slug": "roof-valley-leak-western-nc",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Materials",
     "date": "2026-08-01",
     "readTime": "7 min"
-  },
-  {
-    "id": "highlands-nc-storm-damage-july-28-2026",
-    "slug": "highlands-nc-storm-damage-july-28-2026",
-    "title": "After the July 28 Storm in Highlands, NC: What Homeowners Should Check",
-    "excerpt": "A Severe Thunderstorm Warning covered Highlands and southeastern Macon County on July 28, 2026. Here is a calm, practical guide to what to check from the ground, what to leave to a professional, and how to document it.",
-    "category": "Storm",
-    "date": "2026-07-29",
-    "readTime": "9 min"
   }
 ];
