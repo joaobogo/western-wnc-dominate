@@ -580,44 +580,45 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # falls through to that fallback — i.e. back to today's behaviour, never a 404.
 # ============================================================
 # Macon County communities
-/contact/:segment/aquone                                     /service-areas/county/macon-county                301!
-/contact/:segment/burningtown                                /service-areas/county/macon-county                301!
-/contact/:segment/cartoogechaye                              /service-areas/county/macon-county                301!
-/contact/:segment/cowee                                      /service-areas/county/macon-county                301!
-/contact/:segment/cullasaja                                  /service-areas/county/macon-county                301!
-/contact/:segment/etna                                       /service-areas/county/macon-county                301!
-/contact/:segment/gay                                        /service-areas/county/macon-county                301!
-/contact/:segment/gneiss                                     /service-areas/county/macon-county                301!
-/contact/:segment/holly-springs                              /service-areas/county/macon-county                301!
-/contact/:segment/iotla                                      /service-areas/county/macon-county                301!
-/contact/:segment/kyle                                       /service-areas/county/macon-county                301!
-/contact/:segment/leatherman                                 /service-areas/county/macon-county                301!
-/contact/:segment/nantahala                                  /service-areas/county/macon-county                301!
-/contact/:segment/oak-grove                                  /service-areas/county/macon-county                301!
-/contact/:segment/prentiss                                   /service-areas/county/macon-county                301!
-/contact/:segment/pumpkintown                                /service-areas/county/macon-county                301!
-/contact/:segment/rainbow-springs                            /service-areas/county/macon-county                301!
-/contact/:segment/topton                                     /service-areas/county/macon-county                301!
-/contact/:segment/wests-mill                                 /service-areas/county/macon-county                301!
+/contact/:segment/aquone-nc                                  /service-areas/county/macon-county                301!
+/contact/:segment/burningtown-nc                             /service-areas/county/macon-county                301!
+/contact/:segment/cartoogechaye-nc                           /service-areas/county/macon-county                301!
+/contact/:segment/cowee-nc                                   /service-areas/county/macon-county                301!
+/contact/:segment/cullasaja-nc                               /service-areas/county/macon-county                301!
+/contact/:segment/etna-nc                                    /service-areas/county/macon-county                301!
+/contact/:segment/gay-nc                                     /service-areas/county/macon-county                301!
+/contact/:segment/gneiss-nc                                  /service-areas/county/macon-county                301!
+/contact/:segment/holly-springs-nc                           /service-areas/county/macon-county                301!
+/contact/:segment/iotla-nc                                   /service-areas/county/macon-county                301!
+/contact/:segment/kyle-nc                                    /service-areas/county/macon-county                301!
+/contact/:segment/leatherman-nc                              /service-areas/county/macon-county                301!
+/contact/:segment/nantahala-nc                               /service-areas/county/macon-county                301!
+/contact/:segment/oak-grove-nc                               /service-areas/county/macon-county                301!
+/contact/:segment/prentiss-nc                                /service-areas/county/macon-county                301!
+/contact/:segment/pumpkintown-nc                             /service-areas/county/macon-county                301!
+/contact/:segment/rainbow-springs-nc                         /service-areas/county/macon-county                301!
+/contact/:segment/topton-nc                                  /service-areas/county/macon-county                301!
+/contact/:segment/wests-mill-nc                              /service-areas/county/macon-county                301!
 # Jackson County communities
-/contact/:segment/dean                                       /service-areas/county/jackson-county              301!
-/contact/:segment/greens-creek                               /service-areas/county/jackson-county              301!
-/contact/:segment/norton                                     /service-areas/county/jackson-county              301!
-/contact/:segment/savannah                                   /service-areas/county/jackson-county              301!
-/contact/:segment/whittier                                   /service-areas/county/jackson-county              301!
+/contact/:segment/dean-nc                                    /service-areas/county/jackson-county              301!
+/contact/:segment/greens-creek-nc                            /service-areas/county/jackson-county              301!
+/contact/:segment/norton-nc                                  /service-areas/county/jackson-county              301!
+/contact/:segment/savannah-nc                                /service-areas/county/jackson-county              301!
+/contact/:segment/whittier-nc                                /service-areas/county/jackson-county              301!
 # Cherokee County communities
-/contact/:segment/andrews                                    /service-areas/county/cherokee-county             301!
+/contact/:segment/andrews-nc                                 /service-areas/county/cherokee-county             301!
 # Haywood County — nearest town page
-/contact/:segment/canton                                     /service-areas/waynesville-nc                     301!
-/contact/:segment/clyde                                      /service-areas/waynesville-nc                     301!
-/contact/:segment/hazelwood                                  /service-areas/waynesville-nc                     301!
-/contact/:segment/lake-junaluska                             /service-areas/waynesville-nc                     301!
-/contact/:segment/maggie-valley                              /service-areas/waynesville-nc                     301!
+/contact/:segment/canton-nc                                  /service-areas/waynesville-nc                     301!
+/contact/:segment/clyde-nc                                   /service-areas/waynesville-nc                     301!
+/contact/:segment/hazelwood-nc                               /service-areas/waynesville-nc                     301!
+/contact/:segment/lake-junaluska-nc                          /service-areas/waynesville-nc                     301!
+/contact/:segment/maggie-valley-nc                           /service-areas/waynesville-nc                     301!
 # Graham/Swain — nearest town page
-/contact/:segment/robbinsville                               /service-areas/bryson-city-nc                     301!
+/contact/:segment/robbinsville-nc                            /service-areas/bryson-city-nc                     301!
 # out of state or genuinely unserved
 /contact/:segment/blairsville-ga                             /service-areas                                    301!
 /contact/:segment/hiawassee-ga                               /service-areas                                    301!
+/contact/:segment/stecoah-nc                                 /service-areas                                    301!
 /contact/:segment/stecoah                                    /service-areas                                    301!
 /contact/:segment/walhalla-sc                                /service-areas                                    301!
 
