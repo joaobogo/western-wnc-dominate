@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 248,
+    "sitemap": 249,
     "coverageNoindex": 100,
     "counties": 10,
     "noindexTowns": 0,
     "noindexBlogPosts": 0,
     "noindexFunnels": 6,
-    "total": 364
+    "total": 365
   },
   "routes": [
     "/",
@@ -101,6 +101,7 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
+    "/blog/skylight-leak-repair-western-nc",
     "/blog/roof-valley-leak-western-nc",
     "/blog/roof-inspection-after-storm-western-nc",
     "/blog/gutter-size-western-nc-mountain-homes",

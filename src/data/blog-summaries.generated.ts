@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "skylight-leak-repair-western-nc",
+    "slug": "skylight-leak-repair-western-nc",
+    "title": "Skylight Leak Repair for Western NC Mountain Homes",
+    "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
+    "category": "Maintenance",
+    "date": "2026-09-17",
+    "readTime": "9 min"
+  },
+  {
     "id": "roof-valley-leak-western-nc",
     "slug": "roof-valley-leak-western-nc",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm",
     "date": "2026-07-29",
     "readTime": "9 min"
-  },
-  {
-    "id": "storm-moisture-damage-cullowhee-nc",
-    "slug": "storm-moisture-damage-cullowhee-nc",
-    "title": "Storm and Moisture Damage Cullowhee Homeowners Should Watch For",
-    "excerpt": "The storm and moisture damage patterns Cullowhee, NC homeowners should watch for and when to schedule a professional inspection.",
-    "category": "Storm Damage",
-    "date": "2026-07-26",
-    "readTime": "7 min"
   }
 ];
