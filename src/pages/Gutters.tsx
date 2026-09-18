@@ -63,7 +63,7 @@ const Gutters = () => {
         subtopics={
           <ServiceSubtopics
             heading="Every gutter job we take"
-            intro="The old site had a separate page for each of these. They are one service, and this is what each part of it involves."
+            intro="Gutters, guards and drainage work as one system in the mountains. Here is what each part does and when it matters."
             items={gutterSubtopics}
           />
         }
