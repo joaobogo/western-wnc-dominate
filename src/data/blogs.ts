@@ -11,6 +11,7 @@ import gutterSizingHero from "@/assets/blog/gutter-size-western-nc-mountain-home
 import roofInspectionAfterStormHero from "@/assets/blog/roof-inspection-after-storm-western-nc.jpg";
 import roofValleyLeakHero from "@/assets/blog/roof-valley-leak-western-nc.jpg";
 import skylightLeakRepairHero from "@/assets/blog/skylight-leak-repair-western-nc.jpg";
+import hailDamageRoofHero from "@/assets/blog/hail-damage-roof-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -68,6 +69,140 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "hail-damage-roof-western-nc",
+    title: "One Inch Hail? An Insurance Ready Roof Checklist",
+    excerpt:
+      "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
+    category: "Storm Damage",
+    date: "2026-09-18",
+    image: hailDamageRoofHero,
+    imageAlt:
+      "Hail damaged dimensional shingle roof with granule loss on a Western North Carolina mountain home",
+    readTime: "10 min",
+    metaTitle: "Hail Damage Roof Checklist for Western NC | Highlander",
+    metaDescription:
+      "Spot hail damage by roofing material, document it safely from the ground, and prepare an insurance ready record for a Western North Carolina roof.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Storm Damage Repair", path: "/roofing/storm-damage" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      { question: "Will insurance pay for hail damage to my roof?", answer: "Most homeowners policies cover hail damage up to the policy limit minus the deductible, and some insurers apply a separate wind or hail deductible. Approval still depends on the adjuster confirming functional damage rather than cosmetic marks, so documentation matters." },
+      { question: "How serious is hail damage on a roof?", answer: "It ranges widely. Granule loss and light bruising are often treated as cosmetic, while punctures, fractured shingle mats, and cracked tiles allow water in and need prompt repair. Damage that penetrates the shingle mat is the clearest marker of a functional problem." },
+      { question: "Is it worth claiming hail damage?", answer: "Filing usually makes sense when repair costs clearly exceed the deductible and the damage is functional. When damage is minor and repair costs sit close to the deductible, weigh the potential premium impact before filing." },
+      { question: "What size hail damages a roof?", answer: "Roofing professionals generally treat hailstones about one inch in diameter, roughly the size of a quarter, as capable of producing claim worthy damage. Older or softened shingles can bruise from smaller stones." },
+      { question: "Should I get on the roof to check for hail damage?", answer: "No. Hail loosened granules make a roof slippery, and a storm damaged surface can be unstable. Document from the ground and inside the attic, then have a qualified roofing professional inspect the roof surface." },
+    ],
+    content: `If your roof went through a hailstorm with stones around an inch or larger, assume it took some damage until an inspection shows otherwise. Stay off the roof. Walk the ground, photograph anything dented or chipped, and arrange a professional inspection while the storm date is still fresh.
+
+Insurance outcomes usually turn on documentation. A clear, dated record of what the storm did, paired with a written inspection report, carries far more weight than a handful of blurry photos taken weeks later.
+
+## Signs of Hail Damage by Roofing Material
+
+Hail affects each roofing material differently, and knowing what to look for keeps you from panicking over cosmetic marks or missing a problem that leaks by spring.
+
+**Dimensional shingles** show the most argued over damage type: circular spots where protective granules have been knocked loose, sometimes with a bruise that feels soft under pressure. The [Haag Global technical paper on hail damage to asphalt shingles](https://haagglobal.com/wp-content/uploads/2022/06/hail-damage-to-asphalt-shingles.pdf) notes that granule loss alone is sometimes disputed as cosmetic, while a puncture or fracture through the mat is treated as functional damage because it compromises the shingle's ability to shed water.
+
+**Metal roofing** tells its story in dents. Standing seam panels can take hail hits and still perform structurally, but the visual damage is obvious. Check seams and fastener points for loosening, along with any coating chipped down to bare metal, which invites rust.
+
+**Tile and slate** crack rather than dent. A single cracked tile may not leak today, but water works through hairline fractures over freeze and thaw cycles, so even minor cracking deserves a closer look.
+
+**Wood shakes** split along the grain, and that splitting accelerates rot because exposed wood fibers absorb water directly.
+
+You do not have to climb up to know something happened. [InterNACHI's hail damage guidance](https://www.nachi.org/hail-damage-part9-36.htm) points to collateral evidence: dented air conditioner fins, hail dimples on a vehicle hood, cracked window screens, and heavy granule buildup in gutters. These signs will not approve a claim by themselves, but they corroborate the timing and intensity of the storm.
+
+- Circular granule loss or soft bruised spots on shingles
+- Dents, dings, or chipped coating on metal roofing and flashing
+- Cracked, chipped, or missing tile and slate pieces
+- Split or bruised wood shakes
+- Dented gutters, downspouts, or air conditioner fins
+- Hail dimples on vehicles parked outside during the storm
+
+## How to Inspect Hail Damage Safely
+
+A safe inspection starts on the ground. Wet, granule covered shingles are slippery even for people who work on roofs daily, so leave the roof walk to a professional with fall protection.
+
+1. **Walk the perimeter first.** Check gutters, downspouts, siding, window screens, and condenser units for dents.
+2. **Inspect vehicles and outdoor fixtures.** Dimples on a car hood confirm storm intensity at your specific address.
+3. **Use binoculars or a zoom lens** from the ground to scan for displaced shingles, exposed underlayment, or missing tile.
+4. **Bring in a professional** if you suspect damage you cannot confirm visually. A contractor can safely evaluate the surface, check ridge caps, valleys, and flashing, and test suspect shingles for soft spots.
+5. **Cross reference the storm.** [National Weather Service storm reports](https://www.weather.gov/) log hail size and timing for your area, which ties damage to a documented event.
+
+When photographing, take a wide shot for context, then a close up with something for scale such as a coin or tape measure. Time stamp every photo and shoot from several angles, because hail damage often only catches the light from certain directions.
+
+## Filing a Homeowners Insurance Claim
+
+Report the storm to your insurer promptly and keep the record organized. Useful documentation includes:
+
+- Dated photos of roof, gutters, siding, and collateral damage
+- A written inspection report from a roofing contractor
+- Receipts for any emergency tarping or temporary repairs
+- Local storm reports confirming hail size and date
+
+Not every hail event is worth filing over. If the roof is newer, damage is limited, and the repair cost sits near your deductible, filing may not serve you well. Weigh the repair estimate against the deductible honestly.
+
+After filing, an adjuster inspection commonly follows within one to two weeks under normal conditions, though a widespread regional storm can stretch that timeline as claim volume rises.
+
+## Repair or Replace
+
+The decision usually comes down to latent versus severe damage. Latent damage, such as granule loss and light bruising, does not threaten function today, though it can shorten roof life. Severe damage, including punctures, fractured mats, cracked tile, and exposed underlayment, means water is getting in now or soon will.
+
+To quantify it, professionals use a test square method: marking off sections of each roof slope, commonly 5 by 5 feet up to 10 by 10 feet, and counting damaged pieces within that square. That count becomes a percent damaged figure per slope.
+
+| Damage extent | Typical assessment | Common recommendation |
+| --- | --- | --- |
+| Isolated hits | A few damaged pieces per test square | Spot repair often sufficient |
+| Moderate, multiple slopes | Meaningful percent damaged on two or more slopes | Full slope or broader repair discussion |
+| Widespread | Most test squares show functional damage | Replacement typically more practical |
+
+Roof age matters. A roof near the end of its expected service life is often replaced even with moderate damage, because patching aging material rarely makes economic sense. Roof complexity matters too: a simple gable roof is faster to repair than one with many valleys, dormers, and flashing points.
+
+- Get independent written assessments rather than relying on a verbal opinion
+- Ask any contractor for the test square percentage behind the recommendation
+- Treat these thresholds as decision aids, not universal rules
+
+## Protecting Your Roof Before the Next Storm
+
+The days right after a storm matter. If you find an active leak, get a tarp or temporary seal in place before the next rain and keep every receipt and photo, since insurers commonly reimburse reasonable mitigation costs.
+
+Longer term, maintenance keeps small hail damage from becoming a bigger problem. Keep gutters clear so trapped granules and debris do not hold moisture against the roof edge, trim overhanging limbs, and have flashing at chimneys and vents checked annually.
+
+Material choice is the biggest lever. Impact resistant shingles rated Class 4 cost more upfront and hold up better against repeat storms. Metal roofing rarely suffers functional hail damage even when it dents. Ask your insurer whether impact resistant materials qualify for a premium discount.
+
+## Hail in the Western North Carolina Mountains
+
+Elevation driven weather around Franklin, Highlands, Cashiers, and Sylva can turn a routine afternoon thunderstorm into a hail event with little warning. Steep slopes, mature tree cover, and older tile or shake installations change what an inspection needs to catch, and debris from the same storm often hides damage until the next heavy rain.
+
+A dependable hail inspection produces a written scope rather than a verbal guess. That means documented photos by roof area, an itemized list of damaged material, a price before work begins, and coordination with your adjuster when you ask for it.
+
+## Myths That Cost Homeowners Money
+
+**"If I cannot see damage from the ground, the roof is fine."** Much functional damage, especially bruising, is invisible from a lawn chair.
+
+**"Dents on metal mean full replacement."** Cosmetic denting rarely compromises a panel's ability to shed water.
+
+**"Filing a claim always raises my premium."** It depends on the insurer, claim history, and state regulation. A single weather claim often affects premiums differently than repeated claims.
+
+**"Granule loss means ruined shingles."** Some granule loss is normal aging, which is why granule only claims are sometimes disputed.
+
+## When to Call Now Versus Wait
+
+Call promptly if you see a leak, a puncture, exposed underlayment, or multiple broken tiles. Water intrusion compounds quickly once it starts.
+
+Isolated granule loss on a newer roof with no interior leaks and clear photos can usually wait for a scheduled inspection. Either way, a written assessment dated close to the storm strengthens your position if an adjuster later disputes the extent of damage.
+
+## Get a Written Hail Damage Inspection
+
+Highlander Building Services, Inc. inspects [storm damage](/roofing/storm-damage) across Western North Carolina and provides documented findings with a written scope and price before work begins, covering dimensional shingle, metal, synthetic, and specialty materials common on mountain homes.
+
+If a recent storm has you wondering whether your roof took a hit, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. If the same storm affected gutters or a skylight seal, those are reviewed in the same visit rather than a separate appointment.
+
+This article is general information and not insurance or financial advice. Policy terms vary, so review your own coverage with your insurer.`,
+  },
   {
     slug: "roof-valley-leak-western-nc",
     title: "5 Causes of a Roof Valley Leak and When to Call a Pro",
