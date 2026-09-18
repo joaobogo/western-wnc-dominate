@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "hail-damage-roof-western-nc",
+    "title": "One Inch Hail? An Insurance Ready Roof Checklist",
+    "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
+    "category": "Storm Damage",
+    "date": "2026-09-18",
+    "town": "Franklin"
+  },
+  {
     "slug": "skylight-leak-repair-western-nc",
     "title": "Skylight Leak Repair for Western NC Mountain Homes",
     "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",

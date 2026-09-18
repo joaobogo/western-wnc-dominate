@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "hail-damage-roof-western-nc",
+    "slug": "hail-damage-roof-western-nc",
+    "title": "One Inch Hail? An Insurance Ready Roof Checklist",
+    "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
+    "category": "Storm Damage",
+    "date": "2026-09-18",
+    "readTime": "10 min"
+  },
+  {
     "id": "skylight-leak-repair-western-nc",
     "slug": "skylight-leak-repair-western-nc",
     "title": "Skylight Leak Repair for Western NC Mountain Homes",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Replacement",
     "date": "2026-08-02",
     "readTime": "8 min"
-  },
-  {
-    "id": "metal-roofing-bryson-city-nc-vacation-rentals",
-    "slug": "metal-roofing-bryson-city-nc-vacation-rentals",
-    "title": "Metal Roofing for Bryson City Vacation Rentals: What Owners Should Know",
-    "excerpt": "Bryson City rental cabins take heavy rain, heavy guest turnover, and very little downtime. Here is how standing seam metal changes the maintenance math for short-term rental owners in Swain County.",
-    "category": "Materials",
-    "date": "2026-08-01",
-    "readTime": "7 min"
   }
 ];
