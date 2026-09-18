@@ -11,6 +11,7 @@ import gutterSizingHero from "@/assets/blog/gutter-size-western-nc-mountain-home
 import roofInspectionAfterStormHero from "@/assets/blog/roof-inspection-after-storm-western-nc.jpg";
 import roofValleyLeakHero from "@/assets/blog/roof-valley-leak-western-nc.jpg";
 import skylightLeakRepairHero from "@/assets/blog/skylight-leak-repair-western-nc.jpg";
+import hailDamageRoofHero from "@/assets/blog/hail-damage-roof-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
