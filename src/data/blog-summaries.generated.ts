@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "roof-flashing-leak-western-nc",
+    "slug": "roof-flashing-leak-western-nc",
+    "title": "How to Trace a Roof Flashing Leak Safely",
+    "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs professional repair.",
+    "category": "Maintenance",
+    "date": "2026-09-21",
+    "readTime": "9 min"
+  },
+  {
     "id": "hail-damage-roof-western-nc",
     "slug": "hail-damage-roof-western-nc",
     "title": "One Inch Hail? An Insurance Ready Roof Checklist",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Maintenance",
     "date": "2026-08-03",
     "readTime": "6 min"
-  },
-  {
-    "id": "roof-replacement-waynesville-nc-historic-homes",
-    "slug": "roof-replacement-waynesville-nc-historic-homes",
-    "title": "Roof Replacement on Waynesville's Historic Homes: Doing It Without Losing the Character",
-    "excerpt": "Haywood County's older homes have complex roof lines, original detailing, and modern performance needs. Here is how we approach a replacement that respects the house.",
-    "category": "Replacement",
-    "date": "2026-08-02",
-    "readTime": "8 min"
   }
 ];
