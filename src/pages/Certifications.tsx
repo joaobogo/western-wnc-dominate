@@ -4,7 +4,7 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
-import certainteedPremierBadge from "@/assets/badge-certainteed-premier.png";
+import certainteedPremierBadge from "@/assets/badge-certainteed-premier.webp";
 import badgeJamesHardie from "@/assets/badge-james-hardie.png";
 import badgeHaag from "@/assets/badge-haag.png";
 import badgeVelux from "@/assets/logo-velux.png";

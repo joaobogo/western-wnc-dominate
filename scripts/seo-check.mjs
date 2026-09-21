@@ -366,6 +366,29 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
   rule(11, `Prerender: all ${inventory.manifest.size} manifest routes written, no route skipped`, details);
 }
 
+{
+  // 17 Sep 2026 technical audit: a 286 KB PNG credential badge was shipping on
+  // every page of the site for a 56 px slot. Logos, badges and icons are flat
+  // site chrome rendered at a fixed, small size — unlike photography, which is
+  // served through responsive srcsets — so they get a hard budget.
+  const CHROME_MAX = 100 * 1024;
+  const details = [];
+  const assetsDir = path.join(ROOT, "src/assets");
+  if (existsSync(assetsDir)) {
+    for (const f of walkSrc(assetsDir)) {
+      if (!/\.(png|jpe?g|webp|avif|gif)$/i.test(f)) continue;
+      if (!/^(badge|logo|icon)[-.]/i.test(path.basename(f))) continue;
+      const size = statSync(f).size;
+      if (size > CHROME_MAX) {
+        details.push(
+          `${rel(f)} — ${Math.round(size / 1024)} KB, over the ${CHROME_MAX / 1024} KB budget for a logo/badge. Re-encode it at the size it actually renders.`,
+        );
+      }
+    }
+  }
+  rule(12, `Logos and badges under ${CHROME_MAX / 1024} KB`, details);
+}
+
 // ----------------------------------------------------------------- rule 0 — the earlier suites, unchanged
 
 for (const [script, label] of [
@@ -380,6 +403,20 @@ for (const [script, label] of [
   const r = runChecker("duplicate-paragraphs.mjs", ["--core"]);
   const shareLines = r.out.split("\n").filter((l) => /% shared/.test(l)).map((l) => l.trim());
   rule(0, "duplicate paragraphs on core town pages (informational)", shareLines, { info: true });
+}
+
+{
+  // Informational: Google renders roughly 60 characters, so a 32-character
+  // title wastes half the line. normalizeTitle() spells the brand out wherever
+  // that lands the title in range; what is left here is titles whose subject is
+  // long enough that expanding the brand would push them past 60.
+  const shortTitles = [];
+  for (const [route, h] of headOf) {
+    if (h.noindex || !h.title) continue;
+    if (h.title.length < 45) shortTitles.push(`${h.title.length} chars  ${route} — "${h.title}"`);
+  }
+  shortTitles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+  rule(0, `indexable page titles under 45 characters (informational) — ${shortTitles.length} of ${headOf.size}`, shortTitles.slice(0, 25), { info: true });
 }
 
 // ----------------------------------------------------------------- output

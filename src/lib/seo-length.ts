@@ -39,6 +39,24 @@ const shortenBrand = (title: string): string => {
   return out.replace(/\s{2,}/g, " ").trim();
 };
 
+const BRAND_FULL = "Highlander Building Services";
+
+/**
+ * Grow the short brand back to the full name when the finished title has room.
+ *
+ * The 15 Sep 2026 audit flagged 63 pages whose titles sat under 45 characters
+ * purely because the suffix had been shortened — "Roofing in Otto, NC |
+ * Highlander" is 32 characters and wastes half the SERP line. Titles are
+ * assembled and trimmed with the short form, then this runs last: if spelling
+ * the brand out still fits the budget, it gets spelled out.
+ */
+const expandBrand = (title: string, max: number): string => {
+  const m = title.match(/^(.*\|)\s*Highlander$/);
+  if (!m) return title;
+  const expanded = `${m[1]} ${BRAND_FULL}`;
+  return expanded.length <= max ? expanded : title;
+};
+
 /** Hard cut at a word boundary, never mid-word, never leaving punctuation. */
 const cutAtWord = (text: string, max: number): string => {
   if (text.length <= max) return text;
@@ -55,11 +73,14 @@ const cutAtWord = (text: string, max: number): string => {
 export const normalizeTitle = (rawTitle: string, max = TITLE_MAX): string => {
   // The full brand name is kept whenever the title fits inside the budget with
   // it (H1, 15 Sep 2026). Only a title that would overflow gets collapsed to
-  // the short form, and only then are middle segments dropped.
+  // the short form, and only then are middle segments dropped. Whatever comes
+  // out is passed through expandBrand, so a title that ended up short after
+  // trimming still spells the brand out if there is room.
   const raw = (rawTitle || "").replace(/\s{2,}/g, " ").trim();
-  if (raw.length <= max) return raw;
+  const finish = (t: string) => expandBrand(t, max);
+  if (raw.length <= max) return finish(raw);
   const title = shortenBrand(raw);
-  if (title.length <= max) return title;
+  if (title.length <= max) return finish(title);
 
   const segments = title.split(/\s*\|\s*/).filter(Boolean);
 
@@ -70,7 +91,7 @@ export const normalizeTitle = (rawTitle: string, max = TITLE_MAX): string => {
     // Drop middle segments from the end inward until it fits.
     for (let keep = segments.length - 2; keep >= 0; keep--) {
       const candidate = [...segments.slice(0, keep + 1), tail].join(SEPARATOR);
-      if (candidate.length <= max) return candidate;
+      if (candidate.length <= max) return finish(candidate);
     }
 
     // Head + brand still too long. The subject (with its town/service name)
