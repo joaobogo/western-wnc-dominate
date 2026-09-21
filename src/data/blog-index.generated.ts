@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "roof-flashing-leak-western-nc",
+    "title": "How to Trace a Roof Flashing Leak Safely",
+    "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs profe",
+    "category": "Maintenance",
+    "date": "2026-09-21",
+    "town": "Franklin"
+  },
+  {
     "slug": "hail-damage-roof-western-nc",
     "title": "One Inch Hail? An Insurance Ready Roof Checklist",
     "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
