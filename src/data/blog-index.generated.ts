@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "dimensional-shingle-lifespan-western-nc",
+    "title": "How Long Do Dimensional Shingles Last?",
+    "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
+    "category": "Materials",
+    "date": "2026-09-22",
+    "town": "Franklin"
+  },
+  {
     "slug": "roof-flashing-leak-western-nc",
     "title": "How to Trace a Roof Flashing Leak Safely",
     "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs profe",
