@@ -13,6 +13,7 @@ import roofValleyLeakHero from "@/assets/blog/roof-valley-leak-western-nc.jpg";
 import skylightLeakRepairHero from "@/assets/blog/skylight-leak-repair-western-nc.jpg";
 import hailDamageRoofHero from "@/assets/blog/hail-damage-roof-western-nc.jpg";
 import roofFlashingLeakHero from "@/assets/blog/roof-flashing-leak-western-nc.jpg";
+import dimensionalShingleLifespanHero from "@/assets/blog/dimensional-shingle-lifespan-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -70,6 +71,123 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "dimensional-shingle-lifespan-western-nc",
+    title: "How Long Do Dimensional Shingles Last?",
+    excerpt:
+      "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
+    category: "Materials",
+    date: "2026-09-22",
+    image: dimensionalShingleLifespanHero,
+    imageAlt:
+      "Roofing professional inspecting dimensional shingles on a Western North Carolina mountain home",
+    readTime: "9 min",
+    metaTitle: "Dimensional Shingle Lifespan in Western NC | Highlander",
+    metaDescription:
+      "Learn how long dimensional shingles last in Western North Carolina, what shortens roof life, warning signs to watch, and when to plan an inspection.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Dimensional Shingle Roofing", path: "/roofing/asphalt-shingles" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      { question: "Do dimensional shingles last 30 years?", answer: "Some do, but 30 years is not guaranteed. Installation quality, attic ventilation, roof exposure, storm history, and maintenance all affect service life. Many dimensional shingle roofs fall within a broad 22 to 30 year range." },
+      { question: "When should a dimensional shingle roof be replaced?", answer: "Age alone does not decide replacement. Widespread granule loss, curling across several roof planes, recurring leaks, brittle shingles, or damaged decking can make replacement more practical than another localized repair." },
+      { question: "What shortens shingle roof life in Western North Carolina?", answer: "Strong ultraviolet exposure at elevation, wind-driven rain, shaded moisture, freeze-thaw cycles, falling debris, poor attic ventilation, and installation errors can all accelerate wear." },
+      { question: "Can maintenance extend a dimensional shingle roof's life?", answer: "Professional maintenance can address debris buildup, flashing defects, drainage problems, and ventilation issues before they cause broader damage. It cannot reverse advanced material deterioration." },
+      { question: "How can I check an aging roof safely?", answer: "Use binoculars or a zoom lens from the ground, photograph visible changes, watch for granules at downspout outlets, and check accessible attic areas for staining only when conditions are safe. Leave steep-roof and surface inspections to a qualified roofing professional." },
+    ],
+    content: `Most dimensional shingle roofs provide roughly 22 to 30 years of service, but that range is a planning guide rather than a promise. Two roofs installed in the same year can age very differently when one has balanced attic ventilation and limited exposure while the other faces strong sun, wind-driven rain, shaded moisture, and repeated freeze-thaw cycles.
+
+The number printed on product literature describes warranty terms, not a guaranteed service life. The more useful question is whether the complete roof system is still shedding water reliably and whether localized repairs remain practical.
+
+## What Determines a Dimensional Shingle Roof's Lifespan?
+
+The shingle is only one part of the system. Decking, underlayment, flashing, fasteners, ventilation, drainage, roof geometry, and workmanship all influence how long the roof performs.
+
+### Installation Quality
+
+Correct nail placement, fastener depth, shingle alignment, flashing sequence, and underlayment details matter from the first day. Nails driven too high, too deep, or outside the specified fastening zone can reduce wind resistance. Incorrectly layered flashing can allow water behind otherwise sound shingles.
+
+A written replacement scope should explain the planned underlayment, flashing, ventilation, deck repairs, and fastening approach rather than describing only the visible shingle.
+
+### Attic Ventilation
+
+Balanced intake and exhaust ventilation helps manage attic heat and moisture. A ridge vent cannot work properly if soffit intake is blocked, undersized, or missing. Excessive heat can accelerate material aging, while trapped moisture can affect sheathing and fasteners from below.
+
+Ventilation should be evaluated as a complete system. Adding one vent without checking the available intake can leave the underlying problem unchanged.
+
+### Mountain Weather and Exposure
+
+Western North Carolina roofs face conditions that can vary sharply across the same property. South- and west-facing planes often receive stronger afternoon sun. Shaded sections can stay damp longer. Valleys and lower roof sections carry concentrated runoff, while exposed ridges take more wind.
+
+Around Franklin, Highlands, Cashiers, Sylva, and nearby mountain communities, elevation, tree cover, wind-driven rain, and freeze-thaw cycles can make a broad national lifespan estimate less useful than a physical inspection of the specific roof.
+
+### Roof Geometry and Drainage
+
+Complex roofs have more transitions, valleys, walls, chimneys, vents, and skylights. Each detail creates another place where runoff must move across a properly layered assembly. Debris in valleys or slow drainage near roof-to-wall intersections can keep moisture against the system longer than intended.
+
+## Warning Signs an Aging Shingle Roof Needs Attention
+
+One worn shingle does not automatically mean the complete roof needs replacement. Patterns across several roof planes are more significant than one isolated defect.
+
+Watch from the ground for:
+
+- Curling, cupping, or lifted shingle edges
+- Cracks or splits across multiple areas
+- Bald spots where protective granules are missing
+- Heavy granule accumulation at downspout outlets
+- Uneven wear between sunny and shaded roof planes
+- Repeated repairs around valleys, chimneys, vents, or walls
+- Moss or debris that keeps sections damp
+- Shingles missing after high wind
+
+Interior evidence matters too. Attic staining, damp insulation, rusted fasteners, or recurring ceiling marks can reveal a drainage or flashing problem before widespread exterior damage is obvious.
+
+Stay off steep, wet, mossy, icy, or elevated roofs. Binoculars, a zoom lens, and dated photographs can document changes safely from the ground. A qualified roofing professional should handle surface inspection and maintenance.
+
+## What a Professional Roof Inspection Should Cover
+
+A useful inspection looks beyond color and age. It should assess:
+
+- Shingle adhesion, cracking, granule retention, and wind damage
+- Flashing at chimneys, skylights, vents, valleys, and wall transitions
+- Soft, stained, delaminated, or decayed roof decking where visible
+- Attic moisture, insulation conditions, and ventilation balance
+- Past repairs and whether they still shed water correctly
+- Gutters, downspouts, and drainage paths near the roof edge
+- Differences in wear by roof plane and exposure
+
+Ask for photographs and a written explanation of what is sound, what needs repair, and what should be monitored. A useful scope distinguishes an isolated defect from age-related wear across the complete system.
+
+## Maintenance That Can Help Preserve Roof Life
+
+Maintenance cannot restore shingles that have become brittle or lost substantial granule coverage, but it can prevent avoidable water problems around an otherwise serviceable roof.
+
+Professional maintenance may include clearing roof and valley debris, correcting loose flashing, replacing a split vent boot, improving drainage, and evaluating attic ventilation. Gutters and downspouts should remain clear enough to move water away from fascia and foundations.
+
+Avoid pressure washing a shingle roof. High pressure can dislodge protective granules and force water beneath roofing materials. Any cleaning method should be compatible with the roof system and performed without unsafe roof access.
+
+Our [Western North Carolina exterior maintenance guide](/blog/exterior-maintenance-checklist-highlands-nc) explains how seasonal moisture, tree cover, and temperature changes affect more than the roof alone.
+
+## Repair or Replacement?
+
+A targeted [roof repair](/roofing/roof-repair) may be practical when damage is isolated, nearby shingles remain flexible and serviceable, the deck is sound, and the repair can integrate correctly with the existing assembly.
+
+Replacement becomes more likely when wear is widespread, shingles are brittle, leaks recur in several places, flashing corrections require extensive removal, or concealed deck damage affects a larger area. An older roof is not automatically failed, and a newer roof is not automatically sound. Condition and repairability should guide the decision.
+
+If you are comparing another shingle roof with a longer-term material, review our [metal roof and shingle roof comparison](/blog/metal-roof-vs-shingle-roof-western-north-carolina). The right choice depends on the home, exposure, ownership plans, and complete installed scope.
+
+## Plan Before the Roof Becomes an Emergency
+
+An inspection before active leaking gives a homeowner more time to compare repair and replacement options. It also creates a dated condition record that can help track changes after severe weather.
+
+Highlander Building Services, Inc. evaluates dimensional shingle roofs across Western North Carolina. We document visible conditions, consider attic and drainage evidence where accessible, and provide a written scope for the practical next step.
+
+If your roof is approaching the later part of its expected service life, showing widespread wear, or developing recurring leaks, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}.`,
+  },
   {
     slug: "roof-flashing-leak-western-nc",
     title: "How to Trace a Roof Flashing Leak Safely",

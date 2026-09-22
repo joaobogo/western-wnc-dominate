@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "dimensional-shingle-lifespan-western-nc",
+    "slug": "dimensional-shingle-lifespan-western-nc",
+    "title": "How Long Do Dimensional Shingles Last?",
+    "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
+    "category": "Materials",
+    "date": "2026-09-22",
+    "readTime": "9 min"
+  },
+  {
     "id": "roof-flashing-leak-western-nc",
     "slug": "roof-flashing-leak-western-nc",
     "title": "How to Trace a Roof Flashing Leak Safely",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Maintenance",
     "date": "2026-08-19",
     "readTime": "8 min"
-  },
-  {
-    "id": "attic-ventilation-waynesville-nc-winter",
-    "slug": "attic-ventilation-waynesville-nc-winter",
-    "title": "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
-    "excerpt": "Ice at the eaves, damp insulation, and premature shingle wear in Haywood County usually trace back to one thing — an unbalanced attic. Here is how to diagnose and correct it.",
-    "category": "Maintenance",
-    "date": "2026-08-03",
-    "readTime": "6 min"
   }
 ];
