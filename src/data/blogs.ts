@@ -223,7 +223,7 @@ Highlander Building Services, Inc. inspects chimney flashing and surrounding roo
     relatedServices: [
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Roof Repair", path: "/roofing/roof-repair" },
-      { label: "Dimensional Shingle Roofing", path: "/roofing/asphalt-shingles" },
+      { label: "Residential Roofing", path: "/roofing/residential" },
       { label: "Request an Inspection", path: "/request-inspection" },
     ],
     faqs: [
@@ -312,7 +312,7 @@ A targeted [roof repair](/roofing/roof-repair) may be practical when damage is i
 
 Replacement becomes more likely when wear is widespread, shingles are brittle, leaks recur in several places, flashing corrections require extensive removal, or concealed deck damage affects a larger area. An older roof is not automatically failed, and a newer roof is not automatically sound. Condition and repairability should guide the decision.
 
-If you are comparing another shingle roof with a longer-term material, review our [metal roof and shingle roof comparison](/blog/metal-roof-vs-shingle-roof-western-north-carolina). The right choice depends on the home, exposure, ownership plans, and complete installed scope.
+If you are comparing another shingle roof with a longer-term material, review our [metal roof and shingle roof comparison](/blog/metal-vs-shingle-roof-western-nc). The right choice depends on the home, exposure, ownership plans, and complete installed scope.
 
 ## Plan Before the Roof Becomes an Emergency
 
