@@ -14,6 +14,7 @@ import skylightLeakRepairHero from "@/assets/blog/skylight-leak-repair-western-n
 import hailDamageRoofHero from "@/assets/blog/hail-damage-roof-western-nc.jpg";
 import roofFlashingLeakHero from "@/assets/blog/roof-flashing-leak-western-nc.jpg";
 import dimensionalShingleLifespanHero from "@/assets/blog/dimensional-shingle-lifespan-western-nc.jpg";
+import chimneyFlashingRepairHero from "@/assets/blog/chimney-flashing-repair-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -71,6 +72,139 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "chimney-flashing-repair-western-nc",
+    title: "6 Chimney Flashing Failures and the Repairs That Work",
+    excerpt:
+      "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
+    category: "Maintenance",
+    date: "2026-09-24",
+    image: chimneyFlashingRepairHero,
+    imageAlt:
+      "Step flashing and counterflashing around a brick chimney on a Western North Carolina mountain home",
+    readTime: "10 min",
+    metaTitle: "Chimney Flashing Repair in Western NC | Highlander",
+    metaDescription:
+      "Spot six chimney flashing failures, understand lasting repair options, and learn what a written repair scope should include in Western North Carolina.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Storm Damage Repair", path: "/roofing/storm-damage" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      { question: "What are the signs of failed chimney flashing?", answer: "Visible gaps, rust streaks, lifted metal, repeated roof-cement patches, damp attic decking, and ceiling stains near the chimney can indicate a flashing problem. Water can travel before it appears indoors, so the closest stain does not always identify the entry point." },
+      { question: "Can chimney flashing be repaired without replacing the roof?", answer: "Often, yes. A roofer can remove the shingles immediately around the chimney, rebuild the flashing detail, repair damaged underlayment or decking, and integrate replacement shingles without replacing every roof plane. The practical scope depends on the condition and compatibility of the surrounding materials." },
+      { question: "When is sealant enough for chimney flashing?", answer: "Sealant may be appropriate for a small joint specifically designed to receive it when the metal, mortar, underlayment, and surrounding roofing remain sound. It cannot replace missing step flashing, restore corroded metal, rebuild a failed reglet, or correct poor water-shedding layers." },
+      { question: "Does every chimney need a cricket?", answer: "Not every chimney requires the same detail. Chimney width, position, roof slope, runoff, and the code applying to the property affect the requirement. A professional should verify the current local requirement and whether the uphill side drains correctly." },
+      { question: "Will homeowners insurance cover chimney flashing repair?", answer: "Coverage depends on the policy and the cause of damage. Sudden damage from a covered event may be treated differently from corrosion, aging, installation defects, or deferred maintenance. Document the conditions and ask the insurer to explain the applicable policy terms." },
+    ],
+    content: `Chimney flashing is a layered metal system that directs water away from the joint between the roof and masonry. When that system is intact, rain moves down and out over the roof covering. When one layer separates, corrodes, or was installed in the wrong sequence, water can reach the roof deck and travel into the home.
+
+A surface bead of sealant may help at one small, sound joint. It cannot rebuild missing step flashing, repair corroded metal, or redirect concentrated runoff behind a wide chimney. The repair should match the actual failure rather than cover the visible symptom.
+
+## How a Chimney Flashing System Works
+
+Several pieces work together around a typical masonry chimney:
+
+- **Apron flashing** protects the downhill face of the chimney.
+- **Step flashing** uses separate pieces woven with each shingle course along both sides.
+- **Counterflashing** overlaps the step flashing and connects the roof drainage system to the masonry.
+- **Back-pan flashing** carries water across the uphill side of the chimney.
+- **A cricket or saddle** divides runoff and sends it around a wider chimney when the roof design and applicable requirements call for one.
+
+Each upper layer must shed water onto the layer below it. Surface caulk cannot compensate for metal installed against the direction of water flow.
+
+## Six Common Chimney Flashing Failures
+
+### 1. A Failed Sealant Joint
+
+Sealant can dry, shrink, split, or separate as metal and masonry move through temperature changes. An isolated joint may be repairable if the surrounding metal and mortar remain solid. Repeated cracking often means movement or a deeper assembly problem is being treated only at the surface.
+
+### 2. A Loose or Deteriorated Reglet
+
+Counterflashing is commonly secured into a groove or mortar joint called a reglet. If the joint crumbles or the metal pulls free, wind-driven rain can move behind the counterflashing. Smearing more material across weak masonry does not restore a sound mechanical connection.
+
+### 3. Missing or Poorly Installed Counterflashing
+
+Counterflashing should overlap and protect the top edge of the step flashing. Surface-mounted metal, shallow embedment, open laps, or a missing section can create a direct path behind the roof covering.
+
+### 4. Separated Step Flashing
+
+Step flashing should be integrated one piece at a time with the shingle courses. A continuous strip or reused pieces may not move or drain correctly. Repair usually requires removing enough nearby roofing to inspect and rebuild the complete sequence.
+
+### 5. Corroded or Punctured Metal
+
+Rust, pinholes, incompatible metals, trapped debris, and past fasteners can compromise flashing. A coating may hide corrosion without restoring the metal below it. Broad deterioration generally calls for replacement with a compatible flashing material.
+
+### 6. Poor Drainage Behind the Chimney
+
+Water, leaves, needles, snow, and ice can collect on the uphill side of a chimney. A correctly designed back pan or cricket directs that load around the masonry. The need for a cricket depends on chimney width, roof conditions, and the code that applies to the property, so the detail should be verified rather than assumed.
+
+## Warning Signs Homeowners Can Document Safely
+
+Interior stains can appear some distance from the actual opening because water follows decking, rafters, fasteners, and insulation. Useful evidence includes:
+
+- Rust streaks or visible gaps around the chimney
+- Counterflashing that has lifted away from masonry
+- Repeated roof-cement or sealant patches
+- Shingle edges lifting beside the chimney
+- Damp insulation or dark decking in an accessible attic
+- A ceiling stain that appears during wind-driven rain
+- Debris collecting behind the chimney
+
+Use binoculars or a zoom lens from the ground and take dated photographs after a storm. Do not climb onto a steep, wet, mossy, icy, elevated, or damaged roof. Avoid attic areas near wet wiring, sagging material, or compromised framing.
+
+Our broader [roof flashing leak guide](/blog/roof-flashing-leak-western-nc) explains how a professional traces water around chimneys, vents, walls, and skylights without assuming the nearest stain is the source.
+
+## Reseal or Full Reflash?
+
+A limited reseal may be reasonable when a professional confirms that one designated sealant joint has failed and the metal, mortar, underlayment, decking, and surrounding roofing are sound.
+
+A more complete reflash is usually appropriate when:
+
+- Step flashing is missing, continuous, or incorrectly layered.
+- Counterflashing has separated from the masonry.
+- Metal is punctured or broadly corroded.
+- The leak has returned after earlier surface patches.
+- Decking or underlayment is wet or damaged.
+- Runoff collects behind the chimney.
+- Surrounding shingles must be removed to restore the drainage sequence.
+
+Corrective work may include removing nearby shingles and old flashing, inspecting the exposed deck, repairing damaged materials, installing compatible step and counterflashing, rebuilding the uphill drainage detail, and reinstalling the roof covering in the correct order.
+
+## Materials and Compatibility
+
+Galvanized steel, aluminum, copper, masonry, fasteners, sealants, and roofing materials do not all react the same way. Material thickness, coatings, contact between dissimilar metals, mortar chemistry, and drainage conditions affect performance.
+
+The longest advertised material life is not automatically the right choice for every chimney. A written scope should identify the flashing material and explain how it will integrate with the masonry and existing roof system.
+
+Western North Carolina adds steep roof pitches, shaded moisture, mature tree cover, rapid temperature changes, freeze-thaw cycles, and wind-driven rain. These conditions make clean drainage and compatible materials especially important around chimneys.
+
+## What a Written Chimney Repair Scope Should Include
+
+A useful repair scope should be specific enough to compare proposals. It should identify:
+
+- The diagnosed failure and supporting photographs
+- Which flashing pieces will be repaired or replaced
+- How the counterflashing will connect to the masonry
+- Whether shingles, underlayment, or decking must be removed
+- How concealed damage will be documented and priced if found
+- Whether a back pan or cricket is present and drains correctly
+- The proposed metal, fasteners, membrane, and sealant
+- Cleanup, disposal, workmanship terms, and material coverage
+
+Avoid a proposal that says only "seal chimney" or "repair leak" without explaining the water path or the layers being corrected. A detailed scope helps distinguish a short-term surface patch from a repair intended to restore the flashing assembly.
+
+If the surrounding roof is already brittle, worn across several planes, or difficult to integrate with new materials, compare the flashing repair with the broader condition guidance in our [dimensional shingle lifespan guide](/blog/dimensional-shingle-lifespan-western-nc).
+
+## Plan the Repair Around the Cause
+
+Chimney stains can also involve a cap, crown, porous masonry, condensation, or an uphill roof detail. The first task is to identify the water path. The second is to correct the layers that should carry water away.
+
+Highlander Building Services, Inc. inspects chimney flashing and surrounding roof conditions across Western North Carolina. We document visible findings and provide a written scope for the practical repair. [Request a roof inspection](/request-inspection) or call ${PHONE_DISPLAY}.`,
+  },
   {
     slug: "dimensional-shingle-lifespan-western-nc",
     title: "How Long Do Dimensional Shingles Last?",
