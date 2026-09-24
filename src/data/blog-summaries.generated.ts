@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "chimney-flashing-repair-western-nc",
+    "slug": "chimney-flashing-repair-western-nc",
+    "title": "6 Chimney Flashing Failures and the Repairs That Work",
+    "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
+    "category": "Maintenance",
+    "date": "2026-09-24",
+    "readTime": "10 min"
+  },
+  {
     "id": "dimensional-shingle-lifespan-western-nc",
     "slug": "dimensional-shingle-lifespan-western-nc",
     "title": "How Long Do Dimensional Shingles Last?",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Materials",
     "date": "2026-08-25",
     "readTime": "18 min"
-  },
-  {
-    "id": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
-    "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
-    "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
-    "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall and colder weather.",
-    "category": "Maintenance",
-    "date": "2026-08-19",
-    "readTime": "8 min"
   }
 ];
