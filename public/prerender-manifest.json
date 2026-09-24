@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 250,
+    "sitemap": 251,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 0,
     "noindexFunnels": 6,
-    "total": 360
+    "total": 361
   },
   "routes": [
     "/",
@@ -107,6 +107,7 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
+    "/blog/chimney-flashing-repair-western-nc",
     "/blog/dimensional-shingle-lifespan-western-nc",
     "/blog/roof-flashing-leak-western-nc",
     "/blog/hail-damage-roof-western-nc",

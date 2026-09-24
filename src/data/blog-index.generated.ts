@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "chimney-flashing-repair-western-nc",
+    "title": "6 Chimney Flashing Failures and the Repairs That Work",
+    "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
+    "category": "Maintenance",
+    "date": "2026-09-24",
+    "town": "Franklin"
+  },
+  {
     "slug": "dimensional-shingle-lifespan-western-nc",
     "title": "How Long Do Dimensional Shingles Last?",
     "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
