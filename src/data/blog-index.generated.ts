@@ -71,11 +71,11 @@ export const blogIndex: BlogIndexEntry[] = [
   },
   {
     "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "title": "Standing Seam vs Exposed-Fastener Metal Roofing for Mountain Homes",
-    "excerpt": "The two metal systems are not the same product at different prices. Here is how they differ on cost, fasteners, movement, wind, repairability and look.",
+    "title": "Standing Seam vs Exposed Fastener for Mountain Homes",
+    "excerpt": "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Ca",
     "category": "Materials",
     "date": "2026-09-15",
-    "town": ""
+    "town": "Franklin"
   },
   {
     "slug": "roof-inspection-after-storm-western-nc",
