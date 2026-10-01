@@ -31,8 +31,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "10 min"
   },
   {
-    "id": "dimensional-shingle-lifespan-western-nc",
-    "slug": "dimensional-shingle-lifespan-western-nc",
+    "id": "architectural-shingle-lifespan",
+    "slug": "architectural-shingle-lifespan",
     "title": "How Long Do Dimensional Shingles Last?",
     "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
     "category": "Materials",
@@ -40,8 +40,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "roof-flashing-leak-western-nc",
-    "slug": "roof-flashing-leak-western-nc",
+    "id": "roof-flashing-leak",
+    "slug": "roof-flashing-leak",
     "title": "How to Trace a Roof Flashing Leak Safely",
     "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs professional repair.",
     "category": "Maintenance",
@@ -49,8 +49,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "hail-damage-roof-western-nc",
-    "slug": "hail-damage-roof-western-nc",
+    "id": "hail-damage-roof",
+    "slug": "hail-damage-roof",
     "title": "One Inch Hail? An Insurance Ready Roof Checklist",
     "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
     "category": "Storm Damage",
@@ -58,8 +58,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "10 min"
   },
   {
-    "id": "skylight-leak-repair-western-nc",
-    "slug": "skylight-leak-repair-western-nc",
+    "id": "skylight-leak-repair",
+    "slug": "skylight-leak-repair",
     "title": "Skylight Leak Repair for Western NC Mountain Homes",
     "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
     "category": "Maintenance",
@@ -67,8 +67,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "roof-valley-leak-western-nc",
-    "slug": "roof-valley-leak-western-nc",
+    "id": "roof-valley-leak",
+    "slug": "roof-valley-leak",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
     "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
     "category": "Maintenance",
@@ -94,8 +94,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "10 min"
   },
   {
-    "id": "roof-inspection-after-storm-western-nc",
-    "slug": "roof-inspection-after-storm-western-nc",
+    "id": "roof-inspection-after-storm",
+    "slug": "roof-inspection-after-storm",
     "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
     "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready records.",
     "category": "Inspections",
