@@ -75,7 +75,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "half-round-vs-k-style-gutters-western-nc",
+    slug: "half-round-vs-k-style-gutters",
     title: "Half-Round vs. K-Style Gutters for Western NC Homes",
     excerpt:
       "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
@@ -225,7 +225,7 @@ Choose K-style when capacity, availability, color selection, and value lead the 
 Highlander Building Services, Inc. evaluates roof planes, valleys, fascia condition, outlets, and discharge paths before recommending a profile. Review our [gutter and downspout services](/roofing/gutters), [request an inspection](/request-inspection), or call ${PHONE_DISPLAY} for a written scope for your Western North Carolina home.`,
   },
   {
-    slug: "chimney-flashing-repair-western-nc",
+    slug: "chimney-flashing-repair",
     title: "6 Chimney Flashing Failures and the Repairs That Work",
     excerpt:
       "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
@@ -2551,7 +2551,7 @@ Highlander Building Services, Inc. evaluates skylight leaks and surrounding roof
 If water is entering now, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. The goal is a clear written scope based on what failed, not another temporary surface patch.`,
   },
   {
-    slug: "standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    slug: "standing-seam-vs-exposed-fastener",
     title: "Standing Seam vs Exposed Fastener for Mountain Homes",
     excerpt:
       "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Carolina homes.",

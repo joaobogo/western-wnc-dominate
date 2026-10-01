@@ -14,6 +14,12 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # scripts/fixtures/legacy-urls-from-gsc.txt (P1.1, 2026-09-04).
 # Exact rules live here, above every wildcard, so nothing can shadow them.
 # ============================================================
+# Corrected 2026 blog slugs. Preserve links shared before the uploaded filenames
+# were adopted as the canonical URL source.
+/blog/chimney-flashing-repair-western-nc                   /blog/chimney-flashing-repair                   301!
+/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc     /blog/standing-seam-vs-exposed-fastener         301!
+/blog/half-round-vs-k-style-gutters-western-nc             /blog/half-round-vs-k-style-gutters             301!
+
 # H3 (15 Sep 2026): Asheville and Hendersonville were dropped as markets. Their
 # town pages are noindex, so their legacy doorway URLs go to the SERVICE page
 # the old URL named rather than to a page we no longer want indexed.
