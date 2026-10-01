@@ -173,12 +173,18 @@ describe("suggestDestination — closest live page by intent", () => {
 });
 
 describe("repo integration", () => {
-  it("redirects the three initially published article URLs to their uploaded filename slugs", () => {
+  it("redirects every initially published uploaded article URL to its filename slug", () => {
     const rules = loadRedirectRules();
     const expected = new Map([
       ["/blog/chimney-flashing-repair-western-nc", "/blog/chimney-flashing-repair"],
       ["/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc", "/blog/standing-seam-vs-exposed-fastener"],
       ["/blog/half-round-vs-k-style-gutters-western-nc", "/blog/half-round-vs-k-style-gutters"],
+      ["/blog/roof-inspection-after-storm-western-nc", "/blog/roof-inspection-after-storm"],
+      ["/blog/roof-valley-leak-western-nc", "/blog/roof-valley-leak"],
+      ["/blog/skylight-leak-repair-western-nc", "/blog/skylight-leak-repair"],
+      ["/blog/hail-damage-roof-western-nc", "/blog/hail-damage-roof"],
+      ["/blog/roof-flashing-leak-western-nc", "/blog/roof-flashing-leak"],
+      ["/blog/dimensional-shingle-lifespan-western-nc", "/blog/architectural-shingle-lifespan"],
     ]);
 
     for (const [from, to] of expected) {
