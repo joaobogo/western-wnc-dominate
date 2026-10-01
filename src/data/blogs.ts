@@ -308,7 +308,7 @@ Interior stains can appear some distance from the actual opening because water f
 
 Use binoculars or a zoom lens from the ground and take dated photographs after a storm. Do not climb onto a steep, wet, mossy, icy, elevated, or damaged roof. Avoid attic areas near wet wiring, sagging material, or compromised framing.
 
-Our broader [roof flashing leak guide](/blog/roof-flashing-leak-western-nc) explains how a professional traces water around chimneys, vents, walls, and skylights without assuming the nearest stain is the source.
+Our broader [roof flashing leak guide](/blog/roof-flashing-leak) explains how a professional traces water around chimneys, vents, walls, and skylights without assuming the nearest stain is the source.
 
 ## Reseal or Full Reflash?
 
