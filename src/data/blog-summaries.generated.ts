@@ -13,8 +13,8 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
-    "id": "half-round-vs-k-style-gutters-western-nc",
-    "slug": "half-round-vs-k-style-gutters-western-nc",
+    "id": "half-round-vs-k-style-gutters",
+    "slug": "half-round-vs-k-style-gutters",
     "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
     "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
     "category": "Maintenance",
@@ -22,8 +22,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "chimney-flashing-repair-western-nc",
-    "slug": "chimney-flashing-repair-western-nc",
+    "id": "chimney-flashing-repair",
+    "slug": "chimney-flashing-repair",
     "title": "6 Chimney Flashing Failures and the Repairs That Work",
     "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
     "category": "Maintenance",
@@ -85,8 +85,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    "id": "standing-seam-vs-exposed-fastener",
+    "slug": "standing-seam-vs-exposed-fastener",
     "title": "Standing Seam vs Exposed Fastener for Mountain Homes",
     "excerpt": "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Carolina homes.",
     "category": "Materials",
