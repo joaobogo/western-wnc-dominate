@@ -308,7 +308,7 @@ Interior stains can appear some distance from the actual opening because water f
 
 Use binoculars or a zoom lens from the ground and take dated photographs after a storm. Do not climb onto a steep, wet, mossy, icy, elevated, or damaged roof. Avoid attic areas near wet wiring, sagging material, or compromised framing.
 
-Our broader [roof flashing leak guide](/blog/roof-flashing-leak-western-nc) explains how a professional traces water around chimneys, vents, walls, and skylights without assuming the nearest stain is the source.
+Our broader [roof flashing leak guide](/blog/roof-flashing-leak) explains how a professional traces water around chimneys, vents, walls, and skylights without assuming the nearest stain is the source.
 
 ## Reseal or Full Reflash?
 
@@ -349,7 +349,7 @@ A useful repair scope should be specific enough to compare proposals. It should 
 
 Avoid a proposal that says only "seal chimney" or "repair leak" without explaining the water path or the layers being corrected. A detailed scope helps distinguish a short-term surface patch from a repair intended to restore the flashing assembly.
 
-If the surrounding roof is already brittle, worn across several planes, or difficult to integrate with new materials, compare the flashing repair with the broader condition guidance in our [dimensional shingle lifespan guide](/blog/dimensional-shingle-lifespan-western-nc).
+If the surrounding roof is already brittle, worn across several planes, or difficult to integrate with new materials, compare the flashing repair with the broader condition guidance in our [dimensional shingle lifespan guide](/blog/architectural-shingle-lifespan).
 
 ## Plan the Repair Around the Cause
 
@@ -358,7 +358,7 @@ Chimney stains can also involve a cap, crown, porous masonry, condensation, or a
 Highlander Building Services, Inc. inspects chimney flashing and surrounding roof conditions across Western North Carolina. We document visible findings and provide a written scope for the practical repair. [Request a roof inspection](/request-inspection) or call ${PHONE_DISPLAY}.`,
   },
   {
-    slug: "dimensional-shingle-lifespan-western-nc",
+    slug: "architectural-shingle-lifespan",
     title: "How Long Do Dimensional Shingles Last?",
     excerpt:
       "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
@@ -475,7 +475,7 @@ Highlander Building Services, Inc. evaluates dimensional shingle roofs across We
 If your roof is approaching the later part of its expected service life, showing widespread wear, or developing recurring leaks, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}.`,
   },
   {
-    slug: "roof-flashing-leak-western-nc",
+    slug: "roof-flashing-leak",
     title: "How to Trace a Roof Flashing Leak Safely",
     excerpt:
       "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs professional repair.",
@@ -616,7 +616,7 @@ Homeowners can reduce risk without stepping onto the roof:
 - Have overhanging branches managed by a qualified tree professional.
 - Schedule an inspection when a vent boot cracks, a patch changes shape, or a stain returns.
 
-If a skylight is near the moisture path, review the signs in our [skylight leak guide](/blog/skylight-leak-repair-western-nc). If the leak follows an inside roof angle, compare it with the [roof valley leak guide](/blog/roof-valley-leak-western-nc).
+If a skylight is near the moisture path, review the signs in our [skylight leak guide](/blog/skylight-leak-repair). If the leak follows an inside roof angle, compare it with the [roof valley leak guide](/blog/roof-valley-leak).
 
 ## What a Written Repair Scope Should Include
 
@@ -640,7 +640,7 @@ Highlander Building Services, Inc. evaluates flashing leaks across Western North
 If water is actively entering the home, move belongings away from the area and contain the drip only where it is safe. Then [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. Avoid wet wiring, sagging ceilings, and compromised attic framing while you wait for help.`,
   },
   {
-    slug: "hail-damage-roof-western-nc",
+    slug: "hail-damage-roof",
     title: "One Inch Hail? An Insurance Ready Roof Checklist",
     excerpt:
       "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
@@ -774,7 +774,7 @@ If a recent storm has you wondering whether your roof took a hit, [request an in
 This article is general information and not insurance or financial advice. Policy terms vary, so review your own coverage with your insurer.`,
   },
   {
-    slug: "roof-valley-leak-western-nc",
+    slug: "roof-valley-leak",
     title: "5 Causes of a Roof Valley Leak and When to Call a Pro",
     excerpt:
       "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
@@ -914,7 +914,7 @@ If you see an active leak, move belongings away from the area, contain interior 
 - [HowStuffWorks: Repairing an Open Roof Valley](https://home.howstuffworks.com/home-improvement/repair/how-to-repair-a-leaky-roof4.htm)`,
   },
   {
-    slug: "roof-inspection-after-storm-western-nc",
+    slug: "roof-inspection-after-storm",
     title: "48 to 72 Hour Roof Inspection for Western NC Homeowners",
     excerpt:
       "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready records.",
@@ -2409,7 +2409,7 @@ Elevation, weather exposure, material transport, and skilled labor demand all pu
 The best way to know your actual cost is an on-site inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
   },
   {
-    slug: "skylight-leak-repair-western-nc",
+    slug: "skylight-leak-repair",
     title: "Skylight Leak Repair for Western NC Mountain Homes",
     excerpt:
       "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",

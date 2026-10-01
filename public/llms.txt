@@ -176,6 +176,7 @@ Founded: 2017
 ### Articles
 
 - https://highlandernc.com/blog
+- https://highlandernc.com/blog/architectural-shingle-lifespan
 - https://highlandernc.com/blog/attic-ventilation-waynesville-nc-winter
 - https://highlandernc.com/blog/best-roofing-materials-highlands-nc
 - https://highlandernc.com/blog/best-time-of-year-replace-roof-western-north-carolina
@@ -200,7 +201,6 @@ Founded: 2017
 - https://highlandernc.com/blog/design-consultation-agreement-construction-project
 - https://highlandernc.com/blog/design-services-vs-build-ready-plans
 - https://highlandernc.com/blog/designing-for-drainage-foundation-safety
-- https://highlandernc.com/blog/dimensional-shingle-lifespan-western-nc
 - https://highlandernc.com/blog/emergency-roof-repair-wnc
 - https://highlandernc.com/blog/emergency-vs-scheduled-roof-repair-wnc
 - https://highlandernc.com/blog/exterior-maintenance-checklist-highlands-nc
@@ -214,7 +214,7 @@ Founded: 2017
 - https://highlandernc.com/blog/gutter-installation-franklin-nc
 - https://highlandernc.com/blog/gutter-replacement-cashiers-nc
 - https://highlandernc.com/blog/gutter-size-western-nc-mountain-homes
-- https://highlandernc.com/blog/hail-damage-roof-western-nc
+- https://highlandernc.com/blog/hail-damage-roof
 - https://highlandernc.com/blog/half-round-vs-k-style-gutters
 - https://highlandernc.com/blog/heavy-rain-roofs-gutters-western-nc
 - https://highlandernc.com/blog/highlands-nc-storm-damage-july-28-2026
@@ -262,8 +262,8 @@ Founded: 2017
 - https://highlandernc.com/blog/property-access-terrain-mountain-construction-cashiers-nc
 - https://highlandernc.com/blog/protecting-your-view-window-layout-strategies
 - https://highlandernc.com/blog/roof-financing-options-western-nc
-- https://highlandernc.com/blog/roof-flashing-leak-western-nc
-- https://highlandernc.com/blog/roof-inspection-after-storm-western-nc
+- https://highlandernc.com/blog/roof-flashing-leak
+- https://highlandernc.com/blog/roof-inspection-after-storm
 - https://highlandernc.com/blog/roof-inspection-cashiers-nc
 - https://highlandernc.com/blog/roof-inspection-frequency-cullowhee-nc
 - https://highlandernc.com/blog/roof-inspection-frequency-franklin-nc
@@ -291,7 +291,7 @@ Founded: 2017
 - https://highlandernc.com/blog/roof-replacement-highlands-nc
 - https://highlandernc.com/blog/roof-replacement-sylva-nc
 - https://highlandernc.com/blog/roof-replacement-waynesville-nc-historic-homes
-- https://highlandernc.com/blog/roof-valley-leak-western-nc
+- https://highlandernc.com/blog/roof-valley-leak
 - https://highlandernc.com/blog/roofing-company-cashiers-nc-choosing-contractor
 - https://highlandernc.com/blog/roofing-company-franklin-nc-what-to-look-for
 - https://highlandernc.com/blog/roofing-company-highlands-nc-local-factors
@@ -306,7 +306,7 @@ Founded: 2017
 - https://highlandernc.com/blog/second-home-roofing-cashiers-nc
 - https://highlandernc.com/blog/signs-your-roof-needs-replacement-mountain-homes
 - https://highlandernc.com/blog/skylight-installation-western-nc
-- https://highlandernc.com/blog/skylight-leak-repair-western-nc
+- https://highlandernc.com/blog/skylight-leak-repair
 - https://highlandernc.com/blog/skylight-leaks-roof-or-skylight-wnc
 - https://highlandernc.com/blog/skylight-replacement-wnc
 - https://highlandernc.com/blog/small-exterior-repairs-franklin-nc
