@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "half-round-vs-k-style-gutters-western-nc",
+    "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
+    "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
+    "category": "Maintenance",
+    "date": "2026-10-01",
+    "town": "Franklin"
+  },
+  {
     "slug": "chimney-flashing-repair-western-nc",
     "title": "6 Chimney Flashing Failures and the Repairs That Work",
     "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",

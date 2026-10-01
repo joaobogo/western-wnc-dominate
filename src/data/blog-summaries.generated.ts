@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "half-round-vs-k-style-gutters-western-nc",
+    "slug": "half-round-vs-k-style-gutters-western-nc",
+    "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
+    "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
+    "category": "Maintenance",
+    "date": "2026-10-01",
+    "readTime": "9 min"
+  },
+  {
     "id": "chimney-flashing-repair-western-nc",
     "slug": "chimney-flashing-repair-western-nc",
     "title": "6 Chimney Flashing Failures and the Repairs That Work",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm Damage",
     "date": "2026-09-04",
     "readTime": "14 min"
-  },
-  {
-    "id": "western-north-carolina-mountain-roofing-guide",
-    "slug": "western-north-carolina-mountain-roofing-guide",
-    "title": "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
-    "excerpt": "Which roofing materials perform best in the Western North Carolina mountains, what replacement costs in 2026, and how to protect a mountain home from rain, moss, wind and freeze-thaw damage.",
-    "category": "Materials",
-    "date": "2026-08-25",
-    "readTime": "18 min"
   }
 ];
