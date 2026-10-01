@@ -14,7 +14,7 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
-    "slug": "half-round-vs-k-style-gutters-western-nc",
+    "slug": "half-round-vs-k-style-gutters",
     "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
     "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
     "category": "Maintenance",
@@ -22,7 +22,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Franklin"
   },
   {
-    "slug": "chimney-flashing-repair-western-nc",
+    "slug": "chimney-flashing-repair",
     "title": "6 Chimney Flashing Failures and the Repairs That Work",
     "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
     "category": "Maintenance",
@@ -78,7 +78,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    "slug": "standing-seam-vs-exposed-fastener",
     "title": "Standing Seam vs Exposed Fastener for Mountain Homes",
     "excerpt": "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Ca",
     "category": "Materials",
