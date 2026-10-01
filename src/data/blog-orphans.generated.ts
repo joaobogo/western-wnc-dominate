@@ -1,6 +1,9 @@
 // AUTO-GENERATED orphan blog redirects. These URLs are in the legacy sitemap 
 // but have no corresponding data in blogs.ts. Redirecting to /blog to prevent 404s.
 export const blogOrphanRedirects = [
+  { oldUrl: "/blog/chimney-flashing-repair-western-nc", newUrl: "/blog/chimney-flashing-repair" },
+  { oldUrl: "/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc", newUrl: "/blog/standing-seam-vs-exposed-fastener" },
+  { oldUrl: "/blog/half-round-vs-k-style-gutters-western-nc", newUrl: "/blog/half-round-vs-k-style-gutters" },
   { oldUrl: "/blog/metal-vs-dimensional-shingle-wnc-mountain-homes", newUrl: "/blog" },
   { oldUrl: "/blog/roof-lifespan-western-nc-by-material", newUrl: "/blog" },
   { oldUrl: "/blog/roof-repair-vs-replacement-bryson-city-nc", newUrl: "/blog" },
