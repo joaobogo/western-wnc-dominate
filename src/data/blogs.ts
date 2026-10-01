@@ -16,6 +16,7 @@ import roofFlashingLeakHero from "@/assets/blog/roof-flashing-leak-western-nc.jp
 import dimensionalShingleLifespanHero from "@/assets/blog/dimensional-shingle-lifespan-western-nc.jpg";
 import chimneyFlashingRepairHero from "@/assets/blog/chimney-flashing-repair-western-nc.jpg";
 import standingSeamVsExposedFastenerHero from "@/assets/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc.jpg";
+import halfRoundVsKStyleGuttersHero from "@/assets/blog/half-round-vs-k-style-gutters-western-nc.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -73,6 +74,156 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "half-round-vs-k-style-gutters-western-nc",
+    title: "Half-Round vs. K-Style Gutters for Western NC Homes",
+    excerpt:
+      "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
+    category: "Maintenance",
+    date: "2026-10-01",
+    image: halfRoundVsKStyleGuttersHero,
+    imageAlt:
+      "K-style aluminum and copper half-round gutters on a Western North Carolina mountain home",
+    readTime: "9 min",
+    metaTitle: "Half-Round vs. K-Style Gutters in Western NC",
+    metaDescription:
+      "Compare half-round and K-style gutters for Western NC homes, including capacity, cost, debris handling, materials, and mountain rainfall sizing.",
+    town: "Franklin",
+    relatedServices: [
+      { label: "Gutters and Downspouts", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      {
+        question: "Do K-style gutters hold more water than half-round gutters?",
+        answer: "At the same nominal width, K-style gutters generally provide more carrying capacity because of their deeper, box-like profile. Actual performance still depends on roof area, pitch, valleys, rainfall intensity, outlet placement, and downspout size.",
+      },
+      {
+        question: "When are half-round gutters the better choice?",
+        answer: "Half-round gutters are often chosen for older homes, traditional exteriors, exposed rafter details, and projects where copper or a hand-finished appearance is important. They can perform well when the trough and downspouts are sized for the roof rather than selected by appearance alone.",
+      },
+      {
+        question: "Are half-round gutters easier to clean?",
+        answer: "Their smooth curved interior has fewer corners where leaves, grit, and roof granules can settle. Tree coverage, outlet size, downspout placement, and maintenance frequency usually matter more than profile by itself.",
+      },
+      {
+        question: "Why do half-round gutters usually cost more?",
+        answer: "Specialty brackets, lower-volume components, sectional installation, and premium metals such as copper can increase material and labor costs. A written estimate should identify the metal, thickness, hanger type, seam method, outlet count, and downspout size so the comparison is accurate.",
+      },
+      {
+        question: "What gutter profile is best for heavy Western North Carolina rain?",
+        answer: "K-style is often the practical choice because it provides more capacity at a common residential size, but profile is only one part of the system. Steep roof planes and valleys may require larger gutters, larger or additional downspouts, and careful outlet placement to move concentrated runoff.",
+      },
+    ],
+    content: `Most Western North Carolina homes are well served by K-style gutters. They carry more water at the same nominal width, are widely available in seamless aluminum, and fit standard fascia details. Half-round gutters make sense when a traditional profile, exposed brackets, or copper finish is central to the home's exterior.
+
+That is the short answer. The better answer depends on the entire drainage system. Roof area, pitch, valleys, local rainfall, gutter width, outlet placement, and downspout size all affect whether water reaches the ground without overflowing. A correctly sized half-round system can outperform an undersized K-style system, even though K-style has the capacity advantage profile for profile.
+
+## K-Style vs. Half-Round at a Glance
+
+- **Shape:** K-style has a flat back, flat bottom, and formed front face. Half-round is a smooth semicircular trough.
+- **Capacity:** K-style generally carries more water at the same nominal width.
+- **Cost:** Seamless aluminum K-style is usually the lower-cost option. Half-round costs more, especially in copper.
+- **Debris:** The smooth interior of half-round gutters gives leaves and grit fewer corners in which to settle.
+- **Appearance:** K-style blends with most homes. Half-round creates a more traditional, visible metal detail.
+- **Availability:** K-style components and gutter guards are more widely stocked. Half-round often requires specialty hangers and fittings.
+
+The decision should start with the home's exterior and budget, then be checked against the amount and concentration of runoff. Our guide to [gutter sizing for Western North Carolina mountain homes](/blog/gutter-size-western-nc-mountain-homes) explains why a nominal gutter size does not tell the full story.
+
+## What Are K-Style Gutters?
+
+K-style gutters have a flat back that mounts against the fascia and a formed front edge that resembles exterior trim. Most residential replacements are seamless runs formed on site from a coil of aluminum. That allows each straight roof edge to use one continuous piece, reducing the number of field joints.
+
+The profile's flat bottom and deeper front create useful carrying capacity in a compact size. It also accepts common hidden hangers and is available in many factory-applied colors. Those practical advantages explain why K-style is the standard choice for many contemporary, ranch, cabin, and traditional homes.
+
+K-style is not automatically the right size, however. A narrow trough with too few outlets can still overflow below a roof valley. The profile is only one part of a connected system that includes the roof edge, flashing, gutters, outlets, downspouts, extensions, and final drainage path.
+
+## What Are Half-Round Gutters?
+
+Half-round gutters form a smooth semicircle and are commonly supported by visible brackets or straps. Aluminum and steel versions are available, but copper is closely associated with the profile because the curved trough, round downspouts, and metal brackets create a deliberate traditional appearance.
+
+This style can complement older homes, Craftsman details, farmhouses, timber-frame homes, and exteriors with exposed rafter tails. The gutter becomes part of the exterior design instead of disappearing into the fascia line.
+
+The rounded interior also has no bottom corners. Leaves, pine needles, grit, and dimensional shingle granules have fewer places to collect, although no gutter profile is self-cleaning. Trees near the roof, outlet dimensions, and the maintenance schedule have a greater effect on clogging than shape alone.
+
+## Which Profile Handles Mountain Rain Better?
+
+At the same nominal width, K-style generally carries more water. That makes it a sensible starting point where steep roof planes discharge quickly or where a valley delivers water to a short section of eave.
+
+Western North Carolina homes need more than a profile comparison. Rainfall intensity changes by elevation and location, and mountain roof designs often combine steep slopes, dormers, inside corners, and short runs. Water can arrive at one outlet much faster than a simple square-foot calculation suggests. The [effects of heavy rain on roofs and gutters](/blog/heavy-rain-roofs-gutters-western-nc) are especially visible where overflow repeatedly stains fascia or erodes soil below one corner.
+
+Downspouts are often the restriction. Adding an outlet, increasing the downspout cross-section, or shortening the distance water travels in the trough may improve performance more than changing from one profile to another. That is why a written scope should identify gutter width, outlet locations, downspout dimensions, and discharge points.
+
+## Cost and Material Differences
+
+Seamless aluminum K-style is generally the value choice because the material, forming equipment, hangers, end caps, and outlets are common. Crews can form long runs to the roofline and minimize seams.
+
+Half-round systems usually cost more. Specialty brackets and fittings add material cost, and sectional systems require more field joints and labor. Copper widens the difference further because both the raw material and the joining methods are more demanding.
+
+The material can matter as much as the profile:
+
+- **Aluminum** is lightweight, corrosion resistant, and available in many colors.
+- **Galvanized or coated steel** is strong but needs intact protective finishes to resist corrosion.
+- **Copper** develops a natural patina and can provide long service when its joints, fasteners, and contact with other metals are detailed correctly.
+
+Avoid comparing two estimates by total price alone. One may include heavier material, more outlets, larger downspouts, fascia repairs, or a different discharge plan. Ask for those details in writing before deciding.
+
+## Maintenance and Debris
+
+Half-round gutters can release loose leaves and grit more readily because the trough has no interior corners. K-style gutters can hold debris along the flat bottom and formed front edge, especially when roof granules mix with damp organic material.
+
+Neither shape removes the need for inspection and cleaning. Pine needles can bridge across outlets, hardwood leaves can mat together, and small twigs can lodge at elbows. Our [pre-fall gutter maintenance checklist](/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners) covers the seasonal warning signs homeowners can observe from the ground.
+
+Do not climb onto a steep or wet roof to compare profiles or clear a blockage. Look for water marks, sagging sections, loose downspouts, peeling fascia paint, and erosion from the ground. Use a qualified professional for elevated inspection and cleaning.
+
+Gutter guards can reduce some debris but do not add drainage capacity. They also need to match the profile, roof edge, and debris type. K-style has the widest range of compatible products because it is more common. Half-round guard systems are available, but the selection is narrower and the fit deserves careful review.
+
+## Which Style Fits the Home?
+
+K-style is usually the quieter visual choice. Its front edge resembles trim, painted aluminum can match the fascia, and hidden hangers keep the roofline simple. It works across a wide range of Western North Carolina homes without asking the gutter to become a design feature.
+
+Half-round is more expressive. Visible brackets, round outlets, and copper can reinforce the character of an older home or a carefully detailed mountain property. The strongest applications repeat metal finishes already used on the home rather than introducing a single unrelated accent.
+
+If appearance points toward half-round, confirm that the proposed width and downspouts still handle the roof. If performance and budget point toward K-style, confirm that the outlets are placed where valleys and long runs actually deliver water.
+
+## Installation Details That Matter More Than Shape
+
+A reliable proposal should address:
+
+1. **Contributing roof area and pitch.** Steeper planes move water to the edge quickly.
+2. **Valleys and inside corners.** These concentrate runoff into short gutter sections.
+3. **Gutter width and slope.** The trough must carry water toward outlets without standing water or excessive pitch.
+4. **Outlet count and location.** Long runs and concentrated flow may need more than one outlet.
+5. **Downspout dimensions.** A small downspout can restrict an otherwise adequate gutter.
+6. **Hanger type and spacing.** Fasteners must suit the fascia condition and expected loads.
+7. **Discharge at grade.** Water should leave the foundation area without creating erosion or crawlspace moisture.
+
+Our [Franklin gutter installation guide](/blog/gutter-installation-franklin-nc) explains how those details affect local homes. Repeated overflow can also signal a broader [roof drainage problem](/blog/gutter-drainage-roof-problems-franklin-nc), not just a gutter that needs cleaning.
+
+## Questions to Ask Before Choosing
+
+Ask the installer to show how the recommendation accounts for your roof rather than relying on a standard package:
+
+- What roof area feeds each gutter run?
+- Where do valleys concentrate water?
+- Why is this gutter width appropriate?
+- How many outlets and downspouts are included, and what sizes are they?
+- What metal and thickness are specified?
+- What hanger style and spacing will be used?
+- How will joints, corners, and end caps be sealed or joined?
+- Where will each downspout discharge?
+- Are fascia repairs or removal of the existing system included?
+
+The written answers make competing proposals easier to compare. They also reveal whether the recommendation was designed for the house or selected from habit.
+
+## The Practical Choice for Western North Carolina
+
+Choose K-style when capacity, availability, color selection, and value lead the decision. Choose half-round when the home's traditional detailing or a premium metal finish justifies the added cost. In either case, require the gutter and downspout system to be sized for the actual roof and the way mountain rain reaches each eave.
+
+Highlander Building Services, Inc. evaluates roof planes, valleys, fascia condition, outlets, and discharge paths before recommending a profile. Review our [gutter and downspout services](/roofing/gutters), [request an inspection](/request-inspection), or call ${PHONE_DISPLAY} for a written scope for your Western North Carolina home.`,
+  },
   {
     slug: "chimney-flashing-repair-western-nc",
     title: "6 Chimney Flashing Failures and the Repairs That Work",
