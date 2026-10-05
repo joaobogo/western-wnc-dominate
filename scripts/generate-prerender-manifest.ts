@@ -33,6 +33,7 @@ const OUT = resolve("public/prerender-manifest.json");
  * (Moved here from scripts/prerender.mjs — this file is now the single list.)
  */
 export const NOINDEX_ROUTES = [
+  "/thank-you",
   "/roofing-intake",
   "/construction-intake",
   "/design-intake",
