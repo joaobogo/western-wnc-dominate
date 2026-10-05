@@ -131,7 +131,7 @@ export const ConstructionTrustSidebar = ({ items = defaultItems }: { items?: Tru
       </div>
     ))}
     <div className="pt-3 border-t border-border">
-      <Link to="/consultation" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+      <Link to="/request-inspection" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
         Get My Project Scoped <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
@@ -166,7 +166,7 @@ export const PlanningCallout = ({
   headline = "Not sure where to start?",
   body = "We offer complimentary project consultations. Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.",
   ctaText = "Get My Questions Answered",
-  ctaLink = "/consultation",
+  ctaLink = "/request-inspection",
 }: {
   headline?: string;
   body?: string;
