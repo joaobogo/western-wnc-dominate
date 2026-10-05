@@ -16,6 +16,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import InspectionForm from "@/components/InspectionForm";
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import { ScrollReveal } from "@/components/motion";
@@ -489,6 +490,8 @@ const ConstructionDivision = () => {
         <ProjectTypeSelector />
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="construction projects" />
+
+        <InspectionForm />
 
         <ConstructionClosingCTA
           headline={"Your Home Deserves a Builder\nWho Treats It Like Their Own."}
