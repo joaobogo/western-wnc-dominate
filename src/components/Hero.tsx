@@ -279,7 +279,7 @@ const Hero = () => {
             {/* CTA Group — premium dual-action */}
             <div className={`flex flex-col gap-2.5 ${textLed ? "md:max-w-md md:gap-3" : "sm:flex-row sm:gap-6"}`}>
               <Link
-                to="/consultation"
+                to="/request-inspection"
                 data-gtm-experiment="home_hero_cta"
                 data-gtm-variant={heroCta.variant}
                 className="hero-cta-estimate order-2 md:order-none btn btn-primary btn-lg group md:text-base md:px-14 md:py-5 relative md:tracking-[0.1em] md:min-h-[60px] whitespace-nowrap"
