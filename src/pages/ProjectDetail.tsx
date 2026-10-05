@@ -266,7 +266,7 @@ const ProjectDetailPage = () => {
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
-                  <Link to="/consultation" className="btn btn-primary btn-sm w-full">
+                  <Link to="/request-inspection" className="btn btn-primary btn-sm w-full">
                     Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
@@ -324,7 +324,7 @@ const ProjectDetailPage = () => {
                 </p>
               </div>
               <Link
-                to="/consultation"
+                to="/request-inspection"
                 className="btn btn-primary btn-sm flex-shrink-0"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" /> Get My Project Scoped
