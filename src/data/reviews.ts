@@ -1,4 +1,4 @@
-import { REVIEW_SUMMARY, REVIEW_RATING_VALUE } from "@/data/business";
+import { REVIEW_SUMMARY, REVIEW_RATING_VALUE, FRANKLIN, SYLVA, GBP_MAP_URL } from "@/data/business";
 
 /**
  * Published customer reviews — every entry is REAL and VERBATIM.
@@ -58,11 +58,8 @@ export interface Review {
   sourceUrl: string;
 }
 
-const TRUSTINDEX = "https://www.trustindex.io/reviews/highlandernc.com";
-const BIRDEYE_FRANKLIN =
-  "https://reviews.birdeye.com/highlander-roofing-services-franklin-165906078669425";
-const BIRDEYE_SYLVA =
-  "https://reviews.birdeye.com/highlander-roofing-services-sylva-165926557565736";
+const GOOGLE_FRANKLIN = GBP_MAP_URL(FRANKLIN.gbpCid);
+const GOOGLE_SYLVA = GBP_MAP_URL(SYLVA.gbpCid);
 const HOMEADVISOR = "https://www.homeadvisor.com/rated.HighlanderRoofing.68818115.html";
 
 export const REVIEWS: Review[] = [
@@ -76,7 +73,7 @@ export const REVIEWS: Review[] = [
     service: ["roof-replacement"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: TRUSTINDEX,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
   {
     id: "willard-armes-2024",
@@ -88,7 +85,7 @@ export const REVIEWS: Review[] = [
     service: ["storm-damage", "roof-replacement"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: TRUSTINDEX,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
   {
     id: "jh-dillsboro-2019",
@@ -114,7 +111,7 @@ export const REVIEWS: Review[] = [
     service: ["gutters"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: BIRDEYE_FRANKLIN,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
   {
     id: "david-christopher-2026",
@@ -127,7 +124,7 @@ export const REVIEWS: Review[] = [
     service: ["roof-replacement", "gutters"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: BIRDEYE_FRANKLIN,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
   {
     id: "zary-m-2024",
@@ -139,7 +136,7 @@ export const REVIEWS: Review[] = [
     service: ["metal-roofing"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: TRUSTINDEX,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
   {
     id: "nate-yoder-2023",
@@ -151,7 +148,7 @@ export const REVIEWS: Review[] = [
     service: ["metal-roofing", "roof-replacement"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: TRUSTINDEX,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
   {
     id: "candy-wood-2025",
@@ -164,7 +161,7 @@ export const REVIEWS: Review[] = [
     service: ["general"],
     profile: "sylva",
     source: "Google",
-    sourceUrl: BIRDEYE_SYLVA,
+    sourceUrl: GOOGLE_SYLVA,
   },
   {
     id: "erik-m-2019",
@@ -188,7 +185,7 @@ export const REVIEWS: Review[] = [
     service: ["gutters"],
     profile: "franklin",
     source: "Google",
-    sourceUrl: TRUSTINDEX,
+    sourceUrl: GOOGLE_FRANKLIN,
   },
 ];
 
@@ -228,11 +225,11 @@ export const availableTowns = (): string[] =>
   [...new Set(REVIEWS.map((r) => r.town).filter((t): t is string => !!t))].sort();
 
 /**
- * Human-facing date. Approximate entries are shown as month + year with an
- * explicit marker, never as a precise day and never as a stale "2 days ago".
+ * Human-facing date. When the source only supplied a relative date, omit the
+ * date entirely rather than presenting a derived month as if it were exact.
  */
 export const reviewDateLabel = (r: Review): string => {
+  if (r.dateApprox) return "";
   const d = new Date(`${r.date}T00:00:00Z`);
-  const month = d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
-  return r.dateApprox ? `${month} (approx.)` : month;
+  return d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 };
