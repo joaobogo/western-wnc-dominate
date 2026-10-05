@@ -128,12 +128,12 @@ export const divisions: DivisionDropdown[] = [
     columns: roofingColumns,
     featured: {
       eyebrow: "Start here",
-      label: "Free Roof Inspection",
-      desc: "A credentialed crew on your roof, with photos and a written scope. Response within 24 hours.",
-      href: "/contact",
+      label: "Request a Roof Inspection",
+      desc: "Share the property details and Highlander will review the request and arrange the appropriate next step.",
+      href: "/request-inspection",
     },
     icon: Shield,
-    tagline: "CertainTeed ShingleMaster · Credentialed Contractor",
+    tagline: "CertainTeed · Credentialed Contractor",
     accent: "green",
   },
   {
