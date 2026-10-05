@@ -20,7 +20,7 @@ export const FinalCTA = ({
   heading,
   subheading,
   primaryLabel = "Get My Written Estimate",
-  primaryHref = "/consultation",
+  primaryHref = "/request-inspection",
   phone = `${PHONE_DISPLAY}`,
   telHref = PHONE_TEL,
   className = "",
