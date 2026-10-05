@@ -1,7 +1,7 @@
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDown, Phone, ArrowRight, HelpCircle } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -310,21 +310,19 @@ const FAQ = () => {
                           </span>
                           <ChevronDown className={`w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 transition-transform ${isOpen ? "rotate-180 text-primary" : ""}`} aria-hidden="true" />
                         </button>
-                        <AnimatePresence initial={false}>
-                          {isOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.25 }}
-                              className="overflow-hidden"
-                            >
-                              <p className="text-muted-foreground font-body leading-relaxed pb-6 pr-10">
-                                {qa.a}
-                              </p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                        {/* Keep every answer in the server/prerendered HTML for
+                            search and accessibility; only the visual height is collapsed. */}
+                        <motion.div
+                          initial={false}
+                          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                          transition={{ duration: 0.25 }}
+                          aria-hidden={!isOpen}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-muted-foreground font-body leading-relaxed pb-6 pr-10">
+                            {qa.a}
+                          </p>
+                        </motion.div>
                       </div>
                     );
                   })}
