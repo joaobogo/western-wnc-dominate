@@ -102,12 +102,12 @@ export const CTA_SUBTEXT = {
   blogClosing: "Written by the crew that builds in these mountains. If you have questions, we have answers — and there's no obligation.",
 
   /** Contact page */
-  contact: "No call centers. No automated systems. A Highlander project advisor will personally reach out rapidly.",
+  contact: "A Highlander project advisor reviews inquiries during staffed business hours and follows up with the appropriate next step.",
 
   /** Under primary CTAs */
   noObligation: "No-obligation conversation about your property.",
-  response24h: "We respond rapidly with a direct call — not a form email.",
-  localTeam: "You'll speak with a project advisor who knows these mountains, not a call center.",
+  response24h: "Requests are reviewed during staffed business hours and routed to the appropriate next step.",
+  localTeam: "Your request is handled by Highlander from our Western North Carolina operation.",
 
   /** Planning / not sure where to start */
   planningCallout: "Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.",
@@ -133,10 +133,10 @@ export const CTA_EYEBROW = {
 export const PROOF_CONTEXT = {
   /** Roofing: materials + weather + project proof */
   roofing: [
-    "CertainTeed ShingleMaster Credentialed Contractor",
-    "Franklin & Sylva showrooms you can walk into",
-    "Rapid storm response",
-    "Full warranty documentation on every project",
+    "CertainTeed Credentialed Contractor",
+    "Franklin & Sylva showrooms",
+    "Storm-damage assessment and documentation",
+    "Project-specific warranty terms confirmed in writing",
   ],
   /** Construction: process + planning + finish quality */
   construction: [
@@ -147,8 +147,8 @@ export const PROOF_CONTEXT = {
   ],
   /** About: story + values + team credibility */
   about: [
-    "Family-owned, locally run since 2017",
-    "20+ local team members behind every project",
+    "Family-owned in Franklin since 2017",
+    "Showrooms in Franklin & Sylva",
     REVIEW_LINE_AS_OF,
     // Awards appear only after owner verification (CLAIMS_AUDIT.md).
     ...VERIFIED_AWARDS.map(awardLabel),
@@ -156,24 +156,24 @@ export const PROOF_CONTEXT = {
 
   /** Gallery: transformation + visual proof */
   gallery: [
-    "Every project owner-inspected",
-    "Before/after documentation standard",
-    "Real WNC homes — not stock photos",
-    "Full case studies available",
+    "Project pages with documented scope and location",
+    "Real project photography where available",
+    "Western North Carolina project examples",
+    "Detailed case studies available",
   ],
   /** Blog: expertise + local authority */
   blog: [
-    "Written by our team, not AI",
     "Mountain-specific guidance",
-    "Seasonal updates for WNC",
-    "No sales pitch — just knowledge",
+    "Western North Carolina service context",
+    "Seasonal planning information",
+    "Practical homeowner education",
   ],
   /** Contact: reassurance + professionalism */
   contact: [
-    "Rapid personal response",
-    "Licensed & fully insured",
-    "No automated systems",
-    "Real advisor, not a salesperson",
+    "Requests reviewed during staffed business hours",
+    "Licensed NC General Contractor",
+    "Franklin & Sylva showrooms",
+    "Written project scope",
   ],
 } as const;
 
