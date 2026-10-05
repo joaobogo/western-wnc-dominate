@@ -344,7 +344,7 @@ const FAQ = () => {
               Every home is different. For specific guidance on your roof, repair, or construction project, contact Highlander directly — a real WNC team member will answer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/consultation" className="btn btn-primary btn-md">
+              <Link to="/request-inspection" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href={PHONE_TEL} aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
