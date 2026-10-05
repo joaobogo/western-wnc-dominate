@@ -179,7 +179,7 @@ export const BUSINESS: BusinessIdentity = {
   // profile, both addresses are in `locations` below. Do not add a claim here
   // that cannot be checked from a public record — answer engines cross-check.
   description:
-    "Highlander Building Services, Inc. is a licensed roofing contractor and North Carolina General Contractor (license #87668), founded in 2017 by Luke and Kristy Smith and based at 1511 Highlands Road in Franklin, North Carolina, with a second showroom in Sylva. The company installs standing seam and exposed-fastener metal roofing, CertainTeed shingle systems, cedar shake and Brava synthetic roofing, seamless gutters, skylights, additions and outdoor living spaces for mountain homes across Western North Carolina.",
+    "Highlander Building Services, Inc. is a licensed roofing contractor and North Carolina General Contractor (license #87668), founded in 2017 by Luke and Kristy Smith and based at 40 Depot Street in Franklin, North Carolina, with a second showroom in Sylva. The company installs standing seam and exposed-fastener metal roofing, CertainTeed shingle systems, cedar shake and Brava synthetic roofing, seamless gutters, skylights, additions and outdoor living spaces for mountain homes across Western North Carolina.",
   priceRange: "$$", // set per the 7 Sep 2026 work order (Task 6)
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
@@ -260,12 +260,14 @@ export const BUSINESS: BusinessIdentity = {
     {
       id: "franklin",
       name: "Franklin Showroom",
-      streetAddress: "1511 Highlands Road",
+      streetAddress: "40 Depot Street",
       locality: "Franklin",
       region: "NC",
       postalCode: "28734",
       phoneE164: "+1-828-524-7773",
-      geo: { lat: 35.1626, lng: -83.3459 },
+      // Google Maps Geocoding API, ROOFTOP result for the full confirmed
+      // postal address, verified 2026-10-05.
+      geo: { lat: 35.1759293, lng: -83.3738888 },
       gbpCid: FRANKLIN_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
       googleRating: 4.8,
@@ -324,11 +326,19 @@ export const formatPhonePlain = (e164: string) => e164.replace(/^\+1-/, "");
 /** "+1-828-524-7773" → "tel:+18285247773" */
 export const telHref = (e164: string) => `tel:+${e164.replace(/\D/g, "")}`;
 
-/** "1511 Highlands Road, Franklin, NC 28734" — exact GBP NAP line. */
+/** "40 Depot Street, Franklin, NC 28734" — exact confirmed NAP line. */
 export const napLine = (loc: BusinessLocation) =>
   `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${loc.postalCode}`;
 
-export const directionsUrl = (loc: BusinessLocation) => GBP_MAP_URL(loc.gbpCid);
+/**
+ * Franklin moved while its Business Profile is being updated, so navigation
+ * must target the confirmed postal address rather than the retained profile
+ * CID. Sylva continues to use its established profile destination.
+ */
+export const directionsUrl = (loc: BusinessLocation) =>
+  loc.id === "franklin"
+    ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(napLine(loc))}`
+    : GBP_MAP_URL(loc.gbpCid);
 
 /** A reviewUrl that has not been pasted from the Business Profile yet. */
 export const isReviewUrlPlaceholder = (loc: BusinessLocation) =>

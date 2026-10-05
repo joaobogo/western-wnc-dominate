@@ -19,7 +19,7 @@ const ShowroomMap = ({
   className?: string;
 }) => {
   const address = napLine(location);
-  const encoded = encodeURIComponent(`${location.name} ${address}`);
+  const encoded = encodeURIComponent(address);
   const src = `https://www.google.com/maps?q=${encoded}&output=embed&z=15`;
 
   const wrapRef = useRef<HTMLDivElement>(null);

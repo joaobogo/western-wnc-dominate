@@ -59,5 +59,14 @@ ${JSON.stringify(org, null, 2)
     ${END}`;
 
 const next = html.replace(new RegExp(`${START}[\\s\\S]*?${END}`), block);
-writeFileSync(file, next);
-console.log("index.html Organization JSON-LD synced from src/data/business.ts");
+const synced = next
+  .replace(
+    /<meta name="geo\.position" content="[^"]*" \/>/,
+    `<meta name="geo.position" content="${FRANKLIN.geo.lat};${FRANKLIN.geo.lng}" />`,
+  )
+  .replace(
+    /<meta name="ICBM" content="[^"]*" \/>/,
+    `<meta name="ICBM" content="${FRANKLIN.geo.lat}, ${FRANKLIN.geo.lng}" />`,
+  );
+writeFileSync(file, synced);
+console.log("index.html Organization JSON-LD and Franklin geo metadata synced from src/data/business.ts");

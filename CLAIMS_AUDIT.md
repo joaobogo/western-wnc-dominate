@@ -79,7 +79,7 @@ document/logo/cert, or tell us to soften or remove the claim. Items marked
 
 | Claim | Location(s) | Status | Action Needed |
 |---|---|---|---|
-| Franklin office street address (1511 Highlands Road) | Footer, Contact | Needs confirmation | Confirm exact street address |
+| Franklin office street address (40 Depot Street) | Footer, Contact | **OWNER CONFIRMED 2026-10-05** | Keep all NAP, maps, and schema synchronized from `src/data/business.ts` |
 | Sylva / Waynesville office | Footer, Contact | **SOFTENED** to "by appointment" | Confirm if real office or service area only |
 | Asheville / Buncombe office | Footer, Contact | **SOFTENED** to "by appointment" | Confirm if real office or service area only |
 
