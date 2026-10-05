@@ -401,6 +401,11 @@ export const PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 export const PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 export const PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
 
+/** Number of counties in the canonical service-area list. */
+export const COUNTY_COUNT = BUSINESS.countiesServed.length;
+/** Public staffed-hours label, sourced from the primary showroom. */
+export const PRIMARY_HOURS_LABEL = FRANKLIN.hours[0]?.label ?? "";
+
 /* ── Review proof — the ONLY source for star ratings and review counts ── */
 
 /**
