@@ -112,12 +112,12 @@ const MetalRoofing = () => {
 
                 <div className="overflow-hidden mb-2">
                   <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                    Metal Roofing Built
+                    Metal Roofing in Western North Carolina
                   </motion.h1>
                 </div>
                 <div className="overflow-hidden mb-8">
                   <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                    for Mountain Weather.
+                    Built for Mountain Weather.
                   </motion.h2>
                 </div>
 
@@ -126,7 +126,7 @@ const MetalRoofing = () => {
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <Link to="/consultation" className="btn btn-primary btn-md group">
+                  <Link to="/request-inspection" className="btn btn-primary btn-md group">
                     Get My Metal Roof Scoped <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                   <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark">
