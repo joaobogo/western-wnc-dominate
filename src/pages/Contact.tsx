@@ -194,7 +194,7 @@ export default function Contact() {
                       </div>
                     </a>
                     <Link
-                      to="/consultation"
+                      to="/request-inspection"
                       className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all"
                     >
                       <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
@@ -236,7 +236,7 @@ export default function Contact() {
           heading="Your project deserves a real partner."
           body="Tell us what's going on and a Highlander advisor will follow up personally — no obligation, no sales pressure."
           primaryLabel="Request My Estimate"
-          primaryTo="/consultation"
+          primaryTo="/request-inspection"
           secondaryLabel="See the towns we serve"
           secondaryTo="/service-areas"
           context="contact"
