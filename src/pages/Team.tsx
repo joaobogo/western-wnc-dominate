@@ -19,7 +19,7 @@ const Team = () => {
         path="/team"
         jsonLd={[
           organizationSchema(),
-          ...[personSchema("luke-smith", { memberOf: ["Franklin Daybreak Rotary Club"] }), personSchema("kristy-smith", { memberOf: ["Franklin Daybreak Rotary Club"] })].filter(Boolean),
+          ...[personSchema("luke-smith"), personSchema("kristy-smith")].filter(Boolean),
           breadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "About", url: "/about" },
@@ -162,7 +162,7 @@ const Team = () => {
               Talk to a Real Person — Not a Call Center.
             </h2>
             <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
-              When you call Highlander, a member of our Western NC team picks up. No phone tree, no offshore sales floor.
+              Call Highlander during staffed business hours to reach the team directly and discuss your project.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/request-inspection" className="btn btn-primary btn-md">
