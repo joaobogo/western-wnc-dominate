@@ -1,6 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, CheckCircle, DollarSign, Shield, Clock, AlertCircle, MessageSquare, Hammer } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle, DollarSign, Shield, Clock, MessageSquare, Hammer } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -73,24 +73,6 @@ const Financing = () => {
 
         <section className="section-padding bg-background">
           <div className="container-tight">
-            {/* Pre-launch placeholder — needs client/lender details */}
-            <div className="mb-12 max-w-3xl mx-auto p-5 border-l-4 border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] rounded-sm">
-              <div className="flex items-start gap-3">
-                <AlertCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
-                  <p className="text-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-1.5">
-                    Pending Client Confirmation
-                  </p>
-                  <p className="text-sm text-foreground/80 font-body leading-relaxed">
-                    Highlander team — to publish concrete financing details, please provide: the <strong>financing provider name(s)</strong>,
-                    <strong> approved program wording</strong>, <strong>terms and required disclaimers</strong> (APR ranges, credit
-                    qualification language, "subject to credit approval"), and an <strong>application link</strong> if applicable.
-                    Until that copy is approved, this page directs leads to call or message the office to discuss options.
-                  </p>
-                </div>
-              </div>
-            </div>
-
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {benefits.map((b) => (
                 <div key={b.title} className="text-center">
