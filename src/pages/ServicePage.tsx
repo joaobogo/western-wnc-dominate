@@ -121,7 +121,7 @@ const ServicePage = () => {
                 {service.subheadline}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/consultation" className="btn btn-primary btn-md">
+                <Link to="/request-inspection" className="btn btn-primary btn-md">
                   See What My Project Needs <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
@@ -150,7 +150,7 @@ const ServicePage = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">What We Do</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-                <Link to="/consultation" className="btn btn-primary btn-sm">
+                <Link to="/request-inspection" className="btn btn-primary btn-sm">
                   Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
