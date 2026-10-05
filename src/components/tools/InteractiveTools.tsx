@@ -104,7 +104,7 @@ export function RepairVsReplaceGuide() {
               <button onClick={reset} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body inline-flex items-center gap-1">
                 <RotateCcw className="w-4 h-4" aria-hidden="true" /> Start Over
               </button>
-              <a href="/consultation" className="btn btn-primary btn-sm">
+              <a href="/request-inspection" className="btn btn-primary btn-sm">
                 Get My Questions Answered <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
@@ -174,7 +174,7 @@ export function StormChecklist() {
               <p className={`font-heading font-bold ${getUrgency()?.color}`}>{getUrgency()?.level}</p>
               <p className="text-sm text-muted-foreground font-body mt-1">{getUrgency()?.desc}</p>
             </div>
-            <a href="/consultation" className="btn btn-primary btn-sm w-full">
+            <a href="/request-inspection" className="btn btn-primary btn-sm w-full">
               Get My Storm Damage Documented <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </ResultReveal>
@@ -297,7 +297,7 @@ export function MaterialsComparison() {
 
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground font-body mb-3">Every roof is unique. We'll help you choose the right material for your home's specific conditions.</p>
-          <a href="/consultation" className="btn btn-primary btn-sm">
+          <a href="/request-inspection" className="btn btn-primary btn-sm">
             Get My Material Recommendation <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
@@ -384,7 +384,7 @@ export function ConstructionFitGuide() {
               <button onClick={reset} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body inline-flex items-center gap-1">
                 <RotateCcw className="w-4 h-4" aria-hidden="true" /> Start Over
               </button>
-              <a href="/consultation" className="btn btn-primary btn-sm">
+              <a href="/request-inspection" className="btn btn-primary btn-sm">
                 See What My Project Needs <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
@@ -448,7 +448,7 @@ export function ServiceAreaFinder() {
 
         {filtered.length === 0 && (
           <p className="text-sm text-muted-foreground font-body text-center py-4">
-            Don't see your town? We likely still serve your area. <a href="/consultation" className="text-primary hover:text-[hsl(var(--gold-ink))] transition-colors font-medium">Contact us to confirm.</a>
+            Don't see your town? We likely still serve your area. <a href="/request-inspection" className="text-primary hover:text-[hsl(var(--gold-ink))] transition-colors font-medium">Contact us to confirm.</a>
           </p>
         )}
       </div>
