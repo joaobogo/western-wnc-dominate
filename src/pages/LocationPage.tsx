@@ -78,7 +78,7 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
               {showroom.intro[0]}
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/consultation" className="btn btn-primary">
+              <Link to="/request-inspection" className="btn btn-primary">
                 <span>Get My Written Estimate</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
