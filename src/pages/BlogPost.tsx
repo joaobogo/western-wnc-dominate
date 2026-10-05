@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import InspectionForm from "@/components/InspectionForm";
 import { TrustSidebar } from "@/components/trust";
 import { getBlogBySlug, blogPosts, linkableBlogPosts } from "@/data/blogs";
 import { projectDetails } from "@/data/projects";
@@ -643,6 +644,8 @@ const BlogPostPage = () => {
             </div>
           </div>
         </section>
+
+        <InspectionForm />
 
         {/* ═══ RELATED ARTICLES ═══ */}
         <section className="section-padding bg-secondary tartan-bg">
