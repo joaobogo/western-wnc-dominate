@@ -29,15 +29,15 @@ const RoofReplacementAds = () => (
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
     trustStats={[
       { value: REVIEW_STARS, label: "Google Rating", detail: REVIEW_COUNT_LABEL },
-      { value: "CertainTeed", label: "ShingleMaster", detail: "CertainTeed ShingleMaster Credentialed Contractor" },
-      { value: "2–5", label: "Typical install days", detail: "Most residential projects" },
-      { value: "Warranty", label: "Protected work", detail: "Manufacturer plus Highlander labor coverage" },
+      { value: "CertainTeed", label: "Credentialed", detail: "CertainTeed Credentialed Contractor" },
+      { value: "Written", label: "Project scope", detail: "Materials and work documented" },
+      { value: "Coverage", label: "Project-specific", detail: "Warranty terms confirmed for the selected system" },
     ]}
     highlights={[
       "Clear proposals with real scope language, not vague one-line estimates.",
       "Material recommendations based on mountain weather, roof pitch, and home style.",
-      "Local crews and quality control from tear-off through final walkthrough.",
-      "Financing and insurance-adjacent conversations handled without pressure.",
+      "A documented Highlander project process from tear-off planning through final walkthrough.",
+      "Budget, financing availability, and insurance-related questions discussed before commitment.",
     ]}
     quickSteps={[
       { title: "Quick intake", detail: "Share your town, timing, and what is pushing the replacement decision right now." },
