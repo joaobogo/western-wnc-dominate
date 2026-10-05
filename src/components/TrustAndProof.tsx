@@ -3,17 +3,17 @@ import { Shield, Award, FileCheck, BadgeCheck, Handshake } from "lucide-react";
 import { BlueprintGrid } from "@/components/motion/BackgroundTexture";
 
 const certifications = [
-  { icon: Award, label: "CertainTeed", detail: "ShingleMaster Credentialed Contractor" },
+  { icon: Award, label: "CertainTeed", detail: "Credentialed Contractor" },
   { icon: Shield, label: "Licensed GC", detail: "State of North Carolina" },
   { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer" },
-  { icon: FileCheck, label: "Warranty-Backed", detail: "Labor & Material Coverage" },
+  { icon: FileCheck, label: "Written Scope", detail: "Project Terms Documented" },
 ];
 
 const processPoints = [
-  "Written scope of work delivered before any project begins",
-  "Photo documentation at every construction phase",
-  "Daily progress communication with your named contact",
-  "Final walkthrough with complete warranty package delivery",
+  "Written scope and material direction before work begins",
+  "Photo documentation where it is relevant to the project",
+  "A defined project contact and documented communication path",
+  "Closeout review with the project-specific documentation that applies",
 ];
 
 const TrustAndProof = () => {
@@ -32,10 +32,10 @@ const TrustAndProof = () => {
         >
           <span className="eyebrow mb-3 block">Credentials & Accountability</span>
           <h2 className="section-heading mb-4">
-            Verified. Certified.<br className="hidden md:block" /> Warranty-Backed.
+            Verified. Credentialed.<br className="hidden md:block" /> Documented.
           </h2>
           <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-            Every claim we make is documented, certified, or backed by a warranty you can hold in your hands. No vague promises — just verifiable credentials.
+            Licensing and credentials are linked where they can be independently checked, while project-specific scope and warranty terms are documented in writing.
           </p>
         </motion.div>
 
@@ -105,12 +105,10 @@ const TrustAndProof = () => {
               <Shield className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true" />
               <div>
                 <h4 className="font-heading font-semibold text-sm text-foreground mb-1">
-                  Full Warranty Package Included
+                  Project-Specific Warranty Documentation
                 </h4>
                 <p className="text-body-xs text-muted-foreground font-body leading-relaxed">
-                  Every completed project includes manufacturer material warranty plus
-                  Highlander's labor warranty — physically delivered at your final walkthrough, 
-                  not buried in an email you'll never find.
+                  Manufacturer and workmanship coverage varies by product and scope. The terms that apply to your project are reviewed and documented rather than generalized sitewide.
                 </p>
               </div>
             </div>
