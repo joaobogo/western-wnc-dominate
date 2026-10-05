@@ -76,7 +76,7 @@ const Siding = () => {
                 Mountain-grade exterior protection. Fiber cement, natural cedar, and premium trim systems engineered for Western NC&apos;s moisture and elevation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/consultation" className="btn btn-primary btn-md group">
+                <Link to="/request-inspection" className="btn btn-primary btn-md group">
                   Get My Siding Scope & Price <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
@@ -173,7 +173,7 @@ const Siding = () => {
               Request a free siding estimate from Highlander — serving Franklin, Highlands, Cashiers, Sylva, and the surrounding Western North Carolina mountains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/consultation" className="btn btn-primary btn-md">
+              <Link to="/request-inspection" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href={PHONE_TEL} aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
