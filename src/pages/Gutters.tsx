@@ -121,7 +121,7 @@ const Gutters = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="btn btn-primary btn-md group">
+                <Link to="/request-inspection" className="btn btn-primary btn-md group">
                   See What My Gutters Need <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark">
