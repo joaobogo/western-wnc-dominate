@@ -16,7 +16,7 @@ const steps = [
   {
     icon: CalendarClock,
     title: "We schedule your visit",
-    body: "A local Highlander team member reaches out — usually the same or next business day — to schedule an on-site inspection or consultation.",
+    body: "A Highlander team member reviews the request during staffed business hours and contacts you to arrange the appropriate next step.",
   },
   {
     icon: FileCheck2,
@@ -48,7 +48,7 @@ const RequestInspection = () => {
         <section className="bg-secondary border-b border-border py-6">
           <div className="container-tight flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
             <p className="font-body font-semibold text-foreground text-body-sm">
-              Would rather talk it through? A Franklin-based team member answers.
+              Would rather talk it through? Call the Franklin office directly.
             </p>
             <a
               href={PHONE_TEL}
@@ -93,7 +93,7 @@ const RequestInspection = () => {
               Prefer to talk? Call a real person.
             </h2>
             <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
-              When you call Highlander, a member of our Western NC team picks up.
+              Call the Highlander office directly during staffed business hours.
             </p>
             <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
               <Phone className="w-4 h-4" aria-hidden="true" /> Call {PHONE_DISPLAY}
