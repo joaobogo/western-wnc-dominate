@@ -205,7 +205,7 @@ const GivingBack = () => {
                   Get My Questions Answered
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
-                <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
+                <Link to="/request-inspection" className="btn btn-secondary btn-lg btn-on-dark group">
                   Get My Written Estimate
                 </Link>
               </div>
