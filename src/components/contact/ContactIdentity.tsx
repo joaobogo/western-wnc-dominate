@@ -24,8 +24,8 @@ const ContactIdentity = () => (
             {BUSINESS.legalName}
           </h2>
           <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-6">
-            A locally owned roofing and construction company based in Franklin, North Carolina, working across
-            Macon, Jackson, Haywood, Swain, Clay, Cherokee, and Transylvania counties with in-house crews.
+            A locally owned roofing and construction company based in Franklin, North Carolina, with showrooms
+            in Franklin and Sylva and service across Western North Carolina.
           </p>
 
           <LocationCards className="mb-8" />
@@ -40,7 +40,7 @@ const ContactIdentity = () => (
             <li className="flex items-start gap-3">
               <Building2 className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <p className="text-sm text-muted-foreground font-body">
-                Licensed North Carolina general contractor ({BUSINESS.licenseNumber}) · Fully insured · CertainTeed ShingleMaster credentialed
+                Licensed North Carolina general contractor ({BUSINESS.licenseNumber}) · CertainTeed Credentialed Contractor · VELUX Certified Installer
               </p>
             </li>
           </ul>
