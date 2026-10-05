@@ -192,7 +192,7 @@ const PaidAdsLanding = ({
                   </blockquote>
                   <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground font-body">
                     <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
-                    {review.name} · {reviewDateLabel(review)} ·{" "}
+                    {review.name}{reviewDateLabel(review) ? ` · ${reviewDateLabel(review)}` : ""} ·{" "}
                     <a
                       href={review.sourceUrl}
                       target="_blank"
