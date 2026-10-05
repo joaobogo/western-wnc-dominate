@@ -345,7 +345,7 @@ const Gallery = () => {
                 Imagine results like these on your property.
               </p>
               <Link
-                to="/consultation"
+                to="/request-inspection"
                 className="btn btn-primary btn-sm"
               >
                 Get My Project Scoped <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
