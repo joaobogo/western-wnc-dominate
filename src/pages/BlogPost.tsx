@@ -484,7 +484,7 @@ const BlogPostPage = () => {
                           with in-person consultations and local crews.
                         </p>
                         <Link
-                          to="/consultation"
+                          to="/request-inspection"
                           className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm mt-3 hover:gap-2.5 transition-all"
                         >
                           Talk With Our Local Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
