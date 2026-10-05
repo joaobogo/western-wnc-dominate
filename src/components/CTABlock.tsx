@@ -83,7 +83,7 @@ const CTABlock = () => {
                         <span className="relative">Call {PHONE_DISPLAY}</span>
                       </a>
                       <Link
-                        to="/consultation"
+                        to="/request-inspection"
                         onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
                         className="btn btn-secondary btn-lg btn-on-dark group md:text-lg md:px-12 md:py-5"
                       >
@@ -94,7 +94,7 @@ const CTABlock = () => {
                   ) : (
                     <>
                       <Link
-                        to="/consultation"
+                        to="/request-inspection"
                         onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
                         className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-base md:text-lg px-10 md:px-16 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-floating min-h-[60px]"
                       >
@@ -192,7 +192,7 @@ const CTABlock = () => {
             </p>
             <div className="flex items-center gap-4">
               <Link
-                to="/consultation"
+                to="/request-inspection"
                 className="group inline-flex items-center gap-2 text-primary-foreground font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-primary-foreground transition-colors"
               >
                 Roofing
