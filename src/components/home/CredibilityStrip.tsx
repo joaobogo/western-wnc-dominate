@@ -17,13 +17,13 @@ const CredibilityStrip = () => {
     },
     {
       icon: ShieldCheck,
-      label: "Licensed & insured",
-      detail: "NC general contractor · CertainTeed ShingleMaster Premier",
+      label: "Licensed NC General Contractor",
+      detail: "CertainTeed Credentialed Contractor",
     },
     {
       icon: MapPin,
       label: "Based in Franklin",
-      detail: "Crews working across Western North Carolina",
+      detail: "40 Depot Street · Franklin, NC",
     },
   ];
 
