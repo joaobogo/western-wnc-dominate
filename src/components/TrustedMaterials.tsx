@@ -144,7 +144,7 @@ const TrustedMaterials = () => {
           </div>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
             <Link
-              to="/consultation"
+              to="/request-inspection"
               className="btn btn-primary btn-lg"
             >
               Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
