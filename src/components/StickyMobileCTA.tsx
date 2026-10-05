@@ -15,7 +15,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
  *  — they are landing destinations, and the mobile audit (F2) measured 4.5
  *  screens on /contact with no call action on screen. */
 const INTAKE_ROUTES = [
-  "/consultation",
+  "/request-inspection",
   "/roofing-intake",
   "/construction-intake",
   "/roofing-builder",
@@ -299,7 +299,7 @@ const StickyMobileCTA = () => {
                     </div>
                     <div className="p-2 space-y-0.5">
                       <Link
-                        to="/consultation"
+                        to="/request-inspection"
                         className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
