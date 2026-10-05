@@ -289,7 +289,7 @@ const RoofAssessmentQuiz = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/consultation" className="btn btn-primary btn-lg">
+                    <a href="/request-inspection" className="btn btn-primary btn-lg">
                       <span className="relative z-10">{result.cta}</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                     </a>
