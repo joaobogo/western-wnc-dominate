@@ -718,7 +718,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact-us_gl                                              /contact                                          301!
 /testimonials-and-customer-reviews                          /reviews                                          301!
 /home_em                                                    /                                                 301!
-/thank-you                                                  /contact                                          301!
+
 /engineering-services                                       /construction/design                              301!
 
 /area-projects-map                                          /recent-projects                                  301!
