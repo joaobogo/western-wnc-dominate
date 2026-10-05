@@ -10,33 +10,33 @@ const RoofRepairAds = () => (
     heroImage={heroImg}
     heroAlt="Roof repair work on a residential home in Western North Carolina"
     eyebrow="Roof repair · Western North Carolina"
-    headline="Roof Repair in Western NC — Local Crews, Fast Leak Answers"
+    headline="Roof Repair in Western NC — Clear Leak Assessment & Next Steps"
     subheadline="We diagnose the actual source, explain whether repair makes sense, and move quickly when water is getting inside your home."
     ctaLabel="Get My Repair Assessed"
     adVariants={{
       leak: {
-        headline: "Roof Leak? Local WNC Crews Can Look Today",
-        subheadline: "Tell us what you are seeing and a Franklin-based advisor calls you back to schedule the leak assessment.",
+        headline: "Roof Leak in WNC? Start With a Clear Assessment Request",
+        subheadline: "Tell us what you are seeing and Highlander will review the request during staffed business hours and arrange the appropriate next step.",
         ctaLabel: "Get My Leak Looked At",
       },
       emergency: {
         headline: "Emergency Roof Repair in Western NC",
-        subheadline: "Active water inside? Send the short form or call the office directly and we prioritize the visit.",
+        subheadline: "Active water inside? Use the short form or call the office directly and clearly identify the active leak so the team can triage the request.",
         ctaLabel: "Get Emergency Help",
       },
     }}
-    urgencyOptions={["Leak happening now", "Within 48 hours", "This week", "Just comparing options"]}
+    urgencyOptions={["Leak happening now", "Need help soon", "This week", "Just comparing options"]}
     trustStats={[
-      { value: "48hr", label: "Assessment goal", detail: "Same-day for urgent leak calls" },
-      { value: "Honest", label: "Repair guidance", detail: "We tell you if replacement is unnecessary" },
-      { value: "Local", label: "Crew accountability", detail: "In-house Highlander crews" },
+      { value: "Staffed", label: "Request review", detail: "Inquiries reviewed during business hours" },
+      { value: "Written", label: "Repair guidance", detail: "Scope and recommendation documented" },
+      { value: "NC GC", label: "Licensed contractor", detail: "North Carolina General Contractor" },
       { value: "2017", label: "Serving WNC", detail: "Family-owned, locally run by a mountain-experienced team" },
     ]}
     highlights={[
       "Leak tracing that focuses on the real source instead of a guess near the stain.",
       "Targeted repair recommendations when a full replacement is not the right spend.",
       "Documentation and photos so you know exactly what was found.",
-      "Fast local follow-up for active leak situations across Western North Carolina.",
+      "Active-leak requests can be clearly flagged so the team can triage them during staffed hours.",
     ]}
     quickSteps={[
       { title: "Tell us what you are seeing", detail: "A few details about the leak, missing shingles, or damage help us prioritize quickly." },
@@ -45,7 +45,7 @@ const RoofRepairAds = () => (
     ]}
     trustBullets={[
       "Permanent-minded repairs, not temporary patchwork sold as a solution",
-      "Licensed and insured local team",
+      "Licensed North Carolina General Contractor",
       "Written scopes so you know exactly what is included",
     ]}
     reviewId="jh-dillsboro-2019"
@@ -56,7 +56,7 @@ const RoofRepairAds = () => (
       },
       {
         question: "How soon can someone look at my roof repair issue?",
-        answer: "Active leaks get priority. Most non-emergency repair assessments are scheduled on a same-day or next-day basis depending on weather and call volume.",
+        answer: "Use the form or call the office and clearly identify active water intrusion. Highlander reviews urgent requests during staffed business hours and will provide the earliest available next step based on conditions and scheduling.",
       },
       {
         question: "Will you tell me if repair is no longer the smart option?",
