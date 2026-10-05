@@ -1,6 +1,15 @@
 // AUTO-GENERATED orphan blog redirects. These URLs are in the legacy sitemap 
 // but have no corresponding data in blogs.ts. Redirecting to /blog to prevent 404s.
 export const blogOrphanRedirects = [
+  { oldUrl: "/blog/chimney-flashing-repair-western-nc", newUrl: "/blog/chimney-flashing-repair" },
+  { oldUrl: "/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc", newUrl: "/blog/standing-seam-vs-exposed-fastener" },
+  { oldUrl: "/blog/half-round-vs-k-style-gutters-western-nc", newUrl: "/blog/half-round-vs-k-style-gutters" },
+  { oldUrl: "/blog/roof-inspection-after-storm-western-nc", newUrl: "/blog/roof-inspection-after-storm" },
+  { oldUrl: "/blog/roof-valley-leak-western-nc", newUrl: "/blog/roof-valley-leak" },
+  { oldUrl: "/blog/skylight-leak-repair-western-nc", newUrl: "/blog/skylight-leak-repair" },
+  { oldUrl: "/blog/hail-damage-roof-western-nc", newUrl: "/blog/hail-damage-roof" },
+  { oldUrl: "/blog/roof-flashing-leak-western-nc", newUrl: "/blog/roof-flashing-leak" },
+  { oldUrl: "/blog/dimensional-shingle-lifespan-western-nc", newUrl: "/blog/architectural-shingle-lifespan" },
   { oldUrl: "/blog/metal-vs-dimensional-shingle-wnc-mountain-homes", newUrl: "/blog" },
   { oldUrl: "/blog/roof-lifespan-western-nc-by-material", newUrl: "/blog" },
   { oldUrl: "/blog/roof-repair-vs-replacement-bryson-city-nc", newUrl: "/blog" },

@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 247,
+    "sitemap": 252,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 0,
     "noindexFunnels": 6,
-    "total": 357
+    "total": 362
   },
   "routes": [
     "/",
@@ -107,11 +107,16 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
-    "/blog/skylight-leak-repair-western-nc",
-    "/blog/roof-valley-leak-western-nc",
-    "/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc",
+    "/blog/half-round-vs-k-style-gutters",
+    "/blog/chimney-flashing-repair",
+    "/blog/architectural-shingle-lifespan",
+    "/blog/roof-flashing-leak",
+    "/blog/hail-damage-roof",
+    "/blog/skylight-leak-repair",
+    "/blog/roof-valley-leak",
+    "/blog/standing-seam-vs-exposed-fastener",
     "/blog/brava-synthetic-vs-cedar-shake-vs-slate-wnc",
-    "/blog/roof-inspection-after-storm-western-nc",
+    "/blog/roof-inspection-after-storm",
     "/blog/gutter-size-western-nc-mountain-homes",
     "/blog/wnc-storm-season-roof-damage",
     "/blog/western-north-carolina-mountain-roofing-guide",

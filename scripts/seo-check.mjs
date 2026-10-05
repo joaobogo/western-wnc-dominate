@@ -432,4 +432,15 @@ for (const r of results) {
 }
 const passes = results.filter((r) => r.ok && !r.info).length;
 console.log(`\nseo:check: ${fails ? `${fails} FAIL` : "all rules PASS"} · ${passes} PASS · ${results.filter((r) => r.info).length} informational`);
+if (fails) {
+  // Deployment diagnostics retain the end of long build logs. Repeat only the
+  // actionable failures here so a large informational report cannot hide the
+  // rule and detail that stopped production.
+  console.error("\nseo:check: actionable failure recap");
+  for (const r of results.filter((result) => !result.ok && !result.info)) {
+    console.error(`FAIL  ${String(r.id).padStart(2)}. ${r.title}`);
+    for (const d of r.details.slice(0, 40)) console.error(`        · ${d}`);
+    if (r.details.length > 40) console.error(`        · … ${r.details.length - 40} more`);
+  }
+}
 process.exit(fails ? 1 : 0);

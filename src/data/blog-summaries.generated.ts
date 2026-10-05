@@ -13,8 +13,53 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
-    "id": "skylight-leak-repair-western-nc",
-    "slug": "skylight-leak-repair-western-nc",
+    "id": "half-round-vs-k-style-gutters",
+    "slug": "half-round-vs-k-style-gutters",
+    "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
+    "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
+    "category": "Maintenance",
+    "date": "2026-10-01",
+    "readTime": "9 min"
+  },
+  {
+    "id": "chimney-flashing-repair",
+    "slug": "chimney-flashing-repair",
+    "title": "6 Chimney Flashing Failures and the Repairs That Work",
+    "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
+    "category": "Maintenance",
+    "date": "2026-09-24",
+    "readTime": "10 min"
+  },
+  {
+    "id": "architectural-shingle-lifespan",
+    "slug": "architectural-shingle-lifespan",
+    "title": "How Long Do Dimensional Shingles Last?",
+    "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
+    "category": "Materials",
+    "date": "2026-09-22",
+    "readTime": "9 min"
+  },
+  {
+    "id": "roof-flashing-leak",
+    "slug": "roof-flashing-leak",
+    "title": "How to Trace a Roof Flashing Leak Safely",
+    "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs professional repair.",
+    "category": "Maintenance",
+    "date": "2026-09-21",
+    "readTime": "9 min"
+  },
+  {
+    "id": "hail-damage-roof",
+    "slug": "hail-damage-roof",
+    "title": "One Inch Hail? An Insurance Ready Roof Checklist",
+    "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
+    "category": "Storm Damage",
+    "date": "2026-09-18",
+    "readTime": "10 min"
+  },
+  {
+    "id": "skylight-leak-repair",
+    "slug": "skylight-leak-repair",
     "title": "Skylight Leak Repair for Western NC Mountain Homes",
     "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
     "category": "Maintenance",
@@ -22,8 +67,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "roof-valley-leak-western-nc",
-    "slug": "roof-valley-leak-western-nc",
+    "id": "roof-valley-leak",
+    "slug": "roof-valley-leak",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
     "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
     "category": "Maintenance",
@@ -40,17 +85,17 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "9 min"
   },
   {
-    "id": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "title": "Standing Seam vs Exposed-Fastener Metal Roofing for Mountain Homes",
-    "excerpt": "The two metal systems are not the same product at different prices. Here is how they differ on cost, fasteners, movement, wind, repairability and look.",
+    "id": "standing-seam-vs-exposed-fastener",
+    "slug": "standing-seam-vs-exposed-fastener",
+    "title": "Standing Seam vs Exposed Fastener for Mountain Homes",
+    "excerpt": "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Carolina homes.",
     "category": "Materials",
     "date": "2026-09-15",
-    "readTime": "9 min"
+    "readTime": "10 min"
   },
   {
-    "id": "roof-inspection-after-storm-western-nc",
-    "slug": "roof-inspection-after-storm-western-nc",
+    "id": "roof-inspection-after-storm",
+    "slug": "roof-inspection-after-storm",
     "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
     "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready records.",
     "category": "Inspections",
@@ -74,50 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm Damage",
     "date": "2026-09-04",
     "readTime": "14 min"
-  },
-  {
-    "id": "western-north-carolina-mountain-roofing-guide",
-    "slug": "western-north-carolina-mountain-roofing-guide",
-    "title": "Western North Carolina Roofing Guide: Best Roofs, Costs and Mountain Home Maintenance",
-    "excerpt": "Which roofing materials perform best in the Western North Carolina mountains, what replacement costs in 2026, and how to protect a mountain home from rain, moss, wind and freeze-thaw damage.",
-    "category": "Materials",
-    "date": "2026-08-25",
-    "readTime": "18 min"
-  },
-  {
-    "id": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
-    "slug": "pre-fall-gutter-maintenance-checklist-mountain-homeowners",
-    "title": "Gutter Season Is Coming: The Pre-Fall Checklist for Mountain Homeowners",
-    "excerpt": "A practical guide to clearing debris, testing drainage, spotting roof-edge problems, and preparing a Western North Carolina mountain home before peak leaf fall and colder weather.",
-    "category": "Maintenance",
-    "date": "2026-08-19",
-    "readTime": "8 min"
-  },
-  {
-    "id": "attic-ventilation-waynesville-nc-winter",
-    "slug": "attic-ventilation-waynesville-nc-winter",
-    "title": "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
-    "excerpt": "Ice at the eaves, damp insulation, and premature shingle wear in Haywood County usually trace back to one thing — an unbalanced attic. Here is how to diagnose and correct it.",
-    "category": "Maintenance",
-    "date": "2026-08-03",
-    "readTime": "6 min"
-  },
-  {
-    "id": "roof-replacement-waynesville-nc-historic-homes",
-    "slug": "roof-replacement-waynesville-nc-historic-homes",
-    "title": "Roof Replacement on Waynesville's Historic Homes: Doing It Without Losing the Character",
-    "excerpt": "Haywood County's older homes have complex roof lines, original detailing, and modern performance needs. Here is how we approach a replacement that respects the house.",
-    "category": "Replacement",
-    "date": "2026-08-02",
-    "readTime": "8 min"
-  },
-  {
-    "id": "metal-roofing-bryson-city-nc-vacation-rentals",
-    "slug": "metal-roofing-bryson-city-nc-vacation-rentals",
-    "title": "Metal Roofing for Bryson City Vacation Rentals: What Owners Should Know",
-    "excerpt": "Bryson City rental cabins take heavy rain, heavy guest turnover, and very little downtime. Here is how standing seam metal changes the maintenance math for short-term rental owners in Swain County.",
-    "category": "Materials",
-    "date": "2026-08-01",
-    "readTime": "7 min"
   }
 ];

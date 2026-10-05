@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   parseRedirectRules,
+  loadRedirectRules,
   applyRule,
   resolveUrl,
   classify,
@@ -172,6 +173,28 @@ describe("suggestDestination — closest live page by intent", () => {
 });
 
 describe("repo integration", () => {
+  it("redirects every initially published uploaded article URL to its filename slug", () => {
+    const rules = loadRedirectRules();
+    const expected = new Map([
+      ["/blog/chimney-flashing-repair-western-nc", "/blog/chimney-flashing-repair"],
+      ["/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc", "/blog/standing-seam-vs-exposed-fastener"],
+      ["/blog/half-round-vs-k-style-gutters-western-nc", "/blog/half-round-vs-k-style-gutters"],
+      ["/blog/roof-inspection-after-storm-western-nc", "/blog/roof-inspection-after-storm"],
+      ["/blog/roof-valley-leak-western-nc", "/blog/roof-valley-leak"],
+      ["/blog/skylight-leak-repair-western-nc", "/blog/skylight-leak-repair"],
+      ["/blog/hail-damage-roof-western-nc", "/blog/hail-damage-roof"],
+      ["/blog/roof-flashing-leak-western-nc", "/blog/roof-flashing-leak"],
+      ["/blog/dimensional-shingle-lifespan-western-nc", "/blog/architectural-shingle-lifespan"],
+    ]);
+
+    for (const [from, to] of expected) {
+      const hit = applyRule(rules, from);
+      expect(hit?.rule.status, from).toBe(301);
+      expect(hit?.rule.force, from).toBe(true);
+      expect(hit?.to, from).toBe(to);
+    }
+  });
+
   it("regex-extracted indexable pairs match the runtime isServiceTownIndexable() rule", () => {
     const runtime = new Set(indexableServiceTownPairs().map((e) => `${e.townSlug}|${e.serviceSlug}`));
     expect([...loadIndexablePairs()].sort()).toEqual([...runtime].sort());

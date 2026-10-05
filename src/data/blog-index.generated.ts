@@ -14,7 +14,47 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
-    "slug": "skylight-leak-repair-western-nc",
+    "slug": "half-round-vs-k-style-gutters",
+    "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
+    "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
+    "category": "Maintenance",
+    "date": "2026-10-01",
+    "town": "Franklin"
+  },
+  {
+    "slug": "chimney-flashing-repair",
+    "title": "6 Chimney Flashing Failures and the Repairs That Work",
+    "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
+    "category": "Maintenance",
+    "date": "2026-09-24",
+    "town": "Franklin"
+  },
+  {
+    "slug": "architectural-shingle-lifespan",
+    "title": "How Long Do Dimensional Shingles Last?",
+    "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
+    "category": "Materials",
+    "date": "2026-09-22",
+    "town": "Franklin"
+  },
+  {
+    "slug": "roof-flashing-leak",
+    "title": "How to Trace a Roof Flashing Leak Safely",
+    "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs profe",
+    "category": "Maintenance",
+    "date": "2026-09-21",
+    "town": "Franklin"
+  },
+  {
+    "slug": "hail-damage-roof",
+    "title": "One Inch Hail? An Insurance Ready Roof Checklist",
+    "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
+    "category": "Storm Damage",
+    "date": "2026-09-18",
+    "town": "Franklin"
+  },
+  {
+    "slug": "skylight-leak-repair",
     "title": "Skylight Leak Repair for Western NC Mountain Homes",
     "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
     "category": "Maintenance",
@@ -22,7 +62,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Franklin"
   },
   {
-    "slug": "roof-valley-leak-western-nc",
+    "slug": "roof-valley-leak",
     "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
     "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
     "category": "Maintenance",
@@ -38,15 +78,15 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "standing-seam-vs-exposed-fastener-metal-roof-wnc",
-    "title": "Standing Seam vs Exposed-Fastener Metal Roofing for Mountain Homes",
-    "excerpt": "The two metal systems are not the same product at different prices. Here is how they differ on cost, fasteners, movement, wind, repairability and look.",
+    "slug": "standing-seam-vs-exposed-fastener",
+    "title": "Standing Seam vs Exposed Fastener for Mountain Homes",
+    "excerpt": "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Ca",
     "category": "Materials",
     "date": "2026-09-15",
-    "town": ""
+    "town": "Franklin"
   },
   {
-    "slug": "roof-inspection-after-storm-western-nc",
+    "slug": "roof-inspection-after-storm",
     "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
     "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready recor",
     "category": "Inspections",
