@@ -68,7 +68,7 @@ const RegionalAuthority = () => {
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Link
-              to="/consultation"
+              to="/request-inspection"
               className="btn btn-primary btn-md group"
             >
               Get My Written Estimate
