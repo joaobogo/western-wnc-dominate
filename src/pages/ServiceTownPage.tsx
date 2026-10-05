@@ -186,7 +186,7 @@ const ServiceTownPage = ({
                       : `Fastest way to get ${entry.serviceLabel.toLowerCase()} in ${town.name} on the schedule.`
                   }
                   secondaryLabel={`Request a ${entry.serviceLabel} Assessment`}
-                  secondaryTo="/consultation"
+                  secondaryTo="/request-inspection"
                 />
               </div>
             </motion.div>
@@ -265,7 +265,7 @@ const ServiceTownPage = ({
                 <Link to={`/service-areas/${town.slug}`} className="text-primary font-semibold hover:underline">
                   {town.name}, NC service overview
                 </Link>
-                <Link to="/consultation" className="text-primary font-semibold hover:underline">
+                <Link to="/request-inspection" className="text-primary font-semibold hover:underline">
                   Request a {town.name} consultation
                 </Link>
               </div>
@@ -323,7 +323,7 @@ const ServiceTownPage = ({
               Our {town.name} division specializes in {entry.serviceLabel} and residential construction. Let's discuss your scope and timing today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
+              <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
                 Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
               <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]">
