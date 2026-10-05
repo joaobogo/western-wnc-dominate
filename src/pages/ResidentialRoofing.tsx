@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import InspectionForm from "@/components/InspectionForm";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import asphalt001 from "@/assets/gallery/asphalt-001.webp";
@@ -241,7 +242,7 @@ const ResidentialRoofing = () => {
                           className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                         >
                           <Link
-                            to="/consultation"
+                            to="/request-inspection"
                             className="btn btn-primary btn-lg group relative"
                           >
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -384,7 +385,7 @@ const ResidentialRoofing = () => {
                           className="mt-10 text-center"
                         >
                           <Link
-                            to="/consultation"
+                            to="/request-inspection"
                             className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors font-body"
                           >
                             Not sure? Let us assess your roof — no obligation
@@ -537,7 +538,7 @@ const ResidentialRoofing = () => {
                             <p className="text-primary-foreground text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
                           </div>
                           <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
-                            <Link to="/consultation" className="btn btn-primary btn-md group relative">
+                            <Link to="/request-inspection" className="btn btn-primary btn-md group relative">
                               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                               <span className="relative">Discuss Your Roof</span>
                               <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
@@ -931,7 +932,7 @@ const ResidentialRoofing = () => {
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                               <Link
-                                to="/consultation"
+                                to="/request-inspection"
                                 className="btn btn-primary btn-lg group relative"
                               >
                                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -967,6 +968,7 @@ const ResidentialRoofing = () => {
                   </section>
           </>
         }
+        afterCta={<InspectionForm />}
       />
       <Footer />
       <StickyMobileCTA />
