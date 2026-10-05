@@ -198,12 +198,12 @@ const StormDamage = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  After the Storm.
+                  Storm Damage Roof Repair in Western North Carolina
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Before the Next One.
+                  After the Storm. Before the Next One.
                 </motion.h2>
               </div>
 
