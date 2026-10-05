@@ -23,7 +23,7 @@ export const RoofingMidCTA = ({
   headline = "Ready to discuss your roof?",
   subheadline = "We respond rapidly with a direct call — not a form email.",
   ctaText = "Talk With a Roofing Advisor",
-  ctaLink = "/consultation",
+  ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-10 md:py-12">
@@ -54,7 +54,7 @@ export const RoofingClosingCTA = ({
   subheadline = "Whether you need a repair assessment, a replacement consultation, or just an honest opinion — we're here to help.",
   eyebrow = "Your Roof, Our Expertise",
   ctaText = "See What My Roof Needs",
-  ctaLink = "/consultation",
+  ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => {
   // Money pages lead with the phone (João, 2026-09-08); cost guides stay form-first.
   const callIsPrimary = getPagePrimaryAction(useLocation().pathname).intent === "call";
@@ -129,7 +129,7 @@ export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSid
       </div>
     ))}
     <div className="pt-3 border-t border-border">
-      <Link to="/consultation" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+      <Link to="/request-inspection" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
         See What My Project Needs <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
