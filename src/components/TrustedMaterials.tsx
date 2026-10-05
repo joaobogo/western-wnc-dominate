@@ -23,7 +23,7 @@ const vendors: Vendor[] = [
   {
     name: "CertainTeed",
     logo: logoCertainteed,
-    badge: "CertainTeed ShingleMaster Credentialed Contractor",
+    badge: "CertainTeed Credentialed Contractor",
     body: "CertainTeed residential roofing products support dependable roof systems for homeowners who want proven materials and a professional installation process.",
     href: "https://www.certainteed.com/products/residential-roofing-products?zip=28734",
     ariaLabel: "Visit CertainTeed residential roofing products (opens in a new tab)",
