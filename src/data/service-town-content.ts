@@ -63,7 +63,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
       { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
-      { q: "Will my roof replacement be done by the same crew start-to-finish?", a: "Yes. We don't subcontract out core install work. The crew on day one is the crew on the final walkthrough." },
+      { q: "Who will be responsible for my roof replacement?", a: "Highlander assigns a project lead and explains who will be on site before work starts, with one accountable point of contact through the final walkthrough." },
     ],
   }),
   E({
@@ -72,7 +72,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Franklin, NC",
     intro:
-      "When something fails on a Franklin roof, you usually want a real person on site this week — not next month. Because we're based here, most repair inspections happen on a same-day or next-day basis and the fix is scheduled before we leave the driveway.",
+      "When something fails on a Franklin roof, you want a clear diagnosis without being routed through an out-of-area call center. Highlander is based here in Franklin, and we document the issue, explain the repair options, and provide the next step in writing."
     localContext:
       "The repairs we see most often in Franklin: lifted ridge caps from spring storms coming up the Little Tennessee valley, pipe-boot failures on 15+ year asphalt, and chimney flashing that was never properly stepped on older homes.",
     whoItsFor:
@@ -81,9 +81,9 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
     metaTitle: "Roof Repair in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Honest roof repair in Franklin, NC. Local crews, same-day or next-day inspections, full photo documentation, and a straight answer on whether to repair or replace.",
+      "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense."
     faqs: [
-      { q: "How fast can you get to my Franklin home for a leak?", a: "Most active-leak inspections in Franklin happen on a same-day or next-day basis of the call. Temporary protection can usually be installed the same visit." },
+      { q: "How fast can you get to my Franklin home for a leak?", a: "Call or submit the inspection form and tell us if water is actively entering. The team triages active leaks during staffed hours and will give you the earliest available visit." },
       { q: "Do you provide written estimates for insurance?", a: "Yes. Every repair gets photo documentation and a written scope you can hand directly to your adjuster." },
       { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives." },
     ],
