@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import InspectionForm from "@/components/InspectionForm";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import roofingMobileHero from "@/assets/heroes/roofing-mobile.webp";
@@ -273,7 +274,7 @@ const RoofingDivision = () => {
                 className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
                 <Link
-                  to="/consultation"
+                  to="/request-inspection"
                   className="btn btn-primary btn-md group relative"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -547,6 +548,8 @@ const RoofingDivision = () => {
           className="section-padding bg-background border-t border-border/60"
         />
 
+        <InspectionForm />
+
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div
@@ -579,7 +582,7 @@ const RoofingDivision = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <Link
-                      to="/consultation"
+                      to="/request-inspection"
                       className="btn btn-primary btn-lg group relative"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
