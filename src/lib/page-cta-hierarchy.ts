@@ -26,16 +26,14 @@ export interface PagePrimaryAction {
 
 const PHONE_HREF = PHONE_TEL;
 
-/** Where the ESTIMATE action lands. A roofing visitor tapping ESTIMATE used to
- *  go to the /consultation chooser and then 2.7 screens of preamble before the
- *  first question (mobile re-audit M-2). Send them to the matching intake. */
-const ROOFING_INTAKE = "/roofing-intake";
-const CONSTRUCTION_INTAKE = "/construction-intake";
+/** One primary estimate path sitewide (Oct 2026 CRO audit). Long builders and
+ * specialist intake tools remain available as secondary planning tools only. */
+const ESTIMATE_FORM = "/request-inspection";
 
 const callFirst = (
   pageKey: string,
   label = "Call Direct",
-  estimateHref = ROOFING_INTAKE,
+  estimateHref = ESTIMATE_FORM,
 ): PagePrimaryAction => ({
   pageKey,
   intent: "call",
@@ -48,7 +46,7 @@ const callFirst = (
 const formFirst = (
   pageKey: string,
   label = "Get My Written Estimate",
-  href = "/consultation",
+  href = ESTIMATE_FORM,
 ): PagePrimaryAction => ({
   pageKey,
   intent: "form",
@@ -88,7 +86,7 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   // /construction/consultation is itself the booking step; leading it with a
   // phone call would send people away from the form they came to complete.
   if (path.startsWith("/construction/consultation")) {
-    return formFirst("consultation", "Book My Consultation", "/consultation");
+    return formFirst("consultation", "Book My Consultation", "/construction/consultation");
   }
 
   // Money pages lead with the phone (João, 2026-09-08: calls are where the
@@ -99,7 +97,7 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   if (/^\/[a-z0-9-]+-(roofing|roof-repair|roof-replacement|metal-roofing)-[a-z0-9-]+$/.test(path)) {
     return callFirst("town_service");
   }
-  if (path.startsWith("/construction")) return callFirst("construction", "Call Direct", CONSTRUCTION_INTAKE);
+  if (path.startsWith("/construction")) return callFirst("construction", "Call Direct", ESTIMATE_FORM);
   if (path.startsWith("/roofing")) return callFirst("roofing");
   if (path.startsWith("/blog")) return formFirst("blog", "Get My Questions Answered");
   if (path.startsWith("/projects") || path.startsWith("/recent-projects") || path.startsWith("/gallery")) {
