@@ -148,12 +148,12 @@ const OutdoorLiving = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Built for the View.
+                  Outdoor Living Construction in Western North Carolina
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
-                  <span className="text-[hsl(var(--gold-ink))]">Built for the Weather.</span>
+                  <span className="text-[hsl(var(--gold-ink))]">Built for the View. Built for the Weather.</span>
                 </motion.h2>
               </div>
 
@@ -163,7 +163,7 @@ const OutdoorLiving = () => {
 
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="btn btn-primary btn-md group relative">
+                <Link to="/request-inspection" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -363,7 +363,7 @@ const OutdoorLiving = () => {
                 <p className="text-primary-foreground text-sm font-body">Let's discuss what's possible for your property, your views, and your lifestyle.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
-                <Link to="/consultation" className="btn btn-primary btn-md group relative">
+                <Link to="/request-inspection" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
@@ -489,7 +489,7 @@ const OutdoorLiving = () => {
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2">Wondering what's possible on your lot?</h3>
                   <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-3">We evaluate terrain, views, drainage, and access as part of every outdoor project consultation.</p>
-                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+                  <Link to="/request-inspection" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
