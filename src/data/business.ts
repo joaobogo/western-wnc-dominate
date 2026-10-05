@@ -213,14 +213,9 @@ export const BUSINESS: BusinessIdentity = {
   bbbUrl:
     "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
   bbbAccreditedSince: 2020,
-  press: [
-    {
-      outlet: "The Laurel Magazine",
-      label: "As featured in The Laurel Magazine (October 2024)",
-      date: "2024-10-01",
-      href: "https://www.thelaurelmagazine.com/",
-    },
-  ],
+  // No press mention is rendered until we have the actual article URL.
+  // A publication homepage is not sufficient proof for a specific feature.
+  press: [],
   awards: [
     {
       id: "best-of-macon-county",
