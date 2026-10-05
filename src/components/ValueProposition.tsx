@@ -154,7 +154,7 @@ const ValueProposition = () => {
           className="text-center mt-14 md:mt-16"
         >
           <Link
-            to="/consultation"
+            to="/request-inspection"
             className="btn btn-primary btn-lg group relative"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
