@@ -1,41 +1,36 @@
-import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
+import { BUSINESS, COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Shield, Award, FileCheck, BadgeCheck, Handshake, Phone, ArrowRight,
+  Shield, Award, BadgeCheck, Phone, ArrowRight,
   Star, CheckCircle, Clock, Users, MessageSquare, Mountain, Hammer,
-  Eye, Heart, Home, Wrench,
+  Eye, Heart, Home,
 } from "lucide-react";
-import logoCertainteed from "@/assets/logo-certainteed.png";
 import logoVelux from "@/assets/logo-velux.png";
-import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
-import badgeJamesHardie from "@/assets/badge-james-hardie.png";
-import badgeHaag from "@/assets/badge-haag.png";
-import { ReactNode } from "react";
 
 /* ──────────────────────────────────────
    DATA: Credentials, Stats, Certifications
    ────────────────────────────────────── */
 
 export const credentials = [
-  { icon: Award, label: "CertainTeed ShingleMaster", detail: "Credentialed Contractor", image: badgeCertainteedMaster },
-  { icon: Shield, label: "Licensed & Insured", detail: "NC General Contractor", image: badgeCertainteedMaster },
-  { icon: BadgeCheck, label: "James Hardie", detail: "Preferred Remodeler", image: badgeJamesHardie },
-  { icon: FileCheck, label: "HAAG Certified", detail: "Residential Inspector", image: badgeHaag },
+  { icon: Award, label: "CertainTeed", detail: "Credentialed Contractor", image: null },
+  { icon: Shield, label: "NC General Contractor", detail: BUSINESS.licenseNumber, image: null },
+  { icon: BadgeCheck, label: "VELUX", detail: "Certified Installer", image: logoVelux },
+  { icon: CheckCircle, label: "BBB A+ Accredited", detail: `Since ${BUSINESS.bbbAccreditedSince}`, image: null },
 ];
 
 export const trustStats = [
-  { value: REVIEW_STARS, label: "Google Rating", detail: "Across Western NC" },
+  { value: REVIEW_STARS, label: "Google Rating", detail: "Franklin profile" },
   { value: "2017", label: "Family-Owned Since", detail: "Franklin, NC" },
-  { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain" },
-  { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
+  { value: String(COUNTY_COUNT), label: "Counties Served", detail: "Western North Carolina" },
+  { value: String(BUSINESS.locations.length), label: "Showrooms", detail: "Franklin · Sylva" },
 ];
 
 export const trustPillars = [
   {
     icon: Shield,
     title: "Certified & Licensed",
-    short: "CertainTeed ShingleMaster Credentialed Contractor. Licensed NC General Contractor. Fully insured.",
+    short: "CertainTeed Credentialed Contractor. Licensed NC General Contractor. Project-specific coverage is confirmed in writing.",
     overcomes: "Is this company actually qualified?",
   },
   {
@@ -47,13 +42,13 @@ export const trustPillars = [
   {
     icon: Clock,
     title: "Timeline Discipline",
-    short: "Realistic scheduling. Milestone tracking. We finish when we say we will.",
+    short: "Realistic scheduling, documented milestones, and written communication when timing changes.",
     overcomes: "Will this drag on for months?",
   },
   {
     icon: Hammer,
     title: "Craftsmanship Standard",
-    short: "Manufacturer-exact installation. Owner-inspected. No shortcuts tolerated.",
+    short: "Manufacturer-directed installation details, documented quality checks, and a final project walkthrough.",
     overcomes: "How do I know the quality will be there?",
   },
   {
@@ -71,7 +66,7 @@ export const trustPillars = [
   {
     icon: Eye,
     title: "Full Transparency",
-    short: "Photo documentation at every phase. No hidden costs. No surprise change orders.",
+    short: "Written scope, photo documentation where relevant, and written approval before material change orders.",
     overcomes: "Will the final cost exceed the estimate?",
   },
   {
@@ -89,7 +84,7 @@ export const trustPillars = [
 
 export const TrustBadgeStrip = ({ className = "" }: { className?: string }) => (
   <div className={`flex flex-wrap justify-center gap-4 text-xs font-medium uppercase tracking-wider ${className}`}>
-    {["Licensed & Insured", "CertainTeed ShingleMaster Credentialed Contractor", "In-House Crews", "WNC Specialists"].map((badge, i) => (
+    {["Licensed NC General Contractor", "CertainTeed Credentialed Contractor", "VELUX Certified Installer", "WNC Specialists"].map((badge, i) => (
       <span key={badge} className="flex items-center gap-1.5">
         {i > 0 && <span className="text-current opacity-20 mr-2">•</span>}
         {badge}
@@ -356,7 +351,7 @@ export const ReassuranceBlock = ({
   headline = "Ready to Work With a Team\nThat Builds Like It Matters?",
   subheadline = "Start a conversation with our team. No pressure, no upselling — just honest advice from people who build in these mountains every day.",
   ctaText = "Get My Questions Answered",
-  ctaLink = "/consultation",
+  ctaLink = "/request-inspection",
   variant = "primary",
 }: ReassuranceBlockProps) => {
   const isPrimary = variant === "primary";
@@ -412,11 +407,11 @@ export const TrustSidebar = () => (
     <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
     {[
       "Licensed NC General Contractor",
-      "CertainTeed ShingleMaster Credentialed Contractor",
-      "Fully Insured — Liability & WC",
-      "In-House Crews Only",
-      "Rapid Response Time",
-      "Written Scope on Every Project",
+      "CertainTeed Credentialed Contractor",
+      "VELUX Certified Installer",
+      "BBB A+ Accredited",
+      "Written Scope Before Work",
+      "Named Project Contact",
     ].map((item) => (
       <div key={item} className="flex items-center gap-2">
         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
