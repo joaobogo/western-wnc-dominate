@@ -115,8 +115,8 @@ const qualityStandards = [
   },
   {
     icon: Users,
-    title: "In-House Crew Standards",
-    detail: "Every project team is hired, trained, and supervised by Highlander. Your project team is our team.",
+    title: "Project Team Accountability",
+    detail: "Before work begins, Highlander identifies the project lead and the team responsible for the written scope so the homeowner knows who is accountable on site.",
   },
   {
     icon: Clock,
@@ -130,15 +130,27 @@ const qualityStandards = [
   },
   {
     icon: CheckCircle,
-    title: "Owner Walkthrough",
-    detail: "The owner personally inspects every completed project before handover. Flashing, trim, cleanup, function — nothing is approved until it meets our standard.",
+    title: "Final Project Walkthrough",
+    detail: "The completed scope is reviewed with the homeowner, including visible workmanship, cleanup, documentation, and any remaining follow-up items.",
   },
 ];
 
 const warrantyTiers = [
-  { tier: "Standard", coverage: "Material warranty from manufacturer + Highlander labor warranty", availability: "All projects" },
-  { tier: "Enhanced", coverage: "CertainTeed SureStart PLUS™ — covers both material and labor under manufacturer warranty", availability: "CertainTeed installations" },
-  { tier: "Premium", coverage: "Premium non-prorated material coverage + workmanship guarantee", availability: "Select roofing systems" },
+  {
+    tier: "Manufacturer",
+    coverage: "Product coverage depends on the manufacturer, selected products, and complete roof assembly.",
+    availability: "Confirmed per project",
+  },
+  {
+    tier: "Workmanship",
+    coverage: "Highlander documents the workmanship coverage that applies to the specific written scope.",
+    availability: "Confirmed in writing",
+  },
+  {
+    tier: "Enhanced Options",
+    coverage: "When a selected system qualifies for enhanced manufacturer coverage, eligibility and terms are reviewed before installation.",
+    availability: "System-dependent",
+  },
 ];
 
 const Certifications = () => {
@@ -146,7 +158,7 @@ const Certifications = () => {
     <>
       <SEOHead
         title="Roofing Certifications in Franklin, NC | Highlander"
-        description="Highlander credentials explained: CertainTeed ShingleMaster Premier, licensed NC general contractor, and full insurance coverage."
+        description="Highlander credentials in Franklin, NC: contractor license, CertainTeed credential, VELUX installer status, and BBB accreditation."
         path="/certifications"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }])}
       />
@@ -320,7 +332,7 @@ const Certifications = () => {
                 Want to see these credentials in action?
               </p>
               <Link
-                to="/consultation"
+                to="/request-inspection"
                 className="btn btn-primary btn-sm"
               >
                 Get My Questions Answered <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -372,8 +384,7 @@ const Certifications = () => {
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
               <p className="text-dark-section-muted max-w-2xl mx-auto">
-                Every Highlander project includes warranty coverage. Our CertainTeed certification 
-                unlocks enhanced warranty tiers that most contractors can't offer.
+                Warranty coverage varies by manufacturer, product selection, and project scope. Highlander documents the coverage that applies before installation rather than publishing a one-size-fits-all promise.
               </p>
             </motion.div>
 
@@ -400,13 +411,13 @@ const Certifications = () => {
               <StandardsCallout
                 icon={Shield}
                 title="Warranty Package Delivered at Walkthrough"
-                description="Every completed project includes a physical warranty package — manufacturer documentation, labor warranty, maintenance guidelines, and emergency contact information."
+                description="At project closeout, Highlander provides the warranty and product documentation that applies to the completed scope, along with the appropriate contact information for follow-up."
                 variant="dark"
               />
               <StandardsCallout
                 icon={Wrench}
                 title="Post-Project Support"
-                description="We don't disappear after the last nail. Warranty claims, maintenance questions, and follow-up inspections are handled by the same team that built your project."
+                description="Warranty questions and post-project follow-up are routed through Highlander so the homeowner has a clear point of contact after completion."
                 variant="dark"
               />
             </div>
