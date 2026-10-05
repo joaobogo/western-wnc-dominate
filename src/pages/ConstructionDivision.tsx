@@ -158,7 +158,7 @@ const ConstructionDivision = () => {
 
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="btn btn-primary btn-lg group relative">
+                <Link to="/request-inspection" className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
