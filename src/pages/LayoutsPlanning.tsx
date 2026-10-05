@@ -400,7 +400,7 @@ const LayoutsPlanning = () => {
                 <p className="text-xl text-white/85 mb-12 font-body max-w-3xl mx-auto leading-relaxed">
                   Western North Carolina isn't flat. We plan for soil types, slope stability, heavy snow loads, and extreme temperature swings. A plan from a flat-land designer won't work here. A Highlander plan will.
                 </p>
-                <Link to="/consultation" className="btn btn-primary btn-lg">
+                <Link to="/request-inspection" className="btn btn-primary btn-lg">
                   Get My Mountain Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </ScrollReveal>
