@@ -677,7 +677,7 @@ const About = () => {
                 We'll earn your trust the same way we've earned everyone else's.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/consultation" className="btn btn-primary btn-md">
+                <Link to="/request-inspection" className="btn btn-primary btn-md">
                   Get My Questions Answered <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link to="/recent-projects" className="btn btn-secondary btn-md btn-on-dark">
