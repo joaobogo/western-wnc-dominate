@@ -4,9 +4,6 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
-import certainteedPremierBadge from "@/assets/badge-certainteed-premier.webp";
-import badgeJamesHardie from "@/assets/badge-james-hardie.png";
-import badgeHaag from "@/assets/badge-haag.png";
 import badgeVelux from "@/assets/logo-velux.png";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -33,77 +30,75 @@ const fadeUp = {
 const certifications = [
   {
     icon: Award,
-    title: "CertainTeed ShingleMaster Premier Credentialed",
-    badge: "Premier Credentialed",
-    image: certainteedPremierBadge,
-    description: "Highlander holds CertainTeed ShingleMaster Premier credentials. The credential reflects manufacturer training and installation standards and provides access to enhanced CertainTeed warranty options on eligible roof systems.",
+    title: "CertainTeed Credentialed Contractor",
+    badge: "Manufacturer Credential",
+    image: null,
+    description: "Highlander is a CertainTeed credentialed contractor. The exact roof system, products, and warranty eligibility are confirmed for each project in writing.",
     whatItMeans: [
-      "Manufacturer training for CertainTeed roofing system installation",
-      "Access to enhanced manufacturer warranty options on eligible systems",
-      "Warranty eligibility depends on the selected products and complete roof assembly",
-      "Project-specific coverage is reviewed in writing before installation",
+      "CertainTeed roofing-system training and installation guidance",
+      "System requirements reviewed for the selected roof",
+      "Warranty eligibility depends on the selected products and assembly",
+      "Project-specific terms confirmed before installation",
     ],
   },
   {
     icon: Shield,
     title: "VELUX Certified Installer",
-    badge: "Accredited Expert",
+    badge: "Certified Installer",
     image: badgeVelux,
-    description: "A VELUX Certified Installer is an independent contractor or company trained and accredited by VELUX to install their skylights, ensuring high-quality, reliable service and adherence to VELUX standards.",
+    description: "Highlander is a VELUX Certified Installer for skylight work. Product, flashing, roof type, and warranty details are confirmed for the specific project.",
     whatItMeans: [
-      "Trained and accredited by VELUX to install their full skylight line",
-      "High-quality, reliable service following strict VELUX standards",
-      "Ensures structural integrity and leak-proof performance",
-      "Direct access to VELUX technical support and warranty systems",
+      "Skylight and flashing planned as part of the roof system",
+      "Product selection matched to the roof type and opening",
+      "Installation details follow the selected VELUX system",
+      "Project-specific product information documented before installation",
     ],
   },
   {
-    icon: BadgeCheck,
-    title: "James Hardie Preferred Remodeler",
-    badge: "Siding Experts",
-    image: badgeJamesHardie,
-    description: "As a James Hardie Preferred Remodeler, we are certified to install the nation's #1 brand of fiber cement siding according to their rigorous 'Best Practices' manual.",
+    icon: Shield,
+    title: BUSINESS.licenseNumber,
+    badge: "State License",
+    image: null,
+    description: "Highlander Building Services, Inc. holds a North Carolina General Contractor license and links directly to the public state lookup.",
     whatItMeans: [
-      "Expert installation of James Hardie fiber cement products",
-      "Adherence to James Hardie's strict installation standards",
-      "Verified liability insurance and professional conduct",
-      "Access to specialized James Hardie support and warranty backing",
+      "Publicly verifiable North Carolina contractor license",
+      "License number displayed consistently across the site",
+      "State verification link provided on this page",
+      "Permitting requirements confirmed per project",
     ],
   },
   {
-    icon: BadgeCheck,
-    title: "HAAG Certified Inspector",
-    badge: "Storm Experts",
-    image: badgeHaag,
-    description: "HAAG certification is the gold standard in roofing inspection. It means we have the advanced training to accurately assess damage and represent your interests correctly during insurance claims.",
+    icon: CheckCircle,
+    title: "BBB A+ Accredited",
+    badge: `Accredited Since ${BUSINESS.bbbAccreditedSince}`,
+    image: null,
+    description: "Highlander links directly to its Better Business Bureau profile so homeowners can review the current accreditation information independently.",
     whatItMeans: [
-      "Scientifically-based damage assessment protocols",
-      "Credibility with insurance adjusters and providers",
-      "Expertise in identifying functional vs. cosmetic damage",
-      "More accurate estimates and faster claim processing",
+      "Public BBB profile linked from the website",
+      `Accreditation shown since ${BUSINESS.bbbAccreditedSince}`,
+      "Current BBB information can be checked independently",
+      "Unverified awards are not presented as established facts",
     ],
   },
 ];
 
-/** Aligned badge row (Design Prompt 20): one plain-language line per credential. */
-const badgeRow: { image?: string; name: string; plain: string }[] = [
+const badgeRow: { image?: string | null; name: string; plain: string }[] = [
   {
-    image: certainteedPremierBadge,
-    name: "CertainTeed ShingleMaster Premier",
-    plain: "Manufacturer-credentialed installation with enhanced warranty options available on eligible roof systems.",
+    name: "CertainTeed Credentialed Contractor",
+    plain: "Manufacturer credential with project-specific system and warranty details confirmed in writing.",
   },
   {
     image: badgeVelux,
     name: "VELUX Certified Installer",
-    plain: "Trained by VELUX to cut, flash, and seal skylights so the opening stays watertight.",
+    plain: "Skylight system, flashing, and product details matched to the specific roof and opening.",
   },
   {
-    name: "James Hardie Preferred Remodeler",
-    plain: "Certified to install fiber cement siding to the manufacturer's written best-practice manual.",
+    name: BUSINESS.licenseNumber,
+    plain: "North Carolina General Contractor license with public verification.",
   },
   {
-    name: "HAAG Certified Inspector",
-    plain: "Trained to document storm damage the same way insurance adjusters evaluate it.",
+    name: "BBB A+ Accredited",
+    plain: `Public BBB profile; accreditation shown since ${BUSINESS.bbbAccreditedSince}.`,
   },
 ];
 
