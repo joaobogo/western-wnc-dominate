@@ -1,6 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { towns } from "@/data/towns";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X, Home, Wrench, Layers, CloudLightning, Hammer, Building2, TreePine, HelpCircle } from "lucide-react";
@@ -65,6 +65,7 @@ interface InspectionFormProps {
 }
 
 const InspectionForm = ({ variant = "section", townName, county }: InspectionFormProps) => {
+  const navigate = useNavigate();
   const isPage = variant === "page";
   // Where the visitor came from, e.g. ?context=town_faq_cta
   const contextFromQuery = (): string | null => {
@@ -135,9 +136,9 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
 
   const goToStepTwo = () => {
     const townOk = formData.town.trim().length >= 2;
-    setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
+    setTownError(townOk ? null : "Let us know the town so we route your request correctly.");
     if (!formData.projectType) {
-      setProjectError("Pick what you need help with so we send the right crew.");
+      setProjectError("Pick what you need help with so we route the request correctly.");
       return;
     }
     setProjectError(null);
@@ -154,10 +155,10 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
 
   const handleSubmit = async () => {
     const townOk = formData.town.trim().length >= 2;
-    setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
+    setTownError(townOk ? null : "Let us know the town so we route your request correctly.");
     if (!townOk) {
       setSubmitError("We need a little more before we can send this.");
-      setIssues(["Add the property town so we route you to the right crew."]);
+      setIssues(["Add the property town so we route your request correctly."]);
       setStep(1);
       return;
     }
@@ -232,6 +233,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
     setIsSubmitting(false);
     setSubmitted(true);
     autosave.clear();
+    navigate("/thank-you", { replace: true });
   };
 
   /* ─── Confirmation State ─── */
@@ -304,16 +306,16 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
               <ScrollReveal variant="rise-subtle" delay={0.25}>
                 <p className="text-white font-body text-lg md:text-xl leading-relaxed mb-10 font-bold drop-shadow-md">
                   {townName
-                    ? `Share a few details about your ${townName} property and what you're looking to accomplish. A Highlander advisor who works ${county ?? "this part of Western North Carolina"} every week will review everything and follow up personally to discuss scope, timing, and next steps.`
+                    ? `Share a few details about your ${townName} property and what you're looking to accomplish. A Highlander advisor familiar with ${county ?? "this part of Western North Carolina"} will review the request and follow up to discuss scope, timing, and next steps.`
                     : "Share a few details about your property and what you're looking to accomplish. A Highlander advisor — someone who knows these mountains, these materials, and these building conditions — will review everything and follow up personally to discuss scope, timing, and next steps."}
                 </p>
               </ScrollReveal>
               <div className="space-y-5">
                 {[
-                  { icon: Clock, text: "A real person replies fast — never an auto-reply" },
-                  { icon: MapPin, text: "We serve every community in Western North Carolina" },
-                  { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor certified" },
-                  { icon: Shield, text: "Licensed GC · Fully insured · Written scope on every estimate" },
+                  { icon: Clock, text: "A Highlander team member reviews requests during staffed business hours" },
+                  { icon: MapPin, text: "Serving communities across Western North Carolina" },
+                  { icon: Award, text: "CertainTeed Credentialed Contractor" },
+                  { icon: Shield, text: "Licensed NC General Contractor · written project scope" },
                 ].map((item, i) => (
                   <motion.div
                     key={item.text}
@@ -338,7 +340,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                     <Phone className="w-4 h-4" aria-hidden="true" />
                     {PHONE_DISPLAY}
                   </a>
-                  <p className="text-white text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
+                  <p className="text-white text-sm font-body font-semibold mt-1.5">Call during staffed business hours to speak with the Highlander team.</p>
                 </div>
               </ScrollReveal>
             </div>
