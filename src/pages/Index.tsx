@@ -14,6 +14,7 @@ import TartanBackground from "@/components/TartanBackground";
 import ThreeDivisionPathway from "@/components/DualPathway";
 
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import HomepageStickyLeadBar from "@/components/HomepageStickyLeadBar";
 import SectionDivider from "@/components/SectionDivider";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
@@ -142,6 +143,7 @@ const Index = () => {
       <Suspense fallback={<SectionFallback h={600} />}>
         <Footer />
       </Suspense>
+      <HomepageStickyLeadBar />
       <StickyMobileCTA />
     </>
   );
