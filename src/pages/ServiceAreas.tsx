@@ -298,7 +298,7 @@ const ServiceAreas = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
-                  to="/consultation"
+                  to="/request-inspection"
                   className="btn btn-primary btn-lg group md:text-xl min-w-[320px]"
                 >
                   <span className="relative z-10">See What My Property Needs</span>
