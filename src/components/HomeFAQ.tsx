@@ -41,7 +41,7 @@ const richAnswers: Record<string, ReactNode> = {
   ),
   "How do I request an inspection or quote?": (
     <>
-      Call {PHONE_DISPLAY}, <Link to="/request-inspection" className={linkClass}>request an inspection</Link>, or reach us through our <Link to="/contact" className={linkClass}>contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
+      Call {PHONE_DISPLAY}, <Link to="/request-inspection" className={linkClass}>request an inspection</Link>, or reach us through our <Link to="/request-inspection" className={linkClass}>contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
     </>
   ),
   "When is the best time for gutter maintenance in the mountains?": (
