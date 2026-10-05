@@ -1,27 +1,30 @@
-import { REVIEW_STARS, REVIEW_COUNT } from "@/data/business";
+import { REVIEW_STARS, REVIEW_COUNT, CREDENTIALS, COUNTY_COUNT } from "@/data/business";
 import { motion } from "framer-motion";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldLine from "@/components/motion/GoldLine";
-import { Shield, Award, Clock, Star, MapPin, CheckCircle2 } from "lucide-react";
+import { Shield, Award, MapPin, CheckCircle2 } from "lucide-react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const stats = [
-  { value: `${REVIEW_COUNT}`, label: "Verified Reviews", detail: "From WNC Homeowners" },
+  { value: `${REVIEW_COUNT}`, label: "Google Reviews", detail: "Franklin profile" },
   { value: "2017", label: "Family-Owned Since", detail: "Franklin, NC" },
-  { value: REVIEW_STARS, label: "Google Reviews", detail: "Across 8 WNC Counties" },
+  { value: REVIEW_STARS, label: "Google Rating", detail: `Serving ${COUNTY_COUNT} WNC counties` },
 ];
 
-const credentials = [
-  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", emphasis: true },
-  { icon: Shield, label: "Licensed General Contractor", emphasis: true },
-  { icon: Star, label: "Brava Preferred Installer", emphasis: true },
-  { icon: Clock, label: "Rapid Storm Response" },
-  { icon: MapPin, label: "Locally Owned · Franklin & Sylva" },
-  { icon: CheckCircle2, label: "Fully Licensed & Insured" },
-  { icon: Award, label: "Military Friendly Company", emphasis: true },
-];
+const credentialIcon = (label: string) => {
+  if (label.includes("General Contractor")) return Shield;
+  if (label.includes("BBB")) return CheckCircle2;
+  if (label.includes("Family-owned")) return MapPin;
+  return Award;
+};
+
+const credentials = CREDENTIALS.map((credential) => ({
+  icon: credentialIcon(credential.label),
+  label: credential.label,
+  emphasis: Boolean(credential.href) || credential.label.includes("CertainTeed") || credential.label.includes("VELUX"),
+}));
 
 const TrustStrip = () => {
   return (
@@ -121,8 +124,7 @@ const TrustStrip = () => {
                 className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
                 <p className="text-primary-foreground text-body-sm md:text-body-sm font-body italic leading-relaxed max-w-md font-medium">
-                  "The only company in Western NC that holds both a CertainTeed ShingleMaster Credentialed Contractor
-                  certification and a General Contractor license under the same roof."
+                  "One accountable Highlander team for roofing and construction, backed by a North Carolina General Contractor license."
                 </p>
               </motion.div>
             </div>
