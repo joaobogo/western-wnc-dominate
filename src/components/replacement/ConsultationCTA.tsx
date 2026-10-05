@@ -20,7 +20,7 @@ const ConsultationCTA = ({ heading, subline, label = "Get My Replacement Scoped"
         </div>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
           <Link
-            to="/consultation"
+            to="/request-inspection"
             className="btn btn-primary btn-md group"
           >
             <span>{label}</span>
