@@ -159,7 +159,7 @@ const VeluxProof = () => {
           </div>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
             <Link
-              to="/consultation"
+              to="/request-inspection"
               className="btn btn-primary btn-lg"
             >
               See What My Skylights Need <ArrowRight className="w-4 h-4" aria-hidden="true" />
