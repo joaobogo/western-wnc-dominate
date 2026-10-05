@@ -49,7 +49,7 @@ const MetalRoofingCost = () => (
   <>
     <SEOHead
       title={`Metal Roofing Cost in Western NC (${METAL_COST_YEAR} Guide) | Highlander`}
-      description={`What a metal roof costs in Western North Carolina in ${METAL_COST_YEAR}: installed price per square for standing seam, exposed fastener, and metal shingles, plus mountain-specific cost factors.`}
+      description={`Metal roofing cost in Western NC for ${METAL_COST_YEAR}: compare installed ranges for standing seam, exposed fastener, and metal shingles.`}
       path="/roofing/metal/cost"
       jsonLd={buildPageSchema({
         type: "service",
