@@ -165,7 +165,7 @@ const Team = () => {
               When you call Highlander, a member of our Western NC team picks up. No phone tree, no offshore sales floor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/consultation" className="btn btn-primary btn-md">
+              <Link to="/request-inspection" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href={PHONE_TEL} aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`} className="btn btn-secondary btn-md btn-on-dark">
