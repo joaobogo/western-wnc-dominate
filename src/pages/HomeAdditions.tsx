@@ -64,11 +64,11 @@ const designContinuity = [
 ];
 
 const whyHighlander = [
-  { icon: Shield, title: "Licensed General Contractor", detail: "Full GC oversight on every addition. Structural engineering, code compliance, and permit management handled as part of our standard scope." },
-  { icon: Users, title: "In-House Crews", detail: "Our framing, roofing, and finish crews work for Highlander — not as subcontracted labor. That means accountability, communication, and consistent quality." },
+  { icon: Shield, title: "Licensed General Contractor", detail: "Highlander provides licensed GC oversight and coordinates the engineering, code, and permit requirements that apply to the contracted addition scope." },
+  { icon: Users, title: "Project Team Accountability", detail: "The written scope identifies the Highlander project contact and the responsibilities that need to stay coordinated across framing, roofing, finishes, and specialty trades." },
   { icon: FileCheck, title: "Documented Process", detail: "Written scope, defined deliverables, specified materials, confirmed timeline, and transparent cost groupings before any commitment. You see exactly what you're getting." },
-  { icon: Wrench, title: "Roofing-Proven Standards", detail: "Our extensive roofing background built our construction discipline. The same material standards, crew training, and project documentation now apply to every addition we build." },
-  { icon: Mountain, title: "WNC Site Expertise", detail: "Steep lots, rock outcroppings, variable soils, high-elevation wind exposure — we've built on the challenging terrain that defines Western North Carolina properties." },
+  { icon: Wrench, title: "Roofing-Proven Standards", detail: "Highlander's roofing background informs roof tie-ins, flashing, drainage, material planning, and project documentation on additions." },
+  { icon: Mountain, title: "WNC Site Planning", detail: "Steep lots, rock outcroppings, variable soils, drainage, and high-elevation exposure are evaluated during planning because they can materially change an addition scope." },
   { icon: Star, title: "Planning & Design Support", detail: "From concept through completion, we manage the full scope. For complex projects requiring specialized design services, we collaborate with local professionals we've partnered with successfully." },
 ];
 
@@ -84,7 +84,7 @@ const processSteps = [
   { number: "02", icon: Eye, title: "Site & Structure Assessment", description: "We evaluate your existing home's structure, foundation, roofline, and site conditions to understand what's possible and what needs engineering attention." },
   { number: "03", icon: Ruler, title: "Design & Scope Development", description: "Conceptual layout, material selections, and detailed proposal with defined scope, timeline, and cost. You see exactly what you're getting before we start." },
   { number: "04", icon: CalendarCheck, title: "Permitting & Pre-Construction", description: "Engineering, permits, material ordering, and detailed scheduling. Every detail confirmed before mobilizing." },
-  { number: "05", icon: Hammer, title: "Construction", description: "Foundation, framing, roofing, exterior, mechanical systems, insulation, interior finishes — executed in sequence with daily oversight and communication." },
+  { number: "05", icon: Hammer, title: "Construction", description: "Foundation, framing, roofing, exterior, mechanical systems, insulation, and finishes are sequenced against the approved scope with documented quality and communication checkpoints." },
   { number: "06", icon: Sparkles, title: "Completion & Handover", description: "Final inspections, walk-through, punch list resolution, and complete documentation. Your new space, ready to live in." },
 ];
 
@@ -104,7 +104,7 @@ const wncChallenges = [
 
 const faqs = [
   { q: "How is a home addition priced?", a: "Additions are priced from the actual scope — square footage, structural complexity, finish level, site access, and how the addition ties into the existing home. Instead of a generic per-foot range, we provide a detailed, grouped-cost proposal during the design phase so the number reflects your real project." },
-  { q: "How long does an addition project take?", a: "Most residential additions take 3–6 months from permit approval to completion. Simple single-room additions may be faster; complex multi-room or second-story additions may take longer. We provide a detailed timeline during the proposal phase and communicate proactively about progress and any changes." },
+  { q: "How long does an addition project take?", a: "Addition schedules depend on design completion, engineering, permitting, site work, material lead times, weather, and scope complexity. Highlander develops the project timeline during planning once those variables are known." },
   { q: "Will the addition match my existing home?", a: "This is one of our primary focuses. We match rooflines, siding profiles, trim details, window proportions, and exterior materials to ensure the addition looks like it was always part of the home. When exact material matches aren't available, we source the closest alternatives or recommend design approaches that create intentional, attractive transitions." },
   { q: "Do I need to move out during construction?", a: "In most cases, no. We plan construction to minimize disruption to your daily life, including dust barriers, dedicated access routes, and coordinated noisy-work schedules. For major whole-home renovations that affect essential living areas, we'll discuss temporary relocation options during planning." },
   { q: "Can you build on a steep or challenging lot?", a: "Yes. Many WNC properties have challenging terrain — steep slopes, rock outcroppings, limited access, and variable soil conditions. We have experience building on difficult sites and coordinate with structural engineers and excavation specialists as part of our standard process." },
@@ -443,7 +443,7 @@ const HomeAdditions = () => {
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This Different.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
-                Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
+                Highlander brings its roofing and construction experience into one documented process for additions, with project-specific scope, scheduling, and warranty terms.
               </p>
             </motion.div>
 
