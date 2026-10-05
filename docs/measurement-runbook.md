@@ -73,7 +73,7 @@ Keywords (same set for every grid): `roofing company`, `roofer`,
 
 | Grid centre | Coordinates | Grid | Radius |
 | --- | --- | --- | --- |
-| Franklin, NC | 35.1626, -83.3459 (showroom) | 7×7 | 5 mi |
+| Franklin, NC | 35.1759293, -83.3738888 (40 Depot Street showroom; Google rooftop geocode verified 2026-10-05) | 7×7 | 5 mi |
 | Highlands, NC | 35.0526, -83.1971 | 5×5 | 4 mi |
 | Cashiers, NC | 35.1112, -83.0985 | 5×5 | 4 mi |
 | Sylva, NC | 35.3585, -83.1812 (showroom) | 7×7 | 5 mi |

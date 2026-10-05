@@ -27,7 +27,7 @@ describe("homepage head (P3.6)", () => {
   });
 
   it("both showroom NAP lines come from business.ts", () => {
-    expect(napLine(FRANKLIN)).toBe("1511 Highlands Road, Franklin, NC 28734");
+    expect(napLine(FRANKLIN)).toBe("40 Depot Street, Franklin, NC 28734");
     expect(napLine(SYLVA)).toBe("28 Cross Stitch Mountain Rd, Sylva, NC 28779");
   });
 

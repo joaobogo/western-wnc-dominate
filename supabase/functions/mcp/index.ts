@@ -40,7 +40,7 @@ var BUSINESS = {
   // and credentials are in the footer, the incorporation date is on the BBB
   // profile, both addresses are in `locations` below. Do not add a claim here
   // that cannot be checked from a public record — answer engines cross-check.
-  description: "Highlander Building Services, Inc. is a licensed roofing contractor and North Carolina General Contractor (license #87668), founded in 2017 by Luke and Kristy Smith and based at 1511 Highlands Road in Franklin, North Carolina, with a second showroom in Sylva. The company installs standing seam and exposed-fastener metal roofing, CertainTeed shingle systems, cedar shake and Brava synthetic roofing, seamless gutters, skylights, additions and outdoor living spaces for mountain homes across Western North Carolina.",
+  description: "Highlander Building Services, Inc. is a licensed roofing contractor and North Carolina General Contractor (license #87668), founded in 2017 by Luke and Kristy Smith and based at 40 Depot Street in Franklin, North Carolina, with a second showroom in Sylva. The company installs standing seam and exposed-fastener metal roofing, CertainTeed shingle systems, cedar shake and Brava synthetic roofing, seamless gutters, skylights, additions and outdoor living spaces for mountain homes across Western North Carolina.",
   priceRange: "$$",
   // set per the 7 Sep 2026 work order (Task 6)
   reviewSummary: {
@@ -119,12 +119,14 @@ var BUSINESS = {
     {
       id: "franklin",
       name: "Franklin Showroom",
-      streetAddress: "1511 Highlands Road",
+      streetAddress: "40 Depot Street",
       locality: "Franklin",
       region: "NC",
       postalCode: "28734",
       phoneE164: "+1-828-524-7773",
-      geo: { lat: 35.1626, lng: -83.3459 },
+      // Google Maps Geocoding API, ROOFTOP result for the full confirmed
+      // postal address, verified 2026-10-05.
+      geo: { lat: 35.1759293, lng: -83.3738888 },
       gbpCid: FRANKLIN_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
       googleRating: 4.8,

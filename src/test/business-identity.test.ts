@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync, readdirSync, statSync } from "fs";
 import { join, relative, resolve } from "path";
-import { BUSINESS, FRANKLIN, SYLVA, formatPhoneDisplay, napLine, telHref } from "@/data/business";
+import { BUSINESS, FRANKLIN, SYLVA, directionsUrl, formatPhoneDisplay, napLine, telHref } from "@/data/business";
 
 /**
  * `src/data/business.ts` is the single source of truth for NAP data.
@@ -15,7 +15,7 @@ import { BUSINESS, FRANKLIN, SYLVA, formatPhoneDisplay, napLine, telHref } from 
 const ROOT = resolve(__dirname, "../..");
 const SRC = join(ROOT, "src");
 
-const FORBIDDEN = ["Highlands Road", "Highlands Rd", "524-7773", "397-9211", "476-4000"];
+const FORBIDDEN = ["Depot Street", "Depot St", "Highlands Road", "Highlands Rd", "524-7773", "397-9211", "476-4000"];
 
 const ALLOWED = new Set(["src/data/business.ts", "src/test/business-identity.test.ts"]);
 
@@ -54,9 +54,18 @@ describe("BUSINESS derived values", () => {
 
   it("keeps both showrooms with GBP-exact NAP lines", () => {
     expect(BUSINESS.locations).toHaveLength(2);
-    expect(napLine(FRANKLIN)).toBe("1511 Highlands Road, Franklin, NC 28734");
+    expect(napLine(FRANKLIN)).toBe("40 Depot Street, Franklin, NC 28734");
     expect(napLine(SYLVA)).toBe("28 Cross Stitch Mountain Rd, Sylva, NC 28779");
+    expect(FRANKLIN.geo).toEqual({ lat: 35.1759293, lng: -83.3738888 });
     expect(FRANKLIN.gbpCid).toMatch(/^\d+$/);
     expect(SYLVA.gbpCid).toMatch(/^\d+$/);
+  });
+
+  it("routes Franklin by its confirmed address while retaining profile identity", () => {
+    const url = new URL(directionsUrl(FRANKLIN));
+    expect(url.pathname).toBe("/maps/dir/");
+    expect(url.searchParams.get("destination")).toBe("40 Depot Street, Franklin, NC 28734");
+    expect(directionsUrl(SYLVA)).toBe(`https://www.google.com/maps?cid=${SYLVA.gbpCid}`);
+    expect(FRANKLIN.reviewUrl).toContain("search.google.com/local/writereview");
   });
 });

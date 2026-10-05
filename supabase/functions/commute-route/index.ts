@@ -1,7 +1,7 @@
 // Drive-time lookup for the two Highlander showrooms.
 //
-// Takes a visitor-typed origin address plus a destination lat/lng (one of our
-// showrooms), geocodes the origin and computes a driving route through the
+// Takes a visitor-typed origin address plus a known showroom destination,
+// geocodes the origin and computes a driving route through the
 // Lovable connector gateway. Returns duration, distance and an encoded
 // polyline so the browser can draw the route.
 //
@@ -19,11 +19,20 @@ const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY") ?? "";
 const GOOGLE_MAPS_API_KEY = Deno.env.get("GOOGLE_MAPS_API_KEY") ?? "";
 
 // Known showroom destinations — anything else is rejected so this endpoint
-// can never be used as a generic routing proxy.
-const DESTINATIONS: Record<string, { lat: number; lng: number }> = {
-  "franklin-nc": { lat: 35.1626, lng: -83.3459 },
+// can never be used as a generic routing proxy. Franklin intentionally uses
+// the full confirmed postal address while its Business Profile is updated.
+const DESTINATIONS: Record<string, { address?: string; lat?: number; lng?: number }> = {
+  "franklin-nc": { address: "40 Depot Street, Franklin, NC 28734" },
   "sylva-nc": { lat: 35.3585, lng: -83.1812 },
 };
+
+function routeWaypoint(dest: { address?: string; lat?: number; lng?: number }) {
+  if (dest.address) return { address: dest.address };
+  if (typeof dest.lat === "number" && typeof dest.lng === "number") {
+    return { location: { latLng: { latitude: dest.lat, longitude: dest.lng } } };
+  }
+  return null;
+}
 
 const authHeaders = {
   Authorization: `Bearer ${LOVABLE_API_KEY}`,
@@ -78,9 +87,10 @@ Deno.serve(async (req) => {
   const origin = typeof payload.origin === "string" ? payload.origin.trim().slice(0, 200) : "";
   const showroom = typeof payload.showroom === "string" ? payload.showroom : "";
   const dest = DESTINATIONS[showroom];
+  const destination = dest ? routeWaypoint(dest) : null;
 
   if (origin.length < 3) return fail(400, "Enter a street address, town or ZIP code.");
-  if (!dest) return fail(400, "Unknown showroom");
+  if (!dest || !destination) return fail(400, "Unknown showroom");
 
   // 1) Geocode the visitor address (legacy Geocoding API — no sub-API prefix).
   const geoRes = await fetch(
@@ -112,7 +122,7 @@ Deno.serve(async (req) => {
           },
         },
       },
-      destination: { location: { latLng: { latitude: dest.lat, longitude: dest.lng } } },
+      destination,
       travelMode: "DRIVE",
       routingPreference: "TRAFFIC_AWARE",
       languageCode: "en-US",
