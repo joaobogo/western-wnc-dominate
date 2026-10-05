@@ -5,7 +5,6 @@ import React, { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck, ChevronDown } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
-import certainteedPremierBadge from "@/assets/badge-certainteed-premier.webp";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
@@ -327,10 +326,12 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
-              <img loading="lazy" decoding="async" src={certainteedPremierBadge} alt="CertainTeed ShingleMaster Premier Credentialed" width={336} height={319} className="h-14 w-auto" />
-              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Premier</span>
+              <div className="w-9 h-9 flex items-center justify-center bg-primary/10 rounded-full">
+                <Award className="w-4 h-4 text-primary" aria-hidden="true" />
+              </div>
+              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">CertainTeed</span>
             </div>
-            <span className="text-caption text-muted-foreground font-body leading-tight">CertainTeed ShingleMaster Premier Credentialed</span>
+            <span className="text-caption text-muted-foreground font-body leading-tight">Credentialed Contractor</span>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -338,9 +339,9 @@ const Footer = () => {
               <div className="w-9 h-9 flex items-center justify-center bg-primary/10 rounded-full">
                 <Award className="w-4 h-4 text-primary" aria-hidden="true" />
               </div>
-              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed &amp; Insured</span>
+              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed</span>
             </div>
-            <span className="text-caption text-muted-foreground font-body leading-tight">NC Licensed General Contractor</span>
+            <span className="text-caption text-muted-foreground font-body leading-tight">{BUSINESS.licenseNumber}</span>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -348,9 +349,9 @@ const Footer = () => {
               <div className="w-9 h-9 flex items-center justify-center bg-primary/10 rounded-full">
                 <BadgeCheck className="w-4 h-4 text-primary" aria-hidden="true" />
               </div>
-              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Military Friendly</span>
+              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">BBB A+</span>
             </div>
-            <span className="text-caption text-muted-foreground font-body leading-tight">Supporting veterans &amp; active duty</span>
+            <span className="text-caption text-muted-foreground font-body leading-tight">Accredited since {BUSINESS.bbbAccreditedSince}</span>
           </div>
         </div>
       </div>
@@ -373,7 +374,7 @@ const Footer = () => {
             >
               {BUSINESS.licenseNumber}
             </a>{" "}
-            · Fully insured · Est. {BUSINESS.foundingYear} ·{" "}
+            · Est. {BUSINESS.foundingYear} ·{" "}
             <a href={PHONE_TEL} className="inline-flex items-center min-h-[44px] md:min-h-0 hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
           </p>
         </div>
@@ -395,7 +396,7 @@ const Footer = () => {
             <span className="hidden md:inline text-border">·</span>
             <span>{BUSINESS.licenseNumber}</span>
             <span className="hidden md:inline text-border">·</span>
-            <span>Fully Insured</span>
+            <span>BBB A+ Accredited</span>
           </div>
           <div className="flex items-center gap-4">
             <Link to="/privacy-policy" className="text-body-xs text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
