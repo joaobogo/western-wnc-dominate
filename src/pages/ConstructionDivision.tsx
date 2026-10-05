@@ -68,15 +68,15 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const philosophy = [
   { icon: Compass, title: "Design Sensitivity", detail: "Every project starts with understanding your home's design theme, its setting, and the visual language that connects them. We don't impose a style — we extend the one your home already speaks." },
   { icon: ClipboardCheck, title: "Planning Depth", detail: "We invest in planning because it eliminates surprises. Detailed scoping, material specifications, timeline mapping, and permit coordination happen before we break ground — not while we're building." },
-  { icon: HardHat, title: "Execution Quality", detail: "Our crews are trained craftsmen — not subcontracted labor rotated between contractors. We understand sequencing, tolerances, and the standard we hold. Every phase is supervised and verified." },
-  { icon: MessageSquare, title: "Communication Clarity", detail: "You'll have a single project manager, a defined communication schedule, and real-time updates on progress, decisions needed, and timeline changes. No guessing, no chasing for answers." },
+  { icon: HardHat, title: "Execution Quality", detail: "Project teams work from a documented scope, defined material direction, sequencing requirements, and quality checkpoints appropriate to the work." },
+  { icon: MessageSquare, title: "Communication Clarity", detail: "The project documentation defines the Highlander contact, communication path, key decisions, and how schedule or scope changes are recorded." },
 ];
 
 const whyHighlander = [
-  { icon: Shield, title: "Licensed, Insured, and Established", detail: "We're a permanent, licensed construction company with comprehensive liability and workers' comp coverage — not a pickup-truck outfit that disappears after the check clears." },
-  { icon: Users, title: "In-House Crews", detail: "Our core crews work for Highlander. We're trained to our standards, familiar with our process, and accountable to our quality expectations." },
+  { icon: Shield, title: "Licensed and Established", detail: "Highlander is a North Carolina General Contractor, founded in Franklin in 2017, with showrooms in Franklin and Sylva." },
+  { icon: Users, title: "Project Team Accountability", detail: "Each project is tied to a written scope and Highlander contact so responsibility for decisions, communication, and follow-up is clear." },
   { icon: Mountain, title: "Built for WNC", detail: "We've worked across the region's unique terrain, microclimates, and building conditions for years. We don't learn on your project — we bring institutional knowledge of mountain construction." },
-  { icon: BadgeCheck, title: "Unified Company", detail: "Because we also handle roofing, we coordinate roof-to-structure transitions, weatherproofing, and exterior envelope integrity better than any standalone contractor. One company, one standard, zero finger-pointing." },
+  { icon: BadgeCheck, title: "Roofing + Construction", detail: "Because Highlander offers both roofing and construction, roof-to-structure transitions, flashing, drainage, and exterior-envelope details can be discussed within one project scope." },
 ];
 
 const galleryImages = [
@@ -89,11 +89,11 @@ const galleryImages = [
 const faqsForSEO = [
   { question: "What types of construction projects does Highlander handle?", answer: "We specialize in residential additions, renovations, structural upgrades, exterior improvements, outdoor living spaces, and custom project work." },
   { question: "Do you handle roofing, construction, and design on the same project?", answer: "Yes — and this is one of our key advantages. When a project involves roof work, structural changes, and design planning, having one company manage all three eliminates coordination gaps and protects design integrity from first sketch to final walkthrough." },
-  { question: "How long does a typical construction project take?", answer: "Timelines vary significantly by scope. A deck or porch project typically takes 2–4 weeks. A room addition may take 6–12 weeks. A major renovation can run 3–6 months." },
-  { question: "Do you handle permits and inspections?", answer: "Yes. Permit acquisition, code compliance, and inspection scheduling are part of our standard project management." },
+  { question: "How long does a typical construction project take?", answer: "Construction timing varies by design, engineering, permitting, material lead times, site access, weather, and scope. Highlander develops a project-specific schedule once those variables are known rather than publishing a universal duration." },
+  { question: "Do you handle permits and inspections?", answer: "Highlander coordinates the permits and inspections required for the contracted scope and confirms jurisdiction-specific requirements during planning." },
   { question: "How do you price construction projects?", answer: "We provide detailed, grouped-cost proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees." },
   { question: "Can you work with my designer or project lead?", answer: "Absolutely. We regularly collaborate with designers, project planners, and engineering professionals across Western North Carolina." },
-  { question: "What sets Highlander apart from other contractors in WNC?", answer: "Three things: planning depth, in-house crews, and communication standards." },
+  { question: "What sets Highlander apart from other contractors in WNC?", answer: "Highlander combines licensed general contracting, roofing capability, design and planning support, written scopes, and a documented communication process for mountain projects." },
 ];
 
 /* ═══════════════════════════════════════════
@@ -153,7 +153,7 @@ const ConstructionDivision = () => {
 
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-2 md:order-none text-body-sm md:text-body-lg text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
                 <span className="md:hidden">We walk your site and return a written scope, schedule, and budget range before you commit.</span>
-                <span className="hidden md:inline">Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.</span>
+                <span className="hidden md:inline">Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — led by a licensed North Carolina General Contractor with the scope documented before work begins.</span>
               </motion.p>
 
 
@@ -175,9 +175,9 @@ const ConstructionDivision = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6">
                   {[
                     { value: "6", label: "Service Categories" },
-                    { value: "In-House", label: "Crew Model" },
+                    { value: "Written", label: "Scope Process" },
                     { value: "Design-Build", label: "Capability" },
-                    { value: "Full", label: "Design-Build" },
+                    { value: "2", label: "WNC Showrooms" },
                   ].map((stat) => (
                     <div key={stat.label}>
                       <div className="text-lg font-heading font-bold text-[hsl(var(--gold-ink))]">{stat.value}</div>
@@ -186,7 +186,7 @@ const ConstructionDivision = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
-                  {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
+                  {["Licensed General Contractor", "Written Project Scope", "WNC Mountain Focus", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
                       <span className="text-primary-foreground text-caption font-body font-medium tracking-wide">{item}</span>
@@ -214,7 +214,7 @@ const ConstructionDivision = () => {
             <div className="text-center">
               <GoldLine width="3rem" className="mx-auto mb-8" />
               <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
-                Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and disciplined in-house design planning.
+                Highlander builds mountain homes and outdoor spaces with design-first planning, roofing experience, and a documented construction process tailored to Western North Carolina sites.
               </h2>
               <div className="max-w-2xl mx-auto space-y-6">
                 <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
@@ -241,7 +241,7 @@ const ConstructionDivision = () => {
                     Team-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg leading-relaxed font-body mb-6">
-                    Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed ShingleMaster Credentialed Contractor status to every construction project we take on.
+                    Highlander applies the project discipline developed through its roofing work — written scopes, material planning, weather-detail awareness, and documented communication — to construction projects.
                   </p>
                   <p className="text-dark-section-foreground text-sm md:text-base leading-relaxed font-body mb-8">
                     When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
@@ -249,9 +249,9 @@ const ConstructionDivision = () => {
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { value: REVIEW_STARS, label: "Google Rating" },
-                      { value: "CertainTeed", label: "ShingleMaster Credentialed" },
+                      { value: "CertainTeed", label: "Credentialed Contractor" },
                       { value: `${REVIEW_COUNT}`, label: "Verified Reviews" },
-                      { value: "Rapid", label: "Response Time" },
+                      { value: "Written", label: "Project Scope" },
                     ].map((stat, i) => (
                       <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-border rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--gold-ink))] block">{stat.value}</span>
@@ -435,7 +435,7 @@ const ConstructionDivision = () => {
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
-                Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
+                A company built on documented systems, licensed general contracting, combined roofing and construction capability, and Western North Carolina project experience.
               </p>
             </div>
           </ScrollReveal>
