@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
+import { COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { Link, useLocation } from "react-router-dom";
 import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
 import { motion } from "framer-motion";
@@ -15,10 +15,10 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const CRAFT_EASE = [0.25, 0.1, 0.25, 1] as any;
 
 const promises = [
-  "No high-pressure sales tactics — ever",
-  "Transparent pricing with written scope before work begins",
-  "A named project contact who answers your calls",
-  "Full warranty documentation delivered at walkthrough",
+  "A written scope before work begins",
+  "Pricing and material direction documented for the project",
+  "A defined Highlander contact for project questions",
+  "Project-specific warranty terms reviewed in writing",
 ];
 
 const CTABlock = () => {
@@ -65,7 +65,7 @@ const CTABlock = () => {
               {/* Subtext — calm authority */}
               <ScrollReveal variant="rise-subtle" delay={0.3}>
                 <p className="text-dark-section-muted text-body-sm md:text-body-sm max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
-                  Tell us about your property. A project advisor — not a call center — responds as soon as possible with a clear next step.
+                  Tell us about your property. A Highlander project advisor reviews the request during staffed business hours and follows up with a clear next step.
                 </p>
               </ScrollReveal>
 
@@ -155,11 +155,11 @@ const CTABlock = () => {
               >
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                   {[
-                    { icon: Shield, text: "Licensed & Fully Insured" },
-                    { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
-                    { icon: Shield, text: "Licensed General Contractor" },
-                    { icon: Clock, text: "Rapid Storm Response" },
-                    { icon: Mountain, text: "8 WNC Counties" },
+                    { icon: Shield, text: "Licensed NC General Contractor" },
+                    { icon: Award, text: "CertainTeed Credentialed Contractor" },
+                    { icon: Shield, text: "VELUX Certified Installer" },
+                    { icon: Clock, text: "Storm Damage Assessment" },
+                    { icon: Mountain, text: `${COUNTY_COUNT} WNC Counties` },
                   ].map((item, i) => (
                     <motion.div
                       key={item.text}
