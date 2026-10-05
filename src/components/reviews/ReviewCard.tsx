@@ -24,6 +24,7 @@ const ReviewCard = ({ review, tone = "light" }: ReviewCardProps) => {
   const [expanded, setExpanded] = useState(false);
   const bodyId = useId();
   const isLong = review.text.length > COLLAPSE_AT;
+  const displayDate = reviewDateLabel(review);
 
   const dark = tone === "dark";
   const border = dark ? "border-dark-section-border" : "border-border";
@@ -72,8 +73,7 @@ const ReviewCard = ({ review, tone = "light" }: ReviewCardProps) => {
       <figcaption className={`mt-4 pt-4 border-t ${border}`}>
         <span className={`block font-heading font-bold text-sm ${heading}`}>{review.name}</span>
         <span className={`block text-caption font-body ${muted}`}>
-          {reviewDateLabel(review)}
-          {review.town ? ` · ${review.town}, NC` : ""}
+          {[displayDate, review.town ? `${review.town}, NC` : ""].filter(Boolean).join(" · ")}
         </span>
 
         <span className="mt-3 flex flex-wrap items-center gap-1.5">
