@@ -35,7 +35,7 @@ const PageCloseCTA = ({
   heading = "Ready to talk about your property?",
   body = "Tell us what's going on and a Highlander advisor will follow up personally with a clear next step — no obligation, no sales pressure.",
   primaryLabel = "Get My Written Estimate",
-  primaryTo = "/consultation",
+  primaryTo = "/request-inspection",
   secondaryLabel,
   secondaryTo,
   context,
