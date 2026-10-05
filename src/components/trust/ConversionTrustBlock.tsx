@@ -17,7 +17,7 @@ import { BUSINESS, CREDENTIALS as BUSINESS_CREDENTIALS, REVIEW_LINE_AS_OF } from
 
 export type TrustCategory = "roofing" | "construction" | "storm" | "commercial";
 
-const RESPONSE_PROMISE = "Every inquiry gets a personal reply within 24 hours — most the same business day.";
+const RESPONSE_PROMISE = "A Highlander team member reviews inquiries during staffed business hours and follows up with the next available step.";
 
 /** Reviews that reference warranty terms are excluded: unverified claim surface. */
 const safeReviews = REVIEWS.filter((r) => !/warrant/i.test(r.text));
@@ -81,7 +81,7 @@ const ConversionTrustBlock = ({
 
   if (variant === "band") {
     const items = [
-      { icon: Shield, label: BUSINESS.licenseNumber, detail: "Licensed NC General Contractor · fully insured" },
+      { icon: Shield, label: BUSINESS.licenseNumber, detail: "North Carolina General Contractor license" },
       { icon: Users, label: `Family-owned in Franklin since ${BUSINESS.foundingYear}`, detail: "Showrooms in Franklin & Sylva" },
       { icon: Star, label: REVIEW_LINE_AS_OF, detail: "Google Business Profile reviews" },
       { icon: MapPin, label: `${towns.length} WNC towns served`, detail: `Across ${counties.length} mountain counties` },
@@ -168,7 +168,7 @@ const ConversionTrustBlock = ({
               {review.text}
             </blockquote>
             <figcaption className="mt-2 text-caption font-body text-muted-foreground">
-              {review.name} · {reviewDateLabel(review)} ·{" "}
+              {review.name}{reviewDateLabel(review) ? ` · ${reviewDateLabel(review)}` : ""} ·{" "}
               <a
                 href={review.sourceUrl}
                 target="_blank"
