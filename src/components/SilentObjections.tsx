@@ -9,12 +9,12 @@ import GoldLine from "@/components/motion/GoldLine";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const objections = [
-  { icon: DollarSign, question: "Why is your pricing higher than the other bids I'm getting?", answer: "Because the lowest bid usually means the shortest-lasting work. Our pricing reflects CertainTeed-certified materials selected for your specific elevation, full-time crews — not day laborers — and warranties we personally stand behind. We've rebuilt too many projects that were 'done right' by the cheapest option. We'd rather earn your trust once than inherit someone else's problems." },
-  { icon: HardHat, question: "How much will this disrupt my family's daily life?", answer: "Less than you think. We stage materials carefully, contain debris daily, and communicate start times and noise windows before each phase. Most residential roofs are completed in 2–5 days. We treat your property like someone lives there — because someone does." },
-  { icon: Shield, question: "I've been burned by contractors before. How is this different?", answer: "We're a licensed General Contractor and CertainTeed ShingleMaster Credentialed Contractor — top 1% nationally. But credentials aside: we live in these counties. The owner answers your call, walks your property, and personally signs off on every completed project. We provide written scope, photo documentation at every phase, and a warranty package you hold in your hands — not buried in an email." },
-  { icon: Clock, question: "Is this actually urgent, or are you just trying to close a sale?", answer: "We'll tell you honestly. If you have an active leak or documented storm damage, waiting costs money. If it's cosmetic or preventative, we'll help you plan around weather windows, budget, and timing. There's no manufactured urgency here — just a candid assessment of what your property needs and when." },
-  { icon: MessageSquare, question: "Will I actually be able to reach someone during the project?", answer: "You'll have a named point of contact assigned before work begins. You'll receive a written scope, daily progress updates during the build, and a final walkthrough when we're done. You will never have to call twice to get an answer." },
-];
+  { icon: DollarSign, question: "Why can roofing bids be so different?", answer: "Roofing proposals can differ because the material system, tear-off assumptions, flashing details, ventilation, access, decking allowances, cleanup, and warranty eligibility are not always scoped the same way. Highlander puts the proposed scope and material direction in writing so you can compare what is actually included." },
+  { icon: HardHat, question: "How much will the work disrupt my home?", answer: "Roofing is noisy and active work, so we do not pretend otherwise. Before mobilization, the project team explains staging, access, expected work windows, property-protection steps, and the schedule for your specific roof." },
+  { icon: Shield, question: "I've been burned by contractors before. How is this different?", answer: "Highlander is a licensed North Carolina General Contractor, CertainTeed Credentialed Contractor, and VELUX Certified Installer. More importantly, your project starts with a written scope and clear contact path, so the work being discussed is documented before it begins." },
+  { icon: Clock, question: "Is this actually urgent, or are you just trying to close a sale?", answer: "An active leak or exposed storm damage deserves prompt attention, while cosmetic or preventative work may allow more planning time. Highlander documents what is visible, explains the risk, and lets the condition of the property drive the recommendation." },
+  { icon: MessageSquare, question: "How will communication work during the project?", answer: "The project documentation identifies the Highlander contact and the planned communication path. Schedule changes, scope questions, and any material changes should be documented so you are not relying on vague verbal promises." },
+]
 
 const SilentObjections = () => {
   return (
@@ -31,8 +31,8 @@ const SilentObjections = () => {
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-lg mx-auto text-sm font-body leading-relaxed">
-              We've heard these from hundreds of clients before signing.
-              Here's what we tell them — every time, unedited.
+              These are common questions homeowners raise before signing.
+              The answers below explain how Highlander approaches them.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.35} className="mt-6" />
