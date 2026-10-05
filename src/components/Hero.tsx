@@ -18,7 +18,6 @@ import heroLayer2WebpSet from "@/assets/gallery/metal-010.webp?w=640;960;1280;16
 import heroLayer3AvifSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=avif&as=srcset";
 import heroLayer3WebpSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import veluxLogo from "@/assets/logo-velux.png";
-import certainteedPremierBadge from "@/assets/badge-certainteed-premier.webp";
 import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -30,9 +29,9 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const DRAMATIC_EASE = [0.16, 1, 0.3, 1] as any;
 
 const trustItems = [
-  { icon: Shield, label: "Licensed & Insured" },
-  { icon: Award, label: "CertainTeed ShingleMaster Premier Credentialed" },
-  { icon: HardHat, label: "Licensed General Contractor" },
+  { icon: Shield, label: "Licensed NC General Contractor" },
+  { icon: Award, label: "CertainTeed Credentialed Contractor" },
+  { icon: HardHat, label: "VELUX Certified Installer" },
   { icon: Clock, label: "WNC · Since 2017" },
 ];
 
@@ -272,7 +271,7 @@ const Hero = () => {
                 <span className="block">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva — with a written scope and price before any work starts.</span>
               )}
               <span className={textLed ? "hidden" : "hidden md:inline"}>Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
-              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed · Insured · CertainTeed ShingleMaster Premier</span>
+              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed NC GC · CertainTeed Credentialed · VELUX Certified</span>
             </p>
 
 
@@ -313,9 +312,9 @@ const Hero = () => {
                 <span className="text-primary-foreground text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · {GOOGLE_REVIEW_AGGREGATE.reviewCount} Reviews</span>
               </div>
               <div className="w-px h-3.5 md:h-6 bg-primary-foreground/30" />
-              <span className="text-primary-foreground text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
+              <span className="text-primary-foreground text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed NC General Contractor</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
-              <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Crews Based in Franklin, NC</span>
+              <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Franklin Showroom · 40 Depot Street</span>
             </motion.div>
 
             {/* Manufacturer credentials */}
@@ -351,21 +350,15 @@ const Hero = () => {
                 to="/certifications"
                 className="inline-flex max-w-full items-center gap-2.5 md:gap-3 bg-primary-foreground/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] px-2 md:px-3 py-1.5 md:py-2 hover:bg-primary-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
               >
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src={certainteedPremierBadge}
-                  alt="CertainTeed ShingleMaster Premier Credentialed"
-                  width={336}
-                  height={319}
-                  className="h-11 md:h-14 w-auto flex-shrink-0"
-                />
+                <span className="flex h-10 w-10 md:h-12 md:w-12 flex-shrink-0 items-center justify-center border border-[hsl(var(--highland-gold)/0.35)] bg-primary-foreground/[0.04]">
+                  <Award className="h-5 w-5 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
+                </span>
                 <span className="flex min-w-0 flex-col leading-tight text-left">
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] md:tracking-[0.16em] text-[hsl(var(--gold-ink))]">
-                    CertainTeed Premier
+                    CertainTeed
                   </span>
                   <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground">
-                    ShingleMaster Premier Credentialed
+                    Credentialed Contractor
                   </span>
                 </span>
               </Link>
