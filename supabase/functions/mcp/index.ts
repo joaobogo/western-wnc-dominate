@@ -65,8 +65,8 @@ var BUSINESS = {
       href: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019"
     },
     {
-      label: "CertainTeed ShingleMaster Premier Credentialed",
-      detail: "Access to enhanced manufacturer warranty options; eligibility and terms vary by roof system and project"
+      label: "CertainTeed Credentialed Contractor",
+      detail: "CertainTeed roofing-system training; specific warranty eligibility and terms are confirmed per project"
     },
     { label: "VELUX Certified Installer", detail: "Skylight installation and flashing kits" },
     { label: "Family-owned in Franklin since 2017", detail: "Showrooms in Franklin & Sylva" }
@@ -220,7 +220,7 @@ var get_business_info_default = defineTool({
       service_area: "Western North Carolina \u2014 Macon, Jackson, Swain, Haywood, Transylvania, Henderson, Buncombe, Cherokee, and Clay counties.",
       divisions: ["Roofing", "Construction"],
       credentials: [
-        "CertainTeed ShingleMaster Credentialed Contractor",
+        "CertainTeed Credentialed Contractor Contractor",
         "Licensed General Contractor (NC)"
       ],
       positioning: "Premium local roofing and construction team serving Western NC mountain homes since founding. Team-led, mountain-specialized crews."
