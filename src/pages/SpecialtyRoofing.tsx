@@ -143,12 +143,12 @@ const SpecialtyRoofing = () => {
 
                         <div className="overflow-hidden mb-2">
                           <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                            Where Craft
+                            Specialty Roofing in Western North Carolina
                           </motion.h1>
                         </div>
                         <div className="overflow-hidden mb-8">
                           <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                            Meets Design.
+                            Where Craft Meets Design.
                           </motion.h2>
                         </div>
 
@@ -157,7 +157,7 @@ const SpecialtyRoofing = () => {
                         </motion.p>
 
                         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                          <Link to="/consultation" className="btn btn-primary btn-lg group relative">
+                          <Link to="/request-inspection" className="btn btn-primary btn-lg group relative">
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                             <span className="relative">Discuss Your Project</span>
                             <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -422,7 +422,7 @@ const SpecialtyRoofing = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                              <Link to="/consultation" className="btn btn-primary btn-lg group relative">
+                              <Link to="/request-inspection" className="btn btn-primary btn-lg group relative">
                                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                 <span className="relative">Discuss Your Project</span>
                                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
