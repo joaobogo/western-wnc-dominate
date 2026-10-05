@@ -22,9 +22,9 @@ import ShowroomVisitBlock from "@/components/locations/ShowroomVisitBlock";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const TRUST_POINTS = [
-  { icon: Clock, text: "Personalized response within 24 hours" },
-  { icon: Shield, text: "Licensed GC · Fully insured · Written scope on every job" },
-  { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
+  { icon: Clock, text: "Requests reviewed during staffed business hours" },
+  { icon: Shield, text: "Licensed NC General Contractor · Written project scope" },
+  { icon: Award, text: "CertainTeed Credentialed Contractor" },
   { icon: MapPin, text: "Locally owned — Franklin, NC" },
 ];
 
@@ -70,7 +70,7 @@ export default function Contact() {
                     Contact Highlander Building Services
                   </h1>
                   <p className="text-body-lg md:text-body-xl text-white/95 leading-relaxed max-w-xl font-medium drop-shadow-sm">
-                    Call us, send a message, or request an estimate. A Highlander advisor — not a call center — handles every inquiry personally.
+                    Call us, send a message, or request an estimate. A Highlander advisor reviews your inquiry and follows up with the appropriate next step.
                   </p>
                 </motion.div>
 
