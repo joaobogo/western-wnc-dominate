@@ -23,9 +23,9 @@ const values = [
   { icon: Hammer, title: "Craftsmanship as Standard", description: "Every project reflects our personal standard, not the minimum required. We build like we're building for our own family." },
   { icon: Heart, title: "Relationships Over Transactions", description: "We don't chase projects. We earn trust. Most of our work comes from referrals and repeat clients who've seen what we deliver." },
   { icon: Mountain, title: "Mountain-Built Knowledge", description: "We understand what elevation, weather exposure, and WNC terrain demand from a roof and a structure. That knowledge is earned, not taught." },
-  { icon: Users, title: "Accountability You Can See", description: "The owner walks your property. Your crew lead is on-site daily. When you call, a real person answers. That's how it should work." },
-  { icon: Shield, title: "Licensed, Insured, Certified", description: "Licensed NC General Contractor. CertainTeed ShingleMaster Credentialed Contractor. Fully insured. We carry the credentials because we've earned them." },
-  { icon: Award, title: "Military Friendly Company", description: "We are proud to be a military-friendly company, offering dedicated support and special considerations to those who have served. Honor and integrity guide every project we undertake." },
+  { icon: Users, title: "Accountability You Can See", description: "You receive a written scope, a named project contact, and a clear path for questions and follow-up throughout the work." },
+  { icon: Shield, title: "Licensed & Credentialed", description: "Licensed NC General Contractor. CertainTeed Credentialed Contractor. VELUX Certified Installer. Verification details are linked on our certifications page." },
+  { icon: Award, title: "Local Accountability", description: "Highlander has operated from Franklin since 2017, with showrooms in Franklin and Sylva and a team serving Western North Carolina homeowners." },
 ];
 
 const pickMember = (slug: string) => approvedTeam.find((m) => m.slug === slug)!;
@@ -43,12 +43,7 @@ const leadership = [pickMember("luke-smith"), pickMember("kristy-smith")].map((m
 
 /** Person schema for the two named owners. */
 const ownerSchemas = leadership
-  .map((m) =>
-    personSchema(m.slug, {
-      description: m.bio,
-      memberOf: ["Franklin Daybreak Rotary Club"],
-    }),
-  )
+  .map((m) => personSchema(m.slug, { description: m.bio }))
   .filter(Boolean);
 
 const teamMembers = [
@@ -77,7 +72,7 @@ const maconAward = VERIFIED_AWARDS.find((a) => a.id === "best-of-macon-county");
 
 const milestones = [
   { year: "2017", event: "Founded in Franklin, NC", detail: "Started with a truck, a ladder, and a commitment to doing roofing right in these mountains." },
-  { year: "2019", event: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Earned the industry's highest installer certification, awarded to the top 1% nationally." },
+  { year: "2019", event: "CertainTeed Credentialed Contractor", detail: "Added manufacturer roofing-system training and installation guidance to Highlander's credential set." },
   { year: "2021", event: "Second Office in Sylva", detail: "Expanded into Jackson County to better serve the western reaches of our service area." },
   { year: "2022", event: "Construction Division Launched", detail: "Client demand drove expansion into additions, renovations, and outdoor living builds." },
   // Award milestone renders only once the owner verifies it (see CLAIMS_AUDIT.md).
@@ -231,12 +226,6 @@ const About = () => {
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mt-4" />
             </div>
 
-            <p className="text-center text-body-xs font-body text-muted-foreground mb-10">
-              <a href={BUSINESS.press[0].href} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-2 hover:text-foreground">
-                {BUSINESS.press[0].label}
-              </a>
-            </p>
-
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 mb-24">
               {leadership.map((person, i) => (
                 <motion.div 
@@ -377,14 +366,14 @@ const About = () => {
                   construction, and design projects across Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Ownership sets the standard. A licensed NC General Contractor holding CertainTeed's
-                  ShingleMaster Premier credential approves every scope, and the local team carries that standard
-                  through every estimate, install, inspection, and final walkthrough.
+                  Highlander is a licensed NC General Contractor and CertainTeed Credentialed Contractor.
+                  The team carries those documented standards through estimating, installation, inspection,
+                  and the final project walkthrough.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We don't subcontract critical work. Our in-house crews are trained, vetted, and
-                  held to a standard that most contractors don't even set. When your project is
-                  done, we want it to reflect who we are, not just what we do.
+                  Highlander defines the project scope, assigns accountable project leadership, and
+                  documents quality expectations before work begins. When the project is complete,
+                  the goal is a clear handoff with the work and follow-up responsibilities documented.
                 </p>
               </motion.div>
             </div>
