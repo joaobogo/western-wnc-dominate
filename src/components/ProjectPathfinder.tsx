@@ -43,7 +43,7 @@ const results: Record<string, PathResult> = {
   replace: { title: "Roof Replacement", description: "We'll assess your current roof, recommend the right material for your elevation and exposure, and deliver a full replacement with manufacturer-backed warranty.", href: "/roofing/roof-replacement", cta: "Explore Roof Replacement", highlights: ["Material selection guidance", "CertainTeed warranty options", "Rapid response time"] },
   repair: { title: "Roof Repair", description: "Our team diagnoses accurately and repairs precisely — from single-shingle fixes to complex flashing repairs. We'll tell you honestly if repair is the right call.", href: "/roofing/roof-repair", cta: "Learn About Repairs", highlights: ["Honest diagnosis", "Same-day emergency service", "Transparent pricing"] },
   storm: { title: "Storm Damage Response", description: "We respond rapidly with professional documentation, insurance claim support, and emergency tarping if needed. Your roof is in good hands.", href: "/roofing/storm-damage", cta: "Get Storm Help Now", highlights: ["Rapid emergency response", "Insurance documentation", "Free damage assessment"] },
-  inspect: { title: "Professional Roof Inspection", description: "A thorough 60-point inspection of your entire roof system — we'll document everything and give you a clear picture of your roof's condition.", href: "/consultation", cta: "Request an Inspection", highlights: ["Comprehensive 60-point check", "Photo documentation", "No-pressure report"] },
+  inspect: { title: "Professional Roof Inspection", description: "A thorough 60-point inspection of your entire roof system — we'll document everything and give you a clear picture of your roof's condition.", href: "/request-inspection", cta: "Request an Inspection", highlights: ["Comprehensive 60-point check", "Photo documentation", "No-pressure report"] },
   addition: { title: "Home Additions", description: "From planning through permitting to build-out, we handle every phase of your addition with the same documented process that earned our roofing reputation.", href: "/construction/additions", cta: "Explore Home Additions", highlights: ["Licensed GC oversight", "Professionally coordinated", "Roof-to-structure integration"] },
   renovation: { title: "Renovations & Remodels", description: "Transform your existing spaces with precision craftsmanship. We manage every detail — from structural assessment to final finish.", href: "/construction/renovations", cta: "Explore Renovations", highlights: ["Full project management", "Structural expertise", "Design-build capability"] },
   exterior: { title: "Exterior Improvements", description: "Siding, windows, doors, and façade upgrades that protect your home and transform its appearance. Coordinated with roofing for weatherproofing continuity.", href: "/exterior-improvements", cta: "Explore Exterior Work", highlights: ["Weatherproofing continuity", "Energy efficiency focus", "Curb appeal transformation"] },
@@ -105,7 +105,7 @@ const ProjectPathfinder = () => {
                   ))}
                 </div>
                 <p className="text-center mt-6">
-                  <Link to="/consultation" className="text-xs font-body text-muted-foreground hover:text-primary transition-colors">
+                  <Link to="/request-inspection" className="text-xs font-body text-muted-foreground hover:text-primary transition-colors">
                     Not sure at all? <span className="underline">Talk to an advisor directly →</span>
                   </Link>
                 </p>
@@ -175,7 +175,7 @@ const ProjectPathfinder = () => {
                         <span className="relative">{result.cta}</span>
                         <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                       </Link>
-                      <Link to="/consultation" className="btn btn-secondary btn-md">
+                      <Link to="/request-inspection" className="btn btn-secondary btn-md">
                         See What My Project Needs
                       </Link>
                     </div>
