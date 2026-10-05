@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
@@ -53,7 +53,7 @@ const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Financing = lazy(() => import("./pages/Financing"));
 const Careers = lazy(() => import("./pages/Careers"));
-const RequestInspection = lazy(() => import("./pages/RequestInspection"));
+const RequestInspection = lazy(() => import("./pages/RequestInspection"));\nconst ThankYou = lazy(() => import("./pages/ThankYou"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
 const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
@@ -219,14 +219,14 @@ const App = () => (
 
 
 
-          <Route path="/consultation" element={<IntakeChooser />} />
+          <Route path="/consultation" element={<Navigate to="/request-inspection" replace />} />
           <Route path="/roofing-intake" element={<RoofingIntake />} />
           <Route path="/construction-intake" element={<ConstructionIntake />} />
           <Route path="/roofing-builder" element={<RoofingBuilder />} />
           <Route path="/construction-builder" element={<ConstructionBuilder />} />
           <Route path="/design-intake" element={<DesignIntake />} />
           <Route path="/quote-flow" element={<QuoteFlow />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />\n          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           <Route path="/admin/login" element={<AdminLogin />} />
