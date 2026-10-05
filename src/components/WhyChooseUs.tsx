@@ -14,18 +14,18 @@ const pillars = [
   },
   {
     icon: ShieldCheck,
-    title: "Warranty-Backed Workmanship",
-    description: "Every project carries full labor and material warranties. CertainTeed ShingleMaster Credentialed Contractor certified.",
+    title: "Licensed & Credentialed",
+    description: "Licensed NC General Contractor, CertainTeed Credentialed Contractor, and VELUX Certified Installer with project-specific terms documented in writing.",
   },
   {
     icon: Clock,
-    title: "Rapid Response, Clear Communication",
-    description: "We respond rapidly with clear next steps. Emergency tarping, insurance documentation, and priority scheduling when storms hit.",
+    title: "Clear Communication",
+    description: "Requests are reviewed during staffed business hours, with project scope, scheduling, and next steps documented as the work moves forward.",
   },
   {
     icon: Award,
-    title: "Military Friendly Company",
-    description: "We are proud to support our veterans and active-duty service members with dedicated discounts and priority support.",
+    title: "Established in Western North Carolina",
+    description: "Family-owned in Franklin since 2017, with showrooms in Franklin and Sylva and service across the mountain region.",
   },
 ];
 
