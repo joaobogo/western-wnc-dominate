@@ -23,7 +23,7 @@ const pathways = [
     title: "Schedule a Site Visit",
     desc: "We walk your property, photograph existing conditions, and deliver a written scope with transparent cost groupings. No obligation.",
     action: "See What My Project Needs",
-    href: "/consultation",
+    href: "/request-inspection",
     external: false,
   },
   {
@@ -31,7 +31,7 @@ const pathways = [
     title: "Share Your Project Vision",
     desc: "Have plans, sketches, or a rough idea? Send it to us. We'll review it and call you with honest feedback rapidly.",
     action: "Start the Conversation",
-    href: "/consultation",
+    href: "/request-inspection",
     external: false,
   },
 ];
