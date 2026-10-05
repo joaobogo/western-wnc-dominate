@@ -127,7 +127,7 @@ const CountyPage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="btn btn-primary btn-lg md:text-body-sm min-w-[320px]">
+                  <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-body-sm min-w-[320px]">
                     Start a {county.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                   <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
@@ -397,7 +397,7 @@ const CountyPage = () => {
               From historic roof replacement to engineered home additions, we provide the highest standard of craftsmanship in {county.name}.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
+              <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
                 Start a {county.name} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
               <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark min-w-[240px]">
