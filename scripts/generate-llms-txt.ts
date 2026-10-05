@@ -71,11 +71,11 @@ ${BUSINESS.credentials.map((c) => `- ${c.label}${c.detail ? ` — ${c.detail}` :
 - Legal name: ${BUSINESS.legalName}
 - NC General Contractor license: ${BUSINESS.licenseNumber} (verify: ${BUSINESS.licenseLookupUrl})
 - BBB: A+ accredited since ${BUSINESS.bbbAccreditedSince} (${BUSINESS.bbbUrl})
-- Manufacturer credential: CertainTeed ShingleMaster Credentialed Contractor
+- Manufacturer credential: ${BUSINESS.credentials.find((c) => /certainteed/i.test(c.label))?.label ?? "CertainTeed Credentialed Contractor"}
 - Founded: ${BUSINESS.foundingYear}, family-owned in Franklin, North Carolina
 - Showrooms: ${BUSINESS.locations.map((l) => `${l.locality}, ${l.region} — ${l.streetAddress}, ${l.postalCode}`).join("; ")}
 - Phone numbers: ${BUSINESS.locations.map((l) => `${l.locality} ${formatPhonePlain(l.phoneE164)}`).join("; ")}
-- Google reviews: ${BUSINESS.reviewSummary.ratingValue.toFixed(1)} stars from ${BUSINESS.reviewSummary.reviewCount}+ reviews (last verified ${BUSINESS.reviewSummary.lastVerified})
+- Google reviews: ${BUSINESS.reviewSummary.ratingValue.toFixed(1)} stars from ${BUSINESS.reviewSummary.reviewCount} reviews (last verified ${BUSINESS.reviewSummary.lastVerified})
 - Counties served: ${BUSINESS.countiesServed.map((c) => `${c.name}, ${c.region}`).join("; ")}
 - Key pages: ${BUSINESS.websiteUrl}/roofing · ${BUSINESS.websiteUrl}/roofing/metal/cost · ${BUSINESS.websiteUrl}/roofing-cost-western-nc · ${BUSINESS.websiteUrl}/recent-projects · ${BUSINESS.websiteUrl}/locations/franklin-nc · ${BUSINESS.websiteUrl}/locations/sylva-nc
 
