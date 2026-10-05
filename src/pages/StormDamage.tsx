@@ -217,7 +217,7 @@ const StormDamage = () => {
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <Phone className="w-4 h-4 relative" aria-hidden="true" /> <span className="relative">{PHONE_DISPLAY}</span>
                 </a>
-                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
+                <Link to="/request-inspection" className="btn btn-secondary btn-md btn-on-dark group">
                   Get My Storm Damage Documented
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
@@ -358,7 +358,7 @@ const StormDamage = () => {
                 <a href={PHONE_TEL} className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
-                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
+                <Link to="/request-inspection" className="btn btn-secondary btn-md btn-on-dark">
                   See What My Roof Needs
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
@@ -443,7 +443,7 @@ const StormDamage = () => {
                 <a href={PHONE_TEL} className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
-                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
+                <Link to="/request-inspection" className="btn btn-secondary btn-md btn-on-dark">
                   Get My Storm Damage Documented
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
@@ -626,7 +626,7 @@ const StormDamage = () => {
                     <a href={PHONE_TEL} className="btn btn-primary btn-lg group">
                       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                     </a>
-                    <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
+                    <Link to="/request-inspection" className="btn btn-secondary btn-lg btn-on-dark group">
                       Get My Storm Damage Documented
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
