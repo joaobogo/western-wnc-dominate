@@ -63,7 +63,7 @@ const roofingServices = [
     title: "Storm Damage & Insurance",
     slug: "/roofing/storm-damage",
     problem: "A storm hit your property and you need documented damage your insurer will accept.",
-    description: "Rapid emergency response with full damage documentation, insurance coordination, and priority scheduling — not storm chasing.",
+    description: "Storm-damage assessment with photo documentation, repair or replacement scoping, and insurance-ready project information when applicable.",
     features: ["Emergency tarping", "Insurance documentation", "Adjuster meetings", "Priority repairs"],
   },
   {
@@ -79,7 +79,7 @@ const roofingServices = [
     title: "Metal Roofing",
     slug: "/roofing/metal",
     problem: "You want a roof that outlasts shingles in wind, snow, and mountain sun exposure.",
-    description: "Standing seam and visually complex metal systems rated for 140mph winds and 50+ years of mountain performance. The premium choice.",
+    description: "Standing seam and other metal systems selected around roof geometry, exposure, snow shedding, drainage, and the long-term goals for the property.",
     features: ["Standing seam", "Concealed fastener", "Snow guards", "Custom colors"],
   },
   {
@@ -102,21 +102,21 @@ const galleryItems = [
 ];
 
 const faqs = [
-  { q: "How long does a roof replacement take in WNC?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, and weather. We provide a clear timeline before work begins and communicate daily throughout the project." },
+  { q: "How long does a roof replacement take in WNC?", a: "Timing depends on roof size, pitch, access, material system, weather, and any decking repairs discovered during tear-off. Highlander provides the project schedule and updates for the specific scope before work begins." },
   { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO dimensional shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
   { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photos and measurements, meet with your adjuster on-site, and coordinate the entire repair or replacement process through your insurance claim." },
   { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
-  { q: "Are you certified to install specific roofing brands?", a: "Yes. We are CertainTeed ShingleMaster Credentialed Contractor certified — a designation held by fewer than 1% of roofing contractors nationally. This means enhanced warranties and factory-backed installation quality." },
-  { q: "Do you offer warranties on your roofing work?", a: "Every project includes both the manufacturer's material warranty and Highlander's labor warranty. You receive a complete warranty package at your final walkthrough — documentation you can hold in your hands." },
-  { q: "Can I finance a new roof?", a: "Yes. We offer flexible financing options to make roof replacement accessible. Ask about payment plans during your consultation — there's no obligation and no pressure." },
+  { q: "Are you certified to install specific roofing brands?", a: "Highlander is a CertainTeed Credentialed Contractor and a VELUX Certified Installer. Product, system, and warranty eligibility are confirmed for the specific project before installation." },
+  { q: "Do you offer warranties on your roofing work?", a: "Warranty coverage depends on the manufacturer, products, roof assembly, and written scope. Highlander reviews the coverage that applies to your project before installation and provides the applicable documentation." },
+  { q: "Can I finance a new roof?", a: "Ask the Highlander team about the financing options currently available for your project. Availability, provider terms, and eligibility are confirmed before you make a commitment." },
   { q: "How do I know if I need a repair or full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. We never recommend a replacement when a repair will solve the problem — and we'll document our reasoning so you can decide with confidence." },
 ];
 
 const trustSignals = [
-  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Credentialed installer" },
+  { icon: Award, label: "CertainTeed Credentialed Contractor", detail: "Manufacturer credential" },
   { icon: Shield, label: "Licensed General Contractor", detail: "State of North Carolina" },
-  { icon: FileText, label: "Full Warranty Documentation", detail: "Material + labor coverage" },
-  { icon: Clock, label: "Rapid Storm Response", detail: "Emergency priority service" },
+  { icon: FileText, label: "Written Project Scope", detail: "Project-specific terms" },
+  { icon: Clock, label: "Storm Damage Assessment", detail: "Documented next steps" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -162,7 +162,7 @@ const RoofingDivision = () => {
     <>
       <SEOHead
         title="Roofing Repair & Replacement in Western NC | Highlander"
-        description="Roofing in Western North Carolina: shingle, metal, cedar, storm damage, and commercial systems from a CertainTeed ShingleMaster Credentialed Contractor."
+        description="Roofing in Western North Carolina: repair, replacement, metal, cedar, storm damage, skylights, gutters, and commercial systems from Highlander."
         path="/roofing"
         jsonLd={[
           serviceSchema({ name: "Roofing Services", description: "Expert residential and commercial roofing across Western North Carolina.", url: "/roofing" }),
@@ -264,7 +264,7 @@ const RoofingDivision = () => {
                 className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
                 <span className="md:hidden">We inspect, spec the right system for your elevation, and put scope and price in writing first.</span>
-                <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.</span>
+                <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed credentialed and licensed as a North Carolina General Contractor.</span>
               </motion.p>
 
               <motion.div
@@ -297,7 +297,7 @@ const RoofingDivision = () => {
 
         <AnswerBlock
           question="What roofing services does Highlander provide in Western North Carolina?"
-          answer="Highlander Building Services, Inc. handles roof repair, full roof replacement, metal roofing, synthetic slate and shake, skylights, gutters, and storm damage response across Western North Carolina. Work is run out of our Franklin shop and our Sylva showroom, with a project manager on every job and a written, line-item scope before install."
+          answer="Highlander Building Services, Inc. handles roof repair, full roof replacement, metal roofing, synthetic slate and shake, skylights, gutters, and storm damage assessment across Western North Carolina. Work is supported from the Franklin and Sylva showrooms, with the project scope documented before installation."
           points={[
             "Repair, replacement, metal, and specialty roofing",
             "Storm damage inspections after mountain weather",
