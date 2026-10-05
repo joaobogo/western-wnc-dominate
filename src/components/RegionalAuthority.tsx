@@ -38,20 +38,19 @@ const RegionalAuthority = () => {
             <p>
               Highlander Building Services is a family-owned{" "}
               <strong>roofing company serving Western North Carolina</strong> from
-              our Franklin office — the same crews handling{" "}
+              our Franklin showroom, providing{" "}
               <Link to="/roofing/roof-repair" className="text-primary font-semibold hover:underline">roof repair in Western NC</Link>,{" "}
               <Link to="/roofing/roof-replacement" className="text-primary font-semibold hover:underline">full roof replacement</Link>, and{" "}
               <Link to="/roofing/metal" className="text-primary font-semibold hover:underline">standing-seam metal roofing</Link>{" "}
               for mountain homes from Macon County to Jackson, Buncombe, and Haywood.
             </p>
             <p>
-              We are a licensed <strong>roofing contractor</strong> and General
-              Contractor, which means the same team that installs your roof can
-              also plan and build your addition, porch, or renovation. That's
-              rare in this market — most homeowners have to hire a{" "}
-              <em>roofing company</em> and a separate builder. With Highlander,{" "}
-              <Link to="/construction" className="text-primary font-semibold hover:underline">roofing and construction in Western NC</Link>{" "}
-              live under one roof, one license, and one warranty.
+              Highlander is a licensed North Carolina General Contractor offering both
+              roofing and construction services. That lets homeowners discuss roof-to-structure
+              transitions, exterior envelope work, additions, porches, and renovations with one
+              company instead of starting with disconnected scopes.{" "}
+              <Link to="/construction" className="text-primary font-semibold hover:underline">Roofing and construction in Western NC</Link>{" "}
+              are planned within the same Highlander project system.
             </p>
             <p>
               Homeowners searching for a{" "}
@@ -60,9 +59,8 @@ const RegionalAuthority = () => {
               <Link to="/service-areas/highlands-nc" className="text-primary font-semibold hover:underline">roofing contractor near Highlands, NC</Link>,
               or a{" "}
               <Link to="/service-areas/cashiers-nc" className="text-primary font-semibold hover:underline">roofing contractor near Cashiers, NC</Link>{" "}
-              consistently choose Highlander because we install for elevation —
-              heavier flashing, upgraded fastening schedules, ice-and-water shield
-              where the code doesn't require it, and details that hold at 4,000 ft.
+              can use Highlander to evaluate how elevation, wind exposure, rainfall,
+              drainage, roof geometry, and access should influence the written project scope.
             </p>
           </div>
 
@@ -107,7 +105,7 @@ const RegionalAuthority = () => {
             <ul className="space-y-3 mb-6 text-body-sm font-body">
               <li className="flex items-start gap-3">
                 <ShieldCheck className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
-                <span><strong>Licensed &amp; Insured</strong> — NC General Contractor + CertainTeed ShingleMaster credentialed.</span>
+                <span><strong>Licensed NC General Contractor</strong> — CertainTeed Credentialed Contractor.</span>
               </li>
               <li className="flex items-start gap-3">
                 <Wrench className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
