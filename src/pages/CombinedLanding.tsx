@@ -68,14 +68,6 @@ const validate = (values: FormState): FormErrors => {
   return errors;
 };
 
-const intentLabel = (intent: Intent) => {
-  if (intent === "roofing") return "Roofing";
-  if (intent === "construction") return "Construction";
-  if (intent === "both") return "Both";
-  if (intent === "not_sure") return "Not sure";
-  return "";
-};
-
 const intentHelper = (intent: Intent) => {
   if (intent === "roofing") return "We’ll route your request to the roofing team.";
   if (intent === "construction") return "We’ll route your request to the construction team.";
@@ -150,9 +142,10 @@ function SharedForm({
       data-landing-form={instance}
       data-gtm-form-name={SOURCE}
       data-gtm-form-id={FORM_ID}
-      className={compact ? "w-full" : "rounded-sm border border-border bg-card p-5 shadow-flat sm:p-6"}
+      className={compact ? "w-full" : "rounded-sm border border-border bg-card p-5 shadow-[0_18px_50px_-28px_hsl(var(--foreground)/0.35)] sm:p-6"}
       onSubmit={(event) => {
         event.preventDefault();
+        markStart();
         void onSubmit(instance);
       }}
     >
@@ -164,6 +157,26 @@ function SharedForm({
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Roofing, construction or a little of both? Leave your details and Highlander will help you find the right next step.
           </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-sm bg-secondary px-3 py-2.5 text-sm">
+            <span className="font-semibold text-foreground">Prefer to talk now?</span>
+            <a
+              href={PHONE_TEL}
+              className="inline-flex min-h-10 items-center gap-2 font-bold text-primary underline underline-offset-4"
+              aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
+              onClick={() =>
+                trackPhoneClick({
+                  phone_number: PHONE_PLAIN,
+                  link_url: PHONE_TEL,
+                  click_location: `lp_combined_${instance}_form`,
+                  page_type: "paid_landing",
+                })
+              }
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {PHONE_DISPLAY}
+            </a>
+            <span className="text-xs text-muted-foreground">{PRIMARY_HOURS_LABEL}</span>
+          </div>
 
           <fieldset className="mt-5">
             <legend className="mb-2 text-sm font-semibold text-foreground">What are you thinking about? <span className="font-normal text-muted-foreground">(optional)</span></legend>
@@ -364,6 +377,7 @@ export default function CombinedLanding() {
     });
     if (!result) return;
     if (result.error || (!result.id && !result.duplicate)) {
+      trackFormError({ form_name: SOURCE, form_id: FORM_ID, error_type: "delivery" });
       setSubmitError(`We could not confirm your request. Please try again or call ${PHONE_DISPLAY}.`);
       return;
     }
@@ -427,16 +441,35 @@ export default function CombinedLanding() {
               <p className="mt-4 font-semibold text-foreground">Roofing. Construction. One conversation to get started.</p>
               <div className="mt-5 flex flex-wrap items-center gap-3 text-sm">
                 <span className="inline-flex items-center gap-1.5 font-semibold text-foreground"><Star className="h-4 w-4 fill-current text-primary" aria-hidden="true" />{REVIEW_RATING}/5 on Google</span>
-                <span aria-hidden="true">|</span><span className="text-muted-foreground">Based in Franklin, NC</span>
+                <span aria-hidden="true">|</span><span className="font-medium text-foreground">Based in Franklin, NC</span>
+                <span aria-hidden="true" className="hidden sm:inline">|</span><span className="text-muted-foreground">One short request</span>
               </div>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <button type="button" onClick={scrollToNearestForm} className="btn btn-primary btn-md min-h-12">Discuss My Home Project <ArrowRight className="h-4 w-4" aria-hidden="true" /></button>
-                {phoneLink("Call " + PHONE_DISPLAY, "lp_combined_hero", "btn btn-secondary btn-md min-h-12")}
+                {phoneLink("Call Highlander: " + PHONE_DISPLAY, "lp_combined_hero", "btn btn-secondary btn-md min-h-12")}
               </div>
             </div>
 
-            <div ref={heroFormWrap} className="order-2 lg:col-span-5 lg:row-span-2" data-main-form>
+            <div ref={heroFormWrap} className="order-2 lg:col-span-5 lg:row-span-2 lg:pt-1" data-main-form>
+              <div className="mb-3 hidden items-center justify-between gap-3 lg:flex">
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-primary">Short form · 3 fields</span>
+                <span className="text-xs text-muted-foreground">Service choice is optional</span>
+              </div>
               <SharedForm instance="hero" {...formProps} onSubmit={handleSubmit} />
+              <p className="mt-3 text-center text-xs text-muted-foreground">
+                Prefer a conversation? Call <a
+                  href={PHONE_TEL}
+                  className="font-semibold text-foreground underline underline-offset-2"
+                  onClick={() =>
+                    trackPhoneClick({
+                      phone_number: PHONE_PLAIN,
+                      link_url: PHONE_TEL,
+                      click_location: "lp_combined_form_helper",
+                      page_type: "paid_landing",
+                    })
+                  }
+                >{PHONE_DISPLAY}</a>.
+              </p>
             </div>
 
             <div className="order-3 grid gap-4 sm:grid-cols-2 lg:col-span-7">
@@ -445,8 +478,8 @@ export default function CombinedLanding() {
                 <figcaption className="px-4 py-3 text-xs text-muted-foreground">Documented Highlander roofing work.</figcaption>
               </figure>
               <figure className={`overflow-hidden rounded-sm border bg-card transition-colors ${intent === "construction" || intent === "both" ? "border-primary ring-2 ring-primary/20" : "border-border"}`}>
-                <img src="/media/wnc-construction-framing.webp" alt="Highlander Building Services construction framing work on a Western North Carolina home improvement project" width={760} height={520} className="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-                <figcaption className="px-4 py-3 text-xs text-muted-foreground">Highlander construction work in Western North Carolina.</figcaption>
+                <img src="/media/85aa1f15-construction-project-highlands.webp" alt="Mountain-home construction project image featured by Highlander Building Services in Western North Carolina" width={760} height={520} className="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
+                <figcaption className="px-4 py-3 text-xs text-muted-foreground">Construction work featured on Highlander's current Western North Carolina website.</figcaption>
               </figure>
             </div>
           </div>
@@ -480,6 +513,12 @@ export default function CombinedLanding() {
                   </button>
                 </article>
               ))}
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <button type="button" onClick={scrollToNearestForm} className="btn btn-primary btn-md min-h-12">
+                Discuss My Home Project <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </button>
+              {phoneLink("Call " + PHONE_DISPLAY, "lp_combined_proof", "btn btn-secondary btn-md min-h-12")}
             </div>
           </div>
         </section>
@@ -552,6 +591,12 @@ export default function CombinedLanding() {
             <div className="max-w-2xl">
               <h2 className="font-heading text-3xl font-bold md:text-4xl">One home. A clear next step.</h2>
               <p className="mt-4 leading-relaxed text-primary-foreground/90">Whether it is the roof, the living space or both, start with a conversation. Send your details and Highlander will help route your request to the right team.</p>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                {phoneLink("Call " + PHONE_DISPLAY, "lp_combined_final", "btn btn-secondary btn-md min-h-12")}
+                <button type="button" onClick={scrollToNearestForm} className="btn btn-md min-h-12 border border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
+                  Discuss My Home Project
+                </button>
+              </div>
               <p className="mt-4 text-sm text-primary-foreground/80">Serving Franklin, Highlands, Cashiers, Sylva and surrounding Western North Carolina communities.</p>
             </div>
             <div ref={finalFormWrap} className="mt-8 max-w-3xl" data-main-form>
@@ -564,7 +609,11 @@ export default function CombinedLanding() {
           <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-5 text-sm text-muted-foreground md:px-8 lg:flex-row lg:items-center lg:justify-between">
             <div><div className="font-semibold text-foreground">{BUSINESS.legalName}</div><div>{FRANKLIN_NAP}</div><div>{PRIMARY_HOURS_LABEL}, Eastern Time</div></div>
             <div className="flex flex-wrap items-center gap-4">
-              <a href={PHONE_TEL} className="underline underline-offset-2 hover:text-foreground">{PHONE_DISPLAY}</a>
+              <a
+                href={PHONE_TEL}
+                className="underline underline-offset-2 hover:text-foreground"
+                onClick={() => trackPhoneClick({ phone_number: PHONE_PLAIN, link_url: PHONE_TEL, click_location: "lp_combined_footer", page_type: "paid_landing" })}
+              >{PHONE_DISPLAY}</a>
               <a href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground">Privacy policy</a>
               <a href="/accessibility" className="underline underline-offset-2 hover:text-foreground">Accessibility</a>
             </div>
@@ -573,11 +622,11 @@ export default function CombinedLanding() {
 
         {stickyVisible && (
           <>
-            <div data-sticky-cta className="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border bg-background/98 px-5 py-3 shadow-lg backdrop-blur lg:block">
+            <div data-sticky-cta className="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border bg-background/98 px-5 py-3 shadow-lg backdrop-blur xl:block">
               <div className="mx-auto max-w-[1200px]"><SharedForm instance="rail" {...formProps} onSubmit={handleSubmit} /></div>
             </div>
             {!keyboardOpen && (
-              <div data-sticky-cta className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-3 shadow-lg backdrop-blur lg:hidden" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}>
+              <div data-sticky-cta className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-3 shadow-lg backdrop-blur xl:hidden" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}>
                 {phoneLink("Call Highlander", "lp_combined_sticky", "btn btn-secondary min-h-12 w-full justify-center")}
                 <button type="button" onClick={scrollToNearestForm} className="btn btn-primary min-h-12 w-full justify-center">Discuss My Project</button>
               </div>
