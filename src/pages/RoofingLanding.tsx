@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { ArrowRight, CheckCircle2, Phone, Star } from "lucide-react";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import { trackFormError, trackFormStart, trackPhoneClick } from "@/lib/gtm";
 import {
@@ -410,6 +410,13 @@ export default function RoofingLanding() {
         title="Roof Repair & Replacement in Western NC | Highlander"
         description="Roof repair, replacement and metal roofing in Western North Carolina. Call Highlander or send a short request to discuss your roof."
         path={PATH}
+        jsonLd={[
+          serviceSchema({ name: "Roof Repair & Replacement", description: "Roof repair, replacement and metal roofing in Western North Carolina. Call Highlander or send a short request to discuss your roof.", url: PATH }),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Roofing Estimate", url: PATH },
+          ]),
+        ]}
         noindex="follow"
       />
 
