@@ -440,11 +440,11 @@ export default function CombinedLanding() {
             </div>
 
             <div className="order-3 grid gap-4 sm:grid-cols-2 lg:col-span-7">
-              <figure className="overflow-hidden rounded-sm border border-border bg-card">
+              <figure className={`overflow-hidden rounded-sm border bg-card transition-colors ${intent === "roofing" || intent === "both" ? "border-primary ring-2 ring-primary/20" : "border-border"}`}>
                 <img src={metalRoof} alt="Dark bronze standing seam metal roof installed by Highlander Building Services in Western North Carolina" width={760} height={520} className="aspect-[4/3] w-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
                 <figcaption className="px-4 py-3 text-xs text-muted-foreground">Documented Highlander roofing work.</figcaption>
               </figure>
-              <figure className="overflow-hidden rounded-sm border border-border bg-card">
+              <figure className={`overflow-hidden rounded-sm border bg-card transition-colors ${intent === "construction" || intent === "both" ? "border-primary ring-2 ring-primary/20" : "border-border"}`}>
                 <img src="/media/wnc-construction-framing.webp" alt="Highlander Building Services construction framing work on a Western North Carolina home improvement project" width={760} height={520} className="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
                 <figcaption className="px-4 py-3 text-xs text-muted-foreground">Highlander construction work in Western North Carolina.</figcaption>
               </figure>
