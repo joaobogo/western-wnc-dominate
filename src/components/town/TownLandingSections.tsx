@@ -38,7 +38,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
               Storm or Active Leak in {town.name}?
             </p>
             <p className="font-heading font-bold text-base md:text-xl leading-tight text-white">
-              Rapid response tarping & insurance assessments.
+              Storm damage assessment & temporary protection guidance.
             </p>
           </div>
         </div>
@@ -106,7 +106,7 @@ const services = [
   {
     icon: CloudLightning, label: "Storm Damage",
     desc: (t: TownData) => {
-      const base = "Insurance documentation, emergency tarping, and full storm restoration.";
+      const base = "Contractor documentation, temporary protection options, and storm-related roof repair.";
       return t.county
         ? `${base} We document ${t.name} storm losses across ${t.county} the way carriers expect them recorded.`
         : base;
@@ -248,7 +248,7 @@ const reasons = [
   { icon: ShieldCheck, title: "Licensed general contractor", desc: () => "Full roofing and construction credentials, workers' comp, and liability — verifiable on every proposal." },
   { icon: Award, title: "CertainTeed ShingleMaster", desc: () => "Credentialed contractor status with material-backed warranty options most local competitors can't offer." },
   { icon: Users, title: "Team-led project delivery", desc: () => "A named project manager, inspector, and crew lead — you always know who to call." },
-  { icon: Clock, title: "Rapid response", desc: (t: string) => `Most ${t}-area inspections booked on a same-day or next-day basis.` },
+  { icon: Clock, title: "Direct contact", desc: (t: string) => `Call or send a request to discuss roofing needs in ${t} and the appropriate next step.` },
   { icon: DollarSign, title: "Financing available", desc: () => "Structured payment options for approved buyers so major roofing or construction work fits your plan." },
 ];
 
@@ -357,7 +357,7 @@ export const TownFAQ = ({
       : [
           {
             question: `How quickly can Highlander get to my home in ${town.name}?`,
-            answer: `Most ${town.name}-area inspections are booked on a same-day or next-day basis. Storm and active-leak calls are prioritized ahead of standard scheduling.`,
+            answer: `Scheduling in ${town.name} depends on the service, weather, access, and current workload. For an active leak, call during office hours; outside office hours, send a request for follow-up.`,
           },
           {
             question: `What roofing materials do you recommend for ${town.name}?`,
