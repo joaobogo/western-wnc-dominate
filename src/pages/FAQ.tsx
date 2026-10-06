@@ -21,7 +21,7 @@ const categories: Category[] = [
     label: "Roof Inspections",
     items: [
       { q: "How often should I have my roof inspected in Western North Carolina?", a: "We recommend a professional roof inspection at least once a year, plus after any major storm. WNC weather — wind, hail, ice, and heavy rain — can cause damage that isn't visible from the ground." },
-      { q: "Do you charge for roof inspections?", a: "Standard residential roof inspections are free for homeowners in Franklin, Highlands, Cashiers, Sylva, and surrounding Western NC areas. Specialty assessments (forensic or insurance-specific) may include a fee — we'll let you know upfront." },
+      { q: "Do you offer free estimates?", a: "Yes. Highlander provides free estimates for standard residential roofing projects in Franklin, Highlands, Cashiers, Sylva, and surrounding Western NC areas. Specialty assessments (forensic or insurance-specific) may include a fee — we'll let you know upfront." },
       { q: "How long does a roof inspection take?", a: "Most residential inspections take 45 to 90 minutes, including a walk-through with you afterward to review findings and photos." },
     ],
   },
@@ -47,7 +47,7 @@ const categories: Category[] = [
     id: "storm",
     label: "Storm Damage",
     items: [
-      { q: "What should I do immediately after a storm?", a: "Document any visible damage with photos, avoid climbing on the roof yourself, and call Highlander to schedule a free storm-damage inspection. We'll provide a detailed report you can share with your insurance carrier." },
+      { q: "What should I do immediately after a storm?", a: "Document any visible damage with photos, avoid climbing on the roof yourself, and call Highlander to request a free estimate for storm-damage repair. We'll review the situation and explain the appropriate next step." },
       { q: "Will my insurance cover storm damage to my roof?", a: "It depends on your policy, the cause of damage, and the age of the roof. Many WNC homeowners are covered for wind, hail, and falling-tree damage. We'll help you understand what's likely covered, but your carrier makes the final determination." },
     ],
   },
@@ -56,7 +56,7 @@ const categories: Category[] = [
     label: "Insurance Claims",
     items: [
       { q: "Do you work with my insurance company?", a: "Yes. We routinely document damage, meet adjusters on-site, and provide the photos, measurements, and scope of work your carrier needs to process a claim fairly." },
-      { q: "Should I call my insurance company before calling you?", a: "We usually recommend a free Highlander inspection first. If there's no real damage, there's no reason to file. If there is, we'll help you understand what you're filing on before you make the call." },
+      { q: "Should I call my insurance company before calling you?", a: "You can start by requesting a free Highlander estimate. We'll review the roofing concern and explain the appropriate next step before you decide how to proceed with a claim." },
     ],
   },
   {
@@ -195,7 +195,7 @@ const categories: Category[] = [
     id: "getting-started",
     label: "How to Start a Project",
     items: [
-      { q: "How do I get started with Highlander?", a: `The easiest path is to request a free inspection or consultation on our Request Inspection page, or call ${PHONE_DISPLAY}. A local team member will reach out — usually the same or next business day — to schedule an on-site visit and understand what you're planning.` },
+      { q: "How do I get started with Highlander?", a: `The easiest path is to request a free estimate or consultation online, or call ${PHONE_DISPLAY}. A local team member will reach out to discuss your project and the appropriate next step.` },
       { q: "What should I have ready for the first conversation?", a: "Just the basics: the property address, what you're seeing or want to build, and your rough timing. If you already have plans, photos, or an insurance claim number, share those too — but none of it is required to get started." },
       { q: "What if I'm still early and just exploring ideas?", a: "That's a great time to reach out. Early conversations help us right-size the project, flag anything that could affect budget or timeline, and — if design work is needed — start you on the right phase." },
     ],
@@ -213,7 +213,7 @@ const categories: Category[] = [
     id: "contact",
     label: "Contacting Highlander",
     items: [
-      { q: "How do I get in touch?", a: `Call ${PHONE_DISPLAY}, request a free inspection or consultation online, or use the contact form on the Contact page. Someone from our local Western NC team will follow up personally.` },
+      { q: "How do I get in touch?", a: `Call ${PHONE_DISPLAY}, request a free estimate or consultation online, or use the contact form on the Contact page. Someone from our local Western NC team will follow up personally.` },
       { q: "What are your hours?", a: "Our office is staffed during standard business hours, and we respond to storm and active-leak calls outside of hours when possible. The fastest response is usually a phone call — voicemails after hours are checked first thing." },
       { q: "Do you have a showroom I can visit?", a: "Yes — two. Our Franklin and Sylva showrooms are both open Monday through Friday, 8:00 AM to 5:00 PM, with roofing, skylight, gutter, and siding samples on display. Walk in or call ahead so your estimator is on site when you arrive. Addresses and directions are on our Locations pages." },
     ],
