@@ -36,7 +36,7 @@ const capabilities = [
   { icon: Building2, title: "New Construction Roofing", detail: "Complete roofing systems for new commercial builds — from pre-construction coordination through final inspection. We integrate with general contractors and project managers to deliver on schedule." },
   { icon: Wrench, title: "Roof Replacement & Re-Roofing", detail: "Full tear-off and replacement or recovers for aging commercial roofs. We evaluate existing conditions, recommend the optimal system, and execute with minimal operational disruption." },
   { icon: Settings, title: "Preventive Maintenance Programs", detail: "Scheduled inspection and maintenance programs that extend roof life, preserve warranty coverage, and catch small issues before they become emergency repairs." },
-  { icon: HardHat, title: "Emergency Repair & Response", detail: "Rapid emergency response for active leaks, storm damage, and critical failures. Temporary weatherproofing followed by permanent repair." },
+  { icon: HardHat, title: "Urgent Leak & Storm Support", detail: "For active leaks or storm damage, contact Highlander to discuss temporary weatherproofing and permanent repair options based on conditions and current scheduling." },
   { icon: Layers, title: "Roof Coatings & Restoration", detail: "Elastomeric and silicone coating systems that extend the life of existing commercial roofs by 10–15 years at a fraction of replacement cost." },
   { icon: Eye, title: "Roof Condition Assessments", detail: "Comprehensive roof evaluations with written reports, photo documentation, and capital planning recommendations for property managers and ownership groups." },
 ];
@@ -94,7 +94,7 @@ const processSteps = [
 const trustProofs = [
   { icon: Shield, value: "Licensed & Insured", label: "Full commercial liability coverage" },
   { icon: BadgeCheck, value: "Manufacturer Certified", label: "CertainTeed commercial applicator" },
-  { icon: Clock, value: "Rapid Response", label: "Emergency repair availability" },
+  { icon: Clock, value: "Direct", label: "Leak & storm support" },
   { icon: Award, value: "15+ Years", label: "Commercial roofing experience in WNC" },
   { icon: Building2, value: "Multi-Property", label: "Programs for management groups" },
   { icon: Star, value: "Manufacturer Systems", label: "CertainTeed-credentialed installation" },
@@ -118,7 +118,7 @@ const CommercialRoofing = () => {
     <>
       <SEOHead
         title="Commercial Roofing in WNC | TPO, EPDM & Metal"
-        description="Commercial roofing for Western North Carolina property owners and managers. New installations, replacements, maintenance programs, and Rapid emergency response."
+        description="Commercial roofing for Western North Carolina property owners and managers: installation, replacement, maintenance, and leak or storm repair support."
         path="/roofing/commercial"
         jsonLd={buildPageSchema({
           type: "commercial",
@@ -173,7 +173,7 @@ const CommercialRoofing = () => {
                         </div>
 
                         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                          Commercial roofing for Western North Carolina property owners and managers. New installations, replacements, maintenance programs, and emergency response — executed with operational awareness and professional coordination.
+                          Commercial roofing for Western North Carolina property owners and managers. New installations, replacements, maintenance programs, and leak or storm repair support — executed with operational awareness and professional coordination.
                         </motion.p>
 
                         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -194,7 +194,7 @@ const CommercialRoofing = () => {
                           transition={{ duration: 0.4, delay: 0.3 }}
                           className="mt-10 flex flex-wrap gap-2.5"
                         >
-                          {["Licensed GC", "Fully Insured", "Multi-Property Programs", "Rapid Emergency", "Maintenance Contracts"].map((badge) => (
+                          {["Licensed GC", "Fully Insured", "Multi-Property Programs", "Storm Support", "Maintenance Contracts"].map((badge) => (
                             <span key={badge} className="px-3 py-1.5 text-caption uppercase tracking-wider font-body font-semibold text-primary-foreground border border-white/12 rounded-sm bg-white/5">
                               {badge}
                             </span>
@@ -241,7 +241,7 @@ const CommercialRoofing = () => {
                             {[
                               { value: "15+", label: "Years Commercial Experience" },
                               { value: "Multi", label: "Property Programs Active" },
-                              { value: "Rapid", label: "Emergency Response" },
+                              { value: "Direct", label: "Storm Support" },
                             ].map((stat) => (
                               <div key={stat.label} className="text-center">
                                 <div className="text-2xl font-heading font-bold text-primary">{stat.value}</div>
@@ -493,7 +493,7 @@ const CommercialRoofing = () => {
                             <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                               {[
                                 { icon: Shield, text: "Licensed & Insured" },
-                                { icon: Clock, text: "Rapid Emergency Response" },
+                                { icon: Clock, text: "Leak & Storm Support" },
                                 { icon: BadgeCheck, text: "Manufacturer Certified" },
                                 { icon: Building2, text: "Multi-Property Programs" },
                               ].map((item) => (
