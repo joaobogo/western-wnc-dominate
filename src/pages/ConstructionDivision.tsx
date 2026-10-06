@@ -41,16 +41,12 @@ import heroImg from "@/assets/division-construction-v2.webp";
 import heroImgAvif from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=avif&as=srcset";
 import heroImgWebp from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
-import divisionContextImg from "@/assets/gallery/asphalt-007.webp";
-import constructionDetailImg from "@/assets/gallery/cedar-005.webp";
+const divisionContextImg = "/media/d35d81a4-construction-project-highlands.webp";
+const constructionDetailImg = "/media/85aa1f15-construction-project-highlands.webp";
 import planningFocusImg from "@/assets/division-design.webp";
-import siteCoordinationImg from "@/assets/gallery/metal-006.webp";
-import wncTerrainImg from "@/assets/gallery/asphalt-hero.webp";
+const siteCoordinationImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
+const wncTerrainImg = "/media/wnc-mountain-home-exterior.webp";
 
-import proj1 from "@/assets/gallery/asphalt-006.webp";
-import proj2 from "@/assets/gallery/cedar-002.webp";
-import proj3 from "@/assets/gallery/metal-008.webp";
-import proj4 from "@/assets/gallery/asphalt-004.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -80,10 +76,9 @@ const whyHighlander = [
 ];
 
 const galleryImages = [
-  { src: proj1, alt: "Custom deck addition on a mountain home", label: "Covered Deck — Mountain Residence" },
-  { src: proj2, alt: "Exterior renovation with cedar siding", label: "Exterior Renovation — Custom Home" },
-  { src: proj3, alt: "Room addition with standing seam metal roof", label: "Room Addition — Ridgeline Property" },
-  { src: proj4, alt: "Outdoor living space construction", label: "Outdoor Living — Screened Porch" },
+  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Highlander Construction Work" },
+  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services in Western North Carolina", label: "Mountain Home Construction" },
+  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services in Western North Carolina", label: "Outdoor Living" },
 ];
 
 const faqsForSEO = [
