@@ -93,7 +93,10 @@ export function getPageContext(pathnameArg?: string): PageContext {
   let page_type = "other";
 
   if (path === "/") page_type = "home";
-  else if (path.startsWith("/service-areas/")) {
+  else if (path.startsWith("/lp/")) {
+    page_type = "paid_landing";
+    service = path.split("/")[2] || null;
+  } else if (path.startsWith("/service-areas/")) {
     page_type = "town";
     town = path.split("/")[2] || null;
   } else if (path.startsWith("/counties/")) {
@@ -435,6 +438,9 @@ export function trackFormSuccess(opts: {
   lead_type?: string | null;
   service_category?: string | null;
   property_town?: string | null;
+  landing_page?: string | null;
+  service_intent?: string | null;
+  cta_location?: string | null;
   lead_id: string;
 }) {
   // Dedup per lead_id — the same successful submission must never
@@ -453,6 +459,9 @@ export function trackFormSuccess(opts: {
     lead_type: opts.lead_type ?? null,
     service_category: opts.service_category ?? null,
     property_town: opts.property_town ?? null,
+    landing_page: opts.landing_page ?? null,
+    service_intent: opts.service_intent ?? null,
+    cta_location: opts.cta_location ?? null,
     page_path: pagePath(),
     lead_id: opts.lead_id,
   });
@@ -462,6 +471,9 @@ export function trackFormSuccess(opts: {
     lead_type: opts.lead_type ?? null,
     service_category: opts.service_category ?? null,
     property_town: opts.property_town ?? null,
+    landing_page: opts.landing_page ?? null,
+    service_intent: opts.service_intent ?? null,
+    cta_location: opts.cta_location ?? null,
   });
 }
 
@@ -592,6 +604,9 @@ export function trackGenerateLead(opts: {
   lead_type?: string | null;
   service_category?: string | null;
   property_town?: string | null;
+  landing_page?: string | null;
+  service_intent?: string | null;
+  cta_location?: string | null;
   value?: number | null;
 }) {
   if (generateLeadFired.has(opts.lead_id)) return;
@@ -604,6 +619,9 @@ export function trackGenerateLead(opts: {
     lead_type: opts.lead_type ?? null,
     service_category: opts.service_category ?? null,
     property_town: opts.property_town ?? null,
+    landing_page: opts.landing_page ?? null,
+    service_intent: opts.service_intent ?? null,
+    cta_location: opts.cta_location ?? null,
     town: opts.property_town ?? source?.town ?? null,
     source_context: source?.context ?? null,
     currency: "USD",
