@@ -872,7 +872,7 @@ const ResidentialRoofing = () => {
                                <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
                                   Avoid surprises with our pre-construction support. We help Western North Carolina homeowners define layout, floor plans, and project scope before breaking ground.
                                </p>
-                               <Link to="/layouts-planning" className="text-sm font-bold text-primary hover:underline">
+                               <Link to="/construction/design" className="text-sm font-bold text-primary hover:underline">
                                   Design Support &rarr;
                                </Link>
                             </div>
