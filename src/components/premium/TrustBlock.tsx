@@ -53,7 +53,7 @@ interface TrustBlockProps {
 
 const defaultTrustItems = [
   { icon: Shield, label: "Licensed & Insured" },
-  { icon: Award, label: "CertainTeed Certified" },
+  { icon: Award, label: "CertainTeed Credentialed Contractor" },
   { icon: Clock, label: "Clear Next Steps" },
   { icon: Mountain, label: "All of Western NC" },
 ];
