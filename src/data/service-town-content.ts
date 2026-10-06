@@ -50,16 +50,16 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Franklin, NC",
     intro:
-      "Franklin is our home market. Our crews, trucks, and material yards are minutes from most jobs in town — so replacement projects move on schedule and the same team is on-site from tear-off to final inspection.",
+      "Franklin is Highlander's home market and primary showroom location. Replacement projects are scoped from the actual roof condition, access, materials, and schedule rather than a generic local-response promise.",
     localContext:
       "Most Franklin roofs we replace are 20–30 year asphalt systems on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies and aging underlayment are the two most common reasons homes here need a full replacement rather than another patch.",
     whoItsFor:
       "Long-time Franklin homeowners weighing repair-vs-replace, families preparing a home for sale, and buyers who just closed and want a clean baseline before they move in.",
     proofNote:
-      "Franklin is where we cut our teeth. The crew you meet at your estimate is the crew on your roof — same names, same trucks, year after year.",
+      "Franklin is where Highlander began. Homeowners receive a written scope and a clear project contact so responsibility stays defined from estimate through closeout.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Full roof replacement in Franklin, NC from a locally based team. CertainTeed ShingleMaster Credentialed Contractor, licensed GC, free on-site assessment.",
+      "Full roof replacement in Franklin, NC from Highlander's home market. CertainTeed Credentialed Contractor, licensed NC General Contractor, and free project estimate.",
     faqs: [
       { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
       { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
@@ -84,7 +84,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense."
     faqs: [
       { q: "How fast can you get to my Franklin home for a leak?", a: "Call or submit the inspection form and tell us if water is actively entering. The team triages active leaks during staffed hours and will give you the earliest available visit." },
-      { q: "Do you provide written estimates for insurance?", a: "Yes. Every repair gets photo documentation and a written scope you can hand directly to your adjuster." },
+      { q: "Do you provide written estimates for insurance?", a: "Highlander can provide contractor photos and a written scope for repair work when documentation is part of the assessment. Your carrier or adjuster makes claim and coverage decisions." },
       { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives." },
     ],
   }),
@@ -103,7 +103,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "We specify and install metal as a complete system — substrate, underlayment, panels, trims, and fasteners from compatible manufacturers — so the warranty actually holds together.",
     metaTitle: "Metal Roofing in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Standing seam and exposed-fastener metal roofing in Franklin, NC. Engineered for mountain weather, installed by a locally based, licensed contractor.",
+      "Standing seam and exposed-fastener metal roofing in Franklin, NC from a licensed contractor based in Franklin, with project details matched to the property and roof design.",
     faqs: [
       { q: "Is metal louder than shingles on a Franklin home?", a: "Properly installed metal over solid decking and underlayment is not noticeably louder than asphalt from inside the home. The 'tin roof on a barn' sound comes from open framing, not residential metal." },
       { q: "Does metal really last 40+ years here?", a: "On a correctly designed system with the right substrate and detailing, yes. The failure point on most metal roofs is the install detail, not the panel." },
@@ -146,7 +146,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Owners of custom mountain homes, second-home owners specifying a true forever roof, and clients pairing a new addition or screened porch with a unified metal system.",
     proofNote:
-      "Specified as a system, installed by the same crew that did the estimate, and documented in writing so the warranty path is clean.",
+      "Specified as a system and documented in writing so the installed scope, materials, and applicable warranty terms are clear.",
     metaTitle: "Metal Roofing in Highlands, NC | Highlander Building Services",
     metaDescription:
       "Standing seam metal roofing in Highlands, NC. Designed for mountain elevation, snow loading, and second-home reliability. Team-led installation.",
@@ -261,7 +261,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Designed and installed as a complete system — substrate, underlayment, panels, trims, and fasteners specified together so the warranty actually holds.",
     metaTitle: "Metal Roofing in Cashiers, NC | Highlander Building Services",
     metaDescription:
-      "Standing seam metal roofing in Cashiers, NC. Designed for extreme rainfall and mountain elevation. Team-led, fully warranted installation.",
+      "Standing seam metal roofing in Cashiers, NC with project-specific detailing for mountain exposure and written confirmation of applicable warranty terms.",
     faqs: [
       { q: "Will metal handle the rainfall volume in Cashiers?", a: "Yes — that's one of the things metal does best. The system has to be designed with the right valley detailing and gutter capacity to match." },
       { q: "Can you install metal on a steep mountain-home roof?", a: "Yes. Steep pitches are actually easier for water management; the install plan accounts for safety, anchoring, and snow retention." },
@@ -304,14 +304,14 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Long-time Sylva homeowners, families, and owners of rental or income properties who need the project planned around tenants and turnover.",
     proofNote:
-      "Local crews, real scheduling, and an owner who will give you a straight answer on whether your roof actually needs replacement now or has another season in it.",
+      "A direct Highlander point of contact, project-specific scheduling, and a clear recommendation on whether replacement or continued repair makes sense.",
     metaTitle: "Roof Replacement in Sylva, NC | Highlander Building Services",
     metaDescription:
-      "Full roof replacement in Sylva, NC. Team-led, locally based, CertainTeed ShingleMaster Credentialed Contractor. Free on-site assessment and honest repair-vs-replace guidance.",
+      "Full roof replacement in Sylva, NC from Highlander's Jackson County showroom. CertainTeed Credentialed Contractor, free project estimate, and repair-vs-replace guidance based on roof condition.",
     faqs: [
       { q: "Do you replace roofs on rental properties in Sylva?", a: "Yes. We schedule around tenants and minimize disruption — most single-family replacements are complete in 1–3 working days." },
       { q: "What's the most common issue on older Sylva homes?", a: "Inadequate attic ventilation — which shortens roof life from below. We correct ventilation as part of every full replacement." },
-      { q: "Do you handle the Jackson County permit?", a: "Yes. Permit, inspection, and final sign-off are all included." },
+      { q: "Do you handle the Jackson County permit?", a: "When a permit is required and included in Highlander's scope, the project team coordinates the applicable permit and inspection steps. Jurisdiction requirements are confirmed for the specific property." },
     ],
   }),
   E({
@@ -320,20 +320,20 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Sylva, NC",
     intro:
-      "When something fails on a Sylva roof, we can usually be on-site on a same-day or next-day basis and have a written assessment in your hands before we leave. Most repairs are scheduled the same week.",
+      "When something fails on a Sylva roof, call during staffed business hours or send a request. Highlander will discuss the damage and confirm the appropriate assessment and repair timing based on conditions and current scheduling.",
     localContext:
       "Common Sylva repairs: pipe-boot failures on 12+ year asphalt, lifted ridges from valley-channeled spring storms, and chimney flashing on older homes built before stepped flashing became standard.",
     whoItsFor:
       "Homeowners with an active leak, landlords with a tenant call, and anyone who needs honest guidance on whether to repair, replace, or just monitor.",
     proofNote:
-      "Photo documentation of every repair, plain-English write-up, and a direct answer on whether your roof is worth investing more repair dollars into.",
+      "Clear repair documentation when included in the scope, plus a plain-English recommendation on whether continued repair or replacement makes more sense.",
     metaTitle: "Roof Repair in Sylva, NC | Highlander Building Services",
     metaDescription:
-      "Honest roof repair in Sylva, NC. same-day or next-day inspections, photo documentation, fair pricing, and a straight answer on repair-vs-replace.",
+      "Roof repair in Sylva, NC with clear assessment, written scope, and a direct answer on repair versus replacement based on the roof condition.",
     faqs: [
-      { q: "How fast can you respond to a leak in Sylva?", a: "Most active-leak inspections happen on a same-day or next-day basis. Temporary protection is typically installed during the inspection visit." },
+      { q: "What should I do about an active leak in Sylva?", a: "Call during staffed business hours and explain what is happening; outside office hours, send a request for follow-up. Assessment timing and temporary protection depend on weather, safety, access, and availability." },
       { q: "Will you tell me if a repair isn't worth doing?", a: "Yes. If your roof is too far gone for repair dollars to make sense, we'll say so — in writing — before you spend the money." },
-      { q: "Do you do insurance documentation?", a: "Every repair includes photo and written documentation suitable for an insurance claim." },
+      { q: "Do you do insurance documentation?", a: "When requested and applicable to the scope, Highlander can provide contractor photos and written repair information for insurance conversations. Coverage decisions remain with the carrier." },
     ],
   }),
   E({
@@ -348,10 +348,10 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Homeowners specifying a forever roof, anyone re-roofing a custom home, and clients pairing a main house with outbuildings or an addition under one unified system.",
     proofNote:
-      "Specified as a system, installed by the same team-led crew that estimated the project, with the trim and detail work that protects the warranty.",
+      "Specified as a system with trim and detail work documented in the project scope, along with the applicable manufacturer and contract warranty terms.",
     metaTitle: "Metal Roofing in Sylva, NC | Highlander Building Services",
     metaDescription:
-      "Standing seam and exposed-fastener metal roofing in Sylva, NC. Engineered for mountain weather, installed by a locally based licensed contractor.",
+      "Standing seam and exposed-fastener metal roofing in Sylva, NC from Highlander's Jackson County showroom, with project details matched to the roof and exposure.",
     faqs: [
       { q: "How long will a metal roof last on a Sylva home?", a: "A properly installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues, not panel failures." },
       { q: "Is metal more expensive than asphalt?", a: "Up front, yes — typically 1.5–2.5× asphalt. Over 30+ years, metal is usually the cheaper roof on a per-year basis once you include replacement cycles." },
@@ -379,7 +379,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "Do you handle historic district ARB approvals in Asheville?", a: "Yes. We prepare and submit all required documentation for Biltmore Forest, Montford, and other Asheville historic boards." },
       { q: "What's the best roof for a Town Mountain ridgetop home?", a: "We recommend standing seam metal or synthetic slate for high-exposure Asheville ridges to ensure maximum wind and UV resistance." },
-      { q: "Do you offer financing for large Asheville projects?", a: "Yes. We offer flexible financing options for both roofing and construction projects in the Asheville market." },
+      { q: "Do you offer financing for large Asheville projects?", a: "Financing may be available for qualifying roofing or construction projects. Availability, terms, and approval are determined by the lender." },
     ],
   }),
   E({
@@ -400,7 +400,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Custom home additions and structural modernizations in Asheville, NC. Design-build expertise for Buncombe County homeowners.",
     faqs: [
-      { q: "How long is the permitting process in Asheville?", a: "Asheville and Buncombe County permitting can take 4-8 weeks. We manage the entire process from structural plans to final sign-off." },
+      { q: "How long is the permitting process in Asheville?", a: "Permit and review timing varies by jurisdiction, project scope, and current review volume. Highlander confirms the required process for the property and coordinates the steps included in the project scope." },
       { q: "Can you build on steep Asheville slopes?", a: "Yes. We work with specialized engineers to design foundations for steep-slope Asheville sites." },
     ],
   }),
@@ -417,15 +417,15 @@ export const serviceTownContent: ServiceTownEntry[] = [
     localContext:
       "The Hendersonville plateau sees significant afternoon thunderstorms and localized hail. We recommend Class 4 impact-rated shingles for Henderson County homes to ensure the longest possible service life and storm resistance.",
     whoItsFor:
-      "Established homeowners, retirement community residents, and anyone looking for a highly reliable, warrantied roof system in the Hendersonville area.",
+      "Established homeowners, retirement community residents, and anyone looking for a clearly scoped roof replacement in the Hendersonville area.",
     proofNote:
-      "Locally based crews and thousands of documented successful projects across the Hendersonville plateau.",
+      "Henderson County is a secondary service market; current project availability is confirmed before an estimate is scheduled.",
     metaTitle: "Roof Replacement in Hendersonville, NC | Highlander Building Services",
     metaDescription:
-      "Reliable roof replacement for Hendersonville homes. Local crews, impact-resistant options, and team-led quality. Licensed & Insured.",
+      "Roof replacement for Hendersonville homes with project-specific material options, written scope, and licensed-contractor oversight.",
     faqs: [
       { q: "Do you work in Hendersonville retirement communities?", a: "Yes. We are familiar with the scheduling and staging requirements of many Hendersonville-area active adult and retirement communities." },
-      { q: "Why should I choose impact-resistant shingles in Hendersonville?", a: "Hendersonville is a hail-prone corridor. Class 4 shingles are designed to survive these events and often provide insurance discounts." },
+      { q: "Should I consider impact-resistant shingles in Hendersonville?", a: "Impact-rated shingles can be worth comparing where hail exposure is a concern. Product performance, cost, and any insurance treatment should be confirmed for the selected product and your individual policy." },
     ],
   }),
   // ─────────── WAYNESVILLE ───────────
@@ -551,16 +551,16 @@ export const serviceTownContent: ServiceTownEntry[] = [
     intro:
       "Serving the far west with reliable, team-led roof replacement. We provide Murphy families with the same standard of quality we bring to Asheville and Highlands.",
     localContext:
-      "In Murphy and Cherokee County, we focus on durability and local accountability. Our crews are staged to provide responsive service and honor long-term warranties in the westernmost corner of NC.",
+      "In Murphy and Cherokee County, Highlander focuses on durable project scopes and clear accountability. Current availability is confirmed from the Franklin/Sylva service network before scheduling.",
     whoItsFor:
       "Full-time residents, retirees building custom retreats, and vacation home owners needing a dependable local contractor.",
     proofNote:
       "Documented successful projects across Cherokee County, featuring high-quality shingle and metal systems.",
     metaTitle: "Roof Replacement in Murphy, NC | Highlander Building Services",
     metaDescription:
-      "Reliable roof replacement in Murphy, NC. Locally based crews, durable materials, and team-led quality. Licensed & Insured.",
+      "Roof replacement in Murphy, NC with durable material options, a written scope, and licensed-contractor oversight. Current availability is confirmed when you request an estimate.",
     faqs: [
-      { q: "Do you have local crews in Murphy?", a: "Yes. We maintain a local crew presence to ensure responsive service and local accountability for our Murphy clients." },
+      { q: "Do you work in Murphy?", a: "Yes. Murphy is within Highlander's Western North Carolina service area. Contact the team to confirm current project availability and the appropriate next step." },
       { q: "What's the best roof for a Murphy mountain cabin?", a: "Dimensional shingles or standing seam metal both perform exceptionally well in Murphy's climate." },
     ],
   }),
@@ -609,9 +609,9 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Every Highlands repair leaves with photos of what failed, what we did, and what's still on the clock. Nothing hidden, nothing padded.",
     metaTitle: "Roof Repair in Highlands, NC | Highlander Building Services",
     metaDescription:
-      "Fast, honest roof repair in Highlands, NC. Same-day/next-day plateau response, photo-documented scopes, and a straight answer on repair vs. replace.",
+      "Roof repair in Highlands, NC with plateau-specific assessment, clear scope, and a direct answer on repair versus replacement.",
     faqs: [
-      { q: "How quickly can you get to a Highlands leak?", a: "Most active-leak inspections on the plateau happen within 24–48 hours. In severe weather, we prioritize by damage class, not by call order." },
+      { q: "What should I do about an active leak in Highlands?", a: "Call during staffed business hours and explain the leak or storm damage; outside office hours, send a request for follow-up. Assessment timing depends on weather, safety, access, and current scheduling." },
       { q: "Will a repair void my roof's warranty?", a: "Only if it's done wrong. We use compatible materials and document the repair so your manufacturer coverage stays intact." },
       { q: "My roof is 18 years old — is a repair worth it?", a: "Sometimes. If the failure is isolated and the field is sound, yes. If the underlayment is brittle across the deck, we'll tell you that plainly and price both options." },
     ],
@@ -668,19 +668,19 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roofing Services",
     h1: "Roofing Services in Franklin, NC",
     intro:
-      "Franklin is where Highlander started, and it's still the market we know best. Our crews live here, our yard is here, and most Franklin homes are inside a 15-minute drive of a truck ready to roll. That proximity is why we can quote fast, start on time, and keep our word on completion dates.",
+      "Franklin is where Highlander started and remains the company's primary showroom and operating base. That local presence gives homeowners a direct place to call or visit while project timing is confirmed from the actual scope and current schedule.",
     localContext:
       "Franklin roofing splits cleanly into three groups: 20–30 year asphalt systems on ranch and split-level homes across town, farmhouse and cabin roofs in the surrounding valleys where standing seam metal now dominates new work, and older homes where ventilation and flashing were never done right the first time and are the real cause of premature failure.",
     whoItsFor:
       "Long-time Franklin homeowners weighing repair vs. replace, first-time buyers who need a straight condition report, and homeowners preparing a property for sale or refinance.",
     proofNote:
-      "Same crew from estimate through cleanup. When you drive by Franklin roofs we did five and ten years ago, they still look right — that's the reference you should be asking for.",
+      "A named project contact and written scope keep accountability clear from estimate through closeout. Ask to see documented Highlander work that matches the roof system you are considering.",
     metaTitle: "Roofing Services in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Franklin, NC roofing contractor — repairs, replacements, and metal systems from a local team. CertainTeed ShingleMaster credentialed.",
     faqs: [
       { q: "Are you actually based in Franklin?", a: "Yes. Our shop, yard, and office are in Macon County. When you call, you're reaching the people who will be on your roof." },
-      { q: "What roofing warranty do you offer in Franklin?", a: "Manufacturer material warranty plus a Highlander workmanship warranty. Both are put in writing and handed to you at project close-out." },
+      { q: "What roofing warranty do you offer in Franklin?", a: "Warranty eligibility and terms depend on the selected roofing system and the project agreement. Highlander confirms the applicable manufacturer and workmanship terms in writing for the specific project." },
       { q: "Do you handle insurance claims in Franklin?", a: "We provide the documentation adjusters need, but we don't do the adjuster's job — the claim relationship stays between you and your carrier." },
     ],
   }),
@@ -712,20 +712,20 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Home Repair Services",
     h1: "Home Repair Services in Franklin, NC",
     intro:
-      "Small repairs done badly become big repairs later. Franklin homeowners call us when they want the fix done once — coordinated, warrantied, and documented — not passed between three trades who each blame the next one.",
+      "Small repairs can become larger problems when the underlying cause is missed. Highlander scopes the repair, documents the proposed work, and confirms applicable warranty terms before authorization.",
     localContext:
       "The Franklin repair calls we take most often: exterior trim rot on 25+ year homes, ledger and deck-attachment failures, chimney flashing that never worked, skylight replacement, and water-intrusion cleanup after a roof event.",
     whoItsFor:
       "Homeowners with a punch list, buyers working through a home-inspection response, and property owners keeping a rental in market-ready condition.",
     proofNote:
-      "One estimate, one crew, one warranty. If it isn't right, we come back — that's the standard.",
+      "One written scope and one clear Highlander point of contact. Applicable warranty terms are confirmed for the project in writing.",
     metaTitle: "Home Repair Services in Franklin, NC | Highlander",
     metaDescription:
       "Coordinated home repairs in Franklin, NC. Exterior, envelope, and interior damage remediation from a licensed general contractor.",
     faqs: [
-      { q: "Do you do handyman-scale work?", a: "We're a licensed general contractor, so our floor is higher than a handyman's. Anything at or above that floor, yes — and it comes with a written scope and warranty." },
+      { q: "Do you do handyman-scale work?", a: "Highlander focuses on roofing and construction scopes that fit its licensed-contractor services rather than general handyman tasks. The team can tell you whether a specific repair is a fit." },
       { q: "Can you handle interior work after a roof leak?", a: "Yes. Drying, drywall, paint, and finish repairs are inside our scope so you're not managing multiple companies." },
-      { q: "How fast can a repair estimate happen in Franklin?", a: "Most Franklin repair walk-throughs are on the calendar inside 48 hours." },
+      { q: "How quickly can I get a repair estimate in Franklin?", a: "Scheduling depends on the roof condition, weather, access, and current workload. Call during staffed business hours or send a request so the team can confirm the next available step." },
     ],
   }),
 
@@ -748,7 +748,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Cashiers, NC roofing contractor for complex plateau homes. Metal, specialty, and asphalt roof systems specified and installed for four-season performance.",
     faqs: [
       { q: "Do you work in the private communities around Cashiers?", a: "Yes, across High Hampton, Trillium, Wade Hampton, Chattooga Club, and others. We coordinate ARB submissions and community access requirements before work starts." },
-      { q: "How do you handle steep-slope safety on Cashiers roofs?", a: "Every crew is trained and equipped for the pitches we work on here. Fall protection is planned into the estimate, not improvised on day one." },
+      { q: "How do you handle steep-slope safety on Cashiers roofs?", a: "Steep-slope access and fall-protection requirements are considered during project planning so the proposed scope reflects the roof geometry and site conditions." },
       { q: "Can you re-roof around an existing solar array?", a: "Yes. We coordinate detachment and re-set with the installer or handle a full remove/reinstall if needed." },
     ],
   }),
@@ -771,7 +771,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "How fast can you inspect a Cashiers roof?", a: "Most Cashiers-area repair inspections are on the calendar inside 24–72 hours depending on weather and current call volume." },
       { q: "Can you match aged materials on a repair?", a: "We match to the closest current spec and note any visual difference in writing before we start. On some legacy roofs a broader repair area gives a cleaner result — we'll show you both options." },
-      { q: "Do you provide written repair reports for buyers or sellers?", a: "Yes. Every repair inspection includes a photo-documented scope you can share with counsel, insurance, or the other side of a transaction." },
+      { q: "Do you provide written repair reports for buyers or sellers?", a: "When a documented assessment is part of the scope, Highlander can provide photos and a written contractor summary that the homeowner can share with other parties." },
     ],
   }),
   E({
@@ -808,7 +808,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Owners with a specific failure that needs a definitive fix, second-home owners coordinating repairs between visits, and buyers working through an inspection response.",
     proofNote:
-      "One scope, one crew, one warranty. We own the outcome, not just our part of it.",
+      "One written scope and one clear project contact help keep overlapping roofing and construction responsibilities defined.",
     metaTitle: "Home Repair Services in Cashiers, NC | Highlander",
     metaDescription:
       "Coordinated home repairs in Cashiers, NC. Exterior, envelope, and interior remediation from a licensed general contractor.",
@@ -847,14 +847,14 @@ serviceTownContent.push(
     whoItsFor:
       "Homeowners planning a roof plus an exterior update in the same season, buyers finishing a Jackson County home purchase who need one contractor for a coordinated punch list, and long-term owners weighing a re-roof against a broader whole-home refresh.",
     proofNote:
-      "Roofing and construction under one roof means one written schedule, one warranty, and one person accountable when something moves.",
+      "Roofing and construction under one company can simplify coordination when both scopes touch the same home, with responsibilities and applicable warranty terms documented in writing.",
     metaTitle: "Roofing & Construction in Sylva, NC | Highlander",
     metaDescription:
       "Sylva, NC roofing and construction from one licensed general contractor. Re-roofs, repairs, additions, and remodels coordinated by a single project lead.",
     faqs: [
-      { q: "Do you actually work in Jackson County or just visit?", a: "We work in Jackson County regularly — Sylva, Dillsboro, Cullowhee, and the surrounding communities. Trucks, materials, and crews cover this market on their normal weekly rotation." },
+      { q: "Do you work in Jackson County?", a: "Yes. Highlander has a Sylva showroom and serves Sylva, Dillsboro, Cullowhee, and surrounding Jackson County communities. Scheduling is confirmed for each project." },
       { q: "Can you combine a re-roof with an addition into one project?", a: "Yes, and it usually saves you real money on staging, dumpsters, and access. We sequence both scopes together with one written schedule." },
-      { q: "Who pulls the permits with Jackson County?", a: "We do. Permit coordination, inspections, and final sign-off are on us." },
+      { q: "Who coordinates permits with Jackson County?", a: "When permitting is required and included in Highlander's scope, the project team coordinates the applicable permit and inspection steps. Final approval remains with the jurisdiction." },
     ],
   }),
   E({
@@ -884,12 +884,12 @@ serviceTownContent.push(
     whoItsFor:
       "Homeowners planning a coordinated roof plus exterior update, buyers finishing on a Cullowhee property that needs a real punch list, and property owners upgrading rentals or long-term family homes without juggling multiple trades.",
     proofNote:
-      "One team, one lead, one warranty. If it isn't right we come back — that's the standard on every Cullowhee project.",
+      "One Highlander project contact and written scope keep responsibilities clear. Applicable warranty terms are confirmed for the specific project.",
     metaTitle: "Roofing & Construction in Cullowhee, NC | Highlander",
     metaDescription:
       "Cullowhee, NC roofing and construction from a licensed general contractor. Re-roofs, repairs, additions, and remodels coordinated by one project lead.",
     faqs: [
-      { q: "Are you set up to work in Cullowhee specifically?", a: "Yes. Cullowhee is inside our regular Jackson County service area — same crews, same materials pipeline as Sylva." },
+      { q: "Do you work in Cullowhee?", a: "Yes. Cullowhee is inside Highlander's Jackson County service area and is served from the Sylva showroom. Contact the team to confirm project availability." },
       { q: "Can you handle a re-roof and an addition in the same season?", a: "Yes. Combining the scopes usually cuts cost on staging and access. You get one written schedule for both." },
       { q: "Do you work on rental properties?", a: "Yes. We keep rental turn timelines in mind on scoping and provide a clean, punch-list-tight handoff." },
     ],
@@ -901,7 +901,7 @@ serviceTownContent.push(
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Cullowhee, NC",
     intro:
-      "A leak in Cullowhee doesn't wait on a scheduling window. Because we run Jackson County as a normal weekly route, most repair inspections here happen inside 48 hours — and the fix is scheduled before we leave the driveway.",
+      "For a leak in Cullowhee, call during staffed business hours or send a request for follow-up. Highlander will discuss the roof condition and confirm assessment and repair timing based on safety, access, weather, and current scheduling.",
     localContext:
       "The repair calls we see most often in Cullowhee: valley wear-through on 15+ year asphalt, pipe-boot failures from long UV plus freeze-thaw exposure, chimney flashing that was never properly stepped on older homes, and small storm damage that keeps getting bigger because it was patched instead of fixed.",
     whoItsFor:
@@ -912,9 +912,9 @@ serviceTownContent.push(
     metaDescription:
       "Fast, honest roof repair in Cullowhee, NC. Same-week response, photo-documented scopes, and a straight answer on repair vs. replace.",
     faqs: [
-      { q: "How fast can you get to a Cullowhee leak?", a: "Most active-leak inspections in Cullowhee are on the calendar inside 48 hours. Temporary protection can usually be installed the same visit." },
+      { q: "What should I do about an active leak in Cullowhee?", a: "Call during staffed business hours and explain what is happening; outside office hours, send a request for follow-up. Temporary protection depends on conditions, safety, and availability." },
       { q: "Is my repair worth doing or should I replace?", a: "Depends on the field. If the failure is isolated and the underlayment is sound, repair is the right call. If the deck is brittle across the roof, we'll say so plainly and price both options." },
-      { q: "Do you provide written repair reports for insurance?", a: "Yes. Every repair inspection includes a photo-documented scope you can send directly to your adjuster." },
+      { q: "Do you provide written repair reports for insurance?", a: "When requested and included in the scope, Highlander can provide contractor photos and written repair information for insurance conversations. Coverage decisions remain with the carrier." },
     ],
   }),
 );
