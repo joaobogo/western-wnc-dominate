@@ -396,7 +396,7 @@ export default function CombinedLanding() {
         title="Roofing & Construction in Western NC | Highlander"
         description="Roofing, additions, renovations and outdoor living in Western North Carolina. Call Highlander or send one short request for your home project."
         path={PATH}
-        noindex
+        noindex="follow"
       />
       <a href="#main-content" className="sr-only z-[100] rounded-sm bg-background px-4 py-3 text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:outline-none focus:ring-2 focus:ring-primary">Skip to main content</a>
       <main id="main-content" className="min-h-screen bg-background pb-24 lg:pb-32">
