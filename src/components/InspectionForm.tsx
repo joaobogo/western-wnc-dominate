@@ -280,7 +280,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
           {isPage && (
             <>
               <h1 className="text-[22px] md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-1.5 md:mb-4">
-                Request your free roof inspection in Western North Carolina.
+                Request your free roofing estimate in Western North Carolina.
               </h1>
               <p className="text-white font-body font-semibold text-body-sm md:text-body mb-2 md:mb-10 leading-snug">
                 Two questions now, a written scope after we walk your property.
@@ -648,7 +648,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                       </>
                     ) : (
                       <>
-                        <span className="relative z-10">Get My Inspection Scheduled</span>
+                        <span className="relative z-10">Request My Free Estimate</span>
                         <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                       </>
                     )}
