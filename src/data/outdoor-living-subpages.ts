@@ -90,7 +90,7 @@ export const OUTDOOR_SUBPAGES: OutdoorSubPage[] = [
       { label: "Retaining Walls & Hardscape", href: "/construction/outdoor-living/hardscape", description: "Walls, steps and walkways for sloped lots" },
       { label: "Home Additions", href: "/construction/additions", description: "When the patio becomes a room" },
       { label: "Metal Roofing", href: "/roofing/metal", description: "Standing seam for patio roofs and main roofs" },
-      { label: "Book a Construction Consultation", href: "/construction/consultation", description: "Start with a site visit" },
+      { label: "Discuss My Outdoor Project", href: "/request-inspection?context=outdoor_subpage&type=construction-outdoor-living", description: "Start with the short first-contact form" },
     ],
   },
   {
@@ -157,7 +157,7 @@ export const OUTDOOR_SUBPAGES: OutdoorSubPage[] = [
       { label: "Retaining Walls & Hardscape", href: "/construction/outdoor-living/hardscape", description: "Terraces and seat walls" },
       { label: "Renovations", href: "/construction/renovations", description: "Indoor kitchens and whole-home work" },
       { label: "Design & Planning", href: "/construction/design", description: "Layouts before the first footing" },
-      { label: "Book a Construction Consultation", href: "/construction/consultation", description: "Start with a site visit" },
+      { label: "Discuss My Outdoor Project", href: "/request-inspection?context=outdoor_subpage&type=construction-outdoor-living", description: "Start with the short first-contact form" },
     ],
   },
   {
@@ -224,7 +224,7 @@ export const OUTDOOR_SUBPAGES: OutdoorSubPage[] = [
       { label: "Outdoor Kitchens & Fire Features", href: "/construction/outdoor-living/outdoor-kitchens", description: "Cooking and fire on the terrace" },
       { label: "Home Additions", href: "/construction/additions", description: "Additions that need cut-and-fill grading" },
       { label: "Construction Division", href: "/construction", description: "All construction services" },
-      { label: "Book a Construction Consultation", href: "/construction/consultation", description: "Start with a site visit" },
+      { label: "Discuss My Outdoor Project", href: "/request-inspection?context=outdoor_subpage&type=construction-outdoor-living", description: "Start with the short first-contact form" },
     ],
   },
 ];
