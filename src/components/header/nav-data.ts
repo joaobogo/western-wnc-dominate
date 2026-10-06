@@ -61,7 +61,7 @@ export const constructionItems: DropdownItem[] = [
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
   { label: "Design & Planning", href: "/construction/design", desc: "In-house design for additions & remodels" },
-  { label: "Layout & Design Planning", href: "/layouts-planning", desc: "Floor plans, layouts & feasibility" },
+  { label: "Layout & Design Planning", href: "/construction/design", desc: "Floor plans, layouts & feasibility" },
   { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_nav&type=construction", desc: "Short first-contact form" },
 ];
 
@@ -114,7 +114,7 @@ export const constructionColumns: DropdownColumn[] = [
     title: "Plan & Design",
     items: [
       { label: "Design & Planning", href: "/construction/design", desc: "In-house design for builds" },
-      { label: "Layout & Design Planning", href: "/layouts-planning", desc: "Floor plans & feasibility" },
+      { label: "Layout & Design Planning", href: "/construction/design", desc: "Floor plans & feasibility" },
       { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_nav&type=construction", desc: "Short first-contact form" },
     ],
   },
