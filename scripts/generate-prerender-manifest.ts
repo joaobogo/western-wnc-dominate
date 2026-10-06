@@ -43,6 +43,9 @@ export const NOINDEX_ROUTES = [
   "/construction/consultation",
   // Paid landing pages are intentionally absent from sitemap.xml but need real
   // route HTML for direct ad clicks, refreshes and crawlers reading noindex.
+  "/lp/roof-replacement",
+  "/lp/roof-repair",
+  "/lp/storm-damage",
   "/lp/roofing",
   "/lp/construction",
   "/lp/roofing-construction",
