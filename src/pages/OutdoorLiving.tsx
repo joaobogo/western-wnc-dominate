@@ -27,10 +27,6 @@ const porchContextImg = "/media/wnc-mountain-home-exterior.webp";
 const timberFrameImg = "/media/wnc-mountain-home-exterior.webp";
 const terrainSlopeImg = "/media/wnc-ridge-elevation-home.webp";
 
-import proj1 from "@/assets/gallery/cedar-001.webp";
-import proj2 from "@/assets/gallery/metal-006.webp";
-import proj3 from "@/assets/gallery/asphalt-005.webp";
-import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
@@ -83,10 +79,7 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: proj1, alt: "Covered porch with mountain views", label: "Covered Porch", location: "Mountain Estate, Asheville" },
-  { src: proj2, alt: "Screened room with metal roof", label: "Screened Porch", location: "Ridge Property, Franklin" },
-  { src: proj3, alt: "Multi-level deck with integrated stairs", label: "Composite Deck", location: "Hillside Build, Sylva" },
-  { src: proj4, alt: "Timber-frame pavilion", label: "Timber Pavilion", location: "Custom Design, Fairview" },
+  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services in Western North Carolina", label: "Outdoor Living Work Featured by Highlander", location: "Western North Carolina" },
 ];
 
 const whyHighlander = [
@@ -408,9 +401,9 @@ const OutdoorLiving = () => {
         <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Featured Projects</span>
-              <h2 className="section-heading mb-3">Outdoor Spaces We've Built.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">Each project was designed for its specific property, climate exposure, and the way the homeowner lives.</p>
+              <span className="eyebrow mb-3 block">Outdoor Living Work</span>
+              <h2 className="section-heading mb-3">Outdoor Living Featured by Highlander.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">This image is already used by Highlander for outdoor-living content. Additional project cards will be added only when a project record documents the scope and location.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
