@@ -54,7 +54,7 @@ const ServiceAreas = () => {
     <>
       <SEOHead
         title="Roofing & Construction Service Areas in Western NC"
-        description="Roofing and construction across Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, rapid response."
+        description="Roofing and construction service areas across Western North Carolina, coordinated from Highlander's Franklin and Sylva showrooms."
         path="/service-areas"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }])}
       />
@@ -243,7 +243,7 @@ const ServiceAreas = () => {
               <h2 className="section-heading mb-4">Additional Communities We Serve</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
               <p className="text-muted-foreground text-sm max-w-lg mx-auto font-body">
-                Full roofing and construction services — same crews, same standards, same warranty.
+                Roofing and construction availability varies by project and location; applicable scope and warranty terms are confirmed in writing.
               </p>
             </motion.div>
 
@@ -289,12 +289,11 @@ const ServiceAreas = () => {
             >
               <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Your Town, Our Team</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1]">
-                Wherever You Are in WNC,<br />
-                We're Already Nearby.
+                Serving Mountain Communities<br />
+                Across Western NC.
               </h2>
               <p className="text-primary-foreground text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-body leading-relaxed font-bold drop-shadow-sm">
-                Tell us about your property and we'll connect you with the right team for your area.
-                Same standards, same warranty, same crew accountability — regardless of which town you're in.
+                Tell us about your property and Highlander will confirm current service availability, the appropriate project contact, and the next step for your area.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
@@ -314,9 +313,9 @@ const ServiceAreas = () => {
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground text-sm font-bold uppercase tracking-wider">
                 <span>Franklin & Sylva Offices</span>
                 <span className="text-primary-foreground/15">•</span>
-                <span>Same-Day Contact</span>
+                <span>Requests Reviewed During Staffed Hours</span>
                 <span className="text-primary-foreground/15">•</span>
-                <span>All Three Divisions Available</span>
+                <span>Roofing & Construction</span>
               </div>
             </motion.div>
           </div>
