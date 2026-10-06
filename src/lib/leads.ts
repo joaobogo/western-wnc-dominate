@@ -130,6 +130,8 @@ export type CanonicalLeadPayload = {
   landing_url?: string | null;
 
   consent_given?: boolean;
+  /** Exact disclosure the visitor saw. Falls back to the sitewide consent text when omitted. */
+  consent_text?: string | null;
   metadata?: Record<string, unknown>;
   /** Overrides the auto-generated key. Rarely needed. */
   idempotency_key?: string | null;
@@ -372,7 +374,7 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
   const row = {
     id: leadId,
     ...normalized,
-    consent_text: CONSENT_TEXT,
+    consent_text: clean(payload.consent_text) ?? CONSENT_TEXT,
     idempotency_key: idem.key,
     jobtread_sync_status: "pending",
     jobtread_synced: false,
