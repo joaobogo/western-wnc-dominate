@@ -200,7 +200,7 @@ const CTABlock = () => {
               </Link>
               <div className="w-px h-3 bg-primary-foreground/10" />
               <Link
-                to="/construction/consultation"
+                to="/request-inspection?context=construction_cta&type=construction"
                 className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
               >
                 Construction
