@@ -72,7 +72,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Franklin, NC",
     intro:
-      "When something fails on a Franklin roof, you want a clear diagnosis without being routed through an out-of-area call center. Highlander is based here in Franklin, and we document the issue, explain the repair options, and provide the next step in writing."
+      "When something fails on a Franklin roof, you want a clear diagnosis without being routed through an out-of-area call center. Highlander is based here in Franklin, and we document the issue, explain the repair options, and provide the next step in writing.",
     localContext:
       "The repairs we see most often in Franklin: lifted ridge caps from spring storms coming up the Little Tennessee valley, pipe-boot failures on 15+ year asphalt, and chimney flashing that was never properly stepped on older homes.",
     whoItsFor:
@@ -81,7 +81,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
     metaTitle: "Roof Repair in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense."
+      "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense.",
     faqs: [
       { q: "How fast can you get to my Franklin home for a leak?", a: "Call or submit the inspection form and tell us if water is actively entering. The team triages active leaks during staffed hours and will give you the earliest available visit." },
       { q: "Do you provide written estimates for insurance?", a: "Highlander can provide contractor photos and a written scope for repair work when documentation is part of the assessment. Your carrier or adjuster makes claim and coverage decisions." },
