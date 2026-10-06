@@ -9,7 +9,7 @@ import {
 interface ServiceInternalLinksProps {
   title: string;
   slug: string;
-  /** Construction pages lead with a consultation, never a roofing estimate. */
+  /** Construction pages use the same short first-contact form with construction intent preserved. */
   intent?: "estimate" | "consultation";
 }
 
@@ -32,9 +32,9 @@ const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInter
       },
       intent === "consultation"
         ? {
-            label: "Get My Project Scoped",
-            href: "/construction/consultation",
-            description: `A working session on scope, feasibility, and budget range — ${PHONE_PLAIN}.`,
+            label: "Discuss My Project",
+            href: "/request-inspection?context=construction_internal&type=construction",
+            description: `Start with the short contact form or call ${PHONE_PLAIN}; scope and qualification follow after contact.`,
           }
         : estimateLink,
     ]}
