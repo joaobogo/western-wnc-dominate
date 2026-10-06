@@ -21,9 +21,8 @@ Allow: /*.woff$
 Allow: /*.woff2$
 Allow: /*.ttf$
 
-# Paid/internal tools only
+# Internal tools only
 Disallow: /admin/
-Disallow: /lp/
 Disallow: /front-desk
 Disallow: /front-desk/
 Disallow: /intake
