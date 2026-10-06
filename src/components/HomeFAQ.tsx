@@ -108,7 +108,7 @@ const HomeFAQ = () => {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            to="/contact"
+            to="/request-inspection"
             className="btn btn-primary btn-md group"
           >
             Get My Written Estimate
