@@ -433,6 +433,15 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
     lead_type: normalized.lead_type,
     service_category: normalized.service_category,
     property_town: normalized.property_town,
+    landing_page: payload.landing_page ?? null,
+    service_intent:
+      typeof payload.metadata?.service_intent === "string"
+        ? payload.metadata.service_intent
+        : null,
+    cta_location:
+      typeof payload.metadata?.form_location === "string"
+        ? payload.metadata.form_location
+        : null,
     lead_id: leadId,
   });
   // Fire-and-forget JobTread sync. Never block the visitor on this. A failure
