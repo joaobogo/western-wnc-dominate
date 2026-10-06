@@ -1151,7 +1151,7 @@ export const blogIndex: BlogIndexEntry[] = [
   },
   {
     "slug": "roof-inspection-what-to-expect",
-    "title": "What to Expect During a Free Roof Inspection in WNC",
+    "title": "What to Expect During a Free Roof Estimate in WNC",
     "excerpt": "Never had a professional roof inspection? Here's exactly what our team looks at — and what you'll receive afterward.",
     "category": "Inspections",
     "date": "2025-12-20",
