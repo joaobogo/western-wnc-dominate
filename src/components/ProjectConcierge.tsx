@@ -140,7 +140,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
             {[
               "No sales pressure",
               "Team-led consultations",
-              "Response within 24 hours",
+              "Follow-up during staffed business hours",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-[hsl(var(--highland-gold)/0.75)]" aria-hidden="true" />
