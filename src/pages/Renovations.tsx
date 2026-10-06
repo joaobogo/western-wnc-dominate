@@ -415,7 +415,7 @@ const Renovations = () => {
           description="Browse the VELUX skylight and Sun Tunnel lineup for renovations — then tell us which rooms you want brightened."
         />
             <WhoShowsUp />
-            <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
+            <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/request-inspection?context=renovations&type=construction-renovation" />
 <ConversionTrustBlock variant="band" category="construction" />
           </>
         }
