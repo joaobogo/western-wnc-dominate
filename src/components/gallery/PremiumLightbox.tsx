@@ -151,7 +151,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                     onClick={() => setShowInfo(p => !p)}
                     aria-label={showInfo ? "Hide project details" : "Show project details"}
                     aria-pressed={showInfo}
-                    className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+                    className="w-11 h-11 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle info (I)"
                   >
                     <span className="text-white/85 text-xs font-body font-semibold">i</span>
@@ -160,7 +160,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                     onClick={() => setZoomed(p => !p)}
                     aria-label={zoomed ? "Zoom out" : "Zoom in"}
                     aria-pressed={zoomed}
-                    className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+                    className="w-11 h-11 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle zoom (Z)"
                   >
                     {zoomed ? <Minimize2 className="w-4 h-4 text-white/85" aria-hidden="true" /> : <ZoomIn className="w-4 h-4 text-white/85" aria-hidden="true" />}
@@ -170,7 +170,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               <button
                 onClick={onClose}
                 aria-label="Close project gallery"
-                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
               >
                 <X className="w-4 h-4 text-white/85" aria-hidden="true" />
               </button>
@@ -300,13 +300,13 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   onClick={(e) => { e.stopPropagation(); onNavigate(i); }}
                   aria-label={`View project ${i + 1} of ${projects.length}${p.title ? `: ${p.title}` : ""}`}
                   aria-current={i === currentIndex ? "true" : undefined}
-                  className={`w-12 h-8 rounded-sm overflow-hidden border-2 transition-all duration-300 ${
+                  className={`w-16 h-11 rounded-sm overflow-hidden border-2 transition-all duration-300 ${
                     i === currentIndex
                       ? "border-[hsl(var(--highland-gold))] opacity-100"
                       : "border-transparent opacity-40 hover:opacity-70"
                   }`}
                 >
-                  <img width={1600} height={1067} src={p.image} alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                  <img width={1600} height={1067} src={p.image} alt={`Thumbnail preview of ${p.title}`} aria-hidden="true" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </button>
               ))}
             </motion.div>
