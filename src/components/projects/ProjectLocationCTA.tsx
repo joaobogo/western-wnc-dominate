@@ -20,7 +20,7 @@ interface Props {
 const ProjectLocationCTA = ({ location, type, category, className = "" }: Props) => {
   const { town, path: townPath } = getTownPath(location);
   const tags = getProjectServiceTags(type, category);
-  const scopePath = category === "construction" ? "/construction/consultation" : "/request-inspection";
+  const scopePath = "/request-inspection?context=project_detail";
 
   return (
     <section className={`bg-primary rounded-sm p-6 md:p-8 ${className}`} aria-labelledby="project-location-cta">
@@ -31,11 +31,10 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
         id="project-location-cta"
         className="text-xl md:text-2xl font-heading font-bold text-primary-foreground mb-2"
       >
-        We do this work in {town} — request a scope
+        Planning a similar project in {town}?
       </h2>
       <p className="text-primary-foreground text-sm leading-relaxed mb-5 max-w-xl">
-        Same crews, same standard. We'll look at your {type.toLowerCase()} project in person and put the scope,
-        materials, and timing in writing before anything starts.
+        Start with the short estimate request. Highlander will discuss your {type.toLowerCase()} project and document the applicable scope, materials, and estimate before work is authorized.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -44,7 +43,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
           onClick={() =>
             trackGalleryCtaClick({
               gallery: "project_detail",
-              cta_text: "Request a Scope",
+              cta_text: "Request My Estimate",
               destination_url: scopePath,
               project_title: type,
               town,
@@ -53,7 +52,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
           }
           className="cta-gradient text-accent-foreground font-bold px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
         >
-          Request a Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          Request My Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
         <a
           href={PHONE_TEL}
