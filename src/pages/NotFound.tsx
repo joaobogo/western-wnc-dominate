@@ -95,8 +95,8 @@ const NotFound = () => {
               <div className="text-sm text-muted-foreground">Local roofing & construction guides</div>
             </a>
             <a href="/request-inspection" className="rounded-lg border bg-primary p-4 text-primary-foreground hover:opacity-90">
-              <div className="font-semibold">Request an Inspection</div>
-              <div className="text-sm opacity-90">Free assessment · 24h response</div>
+              <div className="font-semibold">Request a Free Estimate</div>
+              <div className="text-sm opacity-90">Free estimate · Talk with our local team</div>
             </a>
           </div>
         </div>
