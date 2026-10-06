@@ -5,6 +5,7 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import { useRef } from "react";
+import { COUNTY_COUNT } from "@/data/business";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -14,42 +15,42 @@ const pillars = [
     icon: Gem,
     number: "01",
     title: "No Shortcuts at Any Elevation",
-    copy: "Every fastener, cut, and flashing detail is installed by full-time crews who've built their careers on WNC ridgelines. The people on your property are the same full-time Highlander crews you will see on every job.",
-    detail: "Material-specific training · CertainTeed Master certification · Owner-inspected walkthroughs",
+    copy: "Roofing details are scoped for the actual system, access, and mountain exposure on your property, with a named Highlander project contact responsible for communication and follow-through.",
+    detail: "Material-specific planning · CertainTeed Credentialed Contractor · Final walkthrough",
   },
   {
     icon: MessageSquare,
     number: "02",
     title: "You'll Never Chase Us for an Update",
-    copy: "Named project contact from day one. Written scope before work begins. Daily updates sent before you think to ask. If you've ever waited three days for a contractor to return a call — that doesn't happen here.",
+    copy: "A named project contact and written scope create a clear place for questions, updates, and documented project decisions before and during the work.",
     detail: "Named contact · Written scope · Daily progress · Pre-start documentation",
   },
   {
     icon: TrendingUp,
     number: "03",
     title: "The Cheapest Bid Costs You Twice",
-    copy: "We don't compete on price — we compete on what your roof or renovation looks like in 15 years. Every material is specified for your actual elevation and climate zone. Every project carries a full written warranty.",
-    detail: "Climate-zone material specs · Full warranty package · long-horizon build philosophy",
+    copy: "Material choices and project details are matched to the property, roof or construction scope, and the applicable manufacturer and contract terms rather than a one-size-fits-all package.",
+    detail: "Property-specific material choices · Project-specific warranty terms · Written scope",
   },
   {
     icon: Mountain,
     number: "04",
-    title: "Engineered for 2,000–5,000 Feet",
-    copy: "Ice loads that coastal specs ignore. Wind exposure that flatland data doesn't capture. Freeze-thaw cycling 60+ days a year. We don't use generic building assumptions — we specify for the actual conditions on your property.",
-    detail: "Elevation-specific specs · 8 WNC counties · Climate-zone engineering",
+    title: "Planned for Mountain Conditions",
+    copy: "Elevation, wind exposure, drainage, shade, access, and freeze-thaw conditions can change how a mountain project should be detailed. Highlander reviews those conditions as part of project planning.",
+    detail: `Mountain-property planning · ${COUNTY_COUNT} WNC counties · Written project scope`,
   },
   {
     icon: ClipboardCheck,
     number: "05",
     title: "We Find Problems Before You Do",
-    copy: "Every phase is photographed. Every material lot is documented. Every completed surface is walked by our team before you see a final invoice. If something isn't right, we catch it — and fix it — before you know it happened.",
+    copy: "Project documentation and walkthroughs give homeowners a clearer record of the work completed and a defined process for addressing punch-list items before closeout.",
     detail: "Phase photography · Material lot tracking · Pre-invoice walkthrough",
   },
   {
     icon: Ruler,
     number: "06",
     title: "Structured Timeline. No Open-Ended Chaos.",
-    copy: "Permits, sequencing, milestones, punch list — every project follows a defined workflow with hard deadlines. Your property won't be an open construction site for weeks longer than planned.",
+    copy: "Permits when required, sequencing, milestones, and punch-list work are organized around a project-specific plan. Weather, inspections, material availability, and scope changes can affect timing.",
     detail: "Structured timeline · Sequenced phases · Documented milestones · Clean jobsite",
   },
 ];
