@@ -22,11 +22,7 @@ import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
-import heroImg from "@/assets/gallery/asphalt-007.webp";
-import proj1 from "@/assets/gallery/asphalt-008.webp";
-import proj2 from "@/assets/gallery/metal-010.webp";
-import proj3 from "@/assets/gallery/cedar-005.webp";
-import proj4 from "@/assets/gallery/metal-005.webp";
+const heroImg = "/media/d35d81a4-construction-project-highlands.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -78,10 +74,9 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: proj1, alt: "Kitchen renovation in WNC home", label: "Kitchen Remodel", location: "Complete Transformation, Asheville" },
-  { src: proj2, alt: "Bathroom renovation with custom tile", label: "Master Bath", location: "Custom Tile & Vanity, Sylva" },
-  { src: proj3, alt: "Living space open concept renovation", label: "Open Concept Conversion", location: "Wall Removal & Refinish, Franklin" },
-  { src: proj4, alt: "Whole home multi-room renovation", label: "Whole-Home Renovation", location: "Multi-Room Scope, Fairview" },
+  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Highlander Construction Work", location: "Western North Carolina" },
+  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
+  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Construction", location: "Western North Carolina" },
 ];
 
 const faqs = [
@@ -383,9 +378,9 @@ const Renovations = () => {
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Recent Work</span>
-              <h2 className="section-heading mb-3">Renovation Projects.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">Each project was scoped, documented, and executed with the same discipline we bring to every build.</p>
+              <span className="eyebrow mb-3 block">Construction Work</span>
+              <h2 className="section-heading mb-3">Construction Experience Behind Renovation Work.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">These images are construction work already featured by Highlander. Renovation-specific case studies will appear here only when the scope and location are documented.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
