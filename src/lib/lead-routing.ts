@@ -10,7 +10,7 @@ import { leadTier } from "./lead-scoring";
 const TIER_1_TOWNS = ["highlands", "cashiers", "franklin", "sylva"];
 
 export type Lane =
-  | "emergency"     // active leak / storm — same-day call
+  | "emergency"     // active leak / storm — urgent staffed follow-up
   | "express"       // 30d timeline, hot score — 24h call
   | "qualified"     // plans/photos/designer involvement — senior PM
   | "concierge"     // signature tier, second home, ARB community
@@ -76,7 +76,7 @@ export function deriveRoofingRouting(input: RoofingRoutingInput): {
   // Emergency / storm
   if (input.timeline === "emergency") {
     lane = "emergency";
-    notes.push("Active issue — same-day callback required.");
+    notes.push("Active issue — prioritize for staffed follow-up.");
     tags.push("urgency:emergency");
   } else if (input.timeline === "30days") {
     lane = "express";
