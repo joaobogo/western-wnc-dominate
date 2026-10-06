@@ -2457,7 +2457,7 @@ No pressure, no scare tactics — just a clear, professional read on your roof a
       { label: "Metal Roofing Cost in Western NC (2026)", path: "/roofing/metal/cost" },
       { label: "Metal Roofing", path: "/roofing/specialty" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Request a Free Inspection", path: "/request-inspection" },
+      { label: "Request a Free Estimate", path: "/request-inspection" },
     ],
     faqs: [
       {
@@ -2544,7 +2544,7 @@ Standing seam metal is a core system for us on WNC mountain homes. We fabricate 
 
 ## Get a Real Number for Your Home
 
-Every accurate metal roof quote in Western NC starts with an on-site measure — pitch, geometry, access, existing conditions, and wind exposure. We provide free inspections and transparent, line-itemed proposals for standing seam and, where it fits, exposed fastener systems. Call **${PHONE_PLAIN}** or request an inspection online to get started.`,
+Every accurate metal roof quote in Western NC starts with an on-site measure — pitch, geometry, access, existing conditions, and wind exposure. We provide free estimates and transparent, line-itemed proposals for standing seam and, where it fits, exposed fastener systems. Call **${PHONE_PLAIN}** or request an estimate online to get started.`,
   },
   {
     slug: "how-much-does-roof-cost-highlands-nc",
@@ -3739,14 +3739,14 @@ If you're planning a project in WNC, don't just ask for a plan. It's the differe
   {
     slug: "roof-inspection-what-to-expect",
 
-    title: "What to Expect During a Free Roof Inspection in WNC",
+    title: "What to Expect During a Free Roof Estimate in WNC",
     excerpt: "Never had a professional roof inspection? Here's exactly what our team looks at — and what you'll receive afterward.",
     category: "Inspections",
     date: "2025-12-20",
     image: "/media/af2fc547-roof-inspection-what-to-expect.webp", readTime: "4 min",
     metaTitle: "What to Expect During a Roof Inspection | Highlander Building Services",
-    metaDescription: "What happens during a free roof inspection in Western NC? Learn what we check, how long it takes, and what you'll receive from Highlander Building Services.",
-    content: `A professional roof inspection is the smartest first step for any roofing concern. Here's what our free inspections include.
+    metaDescription: "What happens during a free roofing estimate in Western NC? Learn what Highlander reviews and what you can expect before deciding on roof work.",
+    content: `A professional roof assessment is a useful first step for a roofing concern. Here is what Highlander may review while preparing a free estimate.
 
 ## Before the Inspection
 
@@ -3779,9 +3779,9 @@ You'll receive:
 - **Transparent cost estimate** if work is needed
 - **No pressure.** The report is yours whether you hire us or not.
 
-## Schedule Your Free Inspection
+## Request Your Free Estimate
 
-Call ${PHONE_DISPLAY} or submit our online form. We respond rapidly and serve all of Western NC.`,
+Call ${PHONE_DISPLAY} during office hours or submit the online estimate form. Highlander will review your request and discuss the appropriate next step.`,
   },
   {
     slug: "choosing-roofing-contractor-wnc",
@@ -3823,7 +3823,7 @@ Call ${PHONE_DISPLAY} or submit our online form. We respond rapidly and serve al
 - Licensed NC General Contractor
 - CertainTeed ShingleMaster Credentialed Contractors
 - Based in Franklin & Sylva — not out of state
-- Free inspections with written reports
+- Free estimates with written scopes
 - Financing available`,
   },
   {
@@ -3984,7 +3984,7 @@ Delaying a roof replacement can lead to:
 
 ## Get Your Options
 
-During your free inspection, ask about financing. We'll provide a complete cost breakdown and help you find the payment option that works for your budget.`,
+During your free estimate, ask whether financing options are available for your project. Lender availability, approval, and terms are confirmed separately.`,
   },
   {
     slug: "vacation-rental-roof-maintenance-wnc",
