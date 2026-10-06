@@ -73,8 +73,8 @@ const TownPage = () => {
   const isPrimaryTownPage = town.slug === "franklin-nc";
 
   const leadParagraph = isPrimaryTownPage
-    ? `Highlander Building Services is the roofing company headquartered in ${town.name}, NC. This page covers the ${town.name} neighborhoods we work in every week — if you need a roofer here, our crews and showroom are minutes away.`
-    : `Highlander Building Services is a roofing company and licensed builder serving ${town.name}, NC. When ${town.county} homeowners need a roofer who understands ${town.name} elevation, weather, and permitting, our crews work out of the ${showroom.location.locality} showroom.`;
+    ? `Highlander Building Services is headquartered in ${town.name}, NC. This page covers the ${town.name} neighborhoods and roofing needs served from the local Franklin showroom.`
+    : `Highlander Building Services is a roofing company and licensed builder serving ${town.name}, NC. The ${showroom.location.locality} showroom is the nearest Highlander point of contact for this service area.`;
 
 
 
