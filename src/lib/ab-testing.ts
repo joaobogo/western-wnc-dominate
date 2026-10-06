@@ -62,7 +62,7 @@ export const EXPERIMENTS = {
   home_hero_layout: {
     id: "home_hero_layout",
     order: 1,
-    status: "running",
+    status: "concluded",
     hypothesis:
       "A text-led homepage hero (copy and CTA on a solid panel, photography reduced to a supporting column) gets the offer read and acted on faster than the current image-led hero, where copy sits over full-bleed photography.",
     variants: {
@@ -74,6 +74,8 @@ export const EXPERIMENTS = {
     minRunDays: 14,
     minConversionsPerVariant: 60,
     startedAt: "2026-08-13",
+    outcome:
+      "Retired without a valid winner. The implementation drifted after launch, so historical variant data must not be used to make a ship decision. Future homepage hero tests require a new experiment id and a frozen treatment definition.",
   },
   home_hero_cta: {
     id: "home_hero_cta",
