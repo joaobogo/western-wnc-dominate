@@ -76,11 +76,11 @@ const BudgetRangeContext = ({ scopeLabel = "construction projects", className = 
       </div>
 
       <Link
-        to="/construction/consultation"
+        to="/request-inspection?context=construction_budget&type=construction"
         className="text-primary font-semibold hover:underline"
         data-gtm-location="budget_context"
       >
-        Talk through your budget range with a project advisor
+        Start a project conversation
       </Link>
     </div>
   </section>
