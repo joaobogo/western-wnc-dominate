@@ -83,10 +83,9 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   if (path.includes("-cost") || path.endsWith("/cost") || path.startsWith("/roofing-cost")) {
     return formFirst("cost_guide", "Get My Written Estimate", "/request-inspection");
   }
-  // /construction/consultation is itself the booking step; leading it with a
-  // phone call would send people away from the form they came to complete.
+  // This route is an optional detailed intake, not an appointment booking.
   if (path.startsWith("/construction/consultation")) {
-    return formFirst("consultation", "Book My Consultation", "/construction/consultation");
+    return formFirst("construction_detail_intake", "Send Project Details", "/construction/consultation");
   }
 
   // Money pages lead with the phone (João, 2026-09-08: calls are where the
