@@ -62,9 +62,9 @@ export const urlRedirectMap: RedirectEntry[] = [
 
   // === OTHER PAGES ===
   { oldUrl: "/about-us", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "About Highlander Building Services", newTitle: "About Highlander Building Services | Protecting Mountain Homes Since 2017", notes: "Shortened URL." },
-  { oldUrl: "/contact", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Us", newTitle: "Request Free Inspection | Highlander Building Services", notes: "Reframed as conversion-focused inspection request." },
-  { oldUrl: "/contact-franklin-nc", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Franklin, NC", newTitle: "Request Free Inspection", notes: "Merged contact pages." },
-  { oldUrl: "/request-quote-form-page", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Request Quote", newTitle: "Request Free Inspection", notes: "Quote → inspection reframe." },
+  { oldUrl: "/contact", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Us", newTitle: "Request Free Estimate | Highlander Building Services", notes: "Reframed as conversion-focused estimate request." },
+  { oldUrl: "/contact-franklin-nc", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Franklin, NC", newTitle: "Request Free Estimate", notes: "Merged contact pages." },
+  { oldUrl: "/request-quote-form-page", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Request Quote", newTitle: "Request Free Estimate", notes: "Quote → estimate reframe." },
   { oldUrl: "/gallery", newUrl: "/gallery", redirectType: 301, pageType: "other", oldTitle: "Gallery", newTitle: "Project Gallery | Highlander Building Services", notes: "Direct match." },
   { oldUrl: "/reviews", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "Reviews", newTitle: "About Highlander Building Services", notes: "Reviews integrated into About page." },
   { oldUrl: "/faqs", newUrl: "/services", redirectType: 301, pageType: "other", oldTitle: "FAQs", newTitle: "Roofing Services", notes: "FAQs distributed to individual service pages." },
