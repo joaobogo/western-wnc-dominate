@@ -33,8 +33,8 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install dependencies from the authoritative Bun lock
-        run: bun install --frozen-lockfile
+      - name: Install dependencies exactly like Netlify
+        run: npm install --legacy-peer-deps
 
       - name: Install Chromium for prerender QA
         run: npx playwright install --with-deps chromium
