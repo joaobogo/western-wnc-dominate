@@ -3,15 +3,15 @@ import heroImg from "@/assets/gallery/asphalt-003.webp";
 
 const RoofRepairAds = () => (
   <PaidAdsLanding
-    title="Roof Repair in Western NC | Fast Local Leak Help"
-    description="Roof repair landing page for paid traffic with a faster form, leak-focused messaging, and conversion-oriented trust proof for Western North Carolina homeowners."
+    title="Roof Repair in Western NC | Highlander"
+    description="Discuss roof repair or an active leak with Highlander in Western North Carolina. Start with a short contact form or call during staffed business hours."
     path="/lp/roof-repair"
     serviceName="Roof Repair"
     heroImage={heroImg}
     heroAlt="Roof repair work on a residential home in Western North Carolina"
     eyebrow="Roof repair · Western North Carolina"
     headline="Roof Repair in Western NC — Clear Leak Assessment & Next Steps"
-    subheadline="We diagnose the actual source, explain whether repair makes sense, and move quickly when water is getting inside your home."
+    subheadline="We diagnose the source, explain whether repair makes sense, and give you a clear next step based on the roof condition."
     ctaLabel="Get My Repair Assessed"
     adVariants={{
       leak: {
@@ -20,9 +20,9 @@ const RoofRepairAds = () => (
         ctaLabel: "Get My Leak Looked At",
       },
       emergency: {
-        headline: "Emergency Roof Repair in Western NC",
+        headline: "Active Roof Leak in Western NC",
         subheadline: "Active water inside? Use the short form or call the office directly and clearly identify the active leak so the team can triage the request.",
-        ctaLabel: "Get Emergency Help",
+        ctaLabel: "Discuss My Active Leak",
       },
     }}
     urgencyOptions={["Leak happening now", "Need help soon", "This week", "Just comparing options"]}
@@ -39,7 +39,7 @@ const RoofRepairAds = () => (
       "Active-leak requests can be clearly flagged so the team can triage them during staffed hours.",
     ]}
     quickSteps={[
-      { title: "Tell us what you are seeing", detail: "A few details about the leak, missing shingles, or damage help us prioritize quickly." },
+      { title: "Tell us what you are seeing", detail: "Send your contact details first. We will ask about the leak, missing shingles, or damage during follow-up." },
       { title: "We inspect the source", detail: "We assess the roof system, flashing, and nearby failure points instead of treating symptoms only." },
       { title: "You get a straight recommendation", detail: "Repair now, monitor, or replace — with the reasoning explained clearly." },
     ]}
