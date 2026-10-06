@@ -282,7 +282,7 @@ const CountyPage = () => {
                   <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
                     Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
                   </p>
-                  <Link to="/layouts-planning" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--gold-ink))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                  <Link to="/construction/design" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--gold-ink))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
                     Planning Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
