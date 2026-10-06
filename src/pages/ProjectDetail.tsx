@@ -370,10 +370,9 @@ const ProjectDetailPage = () => {
             <div className="mt-16 p-8 bg-secondary/50 border border-border text-left">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                 <div>
-                  <h4 className="font-heading font-bold text-foreground text-lg mb-2">Serving {project.location} and {project.county}</h4>
+                  <h4 className="font-heading font-bold text-foreground text-lg mb-2">Project location: {project.location} · {project.county}</h4>
                   <p className="text-muted-foreground text-sm max-w-xl">
-                    We've completed numerous projects in this area. Our crews understand the local building codes, 
-                    elevation challenges, and weather patterns unique to this part of Western North Carolina.
+                    This case study is tied to the location shown above. Visit the local service page for current coverage, property-specific guidance, and estimate availability in that community.
                   </p>
                 </div>
                 <Link 
