@@ -60,11 +60,11 @@ jobs:
         continue-on-error: true
         run: npm test
 
-      - name: Full production build and prerender
-        run: npm run build
-
       - name: Install Chromium for prerender QA
         run: npx playwright install --with-deps chromium
+
+      - name: Full production build and prerender
+        run: npm run build
 
       - name: SEO, broken-link and route regression gate
         run: npm run seo:check
