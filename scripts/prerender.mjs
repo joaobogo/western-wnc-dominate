@@ -190,15 +190,21 @@ function postProcess(html, route) {
   return `<!doctype html>\n${html}`;
 }
 
-// dist/<route>.html (not dist/<route>/index.html): with Netlify's default
-// pretty-URL handling a file at service-areas/franklin-nc.html is served for
-// /service-areas/franklin-nc with a 200 and no redirect, while
-// /service-areas/franklin-nc/ is 301'd to the slash-less form. A folder
-// index.html would do the opposite and force a redirect on every internal link.
+// Primary prerender artifact: dist/<route>.html. Netlify serves these through
+// its pretty-URL handling. Lovable's static host does not reliably map an
+// extensionless deep link such as /lp/roofing to /lp/roofing.html, so paid
+// landing pages also get a physical directory index at
+// dist/lp/roofing/index.html. Emitting both keeps Netlify behavior unchanged
+// while making direct Lovable ad clicks and refreshes work.
 function outPathFor(route) {
   if (route === "/") return join(DIST, "index.html");
   if (route === "/__404") return join(DIST, "404.html");
   return join(DIST, `${route.replace(/^\//, "").replace(/\/+$/, "")}.html`);
+}
+
+function staticHostIndexPathFor(route) {
+  if (!route.startsWith("/lp/")) return null;
+  return join(DIST, route.replace(/^\//, "").replace(/\/+$/, ""), "index.html");
 }
 
 // ------------------------------------------------------------------- run
@@ -289,9 +295,16 @@ async function renderRoute(context, route, staticHead) {
       status = TITLE_NOT_APPLIED;
     } else {
       if (!ready) status = "ok (no JSON-LD node)";
+      const processed = postProcess(html, route);
       const out = outPathFor(route);
       mkdirSync(resolve(out, ".."), { recursive: true });
-      writeFileSync(out, postProcess(html, route));
+      writeFileSync(out, processed);
+
+      const staticIndex = staticHostIndexPathFor(route);
+      if (staticIndex) {
+        mkdirSync(resolve(staticIndex, ".."), { recursive: true });
+        writeFileSync(staticIndex, processed);
+      }
     }
   } catch (err) {
     status = `SKIPPED (${err.message.split("\n")[0]})`;
