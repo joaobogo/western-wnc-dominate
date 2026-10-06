@@ -31,7 +31,7 @@ const phases = [
     icon: FileCheck,
     label: "Phase 3",
     title: "Permit Set & Construction Documents",
-    detail: "Permit-ready drawings and construction documents your crew can actually build from — and your county will actually approve.",
+    detail: "Drawings and construction documents prepared for the agreed scope and, when applicable, jurisdiction review. The reviewing authority decides permit approval and any required revisions.",
   },
 ];
 
@@ -45,7 +45,7 @@ interface Props {
 const DesignProgramPromo = ({
   variant = "section",
   heading = "Plan Before You Build.",
-  subheading = "Highlander's Design & Consultation Agreement is a paid, three-phase planning program that turns an idea into a permit-ready, buildable scope — before construction pricing is finalized.",
+  subheading = "When a project needs paid design, Highlander's Design & Consultation Agreement defines the phase, deliverables, price, schedule expectations, and other commercial terms before design work begins.",
   className = "",
 }: Props) => {
   if (variant === "card") {
@@ -59,13 +59,13 @@ const DesignProgramPromo = ({
           A paid planning program for serious builds.
         </h3>
         <p className="text-muted-foreground text-sm md:text-body-sm font-body leading-relaxed mb-5">
-          Three phases — scope, plans &amp; 3D views, then a permit set. A portion of design fees can credit toward construction when you build with Highlander.
+          Three structured phases can cover scope, plans and 3D views, then permit/construction documentation when needed. Any construction credit or other commercial term is agreement-specific, not automatic.
         </p>
         <Link
           to="/construction/design"
           className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:gap-3 transition-all"
         >
-          Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          View Design Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
     );
@@ -87,7 +87,7 @@ const DesignProgramPromo = ({
                 {subheading}
               </p>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6">
-                {["Three design phases", "Permit set + construction documents", "Design fees can credit toward your build"].map((item) => (
+                {["Three design phases", "Permit + construction documents when needed", "Commercial terms confirmed in the signed agreement"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <span className="text-body-xs font-body text-muted-foreground">{item}</span>
@@ -98,7 +98,7 @@ const DesignProgramPromo = ({
                 to="/construction/design"
                 className="btn btn-secondary btn-md"
               >
-                Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                View Design Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
             <ul className="space-y-3">
@@ -155,20 +155,20 @@ const DesignProgramPromo = ({
 
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-muted-foreground text-body-xs font-body italic mb-5">
-            A portion of design fees can credit toward your construction agreement when you build with Highlander — a true design-build advantage.
+            Paid design and construction are separate commitments. Any construction credit, ownership/use right, or other commercial term applies only when it is stated in the signed project agreement.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/construction/design"
               className="btn btn-secondary btn-md"
             >
-              Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              View Design Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link
-              to="/construction-intake"
+              to="/request-inspection?context=design_program&type=construction-design"
               className="btn btn-secondary btn-md"
             >
-              Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Discuss My Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
         </div>
