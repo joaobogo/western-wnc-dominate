@@ -43,7 +43,6 @@ const Team = lazy(() => import("./pages/Team"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const RoofingCostWNC = lazy(() => import("./pages/RoofingCostWNC"));
 const MetalRoofingCost = lazy(() => import("./pages/MetalRoofingCost"));
-const LayoutsPlanning = lazy(() => import("./pages/LayoutsPlanning"));
 
 
 
@@ -188,9 +187,6 @@ const App = () => (
 
           {/* ─── Gutter keyword aliases ─── */}
           <Route path="/exterior-improvements" element={<ExteriorImprovements />} />
-
-          {/* ─── Layouts & Planning (Supporting Branch) ─── */}
-          <Route path="/layouts-planning" element={<LayoutsPlanning />} />
 
           {/* ─── Legacy service routes → canonical division pages ─── */}
 
