@@ -62,12 +62,12 @@ export const services: ServiceData[] = [
     ],
     faqs: [
       { question: "How long does a roof replacement take?", answer: "Most residential roof replacements are completed in 2–5 days depending on size, complexity, and weather. We keep you informed every step of the way." },
-      { question: "How much does a new roof cost in Western NC?", answer: "Replacement pricing depends on size, pitch, material system, and complexity. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after a free on-site inspection so you know exactly what you're investing in." },
+      { question: "How much does a new roof cost in Western NC?", answer: "Replacement pricing depends on size, pitch, material system, and complexity. Rather than publish a generic range, we review the roof and provide a free written estimate with a defined proposed scope." },
       { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend dimensional shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
-      { question: "Do you offer financing for roof replacement?", answer: "Yes, we offer flexible financing options to make a new roof affordable. Ask us about payment plans during your free inspection." },
+      { question: "Do you offer financing for roof replacement?", answer: "Yes, financing options may be available for qualified homeowners. Ask about current programs when you receive your free estimate." },
     ],
     metaTitle: "Roof Replacement in Western NC | Highlander Building Services",
-    metaDescription: "Full roof replacement for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. CertainTeed certified. Financing available. Free inspections.",
+    metaDescription: "Full roof replacement for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. CertainTeed certified. Financing available. Free estimates.",
   },
   {
     slug: "storm-damage",
