@@ -4,7 +4,7 @@ import { blogIndex } from "@/data/blog-index.generated";
 const blogPosts = blogIndex.filter((p) => !p.canonicalTo);
 import { projectDetails } from "@/data/projects";
 
-export type LeadCategory = "roofing" | "construction";
+export type LeadCategory = "roofing" | "construction" | "general";
 
 export interface ConfirmationLink {
   label: string;
@@ -21,13 +21,17 @@ export function pickProjectLink(opts: {
   category?: LeadCategory;
 }): ConfirmationLink {
   const town = normalize(opts.town);
-  const category = opts.category ?? "roofing";
+  const category = opts.category ?? "general";
   const byTown = town
     ? projectDetails.find(
         (p) => normalize(p.location).includes(town) && p.category === category,
       ) ?? projectDetails.find((p) => normalize(p.location).includes(town))
     : undefined;
-  const project = byTown ?? projectDetails.find((p) => p.category === category);
+  const project =
+    byTown ??
+    (category === "general"
+      ? projectDetails[0]
+      : projectDetails.find((p) => p.category === category));
 
   if (!project) {
     return {
@@ -54,12 +58,12 @@ export function pickProjectLinks(opts: {
   count?: number;
 }): ConfirmationLink[] {
   const town = normalize(opts.town);
-  const category = opts.category ?? "roofing";
+  const category = opts.category ?? "general";
   const count = opts.count ?? 2;
 
   const score = (p: (typeof projectDetails)[number]) => {
     const sameTown = town ? normalize(p.location).includes(town) : false;
-    const sameCategory = p.category === category;
+    const sameCategory = category !== "general" && p.category === category;
     if (sameTown && sameCategory) return 0;
     if (sameTown) return 1;
     if (sameCategory) return 2;
