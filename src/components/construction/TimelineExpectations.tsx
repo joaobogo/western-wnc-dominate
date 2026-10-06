@@ -11,28 +11,28 @@ interface Phase {
 const DEFAULT_PHASES: Phase[] = [
   {
     label: "Consultation",
-    window: "Week 1",
+    window: "First step",
     body: "A working conversation about goals, constraints, and feasibility — on site where it matters. No pressure to commit.",
   },
   {
     label: "Planning and design",
-    window: "Weeks 2–6",
+    window: "Project-specific",
     body: "Existing conditions measured, concepts developed, scope written down. Length depends on how much design the project needs.",
   },
   {
     label: "Permitting and scheduling",
     window: "Varies by county",
-    body: "Applications submitted, materials ordered, and your project placed on the production calendar with a confirmed start.",
+    body: "When applicable, permit applications and material planning are coordinated before the construction schedule is confirmed. Jurisdiction review and material availability can affect timing.",
   },
   {
     label: "Construction",
     window: "Scope dependent",
-    body: "Daily oversight, milestone checkpoints, and proactive communication when weather or conditions change the sequence.",
+    body: "The construction sequence follows the contracted scope and project schedule, with changes communicated when weather, inspections, material availability, or site conditions affect the plan.",
   },
   {
     label: "Walkthrough and closeout",
-    window: "Final week",
-    body: "Punch list resolved, site restored, documentation handed over, and a final walkthrough before we call it done.",
+    window: "At completion",
+    body: "Closeout includes the applicable punch-list, site cleanup, project documentation, and final walkthrough defined by the contracted scope.",
   },
 ];
 
@@ -49,8 +49,8 @@ interface Props {
  */
 const TimelineExpectations = ({
   phases = DEFAULT_PHASES,
-  heading = "How long this actually takes",
-  intro = "Construction runs on a slower clock than a roof repair, and pretending otherwise helps nobody. Here is the realistic pace of a Highlander project in Western North Carolina.",
+  heading = "How the project moves from inquiry to closeout",
+  intro = "Construction timing is project-specific. This sequence explains the commitments and dependencies without promising a universal calendar before the scope is known.",
   className = "",
 }: Props) => (
   <section className={`section-padding bg-background ${className}`}>
