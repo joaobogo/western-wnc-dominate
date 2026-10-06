@@ -12,6 +12,7 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 import { trackGalleryProjectOpen } from "@/lib/gtm";
+import { projectDetails } from "@/data/projects";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
@@ -19,16 +20,6 @@ import metalImg from "@/assets/gallery/metal-005.webp";
 import cedarImg from "@/assets/gallery/cedar-005.webp";
 import constructionImg from "@/assets/division-construction-v2.webp";
 import designImg from "@/assets/division-design.webp";
-import metal005 from "@/assets/gallery/metal-005.webp";
-import metal006 from "@/assets/gallery/metal-006.webp";
-import metal008 from "@/assets/gallery/metal-008.webp";
-import metal003 from "@/assets/gallery/metal-003.webp";
-import asphalt008 from "@/assets/gallery/asphalt-008.webp";
-import asphalt007 from "@/assets/gallery/asphalt-007.webp";
-import asphalt006 from "@/assets/gallery/asphalt-006.webp";
-import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import asphalt002 from "@/assets/gallery/asphalt-002.webp";
-import cedar005 from "@/assets/gallery/cedar-005.webp";
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
@@ -47,18 +38,16 @@ const pathCards = [
   { q: "Not sure where to start?", href: "/contact", cta: "Talk to Highlander" },
 ];
 
-const completedProjects = [
-  { title: "Standing Seam Metal — Dark Bronze", type: "Metal Roofing", description: "Complex multi-gable standing seam metal roof in dark bronze. Precision panel work on steep pitches with custom trim detailing and concealed fastener system throughout.", image: metal005, location: "Highlands, NC", scope: "3,200 sq ft roof replacement", duration: "8 days", slug: "standing-seam-metal-dark-bronze-highlands" },
-  { title: "CertainTeed Landmark — Weathered Wood", type: "Asphalt Shingles", description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials installed by ShingleMaster Credentialed Contractor certified crew.", image: asphaltHero, location: "Waynesville, NC", scope: "4,100 sq ft roof replacement", duration: "4 days", slug: "certainteed-landmark-weathered-wood-waynesville" },
-  { title: "Cedar Shake — Estate Home", type: "Cedar Shake", description: "Stunning cedar shake roof on a luxury estate in Highlands. Intricate multi-gable design with copper ridge accents. Hand-selected premium cedar with natural preservative treatment.", image: cedar005, location: "Highlands, NC", scope: "Premium cedar shake installation", duration: "14 days", slug: "cedar-shake-estate-highlands" },
-  { title: "Standing Seam Metal — Mountain Cabin", type: "Metal Roofing", description: "Green standing seam metal on a log cabin nestled in the WNC mountains. Engineered for decades of snow load, wind exposure, and UV at 4,200 feet elevation.", image: metal006, location: "Cashiers, NC", scope: "Full roof replacement", duration: "6 days" },
-  { title: "Asphalt & Metal Combo — Highlands Estate", type: "Mixed Materials", description: "Craftsman mountain home featuring dimensional shingles with standing seam metal accent roofing and natural stone exterior accents. Dual-material design for maximum curb appeal.", image: asphalt007, location: "Highlands, NC", scope: "Dual-material roof system", duration: "10 days" },
-  { title: "Metal Panel — Silver", type: "Metal Roofing", description: "Clean silver metal panel installation with complex hip-and-valley geometry. Every intersection precision-cut and sealed for permanent weather protection.", image: metal008, location: "Franklin, NC", scope: "2,800 sq ft re-roof", duration: "7 days" },
-  { title: "Dimensional Shingles — Slate Gray", type: "Asphalt Shingles", description: "Aerial drone view of a large residential shingle replacement in slate gray with complex roof intersections. Every valley and ridge executed to manufacturer specifications.", image: asphalt006, location: "Franklin, NC", scope: "3,500 sq ft complex roof", duration: "5 days" },
-  { title: "Dimensional Shingles — Brown", type: "Asphalt Shingles", description: "Full dimensional shingle roof replacement with clean hip-and-ridge lines on a residential property. Ventilation upgraded during installation for improved attic performance.", image: asphalt008, location: "Bryson City, NC", scope: "Complete re-roof + ventilation", duration: "4 days" },
-  { title: "Metal Roof — Rural Home", type: "Metal Roofing", description: "Brown metal panel installation on a brick home in the WNC countryside. Material selected for longevity and visual harmony with the surrounding mountain landscape.", image: metal003, location: "Sylva, NC", scope: "Full roof replacement", duration: "5 days" },
-  { title: "Dimensional Shingles — Hunter Green", type: "Asphalt Shingles", description: "Bird's-eye view of a large complex residential roof with hunter green dimensional shingles. Precision work on multiple dormers and valleys.", image: asphalt002, location: "Macon County, NC", scope: "5,200 sq ft multi-dormer roof", duration: "6 days" },
-];
+const completedProjects = projectDetails.map((project) => ({
+  title: project.title,
+  type: project.type,
+  description: project.summary,
+  image: project.heroImage,
+  location: project.location,
+  scope: project.scope,
+  duration: project.duration,
+  slug: project.slug,
+}));
 
 const RecentProjects = () => {
   const materialFilters = useMemo(
@@ -158,7 +147,7 @@ const RecentProjects = () => {
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">{card.desc}</p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
-                      See This Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      Explore Service <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </span>
                   </div>
                 </Link>
@@ -178,8 +167,7 @@ const RecentProjects = () => {
                 Real WNC Homes. Real Highlander Work.
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                These aren't stock photos. Every image below represents a real Western North Carolina
-                home we've protected — across metal, shingle, cedar shake, and mixed-material roofing systems.
+                Each case study below is backed by a project-detail record with a location, scope, materials, and documented project narrative.
               </p>
             </div>
 
