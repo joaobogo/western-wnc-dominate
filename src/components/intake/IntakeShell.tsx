@@ -89,7 +89,7 @@ const IntakeShell = ({
               {[
                 { icon: Shield,  text: "Licensed GC" },
                 { icon: Award,   text: "ShingleMaster Credentialed" },
-                { icon: Clock,   text: "24-hr Storm Response" },
+                { icon: Clock,   text: "Storm Damage Support" },
                 { icon: MapPin,  text: "8 WNC Counties" },
               ].map((t) => (
                 <div key={t.text} className="flex items-center gap-2 text-muted-foreground text-body-xs font-body">
