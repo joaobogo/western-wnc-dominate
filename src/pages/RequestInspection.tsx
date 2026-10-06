@@ -29,8 +29,8 @@ const RequestInspection = () => {
   return (
     <>
       <SEOHead
-        title="Request a Free Roof Inspection or Consultation | Highlander"
-        description="Book a free roof inspection or construction consultation in Highlands, Cashiers, Franklin, Sylva, and Western NC. Written report and clear estimate."
+        title="Request a Free Roofing Estimate or Consultation | Highlander"
+        description="Request a free roofing estimate or construction consultation in Highlands, Cashiers, Franklin, Sylva, and Western NC. Clear scope and next steps."
         path="/request-inspection"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
