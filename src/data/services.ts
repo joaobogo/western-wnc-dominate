@@ -32,7 +32,7 @@ export const services: ServiceData[] = [
       "Chimney and skylight flashing repair",
       "Gutter and soffit repair",
       "Full photo documentation for insurance",
-      "Free inspection before any work begins",
+      "Free estimate before any work begins",
     ],
     faqs: [
       { question: "How quickly can you repair my roof?", answer: "Timing depends on the damage, roof access, weather, materials, and current scheduling. Call during office hours for an active leak or send a request so the team can discuss the appropriate next step." },
@@ -41,7 +41,7 @@ export const services: ServiceData[] = [
       { question: "Can you repair just a section of my roof?", answer: "Absolutely. We specialize in targeted repairs that address the problem area without unnecessary full replacements. We'll always recommend the most cost-effective solution." },
     ],
     metaTitle: "Roof Repair in Western NC | Highlander Building Services",
-    metaDescription: "Fast, reliable roof repair services across Highlands, Cashiers, Franklin, Sylva, and Western North Carolina. Free inspections. Licensed & insured since 2017.",
+    metaDescription: "Roof repair services across Highlands, Cashiers, Franklin, Sylva, and Western North Carolina. Free estimates. Licensed & insured since 2017.",
   },
   {
     slug: "roof-replacement",
