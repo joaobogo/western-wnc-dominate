@@ -1657,9 +1657,22 @@ Deno.serve(async (req) => {
     .eq("id", id)
     .maybeSingle();
   if (fetchErr || !row) {
-    return new Response(JSON.stringify({ error: fetchErr?.message ?? "Row not found" }), {
+    return new Response(JSON.stringify({ error: "Row not found" }), {
       status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
+  }
+
+  // Anonymous website callers can only kick off the first sync of a record
+  // they just created. Older or previously attempted records need an admin.
+  if (!privileged) {
+    const createdMs = Date.parse(String(row.created_at ?? ""));
+    const fresh = Number.isFinite(createdMs) && Date.now() - createdMs <= PUBLIC_SYNC_WINDOW_MS;
+    const untouched = !row.jobtread_synced && Number(row.jobtread_retry_count ?? 0) === 0 && !row.jobtread_last_attempt_at;
+    if (!fresh || !untouched) {
+      return new Response(JSON.stringify({ error: "unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
   }
 
   // Short-circuit if already synced (unless caller passed force=true)
