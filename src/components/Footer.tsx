@@ -44,7 +44,7 @@ const resourceLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Financing", href: "/financing" },
   { label: "Certifications", href: "/certifications" },
-  { label: "Design & Layout Planning", href: "/layouts-planning" },
+  { label: "Design & Layout Planning", href: "/construction/design" },
 ];
 
 const companyLinks = [
