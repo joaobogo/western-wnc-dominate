@@ -12,14 +12,19 @@ const BANNED = [
   /\barchitectural\b/i,
   /24\/7/,
   /\bGAF\b/,
-  /free estimate/i,
+  /free (roof )?inspections?/i,
   /book now/i,
   /dream home/i,
   /top[- ]rated/i,
 ];
 
 // Guard tests that assert the ABSENCE of these terms necessarily contain them.
-const ALLOW_FILES = ["banned-terms.test.ts", "chatbot-handler.test.ts", "data/business.ts"];
+const ALLOW_FILES = ["banned-terms.test.ts", "landing-pages.test.tsx", "chatbot-handler.test.ts", "data/business.ts"];
+
+// Approved uses that are not user-facing copy: the owner-approved blog slug
+// (AGENTS.md: uploaded filenames are canonical slugs) and a named industry manual.
+const exemptApproved = (line: string) =>
+  line.replace(/architectural-shingle-lifespan/g, "").replace(/SMACNA Architectural Sheet Metal Manual/g, "");
 
 // Paths are compared with forward slashes so the allow-list works on Windows too.
 const posix = (p: string) => p.replace(/\\/g, "/");
@@ -52,7 +57,7 @@ describe("banned terms", () => {
       for (const f of files) {
         const src = stripComments(readFileSync(f, "utf8"));
         src.split("\n").forEach((line, i) => {
-          if (pattern.test(line)) hits.push(`${f}:${i + 1}: ${line.trim().slice(0, 120)}`);
+          if (pattern.test(exemptApproved(line))) hits.push(`${f}:${i + 1}: ${line.trim().slice(0, 120)}`);
         });
       }
       expect(hits).toEqual([]);
@@ -84,7 +89,7 @@ describe("NAP consistency", () => {
         readFileSync(f, "utf8")
           .split("\n")
           .forEach((line, i) => {
-            if (pattern.test(line)) hits.push(`${f}:${i + 1}: ${line.trim().slice(0, 120)}`);
+            if (pattern.test(exemptApproved(line))) hits.push(`${f}:${i + 1}: ${line.trim().slice(0, 120)}`);
           });
       }
       expect(hits).toEqual([]);

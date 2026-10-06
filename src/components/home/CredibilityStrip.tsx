@@ -1,5 +1,6 @@
 import { Star, ShieldCheck, MapPin } from "lucide-react";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
+import { FRANKLIN_STREET } from "@/data/business";
 
 /**
  * Tight three-item proof band directly under the hero.
@@ -23,7 +24,7 @@ const CredibilityStrip = () => {
     {
       icon: MapPin,
       label: "Based in Franklin",
-      detail: "40 Depot Street · Franklin, NC",
+      detail: `${FRANKLIN_STREET} · Franklin, NC`,
     },
   ];
 

@@ -1,4 +1,4 @@
-import { FRANKLIN, SYLVA, type BusinessLocation } from "@/data/business";
+import { FRANKLIN, FRANKLIN_STREET, SYLVA, type BusinessLocation } from "@/data/business";
 
 /** Showroom street name without the leading house number — the address itself lives only in business.ts (guarded by business-identity.test.ts). */
 const streetName = (loc: BusinessLocation) => loc.streetAddress.replace(/^\d+\s+/, "");
@@ -159,13 +159,12 @@ export const towns: TownData[] = [
     county: "Macon County",
     state: "NC",
     elevation: "2,119 ft",
-    description: "Our hometown market. Based at 40 Depot Street in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.",
+    description: `Our hometown market. Based at ${FRANKLIN_STREET} in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.`,
     features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
-    // 59 chars: fits the 60-char guard intact. The longer "Roof Replacement, Repair & Metal"
-    // middle was dropped by normalizeTitle, which left this page with the homepage's title.
-    metaTitle: "Best Roofers in Franklin, NC | Highlander",
-    h1: `Best Roofers in Franklin, NC — Walk-In Showroom on ${streetName(FRANKLIN)}`,
-    metaDescription: "Looking for the best roofers in Franklin, NC? Visit Highlander at 40 Depot Street for roof repair, replacement, metal roofing and construction across Macon County.",
+    // 54 chars: fits the 60-char guard intact and stays distinct from the homepage title.
+    metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
+    h1: `Roofers in Franklin, NC — Walk-In Showroom on ${streetName(FRANKLIN)}`,
+    metaDescription: `Looking for roofers in Franklin, NC? Visit Highlander at ${FRANKLIN_STREET} for roof repair, replacement, metal roofing and construction across Macon County.`,
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
@@ -173,7 +172,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Dimensional Asphalt Roofing", "Residential Repairs", "Master Suite Additions", "Interior Renovations"],
     styleTendency: "Classic Appalachian styles, including craftsman bungalows and modern farmhouses built for local conditions.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown", "Otto"],
-    marketAuthorityAngle: "Franklin is Highlander's home base, with a walk-in showroom at 40 Depot Street and roofing and construction service across Macon County.",
+    marketAuthorityAngle: `Franklin is Highlander's home base, with a walk-in showroom at ${FRANKLIN_STREET} and roofing and construction service across Macon County.`,
     heroImage: "/media/wnc-aerial-neighborhood.jpg"
   },
   {
@@ -427,7 +426,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Dimensional Asphalt Roofing", "Roof Repair", "Gutter Installation", "Home Additions"],
     styleTendency: "Traditional Appalachian farmhouse and craftsman styles with asphalt or metal roofing suited to valley conditions.",
     notableNeighborhoods: ["Coweeta", "Tessentee", "Otto Community", "US-441 corridor"],
-    marketAuthorityAngle: "Otto is close to our Franklin showroom at 40 Depot Street, giving Macon County homeowners a nearby place to meet the Highlander team.",
+    marketAuthorityAngle: `Otto is close to our Franklin showroom at ${FRANKLIN_STREET}, giving Macon County homeowners a nearby place to meet the Highlander team.`,
     heroImage: "/media/wnc-mountain-home-exterior.jpg"
   },
   {
