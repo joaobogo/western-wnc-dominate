@@ -99,7 +99,7 @@ const RecentProjects = () => {
               and design-led construction support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-2">
-              <Link to="/contact" className="btn btn-primary btn-md">
+              <Link to="/request-inspection" className="btn btn-primary btn-md">
                 Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <Link to="/roofing" className="btn btn-secondary btn-md">
