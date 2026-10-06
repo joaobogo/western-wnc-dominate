@@ -77,7 +77,6 @@ const staticRoutes: SitemapEntry[] = [
 
   // Gutter & exterior hubs
   { path: "/exterior-improvements" },
-  { path: "/layouts-planning" },
 
   // Physical showroom (location) pages
   { path: "/locations" },
