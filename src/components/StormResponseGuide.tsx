@@ -55,8 +55,8 @@ const StormResponseGuide = () => {
   const urgency = criticalCount >= 2 ? "emergency" : criticalCount >= 1 ? "urgent" : warningCount >= 2 ? "soon" : "monitor";
 
   const urgencyConfig = {
-    emergency: { color: "text-alert", bg: "bg-alert/10", label: "Emergency — Call Direct", message: "You have multiple critical damage indicators. Contact us immediately for emergency response.", responseTime: "Same-day response" },
-    urgent: { color: "text-[hsl(var(--gold-ink))]", bg: "bg-highland-gold/10", label: "Urgent — Schedule Within Rapids", message: "You have at least one critical indicator. Schedule a professional inspection rapidly.", responseTime: "Rapid response" },
+    emergency: { color: "text-alert", bg: "bg-alert/10", label: "Urgent — Call Direct", message: "You have multiple critical damage indicators. Keep people away from unsafe areas and call Highlander during office hours; contact emergency services for an immediate life-safety hazard.", responseTime: "Discuss next steps" },
+    urgent: { color: "text-[hsl(var(--gold-ink))]", bg: "bg-highland-gold/10", label: "Urgent — Request Follow-Up", message: "You have at least one important damage indicator. Contact Highlander to discuss a roof assessment and the appropriate next step.", responseTime: "Scheduling confirmed by the team" },
     soon: { color: "text-[hsl(var(--gold-ink))]", bg: "bg-[hsl(var(--highland-gold)/0.1)]", label: "Schedule This Week", message: "You have warning signs that should be professionally assessed soon to prevent further damage.", responseTime: "Scheduled this week" },
     monitor: { color: "text-primary", bg: "bg-primary/10", label: "Monitor & Document", message: "No critical signs detected, but continue monitoring. Document anything that changes and consider a preventive inspection.", responseTime: "Scheduled at your convenience" },
   };
