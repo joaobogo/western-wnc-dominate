@@ -159,7 +159,7 @@ function buildRepair(t: TownData): Built {
     whoItsFor: `Owners with an active leak or a ceiling stain, ${t.name} homeowners working through an inspection response before closing, seasonal owners who just opened the house and found damage, and property managers keeping ${countyShort(t)} County homes tight year-round.`,
     proofNote: `Every ${t.name} repair leaves with photos of what failed, what we did, and what is still on the clock. If your roof is past the point where repairs are worth the spend, we put that in writing instead of selling you another patch.`,
     metaTitle: `Roof Repair in ${t.name}, NC | Highlander`,
-    metaDescription: `Honest roof repair in ${t.name}, NC. Photo-documented inspections, fast local response, and a straight answer on whether to repair or replace.`,
+    metaDescription: `Roof repair in ${t.name}, NC with documented assessment, clear repair-or-replace guidance, and a written estimate from Highlander.`,
     sections: [
       {
         heading: `Repair or replace — how we decide in ${t.name}`,
