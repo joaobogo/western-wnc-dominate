@@ -34,7 +34,7 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies exactly like Netlify
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --no-audit --no-fund
 
       - name: Lint release-critical website files
         continue-on-error: true
