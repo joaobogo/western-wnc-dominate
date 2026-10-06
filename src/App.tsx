@@ -65,7 +65,7 @@ const RoofRepair = lazy(() => import("./pages/RoofRepair"));
 const StormDamage = lazy(() => import("./pages/StormDamage"));
 const RoofReplacementAds = lazy(() => import("./pages/RoofReplacementAds"));
 const RoofRepairAds = lazy(() => import("./pages/RoofRepairAds"));
-const StormDamageAds = lazy(() => import("./pages/StormDamageAds"));\nconst RoofingLanding = lazy(() => import("./pages/RoofingLanding"));\nconst ConstructionLanding = lazy(() => import("./pages/ConstructionLanding"));
+const StormDamageAds = lazy(() => import("./pages/StormDamageAds"));\nconst RoofingLanding = lazy(() => import("./pages/RoofingLanding"));\nconst ConstructionLanding = lazy(() => import("./pages/ConstructionLanding"));\nconst CombinedLanding = lazy(() => import("./pages/CombinedLanding"));
 const CommercialRoofing = lazy(() => import("./pages/CommercialRoofing"));
 const MetalRoofing = lazy(() => import("./pages/MetalRoofing"));
 const SyntheticRoofing = lazy(() => import("./pages/SyntheticRoofing"));
@@ -152,7 +152,7 @@ const App = () => (
           {/* ─── Paid landing pages (kept for ad spend, excluded from nav) ─── */}
           <Route path="/lp/roof-replacement" element={<RoofReplacementAds />} />
           <Route path="/lp/roof-repair" element={<RoofRepairAds />} />
-          <Route path="/lp/storm-damage" element={<StormDamageAds />} />\n          <Route path="/lp/roofing" element={<RoofingLanding />} />\n          <Route path="/lp/construction" element={<ConstructionLanding />} />
+          <Route path="/lp/storm-damage" element={<StormDamageAds />} />\n          <Route path="/lp/roofing" element={<RoofingLanding />} />\n          <Route path="/lp/construction" element={<ConstructionLanding />} />\n          <Route path="/lp/roofing-construction" element={<CombinedLanding />} />
 
           {/* ─── Construction Division ─── */}
           <Route path="/construction" element={<ConstructionDivision />} />
