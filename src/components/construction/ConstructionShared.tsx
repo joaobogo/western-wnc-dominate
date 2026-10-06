@@ -25,7 +25,7 @@ export const ConstructionMidCTA = ({
   headline = "Ready to discuss your project?",
   subheadline = "We respond rapidly with a direct call — not a form email.",
   ctaText = "Start Your Project Conversation",
-  ctaLink = "/construction/consultation",
+  ctaLink = "/request-inspection?context=construction&type=construction",
 }: ConstructionCTAProps) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-10 md:py-12">
@@ -56,7 +56,7 @@ export const ConstructionClosingCTA = ({
   subheadline = "Whether you're planning an addition, a renovation, an outdoor space, or a custom build — we're here to help you think it through.",
   eyebrow = "Start Planning",
   ctaText = "Get My Project Scoped",
-  ctaLink = "/construction/consultation",
+  ctaLink = "/request-inspection?context=construction&type=construction",
 }: ConstructionCTAProps) => {
   // Money pages lead with the phone (João, 2026-09-08); /construction/consultation stays form-first.
   const callIsPrimary = getPagePrimaryAction(useLocation().pathname).intent === "call";
