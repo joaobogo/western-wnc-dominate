@@ -159,7 +159,7 @@ function SharedForm({
       data-gtm-form-name={SOURCE}
       data-gtm-form-id={FORM_ID}
       data-gtm-service-category="roofing"
-      className={compact ? "w-full" : "rounded-sm border border-border bg-card p-5 shadow-flat sm:p-6"}
+      className={compact ? "w-full" : "rounded-sm border border-border bg-card p-5 shadow-[0_18px_50px_-28px_hsl(var(--foreground)/0.35)] sm:p-6"}
       onSubmit={(event) => {
         event.preventDefault();
         void onSubmit(instance);
@@ -173,6 +173,18 @@ function SharedForm({
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Leave your details. Highlander will contact you to discuss the roof and arrange the next step.
           </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-sm bg-secondary px-3 py-2.5 text-sm">
+            <span className="font-semibold text-foreground">Prefer to talk now?</span>
+            <a
+              href={PHONE_TEL}
+              className="inline-flex min-h-10 items-center gap-2 font-bold text-primary underline underline-offset-4"
+              aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {PHONE_DISPLAY}
+            </a>
+            <span className="text-xs text-muted-foreground">{PRIMARY_HOURS_LABEL}</span>
+          </div>
         </div>
       )}
 
@@ -461,19 +473,28 @@ export default function RoofingLanding() {
                   {REVIEW_RATING}/5 on Google
                 </span>
                 <span aria-hidden="true">|</span>
-                <span className="text-muted-foreground">Based in Franklin, NC</span>
+                <span className="font-medium text-foreground">Based in Franklin, NC</span>
+                <span aria-hidden="true" className="hidden sm:inline">|</span>
+                <span className="text-muted-foreground">Free roofing estimates</span>
               </div>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <button type="button" onClick={scrollToNearestForm} className="btn btn-primary btn-md min-h-12">
                   Request My Roofing Estimate
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
-                {phoneLink("Call " + PHONE_DISPLAY, "lp_roofing_hero", "btn btn-secondary btn-md min-h-12")}
+                {phoneLink("Call Highlander: " + PHONE_DISPLAY, "lp_roofing_hero", "btn btn-secondary btn-md min-h-12")}
               </div>
             </div>
 
-            <div ref={heroFormWrap} className="order-2 lg:col-span-5 lg:row-span-2" data-main-form>
+            <div ref={heroFormWrap} className="order-2 lg:col-span-5 lg:row-span-2 lg:pt-1" data-main-form>
+              <div className="mb-3 hidden items-center justify-between gap-3 lg:flex">
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-primary">Short form · 3 fields</span>
+                <span className="text-xs text-muted-foreground">First name + phone required</span>
+              </div>
               <SharedForm instance="hero" {...formProps} onSubmit={handleSubmit} />
+              <p className="mt-3 text-center text-xs text-muted-foreground">
+                Prefer a conversation? Call <a href={PHONE_TEL} className="font-semibold text-foreground underline underline-offset-2">{PHONE_DISPLAY}</a>.
+              </p>
             </div>
 
             <figure className="order-3 overflow-hidden rounded-sm border border-border bg-card lg:col-span-7">
@@ -482,13 +503,14 @@ export default function RoofingLanding() {
                 alt="Dark bronze standing seam metal roof installed by Highlander Building Services on a Western North Carolina mountain home"
                 width={1200}
                 height={760}
-                className="aspect-[16/9] w-full object-cover"
+                className="aspect-[16/9] w-full object-cover object-center"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
               />
-              <figcaption className="px-4 py-3 text-xs text-muted-foreground">
-                Documented Highlander standing-seam roofing work in Western North Carolina.
+              <figcaption className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-xs text-muted-foreground">
+                <span>Documented Highlander standing-seam roofing work in Western North Carolina.</span>
+                <span className="font-semibold text-foreground">Roof repair · replacement · metal roofing</span>
               </figcaption>
             </figure>
           </div>
@@ -522,10 +544,13 @@ export default function RoofingLanding() {
                 </article>
               ))}
             </div>
-            <button type="button" onClick={scrollToNearestForm} className="btn btn-primary btn-md mt-7 min-h-12">
-              Request My Roofing Estimate
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </button>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <button type="button" onClick={scrollToNearestForm} className="btn btn-primary btn-md min-h-12">
+                Request My Roofing Estimate
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </button>
+              {phoneLink("Call " + PHONE_DISPLAY, "lp_roofing_proof", "btn btn-secondary btn-md min-h-12")}
+            </div>
           </div>
         </section>
 
@@ -641,6 +666,12 @@ export default function RoofingLanding() {
               <p className="mt-4 leading-relaxed text-primary-foreground/90">
                 Tell us how to reach you. We will talk through what is happening at your property and the next step toward a written roofing estimate.
               </p>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                {phoneLink("Call " + PHONE_DISPLAY, "lp_roofing_final", "btn btn-secondary btn-md min-h-12")}
+                <button type="button" onClick={scrollToNearestForm} className="btn btn-outline btn-md min-h-12 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10">
+                  Request My Roofing Estimate
+                </button>
+              </div>
               <p className="mt-4 text-sm text-primary-foreground/80">
                 Serving Franklin, Highlands, Cashiers, Sylva and surrounding Western North Carolina communities.
               </p>
