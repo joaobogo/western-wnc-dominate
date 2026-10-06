@@ -21,7 +21,7 @@ interface RoofingCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const RoofingMidCTA = ({
   headline = "Ready to discuss your roof?",
-  subheadline = "We respond rapidly with a direct call — not a form email.",
+  subheadline = "Call directly to explain what is happening, or send a request for follow-up.",
   ctaText = "Talk With a Roofing Advisor",
   ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => (
@@ -113,7 +113,7 @@ interface TrustSidebarItem {
 const defaultSidebarItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
   { icon: Award, label: "CertainTeed Certified" },
-  { icon: Clock, label: "Rapid Emergency Response" },
+  { icon: Clock, label: "Urgent Roof Support" },
   { icon: Star, label: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
 ];
 
@@ -144,7 +144,7 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
   <div className={`flex flex-wrap items-center justify-center gap-6 py-6 ${className}`}>
     {[
       { icon: Shield, text: "Licensed & Insured" },
-      { icon: Clock, text: "Rapid Response" },
+      { icon: Clock, text: "Clear Next Steps" },
       { icon: Award, text: "CertainTeed Certified" },
       { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
     ].map((item) => (
