@@ -257,10 +257,12 @@ export default function ConstructionLanding() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [heroVisible, setHeroVisible] = useState(true);
   const [finalVisible, setFinalVisible] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
   const { submitting, submit } = useLeadSubmit();
   const heroFormWrap = useRef<HTMLDivElement>(null);
   const finalFormWrap = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
 
   const formProps = useMemo(
     () => ({ values, setValues, errors, setErrors, submitted, submitError, submitting }),
@@ -270,12 +272,19 @@ export default function ConstructionLanding() {
   useEffect(() => {
     const hero = heroFormWrap.current;
     const final = finalFormWrap.current;
-    if (!hero || !final || typeof IntersectionObserver === "undefined") return;
+    const footer = footerRef.current;
+    if (!hero || !final || !footer || typeof IntersectionObserver === "undefined") return;
     const heroObserver = new IntersectionObserver(([entry]) => setHeroVisible(entry.isIntersecting), { threshold: 0.15 });
     const finalObserver = new IntersectionObserver(([entry]) => setFinalVisible(entry.isIntersecting), { threshold: 0.15 });
+    const footerObserver = new IntersectionObserver(([entry]) => setFooterVisible(entry.isIntersecting), { threshold: 0.05 });
     heroObserver.observe(hero);
     finalObserver.observe(final);
-    return () => { heroObserver.disconnect(); finalObserver.disconnect(); };
+    footerObserver.observe(footer);
+    return () => {
+      heroObserver.disconnect();
+      finalObserver.disconnect();
+      footerObserver.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -344,13 +353,13 @@ export default function ConstructionLanding() {
       href={PHONE_TEL}
       className={className}
       onClick={() => trackPhoneClick({ phone_number: PHONE_PLAIN, link_url: PHONE_TEL, click_location: location, page_type: "paid_landing" })}
-      aria-label={`${label} at ${PHONE_DISPLAY}`}
+      aria-label={label.includes(PHONE_DISPLAY) ? label : `${label} at ${PHONE_DISPLAY}`}
     >
       <Phone className="h-4 w-4" aria-hidden="true" />{label}
     </a>
   );
 
-  const stickyVisible = !submitted && !heroVisible && !finalVisible;
+  const stickyVisible = !submitted && !heroVisible && !finalVisible && !footerVisible;
 
   return (
     <>
@@ -370,9 +379,9 @@ export default function ConstructionLanding() {
       <a href="#main-content" className="sr-only z-[100] rounded-sm bg-background px-4 py-3 text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:outline-none focus:ring-2 focus:ring-primary">Skip to main content</a>
       <main id="main-content" className="min-h-screen bg-background pb-24 lg:pb-32">
         <header className="border-b border-border bg-background">
-          <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-4 md:px-8">
-            <img src={logo} alt="Highlander Building Services logo" width={176} height={54} className="h-11 w-auto" loading="eager" decoding="sync" />
-            {phoneLink("Call " + PHONE_DISPLAY, "lp_construction_header", "btn btn-secondary btn-sm min-h-12")}
+          <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4 md:px-8">
+            <img src={logo} alt="Highlander Building Services logo" width={176} height={54} className="h-8 w-auto shrink-0 sm:h-11" loading="eager" decoding="sync" />
+            {phoneLink("Call " + PHONE_DISPLAY, "lp_construction_header", "btn btn-secondary min-h-11 shrink-0 px-3 text-xs sm:min-h-12 sm:px-4 sm:text-sm")}
           </div>
         </header>
 
@@ -563,7 +572,7 @@ export default function ConstructionLanding() {
           </div>
         </section>
 
-        <footer className="border-t border-border bg-background py-8">
+        <footer ref={footerRef} className="border-t border-border bg-background py-8">
           <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-5 text-sm text-muted-foreground md:px-8 lg:flex-row lg:items-center lg:justify-between">
             <div><div className="font-semibold text-foreground">{BUSINESS.legalName}</div><div>{FRANKLIN_NAP}</div><div>{PRIMARY_HOURS_LABEL}, Eastern Time</div></div>
             <div className="flex flex-wrap items-center gap-4">
