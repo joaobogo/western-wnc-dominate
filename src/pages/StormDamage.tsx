@@ -84,7 +84,7 @@ const afterStormSteps = [
   {
     number: "04",
     title: "Call a Trusted Local Roofer",
-    description: "Get My Questions Answered for a professional storm assessment. We respond rapidly for storm calls — and same-day for emergencies involving active water intrusion or structural compromise.",
+    description: "Call to explain what happened or send a request for a professional storm assessment. Highlander will discuss the appropriate next step based on the damage, weather, safety, and current scheduling.",
   },
   {
     number: "05",
@@ -142,14 +142,14 @@ const insurancePoints = [
 ];
 
 const faqs = [
-  { q: "How quickly can you inspect my roof after a storm?", a: "For active leaks and structural damage, we offer same-day emergency response including temporary tarping. For non-emergency storm assessments, we typically schedule on a same-day or next-day basis of your call. After major regional storm events, timelines may extend slightly due to volume, but we prioritize by severity." },
+  { q: "What should I do after storm damage?", a: "If water is entering the home, protect the interior if you can do so safely and call Highlander during office hours. Outside office hours, send a request for follow-up. Do not climb onto a wet or damaged roof. Assessment and temporary protection depend on conditions, safety, and availability." },
   { q: "Will you help with my insurance claim?", a: "We provide thorough documentation — photographs, written damage reports, and material/labor scopes — that supports your claim. We'll meet with your insurance adjuster on-site and provide supplemental documentation if the initial assessment misses covered damage. We do not file claims on your behalf or act as public adjusters." },
-  { q: "Should I get a tarp on my roof right away?", a: "If you have active water entering your home or visible structural damage, yes — temporary tarping prevents further interior damage and is typically covered by insurance as an emergency mitigation measure. Call us immediately and we'll dispatch a crew." },
+  { q: "Should I get a tarp on my roof right away?", a: "Temporary weather protection can help limit additional water entry, but it should only be installed when conditions are safe. Call Highlander during office hours to discuss the situation, and do not climb onto a wet or damaged roof yourself." },
   { q: "How do I know if storm chasers are legitimate?", a: "Legitimate contractors don't go door-to-door pressuring you to sign contracts hours after a storm. Check for a permanent local address, verifiable licensing and insurance, manufacturer certifications, and an established track record in Western North Carolina. If someone offers to 'waive your deductible,' that's a red flag — it's illegal in North Carolina." },
   { q: "What if my insurance denies the claim?", a: "If we've documented legitimate storm damage and the claim is denied, we can provide additional documentation and meet with a re-inspector. We'll give you an honest assessment of whether the denial seems justified or whether further pursuit is warranted. We never pressure homeowners to file claims for damage we don't believe exists." },
   { q: "Can hail damage be invisible from the ground?", a: "Absolutely. Hail bruising — where the impact breaks the granule bond without visibly dislodging granules — is extremely common and virtually invisible from ground level. It accelerates aging and voids certain warranty protections. A professional roof inspection is the only reliable way to identify it." },
   { q: "Do I need to replace my whole roof if only part was damaged?", a: "Not necessarily. If damage is isolated to one area and we can match your existing materials, targeted repair is often the right approach. However, if damage is widespread or your roof was already near end-of-life, the storm may have simply accelerated a timeline that was already approaching. We'll give you an honest assessment either way." },
-  { q: "What if a tree fell on my roof?", a: "Tree impacts require immediate assessment for structural integrity. We can dispatch same-day for tree damage — including coordination with tree removal services if the tree is still in contact with the structure. Do not attempt to remove a tree from your roof yourself. Temporary tarping over the impact area prevents further water damage while permanent repairs are planned." },
+  { q: "What if a tree fell on my roof?", a: "Keep people away from the affected area and do not climb onto the roof or attempt to remove the tree yourself. Contact the appropriate emergency service if there is an immediate safety hazard, then call Highlander during office hours to discuss roof assessment and repair options." },
 ];
 
 /* ═══════════════════════════════════════════
@@ -159,11 +159,11 @@ const StormDamage = () => {
   return (
     <>
       <SEOHead
-        title="Storm Damage Roof Repair WNC — Emergency Tarping & Claims"
-        description="Rapid storm response across Western North Carolina. Professional damage assessment, insurance documentation, and honest guidance from a trusted local team."
+        title="Storm Damage Roof Repair in Western NC | Highlander"
+        description="Storm damage roof assessment and repair in Western North Carolina, with contractor documentation and clear repair or replacement guidance."
         path="/roofing/storm-damage"
         jsonLd={[
-          serviceSchema({ name: "Storm Damage Roofing", description: "Rapid storm damage response, assessment, and repair across Western North Carolina.", url: "/roofing/storm-damage" }),
+          serviceSchema({ name: "Storm Damage Roofing", description: "Storm damage assessment and repair guidance across Western North Carolina.", url: "/roofing/storm-damage" }),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Storm Damage", url: "/roofing/storm-damage" }]),
           faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
         ]}
@@ -208,7 +208,7 @@ const StormDamage = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                Rapid storm response across Western North Carolina. Professional damage assessment, complete documentation, and honest guidance — from a local team that's been here through every storm season.
+                Storm damage assessment across Western North Carolina with clear documentation, repair or replacement guidance, and a local team you can contact directly.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
@@ -224,7 +224,7 @@ const StormDamage = () => {
               </motion.div>
               {/* One-line reason to call instead of writing (CRO Prompt 12) */}
               <p className="mt-3 text-body-xs md:text-body-xs font-body text-white/80 max-w-xl leading-snug">
-                Storm damage moves fast — calling gets a real person who can prioritize your assessment and start the insurance documentation today.
+                Storm damage can be stressful. Call during office hours to explain what happened, or send a request so the team can discuss the appropriate next step.
               </p>
 
               {/* Emergency pulse — unique to Storm Damage */}
@@ -239,7 +239,7 @@ const StormDamage = () => {
                   <div className="absolute inset-0 w-3 h-3 bg-alert rounded-full animate-ping opacity-75" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
+                  <div className="text-sm font-heading font-bold text-primary-foreground">Storm Damage Support</div>
                   <div className="text-caption text-primary-foreground font-body uppercase tracking-wider">Call {PHONE_DISPLAY} for immediate storm assistance</div>
                 </div>
               </motion.div>
@@ -352,7 +352,7 @@ const StormDamage = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm hit your area recently?</h3>
-                <p className="text-primary-foreground text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
+                <p className="text-primary-foreground text-sm font-body">Call during office hours for active leaks or storm damage; outside office hours, send a request for follow-up.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href={PHONE_TEL} className="btn btn-primary btn-md">
@@ -436,7 +436,7 @@ const StormDamage = () => {
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? We respond rapidly.</h3>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? Start with a clear next step.</h3>
                 <p className="text-primary-foreground text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
@@ -493,10 +493,10 @@ const StormDamage = () => {
                 <span className="eyebrow mb-3 block">Insurance Support</span>
                 <h2 className="section-heading mb-5">We Document.<br /> You Decide.</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
-                  Filing an insurance claim after storm damage can feel overwhelming. While we are not public adjusters and don't file claims on your behalf, we provide the professional documentation and on-site support that gives your claim the best chance of reflecting the full scope of damage.
+                  Filing an insurance claim after storm damage can feel overwhelming. While we are not public adjusters and do not decide coverage, we can provide contractor documentation and on-site information about the observed damage and proposed work.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  Our documentation is thorough, accurate, and designed to communicate clearly with insurance adjusters — because we've been through this process hundreds of times with homeowners across the region.
+                  Our goal is to document the roof condition and proposed work clearly so you have useful contractor information for conversations with your carrier or adjuster.
                 </p>
               </motion.div>
 
@@ -545,7 +545,7 @@ const StormDamage = () => {
               <div className="grid md:grid-cols-2 gap-4 md:gap-5">
                 {[
                   { icon: Shield, title: "Licensed, Insured, and Permanent", detail: "We're not a storm-chasing crew that appears after weather events and disappears after cashing checks. Highlander is a licensed, insured, locally established roofing company with a permanent address in Western North Carolina." },
-                  { icon: Clock, title: "Rapid Emergency Response", detail: "Active leaks and structural damage don't wait for business hours. Our emergency response team is prioritized for same-day response for tarping, water mitigation, and critical stabilization — because the next rain is always coming." },
+                  { icon: Clock, title: "Urgent Roof Guidance", detail: "For active leaks or storm damage, call during office hours to explain what is happening. Outside office hours, send a request for follow-up. Temporary protection depends on conditions, safety, and availability." },
                   { icon: BadgeCheck, title: "Manufacturer Certified", detail: "As CertainTeed certified installers, our repair and replacement work meets manufacturer standards — which matters when warranty coverage is part of the conversation after storm damage." },
                   { icon: Zap, title: "Hundreds of Storm Calls Answered", detail: "From the 2020 derecho to annual summer hail events, we've assessed and repaired storm damage on hundreds of roofs across the region. We know what WNC weather does to roofs — and how to fix it properly." },
                 ].map((item, i) => (
@@ -635,7 +635,7 @@ const StormDamage = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Clock, text: "Rapid Emergency Response" },
+                      { icon: Clock, text: "Storm Damage Support" },
                       { icon: Award, text: "CertainTeed Certified" },
                       { icon: Star, text: "Local WNC Team" },
                     ].map((item) => (
