@@ -74,14 +74,9 @@ var BUSINESS = {
   licenseLookupUrl: "https://portal.nclbgc.org/Public/Search",
   bbbUrl: "https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019",
   bbbAccreditedSince: 2020,
-  press: [
-    {
-      outlet: "The Laurel Magazine",
-      label: "As featured in The Laurel Magazine (October 2024)",
-      date: "2024-10-01",
-      href: "https://www.thelaurelmagazine.com/"
-    }
-  ],
+  // No press mention is rendered until we have the actual article URL.
+  // A publication homepage is not sufficient proof for a specific feature.
+  press: [],
   awards: [
     {
       id: "best-of-macon-county",
@@ -179,6 +174,8 @@ var napLine = (loc) => `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${l
 var PHONE_DISPLAY = formatPhoneDisplay(BUSINESS.primaryPhoneE164);
 var PHONE_PLAIN = formatPhonePlain(BUSINESS.primaryPhoneE164);
 var PHONE_TEL = telHref(BUSINESS.primaryPhoneE164);
+var COUNTY_COUNT = BUSINESS.countiesServed.length;
+var PRIMARY_HOURS_LABEL = FRANKLIN.hours[0]?.label ?? "";
 var REVIEW_RATING_VALUE = BUSINESS.reviewSummary.ratingValue;
 var REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
 var REVIEW_STARS = `${REVIEW_RATING}\u2605`;
@@ -220,7 +217,7 @@ var get_business_info_default = defineTool({
       service_area: "Western North Carolina \u2014 Macon, Jackson, Swain, Haywood, Transylvania, Henderson, Buncombe, Cherokee, and Clay counties.",
       divisions: ["Roofing", "Construction"],
       credentials: [
-        "CertainTeed Credentialed Contractor Contractor",
+        "CertainTeed ShingleMaster Credentialed Contractor",
         "Licensed General Contractor (NC)"
       ],
       positioning: "Premium local roofing and construction team serving Western NC mountain homes since founding. Team-led, mountain-specialized crews."
