@@ -98,7 +98,7 @@ const designData = {
   links: [
     { name: "Layouts & Planning", href: "/layouts-planning", note: "Floor plans and feasibility" },
     { name: "Design Services", href: "/construction/design", note: "Pre-construction detail" },
-    { name: "Talk It Through", href: "/construction/consultation", note: "Scope your build" },
+    { name: "Talk It Through", href: "/request-inspection?context=construction_pathway&type=construction", note: "Start with a short project inquiry" },
   ],
   description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and protect design integrity end-to-end.",
   stats: [
