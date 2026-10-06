@@ -119,7 +119,7 @@ export const services: ServiceData[] = [
       { question: "How does metal roofing handle snow in WNC?", answer: "Metal roofing sheds snow more efficiently than shingles, reducing ice dam risk. We install snow guards where needed to control snow slide and protect walkways below." },
     ],
     metaTitle: "Metal Roofing Installation in Western NC | Highlander Building Services",
-    metaDescription: "Premium metal roofing for WNC mountain homes. 50+ year lifespan, energy efficient, wind resistant. Free inspection from Highlander Building Services.",
+    metaDescription: "Metal roofing for WNC mountain homes with standing seam and other project-specific options. Request a free estimate from Highlander Building Services.",
   },
   {
     slug: "commercial-roofing",
