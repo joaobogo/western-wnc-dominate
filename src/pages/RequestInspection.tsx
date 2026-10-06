@@ -11,17 +11,17 @@ const steps = [
   {
     icon: ClipboardCheck,
     title: "You submit the form",
-    body: "Tell us about the property and what you're seeing. Two minutes, no pressure, no obligation.",
+    body: "Send your first name, optional email, and phone. No budget, address, timeline, or project description is required to start.",
   },
   {
     icon: CalendarClock,
-    title: "We schedule your visit",
-    body: "A Highlander team member reviews the request during staffed business hours and contacts you to arrange the appropriate next step.",
+    title: "We discuss the next step",
+    body: "A Highlander team member reviews the request during staffed business hours and contacts you to discuss the property and appropriate next step.",
   },
   {
     icon: FileCheck2,
-    title: "You get a written report",
-    body: "We walk the property, document conditions with photos, and send you a clear written summary with recommended next steps and a transparent estimate.",
+    title: "You review the written scope",
+    body: "When an on-site assessment is appropriate, Highlander documents the proposed work and provides the applicable written estimate or scope before you authorize work.",
   },
 ];
 
@@ -29,12 +29,12 @@ const RequestInspection = () => {
   return (
     <>
       <SEOHead
-        title="Request a Free Roofing Estimate or Consultation | Highlander"
-        description="Request a free roofing estimate or construction consultation in Highlands, Cashiers, Franklin, Sylva, and Western NC. Clear scope and next steps."
+        title="Request a Free Estimate in Western NC | Highlander"
+        description="Request a free roofing or construction estimate in Western North Carolina. Start with first name, optional email, and phone."
         path="/request-inspection"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Request Inspection", url: "/request-inspection" },
+          { name: "Request Estimate", url: "/request-inspection" },
         ])}
       />
       <Header />
