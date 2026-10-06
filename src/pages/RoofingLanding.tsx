@@ -162,6 +162,7 @@ function SharedForm({
       className={compact ? "w-full" : "rounded-sm border border-border bg-card p-5 shadow-[0_18px_50px_-28px_hsl(var(--foreground)/0.35)] sm:p-6"}
       onSubmit={(event) => {
         event.preventDefault();
+        markStart();
         void onSubmit(instance);
       }}
     >
@@ -390,6 +391,7 @@ export default function RoofingLanding() {
 
     if (!result) return;
     if (result.error || (!result.id && !result.duplicate)) {
+      trackFormError({ form_name: SOURCE, form_id: FORM_ID, error_type: "delivery" });
       setSubmitError(`We could not confirm your request. Please try again or call ${PHONE_DISPLAY}.`);
       return;
     }
@@ -737,7 +739,7 @@ export default function RoofingLanding() {
           <>
             <div
               data-sticky-cta
-              className="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border bg-background/98 px-5 py-3 shadow-lg backdrop-blur lg:block"
+              className="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border bg-background/98 px-5 py-3 shadow-lg backdrop-blur xl:block"
             >
               <div className="mx-auto max-w-[1200px]">
                 <SharedForm instance="rail" {...formProps} onSubmit={handleSubmit} />
@@ -747,7 +749,7 @@ export default function RoofingLanding() {
             {!keyboardOpen && (
               <div
                 data-sticky-cta
-                className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-3 shadow-lg backdrop-blur lg:hidden"
+                className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-3 shadow-lg backdrop-blur xl:hidden"
                 style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
               >
                 {phoneLink("Call Highlander", "lp_roofing_sticky", "btn btn-secondary min-h-12 w-full justify-center")}
