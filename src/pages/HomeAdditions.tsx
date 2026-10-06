@@ -527,7 +527,7 @@ const HomeAdditions = () => {
           ctaLabel="Build Your Addition Plan"
         />
             <WhoShowsUp />
-            <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
+            <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/request-inspection?context=home_additions&type=construction-addition" />
 <ConversionTrustBlock variant="band" category="construction" />
           </>
         }
