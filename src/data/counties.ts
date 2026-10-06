@@ -32,10 +32,10 @@ export const counties: CountyData[] = [
   {
     slug: "macon-county",
     name: "Macon County",
-    description: "Macon County serves as our headquarters and original operating hub. From the high-elevation estates of Highlands to the family residences of Franklin, we provide the region's most reliable roofing and construction services.",
+    description: "Macon County is Highlander's home county and original operating base. From Highlands to Franklin, the company provides roofing and construction services across a mix of plateau and valley properties.",
     towns: ["Highlands", "Franklin", "Scaly Mountain", "Otto"],
     metaTitle: "Macon County, NC Roofing | Highlander Building Services",
-    metaDescription: "Professional roofing and home construction across Macon County, NC. Serving Franklin and Highlands with local crews and premium materials since 2017.",
+    metaDescription: "Roofing and home construction across Macon County, NC, served from Highlander's Franklin base with project-specific materials and written scopes.",
     heroImage: "/media/wnc-town-overlook.jpg",
     facts: [
       { label: "Dispatch", value: "Franklin Hub" },
@@ -49,7 +49,7 @@ export const counties: CountyData[] = [
     faqs: [
       { q: "Do I need a permit to replace a roof in Macon County?", a: "In most cases yes, and we handle it. Permitting differs between unincorporated Macon County and work inside the Town of Highlands limits, so we confirm jurisdiction before scheduling." },
       { q: "How different are Highlands and Franklin projects?", a: "Substantially. Highlands sits above 4,000 feet with ice loading and high UV, while Franklin sits near 2,100 feet in a valley with storm funneling and heavy canopy. Materials and detailing are specified differently for each." },
-      { q: "Is Highlander actually based in Macon County?", a: "Yes. Franklin is our home base, which is why most Macon County inspections happen on a same-day or next-day basis." },
+      { q: "Is Highlander actually based in Macon County?", a: "Yes. Franklin is Highlander's home base and primary showroom. Scheduling depends on the project, weather, access, and current workload." },
     ]
   },
   {
@@ -64,7 +64,7 @@ export const counties: CountyData[] = [
       { label: "Regional Base", value: "Sylva Hub" },
       { label: "Specialty", value: "Moisture Systems" },
       { label: "Portfolio", value: "Historic + New" },
-      { label: "Status", value: "Active Local Crew" }
+      { label: "Status", value: "Served from Sylva" }
     ],
     housingContext: "Jackson County property spans from luxury resort communities in Cashiers to historic residential hubs in Sylva and university housing in Cullowhee.",
     climateRealities: "This county contains some of the wettest high-elevation terrain in the US, requiring advanced moisture management and superior drainage engineering.",
@@ -129,10 +129,10 @@ export const counties: CountyData[] = [
     description: "Serving the vibrant mountain hub of Asheville and its surrounding towns. We specialize in everything from historic district preservation to modern premium roofing systems.",
     towns: ["Asheville"],
     metaTitle: "Buncombe County, NC Roofing | Highlander Building Services",
-    metaDescription: "Professional roofing and construction across Buncombe County, NC. Serving Asheville with premium local service.",
+    metaDescription: "Roofing and construction availability in Buncombe County, NC. Asheville projects are accepted based on current service-area capacity.",
     heroImage: "/media/wnc-mountain-home-exterior.jpg",
     facts: [
-      { label: "Market Hub", value: "Asheville Region" },
+      { label: "Coverage", value: "Asheville Region" },
       { label: "Specialty", value: "Historic + Modern" },
       { label: "Credentials", value: "Licensed GC" },
       { label: "Rating", value: `${REVIEW_RATING}/5 on Google` }
@@ -154,12 +154,12 @@ export const counties: CountyData[] = [
     description: "Providing Hendersonville and the surrounding plateau with high-reliability roofing and residential construction designed for longevity.",
     towns: ["Hendersonville", "Fletcher", "Mills River"],
     metaTitle: "Henderson County, NC Roofing | Highlander Building Services",
-    metaDescription: "Expert roofing and construction for Henderson County, NC. Serving Hendersonville, Fletcher, and Mills River with locally based crews.",
+    metaDescription: "Roofing and construction availability for Henderson County, NC, including Hendersonville, Fletcher, and Mills River, based on current scheduling capacity.",
     heroImage: "/media/wnc-forest-cabin-roof.jpg",
     facts: [
       { label: "Regional Center", value: "Hendersonville" },
       { label: "Service", value: "Dual Division" },
-      { label: "Status", value: "Active Local Crew" },
+      { label: "Status", value: "Served from Sylva" },
       { label: "Rating", value: `${REVIEW_RATING}/5 Stars` }
     ],
     housingContext: "Henderson County is characterized by established retirement communities, historic downtown residential districts, and new multi-generational developments.",
@@ -210,11 +210,11 @@ export const counties: CountyData[] = [
     ],
     housingContext: "Cherokee County features a blend of traditional residential homes, seasonal cabins, and a growing influx of retirees building custom mountain retreats.",
     climateRealities: "Western humidity and valley wind patterns demand durable materials and high-quality flashing at all structural transitions.",
-    permitting: "Cherokee County permits are handled through the county building inspections office in Murphy, with municipal permitting for work inside Murphy and Andrews town limits. Lead times here are generally shorter than in the eastern counties, which helps on storm-response work.",
+    permitting: "Cherokee County permits are handled through the county building inspections office in Murphy, with municipal permitting for work inside Murphy and Andrews town limits. Project timing is confirmed from the actual scope, access, weather, and current scheduling rather than assumed from county location.",
     faqs: [
-      { q: "Do you actually service the far western counties?", a: "Yes. Murphy and Andrews are a scheduled part of our route, not an occasional trip." },
+      { q: "Do you service the far western counties?", a: "Cherokee County is included in Highlander's Western North Carolina service area. Call or send a request to confirm current project availability for Murphy or Andrews." },
       { q: "What work is most common in Cherokee County?", a: "Dimensional shingle replacements, deck and porch repair, siding replacement, and storm-damage mitigation on family homes and vacation properties." },
-      { q: "How fast can you respond to storm damage in Murphy?", a: "Active water intrusion gets priority scheduling. Documentation and temporary protection typically happen on the first visit." },
+      { q: "What should I do about storm damage in Murphy?", a: "For active water intrusion, call during staffed business hours and explain what is happening. Outside office hours, send a request for follow-up. Assessment timing and temporary protection depend on conditions and availability." },
     ]
   }
   ,
@@ -227,10 +227,10 @@ export const counties: CountyData[] = [
     metaDescription: "Professional roofing and construction across Madison County, NC. Serving Mars Hill with rugged, reliable mountain service.",
     heroImage: "/media/wnc-storm-clouds-ridge.jpg",
     facts: [
-      { label: "Dispatch", value: "Madison Hub" },
+      { label: "Coverage", value: "Madison County" },
       { label: "Top Material", value: "Metal Roofing" },
       { label: "Focus", value: "Historic + Ridgetop" },
-      { label: "Status", value: "Active Service" }
+      { label: "Status", value: "Western NC Service Area" }
     ],
     housingContext: "Madison County is known for its historic riverfront home design and expansive, high-elevation agricultural and residential ridgetops.",
     climateRealities: "Significant ridgetop wind exposure and winter icing events require commercial-grade flashing and heavy-duty metal roofing systems.",
@@ -250,7 +250,7 @@ export const counties: CountyData[] = [
     metaDescription: "Expert roofing and construction for Clay County, NC. Serving Hayesville and Lake Chatuge with durable, high-end mountain systems.",
     heroImage: "/media/wnc-dimensional-shingle-roof.jpg",
     facts: [
-      { label: "Regional Hub", value: "Hayesville" },
+      { label: "Coverage", value: "Hayesville / Lake Chatuge" },
       { label: "Specialty", value: "Lakefront Life" },
       { label: "Response", value: "Priority Support" },
       { label: "Rating", value: `${REVIEW_RATING}/5 Stars` }
