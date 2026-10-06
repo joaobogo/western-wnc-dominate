@@ -493,7 +493,18 @@ export default function RoofingLanding() {
               </div>
               <SharedForm instance="hero" {...formProps} onSubmit={handleSubmit} />
               <p className="mt-3 text-center text-xs text-muted-foreground">
-                Prefer a conversation? Call <a href={PHONE_TEL} className="font-semibold text-foreground underline underline-offset-2">{PHONE_DISPLAY}</a>.
+                Prefer a conversation? Call <a
+                  href={PHONE_TEL}
+                  className="font-semibold text-foreground underline underline-offset-2"
+                  onClick={() =>
+                    trackPhoneClick({
+                      phone_number: PHONE_PLAIN,
+                      link_url: PHONE_TEL,
+                      click_location: "lp_roofing_form_helper",
+                      page_type: "paid_landing",
+                    })
+                  }
+                >{PHONE_DISPLAY}</a>.
               </p>
             </div>
 
@@ -668,7 +679,7 @@ export default function RoofingLanding() {
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 {phoneLink("Call " + PHONE_DISPLAY, "lp_roofing_final", "btn btn-secondary btn-md min-h-12")}
-                <button type="button" onClick={scrollToNearestForm} className="btn btn-outline btn-md min-h-12 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10">
+                <button type="button" onClick={scrollToNearestForm} className="btn btn-md min-h-12 border border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
                   Request My Roofing Estimate
                 </button>
               </div>
