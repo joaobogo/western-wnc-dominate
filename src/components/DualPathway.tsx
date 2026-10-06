@@ -96,7 +96,7 @@ const designData = {
   subtitle: "Our Intelligence",
   promise: "We map the project before the first board is cut so the scope, plan, and budget are settled up front.",
   links: [
-    { name: "Layouts & Planning", href: "/layouts-planning", note: "Floor plans and feasibility" },
+    { name: "Layouts & Planning", href: "/construction/design", note: "Floor plans and feasibility" },
     { name: "Design Services", href: "/construction/design", note: "Pre-construction detail" },
     { name: "Talk It Through", href: "/request-inspection?context=construction_pathway&type=construction", note: "Start with a short project inquiry" },
   ],
@@ -113,7 +113,7 @@ const designData = {
     { icon: ShieldCheck, name: "Scope Definition" },
   ],
   cta: "Explore Design Services",
-  href: "/layouts-planning",
+  href: "/construction/design",
   image: designImg,
   imageSrcSet: designImgSet,
   imageAlt: "Design plans and 3D views for a custom WNC mountain home — Highlander Design Division",
@@ -344,7 +344,7 @@ const ThreeDivisionPathway = ({ paths = "three" }: { paths?: "two" | "three" }) 
           {twoPath && (
             <p className="mt-4 text-body-xs font-body text-muted-foreground">
               Planning a build?{" "}
-              <Link to="/layouts-planning" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">
+              <Link to="/construction/design" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">
                 Start with design and planning
               </Link>
               .
