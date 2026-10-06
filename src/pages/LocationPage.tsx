@@ -196,7 +196,7 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
           <span className="eyebrow mb-3 block">Served From {loc.locality}</span>
           <h2 className="section-heading mb-4">Towns this showroom covers</h2>
           <p className="mb-8 max-w-2xl font-body text-body text-muted-foreground">
-            Crews and estimators dispatch from {loc.locality} to these communities. Each town page covers local
+            Highlander coordinates service from {loc.locality} for these communities. Each town page covers local
             permitting, weather exposure, and the material choices that hold up there.
           </p>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -249,7 +249,7 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
         <PageCloseCTA
           eyebrow="Stop By"
           heading={`Come see your roof materials in ${loc.locality}`}
-          body={`Bring photos or plans to ${loc.locality} and leave with a written scope, or start online and we'll follow up within 24 hours.`}
+          body={`Bring photos or plans to ${loc.locality}, or start online and the team will review your request during staffed business hours.`}
           secondaryLabel="See all locations"
           secondaryTo="/locations"
           context={`location-${showroom.id}`}
