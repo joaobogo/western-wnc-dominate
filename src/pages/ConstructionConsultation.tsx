@@ -430,16 +430,16 @@ export default function ConstructionConsultation() {
   if (submitted) {
     return (
       <>
-        <SEOHead title="Consultation Requested | Highlander Building Services" description="Your construction project consultation has been received." path="/construction/consultation" noindex />
+        <SEOHead title="Project Details Received | Highlander Building Services" description="Your detailed construction project information has been received by Highlander." path="/construction/consultation" noindex />
         <Header />
         <main id="main-content" className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
             <ConfirmationState
               show={true}
               icon={<HardHat className="w-8 h-8 text-[hsl(var(--gold-ink))]" />}
-              headline="Your project consultation is confirmed."
-              message={`Thank you, ${form.name}. A construction project advisor will reach out rapidly to discuss your ${form.projectType === "not-sure" ? "project" : form.projectType.replace(/-/g, " ")} in detail.`}
-              secondaryMessage="We'll come prepared with relevant questions and initial thoughts based on what you've shared."
+              headline="Your project details were received."
+              message={`Thank you, ${form.name}. Highlander has your detailed project information. A team member will review it during staffed business hours and contact you to discuss the appropriate next step.`}
+              secondaryMessage="Submitting this intake does not book an appointment, sign a Design & Consultation Agreement, or authorize construction."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">
                   <Link to="/recent-projects" className="btn-ghost-interactive text-sm px-5 py-2.5 rounded-sm border border-border">View Our Work</Link>
@@ -457,14 +457,14 @@ export default function ConstructionConsultation() {
   return (
     <>
       <SEOHead
-        title="Construction Consultation in Western NC"
-        description="Start a conversation about your home addition, renovation, outdoor living space, or custom construction project in Western North Carolina."
+        title="Detailed Construction Project Intake | Highlander"
+        description="Optional detailed intake for Western North Carolina construction projects. Use it after first contact to share plans, goals, timing, and project context."
         path="/construction/consultation"
         noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "Construction", url: "/construction" },
-          { name: "Consultation", url: "/construction/consultation" },
+          { name: "Detailed Project Intake", url: "/construction/consultation" },
         ])}
       />
       <Header />
@@ -476,11 +476,11 @@ export default function ConstructionConsultation() {
               <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
                 <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               </div>
-              <p className="text-caption font-body font-bold tracking-[0.25em] uppercase text-[hsl(var(--gold-ink))]">Construction Consultation</p>
+              <p className="text-caption font-body font-bold tracking-[0.25em] uppercase text-[hsl(var(--gold-ink))]">Detailed Construction Intake</p>
             </div>
-            <h1 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">Start Your Project Conversation</h1>
+            <h1 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">Share More Project Details</h1>
             <p className="text-sm text-muted-foreground font-body max-w-md mx-auto leading-relaxed">
-              Tell us about your vision. We'll respond with a thoughtful call from someone who understands mountain construction — not a sales pitch.
+              This optional intake collects more detail after first contact. It does not reserve an appointment or commit you to paid design or construction.
             </p>
           </div>
 
@@ -577,7 +577,7 @@ export default function ConstructionConsultation() {
                   </>
                 ) : (
                   <>
-                    <span>{isLast ? "Schedule Your Consultation" : "Continue"}</span>
+                    <span>{isLast ? "Send My Project Details" : "Continue"}</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </>
                 )}
@@ -594,9 +594,9 @@ export default function ConstructionConsultation() {
           >
             {[
               "Licensed General Contractor",
-              "In-House Crews",
+              "Named Project Contact",
               "WNC Specialists",
-              "Design-Build Capable",
+              "Paid Design When Needed",
             ].map(item => (
               <div key={item} className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
