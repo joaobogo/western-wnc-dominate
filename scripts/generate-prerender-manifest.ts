@@ -29,7 +29,7 @@ const OUT = resolve("public/prerender-manifest.json");
 /**
  * Noindex funnel routes that are deliberately absent from sitemap.xml but must
  * still be prerendered, so the server emits their own title, canonical, og:url
- * and `noindex,nofollow` instead of falling back to the homepage shell.
+ * and route-specific noindex directive instead of falling back to the homepage shell.
  * (Moved here from scripts/prerender.mjs — this file is now the single list.)
  */
 export const NOINDEX_ROUTES = [
@@ -41,6 +41,11 @@ export const NOINDEX_ROUTES = [
   "/construction-builder",
   // Removed from sitemap.xml (it carries noindex) but still publicly reachable.
   "/construction/consultation",
+  // Paid landing pages are intentionally absent from sitemap.xml but need real
+  // route HTML for direct ad clicks, refreshes and crawlers reading noindex.
+  "/lp/roofing",
+  "/lp/construction",
+  "/lp/roofing-construction",
 ];
 
 const normalize = (p: string) => (p === "/" ? "/" : p.replace(/\/+$/, ""));
