@@ -636,8 +636,8 @@ export default function CombinedLanding() {
             </div>
             {!keyboardOpen && (
               <div data-sticky-cta className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-3 shadow-lg backdrop-blur xl:hidden" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}>
-                {phoneLink("Call Now", "lp_combined_sticky", "btn btn-secondary min-h-12 w-full justify-center whitespace-nowrap text-sm")}
-                <button type="button" onClick={scrollToNearestForm} className="btn btn-primary min-h-12 w-full justify-center whitespace-nowrap text-sm">Start Request</button>
+                {phoneLink("Call Highlander", "lp_combined_sticky", "btn btn-secondary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.72rem] sm:text-sm")}
+                <button type="button" onClick={scrollToNearestForm} className="btn btn-primary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.72rem] sm:text-sm">Discuss My Project</button>
               </div>
             )}
           </>
