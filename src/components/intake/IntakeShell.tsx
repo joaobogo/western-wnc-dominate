@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { ReactNode } from "react";
 import { Phone, Shield, Award, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -88,9 +88,9 @@ const IntakeShell = ({
             <div className="grid grid-cols-2 gap-3 mb-8">
               {[
                 { icon: Shield,  text: "Licensed GC" },
-                { icon: Award,   text: "ShingleMaster Credentialed" },
+                { icon: Award,   text: "CertainTeed Credentialed" },
                 { icon: Clock,   text: "Storm Damage Support" },
-                { icon: MapPin,  text: "8 WNC Counties" },
+                { icon: MapPin,  text: `${COUNTY_COUNT} WNC Counties` },
               ].map((t) => (
                 <div key={t.text} className="flex items-center gap-2 text-muted-foreground text-body-xs font-body">
                   <t.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0" />
