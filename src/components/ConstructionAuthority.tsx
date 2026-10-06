@@ -218,7 +218,7 @@ const ConstructionAuthority = () => {
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <Link
-                to="/construction/consultation"
+                to="/request-inspection?context=construction_authority&type=construction"
                 className="btn btn-secondary btn-md btn-on-dark group"
               >
                 <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
