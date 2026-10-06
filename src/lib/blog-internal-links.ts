@@ -45,7 +45,7 @@ const pickServicePage = (post: BlogPost): InternalLink => {
     return {
       label: `Storm Damage Response${post.town ? ` in ${post.town}` : ""}`,
       path: "/roofing/storm-damage",
-      description: "Emergency response, tarping, and insurance-ready documentation.",
+      description: "Storm damage assessment, repair guidance, and contractor documentation.",
     };
   }
   if (cat === "materials" || hay.includes("metal") || hay.includes("standing seam")) {
