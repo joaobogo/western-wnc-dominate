@@ -63,7 +63,7 @@ const replacementSigns = [
 
 const risksOfWaiting = [
   { icon: Droplets, title: "Water Damage Escalation", detail: "A failing roof doesn't just leak — it allows moisture into insulation, framing, and interior finishes. What starts as a stain becomes mold, rot, and structural compromise." },
-  { icon: DollarSign, title: "Increased Total Project Cost", detail: "Waiting until emergency failure means emergency pricing, limited material availability, and potential structural repairs that wouldn't have been needed six months earlier." },
+  { icon: DollarSign, title: "Increased Total Project Cost", detail: "Waiting until failure can reduce scheduling flexibility, limit material choices, and allow additional damage to develop before the roof is addressed." },
   { icon: Thermometer, title: "Energy Efficiency Loss", detail: "A deteriorating roof compromises insulation and ventilation performance, driving up heating and cooling costs throughout the year — especially at mountain elevations." },
   { icon: TrendingDown, title: "Property Value Decline", detail: "Roof condition is one of the first things buyers, appraisers, and inspectors evaluate. A visibly aging roof directly impacts your home's market value and saleability." },
 ];
@@ -138,7 +138,7 @@ const trustProof = [
   { value: REVIEW_STARS, label: "Google Rating", detail: "Across Highlands, Cashiers, Franklin, Sylva & surrounding communities" },
   { value: "CertainTeed", label: "ShingleMaster Credentialed", detail: "CertainTeed ShingleMaster Credentialed Contractor" },
   { value: REVIEW_STARS, label: "Google Rating", detail: "Earned through consistent quality, communication, and follow-through" },
-  { value: "Rapid", label: "Storm Response", detail: "Emergency tarping and priority scheduling when weather strikes" },
+  { value: "Direct", label: "Storm Support", detail: "Call to discuss damage, temporary protection, and the appropriate next step" },
 ];
 
 const galleryItems = [
@@ -393,7 +393,7 @@ const RoofReplacement = () => {
                   Delaying a necessary replacement rarely saves money. In most cases, it increases total project cost, expands the scope of damage, and removes your ability to plan on your own terms.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  The best time to replace a roof is before it fails — when you can choose materials deliberately, schedule around weather windows, and avoid emergency pricing.
+                  Planning replacement before a roof fails gives you more room to compare materials, review the written scope, and schedule around appropriate weather windows.
                 </p>
               </motion.div>
 
@@ -596,7 +596,7 @@ const RoofReplacement = () => {
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Clock, text: "Rapid Response" },
+                      { icon: Clock, text: "Clear Next Steps" },
                       { icon: Star, text: "Financing Available" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
