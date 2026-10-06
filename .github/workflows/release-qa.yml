@@ -27,15 +27,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies from the authoritative Bun lock
+        run: bun install --frozen-lockfile
 
       - name: Install Chromium for prerender QA
         run: npx playwright install --with-deps chromium
