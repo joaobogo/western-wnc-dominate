@@ -536,3 +536,16 @@ export function syncDesignerLeadToJobTread(id: string | null | undefined) {
   invokeFn("jobtread-sync", { designer_lead_id: id });
   notifyTeams({ designer_lead_id: id });
 }
+
+/**
+ * submitLead never throws on a rejected insert: it returns `{ error }`. A form
+ * that awaits it and carries on will tell the visitor "your request is in" when
+ * nothing was stored. Call this on the result so a form can only reach its
+ * success state once the lead is durably saved (or was already saved: duplicate).
+ */
+export function requireStoredLead(result: SubmitLeadResult | null | undefined): SubmitLeadResult {
+  if (!result || result.error || (!result.id && !result.duplicate)) {
+    throw result?.error instanceof Error ? result.error : new Error("lead_not_stored");
+  }
+  return result;
+}

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import { ArrowRight, Phone, Shield, Users, Mountain, Award, Heart, Eye, Hammer, TreePine, Home, CheckCircle, Star, MapPin, Calendar, Quote, Mail } from "lucide-react";
-import { BUSINESS } from "@/data/business";
 import SEOHead, { breadcrumbSchema, organizationSchema, localBusinessSchema, personSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -641,7 +640,7 @@ const About = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { stat: REVIEW_STARS, label: "Google Rating" },
-                { stat: `Since ${BUSINESS.foundedYear}`, label: "Serving Western NC" },
+                { stat: `Since ${new Date(`${BUSINESS.foundingDate}T12:00:00Z`).getUTCFullYear()}`, label: "Serving Western NC" },
                 { stat: `${BUSINESS.locations.length}`, label: "Walk-In Showrooms" },
                 { stat: BUSINESS.licenseNumber.replace(/^\D+/, "#"), label: "NC GC License" },
               ].map((item, i) => (

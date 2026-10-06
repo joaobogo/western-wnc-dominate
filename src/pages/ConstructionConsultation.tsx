@@ -400,8 +400,8 @@ export default function ConstructionConsultation() {
 
       if (error) throw error;
       try {
-        const { submitLead } = await import("@/lib/leads");
-        await submitLead({
+        const { submitLead, requireStoredLead } = await import("@/lib/leads");
+        requireStoredLead(await submitLead({
           source: "construction_consultation_form",
           lead_type: "construction",
           full_name: form.name,
@@ -417,8 +417,8 @@ export default function ConstructionConsultation() {
           has_plans: form.hasPlans === "yes-pro-plans" || form.hasPlans === "yes-sketches",
           project_description: form.description || null,
           metadata: { goals: form.projectGoals, planStatus: form.hasPlans },
-        });
-      } catch (e) { console.error(e); }
+        }));
+      } catch (e) { console.error(e); throw e; }
       setSubmitted(true);
     } catch (err) {
       console.error("Submit error:", err);

@@ -104,3 +104,19 @@ describe("idempotent submission", () => {
     expect(syncCall?.[1].body.idempotency_key).toBe(row.idempotency_key);
   });
 });
+
+describe("requireStoredLead (no false success)", () => {
+  it("throws when the database rejected the lead", async () => {
+    const { requireStoredLead } = await import("@/lib/leads");
+    expect(() => requireStoredLead({ id: null, error: new Error("rls") })).toThrow("rls");
+    expect(() => requireStoredLead({ id: null, error: { code: "42501" } })).toThrow("lead_not_stored");
+    expect(() => requireStoredLead({ id: null, error: null })).toThrow("lead_not_stored");
+    expect(() => requireStoredLead(null)).toThrow("lead_not_stored");
+  });
+
+  it("passes a stored lead and an already-stored duplicate", async () => {
+    const { requireStoredLead } = await import("@/lib/leads");
+    expect(requireStoredLead({ id: "abc", error: null }).id).toBe("abc");
+    expect(requireStoredLead({ id: null, error: null, duplicate: true }).duplicate).toBe(true);
+  });
+});
