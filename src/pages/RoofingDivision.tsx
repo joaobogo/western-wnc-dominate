@@ -64,7 +64,7 @@ const roofingServices = [
     slug: "/roofing/storm-damage",
     problem: "A storm hit your property and you need documented damage your insurer will accept.",
     description: "Storm-damage assessment with photo documentation, repair or replacement scoping, and insurance-ready project information when applicable.",
-    features: ["Emergency tarping", "Insurance documentation", "Adjuster meetings", "Priority repairs"],
+    features: ["Storm damage assessment", "Contractor documentation", "Adjuster coordination when appropriate", "Repair or replacement scope"],
   },
   {
     icon: Building2,
