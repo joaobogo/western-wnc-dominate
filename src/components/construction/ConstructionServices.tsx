@@ -25,7 +25,7 @@ export const constructionCategories: ConstructionCategory[] = [
   {
     icon: Compass,
     title: "Design",
-    slug: "/layouts-planning",
+    slug: "/construction/design",
     description: "Detailed pre-construction support including layouts, floor plans, and project scope definition before you build.",
     outcomes: [
       "Cohesive project vision",
