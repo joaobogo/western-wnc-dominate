@@ -358,7 +358,7 @@ export const towns: TownData[] = [
     description: "Serving the far west with reliable roofing and construction. We focus on durability and local accountability for Murphy's growing residential market.",
     features: ["Local crew presence", "Fast turnaround", "Residential specialists", "Vacation home care"],
     metaTitle: "Murphy, NC Roofing | Highlander Building Services",
-    metaDescription: "Reliable roofing and construction for Murphy and Cherokee County. Locally based crews, durable materials, and honest service. Licensed & Insured.",
+    metaDescription: "Roofing and construction for Murphy and Cherokee County, served from the Franklin and Sylva showrooms. Durable materials, and honest service. Licensed & Insured.",
     housingProfile: "Traditional family homes, retirement retreats, and high-traffic vacation rentals.",
     climateExposure: "Heavy seasonal humidity and wind-driven rain that require high-quality underlayment and precise flashing details.",
     localVibe: "A friendly, community-oriented hub where local reliability and straight-forward pricing are the top priorities.",
