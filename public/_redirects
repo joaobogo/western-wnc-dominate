@@ -809,6 +809,22 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /blog/roofing-project-planning-cullowhee-nc                  /blog/roofing-project-planning-highlands-nc                  301!
 
 # ============================================================
+# Blog intent consolidation — SEO/CRO audit 2026-10-06
+/blog/roof-repair-vs-roof-replacement-highlands-nc                   /blog/roof-repair-vs-replacement-highlands-nc                  301!
+/blog/roof-repair-vs-replacement-franklin-nc                         /service-areas/franklin-nc/roof-repair                         301!
+/blog/roof-repair-vs-replacement-cashiers-nc                         /service-areas/cashiers-nc/roof-repair                         301!
+/blog/roof-repair-vs-replacement-sylva-nc                            /service-areas/sylva-nc/roof-repair                            301!
+/blog/roof-repair-vs-replacement-cullowhee-nc                        /service-areas/cullowhee-nc/roof-repair                        301!
+/blog/metal-roofing-vs-shingles-cashiers-nc                          /blog/metal-vs-shingle-roof-western-nc                         301!
+/blog/metal-roofing-vs-shingles-highlands-nc                         /blog/metal-vs-shingle-roof-western-nc                         301!
+/blog/metal-vs-shingle-roof-franklin-highlands-cashiers              /blog/metal-vs-shingle-roof-western-nc                         301!
+/blog/how-to-choose-roofing-contractor-franklin-nc                   /blog/choosing-roofing-contractor-wnc                          301!
+/blog/roofing-company-cashiers-nc-choosing-contractor                /blog/choosing-roofing-contractor-wnc                          301!
+/blog/roofing-contractor-sylva-nc-roofing-gutters-repairs            /blog/choosing-roofing-contractor-wnc                          301!
+/blog/roof-repair-franklin-nc                                        /service-areas/franklin-nc/roof-repair                         301!
+/blog/roof-replacement-franklin-nc                                   /service-areas/franklin-nc/roof-replacement                    301!
+
+# ============================================================
 # App-only rewrites — public/noindex funnels are prerendered as real files.
 # Only genuinely client-only tools fall back to the SPA shell; anything else
 # falls through to dist/404.html with a real 404 status.
