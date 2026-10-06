@@ -22,7 +22,7 @@ const LeadConfirmationPanel = ({
   heading = "Your request is in.",
   summary = [],
   town,
-  category = "roofing",
+  category = "general",
   tone = "light",
   className = "",
 }: {
