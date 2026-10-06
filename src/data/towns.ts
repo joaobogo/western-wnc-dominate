@@ -51,7 +51,7 @@ export const townLocalRelevance: Record<string, string> = {
   "cashiers-nc":
     "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
   "franklin-nc":
-    "Based in Franklin, Highlander Building Services serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen on a same-day or next-day basis and the same team is on site from first call to final walkthrough.",
+    "Based in Franklin, Highlander Building Services serves homeowners across Macon County with roofing, repairs, gutters, and construction built for mountain weather. The Franklin showroom gives local homeowners a direct place to call or visit when discussing a project.",
   "sylva-nc":
     "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
   "bryson-city-nc":
