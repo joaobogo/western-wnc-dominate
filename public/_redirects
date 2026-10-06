@@ -808,24 +808,17 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /blog/roofing-project-planning-cullowhee-nc                  /blog/roofing-project-planning-highlands-nc                  301!
 
 # ============================================================
-# App-only rewrites — every public URL is now a real prerendered
-# file in dist, so there is NO global /* fallback. Only these
-# client-rendered app paths fall back to the SPA shell; anything
-# else falls through to dist/404.html with a real 404 status.
+# App-only rewrites — public/noindex funnels are prerendered as real files.
+# Only genuinely client-only tools fall back to the SPA shell; anything else
+# falls through to dist/404.html with a real 404 status.
 # ============================================================
-/admin/*                 /index.html   200
-/lp/*                    /index.html   200
-/.lovable/*              /index.html   200
-/front-desk                  /index.html   200
-/front-desk/*                /index.html   200
-/consultation            /index.html   200
-/roofing-intake          /index.html   200
-/construction-intake     /index.html   200
-/roofing-builder         /index.html   200
-/construction-builder    /index.html   200
-/design-intake           /index.html   200
-/quote-flow              /index.html   200
-/seo-monitoring          /index.html   200
+/consultation            /request-inspection 301!
+/admin/*                  /index.html   200
+/.lovable/*               /index.html   200
+/front-desk               /index.html   200
+/front-desk/*             /index.html   200
+/quote-flow               /index.html   200
+/seo-monitoring           /index.html   200
 
 # Per-route OG cards live at /og/<slug>.png (generated at build). Any route
 # without a generated card falls back to the sitewide social image.
