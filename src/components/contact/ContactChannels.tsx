@@ -42,7 +42,7 @@ const CHANNELS: Channel[] = [
     eyebrow: "No Pressure",
     title: "Ask a question",
     body: "Best for materials, insurance paperwork, timing, or a second opinion on a bid.",
-    next: "A written answer back within 24 hours — no appointment, no sales follow-up.",
+    next: "The team reviews email during staffed business hours and responds with the appropriate next step.",
     action: "info@highlandernc.com",
     href: "mailto:info@highlandernc.com",
   },
