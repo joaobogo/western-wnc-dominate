@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY } from "@/data/business";
+import { BUSINESS, PHONE_DISPLAY } from "@/data/business";
 import { defineTool } from "@lovable.dev/mcp-js";
 
 export default defineTool({
@@ -9,21 +9,17 @@ export default defineTool({
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {
-      name: "Highlander Building Services, Inc.",
+      name: BUSINESS.legalName,
       phone: `${PHONE_DISPLAY}`,
-      website: "https://highlandernc.com",
+      website: BUSINESS.websiteUrl,
       city: "Franklin",
       region: "North Carolina",
       country: "US",
-      service_area:
-        "Western North Carolina — Macon, Jackson, Swain, Haywood, Transylvania, Henderson, Buncombe, Cherokee, and Clay counties.",
+      service_area: `Western North Carolina — ${BUSINESS.countiesServed.map((county) => county.name).join(", ")}.`,
       divisions: ["Roofing", "Construction"],
-      credentials: [
-        "CertainTeed ShingleMaster Credentialed Contractor",
-        "Licensed General Contractor (NC)",
-      ],
+      credentials: BUSINESS.credentials.map((credential) => credential.label),
       positioning:
-        "Premium local roofing and construction team serving Western NC mountain homes since founding. Team-led, mountain-specialized crews.",
+        "Roofing and construction company serving Western North Carolina from Franklin and Sylva with written project scopes and licensed general-contractor oversight.",
     };
     return {
       content: [{ type: "text", text: JSON.stringify(info, null, 2) }],
