@@ -115,6 +115,9 @@ else {
     const re = new RegExp(`^\\s*Disallow:\\s*${p.replace(/\//g, "\\/")}\\s*$`, "m");
     if (re.test(robots)) fail(`robots.txt blocks public path ${p}.`);
   }
+  if (/^\s*Disallow:\s*\/lp(?:\/|\s*$)/mi.test(robots))
+    fail("robots.txt blocks paid landing pages; /lp pages must stay crawlable so crawlers can read noindex.");
+
   // OAI-SearchBot must not be explicitly blocked (scoped to its own block only)
   const oai = robots.match(/User-agent:\s*OAI-SearchBot[^\n]*\n([\s\S]*?)(?=\n\s*User-agent:|\Z)/i);
   if (oai && /^\s*Disallow:\s*\/\s*$/m.test(oai[1]))
@@ -190,11 +193,24 @@ if (existsSync(seoHeadPath)) {
 // ---------- 5. Prerender output checks (run after `npm run build`) ----------
 // Skipped when dist/ has not been built yet, so `npm run seo:check` still
 // works standalone; enforced hard whenever a build exists.
-const HOME_TITLE = "Roofing Company in Franklin, NC | Highlander";
+const HOME_TITLE = (indexHtml.match(/<title>([^<]*)<\/title>/i) || [, ""])[1].trim();
 const APP_ONLY_PREFIXES = [
-  "/admin", "/lp", "/.lovable", "/front-desk", "/intake", "/consultation", "/roofing-intake",
-  "/construction-intake", "/roofing-builder", "/construction-builder",
-  "/design-intake", "/quote-flow", "/seo-monitoring",
+  "/admin", "/.lovable", "/front-desk", "/intake", "/quote-flow", "/seo-monitoring",
+];
+const REQUIRED_NOINDEX_HTML_ROUTES = [
+  "/thank-you",
+  "/roofing-intake",
+  "/construction-intake",
+  "/design-intake",
+  "/roofing-builder",
+  "/construction-builder",
+  "/construction/consultation",
+  "/lp/roof-replacement",
+  "/lp/roof-repair",
+  "/lp/storm-damage",
+  "/lp/roofing",
+  "/lp/construction",
+  "/lp/roofing-construction",
 ];
 
 const distIndexPath = resolve("dist/index.html");
@@ -217,6 +233,22 @@ if (distIsCurrent) {
     fail(`Prerender coverage ${(coverage * 100).toFixed(1)}% (${present.length}/${paths.length}) — below the 95% floor.`);
 
   if (!existsSync(resolve("dist/404.html"))) fail("dist/404.html missing — NotFound was not prerendered.");
+
+  for (const p of REQUIRED_NOINDEX_HTML_ROUTES) {
+    const file = fileFor(p);
+    if (!existsSync(file)) {
+      fail(`Required noindex route ${p} has no prerendered HTML artifact.`);
+      continue;
+    }
+    const html = readFileSync(file, "utf8");
+    const robots = (html.match(/<meta[^>]+name="robots"[^>]+content="([^"]*)"/i) || [, ""])[1];
+    if (!/noindex/i.test(robots)) fail(`Required noindex route ${p} renders robots="${robots || "missing"}".`);
+    const canonicals = [...html.matchAll(/<link[^>]+rel="canonical"[^>]*href="([^"]+)"/gi)].map(m => m[1]);
+    const expected = `${BASE}${p}`;
+    if (canonicals.length !== 1 || canonicals[0] !== expected)
+      fail(`Required noindex route ${p} must self-canonicalize to ${expected}; found ${canonicals.join(", ") || "none"}.`);
+    if (!/<h1[\s>]/i.test(html)) fail(`Required noindex route ${p} has no <h1> in prerendered HTML.`);
+  }
 
   // Two indexable pages must never share a <title> — duplicate titles are the
   // clearest signal of templated pages competing with each other.
