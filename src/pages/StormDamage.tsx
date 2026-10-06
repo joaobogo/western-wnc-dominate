@@ -240,7 +240,7 @@ const StormDamage = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Storm Damage Support</div>
-                  <div className="text-caption text-primary-foreground font-body uppercase tracking-wider">Call {PHONE_DISPLAY} for immediate storm assistance</div>
+                  <div className="text-caption text-primary-foreground font-body uppercase tracking-wider">Call {PHONE_DISPLAY} during office hours for storm damage support</div>
                 </div>
               </motion.div>
             </div>
@@ -547,7 +547,7 @@ const StormDamage = () => {
                   { icon: Shield, title: "Licensed, Insured, and Permanent", detail: "We're not a storm-chasing crew that appears after weather events and disappears after cashing checks. Highlander is a licensed, insured, locally established roofing company with a permanent address in Western North Carolina." },
                   { icon: Clock, title: "Urgent Roof Guidance", detail: "For active leaks or storm damage, call during office hours to explain what is happening. Outside office hours, send a request for follow-up. Temporary protection depends on conditions, safety, and availability." },
                   { icon: BadgeCheck, title: "Manufacturer Certified", detail: "As CertainTeed certified installers, our repair and replacement work meets manufacturer standards — which matters when warranty coverage is part of the conversation after storm damage." },
-                  { icon: Zap, title: "Hundreds of Storm Calls Answered", detail: "From the 2020 derecho to annual summer hail events, we've assessed and repaired storm damage on hundreds of roofs across the region. We know what WNC weather does to roofs — and how to fix it properly." },
+                  { icon: Zap, title: "Mountain Storm Experience", detail: "Highlander works on mountain roofs exposed to wind, heavy rain, hail, fallen debris, and seasonal weather across Western North Carolina." },
                 ].map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
                     <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
