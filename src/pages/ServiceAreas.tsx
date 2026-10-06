@@ -35,15 +35,15 @@ const serviceStats = [
       </span>
     )
   },
-  { value: "Rapid", label: "Response Time", detail: "Emergency & Standard" },
+  { value: "2", label: "Showrooms", detail: "Franklin & Sylva" },
   { value: REVIEW_STARS, label: "Average Rating", detail: REVIEW_COUNT_LABEL },
 ];
 
 const whyLocal = [
   { icon: Mountain, title: "We Know the Terrain", detail: "Elevation, slope, soil composition, and microclimates affect every project. We've built across this region long enough to know what each town demands." },
   { icon: CloudLightning, title: "We Know the Weather", detail: "From Highlands' 80+ inches of annual rain to Waynesville's ice storms — we spec materials and methods for your area's exact exposure profile." },
-  { icon: Users, title: "Local In-House Crews", detail: "Our teams live and work here. They know the roads, the building codes, and the inspectors." },
-  { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area the same day. Emergency response is prioritized." },
+  { icon: Users, title: "Western NC Team", detail: "Highlander serves mountain communities from its Franklin and Sylva showrooms with locally coordinated project teams." },
+  { icon: Clock, title: "Two Local Points of Contact", detail: "Franklin and Sylva provide clear contact points for homeowners across Highlander's Western North Carolina service area." },
 ];
 
 const primaryTowns = towns.slice(0, 6);
