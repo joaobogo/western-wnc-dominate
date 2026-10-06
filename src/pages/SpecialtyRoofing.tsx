@@ -435,7 +435,7 @@ const SpecialtyRoofing = () => {
                             <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                               {[
                                 { icon: Gem, text: "Premium Material Specialists" },
-                                { icon: Award, text: "CertainTeed Certified" },
+                                { icon: Award, text: "CertainTeed Credentialed Contractor" },
                                 { icon: Mountain, text: "WNC Custom Home Experience" },
                                 { icon: Star, text: "Detail-Obsessed Crews" },
                               ].map((item) => (
