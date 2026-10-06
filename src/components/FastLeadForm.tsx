@@ -1,36 +1,40 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Loader2, Phone } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { fieldAttrs } from "@/lib/field-ergonomics";
-import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import FormSavedNote from "@/components/forms/FormSavedNote";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
 import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
+import { trackFormError, trackFormStart, trackPhoneClick } from "@/lib/gtm";
 
 interface FastLeadFormProps {
   ctaLabel: string;
   serviceLabel: string;
-  urgencyOptions: string[];
+  /** Kept for caller compatibility. Qualification happens after first contact. */
+  urgencyOptions?: string[];
 }
 
-const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormProps) => {
+const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
   const { submitting, submit } = useLeadSubmit();
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    email: "",
     phone: "",
-    town: "",
-    urgency: urgencyOptions[0] ?? "As soon as possible",
   });
+
+  const serviceCategory =
+    serviceLabel.toLowerCase().includes("construction") ? "construction" : "roofing";
+  const formId = `fast-lead-${serviceCategory}`;
 
   const autosave = useFormAutosave(`fast-lead-${serviceLabel}`, formData, {
     enabled: !submitted,
@@ -38,15 +42,21 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
   });
 
   const contact = useContactValidation({
-    name: formData.name,
+    name: formData.firstName,
+    email: formData.email,
     phone: formData.phone,
-    town: formData.town,
-    // No email field on this form, so a valid phone is the only way to reach us.
-    require: { name: true, phone: true, town: true },
+    require: { name: true, email: false, phone: true },
   });
 
+  const markStart = () =>
+    trackFormStart({
+      form_name: "fast_lead_form",
+      form_id: formId,
+      service_category: serviceCategory,
+    });
+
   const fieldClass = (invalid?: boolean) =>
-    `w-full border bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground ${
+    `min-h-12 w-full border bg-background px-4 py-3 text-base font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground ${
       invalid ? "border-destructive focus:border-destructive" : "border-input focus:border-primary"
     }`;
 
@@ -55,12 +65,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
       <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
         <LeadConfirmationPanel
           heading="Request received."
-          town={formData.town}
+          category={serviceCategory}
           summary={[
             { label: "Service", value: serviceLabel },
-            { label: "Town", value: formData.town },
-            { label: "We'll reach you at", value: formData.phone },
-            { label: "Timing", value: formData.urgency },
+            { label: "First name", value: formData.firstName },
+            { label: "We'll reach you at", value: formData.phone || formData.email },
           ]}
         />
       </div>
@@ -71,40 +80,67 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
     <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
       <div className="mb-5">
         <div className="text-caption font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
-          Get My Written Estimate
+          Request a Free Estimate
         </div>
-        <h2 className="font-heading text-2xl font-bold text-foreground">Get help with {serviceLabel.toLowerCase()}.</h2>
+        <h2 className="font-heading text-2xl font-bold text-foreground">
+          Get help with {serviceLabel.toLowerCase()}.
+        </h2>
         <p className="mt-2 text-sm text-muted-foreground font-body leading-relaxed">
-          Four quick fields. A real local advisor follows up fast.
+          Three quick fields. We will discuss the property and project details with you after the request is stored.
         </p>
       </div>
 
       <form
         noValidate
         className="space-y-4"
+        data-hide-sticky
+        data-gtm-form-name="fast_lead_form"
+        data-gtm-form-id={formId}
+        data-gtm-service-category={serviceCategory}
         onSubmit={async (event) => {
           event.preventDefault();
           if (submitting) return;
+          markStart();
           if (!contact.markAttempted()) {
-            setSubmitError("We need a little more before we can send this.");
+            setSubmitError("Please check the highlighted fields.");
             setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
+            trackFormError({
+              form_name: "fast_lead_form",
+              form_id: formId,
+              error_type: "validation",
+            });
             return;
           }
           setSubmitError(null);
           setIssues([]);
           const result = await submit({
             source: "fast_lead_form",
-            lead_type: serviceLabel,
+            lead_type: serviceCategory,
+            first_name: contact.values.name,
             full_name: contact.values.name,
+            email: contact.values.email,
             phone: contact.values.phone,
-            property_town: contact.values.town,
-            property_state: "NC",
-            timeline: formData.urgency,
-            service_category: serviceLabel,
+            project_type: serviceLabel,
+            service_category: serviceCategory,
+            consent_given: true,
+            consent_text:
+              "By submitting, you ask Highlander Building Services, Inc. to contact you about this project by phone or email.",
+            metadata: {
+              service_intent: serviceCategory,
+              form_location: "fast_lead_form",
+              consent_notice_version: "shared-fast-lead-2026-10-06",
+            },
           });
-          if (!result) return; // a submit was already in flight
-          if (result.error) {
-            setSubmitError("We couldn't send that just now. Everything you typed is still here — try again in a moment.");
+          if (!result) return;
+          if (result.error || (!result.id && !result.duplicate)) {
+            setSubmitError(
+              `We could not confirm your request. Please try again or call ${PHONE_DISPLAY}.`,
+            );
+            trackFormError({
+              form_name: "fast_lead_form",
+              form_id: formId,
+              error_type: "delivery",
+            });
             return;
           }
           setSubmitted(true);
@@ -112,103 +148,100 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         }}
       >
         <FormErrorSummary message={submitError} issues={issues} className="mt-0" />
-        {/* Call escape hatch above the first field — calls are the primary
-            conversion, so the phone is offered before the form, not after. */}
+
         <p className="text-sm font-body text-muted-foreground">
           Prefer to talk?{" "}
           <a
             href={PHONE_TEL}
+            onClick={() =>
+              trackPhoneClick({
+                phone_number: PHONE_PLAIN,
+                link_url: PHONE_TEL,
+                click_location: "fast_lead_form",
+                page_type: serviceCategory,
+              })
+            }
             className="inline-flex min-h-[44px] items-center gap-1.5 font-semibold text-foreground underline underline-offset-2 hover:text-[hsl(var(--gold-ink))] transition-colors"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             Call {PHONE_DISPLAY}
           </a>
         </p>
+
         <div>
-          <label htmlFor={`${serviceLabel}-name`} className="field-label">
-            Name
+          <label htmlFor={`${formId}-first-name`} className="field-label">
+            First name
           </label>
           <input
-            id={`${serviceLabel}-name`}
-            {...fieldAttrs.name}
+            id={`${formId}-first-name`}
+            name="first_name"
+            type="text"
+            autoComplete="given-name"
             required
-            value={formData.name}
-            onChange={(event) => setFormData({ ...formData, name: event.target.value })}
+            value={formData.firstName}
+            onFocus={markStart}
+            onChange={(event) => setFormData({ ...formData, firstName: event.target.value })}
             onBlur={() => contact.blur("name")}
             aria-invalid={Boolean(contact.errorFor("name")) || undefined}
-            aria-describedby={contact.errorFor("name") ? `${serviceLabel}-name-error` : undefined}
+            aria-describedby={contact.errorFor("name") ? `${formId}-first-name-error` : undefined}
             className={fieldClass(Boolean(contact.errorFor("name")))}
-            placeholder="e.g. John and Mary Davidson"
+            placeholder="First name"
           />
-          <InlineFieldError id={`${serviceLabel}-name-error`}>{contact.errorFor("name")}</InlineFieldError>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label htmlFor={`${serviceLabel}-phone`} className="field-label">
-              Phone
-            </label>
-            <input
-              id={`${serviceLabel}-phone`}
-              {...fieldAttrs.phone}
-              required
-              value={formData.phone}
-              onChange={(event) => setFormData({ ...formData, phone: contact.formatPhoneInput(event.target.value) })}
-              onBlur={() => contact.blur("phone")}
-              aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
-            aria-describedby={contact.errorFor("phone") ? `${serviceLabel}-phone-error` : undefined}
-              className={fieldClass(Boolean(contact.errorFor("phone")))}
-              placeholder="(828) 555-0123"
-            />
-            <InlineFieldError id={`${serviceLabel}-phone-error`}>{contact.errorFor("phone")}</InlineFieldError>
-          </div>
-          <div>
-            <label htmlFor={`${serviceLabel}-town`} className="field-label">
-              Town
-            </label>
-            <input
-              id={`${serviceLabel}-town`}
-              {...fieldAttrs.town}
-              required
-              value={formData.town}
-              onChange={(event) => setFormData({ ...formData, town: event.target.value })}
-              onBlur={() => contact.blur("town")}
-              aria-invalid={Boolean(contact.errorFor("town")) || undefined}
-            aria-describedby={contact.errorFor("town") ? `${serviceLabel}-town-error` : undefined}
-              className={fieldClass(Boolean(contact.errorFor("town")))}
-              placeholder="Franklin, Highlands, Sylva…"
-            />
-            <InlineFieldError id={`${serviceLabel}-town-error`}>{contact.errorFor("town")}</InlineFieldError>
-          </div>
+          <InlineFieldError id={`${formId}-first-name-error`}>
+            {contact.errorFor("name")}
+          </InlineFieldError>
         </div>
 
         <div>
-          <span className="field-label">
-            Timing
-          </span>
-          <div className="grid grid-cols-2 gap-2">
-            {urgencyOptions.map((option) => {
-              const selected = formData.urgency === option;
-              return (
-                <button
-                  key={option}
-                  type="button"
-                  onClick={() => setFormData({ ...formData, urgency: option })}
-                  aria-pressed={selected}
-                  className="tap-card"
-                >
-                  {option}
-                </button>
-              );
-            })}
-          </div>
+          <label htmlFor={`${formId}-email`} className="field-label">
+            Email <span className="font-normal normal-case tracking-normal text-muted-foreground">(optional)</span>
+          </label>
+          <input
+            id={`${formId}-email`}
+            {...fieldAttrs.email}
+            value={formData.email}
+            onFocus={markStart}
+            onChange={(event) => setFormData({ ...formData, email: event.target.value })}
+            onBlur={() => contact.blur("email")}
+            aria-invalid={Boolean(contact.errorFor("email")) || undefined}
+            aria-describedby={contact.errorFor("email") ? `${formId}-email-error` : undefined}
+            className={fieldClass(Boolean(contact.errorFor("email")))}
+            placeholder="you@email.com"
+          />
+          <InlineFieldError id={`${formId}-email-error`}>
+            {contact.errorFor("email")}
+          </InlineFieldError>
+        </div>
+
+        <div>
+          <label htmlFor={`${formId}-phone`} className="field-label">
+            Phone number
+          </label>
+          <input
+            id={`${formId}-phone`}
+            {...fieldAttrs.phone}
+            required
+            value={formData.phone}
+            onFocus={markStart}
+            onChange={(event) =>
+              setFormData({
+                ...formData,
+                phone: contact.formatPhoneInput(event.target.value),
+              })
+            }
+            onBlur={() => contact.blur("phone")}
+            aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+            aria-describedby={contact.errorFor("phone") ? `${formId}-phone-error` : undefined}
+            className={fieldClass(Boolean(contact.errorFor("phone")))}
+            placeholder="(828) 555-0123"
+          />
+          <InlineFieldError id={`${formId}-phone-error`}>
+            {contact.errorFor("phone")}
+          </InlineFieldError>
         </div>
 
         <FormSavedNote show={autosave.restored} />
-        {/* Submit sits directly under the inputs. It used to come after the
-            "what happens next" note and the consent paragraph, which pushed it
-            ~850px below the last field — off-screen on a phone with the
-            keyboard open (mobile audit F1). The legal copy now follows it. */}
+
         <motion.button
           whileTap={{ scale: 0.98 }}
           type="submit"
@@ -220,7 +253,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           {submitting ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-              Sending…
+              Sending your request...
             </>
           ) : (
             <>
@@ -229,7 +262,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             </>
           )}
         </motion.button>
-        <WhatHappensNext />
+
         <FormConsent />
       </form>
 
