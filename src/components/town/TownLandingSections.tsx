@@ -244,12 +244,12 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
  *  4. WHY CHOOSE HIGHLANDER IN {town}
  * ────────────────────────────────────────────────────────── */
 const reasons = [
-  { icon: Mountain, title: "Local, not visiting", desc: (t: string) => `Our crews live and work in Western NC — ${t} isn't a “drive-out” job for a Charlotte franchise.` },
+  { icon: Mountain, title: "Western NC based", desc: (t: string) => `Highlander serves ${t} from its Franklin and Sylva showrooms as part of its Western North Carolina service area.` },
   { icon: ShieldCheck, title: "Licensed general contractor", desc: () => "Full roofing and construction credentials, workers' comp, and liability — verifiable on every proposal." },
-  { icon: Award, title: "CertainTeed ShingleMaster", desc: () => "Credentialed contractor status with material-backed warranty options most local competitors can't offer." },
-  { icon: Users, title: "Team-led project delivery", desc: () => "A named project manager, inspector, and crew lead — you always know who to call." },
+  { icon: Award, title: "CertainTeed credentialed", desc: () => "CertainTeed Credentialed Contractor; project-specific warranty eligibility and terms are confirmed in writing." },
+  { icon: Users, title: "Named project contact", desc: () => "Highlander gives the homeowner a clear project contact and written scope for questions and follow-up." },
   { icon: Clock, title: "Direct contact", desc: (t: string) => `Call or send a request to discuss roofing needs in ${t} and the appropriate next step.` },
-  { icon: DollarSign, title: "Financing available", desc: () => "Structured payment options for approved buyers so major roofing or construction work fits your plan." },
+  { icon: DollarSign, title: "Ask about financing", desc: () => "Financing may be available for qualifying projects; lender terms and approval are confirmed separately." },
 ];
 
 export const TownWhyChoose = ({ town }: { town: TownData }) => (
@@ -267,7 +267,7 @@ export const TownWhyChoose = ({ town }: { town: TownData }) => (
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.1}>
             <p className="text-muted-foreground font-body leading-relaxed mb-8">
-              We're a Western NC roofing and construction firm — not a national franchise. Here's what changes when your project is run by a team that actually lives on the Plateau.
+              We're a Western NC roofing and construction firm — not a national franchise. Here is what Highlander brings to a project from its Western North Carolina team and two showrooms.
             </p>
             <Link
               to="/about"
