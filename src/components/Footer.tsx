@@ -33,7 +33,7 @@ const constructionLinks = [
   { label: "Design & Planning", href: "/construction/design" },
   { label: "Siding & Exterior", href: "/construction/siding" },
   { label: "Exterior Improvements", href: "/exterior-improvements" },
-  { label: "Construction Consultation", href: "/construction/consultation" },
+  { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_footer&type=construction" },
   { label: "Build Your Project", href: "/construction-builder" },
 ];
 
