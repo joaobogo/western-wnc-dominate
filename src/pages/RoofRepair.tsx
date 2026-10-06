@@ -69,7 +69,7 @@ const repairPhilosophy = [
 ];
 
 const processSteps = [
-  { number: "01", title: "You Call — We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and schedule an assessment — typically on a same-day or next-day basis, or same-day for emergencies." },
+  { number: "01", title: "You Call — We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and arrange the appropriate next step based on current scheduling and conditions." },
   { number: "02", title: "On-Site Diagnosis", icon: Eye, description: "We inspect the affected area and surrounding components to identify the true source of the problem. We photograph everything and explain our findings on-site." },
   { number: "03", title: "Clear Recommendation", icon: ClipboardCheck, description: "You receive a straightforward recommendation — repair, monitor, or replace — with a written scope, cost, and timeline. No ambiguity, no upselling." },
   { number: "04", title: "Precision Repair", icon: Hammer, description: "If repair is the right path, our crew executes with the same materials and standards we use on full replacements. Documented work, verified results." },
@@ -94,11 +94,11 @@ const repairVsReplace = {
 };
 
 const faqs = [
-  { q: "How quickly can you respond to a roof leak?", a: "For active leaks and storm damage, we offer Rapid emergency response including temporary tarping to prevent further water intrusion. Non-emergency repair assessments are typically scheduled on a same-day or next-day basis of your call." },
+  { q: "What should I do if my roof is leaking?", a: "If water is entering the home, protect the interior if you can do so safely and call Highlander during office hours. Outside office hours, send a request for follow-up. Do not climb onto a wet or damaged roof. Temporary weather protection may be discussed when conditions and scheduling allow." },
   { q: "How much does a roof repair cost?", a: "Repair pricing is scope-based — it depends on the type of damage, materials involved, and accessibility. Rather than publish a generic range, we provide exact, itemized pricing after an on-site assessment so the number reflects the actual work." },
   { q: "Will you try to sell me a full replacement when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a targeted repair will solve the problem, that's what we'll recommend — and we'll document our reasoning so you can verify our logic." },
   { q: "Do you warranty repair work?", a: "Yes. Every repair we perform comes with a Highlander labor warranty covering the work we completed. The duration depends on the scope of the repair, and we'll specify it clearly before work begins." },
-  { q: "Can you repair a roof during rain or winter?", a: "Emergency tarping can be done in virtually any conditions to stop active water intrusion. Permanent repairs require dry conditions for proper material adhesion. We schedule accordingly and will never compromise quality to rush a timeline." },
+  { q: "Can you repair a roof during rain or winter?", a: "Permanent roof repairs require suitable weather and safe working conditions. When water is entering the home, call to discuss temporary protection options; the appropriate response depends on the roof, weather, access, and crew availability." },
   { q: "How do I know if the leak is coming from my roof and not somewhere else?", a: "Not all interior water stains come from roof leaks — condensation, plumbing issues, and window failures can mimic roof problems. Our diagnostic process identifies the actual source before recommending a solution. If it's not your roof, we'll tell you." },
   { q: "Do you handle insurance claims for storm damage repairs?", a: "Yes. We provide complete damage documentation with photographs and measurements, meet with your insurance adjuster on-site if needed, and coordinate the repair process through your claim." },
   { q: "What if the repair reveals bigger problems underneath?", a: "If we discover additional issues during repair — like decking damage or widespread underlayment failure — we stop, document what we've found, and discuss your options before proceeding. You always approve the scope of work." },
@@ -583,7 +583,7 @@ const RoofRepair = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Clock, text: "Rapid Emergency Response" },
+                      { icon: Clock, text: "Urgent Roof Support" },
                       { icon: Award, text: "CertainTeed Certified" },
                       { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
                     ].map((item) => (
