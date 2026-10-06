@@ -104,7 +104,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                 <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
               </div>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                Every {town.name} project still includes the same warranty standards, documentation discipline, and mountain-specific install details. Documented {town.name} projects are added here as they are published.
+                Highlander scopes each {town.name} project to the property, documents the proposed work, and confirms applicable warranty terms in writing. Documented {town.name} projects are added here as they are published.
               </p>
             </div>
             )}
@@ -126,7 +126,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                 <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
               </div>
               <p className="text-xs text-muted-foreground font-body leading-relaxed">
-                Every {town.name} project still includes the same warranty standards, documentation discipline, and mountain-specific install details.
+                Highlander scopes each {town.name} project to the property and confirms the applicable work and warranty terms in writing.
               </p>
             </div>
           </motion.div>
