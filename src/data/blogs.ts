@@ -7922,6 +7922,65 @@ for (const p of primaryClusterBlogPosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 
+/**
+ * 2026-10-06 consolidation pass from the SEO/CRO audit.
+ * These older town-swapped articles remain in source so old Lovable previews
+ * can still render a useful noindex fallback, but production permanently
+ * redirects them in public/_redirects. Marking them non-indexable also keeps
+ * them out of the sitemap and out of new internal-link recommendations.
+ */
+const BLOG_CONSOLIDATIONS: Record<string, { target: string; canonicalTo?: string }> = {
+  // Repair vs replacement: keep the materially updated 11 Aug Highlands guide
+  // plus the regional guide; town clones go to the matching repair service.
+  "roof-repair-vs-roof-replacement-highlands-nc": {
+    target: "/blog/roof-repair-vs-replacement-highlands-nc",
+    canonicalTo: "roof-repair-vs-replacement-highlands-nc",
+  },
+  "roof-repair-vs-replacement-franklin-nc": { target: "/service-areas/franklin-nc/roof-repair" },
+  "roof-repair-vs-replacement-cashiers-nc": { target: "/service-areas/cashiers-nc/roof-repair" },
+  "roof-repair-vs-replacement-sylva-nc": { target: "/service-areas/sylva-nc/roof-repair" },
+  "roof-repair-vs-replacement-cullowhee-nc": { target: "/service-areas/cullowhee-nc/roof-repair" },
+
+  // Metal vs shingle: one regional comparison guide.
+  "metal-roofing-vs-shingles-cashiers-nc": {
+    target: "/blog/metal-vs-shingle-roof-western-nc",
+    canonicalTo: "metal-vs-shingle-roof-western-nc",
+  },
+  "metal-roofing-vs-shingles-highlands-nc": {
+    target: "/blog/metal-vs-shingle-roof-western-nc",
+    canonicalTo: "metal-vs-shingle-roof-western-nc",
+  },
+  "metal-vs-shingle-roof-franklin-highlands-cashiers": {
+    target: "/blog/metal-vs-shingle-roof-western-nc",
+    canonicalTo: "metal-vs-shingle-roof-western-nc",
+  },
+
+  // Choosing a roofer: one regional guide rather than near-identical town posts.
+  "how-to-choose-roofing-contractor-franklin-nc": {
+    target: "/blog/choosing-roofing-contractor-wnc",
+    canonicalTo: "choosing-roofing-contractor-wnc",
+  },
+  "roofing-company-cashiers-nc-choosing-contractor": {
+    target: "/blog/choosing-roofing-contractor-wnc",
+    canonicalTo: "choosing-roofing-contractor-wnc",
+  },
+  "roofing-contractor-sylva-nc-roofing-gutters-repairs": {
+    target: "/blog/choosing-roofing-contractor-wnc",
+    canonicalTo: "choosing-roofing-contractor-wnc",
+  },
+
+  // These short Franklin articles duplicate the exact service-page job.
+  "roof-repair-franklin-nc": { target: "/service-areas/franklin-nc/roof-repair" },
+  "roof-replacement-franklin-nc": { target: "/service-areas/franklin-nc/roof-replacement" },
+};
+
+for (const post of blogPosts) {
+  const consolidation = BLOG_CONSOLIDATIONS[post.slug];
+  if (!consolidation) continue;
+  post.indexable = false;
+  if (consolidation.canonicalTo) post.canonicalTo = consolidation.canonicalTo;
+}
+
 blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
@@ -7933,15 +7992,17 @@ export const getRelatedBlogs = (slug: string, limit = 3) => {
   const post = getBlogBySlug(slug);
   if (!post) return [];
   const related = blogPosts
-    .filter(p => p.slug !== slug && (p.category === post.category || p.town === post.town))
+    .filter(p => p.slug !== slug && p.indexable !== false && !p.canonicalTo && (p.category === post.category || p.town === post.town))
     .slice(0, limit);
   if (related.length < limit) {
-    const extra = blogPosts.filter(p => p.slug !== slug && !related.find(r => r.slug === p.slug)).slice(0, limit - related.length);
+    const extra = blogPosts
+      .filter(p => p.slug !== slug && p.indexable !== false && !p.canonicalTo && !related.find(r => r.slug === p.slug))
+      .slice(0, limit - related.length);
     related.push(...extra);
   }
   return related;
 };
 
 /** A post that is not folded into another one (P3.5). Link blocks and the sitemap use only these. */
-export const isLinkableBlogPost = (p: BlogPost) => !p.canonicalTo;
+export const isLinkableBlogPost = (p: BlogPost) => p.indexable !== false && !p.canonicalTo;
 export const linkableBlogPosts = () => blogPosts.filter(isLinkableBlogPost);
