@@ -23,7 +23,7 @@ interface ConstructionCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const ConstructionMidCTA = ({
   headline = "Ready to discuss your project?",
-  subheadline = "We respond rapidly with a direct call — not a form email.",
+  subheadline = "Start with the short inquiry or call during staffed business hours. We will explain the appropriate next step before you commit.",
   ctaText = "Start Your Project Conversation",
   ctaLink = "/request-inspection?context=construction&type=construction",
 }: ConstructionCTAProps) => (
@@ -55,10 +55,10 @@ export const ConstructionClosingCTA = ({
   headline = "Let's Talk About\nYour Project.",
   subheadline = "Whether you're planning an addition, a renovation, an outdoor space, or a custom build — we're here to help you think it through.",
   eyebrow = "Start Planning",
-  ctaText = "Get My Project Scoped",
+  ctaText = "Discuss My Project",
   ctaLink = "/request-inspection?context=construction&type=construction",
 }: ConstructionCTAProps) => {
-  // Money pages lead with the phone (João, 2026-09-08); /construction/consultation stays form-first.
+  // Construction money pages keep phone access prominent while the short estimate form remains the shared form path.
   const callIsPrimary = getPagePrimaryAction(useLocation().pathname).intent === "call";
   return (
   <section className="section-dark tartan-dark relative overflow-hidden">
@@ -114,7 +114,7 @@ interface TrustSidebarItem {
 
 const defaultItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
-  { icon: Users, label: "In-House Construction Crews" },
+  { icon: Users, label: "Named Project Contact" },
   { icon: Mountain, label: "WNC Property Specialists" },
   { icon: Star, label: "Design-Build Capability" },
 ];
