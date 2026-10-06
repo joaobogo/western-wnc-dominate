@@ -260,14 +260,14 @@ export const BUCKETS: {
   {
     grade: "B",
     min: 60,
-    headline: "Call same day.",
+    headline: "Prioritize the callback.",
     action: "Call before the end of the business day and book the assessment.",
     cadence: "Three attempts over 48 hours, mixing call and text.",
   },
   {
     grade: "C",
     min: 40,
-    headline: "Call within 24 hours.",
+    headline: "Follow up during staffed hours.",
     action:
       "Call within one business day. Offer the assessment; if not ready, set a follow-up date.",
     cadence: "Follow up at 2 weeks and 6 weeks. Add to the seasonal list.",
