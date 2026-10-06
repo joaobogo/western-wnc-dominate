@@ -4,15 +4,15 @@ import heroImg from "@/assets/gallery/asphalt-005.webp";
 
 const StormDamageAds = () => (
   <PaidAdsLanding
-    title="Storm Damage Roof Help | Fast Local Response"
-    description="Storm damage landing page for paid traffic with fast response messaging, a short lead form, and local trust proof for Western North Carolina homeowners."
+    title="Storm Damage Roof Help in Western NC | Highlander"
+    description="Discuss storm-related roof damage in Western North Carolina. Start with a short contact form and get clear documentation and repair-or-replace guidance."
     path="/lp/storm-damage"
     serviceName="Storm Damage"
     heroImage={heroImg}
     heroAlt="Storm-damaged roof inspection in Western North Carolina"
     eyebrow="Storm damage landing page"
-    headline="Storm hit your roof? Get a local response before the next rain."
-    subheadline="Fast assessments, clear documentation, and straight answers for Western North Carolina homeowners dealing with wind, hail, leaks, or fallen debris."
+    headline="Storm hit your roof? Start with a clear damage assessment request."
+    subheadline="Clear documentation and straight answers for Western North Carolina homeowners dealing with wind, hail, leaks, or fallen debris."
     ctaLabel="Get My Storm Damage Assessed"
     adVariants={{
       hail: {
@@ -22,7 +22,7 @@ const StormDamageAds = () => (
       },
       insurance: {
         headline: "Storm Damage Claim Help in Western NC",
-        subheadline: "Local crews document the damage and walk your claim through with you, step by step.",
+        subheadline: "Highlander documents observed roof damage and provides contractor information you can use in conversations with your carrier or adjuster.",
         ctaLabel: "Get My Damage Documented",
       },
     }}
@@ -30,19 +30,19 @@ const StormDamageAds = () => (
     trustStats={[
       { value: "Direct", label: "Storm support", detail: "Call during office hours for active leak concerns" },
       { value: REVIEW_STARS, label: "Google Rating", detail: REVIEW_COUNT_LABEL },
-      { value: "Local", label: "WNC team", detail: "Not out-of-town storm chasers" },
-      { value: REVIEW_STARS, label: "Client rating", detail: "Built on responsiveness and follow-through" },
+      { value: "2", label: "Showrooms", detail: "Franklin & Sylva" },
+      { value: "Written", label: "Damage scope", detail: "Observed conditions and proposed work documented" },
     ]}
     highlights={[
-      "Local crews who know mountain wind, hail, and tree-impact damage patterns.",
+      "Western North Carolina roof experience with wind, hail, heavy rain, and fallen-debris damage.",
       "Photo-ready documentation to support insurance conversations without hype.",
       "Temporary protection planning when active water intrusion cannot wait.",
       "Clear repair-vs-replace guidance instead of panic-driven upsells.",
     ]}
     quickSteps={[
-      { title: "You reach out", detail: "Use the short form or call directly so we can understand the urgency and location fast." },
-      { title: "We assess the damage", detail: "A local advisor or inspector documents what happened and explains the next best move." },
-      { title: "You get a clear path", detail: "Repair, mitigation, insurance support, or replacement — with documentation to back it up." },
+      { title: "You reach out", detail: "Use the short form or call directly during staffed business hours to explain what happened." },
+      { title: "We assess the damage", detail: "Highlander documents what is visible and explains the appropriate repair, protection, or replacement path." },
+      { title: "You get a clear path", detail: "Repair, temporary protection when appropriate, or replacement — with contractor documentation to explain the scope." },
     ]}
     trustBullets={[
       "No door-knocker pressure tactics",
