@@ -31,7 +31,7 @@ const categories: Category[] = [
     items: [
       { q: "Can a leak be repaired, or do I need a full roof replacement?", a: "It depends on the age of the roof, the extent of the damage, and the underlying decking condition. Many leaks can be repaired affordably. Get My Questions Answered for a project-specific assessment before assuming a replacement is needed." },
       { q: "Do you repair other contractors' roofs?", a: "Yes. We frequently repair roofs we didn't install, including correcting workmanship issues from storm chasers or out-of-state crews." },
-      { q: "How quickly can you respond to a roof repair?", a: "Most non-emergency repair calls are scheduled within a few business days. Active leaks and storm-related damage are prioritized for same-day or next-day response when possible." },
+      { q: "How quickly can you respond to a roof repair?", a: "Timing depends on the roof condition, weather, access, and current scheduling. For active water intrusion, call during staffed business hours and explain what is happening; outside office hours, send a request for follow-up." },
     ],
   },
   {
@@ -55,7 +55,7 @@ const categories: Category[] = [
     id: "insurance",
     label: "Insurance Claims",
     items: [
-      { q: "Do you work with my insurance company?", a: "Yes. We routinely document damage, meet adjusters on-site, and provide the photos, measurements, and scope of work your carrier needs to process a claim fairly." },
+      { q: "Do you work with my insurance company?", a: "We can document observed roof damage, provide photos and a contractor scope, and coordinate with an adjuster when appropriate. Your carrier makes coverage and claim decisions; Highlander does not act as a public adjuster." },
       { q: "Should I call my insurance company before calling you?", a: "You can start by requesting a free Highlander estimate. We'll review the roofing concern and explain the appropriate next step before you decide how to proceed with a claim." },
     ],
   },
@@ -63,7 +63,7 @@ const categories: Category[] = [
     id: "emergency",
     label: "Emergency Roof Leaks",
     items: [
-      { q: "What counts as a roofing emergency?", a: `Active interior leaks, missing sections of roofing after a storm, tree impact, or any condition allowing water into your home. Call ${PHONE_DISPLAY} and we'll prioritize your response.` },
+      { q: "What counts as an urgent roofing problem?", a: `Active interior leaks, missing roofing after a storm, tree impact, or another condition allowing water into the home needs prompt attention. Call ${PHONE_DISPLAY} during staffed business hours; for an immediate life-safety hazard, contact emergency services.` },
       { q: "Do you offer emergency tarping?", a: "Yes. When safe weather conditions allow, we can tarp a damaged roof to stop further water intrusion until permanent repairs can be completed." },
     ],
   },
@@ -143,7 +143,7 @@ const categories: Category[] = [
     id: "financing",
     label: "Financing",
     items: [
-      { q: "Do you offer financing for roofing or construction?", a: "Yes. We offer financing options for qualified homeowners on most projects. See our Financing page or ask your estimator for current programs and rates." },
+      { q: "Do you offer financing for roofing or construction?", a: "Financing may be available for qualifying projects. Availability, terms, and approval are determined by the lender; ask Highlander about the options currently available for your project." },
     ],
   },
   {
@@ -171,7 +171,7 @@ const categories: Category[] = [
     id: "permits",
     label: "Permits",
     items: [
-      { q: "Do I need a permit for my roof or construction project?", a: "Most construction work and many roofing projects require local permits. Highlander handles permitting on your behalf and ensures all work meets WNC code requirements." },
+      { q: "Do I need a permit for my roof or construction project?", a: "Permit requirements depend on the jurisdiction and scope. When permitting is required and included in Highlander's scope, the project team coordinates the applicable permit and inspection steps." },
     ],
   },
   {
