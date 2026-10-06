@@ -107,7 +107,7 @@ const townProofMap: Record<string, TownProofContent> = {
   "franklin-nc": {
     stats: [
       { label: "Home Base", value: "Since 2017", detail: "Franklin is our original operating hub" },
-      { label: "Dispatch", value: "Fast", detail: "Crews and materials staged locally" },
+      { label: "Home Base", value: "Franklin", detail: "Primary showroom and original operating base" },
       { label: "Project Mix", value: "Residential", detail: "Repairs, replacements, and storm recovery" },
     ],
     jobHighlights: [
@@ -131,11 +131,11 @@ const townProofMap: Record<string, TownProofContent> = {
     faqs: [
       {
         question: "Why do Franklin homeowners choose Highlander?",
-        answer: "As a Franklin-based family business, we provide the fastest dispatch times and most reliable warranties in Macon County. Our crews live here and build to the standard our neighbors deserve.",
+        answer: "Highlander is based in Franklin and serves Macon County from its primary showroom. Project timing and applicable warranty terms are confirmed for the specific scope rather than promised generically.",
       },
       {
         question: "Do you handle small roof repairs in Franklin?",
-        answer: "Yes. From leak detection to minor shingle repairs, we prioritize our hometown clients with fast scheduling and honest, transparent pricing for any size job.",
+        answer: "Yes. Highlander handles roof repairs in Franklin and provides a project-specific recommendation and written scope based on the condition found.",
       },
       {
         question: "Can you help with additions for older Franklin homes?",
@@ -146,7 +146,7 @@ const townProofMap: Record<string, TownProofContent> = {
   "sylva-nc": {
     stats: [
       { label: "Regional Hub", value: "Jackson Co.", detail: "Commercial and residential coverage" },
-      { label: "Response", value: "Rapid", detail: "Storm and leak calls prioritized" },
+      { label: "Showroom", value: "Sylva", detail: "Jackson County point of contact" },
       { label: "Coverage", value: "Mixed Use", detail: "Homes, rentals, and commercial roofs" },
     ],
     jobHighlights: [
@@ -438,8 +438,8 @@ const townProofMap: Record<string, TownProofContent> = {
   },
   "murphy-nc": {
     stats: [
-      { label: "Hub", value: "Cherokee Co.", detail: "Fast response for the far west" },
-      { label: "Response", value: "Local", detail: "Crews staged for Western NC service" },
+      { label: "Coverage", value: "Cherokee Co.", detail: "Murphy and surrounding communities" },
+      { label: "Service", value: "By Request", detail: "Availability confirmed from current scheduling" },
       { label: "Rating", value: `${REVIEW_RATING} Stars`, detail: "Trusted by Murphy families and rental owners" },
     ],
     jobHighlights: [
@@ -464,7 +464,7 @@ const townProofMap: Record<string, TownProofContent> = {
     faqs: [
       {
         question: "Is Highlander local to Murphy?",
-        answer: "Yes. We have a dedicated crew presence in Western NC, allowing us to offer the most reliable scheduling and warranties in Cherokee County.",
+        answer: "Murphy is within Highlander's Western North Carolina service area. Contact the team to confirm current availability and the appropriate scope for your property.",
       },
     ],
   },
@@ -489,8 +489,8 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Clay County storm damage mitigation",
-        summary: "Rapid response and full roof replacement for a Hayesville residence following a localized high-wind event on Lake Chatuge.",
-        proof: "Emergency tarping, insurance documentation, and class-4 rated shingle install",
+        summary: "Storm-related roof replacement scenario for a Hayesville-area residence following high-wind damage near Lake Chatuge.",
+        proof: "Temporary protection when appropriate, contractor documentation, and project-specific roofing scope",
       },
     ],
     faqs: [
@@ -554,7 +554,7 @@ const townProofMap: Record<string, TownProofContent> = {
     faqs: [
       {
         question: "Is Otto inside Highlander's normal service area?",
-        answer: "Yes. Otto is essentially our backyard — our Franklin base is only a short drive up US-441. Otto projects are handled by the same crews that work Franklin daily.",
+        answer: "Yes. Otto is in Highlander's Macon County service area and is served from the Franklin showroom. Project scheduling is confirmed for the specific scope and current workload.",
       },
       {
         question: "Do you handle both roof repair and full replacement in Otto?",
