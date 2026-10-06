@@ -584,7 +584,7 @@ const RoofRepair = () => {
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Clock, text: "Urgent Roof Support" },
-                      { icon: Award, text: "CertainTeed Certified" },
+                      { icon: Award, text: "CertainTeed Credentialed Contractor" },
                       { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
