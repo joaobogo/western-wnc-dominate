@@ -245,6 +245,13 @@ const SOURCES: Record<string, { table: string; label: string }> = {
   designer_lead_id: { table: "designer_leads", label: "roof designer lead" },
 };
 
+const PUBLIC_NOTIFY_WINDOW_MS = 30 * 60 * 1000;
+
+function isServiceCall(req: Request): boolean {
+  const token = (req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "").trim();
+  return !!SERVICE_ROLE && token === SERVICE_ROLE;
+}
+
 const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -306,6 +313,19 @@ Deno.serve(async (req) => {
         status: 404,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
+    }
+
+    // Public website callers may only announce a record created moments ago;
+    // anything older (or an exhausted-sync alert) is internal-only.
+    if (!isServiceCall(req)) {
+      const createdMs = Date.parse(String(row.created_at ?? ""));
+      const fresh = Number.isFinite(createdMs) && Date.now() - createdMs <= PUBLIC_NOTIFY_WINDOW_MS;
+      if (!fresh || body?.event === "sync_exhausted") {
+        return new Response(JSON.stringify({ error: "unauthorized" }), {
+          status: 401,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
     }
 
     if (body?.event === "sync_exhausted") {

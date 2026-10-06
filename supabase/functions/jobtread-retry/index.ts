@@ -32,6 +32,22 @@ const TABLES: Array<{ table: string; idKey: string }> = [
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
+  const admin0 = createClient(SUPABASE_URL, SERVICE_ROLE, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+  const provided = req.headers.get("x-admin-secret") ?? "";
+  const bearer = (req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "").trim();
+  let authorized = !!SERVICE_ROLE && bearer === SERVICE_ROLE;
+  if (!authorized && provided) {
+    const { data: cfg } = await admin0.from("internal_config").select("value").eq("key", "jobtread_retry_token").maybeSingle();
+    authorized = !!cfg?.value && cfg.value === provided;
+  }
+  if (!authorized) {
+    return new Response(JSON.stringify({ error: "unauthorized" }), {
+      status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   const body = await req.json().catch(() => ({} as any));
   const limitPerTable = Math.min(Number(body?.limit) || 25, 100);
   const nowIso = new Date().toISOString();

@@ -41,8 +41,10 @@ Deno.serve(async (req) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${SERVICE_ROLE}`,
-      apikey: SERVICE_ROLE,
+      // Forward the caller's own credentials so jobtread-sync applies its
+      // authorization rules (public callers: fresh, untouched records only).
+      Authorization: req.headers.get("authorization") ?? "",
+      apikey: req.headers.get("apikey") ?? "",
     },
     body: JSON.stringify({
       intake_lead_id: leadId,
