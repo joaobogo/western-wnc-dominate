@@ -26,9 +26,9 @@ const StormDamageAds = () => (
         ctaLabel: "Get My Damage Documented",
       },
     }}
-    urgencyOptions={["Emergency today", "Rapid response", "This week", "Just need answers"]}
+    urgencyOptions={["Active leak", "Recent storm damage", "This week", "Just need answers"]}
     trustStats={[
-      { value: "Rapid", label: "Storm response", detail: "Same-day help for urgent leak situations" },
+      { value: "Direct", label: "Storm support", detail: "Call during office hours for active leak concerns" },
       { value: REVIEW_STARS, label: "Google Rating", detail: REVIEW_COUNT_LABEL },
       { value: "Local", label: "WNC team", detail: "Not out-of-town storm chasers" },
       { value: REVIEW_STARS, label: "Client rating", detail: "Built on responsiveness and follow-through" },
@@ -53,7 +53,7 @@ const StormDamageAds = () => (
     faqs={[
       {
         question: "How fast can you respond after a storm?",
-        answer: "For urgent leak situations we prioritize same-day or next-day response when possible. For non-emergency storm assessments, we typically schedule on a same-day or next-day basis depending on event volume.",
+        answer: "For an active leak, call during office hours and explain what is happening. Outside office hours, send a request for follow-up. Assessment timing depends on conditions, safety, event volume, and current scheduling.",
       },
       {
         question: "Will you help with insurance documentation?",
