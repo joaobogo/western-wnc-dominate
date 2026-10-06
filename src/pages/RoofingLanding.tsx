@@ -369,7 +369,7 @@ export default function RoofingLanding() {
     });
 
     if (!result) return;
-    if (result.error || !result.id) {
+    if (result.error || (!result.id && !result.duplicate)) {
       setSubmitError(`We could not confirm your request. Please try again or call ${PHONE_DISPLAY}.`);
       return;
     }
