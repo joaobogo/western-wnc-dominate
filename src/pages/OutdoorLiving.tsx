@@ -522,7 +522,7 @@ const OutdoorLiving = () => {
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
             { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Outdoor living work in Highlands" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent porches and outdoor rooms" },
-            { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start the conversation" },
+            { label: "Discuss an Outdoor Project", href: "/request-inspection?context=outdoor_related&type=construction-outdoor-living", description: "Start with the short first-contact form" },
             { label: "Get My Questions Answered", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
