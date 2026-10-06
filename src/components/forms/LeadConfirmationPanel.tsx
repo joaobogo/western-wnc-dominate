@@ -82,18 +82,18 @@ const LeadConfirmationPanel = ({
           Next step
         </p>
         <p className={`font-body text-body-sm leading-relaxed ${text}`}>
-          A Highlander project advisor from our Franklin office reviews your details and calls you
-          personally, typically within one business day. We'll talk through the property, the scope,
-          and what an inspection would look like.
+          A Highlander team member reviews your request and contacts you during staffed business
+          hours to discuss the property, the scope, and the appropriate next step. Your request does
+          not reserve an appointment or authorize work.
         </p>
         <div className={`mt-4 flex flex-col gap-2 font-body text-body-xs ${muted}`}>
           <span className="flex items-center gap-2">
             <Clock className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />
-            Typically within one business day
+            Follow-up during staffed business hours
           </span>
           <span className="flex items-center gap-2">
             <Shield className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />
-            No obligation, no sales pressure
+            Appointment timing is confirmed separately
           </span>
         </div>
         <a
