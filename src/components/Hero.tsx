@@ -38,30 +38,44 @@ const trustItems = [
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  // Sequential test 1 (running): image-led vs. text-led homepage hero.
-  // Success metric: generate_lead. Minimum run: 14 days / 60 leads per variant.
-  const heroLayout = useExperiment("home_hero_layout");
-  const textLed = heroLayout.variant === "b";
-  // Queued test — control copy until it is promoted to running.
+  // The original layout experiment was retired because the implementation
+  // drifted after launch. Keep the stable control treatment until a new,
+  // versioned experiment is deliberately launched.
+  const textLed = false;
+  // Queued CTA test — control copy until it is deliberately promoted.
   const heroCta = useExperiment("home_hero_cta");
   const [layer, setLayer] = useState(0);
   // Only the LCP image is in the DOM on first paint. The two cross-fade
   // layers mount after load so they never compete for bandwidth with the LCP.
   const [extraLayersReady, setExtraLayersReady] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduceMotion(query.matches);
+    sync();
+    query.addEventListener?.("change", sync);
+    return () => query.removeEventListener?.("change", sync);
+  }, []);
 
   useEffect(() => {
     const mount = () => setExtraLayersReady(true);
     const id = window.setTimeout(mount, 2500);
     window.addEventListener("load", mount, { once: true });
-    return () => window.clearTimeout(id);
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener("load", mount);
+    };
   }, []);
 
-  // Layered still imagery — slow cinematic cross-fade across 3 real WNC roof photos.
-  // 9s per layer, ease handled by CSS transition.
+  // Layered still imagery — slow cinematic cross-fade across real WNC roof
+  // photos. Reduced-motion visitors keep the first image unless they choose a
+  // different image manually.
   useEffect(() => {
+    if (reduceMotion) return;
     const id = window.setInterval(() => setLayer((l) => (l + 1) % 3), 9000);
     return () => window.clearInterval(id);
-  }, []);
+  }, [reduceMotion]);
 
   const layers = [heroImage, heroLayer2, heroLayer3];
   const layersAvif = [heroImageAvif, heroLayer2Avif, heroLayer3Avif];
@@ -77,9 +91,7 @@ const Hero = () => {
     <section
       ref={ref}
       data-hero
-      data-hero-variant={heroLayout.variant}
-      data-gtm-experiment="home_hero_layout"
-      data-gtm-variant={heroLayout.variant}
+      data-hero-variant="stable"
       className={`dark-surface relative flex flex-col overflow-hidden min-h-[100svh] hero-clears-header pb-24 md:pb-32`}
     >
       {/* Text-led variant: solid brand panel carries the copy; photography is
@@ -140,14 +152,21 @@ const Hero = () => {
         {layers.map((_, i) => (
           <button
             key={i}
+            type="button"
             onClick={() => setLayer(i)}
             aria-label={`Show hero image ${i + 1}`}
-            className="h-px transition-all duration-500"
-            style={{
-              width: layer === i ? 28 : 14,
-              background: layer === i ? "hsl(var(--highland-gold))" : "hsl(var(--highland-gold) / 0.25)",
-            }}
-          />
+            aria-pressed={layer === i}
+            className="flex min-h-11 min-w-11 items-center justify-center"
+          >
+            <span
+              aria-hidden="true"
+              className="block h-px transition-all duration-500"
+              style={{
+                width: layer === i ? 28 : 14,
+                background: layer === i ? "hsl(var(--highland-gold))" : "hsl(var(--highland-gold) / 0.25)",
+              }}
+            />
+          </button>
         ))}
       </div>
 
