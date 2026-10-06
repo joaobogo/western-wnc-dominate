@@ -23,7 +23,7 @@ const COMBINED_OPTIONS: Array<{ id: IntentId; label: string; helper: string }> =
   { id: "roofing", label: "Roofing", helper: "We’ll route your request to the roofing team." },
   { id: "construction", label: "Construction", helper: "We’ll route your request to the construction team." },
   { id: "both", label: "Both", helper: "We’ll keep this as one coordinated request for both scopes." },
-  { id: "not_sure", label: "Not sure", helper: "That is completely fine — the team will help identify the right next step." },
+  { id: "not_sure", label: "Not sure", helper: "That is completely fine. The team will help identify the right next step." },
 ];
 
 /**

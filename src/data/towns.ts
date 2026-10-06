@@ -119,7 +119,7 @@ export const towns: TownData[] = [
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
     // 59 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Highlands, NC | Highlander Building Services",
-    h1: "Roofers in Highlands, NC — Roofing Built for 4,000 ft",
+    h1: "Roofers in Highlands, NC: Roofing Built for 4,000 ft",
     metaDescription: "Highlander serves Highlands, NC with roofing, roof repair, roof replacement, gutters, skylights, construction, and design services for mountain homes across Western North Carolina.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
     climateExposure: "Extreme high-altitude weather: 80+ inches of rain, heavy ice loading, and high UV levels that test standard roofing systems.",
@@ -141,7 +141,7 @@ export const towns: TownData[] = [
     features: ["Design", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
     // 58 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Cashiers, NC | Highlander Building Services",
-    h1: "Roofers in Cashiers, NC — Roofs Built for 80 Inches of Rain",
+    h1: "Roofers in Cashiers, NC: Roofs Built for 80 Inches of Rain",
     metaDescription: "Waterproofing-focused roofing and construction for Cashiers, NC estates. Moisture-resistant materials and engineered decks. Licensed & insured.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates across the Cashiers Plateau.",
     climateExposure: "Temperate rainforest conditions: Persistent moisture, 80+ inches of rain, and low-visibility fog that require advanced drainage.",
@@ -163,7 +163,7 @@ export const towns: TownData[] = [
     features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
     // 54 chars: fits the 60-char guard intact and stays distinct from the homepage title.
     metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
-    h1: `Roofers in Franklin, NC — Walk-In Showroom on ${streetName(FRANKLIN)}`,
+    h1: `Roofers in Franklin, NC: Walk-In Showroom on ${streetName(FRANKLIN)}`,
     metaDescription: `Looking for roofers in Franklin, NC? Visit Highlander at ${FRANKLIN_STREET} for roof repair, replacement, metal roofing and construction across Macon County.`,
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
@@ -185,7 +185,7 @@ export const towns: TownData[] = [
     features: ["Historic home expertise", "Commercial maintenance", "Jackson County hub", "Rental property service"],
     // 56 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Sylva, NC | Highlander Building Services",
-    h1: `Roofers in Sylva, NC — Showroom on ${streetName(SYLVA)}`,
+    h1: `Roofers in Sylva, NC: Showroom on ${streetName(SYLVA)}`,
     metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Sylva, NC homes and Jackson County properties, from our staffed Sylva showroom.",
     housingProfile: "Historic downtown homes, university rentals, and hillside residential properties across the Sylva valley.",
     climateExposure: "Heavy valley moisture, trapped fog, and persistent humidity that accelerate biological growth on aging roof systems.",
