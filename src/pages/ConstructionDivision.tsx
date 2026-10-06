@@ -294,7 +294,7 @@ const ConstructionDivision = () => {
                   to="/construction/design"
                   className="btn btn-secondary btn-md group"
                 >
-                  Get My Plans Drawn
+                  Explore Design & Planning
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <Link
