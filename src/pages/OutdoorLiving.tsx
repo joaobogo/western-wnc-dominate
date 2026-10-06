@@ -151,7 +151,7 @@ const OutdoorLiving = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
-                Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/layouts-planning" className="text-[hsl(var(--gold-ink))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design branch</Link> to handle mountain weather and maximize mountain life.
+                Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/construction/design" className="text-[hsl(var(--gold-ink))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design branch</Link> to handle mountain weather and maximize mountain life.
               </motion.p>
 
 
