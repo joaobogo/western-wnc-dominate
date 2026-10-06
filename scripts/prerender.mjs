@@ -348,10 +348,23 @@ async function main() {
   console.log(`  static shell title: "${staticHead.title}" — non-home routes must replace it before snapshot`);
 
   const server = await startServer();
-  const browser = await chromium.launch(
-    // Escape hatch for environments that ship their own Chromium build.
-    process.env.PRERENDER_CHROMIUM ? { executablePath: process.env.PRERENDER_CHROMIUM } : {},
-  );
+  let browser;
+  try {
+    browser = await chromium.launch(
+      // Escape hatch for environments that ship their own Chromium build.
+      process.env.PRERENDER_CHROMIUM ? { executablePath: process.env.PRERENDER_CHROMIUM } : {},
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const missingBrowser = /Executable doesn't exist|browser executable/i.test(message);
+    if (missingBrowser && process.env.NETLIFY !== "true") {
+      console.warn("prerender: Chromium is unavailable in this non-Netlify build environment; keeping the Vite build and skipping static snapshots.");
+      server.close();
+      return;
+    }
+    server.close();
+    throw error;
+  }
   const context = await browser.newContext({
     viewport: { width: 1280, height: 900 },
     userAgent:

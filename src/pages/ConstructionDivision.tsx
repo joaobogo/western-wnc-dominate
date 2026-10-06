@@ -258,7 +258,7 @@ const ConstructionDivision = () => {
 
                 <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="relative">
                   <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-border">
-                    <img width={1600} height={1067} decoding="async" src={constructionDetailImg} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
+                    <img width={1600} height={1067} decoding="async" src={constructionDetailImg} alt="Mountain-home construction work featured by Highlander Building Services in Western North Carolina" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-raised max-w-[240px]">
                     <span className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
