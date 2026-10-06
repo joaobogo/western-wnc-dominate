@@ -1,6 +1,4 @@
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
-import CostContextBlock from "@/components/conversion/CostContextBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -17,7 +15,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import GoldLine from "@/components/motion/GoldLine";
-import { ConstructionClosingCTA, ConstructionMidCTA } from "@/components/construction";
+import { ConstructionMidCTA } from "@/components/construction";
 import RelatedLinks from "@/components/RelatedLinks";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
@@ -50,9 +48,9 @@ const DESIGN_PHASES = [
       "Material direction",
       "Preliminary budget guidance",
     ],
-    timeline: "2–3 weeks to concept meeting",
-    ctaLabel: "Start With a Design Agreement",
-    ctaHref: "/construction-intake",
+    timeline: "Project-specific schedule confirmed before the phase begins",
+    ctaLabel: "Discuss This Design Phase",
+    ctaHref: "/request-inspection?context=design_phase&type=construction-design",
   },
   {
     icon: PenTool,
@@ -66,9 +64,9 @@ const DESIGN_PHASES = [
       "Engineering coordination",
       "Permit submittal support",
     ],
-    timeline: "3–4 weeks plus jurisdiction review",
-    ctaLabel: "Get My Project Scoped",
-    ctaHref: "/construction-intake",
+    timeline: "Project-specific schedule plus jurisdiction review time",
+    ctaLabel: "Discuss This Design Phase",
+    ctaHref: "/request-inspection?context=design_phase&type=construction-design",
   },
   {
     icon: FileCheck,
@@ -82,9 +80,9 @@ const DESIGN_PHASES = [
       "Specifications",
       "Trade-by-trade scopes of work",
     ],
-    timeline: "4–6 weeks",
-    ctaLabel: "Get My Questions Answered",
-    ctaHref: "/construction-intake",
+    timeline: "Project-specific schedule confirmed before the phase begins",
+    ctaLabel: "Discuss This Design Phase",
+    ctaHref: "/request-inspection?context=design_phase&type=construction-design",
   },
 ];
 
@@ -94,13 +92,13 @@ const whyDesignFirst = [
   "Creates drawings and 3D views you can react to and refine",
   "Supports honest budget conversations early — before commitments",
   "Moves qualified projects smoothly toward permitting and construction",
-  "Gives you deliverables you keep, even if you pause after a phase",
+  "Defines deliverables and use rights in the signed Design & Consultation Agreement",
 ];
 
 const fixedFeeBullets = [
   "Pricing determined by project scope",
   "Clear deliverables for each phase",
-  "Defined timeline expectations",
+  "Project-specific schedule expectations confirmed before each phase",
   "Drawings, 3D views, scopes, and permit support — depending on phase",
   "Better information before construction pricing is set",
   "A more professional path from idea to build",
@@ -123,14 +121,14 @@ const whoStarts = [
 
 const faqs = [
   { question: "Why does Highlander charge for design?", answer: "Design produces real deliverables — measured conditions, concept plans, 3D views, permit-ready drawings, and construction documents — and requires serious planning work from our in-house design team. A paid program ensures the work is dedicated to your project and produced to a professional standard." },
-  { question: "Can I stop after Phase 1?", answer: "Yes. The phases are sequential and you decide at each step whether to continue. Many remodel and addition clients only need Phases 1 and 2. You keep the deliverables from any phase you complete." },
-  { question: "Do I keep the drawings and deliverables?", answer: "Yes. You own the deliverables from any phase you complete, including concept plans, 3D views, permit drawings, and construction documents." },
+  { question: "Can I stop after a design phase?", answer: "The phases are structured so the next commitment can be reviewed before continuing. Any rights to use drawings or other deliverables after stopping are defined in the signed Design & Consultation Agreement for that project." },
+  { question: "What rights do I have to the drawings and deliverables?", answer: "Ownership and permitted use of drawings, 3D views, permit sets, and construction documents are defined in the signed Design & Consultation Agreement. Highlander will review those terms before paid design work begins." },
   { question: "What if I already have plans?", answer: "If your plans are complete and permit-ready, our team can review them and determine whether your project is ready to move toward estimating. If your plans are incomplete or still conceptual, we'll recommend the appropriate design phase to start with." },
-  { question: "What does \"permit set\" mean?", answer: "A permit set is a fully dimensioned set of drawings — with the code and zoning details required — that your local jurisdiction can review and approve for construction. It's the deliverable from Phase 2." },
-  { question: "How does the design fee credit work?", answer: "Clients who complete design with Highlander and then move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion. Final credit details are confirmed in your Design & Consultation Agreement." },
+  { question: "What does \"permit set\" mean?", answer: "A permit set is a coordinated set of drawings prepared for jurisdiction review. The local authority decides whether additional information, revisions, engineering, or other requirements are needed before a permit is issued." },
+  { question: "Is a design-fee credit guaranteed if I build with Highlander?", answer: "No automatic credit is promised on this page. If a construction credit or other commercial term applies to your project, the amount, timing, and conditions must be stated in your signed Design & Consultation Agreement." },
   { question: "Is this required for every construction project?", answer: "No. Smaller, well-defined projects may not need a full design phase. But for additions, major remodels, outdoor living builds, garages, suites, and new construction, a Design & Consultation Agreement is the most reliable starting point." },
   { question: "Can I start if I'm still exploring ideas?", answer: "Absolutely. Early-stage clients are welcome. Phase 1 is specifically designed for homeowners who are still deciding what to build and roughly what it costs." },
-  { question: "How long does the design process take?", answer: "Phase 1 is typically 2–3 weeks to a concept meeting. Phase 2 is typically 3–4 weeks plus jurisdiction review. Phase 3 is typically 4–6 weeks. Your design lead provides a project-specific schedule before Phase 1 begins." },
+  { question: "How long does the design process take?", answer: "Timing depends on project complexity, existing documentation, revisions, engineering coordination, and jurisdiction review. Highlander confirms the project-specific schedule before each paid phase begins." },
   { question: "Does this apply to roofing projects?", answer: "Roofing-only projects usually do not need the full design program. The Design & Consultation Agreement is for construction scopes — additions, remodels, outdoor living, and new builds — including projects where roofing work ties into a larger construction package." },
 ];
 
@@ -208,16 +206,16 @@ const ConstructionDesign = () => {
                 className="flex flex-col sm:flex-row gap-3 mb-8"
               >
                 <Link
-                  to="/construction-intake"
+                  to="/request-inspection?context=construction_design&type=construction-design"
                   className="btn btn-primary btn-md"
                 >
-                  Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Discuss My Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
-                  to="/design-intake?mode=long"
+                  to="#design-phases"
                   className="btn btn-secondary btn-md btn-on-dark"
                 >
-                  Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  See How Paid Design Works <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
 
@@ -229,7 +227,7 @@ const ConstructionDesign = () => {
               >
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.6)]" />
                 <p className="text-body-xs md:text-body-xs font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.18em]">
-                  Fixed fees · Defined deliverables · Real budget guidance before you build
+                  Paid design when needed · Scope and commercial terms confirmed before work begins
                 </p>
               </motion.div>
             </div>
@@ -282,12 +280,12 @@ const ConstructionDesign = () => {
         </section>
 
         {/* ─── SECTION 2: THE THREE DESIGN PHASES ─── */}
-        <section className="section-padding bg-secondary/40 tartan-bg relative">
+        <section id="design-phases" className="section-padding bg-secondary/40 tartan-bg relative scroll-mt-24">
           <div className="container-tight">
             <div className="max-w-2xl mx-auto text-center mb-12">
               <span className="eyebrow text-[hsl(var(--gold-ink))] mb-3 block">The Three Design Phases</span>
               <h2 className="section-heading mb-4">A Clear, Sequential Path From Idea to Build.</h2>
-              <p className="text-muted-foreground text-base font-body">Each phase has fixed pricing, defined deliverables, and a clear timeline. You decide at each step whether to continue.</p>
+              <p className="text-muted-foreground text-base font-body">Each paid phase has defined deliverables. Scope, price, schedule, ownership/use rights, and the next commitment are confirmed in the signed Design & Consultation Agreement before that phase begins.</p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-5">
@@ -355,13 +353,13 @@ const ConstructionDesign = () => {
 
             <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
               <p className="text-foreground/80 text-body-xs font-body leading-relaxed">
-                <span className="font-heading font-bold text-foreground">Clients can stop after any phase and keep their deliverables.</span> Phases can also stack when a project needs to move from concept to permitting and construction documentation.
+                <span className="font-heading font-bold text-foreground">Each phase is a separate project commitment.</span> Before continuing, Highlander reviews the next deliverables and commercial terms. Rights to use completed design work are governed by the signed agreement.
               </p>
             </div>
 
             <div className="max-w-3xl mx-auto mt-4 bg-secondary/40 border border-border p-5 md:p-6">
               <p className="text-muted-foreground text-body-xs font-body leading-relaxed">
-                <span className="font-heading font-bold text-foreground">Pricing is determined by project scope.</span> The appropriate design phase depends on project type, readiness, and existing documentation. Fixed phase pricing and deliverables are reviewed and confirmed during the Design &amp; Consultation Agreement process — after Highlander reviews your project details.
+                <span className="font-heading font-bold text-foreground">Design is a separate paid service when it is needed.</span> The appropriate phase depends on project type, readiness, and existing documentation. Price, deliverables, schedule, revisions, and other commercial terms are confirmed in the signed Design &amp; Consultation Agreement after Highlander reviews the project.
               </p>
             </div>
           </div>
@@ -375,11 +373,11 @@ const ConstructionDesign = () => {
                 <div className="text-center mb-10">
                   <span className="eyebrow text-[hsl(var(--gold-ink))] mb-3 block">Design-Build Advantage</span>
                   <h2 className="text-2xl md:text-4xl lg:text-heading-lg font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
-                    Design Fees Can Credit Back When You Build With Highlander.
+                    Commercial Terms Come From the Signed Agreement.
                   </h2>
                   <div className="max-w-2xl mx-auto space-y-5 text-dark-section-foreground text-base md:text-lg font-body leading-relaxed">
                     <p>
-                      Clients who complete design with Highlander and move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion.
+                      Paid design and construction are separate commitments. A construction credit, if offered for a specific project, is not automatic and must be stated in the signed Design & Consultation Agreement.
                     </p>
                     <p className="text-dark-section-foreground text-body-xs italic">
                       Final credit details are confirmed in your Design &amp; Consultation Agreement.
@@ -405,7 +403,7 @@ const ConstructionDesign = () => {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <ScrollReveal variant="fade">
                 <span className="eyebrow mb-3 block">How We Structure Design</span>
-                <h2 className="section-heading mb-6">No Hourly Guesswork. Clear Phases. Defined Deliverables.</h2>
+                <h2 className="section-heading mb-6">Clear Phases. Defined Deliverables. Terms in Writing.</h2>
                 <div className="space-y-5 text-foreground/80 text-base font-body leading-relaxed">
                   <p>
                     Highlander's design process uses defined phases and itemized deliverables instead of vague hourly design work. You know exactly what each phase includes before you begin. Fixed phase pricing is confirmed for your specific project during the Design &amp; Consultation Agreement process.
@@ -438,7 +436,7 @@ const ConstructionDesign = () => {
               <h2 className="section-heading mb-6">Real Budget Guidance Before You Commit to the Full Build.</h2>
               <div className="space-y-5 text-foreground/80 text-base md:text-lg font-body leading-relaxed">
                 <p>
-                  Phase 1 includes preliminary budget guidance, giving homeowners a more realistic understanding of the project before committing to larger design phases, permitting, or construction.
+                  When preliminary budget guidance is included in the agreed phase, it helps frame the likely construction scope before a homeowner commits to later design, permitting, or construction work.
                 </p>
                 <p>
                   This supports Highlander's "no instant quote" discipline for serious construction projects. Instead of guessing at a number, we help you define the project first — then price it honestly.
@@ -453,7 +451,7 @@ const ConstructionDesign = () => {
           <div className="container-tight">
             <div className="max-w-2xl mx-auto text-center mb-12">
               <span className="eyebrow mb-3 block">Who Should Start With Design</span>
-              <h2 className="section-heading mb-4">If Your Project Fits Here, Start With a Design Agreement.</h2>
+              <h2 className="section-heading mb-4">If Your Project Fits Here, Start With a Conversation.</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
               {whoStarts.map((w, i) => (
@@ -499,10 +497,10 @@ const ConstructionDesign = () => {
                   </p>
                 </div>
                 <Link
-                  to="/design-intake?mode=long"
+                  to="/request-inspection?context=existing_plans&type=construction-design"
                   className="btn btn-primary btn-md"
                 >
-                  Get My Plans Reviewed <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Discuss My Existing Plans <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
             </ScrollReveal>
@@ -511,8 +509,8 @@ const ConstructionDesign = () => {
 
         <ConstructionMidCTA
           headline="Ready to define your project the right way?"
-          subheadline="Start with a Design & Consultation Agreement and we'll scope, draw, and document the build before construction pricing is set."
-          ctaText="Get My Plans Drawn"
+          subheadline="Start with a conversation. If paid design is the right next step, Highlander will explain the phase, deliverables, price, and agreement before you commit."
+          ctaText="Discuss My Project"
         />
 
         {/* ─── SECTION 8: FAQs ─── */}
@@ -545,20 +543,20 @@ const ConstructionDesign = () => {
                 Ready to Plan Your<br className="hidden md:block" /> Construction Project?
               </h2>
               <p className="text-dark-section-foreground text-base md:text-lg font-body leading-relaxed max-w-2xl mx-auto mb-9">
-                Tell us what you're considering, whether you already have plans, and how soon you hope to build. Our team will help determine whether your project is ready for estimating — or should begin with a Design &amp; Consultation Agreement.
+                Tell us what you're considering. The first inquiry is not a design agreement or construction authorization; Highlander will explain whether the next step is estimating, additional discovery, or a separate paid Design &amp; Consultation Agreement.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 <Link
-                  to="/construction-intake"
+                  to="/request-inspection?context=construction_design&type=construction-design"
                   className="btn btn-primary btn-md"
                 >
-                  Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Discuss My Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
-                  to="/design-intake?mode=long"
+                  to="#design-phases"
                   className="btn btn-secondary btn-md btn-on-dark"
                 >
-                  Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  See How Paid Design Works <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
               <a href={PHONE_TEL} className="inline-flex items-center gap-2.5 text-dark-section-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
@@ -568,8 +566,6 @@ const ConstructionDesign = () => {
             </div>
           </div>
         </section>
-        <CostContextBlock serviceLabel="design and planning" variant="construction" />
-        <CommonConcerns />
       <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"
@@ -579,7 +575,7 @@ const ConstructionDesign = () => {
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Construction & Renovation FAQ", href: "/faq", description: "Answers to common planning questions" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
-            { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start with a design conversation" },
+            { label: "Discuss a Construction Project", href: "/request-inspection?context=design_related&type=construction", description: "Start with the short first-contact form" },
             { label: "Get My Questions Answered", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
