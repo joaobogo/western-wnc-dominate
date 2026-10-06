@@ -303,7 +303,15 @@ export async function handleChatbotRequest(req: Request, deps: ChatbotDeps): Pro
     const body = await req.json();
     const messages = body?.messages;
     const context = body?.context;
-    if (!Array.isArray(messages) || messages.length === 0) {
+    if (!Array.isArray(messages) || messages.length === 0 || messages.length > 40) {
+      return jsonResponse({ error: SAFE_ERRORS.generic }, 400);
+    }
+    // Only plain user/assistant turns are accepted; callers can never inject
+    // system/tool messages into the prompt.
+    const safeMessages = messages
+      .filter((m: any) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
+      .map((m: any) => ({ role: m.role as "user" | "assistant", content: String(m.content).slice(0, 4000) }));
+    if (safeMessages.length === 0 || safeMessages.length !== messages.length) {
       return jsonResponse({ error: SAFE_ERRORS.generic }, 400);
     }
 
@@ -337,7 +345,7 @@ export async function handleChatbotRequest(req: Request, deps: ChatbotDeps): Pro
         model: "google/gemini-3-flash-preview",
         messages: [
           { role: "system", content: SYSTEM_PROMPT + contextNote },
-          ...messages,
+          ...safeMessages,
         ],
         stream: true,
       }),
