@@ -6,15 +6,18 @@
 const InlineFieldError = ({
   id,
   children,
-  className = "text-destructive",
+  tone,
+  className,
 }: {
   id?: string;
+  /** "dark" renders a lighter error color for dark sections. */
+  tone?: "light" | "dark" | string;
   children?: React.ReactNode;
   /** Override the color/size when the field sits on a dark section. */
   className?: string;
 }) =>
   children ? (
-    <p id={id} role="alert" className={`mt-1.5 text-xs font-body leading-snug ${className}`}>
+    <p id={id} role="alert" className={`mt-1.5 text-xs font-body leading-snug ${className ?? (tone === "dark" ? "text-destructive-foreground" : "text-destructive")}`}>
       {children}
     </p>
   ) : null;
