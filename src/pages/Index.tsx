@@ -15,6 +15,7 @@ import ThreeDivisionPathway from "@/components/DualPathway";
 
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import HomepageStickyLeadBar from "@/components/HomepageStickyLeadBar";
+import InspectionForm from "@/components/InspectionForm";
 import SectionDivider from "@/components/SectionDivider";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
@@ -75,6 +76,9 @@ const Index = () => {
           ]}
         />
 
+        {/* High-intent in-flow estimate form — complements, not duplicates, the sticky bar. */}
+        <InspectionForm />
+
         {/* Two showrooms — NAP lines from business.ts, each linking to its location page (P3.6) */}
         <section aria-labelledby="two-showrooms" className="bg-background border-y border-border/40">
           <div className="container-tight px-6 py-8 md:py-10 grid gap-4 md:grid-cols-[auto_1fr] md:items-center">
@@ -128,13 +132,13 @@ const Index = () => {
           {/* 8. One closing CTA */}
           <PageCloseCTA
             context="homepage"
-            eyebrow="Gutter Season Resource"
-            heading="Is your mountain home ready for fall?"
-            body="Get the Pre-Fall Gutter Checklist for WNC homeowners or request an inspection to ensure your water-management system is clear and functional before the first heavy rain."
-            primaryLabel="Read the Gutter Checklist"
-            primaryTo="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners"
-            secondaryLabel="Get a Written Inspection Estimate"
-            secondaryTo="/request-inspection"
+            eyebrow="Ready for a Clear Next Step?"
+            heading="Talk with Highlander about your roof or home project."
+            body="Call the team or send the same short estimate request. We will discuss the property and put the proposed next step in writing before you authorize work."
+            primaryLabel="Request a Free Estimate"
+            primaryTo="/request-inspection"
+            secondaryLabel="See recent Highlander projects"
+            secondaryTo="/recent-projects"
           />
         </Suspense>
 
