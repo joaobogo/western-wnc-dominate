@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
@@ -112,6 +112,17 @@ const queryClient = new QueryClient({
   },
 });
 
+const RootEntry = () => {
+  const { search } = useLocation();
+  const landing = new URLSearchParams(search).get("landing");
+
+  if (landing === "roofing") return <RoofingLanding />;
+  if (landing === "construction") return <ConstructionLanding />;
+  if (landing === "roofing-construction" || landing === "combined") return <CombinedLanding />;
+
+  return <Index />;
+};
+
 const App = () => (
   <ErrorBoundary boundary="app-root">
     <QueryClientProvider client={queryClient}>
@@ -133,7 +144,7 @@ const App = () => (
           <Suspense fallback={<div className="min-h-dvh bg-background" />}>
             <ErrorBoundary boundary="route">
               <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<RootEntry />} />
 
           {/* ─── Roofing Division ─── */}
           <Route path="/roofing" element={<RoofingDivision />} />
