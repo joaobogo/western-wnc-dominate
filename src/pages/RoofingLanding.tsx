@@ -179,6 +179,14 @@ function SharedForm({
               href={PHONE_TEL}
               className="inline-flex min-h-10 items-center gap-2 font-bold text-primary underline underline-offset-4"
               aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
+              onClick={() =>
+                trackPhoneClick({
+                  phone_number: PHONE_PLAIN,
+                  link_url: PHONE_TEL,
+                  click_location: `lp_roofing_${instance}_form`,
+                  page_type: "paid_landing",
+                })
+              }
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               {PHONE_DISPLAY}
@@ -701,7 +709,18 @@ export default function RoofingLanding() {
               <div>{PRIMARY_HOURS_LABEL}, Eastern Time</div>
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <a href={PHONE_TEL} className="underline underline-offset-2 hover:text-foreground">
+              <a
+                href={PHONE_TEL}
+                className="underline underline-offset-2 hover:text-foreground"
+                onClick={() =>
+                  trackPhoneClick({
+                    phone_number: PHONE_PLAIN,
+                    link_url: PHONE_TEL,
+                    click_location: "lp_roofing_footer",
+                    page_type: "paid_landing",
+                  })
+                }
+              >
                 {PHONE_DISPLAY}
               </a>
               <a href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground">
