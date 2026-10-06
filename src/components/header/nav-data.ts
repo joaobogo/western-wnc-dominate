@@ -62,7 +62,7 @@ export const constructionItems: DropdownItem[] = [
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
   { label: "Design & Planning", href: "/construction/design", desc: "In-house design for additions & remodels" },
   { label: "Layout & Design Planning", href: "/layouts-planning", desc: "Floor plans, layouts & feasibility" },
-  { label: "Construction Consultation", href: "/construction/consultation", desc: "Scope, schedule & budget review" },
+  { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_nav&type=construction", desc: "Short first-contact form" },
 ];
 
 export const roofingColumns: DropdownColumn[] = [
@@ -115,7 +115,7 @@ export const constructionColumns: DropdownColumn[] = [
     items: [
       { label: "Design & Planning", href: "/construction/design", desc: "In-house design for builds" },
       { label: "Layout & Design Planning", href: "/layouts-planning", desc: "Floor plans & feasibility" },
-      { label: "Construction Consultation", href: "/construction/consultation", desc: "Scope, schedule & budget" },
+      { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_nav&type=construction", desc: "Short first-contact form" },
     ],
   },
 ];
@@ -145,7 +145,7 @@ export const divisions: DivisionDropdown[] = [
       eyebrow: "Start here",
       label: "Plan Your Project",
       desc: "Walk your scope, timeline, and budget with a licensed general contractor before drawings begin.",
-      href: "/construction/consultation",
+      href: "/request-inspection?context=construction_nav&type=construction",
     },
     icon: Hammer,
     tagline: "Licensed General Contractor",
