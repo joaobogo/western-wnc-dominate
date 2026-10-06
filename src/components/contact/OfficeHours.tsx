@@ -53,7 +53,7 @@ const OfficeHours = ({ className = "" }: { className?: string }) => {
           <div>
             <p className="text-body-sm font-body font-semibold text-foreground">Messages &amp; forms</p>
             <p className="text-body-xs text-muted-foreground font-body">
-              Every inquiry gets a personal response — typically within one business day, never longer than 24 hours.
+              Messages and forms are reviewed during staffed business hours. The team will contact you to discuss the appropriate next step.
             </p>
           </div>
         </div>
