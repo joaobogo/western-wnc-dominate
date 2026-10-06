@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { ArrowRight, CheckCircle2, Phone, Star } from "lucide-react";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import { trackFormError, trackFormStart, trackPhoneClick } from "@/lib/gtm";
 import {
@@ -396,6 +396,13 @@ export default function CombinedLanding() {
         title="Roofing & Construction in Western NC | Highlander"
         description="Roofing, additions, renovations and outdoor living in Western North Carolina. Call Highlander or send one short request for your home project."
         path={PATH}
+        jsonLd={[
+          serviceSchema({ name: "Roofing & Construction", description: "Roofing, additions, renovations and outdoor living in Western North Carolina. Call Highlander or send one short request for your home project.", url: PATH }),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Roofing & Construction", url: PATH },
+          ]),
+        ]}
         noindex="follow"
       />
       <a href="#main-content" className="sr-only z-[100] rounded-sm bg-background px-4 py-3 text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:outline-none focus:ring-2 focus:ring-primary">Skip to main content</a>
