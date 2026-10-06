@@ -1,0 +1,53 @@
+name: Release QA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: release-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    name: Lint, test, build and route audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CONTEXT: deploy-preview
+      NETLIFY: "true"
+      CI: "true"
+      INDEXNOW_FORCE: "false"
+    steps:
+      - name: Checkout final source
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium for prerender QA
+        run: npx playwright install --with-deps chromium
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Full production build and prerender
+        run: npm run build
+
+      - name: SEO, broken-link and route regression gate
+        run: npm run seo:check
