@@ -53,6 +53,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /roofing/asphalt-shingle                                     /roofing/residential                               301!
 /roofing/shingle                                             /roofing/residential                               301!
 /construction/exterior                                       /construction/siding                               301!
+/layouts-planning                                            /construction/design                               301!
 /construction/custom                                         /construction                                      301!
 /construction/flatwork                                       /construction                                      301!
 /construction/garages                                        /construction/additions                            301!
