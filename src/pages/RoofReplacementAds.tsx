@@ -12,7 +12,7 @@ const RoofReplacementAds = () => (
     heroAlt="Roof replacement in progress on a mountain home in Western North Carolina"
     eyebrow="Roof replacement · Western North Carolina"
     headline="Roof Replacement in Western NC — Get a Written Scope, Not a Sales Pitch"
-    subheadline="We help Western North Carolina homeowners understand timing, material fit, and budget range so replacement decisions feel informed instead of rushed."
+    subheadline="We help Western North Carolina homeowners understand scope, material fit, and project considerations so replacement decisions feel informed instead of rushed."
     ctaLabel="Get My Replacement Scope"
     adVariants={{
       quote: {
@@ -22,7 +22,7 @@ const RoofReplacementAds = () => (
       },
       metal: {
         headline: "Metal Roof Replacement for Mountain Homes",
-        subheadline: "Standing seam and metal systems specified for elevation, wind, and ice loads in Western North Carolina.",
+        subheadline: "Standing seam and other metal roofing options considered for mountain-home exposure, roof design, and project goals in Western North Carolina.",
         ctaLabel: "Get My Metal Roof Quote",
       },
     }}
@@ -40,9 +40,9 @@ const RoofReplacementAds = () => (
       "Budget, financing availability, and insurance-related questions discussed before commitment.",
     ]}
     quickSteps={[
-      { title: "Quick intake", detail: "Share your town, timing, and what is pushing the replacement decision right now." },
+      { title: "Quick first contact", detail: "Send your first name, optional email, and phone. We will discuss the property and what is driving the replacement decision during follow-up." },
       { title: "On-site evaluation", detail: "We inspect the roof system and determine the correct replacement scope for your property." },
-      { title: "Detailed next step", detail: "You get a clear recommendation, material direction, and what to expect on timeline and investment." },
+      { title: "Detailed next step", detail: "You get a clear recommendation, material direction, and the applicable written scope or estimate for your property." },
     ]}
     trustBullets={[
       "Detailed scopes instead of vague allowances",
