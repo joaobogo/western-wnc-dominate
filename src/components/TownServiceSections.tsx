@@ -78,7 +78,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
                 Before the first nail is driven, we provide {town.name} homeowners with professional design support, site-specific planning, and structural layouts to ensure project success.
               </p>
               <Link 
-                to="/layouts-planning"
+                to="/construction/design"
                 className="inline-flex items-center gap-2 text-foreground font-heading font-bold hover:gap-3 transition-all mt-auto text-sm uppercase tracking-widest"
               >
                 Explore Design Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
