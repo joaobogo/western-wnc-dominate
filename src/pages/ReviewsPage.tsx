@@ -50,8 +50,8 @@ const themes = [
 ];
 
 const trustMetrics = [
-  { value: REVIEW_STARS, label: "Average Rating", detail: "Google & Facebook" },
-  { value: `${REVIEW_COUNT}`, label: "Verified Reviews", detail: "Across Platforms" },
+  { value: REVIEW_STARS, label: "Google Rating", detail: REVIEW_AS_OF },
+  { value: `${REVIEW_COUNT}`, label: "Google Reviews", detail: REVIEW_AS_OF },
   { value: "A+", label: "BBB Accredited", detail: `Since ${BUSINESS.bbbAccreditedSince}` },
   { value: BUSINESS.licenseNumber.replace(/^\D+/, "#"), label: "NC GC License", detail: "Verifiable on the state lookup" },
 ];
