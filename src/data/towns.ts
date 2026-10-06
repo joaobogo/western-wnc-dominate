@@ -159,13 +159,13 @@ export const towns: TownData[] = [
     county: "Macon County",
     state: "NC",
     elevation: "2,119 ft",
-    description: "Our hometown market. Based in Franklin, we provide the region's fastest response times for family homes, valley farms, and ridge-top residences across Macon County.",
-    features: ["Locally based crews", "Design", "Residential specialists", "Family-owned, team-driven"],
+    description: "Our hometown market. Based at 40 Depot Street in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.",
+    features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
     // 59 chars: fits the 60-char guard intact. The longer "Roof Replacement, Repair & Metal"
     // middle was dropped by normalizeTitle, which left this page with the homepage's title.
-    metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
-    h1: `Roofers in Franklin, NC — Local Crews, Walk-In Showroom on ${streetName(FRANKLIN)}`,
-    metaDescription: "Roofing in Franklin, NC neighborhoods — Cartoogechaye, Iotla, Holly Springs and nearby Macon County. Local crews, walk-in showroom in town. Licensed & insured.",
+    metaTitle: "Best Roofers in Franklin, NC | Highlander",
+    h1: `Best Roofers in Franklin, NC — Walk-In Showroom on ${streetName(FRANKLIN)}`,
+    metaDescription: "Looking for the best roofers in Franklin, NC? Visit Highlander at 40 Depot Street for roof repair, replacement, metal roofing and construction across Macon County.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
@@ -173,7 +173,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Dimensional Asphalt Roofing", "Residential Repairs", "Master Suite Additions", "Interior Renovations"],
     styleTendency: "Classic Appalachian styles, including craftsman bungalows and modern farmhouses built for local conditions.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown", "Otto"],
-    marketAuthorityAngle: "Franklin is our home. Our crews live here, meaning we offer the fastest response times and local accountability for Macon County neighbors.",
+    marketAuthorityAngle: "Franklin is Highlander's home base, with a walk-in showroom at 40 Depot Street and roofing and construction service across Macon County.",
     heroImage: "/media/wnc-aerial-neighborhood.jpg"
   },
   {
