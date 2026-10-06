@@ -27,10 +27,6 @@ const expansionContextImg = "/media/wnc-mountain-home-exterior.webp";
 const structuralTieImg = "/media/wnc-construction-framing.webp";
 const mountainSiteImg = "/media/wnc-ridge-elevation-home.webp";
 
-import proj1 from "@/assets/gallery/cedar-001.webp";
-import proj2 from "@/assets/gallery/metal-008.webp";
-import proj3 from "@/assets/gallery/asphalt-006.webp";
-import proj4 from "@/assets/gallery/cedar-002.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -89,10 +85,9 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: proj1, alt: "Room addition on mountain home", label: "Guest Suite Addition", location: "Mountain Residence, Asheville" },
-  { src: proj2, alt: "Expanded living area with metal roof integration", label: "Great Room Expansion", location: "Ridgeline Property, Franklin" },
-  { src: proj3, alt: "Sunroom addition with mountain views", label: "Four-Season Room", location: "Valley Home, Sylva" },
-  { src: proj4, alt: "Garage addition matching existing design theme", label: "Detached Garage Build", location: "Custom Build, Fairview" },
+  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Highlander Construction Work", location: "Western North Carolina" },
+  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
+  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Home Expansion", location: "Western North Carolina" },
 ];
 
 const wncChallenges = [
@@ -493,9 +488,9 @@ const HomeAdditions = () => {
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Featured Additions</span>
-              <h2 className="section-heading mb-3">Integrated by Design.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">Each addition was designed to look like it was part of the original home — because that's the standard.</p>
+              <span className="eyebrow mb-3 block">Construction Context</span>
+              <h2 className="section-heading mb-3">See Highlander Construction Work.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">These images are construction and outdoor-living work already featured by Highlander. Addition-specific case studies are published only when the project scope and location are documented.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
