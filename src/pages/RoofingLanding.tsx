@@ -410,7 +410,7 @@ export default function RoofingLanding() {
         title="Roof Repair & Replacement in Western NC | Highlander"
         description="Roof repair, replacement and metal roofing in Western North Carolina. Call Highlander or send a short request to discuss your roof."
         path={PATH}
-        noindex
+        noindex="follow"
       />
 
       <a
