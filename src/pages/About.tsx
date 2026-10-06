@@ -1,4 +1,4 @@
-import { awardLabel, PHONE_DISPLAY, PHONE_TEL, REVIEW_LINE_AS_OF, REVIEW_STARS, VERIFIED_AWARDS } from "@/data/business";
+import { awardLabel, BUSINESS, PHONE_DISPLAY, PHONE_TEL, REVIEW_LINE_AS_OF, REVIEW_STARS, VERIFIED_AWARDS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -298,7 +298,7 @@ const About = () => {
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
                           <span className="font-heading font-bold text-xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">In-House Specialist</span>
+                        <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Highlander Team Member</span>
                       </div>
                     )}
                   </div>
@@ -641,9 +641,9 @@ const About = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { stat: REVIEW_STARS, label: "Google Rating" },
-                { stat: REVIEW_STARS, label: "Average across Google & Facebook" },
-                { stat: "Rapid", label: "Response time on every inquiry" },
-                { stat: "In-House", label: "Highlander employee crews" },
+                { stat: `Since ${BUSINESS.foundedYear}`, label: "Serving Western NC" },
+                { stat: `${BUSINESS.locations.length}`, label: "Walk-In Showrooms" },
+                { stat: BUSINESS.licenseNumber.replace(/^\D+/, "#"), label: "NC GC License" },
               ].map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.4 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">
                   <p className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] mb-2">{item.stat}</p>
