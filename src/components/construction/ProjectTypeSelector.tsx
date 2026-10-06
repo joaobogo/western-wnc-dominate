@@ -52,7 +52,7 @@ const ProjectTypeSelector = ({
         {constructionProjectTypes.map(({ id, label, icon: Icon, desc }) => (
           <Link
             key={id}
-            to={`/construction/consultation?type=${id}`}
+            to={`/request-inspection?context=construction_project_type&type=construction-${id}`}
             data-gtm-location="project_type_selector"
             className={`group border p-6 flex flex-col gap-3 transition-all hover:shadow-raised ${
               highlight === id
