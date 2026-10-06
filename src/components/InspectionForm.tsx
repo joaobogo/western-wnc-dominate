@@ -30,6 +30,15 @@ function contextFromQuery(): string | null {
   }
 }
 
+function projectTypeFromQuery(): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return new URLSearchParams(window.location.search).get("type");
+  } catch {
+    return null;
+  }
+}
+
 function townFromQuery(): string | null {
   if (typeof window === "undefined") return null;
   try {
@@ -82,7 +91,7 @@ interface InspectionFormProps {
 const InspectionForm = ({ variant = "section", townName, county }: InspectionFormProps) => {
   const navigate = useNavigate();
   const isPage = variant === "page";
-  const presetProjectType = useRef<string>(projectTypeFromPage());
+  const presetProjectType = useRef<string>(projectTypeFromQuery() || projectTypeFromPage());
   const inferredTown = townName || townFromQuery();
   const category = categoryFor(presetProjectType.current);
 
