@@ -53,7 +53,8 @@ const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Financing = lazy(() => import("./pages/Financing"));
 const Careers = lazy(() => import("./pages/Careers"));
-const RequestInspection = lazy(() => import("./pages/RequestInspection"));\nconst ThankYou = lazy(() => import("./pages/ThankYou"));
+const RequestInspection = lazy(() => import("./pages/RequestInspection"));
+const ThankYou = lazy(() => import("./pages/ThankYou"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
 const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
@@ -226,7 +227,8 @@ const App = () => (
           <Route path="/construction-builder" element={<ConstructionBuilder />} />
           <Route path="/design-intake" element={<DesignIntake />} />
           <Route path="/quote-flow" element={<QuoteFlow />} />
-          <Route path="/contact" element={<Contact />} />\n          <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           <Route path="/admin/login" element={<AdminLogin />} />
