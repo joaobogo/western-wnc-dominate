@@ -442,7 +442,7 @@ const OutdoorLiving = () => {
           ctaLabel="Get My Outdoor Plan"
         />
             <WhoShowsUp />
-            <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" primaryTo="/construction/consultation" />
+            <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" primaryTo="/request-inspection?context=outdoor_living&type=construction-outdoor-living" />
 <ConversionTrustBlock variant="band" category="construction" />
           </>
         }
