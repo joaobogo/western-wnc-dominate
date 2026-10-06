@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { ArrowRight, CheckCircle2, Phone, Star } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
@@ -87,11 +87,11 @@ const intentHelper = (intent: Intent) => {
 type SharedFormProps = {
   instance: "hero" | "final" | "rail";
   values: FormState;
-  setValues: React.Dispatch<React.SetStateAction<FormState>>;
+  setValues: Dispatch<SetStateAction<FormState>>;
   errors: FormErrors;
-  setErrors: React.Dispatch<React.SetStateAction<FormErrors>>;
+  setErrors: Dispatch<SetStateAction<FormErrors>>;
   intent: Intent;
-  setIntent: React.Dispatch<React.SetStateAction<Intent>>;
+  setIntent: Dispatch<SetStateAction<Intent>>;
   submitted: boolean;
   submitError: string | null;
   onSubmit: (location: string) => Promise<void>;
