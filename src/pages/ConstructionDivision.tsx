@@ -507,7 +507,7 @@ const ConstructionDivision = () => {
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
-            { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start the conversation" },
+            { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_related&type=construction", description: "Start with the short first-contact form" },
             { label: "Get My Questions Answered", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
