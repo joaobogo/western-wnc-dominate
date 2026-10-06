@@ -351,7 +351,7 @@ const CostContextBlock = ({
           </p>
           <div className="flex flex-col gap-3">
             <Link
-              to={variant === "construction" ? "/construction/consultation" : "/request-inspection"}
+              to={variant === "construction" ? "/request-inspection?context=construction_cost&type=construction" : "/request-inspection"}
               onClick={() => trackEvent("cta_click", { label: "Request a written scope", elementId: "cost-context-scope" })}
               className="btn btn-primary btn-md w-full"
             >
