@@ -113,13 +113,13 @@ export default function Contact() {
             {/* Left: form */}
             <div className="lg:col-span-7">
               <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] block mb-3">
-                Get My Written Estimate
+                Request a Free Estimate
               </span>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3 leading-tight">
                 Tell us the basics. We&apos;ll handle the rest on the call.
               </h2>
               <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
-                Keep it short: who you are, how to reach you, where the property is, and what you need. A Highlander advisor reviews it and calls you back to discuss next steps.
+                Keep it short: first name, optional email, and phone. A Highlander team member will discuss the property, service, and appropriate next step with you after the request is stored.
               </p>
               {/* Call escape hatch — most conversions here are calls, so the
                   phone is offered before the form, not only after it. */}
@@ -180,7 +180,7 @@ export default function Contact() {
                       <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-heading font-semibold text-foreground">{PHONE_DISPLAY}</p>
-                        <p className="text-caption text-muted-foreground font-body">Call — a real person answers</p>
+                        <p className="text-caption text-muted-foreground font-body">Call during office hours</p>
                       </div>
                     </a>
                     <a
@@ -190,7 +190,7 @@ export default function Contact() {
                       <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-heading font-semibold text-foreground">info@highlandernc.com</p>
-                        <p className="text-caption text-muted-foreground font-body">Email — reply within 24 hours</p>
+                        <p className="text-caption text-muted-foreground font-body">Email the Highlander team</p>
                       </div>
                     </a>
                     <Link
@@ -199,8 +199,8 @@ export default function Contact() {
                     >
                       <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       <div>
-                        <p className="text-sm font-heading font-semibold text-foreground">Guided Consultation</p>
-                        <p className="text-caption text-muted-foreground font-body">More detailed project discovery</p>
+                        <p className="text-sm font-heading font-semibold text-foreground">Estimate Request</p>
+                        <p className="text-caption text-muted-foreground font-body">Three-field first step</p>
                       </div>
                     </Link>
                     <Link
