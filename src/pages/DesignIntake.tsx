@@ -21,7 +21,7 @@ const DesignIntake = () => {
         noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Design", url: "/layouts-planning" },
+          { name: "Design", url: "/construction/design" },
           { name: "Project Intake", url: "/design-intake" }
         ])}
       />
