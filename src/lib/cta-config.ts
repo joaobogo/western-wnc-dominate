@@ -3,7 +3,7 @@ import { PHONE_DISPLAY, PHONE_PLAIN, REVIEW_LINE_AS_OF, VERIFIED_AWARDS, awardLa
  * Global CTA Architecture — Highlander Building Services
  * 
  * Premium CTA language system. No cheap/gimmicky language.
- * No "free inspections", "get started", "claim your", "book now".
+ * Never use "free inspection" language. "Free estimate" is allowed only where the offer is factual and approved.
  * 
  * HIERARCHY:
  * 1. Primary CTAs — Gold gradient buttons (conversion-critical)
@@ -179,7 +179,7 @@ export const PROOF_CONTEXT = {
 
 /* ─── FORBIDDEN LANGUAGE ─── */
 // NEVER use these in any CTA context:
-// "Free inspection" / "Free estimate" / "Free quote"
+// "Free inspection" / "Free quote" (approved "Free estimate" wording may be used when factual)
 // "Get started" / "Get a free..." / "Claim your..."
 // "Book now" / "Buy now" / "Act now"
 // "Limited time" / "Don't miss out" / "Hurry"
