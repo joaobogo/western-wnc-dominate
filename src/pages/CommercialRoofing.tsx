@@ -93,11 +93,11 @@ const processSteps = [
 
 const trustProofs = [
   { icon: Shield, value: "Licensed & Insured", label: "Full commercial liability coverage" },
-  { icon: BadgeCheck, value: "Manufacturer Certified", label: "CertainTeed commercial applicator" },
+  { icon: BadgeCheck, value: "CertainTeed", label: "Credentialed Contractor" },
   { icon: Clock, value: "Direct", label: "Leak & storm support" },
-  { icon: Award, value: "15+ Years", label: "Commercial roofing experience in WNC" },
+  { icon: Award, value: "Since 2017", label: "Highlander founded in Western NC" },
   { icon: Building2, value: "Multi-Property", label: "Programs for management groups" },
-  { icon: Star, value: "Manufacturer Systems", label: "CertainTeed-credentialed installation" },
+  { icon: Star, value: "Written", label: "Project-specific scope and terms" },
 ];
 
 const faqs = [
