@@ -32,7 +32,6 @@ const SOFT_BUDGET_MS = 10 * 60 * 1000;
 /** App-only paths that must never be prerendered (noindex / form funnels / admin). */
 const EXCLUDED_PREFIXES = [
   "/admin",
-  "/lp",
   "/.lovable",
   "/front-desk",
   "/intake",
