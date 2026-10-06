@@ -74,11 +74,11 @@ const TimelineExpectations = ({
 
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
         <Link
-          to="/construction/consultation"
+          to="/request-inspection?context=construction_timeline&type=construction"
           className="btn btn-primary btn-md"
           data-gtm-location="timeline_expectations"
         >
-          Get My Project Scoped
+          Discuss My Project
         </Link>
         <a
           href={PHONE_TEL}
