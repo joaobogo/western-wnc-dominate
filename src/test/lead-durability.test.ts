@@ -41,7 +41,8 @@ describe("durable-first lead capture", () => {
     expect(res.error).toBeNull();
     expect(res.id).toBeTruthy();
     expect(order[0]).toBe("insert");
-    expect(order).toContain("invoke");
+    // The CRM sync is fire-and-forget behind a lazy import, so wait for it.
+    await vi.waitFor(() => expect(order).toContain("invoke"));
   });
 
   it("still reports success to the visitor when the CRM sync fails", async () => {
@@ -98,6 +99,7 @@ describe("idempotent submission", () => {
     insert.mockResolvedValue({ error: null });
     await submit(validLead);
     const row = insert.mock.calls[0][0][0];
+    await vi.waitFor(() => expect(invoke.mock.calls.some((c) => c[0] === "jobtread-sync")).toBe(true));
     const syncCall = invoke.mock.calls.find((c) => c[0] === "jobtread-sync");
     expect(syncCall?.[1].body.idempotency_key).toBe(row.idempotency_key);
   });

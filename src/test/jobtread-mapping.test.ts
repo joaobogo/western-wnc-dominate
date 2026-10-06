@@ -232,3 +232,67 @@ describe("Attachment pipeline", () => {
     expect(note).toContain("https://signed.example.com/roof.jpg");
   });
 });
+
+describe("Paid landing page leads (/lp/*)", () => {
+  const landing = (over: Record<string, unknown> = {}) => ({
+    name: "Mike",
+    first_name: "Mike",
+    phone: "(828) 555-0142",
+    source: "highlander_landing_page",
+    page_url: "https://highlandernc.com/lp/roofing-construction",
+    landing_page: "combined",
+    consent_given: true,
+    metadata: { service_intent: "both", form_location: "hero", landing_page_id: "landing-combined" },
+    ...over,
+  });
+
+  it("labels each landing route readably, never as a generic Website Lead", async () => {
+    const { buildJobName } = await mod();
+    expect(buildJobName(landing({ service_category: "roofing", project_type: "roof_repair" }))).toBe("Roof Repair Lead - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "roofing", project_type: "roof_replacement" }))).toBe("Roof Replacement Inquiry - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "roofing", project_type: "metal_roofing" }))).toBe("Metal Roofing Inquiry - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "roofing", project_type: "roofing" }))).toBe("Roofing Inquiry - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "roofing_and_construction", project_type: "roofing_and_construction" }))).toBe("Roofing & Construction Inquiry - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "general", project_type: "general" }))).toBe("Home Project Inquiry - Western NC - Mike");
+  });
+
+  it("does not downgrade construction landing leads to Design Services just because plans were not asked", async () => {
+    const { buildJobName } = await mod();
+    expect(buildJobName(landing({ service_category: "construction", project_type: "addition", page_url: "https://x/lp/construction" }))).toBe("Construction Addition Inquiry - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "construction", project_type: "outdoor_living", page_url: "https://x/lp/construction" }))).toBe("Outdoor Living Inquiry - Western NC - Mike");
+    expect(buildJobName(landing({ service_category: "construction", project_type: "construction", page_url: "https://x/lp/construction" }))).toBe("Construction Inquiry - Western NC - Mike");
+  });
+
+  it("still routes a non-landing construction lead with no plans to Design Services", async () => {
+    const { buildJobName } = await mod();
+    expect(buildJobName({ name: "Ann", first_name: "Ann", service_category: "construction", project_type: "addition", has_plans: false, source: "construction_intake" })).toBe("Design Services Inquiry - Western NC - Ann");
+  });
+
+  it("never merges two different first-name-only customers", async () => {
+    const { buildFirstNameOnlyAccountName } = await mod();
+    const a = buildFirstNameOnlyAccountName("Mike", { phone: "(828) 555-0142" }, null);
+    const b = buildFirstNameOnlyAccountName("Mike", { phone: "828-555-0199" }, null);
+    expect(a).toBe("Mike (828-555-0142)");
+    expect(b).toBe("Mike (828-555-0199)");
+    expect(a).not.toBe(b);
+    // Same person re-submitting resolves to the same customer.
+    expect(buildFirstNameOnlyAccountName("Mike", { phone: "+1 828 555 0142" }, null)).toBe(a);
+    expect(buildFirstNameOnlyAccountName(a, { phone: "828-555-0142" }, null)).toBe(a);
+  });
+
+  it("leaves full-name or town-scoped customers alone", async () => {
+    const { buildFirstNameOnlyAccountName } = await mod();
+    expect(buildFirstNameOnlyAccountName("Jane Van Dyke", { last_name: "Van Dyke", phone: "828-555-0142" }, null)).toBe("Jane Van Dyke");
+    expect(buildFirstNameOnlyAccountName("Mike", { phone: "828-555-0142" }, "Franklin")).toBe("Mike");
+    expect(buildFirstNameOnlyAccountName("Mike", { phone: "" }, null)).toBe("Mike");
+  });
+
+  it("writes the service intent and form location into Source/Attribution only", async () => {
+    const { buildLeadNotes } = await mod();
+    const note: string = buildLeadNotes(landing({ service_category: "roofing_and_construction", created_at: "2026-10-06T16:00:00Z" }));
+    expect(note).toMatch(/Service Intent: both/);
+    expect(note).toMatch(/Form Location: hero/);
+    const sections = [...note.matchAll(/^(Contact Info|Project Summary|Source\/Attribution|Timeline\/Urgency|Property Details|Attachments)/gm)].map((m) => m[1]);
+    expect(sections).toEqual(["Contact Info", "Project Summary", "Source/Attribution", "Timeline/Urgency", "Property Details", "Attachments"]);
+  });
+});

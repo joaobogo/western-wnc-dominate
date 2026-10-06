@@ -103,7 +103,7 @@ const Img = ({
     height={image.height}
     className={className}
     loading={eager ? "eager" : "lazy"}
-    fetchPriority={eager ? "high" : undefined}
+    {...(eager ? ({ fetchpriority: "high" } as Record<string, string>) : {})}
     decoding="async"
   />
 );
