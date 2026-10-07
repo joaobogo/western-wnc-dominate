@@ -1,3 +1,4 @@
+import { FRANKLIN } from "./business";
 import { tier1FlatEntries, tier2FlatEntries, type FlatSlugEntry } from "./service-town-slugs";
 import {
   generatedServiceTownEntries,
@@ -21,6 +22,16 @@ export interface ServiceTownEntry {
   metaTitle: string;
   metaDescription: string;
   faqs: { q: string; a: string }[];
+  /** Optional page-specific copy overrides (defaults live in ServiceTownPage). */
+  copy?: {
+    quickQuestion?: string;
+    localContextHeading?: string;
+    faqHeading?: string;
+    relatedHeading?: string;
+    relatedIntro?: string;
+    climateNote?: string;
+    omitCoverageExtension?: boolean;
+  };
   /** Long-form supporting sections (generated coverage pages). */
   sections?: GeneratedSection[];
   /**
@@ -72,21 +83,30 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Franklin, NC",
     intro:
-      "When something fails on a Franklin roof, you want a clear diagnosis without being routed through an out-of-area call center. Highlander is based here in Franklin, and we document the issue, explain the repair options, and provide the next step in writing.",
+      `When something fails on a Franklin roof, you want a clear diagnosis from a local roofing contractor, not an out-of-area call center. Highlander is based here in Franklin, NC ${FRANKLIN.postalCode}, and we inspect, document the issue, explain the repair options, and provide the next step in writing.`,
     localContext:
-      "The repairs we see most often in Franklin: lifted ridge caps from spring storms coming up the Little Tennessee valley, pipe-boot failures on 15+ year asphalt, and chimney flashing that was never properly stepped on older homes.",
+      "The repairs we see most often in Franklin: lifted or missing sections of ridge cap and missing shingles from spring storm activity coming up the Little Tennessee valley, pipe-boot failures and tears in aging underlayment on 15+ year asphalt shingles, flashing issues where the roof meets a chimney or siding that was never properly stepped on older homes, and punctures from fallen tree limbs. A sagging ridge line or widespread leaks usually mean the roof needs more than a patch, and we will say that honestly rather than sell you a fix that will not hold.",
     whoItsFor:
-      "Homeowners with an active leak, anyone preparing for a home inspection, and second-home owners who just opened the house for the season and found a stain on the ceiling.",
+      "Homeowners with an active leak, anyone preparing for a home inspection, second-home owners who just opened the house for the season and found a stain on the ceiling, and anyone weighing a repair against replacement on an aging roof. Home size and design preferences matter less for a repair than its age and condition. The same skilled roofing pros who handle our residential roof installation do this work, so you get one durable, long-lasting fix instead of a quick patch, and you can read real reviews on our Google Business Profile before you call.",
     proofNote:
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
     metaTitle: "Roof Repair in Franklin, NC: Leaks and Flashing | Highlander Building Services",
     metaDescription:
       "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense.",
     faqs: [
-      { q: "How fast can you get to my Franklin home for a leak?", a: "Call or submit the inspection form and tell us if water is actively entering. The team triages active leaks during staffed hours and will give you the earliest available visit." },
-      { q: "Do you provide written estimates for insurance?", a: "Highlander can provide contractor photos and a written scope for repair work when documentation is part of the assessment. Your carrier or adjuster makes claim and coverage decisions." },
-      { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives." },
+      { q: "How fast can you get to my Franklin home for a leak?", a: "Contact a roofer the same day: call or submit the roof inspection form and tell us if water is actively entering. The team triages urgent issues during staffed hours and will give you the earliest available visit, and a tarp or temporary patch can protect the interior until the permanent fix is scheduled." },
+      { q: "Do you provide written estimates for insurance?", a: "Highlander can provide contractor photos and a written scope for repair work when documentation is part of the assessment, which is what most insurance claims for wind damage, falling debris, or other unexpected events call for. Your carrier or adjuster makes claim and coverage decisions." },
+      { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives. Local labor rates, roof size, and the roofing material — metal, asphalt, or synthetic slate — set the number, and you get a clear written estimate after the visit rather than a guess over the phone, so you can decide whether an affordable repair or a replacement is the better use of your money." },
     ],
+    copy: {
+      quickQuestion: "Which local contractor handles roof repair in Franklin, NC?",
+      localContextHeading: "Why roof repair matters in Franklin",
+      faqHeading: "Roof Repair in Franklin: Frequently Asked Questions",
+      relatedHeading: "Related services we provide in Franklin",
+      relatedIntro: "Related Franklin services, the same work in nearby cities and towns across the region, and local guides for Franklin homeowners.",
+      climateNote: "Humid summers, challenging seasonal swings, and high-wind events channeled through the Little Tennessee River Valley — some of the toughest weather conditions a roof faces year-round, so ridge and edge details get high-wind protection as part of the work.",
+      omitCoverageExtension: true,
+    },
   }),
   E({
     townSlug: "franklin-nc",

@@ -241,10 +241,11 @@ const ServiceTownPage = ({
           town={town}
           serviceLabel={entry.serviceLabel}
           proofNote={entry.proofNote}
+          climateNote={entry.copy?.climateNote}
         />
 
         <AnswerBlock
-          question={`Who handles ${entry.serviceLabel.toLowerCase()} in ${town.name}, ${town.state}?`}
+          question={entry.copy?.quickQuestion ?? `Who handles ${entry.serviceLabel.toLowerCase()} in ${town.name}, ${town.state}?`}
           answer={entry.intro}
           points={[
             `${entry.serviceLabel} in ${town.name} and across ${town.county}`,
@@ -259,7 +260,7 @@ const ServiceTownPage = ({
             <div className="md:col-span-2 space-y-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                  Why this matters in {town.name}
+                  {entry.copy?.localContextHeading ?? `Why this matters in ${town.name}`}
                 </h2>
                 <p className="text-foreground/80 leading-relaxed">{entry.localContext}</p>
               </div>
@@ -321,7 +322,7 @@ const ServiceTownPage = ({
         <section className="section-padding bg-muted/20">
           <div className="container-tight max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">
-              {entry.serviceLabel} in {town.name}: Frequently Asked
+              {entry.copy?.faqHeading ?? `${entry.serviceLabel} in ${town.name}: Frequently Asked`}
             </h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((f, i) => (
@@ -401,7 +402,7 @@ const ServiceTownPage = ({
           <section className="section-padding bg-background">
             <div className="container-tight">
               <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">
-                Other services we provide in {town.name}
+                {entry.copy?.relatedHeading ?? `Other services we provide in ${town.name}`}
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {relatedForTown.map((r) => (
@@ -433,10 +434,10 @@ const ServiceTownPage = ({
         )}
 
         {/* 8. Internal Linking Engine - Nearby Areas */}
-        <NearbyTowns currentTown={town} />
+        <NearbyTowns currentTown={town} omitCoverageExtension={entry.copy?.omitCoverageExtension} />
         <LocalLinkWeb
           heading={`${entry.serviceLabel} and more across ${town.county}`}
-          intro={`Related ${town.name} services, the same work in neighboring towns, and local guides for ${town.name} homeowners.`}
+          intro={entry.copy?.relatedIntro ?? `Related ${town.name} services, the same work in neighboring towns, and local guides for ${town.name} homeowners.`}
           groups={getServiceTownLinkWeb(town, serviceSlug, entry.serviceLabel, resolvedCanonical)}
         />
         <RelatedLinks
