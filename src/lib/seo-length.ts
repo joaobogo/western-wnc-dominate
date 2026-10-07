@@ -58,7 +58,7 @@ const cutAtWord = (text: string, max: number): string => {
  */
 export const normalizeTitle = (rawTitle: string, max = TITLE_MAX): string => {
   // One suffix everywhere: "| Highlander". Overflowing titles drop middle segments, never the keyword.
-  const raw = (rawTitle || "").replace(/\s{2,}/g, " ").trim().replace(TRAILING_BRAND, `${SEPARATOR}${BRAND_SHORT}`);
+  const raw = removeDashes((rawTitle || "").replace(/\s{2,}/g, " ").trim()).replace(TRAILING_BRAND, `${SEPARATOR}${BRAND_SHORT}`);
   const finish = (t: string) => t;
   if (raw.length <= max) return finish(raw);
   const title = shortenBrand(raw);

@@ -37,6 +37,11 @@ describe("normalizeTitle suffix", () => {
     expect(normalizeTitle("Metal Roofing | Highlander Building Services, Inc.")).toBe("Metal Roofing | Highlander");
   });
 
+  it("removes em dashes from titles", () => {
+    expect(normalizeTitle("Roof Repair in Western NC — Leaks, Flashing, Storm Damage")).toBe("Roof Repair in Western NC: Leaks, Flashing, Storm Damage");
+    expect(normalizeTitle("Standing Seam Metal Roof — Highlands, NC | Highlander")).toBe("Standing Seam Metal Roof: Highlands, NC | Highlander");
+  });
+
   it("keeps the keyword and stays within 60 characters", () => {
     const out = normalizeTitle("Standing Seam Metal Roofing Installation in Highlands, North Carolina | Cost | Highlander Building Services");
     expect(out.length).toBeLessThanOrEqual(60);

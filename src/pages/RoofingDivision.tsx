@@ -93,7 +93,7 @@ const roofingServices = [
 ];
 
 const galleryItems = [
-  { image: metalRoof, title: "Standing Seam — Cashiers", category: "Metal" },
+  { image: metalRoof, title: "Standing Seam, Highlands", category: "Metal" },
   { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
   { image: asphaltRoof, title: "Dimensional Shingles — Franklin", category: "Shingle" },
   { image: metalCabin, title: "Metal + Deck — Bryson City", category: "Metal" },
@@ -183,7 +183,7 @@ const RoofingDivision = () => {
               <source type="image/webp" srcSet={metalRoofSet} sizes="100vw" />
               <img width={1600} height={1067} decoding="async" fetchPriority="high"
                 src={metalRoof}
-                alt="Premium standing seam metal roof on a mountain estate in Cashiers, NC"
+                alt="Dark bronze standing seam metal roof on a steep-pitch mountain home in Highlands, NC"
                 className="w-full h-full object-cover object-[50%_25%] md:object-center"
                 loading="eager"
               />
