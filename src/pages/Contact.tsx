@@ -119,7 +119,7 @@ export default function Contact() {
                 Tell us the basics. We&apos;ll handle the rest on the call.
               </h2>
               <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
-                Keep it short: first name, optional email, and phone. A Highlander team member will discuss the property, service, and appropriate next step with you after the request is stored.
+                Keep it short: first name, email, and phone. A Highlander team member will discuss the property, service, and appropriate next step with you after the request is stored.
               </p>
               {/* Call escape hatch — most conversions here are calls, so the
                   phone is offered before the form, not only after it. */}

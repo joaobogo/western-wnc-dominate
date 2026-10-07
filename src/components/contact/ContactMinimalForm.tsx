@@ -23,7 +23,7 @@ const CONSENT =
 /**
  * Shared low-friction first-contact form.
  *
- * First contact is deliberately limited to first name, optional email and
+ * First contact is deliberately limited to first name, email and
  * phone. Property/service qualification happens after the durable lead exists.
  */
 const ContactMinimalForm = () => {
@@ -37,7 +37,7 @@ const ContactMinimalForm = () => {
     name: form.firstName,
     email: form.email,
     phone: form.phone,
-    require: { name: true, email: false, phone: true },
+    require: { name: true, email: true, phone: true },
   });
 
   const autosave = useFormAutosave(FORM_ID, form, {
@@ -199,7 +199,7 @@ const ContactMinimalForm = () => {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="cm-email" className={labelClasses}>
-            Email <span className="font-normal normal-case tracking-normal opacity-70">(optional)</span>
+            Email
           </label>
           <input
             id="cm-email"

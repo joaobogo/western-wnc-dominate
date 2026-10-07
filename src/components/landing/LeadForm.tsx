@@ -231,9 +231,10 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           required: true,
           placeholder: "Jane",
         })}
-        {field("email", "Email (optional)", {
+        {field("email", "Email", {
           type: "email",
           autoComplete: "email",
+          required: true,
           placeholder: "jane@example.com",
         })}
         {field("phone", "Phone number", {

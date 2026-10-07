@@ -38,7 +38,7 @@ export const trustPillars: TrustPillar[] = [
   {
     icon: CloudSun,
     title: "Weather Readiness",
-    detail: "Mountain weather doesn't wait. We monitor conditions daily, stage work to maintain weather-tight integrity at all times, and have emergency response capability for active projects and existing clients.",
+    detail: "Mountain weather doesn't wait. We monitor conditions daily, and stage work to maintain weather-tight integrity at all times.",
   },
   {
     icon: ClipboardCheck,

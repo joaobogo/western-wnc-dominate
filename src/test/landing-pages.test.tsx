@@ -20,15 +20,15 @@ describe.each(pages)("landing page $path", (config) => {
     expect(screen.getAllByRole("button", { name: new RegExp(config.primaryCta, "i") }).length).toBeGreaterThan(0);
   });
 
-  it("has exactly three visible fields per form, with only name and phone required", () => {
+  it("has exactly three visible fields per form, with name, email and phone required", () => {
     mount();
     const hero = document.querySelector('form[data-landing-form="hero"]') as HTMLFormElement;
     const visible = Array.from(hero.querySelectorAll("input")).filter((i) => i.tabIndex !== -1);
     expect(visible).toHaveLength(3);
     expect(hero.querySelector<HTMLInputElement>('input[name="first_name"]')!.required).toBe(true);
     expect(hero.querySelector<HTMLInputElement>('input[name="phone"]')!.required).toBe(true);
-    expect(hero.querySelector<HTMLInputElement>('input[name="email"]')!.required).toBe(false);
-    expect(within(hero).getByLabelText("Email (optional)")).toBeInTheDocument();
+    expect(hero.querySelector<HTMLInputElement>('input[name="email"]')!.required).toBe(true);
+    expect(within(hero).getByLabelText("Email")).toBeInTheDocument();
   });
 
   it("offers only the page form or the phone: no navigation or cross-links", () => {
@@ -69,5 +69,14 @@ describe.each(pages)("landing page $path", (config) => {
     mount();
     expect(config.faqs).toHaveLength(5);
     expect(document.querySelectorAll("h1")).toHaveLength(1);
+  });
+});
+
+describe("landing form validation (owner decision 7 Oct 2026: email required)", () => {
+  it("requires first name, email and phone", async () => {
+    const { validateLanding } = await import("@/components/landing/LandingFormContext");
+    expect(Object.keys(validateLanding({ firstName: "", email: "", phone: "" })).sort()).toEqual(["email", "firstName", "phone"]);
+    expect(validateLanding({ firstName: "Jane", email: "not-an-email", phone: "828-555-0100" }).email).toMatch(/valid email/);
+    expect(validateLanding({ firstName: "Jane", email: "jane@example.com", phone: "828-555-0100" })).toEqual({});
   });
 });

@@ -26,8 +26,9 @@ export const validateLanding = (values: FormValues): FormErrors => {
   const digits = values.phone.replace(/\D/g, "");
   if (!values.phone.trim()) errors.phone = "Please enter a phone number.";
   else if (digits.length < 7 || digits.length > 15) errors.phone = "Please enter a valid phone number.";
-  if (values.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
-    errors.email = "Please enter a valid email address or leave this field blank.";
+  if (!values.email.trim()) errors.email = "Please enter your email address.";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
+    errors.email = "Please enter a valid email address.";
   }
   return errors;
 };
@@ -126,7 +127,7 @@ export function LandingFormProvider({
         source: LANDING_SOURCE,
         lead_type: routing.category,
         first_name: values.firstName.trim(),
-        email: values.email.trim() || null,
+        email: values.email.trim(),
         phone: values.phone.trim(),
         service_category: routing.category,
         project_type: routing.projectType,

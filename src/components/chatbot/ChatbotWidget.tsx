@@ -150,7 +150,7 @@ function LeadCaptureCard({
           <CheckCircle className="w-4 h-4 text-primary" aria-hidden="true" />
           <p className="text-sm font-heading font-semibold text-foreground">We'll be in touch shortly.</p>
         </div>
-        <p className="text-xs text-muted-foreground font-body">A project advisor will call you rapidly.</p>
+        <p className="text-xs text-muted-foreground font-body">A project advisor will call you during business hours.</p>
       </motion.div>
     );
   }

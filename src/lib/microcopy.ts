@@ -30,7 +30,7 @@ export const microcopy = {
     noLeads: "No leads match these filters. Clear a filter or widen the date range.",
   },
   success: {
-    leadSubmitted: "Request received. A Highlander project lead will contact you within one business day.",
+    leadSubmitted: "Request received. A Highlander project lead will contact you during business hours.",
     designSaved: "Design saved. You can reopen it from the link we emailed you.",
     fileUploaded: "Photos attached to your request.",
   },

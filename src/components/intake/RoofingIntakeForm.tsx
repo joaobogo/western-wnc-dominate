@@ -241,8 +241,8 @@ const RoofingIntakeForm = () => {
           { label: "We'll reach you at", value: data.phone || data.email },
         ]}
         body={data.timeline === "emergency"
-          ? "An advisor will contact you within hours. If you have active interior leaking, place a bucket and avoid touching ceiling drywall."
-          : "A Highlander project advisor will personally review your request and reach out as soon as possible."}
+          ? "An advisor will contact you during business hours. If you have active interior leaking, place a bucket and avoid touching ceiling drywall."
+          : "A Highlander project advisor will personally review your request and reach out during business hours."}
       />
     );
   }
@@ -287,7 +287,7 @@ const RoofingIntakeForm = () => {
               </div>
               {data.timeline === "emergency" && (
                 <p className="text-body-xs font-body text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.25)] rounded-md px-4 py-3">
-                  Emergency response: complete the form and we'll call you directly — or dial <a className="underline font-semibold" href={PHONE_TEL}>{PHONE_DISPLAY}</a> now.
+                  Active leak? Call <a className="underline font-semibold" href={PHONE_TEL}>{PHONE_DISPLAY}</a> during business hours, or complete the form and we'll call you back during business hours.
                 </p>
               )}
             </>

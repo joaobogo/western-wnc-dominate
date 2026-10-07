@@ -29,8 +29,8 @@ const WhatHappensNext = ({
       <span>
         <strong className="font-semibold">What happens next:</strong>{" "}
         {variant === "email"
-          ? "a Highlander advisor from our Franklin office reviews your message and replies personally, typically within one business day."
-          : "a Highlander advisor from our Franklin office calls you at the number you provide, typically within one business day."}{" "}
+          ? "a Highlander advisor from our Franklin office reviews your message and replies personally during business hours."
+          : "a Highlander advisor from our Franklin office calls you at the number you provide during business hours."}{" "}
         It's a conversation about your project — no obligation and no sales pressure.
       </span>
     </p>

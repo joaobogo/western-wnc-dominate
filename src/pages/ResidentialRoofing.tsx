@@ -952,7 +952,7 @@ const ResidentialRoofing = () => {
                               {[
                                 { icon: Shield, text: "Licensed & Insured" },
                                 { icon: Award, text: "CertainTeed Certified" },
-                                { icon: Clock, text: "Rapid Response" },
+                                { icon: Clock, text: "Business-Hours Response" },
                                 { icon: Star, text: "Financing Available" },
                               ].map((item) => (
                                 <div key={item.text} className="flex items-center gap-2">

@@ -54,7 +54,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
     </div>
     <CTAProofLine align="start" className="mt-4" />
     <p className="text-muted-foreground text-xs mt-5">
-      Calls are answered by the local team during working hours. Messages get a reply within one business day.
+      Calls are answered by the local team during working hours. Messages are answered during business hours.
     </p>
   </section>
 );
