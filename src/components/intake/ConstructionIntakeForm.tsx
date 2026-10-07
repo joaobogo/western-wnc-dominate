@@ -262,7 +262,7 @@ const ConstructionIntakeForm = () => {
           { label: "Town", value: data.town },
           { label: "We'll reach you at", value: data.phone || data.email },
         ]}
-        body="A project advisor will personally review your scope and reach out as soon as possible to schedule the planning conversation."
+        body="A project advisor will personally review your scope and reach out during business hours to schedule the planning conversation."
         nextSteps={[
           "An advisor reviews scope, readiness, and any plans you shared.",
           "We schedule a 30-minute discovery call to align on direction and feasibility.",

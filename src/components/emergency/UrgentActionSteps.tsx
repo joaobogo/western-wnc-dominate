@@ -27,7 +27,7 @@ const content = {
       "From the ground, photograph the roof, yard debris, siding, gutters, and any interior damage.",
       "Write down the date and time of the storm — your insurer will ask for the date of loss.",
       "Do not sign anything a door-knocking storm chaser hands you. Local contractors don't need pressure tactics.",
-      "Call us for an emergency tarp and a documented damage assessment before the next rain.",
+      "Call us during business hours about a temporary tarp and a documented damage assessment before the next rain.",
     ],
     expectation:
       "After a named storm we run a triage list: tarping and open-roof conditions first, then full documented assessments.",

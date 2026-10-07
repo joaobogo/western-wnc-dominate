@@ -11,7 +11,7 @@ const IntakeChooser = () => (
   <>
     <SEOHead
       title="Start a Project | Highlander Building Services"
-      description="Two intake paths — roofing or construction. Pick the right one and a Highlander project advisor responds as soon as possible."
+      description="Two intake paths — roofing or construction. Pick the right one and a Highlander project advisor responds during business hours."
       path="/consultation"
       noindex
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Start a Project", url: "/consultation" }])}

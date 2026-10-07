@@ -28,7 +28,7 @@ const IntakeConfirmation = ({
   category = "roofing",
 }: Props) => {
   const steps = nextSteps ?? [
-    "A project advisor reviews your details — usually as soon as possible.",
+    "A project advisor reviews your details — and contacts you during business hours.",
     "We confirm scope and schedule an on-site assessment at your property.",
     "You receive a written, itemized proposal with materials, scope, and pricing.",
   ];

@@ -296,7 +296,7 @@ export default function ConstructionConsultation() {
       label: "Contact",
       icon: DoorOpen,
       question: "How should we reach you?",
-      hint: "A project advisor will call you rapidly to discuss your project in detail — no sales scripts, just a real conversation.",
+      hint: "A project advisor will call you during business hours to discuss your project in detail — no sales scripts, just a real conversation.",
       content: (
         <div className="space-y-4">
           <div>

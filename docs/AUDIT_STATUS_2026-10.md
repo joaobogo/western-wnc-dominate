@@ -41,14 +41,20 @@ Each row was checked against the code. Status key:
 | Dead components | Removed `BeforeAfterGallery` and `SilentObjections` (contradictory project data). |
 | Release checks | Strict `NETLIFY=true` build: prerender 369/369, `seo:check` 12 PASS. |
 
+## Owner decisions received (7 Oct 2026)
+
+| Decision | Applied |
+| --- | --- |
+| Email is **required** on first contact | Contact, estimate (`/request-inspection`), fast lead form, homepage sticky bar and the three landing pages all require first name, email and phone. |
+| Response promise: **we answer during business hours** | One wording everywhere ("during business hours", Monday to Friday 8 AM to 5 PM Eastern). Removed "within one business day", "within hours", "as soon as possible", "rapidly", the "Rapid Response" badge and the emergency-response lines. Weekends read "Closed" in every hours block. |
+| The company is **fully insured** | "Licensed & Insured" stays. Specific coverage types ("liability", "workers' comp") are not stated anywhere new until the carrier and coverage wording is supplied. |
+| **Blog clusters confirmed** | The 13 folded posts are recorded in `src/test/blog-canonical-to.test.ts`; the approval-gate test now enforces exactly that list. |
+
 ## Needs a decision or fact from the owner (OWNER)
 
-1. **Email on the first form: required or optional?** The audit says all three required "for this release"; the code (and the landing prompts) make email optional.
-2. **One response-time promise** (e.g. "typically within one business day") and who answers after hours. Remaining copy: "within hours", "call you rapidly", "Rapid Response" badge, "emergency response capability".
-3. **Weekend hours.** Footer says closed, office-hours block says appointments, showroom block says by appointment. Pick one wording; then render all three from `business.ts`.
-4. **Insurance proof.** "Licensed & Insured", "Full Liability & Workers' Comp" appear about 50 times and `business.ts` has no insurance record. Send carrier, coverage and certificate wording, or approve removing the claim.
+4. **Insurance wording.** "Fully insured" is confirmed. "Full Liability & Workers' Comp" names specific coverage; send carrier and coverage types (or a certificate) before it is kept.
 5. **CertainTeed tier and wording.** "ShingleMaster", "Credentialed Contractor", "Certified" are all used. Confirm the exact tier, then one wording everywhere.
-6. **County footprint.** 10 in `business.ts`; only 8 county pages are indexable; Buncombe, Henderson, Madison, Clay need a yes or no.
+6. **County footprint.** 10 in `business.ts`; only 8 county pages are indexable; confirm Buncombe, Henderson, Madison and Clay (the owner's reply was cut off).
 7. **Who does the work.** "In-house crews only" and "we do not subcontract" versus a review that names an outside crew owner.
 8. **Experience claims.** Whose, and how many years ("15+ commercial", "35+ construction", "40+ roofing").
 9. **Licence deep link** for #87668 (currently the board's generic search page).
@@ -56,7 +62,6 @@ Each row was checked against the code. Status key:
 11. **Pricing stance.** Metal cost page publishes ranges; other pages say no headline price.
 12. **Text-message consent wording** on every phone-collecting form (legal review).
 13. **Project proof.** Documented projects with photo, town, scope, date and permission, including at least one construction project; real town for each reused photo; real dates for three reviews; more real Google reviews.
-14. **Blog consolidation.** 13 posts are folded into survivors; the test `blog-canonical-to.test.ts` ("no post is folded until João confirms the clusters") fails by design until you confirm.
 15. **Merges:** `/service-areas/franklin-nc/roofing` into the Franklin page; `/construction/siding` with `/exterior-improvements`.
 16. **Own-business review markup.** Currently removed everywhere; the playbook says keep it simple and optional. Your call.
 17. **Title suffix** (one of `| Highlander` or `| Highlander Building Services`).

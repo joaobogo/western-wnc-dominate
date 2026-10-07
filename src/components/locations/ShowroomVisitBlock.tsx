@@ -54,7 +54,7 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
               </div>
               <div className="flex gap-2">
                 <dt className="text-muted-foreground">Saturday &amp; Sunday</dt>
-                <dd className="font-semibold text-foreground">By appointment</dd>
+                <dd className="font-semibold text-foreground">Closed</dd>
               </div>
             </dl>
           </div>

@@ -31,7 +31,8 @@ document/logo/cert, or tell us to soften or remove the claim. Items marked
 | CertainTeed certification | (mentioned in copy) | Needs proof | Confirm tier (SELECT ShingleMaster, etc.) + provide cert |
 | GAF / Owens Corning / other manufacturer programs | Roofing pages | Not currently claimed | Add only if certified — provide proof |
 | Licensed General Contractor (NC) | Footer, Hero stats, Town pages | Needs license # | Provide NC GC license number for display |
-| Insured & Bonded | Town pages, Footer | Needs confirmation | Provide carrier + policy limits language approved for public display |
+| Insured | Town pages, Footer | Owner confirmed fully insured (7 Oct 2026) | Coverage types and limits stay off public pages until the carrier wording is supplied |
+| Bonded | Town pages, Footer | Needs confirmation | Not confirmed; do not state until the bond is documented |
 
 ## 3. Awards & Recognition
 

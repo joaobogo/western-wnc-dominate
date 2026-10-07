@@ -45,7 +45,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
     name: formData.firstName,
     email: formData.email,
     phone: formData.phone,
-    require: { name: true, email: false, phone: true },
+    require: { name: true, email: true, phone: true },
   });
 
   const markStart = () =>
@@ -194,7 +194,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
 
         <div>
           <label htmlFor={`${formId}-email`} className="field-label">
-            Email <span className="font-normal normal-case tracking-normal text-muted-foreground">(optional)</span>
+            Email
           </label>
           <input
             id={`${formId}-email`}

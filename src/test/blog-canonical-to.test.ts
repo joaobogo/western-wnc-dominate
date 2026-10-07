@@ -5,9 +5,28 @@ import { canonicalUrlFor } from "@/components/SEOHead";
 // P3.5: a post with `canonicalTo` is folded into a survivor. It must drop out
 // of every link block and the sitemap, and its head must point at the survivor.
 describe("blog consolidation (canonicalTo)", () => {
-  it("no post is folded until João confirms the clusters", () => {
-    expect(blogPosts.filter((p) => p.canonicalTo)).toEqual([]);
-    expect(linkableBlogPosts()).toHaveLength(blogPosts.length);
+  // João confirmed these 13 clusters on 7 Oct 2026. Folding any other post needs the owner's OK
+  // and an update to this list.
+  const CONFIRMED_FOLDED = [
+    "how-to-choose-roofing-contractor-franklin-nc",
+    "metal-roofing-vs-shingles-cashiers-nc",
+    "metal-roofing-vs-shingles-highlands-nc",
+    "metal-vs-shingle-roof-franklin-highlands-cashiers",
+    "roof-repair-franklin-nc",
+    "roof-repair-vs-replacement-cashiers-nc",
+    "roof-repair-vs-replacement-cullowhee-nc",
+    "roof-repair-vs-replacement-franklin-nc",
+    "roof-repair-vs-replacement-sylva-nc",
+    "roof-repair-vs-roof-replacement-highlands-nc",
+    "roof-replacement-franklin-nc",
+    "roofing-company-cashiers-nc-choosing-contractor",
+    "roofing-contractor-sylva-nc-roofing-gutters-repairs",
+  ];
+
+  it("only the owner-confirmed clusters are folded", () => {
+    const folded = blogPosts.filter((p) => p.canonicalTo || p.indexable === false).map((p) => p.slug).sort();
+    expect(folded).toEqual([...CONFIRMED_FOLDED].sort());
+    expect(linkableBlogPosts()).toHaveLength(blogPosts.length - CONFIRMED_FOLDED.length);
   });
 
   it("isLinkableBlogPost excludes folded posts and keeps the rest", () => {

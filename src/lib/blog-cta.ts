@@ -131,7 +131,7 @@ const RULES: Record<string, Rule> = {
     midBody:
       "We'll tell you what we see and what it would take to fix — in writing, with photos.",
     closeHeadline: (w) => `Get a straight answer about your roof${w}`,
-    closeBody: "Local crews, written scopes, and a response within one business day.",
+    closeBody: "Local crews, written scopes, and a response during business hours.",
     ctaLabel: "See Roofing Services",
     callFirst: false,
   },

@@ -11,7 +11,7 @@ const steps = [
   {
     icon: ClipboardCheck,
     title: "You submit the form",
-    body: "Send your first name, optional email, and phone. No budget, address, timeline, or project description is required to start.",
+    body: "Send your first name, email, and phone. No budget, address, timeline, or project description is required to start.",
   },
   {
     icon: CalendarClock,
@@ -30,7 +30,7 @@ const RequestInspection = () => {
     <>
       <SEOHead
         title="Request a Free Estimate in Western NC | Highlander"
-        description="Request a free roofing or construction estimate in Western North Carolina. Start with first name, optional email, and phone."
+        description="Request a free roofing or construction estimate in Western North Carolina. Start with first name, email, and phone."
         path="/request-inspection"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },

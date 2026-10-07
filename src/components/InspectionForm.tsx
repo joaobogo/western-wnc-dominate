@@ -84,8 +84,8 @@ interface InspectionFormProps {
 /**
  * Canonical first-contact estimate form.
  *
- * Only three fields are visible before durable storage: first name, optional
- * email and phone. Service/town/page context is inferred from the page and
+ * Only three fields are visible before durable storage: first name, email
+ * and phone. Service/town/page context is inferred from the page and
  * attribution instead of blocking the homeowner with qualification questions.
  */
 const InspectionForm = ({ variant = "section", townName, county }: InspectionFormProps) => {
@@ -115,7 +115,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
     name: formData.firstName,
     email: formData.email,
     phone: formData.phone,
-    require: { name: true, email: false, phone: true },
+    require: { name: true, email: true, phone: true },
   });
 
   const markStart = () =>
@@ -252,8 +252,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
 
               <div className="space-y-3 text-white">
                 {[
-                  "First name and phone are required",
-                  "Email is optional",
+                  "First name, email and phone are required",
                   "No budget, address, timeline, or project description required",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
@@ -349,7 +348,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
 
                   <div>
                     <label htmlFor="estimate-email" className={labelClasses}>
-                      Email <span className="normal-case font-normal tracking-normal text-white/70">(optional)</span>
+                      Email
                     </label>
                     <input
                       id="estimate-email"

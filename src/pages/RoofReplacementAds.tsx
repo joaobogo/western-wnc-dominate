@@ -40,7 +40,7 @@ const RoofReplacementAds = () => (
       "Budget, financing availability, and insurance-related questions discussed before commitment.",
     ]}
     quickSteps={[
-      { title: "Quick first contact", detail: "Send your first name, optional email, and phone. We will discuss the property and what is driving the replacement decision during follow-up." },
+      { title: "Quick first contact", detail: "Send your first name, email, and phone. We will discuss the property and what is driving the replacement decision during follow-up." },
       { title: "On-site evaluation", detail: "We inspect the roof system and determine the correct replacement scope for your property." },
       { title: "Detailed next step", detail: "You get a clear recommendation, material direction, and the applicable written scope or estimate for your property." },
     ]}

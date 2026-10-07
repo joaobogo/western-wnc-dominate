@@ -478,8 +478,8 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
 
             <p className="mt-4 text-body-sm font-body text-muted-foreground leading-relaxed max-w-xl mx-auto">
               Tell us what you&rsquo;re seeing at your {town.name} property. A local Highlander
-              team member responds within one business day with a scheduled on-site visit in{" "}
-              {town.county} and a written, transparent estimate — no obligation.
+              team member responds during business hours to arrange an on-site visit in{" "}
+              {town.county} and a written, transparent estimate, with no obligation.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
