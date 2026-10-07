@@ -34,12 +34,21 @@ const LANDING_CSS = `
 .lp-reveal{opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;transition-delay:var(--lp-delay,0ms)}
 .lp-reveal.lp-in{opacity:1;transform:none}
 .lp-no-io .lp-reveal{opacity:1;transform:none}
+.lp-par-far{transform:translateY(calc(var(--lp-py,0)*-34px))}
+.lp-par-mid{transform:translateY(calc(var(--lp-py,0)*-18px))}
+.lp-par-near{transform:translateY(calc(var(--lp-py,0)*-6px))}
+.lp-shine{position:relative;overflow:hidden}
+.lp-shine::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,hsl(0 0% 100%/.38) 50%,transparent 65%);transform:translateX(-120%);transition:transform .7s ease;pointer-events:none}
+.lp-shine:hover::after{transform:translateX(120%)}
+.lp-hl{background-image:linear-gradient(transparent 62%,hsl(var(--highland-gold)/.38) 62%,hsl(var(--highland-gold)/.38) 92%,transparent 92%);padding:0 .08em}
 .lp-line{transform-origin:top;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .lp-in .lp-line,.lp-line.lp-in{transform:scaleY(1)}
 .lp-tartan{background-image:url(/tartan.png);background-size:auto 100%;background-repeat:repeat-x}
 .lp-topo{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='340' viewBox='0 0 520 340' fill='none' stroke='%231f4a3a' stroke-opacity='.075' stroke-width='1.2'%3E%3Cpath d='M-10 70C60 20 150 10 230 40s150 40 220 0 80-30 90-20'/%3E%3Cpath d='M-10 100C70 55 150 48 230 76s150 36 220 0 80-26 90-16'/%3E%3Cpath d='M-10 130C80 92 150 86 230 112s150 32 220 0 80-22 90-12'/%3E%3Cpath d='M-10 215C50 170 120 160 190 190s140 44 210 10 110-30 140-20'/%3E%3Cpath d='M-10 245C60 205 120 196 190 222s140 38 210 6 110-26 140-16'/%3E%3Cpath d='M-10 275C70 240 120 232 190 254s140 32 210 2 110-22 140-12'/%3E%3C/svg%3E");background-size:520px 340px}
 @media (prefers-reduced-motion:reduce){
  .lp-reveal,.lp-line{opacity:1!important;transform:none!important;transition:none!important}
+ .lp-par-far,.lp-par-mid,.lp-par-near{transform:none!important}
+ .lp-shine::after{display:none}
 }
 `;
 
@@ -119,6 +128,19 @@ const Stars = () => (
   </span>
 );
 
+/** Underline the place name in the H1 with a gold highlighter stroke; text content is unchanged. */
+const highlightH1 = (text: string): ReactNode => {
+  const match = text.match(/Western NC/);
+  if (!match || match.index === undefined) return text;
+  return (
+    <>
+      {text.slice(0, match.index)}
+      <span className="lp-hl">{match[0]}</span>
+      {text.slice(match.index + match[0].length)}
+    </>
+  );
+};
+
 /* ───────────────────────────── page body ───────────────────────────── */
 
 function LandingBody() {
@@ -134,6 +156,8 @@ function LandingBody() {
   const [keyboardOpen, setKeyboardOpen] = useState(false);
   const [railFocused, setRailFocused] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const heroSection = useRef<HTMLElement>(null);
+  const progressBar = useRef<HTMLDivElement>(null);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [expandedReview, setExpandedReview] = useState<string | null>(null);
@@ -160,10 +184,28 @@ function LandingBody() {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      setScrolled((current) => (current === y > 8 ? current : y > 8));
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar.current && max > 0) progressBar.current.style.transform = `scaleX(${Math.min(1, y / max)})`;
+      if (!reduce && heroSection.current) {
+        const h = heroSection.current.offsetHeight || 1;
+        heroSection.current.style.setProperty("--lp-py", String(Math.max(0, Math.min(1, y / h))));
+      }
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   /* Mobile bar hides while a keyboard is up; the desktop rail never unmounts mid-entry. */
@@ -254,6 +296,9 @@ function LandingBody() {
         }`}
       >
         <div aria-hidden="true" className="lp-tartan h-1.5 w-full bg-primary" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-transparent">
+          <div ref={progressBar} className="h-full origin-left bg-[hsl(var(--highland-gold))]" style={{ transform: "scaleX(0)", transition: "transform .12s linear" }} />
+        </div>
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-2.5 sm:px-5 md:px-8 md:py-3">
           <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto shrink-0 sm:h-12" loading="eager" decoding="sync" />
           <div className="flex items-center gap-4">
@@ -268,18 +313,18 @@ function LandingBody() {
 
       <main id="main-content">
         {/* ───────────── Hero ───────────── */}
-        <section className="relative overflow-hidden bg-[hsl(var(--muted))] !py-0">
+        <section ref={heroSection} className="relative overflow-hidden bg-[hsl(var(--muted))] !py-0">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_88%_0%,hsl(var(--highland-gold)/0.2),transparent_62%),linear-gradient(to_bottom,transparent_55%,hsl(var(--primary)/0.06))]"
           />
-          <Mountains variant={config.key} className="absolute inset-x-0 bottom-0 h-[260px] w-full md:h-[440px]" />
+          <Mountains variant={config.key} sun className="absolute inset-x-0 bottom-0 h-[260px] w-full md:h-[440px]" />
           <div className="relative mx-auto grid max-w-[1200px] gap-8 px-4 py-9 sm:px-5 md:px-8 md:py-14 lg:grid-cols-[1.28fr_1fr] lg:gap-12 lg:pb-36 lg:pt-14">
             <div className="order-1 lg:row-span-1">
               <Reveal>
                 {eyebrow(config.eyebrow)}
                 <h1 className="max-w-3xl font-heading text-[2.15rem] font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.4rem]">
-                  {config.h1}
+                  {highlightH1(config.h1)}
                 </h1>
                 <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-muted-foreground md:text-lg">{config.support}</p>
                 <p className="mt-5 inline-flex flex-wrap gap-2 font-semibold text-foreground">
@@ -355,7 +400,10 @@ function LandingBody() {
         </section>
 
         {/* ───────────── Trust band ───────────── */}
-        <section aria-label="Why homeowners start here" className="bg-primary text-primary-foreground !py-0">
+        <section aria-label="Why homeowners start here" className="relative bg-primary text-primary-foreground !py-0">
+          <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 -top-[1px] h-5 w-full -translate-y-full md:h-8">
+            <path fill="hsl(var(--primary))" d="M0 40V26C140 8 260 30 420 16C580 2 700 30 880 18C1040 8 1180 28 1320 14C1380 8 1410 12 1440 16V40Z" />
+          </svg>
           <ul className="mx-auto grid max-w-[1200px] grid-cols-2 gap-x-4 gap-y-3 px-4 py-5 text-sm font-semibold sm:px-5 md:grid-cols-4 md:px-8">
             <li className="flex items-center gap-2.5">
               <Stars />

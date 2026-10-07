@@ -113,10 +113,13 @@ const scenes: Record<LandingKey, Array<{ ridge: "mid" | "near"; x: number; y: nu
 export default function Mountains({
   variant,
   tone = "ink",
+  sun = false,
   className = "",
 }: {
   variant: LandingKey;
   tone?: Tone;
+  /** Warm sunrise glow behind the far ridge (hero only). */
+  sun?: boolean;
   className?: string;
 }) {
   const c = fills[tone];
@@ -128,10 +131,26 @@ export default function Mountains({
       preserveAspectRatio="xMidYMax slice"
       className={`pointer-events-none select-none ${className}`}
     >
+      {sun && (
+        <>
+          <defs>
+            <radialGradient id="lp-sun" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor={GOLD} stopOpacity="0.55" />
+              <stop offset="45%" stopColor={GOLD} stopOpacity="0.18" />
+              <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          <circle cx="1130" cy="96" r="150" fill="url(#lp-sun)" />
+          <circle cx="1130" cy="96" r="30" fill={GOLD} opacity="0.5" />
+        </>
+      )}
+      <g className="lp-par-far">
       <path
         fill={c.far}
         d="M0 210 C120 150 220 120 330 160 C420 190 470 110 580 90 C690 70 740 130 840 150 C940 170 1010 100 1120 80 C1230 60 1320 120 1440 150 V320 H0Z"
       />
+      </g>
+      <g className="lp-par-mid">
       <path
         fill={c.mid}
         d="M0 250 C100 215 200 190 300 215 C400 240 470 175 580 170 C700 165 760 215 880 225 C990 235 1050 170 1160 165 C1270 160 1350 205 1440 220 V320 H0Z"
@@ -143,6 +162,8 @@ export default function Mountains({
         ))}
       <Pines x={238} y={232} s={0.8} fill={c.pine} />
       <Pines x={930} y={236} s={0.9} fill={c.pine} />
+      </g>
+      <g className="lp-par-near">
       <path
         fill={c.near}
         d="M0 285 C150 255 260 250 380 265 C520 283 600 240 740 245 C880 250 980 285 1110 275 C1240 265 1340 250 1440 265 V320 H0Z"
@@ -156,6 +177,7 @@ export default function Mountains({
       <Pines x={742} y={252} s={1.15} fill={c.pine} />
       <Pines x={1290} y={262} s={1} fill={c.pine} />
       <Pines x={90} y={274} s={1.1} fill={c.pine} />
+      </g>
     </svg>
   );
 }

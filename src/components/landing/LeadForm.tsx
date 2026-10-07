@@ -250,7 +250,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           className={
             compact
               ? "btn btn-primary min-h-12 self-end whitespace-nowrap px-5"
-              : "btn btn-primary btn-lg btn-block min-h-14 text-base"
+              : "btn btn-primary btn-lg lp-shine btn-block min-h-14 text-base"
           }
         >
           {submitting ? "Sending your request..." : config.primaryCta}
