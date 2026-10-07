@@ -12,9 +12,9 @@ interface Props {
 
 const sets = {
   repair: {
-    heading: "Repairs We've Actually Completed.",
+    heading: "Repairs We've Completed on WNC Homes.",
     intro:
-      "Real Western North Carolina roofs. Every repair is photographed before and after, and the photos go to the homeowner.",
+      "Real jobs throughout Western North Carolina. Each one is photographed before and after, and the photos go to the homeowner.",
     items: [
       { image: asphalt003, alt: "Repaired shingle roof section on a Franklin NC home", title: "Leak traced to failed valley flashing", location: "Franklin, NC" },
       { image: metal008, alt: "Metal roof panel and fastener repair in Cashiers NC", title: "Loose panel seams and fasteners resealed", location: "Cashiers, NC" },

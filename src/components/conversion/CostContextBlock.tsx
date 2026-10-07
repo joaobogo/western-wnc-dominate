@@ -52,6 +52,10 @@ const roofingIncludes = [
   "Projected schedule window and the weather assumptions behind it",
 ];
 
+const repairIncludes = roofingIncludes.map((i) =>
+  i.replace("before we open the roof", "before we open anything up"),
+);
+
 const repairDrivers: Driver[] = [
   {
     icon: PackageSearch,
@@ -76,7 +80,7 @@ const repairDrivers: Driver[] = [
     icon: ClipboardList,
     title: "Repair versus replace math",
     detail:
-      "If a roof is near the end of its service life, we say so and price both paths, so you are not spending repair money twice inside two years.",
+      "If a roof is near the end of its service life, we say so and price both the repair and having a new roof installed, so you are not spending repair money twice inside two years.",
   },
 ];
 
@@ -85,19 +89,19 @@ const stormDrivers: Driver[] = [
     icon: ClipboardList,
     title: "What the documentation shows",
     detail:
-      "Insurance work is priced against documented damage. Photo evidence, measurements, and test squares determine what gets approved and what does not.",
+      "On an insurance claim, storm damage roof repair cost is set against documented damage. Photo evidence, measurements, and test squares determine what gets approved and what does not.",
   },
   {
     icon: FileText,
     title: "Your policy terms",
     detail:
-      "Deductible, replacement-cost versus actual-cash-value coverage, and code-upgrade coverage change your out-of-pocket far more than our labor rate does.",
+      "Storm damage roof repair coverage comes down to your policy: the deductible, replacement-cost versus actual-cash-value terms, and code-upgrade coverage change your out-of-pocket far more than our labor rate does.",
   },
   {
     icon: Droplets,
     title: "Emergency stabilization",
     detail:
-      "Tarping, water intrusion control, and temporary protection are separate line items handled before permanent repairs begin.",
+      "Tarping, water intrusion control, and temporary protection are separate line items handled before permanent storm damage restoration begins.",
   },
   siteAccess,
   {
@@ -113,7 +117,7 @@ const stormIncludes = [
   "Line-item scope written in the format carriers expect",
   "Clear separation of emergency stabilization from permanent repair",
   "Supplement handling if hidden damage appears after tear-off",
-  "Your deductible and coverage stated plainly, with no surprise balances at the end",
+  "Upfront pricing, with your deductible and coverage stated plainly and no surprise balances at the end",
 ];
 
 const constructionDrivers: Driver[] = [
@@ -266,7 +270,7 @@ const commercialDrivers: Driver[] = [
 
 const variants = {
   roofing: { drivers: roofingDrivers, includes: roofingIncludes },
-  repair: { drivers: repairDrivers, includes: roofingIncludes },
+  repair: { drivers: repairDrivers, includes: repairIncludes },
   storm: { drivers: stormDrivers, includes: stormIncludes },
   construction: { drivers: constructionDrivers, includes: constructionIncludes },
   exterior: { drivers: exteriorDrivers, includes: constructionIncludes },
@@ -279,7 +283,7 @@ export type CostContextVariant = keyof typeof variants;
 
 const walkCopy: Record<CostContextVariant, string> = {
   roofing: "Tell us the address and what you are seeing. We measure the roof, walk the variables above with you, and send a written scope you can compare line by line against any other bid.",
-  repair: "Tell us the address and what you are seeing. We inspect it in person, show you photos of what is actually failing, and send a written scope you can compare line by line against any other bid.",
+  repair: "Tell us the address and what you are seeing. We inspect it in person, show you photos of what is actually failing, and send a written scope you can compare line by line against any other roofing contractor's bid.",
   storm: "Tell us the address and the date of the storm. We document the damage on site, give you the photo report and line-item scope, and walk your claim with you from there.",
   construction: "Tell us what you are planning and where. We walk the property with you, talk through the variables above, and put a written phase-by-phase scope in your hands before anyone commits.",
   exterior: "Tell us the address and what you want changed. We measure the elevations, check what is behind the current surface where we can, and send a written scope with named materials.",
@@ -306,10 +310,10 @@ const CostContextBlock = ({
     <div className="container-tight">
       <div className="max-w-2xl mb-10">
         <span className="eyebrow mb-3 block">Cost Transparency</span>
-        <h2 className="section-heading mb-3">What actually drives {serviceLabel} cost here</h2>
+        <h2 className="section-heading mb-3">{variant === "repair" ? "What actually drives the cost of a roofing project here" : `What actually drives ${serviceLabel} cost here`}</h2>
         <p className="text-muted-foreground font-body">
           We do not publish a headline price, because a number pulled off a chart is not an estimate — and
-          in Western North Carolina, two properties on the same street can price very differently. What we
+          in {variant === "repair" ? "Western North Carolina's mountains" : "Western North Carolina"}, two properties on the same street can price very differently. What we
           can do is show you every variable that moves the number, then put a written scope in your hands.
         </p>
       </div>
@@ -333,7 +337,7 @@ const CostContextBlock = ({
 
       <div className="grid lg:grid-cols-[1.2fr,1fr] gap-6 items-start">
         <div className="bg-card border border-border rounded-sm p-6">
-          <h3 className="font-heading font-bold text-foreground mb-4">What your written estimate includes</h3>
+          <h3 className="font-heading font-bold text-foreground mb-4">{variant === "repair" ? "What your free estimate includes, in writing" : "What your written estimate includes"}</h3>
           <ul className="space-y-2.5">
             {estimateIncludes.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-body-xs md:text-sm font-body text-muted-foreground">

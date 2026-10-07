@@ -108,14 +108,14 @@ export const roofRepairSubtopics: Subtopic[] = [
       "Blown-off tabs, creased shingles after a wind event, cracked pipe boots and failed seams on a porch or a low-slope section are all targeted repairs. Matching an aged shingle exactly is not always possible, and we tell you when a repair will be visible before we do it.",
     points: [
       "Asphalt shingle replacement, boot and vent-collar renewal",
-      "TPO and membrane repair on low-slope and porch roofs",
+      "TPO and membrane work on low-slope, porch and commercial roofing systems",
       "Decking replaced where the sheathing has gone soft",
     ],
   },
   {
     title: "Moss, algae and debris on shaded roofs",
     body:
-      "North-facing slopes under heavy canopy stay damp for days after rain, and moss holds water against the surface. Removal is done without pressure washing, which strips granules and voids warranties, and the real fix is usually more light, better drainage, and keeping valleys clear.",
+      "North-facing slopes under heavy canopy stay damp for days after rain, and moss holds water against the surface. Removal is done without pressure washing, which strips granules and voids warranties, and the real fix is usually more light, better drainage, and keeping valleys and gutters clear.",
     points: [
       "Low-pressure treatment rather than pressure washing",
       "Valleys, behind chimneys and dead corners cleared",
@@ -125,7 +125,7 @@ export const roofRepairSubtopics: Subtopic[] = [
   {
     title: "Underlayment and moisture detail",
     body:
-      "When a repair is opened up, what sits under the shingle decides whether the fix lasts. Ice-and-water membrane at the eaves and in every valley, and a synthetic underlayment rated for this climate, are the parts nobody sees and everybody needs at elevation.",
+      "Once the surface is opened up, what sits under the shingle decides whether the fix lasts. Ice-and-water membrane at the eaves and in every valley, and a synthetic underlayment rated for this climate, are the parts nobody sees and everybody needs at elevation.",
     points: [
       "Ice-and-water membrane at eaves, valleys and penetrations",
       "Synthetic underlayment lapped and fastened to specification",
@@ -171,7 +171,7 @@ export const stormSubtopics: Subtopic[] = [
   {
     title: "Storm damage inspection and documentation",
     body:
-      "Wind and hail damage has to be recorded the way a carrier expects to receive it: dated photographs, slope-by-slope notes, and the mechanism of damage described in the adjuster's language. That record is what turns an inspection into a decision.",
+      "Wind and hail damage has to be recorded the way your insurance provider expects to receive it: dated photographs, slope-by-slope notes, and the mechanism of damage described in claim language. It is the kind of record adjusters appreciate, and it is what turns an inspection into a decision.",
     points: [
       "Slope-by-slope photographic record with dates",
       "Creased shingles, lifted ridge caps, bruising and displaced flashing identified",
@@ -191,7 +191,7 @@ export const stormSubtopics: Subtopic[] = [
   {
     title: "Permanent repair or replacement",
     body:
-      "Once the roof is dry and the claim is settled, the question is whether the damage is localised or the system has reached the end of its life. Both answers are legitimate, and the inspection tells you which one you have.",
+      "Once the roof is dry, the damage is documented and the claim is settled, we can move to repair. The question is whether you have localized damage or a system that has reached the end of its life. Both answers are legitimate, and the inspection tells you which one you have.",
     points: [
       "Targeted repair where the deck and the surrounding field are sound",
       "Full replacement where damage is spread across slopes",

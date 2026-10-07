@@ -26,7 +26,7 @@ import asphalt003Webp from "@/assets/gallery/asphalt-003.webp?w=640;960;1280;160
 import HeroImage from "@/components/media/HeroImage";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { defaultConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import CostOfWaiting from "@/components/conversion/CostOfWaiting";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
@@ -107,6 +107,13 @@ const faqs = [
 /* ═══════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════ */
+const repairConcerns = defaultConcerns.map((c) => ({
+  ...c,
+  answer: c.answer
+    .replace("Our crews are Franklin-based and led by", "Our crews are Franklin-based, bring local roofing expertise, and are led by")
+    .replace("keep debris moving to the dumpster through the day", "keep the job site clear by moving debris to the dumpster through the day"),
+}));
+
 const RoofRepair = () => {
   return (
     <>
@@ -200,7 +207,7 @@ const RoofRepair = () => {
           quickAnswer={
             <>
         <UrgentActionSteps variant="repair" />
-        <InsuranceDocHelp />
+        <InsuranceDocHelp variant="repair" />
         <AnswerBlock
           question="What does roof repair cover, and when is repair the right call?"
           answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the entire roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander inspects first and tells you plainly whether repair or replacement makes more sense."
@@ -463,7 +470,7 @@ const RoofRepair = () => {
             <>
         <CostOfWaiting variant="repair" />
         <CostContextBlock serviceLabel="roof repair" variant="repair" />
-        <SchedulingReality serviceLabel="roof repair" />
+        <SchedulingReality serviceLabel="roof repair" variant="repair" />
             </>
           }
           process={
@@ -497,8 +504,8 @@ const RoofRepair = () => {
           }
           proof={
             <>
-        <WhoShowsUp />
-        <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
+        <WhoShowsUp variant="repair" />
+        <TieredOffer variant="repair" context="roof-repair" primaryLabel="Get My Repair Assessed" />
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
             <AttributedReviews services={["roof-repair", "storm-damage"]} heading="What homeowners say about our craftsmanship" />
@@ -554,7 +561,7 @@ const RoofRepair = () => {
           }
           cta={
             <>
-        <CommonConcerns />
+        <CommonConcerns concerns={repairConcerns} />
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">

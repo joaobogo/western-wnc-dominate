@@ -65,5 +65,8 @@ export function getCallReason(pathname: string, townName?: string | null): strin
   if (path.includes("emergency")) {
     return `An active emergency is faster by phone — we can triage the roof${where} and dispatch the nearest crew while you're on the line.`;
   }
+  if (!townName) {
+    return "An active leak can't wait on email — call and we'll triage on the phone and get an inspection on the schedule.";
+  }
   return `An active leak can't wait on email — call and we'll triage the roof${where} on the phone and get an inspection on the schedule.`;
 }

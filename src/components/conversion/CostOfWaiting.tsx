@@ -6,9 +6,9 @@ type Variant = "repair" | "storm" | "gutters";
 const COPY: Record<Variant, { lead: string; detail: string; points: { icon: typeof Droplets; title: string; text: string }[] }> = {
   repair: {
     lead:
-      "A small leak that waits through one more Western North Carolina season rarely stays small. Freeze-thaw cycles at elevation widen the same opening every night, and each cycle pushes water further into the deck.",
+      "A small leak that waits through one more winter rarely stays small. Freeze-thaw cycles at elevation widen the same opening every night, and each cycle pushes water further into the deck.",
     detail:
-      "By spring, what was a flashing or fastener repair is often plywood replacement, wet insulation, and drywall work — the same roof, with three trades involved instead of one.",
+      "By spring, what was a flashing or fastener fix is often plywood replacement, wet insulation, and drywall work — the same roof, with three trades involved instead of one.",
     points: [
       { icon: Droplets, title: "Decking rot", text: "Sustained moisture softens OSB and plywood, so sheets that could have stayed get cut out at tear-off." },
       { icon: Thermometer, title: "Insulation loss", text: "Wet blown-in and batt insulation compresses and stops performing, raising winter heating load until it is replaced." },
@@ -55,7 +55,7 @@ const CostOfWaiting = ({ variant = "repair", className = "" }: CostOfWaitingProp
       <div className="container-tight">
         <div className="max-w-2xl mb-8">
           <span className="eyebrow mb-3 block">What Waiting Costs</span>
-          <h2 className="section-heading mb-3">What one more season usually changes</h2>
+          <h2 className="section-heading mb-3">{variant === "repair" ? "What one more season of mountain weather usually changes" : "What one more season usually changes"}</h2>
           <p className="text-muted-foreground font-body mb-3">{c.lead}</p>
           <p className="text-muted-foreground font-body">{c.detail}</p>
         </div>
