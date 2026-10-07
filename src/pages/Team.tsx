@@ -159,7 +159,7 @@ const Team = () => {
         <section className="section-padding bg-primary">
           <div className="container-tight text-center">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
-              Talk to a Real Person — Not a Call Center.
+              Talk to a Real Person: Not a Call Center.
             </h2>
             <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
               Call Highlander during staffed business hours to reach the team directly and discuss your project.

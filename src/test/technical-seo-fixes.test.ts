@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 
 const pageMetadata = [
   ["src/pages/Certifications.tsx", "Roofing Certifications in Franklin, NC | Highlander"],
-  ["src/pages/RoofingDivision.tsx", "Roofing Repair & Replacement in Western NC | Highlander"],
-  ["src/pages/ConstructionDivision.tsx", "Construction in Western NC | Additions & Custom Building"],
+  ["src/pages/RoofingDivision.tsx", "Roofing Contractor in Western NC | Highlander"],
+  ["src/pages/ConstructionDivision.tsx", "General Contractor in Western NC | Additions & Building"],
   ["src/pages/Legal.tsx", "Accessibility Statement | Western North Carolina Support"],
 ] as const;
 

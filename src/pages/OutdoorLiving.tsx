@@ -107,7 +107,7 @@ const OutdoorLiving = () => {
   return (
     <>
       <SEOHead
-        title="Outdoor Living in WNC | Patios, Decks, Porches & Pergolas"
+        title="Decks, Porches and Outdoor Living in Western NC"
         description="Outdoor living in Western North Carolina: patios, covered porches, screened rooms, decks, and outdoor kitchens designed for mountain weather."
         path="/construction/outdoor-living"
         jsonLd={[
@@ -141,7 +141,7 @@ const OutdoorLiving = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Outdoor Living Construction in Western North Carolina
+                  Decks, Porches and Outdoor Living in Western North Carolina
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
@@ -209,9 +209,9 @@ const OutdoorLiving = () => {
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <Sun className="w-6 h-6 text-[hsl(var(--highland-gold)/0.75)] mx-auto mb-8" aria-hidden="true" />
-              <h2 className="text-2xl md:text-3xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
-                Mountain living is meant to be lived outside — on porches, decks, and patios built to enjoy the view in every season.
-              </h2>
+              <p className="text-2xl md:text-3xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
+                Mountain living is meant to be lived outside, on porches, decks, and patios built to enjoy the view in every season.
+              </p>
                 <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                   Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>

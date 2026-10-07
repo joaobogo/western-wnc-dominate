@@ -114,7 +114,7 @@ const HomeAdditions = () => {
   return (
     <>
       <SEOHead
-        title="Home Additions in Western NC | Suites & Expansions"
+        title="Home Additions in Western NC: Design to Build"
         description="Home additions for Western North Carolina: guest suites, in-law apartments, room expansions, and second-story builds matched to your existing home."
         path="/construction/additions"
         jsonLd={[
@@ -212,9 +212,9 @@ const HomeAdditions = () => {
                   <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
                   <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
                 </div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
-                  The best additions don't look like additions. We build rooms that look like your home always had them — because we match the rooflines, materials, and proportions.
-                </h2>
+                <p className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
+                  The best additions don't look like additions. We build rooms that look like your home always had them, because we match the rooflines, materials, and proportions.
+                </p>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
@@ -330,7 +330,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
               <div className="md:col-span-2">
                 <span className="eyebrow mb-3 block">Long-Term Value</span>
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug">An Addition Is an Investment — Not Just an Expense.</h3>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug">An Addition Is an Investment: Not Just an Expense.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body">
                   Well-designed additions typically return 50–70% of cost at resale, with primary suites and functional living spaces at the higher end. But the real return is staying in the home and community you've already invested in — without the disruption, transaction costs, and compromise of moving.
                 </p>

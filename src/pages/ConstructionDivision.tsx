@@ -98,7 +98,7 @@ const ConstructionDivision = () => {
   return (
     <>
       <SEOHead
-        title="Construction in Western NC | Additions & Custom Building"
+        title="General Contractor in Western NC | Additions & Building"
         description="Construction in Western North Carolina: home additions, renovations, outdoor living, and structural upgrades from a licensed general contractor."
         path="/construction"
         jsonLd={[
@@ -142,8 +142,8 @@ const ConstructionDivision = () => {
               </motion.div>
 
               <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-3 md:mb-8">
-                Additions &amp; Custom Building{" "}
-                <span className="text-[hsl(var(--gold-ink))]">Across Western NC.</span>
+                General Contractor for Additions &amp; Custom Building{" "}
+                <span className="text-[hsl(var(--gold-ink))]">in Western NC.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-2 md:order-none text-body-sm md:text-body-lg text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
@@ -208,9 +208,9 @@ const ConstructionDivision = () => {
           <ScrollReveal variant="fade">
             <div className="text-center">
               <GoldLine width="3rem" className="mx-auto mb-8" />
-              <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
+              <p className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
                 Highlander builds mountain homes and outdoor spaces with design-first planning, roofing experience, and a documented construction process tailored to Western North Carolina sites.
-              </h2>
+              </p>
               <div className="max-w-2xl mx-auto space-y-6">
                 <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
                   Our Construction division serves homeowners who value meticulous planning and a design-first approach to mountain building.

@@ -142,12 +142,12 @@ const trustProof = [
 ];
 
 const galleryItems = [
-  { image: asphaltHero, title: "Complete Replacement — Highlands", category: "Shingle" },
-  { image: metalRoof, title: "Standing Seam — Cashiers Estate", category: "Metal" },
-  { image: asphalt005, title: "Dimensional Shingles — Franklin", category: "Shingle" },
-  { image: metalCabin, title: "Metal Roof — Bryson City", category: "Metal" },
-  { image: asphalt007, title: "Re-Roof — Mountain Home", category: "Shingle" },
-  { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
+  { image: asphaltHero, title: "Complete Replacement: Highlands", category: "Shingle" },
+  { image: metalRoof, title: "Standing Seam: Cashiers Estate", category: "Metal" },
+  { image: asphalt005, title: "Dimensional Shingles: Franklin", category: "Shingle" },
+  { image: metalCabin, title: "Metal Roof: Bryson City", category: "Metal" },
+  { image: asphalt007, title: "Re-Roof: Mountain Home", category: "Shingle" },
+  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
 ];
 
 const faqs = [
@@ -170,7 +170,7 @@ const RoofReplacement = () => {
   return (
     <>
       <SEOHead
-        title="Roof Replacement for Mountain Homes in Western NC"
+        title="Roof Replacement in Western NC: Mountain Homes"
         description="Roof replacement for Western North Carolina homes: site-specific material specification, certified installation, and transparent written proposals."
         path="/roofing/roof-replacement"
         jsonLd={[
@@ -212,8 +212,8 @@ const RoofReplacement = () => {
 
               <div className="overflow-hidden mb-3 md:mb-4">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
-                  Roof Replacement Across{" "}
-                  <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
+                  Roof Replacement in{" "}
+                  <span className="text-[hsl(var(--gold-ink))]">Western North Carolina</span>
                 </motion.h1>
                 <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-3" />
               </div>
@@ -269,9 +269,9 @@ const RoofReplacement = () => {
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-center">
               <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                A roof replacement isn't a repair. It's a generational investment in your home — one that determines how your property performs, looks, and holds value for decades to come.
-              </h2>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+                A roof replacement isn't a repair. It's a generational investment in your home, one that determines how your property performs, looks, and holds value for decades to come.
+              </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
                 At Highlander, we treat every replacement with the weight it deserves. We don't rush proposals, cut corners on materials, or skip the steps that separate a roof that lasts from one that merely passes inspection. This is the most important exterior investment you'll make — and we build accordingly.
               </p>
@@ -575,7 +575,7 @@ const RoofReplacement = () => {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Ready to Move Forward?</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
-                    When You're Ready to Replace<br className="hidden md:block" /> Your Roof the Right Way —<br className="hidden md:block" /> We're Ready to Build It.
+                    When You're Ready to Replace<br className="hidden md:block" /> Your Roof the Right Way,<br className="hidden md:block" /> We're Ready to Build It.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     No pressure. No obligation. Just a conversation with a local roofing expert who will assess your property honestly and help you make the right decision for your home.

@@ -162,7 +162,7 @@ function buildRepair(t: TownData): Built {
     metaDescription: `Roof repair in ${t.name}, NC with documented assessment, clear repair-or-replace guidance, and a written estimate from Highlander.`,
     sections: [
       {
-        heading: `Repair or replace — how we decide in ${t.name}`,
+        heading: `Repair or replace: how we decide in ${t.name}`,
         body: `The test is not the age of the roof, it is the condition of the field. If the failure is isolated, the deck is sound, and the surrounding material still has flexibility and granule coverage, repair is the right call and we will make it last. If the deck is soft, the shingles are brittle across multiple slopes, or we are looking at the third repair in as many years, replacement is the cheaper decision over any real ownership horizon. We price both options when it is genuinely a close call so you are choosing with numbers in front of you.`,
       },
       {

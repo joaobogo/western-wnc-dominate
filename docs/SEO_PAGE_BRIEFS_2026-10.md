@@ -1,5 +1,11 @@
 # SEO briefs for the 20 priority pages (8 Oct 2026)
 
+> **Status update (same day):** the structural fixes below were applied after this audit. The "Now" lines in each brief describe the page *before* those fixes; the "Applied" list is what changed. What is left is body-copy work (for NeuronWriter) and owner items.
+>
+> **Applied:** new titles, H1s and descriptions (all 20 pages except where noted); boilerplate form headings turned into plain text; the seven paragraph-length H2s turned into paragraphs; 800+ em dashes removed from H1/H2/H3 across the site (data-driven headings, town templates, service pages); an unsupported "hundreds of storm calls ... Buncombe, McDowell, Burke" claim removed from storm damage; the Sylva H1 no longer carries showroom wording; links added to both cost pages and `/construction/renovations` from every roofing and construction service page, the roofing hub and every roofing town page; the metal cost description lengthened. The Cashiers "80 inches of rain" claim checked (sources give 79 to 88 inches per year) and kept.
+>
+> **Not applied on purpose:** extra body copy (hub, town and service-town pages), the "general contractor" content trim on `/construction`, price-range decisions, and anything needing owner facts.
+
 Prepared for the NeuronWriter pass. **No page copy was changed for this document.** Measurements come from the built, prerendered site (368 pages); SERP notes come from live searches on 8 Oct 2026. Suggested titles, H1s and descriptions are proposals only. Constraints for every rewrite: title 60 characters or fewer ending `| Highlander`; description 110 to 155 characters; no em dashes; "free estimate" (never "free inspection"); rating, address, phone and hours only from `src/data/business.ts`; no unconfirmed claims (CertainTeed tier, coverage types, response times, subcontracting).
 
 ## What the SERPs look like

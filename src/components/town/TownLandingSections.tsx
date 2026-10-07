@@ -145,7 +145,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
         </ScrollReveal>
         <HeadingReveal>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight mb-5">
-            Everything your <span className="italic text-primary">{town.name}</span> home needs — under one roof.
+            Everything your <span className="italic text-primary">{town.name}</span> home needs, under one roof.
           </h2>
         </HeadingReveal>
         <ScrollReveal variant="rise-subtle" delay={0.1}>

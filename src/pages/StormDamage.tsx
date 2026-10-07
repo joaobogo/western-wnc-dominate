@@ -68,7 +68,7 @@ const damageTypes = [
 const afterStormSteps = [
   {
     number: "01",
-    title: "Stay Safe — Assess from the Ground",
+    title: "Stay Safe: Assess from the Ground",
     description: "Do not climb onto your roof after a storm. Look for visible damage from the ground: missing shingles, displaced flashing, fallen branches, or debris in gutters. Photograph anything you notice.",
   },
   {
@@ -283,11 +283,11 @@ const StormDamage = () => {
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-center">
               <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                Western North Carolina weather doesn't warn you. It tests your roof — and sometimes it wins.
-              </h2>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+                Western North Carolina weather doesn't warn you. It tests your roof, and sometimes it wins.
+              </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                From high-altitude wind events along the Blue Ridge to summer hail in the foothills, storm damage in our region is both common and uniquely challenging. Highlander has responded to hundreds of storm calls across Buncombe, McDowell, Burke, and surrounding counties — and we bring the same calm, thorough approach to every one. No panic, no pressure — just honest assessment, professional documentation, and clear options.
+                From high-altitude wind events along the Blue Ridge to summer hail in the foothills, storm damage in our region is both common and uniquely challenging. Highlander responds to storm damage calls across Western North Carolina with the same calm, thorough approach every time. No panic, no pressure: just honest assessment, professional documentation, and clear options.
               </p>
               <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
             </motion.div>
@@ -539,7 +539,7 @@ const StormDamage = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               <div className="text-center mb-10 md:mb-12">
                 <span className="eyebrow mb-3 block">Local. Trusted. Here to Stay.</span>
-                <h2 className="section-heading mb-4">Why Highlander —<br className="hidden md:block" /> Especially After a Storm.</h2>
+                <h2 className="section-heading mb-4">Why Highlander:<br className="hidden md:block" /> Especially After a Storm.</h2>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 md:gap-5">

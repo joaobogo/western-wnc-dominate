@@ -107,7 +107,7 @@ const Gutters = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                  Seamless Gutters
+                  Seamless Gutters in Western NC
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">

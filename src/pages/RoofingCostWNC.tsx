@@ -189,7 +189,7 @@ const RoofingCostWNC = () => {
   return (
     <>
       <SEOHead
-        title="What a New Roof Costs in Western North Carolina (2026)"
+        title="Roof Replacement Cost in Western NC (2026)"
         description="A 2026 roofing cost guide for Western NC: material tiers, repair bands, what moves the price, financing, and how to decide between repair and replacement."
         path="/roofing-cost-western-nc"
         jsonLd={buildPageSchema({
@@ -230,7 +230,7 @@ const RoofingCostWNC = () => {
               2026 Cost Guide · Updated {COST_UPDATED}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-4xl">
-              What a New Roof Costs in{" "}
+              Roof Replacement Cost in{" "}
               <span className="text-[hsl(var(--gold-ink))]">Western North Carolina</span> (2026)
             </h1>
             <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body mb-8">

@@ -55,7 +55,7 @@ export interface ProjectDetail {
 export const projectDetails: ProjectDetail[] = [
   {
     slug: "standing-seam-metal-dark-bronze-highlands",
-    title: "Standing Seam Metal — Dark Bronze",
+    title: "Standing Seam Metal: Dark Bronze",
     type: "Metal Roofing",
     category: "roofing",
     heroImage: metal005,
@@ -107,7 +107,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     slug: "certainteed-landmark-weathered-wood-waynesville",
-    title: "CertainTeed Landmark — Weathered Wood",
+    title: "CertainTeed Landmark: Weathered Wood",
     type: "Asphalt Shingles",
     category: "roofing",
     heroImage: asphaltHero,
@@ -116,7 +116,7 @@ export const projectDetails: ProjectDetail[] = [
     elevation: "2,800 ft",
     scope: "4,100 sq ft roof replacement",
     duration: "4 days",
-    highlight: "CertainTeed Landmark system — Weathered Wood",
+    highlight: "CertainTeed Landmark system: Weathered Wood",
     summary: "Full dimensional shingle replacement on a multi-level mountain home in Waynesville using CertainTeed Landmark shingles in Weathered Wood. Highlander is a CertainTeed Credentialed Contractor; applicable warranty eligibility and terms are confirmed for the specific project.",
     challenge: "The existing 3-tab shingles were 22 years old and showing widespread granule loss and curling. The multi-level roofline with screen porch integration required careful sequencing to protect the home during replacement.",
     scopeOfWork: [
@@ -146,7 +146,7 @@ export const projectDetails: ProjectDetail[] = [
       before: asphalt003,
       after: asphaltHero,
       beforeLabel: "22-Year-Old 3-Tab — Granule Loss & Curling",
-      afterLabel: "CertainTeed Landmark — Weathered Wood",
+      afterLabel: "CertainTeed Landmark: Weathered Wood",
       whatChanged: "Full replacement of deteriorated 3-tab shingles with CertainTeed Landmark dimensional shingles. 12 sheets of damaged decking replaced. Ventilation system upgraded. Screen porch roof integrated seamlessly.",
       whyItMattered: "The aging 3-tab shingles had lost most of their protective granules, leaving the home vulnerable to water infiltration. Multiple areas showed curling and lifting, particularly on the north-facing slope.",
       highlanderDifference: "The project combined CertainTeed materials, documented decking repair, ventilation upgrades, and a final cleanup process on a complex multi-level roof. Warranty eligibility and terms were handled as project-specific documentation.",
@@ -158,7 +158,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     slug: "cedar-shake-estate-highlands",
-    title: "Cedar Shake — Estate Home",
+    title: "Cedar Shake: Estate Home",
     type: "Cedar Shake",
     category: "roofing",
     heroImage: cedar004,

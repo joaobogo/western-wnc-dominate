@@ -69,7 +69,7 @@ const repairPhilosophy = [
 ];
 
 const processSteps = [
-  { number: "01", title: "You Call — We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and arrange the appropriate next step based on current scheduling and conditions." },
+  { number: "01", title: "You Call: We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and arrange the appropriate next step based on current scheduling and conditions." },
   { number: "02", title: "On-Site Diagnosis", icon: Eye, description: "We inspect the affected area and surrounding components to identify the true source of the problem. We photograph everything and explain our findings on-site." },
   { number: "03", title: "Clear Recommendation", icon: ClipboardCheck, description: "You receive a straightforward recommendation — repair, monitor, or replace — with a written scope, cost, and timeline. No ambiguity, no upselling." },
   { number: "04", title: "Precision Repair", icon: Hammer, description: "If repair is the right path, our crew executes with the same materials and standards we use on full replacements. Documented work, verified results." },
@@ -111,7 +111,7 @@ const RoofRepair = () => {
   return (
     <>
       <SEOHead
-        title="Roof Repair in Western NC — Leaks, Flashing, Storm Damage"
+        title="Roof Repair in Western NC: Leaks and Flashing"
         description="Targeted roof repairs across Western North Carolina. We diagnose the real cause, complete the fix correctly, and document the work with photos."
         path="/roofing/roof-repair"
         jsonLd={[
@@ -149,8 +149,8 @@ const RoofRepair = () => {
 
               <div className="overflow-hidden mb-3 md:mb-4">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
-                  Roof Repair Across{" "}
-                  <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
+                  Roof Repair in{" "}
+                  <span className="text-[hsl(var(--gold-ink))]">Western North Carolina</span>
                 </motion.h1>
                 <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-3" />
               </div>
@@ -237,9 +237,9 @@ const RoofRepair = () => {
                 <div className="w-16 h-px bg-border" />
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                A roof leak isn't just an inconvenience — it's your home telling you something needs attention before it becomes something worse.
-              </h2>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+                A roof leak isn't just an inconvenience, it's your home telling you something needs attention before it becomes something worse.
+              </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
                 At Highlander, we don't treat repairs as small jobs. We treat them as diagnostic opportunities — a chance to find the real cause, fix it properly, and give you an honest picture of your roof's overall condition. Every repair is documented and built to the same standard as our full replacements.
               </p>

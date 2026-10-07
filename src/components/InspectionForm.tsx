@@ -240,9 +240,9 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                   Request a free estimate in Western North Carolina.
                 </h1>
               ) : (
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-5">
+                <p className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-5">
                   Start with three simple contact details.
-                </h2>
+                </p>
               )}
               <p className="text-white font-body text-base md:text-lg leading-relaxed mb-7">
                 {townName
@@ -302,9 +302,9 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                   <p className="text-caption font-body font-bold uppercase tracking-[0.16em] text-[hsl(var(--gold-ink))]">
                     Three fields · one step
                   </p>
-                  <h2 className="mt-2 font-heading text-2xl font-bold text-white">
+                  <p className="mt-2 font-heading text-2xl font-bold text-white">
                     How should Highlander reach you?
-                  </h2>
+                  </p>
                   <p className="mt-2 text-sm leading-relaxed text-white/80">
                     We will ask about the property and scope during follow-up.
                   </p>

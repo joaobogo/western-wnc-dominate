@@ -34,7 +34,30 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
-import RelatedLinks from "@/components/RelatedLinks";
+import RelatedLinks, { type RelatedLinkItem } from "@/components/RelatedLinks";
+
+const ROOF_COST: RelatedLinkItem = {
+  label: "Roof Replacement Cost in Western NC (2026)",
+  href: "/roofing-cost-western-nc",
+  description: "Material tiers, repair bands and what moves the price.",
+};
+/** Cost guides are the best-converting pages that few pages linked to; every roofing town page now feeds them. */
+const COST_LINK_BY_SERVICE: Record<string, RelatedLinkItem> = {
+  roofing: ROOF_COST,
+  "roof-repair": ROOF_COST,
+  "roof-replacement": ROOF_COST,
+  "storm-damage": ROOF_COST,
+  construction: {
+    label: "Home Renovations in Western NC",
+    href: "/construction/renovations",
+    description: "Kitchens, baths, basements and whole-home work.",
+  },
+  "metal-roofing": {
+    label: "Metal Roofing Cost in Western NC (2026)",
+    href: "/roofing/metal/cost",
+    description: "Price ranges per square for each metal system.",
+  },
+};
 import ServiceTownProofPoints from "@/components/servicetown/ServiceTownProofPoints";
 import { getServiceTownFAQs } from "@/lib/service-town-faqs";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
@@ -298,7 +321,7 @@ const ServiceTownPage = ({
         <section className="section-padding bg-muted/20">
           <div className="container-tight max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">
-              {entry.serviceLabel} in {town.name} — Frequently Asked
+              {entry.serviceLabel} in {town.name}: Frequently Asked
             </h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((f, i) => (
@@ -424,6 +447,7 @@ const ServiceTownPage = ({
             ...(getCountyHubLink(town.county) ? [getCountyHubLink(town.county)!] : []),
             { label: `${town.name} Service Area`, href: `/service-areas/${town.slug}`, description: `Local overview, projects, and coverage for ${town.name}.` },
             ...getTownBlogLinks(town.name, 3),
+            ...(COST_LINK_BY_SERVICE[serviceSlug] ? [COST_LINK_BY_SERVICE[serviceSlug]] : []),
             estimateLink,
           ]}
         />
