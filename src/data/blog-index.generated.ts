@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "high-elevation-roofing",
+    "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
+    "excerpt": "Building science guidance for mountain homeowners: moisture safe roof assemblies, engineered snow retention, and the contractor specs to require for high elevat",
+    "category": "Materials",
+    "date": "2026-10-07",
+    "town": ""
+  },
+  {
     "slug": "skylight-placement",
     "title": "Even Daylight, Less Risk: Skylight Placement for Mountain Homes",
     "excerpt": "Place skylights for even daylight, less glare, and fewer leaks with practical guidance on room placement, roof orientation, flashing, and mountain-home conditio",

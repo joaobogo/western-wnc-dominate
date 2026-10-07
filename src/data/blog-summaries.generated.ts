@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "high-elevation-roofing",
+    "slug": "high-elevation-roofing",
+    "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
+    "excerpt": "Building science guidance for mountain homeowners: moisture safe roof assemblies, engineered snow retention, and the contractor specs to require for high elevation homes.",
+    "category": "Materials",
+    "date": "2026-10-07",
+    "readTime": "9 min"
+  },
+  {
     "id": "skylight-placement",
     "slug": "skylight-placement",
     "title": "Even Daylight, Less Risk: Skylight Placement for Mountain Homes",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Inspections",
     "date": "2026-09-14",
     "readTime": "8 min"
-  },
-  {
-    "id": "gutter-size-western-nc-mountain-homes",
-    "slug": "gutter-size-western-nc-mountain-homes",
-    "title": "Why 5-Inch Gutters Overflow in Western North Carolina and How to Size Them Properly",
-    "excerpt": "Gutter capacity ratings assume one inch of rain per hour. Highlands is designed for 11.3. A licensed WNC contractor walks through gutter and downspout sizing using NOAA rainfall data for our towns.",
-    "category": "Gutters",
-    "date": "2026-09-09",
-    "readTime": "9 min"
   }
 ];
