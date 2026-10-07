@@ -22,7 +22,8 @@ import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import { BUSINESS, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, PRIMARY_HOURS_LABEL, REVIEW_RATING } from "@/data/business";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import logo from "@/assets/logo.svg";
-import Mountains from "./Mountains";
+import teamPhoto from "@/assets/team-photo.webp";
+import teamPhotoSet from "@/assets/team-photo.webp?w=640;1000;1440&format=webp&as=srcset";
 import type { IntentId, LandingConfig, LandingImage } from "./config";
 import { LandingFormProvider, useLandingForm } from "./LandingFormContext";
 import LeadForm, { trackCall } from "./LeadForm";
@@ -45,8 +46,12 @@ const LANDING_CSS = `
 .lp-line{transform-origin:top;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .lp-in .lp-line,.lp-line.lp-in{transform:scaleY(1)}
 .lp-tartan{background-image:url(/tartan.png);background-size:auto 100%;background-repeat:repeat-x}
-.lp-topo{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='340' viewBox='0 0 520 340' fill='none' stroke='%231f4a3a' stroke-opacity='.075' stroke-width='1.2'%3E%3Cpath d='M-10 70C60 20 150 10 230 40s150 40 220 0 80-30 90-20'/%3E%3Cpath d='M-10 100C70 55 150 48 230 76s150 36 220 0 80-26 90-16'/%3E%3Cpath d='M-10 130C80 92 150 86 230 112s150 32 220 0 80-22 90-12'/%3E%3Cpath d='M-10 215C50 170 120 160 190 190s140 44 210 10 110-30 140-20'/%3E%3Cpath d='M-10 245C60 205 120 196 190 222s140 38 210 6 110-26 140-16'/%3E%3Cpath d='M-10 275C70 240 120 232 190 254s140 32 210 2 110-22 140-12'/%3E%3C/svg%3E");background-size:520px 340px}
+@keyframes lp-kb{from{transform:scale(1.03)}to{transform:scale(1.11)}}
+.lp-kb{animation:lp-kb 30s ease-in-out infinite alternate;will-change:transform}
+.lp-strip{scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.lp-strip::-webkit-scrollbar{display:none}
 @media (prefers-reduced-motion:reduce){
+ .lp-kb{animation:none!important}
  .lp-reveal,.lp-line{opacity:1!important;transform:none!important;transition:none!important}
  .lp-par-far,.lp-par-mid,.lp-par-near{transform:none!important}
  .lp-shine::after{display:none}
@@ -101,11 +106,13 @@ const Img = ({
   className,
   eager,
   sizes,
+  style,
 }: {
   image: LandingImage;
   className?: string;
   eager?: boolean;
   sizes?: string;
+  style?: React.CSSProperties;
 }) => (
   <img
     src={image.src}
@@ -115,6 +122,7 @@ const Img = ({
     width={image.width}
     height={image.height}
     className={className}
+    style={style}
     loading={eager ? "eager" : "lazy"}
     {...(eager ? ({ fetchpriority: "high" } as Record<string, string>) : {})}
     decoding="async"
@@ -313,98 +321,83 @@ function LandingBody() {
       </header>
 
       <main id="main-content">
-        {/* ───────────── Hero ───────────── */}
-        <section ref={heroSection} className="relative overflow-hidden bg-[hsl(var(--muted))] !py-0">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_88%_0%,hsl(var(--highland-gold)/0.2),transparent_62%),linear-gradient(to_bottom,transparent_55%,hsl(var(--primary)/0.06))]"
-          />
-          <Mountains variant={config.key} sun className="absolute inset-x-0 bottom-0 h-[260px] w-full md:h-[440px]" />
-          <div className="relative mx-auto grid max-w-[1200px] gap-8 px-4 py-9 sm:px-5 md:px-8 md:py-14 lg:grid-cols-[1.28fr_1fr] lg:gap-12 lg:pb-36 lg:pt-14">
-            <div className="order-1 lg:row-span-1">
+        {/* ───────────── Hero: full-bleed photography ───────────── */}
+        <section ref={heroSection} className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-white !py-0">
+          <div aria-hidden="true" className="lp-par-near absolute inset-0 -z-10">
+            <Img
+              image={{ ...hero.backdrop, alt: "" }}
+              eager
+              sizes="100vw"
+              className="lp-kb absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: hero.position ?? "50% 50%" }}
+            />
+            {hero.secondary && (
+              <div className="absolute inset-0 [clip-path:polygon(46%_0,100%_0,100%_100%,58%_100%)] max-md:hidden">
+                <Img
+                  image={{ ...hero.secondary, alt: "" }}
+                  eager
+                  sizes="60vw"
+                  className="lp-kb absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: hero.secondaryPosition ?? "50% 50%" }}
+                />
+              </div>
+            )}
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.86)_0%,hsl(160_45%_6%/0.62)_36%,hsl(160_45%_6%/0.12)_70%,hsl(160_45%_6%/0)_100%)] max-lg:bg-[linear-gradient(180deg,hsl(160_45%_6%/0.82)_0%,hsl(160_45%_6%/0.6)_55%,hsl(160_45%_6%/0.42)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[hsl(160_45%_5%/0.7)] to-transparent" />
+          </div>
+          <div className="relative mx-auto grid max-w-[1200px] gap-9 px-4 py-10 sm:px-5 md:px-8 md:py-16 lg:min-h-[720px] lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14 lg:py-20">
+            <div className="order-1">
               <Reveal>
-                {eyebrow(config.eyebrow)}
-                <h1 className="max-w-3xl font-heading text-[2.15rem] font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.4rem]">
+                {eyebrow(config.eyebrow, true)}
+                <h1 className="max-w-3xl font-heading text-[2.25rem] font-bold leading-[1.04] tracking-tight text-white [text-shadow:0_2px_24px_hsl(160_45%_4%/0.5)] sm:text-5xl lg:text-[3.6rem]">
                   {highlightH1(config.h1)}
                 </h1>
-                <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-muted-foreground md:text-lg">{config.support}</p>
-                <p className="mt-5 inline-flex flex-wrap gap-2 font-semibold text-foreground">
+                <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-white/90 md:text-lg">{config.support}</p>
+                <p className="mt-5 inline-flex flex-wrap gap-2 font-semibold">
                   {config.serviceLine
                     .split(".")
                     .map((part) => part.trim())
                     .filter(Boolean)
                     .map((part) => (
-                      <span key={part} className="rounded-full border border-primary/20 bg-background px-3.5 py-1.5 text-sm shadow-sm">
+                      <span key={part} className="rounded-full border border-white/30 bg-white/10 px-3.5 py-1.5 text-sm text-white backdrop-blur-sm">
                         {part}
                       </span>
                     ))}
                 </p>
-                <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-                  <span className="inline-flex items-center gap-2 font-semibold text-foreground">
+                <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white">
+                  <span className="inline-flex items-center gap-2 font-semibold">
                     <Stars />
                     {REVIEW_RATING}/5 on Google
                   </span>
-                  <span aria-hidden="true" className="text-border">|</span>
-                  <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
-                    <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
+                  <span aria-hidden="true" className="text-white/40">|</span>
+                  <span className="inline-flex items-center gap-1.5 font-medium">
+                    <MapPin className="h-4 w-4 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
                     Based in Franklin, NC
                   </span>
                 </div>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  {primaryCta()}
-                  {callLink(`Call ${PHONE_DISPLAY}`, `lp_${config.key}_hero`, "btn btn-secondary btn-md min-h-14 whitespace-nowrap", `Call Highlander at ${PHONE_DISPLAY}`)}
+                  {primaryCta("lp-shine")}
+                  {callLink(
+                    `Call ${PHONE_DISPLAY}`,
+                    `lp_${config.key}_hero`,
+                    "btn btn-md min-h-14 whitespace-nowrap border-2 border-white/70 bg-white/5 text-white backdrop-blur-sm hover:bg-white hover:text-foreground",
+                    `Call Highlander at ${PHONE_DISPLAY}`,
+                  )}
                 </div>
               </Reveal>
             </div>
 
-            <div ref={heroFormWrap} data-main-form className="order-2 lg:row-span-2 lg:pt-1">
+            <div ref={heroFormWrap} data-main-form className="order-2">
               <div id="estimate-form" className="lg:sticky lg:top-28">
                 <LeadForm instance="hero" />
               </div>
             </div>
-
-            {/* Photography comes after the form on mobile so it never delays first contact. */}
-            <Reveal className="order-3" delay={80}>
-              {hero.secondary ? (
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {[
-                    { image: hero.primary, tag: hero.primaryTag, on: emphasis !== "construction" },
-                    { image: hero.secondary, tag: hero.secondaryTag ?? "", on: emphasis !== "roofing" },
-                  ].map((tile, i) => (
-                    <figure
-                      key={tile.tag}
-                      className={`group relative overflow-hidden rounded-sm border border-border bg-card shadow-[0_26px_60px_-34px_hsl(var(--foreground)/0.55)] transition-all duration-300 ${
-                        tile.on ? "opacity-100" : "opacity-60 saturate-50"
-                      }`}
-                    >
-                      <Img image={tile.image} eager={i === 0} sizes="(min-width:1024px) 340px, 46vw" className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
-                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 to-transparent px-3 pb-3 pt-10 text-xs font-semibold text-white sm:text-sm">
-                        {tile.tag}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-              ) : (
-                <figure className="group relative">
-                  <span aria-hidden="true" className="absolute -bottom-3 -right-3 hidden h-full w-full border-2 border-[hsl(var(--highland-gold))] sm:block" />
-                  <div className="relative overflow-hidden rounded-sm border border-border bg-card shadow-[0_30px_70px_-34px_hsl(var(--foreground)/0.6)]">
-                    <Img image={hero.primary} eager sizes="(min-width:1024px) 640px, 100vw" className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-                    <figcaption className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-background/95 px-3.5 py-1.5 text-xs font-bold text-foreground shadow-md">
-                      <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                      {hero.primaryTag}
-                    </figcaption>
-                  </div>
-                </figure>
-              )}
-            </Reveal>
           </div>
         </section>
 
         {/* ───────────── Trust band ───────────── */}
         <section aria-label="Why homeowners start here" className="relative bg-primary text-primary-foreground !py-0">
-          <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 -top-[1px] h-5 w-full -translate-y-full md:h-8">
-            <path fill="hsl(var(--primary))" d="M0 40V26C140 8 260 30 420 16C580 2 700 30 880 18C1040 8 1180 28 1320 14C1380 8 1410 12 1440 16V40Z" />
-          </svg>
+          <div aria-hidden="true" className="lp-tartan h-1 w-full" />
           <ul className="mx-auto grid max-w-[1200px] grid-cols-2 gap-x-4 gap-y-3 px-4 py-5 text-sm font-semibold sm:px-5 md:grid-cols-4 md:px-8">
             <li className="flex items-center gap-2.5">
               <Stars />
@@ -419,11 +412,34 @@ function LandingBody() {
               Written scope before work begins
             </li>
             <li className="flex items-center gap-2">
-              <Compass className="h-4 w-4 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
-              Serving Western North Carolina
+              <ShieldCheck className="h-4 w-4 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
+              Licensed and insured
             </li>
           </ul>
         </section>
+
+        {/* ───────────── Aerial photo band ───────────── */}
+        {config.strip && (
+          <section aria-label="Roofs on Western North Carolina homes" className="bg-[hsl(var(--dark-section))] text-white !py-0">
+            <div className="mx-auto max-w-[1200px] px-4 pb-3 pt-10 sm:px-5 md:px-8 md:pt-14">
+              <Reveal>
+                <p className="max-w-3xl font-heading text-2xl font-bold leading-snug !text-white md:text-3xl">{config.strip.heading}</p>
+              </Reveal>
+            </div>
+            <ul className="lp-strip flex snap-x snap-mandatory gap-1 overflow-x-auto px-0 pb-0 pt-4 md:grid md:grid-cols-4 md:overflow-visible">
+              {config.strip.items.map((item) => (
+                <li key={item.label} className="group relative w-[78vw] shrink-0 snap-center overflow-hidden md:w-auto">
+                  <Img image={item.image} sizes="(min-width:768px) 25vw, 78vw" style={{ objectPosition: item.position ?? "50% 50%" }} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.06] md:aspect-[3/4]" />
+                  <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[hsl(160_45%_5%/0.78)] via-transparent to-transparent" />
+                  <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] !text-white">
+                    <span aria-hidden="true" className="h-px w-6 bg-[hsl(var(--highland-gold))]" />
+                    {item.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* ───────────── Proof ───────────── */}
         <section className="!py-0">
@@ -473,7 +489,7 @@ function LandingBody() {
         </section>
 
         {/* ───────────── Recognize your project (informational cards) ───────────── */}
-        <section className="lp-topo bg-[hsl(var(--muted))] !py-0">
+        <section className="bg-[hsl(var(--muted))] !py-0">
           <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-5 md:px-8 md:py-24">
             <Reveal className="max-w-3xl">
               {eyebrow(config.intentEyebrow)}
@@ -556,9 +572,35 @@ function LandingBody() {
           </div>
         </section>
 
+        {/* ───────────── The team ───────────── */}
+        <section aria-label="The Highlander team" className="bg-[hsl(var(--dark-section))] text-white !py-0">
+          <div className="mx-auto max-w-[1200px] px-4 py-12 sm:px-5 md:px-8 md:py-16">
+            <Reveal className="mb-7 max-w-2xl">
+              {eyebrow("The team", true)}
+              <h2 className="font-heading text-3xl font-bold leading-tight !text-white md:text-4xl">Real people, based in Franklin.</h2>
+              <p className="mt-3 text-base leading-relaxed text-white/80">Roofing, construction and design under one roof at {FRANKLIN_NAP}.</p>
+            </Reveal>
+            <Reveal delay={80}>
+              <figure className="overflow-hidden rounded-sm border border-white/15 shadow-[0_30px_70px_-30px_hsl(0_0%_0%/0.7)]">
+                <img
+                  src={teamPhoto}
+                  srcSet={teamPhotoSet}
+                  sizes="(min-width:1200px) 1136px, 100vw"
+                  alt="The Highlander Building Services team gathered in front of a Blue Ridge mountain view"
+                  width={1440}
+                  height={603}
+                  className="h-auto w-full"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </Reveal>
+          </div>
+        </section>
+
         {/* ───────────── Reviews ───────────── */}
         {reviews.length > 0 && (
-          <section className="lp-topo bg-[hsl(var(--muted))] !py-0">
+          <section className="bg-[hsl(var(--muted))] !py-0">
             <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-5 md:px-8 md:py-24">
               <Reveal className="max-w-3xl">
                 {eyebrow(config.reviews.eyebrow)}
@@ -643,22 +685,27 @@ function LandingBody() {
         </section>
 
         {/* ───────────── Final conversion ───────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-primary to-[hsl(var(--dark-section))] text-primary-foreground !py-0">
-          <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-8 w-full md:h-12">
-            <path fill="hsl(var(--background))" d="M0 0H1440V24C1320 50 1200 12 1060 30C900 52 780 14 620 32C470 48 330 16 190 34C110 44 50 36 0 42Z" />
-          </svg>
-          <Mountains variant={config.key} tone="cream" className="absolute inset-x-0 bottom-0 h-[240px] w-full md:h-[400px]" />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[hsl(var(--highland-gold))]/10 blur-3xl" />
-          <div className="relative z-[2] mx-auto grid max-w-[1200px] gap-10 px-4 pb-32 pt-20 sm:px-5 md:px-8 md:pb-44 md:pt-28 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
+        <section className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-primary-foreground !py-0">
+          <div aria-hidden="true" className="absolute inset-0 -z-10">
+            <Img
+              image={{ ...config.finalBackdrop.image, alt: "" }}
+              sizes="100vw"
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: config.finalBackdrop.position ?? "50% 50%" }}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.82)_0%,hsl(160_45%_6%/0.58)_50%,hsl(160_45%_6%/0.4)_100%)]" />
+          </div>
+          <div aria-hidden="true" className="lp-tartan h-1 w-full" />
+          <div className="relative z-[2] mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-5 md:px-8 md:py-24 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
             <Reveal>
-              <h2 className="font-heading text-3xl font-bold leading-tight md:text-5xl">{config.finalHeading}</h2>
+              <h2 className="font-heading text-3xl font-bold leading-tight [text-shadow:0_2px_24px_hsl(160_45%_4%/0.5)] md:text-5xl">{config.finalHeading}</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/90">{config.finalBody}</p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                {callLink(`Call ${PHONE_DISPLAY}`, `lp_${config.key}_final`, "btn btn-primary btn-lg min-h-14", `Call Highlander at ${PHONE_DISPLAY}`)}
+                {callLink(`Call ${PHONE_DISPLAY}`, `lp_${config.key}_final`, "btn btn-primary lp-shine btn-lg min-h-14", `Call Highlander at ${PHONE_DISPLAY}`)}
                 <button
                   type="button"
                   onClick={scrollToNearestForm}
-                  className="btn btn-lg min-h-14 border border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 lg:hidden"
+                  className="btn btn-lg min-h-14 border-2 border-white/70 bg-white/5 text-primary-foreground backdrop-blur-sm hover:bg-white hover:text-foreground lg:hidden"
                 >
                   {config.primaryCta}
                 </button>

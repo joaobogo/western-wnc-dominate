@@ -59,6 +59,15 @@ describe.each(pages)("landing page $path", (config) => {
     expect(text).not.toMatch(/24\/7|same[- ]day|only \d+ spots|guarantee/i);
   });
 
+  it("uses photography, not illustration: decorative backdrops are hidden from assistive tech", () => {
+    mount();
+    const hero = document.querySelector("main section");
+    const backdrops = Array.from(hero!.querySelectorAll("img")).filter((img) => img.closest('[aria-hidden="true"]'));
+    expect(backdrops.length).toBeGreaterThan(0);
+    backdrops.forEach((img) => expect(img.getAttribute("alt")).toBe(""));
+    expect(document.querySelector("svg[viewBox='0 0 1440 560']")).toBeNull();
+  });
+
   it("is noindex,follow with a self-referencing canonical", () => {
     mount();
     expect(document.querySelector('meta[name="robots"]')?.getAttribute("content")).toBe("noindex,follow");
