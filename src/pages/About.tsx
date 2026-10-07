@@ -640,7 +640,7 @@ const About = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { stat: REVIEW_STARS, label: "Google Rating" },
-                { stat: `Since ${new Date(`${BUSINESS.foundingDate}T12:00:00Z`).getUTCFullYear()}`, label: "Serving Western NC" },
+                { stat: `Since ${BUSINESS.foundingYear}`, label: "Serving Western NC" },
                 { stat: `${BUSINESS.locations.length}`, label: "Walk-In Showrooms" },
                 { stat: BUSINESS.licenseNumber.replace(/^\D+/, "#"), label: "NC GC License" },
               ].map((item, i) => (

@@ -1596,11 +1596,41 @@ async function alertSyncExhausted(table: string, id: string, attempts: number) {
   }
 }
 
+/** Public callers may only sync a brand-new, never-attempted record. */
+const PUBLIC_SYNC_WINDOW_MS = 30 * 60 * 1000;
+
+/** True for internal service-role calls or a signed-in admin. */
+async function callerIsPrivileged(req: Request): Promise<boolean> {
+  const auth = req.headers.get("authorization") ?? "";
+  const token = auth.replace(/^Bearer\s+/i, "").trim();
+  if (!token) return false;
+  if (SERVICE_ROLE && token === SERVICE_ROLE) return true;
+  try {
+    const admin = createClient(SUPABASE_URL, SERVICE_ROLE, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const { data, error } = await admin.auth.getUser(token);
+    if (error || !data?.user) return false;
+    const { data: isAdmin } = await admin.rpc("has_role", { _user_id: data.user.id, _role: "admin" });
+    return isAdmin === true;
+  } catch {
+    return false;
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
   let body: any = {};
   try { body = await req.json(); } catch { /* empty */ }
+  const privileged = await callerIsPrivileged(req);
+  if (!privileged) {
+    if (body.retry_failed === true || body.force) {
+      return new Response(JSON.stringify({ error: "unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+  }
 
   // Bulk retry mode: find failed / retry_needed leads and re-run them. Meant
   // for admin/scheduled use — protected by an internal admin token so it
@@ -1683,9 +1713,22 @@ Deno.serve(async (req) => {
     .eq("id", id)
     .maybeSingle();
   if (fetchErr || !row) {
-    return new Response(JSON.stringify({ error: fetchErr?.message ?? "Row not found" }), {
+    return new Response(JSON.stringify({ error: "Row not found" }), {
       status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
+  }
+
+  // Anonymous website callers can only kick off the first sync of a record
+  // they just created. Older or previously attempted records need an admin.
+  if (!privileged) {
+    const createdMs = Date.parse(String(row.created_at ?? ""));
+    const fresh = Number.isFinite(createdMs) && Date.now() - createdMs <= PUBLIC_SYNC_WINDOW_MS;
+    const untouched = !row.jobtread_synced && Number(row.jobtread_retry_count ?? 0) === 0 && !row.jobtread_last_attempt_at;
+    if (!fresh || !untouched) {
+      return new Response(JSON.stringify({ error: "unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
   }
 
   // Short-circuit if already synced (unless caller passed force=true)
