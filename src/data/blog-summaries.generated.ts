@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "skylight-placement",
+    "slug": "skylight-placement",
+    "title": "Even Daylight, Less Risk: Skylight Placement for Mountain Homes",
+    "excerpt": "Place skylights for even daylight, less glare, and fewer leaks with practical guidance on room placement, roof orientation, flashing, and mountain-home conditions.",
+    "category": "Materials",
+    "date": "2026-10-06",
+    "readTime": "14 min"
+  },
+  {
     "id": "half-round-vs-k-style-gutters",
     "slug": "half-round-vs-k-style-gutters",
     "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Gutters",
     "date": "2026-09-09",
     "readTime": "9 min"
-  },
-  {
-    "id": "wnc-storm-season-roof-damage",
-    "slug": "wnc-storm-season-roof-damage",
-    "title": "What a Western North Carolina Storm Season Does to Your Roof",
-    "excerpt": "Wind breaks the sealant bond before it takes a shingle away, and hail either fractures the mat or it does not. A plain accounting of what a WNC summer does to a mountain roof, what you can check from the ground, and what cannot be seen without someone walking it.",
-    "category": "Storm Damage",
-    "date": "2026-09-04",
-    "readTime": "14 min"
   }
 ];
