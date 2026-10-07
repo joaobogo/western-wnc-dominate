@@ -2,6 +2,16 @@ import metalRoof from "@/assets/gallery/metal-005.webp";
 import metalRoofSet from "@/assets/gallery/metal-005.webp?w=480;800;1200&format=webp&as=srcset";
 import shingleRoof from "@/assets/gallery/asphalt-hero.webp";
 import shingleRoofSet from "@/assets/gallery/asphalt-hero.webp?w=480;800;1200&format=webp&as=srcset";
+import heroSky from "@/assets/gallery/asphalt-007.webp";
+import heroSkySet from "@/assets/gallery/asphalt-007.webp?w=800;1280;1800&format=webp&as=srcset";
+import stripShingleA from "@/assets/gallery/asphalt-003.webp";
+import stripShingleASet from "@/assets/gallery/asphalt-003.webp?w=480;800;1200&format=webp&as=srcset";
+import stripShingleB from "@/assets/gallery/asphalt-004.webp";
+import stripShingleBSet from "@/assets/gallery/asphalt-004.webp?w=480;800;1200&format=webp&as=srcset";
+import stripCedar from "@/assets/gallery/cedar-001.webp";
+import stripCedarSet from "@/assets/gallery/cedar-001.webp?w=480;800;1200&format=webp&as=srcset";
+import stripMetalGreen from "@/assets/gallery/metal-006.webp";
+import stripMetalGreenSet from "@/assets/gallery/metal-006.webp?w=480;800;1200&format=webp&as=srcset";
 import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 
 /**
@@ -88,8 +98,16 @@ export interface LandingConfig {
   finalFormHeading: string;
   successHeading: string;
   successBody: string;
-  /** Hero visual: one wide image, or two captioned images (combined page). */
-  hero: { primary: LandingImage; primaryTag: string; secondary?: LandingImage; secondaryTag?: string };
+  /**
+   * Full-bleed hero photography. Decorative: it carries no location or scope
+   * claim (documented projects live in `proof`). The combined page adds a
+   * second image that is split diagonally against the first.
+   */
+  hero: { backdrop: LandingImage; position?: string; secondary?: LandingImage; secondaryPosition?: string };
+  /** Full-bleed backdrop behind the closing call to action. */
+  finalBackdrop: { image: LandingImage; position?: string };
+  /** Optional aerial photo band under the hero. Material names only, no places. */
+  strip?: { heading: string; items: Array<{ image: LandingImage; label: string; position?: string }> };
 
   proofHeading: string;
   proofIntro: string;
@@ -138,6 +156,26 @@ const roofWaynesville: LandingImage = {
   alt: "Weathered Wood dimensional shingle roof installed by Highlander Building Services on a mountain home in Waynesville, North Carolina",
   width: 1400,
   height: 788,
+};
+
+const heroSkyImage: LandingImage = {
+  src: heroSky,
+  srcSet: heroSkySet,
+  alt: "",
+  width: 1800,
+  height: 1477,
+};
+
+const stripImage = (src: string, srcSet: string, alt: string, width: number, height: number): LandingImage => ({ src, srcSet, alt, width, height });
+
+const roofingStrip = {
+  heading: "From above: shingle, metal and cedar roofs on Western NC mountain homes.",
+  items: [
+    { image: stripImage(stripShingleA, stripShingleASet, "Aerial view of a gray dimensional shingle roof on a wooded mountain home", 1600, 1200), label: "Slate-gray shingle" },
+    { image: stripImage(stripMetalGreen, stripMetalGreenSet, "Aerial view of a green standing seam metal roof on a log mountain home", 1400, 1050), label: "Standing seam metal", position: "0% 50%" },
+    { image: stripImage(stripCedar, stripCedarSet, "Aerial view of a cedar shake roof on a shingle-style mountain home", 1500, 1000), label: "Cedar shake" },
+    { image: stripImage(stripShingleB, stripShingleBSet, "Aerial view of a tan dimensional shingle roof with a stone chimney", 1200, 900), label: "Tan shingle" },
+  ],
 };
 
 /**
@@ -277,10 +315,9 @@ export const ROOFING_CONFIG: LandingConfig = {
   successHeading: "Your roofing request is in.",
   successBody:
     "Thank you. Highlander will contact you to discuss your roof and the next step. Prefer to speak with the team? Call {phone} during office hours.",
-  hero: {
-    primary: roofHighlands,
-    primaryTag: "Standing seam metal · Highlands, NC",
-  },
+  hero: { backdrop: heroSkyImage, position: "50% 22%" },
+  finalBackdrop: { image: stripImage(stripShingleA, stripShingleASet, "", 1600, 1200), position: "50% 35%" },
+  strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
   proofIntro:
@@ -396,10 +433,8 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   successHeading: "Your project request is in.",
   successBody:
     "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
-  hero: {
-    primary: constructionPrimary,
-    primaryTag: "Outdoor living · Western NC",
-  },
+  hero: { backdrop: { ...constructionPrimary, alt: "" }, position: "50% 55%" },
+  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 45%" },
 
   proofHeading: "See the work. Understand the standard.",
   proofIntro: "Start from what a finished space can feel like.",
@@ -516,11 +551,13 @@ export const COMBINED_CONFIG: LandingConfig = {
   successBody:
     "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
   hero: {
-    primary: roofHighlands,
-    primaryTag: "Roofing · Highlands, NC",
-    secondary: constructionPrimary,
-    secondaryTag: "Construction · Western NC",
+    backdrop: heroSkyImage,
+    position: "40% 22%",
+    secondary: { ...constructionPrimary, alt: "" },
+    secondaryPosition: "60% 55%",
   },
+  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 45%" },
+  strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
   proofIntro: "Two separate Highlander services, shown as separate examples.",
