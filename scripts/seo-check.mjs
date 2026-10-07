@@ -92,7 +92,8 @@ const head = (html) => {
   const robots = html.match(/<meta[^>]+name="robots"[^>]+content="([^"]*)"/i)?.[1] ?? "";
   const canonicals = [...html.matchAll(/<link[^>]+rel="canonical"[^>]*href="([^"]+)"/gi)].map((m) => m[1]);
   const h1s = (html.match(/<h1\b/gi) || []).length;
-  return { title, description, robots, canonicals, h1s, noindex: /noindex/i.test(robots) };
+  const stamps = (html.match(/<meta\s+name="prerendered-at"/gi) || []).length;
+  return { title, description, robots, canonicals, h1s, stamps, noindex: /noindex/i.test(robots) };
 };
 
 /** Run a sibling checker; returns { ok, out, lines } where lines are its failure lines. */
@@ -181,6 +182,7 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
     if (!h.title) details.push(`${file} — empty <title>`);
     if (!h.description) details.push(`${file} — empty meta description`);
     if (h.h1s !== 1) details.push(`${file} — ${h.h1s} <h1>`);
+    if (h.stamps !== 1) details.push(`${file} — ${h.stamps} prerendered-at tag(s); expected exactly one so freshness can be audited`);
     if (h.canonicals.length !== 1) details.push(`${file} — ${h.canonicals.length} canonical link(s)`);
     const expected = route === "/" ? `${BASE}/` : `${BASE}${route}`;
     // A page that renders content while pointing its canonical elsewhere must
@@ -189,7 +191,7 @@ const rules = loadRedirectRules(path.join(ROOT, "public/_redirects"));
       details.push(`${file} — canonical ${h.canonicals[0]} is not self-referencing (expected ${expected}); make it a 301 instead`);
     }
   }
-  rule(3, `Every prerendered page: non-empty title + description, one <h1>, one self-referencing canonical (${headOf.size} pages)`, details);
+  rule(3, `Every prerendered page: non-empty title + description, one <h1>, one self-referencing canonical, one prerendered-at (${headOf.size} pages)`, details);
 }
 
 // ----------------------------------------------------------------- rule 4

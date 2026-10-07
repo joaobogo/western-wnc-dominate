@@ -89,7 +89,7 @@ describe("idempotent submission", () => {
   });
 
   it("treats a database duplicate-key rejection as a success, not a lost lead", async () => {
-    insert.mockResolvedValue({ error: { code: "23505", message: "duplicate key" } });
+    insert.mockResolvedValue({ error: { code: "23505", message: "duplicate key value violates unique constraint \"leads_idempotency_key_uidx\"", details: "Key (idempotency_key)=(abc) already exists." } });
     const res = await submit(validLead);
     expect(res.error).toBeNull();
     expect(res.duplicate).toBe(true);
@@ -118,5 +118,17 @@ describe("requireStoredLead (no false success)", () => {
     const { requireStoredLead } = await import("@/lib/leads");
     expect(requireStoredLead({ id: "abc", error: null }).id).toBe("abc");
     expect(requireStoredLead({ id: null, error: null, duplicate: true }).duplicate).toBe(true);
+  });
+});
+
+describe("isIdempotencyViolation", () => {
+  it("accepts only a unique violation on the idempotency key", async () => {
+    const { isIdempotencyViolation } = await import("@/lib/leads");
+    expect(isIdempotencyViolation({ code: "23505", message: "violates unique constraint \"leads_idempotency_key_uidx\"" })).toBe(true);
+    expect(isIdempotencyViolation({ code: "23505", details: "Key (idempotency_key)=(x) already exists." })).toBe(true);
+    // Some other unique constraint is a real failure, not a stored duplicate.
+    expect(isIdempotencyViolation({ code: "23505", message: "duplicate key value violates unique constraint \"leads_pkey\"" })).toBe(false);
+    expect(isIdempotencyViolation({ code: "42501", message: "idempotency" })).toBe(false);
+    expect(isIdempotencyViolation(null)).toBe(false);
   });
 });

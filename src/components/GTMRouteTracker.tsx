@@ -4,6 +4,7 @@ import {
   installGtmGlobalListeners,
   startPageEngagement,
   trackGbpMapPackClick,
+  safePageLocation,
 } from "@/lib/gtm";
 import { captureAttribution } from "@/lib/attribution";
 
@@ -60,8 +61,9 @@ const GTMRouteTracker = () => {
     w.dataLayer = w.dataLayer || [];
     w.dataLayer.push({
       event: "virtual_page_view",
-      page_path: window.location.pathname + window.location.search,
-      page_location: window.location.href,
+      // Allowlisted campaign parameters only; never raw query strings (PII risk).
+      page_path: safePageLocation().path,
+      page_location: safePageLocation().location,
       page_title: document.title,
     });
     // Meta and TikTok load outside GTM, so hand them the SPA page change directly.

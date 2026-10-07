@@ -148,9 +148,33 @@ function currentPath() {
   if (typeof window === "undefined") return "/";
   return window.location.pathname;
 }
+/**
+ * Query parameters that may reach analytics. Campaign and click-ID parameters
+ * only: anything else (a pasted email, phone number, name, address...) must
+ * never be copied into a dataLayer payload.
+ */
+const ANALYTICS_QUERY_ALLOWLIST = /^(utm_[a-z_]+|gclid|gbraid|wbraid|gad_[a-z_]+|fbclid|msclkid|ttclid|li_fat_id)$/i;
+
+/** The current query string reduced to the allowlist ("" when nothing qualifies). */
+export function safeSearch(search: string): string {
+  if (!search) return "";
+  const kept = new URLSearchParams();
+  new URLSearchParams(search).forEach((value, key) => {
+    if (ANALYTICS_QUERY_ALLOWLIST.test(key)) kept.append(key, value);
+  });
+  const text = kept.toString();
+  return text ? `?${text}` : "";
+}
+
+/** Path plus allowlisted campaign parameters, safe to send to analytics. */
+export function safePageLocation(): { path: string; location: string } {
+  if (typeof window === "undefined") return { path: "", location: "" };
+  const path = window.location.pathname + safeSearch(window.location.search);
+  return { path, location: `${window.location.origin}${path}` };
+}
+
 function pagePath() {
-  if (typeof window === "undefined") return "";
-  return window.location.pathname + window.location.search;
+  return safePageLocation().path;
 }
 function pageTitle() {
   return typeof document !== "undefined" ? document.title : "";

@@ -136,7 +136,7 @@ const ConstructionDesign = () => {
   return (
     <>
       <SEOHead
-        title="Design Services for Construction Projects | Highlander WNC"
+        title="Design Services for Construction Projects | Highlander"
         description="In-house design for additions, remodels, outdoor living, and new builds in Western NC — scope, permit set, and construction documents with real budget guidance."
         path="/construction/design"
         jsonLd={buildPageSchema({
