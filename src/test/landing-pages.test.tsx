@@ -81,11 +81,27 @@ describe.each(pages)("landing page $path", (config) => {
   });
 });
 
+describe("landing form matches the database contact rules", () => {
+  it("rejects what the database would reject, with a message on the right field", async () => {
+    const { validateLanding, fieldErrorFromDatabase } = await import("@/components/landing/LandingFormContext");
+    // 7 digits, a placeholder number and a reserved email domain all fail on the form.
+    expect(validateLanding({ firstName: "Jane", email: "jane@gmail.com", phone: "555-1234" }).phone).toMatch(/10-digit/);
+    expect(validateLanding({ firstName: "Jane", email: "jane@gmail.com", phone: "5555555555" }).phone).toBeTruthy();
+    expect(validateLanding({ firstName: "Jane", email: "jane@example.com", phone: "828-524-7773" }).email).toMatch(/real email/);
+    expect(validateLanding({ firstName: "Jane", email: "jane@gmail.com", phone: "(828) 524-7773" })).toEqual({});
+    expect(validateLanding({ firstName: "Jane", email: "jane@gmail.com", phone: "1-828-524-7773" })).toEqual({});
+    // If something still slips through, a database rejection lands on the field, not a generic banner.
+    expect(fieldErrorFromDatabase({ message: "Invalid US phone number" })).toHaveProperty("phone");
+    expect(fieldErrorFromDatabase({ message: "Fake or disposable email address" })).toHaveProperty("email");
+    expect(fieldErrorFromDatabase({ message: "network down" })).toBeNull();
+  });
+});
+
 describe("landing form validation (owner decision 7 Oct 2026: email required)", () => {
   it("requires first name, email and phone", async () => {
     const { validateLanding } = await import("@/components/landing/LandingFormContext");
     expect(Object.keys(validateLanding({ firstName: "", email: "", phone: "" })).sort()).toEqual(["email", "firstName", "phone"]);
     expect(validateLanding({ firstName: "Jane", email: "not-an-email", phone: "828-555-0100" }).email).toMatch(/valid email/);
-    expect(validateLanding({ firstName: "Jane", email: "jane@example.com", phone: "828-555-0100" })).toEqual({});
+    expect(validateLanding({ firstName: "Jane", email: "jane@gmail.com", phone: "828-555-0100" })).toEqual({});
   });
 });
