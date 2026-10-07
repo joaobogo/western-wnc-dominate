@@ -187,7 +187,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "How Cullowhee, NC homeowners can decide between a targeted roof repair and full replacement in Jackson County's mountain climate.",
     "category": "Replacement",
     "date": "2026-07-26",
-    "town": "Cullowhee"
+    "town": "Cullowhee",
+    "canonicalTo": "/service-areas/cullowhee-nc/roof-repair"
   },
   {
     "slug": "exterior-repairs-before-winter-sylva-nc",
@@ -219,7 +220,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "How Sylva, NC homeowners can decide between a targeted roof repair and a full replacement in Jackson County's mountain climate.",
     "category": "Replacement",
     "date": "2026-07-25",
-    "town": "Sylva"
+    "town": "Sylva",
+    "canonicalTo": "/service-areas/sylva-nc/roof-repair"
   },
   {
     "slug": "property-access-terrain-mountain-construction-cashiers-nc",
@@ -275,7 +277,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A Cashiers, NC roofer's honest comparison of standing seam metal and quality shingle systems on mountain properties at elevation.",
     "category": "Materials",
     "date": "2026-07-24",
-    "town": "Cashiers"
+    "town": "Cashiers",
+    "canonicalTo": "metal-vs-shingle-roof-western-nc"
   },
   {
     "slug": "second-home-roofing-cashiers-nc",
@@ -291,7 +294,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "How Cashiers, NC homeowners can tell when a targeted roof repair is enough and when a full replacement protects the home better.",
     "category": "Replacement",
     "date": "2026-07-24",
-    "town": "Cashiers"
+    "town": "Cashiers",
+    "canonicalTo": "/service-areas/cashiers-nc/roof-repair"
   },
   {
     "slug": "metal-roofing-cost-wnc",
@@ -323,7 +327,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A practical guide for Franklin, NC homeowners on how to evaluate and choose a trustworthy local roofing contractor.",
     "category": "Guides",
     "date": "2026-07-23",
-    "town": "Franklin"
+    "town": "Franklin",
+    "canonicalTo": "choosing-roofing-contractor-wnc"
   },
   {
     "slug": "best-time-to-replace-roof-franklin-nc",
@@ -371,7 +376,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A local roofer's guide to deciding when a Franklin, NC home needs a targeted roof repair and when full replacement is the smarter long-term move.",
     "category": "Replacement",
     "date": "2026-07-23",
-    "town": "Franklin"
+    "town": "Franklin",
+    "canonicalTo": "/service-areas/franklin-nc/roof-repair"
   },
   {
     "slug": "exterior-maintenance-checklist-highlands-nc",
@@ -419,7 +425,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A local roofer's comparison of standing seam metal and quality shingle systems on Highlands, NC homes — cost, life, style, and mountain performance.",
     "category": "Materials",
     "date": "2026-07-22",
-    "town": "Highlands"
+    "town": "Highlands",
+    "canonicalTo": "metal-vs-shingle-roof-western-nc"
   },
   {
     "slug": "mountain-weather-roofs-highlands-nc",
@@ -443,7 +450,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A local roofer's guide to deciding when a Highlands, NC home needs a focused roof repair and when full replacement is the smarter long-term move.",
     "category": "Replacement",
     "date": "2026-07-21",
-    "town": "Highlands"
+    "town": "Highlands",
+    "canonicalTo": "roof-repair-vs-replacement-highlands-nc"
   },
   {
     "slug": "tree-cover-rain-elevation-affect-roofs-wnc",
@@ -491,7 +499,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "Roofing, gutters, and repair services for Sylva, NC homeowners — what Highlander handles across Jackson County.",
     "category": "Local",
     "date": "2026-07-20",
-    "town": "Sylva"
+    "town": "Sylva",
+    "canonicalTo": "choosing-roofing-contractor-wnc"
   },
   {
     "slug": "roofing-company-cashiers-nc-choosing-contractor",
@@ -499,7 +508,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "How Cashiers, NC homeowners can evaluate roofing contractors — credentials, process, and mountain-climate fit.",
     "category": "Local",
     "date": "2026-07-20",
-    "town": "Cashiers"
+    "town": "Cashiers",
+    "canonicalTo": "choosing-roofing-contractor-wnc"
   },
   {
     "slug": "roofing-company-highlands-nc-local-factors",
@@ -683,7 +693,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A side-by-side comparison of metal and shingle roofs across Franklin, Highlands, and Cashiers — with the trade-offs each town brings.",
     "category": "Materials",
     "date": "2026-07-08",
-    "town": "Highlands"
+    "town": "Highlands",
+    "canonicalTo": "metal-vs-shingle-roof-western-nc"
   },
   {
     "slug": "metal-roofing-highlands-nc-benefits",
@@ -755,7 +766,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "How Franklin, NC homeowners can tell when a roof has passed the repair stage — and what a proper replacement project looks like.",
     "category": "Replacement",
     "date": "2026-07-07",
-    "town": "Franklin"
+    "town": "Franklin",
+    "canonicalTo": "/service-areas/franklin-nc/roof-replacement"
   },
   {
     "slug": "spring-roof-maintenance-western-nc",
@@ -827,7 +839,8 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A practical guide to spotting and addressing small roof problems in Franklin, NC before they turn into full replacements.",
     "category": "Maintenance",
     "date": "2026-07-05",
-    "town": "Franklin"
+    "town": "Franklin",
+    "canonicalTo": "/service-areas/franklin-nc/roof-repair"
   },
   {
     "slug": "mountain-roof-ventilation-science",
