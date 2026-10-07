@@ -16,11 +16,13 @@ import {
   Wrench,
   Compass,
   Maximize2,
+  ShieldCheck,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import { BUSINESS, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, PRIMARY_HOURS_LABEL, REVIEW_RATING } from "@/data/business";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import logo from "@/assets/logo.svg";
+import Mountains from "./Mountains";
 import type { IntentId, LandingConfig, LandingImage } from "./config";
 import { LandingFormProvider, useLandingForm } from "./LandingFormContext";
 import LeadForm, { trackCall } from "./LeadForm";
@@ -35,6 +37,7 @@ const LANDING_CSS = `
 .lp-line{transform-origin:top;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .lp-in .lp-line,.lp-line.lp-in{transform:scaleY(1)}
 .lp-tartan{background-image:url(/tartan.png);background-size:auto 100%;background-repeat:repeat-x}
+.lp-topo{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='340' viewBox='0 0 520 340' fill='none' stroke='%231f4a3a' stroke-opacity='.075' stroke-width='1.2'%3E%3Cpath d='M-10 70C60 20 150 10 230 40s150 40 220 0 80-30 90-20'/%3E%3Cpath d='M-10 100C70 55 150 48 230 76s150 36 220 0 80-26 90-16'/%3E%3Cpath d='M-10 130C80 92 150 86 230 112s150 32 220 0 80-22 90-12'/%3E%3Cpath d='M-10 215C50 170 120 160 190 190s140 44 210 10 110-30 140-20'/%3E%3Cpath d='M-10 245C60 205 120 196 190 222s140 38 210 6 110-26 140-16'/%3E%3Cpath d='M-10 275C70 240 120 232 190 254s140 32 210 2 110-22 140-12'/%3E%3C/svg%3E");background-size:520px 340px}
 @media (prefers-reduced-motion:reduce){
  .lp-reveal,.lp-line{opacity:1!important;transform:none!important;transition:none!important}
 }
@@ -228,7 +231,8 @@ function LandingBody() {
 
   const eyebrow = (text: string, light = false) => (
     <div className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${light ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`}>
-      <span aria-hidden="true" className="h-px w-8 bg-current" />
+      <Mountain aria-hidden="true" className="h-4 w-4 text-[hsl(var(--highland-gold))]" strokeWidth={2.2} />
+      <span aria-hidden="true" className="h-px w-6 bg-current opacity-60" />
       {text}
     </div>
   );
@@ -267,9 +271,10 @@ function LandingBody() {
         <section className="relative overflow-hidden bg-[hsl(var(--muted))] !py-0">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_85%_0%,hsl(var(--highland-gold)/0.14),transparent_60%),radial-gradient(60%_50%_at_0%_100%,hsl(var(--primary)/0.10),transparent_60%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_88%_0%,hsl(var(--highland-gold)/0.2),transparent_62%),linear-gradient(to_bottom,transparent_55%,hsl(var(--primary)/0.06))]"
           />
-          <div className="relative mx-auto grid max-w-[1200px] gap-8 px-4 py-9 sm:px-5 md:px-8 md:py-14 lg:grid-cols-[1.28fr_1fr] lg:gap-12 lg:py-14">
+          <Mountains variant={config.key} className="absolute inset-x-0 bottom-0 h-[260px] w-full md:h-[440px]" />
+          <div className="relative mx-auto grid max-w-[1200px] gap-8 px-4 py-9 sm:px-5 md:px-8 md:py-14 lg:grid-cols-[1.28fr_1fr] lg:gap-12 lg:pb-36 lg:pt-14">
             <div className="order-1 lg:row-span-1">
               <Reveal>
                 {eyebrow(config.eyebrow)}
@@ -419,7 +424,7 @@ function LandingBody() {
         </section>
 
         {/* ───────────── Recognize your project (informational cards) ───────────── */}
-        <section className="bg-[hsl(var(--muted))] !py-0">
+        <section className="lp-topo bg-[hsl(var(--muted))] !py-0">
           <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-5 md:px-8 md:py-24">
             <Reveal className="max-w-3xl">
               {eyebrow(config.intentEyebrow)}
@@ -504,7 +509,7 @@ function LandingBody() {
 
         {/* ───────────── Reviews ───────────── */}
         {reviews.length > 0 && (
-          <section className="bg-[hsl(var(--muted))] !py-0">
+          <section className="lp-topo bg-[hsl(var(--muted))] !py-0">
             <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-5 md:px-8 md:py-24">
               <Reveal className="max-w-3xl">
                 {eyebrow(config.reviews.eyebrow)}
@@ -589,10 +594,13 @@ function LandingBody() {
         </section>
 
         {/* ───────────── Final conversion ───────────── */}
-        <section className="relative overflow-hidden bg-primary text-primary-foreground !py-0">
-          <div aria-hidden="true" className="lp-tartan absolute inset-x-0 top-0 h-1.5" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-primary to-[hsl(var(--dark-section))] text-primary-foreground !py-0">
+          <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-8 w-full md:h-12">
+            <path fill="hsl(var(--background))" d="M0 0H1440V24C1320 50 1200 12 1060 30C900 52 780 14 620 32C470 48 330 16 190 34C110 44 50 36 0 42Z" />
+          </svg>
+          <Mountains variant={config.key} tone="cream" className="absolute inset-x-0 bottom-0 h-[240px] w-full md:h-[400px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[hsl(var(--highland-gold))]/10 blur-3xl" />
-          <div className="relative mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-5 md:px-8 md:py-24 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
+          <div className="relative z-[2] mx-auto grid max-w-[1200px] gap-10 px-4 pb-32 pt-20 sm:px-5 md:px-8 md:pb-44 md:pt-28 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
             <Reveal>
               <h2 className="font-heading text-3xl font-bold leading-tight md:text-5xl">{config.finalHeading}</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/90">{config.finalBody}</p>
@@ -618,24 +626,60 @@ function LandingBody() {
         </section>
       </main>
 
-      {/* ───────────── Footer: legal only ───────────── */}
-      <footer ref={footerRef} className="border-t border-border bg-background py-8 pb-28 xl:pb-32">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-4 text-sm text-muted-foreground sm:px-5 md:px-8 lg:flex-row lg:items-center lg:justify-between">
+      {/* ───────────── Footer: complete, but no site navigation ───────────── */}
+      <footer ref={footerRef} className="relative bg-[hsl(var(--dark-section))] text-[hsl(var(--dark-section-foreground))]">
+        <div aria-hidden="true" className="lp-tartan h-1.5 w-full" />
+        <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-12 sm:px-5 md:grid-cols-[1.3fr_1fr_1fr] md:px-8 md:py-16">
+          <div>
+            <span className="inline-block rounded-sm bg-background px-4 py-2.5 shadow-lg">
+              <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-10 w-auto" loading="lazy" decoding="async" />
+            </span>
+            <p className="mt-5 max-w-sm font-heading text-xl leading-snug text-[hsl(var(--dark-section-foreground))]">
+              Roofing and construction for Western North Carolina homes.
+            </p>
+            <p className="mt-3 inline-flex items-center gap-2 text-sm text-[hsl(var(--dark-section-muted))]">
+              <Stars />
+              <span>{REVIEW_RATING}/5 on Google</span>
+            </p>
+          </div>
+
           <address className="not-italic">
-            <div className="font-semibold text-foreground">{BUSINESS.legalName}</div>
-            <div>{FRANKLIN_NAP}</div>
-            <div>{PRIMARY_HOURS_LABEL}, Eastern Time</div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Franklin showroom</h2>
+            <div className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-[hsl(var(--dark-section-muted))]">
+              <div className="font-semibold text-[hsl(var(--dark-section-foreground))]">{BUSINESS.legalName}</div>
+              <div className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />{FRANKLIN_NAP}</div>
+              <div className="flex gap-2"><Clock className="mt-1 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />{PRIMARY_HOURS_LABEL}, Eastern Time</div>
+            </div>
           </address>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a href={PHONE_TEL} onClick={() => trackCall(`lp_${config.key}_footer`)} className="min-h-11 content-center underline underline-offset-2 hover:text-foreground">
+
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Talk to the team</h2>
+            <a
+              href={PHONE_TEL}
+              onClick={() => trackCall(`lp_${config.key}_footer`)}
+              className="mt-4 inline-flex min-h-12 items-center gap-2.5 rounded-sm bg-[hsl(var(--highland-gold))] px-5 font-bold text-foreground shadow-lg transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--dark-section))]"
+              aria-label={`Call Highlander at ${PHONE_DISPLAY}`}
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
               {PHONE_DISPLAY}
             </a>
-            <a href="/privacy-policy" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-2 hover:text-foreground">
-              Privacy policy
-            </a>
-            <a href="/accessibility" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-2 hover:text-foreground">
-              Accessibility
-            </a>
+            <p className="mt-4 flex gap-2 text-sm leading-relaxed text-[hsl(var(--dark-section-muted))]">
+              <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
+              North Carolina licensed general contractor, {BUSINESS.licenseNumber.replace(/^NC GC\s*/, "license ")}
+            </p>
+          </div>
+        </div>
+        <div className="border-t border-[hsl(var(--dark-section-border))]">
+          <div className="mx-auto flex max-w-[1200px] flex-col gap-3 px-4 py-5 pb-28 text-sm text-[hsl(var(--dark-section-muted))] sm:px-5 md:flex-row md:items-center md:justify-between md:px-8 xl:pb-32">
+            <span>© {new Date().getFullYear()} {BUSINESS.legalName} All rights reserved.</span>
+            <span className="flex flex-wrap gap-x-6 gap-y-1">
+              <a href="/privacy-policy" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
+                Privacy policy
+              </a>
+              <a href="/accessibility" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
+                Accessibility
+              </a>
+            </span>
           </div>
         </div>
       </footer>
