@@ -82,10 +82,12 @@ function LeadCaptureCard({
   const [town, setTown] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async () => {
     if (!name || !phone) return;
     setSubmitting(true);
+    setError(null);
     // Mirror into legacy table for back-compat
     try {
       const { supabase } = await import("@/integrations/supabase/client");
@@ -97,7 +99,7 @@ function LeadCaptureCard({
     } catch { /* continue anyway */ }
 
     // Unified leads table
-    const { id: leadId } = await submitLead({
+    const stored = await submitLead({
       source: "chatbot",
       lead_type: "general_inquiry",
       full_name: name,
@@ -110,6 +112,13 @@ function LeadCaptureCard({
       chat_summary: transcript.slice(-6).map(m => `${m.role}: ${m.content}`).join("\n").slice(0, 2000),
       full_chat_transcript: transcript,
     });
+    // Never say "we'll call you" unless the lead was actually stored.
+    if (stored.error || (!stored.id && !stored.duplicate)) {
+      setError("We couldn't send that just now. Your details are still here. Please try again or call us.");
+      setSubmitting(false);
+      return;
+    }
+    const leadId = stored.id;
     await logChatbotConversation({
       lead_id: leadId,
       name,
@@ -160,6 +169,9 @@ function LeadCaptureCard({
         <input aria-label="Email address (optional)" {...fieldAttrs.email} value={email} onChange={e => setEmail(e.target.value)} placeholder="e.g. john@email.com (optional)" className={inputCls} maxLength={255} />
         <input {...fieldAttrs.town} value={town} onChange={e => setTown(e.target.value)} placeholder="Property town (Franklin, Highlands, Cashiers, Sylva…)" className={inputCls} maxLength={80} aria-label="What town is the property in?" />
       </div>
+      {error && (
+        <p role="alert" className="text-xs font-body font-medium text-destructive">{error}</p>
+      )}
       <div className="flex items-center gap-2">
         <button onClick={handleSubmit} disabled={!name || !phone || submitting} className="flex-1 text-xs font-body font-semibold px-3 py-2 rounded-sm bg-primary text-primary-foreground disabled:opacity-40 hover:bg-primary/90 transition-colors">
           {submitting ? "Sending..." : "Request a Call"}

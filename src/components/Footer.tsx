@@ -10,6 +10,7 @@ import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
 import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
 import { towns } from "@/data/towns";
+import { openConsentPreferences } from "@/lib/consent";
 
 // P4.2 — the ten roofing division pages, each anchor naming its service;
 // "Western NC" appears once in the column. Intake tools stay out of the footer.
@@ -400,6 +401,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-4">
             <Link to="/privacy-policy" className="text-body-xs text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
+            <button type="button" onClick={openConsentPreferences} className="text-body-xs text-muted-foreground hover:text-foreground font-body tracking-wide underline-offset-4 hover:underline transition-colors">Cookie preferences</button>
             <Link to="/accessibility" className="text-body-xs text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
           </div>
         </div>

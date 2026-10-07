@@ -1,6 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -444,7 +444,7 @@ const CustomConstruction = () => {
           <>
             {/* ─── CLOSING CTA ─── */}
         <CostContextBlock serviceLabel="custom build" variant="construction" />
-        <CommonConcerns />
+        <CommonConcerns concerns={constructionConcerns} />
         <ConstructionClosingCTA
           headline={"The Right Builder Makes\nAll the Difference."}
           subheadline="If your project demands precision, coordination, and craft quality that goes beyond standard construction — let's talk about whether Highlander is the right team for the job."

@@ -78,7 +78,7 @@ const RecentProjects = () => {
           <div className="absolute inset-0">
             <GalleryImage width={1600} height={900} loading="eager" decoding="async" sizes="100vw"
               src={heroImg}
-              alt="Standing seam metal roof on a mountain home built by Highlander Building Services in Western North Carolina"
+              alt="Dimensional shingle roof on a mountain home roofed by Highlander Building Services in Western North Carolina"
               fetchPriority="high"
               className="w-full h-full object-cover"
             />
@@ -196,7 +196,7 @@ const RecentProjects = () => {
                 title="No projects in this category yet"
                 description="We photograph work as crews wrap up, so this filter will fill in. In the meantime, see all completed work or tell us about your own project."
                 primaryAction={{ label: "See all work", onClick: () => setMaterial("All Work") }}
-                secondaryAction={{ label: "Get my written estimate", to: "/contact" }}
+                secondaryAction={{ label: "Get my written estimate", to: "/request-inspection" }}
               />
             )}
 

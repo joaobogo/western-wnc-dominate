@@ -97,7 +97,7 @@ const services = [
   {
     icon: Zap, label: "Metal Roofing",
     desc: (t: TownData) => {
-      const base = `Standing-seam systems built for high-elevation ${t.name} homes and long ownership horizons.`;
+      const base = `Standing-seam systems built for ${(parseInt(t.elevation.replace(/[^0-9]/g, ""), 10) || 0) >= 3000 ? "high-elevation " : ""}${t.name} homes and long ownership horizons.`;
       // Elevation is stated once, in the local-conditions section (T10).
       return `${base} Panel gauge, clip spacing, and fastener choices are set against the exposure we measure on site.`;
     },

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {
+  getExperimentQueue,
   announceVariant,
   getVariant,
   variantValue,
@@ -27,7 +28,8 @@ export function useExperiment(id: ExperimentId): {
   useEffect(() => {
     const assigned = getVariant(id);
     setVariant(assigned);
-    announceVariant(id, assigned);
+    // Only a running experiment exposes visitors; a queued/concluded one must not look like exposure.
+    if (getExperimentQueue().find((e) => e.id === id)?.status === "running") announceVariant(id, assigned);
   }, [id]);
 
   return {

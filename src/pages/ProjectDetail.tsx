@@ -15,6 +15,7 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
 import { getProjectBySlug, projectDetails } from "@/data/projects";
 import ProjectLocationCTA from "@/components/projects/ProjectLocationCTA";
 import { linkableBlogPosts } from "@/data/blogs";
+import { getProjectServiceTags } from "@/lib/project-service-tags";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
@@ -258,8 +259,8 @@ const ProjectDetailPage = () => {
 
                 <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
                    <h4 className="text-caption md:text-body-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Service Expertise</h4>
-                   <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
-                      View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                   <Link to={getProjectServiceTags(project.type, project.category)[0].path} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
+                      View {getProjectServiceTags(project.type, project.category)[0].label} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                    </Link>
                 </motion.div>
 

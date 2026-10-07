@@ -35,9 +35,9 @@ CRO tests can compare hero vs. closing placements.
 | --- | --- | --- |
 | `form_start` | `trackFormStart` | `form_name`, `form_location` |
 | `form_step_complete` | `trackFormStepComplete` | `form_name`, `step_number`, `step_name` |
-| `form_success` | `trackFormSuccess` | `form_name`, `lead_id`, `service`, `town` |
-| `form_error` | `trackFormError` | `form_name`, `error_message` |
-| `generate_lead` | fired with `form_success` | conversion event for ads |
+| `form_submit_success` | `trackFormSuccess` (pushed only after the lead is stored) | `form_name`, `form_id`, `lead_id`, `service_category`, `property_town`, `landing_page`, `service_intent`, `cta_location` |
+| `form_submit_error` | `trackFormError` (validation or delivery failure; never typed values) | `form_name`, `form_id`, `error_type` |
+| `generate_lead` | `trackGenerateLead`, fired once per `lead_id` right after `form_submit_success` | conversion event for ads |
 
 ## Gallery and project proof
 
@@ -69,3 +69,18 @@ CRO tests can compare hero vs. closing placements.
 2. Only call a helper directly when the click is not a link/button navigation.
 3. Never fire both a `data-gtm-cta` attribute and a manual `trackCtaClick` on the
    same element — that double-counts the conversion.
+
+
+## Call events
+
+`phone_click` (with `cta_click` and `gbp_call`) records a tap on a `tel:` link. It is
+**intent only**: it does not prove a call connected or was qualified. Do not label it a
+completed or qualified call in GA4. A connected or qualified call needs a call-tracking
+provider or a validated offline import (not yet configured).
+
+## Privacy of analytics payloads
+
+`page_path` / `page_location` contain the path plus campaign and click-ID parameters only
+(`utm_*`, `gclid`, `gbraid`, `wbraid`, `gad_*`, `fbclid`, `msclkid`, `ttclid`, `li_fat_id`).
+Every other query parameter is dropped (`safeSearch()` in `src/lib/gtm.ts`, covered by
+`src/test/analytics-privacy.test.ts`). No name, email, phone, address or free text is sent.

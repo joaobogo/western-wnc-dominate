@@ -1,5 +1,6 @@
 import { Star, ShieldCheck, MapPin } from "lucide-react";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
+import { COUNTY_COUNT } from "@/data/business";
 
 /**
  * One-line sourced proof designed to sit directly beside a primary CTA.
@@ -23,7 +24,7 @@ const CTAProofLine = ({ area, tone = "light", align = "center", className = "" }
   const items = [
     { icon: Star, label: `${ratingValue}★ Google · ${reviewCount} reviews`, strong: true },
     { icon: ShieldCheck, label: "Licensed & insured · family-owned since 2017" },
-    { icon: MapPin, label: area ? `Franklin-based crews serving ${area}` : "Franklin-based crews across 9 WNC counties" },
+    { icon: MapPin, label: area ? `Franklin-based crews serving ${area}` : `Franklin-based crews across ${COUNTY_COUNT} WNC counties` },
   ];
 
   return (

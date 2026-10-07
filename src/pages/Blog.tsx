@@ -137,8 +137,8 @@ const Blog = () => {
                   </h1>
                   <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
                   <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg mb-8 font-medium drop-shadow-sm">
-                    Written by the team that builds in these mountains every day. No filler,
-                    no AI-generated fluff — just practical guidance for Western North Carolina homeowners.
+                    Written by the team that builds in these mountains every day. Practical guidance
+                    for Western North Carolina homeowners.
                   </p>
                   {/* Search */}
                   <div className="relative max-w-md">

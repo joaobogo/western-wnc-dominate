@@ -32,24 +32,31 @@ const Careers = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", role: openRoles[0], experience: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
-    submitLead({
-      source: "careers_application",
-      lead_type: "job_application",
-      full_name: form.name,
-      phone: form.phone,
-      project_type: form.role,
-      project_description: form.experience,
-      lead_score: 0,
-      metadata: { role: form.role },
-    }).catch((err) => console.error("Careers submitLead failed:", err));
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const result = await submitLead({
+        source: "careers_application",
+        lead_type: "job_application",
+        full_name: form.name,
+        phone: form.phone,
+        project_type: form.role,
+        project_description: form.experience,
+        lead_score: 0,
+        metadata: { role: form.role },
+      });
+      // Only confirm once the application is actually stored.
+      if (result.error || (!result.id && !result.duplicate)) throw result.error ?? new Error("not_stored");
       setIsSubmitted(true);
       toast.success("Application submitted successfully!");
-    }, 1500);
+    } catch (err) {
+      console.error("Careers submitLead failed:", err);
+      toast.error("We could not send your application. Please try again or call us.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

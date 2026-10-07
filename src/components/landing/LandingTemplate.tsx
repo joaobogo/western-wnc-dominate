@@ -27,6 +27,7 @@ import type { IntentId, LandingConfig, LandingImage } from "./config";
 import { LandingFormProvider, useLandingForm } from "./LandingFormContext";
 import LeadForm, { trackCall } from "./LeadForm";
 import Lightbox from "./Lightbox";
+import { openConsentPreferences } from "@/lib/consent";
 
 /* ───────────────────────── motion + small helpers ───────────────────────── */
 
@@ -727,6 +728,9 @@ function LandingBody() {
               <a href="/accessibility" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
                 Accessibility
               </a>
+              <button type="button" onClick={openConsentPreferences} className="min-h-11 underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
+                Cookie preferences
+              </button>
             </span>
           </div>
         </div>

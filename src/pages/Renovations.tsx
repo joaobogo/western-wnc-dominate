@@ -24,7 +24,7 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 const heroImg = "/media/d35d81a4-construction-project-highlands.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -463,7 +463,7 @@ const Renovations = () => {
         <BudgetRangeContext scopeLabel="renovations" />
 
         <CostContextBlock serviceLabel="renovation" variant="construction" />
-        <CommonConcerns />
+        <CommonConcerns concerns={constructionConcerns} />
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."
