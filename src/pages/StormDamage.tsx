@@ -46,12 +46,12 @@ const damageTypes = [
   {
     icon: Wind,
     title: "Wind Damage",
-    detail: "Mountain ridgelines and exposed elevations experience sustained gusts that lift, crack, and strip shingles — sometimes without visible ground-level evidence. Wind damage often appears as lifted edges, creased shingles, or exposed underlayment on slopes facing prevailing weather.",
+    detail: "Mountain ridgelines and exposed elevations experience sustained gusts that lift, crack, and strip shingles, weakening the seal between courses — sometimes without visible ground-level evidence. A roof damaged by high winds often shows lifted edges, creased tabs, or exposed underlayment on slopes facing prevailing weather.",
   },
   {
     icon: CloudLightning,
     title: "Hail Impact",
-    detail: "Hail doesn't always punch holes. More often it bruises shingles — breaking the granule surface and accelerating UV degradation. These impacts may be invisible from the ground but are clearly identifiable during a professional roof inspection.",
+    detail: "Hail doesn't always punch holes. More often it bruises shingles — breaking the granule surface and accelerating UV degradation. These impacts may be invisible from the ground but are clear to a trained eye up close.",
   },
   {
     icon: Droplets,
@@ -84,12 +84,12 @@ const afterStormSteps = [
   {
     number: "04",
     title: "Call a Trusted Local Roofer",
-    description: "Call to explain what happened or send a request for a professional storm assessment. Highlander will discuss the appropriate next step based on the damage, weather, safety, and current scheduling.",
+    description: "Call to explain what happened or send a request to have the roof looked at. Roofers get busy after major storms, so Highlander will discuss the appropriate next step based on the damage, weather, safety, and current scheduling.",
   },
   {
     number: "05",
     title: "Do Not Sign Anything from Door-Knockers",
-    description: "After major storms, out-of-area contractors canvass neighborhoods aggressively. Do not sign contracts, agreements, or assignments of benefits with anyone who shows up unsolicited. Work with a local company you can verify.",
+    description: "After major storms, out-of-area storm damage roof repair contractors canvass neighborhoods aggressively. Do not sign contracts, agreements, or assignments of benefits with anyone who shows up unsolicited. Work with local pros you can verify.",
   },
 ];
 
@@ -107,7 +107,7 @@ const assessmentProcess = [
   {
     icon: ClipboardCheck,
     title: "Written Damage Report",
-    detail: "You receive a clear, written summary of all damage identified — categorized by severity, location, and recommended action. No vague language, no inflated urgency.",
+    detail: "You receive a clear, written summary of all damage identified — categorized by severity, location, and recommended action. We list pre-existing wear separately. No vague language, no inflated urgency.",
   },
   {
     icon: MessageSquare,
@@ -145,7 +145,7 @@ const faqs = [
   { q: "What should I do after storm damage?", a: "If water is entering the home, protect the interior if you can do so safely and call Highlander during office hours. Outside office hours, send a request for follow-up. Do not climb onto a wet or damaged roof. Assessment and temporary protection depend on conditions, safety, and availability." },
   { q: "Will you help with my insurance claim?", a: "We provide thorough documentation — photographs, written damage reports, and material/labor scopes — that supports your claim. We'll meet with your insurance adjuster on-site and provide supplemental documentation if the initial assessment misses covered damage. We do not file claims on your behalf or act as public adjusters." },
   { q: "Should I get a tarp on my roof right away?", a: "Temporary weather protection can help limit additional water entry, but it should only be installed when conditions are safe. Call Highlander during office hours to discuss the situation, and do not climb onto a wet or damaged roof yourself." },
-  { q: "How do I know if storm chasers are legitimate?", a: "Legitimate contractors don't go door-to-door pressuring you to sign contracts hours after a storm. Check for a permanent local address, verifiable licensing and insurance, manufacturer certifications, and an established track record in Western North Carolina. If someone offers to 'waive your deductible,' that's a red flag — it's illegal in North Carolina." },
+  { q: "How do I know if storm chasers are legitimate?", a: "Legitimate contractors don't go door-to-door pressuring you to sign contracts hours after a storm. When you compare local contractors, check for a permanent address, verifiable licensing and insurance, manufacturer certifications, and an established track record in Western North Carolina. If someone offers to 'waive your deductible,' that's a red flag — it's illegal in North Carolina." },
   { q: "What if my insurance denies the claim?", a: "If we've documented legitimate storm damage and the claim is denied, we can provide additional documentation and meet with a re-inspector. We'll give you an honest assessment of whether the denial seems justified or whether further pursuit is warranted. We never pressure homeowners to file claims for damage we don't believe exists." },
   { q: "Can hail damage be invisible from the ground?", a: "Absolutely. Hail bruising — where the impact breaks the granule bond without visibly dislodging granules — is extremely common and virtually invisible from ground level. It accelerates aging and voids certain warranty protections. A professional roof inspection is the only reliable way to identify it." },
   { q: "Do I need to replace my whole roof if only part was damaged?", a: "Not necessarily. If damage is isolated to one area and we can match your existing materials, targeted repair is often the right approach. However, if damage is widespread or your roof was already near end-of-life, the storm may have simply accelerated a timeline that was already approaching. We'll give you an honest assessment either way." },
@@ -174,7 +174,7 @@ const StormDamage = () => {
         <ServicePageTemplate
           subtopics={
             <ServiceSubtopics
-              heading="From the storm to the settled claim"
+              heading="The storm damage repair process, from the storm to the settled claim"
               intro="Storm work runs in a sequence. Each stage has its own scope, and you should know which one you are in."
               items={stormSubtopics}
             />
@@ -198,7 +198,7 @@ const StormDamage = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Storm Damage Roof Repair in Western North Carolina
+                  Storm Damage Roof Repair in Western NC
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
@@ -208,7 +208,7 @@ const StormDamage = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                Storm damage assessment across Western North Carolina with clear documentation, repair or replacement guidance, and a local team you can contact directly.
+                Storm damage repair across Western North Carolina: a documented assessment of wind or hail damage, repair or replacement guidance, and a local team you can contact directly.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
@@ -270,8 +270,8 @@ const StormDamage = () => {
         </section>
         <InsuranceDocHelp />
         <AnswerBlock
-          question="What is storm damage roofing work in Western North Carolina?"
-          answer="Storm damage work starts with documenting wind, hail, or falling-tree damage, protecting the home from further water intrusion, and then restoring the roof system. In the mountains, damage is often concentrated on exposed slopes and at flashing points rather than spread evenly. Highlander inspects, documents, and repairs storm damage across the region."
+          question="What is storm damage roof repair in Western NC?"
+          answer="Storm damage work starts with documenting the damage caused by wind, hail, or falling trees, protecting the home from further water intrusion, and then restoring the roof system. In the mountains, damage is often concentrated on exposed slopes and at flashing points rather than spread evenly. Highlander inspects, documents, and repairs storm-related roof damage across Western North Carolina."
           points={["Damage documentation for your insurance claim", "Temporary protection to stop further water intrusion", "Full repair or replacement once scope is set"]}
         />
             </>
@@ -287,7 +287,7 @@ const StormDamage = () => {
                 Western North Carolina weather doesn't warn you. It tests your roof, and sometimes it wins.
               </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                From high-altitude wind events along the Blue Ridge to summer hail in the foothills, storm damage in our region is both common and uniquely challenging. Highlander responds to storm damage calls across Western North Carolina with the same calm, thorough approach every time. No panic, no pressure: just honest assessment, professional documentation, and clear options.
+                From strong winds along the Blue Ridge to summer hail in the foothills, storm damage in our region is both common and uniquely challenging. Highlander responds to storm damage calls across Western North Carolina with the same calm, thorough approach every time. No panic, no pressure: just honest answers, professional documentation, and clear options.
               </p>
               <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
             </motion.div>
@@ -377,7 +377,7 @@ const StormDamage = () => {
                   Repair the Damage.<br className="hidden md:block" /> Or Replace the Roof.
                 </h2>
                 <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
-                  The right answer depends on the extent of damage, your roof's age, and your long-term plans. Here's how we help you decide.
+                  Whether to repair or replace depends on the extent of damage, your roof's age, and your long-term plans. Here's how we help you decide.
                 </p>
               </motion.div>
 
@@ -436,7 +436,7 @@ const StormDamage = () => {
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? Start with a clear next step.</h3>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Need storm damage roof repair services? Start with a clear next step.</h3>
                 <p className="text-primary-foreground text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
@@ -544,7 +544,7 @@ const StormDamage = () => {
 
               <div className="grid md:grid-cols-2 gap-4 md:gap-5">
                 {[
-                  { icon: Shield, title: "Licensed, Insured, and Permanent", detail: "We're not a storm-chasing crew that appears after weather events and disappears after cashing checks. Highlander is a licensed, insured, locally established roofing company with a permanent address in Western North Carolina." },
+                  { icon: Shield, title: "Licensed, Insured, and Permanent", detail: "We're not a storm-chasing crew that appears after weather events and disappears after cashing checks, and we don't specialize in storm damage alone. Highlander is a licensed, insured, locally established roofing company with a permanent address in Western North Carolina." },
                   { icon: Clock, title: "Urgent Roof Guidance", detail: "For active leaks or storm damage, call during office hours to explain what is happening. Outside office hours, send a request for follow-up. Temporary protection depends on conditions, safety, and availability." },
                   { icon: BadgeCheck, title: "Manufacturer Certified", detail: "As CertainTeed certified installers, our repair and replacement work meets manufacturer standards — which matters when warranty coverage is part of the conversation after storm damage." },
                   { icon: Zap, title: "Mountain Storm Experience", detail: "Highlander works on mountain roofs exposed to wind, heavy rain, hail, fallen debris, and seasonal weather across Western North Carolina." },
@@ -578,7 +578,7 @@ const StormDamage = () => {
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Storm Damage FAQs</span>
-              <h2 className="section-heading mb-4">Common Questions After<br className="hidden md:block" /> Storm Damage.</h2>
+              <h2 className="section-heading mb-4">Frequently Asked Questions After{" "}<br className="hidden md:block" /> Storm Damage.</h2>
             </motion.div>
 
             <Accordion type="single" collapsible className="space-y-3">
@@ -619,7 +619,7 @@ const StormDamage = () => {
                     Your Roof Already Took the Hit.<br className="hidden md:block" /> Let's Make Sure It's Still Protecting You.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
-                    A professional storm assessment takes less than an hour and gives you the clarity to make confident decisions — whether that means a simple repair, a full replacement, or the reassurance that your roof came through just fine.
+                    A professional storm damage assessment takes less than an hour and gives you the clarity to make confident decisions — whether that means a simple repair, a full replacement, or the reassurance that your roof came through just fine.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">

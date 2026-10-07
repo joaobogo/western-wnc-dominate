@@ -260,7 +260,7 @@ const Hero = () => {
                   <span
                     className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
-                    Roofing & Construction in Franklin, NC{" "}
+                    Roofing & Construction Contractor in Franklin, NC{" "}
                   </span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">

@@ -48,9 +48,9 @@ const materials: Material[] = [
     name: "Dimensional asphalt shingle",
     href: "/roofing/roof-replacement",
     tier: "Entry tier — lowest installed cost per square",
-    lifespan: "Typically 25–30 years with correct installation and ventilation",
+    lifespan: "Typically 25–30 years with correct roof installation and ventilation",
     body:
-      "This is the baseline most Western North Carolina replacement quotes are measured against. It is the least expensive complete system we install, and on a straightforward roof with good access it is also the fastest, which keeps labor down. We install CertainTeed as a ShingleMaster credentialed contractor.",
+      "This is the baseline most Western North Carolina replacement quotes are measured against. It is the least expensive complete system we install, and on a straightforward roof with good access it is also the fastest, which keeps labor down. We install CertainTeed as a ShingleMaster credentialed roofing contractor.",
     drives:
       "Shingle line (standard dimensional versus premium), ice-and-water coverage at eaves and valleys, and how much ridge and hip footage the roof carries.",
   },
@@ -140,7 +140,7 @@ const drivers = [
     icon: Layers,
     title: "Decking condition",
     body:
-      "Unknown until tear-off, every time. We quote a per-sheet decking rate up front, so if rot is found underneath, it is billed at a number you already agreed to instead of a number invented on the spot.",
+      "Unknown until the old roof is torn off, every time. We quote a per-sheet decking rate up front, so if rot is found underneath, it is billed at a number you already agreed to instead of a number invented on the spot.",
   },
   {
     icon: Truck,
@@ -158,30 +158,30 @@ const drivers = [
     icon: Wrench,
     title: "Detail count",
     body:
-      "Valleys, dormers, chimneys, skylights, roof-to-wall transitions, and ventilation corrections. Labor and flashing follow the detail count, not the footprint. Complex roofs cost more per square than simple ones of the same size.",
+      "Valleys, dormers, chimneys, skylights, roof-to-wall transitions, and ventilation corrections. Labor and flashing follow the detail count, not the footprint. Prices vary based on roof size, of course, but complex roofs cost more per square than simple ones of the same size.",
   },
 ];
 
 const faqs = [
   {
     q: "Why doesn't this page list dollar amounts per square for every material?",
-    a: "Because a published number would be wrong for most of the homes we quote. Metal is the exception — homeowners ask for it constantly, so we publish real installed ranges per square on the metal roofing cost page. Pitch, access, decking condition, elevation, and detail count move mountain roofing prices more than the material choice does. We would rather measure your roof and put a real number in writing than post an average that sets a false expectation.",
+    a: "Because a published number would be wrong for most of the homes we quote. Metal is the exception — homeowners ask for it constantly, so we publish real roofing cost data: installed ranges per square on the metal roofing cost page. Pitch, access, decking condition, elevation, and detail count move mountain roofing prices more than the material choice does. We would rather measure your roof and put an accurate roof estimate in writing than post an average roofing cost that sets a false expectation.",
   },
   {
     q: "What is the cheapest roofing option in Western North Carolina?",
-    a: "Dimensional asphalt shingle has the lowest installed cost per square of any complete system we install, and exposed-fastener metal is the least expensive way to get a metal roof. The cheapest roof over a 30-year window is not always the cheapest roof on quote day, so we will show you both paths.",
+    a: "Dimensional asphalt shingle has the lowest installed cost per square of any complete system we install, and exposed-fastener metal is the least expensive way to get a metal roof. The cheapest way to install a new roof on quote day is not always the cheapest roof over a 30-year window, so we will show you both paths.",
   },
   {
     q: "Should I repair or replace my roof?",
-    a: "If the roof is well inside its service life, the damage is localized, and the decking is sound, repair is usually the right call. If it is near the end of its life, has had multiple repairs already, or the decking is compromised across planes, replacement is the honest answer. We price both when it is genuinely a close call so you are not spending repair money twice inside two years.",
+    a: "If the roof is well inside its service life, the damage is localized, and the decking is sound, repair is usually the right call. If it is near the end of its life, has had multiple repairs already, or the decking is compromised across planes, the home requires a roof replacement and we will say so. We price both when it is genuinely a close call so you are not spending repair money twice inside two years.",
   },
   {
     q: "Do you offer financing on a roof replacement?",
-    a: "Yes, we offer financing options for qualified homeowners on most projects. Your estimator can walk you through what is available alongside your written estimate, and you can read more on our Financing page.",
+    a: "Yes, we offer financing options for qualified homeowners on most projects, so the cost of a new roof can be spread over time. Your estimator can walk you through what is available alongside your written estimate, and you can read more on our Financing page.",
   },
   {
     q: "Will my estimate change after work starts?",
-    a: "Only for conditions that could not be seen before tear-off, and those are priced in advance. The most common one is decking replacement, which is why we agree on a per-sheet rate before the roof is opened. Anything else is documented, shown to you, and approved before it is performed.",
+    a: "Only for conditions that could not be seen before tear-off, and those are priced in advance. The most common one is decking replacement, which is why the estimate includes a per-sheet rate agreed before the roof is opened. Anything else is documented, shown to you, and approved before it is performed.",
   },
 ];
 
@@ -231,7 +231,7 @@ const RoofingCostWNC = () => {
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-4xl">
               Roof Replacement Cost in{" "}
-              <span className="text-[hsl(var(--gold-ink))]">Western North Carolina</span> (2026)
+              <span className="text-[hsl(var(--gold-ink))]">Western NC</span> (2026)
             </h1>
             <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body mb-8">
               How the materials rank against each other, what repair work actually involves, and the five
@@ -258,8 +258,8 @@ const RoofingCostWNC = () => {
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <AnswerBlock
-              question="How much does a new roof cost in Western North Carolina?"
-              answer="A new roof in Western North Carolina is priced by pitch, site access, decking condition, elevation, and detail count as much as by material. Dimensional asphalt shingle is the least expensive complete system, exposed-fastener metal sits above it, and standing seam, synthetic slate, and cedar sit at the top. Highlander measures on site and writes a line-item number."
+              question="How much does it cost to replace a roof in Western North Carolina?"
+              answer="New roof cost in Western North Carolina is set by pitch, site access, decking condition, elevation, and detail count as much as by material. A dimensional asphalt roof is the least expensive complete system, exposed-fastener metal sits above it, and standing seam, synthetic slate, and cedar sit at the top. Highlander does a roof inspection on site and writes a line-item number."
             />
           </div>
         </section>
@@ -271,12 +271,12 @@ const RoofingCostWNC = () => {
               Material by material
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              How the systems rank on cost
+              How roof replacement costs rank by material
             </h2>
             <p className="text-muted-foreground font-body max-w-2xl mb-10 leading-relaxed">
-              We publish tiers rather than dollar figures. A price per square that ignores your pitch, your
+              We publish tiers rather than blanket cost estimates. Understanding the cost drivers matters more than a headline number: a price per square that ignores your pitch, your
               driveway, and what is under the shingles is not information — it is a guess with a decimal point
-              in it.
+              in it. Every tier below is a complete installed price — removal of existing roof material and waste disposal, underlayment, flashing, and cleanup are in the number, not added later.
             </p>
 
             <div className="space-y-6">
@@ -388,7 +388,7 @@ const RoofingCostWNC = () => {
               What moves the price
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-10">
-              Five conditions that change the number
+              Five conditions that change your new roof estimate
             </h2>
             <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
               {drivers.map((d) => (
@@ -457,8 +457,8 @@ const RoofingCostWNC = () => {
               </div>
             </div>
             <p className="text-muted-foreground font-body leading-relaxed mt-8">
-              When it is genuinely close, we price both paths and hand you the comparison. You should be able to
-              see what another five years of repairs costs against what replacing it now costs, and decide with
+              When it is genuinely close — when it may be time for a new roof but a repair could still buy years — we price both paths and hand you the comparison. You should be able to
+              see what another five years of repairs costs against what a full roof replacement now costs, and decide with
               the numbers in front of you.
             </p>
           </div>
@@ -475,13 +475,13 @@ const RoofingCostWNC = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">Financing</h2>
             <p className="text-muted-foreground font-body leading-relaxed mb-4">
-              We offer financing options for qualified homeowners on most roofing and construction projects.
-              Your estimator can walk you through what is available at the same visit you get your written
+              We offer financing options for qualified homeowners in North Carolina on most roofing and construction projects.
+              Your estimator can walk you through what is available at the same visit you get your written, no-hassle roof
               estimate, so the payment conversation and the scope conversation happen together instead of weeks
               apart.
             </p>
             <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              If the work is storm related, insurance may cover part or all of it depending on your policy,
+              If the work is storm related — and Western North Carolina storms bring hail, wind, and falling limbs every year — insurance may cover part or all of it depending on your policy,
               your deductible, and the cause of damage. We document the damage in the format carriers expect
               and let your carrier make the determination — we do not promise approvals we do not control.
             </p>
@@ -495,7 +495,7 @@ const RoofingCostWNC = () => {
         <section className="section-padding bg-secondary">
           <div className="container-tight max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">
-              Cost questions we get most
+              Roof cost questions homeowners ask their roofing contractor
             </h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((f, i) => (

@@ -66,13 +66,13 @@ const Index = () => {
         <CredibilityStrip />
 
         <AnswerBlock
-          question="Who is Highlander Building Services?"
-          answer={`Highlander Building Services, Inc. is a roofing and construction company based at ${FRANKLIN_NAP}. Our roofers in Franklin, NC handle roof repair, roof replacement, metal roofing, gutters, and custom construction, and we are the roofing company serving Highlands, Cashiers and Sylva from two walk-in showrooms.`}
+          question="Who is Highlander, the roofing contractor in Franklin, NC?"
+          answer={`Highlander Building Services, Inc. is a roofing and construction company based at ${FRANKLIN_NAP}. Our roofers in Franklin, NC handle roof repair and replacement, metal roofing, gutters, and custom construction, and we are the roofing company serving Highlands, Cashiers and Sylva from two walk-in showrooms.`}
           points={[
             "Roofing, exteriors, and construction under one contractor",
-            "Serving Western North Carolina mountain towns",
+            "Serving mountain towns across the region",
             `Call ${PHONE_PLAIN} for a direct answer`,
-            "Estimates scoped on site",
+            "Clear written estimates, scoped on site",
           ]}
         />
 
@@ -114,8 +114,8 @@ const Index = () => {
             className="bg-[hsl(var(--dark-section))] text-dark-section-foreground"
           >
             <ReviewsCarousel
-              heading="What Western NC homeowners say"
-              subheading="Published customer reviews, quoted word for word. Every one links to its source."
+              heading="What homeowners near Franklin say"
+              subheading="Read real reviews below: published customer reviews, quoted word for word. Every one links to its source."
               tone="dark"
             />
           </Section>

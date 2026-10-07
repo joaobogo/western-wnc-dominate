@@ -44,11 +44,11 @@ export interface TownData {
  */
 export const townLocalRelevance: Record<string, string> = {
   "highlands-nc":
-    "Highlands homes sit above 4,000 feet, where steep rooflines, heavy rainfall, ice loading, and high UV punish standard roofing systems. Highlander Building Services supports Plateau homeowners with premium synthetic and standing-seam metal systems, high-velocity flashing details, and exterior work built for Western North Carolina's harshest mountain conditions.",
+    "Highlands homes sit above 4,000 feet, where steep rooflines, heavy rainfall, ice loading, and high UV punish ordinary asphalt shingles. Highlander Building Services supports Plateau homeowners with premium synthetic and standing-seam metal roofing, installation by a CertainTeed credentialed contractor, high-velocity flashing details, and siding and exterior work built for Western North Carolina's harshest mountain conditions.",
   "cashiers-nc":
-    "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
+    "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog on the Highlands-Cashiers Plateau. As a roofing contractor and builder, Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain properties and high-end home investments across the Plateau.",
   "franklin-nc":
-    "Based in Franklin, Highlander Building Services serves homeowners across Macon County with roofing, repairs, gutters, and construction built for mountain weather. The Franklin showroom gives local homeowners a direct place to call or visit when discussing a project.",
+    "Based in Franklin, Highlander Building Services serves Macon County with a full range of roofing services: shingle roof installation, cedar shake work, standing seam metal, repairs, gutters and fascia, and construction built for mountain weather and curb appeal. The showroom gives local homeowners a direct place to call or visit when discussing a project.",
   "sylva-nc":
     "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
   "bryson-city-nc":
@@ -112,7 +112,7 @@ export const towns: TownData[] = [
     state: "NC",
     elevation: "4,118 ft",
     population: "~1,100 (Full-time)",
-    description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic systems designed for the plateau's unique exposure.",
+    description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic roofing designed to protect your home from the plateau's unique exposure.",
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
     // 59 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Highlands, NC: Metal and Shingle | Highlander Building Services",
@@ -120,7 +120,7 @@ export const towns: TownData[] = [
     metaDescription: "Highlander serves Highlands, NC with roofing, repair, replacement, gutters, skylights, construction, and design for mountain homes across Western NC.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
     climateExposure: "Extreme high-altitude weather: 80+ inches of rain, heavy ice loading, and high UV levels that test standard roofing systems.",
-    localVibe: "A world-class resort destination where design integrity and high-performance materials are the baseline expectation for every project.",
+    localVibe: "A world-class resort destination where design integrity, attention to detail, and high-performance materials are the baseline expectation for every project.",
     constructionContext: "We specialize in 'mountain rooms' — high-end screened porches with fireplaces — that capture valley views while shielding from heavy plateau rain.",
     serviceDemandMix: ["Standing Seam Metal Roofing", "Brava Synthetic Shake", "Luxury Master Suite Additions", "Storm Damage Recovery"],
     styleTendency: "Traditional mountain rustic with heavy timber accents, natural stone, and premium shake/slate aesthetics.",
@@ -134,7 +134,7 @@ export const towns: TownData[] = [
     county: "Jackson County",
     state: "NC",
     elevation: "3,484 ft",
-    description: "Cashiers sits in a temperate rainforest zone, demanding superior moisture management. Our systems are engineered to handle 80+ inches of rain while maintaining the high-end rustic aesthetic of the plateau.",
+    description: "Cashiers sits in a temperate rainforest zone, demanding superior moisture management. Every roof assembly we build is engineered to handle 80+ inches of wind-driven rain, with attic ventilation matched to the fog and humidity, while maintaining the high-end rustic aesthetic of the plateau.",
     features: ["Design", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
     // 58 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Cashiers, NC: Built for Plateau Rain | Highlander Building Services",
@@ -142,7 +142,7 @@ export const towns: TownData[] = [
     metaDescription: "Waterproofing-focused roofing and construction for Cashiers, NC estates. Moisture-resistant materials and engineered decks. Licensed & insured.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates across the Cashiers Plateau.",
     climateExposure: "Temperate rainforest conditions: Persistent moisture, 80+ inches of rain, and low-visibility fog that require advanced drainage.",
-    localVibe: "Low-density mountain living centered around the plateau's natural waterfalls and lake communities like Lake Glenville.",
+    localVibe: "Low-density mountain living on the plateau shared by Highlands and Cashiers, centered around natural waterfalls and lake communities like Lake Glenville.",
     constructionContext: "We specialize in deck expansions and view-optimization, replacing older outdoor spaces with engineered multi-level entertainment zones.",
     serviceDemandMix: ["Synthetic Slate Roofing", "Advanced Moisture Management", "Engineered Deck Expansions", "Gutter Optimization"],
     styleTendency: "Elevated rustic featuring bark siding, cedar shingles, and massive window walls for indoor-outdoor integration.",
@@ -163,10 +163,10 @@ export const towns: TownData[] = [
     h1: "Roofers in Franklin, NC: Repair, Replacement and Metal Roofing",
     metaDescription: "Looking for roofers in Franklin, NC? Highlander handles roof repair, replacement, metal roofing and construction across Macon County. Free estimate.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
-    climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
-    localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
-    constructionContext: "We specialize in expanding primary residences — adding garage apartments, master suites, or full interior kitchen and bath transformations.",
-    serviceDemandMix: ["Dimensional Asphalt Roofing", "Residential Repairs", "Master Suite Additions", "Interior Renovations"],
+    climateExposure: "Challenging seasonal swings and high winds channeled through the Little Tennessee River Valley.",
+    localVibe: "A stable, year-round community where local accountability, quality of work and family-business reliability are the primary priorities.",
+    constructionContext: "We specialize in expanding primary residences — adding living space with garage apartments, master suites, or full interior kitchen and bath transformations.",
+    serviceDemandMix: ["Dimensional Asphalt Shingle Roofing", "Residential Repairs", "Master Suite Additions", "Interior Renovations"],
     styleTendency: "Classic Appalachian styles, including craftsman bungalows and modern farmhouses built for local conditions.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown", "Otto"],
     marketAuthorityAngle: `Franklin is Highlander's home base, with a walk-in showroom at ${FRANKLIN_STREET} and roofing and construction service across Macon County.`,

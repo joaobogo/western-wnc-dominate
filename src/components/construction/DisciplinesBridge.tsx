@@ -22,14 +22,14 @@ const disciplineItems: DisciplineItem[] = [
     title: "Craftsmanship",
     roofing: "Manufacturer-certified installation",
     construction: "Craft-grade building & finishing",
-    detail: "Our crews learned precision on roofs — where a misaligned shingle invites water into a home. That same intolerance for sloppy work defines how we frame walls, hang doors, and set trim.",
+    detail: "Our crews learned precision on roofs — where a misaligned shingle invites water into a home. That same intolerance for sloppy work defines our carpentry — how we frame walls, hang doors, and set trim.",
   },
   {
     icon: FileText,
     title: "Project Management",
     roofing: "Documented scope, photo milestones",
     construction: "Multi-phase scheduling & oversight",
-    detail: "Our extensive roofing background taught us that the quality of the plan determines the quality of the result. Every construction project gets the same written scope, sequenced phases, and daily accountability.",
+    detail: "Our extensive roofing background taught us that the quality of the plan determines the quality of the result. Every build gets the same written scope, sequenced phases, hands-on construction management, and daily accountability.",
   },
   {
     icon: Ruler,
@@ -50,7 +50,7 @@ const disciplineItems: DisciplineItem[] = [
     title: "Structural Thinking",
     roofing: "Mountain-rated specifications",
     construction: "Elevation-calibrated building science",
-    detail: "Years of engineering roofs for WNC's wind loads, snow accumulation, and freeze-thaw cycling taught us how structures must perform at elevation. We apply that same mountain-specific engineering to every construction project.",
+    detail: "Years of engineering roofs for WNC's wind loads, snow accumulation, and freeze-thaw cycling taught us how structures must perform at elevation. We apply that same mountain-specific engineering to every structure we build.",
   },
   {
     icon: Sparkles,
@@ -75,7 +75,7 @@ interface DisciplinesBridgeProps {
  */
 const DisciplinesBridge = ({
   heading = "Six Disciplines.\nOne Standard.",
-  subheading = "Every skill that makes Highlander exceptional at roofing transfers directly to construction. This isn't a company trying something new — it's a company applying what it already does best.",
+  subheading = "Every skill that makes Highlander exceptional at roofing transfers directly to custom home building and remodeling. This isn't a company trying something new — it's a company applying what it already does best.",
   eyebrow = "Roofing Built This",
   className = "",
 }: DisciplinesBridgeProps) => {

@@ -4,6 +4,8 @@ import { Layers, Ruler, Mountain, FileText } from "lucide-react";
 interface Props {
   /** What the scope tiers describe, e.g. "additions" or "outdoor living". */
   scopeLabel?: string;
+  /** Replaces the default intro paragraph for pages whose copy needs its own wording. */
+  intro?: string;
   className?: string;
 }
 
@@ -38,7 +40,7 @@ const DRIVERS = [
  * scope tiers and the drivers behind the number rather than publishing prices
  * we cannot honor sight-unseen.
  */
-const BudgetRangeContext = ({ scopeLabel = "construction projects", className = "" }: Props) => (
+const BudgetRangeContext = ({ scopeLabel = "construction projects", intro, className = "" }: Props) => (
   <section className={`section-padding bg-muted/20 border-y border-border ${className}`}>
     <div className="container-tight">
       <span className="eyebrow mb-3 block">Budget Context</span>
@@ -46,9 +48,13 @@ const BudgetRangeContext = ({ scopeLabel = "construction projects", className = 
         Where your project likely lands
       </h2>
       <p className="text-muted-foreground max-w-2xl mb-10 font-body">
-        We don't publish a price per square foot for {scopeLabel} — it would be a guess, and guesses cost
-        homeowners money. Instead, here is how we talk about scope and what actually drives the number, so the
-        first consultation starts from a realistic place.
+        {intro ?? (
+          <>
+            We don't publish a price per square foot for {scopeLabel} — it would be a guess, and guesses cost
+            homeowners money. Instead, here is how we talk about scope and what actually drives the number, so the
+            first consultation starts from a realistic place.
+          </>
+        )}
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">

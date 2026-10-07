@@ -53,7 +53,7 @@ const townProofMap: Record<string, TownProofContent> = {
     faqs: [
       {
         question: "What roofing system holds up best at Highlands' 4,118 ft elevation?",
-        answer: "For Highlands plateau estates, we recommend Brava synthetic shake or 24-gauge standing seam metal. These systems are engineered for the high UV intensity and extreme wind speeds common inWildcat Cliffs and surrounding clubs.",
+        answer: "For Highlands plateau estates, the best options we recommend are Brava synthetic shake or 24-gauge standing seam metal. Both are quality roofing products engineered for the high UV intensity and extreme wind speeds common in Wildcat Cliffs and surrounding clubs.",
       },
       {
         question: "Do Highlands roofs need specialized ice-dam protection?",
@@ -61,13 +61,13 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "Can you manage large additions for seasonal Highlands owners?",
-        answer: "Absolutely. We routinely manage luxury master suite and 'mountain room' expansions for remote owners, providing daily photo updates and remote project coordination.",
+        answer: "Absolutely. We routinely manage luxury master suite and 'mountain room' expansions for remote owners who need to trust a BBB accredited local team they can't visit every day — we provide daily photo updates and remote project coordination.",
       },
     ],
   },
   "cashiers-nc": {
     stats: [
-      { label: "Elevation", value: "3,486 ft", detail: "Persistent moisture and fast-moving weather" },
+      { label: "Elevation", value: "3,484 ft", detail: "Persistent moisture and fast-moving weather" },
       { label: "Rainfall", value: "80+ in", detail: "Heavy annual rainfall drives drainage priorities" },
       { label: "Focus", value: "Waterproofing", detail: "Underlayment and flashing details matter most here" },
     ],
@@ -92,7 +92,7 @@ const townProofMap: Record<string, TownProofContent> = {
     faqs: [
       {
         question: "Why do Cashiers roofs face unique moisture failure risks?",
-        answer: "With 80+ inches of rain, Cashiers roofs rarely dry out completely. This accelerates algae growth and exposes weak flashing details. We use algae-resistant materials and engineered drainage to combat these Plateau conditions.",
+        answer: "With 80+ inches of rain, Cashiers roofs rarely dry out completely. This accelerates algae growth and exposes weak flashing details. We use algae-resistant materials — from asphalt shingles to standing seam metal — and engineered drainage to combat these Plateau conditions.",
       },
       {
         question: "Is composite decking better for Cashiers' climate?",
@@ -100,7 +100,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "Do you provide project management for seasonal Cashiers estates?",
-        answer: "Yes. Many of our Cashiers clients live out of town. We provide full project coordination, from design/planning to construction, with frequent photo and video updates.",
+        answer: "Yes. Many of our Cashiers clients live out of town. We provide full project coordination, from design/planning to construction, with in-person consultations when you are on the mountain and frequent photo and video updates from our local crews when you are not.",
       },
     ],
   },

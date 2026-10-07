@@ -40,13 +40,13 @@ export const buildTownFAQs = (town: TownData): TownFAQItem[] => {
   // 1. Service mapping — what we're actually asked for here
   faqs.push({
     question: `What roofing and construction work does Highlander do most in ${town.name}?`,
-    answer: `In ${town.name}, the work we're asked for most is ${listToProse(mix).toLowerCase() || "roofing and exterior construction"}. ${town.housingProfile} That mix shapes how we scope and sequence every ${town.name} project, from first inspection to final walkthrough.`,
+    answer: `In ${town.name}, the work we're asked for most is ${listToProse(mix).toLowerCase().replace(/\bbrava\b/g, "Brava") || "roofing and exterior construction"}. ${town.housingProfile} That mix shapes how we scope and sequence every ${town.name} project${town.slug === "cashiers-nc" ? ", and those in the surrounding area" : ""}, from first inspection to final walkthrough${town.slug === "highlands-nc" ? ", whether you hire us for a small repair or a full estate re-roof" : ""}.`,
   });
 
   // 2. Material specification tied to real exposure
   faqs.push({
     question: `Which roofing system holds up best at ${town.elevation} in ${town.name}?`,
-    answer: `At ${town.elevation}, ${town.name}'s wind, rain and UV exposure pushes us toward ${primary.toLowerCase()}${elev >= 3000 ? ", with wind-rated fastening schedules and reinforced edge metal" : ", with attention to drainage capacity and flashing at every transition"}. We specify against your specific address and exposure rather than a single default product.`,
+    answer: `At ${town.elevation}, ${town.name}'s ${town.slug === "cashiers-nc" ? "rain, UV and wind" : "wind, rain and UV"} exposure pushes us toward ${primary.toLowerCase().replace("asphalt shingle roofing", "asphalt roofing")}${elev >= 3000 ? ", with wind-rated fastening schedules and reinforced edge metal" : ", with attention to drainage capacity and flashing at every transition"}. We specify against your specific address and exposure rather than ${town.slug === "franklin-nc" ? "defaulting to a single line of roofing products" : "a single default product"}.`,
   });
 
   // 3. Permitting / process (county-accurate)
@@ -60,7 +60,7 @@ export const buildTownFAQs = (town: TownData): TownFAQItem[] => {
   // 4. Repair vs. replacement decision — high-intent
   faqs.push({
     question: `Should I repair or replace my roof in ${town.name}?`,
-    answer: `If the damage is localized and the deck is sound, a targeted repair is usually the right call. Once you're seeing widespread granule loss, repeat leaks in multiple areas, or failed flashing across the roof, replacement costs less over the life of the home at ${town.name}'s elevation. We tell you which one you're looking at during the inspection.`,
+    answer: `If the damage is localized and the deck is sound, a targeted repair is usually the right call. Once you're seeing widespread granule loss, repeat leaks in multiple areas, or failed flashing across the roof, replacement costs less over the life of the home at ${town.name}'s elevation. ${town.slug === "highlands-nc" ? "Our expert roofers tell" : "We tell"} you which one you're looking at during the inspection.`,
   });
 
   // 5. Construction division mapping

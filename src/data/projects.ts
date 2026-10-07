@@ -65,7 +65,7 @@ export const projectDetails: ProjectDetail[] = [
     scope: "3,200 sq ft roof replacement",
     duration: "8 days",
     highlight: "Custom-fabricated panels for 12/12 pitch",
-    summary: "A complex multi-gable standing seam metal roof replacement on a mountain estate in Highlands. The steep 12/12 pitch and multiple roof intersections required custom-fabricated panels and careful metal-roofing installation.",
+    summary: "A complex multi-gable standing seam metal roof replacement on a mountain estate in Highlands. The steep 12/12 pitch and multiple roof intersections required custom-fabricated panels and careful metal-roofing installation — craftsmanship that gets a roof like this done right.",
     challenge: "The existing roof had suffered years of accelerated wear from Highlands' extreme UV exposure and freeze-thaw cycles at 4,100+ feet. Multiple prior patch repairs had compromised flashing integrity, and the complex gable geometry demanded custom panel fabrication for every intersection.",
     scopeOfWork: [
       "Complete tear-off of existing metal roofing system",
@@ -168,7 +168,7 @@ export const projectDetails: ProjectDetail[] = [
     scope: "Premium cedar shake installation",
     duration: "14 days",
     highlight: "Hand-selected cedar with copper ridge accents",
-    summary: "Cedar shake roof installation on a Highlands estate with multi-gable geometry, copper ridge accents, selected cedar shakes, and preservative treatment intended to support durability in mountain conditions.",
+    summary: "Cedar shake roof installation on a Highlands estate with multi-gable geometry, copper ridge accents, selected cedar shakes, and preservative treatment intended to support durability and curb appeal in mountain conditions.",
     challenge: "The homeowner wanted authentic cedar-shake aesthetics on a complex estate roofline at roughly 4,200 feet, where UV exposure, moisture, and temperature swings can accelerate cedar weathering and make ventilation and flashing details especially important.",
     scopeOfWork: [
       "Hand-selection of premium #1 Blue Label cedar shakes",

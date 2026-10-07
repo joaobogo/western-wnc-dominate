@@ -116,7 +116,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
         <div>
           <div className="max-w-3xl mb-8">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-3">
-              Roof repair, roof replacement & metal roofing
+              {["franklin-nc", "highlands-nc"].includes(town.slug) ? "Roof repair, shingle roof replacement & metal roofing" : "Roof repair, roof replacement & metal roofing"}
             </h3>
             <p className="text-muted-foreground font-body leading-relaxed">
               The three calls we get most often from {t}.
@@ -136,7 +136,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               Gutters, skylights & exterior water management
             </h3>
             <p className="text-muted-foreground font-body leading-relaxed">
-              In {t}, most roof problems are water problems — we treat gutters, flashing, and skylights as one system.
+              In {t}, most roof problems are water problems — we treat gutters, flashing, and skylights as one system{town.slug === "franklin-nc" ? ", which is why gutter cleaning is part of a maintenance visit" : ""}.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -176,12 +176,12 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               <span className="eyebrow">Local Conditions</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-5">
-              Why mountain homes in {t} need the right roof and exterior system
+              {["franklin-nc", "highlands-nc", "cashiers-nc"].includes(town.slug) ? "Why Western North Carolina mountain homes need the right roof and exterior system" : `Why mountain homes in ${t} need the right roof and exterior system`}
             </h3>
             <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
               {/* The town's exposure sentence is quoted once, in the hero (15 Sep 2026 SEO audit: no repeats). */}
               <p>
-                {t} sits at roughly {town.elevation} in {town.county}. Pitch, exposure, site access and the county permitting office all change how a roof or an exterior project is detailed here, which is why every {t} scope is written after a site visit rather than from a template.
+                {t} sits at roughly {town.elevation} in {town.county}. {town.slug === "franklin-nc" ? "Steeper pitches" : "Pitch"}, exposure, site access and the county permitting office all change how a roof or an exterior project is detailed here, which is why {town.slug === "franklin-nc" ? `every new roof installed in ${t} is scoped` : `every ${t} scope is written`} after a site visit rather than from a template.
               </p>
               <p>{town.constructionContext}</p>
             </div>

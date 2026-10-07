@@ -31,11 +31,11 @@ import ServiceSubtopics from "@/components/service/ServiceSubtopics";
 import { metalSubtopics } from "@/data/service-subtopics";
 
 const faqs = [
-  { q: "How long does a metal roof last in Western NC?", a: "A properly specified and installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues at flashings and terminations — not panel failures." },
+  { q: "How long does a metal roof last in Western NC?", a: "A properly installed metal roof can last 40 years or more when it is a correctly specified standing seam system. When that lifespan gets cut short in the field, the cause is almost always workmanship at flashings and terminations, not panel failures." },
   { q: "Is metal louder than asphalt inside the home?", a: "Properly installed metal over solid decking and underlayment is not noticeably louder than asphalt. The 'tin roof' sound comes from open framing, not residential metal systems." },
-  { q: "Can metal go directly over my existing roof?", a: "Sometimes, but in the WNC mountains we almost always recommend a full tear-off so we can verify decking and install proper underlayment before panels go down." },
-  { q: "How is metal priced versus asphalt?", a: "Up front, metal is typically 1.5–2.5× the cost of dimensional asphalt. Over 30+ years it is usually the cheaper roof per year once you include replacement cycles." },
-  { q: "What metal profile is right for a mountain home?", a: "Standing seam (concealed fastener) is the premium choice for most designer mountain homes. Exposed-fastener panels still have a place on outbuildings, simple gable roofs, and budget-driven projects." },
+  { q: "Can metal go directly over my existing roof?", a: "Sometimes, but in these mountains we almost always recommend a full tear-off so we can inspect the deck, replacing rotted sheets where we find them, and install proper underlayment before panels go down." },
+  { q: "How is metal priced versus asphalt?", a: "Upfront, metal is typically 1.5–2.5× the cost of dimensional asphalt. Over 30+ years, its longevity usually makes it the cheaper roof per year once you include replacement cycles, which is where the long-term value comes from." },
+  { q: "Standing seam or exposed fasteners: which metal profile is right for a mountain home?", a: "For most high-end mountain homes, the right metal roofing profile is standing seam (concealed fastener). Exposed-fastener panels still have a place on outbuildings, simple gable roofs, and budget-driven projects." },
 ];
 
 const MetalRoofing = () => {
@@ -70,8 +70,8 @@ const MetalRoofing = () => {
       <ServicePageTemplate
         subtopics={
           <ServiceSubtopics
-            heading="Installation and repair"
-            intro="Metal roofing splits into two jobs that need different work and different pricing."
+            heading="Installation and repair in Western NC"
+            intro="Metal roofing splits into two jobs that need different work and different pricing. When the exterior is part of the project, the same team scopes metal roofing and siding together, including soffit and fascia."
             items={metalSubtopics}
           />
         }
@@ -112,7 +112,7 @@ const MetalRoofing = () => {
 
                 <div className="overflow-hidden mb-2">
                   <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                    Metal Roofing in Western North Carolina
+                    Metal Roofing in Western NC
                   </motion.h1>
                 </div>
                 <div className="overflow-hidden mb-8">
@@ -122,7 +122,7 @@ const MetalRoofing = () => {
                 </div>
 
                 <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-base md:text-lg text-white/90 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                  Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by a team-led, licensed contractor.
+                  Western North Carolina metal roofing designed to withstand elevation, wind, snow load, and heavy rainfall. Standing seam and exposed-fastener systems are specified and installed as a complete system by a licensed contractor and a knowledgeable team.
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -140,16 +140,16 @@ const MetalRoofing = () => {
         quickAnswer={
           <AnswerBlock
             question="What is metal roofing, and is it right for a Western North Carolina home?"
-            answer="Metal roofing is a long-life roof system — standing seam or exposed-fastener panels — installed as a complete assembly with underlayment, flashing, and trim. It suits Western North Carolina homes that face high wind, heavy rainfall, snow load, and shade-driven moisture at elevation. Highlander installs metal roofs across Franklin, Highlands, Cashiers, Sylva, and the surrounding mountain communities."
-            points={["Standing seam and exposed-fastener systems", "Designed for wind, snow load, and heavy mountain rainfall", "Installed as a full system, not panels alone", "Free on-site assessment before any recommendation"]}
+            answer="Metal roofing is a long-lasting roof system — standing seam or exposed-fastener panels — installed as a complete assembly with underlayment, flashing, and trim. It suits mountain homes that face high wind, hail, heavy rainfall, snow load, and shade-driven moisture at elevation. Highlander installs metal roofs across Franklin, Highlands, Cashiers, Sylva, and the surrounding mountain communities southwest of Asheville."
+            points={["Standing seam and exposed-fastener systems", "Weather resistance designed for wind, snow load, and heavy mountain rainfall", "Installed as a full system, not panels alone", "Free on-site assessment before any recommendation"]}
           />
         }
         whatWeDo={
           <section className="section-padding bg-background">
             <div className="container-tight grid md:grid-cols-3 gap-6">
               {[
-                { icon: Shield, title: "Long-life system", body: "Designed as a forever roof — substrate, underlayment, panels, and trims specified together so the warranty actually holds." },
-                { icon: Wind, title: "Wind-rated", body: "Standing seam panels with concealed clips resist uplift across the Highlands Plateau and exposed mountain ridgelines." },
+                { icon: Shield, title: "Durable, long-life system", body: "High-quality metal roofing is designed as a forever roof — substrate, underlayment, panels, and trims specified together for long-term performance, so the warranty actually holds." },
+                { icon: Wind, title: "Wind-rated", body: "Standing seam panels with hidden clips resist uplift across the Highlands Plateau and exposed mountain ridgelines." },
                 { icon: Snowflake, title: "Snow & ice planned", body: "Snow retention designed into the system at walkways, entries, and outdoor living spaces — not bolted on after the fact." },
               ].map((b) => (
                 <div key={b.title} className="border border-border rounded-lg p-6">
@@ -170,11 +170,11 @@ const MetalRoofing = () => {
               </div>
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {[
-                  "Standing seam metal (concealed fastener) — the premium choice for design-forward mountain homes",
+                  "A standing seam roof (concealed fastener) — the premium choice for design-forward mountain homes",
                   "Exposed-fastener metal panels — appropriate for outbuildings and budget-driven projects",
                   "Full ice-and-water shield underlayment, well past code minimum at eaves and valleys",
                   "Snow retention designed for the specific roof, not stocked as a one-size accessory",
-                  "Coordinated trim and termination detailing so warranties hold across the full assembly",
+                  "Coordinated trim and termination detailing to the manufacturer's specifications, so warranties hold across the full assembly",
                   "ARB submission packages for club community projects",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3">
@@ -231,7 +231,7 @@ const MetalRoofing = () => {
             <div className="container-tight max-w-4xl">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
                 <span className="eyebrow mb-3 block">Metal Roofing FAQs</span>
-                <h2 className="section-heading mb-4">Common Questions About<br className="hidden md:block" /> Metal Roofing.</h2>
+                <h2 className="section-heading mb-4">Frequently Asked Questions About{" "}<br className="hidden md:block" /> Metal Roofing.</h2>
               </motion.div>
               <Accordion type="single" collapsible className="space-y-3">
                 {faqs.map((f, i) => (

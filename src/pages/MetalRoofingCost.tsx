@@ -21,27 +21,27 @@ import {
 const faqs = [
   {
     q: "How much does a metal roof cost in Western North Carolina?",
-    a: `In ${METAL_COST_YEAR}, installed metal roofing in Western NC generally runs $650–$1,100 per square for exposed-fastener panels, $1,000–$1,700 per square for metal shingles, and $1,300–$2,100 per square for standing seam. A square is 100 square feet of roof surface, which is more than 100 square feet of floor area once pitch is counted.`,
+    a: `This year, installed metal roofing prices in Western NC typically run $650–$1,100 per square for exposed fastener panels, $1,000–$1,700 per square for metal shingles, and $1,300–$2,100 per square for standing seam. A square is 100 square feet of roof area, which is more than 100 square feet of floor area once pitch is counted.`,
   },
   {
     q: "Is metal more expensive than a shingle roof here?",
-    a: "On quote day, yes — standing seam commonly runs two to three times a dimensional asphalt roof on the same house. Over a 40-year window the math narrows considerably, because a metal roof typically outlives two shingle roofs and holds up better to ice loading and wind at elevation.",
+    a: "On quote day, yes — standing seam commonly runs two to three times a dimensional asphalt roof on the same house. Over a 40-year window the math narrows considerably: a new metal roof typically outlives two shingle roofs, holds up better to ice loading and wind at elevation, and metal roofs last long enough to protect your home for decades. That is usually what tips homeowners who are considering metal to go with metal.",
   },
   {
     q: "Do I need snow guards on a mountain metal roof?",
-    a: "Anywhere the roof sheds over an entry, walkway, deck, driveway, or gas meter, yes. Metal releases snow in sheets rather than melting it off gradually. Engineered retention is sized to the elevation-driven snow load and generally adds $12–$25 per linear foot.",
+    a: "Anywhere the roof sheds over an entry, walkway, deck, driveway, or gas meter, yes. Metal releases snow in sheets rather than melting it off gradually. Engineered retention is sized to the elevation-driven snow load and local building codes, and generally adds $12–$25 per linear foot.",
   },
   {
-    q: "Why do two similar homes get very different metal quotes?",
-    a: "Pitch, access, and detail count. A 9/12 roof on a switchback drive with four dormers and two valleys takes far more staging and custom flashing than a walkable 5/12 gable of the same square footage — even with identical panels.",
+    q: "Why do two similar homes get very different quotes from the same roofing contractor?",
+    a: "Pitch, access, and detail count. A 9/12 roof on a switchback drive with four dormers and two valleys takes far more staging and custom flashing than a walkable 5/12 gable of the same square footage — even with identical panels. Any roofer who works these mountains prices that in from the start; roofing companies that do not tend to find it out mid-job.",
   },
   {
     q: "Can metal go over an existing shingle roof?",
-    a: "Sometimes, on a sound single-layer deck with the right framing. We inspect the decking first. If the deck is soft or already carries two layers, we tear off — laying metal over a compromised deck buys a few dollars now and costs a roof later.",
+    a: "Sometimes, if the existing roof is a single layer on a sound deck with the right framing. We inspect the old roof and the sheathing first. If the deck is soft or already carries two layers, we tear off and do a full replacement — laying metal over a compromised deck buys a few dollars now and costs a roof later.",
   },
   {
     q: "Are these prices a quote?",
-    a: `No. They are honest ${METAL_COST_YEAR} ranges for Western North Carolina so you can budget. Your number is confirmed in writing after a measured on-site inspection, including a per-sheet decking rate agreed before tear-off.`,
+    a: `No. They are honest current ranges for Western North Carolina so you can budget before investing in a new roof. A measured on-site inspection gives you a written roofing estimate, including a per-sheet decking rate agreed before the roof comes off.`,
   },
 ];
 
@@ -120,7 +120,7 @@ const MetalRoofingCost = () => (
         <div className="container-tight max-w-4xl">
           <AnswerBlock
             question={`How much does a metal roof cost in Western North Carolina in ${METAL_COST_YEAR}?`}
-            answer={metalCostAnswer}
+            answer={metalCostAnswer.replace("decking repairs push a mountain project", "sheathing repairs push a mountain roofing project")}
             points={[
               "Exposed fastener: $650–$1,100 per installed square",
               "Metal shingles: $1,000–$1,700 per installed square",
@@ -138,11 +138,11 @@ const MetalRoofingCost = () => (
             System by system
           </span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            Metal roofing prices per square
+            Metal roof replacement cost per square in Western NC
           </h2>
           <p className="text-muted-foreground font-body max-w-2xl mb-10 leading-relaxed">
-            One roofing square is 100 square feet of roof surface. A 2,000 sq ft mountain home with a
-            steep pitch commonly carries 24–30 squares once the roof planes are measured.
+            One roofing square is 100 square feet of roof surface. We quote ranges rather than one average cost because pitch and access move the number as much as the panel does. For a metal roof replacement on a 2,000 sq ft mountain home with a
+            steep pitch, that commonly means 24–30 squares once the roof planes are measured.
           </p>
 
           <div className="space-y-6">
@@ -177,7 +177,7 @@ const MetalRoofingCost = () => (
             <Mountain className="w-4 h-4" aria-hidden="true" /> Mountain-specific factors
           </span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-10">
-            What moves a metal roof inside the range
+            What moves the cost to install a metal roof inside the range
           </h2>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
             {metalCostFactors.map((f) => (
@@ -201,7 +201,7 @@ const MetalRoofingCost = () => (
       <section className="section-padding bg-background">
         <div className="container-tight max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">
-            Metal roofing cost questions
+            Frequently asked metal roofing cost questions
           </h2>
           <div className="space-y-6">
             {faqs.map((f) => (

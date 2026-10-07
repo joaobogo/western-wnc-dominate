@@ -29,9 +29,9 @@ const roofingData = {
   icon: Home,
   label: "Roofing Division",
   badge: "Est. 2017",
-  title: "Mountain-Grade Roofing",
+  title: "Mountain-Grade Roofing for Severe Weather",
   subtitle: "Our Foundation",
-  promise: "We keep water out of mountain homes with systems specified for your elevation, wind zone, and moisture exposure.",
+  promise: "We keep water out of mountain homes through some of the toughest weather conditions in the Southeast, from humid summers to ice and wind, with systems specified for your elevation, wind zone, and moisture exposure.",
   links: [
     { name: "Roof Repair", href: "/roofing/roof-repair", note: "Leaks and storm damage" },
     { name: "Roof Replacement", href: "/roofing/roof-replacement", note: "Full tear-off and rebuild" },
@@ -307,7 +307,7 @@ const ThreeDivisionPathway = ({ paths = "three" }: { paths?: "two" | "three" }) 
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-foreground text-lg md:text-xl font-body max-w-xl mx-auto leading-relaxed font-bold">
 
-              Standing seam at 4,000 feet or a ground-up addition in Franklin. The process
+              Standing seam at 4,000 feet, new roof shingles in town, or a ground-up addition in Franklin. The process
               is identical: certified materials, a documented written scope, and one named contact
               from first visit to final walkthrough.
             </p>

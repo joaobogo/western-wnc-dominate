@@ -65,10 +65,10 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
             <div className="max-w-xl">
               <span className="eyebrow mb-4 block">Regional Coverage</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight">
-                Serving the <span className="text-primary italic">{currentTown.county}</span> Corridor.
+                {["franklin-nc", "highlands-nc", "cashiers-nc"].includes(currentTown.slug) ? <>Local roofers serving the <span className="text-primary italic">{currentTown.county}</span> corridor.</> : <>Serving the <span className="text-primary italic">{currentTown.county}</span> Corridor.</>}
               </h2>
               <p className="text-muted-foreground mt-4 font-body leading-relaxed">
-                Crews based in Franklin and Sylva cover {currentTown.county} and the towns around {currentTown.name} at {currentTown.elevation} — if you're nearby, we're likely in your neighborhood this week.
+                Crews based in Franklin and Sylva cover {currentTown.county} and the towns around {currentTown.name} at {currentTown.elevation}{currentTown.slug === "franklin-nc" ? ", with a service area that reaches Bryson City and Waynesville" : ""} — if you're nearby, we're likely in your neighborhood this week.
               </p>
             </div>
             <div className="flex flex-col gap-3">
