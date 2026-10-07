@@ -7,8 +7,9 @@
  * truncated snippet regardless of what the page author passed in.
  *
  * Rules:
- *  - the long brand suffix "| Highlander Building Services" collapses to
- *    "| Highlander"
+ *  - the long brand suffix "| Highlander Building Services" is always
+ *    rewritten to the single standard suffix "| Highlander" (decided 8 Oct
+ *    2026; the long form leaves no room for the keyword)
  *  - the primary keyword (the first segment of the title) is never dropped,
  *    and neither is the brand suffix; the middle segments go first
  *  - descriptions keep whole leading sentences and are cut from the end
@@ -39,23 +40,8 @@ const shortenBrand = (title: string): string => {
   return out.replace(/\s{2,}/g, " ").trim();
 };
 
-const BRAND_FULL = "Highlander Building Services";
-
-/**
- * Grow the short brand back to the full name when the finished title has room.
- *
- * The 15 Sep 2026 audit flagged 63 pages whose titles sat under 45 characters
- * purely because the suffix had been shortened — "Roofing in Otto, NC |
- * Highlander" is 32 characters and wastes half the SERP line. Titles are
- * assembled and trimmed with the short form, then this runs last: if spelling
- * the brand out still fits the budget, it gets spelled out.
- */
-const expandBrand = (title: string, max: number): string => {
-  const m = title.match(/^(.*\|)\s*Highlander$/);
-  if (!m) return title;
-  const expanded = `${m[1]} ${BRAND_FULL}`;
-  return expanded.length <= max ? expanded : title;
-};
+/** The one title suffix: "| Highlander". The long form never fits next to a real keyword. */
+const TRAILING_BRAND = /\s*\|\s*Highlander Building Services(?:,?\s*Inc\.?)?\s*$/i;
 
 /** Hard cut at a word boundary, never mid-word, never leaving punctuation. */
 const cutAtWord = (text: string, max: number): string => {
@@ -71,13 +57,9 @@ const cutAtWord = (text: string, max: number): string => {
  * Middle segments are dropped before the leading keyword is ever shortened.
  */
 export const normalizeTitle = (rawTitle: string, max = TITLE_MAX): string => {
-  // The full brand name is kept whenever the title fits inside the budget with
-  // it (H1, 15 Sep 2026). Only a title that would overflow gets collapsed to
-  // the short form, and only then are middle segments dropped. Whatever comes
-  // out is passed through expandBrand, so a title that ended up short after
-  // trimming still spells the brand out if there is room.
-  const raw = (rawTitle || "").replace(/\s{2,}/g, " ").trim();
-  const finish = (t: string) => expandBrand(t, max);
+  // One suffix everywhere: "| Highlander". Overflowing titles drop middle segments, never the keyword.
+  const raw = (rawTitle || "").replace(/\s{2,}/g, " ").trim().replace(TRAILING_BRAND, `${SEPARATOR}${BRAND_SHORT}`);
+  const finish = (t: string) => t;
   if (raw.length <= max) return finish(raw);
   const title = shortenBrand(raw);
   if (title.length <= max) return finish(title);

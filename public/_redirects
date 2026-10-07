@@ -661,7 +661,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /roof-replacement-highlands-nc           /service-areas/highlands-nc/roof-replacement  301!
 /construction-highlands-nc               /service-areas/highlands-nc/construction  301!
 /home-repairs-highlands-nc               /service-areas/highlands-nc/home-repairs  301!
-/roofing-franklin-nc                     /service-areas/franklin-nc/roofing  301!
+/roofing-franklin-nc                     /service-areas/franklin-nc  301!
+/service-areas/franklin-nc/roofing       /service-areas/franklin-nc  301!
 /roof-repair-franklin-nc                 /service-areas/franklin-nc/roof-repair  301!
 /roof-replacement-franklin-nc            /service-areas/franklin-nc/roof-replacement  301!
 /construction-franklin-nc                /service-areas/franklin-nc/construction  301!

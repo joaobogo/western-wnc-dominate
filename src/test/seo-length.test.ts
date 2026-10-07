@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normalizeDescription } from "@/lib/seo-length";
+import { normalizeDescription, normalizeTitle } from "@/lib/seo-length";
 
 describe("normalizeDescription", () => {
   it("replaces em and en dashes", () => {
@@ -28,5 +28,18 @@ describe("normalizeDescription", () => {
   it("leaves a good description untouched", () => {
     const ok = "Metal roofing in Highlands, NC built for wind, snow, and elevation. Free estimate from a licensed local contractor.";
     expect(normalizeDescription(ok)).toBe(ok);
+  });
+});
+
+describe("normalizeTitle suffix", () => {
+  it("always uses the short brand suffix", () => {
+    expect(normalizeTitle("Roof Replacement in Franklin, NC | Highlander Building Services")).toBe("Roof Replacement in Franklin, NC | Highlander");
+    expect(normalizeTitle("Metal Roofing | Highlander Building Services, Inc.")).toBe("Metal Roofing | Highlander");
+  });
+
+  it("keeps the keyword and stays within 60 characters", () => {
+    const out = normalizeTitle("Standing Seam Metal Roofing Installation in Highlands, North Carolina | Cost | Highlander Building Services");
+    expect(out.length).toBeLessThanOrEqual(60);
+    expect(out.startsWith("Standing Seam Metal Roofing")).toBe(true);
   });
 });

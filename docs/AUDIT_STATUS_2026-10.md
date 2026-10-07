@@ -50,6 +50,14 @@ Each row was checked against the code. Status key:
 | The company is **fully insured** | "Licensed & Insured" stays. Specific coverage types ("liability", "workers' comp") are not stated anywhere new until the carrier and coverage wording is supplied. |
 | **Blog clusters confirmed** | The 13 folded posts are recorded in `src/test/blog-canonical-to.test.ts`; the approval-gate test now enforces exactly that list. |
 
+## Decided 8 Oct 2026 (applied, change on request)
+
+| Item | Decision |
+| --- | --- |
+| Title suffix (17) | One suffix everywhere: `\| Highlander`. The long form leaves no room for the keyword (even "Roof Replacement in Franklin, NC" overflows). Enforced in `src/lib/seo-length.ts`. |
+| Franklin overlap (15) | `/service-areas/franklin-nc/roofing` is a 301 to `/service-areas/franklin-nc` and is gone from the sitemap and links. The town page owns "roofers in Franklin"; `/locations/franklin-nc` owns showroom, hours and directions. Guarded by `franklin-consolidation.test.ts`. |
+| Truncated meta descriptions | Every description is 110 to 160 characters, ends cleanly, and has no dash. |
+
 ## Needs a decision or fact from the owner (OWNER)
 
 4. **Insurance wording.** "Fully insured" is confirmed. "Full Liability & Workers' Comp" names specific coverage; send carrier and coverage types (or a certificate) before it is kept.
@@ -62,9 +70,8 @@ Each row was checked against the code. Status key:
 11. **Pricing stance.** Metal cost page publishes ranges; other pages say no headline price.
 12. **Text-message consent wording** on every phone-collecting form (legal review).
 13. **Project proof.** Documented projects with photo, town, scope, date and permission, including at least one construction project; real town for each reused photo; real dates for three reviews; more real Google reviews.
-15. **Merges:** `/service-areas/franklin-nc/roofing` into the Franklin page; `/construction/siding` with `/exterior-improvements`.
+15. **Merge:** `/construction/siding` with `/exterior-improvements`. (Franklin roofing page merged into the Franklin page on 8 Oct 2026; see below.)
 16. **Own-business review markup.** Currently removed everywhere; the playbook says keep it simple and optional. Your call.
-17. **Title suffix** (one of `| Highlander` or `| Highlander Building Services`).
 18. **`/community`, `/team`** content (partners, construction and design staff).
 19. **Construction intake as a primary CTA** on construction pages, or secondary only.
 

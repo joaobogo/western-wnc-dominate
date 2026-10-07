@@ -163,8 +163,8 @@ export const towns: TownData[] = [
     features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
     // 54 chars: fits the 60-char guard intact and stays distinct from the homepage title.
     metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
-    h1: `Roofers in Franklin, NC: Walk-In Showroom on ${streetName(FRANKLIN)}`,
-    metaDescription: `Looking for roofers in Franklin, NC? Visit Highlander at ${FRANKLIN_STREET} for roof repair, replacement, metal roofing and construction across Macon County.`,
+    h1: "Roofers in Franklin, NC: Repair, Replacement and Metal Roofing",
+    metaDescription: "Looking for roofers in Franklin, NC? Highlander handles roof repair, replacement, metal roofing and construction across Macon County. Free estimate.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",

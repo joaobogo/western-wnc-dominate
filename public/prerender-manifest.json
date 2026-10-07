@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 239,
+    "sitemap": 238,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 369
+    "total": 368
   },
   "routes": [
     "/",
@@ -95,7 +95,6 @@
     "/service-areas/highlands-nc/roof-repair",
     "/service-areas/highlands-nc/construction",
     "/service-areas/highlands-nc/home-repairs",
-    "/service-areas/franklin-nc/roofing",
     "/service-areas/franklin-nc/construction",
     "/service-areas/franklin-nc/home-repairs",
     "/service-areas/cashiers-nc/roofing",
