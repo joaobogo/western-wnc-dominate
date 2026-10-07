@@ -17,6 +17,7 @@ import dimensionalShingleLifespanHero from "@/assets/blog/dimensional-shingle-li
 import chimneyFlashingRepairHero from "@/assets/blog/chimney-flashing-repair-western-nc.jpg";
 import standingSeamVsExposedFastenerHero from "@/assets/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc.jpg";
 import halfRoundVsKStyleGuttersHero from "@/assets/blog/half-round-vs-k-style-gutters-western-nc.jpg";
+import highElevationRoofingHero from "@/assets/blog/high-elevation-roofing-hero.jpg";
 
 const roofRepairStock = "/media/wnc-town-overlook.jpg";
 const metalBenefitsStock = "/media/wnc-town-overlook.jpg";
@@ -80,8 +81,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Building science guidance for mountain homeowners: moisture safe roof assemblies, engineered snow retention, and the contractor specs to require for high elevation homes.",
     category: "Materials",
     date: "2026-10-07",
-    image: "/media/wnc-ridge-elevation-home.jpg",
-    imageAlt: "Mountain home on a high ridge in Western North Carolina, illustrating roof exposure at elevation",
+    image: highElevationRoofingHero,
+    imageAlt: "Illustration of a mountain home with a charcoal standing seam metal roof and snow retention rails above forested Blue Ridge ridges",
     readTime: "9 min",
     metaTitle: "High-Elevation Roofing for Mountain Homes | Highlander",
     metaDescription: "Moisture-safe roof assemblies, engineered snow retention and the contractor specs to require for high-elevation mountain homes in Western North Carolina.",
