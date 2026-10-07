@@ -136,12 +136,12 @@ const qualityChecks = [
 ];
 
 const galleryItems = [
-  { image: asphaltHero, title: "Full Replacement — Highlands Plateau", category: "Shingle" },
-  { image: metalRoof, title: "Standing Seam — Cashiers Estate", category: "Metal" },
-  { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
-  { image: asphalt005, title: "Dimensional Shingles — Franklin", category: "Shingle" },
-  { image: asphalt007, title: "Mountain Home — Sylva", category: "Shingle" },
-  { image: cedarDetail, title: "Cedar Detail — Sapphire Valley", category: "Cedar" },
+  { image: asphaltHero, title: "Full Replacement: Highlands Plateau", category: "Shingle" },
+  { image: metalRoof, title: "Standing Seam: Cashiers Estate", category: "Metal" },
+  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
+  { image: asphalt005, title: "Dimensional Shingles: Franklin", category: "Shingle" },
+  { image: asphalt007, title: "Mountain Home: Sylva", category: "Shingle" },
+  { image: cedarDetail, title: "Cedar Detail: Sapphire Valley", category: "Cedar" },
 ];
 
 const faqs = [

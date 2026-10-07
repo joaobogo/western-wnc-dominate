@@ -11,7 +11,7 @@ const RoofReplacementAds = () => (
     heroImage={heroImg}
     heroAlt="Roof replacement in progress on a mountain home in Western North Carolina"
     eyebrow="Roof replacement · Western North Carolina"
-    headline="Roof Replacement in Western NC — Get a Written Scope, Not a Sales Pitch"
+    headline="Roof Replacement in Western NC: Get a Written Scope, Not a Sales Pitch"
     subheadline="We help Western North Carolina homeowners understand scope, material fit, and project considerations so replacement decisions feel informed instead of rushed."
     ctaLabel="Get My Replacement Scope"
     adVariants={{

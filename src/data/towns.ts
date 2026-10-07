@@ -1,7 +1,4 @@
-import { FRANKLIN, FRANKLIN_STREET, SYLVA, type BusinessLocation } from "@/data/business";
-
-/** Showroom street name without the leading house number — the address itself lives only in business.ts (guarded by business-identity.test.ts). */
-const streetName = (loc: BusinessLocation) => loc.streetAddress.replace(/^\d+\s+/, "");
+import { FRANKLIN, FRANKLIN_STREET } from "@/data/business";
 
 export interface TownData {
   slug: string;
@@ -118,7 +115,7 @@ export const towns: TownData[] = [
     description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic systems designed for the plateau's unique exposure.",
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
     // 59 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Highlands, NC | Highlander Building Services",
+    metaTitle: "Roofers in Highlands, NC: Metal and Shingle | Highlander Building Services",
     h1: "Roofers in Highlands, NC: Roofing Built for 4,000 ft",
     metaDescription: "Highlander serves Highlands, NC with roofing, repair, replacement, gutters, skylights, construction, and design for mountain homes across Western NC.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
@@ -140,7 +137,7 @@ export const towns: TownData[] = [
     description: "Cashiers sits in a temperate rainforest zone, demanding superior moisture management. Our systems are engineered to handle 80+ inches of rain while maintaining the high-end rustic aesthetic of the plateau.",
     features: ["Design", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
     // 58 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Cashiers, NC | Highlander Building Services",
+    metaTitle: "Roofers in Cashiers, NC: Built for Plateau Rain | Highlander Building Services",
     h1: "Roofers in Cashiers, NC: Roofs Built for 80 Inches of Rain",
     metaDescription: "Waterproofing-focused roofing and construction for Cashiers, NC estates. Moisture-resistant materials and engineered decks. Licensed & insured.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates across the Cashiers Plateau.",
@@ -162,7 +159,7 @@ export const towns: TownData[] = [
     description: `Our hometown market. Based at ${FRANKLIN_STREET} in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.`,
     features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
     // 54 chars: fits the 60-char guard intact and stays distinct from the homepage title.
-    metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
+    metaTitle: "Roofers in Franklin, NC: Repair, Replacement | Highlander Building Services",
     h1: "Roofers in Franklin, NC: Repair, Replacement and Metal Roofing",
     metaDescription: "Looking for roofers in Franklin, NC? Highlander handles roof repair, replacement, metal roofing and construction across Macon County. Free estimate.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
@@ -184,9 +181,9 @@ export const towns: TownData[] = [
     description: "From historic downtown renovations to commercial maintenance programs, our Sylva operations serve as a critical hub for Jackson County's diverse roofing and construction needs.",
     features: ["Historic home expertise", "Commercial maintenance", "Jackson County hub", "Rental property service"],
     // 56 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Sylva, NC | Highlander Building Services",
-    h1: `Roofers in Sylva, NC: Showroom on ${streetName(SYLVA)}`,
-    metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Sylva, NC homes and Jackson County properties, from our staffed Sylva showroom.",
+    metaTitle: "Roofers in Sylva, NC: Jackson County Roofing | Highlander Building Services",
+    h1: "Roofers in Sylva, NC: Repair, Replacement and Metal Roofing",
+    metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Sylva, NC homes and Jackson County properties. Free estimate.",
     housingProfile: "Historic downtown homes, university rentals, and hillside residential properties across the Sylva valley.",
     climateExposure: "Heavy valley moisture, trapped fog, and persistent humidity that accelerate biological growth on aging roof systems.",
     localVibe: "A mix of vibrant historic downtown character and modern growth driven by commerce and university regionalism.",

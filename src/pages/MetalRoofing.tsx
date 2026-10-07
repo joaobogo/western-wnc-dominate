@@ -166,7 +166,7 @@ const MetalRoofing = () => {
             <div className="container-tight max-w-4xl">
               <div className="text-center mb-10 md:mb-14">
                 <span className="eyebrow mb-3 block">What We Install</span>
-                <h2 className="section-heading mb-4">A Complete Metal Roof<br className="hidden md:block" /> System — Not Just Panels.</h2>
+                <h2 className="section-heading mb-4">A Complete Metal Roof<br className="hidden md:block" /> System, Not Just Panels.</h2>
               </div>
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {[

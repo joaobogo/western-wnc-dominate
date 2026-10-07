@@ -96,7 +96,7 @@ const Renovations = () => {
   return (
     <>
       <SEOHead
-        title="Renovations in Western NC | Kitchen, Bath & Whole-Home"
+        title="Home Renovations in Western NC: Kitchens, Baths"
         description="Renovations for Western NC homes: kitchen remodels, bathroom updates, basement finishing, and whole-home work by in-house Highlander crews."
         path="/construction/renovations"
         jsonLd={[
@@ -207,9 +207,9 @@ const Renovations = () => {
                 <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
-                Renovation isn't about tearing things apart. It's the discipline of improving what exists while preserving what works — structure, character, and the investment you've already made.
-              </h2>
+              <p className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
+                Renovation isn't about tearing things apart. It's the discipline of improving what exists while preserving what works, structure, character, and the investment you've already made.
+              </p>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                 Highlander approaches renovation the way we approach every project: with documented scope, defined materials, honest timelines, and the same crews and project managers who build our additions and install our roofs. The result is renovation work that feels intentional — not improvised.
               </p>

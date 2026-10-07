@@ -486,7 +486,7 @@ const ConstructionDesign = () => {
                   <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">Already Have Plans?</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">
-                  Send Them Over — We'll Tell You Where Your Project Stands.
+                  Send Them Over: We'll Tell You Where Your Project Stands.
                 </h2>
                 <div className="space-y-4 text-foreground/80 text-base font-body leading-relaxed mb-7">
                   <p>

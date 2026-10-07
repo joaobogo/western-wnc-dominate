@@ -370,7 +370,7 @@ const CountyPage = () => {
               {!!county.faqs?.length && (
                 <>
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
-                    {county.name} — Frequently Asked
+                    {county.name}: Frequently Asked
                   </h2>
                   <div className="space-y-6">
                     {county.faqs.map((f, i) => (

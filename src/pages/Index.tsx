@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="Roofing & Construction in Franklin, NC | Highlander"
+        title="Roofing Contractor and Builder in Franklin, NC | Highlander"
         // P3.6 — the rating comes from REVIEW_LINE (single source), never typed.
         // "Western NC" and "&" keep the whole line under the 160-char guard so
         // normalizeDescription never trims the review sentence off the end.

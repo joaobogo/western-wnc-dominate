@@ -2174,7 +2174,7 @@ Read more on why this matters at elevation in our [ventilation guide](/blog/unde
 
 Haywood County permitting is straightforward for a like-for-like replacement. Where a home sits in a district or an HOA with appearance standards, material and color selections should be confirmed before the order goes in, not after tear-off starts.
 
-## Scope Creep Is Normal — Plan for It
+## Scope Creep Is Normal: Plan for It
 
 On homes of this age, opening the roof frequently reveals soft decking, previous repair layers, or flashing that was never correct. We price known scope in the proposal and give a written unit rate for deck replacement so there is no surprise number on day three.
 
@@ -3440,7 +3440,7 @@ We're based in the mountains and we re-roof homes in Highlands, Cashiers, Sapphi
         answer: "Absolutely — and we do this often on Highlands homes. Standing seam on porches, dormers, or lower shed roofs paired with dimensional shingles on the main field can look intentional and lower total cost while still giving the metal roof presence where it matters.",
       },
       {
-        question: "What about synthetic slate — is it worth it?",
+        question: "What about synthetic slate, is it worth it?",
         answer: "On the right home, yes. If the home's style calls for a slate or shake aesthetic and natural slate isn't practical due to weight or budget, high-quality synthetic products deliver the look with modern impact and weather performance. The key is installer experience with the specific product.",
       },
     ],
@@ -5988,7 +5988,7 @@ Explore [roof repair](/roofing/roof-repair), [our roofing services](/roofing), [
     metaDescription: "Fall roof and gutter maintenance for WNC mountain homes — the checklist that prevents winter freeze/thaw problems and ice damage.",
     content: `Winter in the WNC mountains punishes anything the fall left neglected. Here's the checklist that keeps roofs and gutters ready for freeze/thaw, snow load, and ice-dam conditions.
 
-## Clean the Gutters — Thoroughly
+## Clean the Gutters: Thoroughly
 All debris out. Downspouts flushed. Discharge points checked for clogs. Frozen debris blocks gutters and causes overflow that becomes ice.
 
 ## Check the Roof Field

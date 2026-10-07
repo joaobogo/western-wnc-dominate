@@ -10,7 +10,7 @@ const RoofRepairAds = () => (
     heroImage={heroImg}
     heroAlt="Roof repair work on a residential home in Western North Carolina"
     eyebrow="Roof repair · Western North Carolina"
-    headline="Roof Repair in Western NC — Clear Leak Assessment & Next Steps"
+    headline="Roof Repair in Western NC: Clear Leak Assessment & Next Steps"
     subheadline="We diagnose the source, explain whether repair makes sense, and give you a clear next step based on the roof condition."
     ctaLabel="Get My Repair Assessed"
     adVariants={{

@@ -79,7 +79,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Homeowners with an active leak, anyone preparing for a home inspection, and second-home owners who just opened the house for the season and found a stain on the ceiling.",
     proofNote:
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
-    metaTitle: "Roof Repair in Franklin, NC | Highlander Building Services",
+    metaTitle: "Roof Repair in Franklin, NC: Leaks and Flashing | Highlander Building Services",
     metaDescription:
       "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense.",
     faqs: [
@@ -613,7 +613,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "What should I do about an active leak in Highlands?", a: "Call during staffed business hours and explain the leak or storm damage; outside office hours, send a request for follow-up. Assessment timing depends on weather, safety, access, and current scheduling." },
       { q: "Will a repair void my roof's warranty?", a: "Only if it's done wrong. We use compatible materials and document the repair so your manufacturer coverage stays intact." },
-      { q: "My roof is 18 years old — is a repair worth it?", a: "Sometimes. If the failure is isolated and the field is sound, yes. If the underlayment is brittle across the deck, we'll tell you that plainly and price both options." },
+      { q: "My roof is 18 years old, is a repair worth it?", a: "Sometimes. If the failure is isolated and the field is sound, yes. If the underlayment is brittle across the deck, we'll tell you that plainly and price both options." },
     ],
   }),
   E({

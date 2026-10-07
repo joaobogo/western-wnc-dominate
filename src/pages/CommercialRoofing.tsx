@@ -225,7 +225,7 @@ const CommercialRoofing = () => {
                           >
                             <div className="w-12 h-[2px] mb-8 bg-primary/30" />
                             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6">
-                              A commercial roof is infrastructure. It should be managed like one — with planning, precision, and a partner who understands operations.
+                              A commercial roof is infrastructure. It should be managed like one, with planning, precision, and a partner who understands operations.
                             </h2>
                             <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body">
                               Highlander provides commercial roofing services for property owners, managers, and businesses across Western North Carolina. From new construction and full replacements to ongoing maintenance programs, we approach every commercial project with the coordination, documentation, and operational awareness that commercial clients require.

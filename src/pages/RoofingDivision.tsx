@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import RelatedLinks from "@/components/RelatedLinks";
 import InspectionForm from "@/components/InspectionForm";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
@@ -94,10 +95,10 @@ const roofingServices = [
 
 const galleryItems = [
   { image: metalRoof, title: "Standing Seam, Highlands", category: "Metal" },
-  { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
-  { image: asphaltRoof, title: "Dimensional Shingles — Franklin", category: "Shingle" },
-  { image: metalCabin, title: "Metal + Deck — Bryson City", category: "Metal" },
-  { image: asphaltLarge, title: "Full Renovation — Sylva", category: "Shingle" },
+  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
+  { image: asphaltRoof, title: "Dimensional Shingles: Franklin", category: "Shingle" },
+  { image: metalCabin, title: "Metal + Deck: Bryson City", category: "Metal" },
+  { image: asphaltLarge, title: "Full Renovation: Sylva", category: "Shingle" },
   { image: cedarDetail, title: "Cedar Restoration — Highlands", category: "Cedar" },
 ];
 
@@ -161,7 +162,7 @@ const RoofingDivision = () => {
   return (
     <>
       <SEOHead
-        title="Roofing Repair & Replacement in Western NC | Highlander"
+        title="Roofing Contractor in Western NC | Highlander"
         description="Roofing in Western North Carolina: repair, replacement, metal, cedar, storm damage, skylights, gutters, and commercial systems from Highlander."
         path="/roofing"
         jsonLd={[
@@ -616,6 +617,19 @@ const RoofingDivision = () => {
             </div>
           </div>
         </section>
+        <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Roofing costs and the towns we serve"
+          columns={2}
+          links={[
+            { label: "Roof Replacement Cost in Western NC (2026)", href: "/roofing-cost-western-nc", description: "Material tiers, repair bands and what moves the price" },
+            { label: "Metal Roofing Cost in Western NC (2026)", href: "/roofing/metal/cost", description: "Price ranges per square for each metal system" },
+            { label: "Roofers in Franklin, NC", href: "/service-areas/franklin-nc", description: "Our home market in Macon County" },
+            { label: "Roofers in Highlands, NC", href: "/service-areas/highlands-nc", description: "Roofing built for 4,000 feet" },
+            { label: "Roofers in Cashiers, NC", href: "/service-areas/cashiers-nc", description: "Roofs built for plateau rain" },
+            { label: "Roofers in Sylva, NC", href: "/service-areas/sylva-nc", description: "Jackson County roofing" },
+          ]}
+        />
       </main>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />

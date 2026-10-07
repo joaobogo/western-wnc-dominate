@@ -22,7 +22,7 @@ export interface RedirectEntry {
 
 export const urlRedirectMap: RedirectEntry[] = [
   // === HOME ===
-  { oldUrl: "/", newUrl: "/", redirectType: 301, pageType: "home", oldTitle: "Expert Local Roofer | Franklin, NC", newTitle: "Highlander Building Services — Franklin & Sylva, NC", notes: "Homepage. Preserved core messaging, expanded CTAs." },
+  { oldUrl: "/", newUrl: "/", redirectType: 301, pageType: "home", oldTitle: "Expert Local Roofer | Franklin, NC", newTitle: "Highlander Building Services: Franklin & Sylva, NC", notes: "Homepage. Preserved core messaging, expanded CTAs." },
 
   // === SERVICE PAGES ===
   { oldUrl: "/residential-roofing-services", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Residential Roofing Companies | Highlands, NC", newTitle: "Roofing Services | Highlander Building Services", notes: "Hub page consolidates residential services overview." },
