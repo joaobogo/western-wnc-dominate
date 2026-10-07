@@ -59,7 +59,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Franklin is where Highlander began. Homeowners receive a written scope and a clear project contact so responsibility stays defined from estimate through closeout.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Full roof replacement in Franklin, NC from Highlander's home market. CertainTeed Credentialed Contractor, licensed NC General Contractor, and free project estimate.",
+      "Full roof replacement in Franklin, NC from Highlander's home market. Licensed NC General Contractor with a free project estimate and a written scope.",
     faqs: [
       { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
       { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
@@ -103,7 +103,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "We specify and install metal as a complete system — substrate, underlayment, panels, trims, and fasteners from compatible manufacturers — so the warranty actually holds together.",
     metaTitle: "Metal Roofing in Franklin, NC | Highlander Building Services",
     metaDescription:
-      "Standing seam and exposed-fastener metal roofing in Franklin, NC from a licensed contractor based in Franklin, with project details matched to the property and roof design.",
+      "Standing seam and exposed-fastener metal roofing in Franklin, NC from a licensed local contractor, with details matched to the property and roof design.",
     faqs: [
       { q: "Is metal louder than shingles on a Franklin home?", a: "Properly installed metal over solid decking and underlayment is not noticeably louder than asphalt from inside the home. The 'tin roof on a barn' sound comes from open framing, not residential metal." },
       { q: "Does metal really last 40+ years here?", a: "On a correctly designed system with the right substrate and detailing, yes. The failure point on most metal roofs is the install detail, not the panel." },
@@ -307,7 +307,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "A direct Highlander point of contact, project-specific scheduling, and a clear recommendation on whether replacement or continued repair makes sense.",
     metaTitle: "Roof Replacement in Sylva, NC | Highlander Building Services",
     metaDescription:
-      "Full roof replacement in Sylva, NC from Highlander's Jackson County showroom. CertainTeed Credentialed Contractor, free project estimate, and repair-vs-replace guidance based on roof condition.",
+      "Full roof replacement in Sylva, NC from Highlander's Jackson County showroom. Free project estimate and repair-or-replace guidance based on roof condition.",
     faqs: [
       { q: "Do you replace roofs on rental properties in Sylva?", a: "Yes. We schedule around tenants and minimize disruption — most single-family replacements are complete in 1–3 working days." },
       { q: "What's the most common issue on older Sylva homes?", a: "Inadequate attic ventilation — which shortens roof life from below. We correct ventilation as part of every full replacement." },

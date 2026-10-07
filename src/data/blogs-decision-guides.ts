@@ -18,7 +18,7 @@ export const decisionGuidePosts: BlogPost[] = [
     imageAlt: "Standing seam metal roof on a mountain home in Western North Carolina",
     metaTitle: "Metal vs. Shingle Roofs for Western NC Mountain Homes",
     metaDescription:
-      "Standing-seam metal or dimensional asphalt for a Western North Carolina home? Compare cost, lifespan, snow shedding, noise, and resale honestly before you decide.",
+      "Standing-seam metal or dimensional asphalt for a Western NC home? Compare cost, lifespan, snow shedding, noise, and resale before you decide.",
     faqs: [
       {
         question: "Is a metal roof worth the extra cost in Western North Carolina?",
@@ -213,7 +213,7 @@ Get a photo-documented assessment before you commit either way. Start with a [co
     imageAlt: "Roofline of a mountain home in the Blue Ridge of Western North Carolina",
     metaTitle: "Roof Lifespan in Western NC by Material | Real Numbers",
     metaDescription:
-      "Realistic roof lifespans in Western North Carolina by material — asphalt, metal, synthetic, cedar, and slate — plus the four factors that shorten every one of them.",
+      "Realistic roof lifespans in Western NC by material: asphalt, metal, synthetic, cedar, and slate, plus the four factors that shorten every one.",
     faqs: [
       {
         question: "Why do roofs last less time in the mountains?",
@@ -303,7 +303,7 @@ We measure the roof, document the assembly, and give you real numbers for the sy
     imageAlt: "Roofing professional inspecting flashing detail on a mountain home",
     metaTitle: "What a Real Roof Inspection Covers | WNC Homeowner Guide",
     metaDescription:
-      "What a professional roof inspection should include, what documentation you should receive in writing, and how to spot an inspection that exists only to sell a replacement.",
+      "What a professional roof inspection should include, the written documentation you should receive, and how to spot one built only to sell a replacement.",
     faqs: [
       {
         question: "How much should a roof inspection cost?",

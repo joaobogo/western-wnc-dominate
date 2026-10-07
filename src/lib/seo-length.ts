@@ -103,16 +103,29 @@ export const normalizeTitle = (rawTitle: string, max = TITLE_MAX): string => {
   return cutAtWord(title, max);
 };
 
+/** Em and en dashes read as machine-written; use a colon or comma instead. */
+const removeDashes = (text: string): string => {
+  let first = true;
+  return text.replace(/\s*[—–]\s*/g, () => {
+    const sep = first ? ": " : ", ";
+    first = false;
+    return sep;
+  });
+};
+
+const DESCRIPTION_MIN = 110;
+
 /**
- * Normalize a meta description to ≤155 characters, keeping whole leading
- * sentences and cutting from the end.
+ * Normalize a meta description to <=155 characters. Whole leading sentences
+ * are kept; when that leaves a thin snippet, the next sentence is trimmed at
+ * its last clause boundary so the result still ends cleanly.
  */
 export const normalizeDescription = (
   rawDescription: string,
   max = DESCRIPTION_MAX,
   target = DESCRIPTION_TARGET,
 ): string => {
-  const description = (rawDescription || "").replace(/\s{2,}/g, " ").trim();
+  const description = removeDashes((rawDescription || "").replace(/\s{2,}/g, " ").trim());
   if (description.length <= max) return description;
 
   const sentences = description.match(/[^.!?]+[.!?]+(\s|$)|[^.!?]+$/g) ?? [description];
@@ -122,9 +135,14 @@ export const normalizeDescription = (
     if (next.length > target) break;
     out = next;
   }
+  if (out.length >= DESCRIPTION_MIN) return out.trim();
 
+  // Cut the text at the last clause boundary that fits and close it with a period.
+  const window = description.slice(0, target + 1);
+  const clause = Math.max(window.lastIndexOf(", "), window.lastIndexOf("; "), window.lastIndexOf(": "));
+  if (clause >= DESCRIPTION_MIN) return `${window.slice(0, clause).replace(/[\s,;:]+$/, "")}.`;
   if (out.length >= 60) return out.trim();
 
-  // First sentence alone overruns the budget — cut it at a word boundary.
-  return cutAtWord(description, target);
+  const cut = cutAtWord(description, target - 1).replace(/\b(and|or|with|for|the|a|an|of|to|in)$/i, "").trim();
+  return /[.!?]$/.test(cut) ? cut : `${cut}.`;
 };

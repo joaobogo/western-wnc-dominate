@@ -5,7 +5,7 @@ import heroImg from "@/assets/gallery/asphalt-008.webp";
 const RoofReplacementAds = () => (
   <PaidAdsLanding
     title="Roof Replacement in Western NC | Get a Clear Scope"
-    description="Roof replacement landing page for paid traffic with a simplified lead form, stronger trust proof, and clear next-step messaging for Western North Carolina homeowners."
+    description="Discuss a roof replacement with Highlander in Western North Carolina. Send a short request or call during business hours for a free estimate."
     path="/lp/roof-replacement"
     serviceName="Roof Replacement"
     heroImage={heroImg}
