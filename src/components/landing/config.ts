@@ -2,7 +2,7 @@ import metalRoof from "@/assets/gallery/metal-005.webp";
 import metalRoofSet from "@/assets/gallery/metal-005.webp?w=480;800;1200&format=webp&as=srcset";
 import shingleRoof from "@/assets/gallery/asphalt-hero.webp";
 import shingleRoofSet from "@/assets/gallery/asphalt-hero.webp?w=480;800;1200&format=webp&as=srcset";
-import { PHONE_DISPLAY } from "@/data/business";
+import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 
 /**
  * Copy and proof for the three paid landing pages. All public text comes from
@@ -605,7 +605,7 @@ export const COMBINED_CONFIG: LandingConfig = {
     eyebrow: "Roofing experiences",
     heading: "What customers have said about Highlander roofing work.",
     ids: ["david-christopher-2026", "zary-m-2024"],
-    note: "Reviews describe roofing work. The 4.8 Google rating is company-wide.",
+    note: `Reviews describe roofing work. The ${REVIEW_RATING} Google rating is company-wide.`,
   },
 
   faqEyebrow: "Common questions",
