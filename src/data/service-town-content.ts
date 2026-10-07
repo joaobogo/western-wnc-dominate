@@ -664,28 +664,6 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── FRANKLIN ───────────
   E({
     townSlug: "franklin-nc",
-    serviceSlug: "roofing",
-    serviceLabel: "Roofing Services",
-    h1: "Roofing Services in Franklin, NC",
-    intro:
-      "Franklin is where Highlander started and remains the company's primary showroom and operating base. That local presence gives homeowners a direct place to call or visit while project timing is confirmed from the actual scope and current schedule.",
-    localContext:
-      "Franklin roofing splits cleanly into three groups: 20–30 year asphalt systems on ranch and split-level homes across town, farmhouse and cabin roofs in the surrounding valleys where standing seam metal now dominates new work, and older homes where ventilation and flashing were never done right the first time and are the real cause of premature failure.",
-    whoItsFor:
-      "Long-time Franklin homeowners weighing repair vs. replace, first-time buyers who need a straight condition report, and homeowners preparing a property for sale or refinance.",
-    proofNote:
-      "A named project contact and written scope keep accountability clear from estimate through closeout. Ask to see documented Highlander work that matches the roof system you are considering.",
-    metaTitle: "Roofing Services in Franklin, NC | Highlander Building Services",
-    metaDescription:
-      "Franklin, NC roofing contractor — repairs, replacements, and metal systems from a local team. CertainTeed ShingleMaster credentialed.",
-    faqs: [
-      { q: "Are you actually based in Franklin?", a: "Yes. Our shop, yard, and office are in Macon County. When you call, you're reaching the people who will be on your roof." },
-      { q: "What roofing warranty do you offer in Franklin?", a: "Warranty eligibility and terms depend on the selected roofing system and the project agreement. Highlander confirms the applicable manufacturer and workmanship terms in writing for the specific project." },
-      { q: "Do you handle insurance claims in Franklin?", a: "We provide the documentation adjusters need, but we don't do the adjuster's job — the claim relationship stays between you and your carrier." },
-    ],
-  }),
-  E({
-    townSlug: "franklin-nc",
     serviceSlug: "construction",
     serviceLabel: "Construction Services",
     h1: "Construction Services in Franklin, NC",
@@ -931,6 +909,14 @@ for (let i = serviceTownContent.length - 1; i >= 0; i--) {
 //  Hand-written entries above always win; generated entries only
 //  fill combinations that don't already exist.
 // ─────────────────────────────────────────────────────────────
+/**
+ * Service x town pages folded into their town page. They get no route, no
+ * sitemap entry and no internal links; each one is a 301 to the town page in
+ * public/_redirects. Franklin "roofing" competed with /service-areas/franklin-nc
+ * ("Roofers in Franklin, NC") for the same queries.
+ */
+const MERGED_SERVICE_TOWN_PAIRS = new Set(["franklin-nc|roofing"]);
+
 {
   // Everything defined above this point is hand-written and indexable.
   for (const e of serviceTownContent) e.handwritten = true;
@@ -940,7 +926,7 @@ for (let i = serviceTownContent.length - 1; i >= 0; i--) {
   );
   for (const g of generatedServiceTownEntries) {
     const key = `${g.townSlug}|${g.serviceSlug}`;
-    if (existing.has(key)) continue;
+    if (existing.has(key) || MERGED_SERVICE_TOWN_PAIRS.has(key)) continue;
     existing.add(key);
     serviceTownContent.push(E({ ...g, handwritten: false }));
   }
