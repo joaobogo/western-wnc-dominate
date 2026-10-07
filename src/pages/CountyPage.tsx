@@ -244,7 +244,7 @@ const CountyPage = () => {
             <div className="flex flex-col items-center text-center mb-16">
               <span className="eyebrow mb-4 block">Division Overview</span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">Complete local service.</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl font-body leading-relaxed">We maintain local crews across {county.name} to ensure priority response and mountain-grade craftsmanship.</p>
+              <p className="text-lg text-muted-foreground max-w-2xl font-body leading-relaxed">Highlander serves {county.name} from its Franklin and Sylva showrooms, with roofing and construction handled by one team.</p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">

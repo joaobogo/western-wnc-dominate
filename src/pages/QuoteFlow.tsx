@@ -360,8 +360,8 @@ export default function QuoteFlow() {
 
       // Mirror into the unified `leads` table using the canonical payload.
       try {
-        const { submitLead } = await import("@/lib/leads");
-        await submitLead({
+        const { submitLead, requireStoredLead } = await import("@/lib/leads");
+        requireStoredLead(await submitLead({
           source: "quote_flow",
           lead_type: form.serviceCategory || "general_inquiry",
           full_name: contact.values.name,
@@ -377,8 +377,8 @@ export default function QuoteFlow() {
           project_description: form.description || null,
           lead_score: score,
           metadata: { consultation_request_id: consultId },
-        });
-      } catch (e) { console.error("QuoteFlow submitLead failed:", e); }
+        }));
+      } catch (e) { console.error("QuoteFlow submitLead failed:", e); throw e; }
       
       // Track successful submission
       trackEvent("form_submit", {

@@ -217,8 +217,8 @@ const RoofingBuilder = () => {
       if (insertErr) throw insertErr;
       // Canonical pipeline: durable `leads` row + single CRM sync happens here.
       // The consultation_requests row above stays as the builder-specific detail record.
-      const { submitLead } = await import("@/lib/leads");
-      await submitLead({
+      const { submitLead, requireStoredLead } = await import("@/lib/leads");
+      requireStoredLead(await submitLead({
         source: "roofing_builder",
         lead_type: "roofing",
         full_name: data.name,
@@ -246,7 +246,7 @@ const RoofingBuilder = () => {
           jobtread,
           upload_folder: folder,
         },
-      });
+      }));
       trackEvent("form_submit", {
         label: "Roofing Builder",
         elementId: "roofing-builder",

@@ -87,9 +87,9 @@ const services = [
   {
     icon: Wrench, label: "Roof Repair",
     desc: (t: TownData) => {
-      const base = `Targeted leak, flashing, and boot repairs — often same-week in the ${t.name} area.`;
+      const base = `Targeted leak, flashing, and boot repairs for homes in the ${t.name} area.`;
       return t.county
-        ? `${base} Our crews work ${t.county} routinely, so ${t.name} calls don't wait on an out-of-area truck.`
+        ? `${base} Highlander serves ${t.county} from its Franklin and Sylva showrooms.`
         : base;
     },
     href: "/roofing/roof-repair",

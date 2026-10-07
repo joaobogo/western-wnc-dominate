@@ -160,8 +160,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
         },
       });
       try {
-        const { submitLead } = await import("@/lib/leads");
-        await submitLead({
+        const { submitLead, requireStoredLead } = await import("@/lib/leads");
+        requireStoredLead(await submitLead({
           source: "design_intake_form",
           lead_type: "design_services",
           full_name: contact.values.name,
@@ -185,8 +185,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
             decision_makers: data.decisionMakers,
             upload_folder: folder,
           },
-        });
-      } catch (e) { console.error(e); }
+        }));
+      } catch (e) { console.error(e); throw e; }
 
       if (insertErr) throw insertErr;
 

@@ -41,7 +41,8 @@ describe("durable-first lead capture", () => {
     expect(res.error).toBeNull();
     expect(res.id).toBeTruthy();
     expect(order[0]).toBe("insert");
-    expect(order).toContain("invoke");
+    // The CRM sync is fire-and-forget behind a lazy import, so wait for it.
+    await vi.waitFor(() => expect(order).toContain("invoke"));
   });
 
   it("still reports success to the visitor when the CRM sync fails", async () => {
@@ -98,7 +99,24 @@ describe("idempotent submission", () => {
     insert.mockResolvedValue({ error: null });
     await submit(validLead);
     const row = insert.mock.calls[0][0][0];
+    await vi.waitFor(() => expect(invoke.mock.calls.some((c) => c[0] === "jobtread-sync")).toBe(true));
     const syncCall = invoke.mock.calls.find((c) => c[0] === "jobtread-sync");
     expect(syncCall?.[1].body.idempotency_key).toBe(row.idempotency_key);
+  });
+});
+
+describe("requireStoredLead (no false success)", () => {
+  it("throws when the database rejected the lead", async () => {
+    const { requireStoredLead } = await import("@/lib/leads");
+    expect(() => requireStoredLead({ id: null, error: new Error("rls") })).toThrow("rls");
+    expect(() => requireStoredLead({ id: null, error: { code: "42501" } })).toThrow("lead_not_stored");
+    expect(() => requireStoredLead({ id: null, error: null })).toThrow("lead_not_stored");
+    expect(() => requireStoredLead(null)).toThrow("lead_not_stored");
+  });
+
+  it("passes a stored lead and an already-stored duplicate", async () => {
+    const { requireStoredLead } = await import("@/lib/leads");
+    expect(requireStoredLead({ id: "abc", error: null }).id).toBe("abc");
+    expect(requireStoredLead({ id: null, error: null, duplicate: true }).duplicate).toBe(true);
   });
 });

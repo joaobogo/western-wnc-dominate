@@ -203,8 +203,8 @@ const ConstructionIntakeForm = () => {
       if (insertErr) throw insertErr;
 
       try {
-        const { submitLead } = await import("@/lib/leads");
-        await submitLead({
+        const { submitLead, requireStoredLead } = await import("@/lib/leads");
+        requireStoredLead(await submitLead({
           source: "construction_intake_form",
           lead_type: "construction",
           full_name: contact.values.name,
@@ -231,8 +231,8 @@ const ConstructionIntakeForm = () => {
             decision_maker: data.decisionMaker,
             upload_folder: folder,
           },
-        });
-      } catch (e) { console.error(e); }
+        }));
+      } catch (e) { console.error(e); throw e; }
 
       trackEvent("form_submit", {
         label: "Construction Intake",

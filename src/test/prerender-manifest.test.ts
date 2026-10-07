@@ -47,10 +47,12 @@ describe.skipIf(!generated)("sitemap vs prerender manifest", () => {
     expect(offenders).toEqual([]);
   });
 
-  it("every county hub is prerendered but none is in the sitemap (noindex link hubs)", () => {
-    const countyPaths = counties.map((c) => `/service-areas/county/${c.slug}`);
-    expect(countyPaths.filter((p) => !manifest.has(p))).toEqual([]);
-    expect(countyPaths.filter((p) => sitemap.has(p))).toEqual([]);
+  it("every county hub is prerendered; only the indexable ones are in the sitemap", () => {
+    // Indexable since 15 Sep 2026 (SEO spec T2); counties with indexable:false stay noindex,follow.
+    const path = (c: { slug: string }) => `/service-areas/county/${c.slug}`;
+    expect(counties.map(path).filter((p) => !manifest.has(p))).toEqual([]);
+    expect(counties.filter((c) => c.indexable !== false).map(path).filter((p) => !sitemap.has(p))).toEqual([]);
+    expect(counties.filter((c) => c.indexable === false).map(path).filter((p) => sitemap.has(p))).toEqual([]);
   });
 
   it("the noindex funnel steps are prerendered but never in the sitemap", () => {

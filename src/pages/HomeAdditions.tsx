@@ -85,7 +85,7 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Highlander Construction Work", location: "Western North Carolina" },
+  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Construction Work by Highlander", location: "Western North Carolina" },
   { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
   { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Home Expansion", location: "Western North Carolina" },
 ];
@@ -489,7 +489,7 @@ const HomeAdditions = () => {
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Construction Context</span>
-              <h2 className="section-heading mb-3">See Highlander Construction Work.</h2>
+              <h2 className="section-heading mb-3">See Construction Work by Highlander.</h2>
               <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">These images are construction and outdoor-living work already featured by Highlander. Addition-specific case studies are published only when the project scope and location are documented.</p>
             </motion.div>
 

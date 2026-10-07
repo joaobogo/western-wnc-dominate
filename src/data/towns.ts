@@ -1,4 +1,4 @@
-import { FRANKLIN, SYLVA, type BusinessLocation } from "@/data/business";
+import { FRANKLIN, FRANKLIN_STREET, SYLVA, type BusinessLocation } from "@/data/business";
 
 /** Showroom street name without the leading house number — the address itself lives only in business.ts (guarded by business-identity.test.ts). */
 const streetName = (loc: BusinessLocation) => loc.streetAddress.replace(/^\d+\s+/, "");
@@ -119,7 +119,7 @@ export const towns: TownData[] = [
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
     // 59 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Highlands, NC | Highlander Building Services",
-    h1: "Roofers in Highlands, NC — Roofing Built for 4,000 ft",
+    h1: "Roofers in Highlands, NC: Roofing Built for 4,000 ft",
     metaDescription: "Highlander serves Highlands, NC with roofing, roof repair, roof replacement, gutters, skylights, construction, and design services for mountain homes across Western North Carolina.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
     climateExposure: "Extreme high-altitude weather: 80+ inches of rain, heavy ice loading, and high UV levels that test standard roofing systems.",
@@ -141,7 +141,7 @@ export const towns: TownData[] = [
     features: ["Design", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
     // 58 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Cashiers, NC | Highlander Building Services",
-    h1: "Roofers in Cashiers, NC — Roofs Built for 80 Inches of Rain",
+    h1: "Roofers in Cashiers, NC: Roofs Built for 80 Inches of Rain",
     metaDescription: "Waterproofing-focused roofing and construction for Cashiers, NC estates. Moisture-resistant materials and engineered decks. Licensed & insured.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates across the Cashiers Plateau.",
     climateExposure: "Temperate rainforest conditions: Persistent moisture, 80+ inches of rain, and low-visibility fog that require advanced drainage.",
@@ -159,13 +159,12 @@ export const towns: TownData[] = [
     county: "Macon County",
     state: "NC",
     elevation: "2,119 ft",
-    description: "Our hometown market. Based at 40 Depot Street in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.",
+    description: `Our hometown market. Based at ${FRANKLIN_STREET} in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.`,
     features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
-    // 59 chars: fits the 60-char guard intact. The longer "Roof Replacement, Repair & Metal"
-    // middle was dropped by normalizeTitle, which left this page with the homepage's title.
-    metaTitle: "Best Roofers in Franklin, NC | Highlander",
-    h1: `Best Roofers in Franklin, NC — Walk-In Showroom on ${streetName(FRANKLIN)}`,
-    metaDescription: "Looking for the best roofers in Franklin, NC? Visit Highlander at 40 Depot Street for roof repair, replacement, metal roofing and construction across Macon County.",
+    // 54 chars: fits the 60-char guard intact and stays distinct from the homepage title.
+    metaTitle: "Roofers in Franklin, NC | Highlander Building Services",
+    h1: `Roofers in Franklin, NC: Walk-In Showroom on ${streetName(FRANKLIN)}`,
+    metaDescription: `Looking for roofers in Franklin, NC? Visit Highlander at ${FRANKLIN_STREET} for roof repair, replacement, metal roofing and construction across Macon County.`,
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River Valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
@@ -173,7 +172,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Dimensional Asphalt Roofing", "Residential Repairs", "Master Suite Additions", "Interior Renovations"],
     styleTendency: "Classic Appalachian styles, including craftsman bungalows and modern farmhouses built for local conditions.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown", "Otto"],
-    marketAuthorityAngle: "Franklin is Highlander's home base, with a walk-in showroom at 40 Depot Street and roofing and construction service across Macon County.",
+    marketAuthorityAngle: `Franklin is Highlander's home base, with a walk-in showroom at ${FRANKLIN_STREET} and roofing and construction service across Macon County.`,
     heroImage: "/media/wnc-aerial-neighborhood.jpg"
   },
   {
@@ -186,7 +185,7 @@ export const towns: TownData[] = [
     features: ["Historic home expertise", "Commercial maintenance", "Jackson County hub", "Rental property service"],
     // 56 chars so the service differentiator survives the 60-char title guard.
     metaTitle: "Roofers in Sylva, NC | Highlander Building Services",
-    h1: `Roofers in Sylva, NC — Showroom on ${streetName(SYLVA)}`,
+    h1: `Roofers in Sylva, NC: Showroom on ${streetName(SYLVA)}`,
     metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Sylva, NC homes and Jackson County properties, from our staffed Sylva showroom.",
     housingProfile: "Historic downtown homes, university rentals, and hillside residential properties across the Sylva valley.",
     climateExposure: "Heavy valley moisture, trapped fog, and persistent humidity that accelerate biological growth on aging roof systems.",
@@ -359,7 +358,7 @@ export const towns: TownData[] = [
     description: "Serving the far west with reliable roofing and construction. We focus on durability and local accountability for Murphy's growing residential market.",
     features: ["Local crew presence", "Fast turnaround", "Residential specialists", "Vacation home care"],
     metaTitle: "Murphy, NC Roofing | Highlander Building Services",
-    metaDescription: "Reliable roofing and construction for Murphy and Cherokee County. Locally based crews, durable materials, and honest service. Licensed & Insured.",
+    metaDescription: "Roofing and construction for Murphy and Cherokee County, served from the Franklin and Sylva showrooms. Durable materials, and honest service. Licensed & Insured.",
     housingProfile: "Traditional family homes, retirement retreats, and high-traffic vacation rentals.",
     climateExposure: "Heavy seasonal humidity and wind-driven rain that require high-quality underlayment and precise flashing details.",
     localVibe: "A friendly, community-oriented hub where local reliability and straight-forward pricing are the top priorities.",
@@ -427,7 +426,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Dimensional Asphalt Roofing", "Roof Repair", "Gutter Installation", "Home Additions"],
     styleTendency: "Traditional Appalachian farmhouse and craftsman styles with asphalt or metal roofing suited to valley conditions.",
     notableNeighborhoods: ["Coweeta", "Tessentee", "Otto Community", "US-441 corridor"],
-    marketAuthorityAngle: "Otto is close to our Franklin showroom at 40 Depot Street, giving Macon County homeowners a nearby place to meet the Highlander team.",
+    marketAuthorityAngle: `Otto is close to our Franklin showroom at ${FRANKLIN_STREET}, giving Macon County homeowners a nearby place to meet the Highlander team.`,
     heroImage: "/media/wnc-mountain-home-exterior.jpg"
   },
   {

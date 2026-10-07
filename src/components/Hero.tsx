@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
+import { FRANKLIN_STREET, PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { motion } from "framer-motion";
@@ -333,7 +333,7 @@ const Hero = () => {
               <div className="w-px h-3.5 md:h-6 bg-primary-foreground/30" />
               <span className="text-primary-foreground text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed NC General Contractor</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
-              <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Franklin Showroom · 40 Depot Street</span>
+              <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Franklin Showroom · {FRANKLIN_STREET}</span>
             </motion.div>
 
             {/* Manufacturer credentials */}

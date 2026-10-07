@@ -74,7 +74,7 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Highlander Construction Work", location: "Western North Carolina" },
+  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Construction Work by Highlander", location: "Western North Carolina" },
   { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
   { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Construction", location: "Western North Carolina" },
 ];

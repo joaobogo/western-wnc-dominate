@@ -116,6 +116,10 @@ function humanizeLeadName(row: LeadRow): string {
     else if (/construction|addition|renovation|remodel|custom[- ]?home/.test(specialtyBlob)) label = "Construction Inquiry";
   }
 
+  // Paid landing pages already know the service the visitor chose (or did not).
+  const landingLabel = landingLeadLabel(row);
+  if (landingLabel) label = landingLabel;
+
   // Refine construction leads by project type: Addition / Garage / Porch /
   // Sunroom / Deck / Patio / Pergola / Outdoor Living / Renovation.
   if (/construction|design|addition|garage|porch|sunroom|deck|patio|pergola|outdoor|renovation|remodel/.test(key)) {
@@ -176,6 +180,28 @@ function humanizeLeadName(row: LeadRow): string {
 // Returns "construction" when the customer has complete permit-ready plans,
 // "design" when they only have ideas/sketches/no plans/unsure, or null when
 // the lead is not a construction/design project.
+/** Form source written by the three paid landing pages (/lp/*). */
+export const LANDING_SOURCE = "highlander_landing_page";
+
+/**
+ * Readable JobTread label for a paid-landing lead, derived from the routing the
+ * landing page stored (service_category / project_type). Null = use the generic rules.
+ */
+export function landingLeadLabel(row: LeadRow): string | null {
+  if (row.source !== LANDING_SOURCE) return null;
+  const category = String(row.service_category ?? "").toLowerCase();
+  const projectType = String(row.project_type ?? "").toLowerCase();
+  if (category === "roofing_and_construction") return "Roofing & Construction Inquiry";
+  if (category === "general") return "Home Project Inquiry";
+  if (category === "roofing") {
+    if (projectType === "roof_repair") return "Roof Repair Lead";
+    if (projectType === "roof_replacement") return "Roof Replacement Inquiry";
+    if (projectType === "metal_roofing") return "Metal Roofing Inquiry";
+    return "Roofing Inquiry";
+  }
+  return null;
+}
+
 function classifyConstructionDesign(row: LeadRow): "construction" | "design" | null {
   const catBlob = (
     String(row.service_category ?? "") + " " +
@@ -194,6 +220,9 @@ function classifyConstructionDesign(row: LeadRow): "construction" | "design" | n
   const explicitNoPlans =
     /sketch|inspiration|idea|no[- ]?plans|not[- ]?sure|unsure|have[_-]?ideas|^no$/.test(raw);
   if (completePlans || row.has_plans === true && !explicitNoPlans) return "construction";
+  // The paid landing forms never ask about plans, so "unknown" must not be read
+  // as "no plans yet" and silently routed to Design Services.
+  if (row.source === LANDING_SOURCE && !raw && row.has_plans == null) return "construction";
   return "design";
 }
 
@@ -515,6 +544,10 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   kv("LinkedIn Attribution", row.li_fat_id);
   kv("Referrer", row.referrer);
   kv("Landing Page", row.landing_page);
+  if (row.source === LANDING_SOURCE) {
+    kv("Service Intent", meta.service_intent);
+    kv("Form Location", meta.form_location);
+  }
   kv("First Visit", row.first_seen_at);
 
   section("Timeline/Urgency");
@@ -649,6 +682,27 @@ export function buildCustomerAccountName(row: LeadRow): string {
  * exists in a DIFFERENT town. Keeps two unrelated "John Smith" customers
  * apart instead of merging them onto one account.
  */
+/**
+ * The paid landing forms collect a first name only and no town. With nothing
+ * else to match on, "Mike" would be attached to ANY existing customer called
+ * Mike, merging unrelated people. Disambiguate by phone number so the same
+ * person re-submitting still lands on one customer, and different people never
+ * share one. Leads with a last name or a town are untouched.
+ */
+export function buildFirstNameOnlyAccountName(
+  accountName: string,
+  contact: { last_name?: string | null; phone?: string | null } | null | undefined,
+  town?: string | null,
+): string {
+  if (cleanName(contact?.last_name) || cleanName(town)) return accountName;
+  const digits = String(contact?.phone ?? "").replace(/\D/g, "");
+  if (digits.length < 7) return accountName;
+  const tail = digits.slice(-10);
+  const pretty = tail.length === 10 ? `${tail.slice(0, 3)}-${tail.slice(3, 6)}-${tail.slice(6)}` : tail;
+  if (accountName.endsWith(`(${pretty})`)) return accountName;
+  return `${accountName} (${pretty})`;
+}
+
 export function buildTownScopedAccountName(accountName: string, town?: string | null): string {
   const t = cleanName(town);
   if (!t) return accountName;
@@ -1254,6 +1308,8 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
     if (acctErr) {
       return { ok: false, error: `retry_needed: invalid customer name (${acctErr}). Provide a valid full name or company name before retrying.` };
     }
+
+    accountName = buildFirstNameOnlyAccountName(accountName, payload.contact, town);
 
     const noteFull: string = payload.note ?? "";
     // JobTread text custom fields cap at 1024 chars. Attachment links must

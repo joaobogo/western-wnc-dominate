@@ -188,8 +188,8 @@ const RoofingIntakeForm = () => {
 
       // Mirror into unified leads table
       try {
-        const { submitLead } = await import("@/lib/leads");
-        await submitLead({
+        const { submitLead, requireStoredLead } = await import("@/lib/leads");
+        requireStoredLead(await submitLead({
           source: "roofing_intake_form",
           lead_type: "roofing",
           full_name: contact.values.name,
@@ -209,8 +209,8 @@ const RoofingIntakeForm = () => {
           attachments: uploadedPaths,
           attachment_errors: uploadErrors,
           metadata: { routing, jobtread, upload_folder: folder },
-        });
-      } catch (e) { console.error(e); }
+        }));
+      } catch (e) { console.error(e); throw e; }
 
       trackEvent("form_submit", {
         label: "Roofing Intake",
