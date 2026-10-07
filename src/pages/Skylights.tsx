@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Sun, Droplets, Wrench, Shield, Award } from "lucide-react";
@@ -230,7 +230,7 @@ const Skylights = () => {
             <section className="section-padding bg-muted/20">
               <div className="container-tight">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across the Western NC mountains</h2>
-                <p className="text-muted-foreground mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 10-county service area in Western North Carolina.</p>
+                <p className="text-muted-foreground mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our {COUNTY_COUNT}-county service area in Western North Carolina.</p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {towns.filter((t) => t.indexable !== false).map((t) => (
                     <Link

@@ -96,7 +96,13 @@ const MIME = {
   ".xml": "application/xml",
 };
 
+// The pristine SPA shell, read once before anything is written. "/" is prerendered
+// first and overwrites dist/index.html, so reading the file per request would hand
+// every later route the homepage snapshot (and its prerendered-at stamp) as its shell.
+let SHELL_HTML = null;
+
 function startServer() {
+  SHELL_HTML ??= readFileSync(join(DIST, "index.html"));
   const server = createServer((req, res) => {
     const url = new URL(req.url, ORIGIN);
     const filePath = join(DIST, decodeURIComponent(url.pathname));
@@ -108,7 +114,7 @@ function startServer() {
     }
     // SPA fallback — every route serves the shell, React renders it.
     res.writeHead(200, { "content-type": MIME[".html"] });
-    res.end(readFileSync(join(DIST, "index.html")));
+    res.end(SHELL_HTML);
   });
   return new Promise((ok) => server.listen(PORT, "127.0.0.1", () => ok(server)));
 }
@@ -182,6 +188,8 @@ function postProcess(html, route) {
     html = html.replace(/<html/i, '<html lang="en"');
   }
 
+  // Exactly one freshness stamp per page: drop any inherited from the shell first.
+  html = html.replace(/<meta name="prerendered-at"[^>]*>\s*/gi, "");
   html = html.replace(
     /<\/head>/i,
     `  <meta name="prerendered-at" content="${new Date().toISOString()}">\n</head>`,

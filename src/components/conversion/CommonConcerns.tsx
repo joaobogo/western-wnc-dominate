@@ -44,6 +44,43 @@ export const defaultConcerns: ConcernItem[] = [
   },
 ];
 
+/**
+ * Objections a homeowner planning an addition, renovation or outdoor-living project
+ * actually has. Process only: no price, timing, approval or credit promises.
+ */
+export const constructionConcerns: ConcernItem[] = [
+  {
+    icon: DollarSign,
+    concern: "\"I don't have a final budget yet.\"",
+    answer:
+      "That is a normal place to start. We work toward a defined scope, material choices and proposed next steps so you can see what drives the cost before you commit. A written estimate follows the review of your home and the scope.",
+  },
+  {
+    icon: FileText,
+    concern: "\"I don't have drawings or plans.\"",
+    answer:
+      "You do not need finished plans to begin. Design guidance and planning needs are part of the first conversation. Detailed design services and their scope are agreed separately, in writing.",
+  },
+  {
+    icon: CalendarClock,
+    concern: "\"I'm worried about permits and approvals.\"",
+    answer:
+      "Planning and permit requirements depend on the proposed scope and the jurisdiction. We explain what applies to your project, and the responsibilities and included services should be confirmed in writing. Approval is decided by the permitting authority.",
+  },
+  {
+    icon: Users,
+    concern: "\"Who will I be dealing with?\"",
+    answer:
+      "A Highlander point of contact stays with the conversation from planning toward construction, so responsibility for decisions, communication and follow-up is clear.",
+  },
+  {
+    icon: Sparkles,
+    concern: "\"Will new work fit the home I already have?\"",
+    answer:
+      "How an addition or renovation relates to the existing structure, layout, roofline and site conditions is part of the planning conversation. Feasibility has to be assessed for your property.",
+  },
+];
+
 interface CommonConcernsProps {
   heading?: string;
   intro?: string;

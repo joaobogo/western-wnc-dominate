@@ -12,7 +12,7 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import CTABlock from "@/components/CTABlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import NotFound from "@/pages/NotFound";
 import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
@@ -175,7 +175,7 @@ const OutdoorLivingSubPage = ({ slug }: { slug: string }) => {
         }
         cta={
           <>
-            <CommonConcerns />
+            <CommonConcerns concerns={constructionConcerns} />
             <CTABlock />
           </>
         }

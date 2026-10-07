@@ -5,6 +5,7 @@ import {
   Hammer, Cloud, Eye, Sparkles, type LucideIcon,
 } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
+import { COUNTY_COUNT } from "@/data/business";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 
@@ -194,7 +195,7 @@ const ConstructionAuthority = () => {
               {[
                 "Licensed General Contractor",
                 "Full Liability & Workers' Comp",
-                "8 WNC Counties",
+                `${COUNTY_COUNT} WNC Counties`,
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />

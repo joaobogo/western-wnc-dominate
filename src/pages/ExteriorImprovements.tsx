@@ -1,6 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -459,7 +459,7 @@ const ExteriorImprovements = () => {
           <>
             {/* ─── CLOSING CTA ─── */}
         <CostContextBlock serviceLabel="exterior improvement" variant="exterior" />
-        <CommonConcerns />
+        <CommonConcerns concerns={constructionConcerns} />
         <ConstructionClosingCTA
           headline={"Your Home's Best Days\nDon't Have to Be Behind It."}
           subheadline="Whether it's siding that's seen better days, windows that don't perform anymore, or an exterior that needs protection — let's talk about what's possible."

@@ -29,8 +29,10 @@ const elevationNumber = (elevation: string): number =>
 
 export const buildTownFAQs = (town: TownData): TownFAQItem[] => {
   const mix = town.serviceDemandMix ?? [];
-  const primary = mix[0] ?? "roof replacement";
-  const secondary = mix[1] ?? "roof repair";
+  // Roofing sentences must only ever name a roofing service. The demand mix also lists
+  // decks, porches and commercial work, which read wrongly inside a roofing answer.
+  const roofMix = mix.filter((m) => /roof|shingle|metal|storm|gutter|slate|shake|skylight/i.test(m) && !/commercial/i.test(m));
+  const primary = roofMix[0] ?? "roof replacement";
   const elev = elevationNumber(town.elevation);
   const permitting = countyPermitting(town.county);
   const faqs: TownFAQItem[] = [];
@@ -58,7 +60,7 @@ export const buildTownFAQs = (town: TownData): TownFAQItem[] => {
   // 4. Repair vs. replacement decision — high-intent
   faqs.push({
     question: `Should I repair or replace my roof in ${town.name}?`,
-    answer: `If the damage is localized and the deck is sound, ${secondary.toLowerCase()} is usually the right call. Once you're seeing widespread granule loss, repeat leaks in multiple areas, or failed flashing across the roof, replacement costs less over the life of the home at ${town.name}'s elevation. We tell you which one you're looking at during the inspection.`,
+    answer: `If the damage is localized and the deck is sound, a targeted repair is usually the right call. Once you're seeing widespread granule loss, repeat leaks in multiple areas, or failed flashing across the roof, replacement costs less over the life of the home at ${town.name}'s elevation. We tell you which one you're looking at during the inspection.`,
   });
 
   // 5. Construction division mapping

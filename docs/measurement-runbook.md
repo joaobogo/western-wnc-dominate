@@ -123,8 +123,8 @@ is required; the following is GA4 UI configuration.
 
 | Event | Source | Why |
 | --- | --- | --- |
-| `form_success` | `trackFormSuccess` — every inspection/contact form | Primary lead conversion |
-| `generate_lead` | fired alongside `form_success` | Ads-facing conversion |
+| `form_submit_success` | `trackFormSuccess` — every form, only after the lead is stored | Primary lead event |
+| `generate_lead` | fired once per lead right after `form_submit_success` | Ads-facing conversion (mark as the GA4 key event) |
 | `phone_click` | delegated `tel:` listener | Call intent |
 
 Leave `cta_click`, `exit_intent_*`, and `scroll_depth` unmarked — they are

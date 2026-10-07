@@ -30,3 +30,10 @@
 /build-info.json
   Cache-Control: no-store, max-age=0
   Content-Type: application/json
+
+# Tool and funnel URLs that Netlify serves with the SPA shell (200 rewrites in
+# public/_redirects). They must never be indexed.
+/quote-flow
+  X-Robots-Tag: noindex, nofollow
+/seo-monitoring
+  X-Robots-Tag: noindex, nofollow

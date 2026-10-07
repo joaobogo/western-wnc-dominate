@@ -77,3 +77,9 @@ export function onConsentChange(cb: (state: ConsentState) => void): () => void {
   window.addEventListener("hl:consent", handler);
   return () => window.removeEventListener("hl:consent", handler);
 }
+
+/** Reopen the cookie notice so a visitor can change an earlier choice at any time. */
+export function openConsentPreferences(): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent("hl:consent-open"));
+}

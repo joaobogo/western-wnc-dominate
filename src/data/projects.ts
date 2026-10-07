@@ -153,7 +153,7 @@ export const projectDetails: ProjectDetail[] = [
     },
     seo: {
       title: "CertainTeed Landmark Roof Replacement — Waynesville, NC | Highlander",
-      description: "4,100 sq ft CertainTeed Landmark shingle replacement in Waynesville, NC. Completed in 4 days with SureStart PLUS™ warranty. See the full project story.",
+      description: "4,100 sq ft CertainTeed Landmark shingle replacement in Waynesville, NC. Completed in 4 days. See the full project story.",
     },
   },
   {

@@ -28,7 +28,7 @@ const structuralTieImg = "/media/wnc-construction-framing.webp";
 const mountainSiteImg = "/media/wnc-ridge-elevation-home.webp";
 
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -575,7 +575,7 @@ const HomeAdditions = () => {
         <BudgetRangeContext scopeLabel="home additions" />
 
         <CostContextBlock serviceLabel="home addition" variant="construction" />
-        <CommonConcerns />
+        <CommonConcerns concerns={constructionConcerns} />
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."

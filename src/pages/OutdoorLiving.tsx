@@ -29,7 +29,7 @@ const terrainSlopeImg = "/media/wnc-ridge-elevation-home.webp";
 
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -538,7 +538,7 @@ const OutdoorLiving = () => {
         <BudgetRangeContext scopeLabel="outdoor living projects" />
 
         <CostContextBlock serviceLabel="outdoor living" variant="construction" />
-        <CommonConcerns />
+        <CommonConcerns concerns={constructionConcerns} />
         <ConstructionClosingCTA
           headline={"The Best Room in Your\nHouse Doesn't Need Walls."}
           subheadline="Whether it's a covered porch for morning coffee, a screened room for summer evenings, or an outdoor kitchen for gathering — let's design the space you've been imagining."

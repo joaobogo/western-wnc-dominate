@@ -22,6 +22,24 @@ const ORIGIN = "https://highlandernc.com";
 /** Keep in sync with src/components/landing/config.ts and src/pages/*Ads.tsx. */
 const PAGES = [
   {
+    path: "/lp/roof-repair",
+    title: "Roof Repair in Western NC | Highlander",
+    description:
+      "Discuss roof repair or an active leak with Highlander in Western North Carolina. Start with a short contact form or call during staffed business hours.",
+  },
+  {
+    path: "/lp/roof-replacement",
+    title: "Roof Replacement in Western NC | Get a Clear Scope",
+    description:
+      "Roof replacement landing page for paid traffic with a simplified lead form, stronger trust proof, and clear next-step messaging for Western North Carolina homeowners.",
+  },
+  {
+    path: "/lp/storm-damage",
+    title: "Storm Damage Roof Help in Western NC | Highlander",
+    description:
+      "Discuss storm-related roof damage in Western North Carolina. Start with a short contact form and get clear documentation and repair-or-replace guidance.",
+  },
+  {
     path: "/lp/roofing",
     title: "Roof Repair & Replacement in Western NC | Highlander",
     description:

@@ -3956,10 +3956,7 @@ Don't pick materials based on looks alone. Let us help you select a palette that
 ## Financing Options We Offer
 
 ### Monthly Payment Plans
-- Low monthly payments
-- Quick approval process
-- Competitive interest rates
-- No prepayment penalties
+Financing is offered through third-party lenders, so availability, rates, terms and approval depend on the lender and your own situation. Ask about current options during your free estimate.
 
 ### Insurance Claims
 If your roof damage is storm-related, your homeowner's insurance may cover most or all of the replacement cost. We handle the documentation and adjuster coordination.

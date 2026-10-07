@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Loader2, X } from "lucide-react";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import { trackFormError } from "@/lib/gtm";
 import FormConsent from "@/components/FormConsent";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
@@ -65,11 +66,25 @@ export default function HomepageStickyLeadBar() {
       { threshold: 0.01 },
     );
 
-    document.querySelectorAll("[data-final-cta], footer, [data-hide-sticky]").forEach((el) => {
-      // Do not observe this component's own form.
-      if (!(el instanceof HTMLElement) || el.dataset.homeStickyLead !== "true") observer.observe(el);
-    });
-    return () => observer.disconnect();
+    // The footer and final CTA are lazy-loaded, so they may mount after this effect.
+    // Re-scan on DOM changes and observe each target once.
+    const seen = new WeakSet<Element>();
+    const scan = () => {
+      document.querySelectorAll("[data-final-cta], footer, [data-hide-sticky]").forEach((el) => {
+        if (seen.has(el)) return;
+        // Do not observe this component's own form.
+        if (el instanceof HTMLElement && el.dataset.homeStickyLead === "true") return;
+        seen.add(el);
+        observer.observe(el);
+      });
+    };
+    scan();
+    const mutations = new MutationObserver(scan);
+    mutations.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      observer.disconnect();
+      mutations.disconnect();
+    };
   }, []);
 
   if (dismissed || !visible || blocked) return null;
@@ -82,6 +97,7 @@ export default function HomepageStickyLeadBar() {
     if (submitting) return;
 
     if (!contact.markAttempted()) {
+      trackFormError({ form_name: "homepage_sticky_lead_bar", form_id: "homepage_sticky_lead_bar", error_type: "validation" });
       setSubmitError("Please check the three fields below.");
       setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
       return;
@@ -100,7 +116,8 @@ export default function HomepageStickyLeadBar() {
     });
 
     if (!result) return;
-    if (result.error) {
+    if (result.error || (!result.id && !result.duplicate)) {
+      trackFormError({ form_name: "homepage_sticky_lead_bar", form_id: "homepage_sticky_lead_bar", error_type: "delivery" });
       setSubmitError("We couldn't send that just now. Your information is still here — please try again.");
       return;
     }

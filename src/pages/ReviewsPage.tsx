@@ -209,7 +209,7 @@ const ReviewsPage = () => {
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
               <p className="text-dark-section-muted max-w-2xl mx-auto">
-                Across hundreds of reviews, four themes emerge consistently. These aren't cherry-picked 
+                Across {REVIEW_COUNT} Google reviews, four themes emerge consistently. These aren't cherry-picked 
                 highlights — they're patterns that define how clients experience working with Highlander.
               </p>
             </motion.div>
@@ -240,7 +240,7 @@ const ReviewsPage = () => {
 
         {/* ── CLOSING CTA ── */}
         <ReassuranceBlock
-          headline={"See Why Hundreds of WNC\nHomeowners Trust Highlander."}
+          headline={"Read What WNC\nHomeowners Say About Highlander."}
           subheadline="Experience the communication, craftsmanship, and accountability our clients talk about — start a conversation today."
           ctaText="Get My Questions Answered"
         />

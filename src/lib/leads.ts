@@ -341,6 +341,17 @@ export type SubmitLeadResult = {
  * A repeat submission with the same idempotency key inside 10 minutes is
  * ignored and returns the original lead id.
  */
+/**
+ * True only for a unique violation on the idempotency key (a repeat of an already
+ * stored submission). Any other unique violation is a real failure and must not be
+ * reported to the visitor as a saved lead.
+ */
+export function isIdempotencyViolation(error: unknown): boolean {
+  const e = error as { code?: string; message?: string; details?: string } | null;
+  if (e?.code !== "23505") return false;
+  return /idempotency/i.test(`${e.message ?? ""} ${e.details ?? ""}`);
+}
+
 export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult> {
   // getAttribution() captures on the spot if the session never did, so a lead
   // is never sent without page / referrer / campaign context.
@@ -408,7 +419,7 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
     // racing double submit (double click, retry after a timeout that actually
     // succeeded) hits a unique violation instead of creating a second lead.
     // The first write is already durable, so this is a success for the visitor.
-    if ((error as { code?: string })?.code === "23505") {
+    if (isIdempotencyViolation(error)) {
       console.info("submitLead: duplicate submission rejected by the database");
       rememberSubmission(fingerprint, idem.key, idem.lead_id ?? null);
       return { id: idem.lead_id ?? null, error: null, duplicate: true };

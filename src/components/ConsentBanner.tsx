@@ -21,6 +21,13 @@ const ConsentBanner = () => {
     return () => window.clearTimeout(t);
   }, []);
 
+  // Footer "Cookie preferences" link: let the visitor revisit an earlier choice.
+  useEffect(() => {
+    const open = () => setVisible(true);
+    window.addEventListener("hl:consent-open", open);
+    return () => window.removeEventListener("hl:consent-open", open);
+  }, []);
+
   if (!visible) return null;
 
   return (
