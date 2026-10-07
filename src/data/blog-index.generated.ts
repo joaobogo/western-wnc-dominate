@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "skylight-placement",
+    "title": "Even Daylight, Less Risk: Skylight Placement for Mountain Homes",
+    "excerpt": "Place skylights for even daylight, less glare, and fewer leaks with practical guidance on room placement, roof orientation, flashing, and mountain-home conditio",
+    "category": "Materials",
+    "date": "2026-10-06",
+    "town": ""
+  },
+  {
     "slug": "half-round-vs-k-style-gutters",
     "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
     "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
