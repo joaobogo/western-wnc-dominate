@@ -10,6 +10,7 @@ import {
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import { trackFormError, trackFormStart } from "@/lib/gtm";
 import { PHONE_DISPLAY } from "@/data/business";
+import { isObviouslyFakeEmail, normalizePhoneE164 } from "@/lib/lead-validation";
 import type { IntentId, LandingConfig } from "./config";
 
 export const LANDING_SOURCE = "highlander_landing_page";
@@ -20,17 +21,31 @@ export const CONSENT_TEXT =
 export type FormValues = { firstName: string; email: string; phone: string };
 export type FormErrors = Partial<Record<keyof FormValues, string>>;
 
+/**
+ * Same rules the database enforces on insert (see `validate_lead_contact`), so a
+ * visitor is told what to fix on the form instead of getting a generic failure.
+ */
 export const validateLanding = (values: FormValues): FormErrors => {
   const errors: FormErrors = {};
   if (!values.firstName.trim()) errors.firstName = "Please enter your first name.";
-  const digits = values.phone.replace(/\D/g, "");
   if (!values.phone.trim()) errors.phone = "Please enter a phone number.";
-  else if (digits.length < 7 || digits.length > 15) errors.phone = "Please enter a valid phone number.";
-  if (!values.email.trim()) errors.email = "Please enter your email address.";
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
-    errors.email = "Please enter a valid email address.";
+  else {
+    const phone = normalizePhoneE164(values.phone);
+    if (phone.ok === false) errors.phone = "Please enter a valid 10-digit US phone number.";
   }
+  const email = values.email.trim();
+  if (!email) errors.email = "Please enter your email address.";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Please enter a valid email address.";
+  else if (isObviouslyFakeEmail(email)) errors.email = "Please enter a real email address we can reply to.";
   return errors;
+};
+
+/** Turns a database rejection into a field message the visitor can act on. */
+export const fieldErrorFromDatabase = (error: unknown): FormErrors | null => {
+  const text = `${(error as { message?: string } | null)?.message ?? ""} ${(error as { details?: string } | null)?.details ?? ""}`;
+  if (/invalid us phone/i.test(text)) return { phone: "Please enter a valid 10-digit US phone number." };
+  if (/fake or disposable|invalid email/i.test(text)) return { email: "Please enter a real email address we can reply to." };
+  return null;
 };
 
 const newKey = () =>
@@ -152,6 +167,12 @@ export function LandingFormProvider({
       // A second call while one is in flight returns null; ignore it.
       if (!result) return;
       if (result.error || (!result.id && !result.duplicate)) {
+        const fieldErrors = fieldErrorFromDatabase(result.error);
+        if (fieldErrors) {
+          setErrors(fieldErrors);
+          trackFormError({ form_name: LANDING_SOURCE, form_id: config.formId, error_type: "validation" });
+          return;
+        }
         trackFormError({ form_name: LANDING_SOURCE, form_id: config.formId, error_type: "delivery" });
         setSubmitError(`We could not confirm your request. Please try again or call ${PHONE_DISPLAY}.`);
         return;
