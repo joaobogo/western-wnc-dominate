@@ -45,8 +45,8 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/careers" },
   { path: "/community" }, // /giving-back 301s here — one URL only
   { path: "/faq" },
-  { path: "/roofing-cost-western-nc", changefreq: "monthly", priority: "0.8" },
-  { path: "/roofing/metal/cost", changefreq: "monthly", priority: "0.8" },
+  { path: "/roofing-cost-western-nc" },
+  { path: "/roofing/metal/cost" },
   { path: "/financing" },
   { path: "/contact" },
   { path: "/request-inspection" },
@@ -129,14 +129,15 @@ const projectRoutes: SitemapEntry[] = projectDetails.map((p) => ({
   path: `/projects/${p.slug}`,
 }));
 
-// Dynamic: one entry per blog post. lastmod = post.date (authoritative,
-// page-specific). Skip lastmod if the date is unparseable.
+// Dynamic: one entry per blog post. Prefer the recorded substantive revision
+// date over publication; both are authoritative, page-specific timestamps.
+// Omit lastmod when the selected timestamp is unparseable. Never use build time.
 // Posts folded into a survivor (canonicalTo set, P3.5) render noindex with a
 // canonical to the survivor and are NOT listed here.
 const blogRoutes: SitemapEntry[] = blogPosts
   .filter((p) => !p.canonicalTo && p.indexable !== false)
   .map((p) => {
-    const d = new Date(p.date);
+    const d = new Date(p.updated ?? p.date);
     const entry: SitemapEntry = { path: `/blog/${p.slug}` };
     if (!isNaN(d.getTime())) entry.lastmod = d.toISOString().slice(0, 10);
     return entry;
