@@ -63,7 +63,7 @@ const RecentProjects = () => {
     <>
       <SEOHead
         title="Highlander Project Gallery in Western NC"
-        description="See documented Highlander roofing case studies plus recent project activity across Western North Carolina."
+        description="See documented Highlander roofing case studies and recent project activity across Western North Carolina, with the scope and location of each job."
         path="/recent-projects"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
