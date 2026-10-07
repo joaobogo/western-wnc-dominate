@@ -61,21 +61,30 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Franklin, NC",
     intro:
-      "Franklin is Highlander's home market and primary showroom location. Replacement projects are scoped from the actual roof condition, access, materials, and schedule rather than a generic local-response promise.",
+      `Franklin, NC ${FRANKLIN.postalCode} is Highlander's home market and primary showroom location. As a local roofing company offering residential and commercial roofing services, we scope replacement projects from the actual roof condition, access, roofing materials, and schedule rather than a generic local-response promise.`,
     localContext:
-      "Most Franklin roofs we replace are 20–30 year asphalt systems on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies and aging underlayment are the two most common reasons homes here need a full replacement rather than another patch.",
+      "Most Franklin roofs we replace are 20–30 year asphalt shingles on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies, leading to issues like premature granule loss, and aging underlayment are the two most common reasons homes here need a new roof rather than another patch. When you see curling shingles, missing shingles after storm activity, a sagging ridge, or widespread leaks, it is rare that the damage is limited to one plane. Flashing issues at chimneys and siding transitions, fallen tree limbs, and downspouts that have pulled loose get handled in the same project. Recommended options include dimensional asphalt shingles, the common choice for most valley homes, and standing seam metal where the lot takes wind, sheds snow, or design preferences call for it. The final number depends on roof size, pitch, home size, local labor rates, and the materials you choose.",
     whoItsFor:
-      "Long-time Franklin homeowners weighing repair-vs-replace, families preparing a home for sale, and buyers who just closed and want a clean baseline before they move in.",
+      "Long-time Franklin homeowners weighing repair or replacement — if a repair in Franklin is the better call, we will say so — families preparing a home for sale, buyers who just closed and want a clean baseline before they move in, and owners of commercial buildings with flat or low-slope commercial roofing needs. Among roofing contractors in Franklin, Highlander is the one that started here and still keeps its showroom here. Every project gets the same skilled roofing pros and the same workmanship standard. If you want to see reviews first, read real reviews on our Google Business Profile, then contact a roofer who answers the phone locally. The FAQ below covers timing, permits, and who shows up.",
     proofNote:
-      "Franklin is where Highlander began. Homeowners receive a written scope and a clear project contact so responsibility stays defined from estimate through closeout.",
+      "Franklin is where Highlander began. You get clear written estimates — scope, materials, and price defined — and one project contact, so responsibility stays defined from the first visit through closeout.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Full roof replacement in Franklin, NC from Highlander's home market. Licensed NC General Contractor with a free project estimate and a written scope.",
     faqs: [
-      { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
-      { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
-      { q: "Who will be responsible for my roof replacement?", a: "Highlander assigns a project lead and explains who will be on site before work starts, with one accountable point of contact through the final walkthrough." },
+      { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start. Urgent issues like an active leak, falling debris, or other unexpected events get a tarp first, with the full job scheduled behind it. For budget ranges before the visit, see our related cost guides for Western NC." },
+      { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it, and we always check the decking and ventilation during the inspection, since that is what the county inspector looks at." },
+      { q: "Who will be responsible for my roof replacement?", a: "Highlander assigns a project lead and explains who will be on site before work starts, with one accountable point of contact through the final walkthrough. Our crews are Highlander employees — roofing professionals, not a rotating subcontractor — so the same roofing contractor you met at the estimate is responsible for the craftsmanship on your roof." },
     ],
+    copy: {
+      quickQuestion: "Which local contractor handles roof replacement in Franklin, NC?",
+      localContextHeading: "Why roof replacement matters in Franklin",
+      faqHeading: "Roof Replacement in Franklin: Frequently Asked Questions",
+      relatedHeading: "Related services we provide in Franklin",
+      relatedIntro: "Related Franklin services, the same work in nearby cities and towns across the region, and local guides for Franklin homeowners.",
+      climateNote: "Humid summers, challenging seasonal swings, and high-wind events channeled through the Little Tennessee River Valley — some of the toughest weather conditions a roof faces year-round, so ridge and edge details get high-wind protection as part of the work.",
+      omitCoverageExtension: true,
+    },
   }),
   E({
     townSlug: "franklin-nc",
