@@ -19,6 +19,21 @@ const grab = (field, chunk) => {
   return m ? m[1] : "";
 };
 
+// Posts folded into another page by BLOG_CONSOLIDATIONS (src/data/blogs.ts) get their
+// canonicalTo / 301 target applied at runtime, so the literal scan below cannot see it.
+// Read the map here so the generated index never offers a folded post to link helpers.
+const foldedBySlug = new Map();
+{
+  const block = (src.match(/const BLOG_CONSOLIDATIONS[^{]*\{([\s\S]*?)\n\};/) || [, ""])[1];
+  const entryRe = /"([a-z0-9-]+)":\s*\{([^}]*)\}/g;
+  let e;
+  while ((e = entryRe.exec(block)) !== null) {
+    const canonical = (e[2].match(/canonicalTo:\s*"([^"]+)"/) || [, ""])[1];
+    const target = (e[2].match(/target:\s*"([^"]+)"/) || [, ""])[1];
+    foldedBySlug.set(e[1], canonical || target);
+  }
+}
+
 const posts = [];
 let m;
 while ((m = slugRe.exec(src)) !== null) {
@@ -32,7 +47,7 @@ while ((m = slugRe.exec(src)) !== null) {
   const date = grab("date", chunk);
   const readTime = grab("readTime", chunk);
   const town = grab("town", chunk);
-  const canonicalTo = grab("canonicalTo", chunk);
+  const canonicalTo = grab("canonicalTo", chunk) || foldedBySlug.get(slug) || "";
   if (slug && title && date) {
     posts.push({ id: slug, slug, title, excerpt, category, date, readTime, town, ...(canonicalTo ? { canonicalTo } : {}) });
   }

@@ -102,7 +102,7 @@ Here is the comparison without the sales gloss.
 
 Ask yourself: How long will I own this house? How complex is my roof? How much tree cover is over it? How high am I? If the answers are "a long time," "fairly simple," "a lot," and "high" — metal. If they are "not sure," "complicated," "open lot," and "valley floor" — a heavy dimensional asphalt system with a properly corrected assembly is the better use of your money, and there is nothing second-rate about that answer.
 
-If you want the numbers for your specific roof rather than a general range, we measure the roof first and price both systems so you are comparing real figures. Book a [consultation](/consultation), or read more about [roof replacement](/roofing/roof-replacement) and [metal roofing](/roofing/metal) in Western North Carolina.`,
+If you want the numbers for your specific roof rather than a general range, we measure the roof first and price both systems so you are comparing real figures. Book a [consultation](/request-inspection), or read more about [roof replacement](/roofing/roof-replacement) and [metal roofing](/roofing/metal) in Western North Carolina.`,
   },
   {
     slug: "signs-your-roof-needs-replacement-mountain-homes",
@@ -199,7 +199,7 @@ If a contractor cannot show you the failure, be skeptical about the cure. And if
 
 Plan the replacement as an assembly correction, not a covering swap. Tear off so the deck can be inspected and repaired, fix intake and exhaust ventilation, replace every flashing rather than reusing tired metal, install fresh pipe boots, and size the drainage to actual local rainfall. That work is why one roof reaches its rated life and an identical product down the road does not.
 
-Get a photo-documented assessment before you commit either way. Start with a [consultation](/consultation), or read more about [roof replacement](/roofing/roof-replacement) and [roof repair](/roofing/roof-repair).`,
+Get a photo-documented assessment before you commit either way. Start with a [consultation](/request-inspection), or read more about [roof replacement](/roofing/roof-replacement) and [roof repair](/roofing/roof-repair).`,
   },
   {
     slug: "roof-lifespan-western-nc-by-material",
@@ -289,7 +289,7 @@ Maintenance will not turn an eighteen-year asphalt roof into a forty-year roof, 
 
 If your current roof is inside five years of the realistic range above, start planning rather than reacting. You get better material choices, better scheduling, and better pricing when you are not making the decision with a bucket on the floor.
 
-We measure the roof, document the assembly, and give you real numbers for the systems that suit your elevation. Start with a [consultation](/consultation), or read about [roof replacement](/roofing/roof-replacement) and [specialty roofing systems](/roofing/specialty).`,
+We measure the roof, document the assembly, and give you real numbers for the systems that suit your elevation. Start with a [consultation](/request-inspection), or read about [roof replacement](/roofing/roof-replacement) and [specialty roofing systems](/roofing/specialty).`,
   },
   {
     slug: "what-a-roof-inspection-covers",
@@ -391,6 +391,6 @@ Storm inspections should add impact and wind documentation: photographs of impac
 
 Every two to three years for a roof in good condition, annually for roofs under heavy canopy or past fifteen years, and after any significant wind, hail, or heavy-rain event. Also before listing a home and shortly after buying one — a documented baseline is worth having on both sides of a transaction.
 
-We document what we find and tell you plainly what it means, including when the answer is that your roof needs nothing. Book a [consultation](/consultation), or read more about [roof repair](/roofing/roof-repair) and [storm damage response](/roofing/storm-damage).`,
+We document what we find and tell you plainly what it means, including when the answer is that your roof needs nothing. Book a [consultation](/request-inspection), or read more about [roof repair](/roofing/roof-repair) and [storm damage response](/roofing/storm-damage).`,
   },
 ];
