@@ -31,7 +31,7 @@ import ServiceSubtopics from "@/components/service/ServiceSubtopics";
 import { metalSubtopics } from "@/data/service-subtopics";
 
 const faqs = [
-  { q: "How long does a metal roof last in Western NC?", a: "A properly installed metal roof can last 40 years or more when it is a correctly specified standing seam system. When that lifespan gets cut short in the field, the cause is almost always workmanship at flashings and terminations, not panel failures." },
+  { q: "How long does a metal roof last in Western NC?", a: "A properly installed metal roof can last 40 years or more when it is a correctly specified standing seam system. When that lifespan gets cut short in the field, the cause is almost always workmanship at flashings and terminations — not panel failures." },
   { q: "Is metal louder than asphalt inside the home?", a: "Properly installed metal over solid decking and underlayment is not noticeably louder than asphalt. The 'tin roof' sound comes from open framing, not residential metal systems." },
   { q: "Can metal go directly over my existing roof?", a: "Sometimes, but in these mountains we almost always recommend a full tear-off so we can inspect the deck, replacing rotted sheets where we find them, and install proper underlayment before panels go down." },
   { q: "How is metal priced versus asphalt?", a: "Upfront, metal is typically 1.5–2.5× the cost of dimensional asphalt. Over 30+ years, its longevity usually makes it the cheaper roof per year once you include replacement cycles, which is where the long-term value comes from." },

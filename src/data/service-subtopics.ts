@@ -138,17 +138,17 @@ export const metalSubtopics: Subtopic[] = [
   {
     title: "Metal roof installation",
     body:
-      "Standing seam panels are cut to the full length of the run and fastened with concealed clips, so nothing penetrates the water plane in the field of the roof. Exposed-fastener panels are through-fastened and cost less, which makes them the sensible choice on outbuildings and simple gable roofs.",
+      "Standing seam panels are cut to the full length of the run and fastened with concealed clips, so nothing penetrates the water plane in the field of the roof. Exposed-fastener metal roofing panels are through-fastened and cost less, which makes them the sensible choice on outbuildings and simple rooflines. Long panels also mean planning supplier delivery and site logistics on steep mountain drives.",
     points: [
-      "Standing seam with concealed clips and on-site trim fabrication",
-      "Exposed-fastener panels for barns, workshops and utility structures",
+      "Standing seam with concealed clips and custom metal trim fabricated on site",
+      "Exposed-fastener panels for barns, workshops and agricultural structures",
       "Snow retention planned above entries, decks and walkways",
     ],
   },
   {
     title: "Metal roof repair",
     body:
-      "A metal roof is repairable in a way a shingle roof is not: a damaged panel can be replaced, a seam can be re-formed, and the fasteners on a screw-down roof are a scheduled maintenance item rather than a failure. Most calls we get on metal are fasteners, penetrations or trim, not the panel itself.",
+      "A metal roof is repairable in a way asphalt shingles are not: a damaged panel can be replaced, a seam can be re-formed, and the exposed screws on a screw-down roof are a periodic maintenance item rather than a failure. Most calls we get on metal are fasteners, penetrations or trim, not the panel itself.",
     points: [
       "Fastener and gasket replacement on exposed-fastener roofs",
       "Panel replacement, seam repair and trim renewal",
