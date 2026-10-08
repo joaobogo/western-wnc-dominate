@@ -71,7 +71,7 @@ const maconAward = VERIFIED_AWARDS.find((a) => a.id === "best-of-macon-county");
 
 const milestones = [
   { year: "2017", event: "Founded in Franklin, NC", detail: "Started with a truck, a ladder, and a commitment to doing roofing right in these mountains." },
-  { year: "2019", event: "CertainTeed ShingleMaster PREMIER Credentialed Contractor", detail: "Added manufacturer roofing-system training and installation guidance to Highlander's credential set." },
+  { year: "2019", event: "CertainTeed Credentialed Contractor", detail: "Added manufacturer roofing-system training and installation guidance to Highlander's credential set." },
   { year: "2021", event: "Second Office in Sylva", detail: "Expanded into Jackson County to better serve the western reaches of our service area." },
   { year: "2022", event: "Construction Division Launched", detail: "Client demand drove expansion into additions, renovations, and outdoor living builds." },
   // Award milestone renders only once the owner verifies it (see CLAIMS_AUDIT.md).

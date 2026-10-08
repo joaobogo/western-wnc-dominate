@@ -471,7 +471,7 @@ const RoofReplacement = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {trustProof.map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center p-5 md:p-6 bg-card border border-border rounded-sm">
-                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] block mb-2">{item.value}</span>
+                  {item.value === "CertainTeed" ? <CertainTeedPremierBadge className="h-24 w-24 mx-auto mb-2" /> : <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] block mb-2">{item.value}</span>}
                   <span className="font-heading font-semibold text-foreground text-sm block mb-1">{item.label}</span>
                   <span className="text-muted-foreground text-caption font-body leading-snug">{item.detail}</span>
                 </motion.div>
