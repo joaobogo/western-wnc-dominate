@@ -3677,7 +3677,7 @@ Before you commit to a method, walk under the deck with a tape measure and check
 
 - Access: can you actually route a gutter and downspout to a discharge point without cutting into siding or landscaping?
 
-Retrofits favor membrane and trough systems precisely because they flex around posts and slightly uneven joist spacing in ways rigid panels can't. Manufactured systems perform best with consistent joist spacing and full clearance, while a site-built membrane lets you customize around whatever framing quirks you're stuck with.
+Retrofit suitability is product-specific. Confirm whether the system belongs above or below joists, whether decking removal is needed, and how posts, ventilation and service access will be accommodated.
 
 Building drainage into new construction, on the other hand, simplifies everything. You set the slope once, choose your finish material without fighting existing joists, and skip the retrofit workarounds entirely. If your inspection turns up soft ledger wood or a sagging rim beam, stop there. That's a structural repair job, not a drainage project, and no membrane will fix it.
 
@@ -5423,7 +5423,7 @@ Do not pull siding, loosen a ledger or probe structural wood yourself to diagnos
 
 Most ledger flashing failures trace back to one of a handful of repeatable errors, and most of them show up years later as rot rather than an obvious leak.
 
-- **Under-gauge flashing.** Some box-store aluminum flashing runs around 0.011 inches thick, well under the code minimum of 0.019 inches. It dents on installation and cracks at the folds within a couple of seasons.
+- **Unverified material thickness.** Check the approved product and applicable code instead of assuming a shelf label or gauge number establishes suitability.
 
 - **Backward or short laps.** A lap that runs the wrong direction, or one that's an inch short of code minimums, channels water into the wall instead of away from it.
 
@@ -5465,14 +5465,14 @@ Highlander Building Services, Inc. serves Western North Carolina homeowners. [Co
   {
     slug: "acv-vs-rcv-roof",
     title: "ACV vs RCV Roof Insurance: Understand the Depreciation Gap",
-    excerpt: "Compare ACV and RCV roof insurance, see an illustrative depreciation example, and learn which policy details and repair documents Western NC homeowners should check.",
+    excerpt: "Compare ACV and RCV roof insurance, an illustrative depreciation example, and the policy details and repair documents Western NC homeowners should check.",
     category: "Insurance",
     date: "2026-10-08",
     image: octoberBlogImage3,
     imageAlt: "Generated illustration of blank insurance documents, calculator and shingle sample overlooking a mountain home",
     readTime: "15 min",
     metaTitle: "ACV vs RCV Roof Insurance in NC | Highlander",
-    metaDescription: "Compare ACV and RCV roof insurance, see an illustrative depreciation example, and learn which policy details and repair documents Western NC homeowners should check.",
+    metaDescription: "Compare ACV and RCV roof insurance, an illustrative depreciation example, and the policy details and repair documents Western NC homeowners should check.",
     relatedServices: [{"label": "Roof Repair", "path": "/roofing/roof-repair"}, {"label": "Storm Damage", "path": "/roofing/storm-damage"}, {"label": "Roof Replacement", "path": "/roofing/roof-replacement"}, {"label": "Franklin Service Area", "path": "/service-areas/franklin-nc"}, {"label": "Request an Inspection", "path": "/request-inspection"}],
     faqs: [{"question": "What is the difference between ACV and RCV?", "answer": "ACV generally deducts depreciation from replacement cost. RCV coverage may reimburse qualifying replacement costs and release withheld depreciation after repairs, subject to policy limits, deductibles and conditions."}, {"question": "Does RCV guarantee full roof replacement?", "answer": "No. The cause of loss, covered scope, limits, exclusions, endorsements and repair deadlines still apply. Ask your insurer to explain both the covered work and any withheld amount in writing."}, {"question": "How do I check my roof coverage?", "answer": "Read the declarations page and all roof endorsements, including age schedules and wind or hail deductibles. Ask your agent to confirm the valuation method for the specific roof and peril in writing."}, {"question": "Can a contractor start the depreciation deadline later?", "answer": "No. The policy controls deadlines. Confirm the start date and proof requirements with your insurer and request an extension in writing if needed."}, {"question": "Can Highlander provide repair documentation?", "answer": "Discuss your damage and request a written construction estimate. Contractor records can support your claim, but they do not determine coverage or guarantee recoverable depreciation."}],
     content: `Actual cash value usually reflects replacement cost less depreciation. Replacement cost coverage may allow recovery of withheld depreciation after covered repairs, subject to deductibles, limits, exclusions and deadlines. Read the roof endorsement as well as the declarations page: roof terms may differ from the rest of the dwelling.
@@ -7185,7 +7185,7 @@ RCV claims typically pay out in two stages:
 
 - **Recoverable depreciation**: once you complete the repair and submit proof, usually contractor invoices and receipts, the insurer releases the depreciation amount it withheld.
 
-That second check only shows up if your policy includes recoverable depreciation and you meet the insurer's documentation and time requirements, a point confirmed in the NAIC's Post-Disaster Claims Guide. ACV policies never pay that second installment. What you get on day one is what you get, period.
+Recoverable depreciation is available only when the policy provides it and the repair and documentation conditions are met. ACV-only coverage normally has no recoverable depreciation installment, although a supplement for overlooked covered damage may still change the settlement.
 
 ## A Real-World Payout Comparison: ACV vs RCV on the Same Roof
 
@@ -7681,7 +7681,7 @@ Material and scope disagreements round out the list. Insurers may approve a repa
 
 Adjusters don't evaluate your roof in a vacuum. They look at its condition immediately before the loss, and any pre-existing wear factors directly into both ACV and RCV calculations. A roof with visible granule loss, curling shingles, or moss buildup before a storm hit will typically get assessed with additional depreciation stacked on top of standard age-based depreciation.
 
-This works the same direction for both valuation methods, though the financial sting lands harder under ACV. Under RCV, pre-existing wear might reduce the initial ACV-stage payment, but the recoverable depreciation portion still gets released in full once repairs are documented, since RCV ultimately pays for a comparable new roof regardless of prior condition. Under ACV, there's no second check to soften that reduction. Whatever the adjuster subtracts for prior wear is gone for good.
+Pre-loss condition can affect valuation and coverage. Under RCV, withheld depreciation may be recoverable after qualifying repairs, but policy conditions, limits and exclusions still apply. Under ACV-only terms, depreciation normally remains deducted. Ask your insurer to separate covered storm damage from wear and explain the calculation.
 
 Maintenance records help here more than most homeowners realize. A roof that's had regular inspections, minor repairs, and documented upkeep gives you evidence to push back if an adjuster tries to attribute damage to neglect rather than the covered storm event. Without that paper trail, the burden often falls on you to prove the roof was in good condition, which is a much harder argument to win after the fact.
 
@@ -9607,7 +9607,7 @@ A high class rating on a shingle means little if the crew skips proper nailing p
 
 ## Our take on picking between dimensional and 3-tab
 
-Dimensional shingles are the safer default for most primary homes, and the data on wind and impact ratings backs that up. But the bigger mistake homeowners make isn't picking 3-tab when they should have picked dimensional, it's assuming the shingle name alone guarantees performance. A poorly installed dimensional shingle can underperform a well-installed 3-tab roof in the wrong conditions.
+Dimensional shingles are often a practical choice for primary homes, but wind and impact performance must be checked for the exact product. But the bigger mistake homeowners make isn't picking 3-tab when they should have picked dimensional, it's assuming the shingle name alone guarantees performance. A poorly installed dimensional shingle can underperform a well-installed 3-tab roof in the wrong conditions.
 
 Three things matter most: get a written scope before you sign anything, verify the actual wind and impact class on the product label, and schedule an inspection before assuming your current roof needs a full replacement rather than a repair.
 

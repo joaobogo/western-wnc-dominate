@@ -13,6 +13,60 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "roof-replacement-tax-deductible_1",
+    "slug": "roof-replacement-tax-deductible_1",
+    "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
+    "excerpt": "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",
+    "category": "Cost",
+    "date": "2026-10-08",
+    "readTime": "5 min"
+  },
+  {
+    "id": "architectural-vs-3-tab",
+    "slug": "architectural-vs-3-tab",
+    "title": "Dimensional vs 3-Tab Shingles for Western NC Roofs",
+    "excerpt": "Compare dimensional and 3-tab shingles for Western NC homes: construction, wind and impact ratings, installation details, cost factors and contractor questions.",
+    "category": "Materials",
+    "date": "2026-10-08",
+    "readTime": "11 min"
+  },
+  {
+    "id": "acv-vs-rcv-roof",
+    "slug": "acv-vs-rcv-roof",
+    "title": "ACV vs RCV Roof Insurance: Understand the Depreciation Gap",
+    "excerpt": "Compare ACV and RCV roof insurance, an illustrative depreciation example, and the policy details and repair documents Western NC homeowners should check.",
+    "category": "Insurance",
+    "date": "2026-10-08",
+    "readTime": "15 min"
+  },
+  {
+    "id": "deck-ledger-flashing",
+    "slug": "deck-ledger-flashing",
+    "title": "Deck Ledger Flashing: Stop Water Intrusion Before Rot Starts",
+    "excerpt": "Understand deck ledger flashing, membrane layers, material compatibility and warning signs of rot. Get a professional scope for your Western NC mountain home.",
+    "category": "Construction",
+    "date": "2026-10-08",
+    "readTime": "9 min"
+  },
+  {
+    "id": "under-deck-drainage",
+    "slug": "under-deck-drainage",
+    "title": "Under Deck Drainage: Inspect First, Get a Written Scope",
+    "excerpt": "Compare under-deck drainage options for Western NC homes. Check framing, headroom, slope, gutters and discharge before planning a dry outdoor living space.",
+    "category": "Construction",
+    "date": "2026-10-08",
+    "readTime": "10 min"
+  },
+  {
+    "id": "tree-on-roof_2",
+    "slug": "tree-on-roof_2",
+    "title": "Tree on Your Roof in Western NC: Safety, Tarping and Repairs",
+    "excerpt": "What to do after a tree hits your Western NC roof: safe documentation, coordinated removal, temporary protection, insurance questions and written repair scopes.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "readTime": "8 min"
+  },
+  {
     "id": "high-elevation-roofing",
     "slug": "high-elevation-roofing",
     "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
@@ -65,59 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Maintenance",
     "date": "2026-09-21",
     "readTime": "9 min"
-  },
-  {
-    "id": "hail-damage-roof",
-    "slug": "hail-damage-roof",
-    "title": "One Inch Hail? An Insurance Ready Roof Checklist",
-    "excerpt": "How to spot hail damage by roofing material, document it safely from the ground, and build an insurance ready record for a Western North Carolina roof.",
-    "category": "Storm Damage",
-    "date": "2026-09-18",
-    "readTime": "10 min"
-  },
-  {
-    "id": "skylight-leak-repair",
-    "slug": "skylight-leak-repair",
-    "title": "Skylight Leak Repair for Western NC Mountain Homes",
-    "excerpt": "Learn how to tell condensation from a skylight leak, which warning signs need professional repair, and how mountain weather affects flashing and roof openings.",
-    "category": "Maintenance",
-    "date": "2026-09-17",
-    "readTime": "9 min"
-  },
-  {
-    "id": "roof-valley-leak",
-    "slug": "roof-valley-leak",
-    "title": "5 Causes of a Roof Valley Leak and When to Call a Pro",
-    "excerpt": "Learn why roof valleys leak, how to spot warning signs safely, and when a Western North Carolina valley needs a targeted repair or full rebuild.",
-    "category": "Maintenance",
-    "date": "2026-09-16",
-    "readTime": "10 min"
-  },
-  {
-    "id": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
-    "slug": "brava-synthetic-vs-cedar-shake-vs-slate-wnc",
-    "title": "Brava Synthetic vs Cedar Shake vs Natural Slate for Mountain Homes",
-    "excerpt": "Three ways to get a textured, high-end roof on a Western NC home — compared on weight, lifespan, maintenance, fire and what each one asks of the structure.",
-    "category": "Materials",
-    "date": "2026-09-15",
-    "readTime": "9 min"
-  },
-  {
-    "id": "standing-seam-vs-exposed-fastener",
-    "slug": "standing-seam-vs-exposed-fastener",
-    "title": "Standing Seam vs Exposed Fastener for Mountain Homes",
-    "excerpt": "Compare standing seam and exposed-fastener metal roofing by construction, maintenance, slope, wind exposure, appearance, and long-term cost for Western North Carolina homes.",
-    "category": "Materials",
-    "date": "2026-09-15",
-    "readTime": "10 min"
-  },
-  {
-    "id": "roof-inspection-after-storm",
-    "slug": "roof-inspection-after-storm",
-    "title": "48 to 72 Hour Roof Inspection for Western NC Homeowners",
-    "excerpt": "What to inspect, photograph, and document during the first 48 to 72 hours after a Western North Carolina storm, including attic checks and insurance-ready records.",
-    "category": "Inspections",
-    "date": "2026-09-14",
-    "readTime": "8 min"
   }
 ];
