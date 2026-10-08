@@ -62,6 +62,30 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
+    "slug": "storm-damage-roof-inspection_1",
+    "title": "Storm Damage Roof Inspection: A Homeowner Photo Checklist",
+    "excerpt": "Document roof storm damage safely from the ground, organize dated photos and prepare questions for a professional inspection and your insurer.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "wind-driven-rain-leak_2",
+    "title": "Wind-Driven Rain Leaks: Diagnosis and Repairs for Mountain Homes",
+    "excerpt": "Learn why mountain homes leak during windy rain, what to document safely and how flashing, windows and roof details affect repairs.",
+    "category": "Maintenance",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "wind-damaged-shingles",
+    "title": "Wind-Damaged Shingles: Safe Storm Documentation in Western NC",
+    "excerpt": "Spot creased or missing shingles safely, document storm damage and compare repair options for your Western North Carolina roof.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
     "slug": "high-elevation-roofing",
     "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
     "excerpt": "Building science guidance for mountain homeowners: moisture safe roof assemblies, engineered snow retention, and the contractor specs to require for high elevat",
