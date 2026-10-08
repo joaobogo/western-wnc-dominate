@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 245,
+    "sitemap": 248,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 375
+    "total": 378
   },
   "routes": [
     "/",
@@ -105,6 +105,9 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
+    "/blog/wind-damaged-shingles",
+    "/blog/wind-driven-rain-leak_2",
+    "/blog/storm-damage-roof-inspection_1",
     "/blog/tree-on-roof_2",
     "/blog/under-deck-drainage",
     "/blog/deck-ledger-flashing",

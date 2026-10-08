@@ -67,6 +67,33 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "8 min"
   },
   {
+    "id": "storm-damage-roof-inspection_1",
+    "slug": "storm-damage-roof-inspection_1",
+    "title": "Storm Damage Roof Inspection: A Homeowner Photo Checklist",
+    "excerpt": "Document roof storm damage safely from the ground, organize dated photos and prepare questions for a professional inspection and your insurer.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "readTime": "7 min"
+  },
+  {
+    "id": "wind-driven-rain-leak_2",
+    "slug": "wind-driven-rain-leak_2",
+    "title": "Wind-Driven Rain Leaks: Diagnosis and Repairs for Mountain Homes",
+    "excerpt": "Learn why mountain homes leak during windy rain, what to document safely and how flashing, windows and roof details affect repairs.",
+    "category": "Maintenance",
+    "date": "2026-10-08",
+    "readTime": "8 min"
+  },
+  {
+    "id": "wind-damaged-shingles",
+    "slug": "wind-damaged-shingles",
+    "title": "Wind-Damaged Shingles: Safe Storm Documentation in Western NC",
+    "excerpt": "Spot creased or missing shingles safely, document storm damage and compare repair options for your Western North Carolina roof.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "readTime": "7 min"
+  },
+  {
     "id": "high-elevation-roofing",
     "slug": "high-elevation-roofing",
     "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
@@ -91,33 +118,6 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
     "category": "Maintenance",
     "date": "2026-10-01",
-    "readTime": "9 min"
-  },
-  {
-    "id": "chimney-flashing-repair",
-    "slug": "chimney-flashing-repair",
-    "title": "6 Chimney Flashing Failures and the Repairs That Work",
-    "excerpt": "Learn how chimney flashing systems fail, when sealant is only temporary, and what a complete Western North Carolina roof repair should include.",
-    "category": "Maintenance",
-    "date": "2026-09-24",
-    "readTime": "10 min"
-  },
-  {
-    "id": "architectural-shingle-lifespan",
-    "slug": "architectural-shingle-lifespan",
-    "title": "How Long Do Dimensional Shingles Last?",
-    "excerpt": "Most dimensional shingle roofs last about 22 to 30 years, but Western North Carolina weather, ventilation, installation, and maintenance can shift that range.",
-    "category": "Materials",
-    "date": "2026-09-22",
-    "readTime": "9 min"
-  },
-  {
-    "id": "roof-flashing-leak",
-    "slug": "roof-flashing-leak",
-    "title": "How to Trace a Roof Flashing Leak Safely",
-    "excerpt": "Learn how chimney, vent, wall, and skylight flashing leaks develop, how to document the moisture path safely, and when a Western North Carolina roof needs professional repair.",
-    "category": "Maintenance",
-    "date": "2026-09-21",
     "readTime": "9 min"
   }
 ];
