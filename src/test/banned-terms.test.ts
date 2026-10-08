@@ -24,7 +24,7 @@ const ALLOW_FILES = ["banned-terms.test.ts", "landing-pages.test.tsx", "chatbot-
 // Approved uses that are not user-facing copy: the owner-approved blog slug
 // (AGENTS.md: uploaded filenames are canonical slugs) and a named industry manual.
 const exemptApproved = (line: string) =>
-  line.replace(/architectural-shingle-lifespan/g, "").replace(/SMACNA Architectural Sheet Metal Manual/g, "");
+  line.replace(/architectural-shingle-lifespan/g, "").replace(/architectural-vs-3-tab/g, "").replace(/SMACNA Architectural Sheet Metal Manual/g, "");
 
 // Paths are compared with forward slashes so the allow-list works on Windows too.
 const posix = (p: string) => p.replace(/\\/g, "/");

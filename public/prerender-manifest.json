@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 239,
+    "sitemap": 245,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 369
+    "total": 375
   },
   "routes": [
     "/",
@@ -105,6 +105,12 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
+    "/blog/tree-on-roof_2",
+    "/blog/under-deck-drainage",
+    "/blog/deck-ledger-flashing",
+    "/blog/acv-vs-rcv-roof",
+    "/blog/architectural-vs-3-tab",
+    "/blog/roof-replacement-tax-deductible_1",
     "/blog/high-elevation-roofing",
     "/blog/skylight-placement",
     "/blog/half-round-vs-k-style-gutters",
