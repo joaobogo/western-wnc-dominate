@@ -1,11 +1,11 @@
-import premierAsset from "@/assets/certainteed-shinglemaster-premier.jpg.asset.json";
+import premierAsset from "@/assets/certainteed-shinglemaster-premier-transparent.png";
 import { cn } from "@/lib/utils";
 
 /** Official owner-supplied artwork: preserve the original colors and proportions. */
 export default function CertainTeedPremierBadge({ className = "" }: { className?: string }) {
   return (
     <img
-      src={premierAsset.url}
+      src={premierAsset}
       alt="CertainTeed ShingleMaster PREMIER Credentialed Contractor"
       width={768}
       height={768}

@@ -7,7 +7,7 @@ describe("CertainTeed Premier credential", () => {
   it("uses the owner-supplied official artwork with accessible text and square proportions", () => {
     render(<CertainTeedPremierBadge />);
     const image = screen.getByRole("img", { name: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" });
-    expect(image.getAttribute("src")).toContain("certainteed-shinglemaster-premier.jpg");
+    expect(image.getAttribute("src")).toContain("certainteed-shinglemaster-premier-transparent.png");
     expect(image.getAttribute("width")).toBe("768");
     expect(image.getAttribute("height")).toBe("768");
     expect(image.className).not.toMatch(/brightness|contrast|mix-blend|object-cover/);
