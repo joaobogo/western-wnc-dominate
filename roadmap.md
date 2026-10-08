@@ -1,5 +1,5 @@
 # CertainTeed Premier credential
-- [ ] Feature the official Premier badge across CertainTeed credential displays, especially the homepage, footer and certifications page; verify images and existing tests.
+- [x] Feature the official Premier badge across CertainTeed credential displays, especially the homepage, footer and certifications page; hosted artwork verified, eight preview pages checked, 74 regression tests passed and automatic build passed.
 
 # Uploaded blog publication
 - [x] Add all six attached articles with exact filename-based slugs, safe editorial copy, FAQs and related links.
