@@ -5,6 +5,7 @@
 - [x] Request publication for the previous six articles; deployment verification remains external.
 
 ## Additional storm uploads
-- [ ] Add the three new storm articles with exact filename slugs and matching optimized images.
+- [x] Add the three new storm articles with exact filename slugs and matching optimized images.
 - [x] Skip repeated chimney and gutter attachments, leaving existing posts unchanged.
-- [ ] Regenerate search metadata, verify articles and tests, then request publication.
+- [x] Regenerate search metadata and verify all three articles, matching images and FAQ schema; 334 tests passed and automatic build passed.
+- [ ] Request publication and verify the three deployed canonical URLs.
