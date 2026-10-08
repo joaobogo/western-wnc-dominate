@@ -103,15 +103,15 @@ export const blogPosts: BlogPost[] = [
 
 **TL;DR:**
 
-- Wind damage is most reliably indicated by creased, torn, or missing shingles, especially around edges and flashing, often confirmed by granule loss.
+- Creased, torn or missing shingles may indicate wind damage. Granule loss alone does not establish a storm cause.
 - Inspect from the ground with binoculars. Leave all roof access and tarping to qualified professionals and keep dated photos for your insurer.
 - Age, sealing issues, and widespread damage suggest deterioration or installation problems rather than storm-related wind damage.
 - Temporary repairs like properly anchored tarps and prompt interior moisture control can prevent further damage while waiting for professional assessment.
-- Severe damage is typically covered if caused by sudden storms, but gradual aging or poor installation excluding damage might result in denied claims.
+- Coverage depends on the policy, exclusions, deductible and assessed cause; a storm or inspection does not guarantee payment.
 
 ## Recognizing wind damage: the visual signs to check first
 
-Wind damage has a signature, and once you know what to look for, spotting it from your yard gets easier. Creased tabs, torn shingles, and missing pieces are the most reliable indicators, and granule loss around damaged spots often confirms the pattern. Roof edges fail first because wind lifts along the rake, eaves, hips, and ridges before it moves inward, so those areas deserve the closest look.
+Creased tabs, torn shingles and missing pieces are worth documenting from your yard. Granule loss can also reflect wear, and visible defects alone do not establish storm cause. Roof edges, rakes, eaves, hips and ridges can be vulnerable to wind uplift, so have a qualified roofer assess those areas.
 
 When you photograph the roof, capture:
 
@@ -150,14 +150,14 @@ Arrange professional temporary protection if needed. Tarp attachment must suit t
 
 - Move furniture and valuables away from any active leak.
 - Use buckets only where safe. Keep away from wet electrical fixtures and sagging ceilings; arrange qualified drying assistance.
-- Photograph every temporary fix you make, since insurers often reimburse reasonable emergency repairs.
-- Skip permanent patches yourself. A rushed fix can void a warranty or hide damage a professional needs to see.
+- Photograph professional temporary protection and keep receipts; ask your insurer which mitigation costs your policy covers.
+- Leave permanent patches to a qualified professional. A rushed fix may conceal damage or create new leak paths.
 
 **Pro Tip:** If the storm hit at night or the roof is steep, wait for daylight and a professional rather than tarping in risky conditions.
 
 ## Insurance and claims: what to document and how cause affects coverage
 
-Insurers look for a clear, dated record connecting the storm to the damage. Build your file before you call.
+Notify your insurer promptly and ask about reporting deadlines. Collect a clear dated record without delaying notification.
 
 1. Gather dated photos from your own inspection alongside a contractor's written report.
 2. Ask your contractor to preserve removed material safely for insurer review; do not remove shingles yourself.
@@ -165,7 +165,7 @@ Insurers look for a clear, dated record connecting the storm to the damage. Buil
 4. Ask your contractor for an itemized scope of work, since a detailed estimate carries more weight in adjuster negotiations than a verbal quote.
 5. If your claim is denied or underpaid, request a second inspection before accepting the outcome.
 
-Coverage often comes down to cause. Sudden storm damage is typically covered, while gradual wear from age or poor installation is usually excluded, and many policies apply a separate wind or hail deductible, sometimes a percentage of the dwelling coverage rather than a flat dollar amount. NRCA guidance urges homeowners to hire a professional roofing contractor rather than inspect the roof themselves, since a trained eye catches damage that is not visible from the ground.
+Coverage depends on policy wording, exclusions, endorsements and the assessed cause. Some policies use a separate wind or hail deductible, potentially based on a percentage rather than a flat amount. Ask your insurer to explain these terms in writing. A qualified roofing contractor can assess conditions that are not visible from the ground.
 
 ## Repair vs. replacement: criteria pros use and cost drivers
 
@@ -175,7 +175,7 @@ A roofer weighs repairability, product availability, roof condition, decking and
 - Full replacement becomes the better option when missing shingles are widespread, the decking shows rot or soft spots, or unsealing has spread across an older roof.
 - Flashing and fastener condition often decide whether a repair holds or fails again in the next storm.
 
-Repair timing depends on access, weather, materials, hidden damage and crew availability. Review our roof repair versus replacement guide before assuming either option is necessary.
+Repair timing depends on access, weather, materials, hidden damage and crew availability. Review our [roof repair versus replacement guide](/blog/roof-repair-vs-replacement-wnc) before assuming either option is necessary.
 
 ## Prevention and maintenance to reduce wind vulnerability
 
@@ -262,7 +262,7 @@ A few things worth keeping in mind when a leak seems to come and go:
 
 Finding the source takes a sequence, not a guess. Jumping straight to the ceiling stain usually wastes time and money on the wrong repair.
 
-1. Contain water only where safe. Keep away from standing water near electrical equipment and call a qualified electrician or emergency services when needed; do not touch wet switches or panels.
+1. Contain water only where safe. Keep away from wet electrical fixtures, standing water near equipment and electrical panels. Call a qualified electrician or emergency services when needed.
 2. **Photograph everything.** Capture the stain, the weather outside, and a timestamp, since insurers weigh documentation heavily.
 3. Check ceilings from safe rooms. Leave unsafe attic access and moisture tracing to a qualified professional.
 4. **Inspect windward elevations first.** Roof edges, valleys, chimney and skylight flashing, soffits, and window sills on the side the wind was blowing from are the highest-probability spots.
@@ -299,7 +299,7 @@ Flood insurance works differently. The NFIP distinguishes floodwater entering fr
 
 Practical steps for any claim:
 
-- Tarp or otherwise stop active intrusion as soon as it's safe to do so
+- Arrange qualified professional temporary protection; leave roof access and tarping to the crew
 - Photograph damage, weather, and any visible storm impact immediately
 - Get a written contractor estimate that documents the likely cause and scope of repair
 - Loop in a licensed contractor or adjuster early when the source isn't obvious
@@ -310,7 +310,7 @@ A qualified inspection can compare roof, wall, flashing, window and vent conditi
 
 ## What Homeowners Should Actually Prioritize
 
-Protect the interior and document everything before you touch the roof. Chase a targeted diagnosis before assuming you need a full replacement, and bring in a qualified local contractor once the source isn't obvious or the damage looks extensive.
+Protect the interior where safe and document from the ground without touching or climbing onto the roof. Seek a targeted professional diagnosis before assuming you need a full replacement.
 
 ## Get a Roof Inspection or Storm Repair From Highlander
 
@@ -357,18 +357,18 @@ Highlander Building Services, Inc. can discuss your [storm damage concerns](/roo
 Start from safe ground-level locations with binoculars. A ground view is useful but cannot reveal every defect; leave roof access to qualified professionals.
 
 - **Missing or lifted shingles:** look for bare patches, curled edges, or shingles sitting at odd angles.
-- **Granule buildup in gutters and downspouts:** heavy granule loss signals shingle wear from hail or wind abrasion.
+- **Granule buildup visible around downspouts:** record it, but do not assume it proves hail or wind damage; ordinary wear can also shed granules.
 - **Dented vents, flashing, or gutters:** soft metal often shows hail bruising more clearly than shingles do.
 - **Debris and punctures:** branches, hail, or wind-blown objects can crack or puncture roofing material directly.
 - **Standing water or sagging areas:** pooling after rain points to clogged drainage or a dip in the deck.
 
 Each damage type leaves its own signature. Wind tends to lift shingles along ridges and edges first. Hail bruises asphalt granules and dents anything metal, including flashing and gutter runs. Falling debris leaves localized punctures or gouges, usually near trees or taller structures nearby. Standing water, meanwhile, often points to a drainage problem rather than storm impact alone, though a storm can be what exposed it.
 
-Inside the house, check the attic and upper-floor ceilings for water stains, damp insulation, or daylight coming through the roof deck. These interior signs sometimes show up before any exterior damage is obvious, especially with wind-driven rain that works its way under shingles rather than through an open hole.
+Inside the house, photograph upper-floor ceiling stains from safe rooms. Leave attic access to a professional if footing, wiring or structural conditions are uncertain. Interior signs may appear before exterior damage becomes obvious.
 
-## How to document damage so insurers and adjusters accept it
+## How to document damage for insurer review
 
-Objective, dated evidence matters more than a verbal description of what happened. According to NAIC guidance on storm recovery, documentation should include wide shots and close-ups from multiple angles, labeled with date and location, since this is what separates a credible claim from a disputed one.
+Objective, dated photos help an insurer review observed conditions. Keep wide shots from the ground, professional close-ups where available, and a log with dates and locations. Documentation alone cannot guarantee acceptance or settlement.
 
 1. **Shoot wide shots first:** capture each roof slope and elevation from the ground to show overall context.
 2. Use camera zoom from the ground. Leave close-up roof photos and scale measurements to the inspector; never climb to place a coin beside damage.
@@ -382,7 +382,7 @@ Objective, dated evidence matters more than a verbal description of what happene
 
 Before filing a claim, weigh the numbers:
 
-- Compare your inspector's repair estimate against your policy deductible, since minor damage below that threshold may cost more in premium increases than it saves, a point the NAIC's disaster claims guide raises directly.
+- Review the repair estimate and policy deductible with your insurer or licensed insurance adviser. Claims history and premium effects vary; do not assume a claim will raise premiums or delay required notification.
 - Factor in hidden damage risk: a small visible issue sometimes hides deck or flashing problems that only a closer inspection catches.
 - Notify your insurer promptly and ask about reporting deadlines; do not postpone notification while collecting a complete report. Record each conversation.
 
