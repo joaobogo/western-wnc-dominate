@@ -18,6 +18,7 @@ import heroLayer2WebpSet from "@/assets/gallery/metal-010.webp?w=640;960;1280;16
 import heroLayer3AvifSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=avif&as=srcset";
 import heroLayer3WebpSet from "@/assets/gallery/asphalt-hero.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import veluxLogo from "@/assets/logo-velux.png";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -30,7 +31,7 @@ const DRAMATIC_EASE = [0.16, 1, 0.3, 1] as any;
 
 const trustItems = [
   { icon: Shield, label: "Licensed NC General Contractor" },
-  { icon: Award, label: "CertainTeed Credentialed Contractor" },
+  { icon: Award, label: "CertainTeed ShingleMaster PREMIER" },
   { icon: HardHat, label: "VELUX Certified Installer" },
   { icon: Clock, label: "WNC · Since 2017" },
 ];
@@ -369,15 +370,16 @@ const Hero = () => {
                 to="/certifications"
                 className="inline-flex max-w-full items-center gap-2.5 md:gap-3 bg-primary-foreground/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] px-2 md:px-3 py-1.5 md:py-2 hover:bg-primary-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
               >
-                <span className="flex h-10 w-10 md:h-12 md:w-12 flex-shrink-0 items-center justify-center border border-[hsl(var(--highland-gold)/0.35)] bg-primary-foreground/[0.04]">
-                  <Award className="h-5 w-5 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                </span>
+                <CertainTeedPremierBadge className="h-16 w-16 md:h-20 md:w-20" />
                 <span className="flex min-w-0 flex-col leading-tight text-left">
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] md:tracking-[0.16em] text-[hsl(var(--gold-ink))]">
                     CertainTeed
                   </span>
                   <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground">
-                    Credentialed Contractor
+                    ShingleMaster PREMIER
+                  </span>
+                  <span className="mt-1 text-caption font-body font-medium text-primary-foreground">
+                    WNC's only Premier contractor
                   </span>
                 </span>
               </Link>

@@ -1,5 +1,6 @@
 import { CREDENTIALS, VERIFIED_AWARDS, awardLabel } from "@/data/business";
 import { ShieldCheck, Award, BadgeCheck, Home, Wrench, ExternalLink } from "lucide-react";
+import CertainTeedPremierBadge from "./CertainTeedPremierBadge";
 
 /**
  * Sitewide trust strip — ONLY items we can prove with a license lookup,
@@ -39,10 +40,10 @@ const VerifiableTrustStrip = ({ tone = "default", className = "" }: Props) => {
             const Icon = ICONS[i % ICONS.length];
             const body = (
               <>
-                <Icon
+                {c.label.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <Icon
                   className={`w-4 h-4 mt-0.5 flex-shrink-0 ${dark ? "text-accent" : "text-[hsl(var(--gold-ink))]"}`}
                   aria-hidden="true"
-                />
+                />}
                 <span>
                   <span className="block text-body-xs font-heading font-bold leading-snug">
                     {c.label}

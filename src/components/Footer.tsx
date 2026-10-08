@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
 import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { towns } from "@/data/towns";
 import { openConsentPreferences } from "@/lib/consent";
 
@@ -327,12 +328,10 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
-              <div className="w-9 h-9 flex items-center justify-center bg-primary/10 rounded-full">
-                <Award className="w-4 h-4 text-primary" aria-hidden="true" />
-              </div>
-              <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">CertainTeed</span>
+              <CertainTeedPremierBadge className="h-24 w-24 md:h-28 md:w-28" />
             </div>
-            <span className="text-caption text-muted-foreground font-body leading-tight">Credentialed Contractor</span>
+            <span className="text-body-xs font-bold text-foreground">CertainTeed ShingleMaster PREMIER</span>
+            <span className="text-caption text-muted-foreground font-body leading-snug">Western North Carolina's only Premier credentialed contractor</span>
           </div>
 
           <div className="flex flex-col gap-2">

@@ -1,3 +1,6 @@
+# CertainTeed Premier credential
+- [ ] Feature the official Premier badge across CertainTeed credential displays, especially the homepage, footer and certifications page; verify images and existing tests.
+
 # Uploaded blog publication
 - [x] Add all six attached articles with exact filename-based slugs, safe editorial copy, FAQs and related links.
 - [x] Generate and optimize a matching image for each article.

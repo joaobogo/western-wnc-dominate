@@ -2,7 +2,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Phone } from "lucide-react";
-import logoCertainteed from "@/assets/logo-certainteed-vendor.webp";
+import certainteedPremier from "@/assets/certainteed-shinglemaster-premier.jpg.asset.json";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
@@ -22,12 +22,12 @@ type Vendor = {
 const vendors: Vendor[] = [
   {
     name: "CertainTeed",
-    logo: logoCertainteed,
-    badge: "CertainTeed Credentialed Contractor",
-    body: "CertainTeed residential roofing products support dependable roof systems for homeowners who want proven materials and a professional installation process.",
+    logo: certainteedPremier.url,
+    badge: "ShingleMaster PREMIER Credentialed Contractor",
+    body: "Western North Carolina's only CertainTeed ShingleMaster PREMIER credentialed contractor. We match the roof system to your home and confirm warranty eligibility in writing.",
     href: "https://www.certainteed.com/products/residential-roofing-products?zip=28734",
     ariaLabel: "Visit CertainTeed residential roofing products (opens in a new tab)",
-    logoMaxH: "max-h-12 md:max-h-14",
+    logoMaxH: "max-h-24 md:max-h-28",
   },
   {
     name: "VELUX Skylights",
@@ -105,10 +105,10 @@ const TrustedMaterials = () => {
               transition={{ duration: 0.4, delay: i * 0.08, ease: EASE }}
               className="group bg-white p-6 md:p-7 flex flex-col border border-white/10 hover:border-[hsl(var(--highland-gold)/0.6)] hover:-translate-y-1 transition-all duration-300 shadow-raised"
             >
-              <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5 border-b border-foreground/10 pb-5">
+              <div className="h-32 md:h-36 w-full flex items-center justify-center mb-5 border-b border-foreground/10 pb-5">
                 <img decoding="async"
                   src={v.logo}
-                  alt={`${v.name} logo`}
+                  alt={v.name === "CertainTeed" ? "CertainTeed ShingleMaster PREMIER Credentialed Contractor" : `${v.name} logo`}
                   width={180}
                   height={80}
                   loading="lazy"
