@@ -291,7 +291,7 @@ Building drainage into new construction, on the other hand, simplifies everythin
 
 ## Cost, Labor, and Maintenance for Under Deck Drainage
 
-Budget depends on deck size, framing condition, access, ceiling finish, system choice and discharge routing. The uploaded article's material and labor ranges were not verified Highlander prices. Obtain an itemized written estimate for your actual deck.
+Budget depends on deck size, framing condition, access, ceiling finish, system choice and discharge routing. Product prices and installation labor vary with the selected system and site conditions. Obtain an itemized written estimate for your actual deck.
 
 What actually drives the final number:
 
