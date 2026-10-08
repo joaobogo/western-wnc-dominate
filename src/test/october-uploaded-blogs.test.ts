@@ -10,6 +10,9 @@ const uploadedFiles = [
   "acv-vs-rcv-roof.html",
   "architectural-vs-3-tab.html",
   "roof-replacement-tax-deductible_1.html",
+  "wind-damaged-shingles.html",
+  "wind-driven-rain-leak_2.html",
+  "storm-damage-roof-inspection_1.html",
 ];
 
 describe("October 8 uploaded articles", () => {
@@ -56,4 +59,25 @@ describe("October 8 uploaded articles", () => {
     expect(post?.content).not.toContain("still gets released in full");
     expect(post?.content).not.toContain("What you get on day one is what you get, period");
   });
+
+  for (const slug of ["chimney-flashing-repair", "half-round-vs-k-style-gutters"]) {
+    it(`keeps the repeated ${slug} attachment as one canonical post`, () => {
+      expect(blogPosts.filter((post) => post.slug === slug)).toHaveLength(1);
+      expect(getBlogBySlug(slug)?.canonicalTo).toBeUndefined();
+    });
+  }
+
+  for (const slug of ["wind-damaged-shingles", "wind-driven-rain-leak_2", "storm-damage-roof-inspection_1"]) {
+    it(`avoids unsafe roof access and insurance promises in ${slug}`, () => {
+      const post = getBlogBySlug(slug);
+      expect(post?.content).not.toMatch(/\bGAF\b|moves? a claim from disputed to approved|go onto the roof|touch wet switches/i);
+      expect(JSON.stringify(post?.faqs)).toContain("Your policy");
+      expect(post?.content).toContain("qualified professional");
+      for (const match of post?.content.matchAll(/\]\((\/blog\/[^)]+)\)/g) ?? []) {
+        const target = getBlogBySlug(match[1].replace("/blog/", ""));
+        expect(target, `missing internal blog link ${match[1]}`).toBeDefined();
+        expect(target?.canonicalTo, `noncanonical blog link ${match[1]}`).toBeUndefined();
+      }
+    });
+  }
 });
