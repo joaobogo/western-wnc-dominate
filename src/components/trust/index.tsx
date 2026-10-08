@@ -7,13 +7,14 @@ import {
   Eye, Heart, Home,
 } from "lucide-react";
 import logoVelux from "@/assets/logo-velux.png";
+import CertainTeedPremierBadge from "./CertainTeedPremierBadge";
 
 /* ──────────────────────────────────────
    DATA: Credentials, Stats, Certifications
    ────────────────────────────────────── */
 
 export const credentials = [
-  { icon: Award, label: "CertainTeed", detail: "Credentialed Contractor", image: null },
+  { icon: Award, label: "CertainTeed", detail: "ShingleMaster PREMIER", image: null },
   { icon: Shield, label: "NC General Contractor", detail: BUSINESS.licenseNumber, image: null },
   { icon: BadgeCheck, label: "VELUX", detail: "Certified Installer", image: logoVelux },
   { icon: CheckCircle, label: "BBB A+ Accredited", detail: `Since ${BUSINESS.bbbAccreditedSince}`, image: null },
@@ -87,7 +88,8 @@ export const TrustBadgeStrip = ({ className = "" }: { className?: string }) => (
     {["Licensed NC General Contractor", "CertainTeed Credentialed Contractor", "VELUX Certified Installer", "WNC Specialists"].map((badge, i) => (
       <span key={badge} className="flex items-center gap-1.5">
         {i > 0 && <span className="text-current opacity-20 mr-2">•</span>}
-        {badge}
+        {badge.includes("CertainTeed") && <CertainTeedPremierBadge />}
+        {badge.includes("CertainTeed") ? "CertainTeed ShingleMaster PREMIER" : badge}
       </span>
     ))}
   </div>
@@ -116,7 +118,7 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
         <div className={`mb-3 flex items-center justify-center transition-transform group-hover:scale-105 duration-300 ${
           cert.image ? "w-20 h-16" : "w-11 h-11 rounded-sm " + (variant === "dark" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8 group-hover:bg-primary/12")
         }`}>
-          {cert.image ? (
+          {cert.label === "CertainTeed" ? <CertainTeedPremierBadge className="h-24 w-24" /> : cert.image ? (
             <img loading="lazy" decoding="async" 
               src={cert.image} 
               alt={cert.label} 

@@ -1,6 +1,7 @@
 import { type LucideIcon, Shield, Award, Clock, Mountain } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -37,8 +38,8 @@ export const TrustBadge = ({ icon: Icon, label, variant = "default", className }
   const v = badgeVariants[variant];
   return (
     <div className={cn(v.wrapper, className)}>
-      <Icon className={v.icon} aria-hidden="true" />
-      <span className={v.text}>{label}</span>
+      {label.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <Icon className={v.icon} aria-hidden="true" />}
+      <span className={v.text}>{label.includes("CertainTeed") ? "CertainTeed ShingleMaster PREMIER" : label}</span>
     </div>
   );
 };
