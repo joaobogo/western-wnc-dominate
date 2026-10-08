@@ -37,6 +37,8 @@ describe("October 8 uploaded articles", () => {
       expect(post.metaTitle.length).toBeLessThanOrEqual(60);
       expect(post.metaDescription.length).toBeLessThanOrEqual(160);
       expect(post.content).not.toMatch(/data-blg-cta|babylovegrowth|<script|<iframe|supabase\.co/);
+      expect(post.content).not.toMatch(/(?:^|\n)[^\n]{1}\n\n[^\n]{1}\n\n[^\n]{1}(?:\n|$)/);
+      expect(post.content).not.toContain("The uploaded article");
       expect(post.title + post.content + JSON.stringify(post.faqs)).not.toMatch(/\barchitectural\b|24\/7|from a ladder|deck safety inspection partners/);
     });
   }

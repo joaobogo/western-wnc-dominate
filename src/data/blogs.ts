@@ -99,43 +99,13 @@ export const blogPosts: BlogPost[] = [
 
 **TL;DR:**
 
-
-
-
-
-
-
 - Insurance claims should be filed immediately, and documentation must include detailed photos, videos, and receipts to support the damage assessment.
-
-
-
-
-
-
 
 - Temporary protection timing, cost and reimbursement depend on storm conditions, safe access, damage extent and your insurance policy. Request a written estimate; no fixed price or response deadline is promised.
 
-
-
-
-
-
-
 - Prioritize emergency services and the utility when there is danger, then coordinate roofing and tree-removal professionals. Notify your insurer promptly, but do not delay necessary safety or mitigation work.
 
-
-
-
-
-
-
 - Structural repairs can require engineering, permits and several trades. The schedule depends on the actual damage and safe removal plan, not a fixed number of days.
-
-
-
-
-
-
 
 - Regular pruning, clearing debris, and post-storm roof inspections help prevent future tree strikes and minimize repair costs.
 
@@ -245,43 +215,13 @@ Highlander Building Services, Inc. serves Western North Carolina homeowners. [Co
 
 **TL;DR:**
 
-
-
-
-
-
-
 - Retrofitting with membrane and trough systems is ideal for uneven joist spacing and posts inside framing, while rigid panels require consistent bays and ample clearance.
-
-
-
-
-
-
 
 - Follow the selected manufacturer's required slope; some guides use 1/8 to 1/4 inch per foot, but that is not a universal specification for every system.
 
-
-
-
-
-
-
 - Route discharge away from foundations and neighboring property to an approved location. Distance, grading and drainage requirements are site-specific.
 
-
-
-
-
-
-
 - Site-built EPDM systems offer the lowest material costs and highest customization for new construction projects, but require precise installation and structural condition checks.
-
-
-
-
-
-
 
 - Regular maintenance, including biannual debris removal and annual seal inspections, extends system lifespan and prevents early failure.
 
@@ -417,43 +357,13 @@ Highlander Building Services, Inc. serves Western North Carolina homeowners. [Co
 
 **TL;DR:**
 
-
-
-
-
-
-
 - Flashing geometry must follow the locally applicable code and approved assembly, with wall integration that sheds water outward.
-
-
-
-
-
-
 
 - Specify corrosion-resistant flashing and compatible fasteners, with thickness and treated-lumber isolation verified for the actual product and local code.
 
-
-
-
-
-
-
 - Proper installation involves layering membrane before and over the ledger, folding over the top, and installing a cap flashing that laps behind the WRB and siding for redundancy.
 
-
-
-
-
-
-
 - Common mistakes include using under-gauge materials, short or backward laps, metal contact with treated wood, blocked drainage gaps, and reliance solely on caulk for sealing.
-
-
-
-
-
-
 
 - In mountain rain and freeze-thaw exposure, detail drainage, compatible laps and membrane integration carefully; extra layers must not trap moisture.
 
@@ -555,43 +465,13 @@ Highlander Building Services, Inc. serves Western North Carolina homeowners. [Co
 
 **TL;DR:**
 
-
-
-
-
-
-
 - Some policies use roof-specific ACV terms or payment schedules even when dwelling coverage is RCV. Read your own endorsement instead of assuming a market-wide rule.
-
-
-
-
-
-
 
 - Depreciation based on roof age, material, and local factors significantly affects the initial ACV payout, with older asphalt shingles often depreciated up to 75%.
 
-
-
-
-
-
-
 - Homeowners should verify their policy's valuation method by checking the declarations page and request written confirmation to avoid surprises during claims.
 
-
-
-
-
-
-
 - Immediate documentation, detailed contractor estimates, and timely repair actions are critical to maximizing recoverable depreciation payments.
-
-
-
-
-
-
 
 - Policy shifts toward ACV coverage for roofs are driven by insurers' cost control measures, especially in hail-prone regions, making it essential to consider upgrading to RCV endorsements.
 
@@ -749,43 +629,13 @@ Highlander Building Services, Inc. serves Western North Carolina homeowners. [Co
 
 **TL;DR:**
 
-
-
-
-
-
-
 - Dimensional shingles often have stronger published wind performance than older three-tab products. Verify actual product classes and installation requirements; no speed is guaranteed for every roof.
-
-
-
-
-
-
 
 - The laminated construction of dimensional shingles adds mass, improving tear resistance and granule retention, which extends their lifespan over 3-tab options.
 
-
-
-
-
-
-
 - While 3-tab shingles are cheaper upfront and suitable for low-exposure, budget projects, the long-term cost often favors dimensional shingles in most homeownership timelines.
 
-
-
-
-
-
-
 - Proper installation quality and verified test ratings are crucial for both types, as performance depends heavily on workmanship and the shingle's actual class rating.
-
-
-
-
-
-
 
 - Homeowners should ask for written specifications, including wind and impact ratings, before choosing shingles, especially in high-risk areas or when planning resale.
 
@@ -975,7 +825,6 @@ For damage documentation, read [ACV versus RCV roof coverage](/blog/acv-vs-rcv-r
 - [IRS Publication 547: Casualties, Disasters, and Thefts](https://www.irs.gov/publications/p547)
 - [IRS Residential Clean Energy Credit](https://www.irs.gov/credits-deductions/residential-clean-energy-credit)
 - [IRS Energy Efficient Home Improvement Credit](https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit)
-
 
 ## Discuss Your Mountain Home Project
 Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
