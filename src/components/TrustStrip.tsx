@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldLine from "@/components/motion/GoldLine";
 import { Shield, Award, MapPin, CheckCircle2 } from "lucide-react";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -99,11 +100,11 @@ const TrustStrip = () => {
                     transition={{ delay: 0.1 + i * 0.05, duration: 0.4, ease: HIGHLAND_EASE }}
                     className="flex items-start gap-2.5"
                   >
-                    <cred.icon className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${
+                    {cred.label.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <cred.icon className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${
                       cred.emphasis
                         ? "text-[hsl(var(--highland-gold)/0.7)]"
                         : "text-[hsl(var(--highland-gold)/0.35)]"
-                    }`} />
+                    }`} />}
                     <span className={`text-body-sm md:text-body font-body leading-snug font-bold ${
                       cred.emphasis
                         ? "text-white"

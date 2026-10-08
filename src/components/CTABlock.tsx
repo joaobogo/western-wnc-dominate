@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { Link, useLocation } from "react-router-dom";
 import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
@@ -156,7 +157,7 @@ const CTABlock = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                   {[
                     { icon: Shield, text: "Licensed NC General Contractor" },
-                    { icon: Award, text: "CertainTeed Credentialed Contractor" },
+                    { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
                     { icon: Shield, text: "VELUX Certified Installer" },
                     { icon: Clock, text: "Storm Damage Assessment" },
                     { icon: Mountain, text: `${COUNTY_COUNT} WNC Counties` },
@@ -169,7 +170,7 @@ const CTABlock = () => {
                       transition={{ delay: 0.3 + i * 0.08 }}
                       className="flex items-center gap-2"
                     >
-                      <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                      {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />}
                       <span className="text-dark-section-foreground/22 text-caption font-body font-medium">
                         {item.text}
                       </span>

@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
@@ -107,14 +108,14 @@ const faqs = [
   { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO dimensional shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
   { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photos and measurements, meet with your adjuster on-site, and coordinate the entire repair or replacement process through your insurance claim." },
   { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
-  { q: "Are you certified to install specific roofing brands?", a: "Highlander is a CertainTeed Credentialed Contractor and a VELUX Certified Installer. Product, system, and warranty eligibility are confirmed for the specific project before installation." },
+  { q: "Are you certified to install specific roofing brands?", a: "Highlander is a CertainTeed ShingleMaster PREMIER Credentialed Contractor and a VELUX Certified Installer. Product, system, and warranty eligibility are confirmed for the specific project before installation." },
   { q: "Do you offer warranties on your roofing work?", a: "Warranty coverage depends on the manufacturer, products, roof assembly, and written scope. Highlander reviews the coverage that applies to your project before installation and provides the applicable documentation." },
   { q: "Can I finance a new roof?", a: "Ask the Highlander team about the financing options currently available for your project. Availability, provider terms, and eligibility are confirmed before you make a commitment." },
   { q: "How do I know if I need a repair or full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. We never recommend a replacement when a repair will solve the problem — and we'll document our reasoning so you can decide with confidence." },
 ];
 
 const trustSignals = [
-  { icon: Award, label: "CertainTeed Credentialed Contractor", detail: "Manufacturer credential" },
+  { icon: Award, label: "CertainTeed ShingleMaster PREMIER Credentialed Contractor", detail: "Manufacturer credential" },
   { icon: Shield, label: "Licensed General Contractor", detail: "State of North Carolina" },
   { icon: FileText, label: "Written Project Scope", detail: "Project-specific terms" },
   { icon: Clock, label: "Storm Damage Assessment", detail: "Documented next steps" },
@@ -322,7 +323,7 @@ const RoofingDivision = () => {
                   transition={{ delay: i * 0.08 }}
                   className="flex flex-col items-center text-center md:px-6"
                 >
-                  <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />
+                  {item.label.includes("CertainTeed") ? <CertainTeedPremierBadge className="mb-2" /> : <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />}
                   <span className="text-xs font-heading font-semibold text-primary-foreground mb-0.5">{item.label}</span>
                   <span className="text-caption text-primary-foreground font-body">{item.detail}</span>
                 </motion.div>
@@ -602,12 +603,12 @@ const RoofingDivision = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Award, text: "CertainTeed Certified" },
+                      { icon: Award, text: "CertainTeed ShingleMaster PREMIER" },
                       { icon: Clock, text: "Business-Hours Response" },
                       { icon: Star, text: `${REVIEW_STARS} Google Rating` },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                        {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />}
                         <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}

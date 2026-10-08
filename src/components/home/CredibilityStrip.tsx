@@ -1,6 +1,7 @@
 import { Star, ShieldCheck, MapPin } from "lucide-react";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { FRANKLIN_STREET } from "@/data/business";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 
 /**
  * Tight three-item proof band directly under the hero.
@@ -19,7 +20,7 @@ const CredibilityStrip = () => {
     {
       icon: ShieldCheck,
       label: "Licensed NC General Contractor",
-      detail: "CertainTeed Credentialed Contractor",
+      detail: "CertainTeed ShingleMaster PREMIER",
     },
     {
       icon: MapPin,
@@ -40,10 +41,10 @@ const CredibilityStrip = () => {
               key={item.label}
               className="flex items-center gap-3 justify-center py-3 sm:py-0 sm:px-6 text-center sm:text-left"
             >
-              <item.icon
+              {item.detail.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon
                 className="w-5 h-5 flex-shrink-0 text-[hsl(var(--gold-ink))]"
                 aria-hidden="true"
-              />
+              />}
               <span className="min-w-0">
                 <span className="block font-body text-sm font-semibold leading-tight">
                   {item.label}

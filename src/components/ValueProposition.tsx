@@ -16,7 +16,7 @@ const pillars = [
     number: "01",
     title: "No Shortcuts at Any Elevation",
     copy: "Roofing details are scoped for the actual system, access, and mountain exposure on your property, with a named Highlander project contact responsible for communication and follow-through.",
-    detail: "Material-specific planning · CertainTeed Credentialed Contractor · Final walkthrough",
+    detail: "Material-specific planning · CertainTeed ShingleMaster PREMIER Credentialed Contractor · Final walkthrough",
   },
   {
     icon: MessageSquare,

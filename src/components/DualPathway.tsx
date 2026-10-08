@@ -1,4 +1,5 @@
 import { REVIEW_STARS } from "@/data/business";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings, Compass } from "lucide-react";
@@ -40,7 +41,7 @@ const roofingData = {
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines.",
   stats: [
     { value: REVIEW_STARS, label: "Google Rating" },
-    { value: "CertainTeed", label: " ShingleMaster Credentialed" },
+    { value: "CertainTeed", label: "ShingleMaster PREMIER" },
   ],
   services: [
     { icon: Layers, name: "Full Roof Replacements" },
@@ -196,7 +197,8 @@ const DivisionCard = ({ data, accent, index }: {
         <div className="absolute bottom-0 left-0 right-0 px-5 pb-4">
           <div className="flex items-center gap-5 flex-wrap">
             {data.stats.map((stat) => (
-              <div key={stat.label} className="flex items-baseline gap-1.5 drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
+              <div key={stat.label} className="flex items-center gap-1.5 drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
+                {stat.value === "CertainTeed" && <CertainTeedPremierBadge />}
                 <AnimatedCounter
                   value={stat.value}
                   className={`text-lg md:text-xl font-heading font-bold leading-none ${

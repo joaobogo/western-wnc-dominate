@@ -1,5 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS, REVIEW_COUNT_LABEL } from "@/data/business";
 import CTAProofLine from "@/components/trust/CTAProofLine";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { Link, useLocation } from "react-router-dom";
 import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
 import { motion } from "framer-motion";
@@ -112,7 +113,7 @@ interface TrustSidebarItem {
 
 const defaultSidebarItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
-  { icon: Award, label: "CertainTeed Credentialed Contractor" },
+  { icon: Award, label: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
   { icon: Clock, label: "Urgent Roof Support" },
   { icon: Star, label: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
 ];
@@ -122,10 +123,10 @@ export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSid
     <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-2">Why Highlander</h4>
     {items.map((item) => (
       <div key={item.label} className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
+        {item.label.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
           <item.icon className="w-4 h-4 text-primary" />
-        </div>
-        <span className="text-foreground text-xs font-body font-medium">{item.label}</span>
+        </div>}
+        <span className="text-foreground text-xs font-body font-medium">{item.label.includes("CertainTeed") ? "CertainTeed ShingleMaster PREMIER" : item.label}</span>
       </div>
     ))}
     <div className="pt-3 border-t border-border">
@@ -145,12 +146,12 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
     {[
       { icon: Shield, text: "Licensed & Insured" },
       { icon: Clock, text: "Clear Next Steps" },
-      { icon: Award, text: "CertainTeed Credentialed Contractor" },
+      { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
       { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
     ].map((item) => (
       <div key={item.text} className="flex items-center gap-2">
-        <item.icon className="w-3.5 h-3.5 text-primary/80" />
-        <span className="text-muted-foreground text-xs font-body font-medium">{item.text}</span>
+        {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-primary/80" />}
+        <span className="text-muted-foreground text-xs font-body font-medium">{item.text.includes("CertainTeed") ? "CertainTeed ShingleMaster PREMIER" : item.text}</span>
       </div>
     ))}
   </div>
