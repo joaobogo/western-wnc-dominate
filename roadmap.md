@@ -1,5 +1,5 @@
 # Uploaded blog publication
-- [ ] Add all six attached articles with exact filename-based slugs, safe editorial copy, FAQs and related links.
-- [ ] Generate and optimize a matching image for each article.
-- [ ] Regenerate search files and verify slugs, images, metadata and tests.
-- [ ] Publish the completed articles and return their URLs.
+- [x] Add all six attached articles with exact filename-based slugs, safe editorial copy, FAQs and related links.
+- [x] Generate and optimize a matching image for each article.
+- [x] Regenerate search files and verify slugs, images, metadata and tests (43 regression tests passed; all six browser checks passed; automatic build passed).
+- [ ] Request publication and return the six exact canonical URLs; verify deployment separately.
