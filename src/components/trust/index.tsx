@@ -116,7 +116,7 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
         }`}
       >
         <div className={`mb-3 flex items-center justify-center transition-transform group-hover:scale-105 duration-300 ${
-          cert.image ? "w-20 h-16" : "w-11 h-11 rounded-sm " + (variant === "dark" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8 group-hover:bg-primary/12")
+          cert.label === "CertainTeed" ? "w-24 h-24" : cert.image ? "w-20 h-16" : "w-11 h-11 rounded-sm " + (variant === "dark" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8 group-hover:bg-primary/12")
         }`}>
           {cert.label === "CertainTeed" ? <CertainTeedPremierBadge className="h-24 w-24" /> : cert.image ? (
             <img loading="lazy" decoding="async" 

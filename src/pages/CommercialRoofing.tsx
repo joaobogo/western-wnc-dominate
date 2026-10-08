@@ -349,7 +349,7 @@ const CommercialRoofing = () => {
                           {propertyManagerPoints.map((item, i) => (
                             <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
-                                {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-5 h-5 text-primary" />}
+                                <item.icon className="w-5 h-5 text-primary" />
                               </div>
                               <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{item.title}</h3>
                               <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>

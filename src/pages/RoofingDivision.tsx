@@ -323,7 +323,7 @@ const RoofingDivision = () => {
                   transition={{ delay: i * 0.08 }}
                   className="flex flex-col items-center text-center md:px-6"
                 >
-                  {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />}
+                  {item.label.includes("CertainTeed") ? <CertainTeedPremierBadge className="mb-2" /> : <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />}
                   <span className="text-xs font-heading font-semibold text-primary-foreground mb-0.5">{item.label}</span>
                   <span className="text-caption text-primary-foreground font-body">{item.detail}</span>
                 </motion.div>

@@ -547,13 +547,13 @@ const StormDamage = () => {
                 {[
                   { icon: Shield, title: "Licensed, Insured, and Permanent", detail: "We're not a storm-chasing crew that appears after weather events and disappears after cashing checks. Highlander is a licensed, insured, locally established roofing company with a permanent address in Western North Carolina." },
                   { icon: Clock, title: "Urgent Roof Guidance", detail: "For active leaks or storm damage, call during office hours to explain what is happening. Outside office hours, send a request for follow-up. Temporary protection depends on conditions, safety, and availability." },
-                  { icon: BadgeCheck, title: "Manufacturer Certified", detail: "As CertainTeed certified installers, our repair and replacement work meets manufacturer standards — which matters when warranty coverage is part of the conversation after storm damage." },
+                  { icon: BadgeCheck, title: "Manufacturer Certified", detail: "As CertainTeed ShingleMaster PREMIER credentialed installers, our repair and replacement work meets manufacturer standards — which matters when warranty coverage is part of the conversation after storm damage." },
                   { icon: Zap, title: "Mountain Storm Experience", detail: "Highlander works on mountain roofs exposed to wind, heavy rain, hail, fallen debris, and seasonal weather across Western North Carolina." },
                 ].map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
-                    <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
-                      {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-5 h-5 text-primary" />}
-                    </div>
+                    {item.detail.includes("CertainTeed") ? <CertainTeedPremierBadge className="mb-4" /> : <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>}
                     <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
                     <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
