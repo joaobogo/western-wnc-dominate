@@ -113,7 +113,7 @@ interface TrustSidebarItem {
 
 const defaultSidebarItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
-  { icon: Award, label: "CertainTeed Credentialed Contractor" },
+  { icon: Award, label: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
   { icon: Clock, label: "Urgent Roof Support" },
   { icon: Star, label: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
 ];
@@ -146,7 +146,7 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
     {[
       { icon: Shield, text: "Licensed & Insured" },
       { icon: Clock, text: "Clear Next Steps" },
-      { icon: Award, text: "CertainTeed Credentialed Contractor" },
+      { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
       { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
     ].map((item) => (
       <div key={item.text} className="flex items-center gap-2">

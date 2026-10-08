@@ -105,7 +105,7 @@ const RegionalAuthority = () => {
             <ul className="space-y-3 mb-6 text-body-sm font-body">
               <li className="flex items-start gap-3">
                 <ShieldCheck className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
-                <span><strong>Licensed NC General Contractor</strong> — CertainTeed Credentialed Contractor.</span>
+                <span><strong>Licensed NC General Contractor</strong> — CertainTeed ShingleMaster PREMIER Credentialed Contractor.</span>
               </li>
               <li className="flex items-start gap-3">
                 <Wrench className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />

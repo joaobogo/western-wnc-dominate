@@ -60,7 +60,7 @@ const CardCapture = ({
       {[
         { icon: Shield, text: "Licensed & Insured" },
         { icon: Clock, text: "Clear Next Steps" },
-        { icon: Award, text: "CertainTeed Credentialed Contractor" },
+        { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
         { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
       ].map((item) => (
         <div key={item.text} className="flex items-center gap-1.5">

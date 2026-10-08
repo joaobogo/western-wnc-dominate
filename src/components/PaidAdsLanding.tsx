@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import { motion } from "framer-motion";

@@ -291,7 +291,7 @@ const Hero = () => {
                 <span className="block">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva — with a written scope and price before any work starts.</span>
               )}
               <span className={textLed ? "hidden" : "hidden md:inline"}>Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
-              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed NC GC · CertainTeed Credentialed · VELUX Certified</span>
+              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed NC GC · CertainTeed PREMIER · VELUX Certified</span>
             </p>
 
 

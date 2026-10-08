@@ -31,7 +31,7 @@ export const trustPillars = [
   {
     icon: Shield,
     title: "Certified & Licensed",
-    short: "CertainTeed Credentialed Contractor. Licensed NC General Contractor. Project-specific coverage is confirmed in writing.",
+    short: "CertainTeed ShingleMaster PREMIER Credentialed Contractor. Licensed NC General Contractor. Project-specific coverage is confirmed in writing.",
     overcomes: "Is this company actually qualified?",
   },
   {
@@ -85,7 +85,7 @@ export const trustPillars = [
 
 export const TrustBadgeStrip = ({ className = "" }: { className?: string }) => (
   <div className={`flex flex-wrap justify-center gap-4 text-xs font-medium uppercase tracking-wider ${className}`}>
-    {["Licensed NC General Contractor", "CertainTeed Credentialed Contractor", "VELUX Certified Installer", "WNC Specialists"].map((badge, i) => (
+    {["Licensed NC General Contractor", "CertainTeed ShingleMaster PREMIER Credentialed Contractor", "VELUX Certified Installer", "WNC Specialists"].map((badge, i) => (
       <span key={badge} className="flex items-center gap-1.5">
         {i > 0 && <span className="text-current opacity-20 mr-2">•</span>}
         {badge.includes("CertainTeed") && <CertainTeedPremierBadge />}
@@ -409,7 +409,7 @@ export const TrustSidebar = () => (
     <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
     {[
       "Licensed NC General Contractor",
-      "CertainTeed Credentialed Contractor",
+      "CertainTeed ShingleMaster PREMIER Credentialed Contractor",
       "VELUX Certified Installer",
       "BBB A+ Accredited",
       "Written Scope Before Work",

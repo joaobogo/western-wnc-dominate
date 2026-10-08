@@ -40,7 +40,7 @@ const ContactIdentity = () => (
             <li className="flex items-start gap-3">
               <Building2 className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <p className="text-sm text-muted-foreground font-body">
-                Licensed North Carolina general contractor ({BUSINESS.licenseNumber}) · CertainTeed Credentialed Contractor · VELUX Certified Installer
+                Licensed North Carolina general contractor ({BUSINESS.licenseNumber}) · CertainTeed ShingleMaster PREMIER Credentialed Contractor · VELUX Certified Installer
               </p>
             </li>
           </ul>

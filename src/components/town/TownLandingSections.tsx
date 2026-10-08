@@ -246,7 +246,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
 const reasons = [
   { icon: Mountain, title: "Western NC based", desc: (t: string) => `Highlander serves ${t} from its Franklin and Sylva showrooms as part of its Western North Carolina service area.` },
   { icon: ShieldCheck, title: "Licensed general contractor", desc: () => "Full roofing and construction credentials, workers' comp, and liability — verifiable on every proposal." },
-  { icon: Award, title: "CertainTeed credentialed", desc: () => "CertainTeed Credentialed Contractor; project-specific warranty eligibility and terms are confirmed in writing." },
+  { icon: Award, title: "CertainTeed credentialed", desc: () => "CertainTeed ShingleMaster PREMIER Credentialed Contractor; project-specific warranty eligibility and terms are confirmed in writing." },
   { icon: Users, title: "Named project contact", desc: () => "Highlander gives the homeowner a clear project contact and written scope for questions and follow-up." },
   { icon: Clock, title: "Direct contact", desc: (t: string) => `Call or send a request to discuss roofing needs in ${t} and the appropriate next step.` },
   { icon: DollarSign, title: "Ask about financing", desc: () => "Financing may be available for qualifying projects; lender terms and approval are confirmed separately." },

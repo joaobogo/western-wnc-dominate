@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -136,7 +137,7 @@ const timelineSteps = [
 
 const trustProof = [
   { value: REVIEW_STARS, label: "Google Rating", detail: "Across Highlands, Cashiers, Franklin, Sylva & surrounding communities" },
-  { value: "CertainTeed", label: "ShingleMaster Credentialed", detail: "CertainTeed ShingleMaster Credentialed Contractor" },
+  { value: "CertainTeed", label: "ShingleMaster PREMIER", detail: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
   { value: REVIEW_STARS, label: "Google Rating", detail: "Earned through consistent quality, communication, and follow-through" },
   { value: "Direct", label: "Storm Support", detail: "Call to discuss damage, temporary protection, and the appropriate next step" },
 ];
@@ -595,12 +596,12 @@ const RoofReplacement = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Award, text: "CertainTeed Certified" },
+                      { icon: Award, text: "CertainTeed ShingleMaster PREMIER" },
                       { icon: Clock, text: "Clear Next Steps" },
                       { icon: Star, text: "Financing Available" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                        {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />}
                         <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}

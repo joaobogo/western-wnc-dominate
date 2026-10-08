@@ -24,7 +24,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const TRUST_POINTS = [
   { icon: Clock, text: "Requests reviewed during staffed business hours" },
   { icon: Shield, text: "Licensed NC General Contractor · Written project scope" },
-  { icon: Award, text: "CertainTeed Credentialed Contractor" },
+  { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
   { icon: MapPin, text: "Locally owned — Franklin, NC" },
 ];
 
