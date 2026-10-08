@@ -8,4 +8,4 @@
 - [x] Add the three new storm articles with exact filename slugs and matching optimized images.
 - [x] Skip repeated chimney and gutter attachments, leaving existing posts unchanged.
 - [x] Regenerate search metadata and verify all three articles, matching images and FAQ schema; 334 tests passed and automatic build passed.
-- [ ] Request publication and verify the three deployed canonical URLs.
+- [x] Request publication of the three canonical URLs; publication is scheduled, with deployment verification waiting on hosting completion.
