@@ -7,6 +7,9 @@ import bravaGlenvilleBeforeRidge from "@/assets/gallery/brava-glenville-before-r
 import bravaGlenvilleBeforeHips from "@/assets/gallery/brava-glenville-before-hips.webp";
 import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import additionFranklinWindows from "@/assets/gallery/addition-franklin-gable-windows.webp";
+import deckSylvaDoors from "@/assets/gallery/deck-sylva-doors-wide.webp";
+import deckSylvaRun from "@/assets/gallery/deck-sylva-run.webp";
+import deckSylvaJoists from "@/assets/gallery/deck-sylva-new-joists.webp";
 
 export interface ProjectDetail {
   slug: string;
@@ -277,6 +280,50 @@ export const projectDetails: ProjectDetail[] = [
     seo: {
       title: "Living Room Addition in Franklin, NC | Highlander",
       description: "Engineered living room addition in Franklin, NC with a vaulted gable, stone fireplace and mountain-view windows. See the full project story.",
+    },
+  },
+  {
+    slug: "deck-railing-rebuild-sylva",
+    title: "Deck & Railing Rebuild: Elevated Wooded Deck",
+    type: "Deck Rebuild",
+    category: "construction",
+    heroImage: deckSylvaDoors,
+    cardImage: deckSylvaRun,
+    location: "Sylva, NC",
+    county: "Jackson County",
+    elevation: "2,037 ft",
+    scope: "Full deck board replacement, joist replacement and railing rebuild",
+    duration: "Completed early May 2026",
+    highlight: "New joists, new deck boards and a railing rebuilt from the posts up",
+    summary: "A Sylva homeowner's elevated back deck had worn boards underfoot and a tired railing. When the crew pulled up the old decking they found the framing needed attention too, so they replaced the joists before laying new pressure-treated boards across the full length of the deck, then rebuilt the railing from the posts up.",
+    challenge: "The deck is elevated above a wooded slope. Once the old boards came up, the joists underneath were deteriorated, and covering them with new boards would only have hidden the problem.",
+    scopeOfWork: [
+      "Deteriorated joists under the elevated deck replaced to give the new deck a solid base",
+      "New pressure-treated deck boards installed across the full length of the deck",
+      "Old railing system removed",
+      "11 new 6x6 posts set to anchor the new railing",
+      "New treated top and bottom rails framed",
+      "About 270 new 42-inch pressure-treated balusters installed",
+      "Everything fastened with structural timber screws",
+      "Final walkthrough, finish details and site cleanup",
+    ],
+    materials: [
+      { name: "Pressure-Treated Deck Boards", detail: "Laid across the full length of the elevated deck" },
+      { name: "6x6 Railing Posts", detail: "11 new posts anchoring the rebuilt railing" },
+      { name: "42-Inch Balusters", detail: "About 270 new pressure-treated balusters" },
+      { name: "Structural Timber Screws", detail: "Used throughout for long-term strength" },
+    ],
+    processHighlights: [
+      "The crew replaced the joists as soon as the framing problem was found, rather than covering it",
+      "The railing was rebuilt from new posts up, not patched",
+      "Highlander's project manager returned for a final walkthrough and finish details",
+      "The site was left clean at completion",
+    ],
+    result: "The elevated deck now sits on sound framing, with fresh pressure-treated boards and a rebuilt railing, ready for many more seasons in the trees of the North Carolina mountains.",
+    galleryImages: [deckSylvaDoors, deckSylvaRun, deckSylvaJoists],
+    seo: {
+      title: "Deck & Railing Rebuild in Sylva, NC | Highlander",
+      description: "Elevated deck rebuild in Sylva, NC: new joists, new pressure-treated boards and a railing rebuilt from the posts up. See the full project story.",
     },
   },
 ];
