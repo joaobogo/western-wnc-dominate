@@ -1,17 +1,6 @@
 import metal005 from "@/assets/gallery/metal-005.webp";
-import metal006 from "@/assets/gallery/metal-006.webp";
-import metal008 from "@/assets/gallery/metal-008.webp";
-import metal003 from "@/assets/gallery/metal-003.webp";
-import asphalt008 from "@/assets/gallery/asphalt-008.webp";
-import asphalt007 from "@/assets/gallery/asphalt-007.webp";
-import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import asphalt002 from "@/assets/gallery/asphalt-002.webp";
 import cedar004 from "@/assets/gallery/cedar-005.webp";
-import asphalt001 from "@/assets/gallery/asphalt-001.webp";
-import asphalt003 from "@/assets/gallery/asphalt-003.webp";
-import metal009 from "@/assets/gallery/metal-010.webp";
-import metal010 from "@/assets/gallery/metal-010.webp";
 import bravaGlenvilleAerial from "@/assets/gallery/brava-glenville-aerial.webp";
 import bravaGlenvilleChimney from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import bravaGlenvilleBeforeRidge from "@/assets/gallery/brava-glenville-before-ridge.webp";
@@ -100,16 +89,7 @@ export const projectDetails: ProjectDetail[] = [
       "Final drone inspection to verify every panel seam and flashing detail",
     ],
     result: "The completed installation replaced the patched roof with a coordinated 24-gauge standing-seam system and new flashing details. Applicable manufacturer finish and material warranty terms are documented for the selected panels and project.",
-    galleryImages: [metal005, metal006, metal008, metal003],
-    beforeAfter: {
-      before: metal009,
-      after: metal005,
-      beforeLabel: "Worn Metal — Patched & Leaking",
-      afterLabel: "24-Gauge Standing Seam — Dark Bronze",
-      whatChanged: "Complete removal of deteriorated metal roofing with multiple failed patch repairs. Replaced with custom-fabricated 24-gauge standing seam panels, new underlayment system, and precision-fitted trim on all 8 gable intersections.",
-      whyItMattered: "The existing roof was leaking at multiple points, causing interior damage and compromising the home's envelope integrity at 4,100 feet elevation. Every winter freeze-thaw cycle worsened the problem.",
-      highlanderDifference: "Custom panel fabrication eliminated field-cutting waste and ensured precision fit. Pre-project drone survey mapped every intersection. Staggered installation maintained weather protection throughout the 8-day project.",
-    },
+    galleryImages: [metal005],
     seo: {
       title: "Standing Seam Metal Roof — Highlands, NC | Highlander Building Services",
       description: "Custom dark bronze standing seam metal roof on a mountain estate in Highlands, NC. 3,200 sq ft, 12/12 pitch, 8 gable intersections. See the full project story.",
@@ -151,16 +131,7 @@ export const projectDetails: ProjectDetail[] = [
       "Applicable CertainTeed warranty eligibility reviewed and documented for the selected roofing system",
     ],
     result: "The Weathered Wood dimensional shingle system replaced the aging 3-tab roof and was paired with decking repair and ventilation work documented in the project scope. Applicable manufacturer and workmanship warranty terms are confirmed in the project documentation.",
-    galleryImages: [asphaltHero, asphalt007, asphalt006, asphalt008],
-    beforeAfter: {
-      before: asphalt003,
-      after: asphaltHero,
-      beforeLabel: "22-Year-Old 3-Tab — Granule Loss & Curling",
-      afterLabel: "CertainTeed Landmark: Weathered Wood",
-      whatChanged: "Full replacement of deteriorated 3-tab shingles with CertainTeed Landmark dimensional shingles. 12 sheets of damaged decking replaced. Ventilation system upgraded. Screen porch roof integrated seamlessly.",
-      whyItMattered: "The aging 3-tab shingles had lost most of their protective granules, leaving the home vulnerable to water infiltration. Multiple areas showed curling and lifting, particularly on the north-facing slope.",
-      highlanderDifference: "The project combined CertainTeed materials, documented decking repair, ventilation upgrades, and a final cleanup process on a complex multi-level roof. Warranty eligibility and terms were handled as project-specific documentation.",
-    },
+    galleryImages: [asphaltHero],
     seo: {
       title: "CertainTeed Landmark Roof Replacement — Waynesville, NC | Highlander",
       description: "4,100 sq ft CertainTeed Landmark shingle replacement in Waynesville, NC. Completed in 4 days. See the full project story.",
@@ -203,7 +174,7 @@ export const projectDetails: ProjectDetail[] = [
       "Final walkthrough documented with project photographs",
     ],
     result: "The completed cedar shake roof transformed the estate into one of the most visually striking properties in Highlands. The copper accents will develop a natural patina over time, deepening the roof's character. The preservative treatment and spaced sheathing system are designed to extend the cedar's lifespan well beyond typical mountain installations.",
-    galleryImages: [cedar004, asphalt007, metal006],
+    galleryImages: [cedar004],
     seo: {
       title: "Cedar Shake Roof — Highlands Estate | Highlander Building Services",
       description: "Premium cedar shake installation on a luxury Highlands estate. Hand-selected cedar, copper ridge accents, 14-day phased installation. See the full project story.",

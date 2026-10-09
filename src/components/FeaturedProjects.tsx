@@ -122,15 +122,23 @@ const ProjectCard = ({ project, index }: { project: (typeof projects)[number]; i
   );
 };
 
-export const FeaturedProjects = ({ location }: { location?: string }) => {
+export const FeaturedProjects = ({
+  location,
+  excludeImages = [],
+}: {
+  location?: string;
+  /** Photos already shown elsewhere on the page; cards using them are skipped so no photo repeats. */
+  excludeImages?: string[];
+}) => {
   const [activeFilter, setActiveFilter] = useState("all");
   const matchesLocation = (loc: string) =>
     !!location && (loc.includes(location) || loc.includes(location.split(",")[0]));
 
+  const available = projects.filter((project) => !excludeImages.includes(project.image));
   const byFilter =
     activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.type === activeFilter);
+      ? available
+      : available.filter((project) => project.type === activeFilter);
 
   const displayProjects = location
     ? [...byFilter].sort(

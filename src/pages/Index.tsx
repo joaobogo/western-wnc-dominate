@@ -17,6 +17,8 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import HomepageStickyLeadBar from "@/components/HomepageStickyLeadBar";
 import InspectionForm from "@/components/InspectionForm";
 import SectionDivider from "@/components/SectionDivider";
+// The homepage hero photo; the project carousel skips any card that would repeat it.
+import homeHeroPhoto from "@/assets/gallery/asphalt-hero.webp";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
    the hero, trust strip and shell. Each fallback reserves height to keep CLS at 0. */
@@ -105,7 +107,7 @@ const Index = () => {
 
         <Suspense fallback={<SectionFallback h={1800} />}>
           {/* 4. Project showcase (light) */}
-          <FeaturedProjects />
+          <FeaturedProjects excludeImages={[homeHeroPhoto]} />
 
           {/* 5. Local proof band — dark tone, two attributable quotes */}
           <Section

@@ -8,18 +8,15 @@ import GoldLine from "@/components/motion/GoldLine";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import { useRef } from "react";
 
-import metalRoof from "@/assets/gallery/metal-005.webp";
-// NOTE: Construction Division image replaced per client (Robert) — the prior
-// house photo must not appear in marketing. This is a temporary AI-generated
-// WNC mountain construction visual. Client to provide a final approved
-// Construction Division photo before launch.
-import constructionImg from "@/assets/division-construction-v2.webp";
+import roofingImg from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+// Construction Division image: documented job 26-00035, living room addition in Franklin, NC.
+import constructionImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 // NOTE: Temporary Design Division image. Client to provide final approved
 // Design Division image before launch.
 import designImg from "@/assets/division-design.webp";
 // P5.1: responsive renditions — the 800×500 card boxes were downloading the 1600px masters (190–240 KB each) on phones.
-import metalRoofSet from "@/assets/gallery/metal-005.webp?w=480;800;1200&format=webp&as=srcset";
-import constructionImgSet from "@/assets/division-construction-v2.webp?w=480;800;1200&format=webp&as=srcset";
+import roofingImgSet from "@/assets/gallery/shingle-dormer-cabin-aerial.webp?w=480;800;1200&format=webp&as=srcset";
+import constructionImgSet from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=480;800;1200&format=webp&as=srcset";
 import designImgSet from "@/assets/division-design.webp?w=480;800;1200&format=webp&as=srcset";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -52,9 +49,9 @@ const roofingData = {
   ],
   cta: "Explore Roofing",
   href: "/roofing",
-  image: metalRoof,
-  imageSrcSet: metalRoofSet,
-  imageAlt: "Standing seam metal roof on a Western North Carolina mountain home — Highlander Building Services",
+  image: roofingImg,
+  imageSrcSet: roofingImgSet,
+  imageAlt: "Dimensional shingle re-roof with dormers on a wooded Western North Carolina mountain home by Highlander Building Services",
 };
 
 const constructionData = {
@@ -85,7 +82,7 @@ const constructionData = {
   href: "/construction",
   image: constructionImg,
   imageSrcSet: constructionImgSet,
-  imageAlt: "Construction project representing Highlander Building Services design-build services in Western North Carolina",
+  imageAlt: "Living room addition with a vaulted wood ceiling and mountain-view windows, built by Highlander in Franklin, North Carolina",
 };
 
 const designData = {

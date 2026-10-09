@@ -52,6 +52,15 @@ const ProjectDetailPage = () => {
     .filter((p) => p.category === project.category && p.slug !== project.slug)
     .slice(0, 3);
 
+  // A photo appears once per page: the gallery skips anything already shown in
+  // the hero, the before/after slider, or a related-project card.
+  const shownElsewhere = new Set<string>([
+    project.heroImage,
+    ...(project.beforeAfter ? [project.beforeAfter.before, project.beforeAfter.after] : []),
+    ...related.map((r) => r.heroImage),
+  ]);
+  const galleryExtras = Array.from(new Set(project.galleryImages)).filter((img) => !shownElsewhere.has(img));
+
   return (
     <>
       <SEOHead
@@ -388,6 +397,7 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
+        {galleryExtras.length > 0 && (
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
@@ -396,7 +406,7 @@ const ProjectDetailPage = () => {
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
             </motion.div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {project.galleryImages.map((img, i) => (
+              {galleryExtras.map((img, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -416,6 +426,7 @@ const ProjectDetailPage = () => {
             </div>
           </div>
         </section>
+        )}
 
         {related.length > 0 && (
           <section className="section-padding bg-secondary tartan-bg">
