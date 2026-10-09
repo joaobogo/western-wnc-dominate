@@ -12,6 +12,8 @@ import stripCedar from "@/assets/gallery/cedar-001.webp";
 import stripCedarSet from "@/assets/gallery/cedar-001.webp?w=480;800;1200&format=webp&as=srcset";
 import stripMetalGreen from "@/assets/gallery/metal-006.webp";
 import stripMetalGreenSet from "@/assets/gallery/metal-006.webp?w=480;800;1200&format=webp&as=srcset";
+import additionRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+import additionRoomSet from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=480;800;1200&format=webp&as=srcset";
 import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 
 /**
@@ -181,11 +183,11 @@ const roofingStrip = {
 /**
  * Construction photography slots.
  *
- * LAUNCH BLOCKER (prompt 02, page 10): the only construction/outdoor-living
- * images currently in the repo are blog illustrations whose job, location and
- * ownership are not documented. They are used here as stand-ins with neutral
- * captions and alt text (no location or scope claims). Replace the two files
- * with documented Highlander project photographs before ad spend goes live.
+ * constructionSecondary is now a documented job (26-00035, Franklin addition).
+ * REMAINING BLOCKER (prompt 02, page 10): constructionPrimary is still a blog
+ * illustration whose job, location and ownership are not documented, so it
+ * keeps a neutral caption. Replace it with a documented outdoor-living photo
+ * before ad spend goes live.
  */
 const constructionPrimary: LandingImage = {
   src: "/media/9860ca9e-outdoor-living-cashiers.webp",
@@ -196,13 +198,13 @@ const constructionPrimary: LandingImage = {
   height: 900,
 };
 
+/** Documented job 26-00035: living room addition in Franklin, NC (Feb–Aug 2026). */
 const constructionSecondary: LandingImage = {
-  src: "/media/85aa1f15-construction-project-highlands.webp",
-  srcSet:
-    "/media/85aa1f15-construction-project-highlands-640.webp 640w, /media/85aa1f15-construction-project-highlands-960.webp 960w, /media/85aa1f15-construction-project-highlands.webp 1600w",
-  alt: "Timber-framed mountain home under construction, featured by Highlander Building Services",
-  width: 1600,
-  height: 900,
+  src: additionRoom,
+  srcSet: additionRoomSet,
+  alt: "Living room addition by Highlander Building Services in Franklin, North Carolina, with a stained vaulted wood ceiling and a wall of mountain-view windows",
+  width: 1500,
+  height: 844,
 };
 
 const roofingFaqs = [
@@ -434,7 +436,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   successBody:
     "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
   hero: { backdrop: { ...constructionPrimary, alt: "" }, position: "50% 55%" },
-  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 45%" },
+  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 70%" },
 
   proofHeading: "See the work. Understand the standard.",
   proofIntro: "Start from what a finished space can feel like.",
@@ -448,9 +450,9 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
     {
       id: "framing",
-      title: "Mountain home construction",
-      detail: "Mountain-home construction imagery featured by Highlander's construction team.",
-      tag: "Construction",
+      title: "Living room addition, Franklin",
+      detail: "An engineered vaulted gable, a stone fireplace and a wall of mountain-view windows, built on a new block foundation.",
+      tag: "Home addition",
       image: constructionSecondary,
     },
   ],
@@ -556,7 +558,7 @@ export const COMBINED_CONFIG: LandingConfig = {
     secondary: { ...constructionPrimary, alt: "" },
     secondaryPosition: "60% 55%",
   },
-  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 45%" },
+  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 70%" },
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
@@ -572,9 +574,9 @@ export const COMBINED_CONFIG: LandingConfig = {
     {
       id: "construction",
       title: "Construction",
-      detail: "Outdoor living imagery featured by Highlander's construction team.",
-      tag: "Construction",
-      image: constructionPrimary,
+      detail: "A documented Highlander living room addition in Franklin, NC: engineered vaulted gable, stone fireplace and mountain-view windows.",
+      tag: "Construction · Franklin, NC",
+      image: constructionSecondary,
     },
   ],
 

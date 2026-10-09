@@ -270,7 +270,7 @@ export const projectDetails: ProjectDetail[] = [
     category: "construction",
     heroImage: additionFranklinRoom,
     cardImage: additionFranklinWindows,
-    heroPosition: "50% 78%",
+    heroPosition: "50% 60%",
     location: "Franklin, NC",
     county: "Macon County",
     elevation: "2,119 ft",
