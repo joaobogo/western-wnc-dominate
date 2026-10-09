@@ -1,5 +1,6 @@
 import { Fragment, useMemo, useState } from "react";
 import GalleryImage from "@/components/media/GalleryImage";
+import WorkGallery from "@/components/gallery/WorkGallery";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, ImageOff } from "lucide-react";
 import EmptyState from "@/components/states/EmptyState";
@@ -14,7 +15,7 @@ import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 import { trackGalleryProjectOpen } from "@/lib/gtm";
 import { projectDetails } from "@/data/projects";
 // Hero, tiles and project cards each use a different photo, so nothing repeats on this page.
-import heroImg from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+import heroImg from "@/assets/work/roof-charcoal-garage-mountains.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
 import guttersImg from "@/assets/gallery/gutters-002.jpg";
@@ -80,7 +81,7 @@ const RecentProjects = () => {
           <div className="absolute inset-0">
             <GalleryImage width={1600} height={900} loading="eager" decoding="async" sizes="100vw"
               src={heroImg}
-              alt="Dimensional shingle re-roof with dormers on a wooded Western North Carolina mountain home by Highlander Building Services"
+              alt="Charcoal dimensional shingle roof with dormers by Highlander Building Services, overlooking the Western North Carolina mountains"
               fetchPriority="high"
               className="w-full h-full object-cover"
             />
@@ -290,6 +291,21 @@ const RecentProjects = () => {
           </div>
         </section>
 
+        {/* Section 1c: Work gallery — roofing and construction photography */}
+        <section className="py-16 md:py-24 bg-secondary/40 border-t border-border/60" aria-labelledby="work-gallery-heading">
+          <div className="container-tight">
+            <div className="max-w-3xl mb-10">
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work Gallery</p>
+              <h2 id="work-gallery-heading" className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Roofs and Builds Across the Mountains.
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Photos from Highlander roofing and construction jobs. Tap any photo to see it full size.
+              </p>
+            </div>
+            <WorkGallery excludeImages={[heroImg, ...completedProjects.map((p) => p.image)]} />
+          </div>
+        </section>
 
         {/* RealWork Labs — Recent Project Updates (vendor widget target: #rwl-output) */}
         <RealWorkWidget />
