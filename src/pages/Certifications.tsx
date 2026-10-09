@@ -5,6 +5,7 @@ import {
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
 import badgeVelux from "@/assets/logo-velux.png";
+import certainteedPremier from "@/assets/certainteed-shinglemaster-premier.jpg.asset.json";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -30,10 +31,10 @@ const fadeUp = {
 const certifications = [
   {
     icon: Award,
-    title: "CertainTeed Credentialed Contractor",
-    badge: "Manufacturer Credential",
-    image: null,
-    description: "Highlander is a CertainTeed credentialed contractor. The exact roof system, products, and warranty eligibility are confirmed for each project in writing.",
+    title: "CertainTeed ShingleMaster PREMIER Credentialed Contractor",
+    badge: "WNC's Only Premier Contractor",
+    image: certainteedPremier.url,
+    description: "Highlander is Western North Carolina's only CertainTeed ShingleMaster PREMIER credentialed contractor. The exact roof system, products, and warranty eligibility are confirmed for each project in writing.",
     whatItMeans: [
       "CertainTeed roofing-system training and installation guidance",
       "System requirements reviewed for the selected roof",
@@ -84,8 +85,9 @@ const certifications = [
 
 const badgeRow: { image?: string | null; name: string; plain: string }[] = [
   {
-    name: "CertainTeed Credentialed Contractor",
-    plain: "Manufacturer credential with project-specific system and warranty details confirmed in writing.",
+    image: certainteedPremier.url,
+    name: "CertainTeed ShingleMaster PREMIER",
+    plain: "Western North Carolina's only Premier credentialed contractor, with project-specific warranty details confirmed in writing.",
   },
   {
     image: badgeVelux,
@@ -292,7 +294,7 @@ const Certifications = () => {
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-16 h-12 flex items-center justify-center">
                           {cert.image ? (
-                            <img loading="lazy" decoding="async" src={cert.image} alt={cert.title} width={128} height={96} className="w-full h-full object-contain mix-blend-multiply" />
+                            <img loading="lazy" decoding="async" src={cert.image} alt={cert.title} width={128} height={96} className="w-full h-full object-contain" />
                           ) : (
                             <div className="w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center">
                               <cert.icon className="w-5 h-5 text-primary" />

@@ -25,7 +25,7 @@ const values = [
   { icon: Heart, title: "Relationships Over Transactions", description: "We don't chase projects. We earn trust. Most of our work comes from referrals and repeat clients who've seen what we deliver." },
   { icon: Mountain, title: "Mountain-Built Knowledge", description: "We understand what elevation, weather exposure, and WNC terrain demand from a roof and a structure. That knowledge is earned, not taught." },
   { icon: Users, title: "Accountability You Can See", description: "You receive a written scope, a named project contact, and a clear path for questions and follow-up throughout the work." },
-  { icon: Shield, title: "Licensed & Credentialed", description: "Licensed NC General Contractor. CertainTeed Credentialed Contractor. VELUX Certified Installer. Verification details are linked on our certifications page." },
+  { icon: Shield, title: "Licensed & Credentialed", description: "Licensed NC General Contractor. CertainTeed ShingleMaster PREMIER Credentialed Contractor. VELUX Certified Installer. Verification details are linked on our certifications page." },
   { icon: Award, title: "Local Accountability", description: "Highlander has operated from Franklin since 2017, with showrooms in Franklin and Sylva and a team serving Western North Carolina homeowners." },
 ];
 
@@ -367,7 +367,7 @@ const About = () => {
                   construction, and design projects across Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Highlander is a licensed NC General Contractor and CertainTeed Credentialed Contractor.
+                  Highlander is a licensed NC General Contractor and CertainTeed ShingleMaster PREMIER Credentialed Contractor.
                   The team carries those documented standards through estimating, installation, inspection,
                   and the final project walkthrough.
                 </p>

@@ -14,6 +14,78 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "roof-replacement-tax-deductible_1",
+    "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
+    "excerpt": "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",
+    "category": "Cost",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "architectural-vs-3-tab",
+    "title": "Dimensional vs 3-Tab Shingles for Western NC Roofs",
+    "excerpt": "Compare dimensional and 3-tab shingles for Western NC homes: construction, wind and impact ratings, installation details, cost factors and contractor questions.",
+    "category": "Materials",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "acv-vs-rcv-roof",
+    "title": "ACV vs RCV Roof Insurance: Understand the Depreciation Gap",
+    "excerpt": "Compare ACV and RCV roof insurance, an illustrative depreciation example, and the policy details and repair documents Western NC homeowners should check.",
+    "category": "Insurance",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "deck-ledger-flashing",
+    "title": "Deck Ledger Flashing: Stop Water Intrusion Before Rot Starts",
+    "excerpt": "Understand deck ledger flashing, membrane layers, material compatibility and warning signs of rot. Get a professional scope for your Western NC mountain home.",
+    "category": "Construction",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "under-deck-drainage",
+    "title": "Under Deck Drainage: Inspect First, Get a Written Scope",
+    "excerpt": "Compare under-deck drainage options for Western NC homes. Check framing, headroom, slope, gutters and discharge before planning a dry outdoor living space.",
+    "category": "Construction",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "tree-on-roof_2",
+    "title": "Tree on Your Roof in Western NC: Safety, Tarping and Repairs",
+    "excerpt": "What to do after a tree hits your Western NC roof: safe documentation, coordinated removal, temporary protection, insurance questions and written repair scopes.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "storm-damage-roof-inspection_1",
+    "title": "Storm Damage Roof Inspection: A Homeowner Photo Checklist",
+    "excerpt": "Document roof storm damage safely from the ground, organize dated photos and prepare questions for a professional inspection and your insurer.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "wind-driven-rain-leak_2",
+    "title": "Wind-Driven Rain Leaks: Diagnosis and Repairs for Mountain Homes",
+    "excerpt": "Learn why mountain homes leak during windy rain, what to document safely and how flashing, windows and roof details affect repairs.",
+    "category": "Maintenance",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
+    "slug": "wind-damaged-shingles",
+    "title": "Wind-Damaged Shingles: Safe Storm Documentation in Western NC",
+    "excerpt": "Spot creased or missing shingles safely, document storm damage and compare repair options for your Western North Carolina roof.",
+    "category": "Storm",
+    "date": "2026-10-08",
+    "town": ""
+  },
+  {
     "slug": "high-elevation-roofing",
     "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
     "excerpt": "Building science guidance for mountain homeowners: moisture safe roof assemblies, engineered snow retention, and the contractor specs to require for high elevat",

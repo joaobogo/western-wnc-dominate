@@ -15,7 +15,7 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Licensed & Credentialed",
-    description: "Licensed NC General Contractor, CertainTeed Credentialed Contractor, and VELUX Certified Installer with project-specific terms documented in writing.",
+    description: "Licensed NC General Contractor, CertainTeed ShingleMaster PREMIER Credentialed Contractor, and VELUX Certified Installer with project-specific terms documented in writing.",
   },
   {
     icon: Clock,

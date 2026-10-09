@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -139,7 +140,7 @@ const timelineSteps = [
 
 const trustProof = [
   { value: REVIEW_STARS, label: "Google Rating", detail: "Across Highlands, Cashiers, Franklin, Sylva & surrounding communities" },
-  { value: "CertainTeed", label: "ShingleMaster Credentialed", detail: "CertainTeed ShingleMaster Credentialed Contractor" },
+  { value: "CertainTeed", label: "ShingleMaster PREMIER", detail: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
   { value: REVIEW_STARS, label: "Google Rating", detail: "Earned through consistent quality, communication, and follow-through" },
   { value: "Direct", label: "Storm Support", detail: "Call to discuss damage, temporary protection, and the appropriate next step" },
 ];
@@ -473,7 +474,7 @@ const RoofReplacement = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {trustProof.map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center p-5 md:p-6 bg-card border border-border rounded-sm">
-                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] block mb-2">{item.value}</span>
+                  {item.value === "CertainTeed" ? <CertainTeedPremierBadge className="h-24 w-24 mx-auto mb-2" /> : <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] block mb-2">{item.value}</span>}
                   <span className="font-heading font-semibold text-foreground text-sm block mb-1">{item.label}</span>
                   <span className="text-muted-foreground text-caption font-body leading-snug">{item.detail}</span>
                 </motion.div>
@@ -599,12 +600,12 @@ const RoofReplacement = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Award, text: "CertainTeed Certified" },
+                      { icon: Award, text: "CertainTeed ShingleMaster PREMIER" },
                       { icon: Clock, text: "Clear Next Steps" },
                       { icon: Star, text: "Financing Available" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                        {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />}
                         <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}

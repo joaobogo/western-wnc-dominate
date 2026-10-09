@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import { motion } from "framer-motion";
@@ -140,6 +141,7 @@ const PaidAdsLanding = ({
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.4 }} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
                     <div key={item.label} className="border border-dark-section-border bg-primary-foreground/5 px-4 py-4">
+                      {item.value.includes("CertainTeed") && <CertainTeedPremierBadge className="mb-2 h-20 w-20" />}
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
                       <div className="mt-1 text-sm font-semibold text-primary-foreground">{item.label}</div>
                       <div className="mt-1 text-xs font-body text-primary-foreground">{item.detail}</div>

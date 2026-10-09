@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
@@ -93,7 +94,7 @@ const processSteps = [
 
 const trustProofs = [
   { icon: Shield, value: "Licensed & Insured", label: "Full commercial liability coverage" },
-  { icon: BadgeCheck, value: "CertainTeed", label: "Credentialed Contractor" },
+  { icon: BadgeCheck, value: "CertainTeed", label: "ShingleMaster PREMIER" },
   { icon: Clock, value: "Direct", label: "Leak & storm support" },
   { icon: Award, value: "Since 2017", label: "Highlander founded in Western NC" },
   { icon: Building2, value: "Multi-Property", label: "Programs for management groups" },
@@ -411,7 +412,7 @@ const CommercialRoofing = () => {
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                           {trustProofs.map((proof, i) => (
                             <motion.div key={proof.value} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-center p-4 bg-card border border-border rounded-sm">
-                              <proof.icon className="w-5 h-5 text-primary mx-auto mb-2" />
+                              {proof.value === "CertainTeed" ? <CertainTeedPremierBadge className="mx-auto mb-2" /> : <proof.icon className="w-5 h-5 text-primary mx-auto mb-2" />}
                               <p className="font-heading font-bold text-foreground text-xs mb-0.5">{proof.value}</p>
                               <p className="text-muted-foreground text-caption font-body">{proof.label}</p>
                             </motion.div>
@@ -498,7 +499,7 @@ const CommercialRoofing = () => {
                                 { icon: Building2, text: "Multi-Property Programs" },
                               ].map((item) => (
                                 <div key={item.text} className="flex items-center gap-2">
-                                  <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                                  {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />}
                                   <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                                 </div>
                               ))}

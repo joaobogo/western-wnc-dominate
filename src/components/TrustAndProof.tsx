@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Shield, Award, FileCheck, BadgeCheck, Handshake } from "lucide-react";
 import { BlueprintGrid } from "@/components/motion/BackgroundTexture";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 
 const certifications = [
-  { icon: Award, label: "CertainTeed", detail: "Credentialed Contractor" },
+  { icon: Award, label: "CertainTeed", detail: "ShingleMaster PREMIER" },
   { icon: Shield, label: "Licensed GC", detail: "State of North Carolina" },
   { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer" },
   { icon: FileCheck, label: "Written Scope", detail: "Project Terms Documented" },
@@ -55,9 +56,9 @@ const TrustAndProof = () => {
               transition={{ delay: i * 0.08 }}
               className="group text-center p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.15)] card-lift spotlight-hover"
             >
-              <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/12 transition-colors">
+              {cert.label === "CertainTeed" ? <CertainTeedPremierBadge className="h-24 w-24 mx-auto mb-3" /> : <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/12 transition-colors">
                 <cert.icon className="w-5 h-5 text-primary" />
-              </div>
+              </div>}
               <h3 className="font-heading font-bold text-sm text-foreground mb-0.5">{cert.label}</h3>
               <p className="text-caption text-muted-foreground font-body tracking-wide">{cert.detail}</p>
             </motion.div>

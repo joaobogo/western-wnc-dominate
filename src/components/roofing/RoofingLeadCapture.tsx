@@ -2,6 +2,7 @@ import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Clock, Award, Star } from "lucide-react";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 
 /* ═══════════════════════════════════════════
    INLINE LEAD CAPTURE MODULES
@@ -59,12 +60,12 @@ const CardCapture = ({
       {[
         { icon: Shield, text: "Licensed & Insured" },
         { icon: Clock, text: "Clear Next Steps" },
-        { icon: Award, text: "CertainTeed Credentialed Contractor" },
+        { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
         { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
       ].map((item) => (
         <div key={item.text} className="flex items-center gap-1.5">
-          <item.icon className="w-3 h-3 text-primary/80" />
-          <span className="text-muted-foreground text-caption font-body font-medium">{item.text}</span>
+          {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3 h-3 text-primary/80" />}
+          <span className="text-muted-foreground text-caption font-body font-medium">{item.text.includes("CertainTeed") ? "CertainTeed ShingleMaster PREMIER" : item.text}</span>
         </div>
       ))}
     </div>

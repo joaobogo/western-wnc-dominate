@@ -111,7 +111,7 @@ export const projectDetails: ProjectDetail[] = [
     scope: "4,100 sq ft roof replacement",
     duration: "4 days",
     highlight: "CertainTeed Landmark system: Weathered Wood",
-    summary: "Full dimensional shingle replacement on a multi-level mountain home in Waynesville using CertainTeed Landmark shingles in Weathered Wood. Highlander is a CertainTeed Credentialed Contractor; applicable warranty eligibility and terms are confirmed for the specific project.",
+    summary: "Full dimensional shingle replacement on a multi-level mountain home in Waynesville using CertainTeed Landmark shingles in Weathered Wood. Highlander is a CertainTeed ShingleMaster PREMIER Credentialed Contractor; applicable warranty eligibility and terms are confirmed for the specific project.",
     challenge: "The existing 3-tab shingles were 22 years old and showing widespread granule loss and curling. The multi-level roofline with screen porch integration required careful sequencing to protect the home during replacement.",
     scopeOfWork: [
       "Complete tear-off of 22-year-old 3-tab shingles",

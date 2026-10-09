@@ -1,3 +1,4 @@
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -590,11 +591,11 @@ const RoofRepair = () => {
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Clock, text: "Urgent Roof Support" },
-                      { icon: Award, text: "CertainTeed Credentialed Contractor" },
+                      { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
                       { icon: Star, text: `${REVIEW_STARS} Google · ${REVIEW_COUNT_LABEL}` },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                        {item.text.includes("CertainTeed") ? <CertainTeedPremierBadge /> : <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />}
                         <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}

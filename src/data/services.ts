@@ -54,7 +54,7 @@ export const services: ServiceData[] = [
     features: [
       "Complete tear-off and disposal",
       "Ice & water shield underlayment for mountain climates",
-      "CertainTeed ShingleMaster Credentialed Contractor quality",
+      "CertainTeed ShingleMaster PREMIER Credentialed Contractor quality",
       "Premium dimensional and designer shingle options",
       "Ridge vent and attic ventilation optimization",
       "Manufacturer warranty registration",

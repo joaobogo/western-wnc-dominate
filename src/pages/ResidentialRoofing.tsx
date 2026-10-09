@@ -271,7 +271,7 @@ const ResidentialRoofing = () => {
                           className="mt-10 flex items-center gap-6"
                         >
                           {[
-                            { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
+                            { icon: Award, label: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
                             { icon: ShieldCheck, label: "Licensed & Insured" },
                             { icon: Star, label: `${REVIEW_STARS} Google rating` },
                           ].map((item) => (
@@ -324,7 +324,7 @@ const ResidentialRoofing = () => {
                           >
                             {[
                               { icon: ShieldCheck, label: "Licensed & Fully Insured", sub: "NC General Contractor" },
-                              { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", sub: "Credentialed installer" },
+                              { icon: Award, label: "CertainTeed ShingleMaster PREMIER Credentialed Contractor", sub: "Credentialed installer" },
                               { icon: Camera, label: "Documented Everything", sub: "Before, during & after" },
                             ].map((item) => (
                               <div key={item.label} className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm">
@@ -654,7 +654,7 @@ const ResidentialRoofing = () => {
                       <div className="container-tight px-5 md:px-8 py-5 md:py-6">
                         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                           {[
-                            { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
+                            { icon: Award, text: "CertainTeed ShingleMaster PREMIER Credentialed Contractor" },
                             { icon: Shield, text: "Licensed & Insured" },
                             { icon: Clock, text: "Rapid Storm Response" },
                             { icon: Star, text: `${REVIEW_STARS} Google Rating` },
@@ -956,7 +956,7 @@ const ResidentialRoofing = () => {
                             <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                               {[
                                 { icon: Shield, text: "Licensed & Insured" },
-                                { icon: Award, text: "CertainTeed Certified" },
+                                { icon: Award, text: "CertainTeed ShingleMaster PREMIER" },
                                 { icon: Clock, text: "Business-Hours Response" },
                                 { icon: Star, text: "Financing Available" },
                               ].map((item) => (

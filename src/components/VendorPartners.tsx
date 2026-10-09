@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import logoCertainteed from "@/assets/logo-certainteed-vendor.webp";
+import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
@@ -70,8 +71,8 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
               className="group card-premium p-6 md:p-7 flex flex-col items-center text-center hover:shadow-raised transition-all"
               aria-label={`Visit ${v.name} (opens in a new tab)`}
             >
-              <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5">
-                {v.image ? (
+              <div className="h-24 md:h-28 w-full flex items-center justify-center mb-5">
+                {v.name === "CertainTeed" ? <CertainTeedPremierBadge className="h-24 w-24 md:h-28 md:w-28" /> : v.image ? (
                   <img decoding="async"
                     src={v.image}
                     alt={`${v.name} logo`}
@@ -90,7 +91,7 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
                 {v.name}
                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{v.description}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">{v.name === "CertainTeed" ? "Western North Carolina's only CertainTeed ShingleMaster PREMIER credentialed contractor. Warranty eligibility and terms are confirmed for each selected roofing system." : v.description}</p>
             </motion.a>
           ))}
         </div>

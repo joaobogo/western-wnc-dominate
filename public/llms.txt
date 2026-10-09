@@ -28,7 +28,7 @@ Founded: 2017
 
 - NC General Contractor License #87668 — Verify with the NC Licensing Board for General Contractors (https://portal.nclbgc.org/Public/Search)
 - BBB A+ Accredited since 2020 — Better Business Bureau accredited business (https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019)
-- CertainTeed Credentialed Contractor — CertainTeed roofing-system training; specific warranty eligibility and terms are confirmed per project
+- CertainTeed ShingleMaster PREMIER Credentialed Contractor — Western North Carolina's only Premier credentialed contractor; specific warranty eligibility and terms are confirmed per project
 - VELUX Certified Installer — Skylight installation and flashing kits
 - Family-owned in Franklin since 2017 — Showrooms in Franklin & Sylva
 
@@ -37,7 +37,7 @@ Founded: 2017
 - Legal name: Highlander Building Services, Inc.
 - NC General Contractor license: NC GC #87668 (verify: https://portal.nclbgc.org/Public/Search)
 - BBB: A+ accredited since 2020 (https://www.bbb.org/us/nc/franklin/profile/roofing-contractors/highlander-roofing-services-inc-0473-815019)
-- Manufacturer credential: CertainTeed Credentialed Contractor
+- Manufacturer credential: CertainTeed ShingleMaster PREMIER Credentialed Contractor
 - Founded: 2017, family-owned in Franklin, North Carolina
 - Showrooms: Franklin, NC — 40 Depot Street, 28734; Sylva, NC — 28 Cross Stitch Mountain Rd, 28779
 - Phone numbers: Franklin 828-524-7773; Sylva 828-476-4000
@@ -174,7 +174,9 @@ Founded: 2017
 ### Articles
 
 - https://highlandernc.com/blog
+- https://highlandernc.com/blog/acv-vs-rcv-roof
 - https://highlandernc.com/blog/architectural-shingle-lifespan
+- https://highlandernc.com/blog/architectural-vs-3-tab
 - https://highlandernc.com/blog/attic-ventilation-waynesville-nc-winter
 - https://highlandernc.com/blog/best-roofing-materials-highlands-nc
 - https://highlandernc.com/blog/best-time-of-year-replace-roof-western-north-carolina
@@ -194,6 +196,7 @@ Founded: 2017
 - https://highlandernc.com/blog/construction-services-highlands-nc-mountain-homes
 - https://highlandernc.com/blog/cost-saving-layout-tips-wnc
 - https://highlandernc.com/blog/covered-porches-patios-western-nc-considerations
+- https://highlandernc.com/blog/deck-ledger-flashing
 - https://highlandernc.com/blog/deck-vs-porch-planning-wnc
 - https://highlandernc.com/blog/decks-porches-outdoor-spaces-mountain-weather
 - https://highlandernc.com/blog/design-consultation-agreement-construction-project
@@ -278,6 +281,7 @@ Founded: 2017
 - https://highlandernc.com/blog/roof-replacement-cost-factors-western-nc
 - https://highlandernc.com/blog/roof-replacement-highlands-nc
 - https://highlandernc.com/blog/roof-replacement-sylva-nc
+- https://highlandernc.com/blog/roof-replacement-tax-deductible_1
 - https://highlandernc.com/blog/roof-replacement-waynesville-nc-historic-homes
 - https://highlandernc.com/blog/roof-valley-leak
 - https://highlandernc.com/blog/roofing-company-franklin-nc-what-to-look-for
@@ -301,11 +305,14 @@ Founded: 2017
 - https://highlandernc.com/blog/spring-roof-maintenance-western-nc
 - https://highlandernc.com/blog/standing-seam-vs-exposed-fastener
 - https://highlandernc.com/blog/storm-damage-checklist-western-nc
+- https://highlandernc.com/blog/storm-damage-roof-inspection_1
 - https://highlandernc.com/blog/structural-feasibility-second-story-wnc
 - https://highlandernc.com/blog/terrain-responsive-floor-plans-wnc
 - https://highlandernc.com/blog/transforming-screened-porch-sunroom
 - https://highlandernc.com/blog/tree-cover-rain-elevation-affect-roofs-wnc
 - https://highlandernc.com/blog/tree-coverage-roofs-gutters-highlands-nc
+- https://highlandernc.com/blog/tree-on-roof_2
+- https://highlandernc.com/blog/under-deck-drainage
 - https://highlandernc.com/blog/understanding-roof-ventilation-mountain-homes
 - https://highlandernc.com/blog/vacation-rental-roof-maintenance-wnc
 - https://highlandernc.com/blog/velux-skylights-mountain-homes
@@ -315,6 +322,8 @@ Founded: 2017
 - https://highlandernc.com/blog/when-to-replace-roof-highlands
 - https://highlandernc.com/blog/why-design-planning-matters
 - https://highlandernc.com/blog/why-hire-one-company-roof-and-construction
+- https://highlandernc.com/blog/wind-damaged-shingles
+- https://highlandernc.com/blog/wind-driven-rain-leak_2
 - https://highlandernc.com/blog/winter-roof-preparation-highlands
 - https://highlandernc.com/blog/wnc-construction-permitting-guide
 - https://highlandernc.com/blog/wnc-storm-season-roof-damage
