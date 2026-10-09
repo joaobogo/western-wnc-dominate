@@ -28,6 +28,9 @@ import asphalt008Webp from "@/assets/gallery/asphalt-008.webp?w=640;960;1280;160
 import HeroImage from "@/components/media/HeroImage";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
+// Material cards use different photos from the project gallery so no image repeats on the page.
+import metalMaterial from "@/assets/gallery/metal-010.webp";
+import cedarMaterial from "@/assets/gallery/cedar-001.webp";
 import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
 import bravaGlenville from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
@@ -114,14 +117,14 @@ const materials = [
     type: "Custom-Fabricated Panels",
     lifespan: "Premium long-term system",
     detail: "Concealed fastener systems rated for 140mph wind uplift. Zero maintenance, superior snow shedding, and energy-efficient reflectivity. The premium long-term investment.",
-    image: metalRoof,
+    image: metalMaterial,
   },
   {
     name: "Premium Cedar Shake",
     type: "Western Red Cedar",
     lifespan: "30–40 years",
     detail: "Natural insulation, distinctive mountain character, and a timeless aesthetic that ages beautifully. Ideal for estate and heritage properties across Highlands and Cashiers.",
-    image: cedarRoof,
+    image: cedarMaterial,
   },
 ];
 
@@ -146,7 +149,7 @@ const galleryItems: { image: string; title: string; category: string; href?: str
   { image: bravaGlenville, title: "Brava Synthetic Shake: Lake Glenville", category: "Synthetic", href: "/projects/brava-synthetic-shake-glenville" },
   { image: asphaltHero, title: "CertainTeed Landmark: Waynesville", category: "Shingle", href: "/projects/certainteed-landmark-weathered-wood-waynesville" },
   { image: metalRoof, title: "Standing Seam Dark Bronze: Highlands", category: "Metal", href: "/projects/standing-seam-metal-dark-bronze-highlands" },
-  { image: metalCabin, title: "Metal Roof: Bryson City", category: "Metal" },
+  { image: metalCabin, title: "Standing Seam on a Log Home", category: "Metal" },
   { image: cedarRoof, title: "Cedar Shake Estate: Highlands", category: "Cedar", href: "/projects/cedar-shake-estate-highlands" },
 ];
 

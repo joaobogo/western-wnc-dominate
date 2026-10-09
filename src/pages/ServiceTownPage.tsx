@@ -313,6 +313,7 @@ const ServiceTownPage = ({
               category="roofing"
               limit={3}
               heading={`Recent work near ${town.name}`}
+              excludeImages={[hero.src]}
             />
             <AttributedReviews town={town.name} />
           </div>

@@ -13,20 +13,22 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 import { trackGalleryProjectOpen } from "@/lib/gtm";
 import { projectDetails } from "@/data/projects";
-import heroImg from "@/assets/gallery/asphalt-hero.webp";
+// Hero, tiles and project cards each use a different photo, so nothing repeats on this page.
+import heroImg from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
-import metalImg from "@/assets/gallery/metal-005.webp";
-import cedarImg from "@/assets/gallery/cedar-005.webp";
+import guttersImg from "@/assets/gallery/gutters-002.jpg";
 import constructionImg from "@/assets/division-construction-v2.webp";
 import designImg from "@/assets/division-design.webp";
+
+const outdoorImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
   { icon: Wrench, title: "Roof Repairs", desc: "Leak repair, storm-damage assessment, and detail work scoped for the roof condition.", img: repairImg, href: "/roofing/roof-repair" },
   { icon: HardHat, title: "Construction", desc: "Additions, renovations, and full-scope building from a licensed general contractor.", img: constructionImg, href: "/construction" },
-  { icon: Droplets, title: "Gutters", desc: "Seamless gutters and exterior water management built for WNC weather patterns.", img: metalImg, href: "/roofing/gutters" },
-  { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: cedarImg, href: "/construction/outdoor-living" },
+  { icon: Droplets, title: "Gutters", desc: "Seamless gutters and exterior water management built for WNC weather patterns.", img: guttersImg, href: "/roofing/gutters" },
+  { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: outdoorImg, href: "/construction/outdoor-living" },
   { icon: Ruler, title: "Design Services", desc: "Pre-construction layout and planning support before the first board is cut.", img: designImg, href: "/construction/design" },
 ];
 
@@ -78,7 +80,7 @@ const RecentProjects = () => {
           <div className="absolute inset-0">
             <GalleryImage width={1600} height={900} loading="eager" decoding="async" sizes="100vw"
               src={heroImg}
-              alt="Dimensional shingle roof on a mountain home roofed by Highlander Building Services in Western North Carolina"
+              alt="Dimensional shingle re-roof with dormers on a wooded Western North Carolina mountain home by Highlander Building Services"
               fetchPriority="high"
               className="w-full h-full object-cover"
             />

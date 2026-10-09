@@ -8,6 +8,8 @@ import cedar002 from "@/assets/gallery/cedar-002.webp";
 
 interface Props {
   variant: "repair" | "storm";
+  /** Photos already on the page (e.g. the hero); matching cards are skipped so nothing repeats. */
+  excludeImages?: string[];
 }
 
 const sets = {
@@ -35,8 +37,11 @@ const sets = {
   },
 };
 
-const RepairPhotoProof = ({ variant }: Props) => {
+const RepairPhotoProof = ({ variant, excludeImages = [] }: Props) => {
   const s = sets[variant];
+  const items = s.items.filter((it) => !excludeImages.includes(it.image));
+  // Keep the grid full: three cards sit in one row of three, four in a 2×2 / 1×4 grid.
+  const gridCols = items.length === 3 ? "grid-cols-1 sm:grid-cols-3" : "grid-cols-2 lg:grid-cols-4";
   return (
     <section className="section-padding bg-secondary tartan-bg">
       <div className="container-tight">
@@ -48,8 +53,8 @@ const RepairPhotoProof = ({ variant }: Props) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-          {s.items.map((it) => (
+        <div className={`grid ${gridCols} gap-3 md:gap-4`}>
+          {items.map((it) => (
             <figure key={it.title} className="bg-card border border-border overflow-hidden">
               <GalleryImage
                 sizes="(max-width: 1024px) 50vw, 25vw"

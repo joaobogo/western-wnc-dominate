@@ -14,6 +14,10 @@ import stripMetalGreen from "@/assets/gallery/metal-006.webp";
 import stripMetalGreenSet from "@/assets/gallery/metal-006.webp?w=480;800;1200&format=webp&as=srcset";
 import additionRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import additionRoomSet from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=480;800;1200&format=webp&as=srcset";
+import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+import dormerCabinSet from "@/assets/gallery/shingle-dormer-cabin-aerial.webp?w=800;1280&format=webp&as=srcset";
+import additionWindows from "@/assets/gallery/addition-franklin-gable-windows.webp";
+import additionWindowsSet from "@/assets/gallery/addition-franklin-gable-windows.webp?w=800;1200&format=webp&as=srcset";
 import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 
 /**
@@ -168,6 +172,21 @@ const heroSkyImage: LandingImage = {
   height: 1477,
 };
 
+/**
+ * Backdrops are decorative (empty alt) and chosen so that no landing page shows
+ * the same photo twice: none of these appear in that page's proof cards or strip.
+ */
+const dormerCabinBackdrop: LandingImage = { src: dormerCabin, srcSet: dormerCabinSet, alt: "", width: 1280, height: 720 };
+const mountainBuildBackdrop: LandingImage = {
+  src: "/media/d35d81a4-construction-project-highlands.webp",
+  srcSet:
+    "/media/d35d81a4-construction-project-highlands-640.webp 640w, /media/d35d81a4-construction-project-highlands-960.webp 960w, /media/d35d81a4-construction-project-highlands.webp 1600w",
+  alt: "",
+  width: 1600,
+  height: 900,
+};
+const additionWindowsBackdrop: LandingImage = { src: additionWindows, srcSet: additionWindowsSet, alt: "", width: 1200, height: 1600 };
+
 const stripImage = (src: string, srcSet: string, alt: string, width: number, height: number): LandingImage => ({ src, srcSet, alt, width, height });
 
 const roofingStrip = {
@@ -318,7 +337,7 @@ export const ROOFING_CONFIG: LandingConfig = {
   successBody:
     "Thank you. Highlander will contact you to discuss your roof and the next step. Prefer to speak with the team? Call {phone} during office hours.",
   hero: { backdrop: heroSkyImage, position: "50% 22%" },
-  finalBackdrop: { image: stripImage(stripShingleA, stripShingleASet, "", 1600, 1200), position: "50% 35%" },
+  finalBackdrop: { image: dormerCabinBackdrop, position: "50% 45%" },
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
@@ -435,8 +454,10 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   successHeading: "Your project request is in.",
   successBody:
     "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
-  hero: { backdrop: { ...constructionPrimary, alt: "" }, position: "50% 55%" },
-  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 70%" },
+  // The proof cards already show the Franklin room, so the hero uses the separate
+  // gable-window photo and the closing band a different mountain-home image.
+  hero: { backdrop: additionWindowsBackdrop, position: "50% 45%" },
+  finalBackdrop: { image: mountainBuildBackdrop, position: "50% 50%" },
 
   proofHeading: "See the work. Understand the standard.",
   proofIntro: "Start from what a finished space can feel like.",
@@ -558,7 +579,7 @@ export const COMBINED_CONFIG: LandingConfig = {
     secondary: { ...constructionPrimary, alt: "" },
     secondaryPosition: "60% 55%",
   },
-  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 70%" },
+  finalBackdrop: { image: additionWindowsBackdrop, position: "50% 60%" },
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",

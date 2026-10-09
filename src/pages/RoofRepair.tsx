@@ -475,7 +475,7 @@ const RoofRepair = () => {
           }
           process={
             <>
-        <RepairPhotoProof variant="repair" />
+        <RepairPhotoProof variant="repair" excludeImages={[asphalt003]} />
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">

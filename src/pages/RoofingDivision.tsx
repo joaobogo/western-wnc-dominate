@@ -28,8 +28,8 @@ import metalRoofAvif from "@/assets/gallery/metal-005.webp?w=1024;1600&format=av
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
-import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
-import cedarDetail from "@/assets/gallery/cedar-001.webp";
+import bravaGlenville from "@/assets/gallery/brava-glenville-aerial.webp";
+import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
 import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -93,13 +93,14 @@ const roofingServices = [
   },
 ];
 
+// The hero already shows the Highlands standing seam job, so the gallery leads
+// with other documented work. Captions name a town only when it is documented.
 const galleryItems = [
-  { image: metalRoof, title: "Standing Seam, Highlands", category: "Metal" },
-  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
-  { image: asphaltRoof, title: "Dimensional Shingles: Franklin", category: "Shingle" },
-  { image: metalCabin, title: "Metal + Deck: Bryson City", category: "Metal" },
-  { image: asphaltLarge, title: "Full Renovation: Sylva", category: "Shingle" },
-  { image: cedarDetail, title: "Cedar Restoration — Highlands", category: "Cedar" },
+  { image: bravaGlenville, title: "Brava Synthetic Shake: Lake Glenville", category: "Synthetic" },
+  { image: cedarRoof, title: "Cedar Shake Estate: Highlands", category: "Cedar" },
+  { image: asphaltRoof, title: "CertainTeed Landmark: Waynesville", category: "Shingle" },
+  { image: metalCabin, title: "Standing Seam on a Log Home", category: "Metal" },
+  { image: dormerCabin, title: "Dimensional Shingle Re-Roof", category: "Shingle" },
 ];
 
 const faqs = [

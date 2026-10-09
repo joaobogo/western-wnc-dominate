@@ -22,6 +22,8 @@ import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
+import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+
 const heroImg = "/media/d35d81a4-construction-project-highlands.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
@@ -74,7 +76,7 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Construction Work by Highlander", location: "Western North Carolina" },
+  { src: additionFranklinRoom, alt: "Living room addition with a stained vaulted wood ceiling and mountain-view windows in Franklin, North Carolina", label: "Living Room Addition", location: "Franklin, NC" },
   { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
   { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Construction", location: "Western North Carolina" },
 ];

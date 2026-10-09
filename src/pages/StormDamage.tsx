@@ -532,7 +532,7 @@ const StormDamage = () => {
           }
           proof={
             <>
-        <RepairPhotoProof variant="storm" />
+        <RepairPhotoProof variant="storm" excludeImages={[heroImg]} />
         {/* ─── TRUST & URGENCY BALANCE ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
