@@ -23,7 +23,9 @@ import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import heroImg from "@/assets/gallery/addition-franklin-room-tall.webp";
-const expansionContextImg = "/media/wnc-mountain-home-exterior.webp";
+import expansionContextImg from "@/assets/work/addition-franklin-exterior-windows.webp";
+import expansionContextSet from "@/assets/work/addition-franklin-exterior-windows.webp?w=800;1200;1600&format=webp&as=srcset";
+import WorkGallery from "@/components/gallery/WorkGallery";
 const structuralTieImg = "/media/wnc-construction-framing.webp";
 const mountainSiteImg = "/media/wnc-ridge-elevation-home.webp";
 
@@ -84,11 +86,9 @@ const processSteps = [
   { number: "06", icon: Sparkles, title: "Completion & Handover", description: "Final inspections, walk-through, punch list resolution, and complete documentation. Your new space, ready to live in." },
 ];
 
-const galleryImages = [
-  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Construction Work by Highlander", location: "Western North Carolina" },
-  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
-  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Home Expansion", location: "Western North Carolina" },
-];
+// Documented jobs only: Franklin living room addition (26-00035), Cullowhee
+// laundry room addition (2504059) and the Cashiers covered patio (26-00424).
+const galleryIds = ["addition-window-wall", "cullowhee-roofline", "patio-wide", "patio-porch"];
 
 const wncChallenges = [
   { title: "Steep & Variable Terrain", detail: "Many mountain lots present grade changes of 15–40%. Additions on slope require specialized foundation engineering, retaining systems, and drainage planning that a flat-land custom home builder rarely encounters." },
@@ -219,7 +219,7 @@ const HomeAdditions = () => {
                   Highlander brings residential construction craftsmanship to home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
-                  <img width={1600} height={1067} loading="lazy" decoding="async" src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                  <img width={1600} height={1200} loading="lazy" decoding="async" src={expansionContextImg} srcSet={expansionContextSet} sizes="(max-width: 1024px) 100vw, 900px" alt="Cedar shake siding and tall windows with custom gable glass on a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover object-[50%_55%] opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body italic">
@@ -485,24 +485,12 @@ const HomeAdditions = () => {
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Construction Context</span>
-              <h2 className="section-heading mb-3">See Construction Work by Highlander.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">These images are completed construction and outdoor-living projects already featured by Highlander. Addition-specific case studies are published only when the project scope and location are documented.</p>
+              <span className="eyebrow mb-3 block">Recent Additions</span>
+              <h2 className="section-heading mb-3">Additions and Expansions We Have Built.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A living room addition in Franklin, a laundry room addition in Cullowhee, and a covered patio and screened porch in Cashiers. Tap any photo to see it full size.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {galleryImages.map((img, i) => (
-                <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/85 text-xs font-body">{img.location}</p>
-                  </div>
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
-                </motion.div>
-              ))}
-            </div>
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
               <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
