@@ -9157,6 +9157,7 @@ blogPosts.push(...cullowheeClusterPosts);
 // one regional article each; the old URLs 301 in public/_redirects.
 import { decisionGuidePosts } from "./blogs-decision-guides";
 import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
+import { BLOG_COVERS } from "./blog-covers";
 for (const p of decisionGuidePosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
@@ -9221,6 +9222,12 @@ for (const post of blogPosts) {
   if (!consolidation) continue;
   post.indexable = false;
   if (consolidation.canonicalTo) post.canonicalTo = consolidation.canonicalTo;
+}
+
+// One distinct cover per post (see src/data/blog-covers.ts).
+for (const post of blogPosts) {
+  const c = BLOG_COVERS[post.slug];
+  if (c) Object.assign(post, c);
 }
 
 blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

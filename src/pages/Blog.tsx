@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { mediaSrcSet, mediaWebp } from "@/lib/media-srcset";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -231,7 +232,9 @@ const Blog = () => {
                   <Link to={`/blog/${heroFeatured.slug}`} className="group block card-premium overflow-hidden h-full">
                     <div className="relative aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
                       <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-                        src={heroFeatured.image || "/media/wnc-town-overlook.jpg"} 
+                        src={mediaWebp(heroFeatured.image || "/media/wnc-town-overlook.jpg")}
+                        srcSet={mediaSrcSet(heroFeatured.image || "/media/wnc-town-overlook.jpg")}
+                        sizes="(max-width: 1024px) 100vw, 58vw"
                         alt={heroFeatured.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -273,7 +276,9 @@ const Blog = () => {
                         <div className="flex flex-col sm:flex-row h-full">
                           <div className="sm:w-32 md:w-40 shrink-0 overflow-hidden">
                             <img width={1600} height={1067} loading="lazy" decoding="async" 
-                              src={post.image || "/media/wnc-town-overlook.jpg"} 
+                              src={mediaWebp(post.image || "/media/wnc-town-overlook.jpg")}
+                              srcSet={mediaSrcSet(post.image || "/media/wnc-town-overlook.jpg")}
+                              sizes="(max-width: 640px) 100vw, 160px"
                               alt={post.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
@@ -494,7 +499,9 @@ const Blog = () => {
                       <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
                         <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
                           <img width={1600} height={1067} loading="lazy" decoding="async" 
-                            src={listPosts[0].image || "/media/wnc-town-overlook.jpg"} 
+                            src={mediaWebp(listPosts[0].image || "/media/wnc-town-overlook.jpg")}
+                            srcSet={mediaSrcSet(listPosts[0].image || "/media/wnc-town-overlook.jpg")}
+                            sizes="(max-width: 768px) 100vw, 42vw"
                             alt={listPosts[0].title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
@@ -544,7 +551,9 @@ const Blog = () => {
                       <Link to={`/blog/${post.slug}`} className="group block h-full card-premium overflow-hidden flex flex-col">
                         <div className="aspect-[16/10] overflow-hidden">
                           <img width={1600} height={1067} loading="lazy" decoding="async" 
-                            src={post.image || "/media/wnc-town-overlook.jpg"} 
+                            src={mediaWebp(post.image || "/media/wnc-town-overlook.jpg")}
+                            srcSet={mediaSrcSet(post.image || "/media/wnc-town-overlook.jpg")}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
