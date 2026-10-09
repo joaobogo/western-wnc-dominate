@@ -34,17 +34,22 @@ interface WorkGalleryProps {
   excludeImages?: string[];
   /** "masonry" keeps each photo's shape; "grid" gives an even 4:3 grid for short teasers. */
   layout?: "masonry" | "grid";
+  /** Show only these photos, in this order (e.g. one job on its service page). */
+  ids?: string[];
+  /** Columns at desktop width for the grid layout. */
+  columns?: 2 | 3;
 }
 
-const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [], layout = "masonry" }: WorkGalleryProps) => {
+const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [], layout = "masonry", ids, columns = 3 }: WorkGalleryProps) => {
   const [filter, setFilter] = useState<Filter>(initialFilter);
   const [open, setOpen] = useState<number | null>(null);
 
   const photos = useMemo(() => {
-    const pool = workPhotos.filter((ph) => !excludeImages.includes(ph.src));
-    const list = filter === "all" ? interleave(pool) : pool.filter((ph) => ph.division === filter);
+    const picked = ids ? ids.flatMap((id) => workPhotos.filter((ph) => ph.id === id)) : workPhotos;
+    const pool = picked.filter((ph) => !excludeImages.includes(ph.src));
+    const list = ids ? pool : filter === "all" ? interleave(pool) : pool.filter((ph) => ph.division === filter);
     return limit ? list.slice(0, limit) : list;
-  }, [filter, limit, excludeImages]);
+  }, [filter, limit, excludeImages, ids]);
 
   const grid = layout === "grid";
 
@@ -78,7 +83,7 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
       )}
 
       {/* Masonry keeps every photo's own shape; grid crops to an even 4:3 for short teasers. */}
-      <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" : "columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]"}>
+      <div className={grid ? `grid grid-cols-1 sm:grid-cols-2 gap-4 ${columns === 3 ? "lg:grid-cols-3" : ""}` : "columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]"}>
         {photos.map((ph, i) => (
           <figure key={ph.id} className={grid ? "m-0" : "mb-4 break-inside-avoid"}>
             <button
@@ -90,7 +95,7 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
               <img
                 src={ph.src}
                 srcSet={ph.srcSet}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                sizes={columns === 2 ? "(max-width: 640px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
                 width={ph.width}
                 height={ph.height}
                 alt={ph.alt}

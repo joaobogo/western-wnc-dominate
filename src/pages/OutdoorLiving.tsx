@@ -23,8 +23,9 @@ import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 const heroImg = "/media/wnc-forest-cabin-roof.webp";
-const porchContextImg = "/media/wnc-mountain-home-exterior.webp";
-const timberFrameImg = "/media/wnc-mountain-home-exterior.webp";
+import porchContextImg from "@/assets/work/patio-cashiers-wide.webp";
+import porchContextSet from "@/assets/work/patio-cashiers-wide.webp?w=800;1200;1500&format=webp&as=srcset";
+import WorkGallery from "@/components/gallery/WorkGallery";
 const terrainSlopeImg = "/media/wnc-ridge-elevation-home.webp";
 
 import RelatedLinks from "@/components/RelatedLinks";
@@ -78,9 +79,9 @@ const processSteps = [
   { number: "06", icon: Sparkles, title: "Completion & Enjoyment", description: "Final walk-through, cleanup, documentation, and the finished space ready to use." },
 ];
 
-const galleryImages = [
-  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services in Western North Carolina", label: "Outdoor Living Work Featured by Highlander", location: "Western North Carolina" },
-];
+// Documented jobs only: Cashiers covered patio and screened porch (26-00424)
+// and the Sylva deck and railing rebuild (26-00436).
+const galleryIds = ["patio-porch", "deck-doors", "patio-deck-view", "patio-cover"];
 
 const whyHighlander = [
   { icon: Shield, title: "Roofing Expertise Built In", detail: "Every covered outdoor structure needs a roof. We specialize in roofing first, so we handle the roofing on covered structures with the same materials, techniques, and warranty as our primary roofing work." },
@@ -213,7 +214,7 @@ const OutdoorLiving = () => {
                   Whether it is new construction or remodeling a porch you already have, Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img width={1600} height={1067} decoding="async" src={porchContextImg} alt="Sunlit mountain home with covered porch and deck overlooking the landscape" className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
+                <img width={1500} height={1125} decoding="async" src={porchContextImg} srcSet={porchContextSet} sizes="(max-width: 768px) 100vw, 768px" alt="Open trellis converted to a covered patio with a metal roof and wood ceiling, built by Highlander in Cashiers, North Carolina" className="w-full h-full object-cover object-[50%_70%] hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
               </div>
             </motion.div>
           </div>
@@ -399,23 +400,11 @@ const OutdoorLiving = () => {
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Outdoor Living Work</span>
-              <h2 className="section-heading mb-3">Outdoor Living Featured by Highlander.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">This image is already used by Highlander for outdoor-living content. Additional project cards will be added only when a project record documents the scope and location.</p>
+              <h2 className="section-heading mb-3">Porches, Patios and Decks We Have Built.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">A covered patio and screened porch in Cashiers, and a deck and railing rebuild in Sylva. Tap any photo to see it full size.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {galleryImages.map((img, i) => (
-                <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/85 text-xs font-body">{img.location}</p>
-                  </div>
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
-                </motion.div>
-              ))}
-            </div>
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
               <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
