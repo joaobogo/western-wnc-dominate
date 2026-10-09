@@ -624,6 +624,8 @@ const RoofingDivision = () => {
           links={[
             { label: "Roof Replacement Cost in Western NC (2026)", href: "/roofing-cost-western-nc", description: "Material tiers, repair bands and what moves the price" },
             { label: "Metal Roofing Cost in Western NC (2026)", href: "/roofing/metal/cost", description: "Price ranges per square for each metal system" },
+            { label: "Seamless Gutters & Gutter Guards", href: "/roofing/gutters", description: "Sized for mountain rainfall, installed with the roof" },
+            { label: "Skylights & VELUX Installation", href: "/roofing/skylights", description: "Daylight and ventilation, flashed as part of the roof" },
             { label: "Roofers in Franklin, NC", href: "/service-areas/franklin-nc", description: "Our home market in Macon County" },
             { label: "Roofers in Highlands, NC", href: "/service-areas/highlands-nc", description: "Roofing built for 4,000 feet" },
             { label: "Roofers in Cashiers, NC", href: "/service-areas/cashiers-nc", description: "Roofs built for plateau rain" },
