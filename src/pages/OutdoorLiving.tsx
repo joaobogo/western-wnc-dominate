@@ -219,6 +219,24 @@ const OutdoorLiving = () => {
             </motion.div>
           </div>
         </section>
+            {/* ─── GALLERY ─── */}
+        <section className="section-padding bg-background/50 relative">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Outdoor Living Work</span>
+              <h2 className="section-heading mb-3">Porches, Patios and Decks We Have Built.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">A covered patio and screened porch in Cashiers, and a deck and railing rebuild in Sylva. Tap any photo to see it full size.</p>
+            </motion.div>
+
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
+
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
             {/* ─── BEAUTY, FUNCTION, DURABILITY (dark) ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
@@ -393,24 +411,6 @@ const OutdoorLiving = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-            {/* ─── GALLERY ─── */}
-        <section className="section-padding bg-background/50 relative">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Outdoor Living Work</span>
-              <h2 className="section-heading mb-3">Porches, Patios and Decks We Have Built.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">A covered patio and screened porch in Cashiers, and a deck and railing rebuild in Sylva. Tap any photo to see it full size.</p>
-            </motion.div>
-
-            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
-
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </motion.div>
           </div>
         </section>
             <BuilderPromoBlock mode="construction"

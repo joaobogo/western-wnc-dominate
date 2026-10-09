@@ -198,6 +198,15 @@ const ConstructionDivision = () => {
           ]}
         />
 
+        {/* ═══ WORK GALLERY — real construction photos ═══ */}
+        <WorkGallerySection
+          eyebrow="Recent Construction"
+          heading="Porches, additions and decks we have built."
+          body="Photos from Highlander construction jobs in Cashiers, Franklin, Sylva and Cullowhee. Tap any photo to see it full size."
+          division="construction"
+          excludeImages={[additionFranklinRoom]}
+        />
+
         {/* ═══ OPENING STATEMENT — Bright, premium, reader-focused ═══ */}
         <Section density="default" width="tight" className="bg-background relative overflow-hidden">
           <ScrollReveal variant="fade">
@@ -341,15 +350,6 @@ const ConstructionDivision = () => {
           heading="Home Additions, Remodels, and Custom Homes We Build."
           subheading="Six focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
           eyebrow="Construction Services"
-        />
-
-        {/* ═══ WORK GALLERY — real construction photos ═══ */}
-        <WorkGallerySection
-          eyebrow="Recent Construction"
-          heading="Porches, additions and decks we have built."
-          body="Photos from Highlander construction jobs in Cashiers, Franklin, Sylva and Cullowhee. Tap any photo to see it full size."
-          division="construction"
-          excludeImages={[additionFranklinRoom]}
         />
 
         {/* ═══ PHILOSOPHY — How we approach construction ═══ */}

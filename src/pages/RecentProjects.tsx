@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from "react";
+import { useState } from "react";
 import GalleryImage from "@/components/media/GalleryImage";
 import WorkGallery from "@/components/gallery/WorkGallery";
 import { Link } from "react-router-dom";
@@ -16,6 +16,11 @@ import { trackGalleryProjectOpen } from "@/lib/gtm";
 import { projectDetails } from "@/data/projects";
 // Hero, tiles and project cards each use a different photo, so nothing repeats on this page.
 import heroImg from "@/assets/work/roof-charcoal-garage-mountains.webp";
+// Close-up detail shots that look too similar to wider photos in the same grid
+// (they appear on the Roof Repair page instead).
+import copperDormerDetail from "@/assets/work/roof-copper-dormer-detail.webp";
+import chimneyDetail from "@/assets/work/roof-chimney-flashing-detail.webp";
+import charcoalHip from "@/assets/work/roof-charcoal-hip-detail.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
 import guttersImg from "@/assets/gallery/gutters-002.jpg";
@@ -41,6 +46,8 @@ const pathCards = [
   { q: "Not sure where to start?", href: "/contact", cta: "Talk to Highlander" },
 ];
 
+const CONSTRUCTION_TYPES = new Set(["Home Addition", "Deck Rebuild"]);
+
 const completedProjects = projectDetails.map((project) => ({
   title: project.title,
   type: project.type,
@@ -50,16 +57,16 @@ const completedProjects = projectDetails.map((project) => ({
   scope: project.scope,
   duration: project.duration,
   slug: project.slug,
+  division: CONSTRUCTION_TYPES.has(project.type) ? "Construction" : "Roofing",
 }));
 
+// Projects split only by division, the same way the work gallery does.
+const PROJECT_FILTERS = ["All Work", "Roofing", "Construction"] as const;
+
 const RecentProjects = () => {
-  const materialFilters = useMemo(
-    () => ["All Work", ...Array.from(new Set(completedProjects.map((p) => p.type)))],
-    [],
-  );
-  const [material, setMaterial] = useState("All Work");
+  const [material, setMaterial] = useState<(typeof PROJECT_FILTERS)[number]>("All Work");
   const visibleProjects = completedProjects.filter(
-    (p) => material === "All Work" || p.type === material,
+    (p) => material === "All Work" || p.division === material,
   );
 
   return (
@@ -112,8 +119,128 @@ const RecentProjects = () => {
           </div>
         </section>
 
-        {/* Section 1: Service categories */}
+        {/* Completed project portfolio — first thing after the hero */}
         <section className="py-16 md:py-24 bg-background">
+          <div className="container-tight">
+            <div className="max-w-3xl mb-12">
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+                Completed Project Portfolio
+              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Real WNC Homes. Real Highlander Work.
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Each case study below is backed by a project-detail record with a location, scope, materials, and documented project narrative.
+              </p>
+            </div>
+
+            {/* Filter bar */}
+            <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter projects by work type">
+              {PROJECT_FILTERS.map((m) => (
+                <button
+                  key={m}
+                  type="button"
+                  onClick={() => setMaterial(m)}
+                  aria-pressed={material === m}
+                  className={`text-caption font-body font-bold uppercase tracking-[0.18em] px-4 py-2.5 border rounded-sm transition-colors duration-300 min-h-[44px] ${
+                    material === m
+                      ? "bg-primary border-primary text-primary-foreground"
+                      : "bg-background border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                  }`}
+                >
+                  {m}
+                </button>
+              ))}
+            </div>
+
+            {visibleProjects.length === 0 && (
+              <EmptyState
+                icon={ImageOff}
+                title="No projects in this category yet"
+                description="We photograph work as crews wrap up, so this filter will fill in. In the meantime, see all completed work or tell us about your own project."
+                primaryAction={{ label: "See all work", onClick: () => setMaterial("All Work") }}
+                secondaryAction={{ label: "Get my written estimate", to: "/request-inspection" }}
+              />
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {visibleProjects.map((p, i) => (
+                <Link
+                  key={p.title}
+                  to={`/projects/${p.slug}`}
+                  onClick={() =>
+                    trackGalleryProjectOpen({
+                      gallery: "recent_projects",
+                      project_title: p.title,
+                      project_location: p.location,
+                      project_category: p.type,
+                      position: i,
+                    })
+                  }
+                  className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift flex flex-col"
+                >
+                  <div className="overflow-hidden bg-secondary relative aspect-[4/3]">
+                    <GalleryImage
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      src={p.image}
+                      alt={`${p.title} — ${p.location}`}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <span className="absolute top-3 left-3 text-caption font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
+                      {p.type}
+                    </span>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--heritage-green))] transition-colors">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+                      {p.description}
+                    </p>
+                    <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground font-body">
+                      <span className="flex items-center gap-1"><MapPin className="w-4 h-4" aria-hidden="true" /> {p.location}</span>
+                      <span className="flex items-center gap-1"><Calendar className="w-4 h-4" aria-hidden="true" /> {p.duration}</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {visibleProjects.length > 0 && (
+              <GalleryInlineCTA
+                className="mt-10"
+                position={1}
+                towns={Array.from(new Set(visibleProjects.map((x) => x.location)))}
+              />
+            )}
+          </div>
+        </section>
+
+        {/* Section 1c: Work gallery — roofing and construction photography */}
+        <section className="py-16 md:py-24 bg-secondary/40 border-t border-border/60" aria-labelledby="work-gallery-heading">
+          <div className="container-tight">
+            <div className="max-w-3xl mb-10">
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work Gallery</p>
+              <h2 id="work-gallery-heading" className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Roofs and Builds Across the Mountains.
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Photos from Highlander roofing and construction jobs. Tap any photo to see it full size.
+              </p>
+            </div>
+            <WorkGallery
+              layout="grid"
+              excludeImages={[heroImg, copperDormerDetail, chimneyDetail, charcoalHip, ...completedProjects.map((p) => p.image)]}
+            />
+          </div>
+        </section>
+
+        {/* Services — after the real work */}
+        <section className="py-16 md:py-24 bg-background border-t border-border/60">
           <div className="container-tight">
             <div className="max-w-3xl mb-12">
               <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">What We Build</p>
@@ -156,154 +283,6 @@ const RecentProjects = () => {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Section 1b: Completed Project Portfolio */}
-        <section className="py-16 md:py-24 bg-background border-t border-border/60">
-          <div className="container-tight">
-            <div className="max-w-3xl mb-12">
-              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
-                Completed Project Portfolio
-              </p>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
-                Real WNC Homes. Real Highlander Work.
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Each case study below is backed by a project-detail record with a location, scope, materials, and documented project narrative.
-              </p>
-            </div>
-
-            {/* Filter bar */}
-            <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter projects by work type">
-              {materialFilters.map((m) => (
-                <button
-                  key={m}
-                  type="button"
-                  onClick={() => setMaterial(m)}
-                  aria-pressed={material === m}
-                  className={`text-caption font-body font-bold uppercase tracking-[0.18em] px-4 py-2.5 border rounded-sm transition-colors duration-300 min-h-[44px] ${
-                    material === m
-                      ? "bg-primary border-primary text-primary-foreground"
-                      : "bg-background border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                  }`}
-                >
-                  {m}
-                </button>
-              ))}
-            </div>
-
-            {visibleProjects.length === 0 && (
-              <EmptyState
-                icon={ImageOff}
-                title="No projects in this category yet"
-                description="We photograph work as crews wrap up, so this filter will fill in. In the meantime, see all completed work or tell us about your own project."
-                primaryAction={{ label: "See all work", onClick: () => setMaterial("All Work") }}
-                secondaryAction={{ label: "Get my written estimate", to: "/request-inspection" }}
-              />
-            )}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-              {visibleProjects.map((p, i) => {
-                const closesTriplet = (i + 1) % 3 === 0 && i !== visibleProjects.length - 1;
-                // Masonry rhythm: every 5th tile runs wide with a 16:9 crop.
-                const wide = i % 5 === 0;
-                const CardInner = (
-                  <>
-                    <div className={`overflow-hidden bg-secondary relative ${wide ? "aspect-[16/9]" : "aspect-project"}`}>
-                      <GalleryImage
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        src={p.image}
-                        alt={`${p.title} — ${p.location}`}
-                        loading="lazy"
-                        decoding="async"
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <span className="absolute top-3 left-3 text-caption font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
-                        {p.type}
-                      </span>
-                      {/* Hover reveal — scope and location over the image */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-5 text-center bg-[hsl(var(--heritage-charcoal)/0.62)] opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500">
-                        <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] flex items-center gap-1.5">
-                          <MapPin className="w-4 h-4" aria-hidden="true" /> {p.location}
-                        </span>
-                        <span className="text-white font-heading font-bold text-base md:text-lg leading-snug flex items-center gap-2">
-                          <Ruler className="w-4 h-4 opacity-80" aria-hidden="true" /> {p.scope}
-                        </span>
-                        <span className="text-white/80 text-caption font-body uppercase tracking-[0.18em] flex items-center gap-1.5">
-                          <Calendar className="w-4 h-4" aria-hidden="true" /> {p.duration}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--heritage-green))] transition-colors">
-                        {p.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
-                        {p.description}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground font-body">
-                        <span className="flex items-center gap-1"><MapPin className="w-4 h-4" aria-hidden="true" /> {p.location}</span>
-                        <span className="flex items-center gap-1"><Ruler className="w-4 h-4" aria-hidden="true" /> {p.scope}</span>
-                        <span className="flex items-center gap-1"><Calendar className="w-4 h-4" aria-hidden="true" /> {p.duration}</span>
-                      </div>
-                    </div>
-                  </>
-                );
-
-                return (
-                  <Fragment key={p.title}>
-                    {p.slug ? (
-                      <Link
-                        to={`/projects/${p.slug}`}
-                        onClick={() =>
-                          trackGalleryProjectOpen({
-                            gallery: "recent_projects",
-                            project_title: p.title,
-                            project_location: p.location,
-                            project_category: p.type,
-                            position: i,
-                          })
-                        }
-                        className={`group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block ${wide ? "md:col-span-2" : ""}`}
-                      >
-                        {CardInner}
-                      </Link>
-                    ) : (
-                      <div className={`group bg-card border border-border rounded-sm overflow-hidden ${wide ? "md:col-span-2" : ""}`}>
-                        {CardInner}
-                      </div>
-                    )}
-                    {closesTriplet && (
-                      <GalleryInlineCTA
-                        position={Math.ceil((i + 1) / 3)}
-                        towns={Array.from(
-                          new Set(visibleProjects.slice(i - 2, i + 1).map((x) => x.location)),
-                        )}
-                      />
-                    )}
-                  </Fragment>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 1c: Work gallery — roofing and construction photography */}
-        <section className="py-16 md:py-24 bg-secondary/40 border-t border-border/60" aria-labelledby="work-gallery-heading">
-          <div className="container-tight">
-            <div className="max-w-3xl mb-10">
-              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work Gallery</p>
-              <h2 id="work-gallery-heading" className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
-                Roofs and Builds Across the Mountains.
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Photos from Highlander roofing and construction jobs. Tap any photo to see it full size.
-              </p>
-            </div>
-            <WorkGallery excludeImages={[heroImg, ...completedProjects.map((p) => p.image)]} />
           </div>
         </section>
 

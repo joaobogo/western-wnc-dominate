@@ -71,6 +71,16 @@ const Index = () => {
         {/* 2. Tight three-item proof band */}
         <CredibilityStrip />
 
+        {/* 2b. Real work first: photo gallery, then project stories */}
+        <Suspense fallback={<SectionFallback h={2400} />}>
+          <WorkGallerySection
+            heading="Roofs and builds across the mountains."
+            body="Recent Highlander roofing and construction work. Switch between divisions or tap any photo to see it full size."
+            excludeImages={[homeHeroPhoto, additionRoomPhoto, additionExteriorPhoto]}
+          />
+          <FeaturedProjects excludeImages={[homeHeroPhoto]} />
+        </Suspense>
+
         <AnswerBlock
           question="Who is Highlander, the roofing contractor in Franklin, NC?"
           answer={`Highlander Building Services, Inc. is a roofing and construction company based at ${FRANKLIN_NAP}. Our roofers in Franklin, NC handle roof repair and replacement, metal roofing, gutters, and custom construction, and we are the roofing company serving Highlands, Cashiers and Sylva from two walk-in showrooms.`}
@@ -110,16 +120,6 @@ const Index = () => {
         <ThreeDivisionPathway paths="two" />
 
         <Suspense fallback={<SectionFallback h={1800} />}>
-          {/* 4. Project showcase (light) */}
-          <FeaturedProjects excludeImages={[homeHeroPhoto]} />
-
-          {/* 4b. Work gallery teaser: roofing and construction photos */}
-          <WorkGallerySection
-            heading="Roofs and builds across the mountains."
-            body="Recent Highlander roofing and construction work. Switch between divisions or tap any photo to see it full size."
-            excludeImages={[homeHeroPhoto, additionRoomPhoto, additionExteriorPhoto]}
-          />
-
           {/* 5. Local proof band — dark tone, two attributable quotes */}
           <Section
             density="compact"

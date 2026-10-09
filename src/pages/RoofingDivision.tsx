@@ -308,6 +308,70 @@ const RoofingDivision = () => {
           ]}
         />
 
+        {/* ─── EDITORIAL GALLERY ─── */}
+        <Section density="default" width="wide" className="bg-background">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"
+          >
+            <div>
+              <span className="eyebrow mb-3 block">Roofing Portfolio</span>
+              <h2 className="section-heading">
+                Recent Roofing<br className="hidden md:block" /> Projects.
+              </h2>
+            </div>
+            <Link
+              to="/recent-projects"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
+            >
+              Full Gallery
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </Link>
+          </motion.div>
+
+          {/* Editorial layout: large feature + grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* Featured large image */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group relative aspect-[4/3] lg:aspect-auto lg:row-span-2 rounded-none overflow-hidden"
+            >
+              <img width={1600} height={1067} decoding="async" src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-4 left-4 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 mb-1 block">{galleryItems[0].category}</span>
+                <h3 className="font-heading font-bold text-white text-lg md:text-xl">{galleryItems[0].title}</h3>
+              </div>
+            </motion.div>
+
+            {/* Grid of smaller images */}
+            <div className="grid grid-cols-2 gap-4">
+              {galleryItems.slice(1, 5).map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
+                  className="group relative aspect-[4/3] rounded-none overflow-hidden"
+                >
+                  <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-2 left-2 text-caption font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <h3 className="font-heading font-semibold text-white text-xs">{item.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </Section>
+
         {/* ─── INTENT ROUTER ─── */}
         <RoofingIntentRouter />
 
@@ -398,70 +462,6 @@ const RoofingDivision = () => {
         <RoofingPathFinder />
 
         {/* ─── LOCAL PROOF ─── */}
-        {/* ─── EDITORIAL GALLERY ─── */}
-        <Section density="default" width="wide" className="bg-background">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"
-          >
-            <div>
-              <span className="eyebrow mb-3 block">Roofing Portfolio</span>
-              <h2 className="section-heading">
-                Recent Roofing<br className="hidden md:block" /> Projects.
-              </h2>
-            </div>
-            <Link
-              to="/recent-projects"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
-            >
-              Full Gallery
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-          </motion.div>
-
-          {/* Editorial layout: large feature + grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {/* Featured large image */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group relative aspect-[4/3] lg:aspect-auto lg:row-span-2 rounded-none overflow-hidden"
-            >
-              <img width={1600} height={1067} decoding="async" src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute top-4 left-4 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
-                <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 mb-1 block">{galleryItems[0].category}</span>
-                <h3 className="font-heading font-bold text-white text-lg md:text-xl">{galleryItems[0].title}</h3>
-              </div>
-            </motion.div>
-
-            {/* Grid of smaller images */}
-            <div className="grid grid-cols-2 gap-4">
-              {galleryItems.slice(1, 5).map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
-                  className="group relative aspect-[4/3] rounded-none overflow-hidden"
-                >
-                  <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-2 left-2 text-caption font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <h3 className="font-heading font-semibold text-white text-xs">{item.title}</h3>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </Section>
-
         {/* ─── FAQS ─── */}
         <Section density="default" width="tight" className="bg-secondary tartan-bg">
           <motion.div
