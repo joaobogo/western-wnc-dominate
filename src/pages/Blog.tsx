@@ -91,6 +91,11 @@ const Blog = () => {
   const localPosts = linkableBlogPosts().filter((p) => p.town).sort(byNewest).slice(0, 4);
   const seasonalPosts = linkableBlogPosts().filter((p) => seasonal.categories.includes(p.category)).sort(byNewest).slice(0, 3);
   const showFeatured = activeCategory === "All" && !searchQuery;
+  // The featured block already shows the newest posts, so the full list below
+  // skips them; otherwise the same cover photo appears twice on the page.
+  const featuredSlugs = new Set(featuredPosts.map((p) => p.slug));
+  const listPosts =
+    showFeatured && filtered.length > featuredPosts.length ? filtered.filter((p) => !featuredSlugs.has(p.slug)) : filtered;
 
   return (
     <>
@@ -476,45 +481,45 @@ const Blog = () => {
             </div>
 
             {/* Grid — first article gets hero treatment */}
-            {filtered.length > 0 ? (
+            {listPosts.length > 0 ? (
               <div className="space-y-6">
                 {/* Hero article */}
-                {filtered.length > 0 && (
+                {listPosts.length > 0 && (
                   <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <Link to={`/blog/${filtered[0].slug}`} className="group block card-premium overflow-hidden">
+                    <Link to={`/blog/${listPosts[0].slug}`} className="group block card-premium overflow-hidden">
                       <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
                         <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
                           <img width={1600} height={1067} loading="lazy" decoding="async" 
-                            src={filtered[0].image || "/media/wnc-town-overlook.jpg"} 
-                            alt={filtered[0].title}
+                            src={listPosts[0].image || "/media/wnc-town-overlook.jpg"} 
+                            alt={listPosts[0].title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
                         </div>
                         <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center bg-card">
                           <div className="flex items-center gap-2 mb-3">
                             <span className="text-caption font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
-                              {filtered[0].category}
+                              {listPosts[0].category}
                             </span>
-                            {isRecent(filtered[0].date) && (
+                            {isRecent(listPosts[0].date) && (
                               <span className="text-caption font-body font-bold uppercase tracking-[0.18em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
                                 New
                               </span>
                             )}
                           </div>
                           <h3 className="font-heading font-bold text-foreground text-xl md:text-3xl mb-4 group-hover:text-primary transition-colors leading-snug">
-                            {filtered[0].title}
+                            {listPosts[0].title}
                           </h3>
                           <p className="text-muted-foreground text-base mb-6 line-clamp-3 leading-relaxed">
-                            {filtered[0].excerpt}
+                            {listPosts[0].excerpt}
                           </p>
                           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                            <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" aria-hidden="true" /> {filtered[0].readTime}</span>
-                            <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true" /> {formatPostDate(filtered[0].date)}</span>
-                            {filtered[0].town && <span className="flex items-center gap-1.5"><Mountain className="w-4 h-4" aria-hidden="true" /> {filtered[0].town}</span>}
+                            <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" aria-hidden="true" /> {listPosts[0].readTime}</span>
+                            <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true" /> {formatPostDate(listPosts[0].date)}</span>
+                            {listPosts[0].town && <span className="flex items-center gap-1.5"><Mountain className="w-4 h-4" aria-hidden="true" /> {listPosts[0].town}</span>}
                           </div>
                         </div>
                       </div>
@@ -524,7 +529,7 @@ const Blog = () => {
 
                 {/* Subgrid for remaining articles */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filtered.slice(1).map((post, i) => (
+                  {listPosts.slice(1).map((post, i) => (
                     <motion.div
                       key={post.slug}
                       /* Every post stays in the DOM so the internal-link graph
@@ -574,7 +579,7 @@ const Blog = () => {
                   ))}
                 </div>
 
-                {filtered.length > visibleCount && (
+                {listPosts.length > visibleCount && (
                   <div className="pt-2 text-center">
                     <button
                       type="button"
@@ -582,7 +587,7 @@ const Blog = () => {
                       className="btn btn-secondary btn-md min-h-[48px]"
                     >
                       Load more articles
-                      <span className="sr-only"> — showing {Math.min(visibleCount, filtered.length)} of {filtered.length}</span>
+                      <span className="sr-only"> — showing {Math.min(visibleCount, listPosts.length)} of {listPosts.length}</span>
                     </button>
                   </div>
                 )}
