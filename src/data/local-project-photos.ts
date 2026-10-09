@@ -11,6 +11,8 @@ import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import cedar005 from "@/assets/gallery/cedar-005.webp";
 import gutters002 from "@/assets/gallery/gutters-002.jpg";
 import siding001 from "@/assets/gallery/siding-001.webp";
+import additionFranklin from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+import bravaGlenville from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 
 /**
  * Completed local project photography, keyed by the town the work was done in.
@@ -28,6 +30,18 @@ export interface LocalProjectPhoto {
 }
 
 export const localProjectPhotos: LocalProjectPhoto[] = [
+  {
+    src: additionFranklin,
+    town: "Franklin",
+    caption: "Franklin, NC — living room addition with a vaulted wood ceiling and mountain-view windows",
+    alt: "Living room addition with a stained vaulted wood ceiling and a wall of windows in Franklin, North Carolina",
+  },
+  {
+    src: bravaGlenville,
+    town: "Lake Glenville",
+    caption: "Lake Glenville, NC — Brava synthetic shake re-roof with ten VELUX skylights",
+    alt: "Brava synthetic cedar shake roof with a stone chimney beside Lake Glenville, North Carolina",
+  },
   {
     src: metal003,
     town: "Sylva",

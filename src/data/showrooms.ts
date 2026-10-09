@@ -182,7 +182,7 @@ export const showrooms: Showroom[] = [
     onDisplay: ON_DISPLAY,
     visitAgenda: VISIT_AGENDA,
     towns: sylvaTowns,
-    photos: photosForTowns(["Sylva", "Cullowhee", "Dillsboro", "Bryson City", "Cherokee", "Waynesville"], 8),
+    photos: photosForTowns(["Sylva", "Cullowhee", "Lake Glenville", "Dillsboro", "Bryson City", "Cherokee", "Waynesville"], 8),
     faqs: [
       {
         question: "Do I need an appointment to visit the Sylva showroom?",
