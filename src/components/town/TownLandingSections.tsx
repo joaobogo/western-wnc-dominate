@@ -38,7 +38,9 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
               Storm or Active Leak in {town.name}?
             </p>
             <p className="font-heading font-bold text-base md:text-xl leading-tight text-white">
-              Storm damage assessment & temporary protection guidance.
+              {town.slug === "franklin-nc"
+                ? "Storm damage assessment, tarp and temporary protection guidance, and documentation for your adjuster and insurance company."
+                : "Storm damage assessment & temporary protection guidance."}
             </p>
           </div>
         </div>
@@ -150,7 +152,9 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
         </HeadingReveal>
         <ScrollReveal variant="rise-subtle" delay={0.1}>
           <p className="text-lg text-muted-foreground font-body leading-relaxed">
-            Roofing, construction, and design — coordinated by a single local team so {town.name} homeowners don't manage three contractors.
+            {town.slug === "franklin-nc"
+              ? "Residential and commercial roofing, construction, and design — coordinated by a single local team so you don't manage three contractors."
+              : <>Roofing, construction, and design — coordinated by a single local team so {town.name} homeowners don't manage three contractors.</>}
           </p>
         </ScrollReveal>
       </div>
@@ -400,7 +404,7 @@ export const TownFAQ = ({
           </ScrollReveal>
           <HeadingReveal>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight">
-              Answers for <span className="italic text-primary">{town.name}</span> homeowners.
+              Answers for <span className="italic text-primary">{town.name}</span>{["franklin-nc", "highlands-nc", "cashiers-nc"].includes(town.slug) ? ", NC" : ""} homeowners.
             </h2>
           </HeadingReveal>
         </div>

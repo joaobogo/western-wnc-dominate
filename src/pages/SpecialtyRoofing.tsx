@@ -19,7 +19,10 @@ import heroImg from "@/assets/gallery/cedar-005.webp";
 import cedar001 from "@/assets/gallery/cedar-001.webp";
 import cedar002 from "@/assets/gallery/cedar-002.webp";
 import metal009 from "@/assets/gallery/metal-010.webp";
-import metal010 from "@/assets/gallery/metal-010.webp";
+import bravaGlenvilleAerial from "@/assets/gallery/brava-glenville-aerial.webp";
+import bravaGlenvilleChimney from "@/assets/gallery/brava-glenville-chimney-valley.webp";
+import metalHipValley from "@/assets/gallery/metal-008.webp";
+import metalLogHome from "@/assets/gallery/metal-006.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -66,11 +69,12 @@ const whyHigherStandard = [
   "Mistakes on specialty roofs are exponentially more expensive to correct than on standard installations",
 ];
 
+// Every photo here is distinct from the hero and the "Where Craft Meets Design" mosaic.
 const galleryImages = [
-  { src: cedar001, alt: "Cedar shake roof on a custom mountain home", label: "Cedar Shake — Custom Mountain Residence" },
-  { src: cedar002, alt: "Natural cedar shingle detail work", label: "Cedar Shingle — Precision Detail" },
-  { src: metal009, alt: "Standing seam metal on a custom mountain home", label: "Standing Seam — Custom Application" },
-  { src: metal010, alt: "Metal roof with mountain backdrop", label: "Metal Roof — Mountain Integration" },
+  { src: bravaGlenvilleAerial, alt: "Brava synthetic cedar shake re-roof with ten VELUX skylights near Lake Glenville, North Carolina", label: "Brava Synthetic Shake — Lake Glenville" },
+  { src: bravaGlenvilleChimney, alt: "Brava synthetic shake with a stone chimney and brown metal valley near Lake Glenville, North Carolina", label: "Brava Shake — Chimney & Valley Detail" },
+  { src: metalHipValley, alt: "Silver metal panel roof with hip and valley detailing on a mountain home", label: "Metal Roof — Hip & Valley Detail" },
+  { src: metalLogHome, alt: "Green standing seam metal roof on a log mountain home", label: "Standing Seam — Log Home" },
 ];
 
 const processSteps = [

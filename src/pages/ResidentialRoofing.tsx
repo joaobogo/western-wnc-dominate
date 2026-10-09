@@ -25,6 +25,9 @@ import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.webp";
+import bravaGlenville from "@/assets/gallery/brava-glenville-aerial.webp";
+import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+import metalStanding from "@/assets/gallery/metal-010.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
@@ -135,13 +138,15 @@ const qualityChecks = [
   { title: "Daily Cleanup & Property Protection", detail: "Tarps protect landscaping and siding. Magnetic sweeps catch every nail. Your property is left cleaner than we found it — every day." },
 ];
 
+// None of these repeat the hero or the material cards above. Captions name a
+// town only where the job is documented.
 const galleryItems = [
-  { image: asphaltHero, title: "Full Replacement: Highlands Plateau", category: "Shingle" },
-  { image: metalRoof, title: "Standing Seam: Cashiers Estate", category: "Metal" },
-  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
-  { image: asphalt005, title: "Dimensional Shingles: Franklin", category: "Shingle" },
-  { image: asphalt007, title: "Mountain Home: Sylva", category: "Shingle" },
-  { image: cedarDetail, title: "Cedar Detail: Sapphire Valley", category: "Cedar" },
+  { image: bravaGlenville, title: "Brava Synthetic Shake: Lake Glenville", category: "Synthetic" },
+  { image: dormerCabin, title: "Dimensional Shingle Re-Roof", category: "Shingle" },
+  { image: metalStanding, title: "Standing Seam Metal", category: "Metal" },
+  { image: asphalt007, title: "Shingle Roof With Metal Accents", category: "Shingle" },
+  { image: cedarDetail, title: "Cedar Shake Roof", category: "Cedar" },
+  { image: asphalt005, title: "Dimensional Shingle Roof", category: "Shingle" },
 ];
 
 const faqs = [

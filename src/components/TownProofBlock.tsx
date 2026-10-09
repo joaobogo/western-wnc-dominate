@@ -104,7 +104,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                 <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
               </div>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                Highlander scopes each {town.name} project to the property, documents the proposed work, and confirms applicable warranty terms in writing. Documented {town.name} projects are added here as they are published.
+                Highlander scopes each {town.name} project to the property, documents the proposed work, and confirms {town.slug === "franklin-nc" ? "the applicable manufacturer's and workmanship warranty terms" : "applicable warranty terms"} in writing. Documented {town.name} projects are added here as they are published{town.slug === "franklin-nc" ? ", so you can judge the craftsmanship for yourself" : ""}.
               </p>
             </div>
             )}
@@ -126,7 +126,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                 <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
               </div>
               <p className="text-xs text-muted-foreground font-body leading-relaxed">
-                Highlander scopes each {town.name} project to the property and confirms the applicable work and warranty terms in writing.
+                Highlander scopes each {town.name} project to the property and confirms {town.slug === "highlands-nc" ? "the work, the workmanship warranty terms, and any manufacturer certification requirements" : "the applicable work and warranty terms"} in writing.
               </p>
             </div>
           </motion.div>

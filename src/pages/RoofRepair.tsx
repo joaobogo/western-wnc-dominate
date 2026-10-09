@@ -27,7 +27,7 @@ import asphalt003Webp from "@/assets/gallery/asphalt-003.webp?w=640;960;1280;160
 import HeroImage from "@/components/media/HeroImage";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CommonConcerns, { defaultConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
 import CostOfWaiting from "@/components/conversion/CostOfWaiting";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
@@ -47,10 +47,10 @@ import HeroTrustLine from "@/components/hero/HeroTrustLine";
    ═══════════════════════════════════════════ */
 
 const commonProblems = [
-  { icon: Droplets, title: "Active Leaks & Water Intrusion", detail: "Water stains on ceilings, dripping during rain, or moisture in the attic. We trace every leak to its true origin point — which is often far from where the water appears inside." },
-  { icon: Wind, title: "Wind-Damaged or Missing Shingles", detail: "High-altitude gusts can lift, crack, or strip shingles entirely. Even a few missing shingles expose underlayment and decking to rapid deterioration if left unaddressed." },
-  { icon: Layers, title: "Flashing Failures", detail: "Step flashing, counter-flashing, and chimney flashing are the most common failure points on mountain roofs. Improper or aged flashing is behind the majority of repair calls we receive." },
-  { icon: AlertTriangle, title: "Pipe Boot & Penetration Leaks", detail: "Rubber pipe boots degrade over time, especially at elevation where UV exposure is more intense. Cracked boots are a leading cause of attic leaks on roofs that are otherwise in good condition." },
+  { icon: Droplets, title: "Active Leaks & Water Intrusion", detail: "Water stains on ceilings, dripping during rain, or moisture in the attic. We trace the water back to its true origin point — which is often far from where it appears inside." },
+  { icon: Wind, title: "Wind-Damaged or Missing Shingles", detail: "High-altitude gusts can lift, crack, or strip shingles entirely. Even a few bare spots expose underlayment and decking to rapid deterioration if left unaddressed." },
+  { icon: Layers, title: "Flashing Failures", detail: "Step, counter, and chimney flashing are the most common failure points on mountain roofs. Improper or aged flashing is behind the majority of the calls we receive." },
+  { icon: AlertTriangle, title: "Pipe Boot & Penetration Leaks", detail: "Rubber pipe boots degrade over time, especially at elevation where UV exposure is more intense. Cracked boots are a leading cause of hidden moisture on roofs that are otherwise in good condition." },
   { icon: ThermometerSun, title: "Ice Dam & Ridge Vent Issues", detail: "Inadequate ventilation causes ice damming in winter and heat buildup in summer. Both accelerate material degradation and can cause interior water damage." },
   { icon: TrendingDown, title: "Sagging, Soft Spots, or Decking Damage", detail: "Soft spots underfoot or visible sag lines indicate moisture has compromised the structural decking. This requires immediate assessment to prevent further structural damage." },
 ];
@@ -58,23 +58,23 @@ const commonProblems = [
 const escalationReasons = [
   { title: "A small flashing gap becomes interior water damage", detail: "A quarter-inch gap at a chimney base can channel gallons of water into wall cavities during a single heavy rain — damaging insulation, framing, and interior finishes." },
   { title: "A missing shingle exposes underlayment to UV breakdown", detail: "Underlayment is designed to be a secondary barrier, not a primary one. Once exposed to direct sunlight, it degrades within months — turning a small repair into a full section replacement." },
-  { title: "A cracked pipe boot lets moisture into your attic for months", detail: "Slow attic leaks often go unnoticed until mold has spread across sheathing and insulation. The repair cost multiplies with every month of undetected moisture." },
-  { title: "Ice damming from poor ventilation damages soffits and fascia", detail: "Recurring ice dams don't just damage shingles — they force water behind fascia boards and into soffit cavities, causing wood rot that extends well beyond the roof surface." },
+  { title: "A cracked pipe boot lets moisture into your attic for months", detail: "Slow drips often go unnoticed until mold has spread across sheathing and insulation. The cost multiplies with every month of undetected moisture." },
+  { title: "Ice damming from poor ventilation damages soffits and fascia", detail: "Recurring ice dams don't just damage shingles — they force water behind gutters and fascia boards and into soffit cavities, causing wood rot that extends well beyond the roof surface." },
 ];
 
 const repairPhilosophy = [
-  { icon: Search, title: "Diagnose the Root Cause", detail: "We don't patch where water appears — we trace it to where it enters. Roof leaks often travel along rafters and decking before showing up inside, making accurate diagnosis critical." },
+  { icon: Search, title: "Diagnose the Root Cause", detail: "We don't patch where water appears — we trace it to where it enters. Water often travels along rafters and decking before showing up inside, making accurate diagnosis critical." },
   { icon: Camera, title: "Document Everything", detail: "Before we touch anything, we photograph and document the existing condition. You see exactly what we found, what caused it, and what we recommend — with evidence." },
-  { icon: Wrench, title: "Repair Permanently, Not Temporarily", detail: "We use the same materials and methods on a repair that we'd use on a full replacement. No roofing cement cover-ups, no temporary tarps presented as solutions." },
+  { icon: Wrench, title: "Repair Permanently, Not Temporarily", detail: "A high-quality roof repair uses the same materials and methods as a full roof replacement. No roofing cement cover-ups, no temporary tarps presented as solutions." },
   { icon: MessageSquare, title: "Be Honest About What You're Facing", detail: "If a repair will solve the problem, we'll tell you. If you're better served by replacement, we'll explain exactly why — and let you decide without pressure." },
 ];
 
 const processSteps = [
   { number: "01", title: "You Call: We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and arrange the appropriate next step based on current scheduling and conditions." },
-  { number: "02", title: "On-Site Diagnosis", icon: Eye, description: "We inspect the affected area and surrounding components to identify the true source of the problem. We photograph everything and explain our findings on-site." },
+  { number: "02", title: "On-Site Diagnosis", icon: Eye, description: "A roofing technician inspects the affected area and surrounding components to identify the true source of the problem. We photograph everything and explain our findings on-site." },
   { number: "03", title: "Clear Recommendation", icon: ClipboardCheck, description: "You receive a straightforward recommendation — repair, monitor, or replace — with a written scope, cost, and timeline. No ambiguity, no upselling." },
   { number: "04", title: "Precision Repair", icon: Hammer, description: "If repair is the right path, our crew executes with the same materials and standards we use on full replacements. Documented work, verified results." },
-  { number: "05", title: "Verification & Documentation", icon: BadgeCheck, description: "We verify the repair has resolved the issue, photograph the completed work, and provide you with documentation of what was done and what warranty applies." },
+  { number: "05", title: "Verification & Documentation", icon: BadgeCheck, description: "We verify the fix has resolved the issue, photograph the completed work, and give you documentation of what was done and what warranty applies, so you have peace of mind and a record on file." },
 ];
 
 const repairVsReplace = {
@@ -97,17 +97,24 @@ const repairVsReplace = {
 const faqs = [
   { q: "What should I do if my roof is leaking?", a: "If water is entering the home, protect the interior if you can do so safely and call Highlander during office hours. Outside office hours, send a request for follow-up. Do not climb onto a wet or damaged roof. Temporary weather protection may be discussed when conditions and scheduling allow." },
   { q: "How much does a roof repair cost?", a: "Repair pricing is scope-based — it depends on the type of damage, materials involved, and accessibility. Rather than publish a generic range, we provide exact, itemized pricing after an on-site assessment so the number reflects the actual work." },
-  { q: "Will you try to sell me a full replacement when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a targeted repair will solve the problem, that's what we'll recommend — and we'll document our reasoning so you can verify our logic." },
-  { q: "Do you warranty repair work?", a: "Yes. Every repair we perform comes with a Highlander labor warranty covering the work we completed. The duration depends on the scope of the repair, and we'll specify it clearly before work begins." },
+  { q: "Will you try to sell me a new roof when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a targeted repair will solve the problem, that's what we'll recommend — and we'll document our reasoning so you can verify our logic." },
+  { q: "Do your repair services come with a warranty?", a: "Yes. Every repair we perform comes with a Highlander labor warranty covering the work we completed. The duration depends on the scope, and we'll specify it clearly before work begins." },
   { q: "Can you repair a roof during rain or winter?", a: "Permanent roof repairs require suitable weather and safe working conditions. When water is entering the home, call to discuss temporary protection options; the appropriate response depends on the roof, weather, access, and crew availability." },
-  { q: "How do I know if the leak is coming from my roof and not somewhere else?", a: "Not all interior water stains come from roof leaks — condensation, plumbing issues, and window failures can mimic roof problems. Our diagnostic process identifies the actual source before recommending a solution. If it's not your roof, we'll tell you." },
-  { q: "Do you handle insurance claims for storm damage repairs?", a: "Yes. We provide complete damage documentation with photographs and measurements, meet with your insurance adjuster on-site if needed, and coordinate the repair process through your claim." },
+  { q: "How do I know if the leak is coming from my roof and not somewhere else?", a: "Not all interior water stains come from the roof — condensation, plumbing issues, and window failures can mimic roof problems. Our diagnostic process identifies the actual source before recommending a solution. If it's not your roof, we'll tell you." },
+  { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photographs and measurements, meet with your insurance adjuster on-site if needed, and coordinate the repair process through your claim." },
   { q: "What if the repair reveals bigger problems underneath?", a: "If we discover additional issues during repair — like decking damage or widespread underlayment failure — we stop, document what we've found, and discuss your options before proceeding. You always approve the scope of work." },
 ];
 
 /* ═══════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════ */
+const repairConcerns = defaultConcerns.map((c) => ({
+  ...c,
+  answer: c.answer
+    .replace("Our crews are Franklin-based and led by", "Our crews are Franklin-based, bring local roofing expertise, and are led by")
+    .replace("keep debris moving to the dumpster through the day", "keep the job site clear by moving debris to the dumpster through the day"),
+}));
+
 const RoofRepair = () => {
   return (
     <>
@@ -127,7 +134,7 @@ const RoofRepair = () => {
         <ServicePageTemplate
           subtopics={
             <ServiceSubtopics
-              heading="What a roof repair actually covers"
+              heading="The roofing services a repair actually covers"
               intro="Leaks, flashing, ventilation and moss are different problems with different fixes. Here is how we approach each one."
               items={roofRepairSubtopics}
             />
@@ -151,7 +158,7 @@ const RoofRepair = () => {
               <div className="overflow-hidden mb-3 md:mb-4">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
                   Roof Repair in{" "}
-                  <span className="text-[hsl(var(--gold-ink))]">Western North Carolina</span>
+                  <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
                 </motion.h1>
                 <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-3" />
               </div>
@@ -175,7 +182,7 @@ const RoofRepair = () => {
 
               {/* One-line reason to call instead of writing (CRO Prompt 12) */}
               <p className="hidden md:block mt-3 text-body-xs md:text-body-xs font-body text-white/80 max-w-xl leading-snug">
-                An active leak can&apos;t wait on email — call and we&apos;ll triage the roof on the phone and get an inspection on the schedule.
+                An active leak can&apos;t wait on email, call and we&apos;ll triage on the phone and get an inspection on the schedule.
               </p>
 
               {/* Response commitment — unique to Repair */}
@@ -201,10 +208,10 @@ const RoofRepair = () => {
           quickAnswer={
             <>
         <UrgentActionSteps variant="repair" />
-        <InsuranceDocHelp />
+        <InsuranceDocHelp variant="repair" />
         <AnswerBlock
           question="What does roof repair cover, and when is repair the right call?"
-          answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the whole roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander assesses the roof first and tells you plainly whether repair or replacement makes more sense."
+          answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the entire roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander inspects first and tells you plainly whether repair or replacement makes more sense."
           points={["Leak diagnosis before any work is quoted", "Flashing, penetrations, and storm damage repairs", "Honest repair-versus-replace recommendation"]}
         />
             </>
@@ -217,8 +224,7 @@ const RoofRepair = () => {
               <span className="eyebrow mb-3 block">Not an Emergency?</span>
               <h2 className="section-heading mb-3">Send It Over and We'll Call You Back.</h2>
               <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
-                If the leak isn't active right now, four quick fields are all we need to get a
-                repair assessment on the schedule.
+                If the leak isn't active right now, four quick fields are all we need to get a free estimate on the schedule.
               </p>
             </div>
             <FastLeadForm
@@ -242,7 +248,7 @@ const RoofRepair = () => {
                 A roof leak isn't just an inconvenience, it's your home telling you something needs attention before it becomes something worse.
               </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                At Highlander, we don't treat repairs as small jobs. We treat them as diagnostic opportunities — a chance to find the real cause, fix it properly, and give you an honest picture of your roof's overall condition. Every repair is documented and built to the same standard as our full replacements.
+                At Highlander, we don't treat small roof repairs as small jobs. We treat them as diagnostic opportunities — a chance to find the real cause, fix it properly, and give you an honest picture of your roof's overall condition. Every job is documented and held to the same craftsmanship as a full roof installation.
               </p>
               <div className="flex items-center justify-center gap-3 mt-8">
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
@@ -255,10 +261,10 @@ const RoofRepair = () => {
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-              <span className="eyebrow mb-3 block">Common Roof Problems</span>
-              <h2 className="section-heading mb-4">Issues We Diagnose<br className="hidden md:block" /> and Resolve.</h2>
+              <span className="eyebrow mb-3 block">What We See Most</span>
+              <h2 className="section-heading mb-4">Roofing Problems We Diagnose{" "}<br className="hidden md:block" /> and Resolve.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                These are the most common repair calls we receive from homeowners across Western North Carolina — and the conditions we're best equipped to resolve.
+                These are the most common calls we receive from homeowners across Western North Carolina — and the conditions we're best equipped to resolve.
               </p>
             </motion.div>
 
@@ -282,10 +288,10 @@ const RoofRepair = () => {
                 <span className="eyebrow mb-3 block">Don't Ignore It</span>
                 <h2 className="section-heading mb-5">Small Problems<br /> Become Big Problems.</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
-                  The most expensive roof repairs we perform are the ones that should have been addressed months earlier. Water is persistent, patient, and destructive — and mountain weather accelerates every timeline.
+                  The most expensive jobs we take on are the ones that should have been addressed months earlier. Water is persistent, patient, and destructive — and mountain weather accelerates every timeline.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  A small flashing repair left unaddressed for six months can easily become a full section replacement with interior damage remediation. The math always favors acting early.
+                  A small flashing problem left unaddressed for six months can easily become a full section replacement with interior damage remediation. The math always favors acting early.
                 </p>
               </motion.div>
 
@@ -330,7 +336,7 @@ const RoofRepair = () => {
               <span className="eyebrow mb-3 block">Our Repair Philosophy</span>
               <h2 className="section-heading mb-4">We Fix the Cause,<br className="hidden md:block" /> Not Just the Symptom.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                Too many repair jobs fail because they treat where the water shows up — not where it gets in. Our approach is diagnostic first, repair second.
+                Too many patch jobs fail because they treat where the water shows up — not where it gets in. Our approach is diagnostic first, repair second.
               </p>
             </motion.div>
 
@@ -373,10 +379,10 @@ const RoofRepair = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
                 <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Honest Guidance</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
-                  When Repair Is Enough.<br className="hidden md:block" /> When It Isn't.
+                  When a Repair Is Enough.{" "}<br className="hidden md:block" /> When You Need a New Roof.
                 </h2>
                 <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
-                  We'll always tell you the truth about your roof's condition. Here's the framework we use to guide our recommendation.
+                  We tell you the truth about every roof we inspect. Here's the framework we use to guide our recommendation.
                 </p>
               </motion.div>
 
@@ -436,20 +442,20 @@ const RoofRepair = () => {
         <section className="section-padding bg-muted/20">
           <div className="container-tight max-w-4xl">
             <div className="text-center mb-8">
-              <span className="eyebrow mb-3 block">Ongoing Roof Care</span>
+              <span className="eyebrow mb-3 block">Ongoing Care</span>
               <h2 className="section-heading mb-4">Preventive Maintenance for<br className="hidden md:block" /> Western NC Roofs.</h2>
               <p className="text-muted-foreground text-base font-body max-w-2xl mx-auto">
-                Mountain weather — freeze-thaw cycles, wind-driven rain, heavy pollen and organic debris — is hard on roofs. A scheduled walk-through catches small failures at flashings, sealants, and fasteners before they turn into interior damage.
+                The local climate — freeze-thaw cycles, wind-driven rain, heavy pollen and organic debris — creates unique roofing challenges. Regular roof maintenance catches small failures at seams, sealants, and fasteners before they turn into interior damage, and it helps extend roof life.
               </p>
             </div>
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto">
               {[
                 "Flashing, boot, and penetration inspection",
                 "Sealant refresh at exposed fasteners and terminations",
-                "Valley and gutter debris clearing",
+                "Debris cleared from the roof and gutters",
                 "Documented condition report with photos",
                 "Repair-vs-replace guidance you can plan around",
-                "Priority scheduling on future repair calls",
+                "Priority scheduling on future service calls",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" aria-hidden="true" />
@@ -465,12 +471,12 @@ const RoofRepair = () => {
             <>
         <CostOfWaiting variant="repair" />
         <CostContextBlock serviceLabel="roof repair" variant="repair" />
-        <SchedulingReality serviceLabel="roof repair" />
+        <SchedulingReality serviceLabel="roof repair" variant="repair" />
             </>
           }
           process={
             <>
-        <RepairPhotoProof variant="repair" />
+        <RepairPhotoProof variant="repair" excludeImages={[asphalt003]} />
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
@@ -499,11 +505,11 @@ const RoofRepair = () => {
           }
           proof={
             <>
-        <WhoShowsUp />
-        <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
+        <WhoShowsUp variant="repair" />
+        <TieredOffer variant="repair" context="roof-repair" primaryLabel="Get My Repair Assessed" />
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
-            <AttributedReviews services={["roof-repair", "storm-damage"]} heading="What homeowners say about our roof repair work" />
+            <AttributedReviews services={["roof-repair", "storm-damage"]} heading="What homeowners say about our craftsmanship" />
           </div>
         </section>
         <ConversionTrustBlock variant="band" category="roofing" />
@@ -515,7 +521,7 @@ const RoofRepair = () => {
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Roof Repair FAQs</span>
-              <h2 className="section-heading mb-4">Common Questions About<br className="hidden md:block" /> Roof Repair.</h2>
+              <h2 className="section-heading mb-4">Common Roofing Questions From{" "}<br className="hidden md:block" /> NC Homeowners.</h2>
             </motion.div>
 
             <Accordion type="single" collapsible className="space-y-3">
@@ -540,7 +546,7 @@ const RoofRepair = () => {
             <>
         <RelatedLinks
           eyebrow="Keep Exploring"
-          heading="Related pages you may find useful"
+          heading="Related roofing solutions and helpful pages"
           columns={2}
           links={[
             { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
@@ -556,7 +562,7 @@ const RoofRepair = () => {
           }
           cta={
             <>
-        <CommonConcerns />
+        <CommonConcerns concerns={repairConcerns} />
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">
@@ -568,7 +574,7 @@ const RoofRepair = () => {
                     The Best Repair Is the One<br className="hidden md:block" /> You Don't Have to Do Twice.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
-                    If something doesn't look right, it probably isn't. Call us for an honest assessment — we'll tell you what's happening, what it will take to fix it, and whether repair or replacement is the better path forward.
+                    If something doesn't look right, it probably isn't. Call us for an honest, expert roof assessment — we'll tell you what's happening, what it will take to fix it, and whether a repair or having the roof replaced is the better path forward.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">

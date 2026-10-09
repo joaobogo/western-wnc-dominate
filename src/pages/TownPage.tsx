@@ -73,8 +73,10 @@ const TownPage = () => {
   const isPrimaryTownPage = town.slug === "franklin-nc";
 
   const leadParagraph = isPrimaryTownPage
-    ? `Highlander Building Services is headquartered in ${town.name}, NC. This page covers the ${town.name} neighborhoods and roofing needs served from the local Franklin showroom.`
-    : `Highlander Building Services is a roofing company and licensed builder serving ${town.name}, NC. The ${showroom.location.locality} showroom is the nearest Highlander point of contact for this service area.`;
+    ? `Highlander Building Services is a ${town.name}, NC roofing contractor with its headquarters and showroom in town. This page covers the neighborhoods and roofing needs we serve from here, from residential to commercial roofing.`
+    : town.slug === "highlands-nc"
+      ? `Highlander Building Services is a roofing contractor and licensed builder serving ${town.name}, NC. If you are searching for roofers near ${town.name}, the ${showroom.location.locality} showroom is the nearest Highlander point of contact for this service area.`
+      : `Highlander Building Services is a roofing company and licensed builder serving ${town.name}, NC. ${town.slug === "cashiers-nc" ? "For roofing or construction, the" : "The"} ${showroom.location.locality} showroom is the nearest Highlander point of contact for this service area.`;
 
 
 
@@ -264,12 +266,12 @@ const TownPage = () => {
 
         <AnswerBlock
           question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
-          answer={`Yes. Highlander Building Services, Inc. serves ${town.name} and the rest of ${town.county} from our ${showroom.location.locality} showroom at ${napLine(showroom.location)}. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for ${town.name} conditions.`}
+          answer={`Yes. Highlander Building Services, Inc. serves ${town.name} and the rest of ${town.county} from our ${isPrimaryTownPage ? "" : `${showroom.location.locality} `}showroom at ${napLine(showroom.location)}. We handle ${isPrimaryTownPage ? "roof inspections, roof leaks and repairs, roof replacement, new metal roofs, gutters, and general contracting services" : "roof repair, roof replacement, metal roofing, gutters, and construction work"} built for ${town.name} conditions.`}
           points={[
             `Local crews serving ${town.name}, ${town.state}`,
             `Call ${PHONE_PLAIN} to reach the team directly`,
             `${town.county} permitting and inspection experience`,
-            "Estimates scoped in person, not over guesswork",
+            `${isPrimaryTownPage ? "Free estimates" : "Estimates"} scoped in person, not over guesswork`,
           ]}
         />
 
@@ -282,7 +284,7 @@ const TownPage = () => {
                 {showroom.cardLabel} — {napLine(showroom.location)}
               </p>
               <p className="font-body text-body-sm text-muted-foreground">
-                Open {showroom.location.hours[0].label}. Walk in and see materials in person.
+                Open {showroom.location.hours[0].label}. Walk in and see {isPrimaryTownPage ? "roofing " : ""}materials in person.
               </p>
             </div>
             <Link to={showroom.path} className="btn btn-secondary shrink-0">

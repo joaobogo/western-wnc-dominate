@@ -18,6 +18,8 @@ interface TieredOfferProps {
   tertiary?: Offer;
   /** Analytics context, e.g. "roof-repair". */
   context: string;
+  /** Roof repair page wording. */
+  variant?: "repair";
   className?: string;
 }
 
@@ -40,16 +42,19 @@ const TieredOffer = ({
     description: "What drives cost here, how long work takes, and what to ask any contractor before signing.",
   },
   context,
+  variant,
   className = "",
-}: TieredOfferProps) => (
+}: TieredOfferProps) => {
+  const isRepair = variant === "repair";
+  return (
   <section className={`section-padding bg-muted/20 ${className}`} aria-label="Choose your next step">
     <div className="container-tight">
       <div className="max-w-2xl mb-8">
         <span className="eyebrow mb-3 block">Where You Are Right Now</span>
         <h2 className="section-heading mb-3">Pick the next step that fits</h2>
         <p className="text-muted-foreground font-body">
-          Some people need someone on the roof this week. Others are six months out and still gathering
-          information. Both are welcome — start wherever you actually are.
+          Some people need someone on the roof this week. Others are six months out and still {isRepair ? "looking for roofing answers" : "gathering information"}.
+          Both are welcome — start wherever you actually are.
         </p>
       </div>
 
@@ -65,7 +70,7 @@ const TieredOffer = ({
             Ready now
           </span>
           <h3 className="font-heading font-bold text-foreground text-xl md:text-2xl mt-3 mb-2">
-            Get eyes on it and a number in writing
+            {isRepair ? "Get your roof assessed and a number in writing" : "Get eyes on it and a number in writing"}
           </h3>
           <p className="text-sm font-body text-muted-foreground mb-6 max-w-md">{primaryDescription}</p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -117,6 +122,7 @@ const TieredOffer = ({
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default TieredOffer;

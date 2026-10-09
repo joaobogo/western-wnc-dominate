@@ -89,8 +89,8 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             Highlander is a Western NC roofing and construction company built
             around a specific footprint — the mountain communities we can reach
             fast, know intimately, and stand behind long after the last nail is
-            driven. Below are the towns and counties our crews cover from our
-            Franklin base.
+            driven. If you are comparing roofing pros near Franklin, below are the
+            towns and counties our crews cover from our Franklin base.
           </p>
         </div>
 
@@ -168,7 +168,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             className="bg-secondary/40 border border-border p-6"
           >
             <h3 className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
-              Nearby Mountain Communities
+              Nearby Cities and Mountain Communities
             </h3>
             <ul className="flex flex-wrap gap-2">
               {nearbyCommunities.map((area) =>

@@ -41,8 +41,9 @@ import heroImg from "@/assets/division-construction-v2.webp";
 import heroImgAvif from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=avif&as=srcset";
 import heroImgWebp from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
+import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 const divisionContextImg = "/media/d35d81a4-construction-project-highlands.webp";
-const constructionDetailImg = "/media/85aa1f15-construction-project-highlands.webp";
+import WorkGallerySection from "@/components/gallery/WorkGallerySection";
 import planningFocusImg from "@/assets/division-design.webp";
 const siteCoordinationImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
 const wncTerrainImg = "/media/wnc-mountain-home-exterior.webp";
@@ -62,23 +63,17 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
    ═══════════════════════════════════════════ */
 
 const philosophy = [
-  { icon: Compass, title: "Design Sensitivity", detail: "Every project starts with understanding your home's design theme, its setting, and the visual language that connects them. We don't impose a style — we extend the one your home already speaks." },
+  { icon: Compass, title: "Design Sensitivity", detail: "Whether we are building new or remodeling an existing home, every project starts with understanding your home's design theme, its setting, and the visual language that connects them. We don't impose a style — we extend the one your home already speaks." },
   { icon: ClipboardCheck, title: "Planning Depth", detail: "We invest in planning because it eliminates surprises. Detailed scoping, material specifications, timeline mapping, and permit coordination happen before we break ground — not while we're building." },
   { icon: HardHat, title: "Execution Quality", detail: "Project teams work from a documented scope, defined material direction, sequencing requirements, and quality checkpoints appropriate to the work." },
   { icon: MessageSquare, title: "Communication Clarity", detail: "The project documentation defines the Highlander contact, communication path, key decisions, and how schedule or scope changes are recorded." },
 ];
 
 const whyHighlander = [
-  { icon: Shield, title: "Licensed and Established", detail: "Highlander is a North Carolina General Contractor, founded in Franklin in 2017, with showrooms in Franklin and Sylva." },
+  { icon: Shield, title: "Licensed General Contractor, Established in Franklin", detail: "Highlander is a licensed North Carolina General Contractor — NC GC #87668, which you can verify with the North Carolina Licensing Board for General Contractors — founded in Franklin in 2017, with showrooms in Franklin and Sylva." },
   { icon: Users, title: "Project Team Accountability", detail: "Each project is tied to a written scope and Highlander contact so responsibility for decisions, communication, and follow-up is clear." },
   { icon: Mountain, title: "Built for WNC", detail: "We've worked across the region's unique terrain, microclimates, and building conditions for years. We don't learn on your project — we bring institutional knowledge of mountain construction." },
-  { icon: BadgeCheck, title: "Roofing + Construction", detail: "Because Highlander offers both roofing and construction, roof-to-structure transitions, flashing, drainage, and exterior-envelope details can be discussed within one project scope." },
-];
-
-const galleryImages = [
-  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Construction Work by Highlander" },
-  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services in Western North Carolina", label: "Mountain Home Construction" },
-  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services in Western North Carolina", label: "Outdoor Living" },
+  { icon: BadgeCheck, title: "Roofing + Construction", detail: "Because Highlander offers both roofing and construction, roof-to-structure transitions, flashing, drainage, and exterior-envelope details can be discussed within one turn-key project scope." },
 ];
 
 const faqsForSEO = [
@@ -195,7 +190,7 @@ const ConstructionDivision = () => {
 
         <AnswerBlock
           question="What construction work does Highlander take on in Western North Carolina?"
-          answer="Highlander's construction division builds custom homes, additions, renovations, outdoor living spaces, and exterior improvements throughout Western North Carolina, with layout and planning support before the build starts."
+          answer="Highlander's construction division is a general contractor specializing in residential work: a custom home builder that also takes on additions, renovations, outdoor living spaces, and exterior improvements throughout Western North Carolina, west of Asheville, NC, with layout and planning support before the build starts."
           points={[
             "Custom builds, additions, and renovations",
             "Outdoor living and exterior improvements",
@@ -236,10 +231,10 @@ const ConstructionDivision = () => {
                     Team-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg leading-relaxed font-body mb-6">
-                    Highlander applies the project discipline developed through its roofing work — written scopes, material planning, weather-detail awareness, and documented communication — to construction projects.
+                    Highlander applies the project discipline developed through its roofing work — written scopes, material planning, weather-detail awareness, and documented communication — to remodeling and construction alike.
                   </p>
                   <p className="text-dark-section-foreground text-sm md:text-base leading-relaxed font-body mb-8">
-                    When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
+                    When you hire Highlander for construction, you get a construction company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     {[
@@ -258,7 +253,7 @@ const ConstructionDivision = () => {
 
                 <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="relative">
                   <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-border">
-                    <img width={1600} height={1067} decoding="async" src={constructionDetailImg} alt="Mountain-home construction work featured by Highlander Building Services in Western North Carolina" className="w-full h-full object-cover" loading="lazy" />
+                    <img width={1500} height={844} decoding="async" src={additionFranklinRoom} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained vaulted wood ceiling and mountain-view windows" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-raised max-w-[240px]">
                     <span className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
@@ -343,27 +338,26 @@ const ConstructionDivision = () => {
         {/* ═══ SERVICE GRID — Using shared component with detailed variant ═══ */}
         <ConstructionServiceGrid
           variant="detailed"
-          heading="What We Build."
+          heading="Home Additions, Remodels, and Custom Homes We Build."
           subheading="Six focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
           eyebrow="Construction Services"
         />
 
-        {/* ═══ CRAFT DETAIL — Visual break ═══ */}
-        <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-          <img width={1600} height={1067} loading="lazy" decoding="async" src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover opacity-100" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
-          <div className="absolute bottom-10 left-10 flex items-center gap-4">
-             <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-             <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Craftsmanship in Detail</span>
-          </div>
-        </section>
+        {/* ═══ WORK GALLERY — real construction photos ═══ */}
+        <WorkGallerySection
+          eyebrow="Recent Construction"
+          heading="Porches, additions and decks we have built."
+          body="Photos from Highlander construction jobs in Cashiers, Franklin, Sylva and Cullowhee. Tap any photo to see it full size."
+          division="construction"
+          excludeImages={[additionFranklinRoom]}
+        />
 
         {/* ═══ PHILOSOPHY — How we approach construction ═══ */}
         <Section density="default" width="wide" className="bg-background">
           <ScrollReveal variant="fade">
             <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Our Approach</span>
-              <h2 className="section-heading mb-4">How Highlander<br className="hidden md:block" /> Approaches Construction.</h2>
+              <h2 className="section-heading mb-4">How Highlander{" "}<br className="hidden md:block" /> Approaches Residential Construction.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                 Every project begins with four commitments that define how we work — and why the outcome is different.
               </p>
@@ -385,7 +379,7 @@ const ConstructionDivision = () => {
 
         {/* ═══ WNC RELEVANCE — Dark variant ═══ */}
         <WNCRelevanceDark
-          heading="Construction in WNC&#10;Is Different."
+          heading="Construction in Western NC &#10;Is Different."
           subheading="Building in Western North Carolina isn't the same as building anywhere else. The terrain, the weather, and the homes themselves demand a contractor who understands the region."
           eyebrow="Built for These Mountains"
         />
@@ -400,37 +394,14 @@ const ConstructionDivision = () => {
         {/* ═══ DESIGN PROGRAM PROMO ═══ */}
         <DesignProgramPromo />
 
-        {/* ═══ FEATURED PROJECTS ═══ */}
-        <Section density="default" width="wide" className="bg-background/50 relative">
-          <ScrollReveal variant="fade">
-            <div className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Featured Work</span>
-              <h2 className="section-heading">Projects That Speak<br className="hidden md:block" /> for Themselves.</h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-            {galleryImages.map((img, i) => (
-              <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
-                <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.5)] mb-2" />
-                  <p className="text-white text-sm md:text-base font-body font-medium tracking-wide">{img.label}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </Section>
-
         {/* ═══ WHY HIGHLANDER — Trust cards ═══ */}
         <Section density="default" width="wide" className="bg-background">
           <ScrollReveal variant="fade">
             <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Highlander</span>
-              <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
+              <h2 className="section-heading mb-4">What Makes This General{" "}<br className="hidden md:block" /> Contractor Different.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
-                A company built on documented systems, licensed general contracting, combined roofing and construction capability, and Western North Carolina project experience.
+                A full-service general contractor serving Western North Carolina, built on documented systems, licensed general contracting, combined roofing and construction capability, and years of construction experience in these mountains.
               </p>
             </div>
           </ScrollReveal>
@@ -472,7 +443,7 @@ const ConstructionDivision = () => {
         {/* ═══ FAQs — Division category ═══ */}
         <ConstructionFAQs
           category="division"
-          heading="Common Questions."
+          heading="Common Questions About Hiring a General Contractor in Western NC."
           eyebrow="Construction FAQs"
         />
 
@@ -490,7 +461,7 @@ const ConstructionDivision = () => {
 
         <ConstructionClosingCTA
           headline={"Your Home Deserves a Builder\nWho Treats It Like Their Own."}
-          subheadline="Whether you're planning an addition, considering a renovation, or have a custom project in mind — let's have a straightforward conversation about what's possible."
+          subheadline="Whether you're planning an addition, considering a renovation, or have custom construction needs in mind — let's have a straightforward conversation about what's possible."
           ctaText="Get My Project Scoped"
           eyebrow="Start the Conversation"
         />

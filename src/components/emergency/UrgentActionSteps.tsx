@@ -14,7 +14,7 @@ const content = {
       "If the ceiling is bulging, pierce the low point with a small hole to release trapped water.",
       "Photograph the stain, the drip, and anything damaged — timestamped photos help later.",
       "Do not climb on a wet roof. Steep mountain pitches are the most common injury cause.",
-      "Call us with what you're seeing. We triage on the phone and schedule the inspection.",
+      "Call us with what you're seeing. We triage on the phone and schedule the roof inspection.",
     ],
     expectation:
       "Calls during business hours are answered by our team, and active water intrusion is prioritized ahead of routine estimates.",
@@ -30,7 +30,7 @@ const content = {
       "Call us during business hours about a temporary tarp and a documented damage assessment before the next rain.",
     ],
     expectation:
-      "After a named storm we run a triage list: tarping and open-roof conditions first, then full documented assessments.",
+      "Post-storm call volume climbs fast, so after a named storm we run a triage list and prioritize active leaks first: tarping and open-roof conditions, then full documentation of the damage.",
   },
 };
 

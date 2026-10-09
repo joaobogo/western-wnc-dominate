@@ -2,7 +2,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Award, Leaf, Clock, Home, ChevronRight } from "lucide-react";
-import bravaHero from "@/assets/gallery/cedar-005.webp";
+import bravaHero from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -69,7 +69,7 @@ const SyntheticRoofing = () => {
         hero={
           <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
             <div className="absolute inset-0">
-              <img width={1600} height={1067} decoding="async" src={bravaHero} alt="Brava synthetic shake roofing on a Western North Carolina mountain home" className="w-full h-full object-cover" loading="eager" />
+              <img width={1280} height={960} decoding="async" src={bravaHero} alt="Brava synthetic cedar shake in New Cedar with a stone chimney and brown metal valley, installed by Highlander near Lake Glenville, North Carolina" className="w-full h-full object-cover object-[50%_40%]" loading="eager" />
               <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.2)]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.65)] via-transparent to-[hsl(var(--hero-overlay)/0.25)]" />
             </div>

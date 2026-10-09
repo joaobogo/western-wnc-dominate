@@ -6,13 +6,15 @@ interface Props {
   serviceLabel: string;
   /** Authored, page-specific proof line from the content entry. */
   proofNote?: string;
+  /** Page-specific replacement for the town's climate line. */
+  climateNote?: string;
 }
 
 /**
  * CRO Prompt 32 — two concrete local proof points directly under the hero of
  * every town+service page, before any browsing links.
  */
-const ServiceTownProofPoints = ({ town, serviceLabel, proofNote }: Props) => {
+const ServiceTownProofPoints = ({ town, serviceLabel, proofNote, climateNote }: Props) => {
   const points = [
     {
       icon: MapPin,
@@ -24,7 +26,7 @@ const ServiceTownProofPoints = ({ town, serviceLabel, proofNote }: Props) => {
     {
       icon: ShieldCheck,
       label: `Built for ${town.name} conditions`,
-      body: town.climateExposure,
+      body: climateNote ?? town.climateExposure,
     },
   ];
 

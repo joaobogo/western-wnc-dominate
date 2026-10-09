@@ -4,14 +4,22 @@ import shingleRoof from "@/assets/gallery/asphalt-hero.webp";
 import shingleRoofSet from "@/assets/gallery/asphalt-hero.webp?w=480;800;1200&format=webp&as=srcset";
 import heroSky from "@/assets/gallery/asphalt-007.webp";
 import heroSkySet from "@/assets/gallery/asphalt-007.webp?w=800;1280;1800&format=webp&as=srcset";
-import stripShingleA from "@/assets/gallery/asphalt-003.webp";
-import stripShingleASet from "@/assets/gallery/asphalt-003.webp?w=480;800;1200&format=webp&as=srcset";
-import stripShingleB from "@/assets/gallery/asphalt-004.webp";
-import stripShingleBSet from "@/assets/gallery/asphalt-004.webp?w=480;800;1200&format=webp&as=srcset";
-import stripCedar from "@/assets/gallery/cedar-001.webp";
-import stripCedarSet from "@/assets/gallery/cedar-001.webp?w=480;800;1200&format=webp&as=srcset";
-import stripMetalGreen from "@/assets/gallery/metal-006.webp";
-import stripMetalGreenSet from "@/assets/gallery/metal-006.webp?w=480;800;1200&format=webp&as=srcset";
+import additionRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+import additionRoomSet from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=480;800;1200&format=webp&as=srcset";
+import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+import dormerCabinSet from "@/assets/gallery/shingle-dormer-cabin-aerial.webp?w=800;1280&format=webp&as=srcset";
+import additionWindows from "@/assets/gallery/addition-franklin-gable-windows.webp";
+import additionWindowsSet from "@/assets/gallery/addition-franklin-gable-windows.webp?w=800;1200&format=webp&as=srcset";
+import stripCharcoal from "@/assets/work/roof-charcoal-garage-mountains.webp";
+import stripCharcoalSet from "@/assets/work/roof-charcoal-garage-mountains.webp?w=480;800;1200&format=webp&as=srcset";
+import stripCopper from "@/assets/work/roof-copper-dormer-cabin-front.webp";
+import stripCopperSet from "@/assets/work/roof-copper-dormer-cabin-front.webp?w=480;800;1200&format=webp&as=srcset";
+import stripBrava from "@/assets/gallery/brava-glenville-aerial.webp";
+import stripBravaSet from "@/assets/gallery/brava-glenville-aerial.webp?w=480;800;1200&format=webp&as=srcset";
+import stripTan from "@/assets/work/roof-tan-dormers-aerial.webp";
+import stripTanSet from "@/assets/work/roof-tan-dormers-aerial.webp?w=480;800;1200&format=webp&as=srcset";
+import patioPorch from "@/assets/work/patio-cashiers-screened-porch.webp";
+import patioPorchSet from "@/assets/work/patio-cashiers-screened-porch.webp?w=480;800;1200;1600&format=webp&as=srcset";
 import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 
 /**
@@ -166,43 +174,55 @@ const heroSkyImage: LandingImage = {
   height: 1477,
 };
 
+/**
+ * Backdrops are decorative (empty alt) and chosen so that no landing page shows
+ * the same photo twice: none of these appear in that page's proof cards or strip.
+ */
+const dormerCabinBackdrop: LandingImage = { src: dormerCabin, srcSet: dormerCabinSet, alt: "", width: 1280, height: 720 };
+const mountainBuildBackdrop: LandingImage = {
+  src: "/media/d35d81a4-construction-project-highlands.webp",
+  srcSet:
+    "/media/d35d81a4-construction-project-highlands-640.webp 640w, /media/d35d81a4-construction-project-highlands-960.webp 960w, /media/d35d81a4-construction-project-highlands.webp 1600w",
+  alt: "",
+  width: 1600,
+  height: 900,
+};
+const additionWindowsBackdrop: LandingImage = { src: additionWindows, srcSet: additionWindowsSet, alt: "", width: 1200, height: 1600 };
+
 const stripImage = (src: string, srcSet: string, alt: string, width: number, height: number): LandingImage => ({ src, srcSet, alt, width, height });
 
 const roofingStrip = {
-  heading: "From above: shingle, metal and cedar roofs on Western NC mountain homes.",
+  heading: "Shingle, metal and synthetic shake roofs on Western NC mountain homes.",
   items: [
-    { image: stripImage(stripShingleA, stripShingleASet, "Aerial view of a gray dimensional shingle roof on a wooded mountain home", 1600, 1200), label: "Slate-gray shingle" },
-    { image: stripImage(stripMetalGreen, stripMetalGreenSet, "Aerial view of a green standing seam metal roof on a log mountain home", 1400, 1050), label: "Standing seam metal", position: "0% 50%" },
-    { image: stripImage(stripCedar, stripCedarSet, "Aerial view of a cedar shake roof on a shingle-style mountain home", 1500, 1000), label: "Cedar shake" },
-    { image: stripImage(stripShingleB, stripShingleBSet, "Aerial view of a tan dimensional shingle roof with a stone chimney", 1200, 900), label: "Tan shingle" },
+    { image: stripImage(stripCharcoal, stripCharcoalSet, "Charcoal dimensional shingle roof with dormers overlooking the Western North Carolina mountains", 1600, 900), label: "Charcoal shingle", position: "50% 90%" },
+    { image: stripImage(stripCopper, stripCopperSet, "Mountain cabin with charcoal shingles and a copper-tone metal porch roof", 1500, 1125), label: "Shingle + metal porch roof" },
+    { image: stripImage(stripBrava, stripBravaSet, "Brava synthetic cedar shake roof on a lakeside home near Lake Glenville, North Carolina", 1600, 900), label: "Brava synthetic shake" },
+    { image: stripImage(stripTan, stripTanSet, "Light tan dimensional shingle roof with dormers on a wooded mountain cottage", 1280, 720), label: "Tan shingle" },
   ],
 };
 
 /**
  * Construction photography slots.
  *
- * LAUNCH BLOCKER (prompt 02, page 10): the only construction/outdoor-living
- * images currently in the repo are blog illustrations whose job, location and
- * ownership are not documented. They are used here as stand-ins with neutral
- * captions and alt text (no location or scope claims). Replace the two files
- * with documented Highlander project photographs before ad spend goes live.
+ * Both construction images are documented Highlander jobs: the Cashiers
+ * screened porch (26-00424) and the Franklin living room addition (26-00035).
  */
+/** Documented job 26-00424: covered patio and screened porch in Cashiers, NC (May 2026). */
 const constructionPrimary: LandingImage = {
-  src: "/media/9860ca9e-outdoor-living-cashiers.webp",
-  srcSet:
-    "/media/9860ca9e-outdoor-living-cashiers-640.webp 640w, /media/9860ca9e-outdoor-living-cashiers-960.webp 960w, /media/9860ca9e-outdoor-living-cashiers.webp 1600w",
-  alt: "Covered outdoor living space with a stone fireplace and mountain views, featured by Highlander Building Services",
+  src: patioPorch,
+  srcSet: patioPorchSet,
+  alt: "Screened porch with a stained wood ceiling, stone fireplace and a view of the new deck, built by Highlander in Cashiers, North Carolina",
   width: 1600,
-  height: 900,
+  height: 1200,
 };
 
+/** Documented job 26-00035: living room addition in Franklin, NC (Feb–Aug 2026). */
 const constructionSecondary: LandingImage = {
-  src: "/media/85aa1f15-construction-project-highlands.webp",
-  srcSet:
-    "/media/85aa1f15-construction-project-highlands-640.webp 640w, /media/85aa1f15-construction-project-highlands-960.webp 960w, /media/85aa1f15-construction-project-highlands.webp 1600w",
-  alt: "Timber-framed mountain home under construction, featured by Highlander Building Services",
-  width: 1600,
-  height: 900,
+  src: additionRoom,
+  srcSet: additionRoomSet,
+  alt: "Living room addition by Highlander Building Services in Franklin, North Carolina, with a stained vaulted wood ceiling and a wall of mountain-view windows",
+  width: 1500,
+  height: 844,
 };
 
 const roofingFaqs = [
@@ -316,7 +336,7 @@ export const ROOFING_CONFIG: LandingConfig = {
   successBody:
     "Thank you. Highlander will contact you to discuss your roof and the next step. Prefer to speak with the team? Call {phone} during office hours.",
   hero: { backdrop: heroSkyImage, position: "50% 22%" },
-  finalBackdrop: { image: stripImage(stripShingleA, stripShingleASet, "", 1600, 1200), position: "50% 35%" },
+  finalBackdrop: { image: dormerCabinBackdrop, position: "50% 45%" },
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
@@ -433,24 +453,26 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   successHeading: "Your project request is in.",
   successBody:
     "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
-  hero: { backdrop: { ...constructionPrimary, alt: "" }, position: "50% 55%" },
-  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 45%" },
+  // The proof cards already show the Franklin room, so the hero uses the separate
+  // gable-window photo and the closing band a different mountain-home image.
+  hero: { backdrop: additionWindowsBackdrop, position: "50% 45%" },
+  finalBackdrop: { image: mountainBuildBackdrop, position: "50% 50%" },
 
   proofHeading: "See the work. Understand the standard.",
   proofIntro: "Start from what a finished space can feel like.",
   proof: [
     {
       id: "outdoor-living",
-      title: "Outdoor living space",
-      detail: "Outdoor living imagery featured by Highlander's construction team.",
+      title: "Screened porch and covered patio, Cashiers",
+      detail: "An open trellis rebuilt as a covered patio with a metal roof and stained wood ceiling, beside a screened porch with a stone fireplace.",
       tag: "Outdoor living",
       image: constructionPrimary,
     },
     {
       id: "framing",
-      title: "Mountain home construction",
-      detail: "Mountain-home construction imagery featured by Highlander's construction team.",
-      tag: "Construction",
+      title: "Living room addition, Franklin",
+      detail: "An engineered vaulted gable, a stone fireplace and a wall of mountain-view windows, built on a new block foundation.",
+      tag: "Home addition",
       image: constructionSecondary,
     },
   ],
@@ -556,7 +578,7 @@ export const COMBINED_CONFIG: LandingConfig = {
     secondary: { ...constructionPrimary, alt: "" },
     secondaryPosition: "60% 55%",
   },
-  finalBackdrop: { image: { ...constructionSecondary, alt: "" }, position: "50% 45%" },
+  finalBackdrop: { image: additionWindowsBackdrop, position: "50% 60%" },
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
@@ -572,9 +594,9 @@ export const COMBINED_CONFIG: LandingConfig = {
     {
       id: "construction",
       title: "Construction",
-      detail: "Outdoor living imagery featured by Highlander's construction team.",
-      tag: "Construction",
-      image: constructionPrimary,
+      detail: "A documented Highlander living room addition in Franklin, NC: engineered vaulted gable, stone fireplace and mountain-view windows.",
+      tag: "Construction · Franklin, NC",
+      image: constructionSecondary,
     },
   ],
 

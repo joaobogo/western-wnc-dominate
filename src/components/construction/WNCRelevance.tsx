@@ -21,13 +21,13 @@ export const wncInsights: LocalInsight[] = [
   {
     icon: Mountain,
     title: "Terrain & Slope",
-    detail: "Most WNC properties involve grade changes, rock outcroppings, limited equipment access, and variable soil depths. Flat, clear lots are the exception — not the rule.",
+    detail: "Most properties here involve grade changes, rock outcroppings, limited equipment access, variable soil depths, and well and septic constraints. Flat, clear lots are the exception — not the rule.",
     implication: "Foundation design, drainage engineering, retaining structures, and material staging all require site-specific planning that out-of-area contractors routinely underestimate.",
   },
   {
     icon: CloudRain,
     title: "Weather Exposure",
-    detail: "WNC receives 40–60+ inches of rain annually, with intense summer storms, winter ice events, and rapid temperature swings that stress building materials and connections.",
+    detail: "This region receives 40–60+ inches of rain annually, with intense summer storms, winter ice events, and rapid temperature swings that stress building materials and connections.",
     implication: "Weather barriers, flashing details, drainage design, and material selection must be specified for mountain conditions — not coastal or piedmont assumptions.",
   },
   {
@@ -39,7 +39,7 @@ export const wncInsights: LocalInsight[] = [
   {
     icon: Home,
     title: "Mountain Design Theme",
-    detail: "WNC homes range from 1920s bungalows and mid-century ranches to timber-frame lodges and contemporary mountain modern. Each style has distinct structural systems, material languages, and proportional rules.",
+    detail: "Mountain homes here range from 1920s bungalows and mid-century ranches to timber-frame lodges and contemporary mountain modern. Each style has distinct structural systems, material languages, and proportional rules.",
     implication: "Additions and renovations must respect the original design vocabulary. Roofline pitch, overhang proportions, window rhythm, and material palette must be matched — not approximated.",
   },
   {

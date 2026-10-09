@@ -13,6 +13,8 @@ import { teamMembers as approvedTeam } from "@/data/team";
 
 const storyImg = "/media/wnc-valley-fog-sunrise.webp"; // Smoky Mountains focused picture
 const heritageImg = "/media/wnc-town-overlook.webp";
+// Wide band image; deliberately different from the hero so no photo repeats on the page.
+const bandImg = "/media/9e06b4fe-service-areas-hero-smokies.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -405,7 +407,7 @@ const About = () => {
               transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
               className="mt-16 relative aspect-[21/9] md:aspect-[3/1] overflow-hidden border border-border"
             >
-              <img width={1600} height={1067} loading="lazy" decoding="async" src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover opacity-100 transition-opacity duration-700" />
+              <img width={1600} height={1067} loading="lazy" decoding="async" src={bandImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover opacity-100 transition-opacity duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />

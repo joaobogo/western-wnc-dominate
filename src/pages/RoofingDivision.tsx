@@ -29,8 +29,8 @@ import metalRoofAvif from "@/assets/gallery/metal-005.webp?w=1024;1600&format=av
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
-import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
-import cedarDetail from "@/assets/gallery/cedar-001.webp";
+import bravaGlenville from "@/assets/gallery/brava-glenville-aerial.webp";
+import copperCabin from "@/assets/work/roof-copper-dormer-cabin-front.webp";
 import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -94,24 +94,25 @@ const roofingServices = [
   },
 ];
 
+// The hero already shows the Highlands standing seam job, so the gallery leads
+// with other documented work. Captions name a town only when it is documented.
 const galleryItems = [
-  { image: metalRoof, title: "Standing Seam, Highlands", category: "Metal" },
-  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
-  { image: asphaltRoof, title: "Dimensional Shingles: Franklin", category: "Shingle" },
-  { image: metalCabin, title: "Metal + Deck: Bryson City", category: "Metal" },
-  { image: asphaltLarge, title: "Full Renovation: Sylva", category: "Shingle" },
-  { image: cedarDetail, title: "Cedar Restoration — Highlands", category: "Cedar" },
+  { image: bravaGlenville, title: "Brava Synthetic Shake: Lake Glenville", category: "Synthetic" },
+  { image: cedarRoof, title: "Cedar Shake Estate: Highlands", category: "Cedar" },
+  { image: asphaltRoof, title: "CertainTeed Landmark: Waynesville", category: "Shingle" },
+  { image: metalCabin, title: "Standing Seam on a Log Home", category: "Metal" },
+  { image: copperCabin, title: "Shingles with a Metal Porch Roof", category: "Shingle + Metal" },
 ];
 
 const faqs = [
   { q: "How long does a roof replacement take in WNC?", a: "Timing depends on roof size, pitch, access, material system, weather, and any decking repairs discovered during tear-off. Highlander provides the project schedule and updates for the specific scope before work begins." },
   { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO dimensional shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
   { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photos and measurements, meet with your adjuster on-site, and coordinate the entire repair or replacement process through your insurance claim." },
-  { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
+  { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide free estimates as a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
   { q: "Are you certified to install specific roofing brands?", a: "Highlander is a CertainTeed ShingleMaster PREMIER Credentialed Contractor and a VELUX Certified Installer. Product, system, and warranty eligibility are confirmed for the specific project before installation." },
-  { q: "Do you offer warranties on your roofing work?", a: "Warranty coverage depends on the manufacturer, products, roof assembly, and written scope. Highlander reviews the coverage that applies to your project before installation and provides the applicable documentation." },
+  { q: "Do you offer warranties on your roofing work?", a: "Warranty coverage, for materials and for workmanship, depends on the manufacturer, products, roof assembly, and written scope. Highlander reviews the coverage that applies to your project before installation and provides the applicable documentation." },
   { q: "Can I finance a new roof?", a: "Ask the Highlander team about the financing options currently available for your project. Availability, provider terms, and eligibility are confirmed before you make a commitment." },
-  { q: "How do I know if I need a repair or full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. We never recommend a replacement when a repair will solve the problem — and we'll document our reasoning so you can decide with confidence." },
+  { q: "How do I know if I need a repair or full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. We never recommend a replacement when a repair will extend the life of your roof — and we'll document our reasoning so you can decide with confidence." },
 ];
 
 const trustSignals = [
@@ -234,7 +235,7 @@ const RoofingDivision = () => {
               </motion.div>
 
               <h1 className="order-1 md:order-none mb-4 md:mb-8 text-heading md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight">
-                <span className="sr-only">Roofing Built for Western NC Weather.</span>
+                <span className="sr-only">Roofing Contractor for Western NC Weather.</span>
                 <span aria-hidden="true" className="block">
                   <span className="block overflow-hidden mb-2">
                     <motion.span
@@ -243,7 +244,7 @@ const RoofingDivision = () => {
                       animate={{ y: 0 }}
                       transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      Roofing Built for
+                      Roofing Contractor for
                     </motion.span>
                   </span>
                   <span className="block overflow-hidden">
@@ -266,7 +267,7 @@ const RoofingDivision = () => {
                 className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
                 <span className="md:hidden">We inspect, spec the right system for your elevation, and put scope and price in writing first.</span>
-                <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed credentialed and licensed as a North Carolina General Contractor.</span>
+                <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We evaluate your roof's condition, spec the best roofing system for your elevation, shingle or standing seam metal, and put the scope and price in writing before you sign a contract — CertainTeed credentialed, fully insured, and licensed as an NC General Contractor.</span>
               </motion.p>
 
               <motion.div
@@ -299,7 +300,7 @@ const RoofingDivision = () => {
 
         <AnswerBlock
           question="What roofing services does Highlander provide in Western North Carolina?"
-          answer="Highlander Building Services, Inc. handles roof repair, full roof replacement, metal roofing, synthetic slate and shake, skylights, gutters, and storm damage assessment across Western North Carolina. Work is supported from the Franklin and Sylva showrooms, with the project scope documented before installation."
+          answer="Highlander Building Services, Inc. is a residential and commercial roofing contractor handling roofing inspections, roof repair services, full roof replacement, metal roof installation, synthetic slate and shake, skylights, gutters, and storm damage assessment across Western NC. Work is supported from the Franklin and Sylva showrooms, with the project scope documented before installation."
           points={[
             "Repair, replacement, metal, and specialty roofing",
             "Storm damage inspections after mountain weather",
@@ -342,11 +343,11 @@ const RoofingDivision = () => {
           >
             <span className="eyebrow mb-3 block">Roofing Services</span>
             <h2 className="section-heading mb-4">
-              A Complete Roofing<br className="hidden md:block" /> Service Ecosystem.
+              Residential and Commercial Roofing{" "}<br className="hidden md:block" /> From One Contractor.
             </h2>
             <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-              From your first phone call to your warranty package delivery — every roofing
-              need is handled under one roof, with one standard.
+              From your first phone call to your warranty package delivery — dependable roofing
+              solutions for every need, handled under one roof, with one standard.
             </p>
           </motion.div>
 
@@ -471,7 +472,7 @@ const RoofingDivision = () => {
           >
             <span className="eyebrow mb-3 block">Roofing FAQs</span>
             <h2 className="section-heading mb-4">
-              Common Questions<br className="hidden md:block" /> About Roofing in WNC.
+              Common Questions{" "}<br className="hidden md:block" /> for Your Western NC Roofing Contractor.
             </h2>
           </motion.div>
 
@@ -517,7 +518,7 @@ const RoofingDivision = () => {
             <span className="eyebrow mb-3 block">Service Area</span>
             <h2 className="section-heading mb-4">Roofing across Western North Carolina.</h2>
             <p className="text-muted-foreground font-body leading-relaxed">
-              Crews are based in Franklin and Sylva, and we roof homes across {wncCounties.length} counties in the Western NC mountains. Pick your town for local conditions, drive times, and how we schedule work there.
+              Crews are based in Franklin and Sylva, southwest of Asheville, and we roof homes across {wncCounties.length} counties in the Blue Ridge mountains of Western NC. Unlike roofing companies that travel in from outside the area, we work where we live. Pick your town for local conditions, drive times, and how we schedule work there.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -625,6 +626,8 @@ const RoofingDivision = () => {
           links={[
             { label: "Roof Replacement Cost in Western NC (2026)", href: "/roofing-cost-western-nc", description: "Material tiers, repair bands and what moves the price" },
             { label: "Metal Roofing Cost in Western NC (2026)", href: "/roofing/metal/cost", description: "Price ranges per square for each metal system" },
+            { label: "Seamless Gutters & Gutter Guards", href: "/roofing/gutters", description: "Sized for mountain rainfall, installed with the roof" },
+            { label: "Skylights & VELUX Installation", href: "/roofing/skylights", description: "Daylight and ventilation, flashed as part of the roof" },
             { label: "Roofers in Franklin, NC", href: "/service-areas/franklin-nc", description: "Our home market in Macon County" },
             { label: "Roofers in Highlands, NC", href: "/service-areas/highlands-nc", description: "Roofing built for 4,000 feet" },
             { label: "Roofers in Cashiers, NC", href: "/service-areas/cashiers-nc", description: "Roofs built for plateau rain" },

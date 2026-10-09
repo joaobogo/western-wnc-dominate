@@ -1,3 +1,4 @@
+import { FRANKLIN } from "./business";
 import { tier1FlatEntries, tier2FlatEntries, type FlatSlugEntry } from "./service-town-slugs";
 import {
   generatedServiceTownEntries,
@@ -21,6 +22,16 @@ export interface ServiceTownEntry {
   metaTitle: string;
   metaDescription: string;
   faqs: { q: string; a: string }[];
+  /** Optional page-specific copy overrides (defaults live in ServiceTownPage). */
+  copy?: {
+    quickQuestion?: string;
+    localContextHeading?: string;
+    faqHeading?: string;
+    relatedHeading?: string;
+    relatedIntro?: string;
+    climateNote?: string;
+    omitCoverageExtension?: boolean;
+  };
   /** Long-form supporting sections (generated coverage pages). */
   sections?: GeneratedSection[];
   /**
@@ -50,21 +61,30 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Franklin, NC",
     intro:
-      "Franklin is Highlander's home market and primary showroom location. Replacement projects are scoped from the actual roof condition, access, materials, and schedule rather than a generic local-response promise.",
+      `Franklin, NC ${FRANKLIN.postalCode} is Highlander's home market and primary showroom location. As a local roofing company offering residential and commercial roofing services, we scope replacement projects from the actual roof condition, access, roofing materials, and schedule rather than a generic local-response promise.`,
     localContext:
-      "Most Franklin roofs we replace are 20–30 year asphalt systems on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies and aging underlayment are the two most common reasons homes here need a full replacement rather than another patch.",
+      "Most Franklin roofs we replace are 20–30 year asphalt shingles on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies, leading to issues like premature granule loss, and aging underlayment are the two most common reasons homes here need a new roof rather than another patch. When you see curling shingles, missing shingles after storm activity, a sagging ridge, or widespread leaks, it is rare that the damage is limited to one plane. Flashing issues at chimneys and siding transitions, fallen tree limbs, and downspouts that have pulled loose get handled in the same project. Recommended options include dimensional asphalt shingles, the common choice for most valley homes, and standing seam metal where the lot takes wind, sheds snow, or design preferences call for it. The final number depends on roof size, pitch, home size, local labor rates, and the materials you choose.",
     whoItsFor:
-      "Long-time Franklin homeowners weighing repair-vs-replace, families preparing a home for sale, and buyers who just closed and want a clean baseline before they move in.",
+      "Long-time Franklin homeowners weighing repair or replacement — if a repair in Franklin is the better call, we will say so — families preparing a home for sale, buyers who just closed and want a clean baseline before they move in, and owners of commercial buildings with flat or low-slope commercial roofing needs. Among roofing contractors in Franklin, Highlander is the one that started here and still keeps its showroom here. Every project gets the same skilled roofing pros and the same workmanship standard. If you want to see reviews first, read real reviews on our Google Business Profile, then contact a roofer who answers the phone locally. The FAQ below covers timing, permits, and who shows up.",
     proofNote:
-      "Franklin is where Highlander began. Homeowners receive a written scope and a clear project contact so responsibility stays defined from estimate through closeout.",
+      "Franklin is where Highlander began. You get clear written estimates — scope, materials, and price defined — and one project contact, so responsibility stays defined from the first visit through closeout.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Building Services",
     metaDescription:
       "Full roof replacement in Franklin, NC from Highlander's home market. Licensed NC General Contractor with a free project estimate and a written scope.",
     faqs: [
-      { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
-      { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
-      { q: "Who will be responsible for my roof replacement?", a: "Highlander assigns a project lead and explains who will be on site before work starts, with one accountable point of contact through the final walkthrough." },
+      { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start. Urgent issues like an active leak, falling debris, or other unexpected events get a tarp first, with the full job scheduled behind it. For budget ranges before the visit, see our related cost guides for Western NC." },
+      { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it, and we always check the decking and ventilation during the inspection, since that is what the county inspector looks at." },
+      { q: "Who will be responsible for my roof replacement?", a: "Highlander assigns a project lead and explains who will be on site before work starts, with one accountable point of contact through the final walkthrough. Our crews are Highlander employees — roofing professionals, not a rotating subcontractor — so the same roofing contractor you met at the estimate is responsible for the craftsmanship on your roof." },
     ],
+    copy: {
+      quickQuestion: "Which local contractor handles roof replacement in Franklin, NC?",
+      localContextHeading: "Why roof replacement matters in Franklin",
+      faqHeading: "Roof Replacement in Franklin: Frequently Asked Questions",
+      relatedHeading: "Related services we provide in Franklin",
+      relatedIntro: "Related Franklin services, the same work in nearby cities and towns across the region, and local guides for Franklin homeowners.",
+      climateNote: "Humid summers, challenging seasonal swings, and high-wind events channeled through the Little Tennessee River Valley — some of the toughest weather conditions a roof faces year-round, so ridge and edge details get high-wind protection as part of the work.",
+      omitCoverageExtension: true,
+    },
   }),
   E({
     townSlug: "franklin-nc",
@@ -72,21 +92,30 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Franklin, NC",
     intro:
-      "When something fails on a Franklin roof, you want a clear diagnosis without being routed through an out-of-area call center. Highlander is based here in Franklin, and we document the issue, explain the repair options, and provide the next step in writing.",
+      `When something fails on a Franklin roof, you want a clear diagnosis from a local roofing contractor, not an out-of-area call center. Highlander is based here in Franklin, NC ${FRANKLIN.postalCode}, and we inspect, document the issue, explain the repair options, and provide the next step in writing.`,
     localContext:
-      "The repairs we see most often in Franklin: lifted ridge caps from spring storms coming up the Little Tennessee valley, pipe-boot failures on 15+ year asphalt, and chimney flashing that was never properly stepped on older homes.",
+      "The repairs we see most often in Franklin: lifted or missing sections of ridge cap and missing shingles from spring storm activity coming up the Little Tennessee valley, pipe-boot failures and tears in aging underlayment on 15+ year asphalt shingles, flashing issues where the roof meets a chimney or siding that was never properly stepped on older homes, and punctures from fallen tree limbs. A sagging ridge line or widespread leaks usually mean the roof needs more than a patch, and we will say that honestly rather than sell you a fix that will not hold.",
     whoItsFor:
-      "Homeowners with an active leak, anyone preparing for a home inspection, and second-home owners who just opened the house for the season and found a stain on the ceiling.",
+      "Homeowners with an active leak, anyone preparing for a home inspection, second-home owners who just opened the house for the season and found a stain on the ceiling, and anyone weighing a repair against replacement on an aging roof. Home size and design preferences matter less for a repair than its age and condition. The same skilled roofing pros who handle our residential roof installation do this work, so you get one durable, long-lasting fix instead of a quick patch, and you can read real reviews on our Google Business Profile before you call.",
     proofNote:
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
     metaTitle: "Roof Repair in Franklin, NC: Leaks and Flashing | Highlander Building Services",
     metaDescription:
       "Roof repair in Franklin, NC with photo documentation, a written scope, and a clear recommendation on whether repair or replacement makes sense.",
     faqs: [
-      { q: "How fast can you get to my Franklin home for a leak?", a: "Call or submit the inspection form and tell us if water is actively entering. The team triages active leaks during staffed hours and will give you the earliest available visit." },
-      { q: "Do you provide written estimates for insurance?", a: "Highlander can provide contractor photos and a written scope for repair work when documentation is part of the assessment. Your carrier or adjuster makes claim and coverage decisions." },
-      { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives." },
+      { q: "How fast can you get to my Franklin home for a leak?", a: "Contact a roofer the same day: call or submit the roof inspection form and tell us if water is actively entering. The team triages urgent issues during staffed hours and will give you the earliest available visit, and a tarp or temporary patch can protect the interior until the permanent fix is scheduled." },
+      { q: "Do you provide written estimates for insurance?", a: "Highlander can provide contractor photos and a written scope for repair work when documentation is part of the assessment, which is what most insurance claims for wind damage, falling debris, or other unexpected events call for. Your carrier or adjuster makes claim and coverage decisions." },
+      { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives. Local labor rates, roof size, and the roofing material — metal, asphalt, or synthetic slate — set the number, and you get a clear written estimate after the visit rather than a guess over the phone, so you can decide whether an affordable repair or a replacement is the better use of your money." },
     ],
+    copy: {
+      quickQuestion: "Which local contractor handles roof repair in Franklin, NC?",
+      localContextHeading: "Why roof repair matters in Franklin",
+      faqHeading: "Roof Repair in Franklin: Frequently Asked Questions",
+      relatedHeading: "Related services we provide in Franklin",
+      relatedIntro: "Related Franklin services, the same work in nearby cities and towns across the region, and local guides for Franklin homeowners.",
+      climateNote: "Humid summers, challenging seasonal swings, and high-wind events channeled through the Little Tennessee River Valley — some of the toughest weather conditions a roof faces year-round, so ridge and edge details get high-wind protection as part of the work.",
+      omitCoverageExtension: true,
+    },
   }),
   E({
     townSlug: "franklin-nc",

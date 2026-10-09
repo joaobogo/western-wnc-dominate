@@ -16,17 +16,17 @@ const linkClass = "text-primary underline underline-offset-4 hover:no-underline"
 const richAnswers: Record<string, ReactNode> = {
   "What roofing services does Highlander provide in Western North Carolina?": (
     <>
-      Highlander provides a full range of <Link to="/roofing" className={linkClass}>roofing services across Western NC</Link> — including <Link to="/roofing/roof-repair" className={linkClass}>roof repair</Link>, <Link to="/roofing/roof-replacement" className={linkClass}>roof replacement</Link>, <Link to="/roofing/metal" className={linkClass}>metal roofing</Link>, <Link to="/roofing/gutters" className={linkClass}>gutters</Link>, <Link to="/roofing/skylights" className={linkClass}>skylights</Link>, and storm damage response. Every system is specified for mountain elevation, wind exposure, and moisture conditions.
+      Highlander provides a full range of <Link to="/roofing" className={linkClass}>roofing services across Western NC</Link> — including <Link to="/roofing/roof-repair" className={linkClass}>roof repair</Link>, <Link to="/roofing/roof-replacement" className={linkClass}>roof replacement</Link>, <Link to="/roofing/metal" className={linkClass}>metal roofing</Link>, <Link to="/roofing/gutters" className={linkClass}>gutters</Link>, <Link to="/roofing/skylights" className={linkClass}>skylights</Link>, and storm damage response. We also handle asphalt shingle, cedar and slate roofs, commercial roofing, and siding. Every system is specified for durability in severe weather: mountain elevation, wind exposure, and moisture conditions.
     </>
   ),
   "Does Highlander provide both roof repair and roof replacement?": (
     <>
-      Yes. Our crews handle everything from a single leak or failed pipe boot on a <Link to="/roofing/residential" className={linkClass}>residential roof</Link> to full tear-off and <Link to="/roofing/roof-replacement" className={linkClass}>roof replacement for mountain homes</Link>. We diagnose the actual problem first — if a targeted <Link to="/roofing/roof-repair" className={linkClass}>roof repair in Western North Carolina</Link> will protect the home, that's what we recommend rather than a replacement you don't need.
+      Yes. Our crews handle everything from a single leak or failed pipe boot on a <Link to="/roofing/residential" className={linkClass}>residential roof</Link> to full tear-off and <Link to="/roofing/roof-replacement" className={linkClass}>roof replacement for mountain homes</Link>. We diagnose the actual problem first — if a targeted <Link to="/roofing/roof-repair" className={linkClass}>roof repair in Western North Carolina</Link> will protect the home, that's what we recommend rather than a replacement you don't need. If you see curling shingles, missing shingles, flashing issues or one failed vent, repair is usually enough; widespread leaks, aging underlayment, a sag in the roofline or missing sections across several slopes point to replacement.
     </>
   ),
   "Does Highlander install metal roofing?": (
     <>
-      Yes. <Link to="/roofing/metal" className={linkClass}>Metal roofing options</Link> are among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading. For a deeper comparison, see our guide to <Link to="/blog/metal-vs-shingle-roof-western-nc" className={linkClass}>metal vs. shingle roofs in Western NC</Link>.
+      Yes. <Link to="/roofing/metal" className={linkClass}>Metal roofing options</Link> are among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading. Homeowners choose it for snow-shedding performance, high-wind protection, heat protection in summer, and long-lasting installations. For a deeper comparison, see our guide to <Link to="/blog/metal-vs-shingle-roof-western-nc" className={linkClass}>metal vs. shingle roofs in Western NC</Link>.
     </>
   ),
   "Does Highlander serve Franklin, Highlands, Cashiers, and Sylva?": (
@@ -36,17 +36,17 @@ const richAnswers: Record<string, ReactNode> = {
   ),
   "Can Highlander help with construction and design services?": (
     <>
-      Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. Explore our <Link to="/construction" className={linkClass}>construction and design services</Link>, including <Link to="/construction/design" className={linkClass}>in-house design</Link> (floor plans, elevations, material planning) and <Link to="/construction/outdoor-living" className={linkClass}>outdoor living projects</Link>.
+      Yes. Highlander is a licensed North Carolina General Contractor and BBB accredited, as well as a roofing company. Explore our <Link to="/construction" className={linkClass}>construction and design services</Link>, including <Link to="/construction/design" className={linkClass}>in-house design</Link> (floor plans, elevations, material planning) and <Link to="/construction/outdoor-living" className={linkClass}>outdoor living projects</Link>.
     </>
   ),
   "How do I request an inspection or quote?": (
     <>
-      Call {PHONE_DISPLAY}, <Link to="/request-inspection" className={linkClass}>request an inspection</Link>, or reach us through our <Link to="/request-inspection" className={linkClass}>contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
+      Call {PHONE_DISPLAY}, <Link to="/request-inspection" className={linkClass}>request an inspection</Link>, or reach us through our <Link to="/request-inspection" className={linkClass}>contact form</Link>. A Highlander advisor will use your contact information to follow up, gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free, and pricing reflects roof size, home size, materials, design preferences and local labor rates.
     </>
   ),
   "When is the best time for gutter maintenance in the mountains?": (
     <>
-      A two-stage approach works best for wooded WNC properties. Schedule a baseline inspection and cleaning before heavy leaf fall begins, then a follow-up after the main canopy has dropped. For a complete guide and printable schedule, see our <Link to="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners" className={linkClass}>Pre-Fall Gutter Maintenance Checklist for Mountain Homeowners</Link>.
+      A two-stage approach works best for wooded WNC properties. Schedule a baseline inspection and cleaning before heavy leaf fall begins, then a follow-up after the main canopy has dropped. Seasonal maintenance and inspections help catch small problems before winter. For a complete guide and printable schedule, see our <Link to="/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners" className={linkClass}>Pre-Fall Gutter Maintenance Checklist for Mountain Homeowners</Link>.
     </>
   ),
 };
@@ -64,8 +64,8 @@ const HomeFAQ = () => {
         >
           <span className="eyebrow mb-3 block">Common Questions</span>
           <h2 className="section-heading mb-4">
-            Answers Before You{" "}
-            <span className="text-[hsl(var(--gold-ink))]">Pick Up the Phone.</span>
+            Frequently Asked Questions Before You{" "}
+            <span className="text-[hsl(var(--gold-ink))]">Contact a Roofer.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body max-w-2xl mx-auto">
             Short answers to the questions homeowners ask most. For anything specific to your property, call us or send a message and we will answer plainly.

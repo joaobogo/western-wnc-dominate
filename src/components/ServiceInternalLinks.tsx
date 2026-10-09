@@ -23,6 +23,11 @@ const METAL_COST_LINK = {
   href: "/roofing/metal/cost",
   description: "Price ranges per square for each metal system.",
 };
+const GUTTERS_LINK = {
+  label: "Seamless Gutters & Gutter Guards",
+  href: "/roofing/gutters",
+  description: "Sized for mountain rainfall and installed with the roof.",
+};
 const RENOVATIONS_LINK = {
   label: "Home Renovations in Western NC",
   href: "/construction/renovations",
@@ -31,12 +36,12 @@ const RENOVATIONS_LINK = {
 
 /** Hand-picked links that the generic blog/town picker would not surface (cost and renovation pages were under-linked). */
 const EXTRA_LINKS: Record<string, RelatedLinkItem[]> = {
-  "roof-replacement": [ROOF_COST_LINK, METAL_COST_LINK],
-  "roof-repair": [ROOF_COST_LINK],
-  "storm-damage": [ROOF_COST_LINK],
-  "metal-roofing": [ROOF_COST_LINK],
+  "roof-replacement": [ROOF_COST_LINK, METAL_COST_LINK, GUTTERS_LINK],
+  "roof-repair": [ROOF_COST_LINK, GUTTERS_LINK],
+  "storm-damage": [ROOF_COST_LINK, GUTTERS_LINK],
+  "metal-roofing": [ROOF_COST_LINK, GUTTERS_LINK],
   gutters: [ROOF_COST_LINK],
-  "residential-roofing": [ROOF_COST_LINK],
+  "residential-roofing": [ROOF_COST_LINK, GUTTERS_LINK],
   additions: [RENOVATIONS_LINK],
   "outdoor-living": [RENOVATIONS_LINK],
   design: [RENOVATIONS_LINK],

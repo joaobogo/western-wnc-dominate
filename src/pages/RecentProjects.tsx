@@ -1,5 +1,6 @@
 import { Fragment, useMemo, useState } from "react";
 import GalleryImage from "@/components/media/GalleryImage";
+import WorkGallery from "@/components/gallery/WorkGallery";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, ImageOff } from "lucide-react";
 import EmptyState from "@/components/states/EmptyState";
@@ -13,20 +14,22 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 import { trackGalleryProjectOpen } from "@/lib/gtm";
 import { projectDetails } from "@/data/projects";
-import heroImg from "@/assets/gallery/asphalt-hero.webp";
+// Hero, tiles and project cards each use a different photo, so nothing repeats on this page.
+import heroImg from "@/assets/work/roof-charcoal-garage-mountains.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
-import metalImg from "@/assets/gallery/metal-005.webp";
-import cedarImg from "@/assets/gallery/cedar-005.webp";
+import guttersImg from "@/assets/gallery/gutters-002.jpg";
 import constructionImg from "@/assets/division-construction-v2.webp";
 import designImg from "@/assets/division-design.webp";
+
+const outdoorImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
   { icon: Wrench, title: "Roof Repairs", desc: "Leak repair, storm-damage assessment, and detail work scoped for the roof condition.", img: repairImg, href: "/roofing/roof-repair" },
   { icon: HardHat, title: "Construction", desc: "Additions, renovations, and full-scope building from a licensed general contractor.", img: constructionImg, href: "/construction" },
-  { icon: Droplets, title: "Gutters", desc: "Seamless gutters and exterior water management built for WNC weather patterns.", img: metalImg, href: "/roofing/gutters" },
-  { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: cedarImg, href: "/construction/outdoor-living" },
+  { icon: Droplets, title: "Gutters", desc: "Seamless gutters and exterior water management built for WNC weather patterns.", img: guttersImg, href: "/roofing/gutters" },
+  { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: outdoorImg, href: "/construction/outdoor-living" },
   { icon: Ruler, title: "Design Services", desc: "Pre-construction layout and planning support before the first board is cut.", img: designImg, href: "/construction/design" },
 ];
 
@@ -78,7 +81,7 @@ const RecentProjects = () => {
           <div className="absolute inset-0">
             <GalleryImage width={1600} height={900} loading="eager" decoding="async" sizes="100vw"
               src={heroImg}
-              alt="Dimensional shingle roof on a mountain home roofed by Highlander Building Services in Western North Carolina"
+              alt="Charcoal dimensional shingle roof with dormers by Highlander Building Services, overlooking the Western North Carolina mountains"
               fetchPriority="high"
               className="w-full h-full object-cover"
             />
@@ -288,6 +291,21 @@ const RecentProjects = () => {
           </div>
         </section>
 
+        {/* Section 1c: Work gallery — roofing and construction photography */}
+        <section className="py-16 md:py-24 bg-secondary/40 border-t border-border/60" aria-labelledby="work-gallery-heading">
+          <div className="container-tight">
+            <div className="max-w-3xl mb-10">
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work Gallery</p>
+              <h2 id="work-gallery-heading" className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Roofs and Builds Across the Mountains.
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Photos from Highlander roofing and construction jobs. Tap any photo to see it full size.
+              </p>
+            </div>
+            <WorkGallery excludeImages={[heroImg, ...completedProjects.map((p) => p.image)]} />
+          </div>
+        </section>
 
         {/* RealWork Labs — Recent Project Updates (vendor widget target: #rwl-output) */}
         <RealWorkWidget />

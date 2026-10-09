@@ -11,7 +11,18 @@ import { projectDetails } from "@/data/projects";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const projects = projectDetails.map((project, index) => ({
+/** Homepage order: the newest documented jobs lead; anything not listed follows in data order. */
+const FEATURED_ORDER = [
+  "brava-synthetic-shake-glenville",
+  "living-room-addition-franklin",
+  "standing-seam-metal-dark-bronze-highlands",
+];
+const rank = (slug: string) => {
+  const i = FEATURED_ORDER.indexOf(slug);
+  return i === -1 ? FEATURED_ORDER.length : i;
+};
+
+const projects = [...projectDetails].sort((a, b) => rank(a.slug) - rank(b.slug)).map((project) => ({
   slug: project.slug,
   title: project.title,
   location: project.location,
@@ -19,8 +30,10 @@ const projects = projectDetails.map((project, index) => ({
   category: project.type,
   type: project.category,
   outcome: project.highlight,
-  image: project.heroImage,
-  size: index === 0 ? ("hero" as const) : ("standard" as const),
+  image: project.cardImage ?? project.heroImage,
+  imagePosition: project.cardImage ? undefined : project.heroPosition,
+  // Carousel cards share one size; the old 2×2 "hero" tile belonged to a grid layout.
+  size: "standard" as "hero" | "standard",
 }));
 
 const projectTypes = Array.from(new Set(projects.map((project) => project.type)));
@@ -46,7 +59,7 @@ const ProjectCard = ({ project, index }: { project: (typeof projects)[number]; i
       }`}
     >
       <Link to={`/projects/${project.slug}`} className="block relative h-full">
-        <div className={`relative overflow-hidden bg-muted ${isHero ? "aspect-project md:aspect-hero" : "aspect-project"}`}>
+        <div className={`relative overflow-hidden bg-muted aspect-project`}>
           <GalleryImage
             width={1200}
             height={900}
@@ -54,6 +67,7 @@ const ProjectCard = ({ project, index }: { project: (typeof projects)[number]; i
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt={`${project.title} — ${project.category} project by Highlander Building Services in ${project.location}`}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] will-change-transform"
+            style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
           />
 
           <div aria-hidden="true" className="absolute inset-0 bg-scrim-bottom opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
@@ -108,15 +122,23 @@ const ProjectCard = ({ project, index }: { project: (typeof projects)[number]; i
   );
 };
 
-export const FeaturedProjects = ({ location }: { location?: string }) => {
+export const FeaturedProjects = ({
+  location,
+  excludeImages = [],
+}: {
+  location?: string;
+  /** Photos already shown elsewhere on the page; cards using them are skipped so no photo repeats. */
+  excludeImages?: string[];
+}) => {
   const [activeFilter, setActiveFilter] = useState("all");
   const matchesLocation = (loc: string) =>
     !!location && (loc.includes(location) || loc.includes(location.split(",")[0]));
 
+  const available = projects.filter((project) => !excludeImages.includes(project.image));
   const byFilter =
     activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.type === activeFilter);
+      ? available
+      : available.filter((project) => project.type === activeFilter);
 
   const displayProjects = location
     ? [...byFilter].sort(

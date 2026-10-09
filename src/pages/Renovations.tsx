@@ -22,6 +22,8 @@ import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
+import WorkGallery from "@/components/gallery/WorkGallery";
+
 const heroImg = "/media/d35d81a4-construction-project-highlands.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
@@ -33,32 +35,32 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
 const renovationGoals = [
-  { icon: Gauge, title: "Improve How It Functions", detail: "Kitchens that don't work for how you cook. Bathrooms that fight you every morning. Layouts that waste space. Renovation starts with fixing what doesn't serve you anymore." },
-  { icon: Layers, title: "Update What's Worn", detail: "Outdated finishes, failing fixtures, and materials past their lifespan. Some renovations aren't about style — they're about replacing components that are no longer performing." },
-  { icon: ThermometerSun, title: "Address Hidden Problems", detail: "Water damage behind tile, insufficient insulation, outdated wiring, failing subfloors. Often the most important renovation work is what you can't see until demo day." },
+  { icon: Gauge, title: "Improve How It Functions", detail: "Kitchens that don't work for how you cook. Bathrooms that fight you every morning. Layouts that waste space. The first improvement is fixing what doesn't serve you anymore." },
+  { icon: Layers, title: "Update What's Worn", detail: "Outdated finishes, failing fixtures, and materials past their lifespan. Some projects aren't about style — they're about replacing components that are no longer performing." },
+  { icon: ThermometerSun, title: "Address Hidden Problems", detail: "Water damage behind tile, insufficient insulation, outdated wiring, failing subfloors. Often the most important work is what you can't see until demo day." },
   { icon: Star, title: "Protect Long-Term Value", detail: "A well-executed renovation increases your home's value, reduces maintenance costs, and extends the life of your largest asset. Done poorly, it does the opposite." },
 ];
 
 const renovationTypes = [
-  { icon: UtensilsCrossed, title: "Kitchen Remodels", detail: "Complete kitchen transformations — layout reconfiguration, cabinetry, countertops, plumbing, electrical, and finish work. Designed for how you actually cook and live, not just how it photographs." },
-  { icon: Bath, title: "Bathroom Renovations", detail: "Master baths, guest baths, and powder rooms — tile work, vanities, plumbing relocation, ventilation upgrades, and waterproofing that prevents the hidden moisture damage we see constantly in WNC homes." },
-  { icon: Sofa, title: "Living Space Transformations", detail: "Open-concept conversions, room reconfigurations, built-in cabinetry, and living area upgrades that change how your home flows and functions without adding square footage." },
-  { icon: DoorOpen, title: "Basement Finishing", detail: "Converting unfinished basements into functional living space — framing, insulation, moisture management, electrical, plumbing, and finish work. Critical in WNC where basement moisture is a constant consideration." },
-  { icon: Wrench, title: "Structural Modifications", detail: "Load-bearing wall removal, floor leveling, foundation repairs, and structural reinforcement. We involve a structural engineer on every modification that touches the home's skeleton." },
-  { icon: Paintbrush, title: "Whole-Home Renovations", detail: "Coordinated multi-room or full-home renovation projects managed as a single scope — ensuring trades don't conflict, timelines stay integrated, and finishes are consistent throughout." },
+  { icon: UtensilsCrossed, title: "Kitchen Remodels", detail: "Complete kitchen transformations — a new layout, cabinetry, countertops, plumbing, electrical, and finish work. Designed for functionality — how you actually cook and live — not just how it photographs." },
+  { icon: Bath, title: "Bathroom Renovations", detail: "Master bath retreats, guest baths, and powder rooms — tile work, vanities, plumbing relocation, ventilation upgrades, the small amenities that make it pleasant to use, and waterproofing that prevents the hidden moisture damage we see constantly in WNC homes." },
+  { icon: Sofa, title: "Living Space Transformations", detail: "Open-concept living room conversions, room reconfigurations, new door openings, built-in cabinetry, and interior upgrades that change how your home flows and functions without adding square footage." },
+  { icon: DoorOpen, title: "Basement Finishing", detail: "Converting unfinished basements into functional indoor living space — framing, insulation, moisture management, electrical, plumbing, ceilings, and finish work. Critical in WNC where basement moisture is a constant consideration." },
+  { icon: Wrench, title: "Structural Modifications & Repairs", detail: "Load-bearing wall removal, floor leveling, foundation repairs, and structural reinforcement. We bring in a structural engineer as the specialist on every modification that touches the home's skeleton." },
+  { icon: Paintbrush, title: "Whole-Home Renovations", detail: "Coordinated multi-room or full-home projects, up to a full gut and rebuild, managed as a single scope — ensuring trades don't conflict, timelines stay integrated, and finishes are consistent throughout." },
 ];
 
 const finishQuality = [
-  { title: "Tile & Stone", detail: "Precise layout planning, consistent grout lines, proper waterproofing layers, and substrate preparation. Tile work that looks right in year one and stays right in year ten." },
-  { title: "Cabinetry & Millwork", detail: "Plumb, level, and aligned — with consistent reveals, soft-close hardware, and finish carpentry that holds up to daily use. We don't accept gaps, misalignment, or shortcuts." },
-  { title: "Material Transitions", detail: "Where flooring changes, where trim meets tile, where old wall meets new — these transition points define whether a renovation looks professional or improvised." },
+  { title: "Tile & Stone", detail: "Precise layout planning, consistent grout lines, proper waterproofing layers, and substrate preparation. Tile work that looks flawless in year one and stays right in year ten." },
+  { title: "Cabinetry & Millwork", detail: "Plumb, level, and aligned — with consistent reveals, soft-close hardware, and finish carpentry built to the standard of good furniture. We don't accept gaps, misalignment, or shortcuts." },
+  { title: "Material Transitions", detail: "Where new oak hardwood meets existing flooring, where trim meets tile, where old wall meets new — these transition points define whether the work looks professional or improvised." },
   { title: "Paint & Surface Prep", detail: "Proper prep, proper primer, proper technique. Smooth walls, clean edges, and finish coats that last. Paint quality is directly proportional to preparation quality." },
 ];
 
 const whyHighlander = [
-  { icon: ClipboardCheck, title: "Same Planning Discipline", detail: "We scope renovation work with the same detail and documentation we bring to roofing — written proposals, material specifications, defined timelines, and no vague allowances." },
-  { icon: Eye, title: "Same Quality Standards", detail: "Our renovation crews are held to the same quality checkpoints, material handling standards, and supervision protocols as our roofing and construction teams." },
-  { icon: Users, title: "Same In-House Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle renovation work." },
+  { icon: ClipboardCheck, title: "Same Planning Discipline", detail: "We scope this work with the same detail and documentation we bring to roofing — written proposals, material specifications, defined timelines, and no vague allowances." },
+  { icon: Eye, title: "Same Quality Standards", detail: "Our crews are held to the same quality checkpoints, material handling standards, and supervision protocols as our roofing and construction teams." },
+  { icon: Users, title: "Same In-House Craftsmen", detail: "The same trained, employed crews who build our additions and install our roofs handle it." },
   { icon: Ruler, title: "Same Attention to Detail", detail: "Trim reveals, caulk lines, material transitions, and tile work matter. We treat visible details as quality indicators — because you'll notice them every day." },
   { icon: FileCheck, title: "Documented Everything", detail: "Written scope, transparent cost groupings, specified materials, confirmed timeline. You receive a complete proposal — not an estimate with vague allowances and vague 'to be determined' items." },
   { icon: Mountain, title: "WNC Material Knowledge", detail: "Mountain humidity, temperature swings, and elevation affect material performance. We specify products rated for WNC conditions — not what's cheapest at the supply house." },
@@ -66,28 +68,27 @@ const whyHighlander = [
 
 const processSteps = [
   { number: "01", icon: Eye, title: "On-Site Assessment", description: "We walk your home, discuss your goals, and identify structural, mechanical, and aesthetic considerations that will shape the scope." },
-  { number: "02", icon: PenTool, title: "Design & Scope Development", description: "Detailed scope of work with material selections, layout options, and a fixed price. You see exactly what you're getting before work begins." },
+  { number: "02", icon: PenTool, title: "Design, Scope & Firm Pricing", description: "Detailed scope of work with material selections, layout options, and a fixed price. You see exactly what you're getting before work begins." },
   { number: "03", icon: ClipboardCheck, title: "Permitting & Preparation", description: "We handle all permitting, trade coordination, and material procurement so you're not managing logistics." },
-  { number: "04", icon: CalendarCheck, title: "Material Sourcing & Scheduling", description: "Materials ordered, delivery coordinated, and your project locked into the production calendar with a defined start date." },
-  { number: "05", icon: Hammer, title: "Execution", description: "Professional renovation with daily quality checks, clean work zones, dust barriers, and proactive communication throughout." },
-  { number: "06", icon: Sparkles, title: "Walk-Through & Completion", description: "Final review, touch-ups, cleanup, and documentation. Your home, refined." },
+  { number: "04", icon: CalendarCheck, title: "Material Sourcing & Scheduling", description: "Materials ordered from vetted vendors, delivery coordinated, and your project locked into the production calendar with a defined start date." },
+  { number: "05", icon: Hammer, title: "Execution & Installation", description: "Pros on site every day, with daily quality checks, clean work zones, dust barriers, and proactive communication throughout." },
+  { number: "06", icon: Sparkles, title: "Walk-Through & Completion", description: "Final review, touch-ups, cleanup, and documentation. Your home, beautifully refined." },
 ];
 
-const galleryImages = [
-  { src: "/media/d35d81a4-construction-project-highlands.webp", alt: "Mountain-home construction work featured by Highlander Building Services", label: "Construction Work by Highlander", location: "Western North Carolina" },
-  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
-  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Construction", location: "Western North Carolina" },
-];
+// Documented jobs only: Sylva deck rebuild (26-00436), Cashiers trellis-to-
+// covered-patio conversion (26-00424), Franklin addition (26-00035) and the
+// Cullowhee laundry room addition (2504059).
+const galleryIds = ["deck-doors", "patio-wide", "addition-room", "cullowhee-roofline"];
 
 const faqs = [
-  { q: "What types of renovations does Highlander handle?", a: "We handle kitchen remodels, bathroom renovations, basement finishing, open-concept conversions, structural modifications, and whole-home renovation projects. We focus on work that involves structural, plumbing, or electrical systems — not cosmetic painting or flooring-only projects." },
+  { q: "What types of renovations does Highlander handle?", a: "We handle kitchen remodels, bathroom remodels, basement finishing, open-concept conversions, structural modifications, and whole-home projects. We focus on work that involves structural, plumbing, or electrical systems — not cosmetic painting or flooring-only projects." },
   { q: "How long does a typical kitchen renovation take?", a: "A full kitchen remodel typically takes 6–10 weeks depending on scope. Layout changes, plumbing relocation, and custom cabinetry add time. We provide a specific timeline during the proposal phase and update you weekly on progress." },
-  { q: "Can we live in our home during a renovation?", a: "In most cases, yes — with some inconvenience. Kitchen renovations are the most disruptive. We'll discuss staging, temporary solutions, and phasing options during planning to minimize daily-life impact." },
+  { q: "Can we live in our home during a renovation?", a: "In most cases, yes — with some inconvenience. Kitchens are the most disruptive. We'll discuss staging, temporary solutions, and phasing options during planning, and share practical tips for living through it, to minimize daily-life impact." },
   { q: "How do you handle discovering hidden problems during demolition?", a: "It's common — especially in older WNC homes. When we find hidden water damage, outdated wiring, or structural issues behind walls, we stop, document, discuss scope and cost with you, and proceed only after approval. No surprise charges." },
   { q: "Do you handle design or just construction?", a: "We manage the construction scope, including layout and material recommendations. For complex design work, we collaborate with local project planners and designers and manage the construction coordination so you don't have to." },
   { q: "What's included in a renovation proposal?", a: "A written scope with transparent cost groupings, material specifications, timeline, and payment schedule. Every element is defined before work begins — no vague allowances or vague 'to be determined' items." },
   { q: "How do you protect the rest of our home during renovation?", a: "Dust barriers, floor protection, dedicated entry/exit routes for crews, and daily cleanup are standard. We treat the non-renovation areas of your home with the same care we'd want in our own." },
-  { q: "Do renovations in older WNC homes require special considerations?", a: "Yes. Many mountain homes built before 2000 have unique framing methods, non-standard electrical, plaster instead of drywall, and moisture issues specific to elevation and terrain. We assess these factors before scoping work." },
+  { q: "Do renovations in older WNC homes require special considerations?", a: "Yes. Renovation in North Carolina's mountains has its own rules. Many homes built before 2000 have unique framing methods, non-standard electrical, plaster instead of drywall, and moisture issues specific to elevation and terrain. We assess these factors before scoping work." },
 ];
 
 /* ═══════════════════════════════════════════ PAGE ═══════════════════════════════════════════ */
@@ -137,7 +138,7 @@ const Renovations = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Home Renovations in Western North Carolina
+                  Home Renovations in Western NC for Mountain Homes and Cabins
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
@@ -185,8 +186,8 @@ const Renovations = () => {
         quickAnswer={
           <>
             <AnswerBlock
-          question="What does a home renovation include?"
-          answer="A renovation reworks existing space — kitchens, baths, living areas, or whole-home updates — without necessarily expanding the footprint. Scope can range from finishes to structural changes, mechanical updates, and improved insulation or daylighting. Highlander renovates homes and cabins throughout Western North Carolina."
+          question="What does a home renovation in Western NC include?"
+          answer="A renovation reworks existing interior space — kitchens, baths, living areas, or whole-home updates — without necessarily expanding the footprint. Scope can range from finishes to structural changes, mechanical updates, and improved insulation, comfort, or daylighting. Highlander renovates homes and cabins throughout Western North Carolina."
           points={["Kitchen, bath, and whole-home scopes", "Structural and mechanical changes where needed", "Single team managing the full schedule"]}
         />
 
@@ -196,10 +197,6 @@ const Renovations = () => {
         whatWeDo={
           <>
             <section className="py-20 md:py-32 bg-background relative overflow-hidden">
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
-            <img width={1600} height={1067} loading="lazy" decoding="async" src="/media/wnc-construction-framing.webp" alt="Interior detail" className="w-full h-full object-cover" />
-          </div>
-
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <div className="flex items-center justify-center gap-2 mb-8">
@@ -208,10 +205,10 @@ const Renovations = () => {
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
               </div>
               <p className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
-                Renovation isn't about tearing things apart. It's the discipline of improving what exists while preserving what works, structure, character, and the investment you've already made.
+                Most of the homes we work on were built for a different family and a different decade. Our job is to improve what exists while preserving what works — structure, character, and the investment you've already made.
               </p>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander approaches renovation the way we approach every project: with documented scope, defined materials, honest timelines, and the same crews and project managers who build our additions and install our roofs. The result is renovation work that feels intentional — not improvised.
+                Highlander approaches renovation the way we approach every project: with documented scope, defined materials, honest timelines, and the same crews and project managers — one builder, not a chain of subcontractors — who build our additions and install our roofs. The result is remodeling work that feels intentional — not improvised.
               </p>
               <div className="flex items-center justify-center gap-2 mt-10">
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
@@ -227,7 +224,7 @@ const Renovations = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Renovate</span>
               <h2 className="section-heading mb-4">The Real Reasons<br className="hidden md:block" /> Homeowners Renovate.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">Not every renovation is about aesthetics. Most start with a functional problem that's gone unaddressed too long.</p>
+              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">Not every project is about aesthetics. Most start with a functional problem that's gone unaddressed too long.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -279,7 +276,7 @@ const Renovations = () => {
                   The Details You Live With<br className="hidden md:block" /> Every Day.
                 </h2>
                 <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
-                  Renovation quality isn't about the big reveal — it's about what you notice six months later. Grout lines. Trim joints. How a drawer closes. We build for the long view.
+                  Finish quality isn't about the big reveal — it's about what you notice six months later. Grout lines. Trim joints. How a drawer closes. We build for the long view.
                 </p>
               </motion.div>
 
@@ -357,7 +354,7 @@ const Renovations = () => {
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">Renovation With<br className="hidden md:block" /> Roofing-Grade Standards.</h2>
               <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
-                Our heritage in high-elevation roofing built our construction discipline. The same documented process, the same in-house crews, the same material standards — now applied to every renovation we accept.
+                Our heritage in high-elevation roofing built our construction discipline. The same documented process, the same in-house crews, the same material standards — now applied to every project we accept.
               </p>
             </motion.div>
 
@@ -378,24 +375,12 @@ const Renovations = () => {
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Construction Work</span>
-              <h2 className="section-heading mb-3">Construction Experience Behind Renovation Work.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">These images are construction work already featured by Highlander. Renovation-specific case studies will appear here only when the scope and location are documented.</p>
+              <span className="eyebrow mb-3 block">Recent Work</span>
+              <h2 className="section-heading mb-3">Rebuilds, Conversions and Additions.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A deck and railing rebuild in Sylva, an open trellis turned covered patio in Cashiers, and additions in Franklin and Cullowhee. Tap any photo to see it full size.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {galleryImages.map((img, i) => (
-                <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/85 text-xs font-body">{img.location}</p>
-                  </div>
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
-                </motion.div>
-              ))}
-            </div>
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
               <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -421,7 +406,7 @@ const Renovations = () => {
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Renovation FAQs</span>
-              <h2 className="section-heading mb-4">Common Questions.</h2>
+              <h2 className="section-heading mb-4">Common Questions About Remodeling a Mountain House.</h2>
             </motion.div>
 
             <Accordion type="single" collapsible className="space-y-3">
@@ -452,7 +437,7 @@ const Renovations = () => {
             {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo
           heading="Serious Renovations Start With a Design Phase."
-          subheading="Whole-home and multi-room renovations need a coordinated plan, not decisions made on the fly. Our paid Design & Consultation Agreement scopes, draws, and documents the renovation before construction pricing is finalized."
+          subheading="Whole-home and multi-room remodels need a coordinated plan, not decisions made on the fly. Our paid Design & Consultation Agreement scopes, draws, and documents the renovation before construction pricing is finalized."
           variant="band"
           className="mt-4"
         />

@@ -20,6 +20,7 @@ export function getProjectServiceTags(type: string, category: "roofing" | "const
     return tags;
   }
 
+  if (t.includes("synthetic") || t.includes("brava")) tags.push({ label: "Brava Synthetic Roofing", path: "/roofing/brava-synthetic" });
   if (t.includes("metal")) tags.push({ label: "Metal Roofing", path: "/roofing/metal" });
   if (t.includes("asphalt") || t.includes("shingle")) tags.push({ label: "Shingle Roofing", path: "/roofing/residential" });
   if (t.includes("cedar")) tags.push({ label: "Cedar & Specialty Roofing", path: "/roofing/residential" });

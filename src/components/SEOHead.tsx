@@ -51,6 +51,8 @@ const BRAND_SUFFIX = BUSINESS.brandName;
 const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
 const DEFAULT_IMAGE = `${BASE_URL}${OG_FALLBACK}`;
+/** Structured-data images must be absolute URLs; site paths like /media/x.jpg get the domain. */
+const absoluteImage = (src?: string) => (!src ? DEFAULT_IMAGE : src.startsWith("/") ? `${BASE_URL}${src}` : src);
 /** Bing Webmaster Tools verification token — env-driven, optional. */
 const BING_VERIFICATION = (import.meta.env.VITE_BING_SITE_VERIFICATION as string | undefined)?.trim();
 const DEFAULT_IMAGE_WIDTH = "1200";
@@ -671,7 +673,7 @@ export const articleSchema = (article: { title: string; description: string; url
   mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}${article.url}` },
   datePublished: article.datePublished,
   dateModified: article.dateModified || article.datePublished,
-  image: article.image || DEFAULT_IMAGE,
+  image: absoluteImage(article.image),
   author: authorNode(article.author),
   publisher: { "@id": `${BASE_URL}/#organization` },
 });
@@ -767,7 +769,7 @@ export const productSchema = (p: ProductSchemaInput) => ({
   name: p.name,
   description: p.description,
   url: `${BASE_URL}${p.url}`,
-  image: p.image || DEFAULT_IMAGE,
+  image: absoluteImage(p.image),
   category: p.category || "Roofing Material",
   brand: { "@type": "Brand", name: p.brand || SITE_NAME },
 });

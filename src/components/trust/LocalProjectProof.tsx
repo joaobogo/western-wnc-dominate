@@ -69,6 +69,8 @@ interface LocalProjectProofProps {
    * line instead of work from other towns or stock imagery.
    */
   strictTown?: boolean;
+  /** Photos already on the page (e.g. the hero); projects that would repeat one are skipped. */
+  excludeImages?: string[];
 }
 
 /** Copy shown when a town has fewer real projects than the block can hold. */
@@ -81,8 +83,13 @@ const LocalProjectProof = ({
   limit = 2,
   className = "",
   strictTown = false,
+  excludeImages = [],
 }: LocalProjectProofProps) => {
-  const all = pickLocalProjects(town, category, strictTown ? 50 : limit);
+  const shows = (p: ProjectDetail) =>
+    p.beforeAfter ? [p.beforeAfter.before, p.beforeAfter.after] : [p.heroImage];
+  const all = pickLocalProjects(town, category, strictTown ? 50 : limit + excludeImages.length)
+    .filter(({ project }) => !shows(project).some((img) => excludeImages.includes(img)))
+    .slice(0, strictTown ? 50 : limit);
   const picks = strictTown ? all.filter((p) => p.proximity === `In ${town.name}`).slice(0, limit) : all;
   const short = strictTown && picks.length < limit;
   if (!picks.length && !short) return null;

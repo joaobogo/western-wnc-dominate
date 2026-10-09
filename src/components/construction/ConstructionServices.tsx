@@ -60,7 +60,7 @@ export const constructionCategories: ConstructionCategory[] = [
     icon: UtensilsCrossed,
     title: "Kitchen & Bath Remodels",
     slug: "/construction/renovations",
-    description: "Complete interior transformations — layout reconfiguration, cabinetry, tile work, and premium finishes for the most used rooms in your home.",
+    description: "Complete interior transformations — a kitchen remodel or bath update with layout reconfiguration, cabinetry, tile work, and premium finishes for the most used rooms in your home.",
     outcomes: [
       "Improved functionality and flow",
       "Modernized aesthetic and fixtures",

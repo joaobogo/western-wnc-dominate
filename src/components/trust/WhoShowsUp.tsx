@@ -12,6 +12,8 @@ interface WhoShowsUpProps {
   tone?: "light" | "dark";
   className?: string;
   showLink?: boolean;
+  /** Roof repair page wording. */
+  variant?: "repair";
 }
 
 /**
@@ -27,7 +29,9 @@ const WhoShowsUp = ({
   tone = "light",
   className = "",
   showLink = true,
+  variant,
 }: WhoShowsUpProps) => {
+  const isRepair = variant === "repair";
   const isDark = tone === "dark";
   const textMain = isDark ? "text-dark-section-foreground" : "text-foreground";
   const textMuted = isDark ? "text-dark-section-foreground" : "text-muted-foreground";
@@ -110,7 +114,7 @@ const WhoShowsUp = ({
               {town ? `Serving ${town}` : "Local People. Local Accountability."}
             </span>
             <h2 className={`section-heading mb-4 ${textMain}`}>
-              Who shows up at your property.
+              {isRepair ? "The roofing company that shows up at your property." : "Who shows up at your property."}
             </h2>
             <p className={`text-base md:text-lg leading-relaxed font-body mb-6 ${textMuted}`}>
               {town ? (
@@ -124,9 +128,10 @@ const WhoShowsUp = ({
               ) : (
                 <>
                   Highlander Building Services is owned and operated by{" "}
-                  <strong className={textMain}>Luke and Kristy Smith</strong>. Every project gets a
-                  single named point of contact from inspection through completion — backed by
-                  Western NC-based crews and a Franklin office that answers the phone.
+                  <strong className={textMain}>Luke and Kristy Smith</strong>.{" "}
+                  {isRepair
+                    ? "Every project, whether a home repair or commercial roofing services, gets a single named point of contact from inspection through completion — backed by local crews and a Franklin office that answers the phone."
+                    : "Every project gets a single named point of contact from inspection through completion — backed by Western NC-based crews and a Franklin office that answers the phone."}
                 </>
               )}
             </p>
@@ -139,7 +144,7 @@ const WhoShowsUp = ({
                     One named contact
                   </p>
                   <p className={`text-body-xs font-body leading-relaxed ${textMuted}`}>
-                    Same person from quote to final walkthrough.
+                    {isRepair ? "Same person from start to finish." : "Same person from quote to final walkthrough."}
                   </p>
                 </div>
               </div>
@@ -147,10 +152,10 @@ const WhoShowsUp = ({
                 <MapPin className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />
                 <div>
                   <p className={`text-body-xs font-heading font-bold ${textMain}`}>
-                    Western NC crews
+                    {isRepair ? "Local crews" : "Western NC crews"}
                   </p>
                   <p className={`text-body-xs font-body leading-relaxed ${textMuted}`}>
-                    Based in Franklin, not a traveling subcontractor network.
+                    {isRepair ? "Based in Franklin, southwest of Asheville, not a traveling subcontractor network." : "Based in Franklin, not a traveling subcontractor network."}
                   </p>
                 </div>
               </div>
