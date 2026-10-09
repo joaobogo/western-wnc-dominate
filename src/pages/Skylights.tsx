@@ -12,6 +12,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { towns } from "@/data/towns";
 import veluxLogo from "@/assets/logo-velux.png";
 import VeluxProof from "@/components/VeluxProof";
+import chimneySkylights from "@/assets/work/roof-chimney-flashing-skylights.webp";
+import chimneySkylightsSet from "@/assets/work/roof-chimney-flashing-skylights.webp?w=640;960;1280&format=webp&as=srcset";
+import bravaSkylights from "@/assets/gallery/brava-glenville-aerial.webp";
+import bravaSkylightsSet from "@/assets/gallery/brava-glenville-aerial.webp?w=640;960;1280&format=webp&as=srcset";
 import skylightsMobileHero from "@/assets/heroes/skylights-mobile.webp";
 import CTABlock from "@/components/CTABlock";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -153,7 +157,7 @@ const Skylights = () => {
         }
         whatsIncluded={
           <section className="section-padding bg-background">
-            <div className="container-tight space-y-6">
+            <div className="container-tight grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
               <div className="space-y-6">
                 <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider">
                   <Award className="w-4 h-4" aria-hidden="true" /> Manufacturer-Accredited Scope
@@ -170,6 +174,16 @@ const Skylights = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+                <figure className="m-0">
+                  <img src={chimneySkylights} srcSet={chimneySkylightsSet} sizes="(max-width: 1024px) 50vw, 560px" width={1600} height={1200} loading="lazy" decoding="async" alt="Four skylights and a stone chimney with new black metal flashing on a shingle roof with a mountain view" className="w-full aspect-[4/3] object-cover" />
+                  <figcaption className="mt-2 text-sm text-muted-foreground font-body">Skylights and new chimney flashing on a mountain-view shingle roof.</figcaption>
+                </figure>
+                <figure className="m-0">
+                  <img src={bravaSkylights} srcSet={bravaSkylightsSet} sizes="(max-width: 1024px) 50vw, 560px" width={1600} height={900} loading="lazy" decoding="async" alt="VELUX skylights set into a Brava synthetic shake roof on a lakeside home near Lake Glenville, North Carolina" className="w-full aspect-[4/3] lg:aspect-[16/9] object-cover" />
+                  <figcaption className="mt-2 text-sm text-muted-foreground font-body">VELUX skylights in a Brava synthetic shake roof, Lake Glenville.</figcaption>
+                </figure>
               </div>
             </div>
           </section>
