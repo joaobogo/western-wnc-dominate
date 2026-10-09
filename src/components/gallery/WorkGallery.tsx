@@ -32,9 +32,11 @@ interface WorkGalleryProps {
   limit?: number;
   /** Photos already shown elsewhere on the page — skipped so nothing repeats. */
   excludeImages?: string[];
+  /** "masonry" keeps each photo's shape; "grid" gives an even 4:3 grid for short teasers. */
+  layout?: "masonry" | "grid";
 }
 
-const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [] }: WorkGalleryProps) => {
+const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [], layout = "masonry" }: WorkGalleryProps) => {
   const [filter, setFilter] = useState<Filter>(initialFilter);
   const [open, setOpen] = useState<number | null>(null);
 
@@ -43,6 +45,8 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
     const list = filter === "all" ? interleave(pool) : pool.filter((ph) => ph.division === filter);
     return limit ? list.slice(0, limit) : list;
   }, [filter, limit, excludeImages]);
+
+  const grid = layout === "grid";
 
   const lightboxItems: LightboxProject[] = photos.map((ph) => ({
     title: ph.title,
@@ -73,10 +77,10 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
         </div>
       )}
 
-      {/* Masonry: every photo keeps its own shape, so nothing is awkwardly cropped. */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+      {/* Masonry keeps every photo's own shape; grid crops to an even 4:3 for short teasers. */}
+      <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" : "columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]"}>
         {photos.map((ph, i) => (
-          <figure key={ph.id} className="mb-4 break-inside-avoid">
+          <figure key={ph.id} className={grid ? "m-0" : "mb-4 break-inside-avoid"}>
             <button
               type="button"
               onClick={() => setOpen(i)}
@@ -91,8 +95,9 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
                 height={ph.height}
                 alt={ph.alt}
                 loading="lazy"
+                style={grid && ph.position ? { objectPosition: ph.position } : undefined}
                 decoding="async"
-                className="block w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className={`block w-full transition-transform ${grid ? "aspect-[4/3] object-cover" : "h-auto"} duration-700 ease-out group-hover:scale-[1.04]`}
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-90" />
               <span className="absolute top-3 left-3 bg-[hsl(var(--heritage-charcoal)/0.6)] backdrop-blur-sm px-2.5 py-1 text-caption font-body font-bold uppercase tracking-[0.15em] text-white">

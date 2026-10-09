@@ -19,10 +19,14 @@ import InspectionForm from "@/components/InspectionForm";
 import SectionDivider from "@/components/SectionDivider";
 // The homepage hero photo; the project carousel skips any card that would repeat it.
 import homeHeroPhoto from "@/assets/gallery/asphalt-hero.webp";
+// Shown elsewhere on the homepage (division card, Franklin project card), so the gallery skips them.
+import additionRoomPhoto from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+import additionExteriorPhoto from "@/assets/work/addition-franklin-exterior-windows.webp";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
    the hero, trust strip and shell. Each fallback reserves height to keep CLS at 0. */
 const FeaturedProjects = lazy(() => import("@/components/FeaturedProjects"));
+const WorkGallerySection = lazy(() => import("@/components/gallery/WorkGallerySection"));
 const ReviewsCarousel = lazy(() => import("@/components/reviews/ReviewsCarousel"));
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
 const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
@@ -108,6 +112,13 @@ const Index = () => {
         <Suspense fallback={<SectionFallback h={1800} />}>
           {/* 4. Project showcase (light) */}
           <FeaturedProjects excludeImages={[homeHeroPhoto]} />
+
+          {/* 4b. Work gallery teaser: roofing and construction photos */}
+          <WorkGallerySection
+            heading="Roofs and builds across the mountains."
+            body="Recent Highlander roofing and construction work. Switch between divisions or tap any photo to see it full size."
+            excludeImages={[homeHeroPhoto, additionRoomPhoto, additionExteriorPhoto]}
+          />
 
           {/* 5. Local proof band — dark tone, two attributable quotes */}
           <Section
