@@ -79,6 +79,7 @@ const ProjectDetailPage = () => {
               src={project.heroImage}
               alt={project.title}
               className="w-full h-full object-cover"
+              style={project.heroPosition ? { objectPosition: project.heroPosition } : undefined}
               initial={{ scale: 1.08 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.4, ease: HIGHLAND_EASE }}

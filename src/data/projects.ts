@@ -16,6 +16,8 @@ import bravaGlenvilleAerial from "@/assets/gallery/brava-glenville-aerial.webp";
 import bravaGlenvilleChimney from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import bravaGlenvilleBeforeRidge from "@/assets/gallery/brava-glenville-before-ridge.webp";
 import bravaGlenvilleBeforeHips from "@/assets/gallery/brava-glenville-before-hips.webp";
+import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+import additionFranklinWindows from "@/assets/gallery/addition-franklin-gable-windows.webp";
 
 export interface ProjectDetail {
   slug: string;
@@ -23,6 +25,8 @@ export interface ProjectDetail {
   type: string;
   category: "roofing" | "construction";
   heroImage: string;
+  /** CSS object-position for the wide project hero, so the crop lands on the subject. */
+  heroPosition?: string;
   location: string;
   county: string;
   elevation?: string;
@@ -209,6 +213,7 @@ export const projectDetails: ProjectDetail[] = [
     type: "Synthetic Shake",
     category: "roofing",
     heroImage: bravaGlenvilleAerial,
+    heroPosition: "50% 50%",
     location: "Lake Glenville, NC",
     county: "Jackson County",
     elevation: "3,494 ft",
@@ -253,6 +258,50 @@ export const projectDetails: ProjectDetail[] = [
     seo: {
       title: "Brava Synthetic Shake Re-Roof in Glenville, NC | Highlander",
       description: "80+ square wood shake tear-off and Brava synthetic shake re-roof with 10 VELUX skylights near Lake Glenville, NC. See the full project story.",
+    },
+  },
+  {
+    slug: "living-room-addition-franklin",
+    title: "Living Room Addition: Vaulted Gable & Stone Fireplace",
+    type: "Home Addition",
+    category: "construction",
+    heroImage: additionFranklinRoom,
+    heroPosition: "50% 78%",
+    location: "Franklin, NC",
+    county: "Macon County",
+    elevation: "2,119 ft",
+    scope: "Engineered living room addition with a vaulted gable, stone chimney and fireplace",
+    duration: "Late February – August 2026",
+    highlight: "Engineered LVL gable, stone fireplace and a wall of mountain-view windows",
+    summary: "Franklin homeowners already working with Highlander on their interior wanted more room to enjoy their mountain views. Highlander replaced an old deck area with a new living room addition: a block foundation, an engineered vaulted gable, a floor-to-ceiling stone fireplace, and a wall of windows topped with custom gable glass.",
+    challenge: "The addition had to tie into an existing roof built on engineered trusses, an existing deck and a second-floor balcony. A structural engineer reviewed the roof system on site, and the new gable was framed to the engineer's plans with LVL beams.",
+    scopeOfWork: [
+      "Demolition of the old deck area and debris haul-off",
+      "Permitted CMU block foundation finished in stucco, with crawl space vents and a custom access door",
+      "Floor, walls and gable roof framed to a structural engineer's plans with LVL beams",
+      "New stone chimney and a floor-to-ceiling stone fireplace with firewood storage and built-in shelving",
+      "New windows and exterior door, with custom glass panes in the gable above the windows",
+      "Cedar shake and lap siding, soffit, fascia, shingles, black gutters and ridge ventilation",
+      "Insulation, knockdown-texture drywall, stained tongue-and-groove ceiling and a wrapped LVL beam",
+      "Original deck tied into the addition and the second-floor balcony railing rebuilt",
+    ],
+    materials: [
+      { name: "Engineered LVL Beams", detail: "Sized by a structural engineer for the vaulted gable" },
+      { name: "Stone Chimney & Fireplace", detail: "Stone on the roof end and floor-to-ceiling inside" },
+      { name: "Tongue-and-Groove Ceiling", detail: "Stained wood with a stained, wrapped beam through the vault" },
+      { name: "Cedar Shake & Lap Siding", detail: "Exterior finish with black gutters and downspouts" },
+    ],
+    processHighlights: [
+      "A structural engineer met on site and confirmed the existing roof system before framing",
+      "Permits pulled, and the insulation inspection passed",
+      "A cricket was built at the chimney before roofing",
+      "Final walkthrough, cleanup and photo documentation at completion",
+    ],
+    result: "The new room opens under a stained wood vault, with a stone fireplace at one end and tall windows and gable glass framing the mountain view at the other. Outside, cedar shake and lap siding, black gutters and a tied-in deck make the addition read as part of the original home.",
+    galleryImages: [additionFranklinRoom, additionFranklinWindows],
+    seo: {
+      title: "Living Room Addition in Franklin, NC | Highlander",
+      description: "Engineered living room addition in Franklin, NC with a vaulted gable, stone fireplace and mountain-view windows. See the full project story.",
     },
   },
 ];

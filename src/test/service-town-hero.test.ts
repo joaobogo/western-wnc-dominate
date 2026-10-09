@@ -25,7 +25,7 @@ describe("service × town hero resolution", () => {
   });
 
   it("uses the town image (WebP twin) with a no-town-claim alt when no project matches", () => {
-    const hero = resolveServiceTownHero(town("otto-nc"), "construction", "Construction");
+    const hero = resolveServiceTownHero(town("hayesville-nc"), "construction", "Construction");
     expect(["town-image", "regional-fallback"]).toContain(hero.source);
     expect(hero.alt).toBe(REGIONAL_HERO_ALT);
     expect(hero.src).toMatch(/\.webp$/);
