@@ -27,6 +27,8 @@ export interface ProjectDetail {
   heroImage: string;
   /** CSS object-position for the wide project hero, so the crop lands on the subject. */
   heroPosition?: string;
+  /** Optional photo for cards and carousels when the hero is too wide to crop well. */
+  cardImage?: string;
   location: string;
   county: string;
   elevation?: string;
@@ -213,6 +215,7 @@ export const projectDetails: ProjectDetail[] = [
     type: "Synthetic Shake",
     category: "roofing",
     heroImage: bravaGlenvilleAerial,
+    cardImage: bravaGlenvilleChimney,
     heroPosition: "50% 50%",
     location: "Lake Glenville, NC",
     county: "Jackson County",
@@ -266,6 +269,7 @@ export const projectDetails: ProjectDetail[] = [
     type: "Home Addition",
     category: "construction",
     heroImage: additionFranklinRoom,
+    cardImage: additionFranklinWindows,
     heroPosition: "50% 78%",
     location: "Franklin, NC",
     county: "Macon County",
