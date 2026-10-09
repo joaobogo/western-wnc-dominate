@@ -12,6 +12,10 @@ import asphalt001 from "@/assets/gallery/asphalt-001.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.webp";
 import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
+import bravaGlenvilleAerial from "@/assets/gallery/brava-glenville-aerial.webp";
+import bravaGlenvilleChimney from "@/assets/gallery/brava-glenville-chimney-valley.webp";
+import bravaGlenvilleBeforeRidge from "@/assets/gallery/brava-glenville-before-ridge.webp";
+import bravaGlenvilleBeforeHips from "@/assets/gallery/brava-glenville-before-hips.webp";
 
 export interface ProjectDetail {
   slug: string;
@@ -197,6 +201,58 @@ export const projectDetails: ProjectDetail[] = [
     seo: {
       title: "Cedar Shake Roof — Highlands Estate | Highlander Building Services",
       description: "Premium cedar shake installation on a luxury Highlands estate. Hand-selected cedar, copper ridge accents, 14-day phased installation. See the full project story.",
+    },
+  },
+  {
+    slug: "brava-synthetic-shake-glenville",
+    title: "Brava Synthetic Shake: Lake Glenville Re-Roof",
+    type: "Synthetic Shake",
+    category: "roofing",
+    heroImage: bravaGlenvilleAerial,
+    location: "Lake Glenville, NC",
+    county: "Jackson County",
+    elevation: "3,494 ft",
+    scope: "80+ square wood shake tear-off and Brava synthetic shake re-roof",
+    duration: "About 2½ weeks",
+    highlight: "Brava synthetic cedar shake in New Cedar with 10 new VELUX skylights",
+    summary: "Longtime Highlander customers in Glenville's Stillpoint community wanted to keep the look of cedar shake without its upkeep. Working with Luke Smith, they replaced more than 80 squares of aging wood shake with Brava synthetic cedar shake in New Cedar, ten new VELUX skylights, and an upgraded ventilation system.",
+    challenge: "The original wood shake had aged out under the surrounding pines, which held needles and moisture against the roof. The home is large, with steep pitches, intricate valleys and a long carport run, and a 36–48 hour storm arrived in the middle of the tear-off.",
+    scopeOfWork: [
+      "Staged tear-off of the existing wood shake roof (80+ squares), dried in the same day",
+      "New 3/4\" OSB decking across the roof",
+      "Full ice and water shield coverage, topped with SolarHide Class A fire-rated underlayment",
+      "Brava synthetic cedar shake in New Cedar, with solid shakes in the high-visibility areas",
+      "Brown metal valleys and drip edge, with turned-back returns on the valley metal ends",
+      "Ten new VELUX skylights with handheld remote controls",
+      "About 80 feet of new ridge vent and ridge cap over added ridge decking",
+      "Unused satellite dish, pipe and boot removed; new roof-mounted range vent installed",
+    ],
+    materials: [
+      { name: "Brava Synthetic Cedar Shake", detail: "New Cedar — composite shake with the texture of real wood" },
+      { name: "SolarHide Underlayment", detail: "Class A fire-rated, over full ice and water shield" },
+      { name: "VELUX Skylights", detail: "Ten new units with remote operation" },
+      { name: "Brown Metal Valleys & Drip Edge", detail: "Turned-back returns at the valley metal ends" },
+    ],
+    processHighlights: [
+      "Each section was dried in the same day it was torn off, so the home was never left open",
+      "The roof was secured ahead of a two-day storm with extra underlayment fastening, sealed ridges, and ice and water shield tucked high under the chimney counter flashing",
+      "Extra decking was added at the ridges to give the ridge cap a solid fastening base",
+      "The site was cleaned throughout the job and again at completion",
+    ],
+    result: "The home now carries the warm look of cedar shake on a synthetic system with new decking, full ice and water protection, a Class A fire-rated underlayment, and ten new VELUX skylights. To keep the roof clear of pine needles, the homeowners signed up for Highlander's spring and fall roof and gutter maintenance visits.",
+    galleryImages: [bravaGlenvilleAerial, bravaGlenvilleChimney, bravaGlenvilleBeforeRidge, bravaGlenvilleBeforeHips],
+    beforeAfter: {
+      before: bravaGlenvilleBeforeRidge,
+      after: bravaGlenvilleChimney,
+      beforeLabel: "Aging Wood Shake Under Pine Needles",
+      afterLabel: "Brava Synthetic Shake: New Cedar",
+      whatChanged: "More than 80 squares of worn wood shake came off in stages, and the roof was rebuilt with new 3/4\" decking, full ice and water shield, Class A fire-rated underlayment, Brava synthetic shake, brown metal valleys and drip edge, new ridge ventilation and ten VELUX skylights.",
+      whyItMattered: "The old shake was holding pine needles and moisture against the roof, and the homeowners wanted the look of cedar without the maintenance real wood needs under heavy pine cover.",
+      highlanderDifference: "Every section was dried in the day it was opened, the roof was secured ahead of a two-day storm, and the steep, complex sections were finished with solid shakes where they are most visible.",
+    },
+    seo: {
+      title: "Brava Synthetic Shake Re-Roof in Glenville, NC | Highlander",
+      description: "80+ square wood shake tear-off and Brava synthetic shake re-roof with 10 VELUX skylights near Lake Glenville, NC. See the full project story.",
     },
   },
 ];
