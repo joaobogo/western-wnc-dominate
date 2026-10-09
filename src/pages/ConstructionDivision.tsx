@@ -43,7 +43,7 @@ import heroImgWebp from "@/assets/division-construction-v2.webp?w=640;1024;1600&
 import HeroImage from "@/components/media/HeroImage";
 import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 const divisionContextImg = "/media/d35d81a4-construction-project-highlands.webp";
-const constructionDetailImg = "/media/85aa1f15-construction-project-highlands.webp";
+import WorkGallerySection from "@/components/gallery/WorkGallerySection";
 import planningFocusImg from "@/assets/division-design.webp";
 const siteCoordinationImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
 const wncTerrainImg = "/media/wnc-mountain-home-exterior.webp";
@@ -343,15 +343,14 @@ const ConstructionDivision = () => {
           eyebrow="Construction Services"
         />
 
-        {/* ═══ CRAFT DETAIL — Visual break ═══ */}
-        <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-          <img width={1600} height={1067} loading="lazy" decoding="async" src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover opacity-100" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
-          <div className="absolute bottom-10 left-10 flex items-center gap-4">
-             <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-             <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Craftsmanship in Detail</span>
-          </div>
-        </section>
+        {/* ═══ WORK GALLERY — real construction photos ═══ */}
+        <WorkGallerySection
+          eyebrow="Recent Construction"
+          heading="Porches, additions and decks we have built."
+          body="Photos from Highlander construction jobs in Cashiers, Franklin, Sylva and Cullowhee. Tap any photo to see it full size."
+          division="construction"
+          excludeImages={[additionFranklinRoom]}
+        />
 
         {/* ═══ PHILOSOPHY — How we approach construction ═══ */}
         <Section density="default" width="wide" className="bg-background">

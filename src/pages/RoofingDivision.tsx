@@ -29,7 +29,7 @@ import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import bravaGlenville from "@/assets/gallery/brava-glenville-aerial.webp";
-import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+import copperCabin from "@/assets/work/roof-copper-dormer-cabin-front.webp";
 import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -100,7 +100,7 @@ const galleryItems = [
   { image: cedarRoof, title: "Cedar Shake Estate: Highlands", category: "Cedar" },
   { image: asphaltRoof, title: "CertainTeed Landmark: Waynesville", category: "Shingle" },
   { image: metalCabin, title: "Standing Seam on a Log Home", category: "Metal" },
-  { image: dormerCabin, title: "Dimensional Shingle Re-Roof", category: "Shingle" },
+  { image: copperCabin, title: "Shingles with a Metal Porch Roof", category: "Shingle + Metal" },
 ];
 
 const faqs = [
