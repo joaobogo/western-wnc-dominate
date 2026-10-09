@@ -5,6 +5,7 @@ import bravaGlenvilleAerial from "@/assets/gallery/brava-glenville-aerial.webp";
 import bravaGlenvilleChimney from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import bravaGlenvilleBeforeRidge from "@/assets/gallery/brava-glenville-before-ridge.webp";
 import bravaGlenvilleBeforeHips from "@/assets/gallery/brava-glenville-before-hips.webp";
+import bravaGlenvilleTopDown from "@/assets/gallery/brava-glenville-top-down.webp";
 import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import additionFranklinWindows from "@/assets/gallery/addition-franklin-gable-windows.webp";
 import deckSylvaDoors from "@/assets/gallery/deck-sylva-doors-wide.webp";
@@ -222,7 +223,7 @@ export const projectDetails: ProjectDetail[] = [
       "The site was cleaned throughout the job and again at completion",
     ],
     result: "The home now carries the warm look of cedar shake on a synthetic system with new decking, full ice and water protection, a Class A fire-rated underlayment, and ten new VELUX skylights. To keep the roof clear of pine needles, the homeowners signed up for Highlander's spring and fall roof and gutter maintenance visits.",
-    galleryImages: [bravaGlenvilleAerial, bravaGlenvilleChimney, bravaGlenvilleBeforeRidge, bravaGlenvilleBeforeHips],
+    galleryImages: [bravaGlenvilleAerial, bravaGlenvilleChimney, bravaGlenvilleTopDown, bravaGlenvilleBeforeRidge, bravaGlenvilleBeforeHips],
     beforeAfter: {
       before: bravaGlenvilleBeforeRidge,
       after: bravaGlenvilleChimney,
