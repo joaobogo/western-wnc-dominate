@@ -22,7 +22,7 @@ import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
-const heroImg = "/media/wnc-construction-framing.webp";
+import heroImg from "@/assets/gallery/addition-franklin-room-tall.webp";
 const expansionContextImg = "/media/wnc-mountain-home-exterior.webp";
 const structuralTieImg = "/media/wnc-construction-framing.webp";
 const mountainSiteImg = "/media/wnc-ridge-elevation-home.webp";
@@ -132,7 +132,7 @@ const HomeAdditions = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Home addition project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1500} height={1500} decoding="async" src={heroImg} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained tongue-and-groove vaulted ceiling and a wall of mountain-view windows" className="w-full h-full object-cover object-[50%_88%]" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
