@@ -449,9 +449,9 @@ function LandingBody() {
               <h2 className="font-heading text-3xl font-bold leading-tight md:text-5xl">{config.proofHeading}</h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{config.proofIntro}</p>
             </Reveal>
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className={`mt-10 grid gap-6 ${config.proof.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
               {config.proof.map((item, i) => {
-                const on = !emphasis || emphasis === "both" || item.id === emphasis;
+                const on = !emphasis || emphasis === "both" || item.id === emphasis || item.id.startsWith(`${emphasis}-`);
                 return (
                   <Reveal key={item.id} delay={i * 90}>
                     <button
@@ -463,7 +463,7 @@ function LandingBody() {
                       }`}
                     >
                       <div className="relative overflow-hidden">
-                        <Img image={item.image} sizes="(min-width:768px) 560px, 100vw" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
+                        <Img image={item.image} sizes={config.proof.length === 3 ? "(min-width:768px) 380px, 100vw" : "(min-width:768px) 560px, 100vw"} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
                         <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-background/95 px-3 py-1 text-xs font-bold shadow">
                           <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                           {item.tag}
@@ -502,11 +502,23 @@ function LandingBody() {
                 return (
                   <Reveal key={card.id} delay={i * 80}>
                     <article
-                      className={`group relative flex h-full flex-col rounded-sm border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_-34px_hsl(var(--primary)/0.55)] ${
+                      className={`group relative flex h-full flex-col overflow-hidden rounded-sm border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_-34px_hsl(var(--primary)/0.55)] ${
                         active ? "border-primary ring-2 ring-primary/25" : "border-border"
                       }`}
                     >
-                      <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors duration-300 group-hover:bg-[hsl(var(--highland-gold))] group-hover:text-foreground">
+                      {card.image && (
+                        <div className="relative aspect-[16/10] overflow-hidden">
+                          <Img
+                            image={card.image}
+                            sizes="(min-width:768px) 380px, 100vw"
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                            style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
+                          />
+                          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/35 to-transparent" />
+                        </div>
+                      )}
+                      <div className={`flex flex-1 flex-col p-6 ${card.image ? "pt-0" : ""}`}>
+                      <span className={`mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground ring-4 ring-card transition-colors duration-300 group-hover:bg-[hsl(var(--highland-gold))] group-hover:text-foreground ${card.image ? "relative -mt-6" : ""}`}>
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
                       <h3 className="font-heading text-xl font-bold leading-snug">{card.title}</h3>
@@ -520,6 +532,7 @@ function LandingBody() {
                         Discuss this
                         <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
                       </button>
+                      </div>
                     </article>
                   </Reveal>
                 );
