@@ -21,15 +21,15 @@ import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import asphalt001 from "@/assets/gallery/asphalt-001.webp";
-import asphalt005 from "@/assets/gallery/asphalt-005.webp";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
-import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import asphalt008Avif from "@/assets/gallery/asphalt-008.webp?w=640;960;1280;1600&format=avif&as=srcset";
 import asphalt008Webp from "@/assets/gallery/asphalt-008.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
+import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
+import bravaGlenville from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import replacementMobileHero from "@/assets/heroes/replacement-mobile.webp";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -141,13 +141,13 @@ const trustProof = [
   { value: "Direct", label: "Storm Support", detail: "Call to discuss damage, temporary protection, and the appropriate next step" },
 ];
 
-const galleryItems = [
-  { image: asphaltHero, title: "Complete Replacement: Highlands", category: "Shingle" },
-  { image: metalRoof, title: "Standing Seam: Cashiers Estate", category: "Metal" },
-  { image: asphalt005, title: "Dimensional Shingles: Franklin", category: "Shingle" },
+const galleryItems: { image: string; title: string; category: string; href?: string }[] = [
+  { image: dormerCabin, title: "Dimensional Shingle Re-Roof: Dormered Mountain Home", category: "Shingle" },
+  { image: bravaGlenville, title: "Brava Synthetic Shake: Lake Glenville", category: "Synthetic", href: "/projects/brava-synthetic-shake-glenville" },
+  { image: asphaltHero, title: "CertainTeed Landmark: Waynesville", category: "Shingle", href: "/projects/certainteed-landmark-weathered-wood-waynesville" },
+  { image: metalRoof, title: "Standing Seam Dark Bronze: Highlands", category: "Metal", href: "/projects/standing-seam-metal-dark-bronze-highlands" },
   { image: metalCabin, title: "Metal Roof: Bryson City", category: "Metal" },
-  { image: asphalt007, title: "Re-Roof: Mountain Home", category: "Shingle" },
-  { image: cedarRoof, title: "Cedar Shake: Highlands", category: "Cedar" },
+  { image: cedarRoof, title: "Cedar Shake Estate: Highlands", category: "Cedar", href: "/projects/cedar-shake-estate-highlands" },
 ];
 
 const faqs = [
@@ -493,6 +493,7 @@ const RoofReplacement = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {galleryItems.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
+                  {item.href && <Link to={item.href} className="absolute inset-0 z-10" aria-label={`See the project: ${item.title}`} />}
                   <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">{item.category}</div>
