@@ -22,7 +22,7 @@ import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
-import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+import WorkGallery from "@/components/gallery/WorkGallery";
 
 const heroImg = "/media/d35d81a4-construction-project-highlands.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -75,11 +75,10 @@ const processSteps = [
   { number: "06", icon: Sparkles, title: "Walk-Through & Completion", description: "Final review, touch-ups, cleanup, and documentation. Your home, beautifully refined." },
 ];
 
-const galleryImages = [
-  { src: additionFranklinRoom, alt: "Living room addition with a stained vaulted wood ceiling and mountain-view windows in Franklin, North Carolina", label: "Living Room Addition", location: "Franklin, NC" },
-  { src: "/media/85aa1f15-construction-project-highlands.webp", alt: "Construction project imagery featured by Highlander Building Services", label: "Construction Project", location: "Western North Carolina" },
-  { src: "/media/9860ca9e-outdoor-living-cashiers.webp", alt: "Outdoor living space featured by Highlander Building Services", label: "Outdoor Living & Construction", location: "Western North Carolina" },
-];
+// Documented jobs only: Sylva deck rebuild (26-00436), Cashiers trellis-to-
+// covered-patio conversion (26-00424), Franklin addition (26-00035) and the
+// Cullowhee laundry room addition (2504059).
+const galleryIds = ["deck-doors", "patio-wide", "addition-room", "cullowhee-roofline"];
 
 const faqs = [
   { q: "What types of renovations does Highlander handle?", a: "We handle kitchen remodels, bathroom remodels, basement finishing, open-concept conversions, structural modifications, and whole-home projects. We focus on work that involves structural, plumbing, or electrical systems — not cosmetic painting or flooring-only projects." },
@@ -198,10 +197,6 @@ const Renovations = () => {
         whatWeDo={
           <>
             <section className="py-20 md:py-32 bg-background relative overflow-hidden">
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
-            <img width={1600} height={1067} loading="lazy" decoding="async" src="/media/wnc-construction-framing.webp" alt="Interior detail" className="w-full h-full object-cover" />
-          </div>
-
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <div className="flex items-center justify-center gap-2 mb-8">
@@ -380,24 +375,12 @@ const Renovations = () => {
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Construction Work</span>
-              <h2 className="section-heading mb-3">Construction Experience Behind Renovation Work.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">These images are construction work already featured by Highlander. Renovation-specific case studies will appear here only when the scope and location are documented.</p>
+              <span className="eyebrow mb-3 block">Recent Work</span>
+              <h2 className="section-heading mb-3">Rebuilds, Conversions and Additions.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A deck and railing rebuild in Sylva, an open trellis turned covered patio in Cashiers, and additions in Franklin and Cullowhee. Tap any photo to see it full size.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {galleryImages.map((img, i) => (
-                <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/85 text-xs font-body">{img.location}</p>
-                  </div>
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
-                </motion.div>
-              ))}
-            </div>
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
               <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
