@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 251,
+    "sitemap": 256,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 381
+    "total": 386
   },
   "routes": [
     "/",
@@ -108,6 +108,11 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/skylight-replacement-cost_1",
+    "/blog/drip-edge-vs-gutter-apron",
+    "/blog/copper-gutters-cost",
+    "/blog/5-inch-vs-6-inch-gutters",
+    "/blog/metal-roof-noise",
     "/blog/wind-damaged-shingles",
     "/blog/wind-driven-rain-leak_2",
     "/blog/storm-damage-roof-inspection_1",
