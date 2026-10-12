@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 248,
+    "sitemap": 251,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 378
+    "total": 381
   },
   "routes": [
     "/",
@@ -105,6 +105,9 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
+    "/projects/brava-synthetic-shake-glenville",
+    "/projects/living-room-addition-franklin",
+    "/projects/deck-railing-rebuild-sylva",
     "/blog/wind-damaged-shingles",
     "/blog/wind-driven-rain-leak_2",
     "/blog/storm-damage-roof-inspection_1",
