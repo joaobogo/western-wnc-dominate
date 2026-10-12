@@ -14,6 +14,46 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "metal-roof-noise",
+    "title": "Metal Roof Noise: What the Assembly Changes and How to Fix It",
+    "excerpt": "Learn how decking, insulation and panel installation affect metal roof rain noise. Compare inspection points and compatible fixes for mountain homes.",
+    "category": "Materials",
+    "date": "2026-10-12",
+    "town": "Franklin"
+  },
+  {
+    "slug": "5-inch-vs-6-inch-gutters",
+    "title": "5-Inch vs. 6-Inch Gutters: Size Each Roof Run",
+    "excerpt": "Compare 5-inch and 6-inch gutters using roof drainage area, local rainfall, outlets and downspout placement for Western North Carolina mountain homes.",
+    "category": "Materials",
+    "date": "2026-10-12",
+    "town": "Franklin"
+  },
+  {
+    "slug": "copper-gutters-cost",
+    "title": "Copper Gutters Cost: Per-Foot Budgets and Estimate Extras",
+    "excerpt": "Compare illustrative copper gutter budgets, profiles and material weights. Check downspouts, soldered joints, fascia repairs and estimate exclusions.",
+    "category": "Cost",
+    "date": "2026-10-12",
+    "town": "Franklin"
+  },
+  {
+    "slug": "drip-edge-vs-gutter-apron",
+    "title": "Drip Edge vs. Gutter Apron on Mountain Roofs",
+    "excerpt": "Understand drip edge, gutter aprons and roof-edge drainage. Check flashing sequence, fascia condition and gutter fit on Western North Carolina homes.",
+    "category": "Materials",
+    "date": "2026-10-12",
+    "town": "Franklin"
+  },
+  {
+    "slug": "skylight-replacement-cost_1",
+    "title": "Skylight Replacement Costs in Western NC: 2026 Guide",
+    "excerpt": "Compare skylight types, flashing repairs and mountain-roof cost factors. Learn why the expired federal credit does not apply to new 2026 installations.",
+    "category": "Cost",
+    "date": "2026-10-12",
+    "town": "Franklin"
+  },
+  {
     "slug": "roof-replacement-tax-deductible_1",
     "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
     "excerpt": "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",

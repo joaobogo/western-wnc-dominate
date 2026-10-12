@@ -1,4 +1,9 @@
 # CertainTeed Premier credential
+## October 12 uploaded blogs
+- [x] Add five unique attached articles with exact filename slugs; redirect the repeated drip-edge filename to its unsuffixed canonical article.
+- [x] Generate matching images under 100KB, correct factual claims, regenerate search files, and verify all five articles and the duplicate URL in the browser; 91 regression tests passed.
+- [ ] Request publication and verify deployment when hosting makes the new version available.
+
 - [x] Feature the official Premier badge across CertainTeed credential displays, especially the homepage, footer and certifications page; hosted artwork verified, eight preview pages checked, 74 regression tests passed and automatic build passed.
 
 # Uploaded blog publication
