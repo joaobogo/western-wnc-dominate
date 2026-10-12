@@ -16,6 +16,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # ============================================================
 # Corrected 2026 blog slugs. Preserve links shared before the uploaded filenames
 # were adopted as the canonical URL source.
+/blog/drip-edge-vs-gutter-apron_1                         /blog/drip-edge-vs-gutter-apron                 301!
 /blog/chimney-flashing-repair-western-nc                   /blog/chimney-flashing-repair                   301!
 /blog/standing-seam-vs-exposed-fastener-metal-roof-wnc     /blog/standing-seam-vs-exposed-fastener         301!
 /blog/half-round-vs-k-style-gutters-western-nc             /blog/half-round-vs-k-style-gutters             301!

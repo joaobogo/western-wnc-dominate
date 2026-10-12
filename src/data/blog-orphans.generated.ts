@@ -1,6 +1,7 @@
 // AUTO-GENERATED orphan blog redirects. These URLs are in the legacy sitemap 
 // but have no corresponding data in blogs.ts. Redirecting to /blog to prevent 404s.
 export const blogOrphanRedirects = [
+  { oldUrl: "/blog/drip-edge-vs-gutter-apron_1", newUrl: "/blog/drip-edge-vs-gutter-apron" },
   { oldUrl: "/blog/chimney-flashing-repair-western-nc", newUrl: "/blog/chimney-flashing-repair" },
   { oldUrl: "/blog/standing-seam-vs-exposed-fastener-metal-roof-wnc", newUrl: "/blog/standing-seam-vs-exposed-fastener" },
   { oldUrl: "/blog/half-round-vs-k-style-gutters-western-nc", newUrl: "/blog/half-round-vs-k-style-gutters" },
