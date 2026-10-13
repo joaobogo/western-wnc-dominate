@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 256,
+    "sitemap": 257,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 386
+    "total": 387
   },
   "routes": [
     "/",
@@ -108,6 +108,7 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/pergola-vs-covered-patio",
     "/blog/skylight-replacement-cost_1",
     "/blog/drip-edge-vs-gutter-apron",
     "/blog/copper-gutters-cost",
