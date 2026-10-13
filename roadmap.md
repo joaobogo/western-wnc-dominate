@@ -1,4 +1,8 @@
 # CertainTeed Premier credential
+## October 13 uploaded blog
+- [ ] Add pergola-vs-covered-patio with the exact uploaded filename slug, a matching optimized image, corrected site-specific guidance, FAQs and related links.
+- [ ] Regenerate search files, verify the article and image, run regression tests, and request publication.
+
 ## October 12 uploaded blogs
 - [x] Add five unique attached articles with exact filename slugs; redirect the repeated drip-edge filename to its unsuffixed canonical article.
 - [x] Generate matching images under 100KB, correct factual claims, regenerate search files, and verify all five articles and the duplicate URL in the browser; 91 regression tests passed.
