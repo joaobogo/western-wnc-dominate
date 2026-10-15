@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "ridge-vent-vs-box-vent",
+    "title": "Ridge Vent vs. Box Vent: The 1:300 Balance for Mountain Homes",
+    "excerpt": "Compare ridge vents and box vents by net free area, roof shape and tested wind-driven rain resistance. Learn which exhaust system fits your mountain roof.",
+    "category": "Maintenance",
+    "date": "2026-10-15",
+    "town": "Franklin"
+  },
+  {
     "slug": "metal-roof-noise",
     "title": "Metal Roof Noise: What the Assembly Changes and How to Fix It",
     "excerpt": "Learn how decking, insulation and panel installation affect metal roof rain noise. Compare inspection points and compatible fixes for mountain homes.",

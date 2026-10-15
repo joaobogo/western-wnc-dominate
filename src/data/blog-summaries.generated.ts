@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "ridge-vent-vs-box-vent",
+    "slug": "ridge-vent-vs-box-vent",
+    "title": "Ridge Vent vs. Box Vent: The 1:300 Balance for Mountain Homes",
+    "excerpt": "Compare ridge vents and box vents by net free area, roof shape and tested wind-driven rain resistance. Learn which exhaust system fits your mountain roof.",
+    "category": "Maintenance",
+    "date": "2026-10-15",
+    "readTime": "8 min"
+  },
+  {
     "id": "metal-roof-noise",
     "slug": "metal-roof-noise",
     "title": "Metal Roof Noise: What the Assembly Changes and How to Fix It",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Storm",
     "date": "2026-10-08",
     "readTime": "8 min"
-  },
-  {
-    "id": "storm-damage-roof-inspection_1",
-    "slug": "storm-damage-roof-inspection_1",
-    "title": "Storm Damage Roof Inspection: A Homeowner Photo Checklist",
-    "excerpt": "Document roof storm damage safely from the ground, organize dated photos and prepare questions for a professional inspection and your insurer.",
-    "category": "Storm",
-    "date": "2026-10-08",
-    "readTime": "7 min"
   }
 ];
