@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 257,
+    "sitemap": 258,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 387
+    "total": 388
   },
   "routes": [
     "/",
@@ -108,6 +108,7 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/ridge-vent-vs-box-vent",
     "/blog/pergola-vs-covered-patio",
     "/blog/skylight-replacement-cost_1",
     "/blog/drip-edge-vs-gutter-apron",
