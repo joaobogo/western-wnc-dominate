@@ -1,3 +1,4 @@
+import ridgeVentHero from "@/assets/blog/ridge-vent-vs-box-vent-hero.jpg";
 import pergolaPatioHero from "@/assets/blog/pergola-vs-covered-patio-hero.jpg";
 import october12Image0 from "@/assets/blog/skylight-replacement-cost_1-hero.jpg";
 import october12Image1 from "@/assets/blog/drip-edge-vs-gutter-apron-hero.jpg";
