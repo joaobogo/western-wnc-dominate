@@ -136,7 +136,9 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
         uploadErrors = u.errors;
       }
 
+      const consultId = crypto.randomUUID();
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
+        id: consultId,
         name: contact.values.name,
         email: contact.values.email,
         phone: contact.values.phone,
@@ -159,6 +161,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           mode: mode,
         },
       });
+      if (insertErr) throw insertErr;
       try {
         const { submitLead, requireStoredLead } = await import("@/lib/leads");
         requireStoredLead(await submitLead({
@@ -168,6 +171,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           email: contact.values.email,
           phone: contact.values.phone,
           property_address: contact.values.address,
+          property_town: contact.values.town,
           property_state: "NC",
           service_category: "design_planning",
           project_type: data.projectType,
@@ -180,15 +184,18 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           attachment_errors: uploadErrors,
           metadata: {
             mode,
+            consultation_request_id: consultId,
             planning_need: data.planningNeed,
             current_stage: data.currentStage,
             decision_makers: data.decisionMakers,
             upload_folder: folder,
           },
         }));
-      } catch (e) { console.error(e); throw e; }
-
-      if (insertErr) throw insertErr;
+      } catch (e) {
+        console.error("Canonical lead save failed; forwarding the saved consultation", e);
+        const { syncConsultationRequestToJobTread } = await import("@/lib/leads");
+        syncConsultationRequestToJobTread(consultId);
+      }
 
       trackEvent("form_submit", {
         label: `Design Planning Intake (${mode})`,

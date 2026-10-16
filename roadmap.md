@@ -1,3 +1,11 @@
+# JobTread form connection audit
+- [x] Trace active landing, contact, inspection, intake, builder, tool, recovery, receptionist and legacy chatbot save paths; consultation detail rows must not create duplicate CRM jobs.
+- [x] Inspect real failures, verify current JobTread custom fields through read-only queries, and confirm the ten-minute retry schedule.
+- [x] Deploy corrected lead-source, division and communication mappings; omit deleted fields while preserving contact email and all intake detail in Contact / Job Notes.
+- [x] Repair intake/builder fallback delivery, design-town mapping, quiz false success, double-submit guards and duplicate chatbot handoff; 359 website tests plus 43 isolated CRM tests passed, contact failure verified in browser, automatic build passed.
+- [x] Requeue 46 genuine leads rejected by the old website option and four unmirrored consultations; exclude duplicate detail rows and test-named entries.
+- [ ] Confirm restored real enquiries complete delivery after the scheduled retry worker runs; no synthetic CRM data permitted.
+
 # CertainTeed Premier credential
 ## October 13 uploaded blog
 - [x] Add pergola-vs-covered-patio with the exact uploaded filename slug, a matching optimized image, corrected site-specific guidance, FAQs and related links.

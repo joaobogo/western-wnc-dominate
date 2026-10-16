@@ -39,15 +39,12 @@ const stormRow = {
 Deno.test("note sections appear in the required order", () => {
   const note = (buildPayload(stormRow, "lead") as any).note as string;
   const order = [
-    "Source Page",
-    "Service Requested",
-    "Timeline & Urgency",
-    "Property",
-    "Budget",
-    "Insurance",
-    "Customer Message",
-    "Contact",
-    "Tracking",
+    "Contact Info",
+    "Project Summary",
+    "Source/Attribution",
+    "Timeline/Urgency",
+    "Property Details",
+    "Attachments",
   ];
   let cursor = -1;
   for (const s of order) {

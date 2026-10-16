@@ -58,6 +58,7 @@ const RecoveryPrompt = () => {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
+  const inFlight = useRef(false);
   const [done, setDone] = useState(false);
   const shownRef = useRef(false);
   const mountedAt = useRef(Date.now());
@@ -119,11 +120,13 @@ const RecoveryPrompt = () => {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (inFlight.current) return;
     const cleanName = name.trim();
     if (cleanName.length < 2) { setError("Please add your name so we know who to ask for."); return; }
     const p = normalizePhoneE164(phone);
     if (p.ok !== true) { setError(p.error); return; }
     setError(null);
+    inFlight.current = true;
     setSending(true);
 
     const { submitLead } = await import("@/lib/leads");
@@ -141,7 +144,8 @@ const RecoveryPrompt = () => {
       return { id: null, error: err } as const;
     });
 
-    if (result && "error" in result && result.error) {
+    inFlight.current = false;
+    if (!result || result.error || (!result.id && !("duplicate" in result && result.duplicate))) {
       setSending(false);
       setError(`We couldn't send that just now — call us at ${PHONE_DISPLAY} and we'll take it directly.`);
       return;

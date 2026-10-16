@@ -39,7 +39,9 @@ function installFakePave() {
     if (kind === "lookupAccount") {
       const name = query.organization.accounts.$.where.and[0]["="][1].value;
       const id = accounts.get(name);
-      result = { organization: { accounts: { nodes: id ? [{ id, name }] : [] } } };
+      result = { organization: { accounts: { nodes: id ? [{ id, name,
+        locations: { nodes: locations.filter(location => location.accountId === id) },
+      }] : [] } } };
     } else if (kind === "createAccount") {
       const name = query.createAccount.$.name;
       const id = `acct_${++seq}`;
@@ -49,7 +51,7 @@ function installFakePave() {
       result = { createContact: { createdContact: { id: `contact_${++seq}` } } };
     } else if (kind === "createLocation") {
       const id = `loc_${++seq}`;
-      locations.push({ id, accountId: query.createLocation.$.accountId, name: query.createLocation.$.name });
+      locations.push({ id, accountId: query.createLocation.$.accountId, name: query.createLocation.$.name, address: query.createLocation.$.address });
       result = { createLocation: { createdLocation: { id, name: query.createLocation.$.name } } };
     } else if (kind === "createJob") {
       const id = `job_${++seq}`;
