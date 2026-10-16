@@ -1,3 +1,8 @@
+# JobTread form connection audit
+- [ ] Trace all active forms to durable storage and JobTread delivery.
+- [ ] Check recent real delivery results, retry scheduling and connection failures without sending CRM test leads.
+- [ ] Fix confirmed connection defects and run isolated regression checks; report external blockers.
+
 # CertainTeed Premier credential
 ## October 13 uploaded blog
 - [x] Add pergola-vs-covered-patio with the exact uploaded filename slug, a matching optimized image, corrected site-specific guidance, FAQs and related links.

@@ -218,6 +218,7 @@ const RoofingBuilder = () => {
       // Canonical pipeline: durable `leads` row + single CRM sync happens here.
       // The consultation_requests row above stays as the builder-specific detail record.
       const { submitLead, requireStoredLead } = await import("@/lib/leads");
+      try {
       requireStoredLead(await submitLead({
         source: "roofing_builder",
         lead_type: "roofing",
@@ -247,6 +248,11 @@ const RoofingBuilder = () => {
           upload_folder: folder,
         },
       }));
+      } catch (e) {
+        console.error("Canonical lead save failed; forwarding the saved consultation", e);
+        const { syncConsultationRequestToJobTread } = await import("@/lib/leads");
+        syncConsultationRequestToJobTread(consultId);
+      }
       trackEvent("form_submit", {
         label: "Roofing Builder",
         elementId: "roofing-builder",

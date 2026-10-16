@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
+import { requireStoredLead } from "@/lib/leads";
 import FormConsent from "@/components/FormConsent";
 import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import { fieldAttrs } from "@/lib/field-ergonomics";
@@ -82,6 +83,7 @@ const RoofAssessmentQuiz = () => {
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
   const [direction, setDirection] = useState(1);
   const { submitting, submit } = useLeadSubmit();
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const totalScore = answers.reduce((sum, s) => sum + s, 0);
   const result = getResult(totalScore);
@@ -107,7 +109,9 @@ const RoofAssessmentQuiz = () => {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (contact.name && contact.email && !submitting) {
-      await submit({
+      setSubmitError(null);
+      try {
+      requireStoredLead(await submit({
         source: "roof_assessment_quiz",
         lead_type: "roof_assessment",
         full_name: contact.name,
@@ -119,8 +123,11 @@ const RoofAssessmentQuiz = () => {
         urgency: getResult(totalScore).level === "urgent" ? "high" : getResult(totalScore).level === "caution" ? "medium" : "low",
         timeline: getResult(totalScore).level === "urgent" ? "emergency" : "exploring",
         metadata: { quiz_answers: answers, quiz_score: totalScore },
-      });
+      }));
       goTo("result");
+      } catch {
+        setSubmitError("Your request could not be saved. Please check your contact details and try again.");
+      }
     }
   };
 
@@ -242,6 +249,7 @@ const RoofAssessmentQuiz = () => {
                     </div>
                     <WhatHappensNext className="mb-1" />
                     <FormConsent />
+                    {submitError && <p role="alert" className="text-sm text-destructive">{submitError}</p>}
                     <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-raised tracking-widest uppercase disabled:opacity-60">
                       <span className="relative z-10">{submitting ? "Sending…" : "See My Results"}</span>
                       {submitting ? (
