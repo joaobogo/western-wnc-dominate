@@ -145,7 +145,7 @@ const RecoveryPrompt = () => {
     });
 
     inFlight.current = false;
-    if (!result || result.error || (!result.id && !result.duplicate)) {
+    if (!result || result.error || (!result.id && !("duplicate" in result && result.duplicate))) {
       setSending(false);
       setError(`We couldn't send that just now — call us at ${PHONE_DISPLAY} and we'll take it directly.`);
       return;
