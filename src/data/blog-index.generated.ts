@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "energy-efficient-roofing",
+    "title": "Energy Efficient Roofing: 5 Choices Before Mountain Roof Replacement",
+    "excerpt": "Compare metal, tile, cool shingles and coatings by reflectance, insulation and lifecycle cost before your next mountain roof replacement in Western NC.",
+    "category": "Roofing",
+    "date": "2026-10-16",
+    "town": "Franklin"
+  },
+  {
     "slug": "ridge-vent-vs-box-vent",
     "title": "Ridge Vent vs. Box Vent: The 1:300 Balance for Mountain Homes",
     "excerpt": "Compare ridge vents and box vents by net free area, roof shape and tested wind-driven rain resistance. Learn which exhaust system fits your mountain roof.",

@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "energy-efficient-roofing",
+    "slug": "energy-efficient-roofing",
+    "title": "Energy Efficient Roofing: 5 Choices Before Mountain Roof Replacement",
+    "excerpt": "Compare metal, tile, cool shingles and coatings by reflectance, insulation and lifecycle cost before your next mountain roof replacement in Western NC.",
+    "category": "Roofing",
+    "date": "2026-10-16",
+    "readTime": "9 min"
+  },
+  {
     "id": "ridge-vent-vs-box-vent",
     "slug": "ridge-vent-vs-box-vent",
     "title": "Ridge Vent vs. Box Vent: The 1:300 Balance for Mountain Homes",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Construction",
     "date": "2026-10-08",
     "readTime": "10 min"
-  },
-  {
-    "id": "tree-on-roof_2",
-    "slug": "tree-on-roof_2",
-    "title": "Tree on Your Roof in Western NC: Safety, Tarping and Repairs",
-    "excerpt": "What to do after a tree hits your Western NC roof: safe documentation, coordinated removal, temporary protection, insurance questions and written repair scopes.",
-    "category": "Storm",
-    "date": "2026-10-08",
-    "readTime": "8 min"
   }
 ];
