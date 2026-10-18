@@ -34,7 +34,7 @@ export const counties: CountyData[] = [
     name: "Macon County",
     description: "Macon County is Highlander's home county and original operating base. From Highlands to Franklin, the company provides roofing and construction services across a mix of plateau and valley properties.",
     towns: ["Highlands", "Franklin", "Scaly Mountain", "Otto"],
-    metaTitle: "Macon County, NC Roofing | Highlander Building Services",
+    metaTitle: "Macon County, NC Roofing & Roofers | Highlander Building Services",
     metaDescription: "Roofing and home construction across Macon County, NC, served from Highlander's Franklin base with project-specific materials and written scopes.",
     heroImage: "/media/wnc-town-overlook.jpg",
     facts: [

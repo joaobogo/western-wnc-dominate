@@ -57,3 +57,19 @@ describe("core town pages (P3.6)", () => {
     expect(others).toEqual([]);
   });
 });
+
+// Search Console, Oct 2026: local searches ranking on page 2. Each target page's
+// rendered title carries the words people actually searched.
+describe("page-2 local searches (Oct 2026)", () => {
+  it.each([
+    ["lake-glenville-nc", ["Glenville", "Roofing Company"]],
+    ["highlands-nc", ["Highlands", "Roofers", "Roofing"]],
+    ["franklin-nc", ["Franklin", "Roofing Services"]],
+    ["waynesville-nc", ["Waynesville", "Roofing"]],
+  ])("%s title targets its search terms", (slug, terms) => {
+    const rendered = normalizeTitle(town(slug).metaTitle);
+    expect(rendered.length).toBeLessThanOrEqual(60);
+    expect(rendered.endsWith("| Highlander")).toBe(true);
+    for (const term of terms) expect(rendered).toContain(term);
+  });
+});
