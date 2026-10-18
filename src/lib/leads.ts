@@ -6,7 +6,12 @@ const sb = async () => (await import("@/integrations/supabase/client")).supabase
 /** Fire-and-forget edge function invoke that never blocks the visitor. */
 const invokeFn = (name: string, body: Record<string, unknown>) => {
   void sb()
-    .then((s) => s.functions.invoke(name, { body }))
+    .then(async (s) => {
+      const { data, error } = await s.functions.invoke(name, { body });
+      if (error || data?.ok === false) {
+        console.warn(`${name} delivery failed; saved lead remains queued`, error?.message ?? data?.error);
+      }
+    })
     .catch((err) => console.warn(`${name} invoke failed:`, err));
 };
 import { towns } from "@/data/towns";
@@ -517,7 +522,7 @@ export async function logChatbotConversation(input: {
     return;
   }
   // Only sync chatbot rows that actually captured contact info.
-  if (input.phone || input.email || input.name) {
+  if (!input.lead_id && (input.phone || input.email || input.name)) {
     trackChatbotLeadSubmit({
       service_category: input.service_category ?? null,
       property_town: input.property_town ?? null,

@@ -13,6 +13,78 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "helical-piers-vs-concrete-piers",
+    "slug": "helical-piers-vs-concrete-piers",
+    "title": "Helical Piers vs. Concrete Piers: How to Choose for a Mountain Home",
+    "excerpt": "Compare helical and concrete piers by soil, slope, access, cure time and verification before planning a deck, addition or renovation on a Western NC lot.",
+    "category": "Construction",
+    "date": "2026-10-18",
+    "readTime": "9 min"
+  },
+  {
+    "id": "energy-efficient-roofing",
+    "slug": "energy-efficient-roofing",
+    "title": "Energy Efficient Roofing: 5 Choices Before Mountain Roof Replacement",
+    "excerpt": "Compare metal, tile, cool shingles and coatings by reflectance, insulation and lifecycle cost before your next mountain roof replacement in Western NC.",
+    "category": "Roofing",
+    "date": "2026-10-16",
+    "readTime": "9 min"
+  },
+  {
+    "id": "ridge-vent-vs-box-vent",
+    "slug": "ridge-vent-vs-box-vent",
+    "title": "Ridge Vent vs. Box Vent: The 1:300 Balance for Mountain Homes",
+    "excerpt": "Compare ridge vents and box vents by net free area, roof shape and tested wind-driven rain resistance. Learn which exhaust system fits your mountain roof.",
+    "category": "Maintenance",
+    "date": "2026-10-15",
+    "readTime": "8 min"
+  },
+  {
+    "id": "metal-roof-noise",
+    "slug": "metal-roof-noise",
+    "title": "Metal Roof Noise: What the Assembly Changes and How to Fix It",
+    "excerpt": "Learn how decking, insulation and panel installation affect metal roof rain noise. Compare inspection points and compatible fixes for mountain homes.",
+    "category": "Materials",
+    "date": "2026-10-12",
+    "readTime": "6 min"
+  },
+  {
+    "id": "5-inch-vs-6-inch-gutters",
+    "slug": "5-inch-vs-6-inch-gutters",
+    "title": "5-Inch vs. 6-Inch Gutters: Size Each Roof Run",
+    "excerpt": "Compare 5-inch and 6-inch gutters using roof drainage area, local rainfall, outlets and downspout placement for Western North Carolina mountain homes.",
+    "category": "Materials",
+    "date": "2026-10-12",
+    "readTime": "6 min"
+  },
+  {
+    "id": "copper-gutters-cost",
+    "slug": "copper-gutters-cost",
+    "title": "Copper Gutters Cost: Per-Foot Budgets and Estimate Extras",
+    "excerpt": "Compare illustrative copper gutter budgets, profiles and material weights. Check downspouts, soldered joints, fascia repairs and estimate exclusions.",
+    "category": "Cost",
+    "date": "2026-10-12",
+    "readTime": "7 min"
+  },
+  {
+    "id": "drip-edge-vs-gutter-apron",
+    "slug": "drip-edge-vs-gutter-apron",
+    "title": "Drip Edge vs. Gutter Apron on Mountain Roofs",
+    "excerpt": "Understand drip edge, gutter aprons and roof-edge drainage. Check flashing sequence, fascia condition and gutter fit on Western North Carolina homes.",
+    "category": "Materials",
+    "date": "2026-10-12",
+    "readTime": "7 min"
+  },
+  {
+    "id": "skylight-replacement-cost_1",
+    "slug": "skylight-replacement-cost_1",
+    "title": "Skylight Replacement Costs in Western NC: 2026 Guide",
+    "excerpt": "Compare skylight types, flashing repairs and mountain-roof cost factors. Learn why the expired federal credit does not apply to new 2026 installations.",
+    "category": "Cost",
+    "date": "2026-10-12",
+    "readTime": "7 min"
+  },
+  {
     "id": "roof-replacement-tax-deductible_1",
     "slug": "roof-replacement-tax-deductible_1",
     "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
@@ -46,78 +118,6 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "Understand deck ledger flashing, membrane layers, material compatibility and warning signs of rot. Get a professional scope for your Western NC mountain home.",
     "category": "Construction",
     "date": "2026-10-08",
-    "readTime": "9 min"
-  },
-  {
-    "id": "under-deck-drainage",
-    "slug": "under-deck-drainage",
-    "title": "Under Deck Drainage: Inspect First, Get a Written Scope",
-    "excerpt": "Compare under-deck drainage options for Western NC homes. Check framing, headroom, slope, gutters and discharge before planning a dry outdoor living space.",
-    "category": "Construction",
-    "date": "2026-10-08",
-    "readTime": "10 min"
-  },
-  {
-    "id": "tree-on-roof_2",
-    "slug": "tree-on-roof_2",
-    "title": "Tree on Your Roof in Western NC: Safety, Tarping and Repairs",
-    "excerpt": "What to do after a tree hits your Western NC roof: safe documentation, coordinated removal, temporary protection, insurance questions and written repair scopes.",
-    "category": "Storm",
-    "date": "2026-10-08",
-    "readTime": "8 min"
-  },
-  {
-    "id": "storm-damage-roof-inspection_1",
-    "slug": "storm-damage-roof-inspection_1",
-    "title": "Storm Damage Roof Inspection: A Homeowner Photo Checklist",
-    "excerpt": "Document roof storm damage safely from the ground, organize dated photos and prepare questions for a professional inspection and your insurer.",
-    "category": "Storm",
-    "date": "2026-10-08",
-    "readTime": "7 min"
-  },
-  {
-    "id": "wind-driven-rain-leak_2",
-    "slug": "wind-driven-rain-leak_2",
-    "title": "Wind-Driven Rain Leaks: Diagnosis and Repairs for Mountain Homes",
-    "excerpt": "Learn why mountain homes leak during windy rain, what to document safely and how flashing, windows and roof details affect repairs.",
-    "category": "Maintenance",
-    "date": "2026-10-08",
-    "readTime": "8 min"
-  },
-  {
-    "id": "wind-damaged-shingles",
-    "slug": "wind-damaged-shingles",
-    "title": "Wind-Damaged Shingles: Safe Storm Documentation in Western NC",
-    "excerpt": "Spot creased or missing shingles safely, document storm damage and compare repair options for your Western North Carolina roof.",
-    "category": "Storm",
-    "date": "2026-10-08",
-    "readTime": "7 min"
-  },
-  {
-    "id": "high-elevation-roofing",
-    "slug": "high-elevation-roofing",
-    "title": "High Elevation Roofing: Moisture Safe Assemblies for Mountain Homes",
-    "excerpt": "Building science guidance for mountain homeowners: moisture safe roof assemblies, engineered snow retention, and the contractor specs to require for high elevation homes.",
-    "category": "Materials",
-    "date": "2026-10-07",
-    "readTime": "9 min"
-  },
-  {
-    "id": "skylight-placement",
-    "slug": "skylight-placement",
-    "title": "Even Daylight, Less Risk: Skylight Placement for Mountain Homes",
-    "excerpt": "Place skylights for even daylight, less glare, and fewer leaks with practical guidance on room placement, roof orientation, flashing, and mountain-home conditions.",
-    "category": "Materials",
-    "date": "2026-10-06",
-    "readTime": "14 min"
-  },
-  {
-    "id": "half-round-vs-k-style-gutters",
-    "slug": "half-round-vs-k-style-gutters",
-    "title": "Half-Round vs. K-Style Gutters for Western NC Homes",
-    "excerpt": "Compare K-style and half-round gutters by capacity, cost, maintenance, materials, and fit for Western North Carolina mountain homes.",
-    "category": "Maintenance",
-    "date": "2026-10-01",
     "readTime": "9 min"
   }
 ];

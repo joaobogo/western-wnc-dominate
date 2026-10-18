@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,6 +29,7 @@ const CONSENT =
 const ContactMinimalForm = () => {
   const [form, setForm] = useState({ firstName: "", phone: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const inFlight = useRef(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
@@ -61,7 +62,7 @@ const ContactMinimalForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (isSubmitting) return;
+    if (inFlight.current) return;
     markStart();
 
     if (!contact.markAttempted()) {
@@ -77,6 +78,7 @@ const ContactMinimalForm = () => {
 
     setSubmitError(null);
     setIssues([]);
+    inFlight.current = true;
     setIsSubmitting(true);
 
     try {
@@ -126,6 +128,7 @@ const ContactMinimalForm = () => {
         `We could not confirm your request. Please try again or call ${PHONE_DISPLAY}.`,
       );
     } finally {
+      inFlight.current = false;
       setIsSubmitting(false);
     }
   };

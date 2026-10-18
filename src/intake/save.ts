@@ -166,6 +166,11 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult) {
     .invoke("jobtread-sync", {
       body: { intake_lead_id: leadId, idempotency_key: idempotencyKey },
     })
+    .then(({ data, error }) => {
+      if (error || data?.ok === false) {
+        console.error("jobtread-sync delivery failed; saved intake remains queued", error?.message ?? data?.error);
+      }
+    })
     .catch((err) => console.error("jobtread-sync failed:", err));
 
   return leadId;

@@ -785,10 +785,15 @@ export function buildLocationCustomFieldValues(opts: {
 }): Record<string, unknown> {
   // Sales Notes intentionally OMITTED — see SINGLE-WRITE RULE above.
   return {
-    [JT_CF.location.gate_code]: opts.gateCodeBool,
     [JT_CF.location.contact_name]: opts.contactName,
     [JT_CF.location.phone]: opts.phone || "",
-    [JT_CF.location.email]: opts.email || "",
+  };
+}
+
+export function buildAccountCustomFieldValues(town?: string | null, county?: string | null): Record<string, unknown> {
+  return {
+    [JT_CF.account.service_area]: mapServiceArea(town, county),
+    [JT_CF.account.lead_source]: "Highlander Website",
   };
 }
 
@@ -796,9 +801,7 @@ export function buildJobCustomFieldValues(payload: any, noteShort: string): Reco
   return {
     [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
     [JT_CF.job.job_type]: mapJobType(payload),
-    [JT_CF.job.scope_type]: mapScopeType(payload),
     [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
-    [JT_CF.job.customer_present]: false,
     [JT_CF.job.lead_notes]: noteShort,
   };
 }
@@ -1098,21 +1101,17 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
 const JT_CF = {
   account: {
     service_area: "22P72GvSrBgk", // option: Franklin | Sylva | Asheville
-    lead_source: "22P75KEjYCfa",  // option: Website (and many others)
+    lead_source: "22P75KEjYCfa",  // option: Highlander Website
   },
   location: {
-    gate_code: "22PNwBiMbUzf",    // boolean, required
     contact_name: "22PPzwDNUYjN", // text
     phone: "22PPzw5sqRSX",        // phoneNumber
-    email: "22PTWFAtwzqx",        // emailAddress
     sales_notes: "22P6KUiJD3EJ",  // text
   },
   job: {
     status: "22P5uYmYTED2",       // option, "01 New Lead (Needs Appointment)"
-    job_type: "22PNawhnSXmW",     // option, required
-    scope_type: "22P6NLAkTWjs",   // option, required
-    comm_pref: "22PPQYu3uBCx",    // option, required
-    customer_present: "22PNm2NKGREB", // boolean, required
+    job_type: "22PNawhnSXmW",     // Divisions: Roofing | Gutters | Construction | Repair
+    comm_pref: "22PPQYmK3SXB",    // Communication Preferences: Phone Call | Text | Email
     lead_notes: "22PYx7PBhE56",   // text
   },
 } as const;
@@ -1130,37 +1129,17 @@ export function mapServiceArea(town: string | null | undefined, county?: string 
 }
 
 function mapJobType(payload: any): string {
-  const key = (payload?.project?.service_category || payload?.source?.lead_type || "")
-    .toString()
-    .toLowerCase();
+  const key = [payload?.project?.service_category, payload?.project?.project_type, payload?.source?.lead_type]
+    .filter(Boolean).join(" ").toLowerCase();
   if (/gutter/.test(key)) return "Gutters";
-  if (/construction|addition|design|renovation|outdoor/.test(key)) return "Builder Service";
-  if (/repair|storm|maintenance|inspection|leak/.test(key)) return "Maintenance / Repair";
-  return "Roofing Service";
-}
-
-function mapScopeType(payload: any): string {
-  const key = (payload?.project?.service_category || payload?.source?.lead_type || "")
-    .toString()
-    .toLowerCase();
-  const desc = (payload?.project?.description || "").toString().toLowerCase();
-  if (/storm|emergency|active water|water coming/.test(key + " " + desc)) return "Emergency Tarp/Patch";
-  if (/metal/.test(key)) return "Roofing - Metal";
-  if (/synthetic|cedur|brava/.test(key)) return "Roofing - Synthetic CeDUR/Brava";
-  if (/commercial/.test(key)) return "Roofing - TRI-BUILT® SA / Flintlastic style Roofing";
-  if (/repair|leak|inspection/.test(key)) return "Roofing Repairs";
-  if (/replacement|shingle|roof/.test(key)) return "Roofing - Shingles";
-  if (/gutter/.test(key)) return "Gutters";
-  if (/addition/.test(key)) return "Construction - Addition";
-  if (/renovation|remodel/.test(key)) return "Construction - Remodel";
-  if (/design/.test(key)) return "Design & Planning";
-  if (/construction/.test(key)) return "Construction";
-  return "Still Needs";
+  if (/construction|addition|design|renovation|remodel|outdoor|new_build|exterior/.test(key)) return "Construction";
+  if (/repair|storm|maintenance|inspection|leak/.test(key)) return "Repair";
+  return "Roofing";
 }
 
 function mapCommPref(pref: string | null | undefined): string {
   const p = (pref ?? "").toLowerCase();
-  if (/text|sms/.test(p)) return "Texting";
+  if (/text|sms/.test(p)) return "Text";
   if (/email/.test(p)) return "Email";
   return "Phone Call";
 }
@@ -1377,14 +1356,7 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
             organizationId: orgId,
             name: accountName,
             type: "customer",
-            customFieldValues: {
-              [JT_CF.account.service_area]: mapServiceArea(town, county),
-              // Lead Source picklist in JobTread only accepts "Website" for
-              // website-originated leads. Chatbot origin is preserved in the
-              // Job name prefix and inside Lead Notes → Source section so
-              // Highlander can still filter/search for chatbot leads.
-              [JT_CF.account.lead_source]: "Website",
-            },
+            customFieldValues: buildAccountCustomFieldValues(town, county),
           },
           createdAccount: { id: {}, name: {} },
         },
@@ -1455,9 +1427,9 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
           accountId,
           name: locName,
           address: address || null,
-          // JobTread requires the "Is There a Gate Code?" boolean on every
-          // Location. Sales Notes intentionally OMITTED — full website intake
-          // summary lives ONLY in Job → Lead Notes (single-write rule).
+          // Only currently verified Location fields are sent. Removed legacy
+          // fields must not block delivery; email and access details remain in
+          // Contact / Job Notes. Sales Notes intentionally stay empty.
           customFieldValues: buildLocationCustomFieldValues({
             gateCodeBool,
             contactName,

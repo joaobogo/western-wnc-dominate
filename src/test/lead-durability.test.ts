@@ -63,6 +63,18 @@ describe("durable-first lead capture", () => {
     expect(row.idempotency_key).toBeTruthy();
   });
 
+  it("logs resolved delivery errors without discarding the stored lead", async () => {
+    const warning = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    insert.mockResolvedValue({ error: null });
+    invoke.mockResolvedValue({ data: { ok: false, error: "sync_failed" }, error: null });
+    const result = await submit(validLead);
+    expect(result.error).toBeNull();
+    await vi.waitFor(() => expect(warning).toHaveBeenCalledWith(
+      "jobtread-sync delivery failed; saved lead remains queued", "sync_failed",
+    ));
+    warning.mockRestore();
+  });
+
   it("surfaces a real storage failure so the visitor can retry", async () => {
     insert.mockResolvedValue({ error: { code: "500", message: "boom" } });
     const res = await submit(validLead);

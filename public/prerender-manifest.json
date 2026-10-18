@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 248,
+    "sitemap": 260,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 378
+    "total": 390
   },
   "routes": [
     "/",
@@ -105,6 +105,18 @@
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
     "/projects/cedar-shake-estate-highlands",
+    "/projects/brava-synthetic-shake-glenville",
+    "/projects/living-room-addition-franklin",
+    "/projects/deck-railing-rebuild-sylva",
+    "/blog/helical-piers-vs-concrete-piers",
+    "/blog/energy-efficient-roofing",
+    "/blog/ridge-vent-vs-box-vent",
+    "/blog/pergola-vs-covered-patio",
+    "/blog/skylight-replacement-cost_1",
+    "/blog/drip-edge-vs-gutter-apron",
+    "/blog/copper-gutters-cost",
+    "/blog/5-inch-vs-6-inch-gutters",
+    "/blog/metal-roof-noise",
     "/blog/wind-damaged-shingles",
     "/blog/wind-driven-rain-leak_2",
     "/blog/storm-damage-roof-inspection_1",

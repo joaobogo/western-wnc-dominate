@@ -159,7 +159,9 @@ const RoofingIntakeForm = () => {
         insuranceStatus: data.insuranceStatus,
       });
 
+      const consultId = crypto.randomUUID();
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
+        id: consultId,
         name: contact.values.name,
         email: contact.values.email,
         phone: contact.values.phone,
@@ -208,9 +210,13 @@ const RoofingIntakeForm = () => {
           lead_score: score,
           attachments: uploadedPaths,
           attachment_errors: uploadErrors,
-          metadata: { routing, jobtread, upload_folder: folder },
+          metadata: { routing, jobtread, upload_folder: folder, consultation_request_id: consultId },
         }));
-      } catch (e) { console.error(e); throw e; }
+      } catch (e) {
+        console.error("Canonical lead save failed; forwarding the saved consultation", e);
+        const { syncConsultationRequestToJobTread } = await import("@/lib/leads");
+        syncConsultationRequestToJobTread(consultId);
+      }
 
       trackEvent("form_submit", {
         label: "Roofing Intake",
