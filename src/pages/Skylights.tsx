@@ -1,4 +1,5 @@
 import { COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { smallSrc } from "@/lib/gallery-srcset";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Sun, Droplets, Wrench, Shield, Award } from "lucide-react";
@@ -177,11 +178,11 @@ const Skylights = () => {
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
                 <figure className="m-0">
-                  <img src={chimneySkylights} srcSet={chimneySkylightsSet} sizes="(max-width: 1024px) 50vw, 560px" width={1600} height={1200} loading="lazy" decoding="async" alt="Four skylights and a stone chimney with new black metal flashing on a shingle roof with a mountain view" className="w-full aspect-[4/3] object-cover" />
+                  <img src={smallSrc(chimneySkylights)} srcSet={chimneySkylightsSet} sizes="(max-width: 1024px) 50vw, 560px" width={1600} height={1200} loading="lazy" decoding="async" alt="Four skylights and a stone chimney with new black metal flashing on a shingle roof with a mountain view" className="w-full aspect-[4/3] object-cover" />
                   <figcaption className="mt-2 text-sm text-muted-foreground font-body">Skylights and new chimney flashing on a mountain-view shingle roof.</figcaption>
                 </figure>
                 <figure className="m-0">
-                  <img src={bravaSkylights} srcSet={bravaSkylightsSet} sizes="(max-width: 1024px) 50vw, 560px" width={1600} height={900} loading="lazy" decoding="async" alt="VELUX skylights set into a Brava synthetic shake roof on a lakeside home near Lake Glenville, North Carolina" className="w-full aspect-[4/3] lg:aspect-[16/9] object-cover" />
+                  <img src={smallSrc(bravaSkylights)} srcSet={bravaSkylightsSet} sizes="(max-width: 1024px) 50vw, 560px" width={1600} height={900} loading="lazy" decoding="async" alt="VELUX skylights set into a Brava synthetic shake roof on a lakeside home near Lake Glenville, North Carolina" className="w-full aspect-[4/3] lg:aspect-[16/9] object-cover" />
                   <figcaption className="mt-2 text-sm text-muted-foreground font-body">VELUX skylights in a Brava synthetic shake roof, Lake Glenville.</figcaption>
                 </figure>
               </div>

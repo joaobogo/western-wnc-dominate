@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { MapPin, Expand } from "lucide-react";
 import PremiumLightbox, { type LightboxProject } from "@/components/gallery/PremiumLightbox";
+import { smallSrc } from "@/lib/gallery-srcset";
 import { workPhotos, type WorkDivision, type WorkPhoto } from "@/data/work-photos";
 
 type Filter = "all" | WorkDivision;
@@ -93,7 +94,7 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
               aria-label={`View larger: ${ph.title}`}
             >
               <img
-                src={ph.src}
+                src={smallSrc(ph.src)}
                 srcSet={ph.srcSet}
                 sizes={columns === 2 ? "(max-width: 640px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
                 width={ph.width}

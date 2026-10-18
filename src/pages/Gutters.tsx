@@ -1,4 +1,5 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { smallSrc } from "@/lib/gallery-srcset";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Droplets, Shield, Wind, Home, ChevronRight } from "lucide-react";
@@ -151,7 +152,7 @@ const Gutters = () => {
               Western NC gets some of the highest rainfall totals east of the Cascades, on steep lots surrounded by hardwoods and pines. Undersized or clogged gutters push water back under the eaves, saturate foundations, ice over walkways in winter, and quietly rot fascia and trim. A properly sized system solves all of it.
             </p>
             <figure className="mt-10 md:mt-12 m-0">
-              <img src={gutterGuard} srcSet={gutterGuardSet} sizes="(max-width: 896px) 100vw, 896px" width={1600} height={900} loading="lazy" decoding="async" alt="Charcoal shingle roof edge with seamless gutters, mesh gutter guards and a dormer" className="w-full aspect-[16/9] object-cover object-bottom border border-border" />
+              <img src={smallSrc(gutterGuard)} srcSet={gutterGuardSet} sizes="(max-width: 896px) 100vw, 896px" width={1600} height={900} loading="lazy" decoding="async" alt="Charcoal shingle roof edge with seamless gutters, mesh gutter guards and a dormer" className="w-full aspect-[16/9] object-cover object-bottom border border-border" />
               <figcaption className="mt-3 text-sm text-muted-foreground font-body">Seamless gutters with mesh guards along a dormered shingle roof.</figcaption>
             </figure>
           </div>

@@ -2,7 +2,8 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Phone } from "lucide-react";
-import certainteedPremier from "@/assets/certainteed-shinglemaster-premier.jpg.asset.json";
+// Same official artwork the shared Premier badge uses (the .asset.json URL only resolves inside Lovable).
+import certainteedPremier from "@/assets/certainteed-shinglemaster-premier-transparent.png";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
@@ -22,7 +23,7 @@ type Vendor = {
 const vendors: Vendor[] = [
   {
     name: "CertainTeed",
-    logo: certainteedPremier.url,
+    logo: certainteedPremier,
     badge: "ShingleMaster PREMIER Credentialed Contractor",
     body: "Western North Carolina's only CertainTeed ShingleMaster PREMIER credentialed contractor. We match the roof system to your home and confirm warranty eligibility in writing.",
     href: "https://www.certainteed.com/products/residential-roofing-products?zip=28734",

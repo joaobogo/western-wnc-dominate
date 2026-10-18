@@ -218,6 +218,24 @@ const Renovations = () => {
             </motion.div>
           </div>
         </section>
+            {/* ─── GALLERY ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Recent Work</span>
+              <h2 className="section-heading mb-3">Rebuilds, Conversions and Additions.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A deck and railing rebuild in Sylva, an open trellis turned covered patio in Cashiers, and additions in Franklin and Cullowhee. Tap any photo to see it full size.</p>
+            </motion.div>
+
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
+
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
             {/* ─── RENOVATION GOALS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
@@ -369,24 +387,6 @@ const Renovations = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-            {/* ─── GALLERY ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Recent Work</span>
-              <h2 className="section-heading mb-3">Rebuilds, Conversions and Additions.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A deck and railing rebuild in Sylva, an open trellis turned covered patio in Cashiers, and additions in Franklin and Cullowhee. Tap any photo to see it full size.</p>
-            </motion.div>
-
-            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
-
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </motion.div>
           </div>
         </section>
             <VeluxWidget variant="remodeler"

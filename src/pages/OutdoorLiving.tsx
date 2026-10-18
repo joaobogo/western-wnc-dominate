@@ -1,4 +1,5 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { smallSrc } from "@/lib/gallery-srcset";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -214,8 +215,26 @@ const OutdoorLiving = () => {
                   Whether it is new construction or remodeling a porch you already have, Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img width={1500} height={1125} decoding="async" src={porchContextImg} srcSet={porchContextSet} sizes="(max-width: 768px) 100vw, 768px" alt="Open trellis converted to a covered patio with a metal roof and wood ceiling, built by Highlander in Cashiers, North Carolina" className="w-full h-full object-cover object-[50%_70%] hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
+                <img width={1500} height={1125} decoding="async" src={smallSrc(porchContextImg)} srcSet={porchContextSet} sizes="(max-width: 768px) 100vw, 768px" alt="Open trellis converted to a covered patio with a metal roof and wood ceiling, built by Highlander in Cashiers, North Carolina" className="w-full h-full object-cover object-[50%_70%] hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
               </div>
+            </motion.div>
+          </div>
+        </section>
+            {/* ─── GALLERY ─── */}
+        <section className="section-padding bg-background/50 relative">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Outdoor Living Work</span>
+              <h2 className="section-heading mb-3">Porches, Patios and Decks We Have Built.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">A covered patio and screened porch in Cashiers, and a deck and railing rebuild in Sylva. Tap any photo to see it full size.</p>
+            </motion.div>
+
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
+
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -393,24 +412,6 @@ const OutdoorLiving = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-            {/* ─── GALLERY ─── */}
-        <section className="section-padding bg-background/50 relative">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Outdoor Living Work</span>
-              <h2 className="section-heading mb-3">Porches, Patios and Decks We Have Built.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">A covered patio and screened porch in Cashiers, and a deck and railing rebuild in Sylva. Tap any photo to see it full size.</p>
-            </motion.div>
-
-            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
-
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </motion.div>
           </div>
         </section>
             <BuilderPromoBlock mode="construction"

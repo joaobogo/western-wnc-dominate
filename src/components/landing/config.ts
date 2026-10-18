@@ -20,6 +20,24 @@ import stripTan from "@/assets/work/roof-tan-dormers-aerial.webp";
 import stripTanSet from "@/assets/work/roof-tan-dormers-aerial.webp?w=480;800;1200&format=webp&as=srcset";
 import patioPorch from "@/assets/work/patio-cashiers-screened-porch.webp";
 import patioPorchSet from "@/assets/work/patio-cashiers-screened-porch.webp?w=480;800;1200;1600&format=webp&as=srcset";
+import cardChimney from "@/assets/work/roof-chimney-flashing-detail.webp";
+import cardChimneySet from "@/assets/work/roof-chimney-flashing-detail.webp?w=480;800&format=webp&as=srcset";
+import cardRidge from "@/assets/work/roof-charcoal-dormer-ridge.webp";
+import cardRidgeSet from "@/assets/work/roof-charcoal-dormer-ridge.webp?w=480;800&format=webp&as=srcset";
+import cardMetal from "@/assets/gallery/metal-006.webp";
+import cardMetalSet from "@/assets/gallery/metal-006.webp?w=480;800&format=webp&as=srcset";
+import cardAdditionExt from "@/assets/work/addition-franklin-exterior-windows.webp";
+import cardAdditionExtSet from "@/assets/work/addition-franklin-exterior-windows.webp?w=480;800&format=webp&as=srcset";
+import cardPatioWide from "@/assets/work/patio-cashiers-wide.webp";
+import cardPatioWideSet from "@/assets/work/patio-cashiers-wide.webp?w=480;800&format=webp&as=srcset";
+import cardDeckView from "@/assets/work/patio-cashiers-deck-view.webp";
+import cardDeckViewSet from "@/assets/work/patio-cashiers-deck-view.webp?w=480;800&format=webp&as=srcset";
+import cardCullowhee from "@/assets/work/addition-cullowhee-roofline.webp";
+import cardCullowheeSet from "@/assets/work/addition-cullowhee-roofline.webp?w=480;800&format=webp&as=srcset";
+import proofBrava from "@/assets/gallery/brava-glenville-chimney-valley.webp";
+import proofBravaSet from "@/assets/gallery/brava-glenville-chimney-valley.webp?w=480;800;1200&format=webp&as=srcset";
+import proofDeck from "@/assets/gallery/deck-sylva-doors-wide.webp";
+import proofDeckSet from "@/assets/gallery/deck-sylva-doors-wide.webp?w=480;800;1200&format=webp&as=srcset";
 import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 
 /**
@@ -77,6 +95,9 @@ export interface IntentCard {
   projectType: string;
   /** Combined page only: proof emphasis when this card is chosen. */
   emphasis?: "roofing" | "construction" | "both";
+  /** Photo at the top of the card (must not repeat elsewhere on the page). */
+  image?: LandingImage;
+  imagePosition?: string;
 }
 
 export interface LandingConfig {
@@ -149,6 +170,36 @@ export interface LandingConfig {
 
 export const SERVICE_LOCAL_LINE =
   "Serving Franklin, Highlands, Cashiers, Sylva and surrounding Western North Carolina communities.";
+
+/** Intent-card photos: Highlander work, no place claims in the alt text. */
+const img = (src: string, srcSet: string, alt: string, width: number, height: number): LandingImage => ({ src, srcSet, alt, width, height });
+const cardImg = {
+  chimney: img(cardChimney, cardChimneySet, "Stone chimney with new black metal counter-flashing on a shingle roof", 1600, 1200),
+  ridge: img(cardRidge, cardRidgeSet, "New charcoal dimensional shingles on a hip roof with a dormer, mountains behind", 1600, 900),
+  metal: img(cardMetal, cardMetalSet, "Green standing seam metal roof on a log mountain home", 1400, 1050),
+  additionExt: img(cardAdditionExt, cardAdditionExtSet, "Cedar shake gable with tall windows on a living room addition", 1600, 1200),
+  patioWide: img(cardPatioWide, cardPatioWideSet, "Open trellis converted into a covered patio with a metal roof", 1500, 1125),
+  deckView: img(cardDeckView, cardDeckViewSet, "View from a screened porch onto a new wood deck", 1600, 1200),
+  cullowhee: img(cardCullowhee, cardCullowheeSet, "Cedar shake addition with its shingle roof tied into the original roof", 1125, 1500),
+};
+
+/** Documented job 26-00564: Brava synthetic shake re-roof at Lake Glenville, NC. */
+const roofGlenville: LandingImage = img(
+  proofBrava,
+  proofBravaSet,
+  "Brava synthetic cedar shake roof and stone chimney installed by Highlander on a lakeside home at Lake Glenville, North Carolina",
+  1280,
+  960,
+);
+
+/** Documented job 26-00436: deck and railing rebuild in Sylva, NC. */
+const deckSylva: LandingImage = img(
+  proofDeck,
+  proofDeckSet,
+  "Rebuilt elevated deck with new boards and railing by Highlander in Sylva, North Carolina",
+  1125,
+  633,
+);
 
 const roofHighlands: LandingImage = {
   src: metalRoof,
@@ -357,6 +408,13 @@ export const ROOFING_CONFIG: LandingConfig = {
       tag: "Waynesville, NC",
       image: roofWaynesville,
     },
+    {
+      id: "brava-glenville",
+      title: "Brava synthetic shake re-roof",
+      detail: "A documented Highlander synthetic cedar shake roof on a lakeside home at Lake Glenville, NC.",
+      tag: "Lake Glenville, NC",
+      image: roofGlenville,
+    },
   ],
 
   intentEyebrow: "What are you seeing?",
@@ -364,6 +422,8 @@ export const ROOFING_CONFIG: LandingConfig = {
   intents: [
     {
       id: "roof_repair",
+      image: cardImg.chimney,
+      imagePosition: "50% 40%",
       title: "Roof repair",
       label: "Roof repair",
       projectType: "roof_repair",
@@ -371,6 +431,8 @@ export const ROOFING_CONFIG: LandingConfig = {
     },
     {
       id: "roof_replacement",
+      image: cardImg.ridge,
+      imagePosition: "50% 60%",
       title: "Roof replacement",
       label: "Roof replacement",
       projectType: "roof_replacement",
@@ -378,6 +440,7 @@ export const ROOFING_CONFIG: LandingConfig = {
     },
     {
       id: "metal_roofing",
+      image: cardImg.metal,
       title: "Metal roofing",
       label: "Metal roofing",
       projectType: "metal_roofing",
@@ -475,6 +538,13 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
       tag: "Home addition",
       image: constructionSecondary,
     },
+    {
+      id: "deck-sylva",
+      title: "Deck and railing rebuild, Sylva",
+      detail: "Worn boards, a tired railing and framing that needed attention, rebuilt as a solid elevated deck.",
+      tag: "Deck rebuild",
+      image: deckSylva,
+    },
   ],
 
   intentEyebrow: "What are you picturing?",
@@ -482,6 +552,8 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   intents: [
     {
       id: "addition",
+      image: cardImg.additionExt,
+      imagePosition: "50% 45%",
       title: "Add space without changing your address.",
       label: "Home addition",
       projectType: "addition",
@@ -489,6 +561,8 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
     {
       id: "renovation",
+      image: cardImg.patioWide,
+      imagePosition: "50% 70%",
       title: "Make the space you have work better.",
       label: "Renovation",
       projectType: "renovation",
@@ -496,6 +570,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
     {
       id: "outdoor_living",
+      image: cardImg.deckView,
       title: "Bring more living outside.",
       label: "Deck, porch or outdoor living",
       projectType: "outdoor_living",
@@ -582,7 +657,7 @@ export const COMBINED_CONFIG: LandingConfig = {
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
-  proofIntro: "Two separate Highlander services, shown as separate examples.",
+  proofIntro: "Two Highlander services, shown as separate documented examples.",
   proof: [
     {
       id: "roofing",
@@ -590,6 +665,13 @@ export const COMBINED_CONFIG: LandingConfig = {
       detail: "A documented Highlander standing seam metal-roof project in Highlands, NC.",
       tag: "Roofing · Highlands, NC",
       image: roofHighlands,
+    },
+    {
+      id: "roofing-glenville",
+      title: "Roofing",
+      detail: "A documented Highlander Brava synthetic shake re-roof on a lakeside home at Lake Glenville, NC.",
+      tag: "Roofing · Lake Glenville, NC",
+      image: roofGlenville,
     },
     {
       id: "construction",
@@ -605,6 +687,8 @@ export const COMBINED_CONFIG: LandingConfig = {
   intents: [
     {
       id: "roofing",
+      image: cardImg.ridge,
+      imagePosition: "50% 60%",
       title: "Roofing: protect what is already there.",
       label: "Roofing",
       projectType: "roofing",
@@ -613,6 +697,8 @@ export const COMBINED_CONFIG: LandingConfig = {
     },
     {
       id: "construction",
+      image: cardImg.additionExt,
+      imagePosition: "50% 45%",
       title: "Construction: make more of your home.",
       label: "Construction",
       projectType: "construction",
@@ -621,6 +707,8 @@ export const COMBINED_CONFIG: LandingConfig = {
     },
     {
       id: "not_sure",
+      image: cardImg.cullowhee,
+      imagePosition: "50% 40%",
       title: "Need both, or not sure?",
       label: "Need both, or not sure",
       projectType: "general",

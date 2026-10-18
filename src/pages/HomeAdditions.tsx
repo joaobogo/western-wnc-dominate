@@ -1,4 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import GalleryImage from "@/components/media/GalleryImage";
+import { smallSrc } from "@/lib/gallery-srcset";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -132,7 +134,7 @@ const HomeAdditions = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1500} height={1500} decoding="async" src={heroImg} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained tongue-and-groove vaulted ceiling and a wall of mountain-view windows" className="w-full h-full object-cover object-[50%_88%]" loading="eager" />
+            <GalleryImage width={1500} height={1500} decoding="async" src={heroImg} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained tongue-and-groove vaulted ceiling and a wall of mountain-view windows" className="w-full h-full object-cover object-[50%_88%]" loading="eager" sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -219,7 +221,7 @@ const HomeAdditions = () => {
                   Highlander brings residential construction craftsmanship to home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
-                  <img width={1600} height={1200} loading="lazy" decoding="async" src={expansionContextImg} srcSet={expansionContextSet} sizes="(max-width: 1024px) 100vw, 900px" alt="Cedar shake siding and tall windows with custom gable glass on a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover object-[50%_55%] opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                  <img width={1600} height={1200} loading="lazy" decoding="async" src={smallSrc(expansionContextImg)} srcSet={expansionContextSet} sizes="(max-width: 1024px) 100vw, 900px" alt="Cedar shake siding and tall windows with custom gable glass on a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover object-[50%_55%] opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body italic">
@@ -238,6 +240,24 @@ const HomeAdditions = () => {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+            {/* ─── GALLERY ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Recent Additions</span>
+              <h2 className="section-heading mb-3">Additions and Expansions We Have Built.</h2>
+              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A living room addition in Franklin, a laundry room addition in Cullowhee, and a covered patio and screened porch in Cashiers. Tap any photo to see it full size.</p>
+            </motion.div>
+
+            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
+
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
+            </motion.div>
           </div>
         </section>
             {/* ─── WHY HOMEOWNERS BUILD ADDITIONS ─── */}
@@ -479,24 +499,6 @@ const HomeAdditions = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-            {/* ─── GALLERY ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Recent Additions</span>
-              <h2 className="section-heading mb-3">Additions and Expansions We Have Built.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">A living room addition in Franklin, a laundry room addition in Cullowhee, and a covered patio and screened porch in Cashiers. Tap any photo to see it full size.</p>
-            </motion.div>
-
-            <WorkGallery layout="grid" columns={2} showFilters={false} ids={galleryIds} />
-
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </motion.div>
           </div>
         </section>
             <BuilderPromoBlock mode="construction"
