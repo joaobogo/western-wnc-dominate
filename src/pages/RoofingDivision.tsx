@@ -633,6 +633,8 @@ const RoofingDivision = () => {
             { label: "Roofers in Highlands, NC", href: "/service-areas/highlands-nc", description: "Roofing built for 4,000 feet" },
             { label: "Roofers in Cashiers, NC", href: "/service-areas/cashiers-nc", description: "Roofs built for plateau rain" },
             { label: "Roofers in Sylva, NC", href: "/service-areas/sylva-nc", description: "Jackson County roofing" },
+            { label: "Glenville, NC Roofing Company", href: "/service-areas/lake-glenville-nc", description: "Lake Glenville roofs built for plateau rain" },
+            { label: "Macon County, NC Roofing", href: "/service-areas/county/macon-county", description: "Franklin, Highlands, Otto and Scaly Mountain" },
           ]}
         />
       </main>

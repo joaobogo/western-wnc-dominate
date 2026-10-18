@@ -114,8 +114,8 @@ export const towns: TownData[] = [
     population: "~1,100 (Full-time)",
     description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic roofing designed to protect your home from the plateau's unique exposure.",
     features: ["Elevation-rated systems", "Design", "Storm damage recovery", "Premium Brava installers"],
-    // 59 chars so the service differentiator survives the 60-char title guard.
-    metaTitle: "Roofers in Highlands, NC: Metal and Shingle | Highlander Building Services",
+    // 60 chars after the brand is shortened; adds "Roofing" for "highlands roofing" searches.
+    metaTitle: "Roofers in Highlands, NC: Roofing & Metal Roofs | Highlander Building Services",
     h1: "Roofers in Highlands, NC: Roofing Built for 4,000 ft",
     metaDescription: "Highlander serves Highlands, NC with roofing, repair, replacement, gutters, skylights, construction, and design for mountain homes across Western NC.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
@@ -158,8 +158,8 @@ export const towns: TownData[] = [
     elevation: "2,119 ft",
     description: `Our hometown market. Based at ${FRANKLIN_STREET} in Franklin, Highlander serves family homes, valley farms, and ridge-top residences across Macon County.`,
     features: ["Franklin walk-in showroom", "Residential roofing", "Construction", "Family-owned since 2017"],
-    // 54 chars: fits the 60-char guard intact and stays distinct from the homepage title.
-    metaTitle: "Roofers in Franklin, NC: Repair, Replacement | Highlander Building Services",
+    // 54 chars after the brand is shortened; targets "roofing services franklin".
+    metaTitle: "Roofers in Franklin, NC: Roofing Services | Highlander Building Services",
     h1: "Roofers in Franklin, NC: Repair, Replacement and Metal Roofing",
     metaDescription: "Looking for roofers in Franklin, NC? Highlander handles roof repair, replacement, metal roofing and construction across Macon County. Free estimate.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
@@ -222,7 +222,7 @@ export const towns: TownData[] = [
     elevation: "2,753 ft",
     description: "Serving Waynesville's historic districts and established Haywood County neighborhoods with expert roofing modernization and whole-home additions.",
     features: ["Historic district care", "Whole-home renovations", "Haywood County authority", "Structural modernization"],
-    metaTitle: "Waynesville, NC Roofing | Highlander Building Services",
+    metaTitle: "Waynesville, NC Roofing & Roof Repair | Highlander Building Services",
     metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Waynesville, NC homes. Franklin-based crews serving Haywood County.",
     housingProfile: "Historic district estates, mid-century residential neighborhoods, and newer hillside builds in Haywood County.",
     climateExposure: "Regular freeze-thaw cycles and winter snow accumulation that test attic ventilation and older roof deck integrity.",
@@ -434,7 +434,7 @@ export const towns: TownData[] = [
     elevation: "3,494 ft",
     description: "Lake Glenville — often referred to as Glenville, NC — is the highest major lake east of the Mississippi. Steep lots, premium lake homes, and Plateau rainfall drive every roofing and exterior decision here.",
     features: ["Lakefront specialists", "Standing seam metal", "Gutter capacity upgrades", "Design & construction"],
-    metaTitle: "Lake Glenville, NC Roofing | Highlander Building Services",
+    metaTitle: "Glenville & Lake Glenville, NC Roofing Company | Highlander Building Services",
     metaDescription: "Highlander serves Lake Glenville, NC with roofing, repair, replacement, metal roofing, gutters, skylights, and construction for lakefront homes.",
     housingProfile: "Lakefront estates, steep-lot cabins, and long-term second-home properties around Lake Glenville and the Highway 107 corridor.",
     climateExposure: "Plateau elevation with 70+ inches of rainfall, persistent fog, and ice loading that demand oversized drainage and high-temperature underlayment.",
