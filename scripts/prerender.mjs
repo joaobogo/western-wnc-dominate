@@ -167,6 +167,20 @@ function postProcess(html, route) {
     (m, host) => (BLOCKED_HOSTS.some((h) => host === h || host.endsWith(`.${h}`)) ? "" : m),
   );
 
+  // Keep only the shell's own <link rel="modulepreload"> tags. Vite's
+  // dynamic-import helper and the idle route warmer (lib/route-preload) add
+  // more at runtime, and the snapshot froze ~30 of them into every page head
+  // (Thank You, Financing, Intake…), so each visitor fetched them at high
+  // priority, competing with the CSS the first paint needs. The page's own
+  // code-split chunks are still loaded before hydration (lib/lazy-preload).
+  const shellPreloads = new Set(
+    [...String(SHELL_HTML ?? "").matchAll(/<link\b[^>]*rel="modulepreload"[^>]*href="([^"]+)"/gi)].map((m) => m[1]),
+  );
+  html = html.replace(/<link\b[^>]*rel="modulepreload"[^>]*>\s*/gi, (tag) => {
+    const href = (tag.match(/href="([^"]+)"/i) || [])[1];
+    return href && shellPreloads.has(href) ? tag : "";
+  });
+
   // Scroll-reveal animations (framer-motion `initial={{ opacity: 0, y: 16 }}`)
   // were frozen into the snapshot for anything that had not scrolled into the
   // prerender viewport, so a real visitor saw blank space until JavaScript ran
@@ -294,6 +308,27 @@ async function renderRoute(context, route, staticHead) {
       throw new Error(`lazy sections still pending after ${LAZY_TIMEOUT_MS / 1000}s`);
     }
 
+    // Make the snapshot hydratable (React #418/#423 on every page before):
+    //  - React keeps adjacent text nodes ("4.8" + "/5 on Google") separate and
+    //    renderToString marks each boundary with an empty comment. A browser
+    //    snapshot has no markers, so the parser merges them and hydration
+    //    fails. Insert the same <!-- --> separators React expects.
+    //  - Widgets that only appear after mount (cookie notice, sticky bars) are
+    //    tagged data-client-only and dropped, so the snapshot matches React's
+    //    first client render; they mount again on the client as usual.
+    await page.evaluate(() => {
+      const root = document.getElementById("root");
+      if (!root) return;
+      root.querySelectorAll("[data-client-only]").forEach((el) => el.remove());
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const texts = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) texts.push(n);
+      for (const t of texts) {
+        if (t.nextSibling && t.nextSibling.nodeType === Node.TEXT_NODE) {
+          t.parentNode.insertBefore(document.createComment(" "), t.nextSibling);
+        }
+      }
+    });
     const html = await page.evaluate(() => document.documentElement.outerHTML);
 
     // Post-check: a non-home snapshot that still carries the shell's title was

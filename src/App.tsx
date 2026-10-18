@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazyPreload, LazyFallback } from "@/lib/lazy-preload";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
@@ -16,10 +16,10 @@ import { captureAttribution } from "./lib/attribution";
 import { preloadLikelyRoutes } from "./lib/route-preload";
 
 // Toast layers only matter after an interaction — keep them off the critical path.
-const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
-const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
+const Toaster = lazyPreload("Toaster", () => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
+const Sonner = lazyPreload("Sonner", () => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
 // Consent notice is non-critical chrome — mounted lazily, renders only until decided.
-const ConsentBanner = lazy(() => import("./components/ConsentBanner"));
+const ConsentBanner = lazyPreload("ConsentBanner", () => import("./components/ConsentBanner"));
 
 // Initialize tracking pixels
 initPixels();
@@ -29,76 +29,76 @@ captureAttribution();
 preloadLikelyRoutes();
 
 // Lazy-load all non-home routes for faster LCP on initial load
-const NotFound = lazy(() => import("./pages/NotFound"));
-const TownPage = lazy(() => import("./pages/TownPage"));
-const CountyPage = lazy(() => import("./pages/CountyPage"));
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogPostPage = lazy(() => import("./pages/BlogPost"));
-const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
-const Locations = lazy(() => import("./pages/Locations"));
-const LocationPage = lazy(() => import("./pages/LocationPage"));
-const About = lazy(() => import("./pages/About"));
-const GivingBack = lazy(() => import("./pages/GivingBack"));
-const Team = lazy(() => import("./pages/Team"));
-const FAQ = lazy(() => import("./pages/FAQ"));
-const RoofingCostWNC = lazy(() => import("./pages/RoofingCostWNC"));
-const MetalRoofingCost = lazy(() => import("./pages/MetalRoofingCost"));
+const NotFound = lazyPreload("NotFound", () => import("./pages/NotFound"));
+const TownPage = lazyPreload("TownPage", () => import("./pages/TownPage"));
+const CountyPage = lazyPreload("CountyPage", () => import("./pages/CountyPage"));
+const Blog = lazyPreload("Blog", () => import("./pages/Blog"));
+const BlogPostPage = lazyPreload("BlogPostPage", () => import("./pages/BlogPost"));
+const ServiceAreas = lazyPreload("ServiceAreas", () => import("./pages/ServiceAreas"));
+const Locations = lazyPreload("Locations", () => import("./pages/Locations"));
+const LocationPage = lazyPreload("LocationPage", () => import("./pages/LocationPage"));
+const About = lazyPreload("About", () => import("./pages/About"));
+const GivingBack = lazyPreload("GivingBack", () => import("./pages/GivingBack"));
+const Team = lazyPreload("Team", () => import("./pages/Team"));
+const FAQ = lazyPreload("FAQ", () => import("./pages/FAQ"));
+const RoofingCostWNC = lazyPreload("RoofingCostWNC", () => import("./pages/RoofingCostWNC"));
+const MetalRoofingCost = lazyPreload("MetalRoofingCost", () => import("./pages/MetalRoofingCost"));
 
 
 
-const Certifications = lazy(() => import("./pages/Certifications"));
-const RecentProjects = lazy(() => import("./pages/RecentProjects"));
-const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
-const Financing = lazy(() => import("./pages/Financing"));
-const Careers = lazy(() => import("./pages/Careers"));
-const RequestInspection = lazy(() => import("./pages/RequestInspection"));
-const ThankYou = lazy(() => import("./pages/ThankYou"));
-const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
-const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
-const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
-const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
-const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
-const RoofReplacement = lazy(() => import("./pages/RoofReplacement"));
-const RoofRepair = lazy(() => import("./pages/RoofRepair"));
-const StormDamage = lazy(() => import("./pages/StormDamage"));
-const RoofReplacementAds = lazy(() => import("./pages/RoofReplacementAds"));
-const RoofRepairAds = lazy(() => import("./pages/RoofRepairAds"));
-const StormDamageAds = lazy(() => import("./pages/StormDamageAds"));
-const RoofingLanding = lazy(() => import("./pages/RoofingLanding"));
-const ConstructionLanding = lazy(() => import("./pages/ConstructionLanding"));
-const CombinedLanding = lazy(() => import("./pages/CombinedLanding"));
-const CommercialRoofing = lazy(() => import("./pages/CommercialRoofing"));
-const MetalRoofing = lazy(() => import("./pages/MetalRoofing"));
-const SyntheticRoofing = lazy(() => import("./pages/SyntheticRoofing"));
-const Skylights = lazy(() => import("./pages/Skylights"));
-const Gutters = lazy(() => import("./pages/Gutters"));
-const ServiceTownPage = lazy(() => import("./pages/ServiceTownPage"));
-const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
-const HomeAdditions = lazy(() => import("./pages/HomeAdditions"));
-const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
-const OutdoorLivingSubPage = lazy(() => import("./pages/OutdoorLivingSubPage"));
-const Renovations = lazy(() => import("./pages/Renovations"));
-const Siding = lazy(() => import("./pages/Siding"));
-const ConstructionConsultation = lazy(() => import("./pages/ConstructionConsultation"));
-const ConstructionDesign = lazy(() => import("./pages/ConstructionDesign"));
-const QuoteFlow = lazy(() => import("./pages/QuoteFlow"));
-const Contact = lazy(() => import("./pages/Contact"));
-const RoofingIntake = lazy(() => import("./pages/RoofingIntake"));
-const ConstructionIntake = lazy(() => import("./pages/ConstructionIntake"));
-const IntakeChooser = lazy(() => import("./pages/IntakeChooser"));
-const RoofingBuilder = lazy(() => import("./pages/RoofingBuilder"));
-const ConstructionBuilder = lazy(() => import("./pages/ConstructionBuilder"));
-const DesignIntake = lazy(() => import("./pages/DesignIntake"));
-const LegalPage = lazy(() => import("./pages/Legal"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const AdminLeads = lazy(() => import("./pages/AdminLeads"));
-const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
-const AdminBlogReview = lazy(() => import("./pages/AdminBlogReview"));
-const AdminLogin = lazy(() => import("./pages/AdminLogin"));
-const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
+const Certifications = lazyPreload("Certifications", () => import("./pages/Certifications"));
+const RecentProjects = lazyPreload("RecentProjects", () => import("./pages/RecentProjects"));
+const ReviewsPage = lazyPreload("ReviewsPage", () => import("./pages/ReviewsPage"));
+const ProjectDetail = lazyPreload("ProjectDetail", () => import("./pages/ProjectDetail"));
+const Financing = lazyPreload("Financing", () => import("./pages/Financing"));
+const Careers = lazyPreload("Careers", () => import("./pages/Careers"));
+const RequestInspection = lazyPreload("RequestInspection", () => import("./pages/RequestInspection"));
+const ThankYou = lazyPreload("ThankYou", () => import("./pages/ThankYou"));
+const SEOMonitoring = lazyPreload("SEOMonitoring", () => import("./pages/SEOMonitoring"));
+const RoofingDivision = lazyPreload("RoofingDivision", () => import("./pages/RoofingDivision"));
+const ExteriorImprovements = lazyPreload("ExteriorImprovements", () => import("./pages/ExteriorImprovements"));
+const ResidentialRoofing = lazyPreload("ResidentialRoofing", () => import("./pages/ResidentialRoofing"));
+const SpecialtyRoofing = lazyPreload("SpecialtyRoofing", () => import("./pages/SpecialtyRoofing"));
+const RoofReplacement = lazyPreload("RoofReplacement", () => import("./pages/RoofReplacement"));
+const RoofRepair = lazyPreload("RoofRepair", () => import("./pages/RoofRepair"));
+const StormDamage = lazyPreload("StormDamage", () => import("./pages/StormDamage"));
+const RoofReplacementAds = lazyPreload("RoofReplacementAds", () => import("./pages/RoofReplacementAds"));
+const RoofRepairAds = lazyPreload("RoofRepairAds", () => import("./pages/RoofRepairAds"));
+const StormDamageAds = lazyPreload("StormDamageAds", () => import("./pages/StormDamageAds"));
+const RoofingLanding = lazyPreload("RoofingLanding", () => import("./pages/RoofingLanding"));
+const ConstructionLanding = lazyPreload("ConstructionLanding", () => import("./pages/ConstructionLanding"));
+const CombinedLanding = lazyPreload("CombinedLanding", () => import("./pages/CombinedLanding"));
+const CommercialRoofing = lazyPreload("CommercialRoofing", () => import("./pages/CommercialRoofing"));
+const MetalRoofing = lazyPreload("MetalRoofing", () => import("./pages/MetalRoofing"));
+const SyntheticRoofing = lazyPreload("SyntheticRoofing", () => import("./pages/SyntheticRoofing"));
+const Skylights = lazyPreload("Skylights", () => import("./pages/Skylights"));
+const Gutters = lazyPreload("Gutters", () => import("./pages/Gutters"));
+const ServiceTownPage = lazyPreload("ServiceTownPage", () => import("./pages/ServiceTownPage"));
+const ConstructionDivision = lazyPreload("ConstructionDivision", () => import("./pages/ConstructionDivision"));
+const HomeAdditions = lazyPreload("HomeAdditions", () => import("./pages/HomeAdditions"));
+const OutdoorLiving = lazyPreload("OutdoorLiving", () => import("./pages/OutdoorLiving"));
+const OutdoorLivingSubPage = lazyPreload("OutdoorLivingSubPage", () => import("./pages/OutdoorLivingSubPage"));
+const Renovations = lazyPreload("Renovations", () => import("./pages/Renovations"));
+const Siding = lazyPreload("Siding", () => import("./pages/Siding"));
+const ConstructionConsultation = lazyPreload("ConstructionConsultation", () => import("./pages/ConstructionConsultation"));
+const ConstructionDesign = lazyPreload("ConstructionDesign", () => import("./pages/ConstructionDesign"));
+const QuoteFlow = lazyPreload("QuoteFlow", () => import("./pages/QuoteFlow"));
+const Contact = lazyPreload("Contact", () => import("./pages/Contact"));
+const RoofingIntake = lazyPreload("RoofingIntake", () => import("./pages/RoofingIntake"));
+const ConstructionIntake = lazyPreload("ConstructionIntake", () => import("./pages/ConstructionIntake"));
+const IntakeChooser = lazyPreload("IntakeChooser", () => import("./pages/IntakeChooser"));
+const RoofingBuilder = lazyPreload("RoofingBuilder", () => import("./pages/RoofingBuilder"));
+const ConstructionBuilder = lazyPreload("ConstructionBuilder", () => import("./pages/ConstructionBuilder"));
+const DesignIntake = lazyPreload("DesignIntake", () => import("./pages/DesignIntake"));
+const LegalPage = lazyPreload("LegalPage", () => import("./pages/Legal"));
+const PrivacyPolicy = lazyPreload("PrivacyPolicy", () => import("./pages/PrivacyPolicy"));
+const AdminLeads = lazyPreload("AdminLeads", () => import("./pages/AdminLeads"));
+const AdminDashboard = lazyPreload("AdminDashboard", () => import("./pages/AdminDashboard"));
+const AdminBlogReview = lazyPreload("AdminBlogReview", () => import("./pages/AdminBlogReview"));
+const AdminLogin = lazyPreload("AdminLogin", () => import("./pages/AdminLogin"));
+const OAuthConsent = lazyPreload("OAuthConsent", () => import("./pages/OAuthConsent"));
 // Internal receptionist call sheet (unlisted, noindex) — mounted at /front-desk/*
-const IntakeApp = lazy(() => import("./intake/App"));
+const IntakeApp = lazyPreload("IntakeApp", () => import("./intake/App"));
 
 
 
@@ -127,10 +127,10 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <MotionConfig reducedMotion="user">
-        <Suspense fallback={null}>
+        <LazyFallback fallback={null}>
           <Toaster />
           <Sonner />
-        </Suspense>
+        </LazyFallback>
         <BrowserRouter>
           <UrlNormalizer />
           <ScrollToTop />
@@ -140,7 +140,7 @@ const App = () => (
           <PaidLandingGate>
             <RecoveryPrompt />
           </PaidLandingGate>
-          <Suspense fallback={<div className="min-h-dvh bg-background" />}>
+          <LazyFallback fallback={<div className="min-h-dvh bg-background" />}>
             <ErrorBoundary boundary="route">
               <Routes>
           <Route path="/" element={<RootEntry />} />
@@ -268,11 +268,11 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
               </Routes>
             </ErrorBoundary>
-          </Suspense>
+          </LazyFallback>
           <ErrorBoundary boundary="consent" fallback={() => null}>
-            <Suspense fallback={null}>
+            <LazyFallback fallback={null}>
               <ConsentBanner />
-            </Suspense>
+            </LazyFallback>
           </ErrorBoundary>
         </BrowserRouter>
         </MotionConfig>
