@@ -1,4 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import GalleryImage from "@/components/media/GalleryImage";
+import { smallSrc } from "@/lib/gallery-srcset";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -132,7 +134,7 @@ const HomeAdditions = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1500} height={1500} decoding="async" src={heroImg} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained tongue-and-groove vaulted ceiling and a wall of mountain-view windows" className="w-full h-full object-cover object-[50%_88%]" loading="eager" />
+            <GalleryImage width={1500} height={1500} decoding="async" src={heroImg} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained tongue-and-groove vaulted ceiling and a wall of mountain-view windows" className="w-full h-full object-cover object-[50%_88%]" loading="eager" sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -219,7 +221,7 @@ const HomeAdditions = () => {
                   Highlander brings residential construction craftsmanship to home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
-                  <img width={1600} height={1200} loading="lazy" decoding="async" src={expansionContextImg} srcSet={expansionContextSet} sizes="(max-width: 1024px) 100vw, 900px" alt="Cedar shake siding and tall windows with custom gable glass on a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover object-[50%_55%] opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                  <img width={1600} height={1200} loading="lazy" decoding="async" src={smallSrc(expansionContextImg)} srcSet={expansionContextSet} sizes="(max-width: 1024px) 100vw, 900px" alt="Cedar shake siding and tall windows with custom gable glass on a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover object-[50%_55%] opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body italic">

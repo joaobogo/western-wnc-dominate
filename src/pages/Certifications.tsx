@@ -5,7 +5,8 @@ import {
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
 import badgeVelux from "@/assets/logo-velux.png";
-import certainteedPremier from "@/assets/certainteed-shinglemaster-premier.jpg.asset.json";
+// Same official artwork the shared Premier badge uses (the .asset.json URL only resolves inside Lovable).
+import certainteedPremier from "@/assets/certainteed-shinglemaster-premier-transparent.png";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -33,7 +34,7 @@ const certifications = [
     icon: Award,
     title: "CertainTeed ShingleMaster PREMIER Credentialed Contractor",
     badge: "WNC's Only Premier Contractor",
-    image: certainteedPremier.url,
+    image: certainteedPremier,
     description: "Highlander is Western North Carolina's only CertainTeed ShingleMaster PREMIER credentialed contractor. The exact roof system, products, and warranty eligibility are confirmed for each project in writing.",
     whatItMeans: [
       "CertainTeed roofing-system training and installation guidance",
@@ -85,7 +86,7 @@ const certifications = [
 
 const badgeRow: { image?: string | null; name: string; plain: string }[] = [
   {
-    image: certainteedPremier.url,
+    image: certainteedPremier,
     name: "CertainTeed ShingleMaster PREMIER",
     plain: "Western North Carolina's only Premier credentialed contractor, with project-specific warranty details confirmed in writing.",
   },

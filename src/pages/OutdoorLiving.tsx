@@ -1,4 +1,5 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { smallSrc } from "@/lib/gallery-srcset";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -214,7 +215,7 @@ const OutdoorLiving = () => {
                   Whether it is new construction or remodeling a porch you already have, Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img width={1500} height={1125} decoding="async" src={porchContextImg} srcSet={porchContextSet} sizes="(max-width: 768px) 100vw, 768px" alt="Open trellis converted to a covered patio with a metal roof and wood ceiling, built by Highlander in Cashiers, North Carolina" className="w-full h-full object-cover object-[50%_70%] hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
+                <img width={1500} height={1125} decoding="async" src={smallSrc(porchContextImg)} srcSet={porchContextSet} sizes="(max-width: 768px) 100vw, 768px" alt="Open trellis converted to a covered patio with a metal roof and wood ceiling, built by Highlander in Cashiers, North Carolina" className="w-full h-full object-cover object-[50%_70%] hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
               </div>
             </motion.div>
           </div>

@@ -1,4 +1,5 @@
 import { REVIEW_STARS } from "@/data/business";
+import { smallSrc } from "@/lib/gallery-srcset";
 import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -145,7 +146,7 @@ const DivisionCard = ({ data, accent, index }: {
       {/* === IMAGE HEADER with curtain reveal === */}
       <div className="relative h-48 md:h-56 overflow-hidden">
         <img
-          src={data.image}
+          src={data.imageSrcSet ? smallSrc(data.image) : data.image}
           srcSet={data.imageSrcSet}
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           alt={data.imageAlt ?? data.title}

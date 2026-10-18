@@ -27,7 +27,7 @@ import guttersImg from "@/assets/gallery/gutters-002.jpg";
 import constructionImg from "@/assets/division-construction-v2.webp";
 import designImg from "@/assets/division-design.webp";
 
-const outdoorImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
+const outdoorImg = "/media/9860ca9e-outdoor-living-cashiers-640.webp";
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
@@ -72,7 +72,7 @@ const RecentProjects = () => {
   return (
     <>
       <SEOHead
-        title="Highlander Project Gallery in Western NC"
+        title="Roofing & Construction Projects in Western NC | Highlander"
         description="See documented Highlander roofing case studies and recent project activity across Western North Carolina, with the scope and location of each job."
         path="/recent-projects"
         jsonLd={breadcrumbSchema([

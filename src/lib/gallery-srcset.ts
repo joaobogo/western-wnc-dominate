@@ -7,20 +7,20 @@
  *   dev:   /src/assets/gallery/cedar-001.webp
  *   build: /assets/cedar-001-BHXMgQ4y.webp
  */
-const AVIF = import.meta.glob("/src/assets/gallery/*.{webp,jpg}", {
+const AVIF = import.meta.glob(["/src/assets/gallery/*.{webp,jpg}", "/src/assets/work/*.webp"], {
   query: "?w=480;800;1200&format=avif&as=srcset",
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
-const WEBP = import.meta.glob("/src/assets/gallery/*.{webp,jpg}", {
+const WEBP = import.meta.glob(["/src/assets/gallery/*.{webp,jpg}", "/src/assets/work/*.webp"], {
   query: "?w=480;800;1200&format=webp&as=srcset",
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
 /** The 480px WebP — what the <img> fallback should point at, never the master. */
-const SMALL = import.meta.glob("/src/assets/gallery/*.{webp,jpg}", {
+const SMALL = import.meta.glob(["/src/assets/gallery/*.{webp,jpg}", "/src/assets/work/*.webp"], {
   query: "?w=480&format=webp",
   eager: true,
   import: "default",
@@ -40,6 +40,9 @@ for (const key of Object.keys(AVIF)) {
 
 /** Vite appends `-XXXXXXXX` (8 url-safe chars) before the extension in builds. */
 const HASH = /-[A-Za-z0-9_-]{8}(?=\.[a-z0-9]+$)/i;
+
+/** The <img> fallback for a master: its 480px WebP when one exists, else the master itself. */
+export const smallSrc = (masterUrl: string): string => gallerySrcSets(masterUrl)?.small ?? masterUrl;
 
 export function gallerySrcSets(masterUrl: string): GallerySrcSets | null {
   if (!masterUrl || masterUrl.startsWith("data:")) return null;

@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <SEOHead
-        title="Privacy Policy & Terms | Highlander Building Services"
+        title="Privacy Policy & Website Terms of Use | Highlander"
         description="Privacy Policy, Terms & Conditions, SMS/MMS program disclosures, and cookie information for Highlander Building Services, Inc."
         path="/privacy-policy"
       />

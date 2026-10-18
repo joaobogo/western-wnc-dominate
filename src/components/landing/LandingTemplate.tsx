@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { smallSrc } from "@/lib/gallery-srcset";
 import {
   ArrowRight,
   ChevronDown,
@@ -115,7 +116,7 @@ const Img = ({
   style?: React.CSSProperties;
 }) => (
   <img
-    src={image.src}
+    src={image.srcSet ? smallSrc(image.src) : image.src}
     srcSet={image.srcSet}
     sizes={sizes}
     alt={image.alt}
