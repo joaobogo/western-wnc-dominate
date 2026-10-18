@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "helical-piers-vs-concrete-piers",
+    "slug": "helical-piers-vs-concrete-piers",
+    "title": "Helical Piers vs. Concrete Piers: How to Choose for a Mountain Home",
+    "excerpt": "Compare helical and concrete piers by soil, slope, access, cure time and verification before planning a deck, addition or renovation on a Western NC lot.",
+    "category": "Construction",
+    "date": "2026-10-18",
+    "readTime": "9 min"
+  },
+  {
     "id": "energy-efficient-roofing",
     "slug": "energy-efficient-roofing",
     "title": "Energy Efficient Roofing: 5 Choices Before Mountain Roof Replacement",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Construction",
     "date": "2026-10-08",
     "readTime": "9 min"
-  },
-  {
-    "id": "under-deck-drainage",
-    "slug": "under-deck-drainage",
-    "title": "Under Deck Drainage: Inspect First, Get a Written Scope",
-    "excerpt": "Compare under-deck drainage options for Western NC homes. Check framing, headroom, slope, gutters and discharge before planning a dry outdoor living space.",
-    "category": "Construction",
-    "date": "2026-10-08",
-    "readTime": "10 min"
   }
 ];

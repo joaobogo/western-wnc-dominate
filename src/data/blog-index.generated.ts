@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "helical-piers-vs-concrete-piers",
+    "title": "Helical Piers vs. Concrete Piers: How to Choose for a Mountain Home",
+    "excerpt": "Compare helical and concrete piers by soil, slope, access, cure time and verification before planning a deck, addition or renovation on a Western NC lot.",
+    "category": "Construction",
+    "date": "2026-10-18",
+    "town": "Franklin"
+  },
+  {
     "slug": "energy-efficient-roofing",
     "title": "Energy Efficient Roofing: 5 Choices Before Mountain Roof Replacement",
     "excerpt": "Compare metal, tile, cool shingles and coatings by reflectance, insulation and lifecycle cost before your next mountain roof replacement in Western NC.",
