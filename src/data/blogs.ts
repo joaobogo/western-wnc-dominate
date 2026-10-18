@@ -96,7 +96,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
 {
-    id: "helical-piers-vs-concrete-piers",
     slug: "helical-piers-vs-concrete-piers",
     title: "Helical Piers vs. Concrete Piers: How to Choose for a Mountain Home",
     excerpt: "Compare helical and concrete piers by soil, slope, access, cure time and verification before planning a deck, addition or renovation on a Western NC lot.",
