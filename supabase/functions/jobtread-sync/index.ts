@@ -1718,13 +1718,26 @@ Deno.serve(async (req) => {
     const admin = createClient(SUPABASE_URL, SERVICE_ROLE, {
       auth: { persistSession: false, autoRefreshToken: false },
     });
-    const { data: failed } = await admin
-      .from("leads")
-      .select("id, jobtread_retry_count")
-      .in("jobtread_sync_status", ["failed", "retry_needed"])
-      .lt("jobtread_retry_count", MAX_SYNC_ATTEMPTS)
-      .order("created_at", { ascending: true })
-      .limit(limit);
+    // `ids`: re-run exactly these leads once (e.g. the backlog from the
+    // 16 Oct field change, minus internal tests), including leads whose
+    // automatic retries are exhausted. Already-synced leads are skipped.
+    const ids: string[] = Array.isArray(body.ids)
+      ? body.ids.filter((v: unknown) => typeof v === "string").slice(0, 100)
+      : [];
+    const { data: failed } = ids.length
+      ? await admin
+          .from("leads")
+          .select("id, jobtread_retry_count")
+          .in("id", ids)
+          .eq("jobtread_synced", false)
+          .order("created_at", { ascending: true })
+      : await admin
+          .from("leads")
+          .select("id, jobtread_retry_count")
+          .in("jobtread_sync_status", ["failed", "retry_needed"])
+          .lt("jobtread_retry_count", MAX_SYNC_ATTEMPTS)
+          .order("created_at", { ascending: true })
+          .limit(limit);
     const results: Array<{ id: string; ok: boolean }> = [];
     for (const r of failed ?? []) {
       try {
