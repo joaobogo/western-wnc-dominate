@@ -2,7 +2,7 @@ import { FRANKLIN_NAP, PHONE_PLAIN, REVIEW_LINE, FRANKLIN, SYLVA, napLine } from
 import { Link } from "react-router-dom";
 import { homeFaqs } from "@/data/home-faqs";
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import { lazy, Suspense } from "react";
+import { lazyPreload, LazyFallback } from "@/lib/lazy-preload";
 import SEOHead, { buildPageSchema, faqSchema } from "@/components/SEOHead";
 import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
@@ -25,13 +25,13 @@ import additionExteriorPhoto from "@/assets/work/addition-franklin-exterior-wind
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
    the hero, trust strip and shell. Each fallback reserves height to keep CLS at 0. */
-const FeaturedProjects = lazy(() => import("@/components/FeaturedProjects"));
-const WorkGallerySection = lazy(() => import("@/components/gallery/WorkGallerySection"));
-const ReviewsCarousel = lazy(() => import("@/components/reviews/ReviewsCarousel"));
-const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
-const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
-const PageCloseCTA = lazy(() => import("@/components/PageCloseCTA"));
-const Footer = lazy(() => import("@/components/Footer"));
+const FeaturedProjects = lazyPreload("FeaturedProjects", () => import("@/components/FeaturedProjects"));
+const WorkGallerySection = lazyPreload("WorkGallerySection", () => import("@/components/gallery/WorkGallerySection"));
+const ReviewsCarousel = lazyPreload("ReviewsCarousel", () => import("@/components/reviews/ReviewsCarousel"));
+const ServiceAreaMap = lazyPreload("ServiceAreaMap", () => import("@/components/ServiceAreaMap"));
+const HomeFAQ = lazyPreload("HomeFAQ", () => import("@/components/HomeFAQ"));
+const PageCloseCTA = lazyPreload("PageCloseCTA", () => import("@/components/PageCloseCTA"));
+const Footer = lazyPreload("Footer", () => import("@/components/Footer"));
 
 // data-prerender-pending: scripts/prerender.mjs waits until every placeholder
 // has been replaced, so the snapshot always carries the lazy sections' SEO
@@ -72,14 +72,14 @@ const Index = () => {
         <CredibilityStrip />
 
         {/* 2b. Real work first: photo gallery, then project stories */}
-        <Suspense fallback={<SectionFallback h={2400} />}>
+        <LazyFallback fallback={<SectionFallback h={2400} />}>
           <WorkGallerySection
             heading="Roofs and builds across the mountains."
             body="Recent Highlander roofing and construction work. Switch between divisions or tap any photo to see it full size."
             excludeImages={[homeHeroPhoto, additionRoomPhoto, additionExteriorPhoto]}
           />
           <FeaturedProjects excludeImages={[homeHeroPhoto]} />
-        </Suspense>
+        </LazyFallback>
 
         <AnswerBlock
           question="Who is Highlander, the roofing contractor in Franklin, NC?"
@@ -119,7 +119,7 @@ const Index = () => {
         {/* 3. Two-division split (surface-raised) */}
         <ThreeDivisionPathway paths="two" />
 
-        <Suspense fallback={<SectionFallback h={1800} />}>
+        <LazyFallback fallback={<SectionFallback h={1800} />}>
           {/* 5. Local proof band — dark tone, two attributable quotes */}
           <Section
             density="compact"
@@ -153,13 +153,13 @@ const Index = () => {
             secondaryLabel="See recent Highlander projects"
             secondaryTo="/recent-projects"
           />
-        </Suspense>
+        </LazyFallback>
 
         <SectionDivider variant="gold-fade" />
       </main>
-      <Suspense fallback={<SectionFallback h={600} />}>
+      <LazyFallback fallback={<SectionFallback h={600} />}>
         <Footer />
-      </Suspense>
+      </LazyFallback>
       <HomepageStickyLeadBar />
       <StickyMobileCTA />
     </>

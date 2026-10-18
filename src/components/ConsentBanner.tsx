@@ -36,6 +36,7 @@ const ConsentBanner = () => {
     // visit. It used to be a 249px sheet covering the bar (mobile re-audit H-1).
     <div
       role="dialog"
+      data-client-only
       aria-label="Cookie preferences"
       className="consent-strip fixed inset-x-2 z-[70] md:inset-x-auto md:right-5 md:bottom-5 md:max-w-md rounded-md md:rounded-lg border border-border bg-card text-card-foreground shadow-floating p-3 md:p-5"
     >
