@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "hip-roof-vs-gable-roof",
+    "title": "Hip Roof vs. Gable Roof: Which Is Better for a Mountain Home?",
+    "excerpt": "Compare hip and gable roofs on wind, snow, cost, attic space, venting and insurance to choose the right shape for a Western North Carolina mountain home.",
+    "category": "Materials",
+    "date": "2026-10-19",
+    "town": "Franklin"
+  },
+  {
     "slug": "helical-piers-vs-concrete-piers",
     "title": "Helical Piers vs. Concrete Piers: How to Choose for a Mountain Home",
     "excerpt": "Compare helical and concrete piers by soil, slope, access, cure time and verification before planning a deck, addition or renovation on a Western NC lot.",
