@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "hip-roof-vs-gable-roof",
+    "slug": "hip-roof-vs-gable-roof",
+    "title": "Hip Roof vs. Gable Roof: Which Is Better for a Mountain Home?",
+    "excerpt": "Compare hip and gable roofs on wind, snow, cost, attic space, venting and insurance to choose the right shape for a Western North Carolina mountain home.",
+    "category": "Materials",
+    "date": "2026-10-19",
+    "readTime": "8 min"
+  },
+  {
     "id": "helical-piers-vs-concrete-piers",
     "slug": "helical-piers-vs-concrete-piers",
     "title": "Helical Piers vs. Concrete Piers: How to Choose for a Mountain Home",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Insurance",
     "date": "2026-10-08",
     "readTime": "15 min"
-  },
-  {
-    "id": "deck-ledger-flashing",
-    "slug": "deck-ledger-flashing",
-    "title": "Deck Ledger Flashing: Stop Water Intrusion Before Rot Starts",
-    "excerpt": "Understand deck ledger flashing, membrane layers, material compatibility and warning signs of rot. Get a professional scope for your Western NC mountain home.",
-    "category": "Construction",
-    "date": "2026-10-08",
-    "readTime": "9 min"
   }
 ];
