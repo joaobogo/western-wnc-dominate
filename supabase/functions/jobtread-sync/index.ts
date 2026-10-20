@@ -1062,7 +1062,28 @@ export function validateCustomerAccountName(
   return null;
 }
 
+const KNOWN_TOWNS = [
+  "Franklin", "Highlands", "Cashiers", "Sylva", "Sapphire", "Glenville", "Cullowhee", "Dillsboro", "Otto",
+  "Scaly Mountain", "Webster", "Whittier", "Balsam", "Lake Toxaway", "Brevard", "Rosman", "Waynesville",
+  "Bryson City", "Cherokee", "Hayesville", "Maggie Valley", "Asheville", "Hendersonville", "Clayton", "Dillard",
+];
+
+/**
+ * Some forms ask for "Property address" but store it in the town slot. When
+ * the town looks like a street address, move it to the address and pull the
+ * real town out of it, so JobTread gets a proper address and town.
+ */
+export function fixTownAddress(row: LeadRow): LeadRow {
+  const town = cleanName(row.property_town);
+  if (!town || cleanName(row.property_address) || !/^\d+\s+\S/.test(town)) return row;
+  const parts = town.split(",").map((p) => p.trim()).filter(Boolean);
+  let realTown = parts.length >= 2 && /^[a-z .'-]+$/i.test(parts[1]) && !/^nc$/i.test(parts[1]) ? parts[1] : "";
+  if (!realTown) realTown = KNOWN_TOWNS.find((t) => new RegExp(`\\b${t}\\b`, "i").test(town)) ?? "";
+  return { ...row, property_address: town, property_town: realTown || null };
+}
+
 export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments?: AttachmentInfo) {
+  row = fixTownAddress(row);
   const leadName = humanizeLeadName(row);
   const town = row.property_town ?? null;
   const meta: any = row.metadata ?? {};

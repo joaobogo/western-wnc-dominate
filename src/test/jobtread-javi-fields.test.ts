@@ -86,3 +86,12 @@ describe("Javi's JobTread fields", () => {
     expect(queries.find((q) => q.createLocation).createLocation.$.address).toBe("Sylva, NC");
   });
 });
+
+describe("address typed into the town slot", () => {
+  it("moves a street address out of the town and keeps the real town", async () => {
+    const { fixTownAddress } = await mod();
+    expect(fixTownAddress({ property_town: "120 Chestnut St, Highlands, NC" })).toMatchObject({ property_address: "120 Chestnut St, Highlands, NC", property_town: "Highlands" });
+    expect(fixTownAddress({ property_town: "40 Depot Street" })).toMatchObject({ property_address: "40 Depot Street", property_town: null });
+    expect(fixTownAddress({ property_town: "Franklin" })).toMatchObject({ property_town: "Franklin" });
+  });
+});
