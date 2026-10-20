@@ -1494,7 +1494,7 @@ export async function sendToPaveApi(
     //   1. Property address  2. "[Town] Property"  3. "Website Lead"
     // Never the Job Name, Customer Name, or Job Notes.
     const rawLocName = payload.location_display_name
-      || (address ? String(address) : (town ? `${town} Property` : "Website Lead"));
+      || (address ? String(address) : (town ? `${town} Property` : "Property"));
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
 
     // Step 1 — the Customer. Reuse the account an earlier try of THIS lead
@@ -1526,6 +1526,7 @@ export async function sendToPaveApi(
               id: {},
               name: {},
               locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } },
+              contacts: { $: { size: 1 }, nodes: { id: {} } },
             },
           },
         },
@@ -1539,7 +1540,10 @@ export async function sendToPaveApi(
         if (earlierTryOfThisLead || accountMatchesTown(locs, town)) {
           accountId = existing.id;
           existingLocations = locs ?? [];
-          ownAccount = earlierTryOfThisLead;
+          // An account with no contact at all (left by an earlier failed try)
+          // gets this lead's contact; customers with contacts stay untouched.
+          const hasContact = (existing?.contacts?.nodes ?? []).length > 0;
+          ownAccount = earlierTryOfThisLead || !hasContact;
         } else {
           // Same name, different town → distinct customer. Never rename/merge.
           accountName = buildTownScopedAccountName(accountName, town);
@@ -1634,15 +1638,17 @@ export async function sendToPaveApi(
           $: {
             accountId,
             name: locName,
-            address: address || null,
+            address: address || (town ? `${town}, NC` : null),
             // Sales Notes, Gate Code and Email are retired Location fields.
-            customFieldValues: buildLocationCustomFieldValues({
-              gateCodeBool: false,
-              contactName,
-              phone: payload.contact?.phone,
-              email: payload.contact?.email,
-            }),
-            ...(payload.structured?.location ?? {}),
+            customFieldValues: {
+              ...buildLocationCustomFieldValues({
+                gateCodeBool: false,
+                contactName,
+                phone: payload.contact?.phone,
+                email: payload.contact?.email,
+              }),
+              ...(payload.structured?.location ?? {}),
+            },
           },
           createdLocation: { id: {}, name: {} },
         },
