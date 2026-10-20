@@ -353,6 +353,15 @@ function humanizeValue(value: any): string {
   return String(value);
 }
 
+/** Same phone format the website forms store: +1 and ten digits. */
+export function toUsE164(phone: unknown): string | null {
+  const raw = (phone ?? "").toString().trim();
+  if (!raw) return null;
+  let d = raw.replace(/\D/g, "");
+  if (d.length === 11 && d.startsWith("1")) d = d.slice(1);
+  return d.length === 10 ? `+1${d}` : raw;
+}
+
 export function normalizeIntakeLead(row: LeadRow): LeadRow {
   const payload = row.payload && typeof row.payload === "object" ? row.payload : {};
   const appointment = row.appointment && typeof row.appointment === "object" ? row.appointment : {};
@@ -376,6 +385,7 @@ export function normalizeIntakeLead(row: LeadRow): LeadRow {
   return {
     ...row,
     name: row.name ?? ([row.first_name, row.last_name].filter(Boolean).join(" ") || null),
+    phone: toUsE164(row.phone),
     property_town: row.property_town ?? row.town ?? null,
     property_address: row.property_address ?? row.address ?? null,
     project_description: row.project_description ?? row.details ?? null,

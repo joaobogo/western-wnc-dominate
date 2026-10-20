@@ -95,3 +95,18 @@ describe("address typed into the town slot", () => {
     expect(fixTownAddress({ property_town: "Franklin" })).toMatchObject({ property_town: "Franklin" });
   });
 });
+
+describe("Javi review fixes", () => {
+  it("uses the exact town as Service Area when JobTread lists it", async () => {
+    const { mapServiceArea } = await mod();
+    expect(mapServiceArea("Cashiers")).toBe("Cashiers");
+    expect(mapServiceArea("Highlands")).toBe("Highlands");
+    expect(mapServiceArea("Sylva")).toBe("Sylva");
+    expect(mapServiceArea("Webster")).toBe("Sylva");
+  });
+  it("stores front desk phones the same way as website forms", async () => {
+    const { toUsE164 } = await mod();
+    expect(toUsE164("828-524-7773")).toBe("+18285247773");
+    expect(toUsE164("+1 (828) 524-7773")).toBe("+18285247773");
+  });
+});
