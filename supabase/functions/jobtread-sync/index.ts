@@ -1744,7 +1744,15 @@ export async function sendToPaveApi(
       if (full.length <= 30) return full;
       const parts = full.split(" - ");
       // Drop filler words first so the useful part survives the 30-char cap.
-      if (parts[0]) parts[0] = parts[0].replace(/\s+(Lead|Inquiry)\b/g, "");
+      // ("URGENT" still leads the Job Notes.)
+      if (parts[0]) {
+        parts[0] = parts[0]
+          .replace(/\s+(Lead|Inquiry)\b/g, "")
+          .replace(/\bUrgent\s+/i, "")
+          .replace(/\bRoof Replacement\b/i, "Reroof")
+          .replace(/\bDesign Services\b/i, "Design")
+          .replace(/\bConstruction\s+(?=\S)/i, "");
+      }
       const tight = parts.join(" - ");
       if (tight.length <= 30) return tight;
       if (parts.length === 3) {
