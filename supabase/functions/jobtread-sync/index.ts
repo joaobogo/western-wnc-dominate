@@ -1298,8 +1298,19 @@ const JT_CF = {
   },
 } as const;
 
+// JobTread's Service Area options (customer field). A town that is itself an
+// option is used as-is; other towns fall back to their nearest showroom area.
+const SERVICE_AREA_TOWNS = [
+  "Bryson City", "Maggie Valley", "Lake Toxaway", "Scaly Mountain", "Highlands", "Cullowhee", "Cashiers",
+  "Waynesville", "Whittier", "Sapphire", "Glenville", "Otto", "Robbinsville", "Tuckasegee", "Clyde", "Canton",
+  "Cherokee", "Topton", "Brevard", "Murphy", "Hayesville", "Hendersonville", "Dillsboro", "Asheville",
+  "Franklin", "Sylva",
+];
+
 export function mapServiceArea(town: string | null | undefined, county?: string | null): string {
   const t = `${town ?? ""} ${county ?? ""}`.toLowerCase();
+  const exact = SERVICE_AREA_TOWNS.find((a) => new RegExp(`\\b${a.toLowerCase()}\\b`).test((town ?? "").toLowerCase()));
+  if (exact) return exact;
   if (/franklin|highlands|cashiers|scaly|otto|clayton/.test(t)) return "Franklin";
   if (/sylva|cullowhee|bryson|waynesville|dillsboro|webster|balsam|maggie|cherokee/.test(t)) return "Sylva";
   if (/asheville|hendersonville|weaverville|black mountain|arden|fletcher/.test(t)) return "Asheville";
@@ -1722,6 +1733,10 @@ export async function sendToPaveApi(
       const full = payload.job_name;
       if (full.length <= 30) return full;
       const parts = full.split(" - ");
+      // Drop filler words first so the useful part survives the 30-char cap.
+      if (parts[0]) parts[0] = parts[0].replace(/\s+(Lead|Inquiry)\b/g, "");
+      const tight = parts.join(" - ");
+      if (tight.length <= 30) return tight;
       if (parts.length === 3) {
         const withInitial = `${parts[0]} - ${parts[1]} - ${parts[2].charAt(0)}`;
         if (withInitial.length <= 30) return withInitial;
