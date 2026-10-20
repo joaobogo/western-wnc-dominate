@@ -1693,8 +1693,16 @@ export async function sendToPaveApi(
       let accountRes = await create(accountName);
       let apiErrA = accountRes?.error?.message || accountRes?.error;
       // Only if JobTread refuses a duplicate name do we add the town.
-      if (apiErrA && /name|exist|unique|taken|duplicate/i.test(String(apiErrA)) && cleanName(town)) {
-        accountName = buildTownScopedAccountName(accountName, town);
+      // JobTread requires unique customer names: use the town, then a number,
+      // so the office sees two separate people and can merge them if needed.
+      const base = accountName;
+      const fallbacks = [
+        ...(cleanName(town) ? [buildTownScopedAccountName(base, town)] : []),
+        `${base} (2)`, `${base} (3)`, `${base} (4)`,
+      ];
+      for (const alt of fallbacks) {
+        if (!apiErrA || !/already exists|unique|taken|duplicate/i.test(String(apiErrA))) break;
+        accountName = alt;
         accountRes = await create(accountName);
         apiErrA = accountRes?.error?.message || accountRes?.error;
       }

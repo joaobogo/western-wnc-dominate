@@ -114,7 +114,9 @@ describe("returning customers are matched by phone, then email, never by name", 
         const found = hit && ((hit.by === "phone") === isPhone);
         r = { customField: { customFieldValues: { nodes: found ? [{ contact: { id: "old-contact", account: { id: "old-acct", type: "customer", locations: { nodes: [{ id: "old-loc", name: "1 Elm St", address: "1 Elm St, Franklin, NC" }] } } } }] : [] } } };
       } else if (query.organization) r = { organization: { accounts: { nodes: nameTaken ? [{ id: "other", contacts: { nodes: [{ id: "x" }] } }] : [] } } };
-      else if (query.createAccount) r = { createAccount: { createdAccount: { id: "new-acct" } } };
+      else if (query.createAccount) r = nameTaken && query.createAccount.$.name === "John Mitchell"
+        ? { error: { message: 'A customer with the name "John Mitchell" already exists' } }
+        : { createAccount: { createdAccount: { id: "new-acct" } } };
       else if (query.createContact) r = { createContact: { createdContact: { id: "new-contact" } } };
       else if (query.createLocation) r = { createLocation: { createdLocation: { id: "new-loc" } } };
       else if (query.createJob) r = { createJob: { createdJob: { id: "job" } } };
@@ -144,12 +146,19 @@ describe("returning customers are matched by phone, then email, never by name", 
     expect(q.find((x) => x.createJob)).toBeTruthy();
   });
 
-  it("the same name with a different phone and email is a new, plainly named customer", async () => {
+  it("a new person gets a plain name", async () => {
+    const { buildPayload, sendToPaveApi } = await mod();
+    const q = crm(null, false);
+    await sendToPaveApi(buildPayload(lead, "lead"));
+    expect(q.find((x) => x.createAccount).createAccount.$.name).toBe("John Mitchell");
+  });
+
+  it("the same name with a different phone and email is a separate customer, never merged", async () => {
     const { buildPayload, sendToPaveApi } = await mod();
     const q = crm(null, true);
-    await sendToPaveApi(buildPayload({ ...lead, property_address: "", property_town: "" }, "lead"));
-    expect(count(q, "createAccount")).toBe(1);
-    expect(q.find((x) => x.createAccount).createAccount.$.name).toBe("John Mitchell");
+    const res = await sendToPaveApi(buildPayload({ ...lead, property_address: "", property_town: "" }, "lead"));
+    expect(res.ok).toBe(true);
+    expect(q.filter((x) => x.createAccount).map((x) => x.createAccount.$.name)).toEqual(["John Mitchell", "John Mitchell (2)"]);
     expect(count(q, "createContact")).toBe(1);
   });
 });
