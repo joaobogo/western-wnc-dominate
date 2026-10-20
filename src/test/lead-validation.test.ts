@@ -131,3 +131,11 @@ describe("validateContact reachability rule", () => {
     expect(r.errors.zip).toMatch(/5-digit/);
   });
 });
+
+import { normalizeLeadPayload as __norm } from "@/lib/leads";
+import { it as __it, expect as __expect } from "vitest";
+__it("splits a full name typed into a quick form's single name box", () => {
+  const n: any = __norm({ source: "contact_form", first_name: "JOAO OMNIFLOW KASPRZAK TEST", email: "a@b.co" } as any);
+  __expect(n.first_name).toBe("JOAO");
+  __expect(n.last_name).toBeTruthy();
+});

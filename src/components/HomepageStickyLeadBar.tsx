@@ -171,7 +171,7 @@ export default function HomepageStickyLeadBar() {
               <FormErrorSummary message={submitError} issues={issues} className="mb-2 mt-0" />
               <div className="grid grid-cols-[1fr_1.15fr_1fr_auto] gap-2">
                 <div>
-                  <label htmlFor="home-sticky-first-name" className="sr-only">First name</label>
+                  <label htmlFor="home-sticky-first-name" className="sr-only">Full name</label>
                   <input
                     id="home-sticky-first-name"
                     {...fieldAttrs.name}
@@ -181,7 +181,7 @@ export default function HomepageStickyLeadBar() {
                     aria-invalid={Boolean(contact.errorFor("name")) || undefined}
                     aria-describedby={contact.errorFor("name") ? "home-sticky-first-name-error" : undefined}
                     className={fieldClass}
-                    placeholder="First name"
+                    placeholder="First and last name"
                     required
                   />
                   <InlineFieldError id="home-sticky-first-name-error">{contact.errorFor("name")}</InlineFieldError>

@@ -68,7 +68,7 @@ describe("Job name, Location, and Description", () => {
     const { buildLocationDisplayName } = await mod();
     expect(buildLocationDisplayName({ ...base, property_address: "53 Mountain Rd" })).toBe("53 Mountain Rd");
     expect(buildLocationDisplayName(base)).toBe("Highlands Property");
-    expect(buildLocationDisplayName({})).toBe("Website Lead");
+    expect(buildLocationDisplayName({})).toBe("Property");
   });
 
   it("routes the service area by town, falling back to county", async () => {

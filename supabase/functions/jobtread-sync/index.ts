@@ -82,6 +82,12 @@ function humanizeLeadName(row: LeadRow): string {
   };
   const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
   let label = serviceMap[key] || "Website Lead";
+  if (key === "roofing") {
+    const pt = String(row.project_type ?? "").toLowerCase();
+    if (/storm|hail|wind/.test(pt)) label = "Storm Damage Lead";
+    else if (/repair|leak/.test(pt)) label = "Roof Repair Lead";
+    else if (/replac|new_roof/.test(pt)) label = "Roof Replacement Inquiry";
+  }
 
   // Detect specialty leads (gutters, skylights, outdoor living, deck/patio/pergola)
   // from page_url, referrer, project_description and metadata when the
@@ -174,7 +180,103 @@ function humanizeLeadName(row: LeadRow): string {
   // fall back to the first token of the display name for legacy rows.
   const firstName =
     cleanName((row as any).first_name) || (name.split(/\s+/)[0]?.trim() ?? "");
+  if (isTestLead(row)) label = `TEST ${label}`;
   return firstName ? `${label} - ${town} - ${firstName}` : `${label} - ${town}`;
+}
+
+/** A lead whose name clearly says it is a test (e.g. "JOAO OMNIFLOW KASPRZAK TEST"). */
+export function isTestLead(row: LeadRow): boolean {
+  const n = [row.name, (row as any).first_name, (row as any).last_name].map((v) => String(v ?? "")).join(" ");
+  return /\btest\b/i.test(n);
+}
+
+const BLANK_ANSWER_RE = /^(not provided|n\/a|na|none|unknown|unsure|not sure|-|null|undefined)$/i;
+function answer(...values: unknown[]): string {
+  for (const v of values) {
+    const s = cleanName(v == null ? "" : String(v));
+    if (s && !BLANK_ANSWER_RE.test(s)) return s;
+  }
+  return "";
+}
+
+export function mapRoofType(v: string): string {
+  const t = v.toLowerCase();
+  if (!t) return "";
+  if (/slate|tile/.test(t)) return "Slate / Tile";
+  if (/shake|cedar|wood/.test(t)) return "Shake";
+  if (/flat|tpo|epdm|low[ _-]?slope|membrane/.test(t)) return "Flat";
+  if (/metal|standing|steel/.test(t)) return "Metal";
+  if (/shingle|asphalt|dimensional|3[ _-]?tab/.test(t)) return "Shingle";
+  return "";
+}
+
+export function mapPropertyType(v: string): string {
+  const t = v.toLowerCase();
+  if (!t) return "";
+  if (/second|cabin|vacation/.test(t)) return "Second Home / Cabin";
+  if (/rental|investment/.test(t)) return "Rental (Owned)";
+  if (/hoa|multi|condo|apartment/.test(t)) return "HOA / Multi - Family";
+  if (/non[ _-]?profit|church/.test(t)) return "Non-Profit";
+  if (/government|municipal/.test(t)) return "Government";
+  if (/commercial|business|office|retail/.test(t)) return "Commercial";
+  if (/primary|residential|home|house/.test(t)) return "Primary Home";
+  return "";
+}
+
+export function mapStories(v: string): string {
+  const t = v.toLowerCase();
+  if (!t) return "";
+  if (/^1\b|one|single/.test(t)) return "1";
+  if (/^2\b|two/.test(t)) return "2";
+  if (/3|three|plus|more/.test(t)) return "3+";
+  return "";
+}
+
+const FRONT_DESK_SOURCE: Record<string, string> = {
+  google: "Google", gbp: "Google", referral: "Referral", past_customer: "Existing Customer",
+  social: "Facebook", yard_sign: "Marked Presence (Trucks, Trailers, Job Signs)", ad: "Web Ad",
+  trade: "Real Estate Agent", angi: "Angi", home_advisor: "Home Advisor", hibu: "Hibu", other: "Other",
+};
+
+/**
+ * Javi's structured JobTread fields, filled only when the form actually
+ * collected a real answer. Blank / "Not provided" answers stay blank in
+ * JobTread. Rep, crew and project-manager fields are assigned by the office.
+ */
+export function buildStructuredFields(row: LeadRow) {
+  const meta: any = row.metadata ?? {};
+  const appt: any = meta.appointment ?? (row as any).appointment ?? {};
+  const job: Record<string, unknown> = {};
+  const location: Record<string, unknown> = {};
+  const account: Record<string, unknown> = {};
+
+  const roofType = mapRoofType(answer((row as any).roof_type, meta.roof_type, meta.current_roof, appt.roofType));
+  if (roofType) job[JT_CF.job.roof_type] = roofType;
+  const roofColor = answer((row as any).material_color, meta.roofing_color, meta.material_color, meta.color);
+  if (roofColor) job[JT_CF.job.roofing_color] = roofColor;
+  const gutterColor = answer(meta.gutter_color);
+  if (gutterColor) job[JT_CF.job.gutter_color] = gutterColor;
+  const dripColor = answer(meta.drip_edge_color);
+  if (dripColor) job[JT_CF.job.drip_edge_color] = dripColor;
+  const insurance = answer(row.insurance_status, meta.insurance_status).toLowerCase();
+  if (insurance && !/^(no|none|not)/.test(insurance) && /yes|filed|claim|approved|open|adjuster/.test(insurance)) {
+    job[JT_CF.job.insurance_claim] = true;
+  }
+
+  const propertyType = mapPropertyType(answer(row.property_type, meta.property_type));
+  if (propertyType) location[JT_CF.location.property_type] = propertyType;
+  const stories = mapStories(answer(meta.stories, appt.stories));
+  if (stories) location[JT_CF.location.stories] = stories;
+
+  const isFrontDesk = !!meta.receptionist || (meta.lead_score != null && !!meta.score_version);
+  const rawSource = String(row.source ?? "").toLowerCase();
+  if (isFrontDesk && FRONT_DESK_SOURCE[rawSource]) account[JT_CF.account.lead_source] = FRONT_DESK_SOURCE[rawSource];
+  const referredBy = answer((row as any).referred_by, meta.referred_by, rawSource === "referral" ? meta.source_detail : "");
+  if (referredBy) account[JT_CF.account.referred_by] = referredBy;
+  const community = answer((row as any).community_or_subdivision, meta.community_or_subdivision, meta.community, meta.subdivision);
+  if (community) account[JT_CF.account.community] = community;
+
+  return { job, location, account };
 }
 
 // Returns "construction" when the customer has complete permit-ready plans,
@@ -759,7 +861,8 @@ export function buildLocationDisplayName(row: LeadRow): string {
   if (address) return address;
   const town = cleanName(row.property_town);
   if (town) return `${town} Property`;
-  return "Website Lead";
+  const who = cleanName(row.name) || cleanName(`${(row as any).first_name ?? ""} ${(row as any).last_name ?? ""}`);
+  return who ? `${who} Property`.slice(0, 30) : "Property";
 }
 
 /** Job name = human-readable "[Service] - [Town] - [First Name]". */
@@ -802,6 +905,7 @@ export function buildJobCustomFieldValues(payload: any, noteShort: string): Reco
     [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
     [JT_CF.job.divisions]: [mapJobType(payload)],
     [JT_CF.job.job_notes]: noteShort,
+    ...(payload?.structured?.job ?? {}),
   };
 }
 
@@ -958,7 +1062,28 @@ export function validateCustomerAccountName(
   return null;
 }
 
+const KNOWN_TOWNS = [
+  "Franklin", "Highlands", "Cashiers", "Sylva", "Sapphire", "Glenville", "Cullowhee", "Dillsboro", "Otto",
+  "Scaly Mountain", "Webster", "Whittier", "Balsam", "Lake Toxaway", "Brevard", "Rosman", "Waynesville",
+  "Bryson City", "Cherokee", "Hayesville", "Maggie Valley", "Asheville", "Hendersonville", "Clayton", "Dillard",
+];
+
+/**
+ * Some forms ask for "Property address" but store it in the town slot. When
+ * the town looks like a street address, move it to the address and pull the
+ * real town out of it, so JobTread gets a proper address and town.
+ */
+export function fixTownAddress(row: LeadRow): LeadRow {
+  const town = cleanName(row.property_town);
+  if (!town || cleanName(row.property_address) || !/^\d+\s+\S/.test(town)) return row;
+  const parts = town.split(",").map((p) => p.trim()).filter(Boolean);
+  let realTown = parts.length >= 2 && /^[a-z .'-]+$/i.test(parts[1]) && !/^nc$/i.test(parts[1]) ? parts[1] : "";
+  if (!realTown) realTown = KNOWN_TOWNS.find((t) => new RegExp(`\\b${t}\\b`, "i").test(town)) ?? "";
+  return { ...row, property_address: town, property_town: realTown || null };
+}
+
 export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments?: AttachmentInfo) {
+  row = fixTownAddress(row);
   const leadName = humanizeLeadName(row);
   const town = row.property_town ?? null;
   const meta: any = row.metadata ?? {};
@@ -1084,6 +1209,7 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
     note: buildLeadNotes(row, resolvedAttachments),
+    structured: buildStructuredFields(row),
   };
 }
 
@@ -1145,6 +1271,8 @@ const JT_CF = {
   account: {
     service_area: "22P72GvSrBgk", // option: Franklin | Sylva | Asheville
     lead_source: "22P75KEjYCfa",  // option: Highlander Website
+    referred_by: "22P75KDSW7iP",  // text
+    community: "22PPQaQrDp8h",    // text: Community or Subdivision Name
   },
   contact: {
     email: "22P5uYmYEAkx",           // email
@@ -1155,11 +1283,18 @@ const JT_CF = {
   location: {
     contact_name: "22PPzwDNUYjN", // text
     phone: "22PPzw5sqRSX",        // phoneNumber
+    stories: "22PgCuQ9Qdjx",      // option: 1 | 2 | 3+
+    property_type: "22PgCue6AFVm", // option: Primary Home | Second Home / Cabin | ...
   },
   job: {
     status: "22P5uYmYTED2",       // option, "01 New Lead (Needs Appointment)"
     divisions: "22PNawhnSXmW",    // list: Roofing | Gutters | Construction | Repair
     job_notes: "22PYx7PBhE56",    // text (was Lead Notes, same ID)
+    roof_type: "22PgCu9jhtAA",    // option: Shingle | Metal | Shake | Slate / Tile | Flat
+    roofing_color: "22PgCuC3sTWg", // text
+    gutter_color: "22PgCuDm46uM", // text
+    drip_edge_color: "22PgCuF45LBK", // text
+    insurance_claim: "22PNawMp3BLV", // boolean
   },
 } as const;
 
@@ -1180,7 +1315,7 @@ function mapJobType(payload: any): string {
     .filter(Boolean).join(" ").toLowerCase();
   if (/gutter/.test(key)) return "Gutters";
   if (/construction|addition|design|renovation|remodel|outdoor|new_build|exterior/.test(key)) return "Construction";
-  if (/repair|storm|maintenance|inspection|leak/.test(key)) return "Repair";
+  if (/repair|storm|leak|hail/.test(key)) return "Repair";
   return "Roofing";
 }
 
@@ -1380,7 +1515,7 @@ export async function sendToPaveApi(
     //   1. Property address  2. "[Town] Property"  3. "Website Lead"
     // Never the Job Name, Customer Name, or Job Notes.
     const rawLocName = payload.location_display_name
-      || (address ? String(address) : (town ? `${town} Property` : "Website Lead"));
+      || (address ? String(address) : (town ? `${town} Property` : "Property"));
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
 
     // Step 1 — the Customer. Reuse the account an earlier try of THIS lead
@@ -1412,6 +1547,7 @@ export async function sendToPaveApi(
               id: {},
               name: {},
               locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } },
+              contacts: { $: { size: 1 }, nodes: { id: {} } },
             },
           },
         },
@@ -1425,7 +1561,10 @@ export async function sendToPaveApi(
         if (earlierTryOfThisLead || accountMatchesTown(locs, town)) {
           accountId = existing.id;
           existingLocations = locs ?? [];
-          ownAccount = earlierTryOfThisLead;
+          // An account with no contact at all (left by an earlier failed try)
+          // gets this lead's contact; customers with contacts stay untouched.
+          const hasContact = (existing?.contacts?.nodes ?? []).length > 0;
+          ownAccount = earlierTryOfThisLead || !hasContact;
         } else {
           // Same name, different town → distinct customer. Never rename/merge.
           accountName = buildTownScopedAccountName(accountName, town);
@@ -1455,7 +1594,7 @@ export async function sendToPaveApi(
               organizationId: orgId,
               name: accountName,
               type: "customer",
-              customFieldValues: buildAccountCustomFieldValues(town, county),
+              customFieldValues: { ...buildAccountCustomFieldValues(town, county), ...(payload.structured?.account ?? {}) },
             },
             createdAccount: { id: {}, name: {} },
           },
@@ -1520,14 +1659,17 @@ export async function sendToPaveApi(
           $: {
             accountId,
             name: locName,
-            address: address || null,
+            address: address || (town ? `${town}, NC` : null),
             // Sales Notes, Gate Code and Email are retired Location fields.
-            customFieldValues: buildLocationCustomFieldValues({
-              gateCodeBool: false,
-              contactName,
-              phone: payload.contact?.phone,
-              email: payload.contact?.email,
-            }),
+            customFieldValues: {
+              ...buildLocationCustomFieldValues({
+                gateCodeBool: false,
+                contactName,
+                phone: payload.contact?.phone,
+                email: payload.contact?.email,
+              }),
+              ...(payload.structured?.location ?? {}),
+            },
           },
           createdLocation: { id: {}, name: {} },
         },

@@ -190,7 +190,7 @@ describe("JobTread sync flow (mocked CRM only)", () => {
     const { buildPayload, sendToPaveApi } = await mod();
     const crm = mockCrm({
       organization: () => ({
-        organization: { accounts: { nodes: [{ id: "account-cust", name: "Jane Doe", locations: { nodes: [{ id: "loc-cust", name: "Franklin home", address: "1 Elm St, Franklin, NC" }] } }] } },
+        organization: { accounts: { nodes: [{ id: "account-cust", name: "Jane Doe", contacts: { nodes: [{ id: "contact-cust" }] }, locations: { nodes: [{ id: "loc-cust", name: "Franklin home", address: "1 Elm St, Franklin, NC" }] } }] } },
       }),
     });
     const result = await sendToPaveApi(buildPayload(LEAD, "lead"));

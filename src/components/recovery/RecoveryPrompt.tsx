@@ -211,7 +211,7 @@ const RecoveryPrompt = () => {
                   {...fieldAttrs.name}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Your name"
+                  placeholder="First and last name"
                   className="field-input"
                 />
               </div>

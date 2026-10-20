@@ -27,7 +27,7 @@ export type FormErrors = Partial<Record<keyof FormValues, string>>;
  */
 export const validateLanding = (values: FormValues): FormErrors => {
   const errors: FormErrors = {};
-  if (!values.firstName.trim()) errors.firstName = "Please enter your first name.";
+  if (!values.firstName.trim()) errors.firstName = "Please enter your first and last name.";
   if (!values.phone.trim()) errors.phone = "Please enter a phone number.";
   else {
     const phone = normalizePhoneE164(values.phone);
