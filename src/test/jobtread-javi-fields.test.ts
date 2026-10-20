@@ -95,3 +95,29 @@ describe("address typed into the town slot", () => {
     expect(fixTownAddress({ property_town: "Franklin" })).toMatchObject({ property_town: "Franklin" });
   });
 });
+
+describe("Javi review fixes", () => {
+  it("uses the exact town as Service Area when JobTread lists it", async () => {
+    const { mapServiceArea } = await mod();
+    expect(mapServiceArea("Cashiers")).toBe("Cashiers");
+    expect(mapServiceArea("Highlands")).toBe("Highlands");
+    expect(mapServiceArea("Sylva")).toBe("Sylva");
+    expect(mapServiceArea("Webster")).toBe("Sylva");
+  });
+  it("stores front desk phones the same way as website forms", async () => {
+    const { toUsE164 } = await mod();
+    expect(toUsE164("828-524-7773")).toBe("+18285247773");
+    expect(toUsE164("+1 (828) 524-7773")).toBe("+18285247773");
+  });
+});
+
+describe("job names fit JobTread's 30 characters without cutting words", () => {
+  it.each([
+    ["TEST Urgent Roof Replacement Inquiry - Highlands - Diego", "TEST Reroof - Highlands - D"],
+    ["TEST Urgent Roof Repair Lead - Cashiers - Rita", "TEST Roof Repair - Cashiers"],
+    ["TEST Construction Addition Inquiry - Franklin - Elena", "TEST Addition - Franklin - E"],
+  ])("%s", async (full, short) => {
+    const { shortJobName } = await mod();
+    expect(shortJobName(full)).toBe(short);
+  });
+});

@@ -353,6 +353,15 @@ function humanizeValue(value: any): string {
   return String(value);
 }
 
+/** Same phone format the website forms store: +1 and ten digits. */
+export function toUsE164(phone: unknown): string | null {
+  const raw = (phone ?? "").toString().trim();
+  if (!raw) return null;
+  let d = raw.replace(/\D/g, "");
+  if (d.length === 11 && d.startsWith("1")) d = d.slice(1);
+  return d.length === 10 ? `+1${d}` : raw;
+}
+
 export function normalizeIntakeLead(row: LeadRow): LeadRow {
   const payload = row.payload && typeof row.payload === "object" ? row.payload : {};
   const appointment = row.appointment && typeof row.appointment === "object" ? row.appointment : {};
@@ -376,6 +385,7 @@ export function normalizeIntakeLead(row: LeadRow): LeadRow {
   return {
     ...row,
     name: row.name ?? ([row.first_name, row.last_name].filter(Boolean).join(" ") || null),
+    phone: toUsE164(row.phone),
     property_town: row.property_town ?? row.town ?? null,
     property_address: row.property_address ?? row.address ?? null,
     project_description: row.project_description ?? row.details ?? null,
@@ -1298,8 +1308,19 @@ const JT_CF = {
   },
 } as const;
 
+// JobTread's Service Area options (customer field). A town that is itself an
+// option is used as-is; other towns fall back to their nearest showroom area.
+const SERVICE_AREA_TOWNS = [
+  "Bryson City", "Maggie Valley", "Lake Toxaway", "Scaly Mountain", "Highlands", "Cullowhee", "Cashiers",
+  "Waynesville", "Whittier", "Sapphire", "Glenville", "Otto", "Robbinsville", "Tuckasegee", "Clyde", "Canton",
+  "Cherokee", "Topton", "Brevard", "Murphy", "Hayesville", "Hendersonville", "Dillsboro", "Asheville",
+  "Franklin", "Sylva",
+];
+
 export function mapServiceArea(town: string | null | undefined, county?: string | null): string {
   const t = `${town ?? ""} ${county ?? ""}`.toLowerCase();
+  const exact = SERVICE_AREA_TOWNS.find((a) => new RegExp(`\\b${a.toLowerCase()}\\b`).test((town ?? "").toLowerCase()));
+  if (exact) return exact;
   if (/franklin|highlands|cashiers|scaly|otto|clayton/.test(t)) return "Franklin";
   if (/sylva|cullowhee|bryson|waynesville|dillsboro|webster|balsam|maggie|cherokee/.test(t)) return "Sylva";
   if (/asheville|hendersonville|weaverville|black mountain|arden|fletcher/.test(t)) return "Asheville";
@@ -1462,6 +1483,30 @@ export type PaveSendOptions = {
   /** Persist progress as each step succeeds. Never throws into the sync. */
   onProgress?: (progress: JobTreadProgress) => Promise<void> | void;
 };
+
+export function shortJobName(full: string): string {
+    if (full.length <= 30) return full;
+    const parts = full.split(" - ");
+    // Drop filler words first so the useful part survives the 30-char cap.
+    // ("URGENT" still leads the Job Notes.)
+    if (parts[0]) {
+      parts[0] = parts[0]
+        .replace(/\s+(Lead|Inquiry)\b/g, "")
+        .replace(/\bUrgent\s+/i, "")
+        .replace(/\bRoof Replacement\b/i, "Reroof")
+        .replace(/\bDesign Services\b/i, "Design")
+        .replace(/\bConstruction\s+(?=\S)/i, "");
+    }
+    const tight = parts.join(" - ");
+    if (tight.length <= 30) return tight;
+    if (parts.length === 3) {
+      const withInitial = `${parts[0]} - ${parts[1]} - ${parts[2].charAt(0)}`;
+      if (withInitial.length <= 30) return withInitial;
+      const noName = `${parts[0]} - ${parts[1]}`;
+      if (noName.length <= 30) return noName;
+    }
+    return full.slice(0, 30);
+}
 
 export async function sendToPaveApi(
   payload: any,
@@ -1718,18 +1763,7 @@ export async function sendToPaveApi(
     // JobTread caps job.name at 30 chars. Prefer graceful degradation over a
     // hard slice so we never leave a truncated word (e.g. "... - Q") in the
     // title. Try full name → first initial → drop name entirely.
-    const jobNameShort = (() => {
-      const full = payload.job_name;
-      if (full.length <= 30) return full;
-      const parts = full.split(" - ");
-      if (parts.length === 3) {
-        const withInitial = `${parts[0]} - ${parts[1]} - ${parts[2].charAt(0)}`;
-        if (withInitial.length <= 30) return withInitial;
-        const noName = `${parts[0]} - ${parts[1]}`;
-        if (noName.length <= 30) return noName;
-      }
-      return full.slice(0, 30);
-    })();
+    const jobNameShort = shortJobName(payload.job_name);
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
