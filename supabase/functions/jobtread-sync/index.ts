@@ -1484,6 +1484,40 @@ export type PaveSendOptions = {
   onProgress?: (progress: JobTreadProgress) => Promise<void> | void;
 };
 
+/** Contact Phone / Email custom fields hold one format: +1XXXXXXXXXX and the address as typed. */
+async function findCustomerByContact(contact: any): Promise<{ accountId: string; contactId: string; locations: any[] } | null> {
+  const phone = toUsE164(contact?.phone);
+  const email = (contact?.email ?? "").toString().trim();
+  const lookups: Array<[string, string]> = [];
+  if (phone && /^\+1\d{10}$/.test(phone)) lookups.push([JT_CF.contact.phone, phone]);
+  if (email) {
+    lookups.push([JT_CF.contact.email, email]);
+    if (email.toLowerCase() !== email) lookups.push([JT_CF.contact.email, email.toLowerCase()]);
+  }
+  for (const [fieldId, value] of lookups) {
+    const res = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      customField: {
+        $: { id: fieldId },
+        customFieldValues: {
+          $: { where: [["value"], "=", value], size: 1 },
+          nodes: {
+            contact: {
+              id: {},
+              account: { id: {}, type: {}, locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } } },
+            },
+          },
+        },
+      },
+    });
+    const c = res?.customField?.customFieldValues?.nodes?.[0]?.contact;
+    if (c?.id && c?.account?.id && (c.account.type ?? "customer") === "customer") {
+      return { accountId: c.account.id, contactId: c.id, locations: c.account.locations?.nodes ?? [] };
+    }
+  }
+  return null;
+}
+
 export function shortJobName(full: string): string {
     if (full.length <= 30) return full;
     const parts = full.split(" - ");
@@ -1578,7 +1612,7 @@ export async function sendToPaveApi(
       return fail(`retry_needed: invalid customer name (${acctErr}). Provide a valid full name or company name before retrying.`);
     }
 
-    accountName = buildFirstNameOnlyAccountName(accountName, payload.contact, town);
+    // Customer names stay plain: no phone or address is added to them.
 
     const noteFull: string = payload.note ?? "";
     // JobTread text custom fields cap at 1024 chars. Attachment links must
@@ -1604,81 +1638,72 @@ export async function sendToPaveApi(
     let ownAccount = !!accountId;
     let existingLocations: Array<{ id?: string; name?: string; address?: string }> = [];
     if (!accountId) {
-      const lookupRes = await paveFetch({
-        $: { grantKey: JOBTREAD_API_KEY },
-        organization: {
-          $: { id: orgId },
-          accounts: {
-            $: {
-              where: {
-                and: [
-                  { "=": [{ field: "name" }, { value: accountName }] },
-                ],
-              },
-              size: 1,
-            },
-            nodes: {
-              id: {},
-              name: {},
-              locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } },
-              contacts: { $: { size: 1 }, nodes: { id: {} } },
-            },
-          },
-        },
-      });
-      const existing = lookupRes?.organization?.accounts?.nodes?.[0];
-      if (existing?.id) {
-        const locs = existing?.locations?.nodes ?? null;
-        // A lead that already failed here before made this account on its
-        // earlier try (the 2nd-account-on-retry bug): it is this lead's account.
-        const earlierTryOfThisLead = Number(opts.priorAttempts ?? 0) > 0;
-        if (earlierTryOfThisLead || accountMatchesTown(locs, town)) {
-          accountId = existing.id;
-          existingLocations = locs ?? [];
-          // An account with no contact at all (left by an earlier failed try)
-          // gets this lead's contact; customers with contacts stay untouched.
-          const hasContact = (existing?.contacts?.nodes ?? []).length > 0;
-          ownAccount = earlierTryOfThisLead || !hasContact;
-        } else {
-          // Same name, different town → distinct customer. Never rename/merge.
-          accountName = buildTownScopedAccountName(accountName, town);
-          const scopedRes = await paveFetch({
-            $: { grantKey: JOBTREAD_API_KEY },
-            organization: {
-              $: { id: orgId },
-              accounts: {
-                $: {
-                  where: { and: [{ "=": [{ field: "name" }, { value: accountName }] }] },
-                  size: 1,
-                },
-                nodes: { id: {}, name: {}, locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } } },
-              },
-            },
-          });
-          const scoped = scopedRes?.organization?.accounts?.nodes?.[0];
-          accountId = scoped?.id;
-          existingLocations = scoped?.locations?.nodes ?? [];
-        }
+      // 1a. Returning customer: an exact match on a contact's phone, then
+      //     email, anywhere in JobTread. A hit joins that customer; a new
+      //     address becomes a new property under it. Never matched by name.
+      const match = await findCustomerByContact(payload.contact);
+      if (match) {
+        accountId = match.accountId;
+        existingLocations = match.locations;
+        progress.contactId = match.contactId; // the customer keeps its contacts
+        ownAccount = false;
       }
-      if (!accountId) {
-        const accountRes = await paveFetch({
+    }
+    if (!accountId) {
+      // 1b. A contactless account with this exact name left by an earlier
+      //     failed try of THIS lead is reused so it isn't duplicated.
+      if (Number(opts.priorAttempts ?? 0) > 0) {
+        const lookupRes = await paveFetch({
           $: { grantKey: JOBTREAD_API_KEY },
-          createAccount: {
-            $: {
-              organizationId: orgId,
-              name: accountName,
-              type: "customer",
-              customFieldValues: { ...buildAccountCustomFieldValues(town, county), ...(payload.structured?.account ?? {}) },
+          organization: {
+            $: { id: orgId },
+            accounts: {
+              $: { where: { and: [{ "=": [{ field: "name" }, { value: accountName }] }] }, size: 1 },
+              nodes: {
+                id: {},
+                locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } },
+                contacts: { $: { size: 1 }, nodes: { id: {} } },
+              },
             },
-            createdAccount: { id: {}, name: {} },
           },
         });
-        const apiErrA = accountRes?.error?.message || accountRes?.error;
-        if (apiErrA) return fail(`createAccount: ${String(apiErrA).slice(0, 400)}`);
-        accountId = accountRes?.createAccount?.createdAccount?.id;
-        if (!accountId) return fail(`createAccount returned no id`);
-        ownAccount = true;
+        const existing = lookupRes?.organization?.accounts?.nodes?.[0];
+        if (existing?.id && (existing?.contacts?.nodes ?? []).length === 0) {
+          accountId = existing.id;
+          existingLocations = existing?.locations?.nodes ?? [];
+          ownAccount = true;
+        }
       }
+    }
+    if (!accountId) {
+      // 1c. New customer, named plainly. A same-name customer with a
+      //     different phone and email is a different person: never merged.
+      const create = (name: string) => paveFetch({
+        $: { grantKey: JOBTREAD_API_KEY },
+        createAccount: {
+          $: {
+            organizationId: orgId,
+            name,
+            type: "customer",
+            customFieldValues: { ...buildAccountCustomFieldValues(town, county), ...(payload.structured?.account ?? {}) },
+          },
+          createdAccount: { id: {}, name: {} },
+        },
+      });
+      let accountRes = await create(accountName);
+      let apiErrA = accountRes?.error?.message || accountRes?.error;
+      // Only if JobTread refuses a duplicate name do we add the town.
+      if (apiErrA && /name|exist|unique|taken|duplicate/i.test(String(apiErrA)) && cleanName(town)) {
+        accountName = buildTownScopedAccountName(accountName, town);
+        accountRes = await create(accountName);
+        apiErrA = accountRes?.error?.message || accountRes?.error;
+      }
+      if (apiErrA) return fail(`createAccount: ${String(apiErrA).slice(0, 400)}`);
+      accountId = accountRes?.createAccount?.createdAccount?.id;
+      if (!accountId) return fail(`createAccount returned no id`);
+      ownAccount = true;
+    }
+    if (progress.accountId !== accountId) {
       progress.accountId = accountId;
       await save();
     }
