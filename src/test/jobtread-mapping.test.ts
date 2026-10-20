@@ -73,7 +73,8 @@ describe("Job name, Location, and Description", () => {
 
   it("routes the service area by town, falling back to county", async () => {
     const { mapServiceArea } = await mod();
-    expect(mapServiceArea("Highlands", "Macon")).toBe("Franklin");
+    expect(mapServiceArea("Highlands", "Macon")).toBe("Highlands");
+    expect(mapServiceArea("Webster", "Jackson")).toBe("Sylva");
     expect(mapServiceArea("Unknown Cove", "Jackson")).toBe("Sylva");
     expect(mapServiceArea("Unknown Cove", "Buncombe")).toBe("Asheville");
   });
