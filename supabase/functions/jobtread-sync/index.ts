@@ -1361,19 +1361,20 @@ const FORBIDDEN_MUTATIONS = [
 ];
 
 export function assertNoCustomerRewrite(query: any): void {
-  if (query?.updateContact) {
-    const args = query.updateContact.$ ?? {};
+  const validateContactEdit = (edit: any) => {
+    const args = edit.$ ?? {};
     const fields = Object.keys(args.customFieldValues ?? {});
     if (!args.id || Object.keys(args).some((k) => !["id", "customFieldValues"].includes(k)) ||
         fields.length !== 1 || fields[0] !== JT_CF.contact.secondary_phone ||
         !/^\+1\d{10}$/.test(args.customFieldValues[JT_CF.contact.secondary_phone])) {
-      throw new Error("blocked: contact edits may only save Secondary Phone");
+      throw new Error("blocked: existing customers are never renamed or merged; contact edits may only save Secondary Phone");
     }
   }
   const keys = new Set<string>();
   const walk = (node: any, depth = 0) => {
     if (!node || typeof node !== "object" || depth > 6) return;
     for (const k of Object.keys(node)) {
+      if (k === "updateContact") validateContactEdit(node[k]);
       keys.add(k);
       walk(node[k], depth + 1);
     }
@@ -1549,9 +1550,14 @@ async function reusePersonContact(existing: any, incoming: any, byEmail: boolean
     if (secondary) throw new Error("Secondary Phone already occupied; office review required to preserve both saved numbers");
     const res = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
-      updateContact: { $: { id: existing.id, customFieldValues: { [JT_CF.contact.secondary_phone]: phone } }, updatedContact: { id: {} } },
+      updateContact: { $: { id: existing.id, customFieldValues: { [JT_CF.contact.secondary_phone]: phone } }, contact: { $: { id: existing.id }, ...contactSelection } },
     });
-    if (res?.error || !res?.updateContact?.updatedContact?.id) throw new Error("Secondary Phone update failed");
+    const updated = res?.updateContact?.contact;
+    if (res?.error || updated?.id !== existing.id ||
+        toUsE164(contactField(updated, JT_CF.contact.secondary_phone)) !== phone ||
+        toUsE164(contactField(updated, JT_CF.contact.phone)) !== primary) {
+      throw new Error("Secondary Phone update could not be verified");
+    }
   }
   return existing.id;
 }
