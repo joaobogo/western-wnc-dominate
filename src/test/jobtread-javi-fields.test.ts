@@ -110,3 +110,14 @@ describe("Javi review fixes", () => {
     expect(toUsE164("+1 (828) 524-7773")).toBe("+18285247773");
   });
 });
+
+describe("job names fit JobTread's 30 characters without cutting words", () => {
+  it.each([
+    ["TEST Urgent Roof Replacement Inquiry - Highlands - Diego", "TEST Reroof - Highlands - D"],
+    ["TEST Urgent Roof Repair Lead - Cashiers - Rita", "TEST Roof Repair - Cashiers"],
+    ["TEST Construction Addition Inquiry - Franklin - Elena", "TEST Addition - Franklin - E"],
+  ])("%s", async (full, short) => {
+    const { shortJobName } = await mod();
+    expect(shortJobName(full)).toBe(short);
+  });
+});

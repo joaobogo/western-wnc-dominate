@@ -1484,6 +1484,30 @@ export type PaveSendOptions = {
   onProgress?: (progress: JobTreadProgress) => Promise<void> | void;
 };
 
+export function shortJobName(full: string): string {
+    if (full.length <= 30) return full;
+    const parts = full.split(" - ");
+    // Drop filler words first so the useful part survives the 30-char cap.
+    // ("URGENT" still leads the Job Notes.)
+    if (parts[0]) {
+      parts[0] = parts[0]
+        .replace(/\s+(Lead|Inquiry)\b/g, "")
+        .replace(/\bUrgent\s+/i, "")
+        .replace(/\bRoof Replacement\b/i, "Reroof")
+        .replace(/\bDesign Services\b/i, "Design")
+        .replace(/\bConstruction\s+(?=\S)/i, "");
+    }
+    const tight = parts.join(" - ");
+    if (tight.length <= 30) return tight;
+    if (parts.length === 3) {
+      const withInitial = `${parts[0]} - ${parts[1]} - ${parts[2].charAt(0)}`;
+      if (withInitial.length <= 30) return withInitial;
+      const noName = `${parts[0]} - ${parts[1]}`;
+      if (noName.length <= 30) return noName;
+    }
+    return full.slice(0, 30);
+}
+
 export async function sendToPaveApi(
   payload: any,
   opts: PaveSendOptions = {},
@@ -1739,30 +1763,7 @@ export async function sendToPaveApi(
     // JobTread caps job.name at 30 chars. Prefer graceful degradation over a
     // hard slice so we never leave a truncated word (e.g. "... - Q") in the
     // title. Try full name → first initial → drop name entirely.
-    const jobNameShort = (() => {
-      const full = payload.job_name;
-      if (full.length <= 30) return full;
-      const parts = full.split(" - ");
-      // Drop filler words first so the useful part survives the 30-char cap.
-      // ("URGENT" still leads the Job Notes.)
-      if (parts[0]) {
-        parts[0] = parts[0]
-          .replace(/\s+(Lead|Inquiry)\b/g, "")
-          .replace(/\bUrgent\s+/i, "")
-          .replace(/\bRoof Replacement\b/i, "Reroof")
-          .replace(/\bDesign Services\b/i, "Design")
-          .replace(/\bConstruction\s+(?=\S)/i, "");
-      }
-      const tight = parts.join(" - ");
-      if (tight.length <= 30) return tight;
-      if (parts.length === 3) {
-        const withInitial = `${parts[0]} - ${parts[1]} - ${parts[2].charAt(0)}`;
-        if (withInitial.length <= 30) return withInitial;
-        const noName = `${parts[0]} - ${parts[1]}`;
-        if (noName.length <= 30) return noName;
-      }
-      return full.slice(0, 30);
-    })();
+    const jobNameShort = shortJobName(payload.job_name);
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
