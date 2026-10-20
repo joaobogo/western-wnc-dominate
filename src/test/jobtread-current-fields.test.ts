@@ -186,19 +186,6 @@ describe("JobTread sync flow (mocked CRM only)", () => {
     expect(crm.find("createJob").locationId).toBe("location-old");
   });
 
-  it("leaves an existing customer's contacts alone on a first-time lead", async () => {
-    const { buildPayload, sendToPaveApi } = await mod();
-    const crm = mockCrm({
-      organization: () => ({
-        organization: { accounts: { nodes: [{ id: "account-cust", name: "Jane Doe", contacts: { nodes: [{ id: "contact-cust" }] }, locations: { nodes: [{ id: "loc-cust", name: "Franklin home", address: "1 Elm St, Franklin, NC" }] } }] } },
-      }),
-    });
-    const result = await sendToPaveApi(buildPayload(LEAD, "lead"));
-    expect(result.ok).toBe(true);
-    expect(crm.count("createAccount")).toBe(0);
-    expect(crm.count("createContact")).toBe(0);
-    expect(crm.find("createLocation").accountId).toBe("account-cust");
-  });
 });
 
 describe("finished job whose account has no contact", () => {
