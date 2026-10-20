@@ -227,6 +227,15 @@ export function normalizeLeadPayload(input: LeadPayload) {
     first = parsed.first_name;
     last = parsed.last_name;
   }
+  // Quick forms ask for "First and last name" in one box and send it as
+  // first_name: split it so the CRM gets a real first and last name.
+  if (first && !last && /\s/.test(first)) {
+    const split = parsePersonName(first);
+    if (split.last_name) {
+      first = split.first_name;
+      last = split.last_name;
+    }
+  }
   const fullName = providedFull ?? clean([first, last].filter(Boolean).join(" "));
   const isCompany = input.is_company ?? parsed.is_company;
   const companyName = clean(input.company_name) ?? parsed.company_name;

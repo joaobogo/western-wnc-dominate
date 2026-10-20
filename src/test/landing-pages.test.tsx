@@ -43,7 +43,7 @@ describe.each(pages)("landing page $path", (config) => {
     mount();
     const hero = document.querySelector('form[data-landing-form="hero"]') as HTMLFormElement;
     fireEvent.submit(hero);
-    expect(within(hero).getByText("Please enter your first name.")).toBeInTheDocument();
+    expect(within(hero).getByText("Please enter your first and last name.")).toBeInTheDocument();
     expect(within(hero).getByText("Please enter a phone number.")).toBeInTheDocument();
     expect(document.querySelector("[data-success-panel]")).toBeNull();
   });

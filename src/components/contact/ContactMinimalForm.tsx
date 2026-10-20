@@ -183,7 +183,7 @@ const ContactMinimalForm = () => {
         <input
           id="cm-first-name"
           required
-          autoComplete="given-name"
+          autoComplete="name"
           name="first_name"
           type="text"
           value={form.firstName}

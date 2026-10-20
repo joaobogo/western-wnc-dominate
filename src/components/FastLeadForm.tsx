@@ -176,7 +176,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
             id={`${formId}-first-name`}
             name="first_name"
             type="text"
-            autoComplete="given-name"
+            autoComplete="name"
             required
             value={formData.firstName}
             onFocus={markStart}
