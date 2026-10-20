@@ -1482,7 +1482,36 @@ export async function sendToPaveApi(
       return fail("Missing JOBTREAD_ORG_ID (Highlander org). Cannot create JobTread records.");
     }
     // The job already exists from an earlier try: never create a second one.
-    if (progress.jobId) return { ok: true, id: progress.jobId, progress: { ...progress } };
+    // If that earlier try left its account without any contact, add the
+    // lead's contact now (accounts that already have a contact are untouched).
+    if (progress.jobId) {
+      if (progress.accountId && !progress.contactId) {
+        const accRes = await paveFetch({
+          $: { grantKey: JOBTREAD_API_KEY },
+          account: { $: { id: progress.accountId }, contacts: { $: { size: 1 }, nodes: { id: {} } } },
+        });
+        const firstContact = accRes?.account?.contacts?.nodes?.[0]?.id;
+        if (firstContact) {
+          progress.contactId = firstContact;
+        } else {
+          const name = (payload.contact?.name ?? "").toString().trim() || payload.lead_name;
+          const contactRes = await paveFetch({
+            $: { grantKey: JOBTREAD_API_KEY },
+            createContact: {
+              $: { accountId: progress.accountId, name, customFieldValues: buildContactCustomFieldValues(payload.contact) },
+              createdContact: { id: {} },
+            },
+          });
+          const apiErr = contactRes?.error?.message || contactRes?.error;
+          if (apiErr) return fail(`createContact: ${String(apiErr).slice(0, 400)}`);
+          const contactId = contactRes?.createContact?.createdContact?.id;
+          if (!contactId) return fail(`createContact returned no id`);
+          progress.contactId = contactId;
+        }
+        await save();
+      }
+      return { ok: true, id: progress.jobId, progress: { ...progress } };
+    }
 
     const contactName = payload.contact?.name || "Website Lead";
     const town = payload.location?.town;
