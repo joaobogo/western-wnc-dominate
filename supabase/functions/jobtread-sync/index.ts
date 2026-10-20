@@ -1385,6 +1385,10 @@ export function assertNoCustomerRewrite(query: any): void {
   }
 }
 
+async function paveFetchSafe(query: any): Promise<any> {
+  try { return await paveFetch(query); } catch (e) { return { error: { message: (e as Error).message } }; }
+}
+
 async function paveFetch(query: any): Promise<any> {
   assertNoCustomerRewrite(query);
   const res = await fetch(JOBTREAD_PAVE_URL, {
@@ -1678,7 +1682,9 @@ export async function sendToPaveApi(
     if (!accountId) {
       // 1c. New customer, named plainly. A same-name customer with a
       //     different phone and email is a different person: never merged.
-      const create = (name: string) => paveFetch({
+      // paveFetch throws on HTTP 400 (e.g. a duplicate name); return it as an
+      // error so the fallback names below can be tried.
+      const create = (name: string) => paveFetchSafe({
         $: { grantKey: JOBTREAD_API_KEY },
         createAccount: {
           $: {
