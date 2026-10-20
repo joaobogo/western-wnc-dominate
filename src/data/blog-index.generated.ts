@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "screened-porch-vs-sunroom",
+    "title": "Screened Porch vs. Sunroom: Which Fits a Mountain Home?",
+    "excerpt": "Compare screened porches, three-season rooms and four-season sunrooms on cost, comfort, permits and resale value for Western North Carolina mountain homes.",
+    "category": "Outdoor Living",
+    "date": "2026-10-20",
+    "town": "Franklin"
+  },
+  {
     "slug": "hip-roof-vs-gable-roof",
     "title": "Hip Roof vs. Gable Roof: Which Is Better for a Mountain Home?",
     "excerpt": "Compare hip and gable roofs on wind, snow, cost, attic space, venting and insurance to choose the right shape for a Western North Carolina mountain home.",
