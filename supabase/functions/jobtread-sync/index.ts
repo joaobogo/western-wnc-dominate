@@ -1504,7 +1504,7 @@ async function findCustomerByContact(contact: any): Promise<{ accountId: string;
       customField: {
         $: { id: fieldId },
         customFieldValues: {
-          $: { where: [["value"], "=", value], size: 1 },
+          $: { where: [["value"], "=", value], size: 5 },
           nodes: {
             contact: {
               id: {},
@@ -1514,8 +1514,14 @@ async function findCustomerByContact(contact: any): Promise<{ accountId: string;
         },
       },
     });
-    const c = res?.customField?.customFieldValues?.nodes?.[0]?.contact;
-    if (c?.id && c?.account?.id && (c.account.type ?? "customer") === "customer") {
+    const hits = (res?.customField?.customFieldValues?.nodes ?? [])
+      .map((n: any) => n?.contact)
+      .filter((c: any) => c?.id && c?.account?.id && (c.account.type ?? "customer") === "customer");
+    // A phone or email shared by several customers (e.g. an office line) is
+    // ambiguous: don't guess, try the next identifier instead.
+    const accounts = new Set(hits.map((c: any) => c.account.id));
+    if (accounts.size === 1) {
+      const c = hits[0];
       return { accountId: c.account.id, contactId: c.id, locations: c.account.locations?.nodes ?? [] };
     }
   }

@@ -161,4 +161,21 @@ describe("returning customers are matched by phone, then email, never by name", 
     expect(q.filter((x) => x.createAccount).map((x) => x.createAccount.$.name)).toEqual(["John Mitchell", "John Mitchell (2)"]);
     expect(count(q, "createContact")).toBe(1);
   });
+
+  it("a phone shared by several customers is ignored and email decides", async () => {
+    const { buildPayload, sendToPaveApi } = await mod();
+    const queries: any[] = [];
+    const acct = (id: string) => ({ contact: { id: `c-${id}`, account: { id, type: "customer", locations: { nodes: [] } } } });
+    vi.stubGlobal("fetch", vi.fn(async (_u: string, init: any) => {
+      const { query } = JSON.parse(init.body); queries.push(query);
+      let r: any = {};
+      if (query.customField) r = { customField: { customFieldValues: { nodes: query.customField.$.id === "22P5uYmnWzne" ? [acct("a1"), acct("a2")] : [acct("email-acct")] } } };
+      else if (query.createLocation) r = { createLocation: { createdLocation: { id: "l" } } };
+      else if (query.createJob) r = { createJob: { createdJob: { id: "j" } } };
+      return new Response(JSON.stringify(r), { status: 200 });
+    }));
+    await sendToPaveApi(buildPayload(lead, "lead"));
+    expect(queries.find((x) => x.createLocation).createLocation.$.accountId).toBe("email-acct");
+    expect(queries.filter((x) => x.createAccount)).toHaveLength(0);
+  });
 });
