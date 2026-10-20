@@ -1,4 +1,5 @@
 # JobTread form connection audit
+- [ ] Implement missing-address property reuse/office fallback, distinct-person contacts, secondary phones, Design routing and specified defaults; verify live configuration and mocked delivery, then deploy.
 - [x] Trace active landing, contact, inspection, intake, builder, tool, recovery, receptionist and legacy chatbot save paths; consultation detail rows must not create duplicate CRM jobs.
 - [x] Inspect real failures, verify current JobTread custom fields through read-only queries, and confirm the ten-minute retry schedule.
 - [x] Deploy corrected lead-source, division and communication mappings; omit deleted fields while preserving contact email and all intake detail in Contact / Job Notes.
