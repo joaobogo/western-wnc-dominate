@@ -200,3 +200,19 @@ describe("JobTread sync flow (mocked CRM only)", () => {
     expect(crm.find("createLocation").accountId).toBe("account-cust");
   });
 });
+
+describe("finished job whose account has no contact", () => {
+  it("adds the missing contact without creating another job", async () => {
+    const { buildPayload, sendToPaveApi } = await mod();
+    const queries: any[] = [];
+    vi.stubGlobal("fetch", vi.fn(async (_u: string, init: any) => {
+      const { query } = JSON.parse(init.body); queries.push(query);
+      if (query.account) return new Response(JSON.stringify({ account: { contacts: { nodes: [] } } }));
+      return new Response(JSON.stringify({ createContact: { createdContact: { id: "contact-new" } } }));
+    }));
+    const r = await sendToPaveApi(buildPayload(LEAD, "lead"), { progress: { accountId: "a", locationId: "l", jobId: "job-9" } });
+    expect(r).toMatchObject({ ok: true, id: "job-9", progress: { contactId: "contact-new" } });
+    expect(queries.filter((q) => q.createContact)).toHaveLength(1);
+    expect(queries.filter((q) => q.createJob || q.createLocation || q.createAccount)).toHaveLength(0);
+  });
+});
