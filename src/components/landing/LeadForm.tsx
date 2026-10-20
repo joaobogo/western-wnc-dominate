@@ -229,7 +229,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           type: "text",
           autoComplete: "name",
           required: true,
-          placeholder: "Jane",
+          placeholder: "First and last name",
         })}
         {field("email", "Email", {
           type: "email",

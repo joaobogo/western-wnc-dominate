@@ -199,7 +199,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
             town={inferredTown}
             category={category}
             summary={[
-              { label: "First name", value: formData.firstName },
+              { label: "Name", value: formData.firstName },
               { label: "We'll reach you at", value: formData.phone || formData.email },
             ]}
           />
@@ -316,13 +316,13 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                 <div className="space-y-5">
                   <div>
                     <label htmlFor="estimate-first-name" className={labelClasses}>
-                      First name
+                      Full name
                     </label>
                     <input
                       id="estimate-first-name"
                       name="first_name"
                       type="text"
-                      autoComplete="given-name"
+                      autoComplete="name"
                       required
                       value={formData.firstName}
                       onFocus={markStart}
@@ -338,7 +338,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                         contact.errorFor("name") ? "estimate-first-name-error" : undefined
                       }
                       className={inputClasses}
-                      placeholder="First name"
+                      placeholder="First and last name"
                       maxLength={100}
                     />
                     <InlineFieldError id="estimate-first-name-error" tone="dark">
