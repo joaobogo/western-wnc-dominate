@@ -1145,6 +1145,8 @@ const JT_CF = {
   account: {
     service_area: "22P72GvSrBgk", // option: Franklin | Sylva | Asheville
     lead_source: "22P75KEjYCfa",  // option: Highlander Website
+    referred_by: "22P75KDSW7iP",  // text
+    community: "22PPQaQrDp8h",    // text: Community or Subdivision Name
   },
   contact: {
     email: "22P5uYmYEAkx",           // email
@@ -1155,11 +1157,18 @@ const JT_CF = {
   location: {
     contact_name: "22PPzwDNUYjN", // text
     phone: "22PPzw5sqRSX",        // phoneNumber
+    stories: "22PgCuQ9Qdjx",      // option: 1 | 2 | 3+
+    property_type: "22PgCue6AFVm", // option: Primary Home | Second Home / Cabin | ...
   },
   job: {
     status: "22P5uYmYTED2",       // option, "01 New Lead (Needs Appointment)"
     divisions: "22PNawhnSXmW",    // list: Roofing | Gutters | Construction | Repair
     job_notes: "22PYx7PBhE56",    // text (was Lead Notes, same ID)
+    roof_type: "22PgCu9jhtAA",    // option: Shingle | Metal | Shake | Slate / Tile | Flat
+    roofing_color: "22PgCuC3sTWg", // text
+    gutter_color: "22PgCuDm46uM", // text
+    drip_edge_color: "22PgCuF45LBK", // text
+    insurance_claim: "22PNawMp3BLV", // boolean
   },
 } as const;
 
