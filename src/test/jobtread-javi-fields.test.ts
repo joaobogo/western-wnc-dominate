@@ -50,7 +50,7 @@ describe("Javi's JobTread fields", () => {
       .toBe("TEST Gutter Inquiry - Sylva - JOAO");
   });
 
-  it("a property with no street address still gets the town as its address", async () => {
+  it("a property with no street address uses the clearly labelled Franklin office fallback", async () => {
     const { buildPayload, sendToPaveApi } = await mod();
     const queries: any[] = [];
     vi.stubGlobal("fetch", vi.fn(async (_u: string, init: any) => {
@@ -64,7 +64,8 @@ describe("Javi's JobTread fields", () => {
       return new Response(JSON.stringify(r), { status: 200 });
     }));
     await sendToPaveApi(buildPayload({ first_name: "Jane", last_name: "Doe", property_town: "Sylva", phone: "8285551234" }, "lead"));
-    expect(queries.find((q) => q.createLocation).createLocation.$.address).toBe("Sylva, NC");
+    expect(queries.find((q) => q.createLocation).createLocation.$.address).toBe("40 Depot Street, Franklin, NC 28734");
+    expect(queries.find((q) => q.createLocation).createLocation.$.name).toBe("Franklin Office Placeholder");
   });
 });
 

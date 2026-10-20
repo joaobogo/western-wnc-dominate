@@ -60,7 +60,7 @@ describe("JobTread field contract (16 Oct 2026 update)", () => {
     ["storm", "storm_damage", "Repair"],
     ["gutters", "gutter_guards", "Gutters"],
     ["construction", "addition", "Construction"],
-    ["design_services", "design_planning", "Construction"],
+    ["design_services", "design_planning", "Design"],
   ])("Fix 1: sends %s / %s as a Divisions list, with no account field on the job", async (category, type, division) => {
     const { buildJobCustomFieldValues } = await mod();
     const fields = buildJobCustomFieldValues({ project: { service_category: category, project_type: type }, contact: {} }, "Intake notes");

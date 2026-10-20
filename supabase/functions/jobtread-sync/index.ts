@@ -7,16 +7,10 @@
 // - Updates jobtread_* columns with success/failure state. Never throws to the caller in a way that would lose the lead.
 
 import { createClient } from "npm:@supabase/supabase-js@2.112.3";
+import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
-
-const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
+const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 
 // Required: API key + base URL. Everything else is optional.
 // JobTread's Pave API calls the API key a "grantKey"; we accept either name
@@ -1298,7 +1292,7 @@ const JT_CF = {
   },
   job: {
     status: "22P5uYmYTED2",       // option, "01 New Lead (Needs Appointment)"
-    divisions: "22PNawhnSXmW",    // list: Roofing | Gutters | Construction | Repair
+    divisions: "22PNawhnSXmW",    // list: Roofing | Gutters | Construction | Repair | Small Projects | Design
     job_notes: "22PYx7PBhE56",    // text (was Lead Notes, same ID)
     roof_type: "22PgCu9jhtAA",    // option: Shingle | Metal | Shake | Slate / Tile | Flat
     roofing_color: "22PgCuC3sTWg", // text
@@ -1335,7 +1329,8 @@ function mapJobType(payload: any): string {
   const key = [payload?.project?.service_category, payload?.project?.project_type, payload?.source?.lead_type]
     .filter(Boolean).join(" ").toLowerCase();
   if (/gutter/.test(key)) return "Gutters";
-  if (/construction|addition|design|renovation|remodel|outdoor|new_build|exterior/.test(key)) return "Construction";
+  if (/design|planning/.test(key) || payload?.project?.lead_classification === "design") return "Design";
+  if (/construction|addition|renovation|remodel|outdoor|new_build|exterior/.test(key)) return "Construction";
   if (/repair|storm|leak|hail/.test(key)) return "Repair";
   return "Roofing";
 }
@@ -1353,25 +1348,33 @@ export function mapCommPref(pref: string | null | undefined): string {
 }
 
 /**
- * NEVER RENAME OR MERGE — hard guard. This function may only create records.
- * Any mutation that could rename, merge, or overwrite an existing Customer /
- * Account / Contact is refused before it leaves the edge function.
+ * NEVER RENAME OR MERGE. The only existing-contact edit allowed is the
+ * owner-requested Secondary Phone field; primary phone and identity stay intact.
  */
 const FORBIDDEN_MUTATIONS = [
   "updateAccount",
   "renameAccount",
   "mergeAccount",
   "mergeAccounts",
-  "updateContact",
   "mergeContacts",
   "deleteAccount",
 ];
 
 export function assertNoCustomerRewrite(query: any): void {
+  const validateContactEdit = (edit: any) => {
+    const args = edit.$ ?? {};
+    const fields = Object.keys(args.customFieldValues ?? {});
+    if (!args.id || Object.keys(args).some((k) => !["id", "customFieldValues"].includes(k)) ||
+        fields.length !== 1 || fields[0] !== JT_CF.contact.secondary_phone ||
+        !/^\+1\d{10}$/.test(args.customFieldValues[JT_CF.contact.secondary_phone])) {
+      throw new Error("blocked: existing customers are never renamed or merged; contact edits may only save Secondary Phone");
+    }
+  }
   const keys = new Set<string>();
   const walk = (node: any, depth = 0) => {
     if (!node || typeof node !== "object" || depth > 6) return;
     for (const k of Object.keys(node)) {
+      if (k === "updateContact") validateContactEdit(node[k]);
       keys.add(k);
       walk(node[k], depth + 1);
     }
@@ -1488,12 +1491,21 @@ export type PaveSendOptions = {
   onProgress?: (progress: JobTreadProgress) => Promise<void> | void;
 };
 
+const contactSelection = {
+  id: {}, name: {},
+  customFieldValues: { $: { size: 100 }, nodes: { customField: { id: {} }, value: {} } },
+};
+const personKey = (name: unknown) => String(name ?? "").trim().replace(/\s+/g, " ").toLowerCase();
+const contactField = (contact: any, id: string) => contact?.customFieldValues?.nodes?.find((n: any) => n.customField?.id === id)?.value;
+export const OFFICE_PLACEHOLDER_ADDRESS = "40 Depot Street, Franklin, NC 28734";
+
 /** Contact Phone / Email custom fields hold one format: +1XXXXXXXXXX and the address as typed. */
-async function findCustomerByContact(contact: any): Promise<{ accountId: string; contactId: string; locations: any[] } | null> {
+async function findCustomerByContact(contact: any): Promise<{ accountId: string; contact: any; byEmail: boolean; locations: any[] } | null> {
   const phone = toUsE164(contact?.phone);
   const email = (contact?.email ?? "").toString().trim();
   const lookups: Array<[string, string]> = [];
   if (phone && /^\+1\d{10}$/.test(phone)) lookups.push([JT_CF.contact.phone, phone]);
+  if (phone && /^\+1\d{10}$/.test(phone)) lookups.push([JT_CF.contact.secondary_phone, phone]);
   if (email) {
     lookups.push([JT_CF.contact.email, email]);
     if (email.toLowerCase() !== email) lookups.push([JT_CF.contact.email, email.toLowerCase()]);
@@ -1504,10 +1516,10 @@ async function findCustomerByContact(contact: any): Promise<{ accountId: string;
       customField: {
         $: { id: fieldId },
         customFieldValues: {
-          $: { where: [["value"], "=", value], size: 5 },
+          $: { where: [["value"], "=", value], size: 100 },
           nodes: {
             contact: {
-              id: {},
+              ...contactSelection,
               account: { id: {}, type: {}, locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } } },
             },
           },
@@ -1520,12 +1532,34 @@ async function findCustomerByContact(contact: any): Promise<{ accountId: string;
     // A phone or email shared by several customers (e.g. an office line) is
     // ambiguous: don't guess, try the next identifier instead.
     const accounts = new Set(hits.map((c: any) => c.account.id));
-    if (accounts.size === 1) {
-      const c = hits[0];
-      return { accountId: c.account.id, contactId: c.id, locations: c.account.locations?.nodes ?? [] };
+    if (accounts.size === 1 && hits.length < 100) {
+      const c = hits.find((h: any) => personKey(h.name) === personKey(contact?.name)) ?? hits[0];
+      return { accountId: c.account.id, contact: c, byEmail: fieldId === JT_CF.contact.email, locations: c.account.locations?.nodes ?? [] };
     }
   }
   return null;
+}
+
+async function reusePersonContact(existing: any, incoming: any, byEmail: boolean): Promise<string | undefined> {
+  // A shared identifier establishes the account, not the person's identity.
+  if (existing.name && personKey(existing.name) !== personKey(incoming?.name)) return undefined;
+  const phone = toUsE164(incoming?.phone);
+  const primary = toUsE164(contactField(existing, JT_CF.contact.phone));
+  const secondary = toUsE164(contactField(existing, JT_CF.contact.secondary_phone));
+  if (byEmail && phone && /^\+1\d{10}$/.test(phone) && primary && phone !== primary && phone !== secondary) {
+    if (secondary) throw new Error("Secondary Phone already occupied; office review required to preserve both saved numbers");
+    const res = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      updateContact: { $: { id: existing.id, customFieldValues: { [JT_CF.contact.secondary_phone]: phone } }, contact: { $: { id: existing.id }, ...contactSelection } },
+    });
+    const updated = res?.updateContact?.contact;
+    if (res?.error || updated?.id !== existing.id ||
+        toUsE164(contactField(updated, JT_CF.contact.secondary_phone)) !== phone ||
+        toUsE164(contactField(updated, JT_CF.contact.phone)) !== primary) {
+      throw new Error("Secondary Phone update could not be verified");
+    }
+  }
+  return existing.id;
 }
 
 export function shortJobName(full: string): string {
@@ -1577,9 +1611,10 @@ export async function sendToPaveApi(
       if (progress.accountId && !progress.contactId) {
         const accRes = await paveFetch({
           $: { grantKey: JOBTREAD_API_KEY },
-          account: { $: { id: progress.accountId }, contacts: { $: { size: 1 }, nodes: { id: {} } } },
+          account: { $: { id: progress.accountId }, contacts: { $: { size: 100 }, nodes: contactSelection } },
         });
-        const firstContact = accRes?.account?.contacts?.nodes?.[0]?.id;
+        const person = accRes?.account?.contacts?.nodes?.find((c: any) => personKey(c.name) === personKey(payload.contact?.name));
+        const firstContact = person ? await reusePersonContact(person, payload.contact, true) : undefined;
         if (firstContact) {
           progress.contactId = firstContact;
         } else {
@@ -1637,11 +1672,7 @@ export async function sendToPaveApi(
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
 
     // Step 1 — the Customer. Reuse the account an earlier try of THIS lead
-    // created; otherwise resolve by "full name + town". JobTread enforces
-    // unique account names within an org, so we look the name up first. An
-    // existing account with a location in this lead's town is reused; one in
-    // a different town gets a separate "Full Name (Town)" account. We never
-    // rename or merge an existing customer.
+    // created; otherwise match contacts by phone, then email, never name.
     let accountId: string | undefined = progress.accountId;
     // The account belongs to this lead (created by it now or by an earlier
     // try): it may still need its contact and property.
@@ -1655,7 +1686,7 @@ export async function sendToPaveApi(
       if (match) {
         accountId = match.accountId;
         existingLocations = match.locations;
-        progress.contactId = match.contactId; // the customer keeps its contacts
+        progress.contactId = await reusePersonContact(match.contact, payload.contact, match.byEmail);
         ownAccount = false;
       }
     }
@@ -1738,7 +1769,21 @@ export async function sendToPaveApi(
     // as custom fields). Created once for the lead's own account; an existing
     // customer keeps its contacts untouched. A failure now fails the attempt —
     // it is no longer swallowed — and the retry redoes only this step.
-    if (ownAccount && !progress.contactId) {
+    if (!progress.contactId) {
+      // Resume safely after a failed contact/property/job step. Read back the
+      // account's people and properties before creating anything else.
+      if (opts.progress?.accountId) {
+        const res = await paveFetch({
+          $: { grantKey: JOBTREAD_API_KEY },
+          account: { $: { id: accountId }, contacts: { $: { size: 100 }, nodes: contactSelection }, locations: { $: { size: 100 }, nodes: { id: {}, name: {}, address: {} } } },
+        });
+        if (res?.error) throw new Error("Could not read customer's contacts and properties");
+        existingLocations = res?.account?.locations?.nodes ?? [];
+        const person = res?.account?.contacts?.nodes?.find((c: any) => personKey(c.name) === personKey(payload.contact?.name));
+        if (person) progress.contactId = await reusePersonContact(person, payload.contact, true);
+      }
+    }
+    if (!progress.contactId) {
       const name = (payload.contact?.name ?? "").toString().trim() || payload.lead_name;
       const title = (payload.contact?.title ?? "").toString().trim();
       const contactRes = await paveFetch({
@@ -1765,8 +1810,13 @@ export async function sendToPaveApi(
     // Reuse one the lead's earlier try (or the customer) already has with the
     // same name or address instead of adding another.
     let locationId: string | undefined = progress.locationId;
+    if (!locationId && !address && opts.progress?.accountId && !existingLocations.length) {
+      const res = await paveFetch({ $: { grantKey: JOBTREAD_API_KEY }, account: { $: { id: accountId }, locations: { $: { size: 100 }, nodes: { id: {}, name: {}, address: {} } } } });
+      if (res?.error) throw new Error("Could not read customer's properties");
+      existingLocations = res?.account?.locations?.nodes ?? [];
+    }
     if (!locationId) {
-      const sameProperty = existingLocations.find((l) =>
+      const sameProperty = !address ? existingLocations.find((l) => l.id && l.address) ?? existingLocations.find((l) => l.id) : existingLocations.find((l) =>
         (l?.name && l.name === locName) || (!!address && !!l?.address && l.address === address),
       );
       locationId = sameProperty?.id;
@@ -1777,8 +1827,8 @@ export async function sendToPaveApi(
         createLocation: {
           $: {
             accountId,
-            name: locName,
-            address: address || (town ? `${town}, NC` : null),
+            name: address ? locName : "Franklin Office Placeholder",
+            address: address || OFFICE_PLACEHOLDER_ADDRESS,
             // Sales Notes, Gate Code and Email are retired Location fields.
             customFieldValues: {
               ...buildLocationCustomFieldValues({
