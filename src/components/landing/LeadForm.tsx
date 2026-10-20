@@ -227,7 +227,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
       <div className={compact ? "grid grid-cols-[1fr_1.2fr_1fr_auto] items-start gap-3" : "space-y-4"}>
         {field("firstName", "Full name", {
           type: "text",
-          autoComplete: "given-name",
+          autoComplete: "name",
           required: true,
           placeholder: "Jane",
         })}
