@@ -147,7 +147,7 @@ const ContactMinimalForm = () => {
           heading={`Thank you, ${form.firstName || "there"} — your request is in.`}
           category="general"
           summary={[
-            { label: "First name", value: form.firstName },
+            { label: "Name", value: form.firstName },
             { label: "We'll reach you at", value: form.phone || form.email },
           ]}
         />
@@ -178,7 +178,7 @@ const ContactMinimalForm = () => {
 
       <div>
         <label htmlFor="cm-first-name" className={labelClasses}>
-          First name <span className="text-alert">*</span>
+          Full name <span className="text-alert">*</span>
         </label>
         <input
           id="cm-first-name"
@@ -192,7 +192,7 @@ const ContactMinimalForm = () => {
           onBlur={() => contact.blur("name")}
           aria-invalid={Boolean(contact.errorFor("name")) || undefined}
           aria-describedby={contact.errorFor("name") ? "cm-first-name-error" : undefined}
-          placeholder="First name"
+          placeholder="First and last name"
           className={inputClasses}
           maxLength={100}
         />

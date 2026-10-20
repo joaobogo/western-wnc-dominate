@@ -68,7 +68,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
           category={serviceCategory}
           summary={[
             { label: "Service", value: serviceLabel },
-            { label: "First name", value: formData.firstName },
+            { label: "Name", value: formData.firstName },
             { label: "We'll reach you at", value: formData.phone || formData.email },
           ]}
         />
@@ -170,7 +170,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
 
         <div>
           <label htmlFor={`${formId}-first-name`} className="field-label">
-            First name
+            Full name
           </label>
           <input
             id={`${formId}-first-name`}
@@ -185,7 +185,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
             aria-invalid={Boolean(contact.errorFor("name")) || undefined}
             aria-describedby={contact.errorFor("name") ? `${formId}-first-name-error` : undefined}
             className={fieldClass(Boolean(contact.errorFor("name")))}
-            placeholder="First name"
+            placeholder="First and last name"
           />
           <InlineFieldError id={`${formId}-first-name-error`}>
             {contact.errorFor("name")}
