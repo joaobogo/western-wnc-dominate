@@ -9,3 +9,5 @@
 - Derive blog sitemap lastmod from the recorded substantive revision date, falling back to publication; never stamp build time because it misrepresents page changes.
 - Render CertainTeed credential artwork through the shared Premier badge using the supplied asset without color filters or cropping; keep manufacturer product names distinct from Highlander's contractor credential.
 - Match returning JobTread customers only by exact contact phone (+1XXXXXXXXXX), then email; never by name, and keep new customer names plain. Name-only matching merged or suffixed different people.
+- Resolve people independently from account matches, allowing only Secondary Phone edits on existing contacts; preserve identity and primary phone to avoid corrupting shared-contact records.
+- Missing-address enquiries reuse an account property before a clearly labelled Franklin office fallback; keep the edge fallback aligned with the canonical business identity in regression tests to prevent empty properties.
