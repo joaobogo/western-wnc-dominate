@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 262,
+    "sitemap": 266,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 392
+    "total": 396
   },
   "routes": [
     "/",
@@ -108,6 +108,10 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/roof-wind-mitigation",
+    "/blog/shingle-blistering",
+    "/blog/roof-decking-replacement",
+    "/blog/copper-roof-cost",
     "/blog/screened-porch-vs-sunroom",
     "/blog/hip-roof-vs-gable-roof",
     "/blog/helical-piers-vs-concrete-piers",
