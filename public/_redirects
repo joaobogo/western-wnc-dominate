@@ -18,6 +18,12 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 # were adopted as the canonical URL source.
 /blog/drip-edge-vs-gutter-apron_1                         /blog/drip-edge-vs-gutter-apron                 301!
 /blog/wind-driven-rain-leak                              /blog/wind-driven-rain-leak_2                   301!
+/blog/wind-driven-rain-leak_1                            /blog/wind-driven-rain-leak_2                   301!
+/blog/shingle-blistering_1                               /blog/shingle-blistering                        301!
+/blog/skylight-replacement-cost                          /blog/skylight-replacement-cost_1               301!
+/blog/skylight-replacement-cost_1-2                      /blog/skylight-replacement-cost_1               301!
+/blog/storm-damage-roof-inspection                       /blog/storm-damage-roof-inspection_1            301!
+/blog/storm-damage-roof-inspection_1-2                   /blog/storm-damage-roof-inspection_1            301!
 /blog/chimney-flashing-repair-western-nc                   /blog/chimney-flashing-repair                   301!
 /blog/standing-seam-vs-exposed-fastener-metal-roof-wnc     /blog/standing-seam-vs-exposed-fastener         301!
 /blog/half-round-vs-k-style-gutters-western-nc             /blog/half-round-vs-k-style-gutters             301!
