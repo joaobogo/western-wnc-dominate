@@ -9736,9 +9736,13 @@ blogPosts.push(...cullowheeClusterPosts);
 // one regional article each; the old URLs 301 in public/_redirects.
 import { decisionGuidePosts } from "./blogs-decision-guides";
 import { october21Posts } from "./blogs-october21";
+import { october22Posts } from "./blogs-october22";
 import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
 import { BLOG_COVERS } from "./blog-covers";
 for (const p of october21Posts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
+for (const p of october22Posts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of decisionGuidePosts) {
