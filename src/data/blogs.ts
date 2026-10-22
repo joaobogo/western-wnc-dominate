@@ -7232,10 +7232,11 @@ We won't publish flat pricing. We won't estimate off Google Earth. Every proposa
   },
   {
     slug: "roof-lifespan-mountain-home-wnc",
-    title: "How Long Does a Roof Last on a Mountain Home in WNC?",
+    title: "How Long Do Roofs Last in NC? WNC Mountain Roof Lifespans",
     excerpt: "Real-world roof lifespans for Western NC mountain homes across shingles, metal, and specialty systems — with the caveats that matter.",
     category: "Materials",
     date: "2026-07-07",
+    updated: "2026-10-22",
     image: "/media/wnc-roof-tearoff-crew.jpg",
     readTime: "6 min",
     metaTitle: "How Long Does a WNC Mountain Roof Last? | Highlander",
@@ -7263,7 +7264,18 @@ Correct spec for the site. Periodic professional inspection. Prompt repair when 
 ## Planning Ahead
 If your roof is nearing the end of its useful life, planning a replacement early gives you more material and scheduling options. Learn about [roof replacement](/roofing/roof-replacement), [metal roofing](/roofing/metal), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [repair vs replacement guide](/blog/roof-repair-vs-replacement-wnc).
 
-> Highlander does not publish unsupported warranty-year claims. Manufacturer warranties vary by product and install method; we'll walk through the specifics for your project.`,
+> Highlander does not publish unsupported warranty-year claims. Manufacturer warranties vary by product and install method; we'll walk through the specifics for your project.
+
+## Signs a Roof May Need Replacement
+A few shingles out of place is usually a repair. Widespread damage is a different conversation.
+
+- **Curling or cupping shingles across large sections:** heat and UV exposure have broken down the asphalt, not just one spot.
+- **Heavy granule loss:** noticeable amounts of granules collecting in gutters or at downspouts mean the protective coating is wearing through.
+- **Recurring leaks or interior water stains:** repeat staining or dark spots signal the roofing system itself is compromised, not a one-time clog.
+- **Sagging roof lines:** this points to deck damage underneath and needs prompt expert attention.
+- **Widespread missing, cracked, or rotten shingles:** especially with debris turning up in gutters or on the ground.
+
+Document what you see with dates and locations, then [request an inspection](/request-inspection) before the damage spreads.`,
     faqs: [
       { question: "Can I get a warranty on a WNC mountain roof?", answer: "Yes — manufacturer warranties apply per product and install method. We'll walk through what actually applies to your project rather than making blanket claims." },
     ],
@@ -8397,10 +8409,11 @@ Photos, findings, and written scope — sent to your email. You approve work bef
   {
     slug: "roofing-mountain-homes-lake-glenville-scaly-mountain",
     town: "Lake Glenville",
-    title: "Roofing for Mountain Homes Near Lake Glenville and Scaly Mountain",
+    title: "Roofing Glenville: What Elevation Does to Your Roof",
     excerpt: "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
     category: "Local",
     date: "2026-07-20",
+    updated: "2026-10-22",
     image: "/media/wnc-mountain-home-exterior.jpg",
     readTime: "7 min",
     metaTitle: "Roofing Near Lake Glenville & Scaly Mountain | Highlander",
@@ -8415,6 +8428,17 @@ Ice and water shield at eaves and valleys is essential, not optional.
 
 ## Metal vs. Shingle
 Both work here. Metal earns its cost on high-exposure sites; shingles remain the value option on more sheltered lots.
+
+## Roofing Costs Near Lake Glenville
+A comparable estimate starts with a few basics gathered before anyone climbs a ladder:
+
+- **Roof size and complexity:** more valleys, dormers, and roof planes mean more labor and material.
+- **Access and pitch:** steep or hard-to-reach roofs change staging, safety setup, and crew time.
+- **Material:** metal and asphalt shingles differ in both installation process and total scope.
+- **Tear-off:** removing the existing roof, versus roofing over it, adds labor and disposal.
+- **Hidden repairs:** rot or decking damage found once the old roof comes off can shift the schedule and the scope.
+
+Asking each estimator to itemize these line by line makes quotes easier to compare side by side.
 
 ## Local Contractor
 Highlander works these communities regularly. We know the roads, the sites, and the weather.
