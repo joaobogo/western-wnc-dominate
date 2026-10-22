@@ -33,7 +33,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Roofing & Construction Estimates in Western NC | Highlander"
-        description={`Contact Highlander for roofing and construction in Western NC. Call, email, or request an on-site estimate through our showrooms. ${PHONE_DISPLAY}.`}
+        description="Contact Highlander Building Services for roofing or construction questions and written estimates in Western NC. Call, email, or request an estimate."
         path="/contact"
         jsonLd={buildPageSchema({
           type: "contact",
