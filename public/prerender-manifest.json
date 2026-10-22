@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 266,
+    "sitemap": 267,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 396
+    "total": 397
   },
   "routes": [
     "/",
@@ -108,6 +108,7 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/low-slope-roofing-options",
     "/blog/roof-wind-mitigation",
     "/blog/shingle-blistering",
     "/blog/roof-decking-replacement",
