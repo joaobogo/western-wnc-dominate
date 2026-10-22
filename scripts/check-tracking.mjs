@@ -57,10 +57,12 @@ check(
 check("gtag consent default block missing", /gtag\('consent','default'/.test(html));
 check("url_passthrough missing", html.includes("url_passthrough"));
 
-// Pixels must fire on load, not behind the interaction gate.
+// Pixels must fire on page load (the window load event still fires for every
+// visitor, including bounces), never behind the scroll/click intent gate.
 check(
   "loadMarketing() must run on page load",
-  /\n\s*loadMarketing\(\);\s*\n\s*arm\(\);/.test(html),
+  /\n\s*loadMarketing\(\);\s*\n\s*arm\(\);/.test(html) ||
+    /addEventListener\('load', loadMarketing/.test(html),
   "pixels would only fire after a scroll or click, losing every bounce",
 );
 check("__hlApplyConsent hook missing", html.includes("__hlApplyConsent"));
