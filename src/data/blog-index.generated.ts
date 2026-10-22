@@ -631,7 +631,7 @@ export const blogIndex: BlogIndexEntry[] = [
   },
   {
     "slug": "roofing-mountain-homes-lake-glenville-scaly-mountain",
-    "title": "Roofing for Mountain Homes Near Lake Glenville and Scaly Mountain",
+    "title": "Roofing Glenville: What Elevation Does to Your Roof",
     "excerpt": "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
     "category": "Local",
     "date": "2026-07-20",
@@ -882,7 +882,7 @@ export const blogIndex: BlogIndexEntry[] = [
   },
   {
     "slug": "roof-lifespan-mountain-home-wnc",
-    "title": "How Long Does a Roof Last on a Mountain Home in WNC?",
+    "title": "How Long Do Roofs Last in NC? WNC Mountain Roof Lifespans",
     "excerpt": "Real-world roof lifespans for Western NC mountain homes across shingles, metal, and specialty systems — with the caveats that matter.",
     "category": "Materials",
     "date": "2026-07-07",
