@@ -348,7 +348,9 @@ div[style*="Edit with Lovable"],
          /recent-projects still initializes; it simply mounts a moment later. -->
     <script type="text/javascript">
     (function(){
+      var rwlRequested = false;
       function loadRWL(){
+        if(rwlRequested) return; rwlRequested = true;
                  var d = document, t = 'script',
                      o = d.createElement(t),
                      s = d.getElementsByTagName(t)[0];
@@ -359,6 +361,9 @@ div[style*="Edit with Lovable"],
                     }, false);
                     s.parentNode.insertBefore(o, s);
       }
+      // Pages that render the project feed (RealWorkWidget) call this on mount
+      // so the feed loads right away there; everywhere else it waits for intent.
+      window.__loadRWL = loadRWL;
       if(window.__hlOnUserIntent) window.__hlOnUserIntent(loadRWL);
       else window.addEventListener('load', loadRWL, {once:true});
                 }());
