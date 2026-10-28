@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, CheckCircle2, Phone, ShieldCheck, X } from "lucide-react";
 import { trackPhoneClick } from "@/lib/gtm";
-import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, PRIMARY_HOURS_LABEL } from "@/data/business";
+import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { useLandingForm } from "./LandingFormContext";
 import type { IntentId } from "./config";
 
-export type FormInstance = "hero" | "final" | "rail";
+export type FormInstance = "hero" | "final";
 
 const inputClass =
   "min-h-12 w-full rounded-sm border border-input bg-background px-3.5 text-base text-foreground shadow-sm outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/60 focus:border-primary focus:ring-4 focus:ring-primary/15";
@@ -27,13 +27,14 @@ const COMBINED_OPTIONS: Array<{ id: IntentId; label: string; helper: string }> =
 ];
 
 /**
- * The single three-field form. Hero, final and desktop-rail instances all read
- * the same provider state, so a value typed in one is never lost in another.
+ * The single three-field form. The hero and final instances read the same
+ * provider state, so a value typed in one is never lost in the other. Calling
+ * leads (call plan, 28 Oct 2026): the card opens with the phone, and the form
+ * itself promises a call back.
  */
 export default function LeadForm({ instance }: { instance: FormInstance }) {
   const form = useLandingForm();
   const { config, values, errors, setField, intent, setIntent, submitted, submitting, submitError, markStart, submit } = form;
-  const compact = instance === "rail";
   const prefix = `${config.key}-${instance}`;
   const successRef = useRef<HTMLDivElement>(null);
   const wasSubmitted = useRef(false);
@@ -55,32 +56,25 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
         tabIndex={-1}
         role="status"
         aria-live="polite"
-        className={
-          compact
-            ? "mx-auto flex max-w-3xl items-center gap-3 px-4 py-3"
-            : "rounded-sm border border-primary/25 bg-card p-7 shadow-[0_24px_60px_-30px_hsl(var(--primary)/0.45)] outline-none"
-        }
+        className="rounded-sm border border-primary/25 bg-card p-7 shadow-[0_24px_60px_-30px_hsl(var(--primary)/0.45)] outline-none"
       >
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
           <CheckCircle2 className="h-6 w-6" aria-hidden="true" />
         </span>
         <div>
-          <h2 className={compact ? "font-heading text-lg font-bold" : "font-heading text-2xl font-bold text-foreground"}>
-            {config.successHeading}
-          </h2>
-          {!compact && (
-            <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
-              {config.successBody.split("{phone}")[0]}
-              <a
-                className="font-semibold text-foreground underline underline-offset-2"
-                href={PHONE_TEL}
-                onClick={() => trackCall(`lp_${config.key}_success`)}
-              >
-                {PHONE_DISPLAY}
-              </a>
-              {config.successBody.split("{phone}")[1]}
-            </p>
-          )}
+          <h2 className="font-heading text-2xl font-bold text-foreground">{config.successHeading}</h2>
+          <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
+            {config.successBody.split("{phone}")[0]}
+            <a
+              className="font-semibold text-foreground underline underline-offset-2"
+              href={PHONE_TEL}
+              data-cta="success"
+              onClick={() => trackCall(`lp_${config.key}_success`)}
+            >
+              {PHONE_DISPLAY}
+            </a>
+            {config.successBody.split("{phone}")[1]}
+          </p>
         </div>
       </div>
     );
@@ -97,7 +91,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
     const id = `${prefix}-${name}`;
     const error = errors[name];
     return (
-      <div className={compact ? "min-w-0" : undefined}>
+      <div>
         <label htmlFor={id} className="mb-1.5 block text-sm font-semibold text-foreground">
           {label}
         </label>
@@ -127,39 +121,63 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
       data-landing-form={instance}
       data-gtm-form-name="highlander_landing_page"
       data-gtm-form-id={config.formId}
-      className={
-        compact
-          ? "mx-auto w-full max-w-[1200px]"
-          : "relative rounded-sm border border-border bg-card p-5 shadow-[0_30px_70px_-36px_hsl(var(--primary)/0.5)] sm:p-7"
-      }
+      className="relative rounded-sm border border-border bg-card p-5 shadow-[0_30px_70px_-36px_hsl(var(--primary)/0.5)] sm:p-7"
       onSubmit={(event) => {
         event.preventDefault();
         markStart();
         void submit(instance);
       }}
     >
-      {!compact && (
-        <>
-          <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary to-[hsl(var(--highland-gold))]" />
-          <div className="mb-5">
-            <h2
-              id={`${prefix}-heading`}
-              data-form-heading
-              tabIndex={-1}
-              className="font-heading text-[1.65rem] font-bold leading-tight text-foreground outline-none sm:text-3xl"
-            >
-              {instance === "hero" ? config.formHeading : config.finalFormHeading}
-            </h2>
-            <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">{config.formHelper}</p>
-          </div>
-        </>
-      )}
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary to-[hsl(var(--highland-gold))]" />
 
-      {combined && !compact && (
+      {/* Fastest way first: the phone, then the form as the call-back option. */}
+      <div className="mb-5 rounded-sm bg-secondary px-4 py-3.5">
+        <p className="text-sm font-semibold text-foreground">Fastest way:</p>
+        <a
+          href={PHONE_TEL}
+          data-cta={`form-${instance}`}
+          onClick={() => trackCall(`lp_${config.key}_${instance}_form_top`)}
+          className="mt-1 inline-flex min-h-11 items-center gap-2 font-heading text-2xl font-bold text-primary underline-offset-4 hover:underline"
+          aria-label={`Call Highlander at ${PHONE_DISPLAY}`}
+        >
+          <Phone className="h-5 w-5" aria-hidden="true" />
+          {PHONE_DISPLAY}
+        </a>
+        <p className="text-sm text-muted-foreground">Talk to our team in Franklin.</p>
+      </div>
+      <div className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        <span aria-hidden="true" className="h-px flex-1 bg-border" />
+        Or leave your details and we'll call you
+        <span aria-hidden="true" className="h-px flex-1 bg-border" />
+      </div>
+      <div className="mb-5">
+        <h2
+          id={`${prefix}-heading`}
+          data-form-heading
+          tabIndex={-1}
+          className="font-heading text-[1.5rem] font-bold leading-tight text-foreground outline-none sm:text-[1.75rem]"
+        >
+          {instance === "hero" ? config.formHeading : config.finalFormHeading}
+        </h2>
+        <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">{config.formHelper}</p>
+      </div>
+
+      {combined && (
         <fieldset className="mb-5">
           <legend className="mb-2 text-sm font-semibold text-foreground">
             What do you need? <span className="font-normal text-muted-foreground">(optional)</span>
           </legend>
+          <p className="mb-2 text-sm text-muted-foreground">
+            Not sure?{" "}
+            <a
+              href={PHONE_TEL}
+              data-cta="form-not-sure"
+              onClick={() => trackCall(`lp_${config.key}_${instance}_not_sure`)}
+              className="font-semibold text-primary underline underline-offset-2"
+            >
+              That's exactly what the call is for.
+            </a>
+          </p>
           <div role="radiogroup" aria-label="Service interest" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
             {COMBINED_OPTIONS.map((option) => {
               const active = intent === option.id;
@@ -187,7 +205,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
         </fieldset>
       )}
 
-      {!combined && selectedCard && !compact && (
+      {!combined && selectedCard && (
         <p className="mb-4 flex items-center justify-between gap-2 rounded-sm bg-secondary px-3 py-2 text-sm">
           <span>
             <span className="text-muted-foreground">Interested in: </span>
@@ -224,7 +242,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
         />
       </div>
 
-      <div className={compact ? "grid grid-cols-[1fr_1.2fr_1fr_auto] items-start gap-3" : "space-y-4"}>
+      <div className="space-y-4">
         {field("firstName", "Full name", {
           type: "text",
           autoComplete: "name",
@@ -248,18 +266,18 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           type="submit"
           disabled={submitting}
           aria-busy={submitting || undefined}
-          className={
-            compact
-              ? "btn btn-primary min-h-12 self-end whitespace-nowrap px-5"
-              : "btn btn-primary btn-lg lp-shine btn-block min-h-14 text-base"
-          }
+          className="btn btn-primary btn-lg lp-shine btn-block min-h-14 text-base"
         >
-          {submitting ? "Sending your request..." : config.primaryCta}
+          {submitting ? "Sending your request..." : "Call Me Back"}
           {!submitting && <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />}
         </button>
       </div>
 
-      <p className={compact ? "mt-2 text-[11px] leading-snug text-muted-foreground" : "mt-4 text-xs leading-relaxed text-muted-foreground"}>
+      <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
+        <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
+        Free estimate. No obligation.
+      </p>
+      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         By submitting, you ask Highlander to contact you about this project by phone or email.{" "}
         <a
           href="/privacy-policy"
@@ -270,25 +288,6 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           Privacy policy.
         </a>
       </p>
-
-      {!compact && (
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-border pt-4 text-sm">
-          <span className="inline-flex items-center gap-1.5 text-muted-foreground">
-            <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
-            Free estimate. Sending a request does not authorize work.
-          </span>
-          <a
-            href={PHONE_TEL}
-            onClick={() => trackCall(`lp_${config.key}_${instance}_form`)}
-            className="inline-flex min-h-10 items-center gap-2 font-bold text-primary underline-offset-4 hover:underline"
-            aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
-          >
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            {PHONE_DISPLAY}
-          </a>
-          <span className="w-full text-xs text-muted-foreground">{PRIMARY_HOURS_LABEL}, Eastern Time</span>
-        </div>
-      )}
     </form>
   );
 }

@@ -18,9 +18,23 @@ import {
   Compass,
   Maximize2,
   ShieldCheck,
+  CheckCircle2,
+  Droplets,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
-import { BUSINESS, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, PRIMARY_HOURS_LABEL, REVIEW_RATING } from "@/data/business";
+import {
+  BUSINESS,
+  FRANKLIN,
+  FRANKLIN_NAP,
+  LICENSE_NUMBER,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  PRIMARY_HOURS_LABEL,
+  REVIEW_COUNT,
+  REVIEW_RATING,
+  directionsUrl,
+} from "@/data/business";
+import { useOfficeOpen } from "@/lib/office-hours";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import logo from "@/assets/logo.svg";
 import teamPhoto from "@/assets/team-photo.webp";
@@ -159,12 +173,10 @@ function LandingBody() {
   const heroFormWrap = useRef<HTMLDivElement>(null);
   const finalFormWrap = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLElement>(null);
-  const railRef = useRef<HTMLDivElement>(null);
   const [heroVisible, setHeroVisible] = useState(true);
   const [finalVisible, setFinalVisible] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
-  const [railFocused, setRailFocused] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const heroSection = useRef<HTMLElement>(null);
   const progressBar = useRef<HTMLDivElement>(null);
@@ -218,21 +230,16 @@ function LandingBody() {
     };
   }, []);
 
-  /* Mobile bar hides while a keyboard is up; the desktop rail never unmounts mid-entry. */
+  /* The mobile bar hides while a keyboard is up. */
   useEffect(() => {
     const onIn = (event: FocusEvent) => {
       const target = event.target as HTMLElement | null;
-      if (target?.matches("input, textarea, select")) {
-        setKeyboardOpen(true);
-        setRailFocused(Boolean(railRef.current?.contains(target)));
-      }
+      if (target?.matches("input, textarea, select")) setKeyboardOpen(true);
     };
     const onOut = () =>
       window.setTimeout(() => {
         const active = document.activeElement as HTMLElement | null;
-        const stillTyping = Boolean(active?.matches("input, textarea, select"));
-        setKeyboardOpen(stillTyping);
-        setRailFocused(Boolean(stillTyping && railRef.current?.contains(active)));
+        setKeyboardOpen(Boolean(active?.matches("input, textarea, select")));
       }, 120);
     window.addEventListener("focusin", onIn);
     window.addEventListener("focusout", onOut);
@@ -262,24 +269,52 @@ function LandingBody() {
     scrollToNearestForm();
   };
 
-  const railVisible = !submitted && (railFocused || (!heroVisible && !finalVisible && !footerVisible));
+  // Both sticky bars stay out of the way while a form is on screen.
+  const railVisible = !submitted && !heroVisible && !finalVisible && !footerVisible;
   const barVisible = railVisible && !keyboardOpen;
   const emphasis = config.intents.find((card) => card.id === intent)?.emphasis;
   const hero = config.hero;
+  const officeOpen = useOfficeOpen();
 
-  const callLink = (label: string, location: string, className: string, ariaLabel?: string) => (
-    <a href={PHONE_TEL} onClick={() => trackCall(location)} className={className} aria-label={ariaLabel ?? `${label} at ${PHONE_DISPLAY}`}>
-      <Phone className="h-4 w-4" aria-hidden="true" />
+  /**
+   * Every call button. `cta` names the placement (data-cta, plus the GTM
+   * click_location) so the report shows which placements produce calls. The
+   * number stays in the tel: link for Google's forwarding-number swap.
+   */
+  const callLink = (label: string, cta: string, className: string, ariaLabel?: string) => (
+    <a
+      href={PHONE_TEL}
+      data-cta={cta}
+      onClick={() => trackCall(`lp_${config.key}_${cta.replace(/-/g, "_")}`)}
+      className={className}
+      aria-label={ariaLabel ?? `${label}: call Highlander at ${PHONE_DISPLAY}`}
+    >
+      <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
       {label}
     </a>
   );
 
-  const primaryCta = (extra = "") => (
-    <button type="button" onClick={scrollToNearestForm} className={`btn btn-primary btn-md group min-h-14 whitespace-nowrap ${extra}`}>
+  /** The form button: outline, second to the call everywhere it appears. */
+  const formCta = (onDark = false, extra = "") => (
+    <button
+      type="button"
+      onClick={scrollToNearestForm}
+      className={`btn btn-md group min-h-14 whitespace-nowrap ${
+        onDark ? "border-2 border-white/70 bg-white/5 text-white backdrop-blur-sm hover:bg-white hover:text-foreground" : "btn-secondary"
+      } ${extra}`}
+    >
       {config.primaryCta}
       <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
     </button>
   );
+
+  const trustItems = [
+    `${REVIEW_RATING}★ · ${REVIEW_COUNT} Google reviews`,
+    "CertainTeed ShingleMaster PREMIER contractor, the only one in WNC",
+    "BBB A+",
+    LICENSE_NUMBER,
+    `Since ${BUSINESS.foundingYear}`,
+  ];
 
   const eyebrow = (text: string, light = false) => (
     <div className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${light ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`}>
@@ -312,11 +347,16 @@ function LandingBody() {
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-2.5 sm:px-5 md:px-8 md:py-3">
           <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto shrink-0 sm:h-12" loading="eager" decoding="sync" />
           <div className="flex items-center gap-4">
-            <span className="hidden items-center gap-1.5 text-sm text-muted-foreground lg:inline-flex">
-              <Clock className="h-4 w-4" aria-hidden="true" />
-              {PRIMARY_HOURS_LABEL}
+            <span className="hidden flex-col items-end text-sm leading-tight lg:flex">
+              <span className="font-semibold text-foreground">{config.headerTagline}</span>
+              {officeOpen && (
+                <span data-client-only className="mt-0.5 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[hsl(142_70%_40%)] shadow-[0_0_0_3px_hsl(142_70%_40%/0.2)]" />
+                  Office open now · call
+                </span>
+              )}
             </span>
-            {callLink(`Call ${PHONE_DISPLAY}`, `lp_${config.key}_header`, "btn btn-secondary min-h-11 shrink-0 px-3.5 text-[0.8rem] font-bold sm:min-h-12 sm:px-5 sm:text-sm")}
+            {callLink(`Call ${PHONE_DISPLAY}`, "header", "btn btn-primary min-h-11 shrink-0 px-3.5 text-[0.8rem] font-bold sm:min-h-12 sm:px-5 sm:text-sm")}
           </div>
         </div>
       </header>
@@ -365,26 +405,36 @@ function LandingBody() {
                       </span>
                     ))}
                 </p>
-                <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white">
-                  <span className="inline-flex items-center gap-2 font-semibold">
-                    <Stars />
-                    {REVIEW_RATING}/5 on Google
-                  </span>
-                  <span aria-hidden="true" className="text-white/40">|</span>
-                  <span className="inline-flex items-center gap-1.5 font-medium">
-                    <MapPin className="h-4 w-4 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
-                    Based in Franklin, NC
-                  </span>
-                </div>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  {primaryCta("lp-shine")}
-                  {callLink(
-                    `Call ${PHONE_DISPLAY}`,
-                    `lp_${config.key}_hero`,
-                    "btn btn-md min-h-14 whitespace-nowrap border-2 border-white/70 bg-white/5 text-white backdrop-blur-sm hover:bg-white hover:text-foreground",
-                    `Call Highlander at ${PHONE_DISPLAY}`,
-                  )}
+                  <a
+                    href={PHONE_TEL}
+                    data-cta="hero"
+                    onClick={() => trackCall(`lp_${config.key}_hero`)}
+                    aria-label={`${config.heroCallLabel}: call Highlander`}
+                    className="btn btn-primary btn-md lp-shine min-h-14 w-full justify-center text-base sm:w-auto"
+                  >
+                    <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    {/* Keep the number on one line; the promise wraps under it on phones. */}
+                    <span className="flex flex-col items-start leading-tight sm:flex-row sm:items-center sm:gap-1.5">
+                      {config.heroCallLabel.split(" · ").map((part, i) => (
+                        <span key={part} className={i === 0 ? "whitespace-nowrap" : "text-[0.8em] opacity-90 sm:text-[1em] sm:opacity-100"}>
+                          {i > 0 && <span aria-hidden="true" className="hidden sm:inline">· </span>}
+                          {part}
+                        </span>
+                      ))}
+                    </span>
+                  </a>
+                  {formCta(true, "w-full justify-center sm:w-auto")}
                 </div>
+                <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-white/85">{config.callReason}</p>
+                <ul aria-label="Credentials" className="mt-5 flex max-w-2xl flex-wrap gap-x-5 gap-y-2 text-[0.8rem] font-semibold text-white/90">
+                  {trustItems.map((item, i) => (
+                    <li key={item} className="inline-flex items-center gap-2">
+                      {i === 0 ? <Stars /> : <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />}
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
             </div>
 
@@ -395,6 +445,21 @@ function LandingBody() {
             </div>
           </div>
         </section>
+
+        {/* ───────────── Leak right now? (roofing) ───────────── */}
+        {config.urgentStrip && (
+          <section aria-label={config.urgentStrip.heading} className="border-b border-[hsl(var(--highland-gold))]/40 bg-[hsl(var(--highland-gold))]/15 !py-0">
+            <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-4 py-5 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8">
+              <p className="flex items-start gap-3 text-[0.98rem] leading-relaxed text-foreground">
+                <Droplets className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                <span>
+                  <strong className="font-heading text-lg">{config.urgentStrip.heading}</strong> {config.urgentStrip.body}
+                </span>
+              </p>
+              {callLink(`Call ${PHONE_DISPLAY}`, "leak-strip", "btn btn-primary min-h-12 shrink-0 justify-center px-6")}
+            </div>
+          </section>
+        )}
 
         {/* ───────────── Trust band ───────────── */}
         <section aria-label="Why homeowners start here" className="relative bg-primary text-primary-foreground !py-0">
@@ -483,9 +548,26 @@ function LandingBody() {
               })}
             </div>
             <Reveal className="mt-9 flex flex-col gap-3 sm:flex-row">
-              {primaryCta()}
-              {callLink(`Call ${PHONE_DISPLAY}`, `lp_${config.key}_proof`, "btn btn-secondary btn-lg min-h-14", `Call Highlander at ${PHONE_DISPLAY}`)}
+              {callLink(`Call ${PHONE_DISPLAY}`, "proof", "btn btn-primary btn-lg min-h-14 justify-center")}
+              {formCta()}
             </Reveal>
+
+            {config.callTopics && (
+              <Reveal className="mt-14 grid gap-6 rounded-sm border border-border bg-card p-6 shadow-sm md:grid-cols-[1fr_auto] md:items-end md:p-8">
+                <div>
+                  <h2 className="font-heading text-2xl font-bold leading-tight md:text-3xl">{config.callTopics.heading}</h2>
+                  <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                    {config.callTopics.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-[0.98rem] leading-relaxed">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {callLink(`Call ${PHONE_DISPLAY}`, "call-topics", "btn btn-primary btn-lg min-h-14 justify-center")}
+              </Reveal>
+            )}
           </div>
         </section>
 
@@ -524,15 +606,22 @@ function LandingBody() {
                       </span>
                       <h3 className="font-heading text-xl font-bold leading-snug">{card.title}</h3>
                       <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-muted-foreground">{card.text}</p>
-                      <button
-                        type="button"
-                        onClick={() => chooseIntent(card.id)}
-                        aria-pressed={active}
-                        className="mt-5 inline-flex min-h-12 items-center gap-2 self-start font-bold text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                      >
-                        Discuss this
-                        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
-                      </button>
+                      <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+                        {callLink(
+                          card.callLabel,
+                          `card-${card.id.replace(/_/g, "-")}`,
+                          "btn btn-primary min-h-12 justify-center px-4 text-sm",
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => chooseIntent(card.id)}
+                          aria-pressed={active}
+                          className="inline-flex min-h-12 items-center gap-1.5 text-sm font-bold text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        >
+                          Send details
+                          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </button>
+                      </div>
                       </div>
                     </article>
                   </Reveal>
@@ -621,7 +710,7 @@ function LandingBody() {
                 <h2 className="font-heading text-3xl font-bold leading-tight md:text-4xl">{config.reviews.heading}</h2>
                 {config.reviews.note && <p className="mt-3 text-sm text-muted-foreground">{config.reviews.note}</p>}
               </Reveal>
-              <div className={`mt-10 grid gap-5 ${reviews.length > 2 ? "lg:grid-cols-3" : "md:grid-cols-2"}`}>
+              <div className={`mt-10 grid gap-5 ${reviews.length === 3 ? "lg:grid-cols-3" : "md:grid-cols-2"}`}>
                 {reviews.map((review, i) => {
                   const open = expandedReview === review.id;
                   const long = review.text.length > 190;
@@ -698,6 +787,34 @@ function LandingBody() {
           </div>
         </section>
 
+        {/* ───────────── Franklin showroom (construction) ───────────── */}
+        {config.showroom && (
+          <section aria-label="Visit the Franklin showroom" className="bg-[hsl(var(--muted))] !py-0">
+            <div className="mx-auto flex max-w-[1200px] flex-col gap-5 px-4 py-12 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8">
+              <div>
+                {eyebrow("Visit the Franklin showroom")}
+                <p className="font-heading text-2xl font-bold leading-snug md:text-3xl">See materials and talk it through in person.</p>
+                <p className="mt-2 flex items-start gap-2 text-muted-foreground">
+                  <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  {FRANKLIN_NAP}
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                {callLink(`Call ${PHONE_DISPLAY}`, "showroom", "btn btn-primary btn-lg min-h-14 justify-center")}
+                <a
+                  href={directionsUrl(FRANKLIN)}
+                  target="_blank"
+                  rel="noopener"
+                  className="btn btn-secondary btn-lg min-h-14 justify-center"
+                >
+                  <MapPin className="h-4 w-4" aria-hidden="true" />
+                  Get directions
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ───────────── Final conversion ───────────── */}
         <section className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-primary-foreground !py-0">
           <div aria-hidden="true" className="absolute inset-0 -z-10">
@@ -715,7 +832,7 @@ function LandingBody() {
               <h2 className="font-heading text-3xl font-bold leading-tight [text-shadow:0_2px_24px_hsl(160_45%_4%/0.5)] md:text-5xl">{config.finalHeading}</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/90">{config.finalBody}</p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                {callLink(`Call ${PHONE_DISPLAY}`, `lp_${config.key}_final`, "btn btn-primary lp-shine btn-lg min-h-14", `Call Highlander at ${PHONE_DISPLAY}`)}
+                {callLink(`Call ${PHONE_DISPLAY}`, "final", "btn btn-primary lp-shine btn-lg min-h-14 justify-center")}
                 <button
                   type="button"
                   onClick={scrollToNearestForm}
@@ -766,6 +883,7 @@ function LandingBody() {
             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Talk to the team</h2>
             <a
               href={PHONE_TEL}
+              data-cta="footer"
               onClick={() => trackCall(`lp_${config.key}_footer`)}
               className="mt-4 inline-flex min-h-12 items-center gap-2.5 rounded-sm bg-[hsl(var(--highland-gold))] px-5 font-bold text-foreground shadow-lg transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--dark-section))]"
               aria-label={`Call Highlander at ${PHONE_DISPLAY}`}
@@ -799,31 +917,45 @@ function LandingBody() {
 
       <Lightbox items={config.proof} index={lightbox} onIndexChange={setLightbox} onClose={() => setLightbox(null)} />
 
-      {/* Desktop rail (≥1280px): same form, same state. Hidden, not unmounted, so typing is never lost. */}
+      {/* Desktop call bar (≥1280px): the number and a call button; the form is one link away. */}
       {!submitted && (
         <div
-          ref={railRef}
           data-sticky-cta="desktop"
           aria-hidden={!railVisible}
           // @ts-expect-error `inert` is valid HTML; React 18 types lag behind.
           inert={!railVisible ? "" : undefined}
-          className={`fixed inset-x-0 bottom-0 z-50 hidden border-t border-border bg-background/98 px-5 py-3 shadow-[0_-18px_40px_-24px_hsl(var(--foreground)/0.45)] backdrop-blur transition-transform duration-300 xl:block ${
+          className={`fixed inset-x-0 bottom-0 z-50 hidden border-t border-border bg-card px-5 py-3 shadow-[0_-18px_40px_-24px_hsl(var(--foreground)/0.45)] backdrop-blur transition-transform duration-300 xl:block ${
             railVisible ? "translate-y-0" : "translate-y-full"
           }`}
         >
-          <LeadForm instance="rail" />
+          <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-6">
+            <div className="flex items-baseline gap-4">
+              <span className="font-heading text-3xl font-bold text-foreground">{PHONE_DISPLAY}</span>
+              <span className="text-sm font-semibold text-muted-foreground">Free estimate · local Franklin team</span>
+            </div>
+            <div className="flex items-center gap-5">
+              <button
+                type="button"
+                onClick={scrollToNearestForm}
+                className="min-h-11 text-sm font-semibold text-primary underline underline-offset-4 hover:text-foreground"
+              >
+                or request a callback
+              </button>
+              {callLink("Call now", "sticky-desktop", "btn btn-primary lp-shine min-h-12 justify-center px-8", `Call Highlander at ${PHONE_DISPLAY}`)}
+            </div>
+          </div>
         </div>
       )}
 
-      {/* Tablet / mobile bar: two buttons only, never three tiny inputs. */}
+      {/* Tablet / mobile bar: call (70%) and the form (30%). */}
       {!submitted && barVisible && (
         <div
           data-sticky-cta="mobile"
-          className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-3 shadow-[0_-18px_40px_-24px_hsl(var(--foreground)/0.45)] backdrop-blur xl:hidden"
+          className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-[7fr_3fr] gap-2 border-t border-border bg-card p-3 shadow-[0_-18px_40px_-24px_hsl(var(--foreground)/0.45)] backdrop-blur xl:hidden"
           style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
         >
-          {callLink("Call Highlander", `lp_${config.key}_sticky`, "btn btn-secondary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.8rem] sm:text-sm", `Call Highlander at ${PHONE_DISPLAY}`)}
-          <button type="button" onClick={scrollToNearestForm} className="btn btn-primary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.8rem] sm:text-sm">
+          {callLink("Call now · Franklin team", "sticky-mobile", "btn btn-primary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.85rem] sm:text-sm", `Call Highlander at ${PHONE_DISPLAY}`)}
+          <button type="button" onClick={scrollToNearestForm} className="btn btn-secondary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.8rem] sm:text-sm">
             {config.mobileCta}
           </button>
         </div>

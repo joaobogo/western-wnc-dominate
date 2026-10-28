@@ -38,7 +38,7 @@ import proofBrava from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import proofBravaSet from "@/assets/gallery/brava-glenville-chimney-valley.webp?w=480;800;1200&format=webp&as=srcset";
 import proofDeck from "@/assets/gallery/deck-sylva-doors-wide.webp";
 import proofDeckSet from "@/assets/gallery/deck-sylva-doors-wide.webp?w=480;800;1200&format=webp&as=srcset";
-import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
+import { PHONE_DISPLAY } from "@/data/business";
 
 /**
  * Copy and proof for the three paid landing pages. All public text comes from
@@ -98,6 +98,8 @@ export interface IntentCard {
   /** Photo at the top of the card (must not repeat elsewhere on the page). */
   image?: LandingImage;
   imagePosition?: string;
+  /** Tap-to-call link on the card, e.g. "Call about a repair". */
+  callLabel: string;
 }
 
 export interface LandingConfig {
@@ -118,10 +120,26 @@ export interface LandingConfig {
   h1: string;
   support: string;
   serviceLine: string;
-  /** Primary CTA wording (button text + submit label). */
+  /** Form CTA wording: the outline hero button that scrolls to the form. */
   primaryCta: string;
   /** Mobile bar second button. */
   mobileCta: string;
+  /**
+   * Main hero call button. Calls lead on every landing page (call plan,
+   * 28 Oct 2026); the number stays in the label so Google's forwarding-number
+   * swap still replaces it for ad visitors.
+   */
+  heroCallLabel: string;
+  /** Why to call, in plain words, under the hero buttons. */
+  callReason: string;
+  /** Header line beside the call button (replaces the office hours). */
+  headerTagline: string;
+  /** Roofing only: "Leak right now?" strip under the hero. */
+  urgentStrip?: { heading: string; body: string };
+  /** Construction only: what a short planning call covers. */
+  callTopics?: { heading: string; items: string[] };
+  /** Show the "Visit the Franklin showroom" block. */
+  showroom?: boolean;
   formHeading: string;
   formHelper: string;
   finalFormHeading: string;
@@ -290,16 +308,16 @@ const roofingFaqs = [
   {
     question: "How much will the work cost?",
     answer:
-      "The price depends on the roof, materials, access and scope. Request an assessment so the proposed work can be put in writing; this form does not generate an instant quote.",
+      "The price depends on the roof, materials, access and scope, and you get it in writing before any work. Call and we'll give you a straight answer on what drives the price for your roof.",
   },
   {
     question: "What if my roof is leaking now?",
-    answer: `Call ${PHONE_DISPLAY} during office hours and explain what is happening. Outside office hours, send a request for follow-up. Do not climb onto a wet or damaged roof.`,
+    answer: `Call ${PHONE_DISPLAY} and tell us what is happening. Put a bucket under the drip and stay off the roof: never climb onto a wet or damaged roof.`,
   },
   {
     question: "What happens after I send the form?",
     answer:
-      "A Highlander team member will contact you to discuss the property, confirm the service area and arrange the next step. Sending a request does not book an appointment or authorize work.",
+      "A Highlander team member calls you back to talk about the property and book a free on-site look. Calling is the fastest way to get on the schedule.",
   },
 ];
 
@@ -320,9 +338,9 @@ const constructionFaqs = [
       "That is part of the planning conversation. The existing structure, layout, roofline and site conditions influence the approach; feasibility needs to be assessed for your property.",
   },
   {
-    question: "Can you give me a price or start date from this form?",
+    question: "How do I get a price?",
     answer:
-      "Not reliably. Scope, materials, site conditions and scheduling need to be reviewed first. This short request starts the conversation; it is not an instant quote or confirmed booking.",
+      "Call and we'll walk you through what drives the cost of your project and set up a site visit. Scope, materials and site conditions decide the price, and you get it in writing.",
   },
   {
     question: "Will you discuss planning and permit requirements?",
@@ -335,7 +353,7 @@ const combinedFaqs = [
   {
     question: "Do I need to choose roofing or construction first?",
     answer:
-      "No. You can choose a category when it is useful, or send the form without one. Highlander will help clarify the appropriate next step.",
+      "No. That is exactly what the call is for: tell us what is going on and we'll tell you whether it is roofing, construction or both.",
   },
   {
     question: "Can I ask about both in one request?",
@@ -350,12 +368,12 @@ const combinedFaqs = [
   {
     question: "Can I get a price without a site assessment?",
     answer:
-      "A reliable proposal depends on the property and the scope. This form starts the conversation; it does not generate an instant quote or reserve a project date.",
+      "A reliable price depends on the property and the scope. Call and we'll tell you what we need to see and book the visit.",
   },
   {
     question: "What happens after I send my details?",
     answer:
-      "A Highlander team member will contact you to discuss the property, confirm the service area and arrange the next step with the appropriate team.",
+      "A Highlander team member calls you back to talk about the property and set up the next step with the right team. Calling is the fastest way.",
   },
 ];
 
@@ -374,18 +392,26 @@ export const ROOFING_CONFIG: LandingConfig = {
   breadcrumbName: "Roofing Estimate",
 
   eyebrow: "Highlander Building Services | Western North Carolina",
-  h1: "Roof repair & replacement in Western NC.",
+  h1: "Roof leaking or wearing out? Talk to a Franklin roofer today.",
   support:
-    "Not sure whether your roof needs a repair or a replacement? Start with a local team that can assess the problem, explain the options and put the proposed work in writing.",
+    "Call and describe what you're seeing. We'll tell you if it sounds like a repair or a replacement and book a free on-site look, with the price in writing before any work.",
   serviceLine: "Roof repair. Roof replacement. Metal roofing.",
-  primaryCta: "Request My Roofing Estimate",
-  mobileCta: "Get My Estimate",
+  primaryCta: "Request My Estimate",
+  mobileCta: "Estimate",
+  heroCallLabel: `Call ${PHONE_DISPLAY} · Free estimate`,
+  callReason:
+    "A 5-minute call: tell us what you're seeing, we'll tell you the likely next step and book your free on-site look.",
+  headerTagline: "Talk to a local roofer",
+  urgentStrip: {
+    heading: "Leak right now?",
+    body: `Put a bucket under it, stay off the roof, and call ${PHONE_DISPLAY}. We'll tell you what to do now and get you on the schedule.`,
+  },
   formHeading: "Get a clear next step for your roof.",
-  formHelper: "Leave your details. Highlander will contact you to discuss the roof and arrange the next step.",
-  finalFormHeading: "Request your roofing estimate.",
+  formHelper: "Leave your details and we'll call you to talk through the roof and book the next step.",
+  finalFormHeading: "Prefer a call back? Leave your details.",
   successHeading: "Your roofing request is in.",
   successBody:
-    "Thank you. Highlander will contact you to discuss your roof and the next step. Prefer to speak with the team? Call {phone} during office hours.",
+    "Thank you. Highlander will call you to talk through your roof and the next step. Want to talk now? Call {phone}.",
   hero: { backdrop: heroSkyImage, position: "50% 22%" },
   finalBackdrop: { image: dormerCabinBackdrop, position: "50% 45%" },
   strip: roofingStrip,
@@ -427,6 +453,7 @@ export const ROOFING_CONFIG: LandingConfig = {
       title: "Roof repair",
       label: "Roof repair",
       projectType: "roof_repair",
+      callLabel: "Call about a repair",
       text: "Leaks, damaged areas or flashing concerns? Have the roof assessed before deciding how much work is needed.",
     },
     {
@@ -436,6 +463,7 @@ export const ROOFING_CONFIG: LandingConfig = {
       title: "Roof replacement",
       label: "Roof replacement",
       projectType: "roof_replacement",
+      callLabel: "Call about a new roof",
       text: "Planning for an aging roof? Compare the proposed system, materials and scope before making your decision.",
     },
     {
@@ -444,6 +472,7 @@ export const ROOFING_CONFIG: LandingConfig = {
       title: "Metal roofing",
       label: "Metal roofing",
       projectType: "metal_roofing",
+      callLabel: "Call about metal",
       text: "Considering metal for your home? Discuss the roof shape, appearance and installation details with Highlander.",
     },
   ],
@@ -463,8 +492,8 @@ export const ROOFING_CONFIG: LandingConfig = {
   ],
   steps: [
     {
-      title: "Make contact.",
-      text: "Call or send the three-field form. You do not need to know the roof material or the cause of the problem.",
+      title: "Call us.",
+      text: "A 5-minute conversation. You don't need to know the roof material or the cause of the problem.",
     },
     { title: "Review the roof.", text: "The team discusses the property and arranges the appropriate assessment." },
     {
@@ -475,8 +504,8 @@ export const ROOFING_CONFIG: LandingConfig = {
 
   reviews: {
     eyebrow: "Roofing experiences",
-    heading: "What customers have said about Highlander roofing work.",
-    ids: ["david-christopher-2026", "zary-m-2024", "nate-yoder-2023"],
+    heading: "What happened when customers called Highlander.",
+    ids: ["willard-armes-2024", "jh-dillsboro-2019", "david-christopher-2026", "zary-m-2024"],
   },
 
   faqEyebrow: "Roofing questions",
@@ -485,7 +514,7 @@ export const ROOFING_CONFIG: LandingConfig = {
 
   finalHeading: "A roof question should not become a guessing game.",
   finalBody:
-    "Tell us how to reach you. We will talk through what is happening at your property and the next step toward a written roofing estimate.",
+    "Call and talk to the Franklin team about what is happening at your property. We'll tell you the next step toward a written roofing estimate.",
   serviceLocalLine: SERVICE_LOCAL_LINE,
 };
 
@@ -506,16 +535,30 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   eyebrow: "Highlander Building Services | Construction Division",
   h1: "Additions, renovations & outdoor living in Western NC.",
   support:
-    "More room. Better flow. More time outside. Talk with Highlander about improving the home you already love, with design guidance, a defined scope and one local point of contact.",
+    "More room. Better flow. More time outside. Call for a 10-minute talk with our construction team about your idea. No plans needed.",
   serviceLine: "Home additions. Renovations. Decks and porches.",
-  primaryCta: "Discuss My Construction Project",
-  mobileCta: "Discuss My Project",
+  primaryCta: "Send My Details",
+  mobileCta: "Details",
+  heroCallLabel: `Talk Through My Project · ${PHONE_DISPLAY}`,
+  callReason:
+    "A 10-minute call: tell us what you want the space to do, and we'll tell you the next step, an on-site visit or a design meeting.",
+  headerTagline: "Talk to our construction team",
+  callTopics: {
+    heading: "What we'll cover on a 10-minute call.",
+    items: [
+      "What you want the space to do",
+      "Rough size and budget range",
+      "Site and permit questions",
+      "The next step: an on-site visit or a design meeting",
+    ],
+  },
+  showroom: true,
   formHeading: "Your project can start with a conversation.",
-  formHelper: "No finished plans needed to get in touch. Leave your details and Highlander will discuss the next step with you.",
-  finalFormHeading: "Discuss your construction project.",
+  formHelper: "No finished plans needed. Leave your details and we'll call you to talk through the idea.",
+  finalFormHeading: "Prefer a call back? Leave your details.",
   successHeading: "Your project request is in.",
   successBody:
-    "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
+    "Thank you. Highlander will call you to talk through your project and the next step. Want to talk now? Call {phone}.",
   // The proof cards already show the Franklin room, so the hero uses the separate
   // gable-window photo and the closing band a different mountain-home image.
   hero: { backdrop: additionWindowsBackdrop, position: "50% 45%" },
@@ -557,6 +600,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
       title: "Add space without changing your address.",
       label: "Home addition",
       projectType: "addition",
+      callLabel: "Call about an addition",
       text: "Explore a home addition, expanded living area, guest space or sunroom that fits how you want to live.",
     },
     {
@@ -566,6 +610,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
       title: "Make the space you have work better.",
       label: "Renovation",
       projectType: "renovation",
+      callLabel: "Call about a renovation",
       text: "Discuss a renovation that improves the layout, finishes and everyday function of your home.",
     },
     {
@@ -574,6 +619,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
       title: "Bring more living outside.",
       label: "Deck, porch or outdoor living",
       projectType: "outdoor_living",
+      callLabel: "Call about a deck or porch",
       text: "Plan a deck, porch or outdoor living area that feels connected to your home and the way you use it.",
     },
   ],
@@ -592,7 +638,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
   ],
   steps: [
-    { title: "Tell us the idea.", text: "Call or send your details. You do not need finished drawings to make an initial inquiry." },
+    { title: "Call and tell us the idea.", text: "A 10-minute conversation. You don't need finished drawings to get started." },
     {
       title: "Review the home and the scope.",
       text: "Discuss the existing space, site conditions and planning needs with Highlander.",
@@ -603,11 +649,12 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
   ],
 
+  // No construction reviews on file yet (ask Luke for 2–3); the three
+  // documented project stories above carry the proof until then.
   reviews: {
     eyebrow: "Company reputation",
-    heading: "Reviews of Highlander's roofing work.",
-    ids: ["david-christopher-2026", "zary-m-2024"],
-    note: "These reviews describe Highlander's roofing work. They are shown as company-reputation context, not as feedback on additions or renovations.",
+    heading: "What customers say about Highlander.",
+    ids: [],
   },
 
   faqEyebrow: "Construction questions",
@@ -616,7 +663,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
 
   finalHeading: "Keep the home you love. Make it work better.",
   finalBody:
-    "An idea is enough to start the conversation. Leave your details and Highlander will help you understand the next step for your addition, renovation or outdoor space.",
+    "An idea is enough to start. Call and talk it through with the construction team, and we'll tell you the next step for your addition, renovation or outdoor space.",
   serviceLocalLine: SERVICE_LOCAL_LINE,
 };
 
@@ -635,18 +682,22 @@ export const COMBINED_CONFIG: LandingConfig = {
   breadcrumbName: "Home Project Request",
 
   eyebrow: "Highlander Building Services | Western North Carolina",
-  h1: "Roofing & construction for your Western NC home.",
+  h1: "Roof, addition or both? One call to Highlander sorts it out.",
   support:
-    "Fix the roof. Add the space. Improve the way home feels. Start with Highlander for roofing, additions, renovations and outdoor living, with one local point of contact for the next step.",
-  serviceLine: "Roofing. Construction. One conversation to get started.",
-  primaryCta: "Discuss My Home Project",
-  mobileCta: "Discuss My Project",
+    "Fix the roof. Add the space. Improve the way home feels. Call and tell us what is going on; one local team handles roofing, additions, renovations and outdoor living.",
+  serviceLine: "Roofing. Construction. One call to get started.",
+  primaryCta: "Send My Details",
+  mobileCta: "Details",
+  heroCallLabel: `Call ${PHONE_DISPLAY} · One call, one team`,
+  callReason:
+    "A 5-minute call: tell us what you're seeing or planning, and we'll tell you which team you need and book the next step.",
+  headerTagline: "Talk to a local roofer or builder",
   formHeading: "One simple place to start.",
-  formHelper: "Roofing, construction or a little of both? Leave your details and Highlander will help you find the right next step.",
-  finalFormHeading: "Discuss your home project.",
+  formHelper: "Roofing, construction or a little of both? Leave your details and we'll call you to sort out the next step.",
+  finalFormHeading: "Prefer a call back? Leave your details.",
   successHeading: "Your home-project request is in.",
   successBody:
-    "Thank you. Highlander will contact you to discuss your project and the next step. Prefer to speak with the team? Call {phone} during office hours.",
+    "Thank you. Highlander will call you to talk through your project and the next step. Want to talk now? Call {phone}.",
   hero: {
     backdrop: heroSkyImage,
     position: "40% 22%",
@@ -657,28 +708,35 @@ export const COMBINED_CONFIG: LandingConfig = {
   strip: roofingStrip,
 
   proofHeading: "See the work. Understand the standard.",
-  proofIntro: "Two Highlander services, shown as separate documented examples.",
+  proofIntro: "Documented Highlander jobs: roofing, construction, and one that needed both.",
   proof: [
     {
       id: "roofing",
-      title: "Roofing",
+      title: "Standing seam metal, Highlands",
       detail: "A documented Highlander standing seam metal-roof project in Highlands, NC.",
       tag: "Roofing · Highlands, NC",
       image: roofHighlands,
     },
     {
       id: "roofing-glenville",
-      title: "Roofing",
+      title: "Brava synthetic shake, Lake Glenville",
       detail: "A documented Highlander Brava synthetic shake re-roof on a lakeside home at Lake Glenville, NC.",
       tag: "Roofing · Lake Glenville, NC",
       image: roofGlenville,
     },
     {
       id: "construction",
-      title: "Construction",
+      title: "Living room addition, Franklin",
       detail: "A documented Highlander living room addition in Franklin, NC: engineered vaulted gable, stone fireplace and mountain-view windows.",
       tag: "Construction · Franklin, NC",
       image: constructionSecondary,
+    },
+    {
+      id: "both-cullowhee",
+      title: "Addition tied into the roof, Cullowhee",
+      detail: "A documented Highlander cedar shake addition in Cullowhee, NC, with its shingle roof tied into the original roofline: both trades on one job.",
+      tag: "Roofing + construction · Cullowhee, NC",
+      image: cardImg.cullowhee,
     },
   ],
 
@@ -693,6 +751,7 @@ export const COMBINED_CONFIG: LandingConfig = {
       label: "Roofing",
       projectType: "roofing",
       emphasis: "roofing",
+      callLabel: "Call about the roof",
       text: "Discuss roof repair, roof replacement or metal roofing. Start with the condition of the roof and the work it may need.",
     },
     {
@@ -703,17 +762,19 @@ export const COMBINED_CONFIG: LandingConfig = {
       label: "Construction",
       projectType: "construction",
       emphasis: "construction",
+      callLabel: "Call about a project",
       text: "Explore an addition, renovation, deck or porch. Start with the way you want to use the space.",
     },
     {
       id: "not_sure",
-      image: cardImg.cullowhee,
+      image: cardImg.chimney,
       imagePosition: "50% 40%",
       title: "Need both, or not sure?",
       label: "Need both, or not sure",
       projectType: "general",
       emphasis: "both",
-      text: "You do not have to sort the trades before you contact us. Highlander can discuss the project and help identify the appropriate next step.",
+      callLabel: "Call, not sure yet",
+      text: "You do not have to sort the trades before you call. Tell us what is going on and we'll point you to the right next step.",
     },
   ],
 
@@ -735,8 +796,8 @@ export const COMBINED_CONFIG: LandingConfig = {
   ],
   steps: [
     {
-      title: "Start with the home.",
-      text: "Call or send your contact details. Choose a service only when you already know what you need.",
+      title: "Call us.",
+      text: "A 5-minute conversation about the home. You don't need to know yet whether it is roofing or construction.",
     },
     {
       title: "Talk with the right team.",
@@ -750,9 +811,8 @@ export const COMBINED_CONFIG: LandingConfig = {
 
   reviews: {
     eyebrow: "Roofing experiences",
-    heading: "What customers have said about Highlander roofing work.",
-    ids: ["david-christopher-2026", "zary-m-2024"],
-    note: `Reviews describe roofing work. The ${REVIEW_RATING} Google rating is company-wide.`,
+    heading: "What happened when customers called Highlander.",
+    ids: ["willard-armes-2024", "jh-dillsboro-2019", "lorrie-contino-2024"],
   },
 
   faqEyebrow: "Common questions",
@@ -761,6 +821,6 @@ export const COMBINED_CONFIG: LandingConfig = {
 
   finalHeading: "One home. A clear next step.",
   finalBody:
-    "Whether it is the roof, the living space or both, start with a conversation. Send your details and Highlander will help route your request to the right team.",
+    "Whether it is the roof, the living space or both, one call to Highlander gets it to the right team.",
   serviceLocalLine: SERVICE_LOCAL_LINE,
 };

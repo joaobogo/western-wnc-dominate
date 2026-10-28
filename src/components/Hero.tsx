@@ -297,27 +297,27 @@ const Hero = () => {
 
             {/* CTA Group — premium dual-action */}
             <div className={`flex flex-col gap-2.5 ${textLed ? "md:max-w-md md:gap-3" : "sm:flex-row sm:gap-6"}`}>
+              {/* Call leads at every width (call plan, 28 Oct 2026); the estimate is the outline second. */}
+              <a
+                href={PHONE_TEL}
+                data-cta="home-hero"
+                aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
+                className="hero-cta-call btn btn-primary btn-lg group relative md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <Phone className="w-4 h-4 md:w-5 md:h-5 relative" aria-hidden="true" />
+                <span className="relative md:hidden">Call · {PHONE_DISPLAY}</span>
+                <span className="relative hidden md:inline">Call {PHONE_DISPLAY} · Free estimate</span>
+              </a>
               <Link
                 to="/request-inspection"
                 data-gtm-experiment="home_hero_cta"
                 data-gtm-variant={heroCta.variant}
-                className="hero-cta-estimate order-2 md:order-none btn btn-primary btn-lg group md:text-base md:px-14 md:py-5 relative md:tracking-[0.1em] md:min-h-[60px] whitespace-nowrap"
+                className="hero-cta-estimate btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-14 md:py-5 md:tracking-[0.1em] md:min-h-[60px] whitespace-nowrap"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">
-                  {heroCta.pick("Get My Written Estimate", "See What My Roof Needs")}
-                </span>
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
+                <span>{heroCta.pick("Get My Written Estimate", "See What My Roof Needs")}</span>
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
               </Link>
-              <a
-                href={PHONE_TEL}
-                aria-label={`Call Highlander Building Services at ${PHONE_PLAIN}`}
-                className="hero-cta-call order-1 md:order-none btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
-              >
-                <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                <span className="md:hidden">Call · {PHONE_DISPLAY}</span>
-                <span className="hidden md:inline">Call Highlander · {PHONE_DISPLAY}</span>
-              </a>
             </div>
 
             {/* Micro proof — appears subtly after CTAs */}
