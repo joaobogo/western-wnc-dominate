@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import LandingTemplate from "@/components/landing/LandingTemplate";
 import { COMBINED_CONFIG, CONSTRUCTION_CONFIG, ROOFING_CONFIG } from "@/components/landing/config";
-import { FRANKLIN_NAP, PHONE_TEL } from "@/data/business";
+import { FRANKLIN, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, directionsUrl } from "@/data/business";
 
 /**
  * Rules from the 5 Oct 2026 landing prompts that must never regress:
@@ -34,7 +34,8 @@ describe.each(pages)("landing page $path", (config) => {
   it("offers only the page form or the phone: no navigation or cross-links", () => {
     mount();
     const hrefs = Array.from(document.querySelectorAll("a[href]")).map((a) => a.getAttribute("href"));
-    const allowed = new Set([PHONE_TEL, "#main-content", "/privacy-policy", "/accessibility"]);
+    // Directions to the Franklin showroom open Google Maps; they never lead to another page of the site.
+    const allowed = new Set([PHONE_TEL, "#main-content", "/privacy-policy", "/accessibility", directionsUrl(FRANKLIN)]);
     expect(hrefs.filter((h) => !allowed.has(h!))).toEqual([]);
     expect(document.querySelector("nav")).toBeNull();
   });
@@ -46,6 +47,28 @@ describe.each(pages)("landing page $path", (config) => {
     expect(within(hero).getByText("Please enter your first and last name.")).toBeInTheDocument();
     expect(within(hero).getByText("Please enter a phone number.")).toBeInTheDocument();
     expect(document.querySelector("[data-success-panel]")).toBeNull();
+  });
+
+  it("leads with the phone: call first in the hero, forms promise a call back (call plan, 28 Oct 2026)", () => {
+    mount();
+    const heroActions = screen.getByRole("heading", { level: 1 }).parentElement!.querySelectorAll("a[href], button");
+    expect(heroActions[0].getAttribute("href")).toBe(PHONE_TEL);
+    expect(heroActions[0].textContent).toContain(PHONE_DISPLAY);
+    expect(screen.getAllByRole("button", { name: /Call Me Back/ }).length).toBe(2);
+    // Every call button is tagged by placement for GTM, and the number stays in the tel: link.
+    const calls = Array.from(document.querySelectorAll<HTMLAnchorElement>(`a[href="${PHONE_TEL}"]`));
+    expect(calls.length).toBeGreaterThan(5);
+    calls.forEach((a) => expect(a.dataset.cta).toBeTruthy());
+    // Every option card has its own call link.
+    expect(document.querySelectorAll('a[data-cta^="card-"]').length).toBe(config.intents.length);
+  });
+
+  it("drops the cautious small print and the office-hours deflection", () => {
+    mount();
+    const text = document.body.textContent ?? "";
+    expect(text).not.toMatch(/authorize work|instant quote|during office hours|Outside office hours|Discuss this/i);
+    expect(text).toContain("Free estimate. No obligation.");
+    expect(text).toContain("158 Google reviews");
   });
 
   it("keeps the owner-locked facts and avoids banned claims", () => {

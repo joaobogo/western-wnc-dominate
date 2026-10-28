@@ -220,11 +220,12 @@ const StickyMobileCTA = () => {
                         firePrimary();
                         trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" });
                       }}
-                      className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
+                      data-cta="sticky-mobile"
+                      className="flex-[2.33] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                     >
                       <Phone className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">
-                        Call
+                        Call now
                       </span>
                     </a>
                     <Link

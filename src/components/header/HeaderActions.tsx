@@ -12,13 +12,16 @@ interface Props {
 
 export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Props) => (
   <div className="flex items-center gap-3">
+    {/* Call is the filled button and the estimate the outline one, site-wide (call plan, 28 Oct 2026). */}
     <a
       href={PHONE_TEL}
+      data-cta="header"
       aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
-      className="hidden sm:flex items-center gap-2 transition-all duration-300 text-body-sm font-body font-bold mr-1 text-heritage-charcoal/75 hover:text-heritage-charcoal whitespace-nowrap"
+      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-6 lg:max-xl:px-4 sm:py-4 sm:gap-2 whitespace-nowrap"
     >
       <Phone className="w-4 h-4" aria-hidden="true" />
-      <span>{PHONE_DISPLAY}</span>
+      {/* lg–xl also shows the desktop nav, so the labels shorten to fit. */}
+      <span><span className="lg:max-xl:hidden">Call </span>{PHONE_DISPLAY}</span>
     </a>
     {/* Phones showed an icon-only phone button, so the number was never on
         screen (mobile audit F7). It is now a pill with the number. The estimate
@@ -36,9 +39,9 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Prop
       to="/request-inspection"
       data-gtm-cta="request_inspection"
       data-gtm-location="header"
-      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
+      className="hidden sm:inline-flex btn btn-secondary btn-sm sm:px-6 lg:max-xl:px-4 sm:py-4 sm:gap-2.5 whitespace-nowrap"
     >
-      <span className="relative z-10">Get My <span className="hidden sm:inline">Written </span>Estimate</span>
+      <span className="relative z-10"><span className="lg:max-xl:hidden">Get My </span><span className="hidden sm:inline lg:max-2xl:hidden">Written </span>Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
     </Link>
     <button
