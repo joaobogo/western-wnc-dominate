@@ -132,8 +132,9 @@ const RealWorkWidget = ({
     schedulePatch();
 
     // The RealWork loader is installed sitewide in index.html (vendor
-    // instructions, 2026-06-24). This component only initialises the plugin for
-    // its #rwl-output target and patches the injected markup for accessibility.
+    // instructions, 2026-06-24) behind the intent gate for speed. This page's
+    // feed is primary content, so request the loader immediately on mount.
+    window.__loadRWL?.();
     initialize();
     window.addEventListener("rwlPluginReady", initialize, false);
     const poll = window.setInterval(() => {

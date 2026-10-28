@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 261,
+    "sitemap": 274,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 391
+    "total": 404
   },
   "routes": [
     "/",
@@ -108,6 +108,19 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/roof-replacement-timeline",
+    "/blog/rain-chains-vs-downspouts",
+    "/blog/aluminum-vs-vinyl-soffit",
+    "/blog/metal-roof-colors",
+    "/blog/roof-snow-load-requirements",
+    "/blog/roof-sheathing-thickness",
+    "/blog/ice-and-water-shield",
+    "/blog/low-slope-roofing-options",
+    "/blog/roof-wind-mitigation",
+    "/blog/shingle-blistering",
+    "/blog/roof-decking-replacement",
+    "/blog/copper-roof-cost",
+    "/blog/screened-porch-vs-sunroom",
     "/blog/hip-roof-vs-gable-roof",
     "/blog/helical-piers-vs-concrete-piers",
     "/blog/energy-efficient-roofing",

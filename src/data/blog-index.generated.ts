@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "screened-porch-vs-sunroom",
+    "title": "Screened Porch vs. Sunroom: Which Fits a Mountain Home?",
+    "excerpt": "Compare screened porches, three-season rooms and four-season sunrooms on cost, comfort, permits and resale value for Western North Carolina mountain homes.",
+    "category": "Outdoor Living",
+    "date": "2026-10-20",
+    "town": "Franklin"
+  },
+  {
     "slug": "hip-roof-vs-gable-roof",
     "title": "Hip Roof vs. Gable Roof: Which Is Better for a Mountain Home?",
     "excerpt": "Compare hip and gable roofs on wind, snow, cost, attic space, venting and insurance to choose the right shape for a Western North Carolina mountain home.",
@@ -623,7 +631,7 @@ export const blogIndex: BlogIndexEntry[] = [
   },
   {
     "slug": "roofing-mountain-homes-lake-glenville-scaly-mountain",
-    "title": "Roofing for Mountain Homes Near Lake Glenville and Scaly Mountain",
+    "title": "Roofing Glenville: What Elevation Does to Your Roof",
     "excerpt": "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
     "category": "Local",
     "date": "2026-07-20",
@@ -874,7 +882,7 @@ export const blogIndex: BlogIndexEntry[] = [
   },
   {
     "slug": "roof-lifespan-mountain-home-wnc",
-    "title": "How Long Does a Roof Last on a Mountain Home in WNC?",
+    "title": "How Long Do Roofs Last in NC? WNC Mountain Roof Lifespans",
     "excerpt": "Real-world roof lifespans for Western NC mountain homes across shingles, metal, and specialty systems — with the caveats that matter.",
     "category": "Materials",
     "date": "2026-07-07",

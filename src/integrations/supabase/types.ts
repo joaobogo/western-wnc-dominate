@@ -114,6 +114,7 @@ export type Database = {
           jobtread_id: string | null
           jobtread_last_attempt_at: string | null
           jobtread_next_retry_at: string | null
+          jobtread_progress: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string
           jobtread_synced: boolean
@@ -151,6 +152,7 @@ export type Database = {
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -188,6 +190,7 @@ export type Database = {
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -236,6 +239,7 @@ export type Database = {
           jobtread_last_attempt_at: string | null
           jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
+          jobtread_progress: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string | null
           jobtread_synced: boolean
@@ -268,6 +272,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
           jobtread_synced?: boolean
@@ -300,6 +305,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
           jobtread_synced?: boolean
@@ -387,6 +393,7 @@ export type Database = {
           jobtread_last_attempt_at: string | null
           jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
+          jobtread_progress: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string | null
           jobtread_synced: boolean
@@ -409,6 +416,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
           jobtread_synced?: boolean
@@ -431,6 +439,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
           jobtread_synced?: boolean
@@ -511,6 +520,7 @@ export type Database = {
           jobtread_last_attempt_at: string | null
           jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
+          jobtread_progress: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string
           jobtread_synced: boolean
@@ -560,6 +570,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -609,6 +620,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -686,6 +698,7 @@ export type Database = {
           jobtread_last_attempt_at: string | null
           jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
+          jobtread_progress: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string
           jobtread_synced: boolean
@@ -761,6 +774,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -836,6 +850,7 @@ export type Database = {
           jobtread_last_attempt_at?: string | null
           jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
+          jobtread_progress?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean

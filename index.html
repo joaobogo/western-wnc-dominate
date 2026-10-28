@@ -333,25 +333,39 @@ div[style*="Edit with Lovable"],
         try{ w.ttq && w.ttq.grantConsent && w.ttq.grantConsent(); }catch(e){}
         loadMarketing();
       };
-      // Marketing pixels fire on load, before any interaction, so even a bounce
-      // is measured. Heavy functional embeds (VELUX, maps) stay behind the intent gate.
-      loadMarketing();
+      // Marketing pixels fire on the window load event (after first paint), so
+      // even a bounce is measured without blocking rendering. Heavy functional
+      // embeds (VELUX, maps, RealWork Labs) stay behind the intent gate.
+      if(d.readyState==='complete') loadMarketing();
+      else w.addEventListener('load', loadMarketing, {once:true});
       arm();
     })(window);
     </script>
 
-    <!-- RealWork Labs — installed per vendor instructions (support@realworklabs.com, 2026-06-24): sitewide loader, #rwl-output on /recent-projects -->
+    <!-- RealWork Labs — installed per vendor instructions (support@realworklabs.com, 2026-06-24): sitewide loader, #rwl-output on /recent-projects.
+         The loader is ~1 MB of main-thread work, so it waits for user intent
+         (or 5 s of idle) via the same gate as the VELUX embed. The widget on
+         /recent-projects still initializes; it simply mounts a moment later. -->
     <script type="text/javascript">
     (function(){
+      var rwlRequested = false;
+      function loadRWL(){
+        if(rwlRequested) return; rwlRequested = true;
                  var d = document, t = 'script',
                      o = d.createElement(t),
                      s = d.getElementsByTagName(t)[0];
+                     o.async = true;
                      o.src = 'https://app.realworklabs.com/static/plugin/loader.js?v=' + new Date().getTime();
                      window.addEventListener('rwlPluginReady', function () {
                          window.rwlPlugin.init('https://app.realworklabs.com', 'SxCxaBpYsO_fVnK0');
                     }, false);
                     s.parentNode.insertBefore(o, s);
-    
+      }
+      // Pages that render the project feed (RealWorkWidget) call this on mount
+      // so the feed loads right away there; everywhere else it waits for intent.
+      window.__loadRWL = loadRWL;
+      if(window.__hlOnUserIntent) window.__hlOnUserIntent(loadRWL);
+      else window.addEventListener('load', loadRWL, {once:true});
                 }());
     </script>
 

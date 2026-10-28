@@ -60,7 +60,7 @@ describe("JobTread field contract (16 Oct 2026 update)", () => {
     ["storm", "storm_damage", "Repair"],
     ["gutters", "gutter_guards", "Gutters"],
     ["construction", "addition", "Construction"],
-    ["design_services", "design_planning", "Construction"],
+    ["design_services", "design_planning", "Design"],
   ])("Fix 1: sends %s / %s as a Divisions list, with no account field on the job", async (category, type, division) => {
     const { buildJobCustomFieldValues } = await mod();
     const fields = buildJobCustomFieldValues({ project: { service_category: category, project_type: type }, contact: {} }, "Intake notes");
@@ -186,17 +186,20 @@ describe("JobTread sync flow (mocked CRM only)", () => {
     expect(crm.find("createJob").locationId).toBe("location-old");
   });
 
-  it("leaves an existing customer's contacts alone on a first-time lead", async () => {
+});
+
+describe("finished job whose account has no contact", () => {
+  it("adds the missing contact without creating another job", async () => {
     const { buildPayload, sendToPaveApi } = await mod();
-    const crm = mockCrm({
-      organization: () => ({
-        organization: { accounts: { nodes: [{ id: "account-cust", name: "Jane Doe", locations: { nodes: [{ id: "loc-cust", name: "Franklin home", address: "1 Elm St, Franklin, NC" }] } }] } },
-      }),
-    });
-    const result = await sendToPaveApi(buildPayload(LEAD, "lead"));
-    expect(result.ok).toBe(true);
-    expect(crm.count("createAccount")).toBe(0);
-    expect(crm.count("createContact")).toBe(0);
-    expect(crm.find("createLocation").accountId).toBe("account-cust");
+    const queries: any[] = [];
+    vi.stubGlobal("fetch", vi.fn(async (_u: string, init: any) => {
+      const { query } = JSON.parse(init.body); queries.push(query);
+      if (query.account) return new Response(JSON.stringify({ account: { contacts: { nodes: [] } } }));
+      return new Response(JSON.stringify({ createContact: { createdContact: { id: "contact-new" } } }));
+    }));
+    const r = await sendToPaveApi(buildPayload(LEAD, "lead"), { progress: { accountId: "a", locationId: "l", jobId: "job-9" } });
+    expect(r).toMatchObject({ ok: true, id: "job-9", progress: { contactId: "contact-new" } });
+    expect(queries.filter((q) => q.createContact)).toHaveLength(1);
+    expect(queries.filter((q) => q.createJob || q.createLocation || q.createAccount)).toHaveLength(0);
   });
 });

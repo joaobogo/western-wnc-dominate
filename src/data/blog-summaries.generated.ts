@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "screened-porch-vs-sunroom",
+    "slug": "screened-porch-vs-sunroom",
+    "title": "Screened Porch vs. Sunroom: Which Fits a Mountain Home?",
+    "excerpt": "Compare screened porches, three-season rooms and four-season sunrooms on cost, comfort, permits and resale value for Western North Carolina mountain homes.",
+    "category": "Outdoor Living",
+    "date": "2026-10-20",
+    "readTime": "9 min"
+  },
+  {
     "id": "hip-roof-vs-gable-roof",
     "slug": "hip-roof-vs-gable-roof",
     "title": "Hip Roof vs. Gable Roof: Which Is Better for a Mountain Home?",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Materials",
     "date": "2026-10-08",
     "readTime": "11 min"
-  },
-  {
-    "id": "acv-vs-rcv-roof",
-    "slug": "acv-vs-rcv-roof",
-    "title": "ACV vs RCV Roof Insurance: Understand the Depreciation Gap",
-    "excerpt": "Compare ACV and RCV roof insurance, an illustrative depreciation example, and the policy details and repair documents Western NC homeowners should check.",
-    "category": "Insurance",
-    "date": "2026-10-08",
-    "readTime": "15 min"
   }
 ];

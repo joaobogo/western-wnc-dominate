@@ -14,7 +14,7 @@ const Team = () => {
   return (
     <>
       <SEOHead
-        title="Roofing & Construction Team in Western NC | Highlander"
+        title="Meet the Highlander Team in Western North Carolina"
         description="Meet the Highlander roofing and construction team serving Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/team"
         jsonLd={[
