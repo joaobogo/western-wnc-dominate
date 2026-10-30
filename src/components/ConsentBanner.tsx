@@ -15,6 +15,9 @@ const ConsentBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Staff-only tools (the front-desk call sheet, the admin pages) are not
+    // visitor pages; the notice would only cover their buttons.
+    if (/^\/(front-desk|admin)(\/|$)/.test(window.location.pathname)) return;
     if (readConsent()) return;
     // Show immediately after the first paint to maximize opt-in velocity.
     const t = window.setTimeout(() => setVisible(true), 50);

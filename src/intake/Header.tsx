@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { COMPANY } from "./config";
+import { supabase } from "@/integrations/supabase/client";
+import type { FrontDeskSession } from "./session";
 import logoCream from "@/assets/logo-cream.svg";
 
-export function Header({ showQueue }: { showQueue: boolean }) {
+export function Header({ session }: { session?: Extract<FrontDeskSession, { state: "ready" }> }) {
   const { pathname } = useLocation();
   const linkStyle = (active: boolean) => ({
     color: "var(--hl-cream)",
@@ -39,16 +41,34 @@ export function Header({ showQueue }: { showQueue: boolean }) {
 
 
 
-        <nav className="flex items-center gap-4 text-[14px] font-semibold">
-          <Link to="/front-desk" style={linkStyle(pathname === "/front-desk")}>
-            Call sheet
-          </Link>
-          {showQueue && (
-            <Link to="/front-desk/queue" style={linkStyle(pathname.startsWith("/front-desk/queue"))}>
-              Queue
+        {session && (
+          <nav className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1 text-[14px] font-semibold">
+            <Link to="/front-desk" style={linkStyle(pathname === "/front-desk" || pathname === "/front-desk/")}>
+              Call sheet
             </Link>
-          )}
-        </nav>
+            {session.isAdmin && (
+              <>
+                <Link to="/front-desk/team" style={linkStyle(pathname.startsWith("/front-desk/team"))}>
+                  Team
+                </Link>
+                <Link to="/front-desk/queue" style={linkStyle(pathname.startsWith("/front-desk/queue"))}>
+                  Queue
+                </Link>
+              </>
+            )}
+            <span style={{ color: "var(--hl-cream)", opacity: 0.85 }} className="font-normal">
+              {session.member.display_name}
+            </span>
+            <button
+              type="button"
+              onClick={() => void supabase.auth.signOut()}
+              style={{ color: "var(--hl-cream)", opacity: 0.72 }}
+              className="underline underline-offset-2"
+            >
+              Sign out
+            </button>
+          </nav>
+        )}
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   APPOINTMENT_STATE,
   BEST_TIME,
@@ -38,10 +38,14 @@ import {
   type MissingField,
 } from "./scoring";
 import { saveLead } from "./save";
-
-const TAKEN_BY_KEY = "hl_taken_by";
+import { useReadySession } from "./session";
+import { useMyDay } from "./useMyDay";
+import { MyDayCard, OutcomePicker } from "./MyDayCard";
+import { cheer, dayKey, since, type Outcome } from "./tracker";
 
 type Saved = {
+  id: string;
+  score: number | null;
   name: string;
   callBy: string;
   action: string;
@@ -50,10 +54,11 @@ type Saved = {
 };
 
 export default function IntakeSheet() {
-  const [lead, setLead] = useState<LeadDraft>(() => ({
-    ...EMPTY_LEAD,
-    takenBy: localStorage.getItem(TAKEN_BY_KEY) ?? "",
-  }));
+  const { user, member } = useReadySession();
+  const myDay = useMyDay(user.id);
+  // "Taken by" is the signed-in person; nobody types their own name any more.
+  const [lead, setLead] = useState<LeadDraft>(() => ({ ...EMPTY_LEAD, takenBy: member.display_name }));
+  const [savedOutcome, setSavedOutcome] = useState<Outcome | null>(null);
   const [missing, setMissing] = useState<MissingField[]>([]);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
@@ -74,10 +79,6 @@ export default function IntakeSheet() {
     setLead((prev) => ({ ...prev, [key]: value }));
 
   const result = useMemo(() => scoreLead(lead), [lead]);
-
-  useEffect(() => {
-    if (lead.takenBy.trim()) localStorage.setItem(TAKEN_BY_KEY, lead.takenBy.trim());
-  }, [lead.takenBy]);
 
   const townNeedsText =
     lead.town === CORE_OTHER.id ||
@@ -103,11 +104,9 @@ export default function IntakeSheet() {
     }));
   }
 
-  function clearSheet(keepTakenBy = true) {
-    setLead({
-      ...EMPTY_LEAD,
-      takenBy: keepTakenBy ? lead.takenBy : "",
-    });
+  function clearSheet() {
+    setLead({ ...EMPTY_LEAD, takenBy: member.display_name });
+    setSavedOutcome(null);
     setMissing([]);
     setSaveError(null);
     setSaved(null);
@@ -131,9 +130,12 @@ export default function IntakeSheet() {
     setSaveError(null);
     try {
       const finalResult = scoreLead(lead);
-      await saveLead(lead, finalResult);
+      const id = await saveLead(lead, finalResult, user.id);
+      await myDay.refresh();
       const callBy = finalResult.callBy ? formatCallBy(finalResult.callBy) : "";
       setSaved({
+        id,
+        score: finalResult.gated ? null : finalResult.score,
         name: `${lead.firstName} ${lead.lastName}`.trim() || "this lead",
         callBy,
         action: finalResult.action,
@@ -156,7 +158,9 @@ export default function IntakeSheet() {
           <div className="flex items-center gap-4">
             <GradeTile grade={saved.grade} />
             <div>
-              <h1 className="hl-slab text-xl">Lead saved</h1>
+              <h1 className="hl-slab text-xl">
+                Lead saved{saved.score !== null ? ` · score ${saved.score}/100` : ""}
+              </h1>
               <p className="text-[15px] mt-1">
                 {saved.callBy
                   ? `Call ${saved.name} by ${saved.callBy}`
@@ -167,8 +171,21 @@ export default function IntakeSheet() {
           {saved.action && (
             <p className="text-[15px] mt-4">{saved.action}</p>
           )}
+          <p className="mt-4 rounded-md px-3 py-2 text-[15px] font-semibold" style={{ background: "#eef3e6", color: "var(--hl-green)" }}>
+            ✓ {cheer(since(myDay.calls, dayKey(new Date())).length + since(myDay.missed, dayKey(new Date())).length, member.daily_goal)}
+          </p>
+          <div className="mt-5">
+            <div className="hl-q mb-2">How did the call end?</div>
+            <OutcomePicker
+              value={savedOutcome}
+              onChoose={async (outcome, callbackAt) => {
+                await myDay.setOutcome(saved.id, outcome, callbackAt);
+                setSavedOutcome(outcome);
+              }}
+            />
+          </div>
           <div className="flex flex-wrap gap-3 mt-5">
-            <button className="hl-btn-primary" onClick={() => clearSheet(true)}>
+            <button className="hl-btn-primary" onClick={() => clearSheet()}>
               New lead
             </button>
             <button
@@ -193,6 +210,7 @@ export default function IntakeSheet() {
   /* ── Call sheet ─────────────────────────────────────────────── */
   return (
     <div className="mx-auto max-w-[1180px] px-4 py-5 pb-28 lg:pb-8">
+      <MyDayCard myDay={myDay} member={member} />
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_330px]">
         <div>
           {/* 1. Who */}
@@ -424,14 +442,9 @@ export default function IntakeSheet() {
               />
             </Question>
 
-            <div className="mb-5 sm:max-w-[280px]">
-              <TextField
-                label="Taken by"
-                value={lead.takenBy}
-                onChange={(v) => set("takenBy", v)}
-                placeholder="Your name"
-              />
-            </div>
+            <p className="mb-5 text-[14px]">
+              Taken by <b>{member.display_name}</b>
+            </p>
 
             <div className="grid gap-2 sm:grid-cols-3 mb-5">
               <Toggle
@@ -569,7 +582,7 @@ export default function IntakeSheet() {
             <button className="hl-btn-primary" onClick={handleSave} disabled={saving}>
               {saving ? "Saving…" : "Save lead"}
             </button>
-            <button className="hl-btn-quiet" onClick={() => clearSheet(true)}>
+            <button className="hl-btn-quiet" onClick={() => clearSheet()}>
               Clear
             </button>
           </div>
