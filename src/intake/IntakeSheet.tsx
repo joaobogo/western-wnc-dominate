@@ -150,7 +150,14 @@ export default function IntakeSheet() {
         grade: finalResult.gated ? "DQ" : (finalResult.grade ?? "D"),
         summary: leadSummary(lead, finalResult, callBy),
       });
-      window.scrollTo({ top: 0 });
+      // Back to the start: a blank sheet under "Hi Frank" with the new count.
+      // The lead is already saved and on its way to JobTread.
+      setLead({ ...EMPTY_LEAD, takenBy: person.name });
+      setSavedOutcome(null);
+      setMissing([]);
+      setShowAppointment(false);
+      setCopied(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : "Could not save the lead.");
     } finally {
@@ -158,68 +165,63 @@ export default function IntakeSheet() {
     }
   }
 
-  /* ── Confirmation view ──────────────────────────────────────── */
-  if (saved) {
-    return (
-      <div className="mx-auto max-w-[640px] px-4 py-8">
-        <div className="hl-card p-5">
-          <div className="flex items-center gap-4">
-            <GradeTile grade={saved.grade} />
-            <div>
-              <h1 className="hl-slab text-xl">
-                Lead saved{saved.score !== null ? ` · score ${saved.score}/100` : ""}
-              </h1>
-              <p className="text-[15px] mt-1">
-                {saved.callBy
-                  ? `Call ${saved.name} by ${saved.callBy}`
-                  : `${saved.name} is disqualified — no call-back time.`}
-              </p>
-            </div>
-          </div>
-          {saved.action && (
-            <p className="text-[15px] mt-4">{saved.action}</p>
-          )}
-          <p className="mt-4 rounded-md px-3 py-2 text-[15px] font-semibold" style={{ background: "#eef3e6", color: "var(--hl-green)" }}>
-            ✓ Saved for {person?.name}.{" "}
-            {person &&
-              cheer(
-                since(myDay.calls.filter((c) => callPersonKey(c) === personKey(person)), dayKey(new Date())).length +
-                  since(myDay.missed.filter((m) => missedPersonKey(m) === personKey(person)), dayKey(new Date())).length,
-                person.daily_goal,
-              )}
-          </p>
-          <div className="mt-5">
-            <div className="hl-q mb-2">How did the call end?</div>
-            <OutcomePicker
-              value={savedOutcome}
-              onChoose={async (outcome, callbackAt) => {
-                await myDay.setOutcome(saved.id, outcome, callbackAt);
-                setSavedOutcome(outcome);
-              }}
-            />
-          </div>
-          <div className="flex flex-wrap gap-3 mt-5">
-            <button className="hl-btn-primary" onClick={() => clearSheet()}>
-              New lead
-            </button>
-            <button
-              className="hl-btn-quiet"
-              onClick={async () => {
-                try {
-                  await navigator.clipboard.writeText(saved.summary);
-                  setCopied(true);
-                } catch {
-                  setCopied(false);
-                }
-              }}
-            >
-              {copied ? "Copied" : "Copy summary"}
-            </button>
+  /* ── Saved banner: shown on the start screen right after a save ── */
+  const savedBanner = saved && (
+    <section className="hl-card p-4 sm:p-5 mb-4" role="status" aria-live="polite" style={{ borderColor: "var(--hl-green)", borderWidth: 2 }}>
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-4">
+          <GradeTile grade={saved.grade} />
+          <div>
+            <h2 className="hl-slab text-xl">
+              ✓ Lead saved{saved.score !== null ? ` · score ${saved.score}/100` : ""} · on its way to JobTread
+            </h2>
+            <p className="text-[15px] mt-1">
+              {saved.callBy ? `Call ${saved.name} by ${saved.callBy}` : `${saved.name} is disqualified, no call-back time.`}
+            </p>
           </div>
         </div>
+        <button type="button" className="text-[22px] leading-none opacity-60 hover:opacity-100" aria-label="Close" onClick={() => setSaved(null)}>
+          ×
+        </button>
       </div>
-    );
-  }
+      {saved.action && <p className="text-[15px] mt-3">{saved.action}</p>}
+      {person && (
+        <p className="mt-3 rounded-md px-3 py-2 text-[15px] font-semibold" style={{ background: "#eef3e6", color: "var(--hl-green)" }}>
+          Saved for {person.name}.{" "}
+          {cheer(
+            since(myDay.calls.filter((c) => callPersonKey(c) === personKey(person)), dayKey(new Date())).length +
+              since(myDay.missed.filter((m) => missedPersonKey(m) === personKey(person)), dayKey(new Date())).length,
+            person.daily_goal,
+          )}
+        </p>
+      )}
+      <div className="mt-4">
+        <div className="hl-q mb-2">How did the call end?</div>
+        <OutcomePicker
+          compact
+          value={savedOutcome}
+          onChoose={async (outcome, callbackAt) => {
+            await myDay.setOutcome(saved.id, outcome, callbackAt);
+            setSavedOutcome(outcome);
+          }}
+        />
+      </div>
+      <button
+        type="button"
+        className="hl-btn-quiet !py-1.5 !px-3 !text-[14px] mt-4"
+        onClick={async () => {
+          try {
+            await navigator.clipboard.writeText(saved.summary);
+            setCopied(true);
+          } catch {
+            setCopied(false);
+          }
+        }}
+      >
+        {copied ? "Copied" : "Copy summary"}
+      </button>
+    </section>
+  );
 
   /* ── Who's on the phone? (asked each morning, before anything else) ── */
   if (!person) {
@@ -237,6 +239,7 @@ export default function IntakeSheet() {
   /* ── Call sheet ─────────────────────────────────────────────── */
   return (
     <div className="mx-auto max-w-[1180px] px-4 py-5 pb-28 lg:pb-8">
+      {savedBanner}
       <MyDayCard myDay={myDay} person={person} onSwitch={onThePhone.clear} />
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_330px]">
         <div>
