@@ -108,25 +108,28 @@ Deno.serve(async (req) => {
   }
 
   const since = franklinMidnight(now.day).toISOString();
+  // People are the names on "Who's on the phone?" (the office shares one login).
   const [{ data: members }, { data: calls }, { data: missed }] = await Promise.all([
-    client.from("team_members").select("user_id, display_name, active"),
+    client.from("front_desk_people").select("id, name, active").order("sort"),
     client
       .from("intake_leads")
-      .select("taken_by_user, taken_by, grade, score, outcome, first_name, town, job_type")
+      .select("taken_by_person, taken_by, grade, score, outcome, first_name, town, job_type")
       .gte("created_at", since),
-    client.from("missed_calls").select("user_id").gte("created_at", since),
+    client.from("missed_calls").select("person_id, person_name").gte("created_at", since),
   ]);
 
   const people = new Map<string, Person>();
-  const nameOf = new Map((members ?? []).map((m: any) => [m.user_id, m.display_name as string]));
+  const nameOf = new Map((members ?? []).map((m: any) => [m.id, m.name as string]));
   for (const m of members ?? []) {
-    if (m.active) people.set(m.user_id, { name: m.display_name, calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0, scores: [] });
+    if (m.active) people.set(m.id, { name: m.name, calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0, scores: [] });
   }
-  const bucket = (userId: string | null, fallback: string | null) => {
-    const key = userId ?? `name:${fallback ?? "Other"}`;
+  // "Other" calls are grouped by the name typed on the call sheet.
+  const bucket = (personId: string | null, fallback: string | null) => {
+    const typed = (fallback ?? "").trim();
+    const key = personId ?? `other:${typed.toLowerCase() || "not recorded"}`;
     if (!people.has(key)) {
       people.set(key, {
-        name: (userId && nameOf.get(userId)) || fallback || "Other",
+        name: (personId && nameOf.get(personId)) || (typed ? `${typed} (other)` : "Not recorded"),
         calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0, scores: [],
       });
     }
@@ -135,7 +138,7 @@ Deno.serve(async (req) => {
 
   let best: any = null;
   for (const c of calls ?? []) {
-    const p = bucket(c.taken_by_user, c.taken_by);
+    const p = bucket(c.taken_by_person, c.taken_by);
     p.calls++;
     if (c.outcome === "booked") p.booked++;
     if (c.outcome === "callback") p.callbacks++;
@@ -143,9 +146,9 @@ Deno.serve(async (req) => {
     if (c.grade !== "DQ" && typeof c.score === "number") p.scores.push(c.score);
     if (c.grade !== "DQ" && (best === null || (c.score ?? 0) > (best.score ?? 0))) best = c;
   }
-  for (const m of missed ?? []) bucket(m.user_id, null).missed++;
+  for (const m of missed ?? []) bucket(m.person_id, m.person_name).missed++;
 
-  // Every active team member is listed (a zero day is worth seeing), plus anyone else who logged a call.
+  // Everyone on the phone list is listed (a zero day is worth seeing), plus anyone else who logged a call.
   const rows = [...people.values()];
   const totals = rows.reduce(
     (t, p) => ({ calls: t.calls + p.calls, missed: t.missed + p.missed, booked: t.booked + p.booked, strong: t.strong + p.strong }),

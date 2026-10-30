@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { GRADE_COLORS, SOURCES, type Grade } from "./config";
 import { TABLE, db } from "./save";
+import { usePeople, type ListedPerson } from "./onThePhone";
 import {
   CALL_COLUMNS,
+  OTHER_GOAL,
   OUTCOMES,
+  callPersonKey,
+  missedPersonKey,
   addDays,
   dayCounts,
   dayKey,
@@ -38,7 +42,7 @@ type ManagedMember = {
   is_admin: boolean;
 };
 
-type Person = { key: string; name: string; goal: number; active: boolean };
+type Person = { key: string; name: string; goal: number; active: boolean; other: boolean };
 
 const timeFmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 const sourceLabel = (id: string) => SOURCES.find((s) => s.id === id)?.label ?? (id === "not asked" ? "Not asked" : id);
@@ -96,22 +100,26 @@ export default function Team() {
     void load();
   }, [load]);
 
-  /** Everyone who appears: team logins first, then older calls typed under a name. */
-  const people = useMemo<Person[]>(() => {
-    const list: Person[] = members.map((m) => ({ key: m.user_id, name: m.display_name, goal: m.daily_goal, active: m.active }));
-    const known = new Set(list.map((p) => p.key));
-    for (const c of calls ?? []) {
-      const key = c.taken_by_user ?? `name:${(c.taken_by ?? "Not recorded").trim()}`;
-      if (!known.has(key)) {
-        known.add(key);
-        // A login without a team row (an admin taking a call) shows under the name saved on the call.
-        list.push({ key, name: (c.taken_by ?? "").trim() || "Not recorded", goal: 8, active: false });
-      }
-    }
-    return list;
-  }, [members, calls]);
+  const { people: listed, reload: reloadPeople } = usePeople(true);
 
-  const keyOfCall = (c: CallRow) => c.taken_by_user ?? `name:${(c.taken_by ?? "Not recorded").trim()}`;
+  /**
+   * Everyone who answers the phone: the listed people (Frank, Susan, …) first,
+   * then anyone picked as "Other", grouped by the name they typed.
+   */
+  const people = useMemo<Person[]>(() => {
+    const list: Person[] = (listed ?? []).map((p) => ({ key: p.id, name: p.name, goal: p.daily_goal, active: p.active, other: false }));
+    const known = new Set(list.map((p) => p.key));
+    const addOther = (key: string, name: string | null) => {
+      if (known.has(key)) return;
+      known.add(key);
+      list.push({ key, name: `${(name ?? "").trim() || "Not recorded"} (other)`, goal: OTHER_GOAL, active: false, other: true });
+    };
+    for (const c of calls ?? []) addOther(callPersonKey(c), c.taken_by);
+    for (const m of missed) addOther(missedPersonKey(m), m.person_name);
+    return list;
+  }, [listed, calls, missed]);
+
+  const keyOfCall = callPersonKey;
 
   const view = useMemo(() => {
     if (!calls) return null;
@@ -120,8 +128,8 @@ export default function Team() {
     const pMissed = since(missed, start);
     const perPerson = people.map((p) => {
       const mine = pCalls.filter((c) => keyOfCall(c) === p.key);
-      const myMissed = pMissed.filter((m) => m.user_id === p.key);
-      const counts = dayCounts(calls.filter((c) => keyOfCall(c) === p.key), missed.filter((m) => m.user_id === p.key));
+      const myMissed = pMissed.filter((m) => missedPersonKey(m) === p.key);
+      const counts = dayCounts(calls.filter((c) => keyOfCall(c) === p.key), missed.filter((m) => missedPersonKey(m) === p.key));
       const days = lastNDays(30, today);
       const goalDays = days.filter((d) => d >= start && (counts.get(d) ?? 0) >= p.goal).length;
       return { person: p, t: tally(mine, myMissed), counts, days, goalDays };
@@ -192,7 +200,6 @@ export default function Team() {
               <tr key={person.key} className="border-t" style={{ borderColor: "var(--hl-border)" }}>
                 <td className="py-2 pr-3 font-semibold">
                   {person.name}
-                  {!person.active && person.key.startsWith("name:") && <span className="opacity-60 font-normal"> (typed name)</span>}
                 </td>
                 <td className="py-2 pr-3">{t.calls}</td>
                 <td className="py-2 pr-3">{t.missed}</td>
@@ -201,7 +208,7 @@ export default function Team() {
                 <td className="py-2 pr-3">{t.notFit + t.spam}</td>
                 <td className="py-2 pr-3">{t.strong}</td>
                 <td className="py-2 pr-3">{t.avgScore === null ? "—" : t.avgScore}</td>
-                <td className="py-2 pr-3">{person.key.startsWith("name:") ? "—" : `${goalDays} (goal ${person.goal})`}</td>
+                <td className="py-2 pr-3">{person.other ? "—" : `${goalDays} (goal ${person.goal})`}</td>
               </tr>
             ))}
           </tbody>
@@ -213,7 +220,7 @@ export default function Team() {
         <h2 className="hl-slab text-xl">Last 30 days</h2>
         <p className="text-[13px] opacity-70 mb-3">Calls logged each day. Green = daily goal reached. Weekends are faded.</p>
         <div className="grid gap-2 min-w-[760px]">
-          {view.perPerson.filter((r) => !r.person.key.startsWith("name:")).map(({ person, counts, days }) => (
+          {view.perPerson.filter((r) => !r.person.other).map(({ person, counts, days }) => (
             <div key={person.key} className="grid grid-cols-[120px_1fr] items-center gap-3">
               <span className="text-[14px] font-semibold truncate">{person.name}</span>
               <div className="grid grid-cols-[repeat(30,minmax(0,1fr))] gap-[3px]">
@@ -315,16 +322,114 @@ export default function Team() {
         )}
       </section>
 
+      <PeopleManager people={listed ?? []} onChanged={reloadPeople} />
       <TeamLogins members={members} onChange={setMembers} />
     </div>
   );
 }
 
-/** Add people and set their daily goals. Logins themselves are created in Lovable Cloud → Users. */
+/**
+ * The names on "Who's on the phone?" (Frank, Susan, …) and their daily goals.
+ * Removing someone hides them from the picker; their past calls stay in the reports.
+ */
+function PeopleManager({ people, onChanged }: { people: ListedPerson[]; onChanged: () => void }) {
+  const [name, setName] = useState("");
+  const [goal, setGoal] = useState("8");
+  const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
+
+  const write = async (fn: () => PromiseLike<{ error: { message: string } | null }>, success: string) => {
+    setBusy(true);
+    setMessage(null);
+    const { error } = await fn();
+    setBusy(false);
+    if (error) {
+      setMessage({ ok: false, text: /duplicate|unique/i.test(error.message) ? "That name is already on the list." : error.message });
+      return false;
+    }
+    setMessage({ ok: true, text: success });
+    onChanged();
+    return true;
+  };
+
+  return (
+    <section className="hl-card p-4 sm:p-5 mb-6">
+      <h2 className="hl-slab text-xl">Who answers the phone</h2>
+      <p className="text-[13px] opacity-75 mt-1">
+        These names appear on "Who's on the phone?" every morning, plus <b>Other</b> for anyone else (they type their name).
+      </p>
+      <ul className="mt-4 grid gap-2">
+        {people.map((p) => (
+          <li key={p.id} className="flex flex-wrap items-center justify-between gap-3 rounded-md border px-3 py-2" style={{ borderColor: "var(--hl-border)", opacity: p.active ? 1 : 0.6 }}>
+            <b className="text-[15px]">{p.name}</b>
+            <span className="flex items-center gap-2">
+              <label className="text-[13px] flex items-center gap-1.5">
+                Daily goal
+                <input
+                  className="hl-input !w-[70px] !py-1.5"
+                  type="number"
+                  min={1}
+                  max={100}
+                  defaultValue={p.daily_goal}
+                  onBlur={(e) => {
+                    const v = Math.round(Number(e.target.value));
+                    if (v >= 1 && v <= 100 && v !== p.daily_goal) {
+                      void write(() => db.from("front_desk_people").update({ daily_goal: v }).eq("id", p.id), `Goal updated for ${p.name}.`);
+                    }
+                  }}
+                />
+              </label>
+              <button
+                type="button"
+                className="hl-btn-quiet !py-1.5 !px-3 !text-[13px]"
+                disabled={busy}
+                onClick={() =>
+                  void write(
+                    () => db.from("front_desk_people").update({ active: !p.active }).eq("id", p.id),
+                    p.active ? `${p.name} is off the list.` : `${p.name} is back on the list.`,
+                  )
+                }
+              >
+                {p.active ? "Remove" : "Restore"}
+              </button>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <form
+        className="mt-4 flex flex-wrap items-end gap-3"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const clean = name.trim().replace(/\s+/g, " ");
+          const g = Math.min(100, Math.max(1, Math.round(Number(goal)) || 8));
+          if (!clean) return;
+          if (await write(() => db.from("front_desk_people").insert({ name: clean, daily_goal: g, sort: 100 }), `${clean} added.`)) {
+            setName("");
+            setGoal("8");
+          }
+        }}
+      >
+        <label className="block">
+          <span className="block text-[13px] font-semibold mb-1">Name</span>
+          <input className="hl-input" value={name} maxLength={40} placeholder="e.g. Kristy" onChange={(e) => setName(e.target.value)} />
+        </label>
+        <label className="block">
+          <span className="block text-[13px] font-semibold mb-1">Daily goal</span>
+          <input className="hl-input !w-[90px]" type="number" min={1} max={100} value={goal} onChange={(e) => setGoal(e.target.value)} />
+        </label>
+        <button type="submit" className="hl-btn-primary" disabled={busy || !name.trim()}>Add person</button>
+      </form>
+      {message && (
+        <p className="mt-3 text-[14px] font-semibold" style={{ color: message.ok ? "var(--hl-green)" : "var(--hl-red)" }}>{message.text}</p>
+      )}
+    </section>
+  );
+}
+
+/** Who can sign in: the shared front-desk login (and any personal ones). Logins are created in Lovable Cloud → Users. */
 function TeamLogins({ members, onChange }: { members: ManagedMember[]; onChange: (m: ManagedMember[]) => void }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [goal, setGoal] = useState("8");
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
 
@@ -345,18 +450,17 @@ function TeamLogins({ members, onChange }: { members: ManagedMember[]; onChange:
 
   const add = async (e: FormEvent) => {
     e.preventDefault();
-    if (await run({ action: "add", email, display_name: name, daily_goal: Number(goal) }, `${name} is on the team.`)) {
+    if (await run({ action: "add", email, display_name: name }, `${name} can now sign in.`)) {
       setEmail("");
       setName("");
-      setGoal("8");
     }
   };
 
   return (
     <section className="hl-card p-4 sm:p-5">
-      <h2 className="hl-slab text-xl">Team logins</h2>
+      <h2 className="hl-slab text-xl">Logins</h2>
       <p className="text-[13px] opacity-75 mt-1">
-        First create the login (email + password) in Lovable Cloud → Users. Then add the person here with their name and daily goal.
+        Who can sign in to the call sheet. Create the shared front-desk login (email + password) in Lovable Cloud → Users, then add its email here once, named "Front desk".
       </p>
 
       <ul className="mt-4 grid gap-2">
@@ -370,27 +474,13 @@ function TeamLogins({ members, onChange }: { members: ManagedMember[]; onChange:
               </span>
             </span>
             <span className="flex items-center gap-2">
-              <label className="text-[13px] flex items-center gap-1.5">
-                Daily goal
-                <input
-                  className="hl-input !w-[70px] !py-1.5"
-                  type="number"
-                  min={1}
-                  max={100}
-                  defaultValue={m.daily_goal}
-                  onBlur={(e) => {
-                    const v = Number(e.target.value);
-                    if (v && v !== m.daily_goal) void run({ action: "update", user_id: m.user_id, daily_goal: v }, `Goal updated for ${m.display_name}.`);
-                  }}
-                />
-              </label>
               <button
                 type="button"
                 className="hl-btn-quiet !py-1.5 !px-3 !text-[13px]"
                 disabled={busy}
                 onClick={() => void run({ action: "update", user_id: m.user_id, active: !m.active }, m.active ? `${m.display_name} can no longer use the call sheet.` : `${m.display_name} is back on the team.`)}
               >
-                {m.active ? "Remove access" : "Restore access"}
+                {m.active ? "Turn off login" : "Turn on login"}
               </button>
             </span>
           </li>
@@ -398,18 +488,14 @@ function TeamLogins({ members, onChange }: { members: ManagedMember[]; onChange:
         {members.length === 0 && <li className="text-[14px] opacity-70">Nobody added yet.</li>}
       </ul>
 
-      <form onSubmit={add} className="mt-5 grid gap-3 sm:grid-cols-[1fr_1fr_110px_auto] sm:items-end">
+      <form onSubmit={add} className="mt-5 grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
         <label className="block">
           <span className="block text-[13px] font-semibold mb-1">Login email</span>
           <input className="hl-input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className="block">
-          <span className="block text-[13px] font-semibold mb-1">Name shown</span>
-          <input className="hl-input" value={name} placeholder="Frank" onChange={(e) => setName(e.target.value)} />
-        </label>
-        <label className="block">
-          <span className="block text-[13px] font-semibold mb-1">Daily goal</span>
-          <input className="hl-input" type="number" min={1} max={100} value={goal} onChange={(e) => setGoal(e.target.value)} />
+          <span className="block text-[13px] font-semibold mb-1">Name for this login</span>
+          <input className="hl-input" value={name} placeholder="Front desk" onChange={(e) => setName(e.target.value)} />
         </label>
         <button type="submit" className="hl-btn-primary" disabled={busy || !email || !name}>Add to team</button>
       </form>

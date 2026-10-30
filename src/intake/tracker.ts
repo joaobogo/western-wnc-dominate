@@ -19,6 +19,8 @@ export type CallRow = {
   id: string;
   created_at: string;
   taken_by_user: string | null;
+  /** Who was on the phone (front_desk_people.id); null for "Other". */
+  taken_by_person: string | null;
   taken_by: string | null;
   first_name: string | null;
   last_name: string | null;
@@ -38,13 +40,28 @@ export type MissedRow = {
   id: string;
   created_at: string;
   user_id: string;
+  person_id: string | null;
+  person_name: string | null;
   phone: string | null;
   note: string | null;
   called_back: boolean;
 };
 
+/** Someone who answers the phone: a listed person, or "Other" with a typed name (id null). */
+export type PhonePerson = { id: string | null; name: string; daily_goal: number };
+
+export const OTHER_GOAL = 8;
+
+/** Stable key for whoever took a call or logged a missed call. */
+export const callPersonKey = (c: Pick<CallRow, "taken_by_person" | "taken_by">) =>
+  c.taken_by_person ?? `other:${(c.taken_by ?? "").trim().toLowerCase() || "not recorded"}`;
+export const missedPersonKey = (m: Pick<MissedRow, "person_id" | "person_name">) =>
+  m.person_id ?? `other:${(m.person_name ?? "").trim().toLowerCase() || "not recorded"}`;
+export const personKey = (p: Pick<PhonePerson, "id" | "name">) =>
+  p.id ?? `other:${p.name.trim().toLowerCase() || "not recorded"}`;
+
 export const CALL_COLUMNS =
-  "id, created_at, taken_by_user, taken_by, first_name, last_name, phone, town, job_type, source, grade, score, outcome, callback_at, callback_done, jobtread_sync_status";
+  "id, created_at, taken_by_user, taken_by_person, taken_by, first_name, last_name, phone, town, job_type, source, grade, score, outcome, callback_at, callback_done, jobtread_sync_status";
 
 const dayFmt = new Intl.DateTimeFormat("en-CA", { timeZone: TIME_ZONE, year: "numeric", month: "2-digit", day: "2-digit" });
 const hourFmt = new Intl.DateTimeFormat("en-US", { timeZone: TIME_ZONE, hour: "2-digit", hour12: false });

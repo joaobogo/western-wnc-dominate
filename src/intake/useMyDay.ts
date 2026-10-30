@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TABLE, db } from "./save";
-import { CALL_COLUMNS, addDays, dayKey, type CallRow, type MissedRow, type Outcome } from "./tracker";
+import { CALL_COLUMNS, addDays, dayKey, type CallRow, type MissedRow, type Outcome, type PhonePerson } from "./tracker";
 
 export type TeamToday = { calls: number; missed: number; booked: number };
 
 /**
- * The signed-in person's own calls and missed calls (60 days, enough for the
- * streak and the 30-day strip) plus the team's total for today.
+ * Calls and missed calls saved under this login (60 days, enough for the
+ * streak and the 30-day strip) plus the team's total for today. The office
+ * shares one login, so the card narrows these to whoever is on the phone.
  */
 export function useMyDay(userId: string) {
   const [calls, setCalls] = useState<CallRow[]>([]);
@@ -57,10 +58,16 @@ export function useMyDay(userId: string) {
   }, []);
 
   const logMissed = useCallback(
-    async (phone: string, note: string) => {
+    async (phone: string, note: string, person: PhonePerson) => {
       const { data, error: err } = await db
         .from("missed_calls")
-        .insert({ user_id: userId, phone: phone.trim() || null, note: note.trim() || null })
+        .insert({
+          user_id: userId,
+          person_id: person.id,
+          person_name: person.name,
+          phone: phone.trim() || null,
+          note: note.trim() || null,
+        })
         .select("*")
         .single();
       if (err) throw new Error(err.message);

@@ -1,79 +1,55 @@
-# Front desk: logins and tracker setup
+# Front desk: shared login and tracker setup
 
-The call sheet at https://highlandernc.com/front-desk now has personal logins,
-a "My day" tracker for each person, outcome buttons, callback reminders, a
-missed-call log, an admin Team page and a 5 PM Teams recap.
+The call sheet at https://highlandernc.com/front-desk is closed to the public. It only shows a sign-in screen until the shared login below exists.
 
-## 1. In Lovable (once)
+How it works:
+1. The office shares **one login** (one email and one password).
+2. After signing in, each morning the page asks **"Who's on the phone?"**: Frank, Susan or **Other** (Other types their name).
+3. Every call and missed call from then on counts for that person, until someone taps **"Not Frank? Switch"** or the next morning.
 
-Paste this into Lovable's chat:
+## 1. Lovable prompt (paste once, after filling in the email and password)
 
-> Pull the latest from GitHub `main`. Then:
-> 1. Apply the migrations `supabase/migrations/20261030120000_front_desk_role.sql`
->    and `supabase/migrations/20261030120100_front_desk_tracking.sql`, in that order.
+> Pull the latest from GitHub `main`. Don't change any code, and don't touch `jobtread-sync`. Then:
+> 1. Apply these migrations, in this order:
+>    - `supabase/migrations/20261030120000_front_desk_role.sql`
+>    - `supabase/migrations/20261030120100_front_desk_tracking.sql`
+>    - `supabase/migrations/20261030140000_front_desk_people.sql`
 > 2. Deploy the edge functions `front-desk-team` and `front-desk-daily-summary`.
->
-> Don't change any code, and don't touch `jobtread-sync`.
+> 3. Create one Supabase Auth user for the shared front-desk login:
+>    - email: `EMAIL_HERE`
+>    - password: `PASSWORD_HERE`
+>    - mark the email as confirmed.
+> 4. Give that user the front-desk role and its display name with this SQL:
+>    ```sql
+>    insert into public.user_roles (user_id, role)
+>    select id, 'front_desk' from auth.users where email = 'EMAIL_HERE'
+>    on conflict do nothing;
+>    insert into public.team_members (user_id, display_name, daily_goal)
+>    select id, 'Front desk', 8 from auth.users where email = 'EMAIL_HERE'
+>    on conflict (user_id) do update set display_name = excluded.display_name, active = true;
+>    ```
+> 5. Confirm with a read-only query that `public.front_desk_people` lists Frank and Susan, and that the user above has the `front_desk` role. Tell me the results.
 
-Approve the SQL when Lovable shows it. Here is what it does:
-- adds a `front_desk` role;
-- adds a `team_members` list (name and daily goal per login);
-- adds call outcome and callback columns to the call sheet's leads;
-- adds a `missed_calls` table, which is never sent to JobTread;
-- adds a team-total function;
-- schedules the 5 PM summary.
+**Safer option for the password:** instead of steps 3 and 4, create the user yourself in **Lovable Cloud → Users → Add user**. Then add its email under **Team → Logins** on the site, with the name "Front desk". The password then never sits in Lovable's chat history.
 
-## 2. Create each login (Lovable Cloud → Users)
+## 2. Share it with the office
 
-For Frank, Susan and anyone else who answers the phone:
-1. Open **Cloud → Users → Add user**.
-2. Enter their email and a password. Tick "Auto confirm" if it's offered.
+Give Frank and Susan https://highlandernc.com/front-desk plus the email and password. Then:
+- They sign in once on each computer; the browser remembers them.
+- Each morning they tap their name.
+- If someone else answers, they tap **Other** and type their name.
 
-You do this part because only Lovable can create logins.
+## 3. Your Team page (sign in with your own admin login)
 
-## 3. Add them to the team (on the site)
+At https://highlandernc.com/front-desk/team:
+- **Totals and by person** for today, this week or this month: calls, missed calls, booked, callbacks, average lead score, days on goal. "Other" callers are grouped by the name they typed.
+- **Last 30 days per person:** green on the days they hit their goal.
+- **Busiest hours**, **how callers found us**, and a **calls list** you can filter by person. Each call shows its score.
+- **Who answers the phone:** add or remove names (e.g. add Kristy) and set each person's daily goal.
+- **Logins:** who can sign in. Turn the shared login off here if the password ever leaks, then make a new one.
 
-1. Sign in at https://highlandernc.com/front-desk with your admin login.
-2. Open **Team**, then scroll down to **Team logins**.
-3. Enter each person's login email, the name to show ("Frank") and their daily goal (default 8).
-4. Click **Add to team**.
+## Good to know
 
-That's it. They can now sign in at https://highlandernc.com/front-desk with their email and password.
-
-To remove someone, click **Remove access**. Their past calls stay in the reports.
-
-## What each person sees
-
-- **My day card** at the top of the call sheet, showing:
-  - a goal ring (calls logged today against their goal);
-  - today's calls, missed calls and booked appointments;
-  - their streak of workdays on goal;
-  - the whole team's total for today.
-
-  They never see each other's numbers.
-- **Taken by** fills itself in from their login.
-- After saving a call, they see a short "Nice — that's 5 today" message and **How did the call end?**: Booked appointment, Call back later (asks when), Not a fit, or Spam / vendor.
-- **Call back today:** reminders for the callbacks they set, with a Done button. Overdue ones are outlined in red.
-- **Log a missed call:** one tap with a number and an optional note. It counts toward the day, and a "Missed calls to return" list follows them for two days.
-
-## What you (admin) see: Front desk → Team
-
-- Totals and a by-person table for today, this week or this month: calls, missed calls, booked, callbacks, not a fit or spam, A/B leads, and days on goal.
-- **Last 30 days:** one row per person, one square per day. Green means they hit their goal.
-- **Busiest hours:** when the phone rings, from 7 AM to 7 PM.
-- **How callers found us:** from "How did you hear about us?" on the call sheet.
-- **Calls:** a list filterable by person, each linking to the lead in the Queue.
-- **Team logins:** add people, change goals, remove access.
-
-## 5 PM Teams recap
-
-Every weekday at 5 PM Eastern, the Highlander Teams channel gets a short post:
-- calls, missed calls, appointments and A/B leads for the day;
-- one line per person;
-- the best-scored lead of the day.
-
-It posts once a day and adjusts for daylight saving on its own.
-
-## Before setup is finished
-
-The call sheet keeps saving calls even if the database step in section 1 hasn't been done yet. Until then, the tracker card shows "Your daily tracker will appear here once setup is finished." Staff need step 2 and step 3 before they can sign in, while admin logins work straight away.
+- On a shared login, privacy between people isn't really possible: anyone signed in could switch names. The card only shows the picked person's numbers plus the team total. Callbacks and missed calls to return are shown to whoever is on the phone, so nobody's follow-up gets lost on a day off.
+- The 5 PM Teams recap (weekdays) lists each person on the phone list, plus any "Other" names, with calls, missed calls, booked, average score and the day's best lead.
+- Until step 1 is done, the page keeps showing only the sign-in screen to everyone except admins.
