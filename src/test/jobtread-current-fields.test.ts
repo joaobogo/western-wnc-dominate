@@ -203,3 +203,38 @@ describe("finished job whose account has no contact", () => {
     expect(queries.filter((q) => q.createJob || q.createLocation || q.createAccount)).toHaveLength(0);
   });
 });
+
+/**
+ * JobTread's Pave API answers "413 Request Entity Too Large" when a query's
+ * possible result is too big (it multiplies nested page sizes). A returning-
+ * customer lookup of 100 × 100 × 20 made every website lead fail from 20 Oct.
+ */
+const worstCaseNodes = (node: unknown): number => {
+  if (!node || typeof node !== "object") return 1;
+  const obj = node as Record<string, unknown>;
+  const size = typeof (obj.$ as { size?: number } | undefined)?.size === "number" ? (obj.$ as { size: number }).size : 1;
+  let inner = 0;
+  for (const [key, value] of Object.entries(obj)) {
+    if (key === "$") continue;
+    inner += worstCaseNodes(value);
+  }
+  return size * Math.max(1, inner);
+};
+
+describe("JobTread request size (413 guard)", () => {
+  it("keeps every query the sync sends far below JobTread's size limit", async () => {
+    const { buildPayload, sendToPaveApi } = await mod();
+    const crm = mockCrm();
+    const result = await sendToPaveApi(buildPayload({ ...LEAD, phone: "8285551234" }, "lead"));
+    expect(result.ok).toBe(true);
+    expect(crm.queries.length).toBeGreaterThan(0);
+    for (const q of crm.queries) expect(worstCaseNodes(q)).toBeLessThan(2000);
+  });
+
+  it("caps the returning-customer lookup and the account reads", async () => {
+    const { PAVE_LIMITS } = await mod();
+    expect(PAVE_LIMITS.lookupMatches).toBeLessThanOrEqual(10);
+    expect(PAVE_LIMITS.contactFields).toBeLessThanOrEqual(10);
+    expect(PAVE_LIMITS.accountContacts * PAVE_LIMITS.contactFields).toBeLessThan(2000);
+  });
+});
