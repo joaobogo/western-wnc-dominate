@@ -80,7 +80,9 @@ async function postToTeams(html: string) {
   return true;
 }
 
-type Person = { name: string; calls: number; missed: number; booked: number; callbacks: number; strong: number };
+const avg = (xs: number[]) => Math.round(xs.reduce((a, b) => a + b, 0) / xs.length);
+
+type Person = { name: string; calls: number; missed: number; booked: number; callbacks: number; strong: number; scores: number[] };
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
@@ -118,14 +120,14 @@ Deno.serve(async (req) => {
   const people = new Map<string, Person>();
   const nameOf = new Map((members ?? []).map((m: any) => [m.user_id, m.display_name as string]));
   for (const m of members ?? []) {
-    if (m.active) people.set(m.user_id, { name: m.display_name, calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0 });
+    if (m.active) people.set(m.user_id, { name: m.display_name, calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0, scores: [] });
   }
   const bucket = (userId: string | null, fallback: string | null) => {
     const key = userId ?? `name:${fallback ?? "Other"}`;
     if (!people.has(key)) {
       people.set(key, {
         name: (userId && nameOf.get(userId)) || fallback || "Other",
-        calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0,
+        calls: 0, missed: 0, booked: 0, callbacks: 0, strong: 0, scores: [],
       });
     }
     return people.get(key)!;
@@ -138,6 +140,7 @@ Deno.serve(async (req) => {
     if (c.outcome === "booked") p.booked++;
     if (c.outcome === "callback") p.callbacks++;
     if (c.grade === "A" || c.grade === "B") p.strong++;
+    if (c.grade !== "DQ" && typeof c.score === "number") p.scores.push(c.score);
     if (c.grade !== "DQ" && (best === null || (c.score ?? 0) > (best.score ?? 0))) best = c;
   }
   for (const m of missed ?? []) bucket(m.user_id, null).missed++;
@@ -156,11 +159,11 @@ Deno.serve(async (req) => {
     "<ul>",
     ...rows.map(
       (p) =>
-        `<li><b>${esc(p.name)}</b>: ${p.calls} calls, ${p.missed} missed, ${p.booked} booked${p.callbacks ? `, ${p.callbacks} to call back` : ""}</li>`,
+        `<li><b>${esc(p.name)}</b>: ${p.calls} calls, ${p.missed} missed, ${p.booked} booked${p.callbacks ? `, ${p.callbacks} to call back` : ""}${p.scores.length ? `, average score ${avg(p.scores)}/100` : ""}</li>`,
     ),
     "</ul>",
     best
-      ? `<p>⭐ Best lead: ${esc(best.first_name ?? "Caller")}${best.town ? ` in ${esc(best.town)}` : ""}${best.job_type ? ` · ${esc(String(best.job_type).replace(/_/g, " "))}` : ""} (grade ${esc(best.grade)})</p>`
+      ? `<p>⭐ Best lead: ${esc(best.first_name ?? "Caller")}${best.town ? ` in ${esc(best.town)}` : ""}${best.job_type ? ` · ${esc(String(best.job_type).replace(/_/g, " "))}` : ""} (grade ${esc(best.grade)}, score ${esc(best.score)}/100)</p>`
       : "",
     `<p><a href="${SITE}/front-desk/team">Open the team page</a></p>`,
   ].join("");

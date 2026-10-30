@@ -79,7 +79,7 @@ describe("tallies", () => {
       [call({ outcome: "booked", grade: "A" }), call({ outcome: "callback" }), call({ outcome: "spam", grade: "DQ", jobtread_sync_status: "pending" })],
       [missed("2026-10-27T15:00:00Z")],
     );
-    expect(t).toMatchObject({ calls: 3, missed: 1, logged: 4, booked: 1, callbacks: 1, spam: 1, strong: 2, synced: 2 });
+    expect(t).toMatchObject({ avgScore: 60, calls: 3, missed: 1, logged: 4, booked: 1, callbacks: 1, spam: 1, strong: 2, synced: 2 });
   });
 
   it("counts both calls and missed calls toward the day", () => {
@@ -149,5 +149,14 @@ describe("rollout safety", () => {
     const { isMissingTrackerColumn } = await import("@/intake/save");
     expect(isMissingTrackerColumn({ code: "PGRST204", message: "Could not find the 'taken_by_user' column of 'intake_leads' in the schema cache" })).toBe(true);
     expect(isMissingTrackerColumn({ code: "42501", message: "new row violates row-level security policy" })).toBe(false);
+  });
+});
+
+describe("lead score", () => {
+  it("labels each call with its score, and DQ calls as disqualified", async () => {
+    const { scoreLabel } = await import("@/intake/tracker");
+    expect(scoreLabel({ grade: "A", score: 88 })).toBe("88/100");
+    expect(scoreLabel({ grade: "DQ", score: null })).toBe("Disqualified");
+    expect(scoreLabel({ grade: "C", score: null })).toBe("No score");
   });
 });

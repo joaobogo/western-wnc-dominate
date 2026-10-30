@@ -112,7 +112,15 @@ export function goalStreak(counts: Map<string, number>, goal: number, today: str
   return streak;
 }
 
+/** "88/100", or "Disqualified" for a gated call (DQ calls carry no score). */
+export function scoreLabel(c: Pick<CallRow, "grade" | "score">): string {
+  if (c.grade === "DQ") return "Disqualified";
+  return c.score === null || c.score === undefined ? "No score" : `${c.score}/100`;
+}
+
 export type Tally = {
+  /** Mean score of the scored (non-DQ) calls, or null when none. */
+  avgScore: number | null;
   calls: number;
   missed: number;
   logged: number;
@@ -125,7 +133,10 @@ export type Tally = {
 };
 
 export function tally(calls: CallRow[], missed: MissedRow[]): Tally {
-  const t: Tally = { calls: calls.length, missed: missed.length, logged: 0, booked: 0, callbacks: 0, notFit: 0, spam: 0, strong: 0, synced: 0 };
+  const scored = calls.filter((c) => c.grade !== "DQ" && typeof c.score === "number").map((c) => c.score as number);
+  const t: Tally = {
+    avgScore: scored.length ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length) : null,
+    calls: calls.length, missed: missed.length, logged: 0, booked: 0, callbacks: 0, notFit: 0, spam: 0, strong: 0, synced: 0 };
   for (const c of calls) {
     if (c.outcome === "booked") t.booked++;
     else if (c.outcome === "callback") t.callbacks++;

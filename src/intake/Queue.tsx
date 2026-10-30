@@ -132,7 +132,7 @@ export default function Queue() {
                     "No name"}
                 </Link>
                 <div className="text-[13.5px] truncate" style={{ color: "#4b5563" }}>
-                  {[r.town, r.phone || r.email].filter(Boolean).join(" · ")}
+                  {[r.grade === "DQ" ? "Disqualified" : r.score !== null ? `Score ${r.score}/100` : null, r.town, r.phone || r.email].filter(Boolean).join(" · ")}
                 </div>
                 <div
                   className="text-[13px] mt-0.5"

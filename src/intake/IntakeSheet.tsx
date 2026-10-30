@@ -45,6 +45,7 @@ import { cheer, dayKey, since, type Outcome } from "./tracker";
 
 type Saved = {
   id: string;
+  score: number | null;
   name: string;
   callBy: string;
   action: string;
@@ -134,6 +135,7 @@ export default function IntakeSheet() {
       const callBy = finalResult.callBy ? formatCallBy(finalResult.callBy) : "";
       setSaved({
         id,
+        score: finalResult.gated ? null : finalResult.score,
         name: `${lead.firstName} ${lead.lastName}`.trim() || "this lead",
         callBy,
         action: finalResult.action,
@@ -156,7 +158,9 @@ export default function IntakeSheet() {
           <div className="flex items-center gap-4">
             <GradeTile grade={saved.grade} />
             <div>
-              <h1 className="hl-slab text-xl">Lead saved</h1>
+              <h1 className="hl-slab text-xl">
+                Lead saved{saved.score !== null ? ` · score ${saved.score}/100` : ""}
+              </h1>
               <p className="text-[15px] mt-1">
                 {saved.callBy
                   ? `Call ${saved.name} by ${saved.callBy}`

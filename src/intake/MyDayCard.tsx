@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { addDays, callbacksDue, dayCounts, dayKey, goalStreak, OUTCOMES, tally, since, type CallRow, type Outcome } from "./tracker";
+import { addDays, callbacksDue, scoreLabel, dayCounts, dayKey, goalStreak, OUTCOMES, tally, since, type CallRow, type Outcome } from "./tracker";
 import type { MyDay } from "./useMyDay";
 import type { TeamMember } from "./session";
 import { formatPhone } from "./scoring";
@@ -294,7 +294,7 @@ export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember 
                       {c.town && <span className="opacity-75"> · {c.town}</span>}
                       <span className="opacity-60"> · {timeFmt.format(new Date(c.created_at))}</span>
                     </span>
-                    {c.grade && <span className="hl-chip">Grade {c.grade}</span>}
+                    {c.grade && <span className="hl-chip">Grade {c.grade} · {scoreLabel(c)}</span>}
                   </div>
                   <OutcomePicker compact value={c.outcome} onChoose={(o, at) => myDay.setOutcome(c.id, o, at)} />
                 </li>

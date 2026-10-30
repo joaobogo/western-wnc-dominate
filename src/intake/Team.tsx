@@ -13,6 +13,7 @@ import {
   isWorkday,
   lastNDays,
   periodStart,
+  scoreLabel,
   since,
   sourceTally,
   tally,
@@ -160,18 +161,19 @@ export default function Team() {
 
       {error && <p className="mb-3 text-[14px]" style={{ color: "var(--hl-red)" }}>{error}</p>}
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
         <Tile label="Calls saved" value={view.total.calls} />
         <Tile label="Missed calls" value={view.total.missed} />
         <Tile label="Appointments booked" value={view.total.booked} />
         <Tile label="A / B leads" value={view.total.strong} hint="best-scored calls" />
+        <Tile label="Average lead score" value={view.total.avgScore === null ? "—" : view.total.avgScore} hint="out of 100" />
         <Tile label="Sent to JobTread" value={view.total.synced} hint={`of ${view.total.calls}`} />
       </div>
 
       {/* Per person */}
       <section className="hl-card p-4 sm:p-5 mb-6 overflow-x-auto">
         <h2 className="hl-slab text-xl mb-3">By person</h2>
-        <table className="w-full min-w-[640px] text-[14px]">
+        <table className="w-full min-w-[700px] text-[14px]">
           <thead>
             <tr className="text-left hl-label">
               <th className="py-2 pr-3">Name</th>
@@ -181,6 +183,7 @@ export default function Team() {
               <th className="py-2 pr-3">Call back</th>
               <th className="py-2 pr-3">Not a fit / spam</th>
               <th className="py-2 pr-3">A / B</th>
+              <th className="py-2 pr-3">Avg score</th>
               <th className="py-2 pr-3">Goal days</th>
             </tr>
           </thead>
@@ -197,6 +200,7 @@ export default function Team() {
                 <td className="py-2 pr-3">{t.callbacks}</td>
                 <td className="py-2 pr-3">{t.notFit + t.spam}</td>
                 <td className="py-2 pr-3">{t.strong}</td>
+                <td className="py-2 pr-3">{t.avgScore === null ? "—" : t.avgScore}</td>
                 <td className="py-2 pr-3">{person.key.startsWith("name:") ? "—" : `${goalDays} (goal ${person.goal})`}</td>
               </tr>
             ))}
@@ -296,6 +300,7 @@ export default function Team() {
                   <span>
                     <span className="hl-grade-sm mr-2" style={{ background: GRADE_COLORS[grade]?.bg, color: GRADE_COLORS[grade]?.fg }}>{grade}</span>
                     <Link to={`/front-desk/queue/${c.id}`} className="font-semibold underline-offset-2 hover:underline">{callerName(c)}</Link>
+                    <span className="font-semibold"> · {scoreLabel(c)}</span>
                     {c.town && <span className="opacity-75"> · {c.town}</span>}
                     <span className="opacity-60"> · {timeFmt.format(new Date(c.created_at))}</span>
                   </span>
