@@ -70,7 +70,7 @@ export type IntakeRow = {
 
 /** PostgREST's "unknown column" errors for the tracker columns. */
 export function isMissingTrackerColumn(error: { code?: string; message?: string }): boolean {
-  return (error.code === "PGRST204" || error.code === "42703") && /taken_by_user/.test(error.message ?? "");
+  return (error.code === "PGRST204" || error.code === "42703") && /taken_by_(user|person)/.test(error.message ?? "");
 }
 
 export function toRow(lead: LeadDraft, result: ScoreResult) {
@@ -112,7 +112,7 @@ export function toRow(lead: LeadDraft, result: ScoreResult) {
   };
 }
 
-export async function saveLead(lead: LeadDraft, result: ScoreResult, takenByUser: string) {
+export async function saveLead(lead: LeadDraft, result: ScoreResult, takenByUser: string, takenByPerson: string | null) {
   const row = toRow(lead, result);
   const leadId = crypto.randomUUID();
   const idempotencyKey = crypto.randomUUID();
@@ -147,8 +147,9 @@ export async function saveLead(lead: LeadDraft, result: ScoreResult, takenByUser
     jobtread_alerted: false,
     idempotency_key: idempotencyKey,
   };
-  // Who took the call: the signed-in front-desk login (drives the tracker and the database rules).
-  let { error } = await db.from(TABLE).insert({ ...record, taken_by_user: takenByUser });
+  // Who took the call: the login (database rules) and the person picked in
+  // "Who's on the phone?" (the tracker; null for Other, named in taken_by).
+  let { error } = await db.from(TABLE).insert({ ...record, taken_by_user: takenByUser, taken_by_person: takenByPerson });
   // Until the 20261030 tracker migration is applied the column doesn't exist yet;
   // save without it rather than lose the call (taken_by still names the person).
   if (error && isMissingTrackerColumn(error)) {

@@ -18,7 +18,8 @@ import {
 const call = (over: Partial<CallRow>): CallRow => ({
   id: Math.random().toString(36).slice(2),
   created_at: "2026-10-27T14:00:00Z",
-  taken_by_user: "frank",
+  taken_by_user: "desk",
+  taken_by_person: "frank-id",
   taken_by: "Frank",
   first_name: "Jane",
   last_name: "Doe",
@@ -35,7 +36,7 @@ const call = (over: Partial<CallRow>): CallRow => ({
   ...over,
 });
 
-const missed = (created_at: string): MissedRow => ({ id: created_at, created_at, user_id: "frank", phone: null, note: null, called_back: false });
+const missed = (created_at: string): MissedRow => ({ id: created_at, created_at, user_id: "desk", person_id: "frank-id", person_name: "Frank", phone: null, note: null, called_back: false });
 
 describe("office clock (Eastern)", () => {
   it("buckets calls by the Franklin calendar day and hour, not UTC", () => {
@@ -158,5 +159,29 @@ describe("lead score", () => {
     expect(scoreLabel({ grade: "A", score: 88 })).toBe("88/100");
     expect(scoreLabel({ grade: "DQ", score: null })).toBe("Disqualified");
     expect(scoreLabel({ grade: "C", score: null })).toBe("No score");
+  });
+});
+
+describe("shared login: calls count for whoever is on the phone", () => {
+  it("keys listed people by id and Other by the typed name", async () => {
+    const { callPersonKey, missedPersonKey, personKey } = await import("@/intake/tracker");
+    expect(callPersonKey(call({}))).toBe("frank-id");
+    expect(callPersonKey(call({ taken_by_person: null, taken_by: "Luke " }))).toBe("other:luke");
+    expect(missedPersonKey({ person_id: null, person_name: "Luke" })).toBe("other:luke");
+    expect(personKey({ id: null, name: "luke" })).toBe(personKey({ id: null, name: "Luke" }));
+    expect(personKey({ id: "frank-id", name: "Frank" })).toBe("frank-id");
+  });
+
+  it("seeds Frank and Susan and records the person on every call and missed call", () => {
+    const sql = readFileSync("supabase/migrations/20261030140000_front_desk_people.sql", "utf8");
+    expect(sql).toMatch(/VALUES \('Frank', 8, 1\), \('Susan', 8, 2\)/);
+    expect(sql).toMatch(/ADD COLUMN IF NOT EXISTS taken_by_person uuid/);
+    expect(sql).toMatch(/ADD COLUMN IF NOT EXISTS person_id uuid/);
+    expect(readFileSync("src/intake/save.ts", "utf8")).toMatch(/taken_by_person: takenByPerson/);
+  });
+
+  it("asks again each morning so yesterday's name never carries over", () => {
+    const src = readFileSync("src/intake/onThePhone.tsx", "utf8");
+    expect(src).toMatch(/s\.day === dayKey\(new Date\(\)\)/);
   });
 });

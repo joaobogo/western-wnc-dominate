@@ -41,7 +41,8 @@ import { saveLead } from "./save";
 import { useReadySession } from "./session";
 import { useMyDay } from "./useMyDay";
 import { MyDayCard, OutcomePicker } from "./MyDayCard";
-import { cheer, dayKey, since, type Outcome } from "./tracker";
+import { callPersonKey, cheer, dayKey, missedPersonKey, OTHER_GOAL, personKey, since, type Outcome, type PhonePerson } from "./tracker";
+import { PersonPicker, useOnThePhone, usePeople } from "./onThePhone";
 
 type Saved = {
   id: string;
@@ -56,8 +57,14 @@ type Saved = {
 export default function IntakeSheet() {
   const { user, member } = useReadySession();
   const myDay = useMyDay(user.id);
-  // "Taken by" is the signed-in person; nobody types their own name any more.
-  const [lead, setLead] = useState<LeadDraft>(() => ({ ...EMPTY_LEAD, takenBy: member.display_name }));
+  const { people, error: peopleError } = usePeople();
+  const onThePhone = useOnThePhone(people);
+  // The office shares one login, so calls are credited to whoever is picked in
+  // "Who's on the phone?". Before the people list exists (setup not finished),
+  // calls fall back to the login's own name.
+  const person: PhonePerson | null =
+    onThePhone.person ?? (peopleError ? { id: null, name: member.display_name, daily_goal: member.daily_goal || OTHER_GOAL } : null);
+  const [lead, setLead] = useState<LeadDraft>(() => ({ ...EMPTY_LEAD, takenBy: person?.name ?? "" }));
   const [savedOutcome, setSavedOutcome] = useState<Outcome | null>(null);
   const [missing, setMissing] = useState<MissingField[]>([]);
   const [saving, setSaving] = useState(false);
@@ -105,7 +112,7 @@ export default function IntakeSheet() {
   }
 
   function clearSheet() {
-    setLead({ ...EMPTY_LEAD, takenBy: member.display_name });
+    setLead({ ...EMPTY_LEAD, takenBy: person?.name ?? "" });
     setSavedOutcome(null);
     setMissing([]);
     setSaveError(null);
@@ -130,7 +137,8 @@ export default function IntakeSheet() {
     setSaveError(null);
     try {
       const finalResult = scoreLead(lead);
-      const id = await saveLead(lead, finalResult, user.id);
+      if (!person) throw new Error("Pick who's on the phone first.");
+      const id = await saveLead({ ...lead, takenBy: person.name }, finalResult, user.id, person.id);
       await myDay.refresh();
       const callBy = finalResult.callBy ? formatCallBy(finalResult.callBy) : "";
       setSaved({
@@ -172,7 +180,13 @@ export default function IntakeSheet() {
             <p className="text-[15px] mt-4">{saved.action}</p>
           )}
           <p className="mt-4 rounded-md px-3 py-2 text-[15px] font-semibold" style={{ background: "#eef3e6", color: "var(--hl-green)" }}>
-            ✓ {cheer(since(myDay.calls, dayKey(new Date())).length + since(myDay.missed, dayKey(new Date())).length, member.daily_goal)}
+            ✓ Saved for {person?.name}.{" "}
+            {person &&
+              cheer(
+                since(myDay.calls.filter((c) => callPersonKey(c) === personKey(person)), dayKey(new Date())).length +
+                  since(myDay.missed.filter((m) => missedPersonKey(m) === personKey(person)), dayKey(new Date())).length,
+                person.daily_goal,
+              )}
           </p>
           <div className="mt-5">
             <div className="hl-q mb-2">How did the call end?</div>
@@ -207,10 +221,23 @@ export default function IntakeSheet() {
     );
   }
 
+  /* ── Who's on the phone? (asked each morning, before anything else) ── */
+  if (!person) {
+    return (
+      <div className="mx-auto max-w-[900px] px-4 py-8">
+        {people ? (
+          <PersonPicker people={people} onChoose={onThePhone.choose} />
+        ) : (
+          <div className="hl-card p-4 text-[14px] opacity-70">Loading…</div>
+        )}
+      </div>
+    );
+  }
+
   /* ── Call sheet ─────────────────────────────────────────────── */
   return (
     <div className="mx-auto max-w-[1180px] px-4 py-5 pb-28 lg:pb-8">
-      <MyDayCard myDay={myDay} member={member} />
+      <MyDayCard myDay={myDay} person={person} onSwitch={onThePhone.clear} />
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_330px]">
         <div>
           {/* 1. Who */}
@@ -443,7 +470,10 @@ export default function IntakeSheet() {
             </Question>
 
             <p className="mb-5 text-[14px]">
-              Taken by <b>{member.display_name}</b>
+              Taken by <b>{person.name}</b>{" "}
+              <button type="button" className="underline underline-offset-2 text-[13px] opacity-75" onClick={onThePhone.clear}>
+                change
+              </button>
             </p>
 
             <div className="grid gap-2 sm:grid-cols-3 mb-5">

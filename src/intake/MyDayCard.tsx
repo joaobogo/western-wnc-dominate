@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
-import { addDays, callbacksDue, scoreLabel, dayCounts, dayKey, goalStreak, OUTCOMES, tally, since, type CallRow, type Outcome } from "./tracker";
+import { addDays, callbacksDue, callPersonKey, missedPersonKey, personKey, scoreLabel, type PhonePerson, dayCounts, dayKey, goalStreak, OUTCOMES, tally, since, type CallRow, type Outcome } from "./tracker";
 import type { MyDay } from "./useMyDay";
-import type { TeamMember } from "./session";
 import { formatPhone } from "./scoring";
 
 const timeFmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
@@ -174,20 +173,24 @@ function MissedCallForm({ onSave, onClose }: { onSave: (phone: string, note: str
  * "My day": the personal tracker at the top of the call sheet. Only the
  * signed-in person's own numbers, plus the team's combined total.
  */
-export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember }) {
+export function MyDayCard({ myDay, person, onSwitch }: { myDay: MyDay; person: PhonePerson; onSwitch: () => void }) {
   const [missedOpen, setMissedOpen] = useState(false);
   const [listOpen, setListOpen] = useState(false);
   const today = dayKey(new Date());
 
   const view = useMemo(() => {
-    const todayCalls = since(myDay.calls, today);
-    const todayMissed = since(myDay.missed, today);
-    const t = tally(todayCalls, todayMissed);
-    const streak = goalStreak(dayCounts(myDay.calls, myDay.missed), member.daily_goal, today);
+    // Numbers and the goal are this person's; callbacks and missed calls to
+    // return are the whole desk's, so nobody's follow-up is lost on a day off.
+    const key = personKey(person);
+    const mine = myDay.calls.filter((c) => callPersonKey(c) === key);
+    const myMissed = myDay.missed.filter((m) => missedPersonKey(m) === key);
+    const todayCalls = since(mine, today);
+    const t = tally(todayCalls, since(myMissed, today));
+    const streak = goalStreak(dayCounts(mine, myMissed), person.daily_goal, today);
     const due = callbacksDue(myDay.calls, today);
     const missedToCall = myDay.missed.filter((m) => !m.called_back && dayKey(m.created_at) >= addDays(today, -2));
     return { todayCalls, t, streak, due, missedToCall };
-  }, [myDay.calls, myDay.missed, member.daily_goal, today]);
+  }, [myDay.calls, myDay.missed, person, today]);
 
   if (!myDay.loaded) {
     return <div className="hl-card p-4 mb-4 text-[14px] opacity-70">Loading your day…</div>;
@@ -197,6 +200,7 @@ export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember 
     return <div className="hl-card p-4 mb-4 text-[14px] opacity-70">Your daily tracker will appear here once setup is finished.</div>;
   }
 
+  const member = { display_name: person.name, daily_goal: person.daily_goal };
   const hit = view.t.logged >= member.daily_goal;
   const dateLabel = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "long", month: "long", day: "numeric" }).format(new Date());
 
@@ -205,7 +209,14 @@ export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember 
       <div className="flex flex-wrap items-center gap-5">
         <GoalRing done={view.t.logged} goal={member.daily_goal} />
         <div className="min-w-[200px] flex-1">
-          <p className="hl-label">{dateLabel}</p>
+          <p className="hl-label flex flex-wrap items-center gap-x-2">
+            {dateLabel}
+            <span aria-hidden="true">·</span>
+            <span>On the phone: {person.name}</span>
+            <button type="button" onClick={onSwitch} className="underline underline-offset-2 normal-case tracking-normal font-semibold" style={{ color: "var(--hl-green)" }}>
+              Not {person.name}? Switch
+            </button>
+          </p>
           <h2 className="hl-slab text-[22px] leading-tight mt-0.5">
             {hit ? `Goal reached, ${member.display_name}! 🎉` : `Hi ${member.display_name} — your day so far`}
           </h2>
@@ -233,7 +244,7 @@ export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember 
         <Stat label="Whole team" value={myDay.team ? myDay.team.calls + myDay.team.missed : "—"} hint="calls today" className="col-span-2 sm:col-span-1" />
       </div>
 
-      {missedOpen && <MissedCallForm onSave={myDay.logMissed} onClose={() => setMissedOpen(false)} />}
+      {missedOpen && <MissedCallForm onSave={(phone, note) => myDay.logMissed(phone, note, person)} onClose={() => setMissedOpen(false)} />}
 
       {view.due.length > 0 && (
         <div className="mt-4">
@@ -248,6 +259,7 @@ export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember 
                     {c.phone && <> · <a className="underline" href={`tel:${c.phone}`}>{c.phone}</a></>}
                     {c.callback_at && <span className="opacity-70"> · {whenFmt.format(new Date(c.callback_at))}</span>}
                     {overdue && <span style={{ color: "var(--hl-red)" }}> · overdue</span>}
+                    {c.taken_by && c.taken_by !== person.name && <span className="opacity-60"> · set by {c.taken_by}</span>}
                   </span>
                   <button type="button" className="hl-btn-quiet !py-1.5 !px-3 !text-[14px]" onClick={() => void myDay.markCallbackDone(c.id)}>
                     ✓ Done
@@ -269,6 +281,7 @@ export function MyDayCard({ myDay, member }: { myDay: MyDay; member: TeamMember 
                   {m.phone ? <a className="underline font-semibold" href={`tel:${m.phone}`}>{m.phone}</a> : <b>No number</b>}
                   <span className="opacity-70"> · {timeFmt.format(new Date(m.created_at))}</span>
                   {m.note && <span className="opacity-80"> · {m.note}</span>}
+                  {m.person_name && m.person_name !== person.name && <span className="opacity-60"> · logged by {m.person_name}</span>}
                 </span>
                 <button type="button" className="hl-btn-quiet !py-1.5 !px-3 !text-[14px]" onClick={() => void myDay.markMissedCalledBack(m.id)}>
                   ✓ Called back
