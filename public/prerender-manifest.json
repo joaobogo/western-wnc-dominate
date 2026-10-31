@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 274,
+    "sitemap": 277,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 404
+    "total": 407
   },
   "routes": [
     "/",
@@ -108,6 +108,9 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/lightning-and-metal-roofs",
+    "/blog/pine-needles-on-roof",
+    "/blog/deck-waterproofing-membrane_3",
     "/blog/roof-replacement-timeline",
     "/blog/rain-chains-vs-downspouts",
     "/blog/aluminum-vs-vinyl-soffit",
