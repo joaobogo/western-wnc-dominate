@@ -8,6 +8,7 @@
 
 import { createClient } from "npm:@supabase/supabase-js@2.112.3";
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
+import { sendLeadAlertEmail, shouldSendLeadAlert, type LeadAlertKind } from "../_shared/leadAlertEmail.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
 const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
@@ -1982,6 +1983,31 @@ async function alertSyncExhausted(table: string, id: string, attempts: number) {
   }
 }
 
+/**
+ * Office alert email (info@). Runs after the sync status is saved, in the
+ * background when the runtime allows. Never throws and never touches sync fields.
+ */
+function queueLeadAlertEmail(admin: any, table: string, row: any, kind: LeadAlertKind, jobId?: string | null) {
+  const run = async () => {
+    try {
+      if (!shouldSendLeadAlert(row, kind, isTestLead(row as LeadRow))) return;
+      const res = await sendLeadAlertEmail(table, row, { kind, jobId });
+      if (!res.sent) return;
+      const col = kind === "success" ? "alert_email_sent_at" : "alert_email_exhausted_at";
+      const { error } = await admin.from(table).update({ [col]: new Date().toISOString() }).eq("id", row.id);
+      if (error) console.error("lead alert email mark failed:", error.message);
+    } catch (e) {
+      console.error("lead alert email failed:", (e as Error).message);
+    }
+  };
+  const p = run();
+  try {
+    const rt = (globalThis as any).EdgeRuntime;
+    if (rt?.waitUntil) { rt.waitUntil(p); return Promise.resolve(); }
+  } catch { /* fall through */ }
+  return p;
+}
+
 /** Public callers may only sync a brand-new, never-attempted record. */
 const PUBLIC_SYNC_WINDOW_MS = 30 * 60 * 1000;
 
@@ -2069,6 +2095,29 @@ Deno.serve(async (req) => {
     }
     return new Response(JSON.stringify({ ok: true, retried: results.length, results }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  // Dry run of the office alert email: renders a sample lead, sends nothing,
+  // reads and writes nothing. Admin / service callers only.
+  if (body.alert_email_dry_run === true) {
+    if (!privileged) {
+      return new Response(JSON.stringify({ error: "unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const kind: LeadAlertKind = body.kind === "exhausted" ? "exhausted" : "success";
+    const sample = {
+      id: "dry-run", created_at: new Date().toISOString(), name: "Sample Customer <b>",
+      phone: "+18285550142", email: "sample@highlandernc.com", property_address: "40 Depot Street",
+      property_town: "Franklin", project_type: "roof_repair", page_path: "/contact",
+      preferred_contact_method: "phone", urgency: "This week", project_description: "Leak over the porch.",
+    };
+    const preview = await sendLeadAlertEmail(body.table === "intake_leads" ? "intake_leads" : "leads", sample, {
+      kind, jobId: kind === "success" ? "22PSampleJob" : null, dryRun: true,
+    });
+    return new Response(JSON.stringify({ ok: true, dry_run: true, subject: preview.subject, html: preview.html }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
 
@@ -2191,6 +2240,7 @@ Deno.serve(async (req) => {
       await alertSyncExhausted(table, id, attempt);
       await admin.from(table).update({ jobtread_alerted: true }).eq("id", id);
     }
+    if (exhausted) await queueLeadAlertEmail(admin, table, normalizedBase, "exhausted");
     return new Response(JSON.stringify({ ok: false, error: "sync_config_missing", retryable: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
@@ -2223,6 +2273,7 @@ Deno.serve(async (req) => {
       jobtread_next_retry_at: null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
+    await queueLeadAlertEmail(admin, table, normalizedBase, "success", result.id ?? savedProgress?.jobId ?? null);
   } else {
     // A name-rule violation is not a transport failure: keep the lead queued
     // locally as `retry_needed` so the team can supply a real customer name.
@@ -2241,6 +2292,7 @@ Deno.serve(async (req) => {
       await alertSyncExhausted(table, id, attempt);
       await admin.from(table).update({ jobtread_alerted: true }).eq("id", id);
     }
+    if (exhausted) await queueLeadAlertEmail(admin, table, normalizedBase, "exhausted");
   }
 
   // Never leak raw upstream error text back to the caller.

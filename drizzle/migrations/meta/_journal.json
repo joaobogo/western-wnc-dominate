@@ -43,6 +43,13 @@
       "when": 1792512193984,
       "tag": "0005_jobtread_progress",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793449947951,
+      "tag": "0006_lead_alert_email_columns",
+      "breakpoints": true
     }
   ]
 }
