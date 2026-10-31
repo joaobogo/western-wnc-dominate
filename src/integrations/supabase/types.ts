@@ -494,6 +494,51 @@ export type Database = {
           },
         ]
       }
+      front_desk_people: {
+        Row: {
+          active: boolean
+          created_at: string
+          daily_goal: number
+          id: string
+          name: string
+          sort: number
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          daily_goal?: number
+          id?: string
+          name: string
+          sort?: number
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          daily_goal?: number
+          id?: string
+          name?: string
+          sort?: number
+        }
+        Relationships: []
+      }
+      front_desk_summaries: {
+        Row: {
+          day: string
+          posted_at: string
+          totals: Json
+        }
+        Insert: {
+          day: string
+          posted_at?: string
+          totals?: Json
+        }
+        Update: {
+          day?: string
+          posted_at?: string
+          totals?: Json
+        }
+        Relationships: []
+      }
       intake_leads: {
         Row: {
           address: string | null
@@ -502,6 +547,8 @@ export type Database = {
           breakdown: Json
           budget_range: string | null
           call_by: string | null
+          callback_at: string | null
+          callback_done: boolean
           channel: string | null
           created_at: string
           details: string | null
@@ -527,6 +574,8 @@ export type Database = {
           last_name: string | null
           location_tier: string | null
           not_offered: boolean
+          outcome: string | null
+          outcome_at: string | null
           owner_contact: string | null
           owner_name: string | null
           payload: Json
@@ -541,6 +590,8 @@ export type Database = {
           spoke_live: boolean
           status: string
           taken_by: string | null
+          taken_by_person: string | null
+          taken_by_user: string | null
           timing: string | null
           town: string | null
           vendor_call: boolean
@@ -552,6 +603,8 @@ export type Database = {
           breakdown?: Json
           budget_range?: string | null
           call_by?: string | null
+          callback_at?: string | null
+          callback_done?: boolean
           channel?: string | null
           created_at?: string
           details?: string | null
@@ -577,6 +630,8 @@ export type Database = {
           last_name?: string | null
           location_tier?: string | null
           not_offered?: boolean
+          outcome?: string | null
+          outcome_at?: string | null
           owner_contact?: string | null
           owner_name?: string | null
           payload?: Json
@@ -591,6 +646,8 @@ export type Database = {
           spoke_live?: boolean
           status?: string
           taken_by?: string | null
+          taken_by_person?: string | null
+          taken_by_user?: string | null
           timing?: string | null
           town?: string | null
           vendor_call?: boolean
@@ -602,6 +659,8 @@ export type Database = {
           breakdown?: Json
           budget_range?: string | null
           call_by?: string | null
+          callback_at?: string | null
+          callback_done?: boolean
           channel?: string | null
           created_at?: string
           details?: string | null
@@ -627,6 +686,8 @@ export type Database = {
           last_name?: string | null
           location_tier?: string | null
           not_offered?: boolean
+          outcome?: string | null
+          outcome_at?: string | null
           owner_contact?: string | null
           owner_name?: string | null
           payload?: Json
@@ -641,11 +702,21 @@ export type Database = {
           spoke_live?: boolean
           status?: string
           taken_by?: string | null
+          taken_by_person?: string | null
+          taken_by_user?: string | null
           timing?: string | null
           town?: string | null
           vendor_call?: boolean
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "intake_leads_taken_by_person_fkey"
+            columns: ["taken_by_person"]
+            isOneToOne: false
+            referencedRelation: "front_desk_people"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       internal_config: {
         Row: {
@@ -896,6 +967,50 @@ export type Database = {
         }
         Relationships: []
       }
+      missed_calls: {
+        Row: {
+          called_back: boolean
+          called_back_at: string | null
+          created_at: string
+          id: string
+          note: string | null
+          person_id: string | null
+          person_name: string | null
+          phone: string | null
+          user_id: string
+        }
+        Insert: {
+          called_back?: boolean
+          called_back_at?: string | null
+          created_at?: string
+          id?: string
+          note?: string | null
+          person_id?: string | null
+          person_name?: string | null
+          phone?: string | null
+          user_id?: string
+        }
+        Update: {
+          called_back?: boolean
+          called_back_at?: string | null
+          created_at?: string
+          id?: string
+          note?: string | null
+          person_id?: string | null
+          person_name?: string | null
+          phone?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "missed_calls_person_id_fkey"
+            columns: ["person_id"]
+            isOneToOne: false
+            referencedRelation: "front_desk_people"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       roof_designs: {
         Row: {
           color_hex: string | null
@@ -1111,6 +1226,30 @@ export type Database = {
         }
         Relationships: []
       }
+      team_members: {
+        Row: {
+          active: boolean
+          created_at: string
+          daily_goal: number
+          display_name: string
+          user_id: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          daily_goal?: number
+          display_name: string
+          user_id: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          daily_goal?: number
+          display_name?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -1137,6 +1276,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      front_desk_team_today: {
+        Args: never
+        Returns: {
+          booked: number
+          calls: number
+          missed: number
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -1144,9 +1291,10 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_front_desk: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      app_role: "admin" | "moderator" | "user"
+      app_role: "admin" | "moderator" | "user" | "front_desk"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1274,7 +1422,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "moderator", "user"],
+      app_role: ["admin", "moderator", "user", "front_desk"],
     },
   },
 } as const
