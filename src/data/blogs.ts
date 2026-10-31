@@ -9762,6 +9762,7 @@ import { decisionGuidePosts } from "./blogs-decision-guides";
 import { october21Posts } from "./blogs-october21";
 import { october22Posts } from "./blogs-october22";
 import { october28Posts } from "./blogs-october28";
+import { october31Posts } from "./blogs-october31";
 import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
 import { BLOG_COVERS } from "./blog-covers";
 for (const p of october21Posts) {
@@ -9771,6 +9772,9 @@ for (const p of october22Posts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of october28Posts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
+for (const p of october31Posts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of decisionGuidePosts) {
