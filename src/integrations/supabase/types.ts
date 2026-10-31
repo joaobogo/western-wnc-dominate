@@ -100,6 +100,8 @@ export type Database = {
       }
       chatbot_conversations: {
         Row: {
+          alert_email_exhausted_at: string | null
+          alert_email_sent_at: string | null
           consent_given: boolean | null
           consent_text: string | null
           contact_path: string | null
@@ -138,6 +140,8 @@ export type Database = {
           utm_term: string | null
         }
         Insert: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           consent_given?: boolean | null
           consent_text?: string | null
           contact_path?: string | null
@@ -176,6 +180,8 @@ export type Database = {
           utm_term?: string | null
         }
         Update: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           consent_given?: boolean | null
           consent_text?: string | null
           contact_path?: string | null
@@ -225,6 +231,8 @@ export type Database = {
       }
       consultation_requests: {
         Row: {
+          alert_email_exhausted_at: string | null
+          alert_email_sent_at: string | null
           budget_range: string | null
           conversation_log: Json | null
           created_at: string
@@ -258,6 +266,8 @@ export type Database = {
           urgency: string | null
         }
         Insert: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           budget_range?: string | null
           conversation_log?: Json | null
           created_at?: string
@@ -291,6 +301,8 @@ export type Database = {
           urgency?: string | null
         }
         Update: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           budget_range?: string | null
           conversation_log?: Json | null
           created_at?: string
@@ -381,6 +393,8 @@ export type Database = {
       }
       designer_leads: {
         Row: {
+          alert_email_exhausted_at: string | null
+          alert_email_sent_at: string | null
           created_at: string
           design_id: string | null
           email: string
@@ -404,6 +418,8 @@ export type Database = {
           town: string | null
         }
         Insert: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           created_at?: string
           design_id?: string | null
           email: string
@@ -427,6 +443,8 @@ export type Database = {
           town?: string | null
         }
         Update: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           created_at?: string
           design_id?: string | null
           email?: string
@@ -542,6 +560,8 @@ export type Database = {
       intake_leads: {
         Row: {
           address: string | null
+          alert_email_exhausted_at: string | null
+          alert_email_sent_at: string | null
           appointment: Json
           best_time: string | null
           breakdown: Json
@@ -598,6 +618,8 @@ export type Database = {
         }
         Insert: {
           address?: string | null
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           appointment?: Json
           best_time?: string | null
           breakdown?: Json
@@ -654,6 +676,8 @@ export type Database = {
         }
         Update: {
           address?: string | null
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           appointment?: Json
           best_time?: string | null
           breakdown?: Json
@@ -738,6 +762,8 @@ export type Database = {
       }
       leads: {
         Row: {
+          alert_email_exhausted_at: string | null
+          alert_email_sent_at: string | null
           attachments: Json | null
           budget_range: string | null
           chat_summary: string | null
@@ -814,6 +840,8 @@ export type Database = {
           utm_term: string | null
         }
         Insert: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           attachments?: Json | null
           budget_range?: string | null
           chat_summary?: string | null
@@ -890,6 +918,8 @@ export type Database = {
           utm_term?: string | null
         }
         Update: {
+          alert_email_exhausted_at?: string | null
+          alert_email_sent_at?: string | null
           attachments?: Json | null
           budget_range?: string | null
           chat_summary?: string | null
