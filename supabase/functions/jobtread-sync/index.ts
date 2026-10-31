@@ -1491,9 +1491,23 @@ export type PaveSendOptions = {
   onProgress?: (progress: JobTreadProgress) => Promise<void> | void;
 };
 
+// JobTread's Pave API rejects a query whose possible result is too large with
+// "413 Request Entity Too Large" (it multiplies the page sizes). On 20 Oct a
+// lookup of 100 matches × 100 fields × 20 properties made every lead fail at
+// its first step. Keep every page only as large as the answer can be:
+// a contact has 4 custom fields; a phone/email matches a handful of contacts.
+export const PAVE_LIMITS = {
+  /** Custom field values read per contact (Email, Phone, Secondary Phone, Communication Preference). */
+  contactFields: 10,
+  /** Contacts matched by one phone/email; one more than "shared" so a full page means ambiguous. */
+  lookupMatches: 6,
+  /** Contacts read from one customer account. */
+  accountContacts: 25,
+} as const;
+
 const contactSelection = {
   id: {}, name: {},
-  customFieldValues: { $: { size: 100 }, nodes: { customField: { id: {} }, value: {} } },
+  customFieldValues: { $: { size: PAVE_LIMITS.contactFields }, nodes: { customField: { id: {} }, value: {} } },
 };
 const personKey = (name: unknown) => String(name ?? "").trim().replace(/\s+/g, " ").toLowerCase();
 const contactField = (contact: any, id: string) => contact?.customFieldValues?.nodes?.find((n: any) => n.customField?.id === id)?.value;
@@ -1516,7 +1530,7 @@ async function findCustomerByContact(contact: any): Promise<{ accountId: string;
       customField: {
         $: { id: fieldId },
         customFieldValues: {
-          $: { where: [["value"], "=", value], size: 100 },
+          $: { where: [["value"], "=", value], size: PAVE_LIMITS.lookupMatches },
           nodes: {
             contact: {
               ...contactSelection,
@@ -1532,7 +1546,7 @@ async function findCustomerByContact(contact: any): Promise<{ accountId: string;
     // A phone or email shared by several customers (e.g. an office line) is
     // ambiguous: don't guess, try the next identifier instead.
     const accounts = new Set(hits.map((c: any) => c.account.id));
-    if (accounts.size === 1 && hits.length < 100) {
+    if (accounts.size === 1 && hits.length < PAVE_LIMITS.lookupMatches) {
       const c = hits.find((h: any) => personKey(h.name) === personKey(contact?.name)) ?? hits[0];
       return { accountId: c.account.id, contact: c, byEmail: fieldId === JT_CF.contact.email, locations: c.account.locations?.nodes ?? [] };
     }
@@ -1611,7 +1625,7 @@ export async function sendToPaveApi(
       if (progress.accountId && !progress.contactId) {
         const accRes = await paveFetch({
           $: { grantKey: JOBTREAD_API_KEY },
-          account: { $: { id: progress.accountId }, contacts: { $: { size: 100 }, nodes: contactSelection } },
+          account: { $: { id: progress.accountId }, contacts: { $: { size: PAVE_LIMITS.accountContacts }, nodes: contactSelection } },
         });
         const person = accRes?.account?.contacts?.nodes?.find((c: any) => personKey(c.name) === personKey(payload.contact?.name));
         const firstContact = person ? await reusePersonContact(person, payload.contact, true) : undefined;
@@ -1775,7 +1789,7 @@ export async function sendToPaveApi(
       if (opts.progress?.accountId) {
         const res = await paveFetch({
           $: { grantKey: JOBTREAD_API_KEY },
-          account: { $: { id: accountId }, contacts: { $: { size: 100 }, nodes: contactSelection }, locations: { $: { size: 100 }, nodes: { id: {}, name: {}, address: {} } } },
+          account: { $: { id: accountId }, contacts: { $: { size: PAVE_LIMITS.accountContacts }, nodes: contactSelection }, locations: { $: { size: 100 }, nodes: { id: {}, name: {}, address: {} } } },
         });
         if (res?.error) throw new Error("Could not read customer's contacts and properties");
         existingLocations = res?.account?.locations?.nodes ?? [];

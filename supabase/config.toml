@@ -7,3 +7,6 @@ verify_jwt = false
 
 [functions.commute-route]
 verify_jwt = false
+
+[functions.front-desk-daily-summary]
+verify_jwt = false
