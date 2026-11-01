@@ -1,11 +1,11 @@
-// Lead alert email to the office inbox, sent from the Highlander Microsoft 365
-// mailbox through the Microsoft Outlook connector. Called from jobtread-sync
+// Lead alert email to the office inbox, sent through the Gmail (google_mail)
+// connector. Called from jobtread-sync
 // after a sync finishes. Never throws: an email problem must not affect sync.
 
 export const LEAD_ALERT_TO = "info@highlandernc.com";
 /** Leads created before this moment never get an alert (prevents an inbox flood). */
 export const LEAD_ALERT_EMAIL_SINCE = "2026-10-31T12:45:00Z";
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/microsoft_outlook";
+const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_mail/gmail/v1";
 
 export type LeadAlertKind = "success" | "exhausted";
 
@@ -197,7 +197,56 @@ export interface SendResult {
   html?: string;
 }
 
-/** Sends one alert through the Outlook connector. Never throws. */
+function utf8Base64(s: string): string {
+  const bytes = new TextEncoder().encode(s);
+  let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  }
+  return btoa(bin);
+}
+
+/** RFC 2047 header value: plain ASCII stays as is, otherwise UTF-8 B encoded-words (<= 75 chars each). */
+export function encodeMimeHeader(value: string): string {
+  const v = oneLine(value);
+  if (/^[\x20-\x7E]*$/.test(v)) return v;
+  const words: string[] = [];
+  let chunk = "";
+  const enc = new TextEncoder();
+  for (const ch of Array.from(v)) {
+    if (enc.encode(chunk + ch).length > 45) {
+      words.push(`=?UTF-8?B?${utf8Base64(chunk)}?=`);
+      chunk = "";
+    }
+    chunk += ch;
+  }
+  if (chunk) words.push(`=?UTF-8?B?${utf8Base64(chunk)}?=`);
+  return words.join("\r\n ");
+}
+
+/** Pure RFC 2822 builder: HTML body as UTF-8, base64 transfer encoding, CRLF line endings. */
+export function buildRfc2822Message(to: string, subject: string, html: string): string {
+  const body = (utf8Base64(html).match(/.{1,76}/g) ?? []).join("\r\n");
+  return [
+    `To: ${oneLine(to)}`,
+    `Subject: ${encodeMimeHeader(subject)}`,
+    "MIME-Version: 1.0",
+    'Content-Type: text/html; charset="UTF-8"',
+    "Content-Transfer-Encoding: base64",
+    "",
+    body,
+  ].join("\r\n");
+}
+
+/** Gmail `raw` value: base64url of the RFC 2822 message, no padding. */
+export function buildGmailRaw(to: string, subject: string, html: string): string {
+  return utf8Base64(buildRfc2822Message(to, subject, html))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+}
+
+/** Sends one alert through the Gmail connector. Never throws. */
 export async function sendLeadAlertEmail(
   table: string,
   row: Row,
@@ -210,26 +259,19 @@ export async function sendLeadAlertEmail(
     if (opts.dryRun) return { sent: false, skipped: "dry_run", subject, html };
 
     const lovableKey = Deno.env.get("LOVABLE_API_KEY");
-    const outlookKey = Deno.env.get("MICROSOFT_OUTLOOK_API_KEY");
-    if (!lovableKey || !outlookKey) {
-      console.warn("lead alert email skipped: Outlook connection not linked");
+    const gmailKey = Deno.env.get("GOOGLE_MAIL_API_KEY");
+    if (!lovableKey || !gmailKey) {
+      console.warn("lead alert email skipped: Gmail connection not linked");
       return { sent: false, skipped: "not_configured" };
     }
-    const res = await fetch(`${GATEWAY_URL}/me/sendMail`, {
+    const res = await fetch(`${GATEWAY_URL}/users/me/messages/send`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${lovableKey}`,
-        "X-Connection-Api-Key": outlookKey,
+        "X-Connection-Api-Key": gmailKey,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        message: {
-          subject,
-          body: { contentType: "HTML", content: html },
-          toRecipients: [{ emailAddress: { address: LEAD_ALERT_TO } }],
-        },
-        saveToSentItems: true,
-      }),
+      body: JSON.stringify({ raw: buildGmailRaw(LEAD_ALERT_TO, subject, html) }),
     });
     if (!res.ok) {
       const text = await res.text();
