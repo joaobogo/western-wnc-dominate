@@ -5,6 +5,10 @@ import {
   leadAlertFields,
   shouldSendLeadAlert,
   LEAD_ALERT_EMAIL_SINCE,
+  LEAD_ALERT_TO,
+  buildGmailRaw,
+  buildRfc2822Message,
+  encodeMimeHeader,
 } from "../../supabase/functions/_shared/leadAlertEmail";
 
 const after = new Date(Date.parse(LEAD_ALERT_EMAIL_SINCE) + 60_000).toISOString();
@@ -87,5 +91,53 @@ describe("who gets an alert", () => {
     expect(shouldSendLeadAlert({ created_at: after, alert_email_sent_at: after }, "success", false)).toBe(false);
     expect(shouldSendLeadAlert({ created_at: after, alert_email_sent_at: after }, "exhausted", false)).toBe(true);
     expect(shouldSendLeadAlert({ created_at: after, alert_email_exhausted_at: after }, "exhausted", false)).toBe(false);
+  });
+});
+
+const b64decode = (b64: string) =>
+  new TextDecoder().decode(Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)));
+const decodeHeader = (h: string) =>
+  h.split(/\r\n /).map((w) => {
+    const m = /^=\?UTF-8\?B\?(.+)\?=$/.exec(w);
+    return m ? b64decode(m[1]) : w;
+  }).join("");
+
+describe("Gmail MIME builder", () => {
+  const subject = "New lead: José Ñúñez · Franklin · Roof Repair · /contact";
+  const html = "<p>Olá — café · ✅</p>";
+
+  it("leaves a plain ASCII subject untouched", () => {
+    expect(encodeMimeHeader("New lead: Mary Smith")).toBe("New lead: Mary Smith");
+  });
+
+  it("encodes non-ASCII subjects per RFC 2047 and round-trips them", () => {
+    const enc = encodeMimeHeader(subject);
+    expect(enc).toMatch(/^=\?UTF-8\?B\?/);
+    expect(/^[\x20-\x7E\r\n]*$/.test(enc)).toBe(true);
+    for (const w of enc.split("\r\n ")) expect(w.length).toBeLessThanOrEqual(75);
+    expect(decodeHeader(enc)).toBe(subject);
+  });
+
+  it("strips newlines from the subject so headers cannot be injected", () => {
+    const enc = encodeMimeHeader("Hi\r\nBcc: evil@example.com");
+    expect(enc).toBe("Hi Bcc: evil@example.com");
+  });
+
+  it("builds an RFC 2822 message to info@ with a UTF-8 HTML body", () => {
+    const msg = buildRfc2822Message(LEAD_ALERT_TO, subject, html);
+    const [head, body] = msg.split("\r\n\r\n");
+    expect(head).toContain("To: info@highlandernc.com");
+    expect(head).toContain('Content-Type: text/html; charset="UTF-8"');
+    expect(head).toContain("Content-Transfer-Encoding: base64");
+    expect(head).toContain("MIME-Version: 1.0");
+    expect(b64decode(body.replace(/\r\n/g, ""))).toBe(html);
+  });
+
+  it("returns base64url with no padding that decodes to the message", () => {
+    const raw = buildGmailRaw(LEAD_ALERT_TO, subject, html);
+    expect(raw).toMatch(/^[A-Za-z0-9_-]+$/);
+    const std = raw.replace(/-/g, "+").replace(/_/g, "/");
+    const padded = std + "=".repeat((4 - (std.length % 4)) % 4);
+    expect(b64decode(padded)).toBe(buildRfc2822Message(LEAD_ALERT_TO, subject, html));
   });
 });
