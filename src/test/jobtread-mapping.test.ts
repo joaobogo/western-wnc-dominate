@@ -58,10 +58,17 @@ describe("Customer / Account name rule", () => {
 });
 
 describe("Job name, Location, and Description", () => {
-  it("formats the job name as [Service] - [Town] - [First Name]", async () => {
-    const { buildJobName } = await mod();
-    expect(buildJobName(base)).toBe("Roofing Inquiry - Highlands - Jane");
-    expect(buildJobName({ ...base, first_name: "", name: "" })).toBe("Roofing Inquiry - Highlands");
+  it("names jobs the way Highlander does: RFG/CON - Last name - street number", async () => {
+    const { buildJobName, buildLeadLabel } = await mod();
+    expect(buildJobName({ ...base, property_address: "53 Mountain Rd" })).toBe(`RFG - ${base.last_name} - 53`);
+    expect(buildJobName(base)).toBe(`RFG - ${base.last_name}`);
+    expect(buildJobName({ ...base, last_name: "", name: "Greg & Linda DaLay" })).toBe("RFG - DaLay");
+    expect(buildJobName({ ...base, last_name: "", first_name: "Robin", name: "Robin" })).toBe("RFG - Robin");
+    expect(buildJobName({ name: "Ann Lee", last_name: "Lee", service_category: "construction", project_type: "addition", property_address: "1204B Hwy 64" })).toBe("CON - Lee - 1204B");
+    expect(buildJobName({ ...base, last_name: "Montgomery-Fitzwilliams-Smythe", property_address: "12345 Long Rd" })).toBe("RFG - Montgomery-Fitzw - 12345");
+    expect(buildJobName({ ...base, last_name: "Montgomery-Fitzwilliams-Smythe", property_address: "12345 Long Rd" }).length).toBeLessThanOrEqual(30);
+    // The readable service label still drives the job type.
+    expect(buildLeadLabel(base)).toBe("Roofing Inquiry - Highlands - Jane");
   });
 
   it("maps the location to address, then town", async () => {
@@ -248,25 +255,25 @@ describe("Paid landing page leads (/lp/*)", () => {
   });
 
   it("labels each landing route readably, never as a generic Website Lead", async () => {
-    const { buildJobName } = await mod();
-    expect(buildJobName(landing({ service_category: "roofing", project_type: "roof_repair" }))).toBe("Roof Repair Lead - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "roofing", project_type: "roof_replacement" }))).toBe("Roof Replacement Inquiry - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "roofing", project_type: "metal_roofing" }))).toBe("Metal Roofing Inquiry - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "roofing", project_type: "roofing" }))).toBe("Roofing Inquiry - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "roofing_and_construction", project_type: "roofing_and_construction" }))).toBe("Roofing & Construction Inquiry - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "general", project_type: "general" }))).toBe("Home Project Inquiry - Western NC - Mike");
+    const { buildLeadLabel } = await mod();
+    expect(buildLeadLabel(landing({ service_category: "roofing", project_type: "roof_repair" }))).toBe("Roof Repair Lead - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "roofing", project_type: "roof_replacement" }))).toBe("Roof Replacement Inquiry - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "roofing", project_type: "metal_roofing" }))).toBe("Metal Roofing Inquiry - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "roofing", project_type: "roofing" }))).toBe("Roofing Inquiry - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "roofing_and_construction", project_type: "roofing_and_construction" }))).toBe("Roofing & Construction Inquiry - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "general", project_type: "general" }))).toBe("Home Project Inquiry - Western NC - Mike");
   });
 
   it("does not downgrade construction landing leads to Design Services just because plans were not asked", async () => {
-    const { buildJobName } = await mod();
-    expect(buildJobName(landing({ service_category: "construction", project_type: "addition", page_url: "https://x/lp/construction" }))).toBe("Construction Addition Inquiry - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "construction", project_type: "outdoor_living", page_url: "https://x/lp/construction" }))).toBe("Outdoor Living Inquiry - Western NC - Mike");
-    expect(buildJobName(landing({ service_category: "construction", project_type: "construction", page_url: "https://x/lp/construction" }))).toBe("Construction Inquiry - Western NC - Mike");
+    const { buildLeadLabel } = await mod();
+    expect(buildLeadLabel(landing({ service_category: "construction", project_type: "addition", page_url: "https://x/lp/construction" }))).toBe("Construction Addition Inquiry - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "construction", project_type: "outdoor_living", page_url: "https://x/lp/construction" }))).toBe("Outdoor Living Inquiry - Western NC - Mike");
+    expect(buildLeadLabel(landing({ service_category: "construction", project_type: "construction", page_url: "https://x/lp/construction" }))).toBe("Construction Inquiry - Western NC - Mike");
   });
 
   it("still routes a non-landing construction lead with no plans to Design Services", async () => {
-    const { buildJobName } = await mod();
-    expect(buildJobName({ name: "Ann", first_name: "Ann", service_category: "construction", project_type: "addition", has_plans: false, source: "construction_intake" })).toBe("Design Services Inquiry - Western NC - Ann");
+    const { buildLeadLabel } = await mod();
+    expect(buildLeadLabel({ name: "Ann", first_name: "Ann", service_category: "construction", project_type: "addition", has_plans: false, source: "construction_intake" })).toBe("Design Services Inquiry - Western NC - Ann");
   });
 
   it("never merges two different first-name-only customers", async () => {

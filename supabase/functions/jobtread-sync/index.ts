@@ -870,9 +870,44 @@ export function buildLocationDisplayName(row: LeadRow): string {
   return who ? `${who} Property`.slice(0, 30) : "Property";
 }
 
-/** Job name = human-readable "[Service] - [Town] - [First Name]". */
-export function buildJobName(row: LeadRow): string {
+/** Readable service label ("Roof Repair Lead - Franklin - Jane"): the lead name and job type source. */
+export function buildLeadLabel(row: LeadRow): string {
   return humanizeLeadName(row);
+}
+
+/** Highlander's job naming: roof work is RFG, everything else is CON. */
+export function jobNamePrefix(row: LeadRow): "RFG" | "CON" {
+  return /roof|storm|leak|gutter|skylight/i.test(humanizeLeadName(row)) ? "RFG" : "CON";
+}
+
+/** Customer's last name: the parsed column, else the last word of the name (a lone first name stays). */
+export function jobLastName(row: LeadRow): string {
+  const last = cleanName((row as any).last_name);
+  if (last) return last;
+  const words = cleanName(row.name).split(" ").filter(Boolean);
+  return words[words.length - 1] ?? cleanName((row as any).first_name);
+}
+
+/** House number at the start of the property address ("53 Mountain Rd" → "53"). */
+export function jobStreetNumber(row: LeadRow): string {
+  const m = /^\s*(\d{1,6}[A-Za-z]?)\b/.exec(String(row.property_address ?? ""));
+  return m ? m[1] : "";
+}
+
+/**
+ * Job name = "RFG - Smith - 53" (roof work) or "CON - Smith - 53" (everything
+ * else), the way Highlander names jobs by hand. The street number is left off
+ * when there is no address. Fits JobTread's 30-character job name by
+ * shortening the last name, never the prefix or the number.
+ */
+export function buildJobName(row: LeadRow): string {
+  const prefix = `${isTestLead(row) ? "TEST " : ""}${jobNamePrefix(row)}`;
+  const number = jobStreetNumber(row);
+  const tail = number ? ` - ${number}` : "";
+  let last = jobLastName(row);
+  const room = 30 - prefix.length - tail.length - 3;
+  if (last.length > room) last = last.slice(0, Math.max(1, room)).trim();
+  return last ? `${prefix} - ${last}${tail}` : `${prefix}${tail}`;
 }
 
 /** Lead Notes = full intake summary. Stored ONLY on Job custom field. */
