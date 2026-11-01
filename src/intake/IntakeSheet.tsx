@@ -17,6 +17,7 @@ import {
   PREFERRED_CONTACT,
   PROPERTY_TYPES,
   RELATIONSHIPS,
+  ROOF_DETAIL_JOB_TYPES,
   ROOF_TYPES,
   SOURCES,
   SOURCE_DETAIL_TRIGGERS,
@@ -43,6 +44,7 @@ import { useMyDay } from "./useMyDay";
 import { MyDayCard, OutcomePicker } from "./MyDayCard";
 import { callPersonKey, cheer, dayKey, missedPersonKey, OTHER_GOAL, personKey, since, type Outcome, type PhonePerson } from "./tracker";
 import { PersonPicker, useOnThePhone, usePeople } from "./onThePhone";
+import { ExistingCustomerCard } from "./ExistingCustomer";
 
 type Saved = {
   id: string;
@@ -93,6 +95,8 @@ export default function IntakeSheet() {
     lead.town === OUTSIDE_AREA.id;
   const notOwner = Boolean(lead.relationship && lead.relationship !== "owner");
   const showBudget = Boolean(lead.jobType && BUDGET_JOB_TYPES.includes(lead.jobType));
+  // Sales wants the roof basics before anyone drives out, so ask them up top on roof work.
+  const showRoofDetails = !lead.jobType || ROOF_DETAIL_JOB_TYPES.includes(lead.jobType);
   const showSourceDetail = Boolean(
     lead.source && SOURCE_DETAIL_TRIGGERS.includes(lead.source),
   );
@@ -285,6 +289,12 @@ export default function IntakeSheet() {
               />
             </Question>
 
+            <ExistingCustomerCard
+              phone={lead.phone}
+              email={lead.email}
+              name={`${lead.firstName} ${lead.lastName}`.trim()}
+            />
+
             <Question label="Prefer a call or a text?">
               <Choices
                 options={PREFERRED_CONTACT}
@@ -406,6 +416,43 @@ export default function IntakeSheet() {
               </Question>
             </div>
 
+            {showRoofDetails && (
+              <div data-testid="roof-details">
+                <Question label="Roof type" script="What kind of roof is it now? Shingle, metal…?">
+                  <Choices
+                    options={ROOF_TYPES}
+                    value={lead.appointment.roofType ?? null}
+                    onChange={(v) => setAppointment("roofType", v ?? "")}
+                    columns={3}
+                  />
+                </Question>
+                <Question label="Stories">
+                  <Choices
+                    options={STORIES}
+                    value={lead.appointment.stories ?? null}
+                    onChange={(v) => setAppointment("stories", v ?? "")}
+                    columns={3}
+                  />
+                </Question>
+                <Question label="Steep pitch" script="Is it a steep roof, hard to walk on?">
+                  <Choices
+                    options={YES_NO}
+                    value={lead.appointment.steepPitch ?? null}
+                    onChange={(v) => setAppointment("steepPitch", v ?? "")}
+                    columns={3}
+                  />
+                </Question>
+                {(lead.jobType === "roof_repair" || lead.jobType === "storm_insurance") && (
+                  <Question label="Where is it leaking?">
+                    <TextField
+                      value={lead.appointment.leakLocation ?? ""}
+                      onChange={(v) => setAppointment("leakLocation", v)}
+                    />
+                  </Question>
+                )}
+              </div>
+            )}
+
             <Question label="Tell us a little more">
               <TextArea
                 value={lead.details}
@@ -502,41 +549,11 @@ export default function IntakeSheet() {
               className="hl-btn-quiet w-full sm:w-auto"
               onClick={() => setShowAppointment((v) => !v)}
             >
-              {showAppointment ? "Hide" : "Appointment details (optional)"}
+              {showAppointment ? "Hide" : "More appointment details (optional)"}
             </button>
 
             {showAppointment && (
               <div className="mt-4 space-y-5">
-                <Question label="Roof type">
-                  <Choices
-                    options={ROOF_TYPES}
-                    value={lead.appointment.roofType ?? null}
-                    onChange={(v) => setAppointment("roofType", v ?? "")}
-                    columns={3}
-                  />
-                </Question>
-                <Question label="Stories">
-                  <Choices
-                    options={STORIES}
-                    value={lead.appointment.stories ?? null}
-                    onChange={(v) => setAppointment("stories", v ?? "")}
-                    columns={3}
-                  />
-                </Question>
-                <Question label="Steep pitch">
-                  <Choices
-                    options={YES_NO}
-                    value={lead.appointment.steepPitch ?? null}
-                    onChange={(v) => setAppointment("steepPitch", v ?? "")}
-                    columns={3}
-                  />
-                </Question>
-                <Question label="Where is it leaking">
-                  <TextField
-                    value={lead.appointment.leakLocation ?? ""}
-                    onChange={(v) => setAppointment("leakLocation", v)}
-                  />
-                </Question>
                 <Question label="Gutters">
                   <Choices
                     options={GUTTER_STATE}

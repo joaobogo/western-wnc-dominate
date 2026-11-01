@@ -138,6 +138,9 @@ export const JOB_TYPES: Option[] = [
   { id: "inspection", label: "Inspection or not sure yet", points: 10 },
 ];
 
+/** Job types that get roof type, stories, pitch and leak spot near the top of the sheet. */
+export const ROOF_DETAIL_JOB_TYPES = ["roof_replacement", "roof_repair", "storm_insurance", "inspection", "gutters"];
+
 export const TIMINGS: Option[] = [
   {
     id: "emergency",

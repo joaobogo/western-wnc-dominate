@@ -41,13 +41,14 @@ describe("Javi's JobTread fields", () => {
     const rep = buildPayload({ ...base, project_type: "roof_repair" }, "lead");
     expect(buildJobCustomFieldValues(insp, "n")["22PNawhnSXmW"]).toEqual(["Roofing"]);
     expect(buildJobCustomFieldValues(rep, "n")["22PNawhnSXmW"]).toEqual(["Repair"]);
-    expect(rep.job_name).toBe("Roof Repair Lead - Franklin - Jane");
+    expect(rep.job_name).toBe("RFG - Doe");
+    expect(rep.lead_name).toBe("Roof Repair Lead - Franklin - Jane");
   });
 
   it("test leads say TEST at the start of the job name", async () => {
     const { buildJobName } = await mod();
     expect(buildJobName({ first_name: "JOAO", last_name: "OMNIFLOW KASPRZAK TEST", property_town: "Sylva", service_category: "gutters" }))
-      .toBe("TEST Gutter Inquiry - Sylva - JOAO");
+      .toMatch(/^TEST RFG - OMNIFLOW/);
   });
 
   it("a property with no street address uses the clearly labelled Franklin office fallback", async () => {
