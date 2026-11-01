@@ -2012,6 +2012,93 @@ function queueLeadAlertEmail(admin: any, table: string, row: any, kind: LeadAler
 const PUBLIC_SYNC_WINDOW_MS = 30 * 60 * 1000;
 
 /** True for internal service-role calls or a signed-in admin. */
+// ── Front desk: "Is this caller already a customer?" ─────────────────────
+// Read-only. Uses the same phone-then-email match the sync uses, so what the
+// call sheet shows is the customer the new job will be added to.
+
+/** Jobs read for the call-sheet customer check (newest first when sorting works). */
+export const CUSTOMER_LOOKUP_JOBS = 25;
+
+export function customerLookupQuery(accountId: string, sorted = true) {
+  return {
+    $: { grantKey: JOBTREAD_API_KEY },
+    account: {
+      $: { id: accountId },
+      id: {},
+      name: {},
+      jobs: {
+        $: { size: CUSTOMER_LOOKUP_JOBS, ...(sorted ? { sortBy: [{ field: "createdAt", order: "desc" }] } : {}) },
+        nodes: { id: {}, name: {}, number: {}, createdAt: {}, closedOn: {} },
+      },
+    },
+  };
+}
+
+export interface CustomerLookupResult {
+  found: boolean;
+  accountId?: string;
+  accountName?: string;
+  contactName?: string;
+  matchedBy?: "phone" | "email";
+  locations?: Array<{ name: string; address: string }>;
+  jobs?: Array<{ id: string; name: string; number: string; createdAt: string; open: boolean }>;
+}
+
+/** Shapes the JobTread reads into what the call sheet shows (newest jobs first, max 5). */
+export function summarizeCustomerLookup(
+  match: { accountId: string; contact: any; byEmail: boolean; locations: any[] },
+  account: any,
+): CustomerLookupResult {
+  const jobs = (account?.jobs?.nodes ?? [])
+    .filter((j: any) => j?.id)
+    .map((j: any) => ({
+      id: String(j.id),
+      name: String(j.name ?? ""),
+      number: j.number == null ? "" : String(j.number),
+      createdAt: String(j.createdAt ?? ""),
+      open: !j.closedOn,
+    }))
+    .sort((a: any, b: any) => b.createdAt.localeCompare(a.createdAt))
+    .slice(0, 5);
+  return {
+    found: true,
+    accountId: match.accountId,
+    accountName: String(account?.name ?? match.contact?.name ?? ""),
+    contactName: String(match.contact?.name ?? ""),
+    matchedBy: match.byEmail ? "email" : "phone",
+    locations: (match.locations ?? []).slice(0, 5).map((l: any) => ({
+      name: String(l?.name ?? ""),
+      address: String(l?.address ?? ""),
+    })),
+    jobs,
+  };
+}
+
+async function lookupCustomer(phone: string, email: string, name: string): Promise<CustomerLookupResult> {
+  const match = await findCustomerByContact({ phone, email, name });
+  if (!match) return { found: false };
+  let res = await paveFetchSafe(customerLookupQuery(match.accountId));
+  if (res?.error || !res?.account) res = await paveFetchSafe(customerLookupQuery(match.accountId, false));
+  return summarizeCustomerLookup(match, res?.account);
+}
+
+/** Signed-in front desk or admin user (the call sheet). */
+async function callerIsFrontDesk(req: Request): Promise<boolean> {
+  const token = (req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "").trim();
+  if (!token) return false;
+  try {
+    const admin = createClient(SUPABASE_URL, SERVICE_ROLE, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const { data, error } = await admin.auth.getUser(token);
+    if (error || !data?.user) return false;
+    const { data: ok } = await admin.rpc("is_front_desk", { _user_id: data.user.id });
+    return ok === true;
+  } catch {
+    return false;
+  }
+}
+
 async function callerIsPrivileged(req: Request): Promise<boolean> {
   const auth = req.headers.get("authorization") ?? "";
   const token = auth.replace(/^Bearer\s+/i, "").trim();
@@ -2096,6 +2183,23 @@ Deno.serve(async (req) => {
     return new Response(JSON.stringify({ ok: true, retried: results.length, results }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
+  }
+
+  // Call sheet: look up the caller in JobTread before a lead is saved. Read-only.
+  if (body.action === "customer_lookup") {
+    const json = (b: unknown, status = 200) =>
+      new Response(JSON.stringify(b), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    if (!(privileged || (await callerIsFrontDesk(req)))) return json({ error: "unauthorized" }, 401);
+    const phone = String(body.phone ?? "").slice(0, 40);
+    const email = String(body.email ?? "").trim().slice(0, 200);
+    if (!/^\+1\d{10}$/.test(toUsE164(phone) ?? "") && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({ ok: true, found: false });
+    if (!JOBTREAD_API_KEY) return json({ ok: false, error: "not_configured" });
+    try {
+      return json({ ok: true, ...(await lookupCustomer(phone, email, String(body.name ?? "").slice(0, 120))) });
+    } catch (e) {
+      console.error("customer_lookup failed:", (e as Error).message);
+      return json({ ok: false, error: "lookup_failed" });
+    }
   }
 
   // Dry run of the office alert email: renders a sample lead, sends nothing,
