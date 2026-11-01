@@ -7,6 +7,11 @@ export const LEAD_ALERT_TO = "info@highlandernc.com";
 export const LEAD_ALERT_EMAIL_SINCE = "2026-10-31T12:45:00Z";
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_mail/gmail/v1";
 
+/** Reads an env var in Deno; also type-checks and imports cleanly under the app's Node tests. */
+function denoEnv(name: string): string | undefined {
+  return (globalThis as { Deno?: { env: { get(k: string): string | undefined } } }).Deno?.env.get(name);
+}
+
 export type LeadAlertKind = "success" | "exhausted";
 
 type Row = Record<string, any>;
@@ -258,8 +263,8 @@ export async function sendLeadAlertEmail(
     const html = buildLeadAlertHtml(f, opts);
     if (opts.dryRun) return { sent: false, skipped: "dry_run", subject, html };
 
-    const lovableKey = Deno.env.get("LOVABLE_API_KEY");
-    const gmailKey = Deno.env.get("GOOGLE_MAIL_API_KEY");
+    const lovableKey = denoEnv("LOVABLE_API_KEY");
+    const gmailKey = denoEnv("GOOGLE_MAIL_API_KEY");
     if (!lovableKey || !gmailKey) {
       console.warn("lead alert email skipped: Gmail connection not linked");
       return { sent: false, skipped: "not_configured" };
