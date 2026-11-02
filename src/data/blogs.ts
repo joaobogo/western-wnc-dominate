@@ -9763,6 +9763,7 @@ import { october21Posts } from "./blogs-october21";
 import { october22Posts } from "./blogs-october22";
 import { october28Posts } from "./blogs-october28";
 import { october31Posts } from "./blogs-october31";
+import { november2Posts } from "./blogs-november2";
 import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
 import { BLOG_COVERS } from "./blog-covers";
 for (const p of october21Posts) {
