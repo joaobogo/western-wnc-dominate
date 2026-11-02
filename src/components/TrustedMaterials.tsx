@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Phone } from "lucide-react";
 // Same official artwork the shared Premier badge uses (the .asset.json URL only resolves inside Lovable).
-import certainteedPremier from "@/assets/certainteed-shinglemaster-premier-transparent.png";
+import certainteedPremier from "@/assets/certainteed-shinglemaster-premier-transparent.png?format=webp";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
@@ -65,7 +65,7 @@ const TrustedMaterials = () => {
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
-          backgroundImage: "url('/tartan.png')",
+          backgroundImage: "url('/tartan.webp')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
         }}

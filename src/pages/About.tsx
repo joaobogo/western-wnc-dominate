@@ -37,6 +37,7 @@ const leadership = [pickMember("luke-smith"), pickMember("kristy-smith")].map((m
   role: m.role,
   bio: m.bio[0],
   image: m.image,
+  srcSet: m.srcSet,
   alt: m.alt,
   credentials: m.details.slice(0, 3).map((d) => d.value),
   community: m.details.find((d) => d.label === "Community Involvement")?.value,
@@ -59,6 +60,7 @@ const teamMembers = [
   specialty: m.details.find((d) => d.label === "Specialty")?.value ?? m.role,
   bio: m.bio[0],
   image: m.image,
+  srcSet: m.srcSet,
   alt: m.alt,
 }));
 
@@ -146,7 +148,7 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
             {/* Subtle tartan accent */}
-            <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+            <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "300px auto" }} />
           </div>
           {/* Warm cream wash removed for clarity per client request */}
 
@@ -240,7 +242,7 @@ const About = () => {
                 >
                   <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
                     {person.image ? (
-                      <img width={1600} height={1067} loading="lazy" decoding="async" src={person.image} alt={person.alt} className="w-full h-full object-cover object-top hover:scale-[1.02] transition-all duration-700" />
+                      <img width={1600} height={1067} loading="lazy" decoding="async" src={person.image} srcSet={person.srcSet} sizes="(min-width: 1024px) 224px, (min-width: 768px) 192px, 100vw" alt={person.alt} className="w-full h-full object-cover object-top hover:scale-[1.02] transition-all duration-700" />
                     ) : (
                       <div className="text-center p-4">
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -293,7 +295,7 @@ const About = () => {
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
                     {person.image ? (
-                      <img width={1600} height={1067} loading="lazy" decoding="async" src={person.image} alt={person.alt} className="w-full h-full object-cover object-top group-hover:scale-[1.02] group-hover:scale-105 transition-all duration-700" />
+                      <img width={1600} height={1067} loading="lazy" decoding="async" src={person.image} srcSet={person.srcSet} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt={person.alt} className="w-full h-full object-cover object-top group-hover:scale-[1.02] group-hover:scale-105 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-6">
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -325,13 +327,13 @@ const About = () => {
         <section className="section-padding bg-secondary relative overflow-hidden">
           {/* Subtle Tartan Watermark — Section Level */}
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ 
-            backgroundImage: "url('/tartan.png')",
+            backgroundImage: "url('/tartan.webp')",
             backgroundSize: "400px auto"
           }} />
           
           {/* Accent Band at top */}
           <div className="absolute top-0 left-0 w-full h-1 opacity-20" style={{ 
-            backgroundImage: "url('/tartan.png')",
+            backgroundImage: "url('/tartan.webp')",
             backgroundSize: "100px auto"
           }} />
           <div className="container-tight">
@@ -454,7 +456,7 @@ const About = () => {
           <div 
             className="absolute inset-0 opacity-[0.05] pointer-events-none" 
             style={{ 
-              backgroundImage: "url('/tartan.png')",
+              backgroundImage: "url('/tartan.webp')",
               backgroundSize: "320px auto",
               backgroundRepeat: "repeat"
             }} 

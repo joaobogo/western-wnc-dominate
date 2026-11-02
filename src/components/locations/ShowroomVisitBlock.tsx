@@ -1,4 +1,6 @@
+import { useRef, useState } from "react";
 import { Clock, MapPin, Phone } from "lucide-react";
+import { useDeferredEmbed } from "@/lib/useDeferredEmbed";
 import Section from "@/components/layout/Section";
 import {
   BUSINESS,
@@ -11,11 +13,15 @@ import {
 /**
  * Physical showroom block for the town page that actually has a showroom.
  * Same visual language as the /contact office block: NAP, hours, phone,
- * a lazy Google Maps embed and an "Open in Google Maps" link.
+ * a deferred Google Maps embed (mounts after the visitor interacts and the
+ * map is near the viewport, or on "Load map") and an "Open in Google Maps" link.
  */
 const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
   const address = napLine(location);
   const encoded = encodeURIComponent(address);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const ready = useDeferredEmbed(mapRef);
+  const [manual, setManual] = useState(false);
 
   return (
     <Section density="default" width="wide">
@@ -61,16 +67,26 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
         </div>
 
         <div className="relative overflow-hidden border border-border bg-card flex flex-col">
-          <div className="aspect-video w-full relative flex-1">
-            <iframe
-              title={`Map showing the ${BUSINESS.brandName} ${location.locality} showroom`}
-              src={`https://www.google.com/maps?q=${encoded}&output=embed&z=14`}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 w-full h-full border-0"
-              allowFullScreen
-              aria-label={`Map showing ${address}`}
-            />
+          <div ref={mapRef} className="aspect-video w-full relative flex-1 bg-muted">
+            {ready || manual ? (
+              <iframe
+                title={`Map showing the ${BUSINESS.brandName} ${location.locality} showroom`}
+                src={`https://www.google.com/maps?q=${encoded}&output=embed&z=14`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full border-0"
+                allowFullScreen
+                aria-label={`Map showing ${address}`}
+              />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
+                <MapPin className="h-6 w-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
+                <p className="font-body text-body-sm text-muted-foreground max-w-sm">{address}</p>
+                <button type="button" onClick={() => setManual(true)} className="btn btn-secondary btn-sm">
+                  <span className="font-body text-body-sm font-semibold">Load map</span>
+                </button>
+              </div>
+            )}
           </div>
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encoded}`}

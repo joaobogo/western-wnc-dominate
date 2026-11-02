@@ -119,7 +119,7 @@ const GivingBack = () => {
 
         {/* ── FOCUS AREAS ── */}
         <section className="section-padding bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10">
             <div className="text-center mb-14 max-w-2xl mx-auto">
               <span className="eyebrow mb-3 block">Community Focus Areas</span>
@@ -190,7 +190,7 @@ const GivingBack = () => {
 
         {/* ── HOW TO CONNECT ── */}
         <section className="section-padding bg-heritage-charcoal text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10 max-w-3xl text-center">
             <ScrollReveal>
               <Users className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-6" aria-hidden="true" />

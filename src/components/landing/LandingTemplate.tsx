@@ -60,7 +60,7 @@ const LANDING_CSS = `
 .lp-hl{background-image:linear-gradient(transparent 62%,hsl(var(--highland-gold)/.38) 62%,hsl(var(--highland-gold)/.38) 92%,transparent 92%);padding:0 .08em}
 .lp-line{transform-origin:top;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .lp-in .lp-line,.lp-line.lp-in{transform:scaleY(1)}
-.lp-tartan{background-image:url(/tartan.png);background-size:auto 100%;background-repeat:repeat-x}
+.lp-tartan{background-image:url(/tartan.webp);background-size:auto 100%;background-repeat:repeat-x}
 @keyframes lp-kb{from{transform:scale(1.03)}to{transform:scale(1.11)}}
 .lp-kb{animation:lp-kb 30s ease-in-out infinite alternate;will-change:transform}
 .lp-strip{scrollbar-width:none;-webkit-overflow-scrolling:touch}

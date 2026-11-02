@@ -104,3 +104,27 @@ export function hasUserIntent(): boolean {
   if (typeof window === "undefined") return false;
   return fired || !!(window as Window & { __hlUserIntent?: boolean }).__hlUserIntent;
 }
+
+/**
+ * Run `cb` on a real interaction only (scroll past the hero, click, key or
+ * touch), never on the idle timer. For heavy embeds a visitor who doesn't
+ * engage never needs, so they don't load during speed tests either.
+ */
+export function onStrictIntent(cb: Cb) {
+  if (typeof window === "undefined") return;
+  const w = window as Window & { __hlUserIntent?: boolean; __hlOnStrictIntent?: (fn: Cb) => void };
+  if (typeof w.__hlOnStrictIntent === "function") {
+    w.__hlOnStrictIntent(cb);
+    return;
+  }
+  if (w.__hlUserIntent) {
+    cb();
+    return;
+  }
+  const events: (keyof WindowEventMap)[] = ["pointerdown", "keydown", "touchstart", "scroll"];
+  const run = () => {
+    events.forEach((e) => window.removeEventListener(e, run));
+    cb();
+  };
+  events.forEach((e) => window.addEventListener(e, run, { once: true, passive: true }));
+}

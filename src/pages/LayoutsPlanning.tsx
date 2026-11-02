@@ -113,7 +113,7 @@ const LayoutsPlanning = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/70 pointer-events-none" />
 
           {/* Subtle Tartan Overlay */}
-          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "400px auto" }} />
 
           {/* Blueprint-style grid lines overlay */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ 
@@ -199,7 +199,7 @@ const LayoutsPlanning = () => {
                   {/* Tartan Accent Box */}
                   <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary z-0 p-1">
                     <div className="w-full h-full border border-white/10 relative overflow-hidden">
-                      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "100px auto" }} />
+                      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "100px auto" }} />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <DraftingCompass className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       </div>
@@ -241,7 +241,7 @@ const LayoutsPlanning = () => {
         {/* 3. Service Pillar: The Triage — Short vs Long */}
         <section className="py-24 md:py-32 bg-secondary/30 relative">
           {/* Subtle Tartan Background */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "320px auto" }} />
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "320px auto" }} />
           
           <div className="container-tight">
             <div className="text-center max-w-3xl mx-auto mb-20">
@@ -290,7 +290,7 @@ const LayoutsPlanning = () => {
               <ScrollReveal variant="rise" delay={0.1}>
                 <div className="bg-primary border border-primary p-10 h-full flex flex-col shadow-floating group relative overflow-hidden text-white">
                   {/* Tartan subtle overlay in dark card */}
-                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
+                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "200px auto" }} />
                   
                   <div className="relative z-10">
                     <div className="mb-8">
@@ -385,7 +385,7 @@ const LayoutsPlanning = () => {
         {/* 5. Mountain-Grade Planning — Local Expertise */}
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           {/* Subtle Tartan Overlay */}
-          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "400px auto" }} />
           
           <div className="container-tight relative z-10">
             <div className="max-w-4xl mx-auto text-center">
@@ -434,7 +434,7 @@ const LayoutsPlanning = () => {
         {/* 7. Final CTA */}
         <section className="py-20 bg-secondary relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-border" />
-          <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "320px auto" }} />
+          <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "320px auto" }} />
           
           <div className="container-tight text-center relative z-10">
             <h2 className="text-3xl font-heading font-bold mb-8">Ready to define your project?</h2>

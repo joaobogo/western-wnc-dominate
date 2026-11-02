@@ -149,14 +149,14 @@ const Footer = () => {
     <footer className="bg-white text-foreground relative overflow-hidden border-t border-border pb-[calc(72px+env(safe-area-inset-bottom,0px))] md:pb-0">
       {/* Background Tartan Watermark — Ultra subtle */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ 
-        backgroundImage: "url('/tartan.png')",
+        backgroundImage: "url('/tartan.webp')",
         backgroundSize: "600px auto"
       }} />
 
       {/* Top Heritage Accent Bar */}
       <div className="h-[4px] w-full relative overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ 
-          backgroundImage: "url('/tartan.png')",
+          backgroundImage: "url('/tartan.webp')",
           backgroundSize: "120px auto"
         }} />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
@@ -385,7 +385,7 @@ const Footer = () => {
         <div 
           className="absolute inset-0 opacity-[0.015] pointer-events-none" 
           style={{ 
-            backgroundImage: "url('/tartan.png')",
+            backgroundImage: "url('/tartan.webp')",
             backgroundSize: "120px auto",
             backgroundRepeat: "repeat"
           }} 

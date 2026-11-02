@@ -29,6 +29,28 @@ const RealWorkWidget = ({
   const outputWrapRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  // The feed sits far below the fold and its loader is ~1 MB of script plus
+  // Google Maps, so it's only requested once the section is close to view.
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "800px 0px" },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
 
   /*
    * The RealWork embed injects markup we don't control, and it ships icon-only
@@ -71,6 +93,7 @@ const RealWorkWidget = ({
   };
 
   useEffect(() => {
+    if (!near) return;
     let cancelled = false;
     let observer: MutationObserver | null = null;
 
@@ -132,8 +155,8 @@ const RealWorkWidget = ({
     schedulePatch();
 
     // The RealWork loader is installed sitewide in index.html (vendor
-    // instructions, 2026-06-24) behind the intent gate for speed. This page's
-    // feed is primary content, so request the loader immediately on mount.
+    // instructions, 2026-06-24) behind the interaction gate for speed. Here the
+    // feed is content, so request the loader as soon as it's close to view.
     window.__loadRWL?.();
     initialize();
     window.addEventListener("rwlPluginReady", initialize, false);
@@ -155,7 +178,7 @@ const RealWorkWidget = ({
       if (observer) observer.disconnect();
       window.removeEventListener("rwlPluginReady", initialize);
     };
-  }, []);
+  }, [near]);
 
   // If the vendor plugin never renders (account or network problem) the whole
   // section disappears instead of showing an "unavailable" notice.

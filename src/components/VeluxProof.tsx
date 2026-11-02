@@ -44,7 +44,7 @@ const VeluxProof = () => {
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
-          backgroundImage: "url('/tartan.png')",
+          backgroundImage: "url('/tartan.webp')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
         }}
