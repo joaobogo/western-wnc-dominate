@@ -203,7 +203,7 @@ Most prevention comes down to managing heat, not chasing individual bumps.
 1. Have a contractor calculate your attic's net free ventilation area and confirm intake and exhaust are balanced.
 2. If you are reroofing a hot, sun-exposed slope, ask about more reflective shingle colors.
 3. Keep soffit vents clear of insulation and debris, and keep branches trimmed back from the roof.
-4. Schedule a seasonal look with a [mountain roof maintenance checklist](/blog/mountain-roofing-maintenance-checklist) so small issues get caught early.
+4. Schedule a seasonal look with a [mountain roof maintenance checklist](/roofing) so small issues get caught early.
 
 Avoid do-it-yourself patches. Spot repairs on blistered areas can hide a heat or ventilation problem if they are not paired with a broader assessment. Our [mountain roof ventilation guide](/blog/mountain-roof-ventilation-science) covers how elevation and tree cover affect attic airflow, and [ridge vent vs. box vent](/blog/ridge-vent-vs-box-vent) explains exhaust options.
 
@@ -351,7 +351,7 @@ Decking surprises are one of the most common places a roofing project goes wrong
 
 ## Ready for an Inspection?
 
-If you have spotted soft spots, staining or sagging, the next step is a qualified professional on your roof. We handle decking assessment and replacement as part of [roof replacement projects](/roofing/roof-replacement) across Western North Carolina, with written scopes that spell out decking allowances before tear-off. If the problem looks like a single leak, a [roof repair](/roofing/roof-repair) may be the right start, and our [repair vs. replacement guide](/blog/roof-repair-vs-replacement-wnc) helps you decide.
+If you have spotted soft spots, staining or sagging, the next step is a qualified professional on your roof. We handle decking assessment and replacement as part of [roof replacement projects](/roofing/roof-replacement) across Western North Carolina, with written scopes that spell out decking allowances before tear-off. If the problem looks like a single leak, a [roof repair](/roofing/roof-repair) may be the right start, and our [repair vs. replacement guide](/blog/roof-lifespan-mountain-home-wnc) helps you decide.
 
 Before your estimate, gather photos of interior staining or exterior sagging, your roof's age and repair history, dates of known leaks and notes on access. Then [contact us](/contact) to schedule an inspection.
 

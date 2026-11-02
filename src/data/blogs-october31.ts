@@ -67,7 +67,7 @@ Notice what is absent from the list: the color, finish, thickness or type of roo
 
 Western North Carolina homes often sit where the first factors apply. A house near a ridge line, on an exposed knoll, or at a cleared lot with a long view is higher and more isolated than a house on a valley floor. That is the main reason a mountain homeowner might think about lightning at all, and it is a reason rooted in the site, not the roof.
 
-If you are choosing between metal and shingles for a mountain property, lightning should not be the tiebreaker, because it does not favor one over the other in terms of strike likelihood. The better questions are about wind exposure, snow and ice shedding, moisture and longevity. Our guides on [metal versus shingle roofs for Western NC mountain homes](/blog/metal-vs-dimensional-shingle-wnc-mountain-homes) and [whether metal roofing suits a Western NC mountain home](/blog/metal-roofing-western-nc-mountain-home) cover those trade-offs.
+If you are choosing between metal and shingles for a mountain property, lightning should not be the tiebreaker, because it does not favor one over the other in terms of strike likelihood. The better questions are about wind exposure, snow and ice shedding, moisture and longevity. Our guides on [metal versus shingle roofs for Western NC mountain homes](/blog/metal-vs-dimensional-shingle-wnc-mountain-homes) and [whether metal roofing suits a Western NC mountain home](/roofing/metal) cover those trade-offs.
 
 If your house is the high point on a bare site, that is worth knowing for a different reason: it is the kind of location where a conversation about a dedicated lightning protection system makes sense. More on that below.
 
@@ -480,13 +480,13 @@ A membrane is not a permanent, forget-it product. [Inspect it regularly for wear
 * Stains on the ceiling below, or peeling paint on the fascia
 * Debris blocking drains, scuppers or gutters
 
-If you have an under-deck drainage system, build in access. Fine Homebuilding suggests [removable deck-board courses](https://www.finehomebuilding.com/project-guides/decks/site-built-deck-drainage) so you can wash out the drainage system and gutter periodically. In our area, pine needles and leaves make that a seasonal chore. Small fixes early cost far less than a rebuild, and our note on [small exterior repairs that prevent major damage](/blog/small-exterior-repairs-franklin-nc) shows the pattern.
+If you have an under-deck drainage system, build in access. Fine Homebuilding suggests [removable deck-board courses](https://www.finehomebuilding.com/project-guides/decks/site-built-deck-drainage) so you can wash out the drainage system and gutter periodically. In our area, pine needles and leaves make that a seasonal chore. Small fixes early cost far less than a rebuild, and our note on [small exterior repairs that prevent major damage](/blog/exterior-maintenance-checklist-highlands-nc) shows the pattern.
 
 ## Our perspective on mountain decks
 
 We see the same deck problems across Franklin, Highlands, Cashiers and Sylva. Elevation, wind-driven rain and long wet stretches expose every shortcut. Most of what we are called to fix is not a bad membrane but a good membrane with a bad edge: a ledger without proper flashing, a threshold nobody detailed, or a post sealed with caulk alone.
 
-Our view is simple. Treat a deck over a room as a small roof, and plan drainage before choosing a surface. Decide where the water goes first, then pick the product. Our posts on [mountain home drainage planning](/blog/designing-for-drainage-foundation-safety) and [decks and porches for mountain weather](/blog/decks-porches-outdoor-spaces-mountain-weather) go deeper on that thinking. And because we do both roofing and construction, flashing where a deck meets a wall or roof is work we are used to getting right. You can see the kind of work involved in our [deck and railing rebuild in Sylva](/projects/deck-railing-rebuild-sylva).
+Our view is simple. Treat a deck over a room as a small roof, and plan drainage before choosing a surface. Decide where the water goes first, then pick the product. Our posts on [mountain home drainage planning](/blog/designing-for-drainage-foundation-safety) and [decks and porches for mountain weather](/construction/outdoor-living) go deeper on that thinking. And because we do both roofing and construction, flashing where a deck meets a wall or roof is work we are used to getting right. You can see the kind of work involved in our [deck and railing rebuild in Sylva](/projects/deck-railing-rebuild-sylva).
 
 ## When to bring in a professional
 
