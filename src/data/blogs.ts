@@ -491,7 +491,7 @@ The foundation plan affects cost and timeline. Before you commit, read our guide
               path: "/service-areas/franklin-nc"
           }
       ],
-      content: "Skylight replacement cost depends on the unit, roof pitch, flashing, curb condition and interior finish work. Fixed, venting and tubular daylighting products have different scopes. The figures below are broad planning examples, not Highlander quotes; an on-site inspection determines your written price.\n\n> **TL;DR:**\n>\n> - The installed cost for fixed skylights ranges from $800 to $2,400, while manual venting units cost between $1,500 and $3,500, with electric and solar options being more expensive.\n> - Roof complexity, including pitch, layers, and material, significantly influences installation costs, with curb-mounted skylights generally costing more than deck-mounted ones.\n> - Repairing components like glass or seals is much cheaper than full replacement, and many leaks stem from flashing or roof integration issues rather than the skylight itself.\n> - The federal Energy Efficient Home Improvement Credit is unavailable for property placed in service after December 31, 2025. Do not subtract it from a new 2026 skylight budget.\n> - Accurate bids require site visits to assess flashing, roof conditions, and interior repairs, as superficial quotes often omit critical costs that determine the final project budget.\n\n## Cost by skylight type: fixed, venting, and tubular units\n\nSkylight prices vary more by type than almost any other factor. A simple fixed unit with no moving parts costs far less than a motorized venting skylight, and tubular models sit at the budget end of the spectrum because they require minimal structural work.\n\nBased on manufacturer and industry pricing data, here is what installed costs typically look like:\n\n- **Fixed skylights**: about $800 to $2,400 installed, the most common and least expensive option for adding light without ventilation, according to [VELUX's cost breakdown](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight).\n- **Manual venting skylights**: roughly $1,500 to $3,500 installed, reflecting the added hardware and flashing work for an operable unit, per the same [VELUX pricing data](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight).\n- **Electric or solar-powered venting skylights**: often several thousand dollars installed once you add the motor, wiring, or solar components.\n- **Tubular skylights**: generally the cheapest option, since they use a reflective tube instead of a full shaft and glazing assembly.\n\nIf your existing skylight is sound but a component failed, you may not need a full replacement. Glass-only repairs typically run $300 to $800, while motor replacement on an electric unit falls between $110 and $510, according to [VELUX](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight). Flashing-only repairs vary based on roof type but are almost always cheaper than swapping the entire unit.\n\nA typical scenario: a homeowner replacing an aging fixed skylight on an asphalt shingle roof might pay around $1,200 for the unit and standard installation, with costs climbing if the old flashing needs a full rebuild. Our guide on [Western NC skylight replacement projects](/blog/skylight-replacement-wnc) walks through several real cost scenarios in more detail.\n\n## What actually drives your skylight installation price\n\nTwo quotes for the \"same\" skylight can differ by hundreds of dollars, and the gap almost always comes down to roof complexity rather than the unit itself.\n\nCurb-mounted and deck-mounted skylights require different roof integration details. The qualified installer must follow the exact skylight and flashing-kit instructions, permitted roof pitches and applicable code. Do not apply one generic shingle cutback dimension to every model.\n\nOther factors that move the price:\n\n- **Roof pitch and layers**: steep roofs and multiple existing shingle layers add labor time and often require extra safety equipment.\n- **Roofing material**: metal roofs require different flashing techniques than asphalt shingles, which can add cost.\n- **Glazing upgrades**: low-E coatings and double or triple-pane glass raise material cost but improve energy performance.\n- **Skylight size and shaft length**: larger units and longer light shafts mean more interior finish work.\n- **Access and scheduling**: steep or hard-to-reach roofs, plus emergency or off-season scheduling, often carry a premium.\n\n**Pro Tip:** *Ask every contractor whether their quote includes interior drywall or trim repair around the shaft; it's one of the most commonly missed line items in skylight bids.*\n\n## Should you repair or replace your skylight?\n\nNot every leaking or foggy skylight needs full replacement. A short inspection usually tells you which direction makes sense.\n\nSigns that point toward replacement:\n\n1. **Persistent leaks** that return after flashing repairs, which often means the unit itself has failed.\n2. **Rot or structural damage** around the curb or shaft framing.\n3. **Age over 20 to 30 years**, the typical functional lifespan building science guidance points to for skylight units, per Building Science Education.\n4. **Chronic condensation** that persists even after improving ventilation, which can signal failed insulating glass.\n\nSigns that favor a simpler repair:\n\n1. An isolated cracked or fogged glass panel with an otherwise sound frame.\n2. A failed rubber gasket or seal around the perimeter.\n3. A broken motor on an otherwise functional electric unit.\n\nA thorough inspection should check for interior water stains, attic moisture or daylight gaps, cutback and condition of the flashing, and the state of the curb and surrounding sealant. Many leaks actually originate in the flashing or roof integration rather than the skylight glazing itself, according to Building Science Education's inspection guidance, so a proper diagnosis can save you from paying for a replacement you didn't need. Our [guide to diagnosing skylight leaks](/blog/skylight-leaks-roof-or-skylight-wnc) covers this distinction in more depth.\n\n## Budgeting, insurance, and the federal tax credit\n\nA few tools can lower your out-of-pocket cost, but each comes with specific rules worth understanding before you count on them.\n\nThe Energy Efficient Home Improvement Credit is unavailable for property placed in service after December 31, 2025. Its former 30% credit and $600 windows-and-skylights limit do not apply to new 2026 installations. Consult current IRS guidance and a tax professional about prior-year eligibility or any separate incentive.\n\nYour policy determines whether sudden storm damage is covered; exclusions, wear, maintenance history and deductibles matter. Document damage from the ground and contact your insurer promptly. Coverage is not guaranteed.\n\nWhen budgeting, build in:\n\n- A **contingency of 10% to 20%** for unexpected flashing or structural repairs once the old unit comes out.\n- **Permit fees**, which vary by jurisdiction but are common for skylight work tied to roofing.\n- **Interior finish repairs**, especially drywall or trim damaged by a leak before replacement.\n\n## How to get accurate, comparable quotes\n\nA vague quote is where cost overruns start. A complete bid should include the unit cost, a specific flashing detail, estimated labor hours, warranty terms, permit handling, any interior repair work, and disposal of the old unit.\n\nBefore signing anything, ask:\n\n1. **What warranty covers the workmanship**, separate from the manufacturer's product warranty?\n2. **Who handles flashing integration** if the skylight replacement happens alongside new roofing?\n3. **Can you provide proof of insurance and references** from similar skylight projects?\n\n**Pro Tip:** *When comparing bids, make sure each one lists the same skylight brand, size, and glazing package; a lower number often means a lower-grade unit, not a better deal.*\n\nA site visit is worth requiring rather than accepting a phone estimate, since flashing complexity and shaft length are hard to judge without seeing the roof. For more on what the installation process physically involves, see our [technical overview of skylight installation](/blog/skylight-installation-western-nc).\n\n## How our mountain-roofing experience reduces cost and risk\n\nSkylight installation and replacement are integrated with roofing work in areas with challenging weather and terrain, requiring specialized flashing details and attention to mountain roof demands.\n\nRequest an on-site assessment of the unit, curb, flashing and surrounding roof, then a written scope identifying any interior repair needs. Confirm crew responsibilities and communication arrangements before work begins.\n\n## What homeowners get wrong about skylight costs\n\nThe biggest mistake we see is treating the skylight unit price as the whole budget. The unit itself is often the smaller line item; flashing integration, curb condition, and interior shaft repairs decide whether a project costs $1,200 or $3,500. Homeowners who get a surprise bill almost always skipped a real inspection of the flashing and roof deck before signing.\n\nThe second mistake is assuming condensation always means a failing skylight. It's frequently an indoor humidity problem that ventilation or a dehumidifier fixes for far less than a replacement, according to [VELUX's own guidance on condensation](https://veluxusa.kb.help/why-is-there-condensation-on-my-velux-skylight/). Before you budget for a new unit, rule out the cheaper fix.\n\nIf you take one thing from this guide, let it be this: get a contractor on your roof before you get a number in your head. The roof, not the catalog price, decides what you'll actually pay.\n\n## Ready for a written skylight estimate?\n\nIf your skylight is leaking, fogging, or aging, professional evaluation typically begins with a site visit to check the unit, curb, and flashing, followed by a written scope and price, so you know what to expect before work starts.\n\nReach out through our [skylight installation page](/roofing/skylights) to schedule an inspection, and if the project overlaps with broader roof work, we can walk you through that scope at the same visit.\n\n## Sources\n\n- [Energy Efficient Home Improvement Credit | IRS](https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit)\n- [How much does it cost to replace a skylight? | VELUX USA](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight)\n\n## Plan your Western North Carolina project\n\nReview our [skylights](/roofing/skylights) services and [Franklin service area](/service-areas/franklin-nc). [Request a written estimate](/request-inspection) for your roof and drainage conditions.\n\nLeave roof access, ladder inspections and repairs to qualified professionals.\n"
+      content: "Skylight replacement cost depends on the unit, roof pitch, flashing, curb condition and interior finish work. Fixed, venting and tubular daylighting products have different scopes. The figures below are broad planning examples, not Highlander quotes; an on-site inspection determines your written price.\n\n> **TL;DR:**\n>\n> - The installed cost for fixed skylights ranges from $800 to $2,400, while manual venting units cost between $1,500 and $3,500, with electric and solar options being more expensive.\n> - Roof complexity, including pitch, layers, and material, significantly influences installation costs, with curb-mounted skylights generally costing more than deck-mounted ones.\n> - Repairing components like glass or seals is much cheaper than full replacement, and many leaks stem from flashing or roof integration issues rather than the skylight itself.\n> - The federal Energy Efficient Home Improvement Credit is unavailable for property placed in service after December 31, 2025. Do not subtract it from a new 2026 skylight budget.\n> - Accurate bids require site visits to assess flashing, roof conditions, and interior repairs, as superficial quotes often omit critical costs that determine the final project budget.\n\n## Cost by skylight type: fixed, venting, and tubular units\n\nSkylight prices vary more by type than almost any other factor. A simple fixed unit with no moving parts costs far less than a motorized venting skylight, and tubular models sit at the budget end of the spectrum because they require minimal structural work.\n\nBased on manufacturer and industry pricing data, here is what installed costs typically look like:\n\n- **Fixed skylights**: about $800 to $2,400 installed, the most common and least expensive option for adding light without ventilation, according to [VELUX's cost breakdown](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight).\n- **Manual venting skylights**: roughly $1,500 to $3,500 installed, reflecting the added hardware and flashing work for an operable unit, per the same [VELUX pricing data](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight).\n- **Electric or solar-powered venting skylights**: often several thousand dollars installed once you add the motor, wiring, or solar components.\n- **Tubular skylights**: generally the cheapest option, since they use a reflective tube instead of a full shaft and glazing assembly.\n\nIf your existing skylight is sound but a component failed, you may not need a full replacement. Glass-only repairs typically run $300 to $800, while motor replacement on an electric unit falls between $110 and $510, according to [VELUX](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight). Flashing-only repairs vary based on roof type but are almost always cheaper than swapping the entire unit.\n\nA typical scenario: a homeowner replacing an aging fixed skylight on an asphalt shingle roof might pay around $1,200 for the unit and standard installation, with costs climbing if the old flashing needs a full rebuild. Our guide on [Western NC skylight replacement projects](/roofing/skylights) walks through several real cost scenarios in more detail.\n\n## What actually drives your skylight installation price\n\nTwo quotes for the \"same\" skylight can differ by hundreds of dollars, and the gap almost always comes down to roof complexity rather than the unit itself.\n\nCurb-mounted and deck-mounted skylights require different roof integration details. The qualified installer must follow the exact skylight and flashing-kit instructions, permitted roof pitches and applicable code. Do not apply one generic shingle cutback dimension to every model.\n\nOther factors that move the price:\n\n- **Roof pitch and layers**: steep roofs and multiple existing shingle layers add labor time and often require extra safety equipment.\n- **Roofing material**: metal roofs require different flashing techniques than asphalt shingles, which can add cost.\n- **Glazing upgrades**: low-E coatings and double or triple-pane glass raise material cost but improve energy performance.\n- **Skylight size and shaft length**: larger units and longer light shafts mean more interior finish work.\n- **Access and scheduling**: steep or hard-to-reach roofs, plus emergency or off-season scheduling, often carry a premium.\n\n**Pro Tip:** *Ask every contractor whether their quote includes interior drywall or trim repair around the shaft; it's one of the most commonly missed line items in skylight bids.*\n\n## Should you repair or replace your skylight?\n\nNot every leaking or foggy skylight needs full replacement. A short inspection usually tells you which direction makes sense.\n\nSigns that point toward replacement:\n\n1. **Persistent leaks** that return after flashing repairs, which often means the unit itself has failed.\n2. **Rot or structural damage** around the curb or shaft framing.\n3. **Age over 20 to 30 years**, the typical functional lifespan building science guidance points to for skylight units, per Building Science Education.\n4. **Chronic condensation** that persists even after improving ventilation, which can signal failed insulating glass.\n\nSigns that favor a simpler repair:\n\n1. An isolated cracked or fogged glass panel with an otherwise sound frame.\n2. A failed rubber gasket or seal around the perimeter.\n3. A broken motor on an otherwise functional electric unit.\n\nA thorough inspection should check for interior water stains, attic moisture or daylight gaps, cutback and condition of the flashing, and the state of the curb and surrounding sealant. Many leaks actually originate in the flashing or roof integration rather than the skylight glazing itself, according to Building Science Education's inspection guidance, so a proper diagnosis can save you from paying for a replacement you didn't need. Our [guide to diagnosing skylight leaks](/blog/skylight-leaks-roof-or-skylight-wnc) covers this distinction in more depth.\n\n## Budgeting, insurance, and the federal tax credit\n\nA few tools can lower your out-of-pocket cost, but each comes with specific rules worth understanding before you count on them.\n\nThe Energy Efficient Home Improvement Credit is unavailable for property placed in service after December 31, 2025. Its former 30% credit and $600 windows-and-skylights limit do not apply to new 2026 installations. Consult current IRS guidance and a tax professional about prior-year eligibility or any separate incentive.\n\nYour policy determines whether sudden storm damage is covered; exclusions, wear, maintenance history and deductibles matter. Document damage from the ground and contact your insurer promptly. Coverage is not guaranteed.\n\nWhen budgeting, build in:\n\n- A **contingency of 10% to 20%** for unexpected flashing or structural repairs once the old unit comes out.\n- **Permit fees**, which vary by jurisdiction but are common for skylight work tied to roofing.\n- **Interior finish repairs**, especially drywall or trim damaged by a leak before replacement.\n\n## How to get accurate, comparable quotes\n\nA vague quote is where cost overruns start. A complete bid should include the unit cost, a specific flashing detail, estimated labor hours, warranty terms, permit handling, any interior repair work, and disposal of the old unit.\n\nBefore signing anything, ask:\n\n1. **What warranty covers the workmanship**, separate from the manufacturer's product warranty?\n2. **Who handles flashing integration** if the skylight replacement happens alongside new roofing?\n3. **Can you provide proof of insurance and references** from similar skylight projects?\n\n**Pro Tip:** *When comparing bids, make sure each one lists the same skylight brand, size, and glazing package; a lower number often means a lower-grade unit, not a better deal.*\n\nA site visit is worth requiring rather than accepting a phone estimate, since flashing complexity and shaft length are hard to judge without seeing the roof. For more on what the installation process physically involves, see our [technical overview of skylight installation](/blog/skylight-installation-western-nc).\n\n## How our mountain-roofing experience reduces cost and risk\n\nSkylight installation and replacement are integrated with roofing work in areas with challenging weather and terrain, requiring specialized flashing details and attention to mountain roof demands.\n\nRequest an on-site assessment of the unit, curb, flashing and surrounding roof, then a written scope identifying any interior repair needs. Confirm crew responsibilities and communication arrangements before work begins.\n\n## What homeowners get wrong about skylight costs\n\nThe biggest mistake we see is treating the skylight unit price as the whole budget. The unit itself is often the smaller line item; flashing integration, curb condition, and interior shaft repairs decide whether a project costs $1,200 or $3,500. Homeowners who get a surprise bill almost always skipped a real inspection of the flashing and roof deck before signing.\n\nThe second mistake is assuming condensation always means a failing skylight. It's frequently an indoor humidity problem that ventilation or a dehumidifier fixes for far less than a replacement, according to [VELUX's own guidance on condensation](https://veluxusa.kb.help/why-is-there-condensation-on-my-velux-skylight/). Before you budget for a new unit, rule out the cheaper fix.\n\nIf you take one thing from this guide, let it be this: get a contractor on your roof before you get a number in your head. The roof, not the catalog price, decides what you'll actually pay.\n\n## Ready for a written skylight estimate?\n\nIf your skylight is leaking, fogging, or aging, professional evaluation typically begins with a site visit to check the unit, curb, and flashing, followed by a written scope and price, so you know what to expect before work starts.\n\nReach out through our [skylight installation page](/roofing/skylights) to schedule an inspection, and if the project overlaps with broader roof work, we can walk you through that scope at the same visit.\n\n## Sources\n\n- [Energy Efficient Home Improvement Credit | IRS](https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit)\n- [How much does it cost to replace a skylight? | VELUX USA](https://www.veluxusa.com/inspiration/blog/how-much-does-it-cost-to-replace-a-skylight)\n\n## Plan your Western North Carolina project\n\nReview our [skylights](/roofing/skylights) services and [Franklin service area](/service-areas/franklin-nc). [Request a written estimate](/request-inspection) for your roof and drainage conditions.\n\nLeave roof access, ladder inspections and repairs to qualified professionals.\n"
   },
   {
       slug: "drip-edge-vs-gutter-apron",
@@ -1604,7 +1604,7 @@ Real-world lifespan depends on more than the product spec sheet:
 
 ## Cost and long-term value
 
-3-tab shingles cost less per bundle and per square, which is why they still show up on budget-driven builds and rental properties. Dimensional shingles cost more upfront, but that gap narrows when you factor in service life. A [roof replacement in Western North Carolina](/blog/roof-replacement-cost-factors-western-nc) that leans dimensional is often a lower cost-per-year investment than one that saves money with 3-tab now and needs a full [redo sooner](/blog/roof-lifespan-mountain-home-wnc).
+3-tab shingles cost less per bundle and per square, which is why they still show up on budget-driven builds and rental properties. Dimensional shingles cost more upfront, but that gap narrows when you factor in service life. A [roof replacement in Western North Carolina](/roofing-cost-western-nc) that leans dimensional is often a lower cost-per-year investment than one that saves money with 3-tab now and needs a full [redo sooner](/blog/roof-lifespan-mountain-home-wnc).
 
 The math favors dimensional in most ownership timelines, but not every project needs that math:
 
@@ -1822,7 +1822,7 @@ Material choice at elevation comes down to how a product sheds snow, resists win
 - **Synthetic slate and shake composites** balance weight, appearance, and snow behavior, giving the look of natural slate or cedar without the full structural load penalty.
 - **Natural materials** like heavy slate, clay tile, or traditional cedar shake often demand additional framing to carry their weight safely under added snow load.
 
-Our post on [metal roofing advantages in mountain conditions](/blog/metal-roofing-highlands-nc-benefits) walks through how standing seam performs across a full mountain winter, including snow shedding behavior that homeowners should plan around before installation. For a broader look at materials by elevation, see [choosing materials for high elevation](/blog/choosing-materials-for-high-elevation).
+Our post on [metal roofing advantages in mountain conditions](/roofing/metal) walks through how standing seam performs across a full mountain winter, including snow shedding behavior that homeowners should plan around before installation. For a broader look at materials by elevation, see [choosing materials for high elevation](/blog/choosing-materials-for-high-elevation).
 
 > **Pro Tip:** Ask any contractor quoting metal roofing to specify panel gauge, seam type, and fastening frequency in writing, since those three details determine wind performance far more than the metal's finish or color.
 
@@ -1896,7 +1896,7 @@ We build mountain grade roofs around durable cladding, engineered snow retention
 - [Choosing Materials for High Elevation](/blog/choosing-materials-for-high-elevation)
 - [Mountain Roof Ventilation Science](/blog/mountain-roof-ventilation-science)
 - [Ice Dam Prevention for Mountain Homes](/blog/ice-dam-prevention-mountain-homes)
-- [Metal Roofing in Highlands, NC](/blog/metal-roofing-highlands-nc-benefits)`,
+- [Metal Roofing in Highlands, NC](/roofing/metal)`,
   },
   {
     slug: "skylight-placement",
@@ -1996,7 +1996,7 @@ Most skylight leaks trace back to a handful of avoidable mistakes rather than th
 
 [Industry flashing guidance](https://cdn-web.iccsafe.org/wp-content/uploads/proclamations/TN05-Window-and-Door-Flashing_pdf.pdf) outlines a specific sequence: pan flashing first, then step flashing integrated with the roof’s water-resistive barrier, then head flashing last so water always sheds downhill over the layer beneath it.
 
-Uninsulated light tunnels also lose heat and can cause condensation drips inside the tube. Wrapping the tunnel in insulation keeps the space between the roof opening and the ceiling from acting as a thermal bridge. Our [skylight replacement guidance](/blog/skylight-replacement-wnc) covers how aging flashing and insulation show up as performance loss over time.
+Uninsulated light tunnels also lose heat and can cause condensation drips inside the tube. Wrapping the tunnel in insulation keeps the space between the roof opening and the ceiling from acting as a thermal bridge. Our [skylight replacement guidance](/roofing/skylights) covers how aging flashing and insulation show up as performance loss over time.
 
 ## How to Plan Placement for Even Daylighting and Low Glare
 A practical placement plan takes three steps:
@@ -2063,9 +2063,9 @@ Ready to find the right spot on your roof? [Request a skylight installation esti
 
 ## Recommended Reading
 - [Natural Light Layout Strategies WNC](/roofing)
-- [VELUX Skylights for WNC Mountain Homes](/blog/velux-skylights-mountain-homes)
+- [VELUX Skylights for WNC Mountain Homes](/roofing/skylights)
 - [Skylight Installation in Western NC](/blog/skylight-installation-western-nc)
-- [Skylight Replacement in Western NC](/blog/skylight-replacement-wnc)`,
+- [Skylight Replacement in Western NC](/roofing/skylights)`,
   },
   {
     slug: "half-round-vs-k-style-gutters",
@@ -4184,7 +4184,7 @@ A sound repair should preserve designed drainage paths, including weep openings.
 
 Repair is often reasonable when the glass and frame remain sound, the leak is isolated to serviceable flashing or a replaceable gasket, and the surrounding deck is dry. Replacement becomes more likely when the frame is cracked, the insulated glass seal has failed, the unit is difficult to match, or the roof opening has a history of repeated repairs.
 
-The age and condition of the surrounding roof also matter. If a roof replacement is already planned, coordinating the skylight work can avoid disturbing new shingles later. The [skylight replacement guide](/blog/skylight-replacement-wnc) explains the signs that a complete unit has reached the practical end of its service life.
+The age and condition of the surrounding roof also matter. If a roof replacement is already planned, coordinating the skylight work can avoid disturbing new shingles later. The [skylight replacement guide](/roofing/skylights) explains the signs that a complete unit has reached the practical end of its service life.
 
 ## Why Mountain Weather Changes the Repair
 
@@ -5069,36 +5069,6 @@ Clogged gutters accelerate ice dam formation by trapping water at the roof edge.
 If you've had ice dams before, we can assess your roof and attic to identify the root cause and install permanent solutions. Call ${PHONE_DISPLAY}.`,
   },
   {
-    slug: "mountain-home-addition-planning",
-    title: "Planning a Home Addition in WNC: Technical Hurdles to Solve First",
-    excerpt: "Building on a mountain slope requires more than just a footprint. Learn the unique engineering and permitting steps for WNC additions.",
-    category: "Construction",
-    date: "2026-03-01",
-    image: "/media/e1feb40c-mountain-home-addition-planning.webp", readTime: "8 min",
-    metaTitle: "WNC Home Addition Planning Guide | Highlander Building Services",
-    metaDescription: "Planning an addition in Western NC? Learn about terrain engineering, permitting, and structural integration from mountain building experts.",
-    content: `Adding square footage to a mountain home is one of the most rewarding investments you can make — but it's also one of the most technically demanding. Unlike building on flat land, WNC additions require a deeper level of planning before the first board is cut.
-
-## 1. Terrain and Soil Engineering
-Highlands and Cashiers terrain often means building on significant slopes. We start by assessing the structural feasibility of your lot. Will you need a daylight basement foundation? A pier system? Soil stability is the silent driver of your addition's budget.
-
-## 2. Integrating with Existing Structures
-An addition shouldn't look like an after-thought. We focus on 'structural flow' — ensuring the new rooflines tie in perfectly and the interior layout makes logical sense with your current floor plan.
-
-## 3. HVAC and Utility Capacity
-Don't assume your current system can handle another 500 square feet. We evaluate your septic capacity (critical for bedroom additions in WNC) and HVAC load early in the design phase.
-
-## 4. Permitting and Zoning
-Every county — Macon, Jackson, Haywood — has unique rules for setbacks, impervious surface limits, and mountain-ridge protections. We handle the coordination to ensure your plan is fully compliant before work starts.
-
-## How Highlander Helps
-Our Design branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`,
-    relatedServices: [
-      { label: "Design", path: "/construction/design" },
-      { label: "Home Additions", path: "/construction/additions" }
-    ],
-  },
-  {
     slug: "planning-your-mountain-home-layout",
     title: "Planning Your Mountain Home Layout: Flow, Views, and Function",
     excerpt: "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
@@ -5162,49 +5132,6 @@ You'll receive:
 ## Request Your Free Estimate
 
 Call ${PHONE_DISPLAY} during office hours or submit the online estimate form. Highlander will review your request and discuss the appropriate next step.`,
-  },
-  {
-    slug: "choosing-roofing-contractor-wnc",
-    title: "How to Choose a Roofing Contractor in Western North Carolina",
-    excerpt: "Not all roofers are equal. Here's what WNC homeowners should look for — and what red flags to avoid.",
-    category: "Tips",
-    date: "2025-12-12",
-    image: "/media/e188b978-choosing-roofing-contractor-wnc.webp", readTime: "6 min",
-    metaTitle: "How to Choose a Roofing Contractor in WNC | Highlander Building Services",
-    metaDescription: "Tips for choosing a trusted roofing contractor in Western NC. What to look for, red flags to avoid, and questions to ask before hiring.",
-    content: `Choosing the wrong roofing contractor can cost you thousands — or worse, leave you with a roof that fails prematurely. Here's how to find the right one in WNC.
-
-## Must-Have Qualifications
-
-1. **NC General Contractor License.** Required for roofing work in North Carolina. Ask for the license number and verify it.
-2. **Insurance.** Both general liability and workers' compensation. Ask for certificates.
-3. **Local presence.** A contractor who lives and works in WNC understands mountain roofing challenges that out-of-state storm chasers don't.
-4. **Manufacturer certifications.** CertainTeed ShingleMaster Credentialed Contractor or similar certifications indicate training and quality standards.
-
-## Red Flags to Avoid
-
-- **Door-to-door solicitation after storms.** Legitimate contractors don't chase storms.
-- **No written contract.** Everything should be documented before work begins.
-- **Large upfront deposits.** Never pay more than 30% before work starts.
-- **No physical address.** Contractors without a verifiable local presence can be difficult to reach if issues arise after the project.
-- **Pressure to sign immediately.** Good contractors give you time to decide.
-
-## Questions to Ask
-
-- How long have you been roofing in WNC?
-- Can you provide local references?
-- What warranty do you offer on labor?
-- Will you handle the permit process?
-- Who will supervise the crew on site?
-
-## Why Homeowners Choose Highlander
-
-- Family-owned since 2017
-- Licensed NC General Contractor
-- CertainTeed ShingleMaster Credentialed Contractors
-- Based in Franklin & Sylva — not out of state
-- Free estimates with written scopes
-- Financing available`,
   },
   {
     slug: "emergency-roof-repair-wnc",
@@ -5298,47 +5225,6 @@ High-elevation clouds often 'sit' on the ridges, creating 100% humidity for days
 Don't pick materials based on looks alone. Let us help you select a palette that is both beautiful and 'mountain-proof.'`
   },
   {
-    slug: "roof-financing-options-western-nc",
-    title: "Roof Financing Options for Western NC Homeowners",
-    excerpt: "A new roof is a major investment. Here are the financing options available to make it affordable.",
-    category: "Financing",
-    date: "2025-11-28",
-    image: "/media/a2b1b6c6-roof-financing-options-western-nc.webp", readTime: "5 min",
-    metaTitle: "How Roof Financing Works in Western NC | Highlander",
-    metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Building Services.",
-    content: `A new roof is one of the most important investments you'll make in your home — but that doesn't mean it has to strain your finances. Here's how WNC homeowners are making it work.
-
-## Financing Options We Offer
-
-### Monthly Payment Plans
-Financing is offered through third-party lenders, so availability, rates, terms and approval depend on the lender and your own situation. Ask about current options during your free estimate.
-
-### Insurance Claims
-If your roof damage is storm-related, your homeowner's insurance may cover most or all of the replacement cost. We handle the documentation and adjuster coordination.
-
-### Home Equity Options
-Many homeowners use home equity lines of credit for roof replacement. The interest may be tax-deductible — consult your tax advisor.
-
-## What Affects Your Roof Investment
-
-- **Roof size and complexity**
-- **Material choice** (shingle vs. metal)
-- **Existing damage requiring repair**
-- **Accessibility of your property**
-
-## Why Financing Makes Sense
-
-Delaying a roof replacement can lead to:
-- Interior water damage
-- Mold remediation
-- Structural damage to framing and decking
-- Reduced home value
-
-## Get Your Options
-
-During your free estimate, ask whether financing options are available for your project. Lender availability, approval, and terms are confirmed separately.`,
-  },
-  {
     slug: "winter-roof-preparation-highlands",
     title: "Preparing Your Highlands Home Roof for Winter",
     excerpt: "Mountain winters punish unprepared roofs. Here's how to winterize your Highlands home before the first freeze.",
@@ -5383,53 +5269,6 @@ During your free estimate, ask whether financing options are available for your 
 Don't wait for the first storm. Call ${PHONE_DISPLAY} to schedule a pre-winter roof assessment for your Highlands home.`,
   },
   // ── Construction Insights ──
-  {
-    slug: "why-hire-one-company-roof-and-construction",
-    title: "Why Hiring One Company for Roofing and Construction Makes Sense",
-    excerpt: "Coordinating separate roofing and construction contractors creates problems. Here's why a single team delivers better results.",
-    category: "Construction",
-    date: "2026-03-01",
-    image: "/media/492dd83a-why-hire-one-company-roof-and-construction.webp", readTime: "5 min",
-    metaTitle: "One Company for Roofing & Construction | Highlander",
-    metaDescription: "Why hiring one company for roofing, construction, and design saves time, money, and headaches. Highlander Building Services in WNC.",
-    content: `When a project involves both roofing and structural work — additions, exterior renovations, or storm damage repairs — homeowners often hire separate contractors. That almost always creates problems.
-
-## The Coordination Problem
-
-Separate contractors mean separate timelines, separate warranties, and separate accountability. When a leak appears six months later, who's responsible — the roofer or the framer?
-
-## Benefits of a Single Team
-
-- **One timeline.** No waiting for one contractor to finish before the next can start.
-- **Integrated warranty.** One company stands behind the entire project.
-- **Consistent quality.** The same standards apply to every aspect of the work.
-- **Better communication.** One project manager, one point of contact, one set of expectations.
-- **Cost efficiency.** Shared mobilization, equipment, and crew coordination reduces overhead.
-
-## When This Matters Most
-
-### Additions and Extensions
-Tying a new roof section into an existing system requires roofing expertise during the framing phase — not after.
-
-### Storm Damage
-Wind and water damage often affects both the roof and the structure below. A single team assesses and repairs everything.
-
-### Exterior Renovations
-Siding, fascia, soffit, and roofing all interact. Separating them creates gaps in weather protection.
-
-## The Highlander Approach
-
-We started as roofers and expanded into construction because our clients kept asking us to handle the whole project. That experience means our construction crews understand roof systems, and our roofing crews understand structural requirements.`,
-    relatedServices: [
-      { label: "Construction Division", path: "/construction" },
-      { label: "Home Additions", path: "/construction/additions" },
-      { label: "Exterior Improvements", path: "/exterior-improvements" },
-    ],
-    faqs: [
-      { question: "Can Highlander handle both my roof and my addition?", answer: "Yes. We're a licensed NC General Contractor with dedicated roofing and construction crews. One contract, one timeline, one warranty." },
-      { question: "Is it cheaper to hire one company?", answer: "Usually yes. Shared mobilization costs, coordinated scheduling, and eliminated overlap typically save 10-15% compared to hiring separately." },
-    ],
-  },
   // ── Project Spotlights ──
   // ── WNC News ──
   // ── Roofing Education ──
@@ -5560,31 +5399,6 @@ Floor plan modernization isn't just about moving walls; it's about adding glass.
     ],
   },
   {
-    slug: "permitting-additions-macon-vs-jackson-county",
-    title: "Permitting for Additions: Macon vs. Jackson County",
-    excerpt: "The rules change at the county line. A guide to building codes and permit timelines in Franklin, Highlands, and Sylva.",
-    category: "Local",
-    date: "2026-05-25",
-    image: "/media/f46385be-permitting-additions-macon-vs-jackson-county.webp", readTime: "7 min",
-    town: "Franklin",
-    metaTitle: "Macon and Jackson County Building Permits | Highlander",
-    metaDescription: "Navigating building permits in Macon and Jackson County, NC. Code requirements for Franklin, Highlands, and Sylva additions.",
-    content: `Building in the Blue Ridge means navigating specific county-level requirements. Here's what we've learned working across Macon and Jackson.
-
-## Macon County Standards (Franklin/Highlands)
-Macon has specific rules regarding steep-slope construction and setbacks, especially in the Highlands Plateau area. We handle the technical submittals to ensure your plan meets all local ordnances.
-
-## Jackson County Nuances (Sylva/Cashiers)
-Jackson County's permitting process focuses heavily on erosion control and watershed protection. Because we live and work here, we maintain relationships with the inspectors who review these projects.
-
-## Why We Handle It For You
-Permitting isn't just paperwork; it's a structural safeguard. Our team manages the entire submittal and inspection cycle so you don't have to learn the code manual.`,
-    relatedServices: [
-      { label: "Design", path: "/construction/design" },
-      { label: "Construction Division", path: "/construction" }
-    ],
-  },
-  {
     slug: "modern-mountain-design-trends-2026",
     title: "Design Trends: Modern Mountain Rusticity in 2026",
     excerpt: "What's shaping WNC home design this year? From mixed-material exteriors to floor plans that prioritize 'wellness' spaces.",
@@ -5606,30 +5420,6 @@ Deep charcols and 'Iron Ore' tones are popular for exteriors as they help homes 
     relatedServices: [
       { label: "Design", path: "/construction/design" },
       { label: "Exterior Improvements", path: "/construction/siding" }
-    ],
-  },
-  {
-    slug: "budgeting-for-preconstruction-planning",
-    title: "Budgeting for Pre-Construction: Why Planning Saves 15% on Build Costs",
-    excerpt: "Investing in planning prevents costly mistakes during construction. Learn the ROI of the Design phase.",
-    category: "Cost",
-    date: "2026-06-10",
-    image: "/media/499420d3-budgeting-for-preconstruction-planning.webp", readTime: "6 min",
-    metaTitle: "Pre-Construction Planning ROI | Highlander",
-    metaDescription: "How professional project planning reduces construction costs. Avoid change orders and material waste with better pre-build logic.",
-    content: `At Highlander, we treat 'Design' as an investment, not an expense. Here is how that investment pays for itself.
-
-## Eliminating 'Field Figuring'
-When a crew has to stop and 'figure out' a detail on-site, it costs you hourly labor and wasted materials. A good plan solves those details on paper first.
-
-## Accurate Material Ordering
-We calculate exact quantities for premium materials like metal panels and custom siding. This reduces over-ordering and eliminates the 'shortage' delays that stall projects.
-
-## Preventing Change Orders
-Most change orders come from a lack of clarity in the initial scope. By documenting every detail now, you lock in your price and protect your budget.`,
-    relatedServices: [
-      { label: "Design", path: "/construction/design" },
-      { label: "Construction Division", path: "/construction" }
     ],
   },
   {
@@ -5862,51 +5652,6 @@ Learn more about [roof replacement](/roofing/roof-replacement), see when [roof r
     ],
   },
   {
-    slug: "roof-replacement-cost-factors-western-nc",
-    title: "Roof Replacement Cost Factors in Western North Carolina",
-    excerpt: "The real factors that shape a WNC roof replacement estimate — and why flat, published pricing rarely reflects actual mountain conditions.",
-    category: "Cost",
-    date: "2026-07-07",
-    image: "/media/wnc-roof-tearoff-crew.jpg",
-    readTime: "7 min",
-    metaTitle: "Roof Replacement Cost Factors in Western NC | Highlander",
-    metaDescription: "What actually drives roof replacement pricing in Western NC — access, materials, decking, and mountain-specific details.",
-    content: `We don't publish flat replacement pricing for one honest reason: it never reflects a real WNC project. Access, deck condition, complexity, and material choice change the number more than the roof's square footage does. Here are the factors that actually shape a Western NC replacement estimate.
-
-## Roof Size and Pitch
-Square footage is the starting point. Steep pitches take longer, need more safety setup, and often waste more material.
-
-## Access and Site Conditions
-Steep driveways, narrow lots, and limited staging areas add time and equipment cost. Ridge lots with high-lift requirements cost more than street-level suburban roofs.
-
-## Deck Condition
-You don't know what's under the shingles until they come off. Rotten or delaminated decking gets replaced — that's a per-sheet add.
-
-## Material Choice
-Standard dimensional shingles are the value baseline. Premium shingles, standing seam metal, and specialty products step up from there.
-
-## Complexity Details
-Number of valleys, dormers, skylights, chimneys, and penetrations all matter. So do underlayment upgrades (extra ice-and-water shield, high-temp underlayments for metal).
-
-## Removal and Disposal
-Tear-off of one or two layers, dump fees, and disposal logistics vary by location.
-
-## What We Won't Do
-We won't publish flat pricing. We won't estimate off Google Earth. Every proposal comes from an in-person inspection.
-
-## Ready for a Real Number?
-[Request an inspection](/request-inspection) or read more about [roof replacement](/roofing/roof-replacement), [our roofing services](/roofing), and [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [repair vs replacement decision guide](/blog/roof-lifespan-mountain-home-wnc).`,
-    faqs: [
-      { question: "Can you give me a ballpark over the phone?", answer: "Not honestly. We'd rather see the roof and give you a real number." },
-    ],
-    relatedServices: [
-      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Roofing Division", path: "/roofing" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
-    ],
-  },
-  {
     slug: "roof-lifespan-mountain-home-wnc",
     title: "How Long Do Roofs Last in NC? WNC Mountain Roof Lifespans",
     excerpt: "Real-world roof lifespans for Western NC mountain homes across shingles, metal, and specialty systems — with the caveats that matter.",
@@ -5963,46 +5708,6 @@ Document what you see with dates and locations, then [request an inspection](/re
     ],
   },
   {
-    slug: "metal-roofing-highlands-nc-benefits",
-    title: "Metal Roofing in Highlands, NC: Benefits for Rain, Wind, and Elevation",
-    excerpt: "Why standing seam metal is one of the strongest roofing options for Highlands, NC homes at 4,000+ feet.",
-    category: "Materials",
-    date: "2026-07-08",
-    image: "/media/wnc-metal-standing-seam.jpg",
-    readTime: "7 min",
-    town: "Highlands",
-    metaTitle: "Metal Roofing Benefits in Highlands, NC | Highlander",
-    metaDescription: "Metal roofing for Highlands, NC homes — how it performs against rain, wind, and elevation, and where it fits best.",
-    content: `At 4,000+ feet, roofing systems face a different set of stresses than they do in lower elevations. Metal — especially standing seam — is one of the strongest answers for Highlands homes on exposed lots.
-
-## Rain Performance
-Highlands gets serious rainfall. Metal sheds water fast and doesn't hold moisture in the surface the way an aging shingle does. Fewer surface freeze/thaw problems.
-
-## Wind Resistance
-Locked standing seam panel systems resist uplift where shingles start losing tabs. On ridge and exposed lots, this alone often justifies the material.
-
-## Elevation and Temperature Cycling
-Metal expands and contracts predictably. Properly detailed clips accommodate that movement — old-style through-fasteners eventually work loose in this climate.
-
-## Ice, Snow, and Snow Guards
-Metal sheds snow fast, which can be a problem over entries and walkways. We install snow guards where needed to control release.
-
-## The Long View
-Standing seam is a longer install than shingles and a bigger upfront investment, but for owners planning to keep the home long-term, the lifecycle math typically favors it.
-
-## Ready to Talk About Metal on Your Home?
-Learn more about [metal roofing](/roofing/metal), consider [roof replacement](/roofing/roof-replacement) as a broader project, [request an inspection](/request-inspection), or explore our work across [Highlands, NC](/service-areas/highlands-nc). Related: [is metal roofing right for your WNC home?](/roofing/metal)`,
-    faqs: [
-      { question: "Do I need snow guards on a Highlands metal roof?", answer: "Almost always over doors, walkways, and gathering spaces. Snow release from smooth panels can be dangerous without them." },
-    ],
-    relatedServices: [
-      { label: "Metal Roofing", path: "/roofing/metal" },
-      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
-    ],
-  },
-  {
     slug: "metal-vs-shingle-roof-franklin-highlands-cashiers",
     town: "Highlands",
     title: "Metal Roof vs. Shingle Roof in Franklin, Highlands, and Cashiers",
@@ -6025,7 +5730,7 @@ Shingles typically last 18–25 years in WNC. Standing seam metal commonly runs 
 Franklin's mix of elevations and lot types means both materials work. We often recommend premium dimensional shingles for suburban lots, metal for exposed ridge lots.
 
 ## Highlands: Metal-Leaning
-Elevation, exposure, and long-hold ownership patterns often favor metal. See more in our [Highlands metal roofing guide](/blog/metal-roofing-highlands-nc-benefits).
+Elevation, exposure, and long-hold ownership patterns often favor metal. See more in our [Highlands metal roofing guide](/roofing/metal).
 
 ## Cashiers: Depends on the Home
 Plateau winds and long-hold ownership favor metal on many homes. Some home styles read better in shingle — we help match material to aesthetic.
@@ -6075,7 +5780,7 @@ Every downspout needs to discharge water away from the foundation. On sloped lot
 **Gutter guards** for wooded lots. **Kickout flashings** where roof meets wall. **Larger 6" gutters** on high-volume roofs.
 
 ## Getting It Right the First Time
-Learn more about our [gutters and water management](/roofing/gutters), [roof repair](/roofing/roof-repair) related to gutter failures, [request an inspection](/request-inspection), or explore [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [how gutters protect roofs, siding, foundations, and outdoor spaces](/blog/how-gutters-protect-home-wnc).`,
+Learn more about our [gutters and water management](/roofing/gutters), [roof repair](/roofing/roof-repair) related to gutter failures, [request an inspection](/request-inspection), or explore [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [how gutters protect roofs, siding, foundations, and outdoor spaces](/roofing/gutters).`,
     faqs: [
       { question: "How long do aluminum gutters last in WNC?", answer: "Properly installed, commonly 20+ years. Failure usually comes from fastener issues or overflow damage, not the aluminum itself." },
     ],
@@ -6207,45 +5912,6 @@ Learn about [our gutter services](/roofing/gutters), [our roofing division](/roo
     ],
   },
   {
-    slug: "how-gutters-protect-home-wnc",
-    title: "How Gutters Help Protect Roofs, Siding, Foundations, and Outdoor Living Areas",
-    excerpt: "Gutters do more than move rainwater — here's how a well-designed WNC system protects the whole home, from roof edge to foundation.",
-    category: "Maintenance",
-    date: "2026-07-09",
-    image: "/media/wnc-copper-gutters.jpg",
-    readTime: "7 min",
-    metaTitle: "How Gutters Protect Your Home in WNC | Highlander",
-    metaDescription: "How gutters protect roofs, siding, foundations, and outdoor living areas on Western NC mountain homes, and the signs your system is falling short.",
-    content: `Gutters get treated as a finish detail. On a WNC mountain home moving 70+ inches of rain a year, they're actually a whole-home protection system.
-
-## Protecting the Roof Edge
-Gutters that overflow or pull away from fascia let water track behind the edge. Over a few seasons that means rotted fascia, wet decking, and eventually a roof-edge repair.
-
-## Protecting Siding
-Overflow splashes and stains siding. Water dripping in the wrong place accelerates paint failure and, on wood, rot.
-
-## Protecting the Foundation
-Concentrated water at the drip line saturates soil against the foundation. Over years, that means settlement, cracked foundations, and basement moisture.
-
-## Protecting Outdoor Living Areas
-Decks, porches, and patios below a roof edge get hammered by uncontrolled runoff. Proper gutter design puts that water where you want it — not on your outdoor space.
-
-## What a Whole-Home System Looks Like
-Seamless aluminum, correct sizing, adequate downspouts, controlled discharge, guards where warranted, kickout flashings at wall junctions. See our [gutter services](/roofing/gutters) or [outdoor living work](/construction/outdoor-living).
-
-## Next Steps
-Learn more about [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [gutter installation in Franklin, NC](/blog/gutter-installation-franklin-nc).`,
-    faqs: [
-      { question: "Can gutter design impact insurance?", answer: "Indirectly, yes — foundation and roof-edge damage from failed gutters is a common denied claim source." },
-    ],
-    relatedServices: [
-      { label: "Gutters", path: "/roofing/gutters" },
-      { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
-    ],
-  },
-  {
     slug: "skylight-installation-western-nc",
     title: "Skylight Installation in Western NC: What Homeowners Should Consider",
     excerpt: "Planning a skylight install on a Western NC mountain home — placement, product choice, and the details that keep them leak-free long-term.",
@@ -6273,7 +5939,7 @@ Best time to install or replace a skylight is during [a roof replacement](/roofi
 Cutting corners on flashing. Reusing old flashing on a new skylight. Sealing over problems instead of correcting them.
 
 ## Ready to Plan?
-Learn more about [our roofing services](/roofing), [roof replacement](/roofing/roof-replacement), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [Velux skylights for mountain homes](/blog/velux-skylights-mountain-homes).`,
+Learn more about [our roofing services](/roofing), [roof replacement](/roofing/roof-replacement), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [Velux skylights for mountain homes](/roofing/skylights).`,
     faqs: [
       { question: "How long do modern skylights last?", answer: "Quality units with proper install commonly run 20+ years before the seals or flashings need attention." },
     ],
@@ -6282,84 +5948,6 @@ Learn more about [our roofing services](/roofing), [roof replacement](/roofing/r
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Request an Inspection", path: "/request-inspection" },
       { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
-    ],
-  },
-  {
-    slug: "velux-skylights-mountain-homes",
-    title: "Velux Skylights for Mountain Homes: Light, Ventilation, and Planning",
-    excerpt: "Why Velux is the dominant skylight choice for Western NC mountain homes — light quality, ventilation options, and planning considerations.",
-    category: "Materials",
-    date: "2026-07-10",
-    image: "/media/wnc-skylight-interior.jpg",
-    readTime: "6 min",
-    metaTitle: "Velux Skylights for WNC Mountain Homes | Highlander",
-    metaDescription: "Velux skylights for Western NC mountain homes — light, ventilation, and planning for a well-integrated install.",
-    content: `Velux is the skylight brand we install most often on WNC mountain homes. Here's why, and what to think through when planning yours.
-
-## Product Lines
-**Fixed skylights** for pure daylighting.
-**Manual venting** for accessible openings.
-**Solar-powered venting** with rain sensors — a mountain-home favorite for high ceilings and hard-to-reach spaces.
-**Sun tunnels** for interior rooms where a full skylight isn't practical.
-
-## Why Velux Specifically
-Comprehensive flashing kits designed for each install condition. Strong warranty support. Wide dealer and installer network. Long track record.
-
-## Ventilation as a Real Benefit
-Vented skylights create passive stack effect — hot air escapes at the peak while cooler air draws in below. On a mountain home with big volume spaces, this can meaningfully improve summer comfort.
-
-## Planning Considerations
-Roof pitch, framing layout, interior ceiling condition, and tree cover all shape placement. We survey during inspection and coordinate with any interior finish work needed.
-
-## Working With Highlander
-We install Velux products per manufacturer spec, with the flashing kit designed for your roof type. See more about [our roofing services](/roofing), [roof replacement](/roofing/roof-replacement) coordination, [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [skylight leak diagnosis guide](/blog/skylight-leaks-roof-or-skylight-wnc).`,
-    faqs: [
-      { question: "Can you retrofit a Velux into an existing shingle roof?", answer: "Yes — retrofit installs are common and done well with the right flashing kit and detail work." },
-    ],
-    relatedServices: [
-      { label: "Roofing Division", path: "/roofing" },
-      { label: "Design", path: "/construction/design" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
-    ],
-  },
-  {
-    slug: "skylight-replacement-wnc",
-    title: "Skylight Replacement: When Repairs Are Not Enough",
-    excerpt: "How to tell when a WNC skylight is past repair — and what a proper replacement should include to prevent future leaks.",
-    category: "Materials",
-    date: "2026-07-10",
-    image: "/media/wnc-skylight-interior.jpg",
-    readTime: "6 min",
-    metaTitle: "Skylight Replacement in Western NC | Highlander",
-    metaDescription: "Skylight replacement in Western NC — when repairs are not enough and what a proper replacement install involves.",
-    content: `Not every skylight leak is the skylight's fault, and not every failing skylight needs replacement. Here's how to tell the difference.
-
-## Signs of Actual Skylight Failure
-Fogging between panes. Cracked or hazed exterior dome. Broken seals letting condensation form inside. Visible frame damage. Age past 20–25 years for older units.
-
-## Signs of Flashing Failure (Not the Skylight)
-Leaks that appear along one side of the frame. Water tracking down the wall below. Sealant that's separated at the flashing edges. These are repair situations, not replacement.
-
-## Why Old Skylights Fail
-Seals degrade over time from UV and temperature cycling. Older acrylic domes yellow, haze, and crack. Frames corrode where drainage was inadequate.
-
-## What a Proper Replacement Includes
-New unit sized to the existing opening (or the opening resized if you're upgrading). Manufacturer flashing kit. Ice-and-water shield around the frame. New shingle or panel integration. No reuse of old flashing.
-
-## Coordinating With Other Roof Work
-If your roof is also aging, doing both together is efficient and gets you a coordinated warranty. See [roof replacement](/roofing/roof-replacement).
-
-## Ready to Talk About Yours?
-Learn more about [our roofing services](/roofing), [roof repair](/roofing/roof-repair) for flashing-only fixes, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [skylight installation planning guide](/blog/skylight-installation-western-nc).`,
-    faqs: [
-      { question: "Can you replace a skylight without touching the surrounding shingles?", answer: "Usually not — proper integration requires lifting shingles around the frame. That's why doing it as part of a re-roof is often most efficient." },
-    ],
-    relatedServices: [
-      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Roofing Division", path: "/roofing" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
     ],
   },
   {
@@ -6390,7 +5978,7 @@ Water hitting the skylight frame after tracking from a higher point — a chimne
 Repair the flashing. Replace the unit. Correct the unrelated leak. We won't recommend replacement when repair solves it, and we won't seal over a symptom.
 
 ## Next Steps
-Explore [roof repair](/roofing/roof-repair), [our roofing services](/roofing), [request an inspection](/request-inspection), or read about our work in [Franklin, NC](/service-areas/franklin-nc). Related: [Velux skylights for mountain homes](/blog/velux-skylights-mountain-homes).`,
+Explore [roof repair](/roofing/roof-repair), [our roofing services](/roofing), [request an inspection](/request-inspection), or read about our work in [Franklin, NC](/service-areas/franklin-nc). Related: [Velux skylights for mountain homes](/roofing/skylights).`,
     faqs: [
       { question: "Is condensation on a skylight always a problem?", answer: "Not necessarily — some interior condensation in cold weather is normal on any glazed surface. Persistent moisture between the panes is a seal failure." },
     ],
@@ -6447,43 +6035,6 @@ Home additions, porches, decks, outdoor living spaces, and full remodels — coo
     ],
   },
   {
-    slug: "construction-services-highlands-nc-mountain-homes",
-    title: "Construction Services in Highlands, NC for Mountain Homes",
-    excerpt: "How Highlander approaches additions, porches, and construction projects on Highlands, NC mountain homes at elevation.",
-    category: "Construction",
-    date: "2026-07-15",
-    image: "/media/514073f1-construction-services-highlands-nc-mountain-homes.webp",
-    readTime: "7 min",
-    town: "Highlands",
-    metaTitle: "Construction for Highlands, NC Mountain Homes | Highlander",
-    metaDescription: "Additions, porches, and construction projects for Highlands, NC mountain homes. In-house design team, elevation-savvy planning, single project team.",
-    content: `Highlands homes are rarely simple. Steep lots, complex rooflines, and a mix of original structure and past additions mean construction work here needs a team that understands mountain sites — not just floor plans.
-
-## Elevation Changes What's Possible
-At 4,100+ feet, structural loads, drainage, and access all matter. A porch that's routine at lower elevation may need different footings and connections here.
-
-## Working With Existing Structure
-Most Highlands additions tie into homes that have already been added to once or twice. Our design team documents what's actually there before drawing what's next.
-
-## Design First, Then Build
-If you don't have plans yet, our in-house design services produce drawings under a Design & Consultation Agreement. That gives you a build-ready plan a crew can price and permit against.
-
-## Coordinated Project Team
-Roofing, framing, exterior details, and interior work stay under one project team so nothing gets lost between trades.
-
-## Start the Conversation
-[Get My Questions Answered](/contact), or read more about our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
-    faqs: [
-      { question: "Do you build on very steep Highlands lots?", answer: "Yes, with the right structural design. That's a conversation we have on a site walk with our design team." },
-    ],
-    relatedServices: [
-      { label: "Construction Division", path: "/construction" },
-      { label: "Design Services", path: "/construction/design" },
-      { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Get My Questions Answered", path: "/contact" },
-    ],
-  },
-  {
     slug: "design-consultation-agreement-construction-project",
     title: "How a Design & Consultation Agreement Helps Plan a Construction Project",
     excerpt: "The Design & Consultation Agreement defines scope, drawings, and design fees before construction pricing — here's how it works.",
@@ -6522,40 +6073,6 @@ Our in-house design team — led by our Design Lead — produces the drawings. Y
     ],
   },
   {
-    slug: "outdoor-living-highlands-nc-porches-patios",
-    title: "Outdoor Living in Highlands, NC: Porches, Patios, and Mountain Views",
-    excerpt: "Planning porches, patios, and outdoor living spaces on Highlands, NC mountain homes — sightlines, weather, and structure.",
-    category: "Outdoor Living",
-    date: "2026-07-15",
-    image: "/media/wnc-construction-framing.jpg",
-    readTime: "7 min",
-    town: "Highlands",
-    metaTitle: "Outdoor Living in Highlands, NC | Highlander",
-    metaDescription: "Porches, patios, and outdoor living spaces for Highlands, NC mountain homes. Planned around view, weather exposure, and elevation.",
-    content: `In Highlands, outdoor living is the reason people build here. Getting the porch, patio, or covered outdoor space right shapes how the whole home feels.
-
-## Start With the View
-Where you sit matters. Our design team walks the site to understand sightlines before drawing anything.
-
-## Weather Exposure at Elevation
-Wind, rain, and shoulder-season cold change what "outdoor" means at 4,100+ feet. Covered porches with proper structure extend the usable season significantly.
-
-## Structure and Roof Integration
-Adding a porch usually means new roof lines tying into existing. Because Highlander runs roofing and construction together, those transitions are planned as one system.
-
-## Materials That Hold Up
-Decking, railing, ceiling material, and finishes all get evaluated against mountain weather — not lowland assumptions.
-
-## Start Planning
-[Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
-    relatedServices: [
-      { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Construction Division", path: "/construction" },
-      { label: "Design Services", path: "/construction/design" },
-      { label: "Get My Questions Answered", path: "/contact" },
-    ],
-  },
-  {
     slug: "outdoor-living-cashiers-nc-mountain-homes",
     title: "Outdoor Living in Cashiers, NC: Planning Spaces for Mountain Homes",
     excerpt: "How to plan porches, patios, and outdoor living spaces for Cashiers, NC mountain homes — with view, weather, and daily use in mind.",
@@ -6579,39 +6096,6 @@ How the new space connects to the kitchen, living, or primary suite matters more
 
 ## Start Planning
 [Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
-    relatedServices: [
-      { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Construction Division", path: "/construction" },
-      { label: "Design Services", path: "/construction/design" },
-      { label: "Get My Questions Answered", path: "/contact" },
-    ],
-  },
-  {
-    slug: "covered-porches-patios-western-nc-considerations",
-    title: "Covered Porches and Patios in Western NC: What to Consider",
-    excerpt: "Covered porches and patios extend the usable season for Western NC homes — here's what to think through before building.",
-    category: "Outdoor Living",
-    date: "2026-07-15",
-    image: "/media/wnc-construction-framing.jpg",
-    readTime: "6 min",
-    metaTitle: "Covered Porches & Patios in Western NC | Highlander",
-    metaDescription: "What to consider when planning a covered porch or patio for a Western NC mountain home — cover, structure, and roof integration.",
-    content: `Cover changes everything about how an outdoor space is used in WNC. Here's what to think through before committing to a design.
-
-## Roof Cover vs. Pergola
-Full roof cover keeps rain and sun off — the difference between using the space in a shower and not. Pergolas look nice but limit real use.
-
-## Structural Design
-A covered porch is a structural project. Posts, beams, connections, and footings all need to be right for mountain wind and snow loads.
-
-## Ceiling and Lighting
-T&G ceilings, fans, and layered lighting turn a covered porch into a real room. Plan those early.
-
-## Tying Into the Existing Roof
-Most covered porches join the existing roof. Getting that transition watertight is where roofing and construction have to work together.
-
-## Start the Conversation
-[Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
       { label: "Construction Division", path: "/construction" },
@@ -6718,119 +6202,6 @@ Targeted repair when the roof is sound but a section has failed. We won't push r
       { label: "Gutters", path: "/roofing/gutters" },
       { label: "Roof Repair", path: "/roofing/roof-repair" },
       { label: "Roofing in Sylva, NC", path: "/service-areas/sylva-nc" },
-    ],
-  },
-  {
-    slug: "roofing-construction-services-western-north-carolina",
-    title: "Roofing and Construction Services Across Western North Carolina",
-    excerpt: "An overview of Highlander's roofing and construction services across Western North Carolina — one team, roof to remodel.",
-    category: "Local",
-    date: "2026-07-20",
-    image: "/media/wnc-winter-ice-dam.jpg",
-    readTime: "7 min",
-    metaTitle: "Roofing & Construction Services in Western NC | Highlander",
-    metaDescription: "Roofing, gutters, additions, and outdoor living across Western North Carolina. One project team from roof to remodel.",
-    content: `Highlander serves Western North Carolina with two coordinated divisions: roofing and construction. Same company, same standards, one project team.
-
-## Roofing
-Repair, replacement, metal, gutters, and skylights across WNC. CertainTeed ShingleMaster Credentialed Contractor.
-
-## Construction and Design
-Additions, porches, decks, and outdoor living with in-house design services and a Design & Consultation Agreement for any project needing drawings.
-
-## Coverage
-Franklin, Highlands, Cashiers, Sylva, and surrounding communities across Macon and Jackson counties.
-
-## Why One Team Matters
-When a new porch needs to tie into an existing roof, or a remodel touches the exterior envelope, having roofing and construction under one company removes the finger-pointing that stalls projects.
-
-## Start the Conversation
-[Get My Questions Answered](/contact) or [request an inspection](/request-inspection). Explore [roofing](/roofing), [construction](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living).`,
-    relatedServices: [
-      { label: "Roofing Division", path: "/roofing" },
-      { label: "Construction Division", path: "/construction" },
-      { label: "Get My Questions Answered", path: "/contact" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-    ],
-  },
-  {
-    slug: "roofing-vacation-second-homes-highlands-cashiers",
-    town: "Highlands",
-    title: "Roofing for Vacation Homes and Second Homes in Highlands and Cashiers",
-    excerpt: "What second-home owners in Highlands and Cashiers should know about roof maintenance, monitoring, and long-distance communication.",
-    category: "Local",
-    date: "2026-07-20",
-    image: "/media/wnc-mountain-home-exterior.jpg",
-    readTime: "7 min",
-    metaTitle: "Roofing for Vacation Homes in Highlands & Cashiers | Highlander",
-    metaDescription: "Second-home owners in Highlands and Cashiers: how to keep the roof sound when you're not on the mountain full time.",
-    content: `If your Highlands or Cashiers home is a second residence, roof problems have a way of compounding between visits. Here's how to stay ahead of them.
-
-## Scheduled Inspections
-A once-a-year inspection catches issues while they're still repairs. We document everything with photos so you can see what we saw.
-
-## Storm Follow-Up
-After named storms or unusual wind events, we'll do a check even when you're not in town.
-
-## Gutter Maintenance
-Heavy tree cover means gutters clog. Twice-a-year cleaning avoids overflow damage to fascia, soffits, and foundations.
-
-## Communication for Out-of-Town Owners
-Photos, findings, and written scope — sent to your email. You approve work before it happens.
-
-## Talk With Highlander
-[Request an inspection](/request-inspection), or explore [roofing](/roofing), [gutters](/roofing/gutters), and [roof repair](/roofing/roof-repair). Related: [Highlands, NC](/service-areas/highlands-nc) and [Cashiers, NC](/service-areas/cashiers-nc).`,
-    relatedServices: [
-      { label: "Roofing Division", path: "/roofing" },
-      { label: "Gutters", path: "/roofing/gutters" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
-    ],
-  },
-  {
-    slug: "roofing-mountain-homes-lake-glenville-scaly-mountain",
-    town: "Lake Glenville",
-    title: "Roofing Glenville: What Elevation Does to Your Roof",
-    excerpt: "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
-    category: "Local",
-    date: "2026-07-20",
-    updated: "2026-10-22",
-    image: "/media/wnc-mountain-home-exterior.jpg",
-    readTime: "7 min",
-    metaTitle: "Roofing Near Lake Glenville & Scaly Mountain | Highlander",
-    metaDescription: "Roofing for mountain homes near Lake Glenville and Scaly Mountain — elevation, wind, and weather considerations from a local WNC contractor.",
-    content: `Homes near Lake Glenville and Scaly Mountain sit at elevations and exposures that shape every roofing decision — from underlayment to material choice.
-
-## Wind Exposure
-Ridge and lakefront lots see routine wind loads that lift shingle tabs and stress ridge details. Fastening schedule and starter courses matter.
-
-## Freeze/Thaw at Elevation
-Ice and water shield at eaves and valleys is essential, not optional.
-
-## Metal vs. Shingle
-Both work here. Metal earns its cost on high-exposure sites; shingles remain the value option on more sheltered lots.
-
-## Roofing Costs Near Lake Glenville
-A comparable estimate starts with a few basics gathered before anyone climbs a ladder:
-
-- **Roof size and complexity:** more valleys, dormers, and roof planes mean more labor and material.
-- **Access and pitch:** steep or hard-to-reach roofs change staging, safety setup, and crew time.
-- **Material:** metal and asphalt shingles differ in both installation process and total scope.
-- **Tear-off:** removing the existing roof, versus roofing over it, adds labor and disposal.
-- **Hidden repairs:** rot or decking damage found once the old roof comes off can shift the schedule and the scope.
-
-Asking each estimator to itemize these line by line makes quotes easier to compare side by side.
-
-## Local Contractor
-Highlander works these communities regularly. We know the roads, the sites, and the weather.
-
-## Talk With Highlander
-[Request an inspection](/request-inspection), or explore [roofing](/roofing), [metal roofing](/roofing/metal), and [roof replacement](/roofing/roof-replacement). Related: [Cashiers, NC](/service-areas/cashiers-nc) and [Highlands, NC](/service-areas/highlands-nc).`,
-    relatedServices: [
-      { label: "Roofing Division", path: "/roofing" },
-      { label: "Metal Roofing", path: "/roofing/metal" },
-      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Request an Inspection", path: "/request-inspection" },
     ],
   },
   {
@@ -7377,31 +6748,6 @@ Highlander inspects roofs across Franklin, Highlands, Cashiers, Sylva and the su
     ],
   },
   {
-    slug: "metal-roof-maintenance-franklin-nc",
-    title: "Metal Roof Maintenance for Franklin Homeowners",
-    excerpt: "A practical maintenance guide for Franklin, NC homeowners with standing seam or exposed fastener metal roofs.",
-    category: "Maintenance",
-    date: "2026-07-23",
-    image: "/media/86bb28c1-metal-roof-maintenance-franklin-nc.webp",
-    readTime: "8 min",
-    town: "Franklin",
-    metaTitle: "Metal Roof Maintenance in Franklin, NC | Local Guide",
-    metaDescription: "How to maintain a standing seam or exposed fastener metal roof on a Franklin, NC home — inspection, sealant, fasteners, and drainage.",
-    content: `Metal roofing performs very well on Franklin, North Carolina homes when it is maintained thoughtfully. The failure modes of metal roofs are different from shingle roofs, and so is the maintenance routine. Understanding what actually needs attention on your metal roof extends its life, protects your home, and reduces the chance of surprise repairs.\n\nHere is what we recommend to Franklin homeowners with metal roofs.\n\n## Two Systems, Different Priorities\n\nMost residential metal roofs in Franklin fall into two categories:\n\n- **Standing seam metal** with concealed fasteners\n- **Exposed fastener metal** with screws visible through the panel face\n\nBoth are proven systems, but they age differently and require different maintenance attention.\n\n## Standing Seam Metal Maintenance\n\nStanding seam roofs are typically low maintenance, which is one reason mountain homeowners choose them. That does not mean no maintenance.\n\n### Sealant at penetrations and terminations\nStanding seam roofs rely on sealant at pipe penetrations, curbs, hips, ridges, and end terminations. Sealant has a finite life. Periodic inspection catches sealant that is cracking, shrinking, or pulling away before it becomes a leak.\n\n### Snow retention devices\nOn steep mountain roofs, snow retention devices help control the release of snow and ice. These should be inspected annually for movement, damage, and mounting integrity.\n\n### Debris in valleys and behind penetrations\nEven a well shedding metal roof can collect debris in low areas, behind chimneys, and in valleys. Removing accumulated debris prevents backed up water and prolongs the life of coatings and sealant.\n\n### Coating condition\nCoating breakdown that is more than cosmetic can affect long term performance. Note any areas where coating loss appears widespread.\n\n### Fastener check at exposed points\nWhile the panel field is concealed fastener, ridge caps, trim, and terminations often have exposed fasteners. Confirm these are seated and sealed.\n\n## Exposed Fastener Metal Maintenance\n\nExposed fastener metal roofs need more consistent attention because every fastener is a potential leak point.\n\n### Fastener condition\nOver time, as panels expand and contract, screws can back out and washers can compress or crack. On an aging exposed fastener roof, spot checks for backed out fasteners are worth doing annually.\n\n### Washer condition\nRubber or neoprene washers under fasteners age with sun and heat. Once they crack or lose seal, the fastener no longer keeps water out. Widespread washer failure is a signal that a broader plan is needed.\n\n### Panel overlaps and end laps\nLap joints rely on sealant and correct installation. Failures at overlaps are a common leak source on older exposed fastener roofs.\n\n### Rust and coating condition\nExposed fastener panels can develop rust, especially at cut edges and any point of coating damage. Small areas can often be treated. Widespread rust is a broader conversation.\n\n## Universal Metal Roof Maintenance\n\nRegardless of which system you have:\n\n- **Keep gutters and drainage clear.** Metal sheds water fast, and it needs somewhere to go.\n- **Inspect after major storms.** Wind and impact can move panels, trim, or terminations.\n- **Trim overhanging limbs** where practical to reduce debris and impact.\n- **Do not walk the roof yourself.** Metal roofs are slippery. Walking them requires the right footwear and technique.\n- **Address small issues promptly.** Sealant, fasteners, and trim repairs are low cost early and expensive if ignored.\n\n## When to Schedule a Professional Inspection\n\nWe recommend a professional metal roof inspection:\n\n- Annually or every other year on standing seam roofs\n- Annually on exposed fastener roofs, especially those over ten years old\n- After any major storm or falling limb event\n- Before selling or buying a home with a metal roof\n\nA good inspection documents fasteners, sealant, coatings, drainage, and terminations with photos and written notes.\n\n## Repair vs. Replacement Decisions\n\nSome metal roof issues are localized and repairable:\n\n- Individual damaged panels\n- Sealant refresh at penetrations and terminations\n- Selective fastener replacement\n- Snow retention device repair\n\nOther situations point toward broader work:\n\n- Widespread washer or fastener failure across many panels\n- Extensive coating breakdown or rust\n- Multiple leaks in unrelated areas\n- Underlayment failure beneath the panels\n\nA local roofer can help you weigh the options honestly.\n\n## Get a Local Metal Roof Team\n\nHighlander Building Services installs, repairs, and inspects metal roofs across Franklin, Highlands, Cashiers, and the surrounding Western North Carolina area. Whether you need a routine check on a standing seam roof or a plan for an aging exposed fastener system, [request an inspection](/request-inspection) and we will walk the roof and give you an honest recommendation.\n\nLearn more about our [roofing services](/roofing) or [Franklin service area](/service-areas/franklin-nc).`,
-    faqs: [
-      { question: "How long does a metal roof last in Franklin?", answer: "Standing seam metal roofs on mountain homes are typically expected to last several decades with proper maintenance. Exposed fastener systems generally have a shorter useful life." },
-      { question: "Can I walk on my metal roof to inspect it?", answer: "We do not recommend it. Metal roofs are slippery and can be dented by improper footfall. Use a phone camera, binoculars, or a professional inspection." },
-      { question: "How often do fasteners need to be replaced on an exposed fastener metal roof?", answer: "It varies by system and exposure. Many exposed fastener roofs benefit from a fastener check every few years and selective replacement as needed." },
-      { question: "Is a metal roof leak always at the panel?", answer: "No. Most metal roof leaks are at penetrations, sealant, seams, or terminations, not at the panel itself." },
-      { question: "Does Highlander service both standing seam and exposed fastener systems?", answer: "Yes. Our team works on both systems across the Franklin area." },
-    ],
-    relatedServices: [
-      { label: "Roofing Services", path: "/roofing" },
-      { label: "Roof Repair", path: "/roofing/roof-repair" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-    ],
-  },
-  {
     slug: "how-to-choose-roofing-contractor-franklin-nc",
     title: "How to Choose a Roofing Contractor in Franklin, NC",
     excerpt: "A practical guide for Franklin, NC homeowners on how to evaluate and choose a trustworthy local roofing contractor.",
@@ -7640,32 +6986,6 @@ const sylvaClusterPosts: BlogPost[] = [
       { label: "Sylva Service Area", path: "/service-areas/sylva-nc" },
     ],
   },
-  {
-    slug: "roofing-construction-contractor-sylva-nc",
-    title: "How to Choose a Roofing and Construction Contractor in Sylva",
-    excerpt: "A practical guide for Sylva, NC homeowners on how to evaluate and choose a trustworthy local roofing and construction contractor.",
-    category: "Guides",
-    date: "2026-07-25",
-    image: "/media/wnc-roof-inspection.jpg",
-    readTime: "8 min",
-    town: "Sylva",
-    metaTitle: "Choose a Roofing and Construction Contractor in Sylva, NC",
-    metaDescription: "A practical, homeowner focused guide to choosing a roofing and construction contractor in Sylva, NC and avoiding common mistakes.",
-    content: `Choosing a contractor for roofing or construction work in Sylva, North Carolina is one of the most important decisions a homeowner makes about their property. The people you hire determine whether the finished result actually holds up in Jackson County weather.\n\nHere is how to evaluate a Sylva contractor and avoid the mistakes that lead to disappointed homeowners.\n\n## Start With Local\n\nOut of area crews follow storms and market cycles. They may do good work, but they are rarely available for follow up. A local Sylva contractor:\n\n- Works in the same climate every day\n- Understands local homes and roof designs\n- Has a real physical presence in the community\n- Can respond to follow up questions\n- Understands local permitting and inspection\n\nLocal does not automatically mean better. It does mean the contractor is more likely to still be there in five years.\n\n## Confirm the Basics\n\nBefore going deep, confirm:\n\n- Business is properly licensed in North Carolina\n- Liability insurance and workers compensation are in place\n- Physical business address in the region\n- Verifiable phone number and website\n- Real reviews from local customers\n\n## Ask the Right Questions\n\n1. How long have you worked in the Sylva area?\n2. Who will be on site and who is my point of contact?\n3. What does the written scope include, and what does it exclude?\n4. What products are proposed and why?\n5. How is the roof deck or existing conditions evaluated before work begins?\n6. What is your process if you find unexpected conditions?\n7. How is cleanup handled?\n8. What warranty is offered and what does it cover?\n9. How are change orders documented?\n10. How is payment structured?\n\nThe quality of the answers tells you a lot.\n\n## Red Flags\n\n- Pressure to sign quickly, especially after a storm\n- Requests for large upfront payments\n- No written scope of work\n- Promises to handle everything through insurance with no evaluation\n- Verbal warranty claims that are not in writing\n- No physical business address or local references\n- Bids dramatically lower than others\n\nA dramatically low bid usually reflects missing scope, not a better deal.\n\n## Understand the Written Scope\n\nEvery reputable contractor should provide a written scope that includes:\n\n- Tear off or demolition and disposal where applicable\n- Materials and specifications\n- Underlayment and flashing details for roofing\n- Structural or design details for construction\n- Cleanup and property protection\n- Warranty terms\n- Payment terms and schedule\n\nIf any of these are missing or vague, ask for clarification before signing.\n\n## Consider Roofing and Construction Together\n\nMany Sylva projects touch both roofing and broader exterior or construction scope. Working with one team that handles both often means:\n\n- Fewer handoffs and less finger pointing\n- Better sequencing of trades\n- One consistent point of contact\n- Cleaner overall completion\n\nAsk your contractor how they handle projects that cross those boundaries.\n\n## Trust the Overall Fit\n\nBeyond credentials and price, pay attention to whether:\n\n- The contractor listens more than they talk\n- The answers are clear and consistent\n- The written proposal matches the verbal conversation\n- You feel respected during the process\n\nA great contractor helps you understand your options and make the decision that fits your home.\n\n## Talk to a Local Sylva Team\n\nHighlander Building Services works on roofing, exterior, and construction projects across Sylva, Cullowhee, Franklin, and the surrounding Western North Carolina area. If you are evaluating contractors, [request an inspection](/request-inspection) and we will walk your home, put a clear written scope in front of you, and answer questions honestly.\n\nLearn more about our [roofing services](/roofing), [construction services](/construction), or [Sylva service area](/service-areas/sylva-nc).`,
-    faqs: [
-      { question: "How many bids should I get?", answer: "Two or three from reputable local contractors is a good baseline. The goal is to compare scope and approach, not just price." },
-      { question: "Is the lowest bid usually the best deal?", answer: "Rarely. A dramatically low bid usually reflects missing scope or thinner materials." },
-      { question: "Do I need permits for a Sylva project?", answer: "Most meaningful projects require some form of permit. We help homeowners understand what applies to their specific scope." },
-      { question: "Can Highlander handle roofing and construction together?", answer: "Yes. We routinely coordinate both on the same project across the Sylva area." },
-      { question: "What if I already have a bid and want a second opinion?", answer: "A second opinion inspection can confirm the scope or highlight anything worth reconsidering." },
-    ],
-    relatedServices: [
-      { label: "Roofing Services", path: "/roofing" },
-      { label: "Construction Services", path: "/construction" },
-      { label: "Request an Inspection", path: "/request-inspection" },
-      { label: "Sylva Service Area", path: "/service-areas/sylva-nc" },
-    ],
-  },
 ];
 
 blogPosts.push(...sylvaClusterPosts);
@@ -7768,18 +7088,15 @@ const BLOG_CONSOLIDATIONS: Record<string, { target: string; canonicalTo?: string
     canonicalTo: "metal-vs-shingle-roof-western-nc",
   },
 
-  // Choosing a roofer: one regional guide rather than near-identical town posts.
+  // Choosing a roofer: the town posts and the regional guide all point to /roofing.
   "how-to-choose-roofing-contractor-franklin-nc": {
-    target: "/blog/choosing-roofing-contractor-wnc",
-    canonicalTo: "choosing-roofing-contractor-wnc",
+    target: "/roofing",
   },
   "roofing-company-cashiers-nc-choosing-contractor": {
-    target: "/blog/choosing-roofing-contractor-wnc",
-    canonicalTo: "choosing-roofing-contractor-wnc",
+    target: "/roofing",
   },
   "roofing-contractor-sylva-nc-roofing-gutters-repairs": {
-    target: "/blog/choosing-roofing-contractor-wnc",
-    canonicalTo: "choosing-roofing-contractor-wnc",
+    target: "/roofing",
   },
 
   // These short Franklin articles duplicate the exact service-page job.

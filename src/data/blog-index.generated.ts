@@ -311,14 +311,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "canonicalTo": "/service-areas/cullowhee-nc/roof-repair"
   },
   {
-    "slug": "roofing-construction-contractor-sylva-nc",
-    "title": "How to Choose a Roofing and Construction Contractor in Sylva",
-    "excerpt": "A practical guide for Sylva, NC homeowners on how to evaluate and choose a trustworthy local roofing and construction contractor.",
-    "category": "Guides",
-    "date": "2026-07-25",
-    "town": "Sylva"
-  },
-  {
     "slug": "roof-inspection-signs-sylva-nc",
     "title": "Common Signs Your Sylva Home Needs a Roof Inspection",
     "excerpt": "The most common signs a Sylva, NC home is due for a professional roof inspection, and what a good inspection actually covers.",
@@ -400,15 +392,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "category": "Guides",
     "date": "2026-07-23",
     "town": "Franklin",
-    "canonicalTo": "choosing-roofing-contractor-wnc"
-  },
-  {
-    "slug": "metal-roof-maintenance-franklin-nc",
-    "title": "Metal Roof Maintenance for Franklin Homeowners",
-    "excerpt": "A practical maintenance guide for Franklin, NC homeowners with standing seam or exposed fastener metal roofs.",
-    "category": "Maintenance",
-    "date": "2026-07-23",
-    "town": "Franklin"
+    "canonicalTo": "/roofing"
   },
   {
     "slug": "common-roofing-problems-western-nc",
@@ -470,37 +454,13 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Highlands"
   },
   {
-    "slug": "roofing-mountain-homes-lake-glenville-scaly-mountain",
-    "title": "Roofing Glenville: What Elevation Does to Your Roof",
-    "excerpt": "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
-    "category": "Local",
-    "date": "2026-07-20",
-    "town": "Lake Glenville"
-  },
-  {
-    "slug": "roofing-vacation-second-homes-highlands-cashiers",
-    "title": "Roofing for Vacation Homes and Second Homes in Highlands and Cashiers",
-    "excerpt": "What second-home owners in Highlands and Cashiers should know about roof maintenance, monitoring, and long-distance communication.",
-    "category": "Local",
-    "date": "2026-07-20",
-    "town": "Highlands"
-  },
-  {
-    "slug": "roofing-construction-services-western-north-carolina",
-    "title": "Roofing and Construction Services Across Western North Carolina",
-    "excerpt": "An overview of Highlander's roofing and construction services across Western North Carolina — one team, roof to remodel.",
-    "category": "Local",
-    "date": "2026-07-20",
-    "town": "Highlands"
-  },
-  {
     "slug": "roofing-contractor-sylva-nc-roofing-gutters-repairs",
     "title": "Roofing Contractor in Sylva, NC: Roofing, Gutters, and Repairs",
     "excerpt": "Roofing, gutters, and repair services for Sylva, NC homeowners — what Highlander handles across Jackson County.",
     "category": "Local",
     "date": "2026-07-20",
     "town": "Sylva",
-    "canonicalTo": "choosing-roofing-contractor-wnc"
+    "canonicalTo": "/roofing"
   },
   {
     "slug": "roofing-company-cashiers-nc-choosing-contractor",
@@ -509,7 +469,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "category": "Local",
     "date": "2026-07-20",
     "town": "Cashiers",
-    "canonicalTo": "choosing-roofing-contractor-wnc"
+    "canonicalTo": "/roofing"
   },
   {
     "slug": "roofing-company-highlands-nc-local-factors",
@@ -517,14 +477,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "What sets a real Highlands, NC roofing company apart — elevation experience, access, and mountain-climate detail.",
     "category": "Local",
     "date": "2026-07-20",
-    "town": "Highlands"
-  },
-  {
-    "slug": "covered-porches-patios-western-nc-considerations",
-    "title": "Covered Porches and Patios in Western NC: What to Consider",
-    "excerpt": "Covered porches and patios extend the usable season for Western NC homes — here's what to think through before building.",
-    "category": "Outdoor Living",
-    "date": "2026-07-15",
     "town": "Highlands"
   },
   {
@@ -536,28 +488,12 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Cashiers"
   },
   {
-    "slug": "outdoor-living-highlands-nc-porches-patios",
-    "title": "Outdoor Living in Highlands, NC: Porches, Patios, and Mountain Views",
-    "excerpt": "Planning porches, patios, and outdoor living spaces on Highlands, NC mountain homes — sightlines, weather, and structure.",
-    "category": "Outdoor Living",
-    "date": "2026-07-15",
-    "town": "Highlands"
-  },
-  {
     "slug": "design-consultation-agreement-construction-project",
     "title": "How a Design & Consultation Agreement Helps Plan a Construction Project",
     "excerpt": "The Design & Consultation Agreement defines scope, drawings, and design fees before construction pricing — here's how it works.",
     "category": "Design",
     "date": "2026-07-15",
     "town": ""
-  },
-  {
-    "slug": "construction-services-highlands-nc-mountain-homes",
-    "title": "Construction Services in Highlands, NC for Mountain Homes",
-    "excerpt": "How Highlander approaches additions, porches, and construction projects on Highlands, NC mountain homes at elevation.",
-    "category": "Construction",
-    "date": "2026-07-15",
-    "town": "Highlands"
   },
   {
     "slug": "construction-services-franklin-nc",
@@ -576,35 +512,11 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "skylight-replacement-wnc",
-    "title": "Skylight Replacement: When Repairs Are Not Enough",
-    "excerpt": "How to tell when a WNC skylight is past repair — and what a proper replacement should include to prevent future leaks.",
-    "category": "Materials",
-    "date": "2026-07-10",
-    "town": ""
-  },
-  {
-    "slug": "velux-skylights-mountain-homes",
-    "title": "Velux Skylights for Mountain Homes: Light, Ventilation, and Planning",
-    "excerpt": "Why Velux is the dominant skylight choice for Western NC mountain homes — light quality, ventilation options, and planning considerations.",
-    "category": "Materials",
-    "date": "2026-07-10",
-    "town": ""
-  },
-  {
     "slug": "skylight-installation-western-nc",
     "title": "Skylight Installation in Western NC: What Homeowners Should Consider",
     "excerpt": "Planning a skylight install on a Western NC mountain home — placement, product choice, and the details that keep them leak-free long-term.",
     "category": "Materials",
     "date": "2026-07-10",
-    "town": ""
-  },
-  {
-    "slug": "how-gutters-protect-home-wnc",
-    "title": "How Gutters Help Protect Roofs, Siding, Foundations, and Outdoor Living Areas",
-    "excerpt": "Gutters do more than move rainwater — here's how a well-designed WNC system protects the whole home, from roof edge to foundation.",
-    "category": "Maintenance",
-    "date": "2026-07-09",
     "town": ""
   },
   {
@@ -649,26 +561,10 @@ export const blogIndex: BlogIndexEntry[] = [
     "canonicalTo": "metal-vs-shingle-roof-western-nc"
   },
   {
-    "slug": "metal-roofing-highlands-nc-benefits",
-    "title": "Metal Roofing in Highlands, NC: Benefits for Rain, Wind, and Elevation",
-    "excerpt": "Why standing seam metal is one of the strongest roofing options for Highlands, NC homes at 4,000+ feet.",
-    "category": "Materials",
-    "date": "2026-07-08",
-    "town": "Highlands"
-  },
-  {
     "slug": "roof-lifespan-mountain-home-wnc",
     "title": "How Long Do Roofs Last in NC? WNC Mountain Roof Lifespans",
     "excerpt": "Real-world roof lifespans for Western NC mountain homes across shingles, metal, and specialty systems — with the caveats that matter.",
     "category": "Materials",
-    "date": "2026-07-07",
-    "town": ""
-  },
-  {
-    "slug": "roof-replacement-cost-factors-western-nc",
-    "title": "Roof Replacement Cost Factors in Western North Carolina",
-    "excerpt": "The real factors that shape a WNC roof replacement estimate — and why flat, published pricing rarely reflects actual mountain conditions.",
-    "category": "Cost",
     "date": "2026-07-07",
     "town": ""
   },
@@ -723,14 +619,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "budgeting-for-preconstruction-planning",
-    "title": "Budgeting for Pre-Construction: Why Planning Saves 15% on Build Costs",
-    "excerpt": "Investing in planning prevents costly mistakes during construction. Learn the ROI of the Design phase.",
-    "category": "Cost",
-    "date": "2026-06-10",
-    "town": ""
-  },
-  {
     "slug": "modern-mountain-design-trends-2026",
     "title": "Design Trends: Modern Mountain Rusticity in 2026",
     "excerpt": "What's shaping WNC home design this year? From mixed-material exteriors to floor plans that prioritize 'wellness' spaces.",
@@ -739,20 +627,12 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "permitting-additions-macon-vs-jackson-county",
-    "title": "Permitting for Additions: Macon vs. Jackson County",
-    "excerpt": "The rules change at the county line. A guide to building codes and permit timelines in Franklin, Highlands, and Sylva.",
-    "category": "Local",
-    "date": "2026-05-25",
-    "town": "Franklin"
-  },
-  {
     "slug": "choosing-materials-for-high-elevation",
     "title": "Choosing Materials for High-Elevation Builds",
     "excerpt": "UV, wind, and ice change the rules for material selection. Learn what to pick for homes above 3,500 feet.",
     "category": "Materials",
     "date": "2026-04-20",
-    "town": ""
+    "town": "Highlands"
   },
   {
     "slug": "floor-plan-modernization-older-homes",
@@ -760,7 +640,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "How to transform a traditional mountain home layout into a bright, open space without losing its character.",
     "category": "Construction",
     "date": "2026-04-18",
-    "town": "Franklin"
+    "town": ""
   },
   {
     "slug": "wnc-construction-permitting-guide",
@@ -792,22 +672,6 @@ export const blogIndex: BlogIndexEntry[] = [
     "excerpt": "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
     "category": "Construction",
     "date": "2026-03-20",
-    "town": ""
-  },
-  {
-    "slug": "why-hire-one-company-roof-and-construction",
-    "title": "Why Hiring One Company for Roofing and Construction Makes Sense",
-    "excerpt": "Coordinating separate roofing and construction contractors creates problems. Here's why a single team delivers better results.",
-    "category": "Construction",
-    "date": "2026-03-01",
-    "town": ""
-  },
-  {
-    "slug": "mountain-home-addition-planning",
-    "title": "Planning a Home Addition in WNC: Technical Hurdles to Solve First",
-    "excerpt": "Building on a mountain slope requires more than just a footprint. Learn the unique engineering and permitting steps for WNC additions.",
-    "category": "Construction",
-    "date": "2026-03-01",
     "town": ""
   },
   {
@@ -883,28 +747,12 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "choosing-roofing-contractor-wnc",
-    "title": "How to Choose a Roofing Contractor in Western North Carolina",
-    "excerpt": "Not all roofers are equal. Here's what WNC homeowners should look for — and what red flags to avoid.",
-    "category": "Tips",
-    "date": "2025-12-12",
-    "town": ""
-  },
-  {
     "slug": "emergency-roof-repair-wnc",
     "title": "Emergency Roof Repair in Western NC: What to Do When Disaster Strikes",
     "excerpt": "Fallen tree? Major leak? Here's your step-by-step emergency guide for WNC homeowners.",
     "category": "Storm",
     "date": "2025-12-05",
     "town": ""
-  },
-  {
-    "slug": "roof-financing-options-western-nc",
-    "title": "Roof Financing Options for Western NC Homeowners",
-    "excerpt": "A new roof is a major investment. Here are the financing options available to make it affordable.",
-    "category": "Financing",
-    "date": "2025-11-28",
-    "town": "Highlands"
   },
   {
     "slug": "winter-roof-preparation-highlands",

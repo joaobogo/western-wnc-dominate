@@ -89,7 +89,7 @@ Mineral-surfaced roll roofing is inexpensive and sometimes used on sheds and uti
 | Modified bitumen | Torched, adhered or self-adhered | Multi-layer redundancy, tough surface | Heavier, installation method matters |
 | Standing seam metal | Mechanical, concealed fasteners | Sheds snow, long service life | Must be designed for the actual slope |
 
-We do not publish prices for these systems, because cost swings with roof size, access, insulation and the number of penetrations. For how pricing generally works up here, see our [roof replacement cost factors in Western NC](/blog/roof-replacement-cost-factors-western-nc).
+We do not publish prices for these systems, because cost swings with roof size, access, insulation and the number of penetrations. For how pricing generally works up here, see our [roof replacement cost factors in Western NC](/roofing-cost-western-nc).
 
 ## Single-Ply Details That Separate Good from Average
 

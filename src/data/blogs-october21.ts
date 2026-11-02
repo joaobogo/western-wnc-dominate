@@ -314,7 +314,7 @@ Decking work almost always happens as part of a reroof, since removing shingles 
 
 A small patch of one or two sheets around a leak costs far less than a full redeck. Steep or complex roofs, multiple old shingle layers, rafter repairs and difficult access, such as a tight mountain driveway, all push costs up.
 
-Because nobody knows the full extent until tear-off, most contractors price decking as an allowance: a per-sheet rate in the estimate, with a change order only if actual damage exceeds it. Get that structure in writing before signing. A verbal promise to "handle whatever we find" is how homeowners end up with surprise invoices. Our guide to [roof replacement cost factors in Western NC](/blog/roof-replacement-cost-factors-western-nc) covers what else moves the number.
+Because nobody knows the full extent until tear-off, most contractors price decking as an allowance: a per-sheet rate in the estimate, with a change order only if actual damage exceeds it. Get that structure in writing before signing. A verbal promise to "handle whatever we find" is how homeowners end up with surprise invoices. Our guide to [roof replacement cost factors in Western NC](/roofing-cost-western-nc) covers what else moves the number.
 
 Insurance depends on your policy. Policies often cover decking damaged by a sudden covered event, such as wind-driven rain through storm damage or a tree limb puncture, and usually exclude rot from long-term wear or ventilation problems. If you file a claim, keep dated photos, receipts for temporary repairs and your contractor's written assessment of the cause. If storm damage is the trigger, see our [storm damage roof inspection guide](/blog/storm-damage-roof-inspection_1).
 
