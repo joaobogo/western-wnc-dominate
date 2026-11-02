@@ -343,9 +343,10 @@ div[style*="Edit with Lovable"],
     </script>
 
     <!-- RealWork Labs — installed per vendor instructions (support@realworklabs.com, 2026-06-24): sitewide loader, #rwl-output on /recent-projects.
-         The loader is ~1 MB of main-thread work, so it waits for user intent
-         (or 5 s of idle) via the same gate as the VELUX embed. The widget on
-         /recent-projects still initializes; it simply mounts a moment later. -->
+         The loader is ~1 MB of main-thread work (plus Google Maps), so on other
+         pages it waits for a real interaction (scroll past the hero, click, key
+         or touch), never the idle timer. On /recent-projects the feed requests
+         it once the section is close to view (RealWorkWidget). -->
     <script type="text/javascript">
     (function(){
       var rwlRequested = false;
@@ -364,7 +365,7 @@ div[style*="Edit with Lovable"],
       // Pages that render the project feed (RealWorkWidget) call this on mount
       // so the feed loads right away there; everywhere else it waits for intent.
       window.__loadRWL = loadRWL;
-      if(window.__hlOnUserIntent) window.__hlOnUserIntent(loadRWL);
+      if(window.__hlOnStrictIntent) window.__hlOnStrictIntent(loadRWL);
       else window.addEventListener('load', loadRWL, {once:true});
                 }());
     </script>

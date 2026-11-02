@@ -6,12 +6,22 @@ import robertImg from "@/assets/team/robert-harrison.jpg";
 import kyleImg from "@/assets/team/kyle-poindexter.jpg";
 import prestonImg from "@/assets/team/preston-lopes.jpg";
 import alexImg from "@/assets/team/alex-hurst.jpg";
+import lukeSet from "@/assets/team/luke-smith.jpg?w=240;480;720&format=webp&as=srcset";
+import kristySet from "@/assets/team/kristy-smith.jpg?w=240;480;720&format=webp&as=srcset";
+import davidSet from "@/assets/team/david-bourque.jpg?w=240;480;720&format=webp&as=srcset";
+import derekSet from "@/assets/team/derek-wallace.jpg?w=240;480;720&format=webp&as=srcset";
+import robertSet from "@/assets/team/robert-harrison.jpg?w=240;480;720&format=webp&as=srcset";
+import kyleSet from "@/assets/team/kyle-poindexter.jpg?w=240;480;720&format=webp&as=srcset";
+import prestonSet from "@/assets/team/preston-lopes.jpg?w=240;480;720&format=webp&as=srcset";
+import alexSet from "@/assets/team/alex-hurst.jpg?w=240;480;720&format=webp&as=srcset";
 
 export type TeamMember = {
   slug: string;
   name: string;
   role: string;
   image: string;
+  /** WebP sizes of `image` (240/480/720 px wide) for `srcSet`. */
+  srcSet: string;
   alt: string;
   bio: string[];
   details: { label: string; value: string }[];
@@ -24,6 +34,7 @@ export const teamMembers: TeamMember[] = [
     name: "Luke Smith",
     role: "Owner & Founder",
     image: lukeImg,
+    srcSet: lukeSet,
     alt: "Luke Smith, Owner & Founder at Highlander Building Services",
     bio: [
       "Luke's roots in roofing and construction go back to the 1980s, when he first started learning the trades hands-on. That decades-long foundation shaped the standards, craftsmanship, and work ethic that define Highlander Building Services today.",
@@ -44,6 +55,7 @@ export const teamMembers: TeamMember[] = [
     name: "Kristy Smith",
     role: "Owner & Financial Manager",
     image: kristyImg,
+    srcSet: kristySet,
     alt: "Kristy Smith, Owner & Financial Manager at Highlander Building Services",
     bio: [
       "Kristy plays a vital role in the daily operations of Highlander Building Services, overseeing the company's bookkeeping, accounting, and financial management. Her attention to detail and organizational skills help ensure the company operates efficiently while maintaining the high standards customers have come to expect.",
@@ -62,6 +74,7 @@ export const teamMembers: TeamMember[] = [
     name: "David Bourque",
     role: "Sales Manager",
     image: davidImg,
+    srcSet: davidSet,
     alt: "David Bourque, Sales Manager at Highlander Building Services",
     bio: [
       "David leads Highlander Building Services' sales team and works directly with homeowners to help them navigate roofing projects with confidence. His focus is on understanding each customer's needs, providing clear recommendations, and ensuring every client receives the information necessary to make informed decisions about their property.",
@@ -80,6 +93,7 @@ export const teamMembers: TeamMember[] = [
     name: "Derek Wallace",
     role: "Roofing Consultant",
     image: derekImg,
+    srcSet: derekSet,
     alt: "Derek Wallace, Roofing Consultant at Highlander Building Services",
     bio: [
       "Derek works closely with homeowners throughout Western North Carolina to evaluate roofing needs, explain available options, and provide practical solutions tailored to each property. He believes in honest communication and helping customers feel comfortable throughout every stage of the roofing process.",
@@ -98,6 +112,7 @@ export const teamMembers: TeamMember[] = [
     name: "Robert Harrison",
     role: "Commercial Roofing Specialist & Inspector",
     image: robertImg,
+    srcSet: robertSet,
     alt: "Robert Harrison, Commercial Roofing Specialist & Inspector at Highlander Building Services",
     bio: [
       "With more than 40 years of experience in the roofing industry, Robert brings a wealth of knowledge and expertise to Highlander Building Services. Before relocating to the mountains of Western North Carolina, he successfully owned and operated his own roofing company in Florida, gaining extensive experience across residential and commercial roofing systems.",
@@ -116,6 +131,7 @@ export const teamMembers: TeamMember[] = [
     name: "Kyle Poindexter",
     role: "Senior Roofing Project Manager",
     image: kyleImg,
+    srcSet: kyleSet,
     alt: "Kyle Poindexter, Senior Roofing Project Manager at Highlander Building Services",
     bio: [
       "Kyle serves as Highlander Building Services' Senior Roofing Project Manager and Scheduling Coordinator. With five years of industry experience, he plays a key role in coordinating projects, managing schedules, and ensuring roofing installations are completed efficiently and to Highlander's quality standards.",
@@ -134,6 +150,7 @@ export const teamMembers: TeamMember[] = [
     name: "Preston Lopes",
     role: "Roofing Project Manager",
     image: prestonImg,
+    srcSet: prestonSet,
     alt: "Preston Lopes, Roofing Project Manager at Highlander Building Services",
     bio: [
       "Preston helps oversee roofing projects from start to finish, ensuring customers receive the quality workmanship and service Highlander Building Services is known for. With two years of industry experience, he works closely with crews and homeowners to keep projects running smoothly and efficiently.",
@@ -152,6 +169,7 @@ export const teamMembers: TeamMember[] = [
     name: "Alex Hurst",
     role: "Roofing Repairs Project Manager",
     image: alexImg,
+    srcSet: alexSet,
     alt: "Alex Hurst, Roofing Repairs Project Manager at Highlander Building Services",
     bio: [
       "Alex specializes in managing roofing repair projects, helping homeowners address everything from leaks and storm damage to general roofing concerns. With three years of industry experience, he works diligently to ensure repair projects are completed efficiently while maintaining Highlander's commitment to quality and customer service.",

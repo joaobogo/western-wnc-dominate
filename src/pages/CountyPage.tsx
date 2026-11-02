@@ -250,7 +250,7 @@ const CountyPage = () => {
             <div className="grid lg:grid-cols-3 gap-8">
               <ScrollReveal variant="rise-subtle">
                 <div className="bg-primary p-10 text-white h-full flex flex-col group relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
+                  <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "200px auto" }} />
                   <Home className="w-6 h-6 text-[hsl(var(--gold-ink))] mb-6" aria-hidden="true" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
                   <p className="text-white/90 text-sm mb-8 font-body leading-relaxed">
@@ -387,7 +387,7 @@ const CountyPage = () => {
         )}
 
         <section className="py-24 bg-primary text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
             <span className="eyebrow mb-6 block text-[hsl(var(--gold-ink))] uppercase tracking-widest">Start Your Project</span>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight text-white text-balance">

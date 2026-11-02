@@ -32,7 +32,7 @@ const Team = () => {
       <main id="main-content">
         {/* HERO */}
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+          <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10">
             <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
               The People Behind Highlander
@@ -89,6 +89,8 @@ const Team = () => {
                   <div className="relative aspect-[4/5] overflow-hidden bg-muted">
                       <img width={1000} height={1250} decoding="async"
                         src={member.image}
+                        srcSet={member.srcSet}
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         alt={member.alt}
                         loading="lazy"
                         className="w-full h-full object-cover object-top"

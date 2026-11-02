@@ -17,7 +17,7 @@ const TartanBackground = ({
     <div 
       className={cn("absolute inset-0 pointer-events-none transition-opacity duration-700", className)}
       style={{ 
-        backgroundImage: "url('/tartan.png')",
+        backgroundImage: "url('/tartan.webp')",
         backgroundSize: patternSize,
         backgroundRepeat: "repeat",
         opacity: opacity,

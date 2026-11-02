@@ -59,6 +59,8 @@ const WhoShowsUp = ({
                   <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 overflow-hidden rounded-sm border-2 border-[hsl(var(--highland-gold)/0.3)] shadow-raised">
                     <img
                       src={luke.image}
+                      srcSet={luke.srcSet}
+                      sizes="(min-width: 768px) 144px, (min-width: 640px) 128px, 112px"
                       alt={luke.alt}
                       loading="lazy"
                       decoding="async"
@@ -83,6 +85,8 @@ const WhoShowsUp = ({
                   <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 overflow-hidden rounded-sm border-2 border-[hsl(var(--highland-gold)/0.3)] shadow-raised">
                     <img
                       src={kristy.image}
+                      srcSet={kristy.srcSet}
+                      sizes="(min-width: 768px) 144px, (min-width: 640px) 128px, 112px"
                       alt={kristy.alt}
                       loading="lazy"
                       decoding="async"

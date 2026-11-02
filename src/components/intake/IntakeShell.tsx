@@ -64,7 +64,7 @@ const IntakeShell = ({
               <div 
                 className="absolute top-0 left-0 right-0 h-1 opacity-[0.25]" 
                 style={{ 
-                  backgroundImage: "url('/tartan.png')",
+                  backgroundImage: "url('/tartan.webp')",
                   backgroundSize: "80px auto",
                   backgroundRepeat: "repeat"
                 }} 

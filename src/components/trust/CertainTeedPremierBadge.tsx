@@ -1,4 +1,5 @@
 import premierAsset from "@/assets/certainteed-shinglemaster-premier-transparent.png";
+import premierSet from "@/assets/certainteed-shinglemaster-premier-transparent.png?w=128;256&format=webp&as=srcset";
 import { cn } from "@/lib/utils";
 
 /** Official owner-supplied artwork: preserve the original colors and proportions. */
@@ -6,6 +7,8 @@ export default function CertainTeedPremierBadge({ className = "" }: { className?
   return (
     <img
       src={premierAsset}
+      srcSet={premierSet}
+      sizes="64px"
       alt="CertainTeed ShingleMaster PREMIER Credentialed Contractor"
       width={768}
       height={768}

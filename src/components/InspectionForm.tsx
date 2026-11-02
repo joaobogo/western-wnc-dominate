@@ -221,7 +221,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: "url('/tartan.png')",
+          backgroundImage: "url('/tartan.webp')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
         }}

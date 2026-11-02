@@ -121,7 +121,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
             <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
               <div
                 className="absolute inset-0 opacity-40 bg-[hsl(var(--highland-gold)/0.1)]"
-                style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "80px auto" }}
+                style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "80px auto" }}
               />
             </div>
 

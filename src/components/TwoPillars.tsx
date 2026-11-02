@@ -18,7 +18,7 @@ const TwoPillars = () => {
     <section className="bg-background py-20 md:py-32 relative overflow-hidden">
       {/* Subtle Heritage Tartan Watermark */}
       <div className="absolute inset-0 pointer-events-none" style={{ 
-        backgroundImage: "url('/tartan.png')",
+        backgroundImage: "url('/tartan.webp')",
         backgroundSize: "400px auto",
         opacity: "0.03"
       }} />

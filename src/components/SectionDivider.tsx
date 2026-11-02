@@ -168,7 +168,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
         <div 
           className="absolute inset-0 opacity-[0.35]" 
           style={{ 
-            backgroundImage: "url('/tartan.png')",
+            backgroundImage: "url('/tartan.webp')",
             backgroundSize: "100px auto",
             backgroundRepeat: "repeat"
           }} 

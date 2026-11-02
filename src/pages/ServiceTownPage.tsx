@@ -172,10 +172,10 @@ const ServiceTownPage = ({
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
-            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "300px auto" }} />
             
             {/* Subtle Bottom Heritage Trim */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.webp')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
           </div>
 
           <div className="container-tight relative z-10 pb-20">
@@ -338,7 +338,7 @@ const ServiceTownPage = ({
 
         {/* Final Conversion Pathway */}
         <section className="py-24 bg-primary text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.webp')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
             <span className="eyebrow mb-6 block text-[hsl(var(--gold-ink))]">Start Your Project</span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight">

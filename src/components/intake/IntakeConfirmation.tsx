@@ -53,7 +53,7 @@ const IntakeConfirmation = ({
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-[0.03] pointer-events-none rotate-12" 
         style={{ 
-          backgroundImage: "url('/tartan.png')",
+          backgroundImage: "url('/tartan.webp')",
           backgroundSize: "160px auto",
           backgroundRepeat: "repeat"
         }} 
