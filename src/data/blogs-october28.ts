@@ -72,7 +72,7 @@ Ask the contractor how decking repair is priced and scheduled before you sign. A
 
 If you already know what you want, this takes a day or two. If you are still weighing metal against shingles, give yourself a week. Our comparisons for mountain homes can help you decide faster: [metal vs. shingle roofs for Western NC homes](/blog/metal-vs-shingle-roof-western-nc) covers the tradeoffs, and [how long a mountain roof lasts](/blog/roof-lifespan-mountain-home-wnc) shows what you get for the time and money.
 
-If you are not sure whether you need a replacement at all, read [roof repair vs. replacement](/blog/roof-repair-vs-replacement-wnc) first. A common rule of thumb: when repair costs would exceed 25 percent of a full replacement, or more than 30 percent of the roof surface is damaged, replacement is generally the better long-term decision.
+If you are not sure whether you need a replacement at all, read [roof repair vs. replacement](/blog/roof-lifespan-mountain-home-wnc) first. A common rule of thumb: when repair costs would exceed 25 percent of a full replacement, or more than 30 percent of the roof surface is damaged, replacement is generally the better long-term decision.
 
 ### 3. Permits
 
@@ -463,7 +463,7 @@ Typical culprits we find behind failed soffit in the mountains:
 - Ice and snowmelt refreezing at the eave, which points back to insulation and ventilation.
 - Old wood fascia and rafter tails that have been wet for years.
 
-A homeowner who catches this in early autumn can solve it before the first hard freeze. Our piece on [pre-winter exterior repairs in Sylva](/blog/exterior-repairs-before-winter-sylva-nc) lays out what to check.
+A homeowner who catches this in early autumn can solve it before the first hard freeze. Our piece on [pre-winter exterior repairs in Sylva](/service-areas/sylva-nc/roof-repair) lays out what to check.
 
 ## Our Perspective: How We Choose for Mountain Homes
 
@@ -784,7 +784,7 @@ Snow load matters most at three moments.
 
 **Roof replacement.** A new roof usually keeps the existing structure, so the framing is not redesigned. But the roofing material changes the weight on it. Heavier materials like some tile or slate add dead load, while metal and synthetic products are generally lighter. Tear-off is also the moment to check decking, ventilation and any sagging you have been ignoring. Our [roof replacement work for mountain homes](/roofing/roof-replacement) starts with this kind of inspection.
 
-**Additions.** Adding a wing or a second story creates new roof steps, valleys and drift zones, and can add load to old framing. We cover the structural questions in [second story addition feasibility in WNC](/blog/structural-feasibility-second-story-wnc).
+**Additions.** Adding a wing or a second story creates new roof steps, valleys and drift zones, and can add load to old framing. We cover the structural questions in [second story addition feasibility in WNC](/construction/additions).
 
 ### Material choices for snow country
 

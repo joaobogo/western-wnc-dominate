@@ -227,7 +227,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /blog/common-roofing-problems-franklin-nc                   /blog/common-roofing-problems-western-nc          301!
 /blog/common-roofing-problems-cashiers-nc                   /blog/common-roofing-problems-western-nc          301!
 /blog/common-roofing-problems-cullowhee-nc                  /blog/common-roofing-problems-western-nc          301!
-/blog/2026-spring-storm-season-wnc-preparation              /blog/wnc-storm-season-roof-damage                301!
+/blog/2026-spring-storm-season-wnc-preparation              /blog/storm-damage-checklist-western-nc                301!
 
 # ============================================================
 # 15 Sep 2026 SEO audit — old-site URLs still in Google's index with no rule
@@ -772,20 +772,20 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /blog/roof-replacement-cost-sapphire-nc                      /blog/roof-replacement-cost-factors-western-nc               301!
 /blog/roof-replacement-cost-lake-toxaway-nc                  /blog/roof-replacement-cost-factors-western-nc               301!
 /blog/roof-replacement-cost-lake-glenville-nc                /blog/roof-replacement-cost-factors-western-nc               301!
-/blog/storm-season-prep-bryson-city-nc                       /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-waynesville-nc                       /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-dillsboro-nc                         /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-cherokee-nc                          /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-asheville-nc                         /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-hendersonville-nc                    /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-brevard-nc                           /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-murphy-nc                            /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-hayesville-nc                        /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-otto-nc                              /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-scaly-mountain-nc                    /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-sapphire-nc                          /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-lake-toxaway-nc                      /blog/2026-spring-storm-season-wnc-preparation               301!
-/blog/storm-season-prep-lake-glenville-nc                    /blog/2026-spring-storm-season-wnc-preparation               301!
+/blog/storm-season-prep-bryson-city-nc                       /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-waynesville-nc                       /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-dillsboro-nc                         /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-cherokee-nc                          /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-asheville-nc                         /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-hendersonville-nc                    /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-brevard-nc                           /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-murphy-nc                            /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-hayesville-nc                        /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-otto-nc                              /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-scaly-mountain-nc                    /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-sapphire-nc                          /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-lake-toxaway-nc                      /blog/storm-damage-checklist-western-nc               301!
+/blog/storm-season-prep-lake-glenville-nc                    /blog/storm-damage-checklist-western-nc               301!
 /blog/storm-damage-asheville-nc-what-to-check                /blog/storm-damage-checklist-western-nc                      301!
 /blog/storm-damage-hendersonville-nc-what-to-check           /blog/storm-damage-checklist-western-nc                      301!
 /blog/storm-damage-brevard-nc-what-to-check                  /blog/storm-damage-checklist-western-nc                      301!
@@ -832,6 +832,74 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /blog/roofing-contractor-sylva-nc-roofing-gutters-repairs            /blog/choosing-roofing-contractor-wnc                          301!
 /blog/roof-repair-franklin-nc                                        /service-areas/franklin-nc/roof-repair                         301!
 /blog/roof-replacement-franklin-nc                                   /service-areas/franklin-nc/roof-replacement                    301!
+
+# ============================================================
+# Blog cleanup — Search Console audit 2026-11-02
+# Off-topic posts and posts over 90 days old with <50 impressions and 0 clicks
+# in 3 months were removed; topic duplicates were merged. Each goes to the
+# closest live page (town service page when the post was about one town).
+# ============================================================
+/blog/wnc-storm-season-roof-damage                                 /blog/storm-damage-checklist-western-nc                      301!
+/blog/transforming-screened-porch-sunroom                          /blog/screened-porch-vs-sunroom                              301!
+/blog/small-exterior-repairs-franklin-nc                           /blog/exterior-maintenance-checklist-highlands-nc            301!
+/blog/signs-your-roof-needs-replacement-mountain-homes             /blog/roof-lifespan-mountain-home-wnc                        301!
+/blog/roof-repair-highlands-nc                                     /service-areas/highlands-nc/roof-repair                      301!
+/blog/roof-replacement-cashiers-nc                                 /service-areas/cashiers-nc/roof-replacement                  301!
+/blog/roof-replacement-highlands-nc                                /service-areas/highlands-nc/roof-replacement                 301!
+/blog/roof-repair-vs-replacement-wnc                               /blog/roof-lifespan-mountain-home-wnc                        301!
+/blog/mountain-weather-roofs-highlands-nc                          /service-areas/highlands-nc/roofing                          301!
+/blog/why-design-planning-matters                                  /construction/design                                         301!
+/blog/roof-inspection-frequency-franklin-nc                        /service-areas/franklin-nc/roofing                           301!
+/blog/mountain-porch-deck-design-wnc                               /construction/outdoor-living                                 301!
+/blog/exterior-repairs-before-winter-sylva-nc                      /service-areas/sylva-nc/roof-repair                          301!
+/blog/decks-porches-outdoor-spaces-mountain-weather                /construction/outdoor-living                                 301!
+/blog/kitchen-layout-trends-mountain-homes                         /construction/additions                                      301!
+/blog/roof-repair-cashiers-nc                                      /service-areas/cashiers-nc/roof-repair                       301!
+/blog/roof-replacement-waynesville-nc-historic-homes               /roofing                                                     301!
+/blog/design-services-vs-build-ready-plans                         /construction/design                                         301!
+/blog/outdoor-living-trends-wnc                                    /construction/outdoor-living                                 301!
+/blog/commercial-roof-maintenance-wnc                              /roofing                                                     301!
+/blog/roof-repair-sylva-nc                                         /service-areas/sylva-nc/roof-repair                          301!
+/blog/roof-inspection-highlands-nc                                 /service-areas/highlands-nc/roofing                          301!
+/blog/roof-replacement-sylva-nc                                    /service-areas/sylva-nc/roofing-construction                 301!
+/blog/home-addition-renovation-franklin-nc                         /service-areas/franklin-nc/construction                      301!
+/blog/construction-services-cashiers-nc-additions-porches          /service-areas/cashiers-nc/construction                      301!
+/blog/guest-suite-vs-mother-in-law-flat                            /construction/additions                                      301!
+/blog/emergency-vs-scheduled-roof-repair-wnc                       /roofing/roof-repair                                         301!
+/blog/metal-roofing-western-nc-mountain-home                       /roofing/metal                                               301!
+/blog/common-roof-leak-locations-highlands-nc                      /service-areas/highlands-nc/roof-repair                      301!
+/blog/protecting-your-view-window-layout-strategies                /construction/design                                         301!
+/blog/second-home-roofing-cashiers-nc                              /service-areas/cashiers-nc/roofing                           301!
+/blog/roofing-company-franklin-nc-what-to-look-for                 /service-areas/franklin-nc/roofing                           301!
+/blog/roof-inspection-frequency-cullowhee-nc                       /service-areas/cullowhee-nc/roofing-construction             301!
+/blog/second-home-maintenance-highlands-nc                         /service-areas/highlands-nc/roofing                          301!
+/blog/project-spotlight-standing-seam-highlands-estate             /service-areas/highlands-nc/roofing                          301!
+/blog/what-a-roof-inspection-covers                                /request-inspection                                          301!
+/blog/moisture-tree-coverage-roofs-cashiers-nc                     /service-areas/cashiers-nc/roofing                           301!
+/blog/construction-scope-development-guide                         /construction/additions                                      301!
+/blog/maximizing-natural-light-skylight-strategies                 /roofing                                                     301!
+/blog/terrain-responsive-floor-plans-wnc                           /construction/additions                                      301!
+/blog/fall-roof-gutter-maintenance-before-winter-mountains         /roofing/gutters                                             301!
+/blog/outdoor-kitchen-layouts-high-elevation                       /construction/outdoor-living                                 301!
+/blog/spring-roof-maintenance-western-nc                           /roofing                                                     301!
+/blog/cost-saving-layout-tips-wnc                                  /construction/additions                                      301!
+/blog/planning-home-addition-western-nc                            /construction/additions                                      301!
+/blog/roof-leak-causes-cashiers-nc                                 /service-areas/cashiers-nc/roof-repair                       301!
+/blog/home-renovation-exterior-project-cullowhee-nc                /service-areas/cullowhee-nc/roofing-construction             301!
+/blog/mountain-roofing-maintenance-checklist                       /roofing                                                     301!
+/blog/vacation-rental-roof-maintenance-wnc                         /roofing                                                     301!
+/blog/mountain-room-addition-trends                                /construction/additions                                      301!
+/blog/water-through-ceiling-western-nc                             /roofing/roof-repair                                         301!
+/blog/tree-coverage-roofs-gutters-highlands-nc                     /service-areas/highlands-nc/roofing                          301!
+/blog/home-addition-without-plans-western-nc                       /construction/additions                                      301!
+/blog/master-suite-layouts-wnc                                     /construction/additions                                      301!
+/blog/tree-cover-rain-elevation-affect-roofs-wnc                   /roofing                                                     301!
+/blog/roof-inspection-cashiers-nc                                  /service-areas/cashiers-nc/roofing                           301!
+/blog/metal-roofing-bryson-city-nc-vacation-rentals                /roofing/metal                                               301!
+/blog/when-to-replace-roof-highlands                               /service-areas/highlands-nc/roof-replacement                 301!
+/blog/best-time-to-replace-roof-franklin-nc                        /service-areas/franklin-nc/roof-replacement                  301!
+/blog/structural-feasibility-second-story-wnc                      /construction/additions                                      301!
+/blog/plan-multi-phase-home-addition-wnc                           /construction/additions                                      301!
 
 # ============================================================
 # App-only rewrites — public/noindex funnels are prerendered as real files.

@@ -118,7 +118,7 @@ In practice:
 * **Exposed-fastener (screw-down):** every screw is a hole. Self-adhering membrane seals around them, and it is worth considering where the roof will face heavy weather.
 * **Metal shingles and stamped panels:** follow the manufacturer's spec. Some call for specific felt or synthetic products.
 
-If you are weighing panel styles, see our comparison of [standing seam vs. exposed-fastener metal](/blog/standing-seam-vs-exposed-fastener), or read about [metal roofing in Western NC](/blog/metal-roofing-western-nc-mountain-home).
+If you are weighing panel styles, see our comparison of [standing seam vs. exposed-fastener metal](/blog/standing-seam-vs-exposed-fastener), or read about [metal roofing in Western NC](/roofing/metal).
 
 ## Choosing underlayment for shingles
 
