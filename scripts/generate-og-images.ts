@@ -112,7 +112,22 @@ async function main() {
   mkdirSync(OUT_DIR, { recursive: true });
 
   const routes = prerenderedRoutes();
-  const browser = await chromium.launch();
+  let browser;
+  try {
+    browser = await chromium.launch(
+      process.env.PRERENDER_CHROMIUM ? { executablePath: process.env.PRERENDER_CHROMIUM } : {},
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const missingBrowser = /Executable doesn't exist|browser executable/i.test(message);
+    // Same policy as scripts/prerender.mjs: hosts without Chromium keep the
+    // build; /og/* falls back to /og-image.jpg via public/_redirects.
+    if (missingBrowser && process.env.NETLIFY !== "true") {
+      console.warn("og: Chromium is unavailable in this non-Netlify build environment; skipping per-route cards (fallback /og-image.jpg).");
+      return;
+    }
+    throw error;
+  }
   const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 
   let n = 0;
