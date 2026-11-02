@@ -9778,6 +9778,9 @@ for (const p of october28Posts) {
 for (const p of october31Posts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
+for (const p of november2Posts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
 for (const p of decisionGuidePosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
