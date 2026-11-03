@@ -86,6 +86,8 @@ export interface LeadAlertFields {
   grade: string;
   score: string;
   outcome: string;
+  /** Separate point of contact, e.g. "Jane Doe · (828) 555-0100 · jane@x.com". */
+  pointOfContact: string;
 }
 
 /** Pulls the alert fields out of any of the five lead tables' rows. */
@@ -122,6 +124,11 @@ export function leadAlertFields(table: string, row: Row): LeadAlertFields {
     grade: isFrontDesk ? pick(row.grade) : "",
     score: isFrontDesk && score != null && score !== "" ? `${score}/100` : "",
     outcome: isFrontDesk ? humanize(pick(row.outcome)) : "",
+    pointOfContact: [
+      pick(row.point_of_contact_name, row.metadata?.pocName, row.payload?.pocName),
+      pick(row.point_of_contact_phone, row.metadata?.pocPhone, row.payload?.pocPhone),
+      pick(row.point_of_contact_email, row.metadata?.pocEmail, row.payload?.pocEmail),
+    ].filter(Boolean).join(" · "),
   };
 }
 
@@ -152,6 +159,7 @@ export function buildLeadAlertHtml(f: LeadAlertFields, opts: LeadAlertOptions): 
     if (value) rows.push([label, html ?? escapeHtml(value)]);
   };
   add("Name", f.name);
+  add("Point of contact (send all communication here)", f.pointOfContact);
   const tel = f.phone.replace(/[^\d+]/g, "");
   add("Phone", f.phone, `<a href="tel:${escapeHtml(tel)}">${escapeHtml(f.phone)}</a>`);
   add("Email", f.email, `<a href="mailto:${escapeHtml(f.email)}">${escapeHtml(f.email)}</a>`);

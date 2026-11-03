@@ -73,6 +73,7 @@ export default function IntakeSheet() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const [saved, setSaved] = useState<Saved | null>(null);
   const [showAppointment, setShowAppointment] = useState(false);
+  const [showPoc, setShowPoc] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const refs = {
@@ -122,6 +123,7 @@ export default function IntakeSheet() {
     setSaveError(null);
     setSaved(null);
     setShowAppointment(false);
+    setShowPoc(false);
     setCopied(false);
     window.scrollTo({ top: 0 });
   }
@@ -160,6 +162,7 @@ export default function IntakeSheet() {
       setSavedOutcome(null);
       setMissing([]);
       setShowAppointment(false);
+      setShowPoc(false);
       setCopied(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
@@ -288,6 +291,48 @@ export default function IntakeSheet() {
                 invalid={has("contact")}
               />
             </Question>
+
+            <div className="mb-5" data-testid="point-of-contact">
+              {showPoc ? (
+                <div className="hl-card p-4">
+                  <p className="mb-3 text-[14px] font-bold">
+                    Point of contact{" "}
+                    <span className="font-normal opacity-70">— all calls, texts and emails go to this person</span>
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <TextField label="PoC name" value={lead.pocName} onChange={(v) => set("pocName", v)} />
+                    <TextField
+                      label="Phone"
+                      value={lead.pocPhone}
+                      onChange={(v) => set("pocPhone", formatPhone(v))}
+                      placeholder="828-555-0100"
+                      inputMode="tel"
+                    />
+                    <TextField
+                      label="Email"
+                      value={lead.pocEmail}
+                      onChange={(v) => set("pocEmail", v)}
+                      placeholder="name@example.com"
+                      inputMode="email"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    className="mt-3 text-[13px] underline underline-offset-2 opacity-75"
+                    onClick={() => {
+                      setLead((p) => ({ ...p, pocName: "", pocPhone: "", pocEmail: "" }));
+                      setShowPoc(false);
+                    }}
+                  >
+                    Remove point of contact
+                  </button>
+                </div>
+              ) : (
+                <button type="button" className="hl-btn-quiet w-full sm:w-auto" onClick={() => setShowPoc(true)}>
+                  + Someone else is the point of contact
+                </button>
+              )}
+            </div>
 
             <ExistingCustomerCard
               phone={lead.phone}
