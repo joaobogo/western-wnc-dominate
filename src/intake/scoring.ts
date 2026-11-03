@@ -25,6 +25,10 @@ export type LeadDraft = {
   email: string;
   preferredContact: string | null;
   bestTime: string | null;
+  /** Someone else every call, text and email should go to (e.g. a daughter). */
+  pocName: string;
+  pocPhone: string;
+  pocEmail: string;
 
   address: string;
   town: string | null;
@@ -57,6 +61,9 @@ export const EMPTY_LEAD: LeadDraft = {
   email: "",
   preferredContact: null,
   bestTime: null,
+  pocName: "",
+  pocPhone: "",
+  pocEmail: "",
   address: "",
   town: null,
   townOther: "",
@@ -341,6 +348,8 @@ export function leadSummary(lead: LeadDraft, result: ScoreResult, callBy: string
     `${lead.firstName} ${lead.lastName}`.trim(),
     lead.phone && `Phone: ${lead.phone}`,
     lead.email && `Email: ${lead.email}`,
+    (lead.pocName || lead.pocPhone || lead.pocEmail) &&
+      `Point of contact: ${[lead.pocName, lead.pocPhone, lead.pocEmail].filter(Boolean).join(" · ")}`,
     townLabel(lead) && `Town: ${townLabel(lead)}`,
     lead.address && `Address: ${lead.address}`,
     `Job: ${label(JOB_TYPES, lead.jobType)}`,

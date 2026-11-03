@@ -555,6 +555,15 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     if (waterEntering) lines.push("*** WATER ACTIVELY ENTERING PROPERTY ***");
   }
 
+  const poc = pointOfContact(row);
+  if (poc) {
+    lines.push("");
+    lines.push("*** POINT OF CONTACT — send all communication here ***");
+    kv("Name", poc.name);
+    kv("Phone", poc.phone);
+    kv("Email", poc.email);
+  }
+
   // Metadata fields that may carry extra property/project details submitted
   // by newer form variants without dedicated columns.
   const communityOrSubdivision =
@@ -834,6 +843,23 @@ export function accountMatchesTown(
   return locations.some((l) =>
     `${l?.name ?? ""} ${l?.address ?? ""}`.toLowerCase().includes(t),
   );
+}
+
+/**
+ * A separate point of contact: the person the customer wants every call,
+ * text and email to go to (e.g. a daughter who handles things for a parent).
+ * Front desk sheets store it as pocName / pocPhone / pocEmail; other forms may
+ * send point_of_contact_* columns. Null when nothing was given.
+ */
+export function pointOfContact(row: LeadRow): { name: string; phone: string | null; email: string | null } | null {
+  const meta: any = row.metadata ?? {};
+  const r: any = row;
+  const name = cleanName(r.point_of_contact_name ?? meta.pocName ?? meta.point_of_contact_name);
+  const rawPhone = String(r.point_of_contact_phone ?? meta.pocPhone ?? meta.point_of_contact_phone ?? "").trim();
+  const email = String(r.point_of_contact_email ?? meta.pocEmail ?? meta.point_of_contact_email ?? "").trim();
+  if (!name && !rawPhone && !email) return null;
+  const phone = rawPhone ? toUsE164(rawPhone) : null;
+  return { name: name || "Point of contact", phone: phone || null, email: email || null };
 }
 
 function buildContactPayload(row: LeadRow) {
@@ -1162,6 +1188,7 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments
     org_id: JOBTREAD_ORG_ID || null,
     // Structured sections
     contact: buildContactPayload(row),
+    point_of_contact: pointOfContact(row),
     property: {
       property_address: row.property_address ?? null,
       property_town: town,
@@ -1517,7 +1544,7 @@ export function truncateNotePreservingFiles(note: string, max = 1000): string {
  * retry reuses them and redoes only the step that failed (an account made by an
  * earlier try of the same lead IS that lead's account).
  */
-export type JobTreadProgress = { accountId?: string; contactId?: string; locationId?: string; jobId?: string };
+export type JobTreadProgress = { accountId?: string; contactId?: string; pocContactId?: string; locationId?: string; jobId?: string };
 
 export type PaveSendOptions = {
   progress?: JobTreadProgress | null;
@@ -1856,6 +1883,41 @@ export async function sendToPaveApi(
       await save();
     }
 
+    // Step 2b — the separate point of contact, as its own contact on the same
+    // customer (titled "Point of contact") so calls and emails can go to them.
+    // Reuses a contact with the same name; never touches the primary contact.
+    const poc = payload.point_of_contact;
+    if (poc && !progress.pocContactId) {
+      const accRes = await paveFetch({
+        $: { grantKey: JOBTREAD_API_KEY },
+        account: { $: { id: accountId }, contacts: { $: { size: PAVE_LIMITS.accountContacts }, nodes: contactSelection } },
+      });
+      if (accRes?.error) throw new Error("Could not read customer's contacts");
+      const same = accRes?.account?.contacts?.nodes?.find((c: any) => personKey(c.name) === personKey(poc.name));
+      if (same?.id) {
+        progress.pocContactId = same.id;
+      } else {
+        const pocRes = await paveFetch({
+          $: { grantKey: JOBTREAD_API_KEY },
+          createContact: {
+            $: {
+              accountId,
+              name: poc.name,
+              title: "Point of contact",
+              customFieldValues: buildContactCustomFieldValues({ phone: poc.phone, email: poc.email }),
+            },
+            createdContact: { id: {} },
+          },
+        });
+        const apiErrP = pocRes?.error?.message || pocRes?.error;
+        if (apiErrP) return fail(`createContact (point of contact): ${String(apiErrP).slice(0, 400)}`);
+        const pocId: string | undefined = pocRes?.createContact?.createdContact?.id;
+        if (!pocId) return fail(`createContact (point of contact) returned no id`);
+        progress.pocContactId = pocId;
+      }
+      await save();
+    }
+
     // Step 3 — the Property (JobTread Location) with the full street address.
     // Reuse one the lead's earlier try (or the customer) already has with the
     // same name or address instead of adding another.
@@ -1883,9 +1945,9 @@ export async function sendToPaveApi(
             customFieldValues: {
               ...buildLocationCustomFieldValues({
                 gateCodeBool: false,
-                contactName,
-                phone: payload.contact?.phone,
-                email: payload.contact?.email,
+                contactName: payload.point_of_contact?.name ?? contactName,
+                phone: payload.point_of_contact ? payload.point_of_contact.phone : payload.contact?.phone,
+                email: payload.point_of_contact ? payload.point_of_contact.email : payload.contact?.email,
               }),
               ...(payload.structured?.location ?? {}),
             },
