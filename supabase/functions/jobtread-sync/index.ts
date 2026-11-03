@@ -503,7 +503,11 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     return r ? r : NP;
   };
   const has = (v: any): boolean => humanizeValue(v).length > 0;
-  const kv = (label: string, v: any) => lines.push(`${label}: ${val(v)}`);
+  // Empty answers are left out: "Not provided" lines used to fill the
+  // 1,000-character Job Notes field before the details the crew needs.
+  const kv = (label: string, v: any) => {
+    if (has(v)) lines.push(`${label}: ${val(v)}`);
+  };
   const section = (title: string) => {
     if (lines.length) lines.push("");
     lines.push(title);
@@ -569,7 +573,10 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   const communityOrSubdivision =
     row.community_or_subdivision ?? meta.community_or_subdivision ?? meta.community ?? meta.subdivision ?? null;
   const gateCode = row.gate_code ?? meta.gate_code ?? meta.entry_code ?? null;
-  const roofType = row.roof_type ?? meta.roof_type ?? null;
+  // Front desk sheet: roof basics up top plus "More appointment details".
+  const appt: any = meta.appointment ?? (row as any).appointment ?? {};
+  const label = (v: any) => (has(v) ? humanizeValue(v).replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase()) : "");
+  const roofType = row.roof_type ?? meta.roof_type ?? label(appt.roofType) ?? null;
   const materialColor = row.material_color ?? meta.material_color ?? meta.color ?? null;
   const foundationType = row.foundation_type ?? meta.foundation_type ?? null;
   const budgetValue =
@@ -599,15 +606,18 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   kv("Email", row.email);
   kv("Preferred Contact Method", row.preferred_contact_method);
   kv("Best Time to Contact", meta.best_time ?? meta.best_time_to_call ?? meta.contact_time ?? null);
-  lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
+  if (typeof row.consent_given === "boolean") lines.push(`Consent Given: ${row.consent_given}`);
   if (has(row.consent_text)) kv("Consent Text", row.consent_text);
 
   section("Project Summary");
   kv("Service Category", row.service_category);
-  kv("Project Type", row.project_type);
+  // Front desk calls carry the same job type in all three fields; say it once.
+  const sameAs = (v: any, ...others: any[]) => others.some((o) => humanizeValue(o) === humanizeValue(v));
+  if (!sameAs(row.project_type, row.service_category)) kv("Project Type", row.project_type);
   if (isRoofingCategory) {
     kv("Roof Type", roofType);
-    kv("Roofing Issue", row.roofing_issue_type ?? row.project_type);
+    const issue = row.roofing_issue_type ?? row.project_type;
+    if (!sameAs(issue, row.service_category, row.project_type)) kv("Roofing Issue", issue);
     kv("Material Color", materialColor);
     kv("Approximate Roof Age", (row as any).roof_age ?? meta.roof_age ?? meta.date_of_roof ?? meta.roof_installed ?? null);
     kv("Material Interest", meta.material_interest ?? meta.material ?? null);
@@ -622,8 +632,15 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     if (has(insuranceCarrier)) kv("Insurance Carrier", insuranceCarrier);
     if (has(claimNumber)) kv("Claim Number", claimNumber);
   }
+  kv("Stories", label(appt.stories));
+  kv("Steep Pitch", label(appt.steepPitch));
+  kv("Where It's Leaking", appt.leakLocation);
+  kv("Gutters", label(appt.gutters));
+  kv("Chimney", label(appt.chimney));
   const customerMessage = (row.project_description ?? "").toString().trim();
   lines.push(`Customer Message: ${customerMessage || NP}`);
+  const officeNotes = String(appt.notes ?? "").trim();
+  if (officeNotes && officeNotes !== customerMessage) lines.push(`Office Notes: ${officeNotes}`);
   if (isChatbotLead) {
     const summaryText = String(row.chat_summary ?? row.summary ?? "").trim();
     lines.push(`Chat Summary: ${summaryText || NP}`);
@@ -669,11 +686,15 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   section("Timeline/Urgency");
   kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
   kv("Timeline", timelineValue);
+  if (has(appt.state) || has(appt.dateTime)) {
+    kv("Appointment", [label(appt.state), humanizeValue(appt.dateTime)].filter(Boolean).join(" — "));
+  }
+  kv("Someone Home For Appointment", label(appt.someoneHome));
   if (has(meta.lead_score)) kv("Lead Score", `${meta.lead_score}/100`);
   if (has(meta.lead_grade)) kv("Lead Grade", meta.lead_grade);
   if (has(meta.score_version)) kv("Score Version", meta.score_version);
   if (meta.score_breakdown && typeof meta.score_breakdown === "object") {
-    kv("Score Breakdown", meta.score_breakdown);
+    kv("Score Breakdown", Object.entries(meta.score_breakdown).map(([k, v]) => `${k} ${v}`).join(" · "));
   }
   if (has(meta.call_by)) kv("Call By", meta.call_by);
   if (has(meta.receptionist)) kv("Taken By", meta.receptionist);
@@ -690,6 +711,8 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   kv("Community/Subdivision", communityOrSubdivision);
   kv("Gate Code", gateCode);
   kv("Property Type", row.property_type);
+  kv("Access Notes", appt.accessNotes);
+  kv("Mailing Address", appt.mailingAddress);
 
   // Attachments: signed download links when available, plus an explicit list
   // of files that failed so the team knows what to ask the customer to resend.
@@ -711,7 +734,29 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     resolved.failures.forEach((f) => lines.push(`  • ${f.name} — ${f.reason}`));
   }
 
-  return lines.join("\n");
+  return fitNoteLines(lines).join("\n");
+}
+
+/**
+ * JobTread's Job Notes field holds about 1,000 characters. When a note runs
+ * long, tracking and scoring detail goes first (it stays on the lead record),
+ * so the crew always sees contact, project, appointment and property details.
+ */
+export const NOTE_LIMIT = 1000;
+const LOW_PRIORITY_NOTE_LINES = [
+  "First Visit:", "Landing Page:", "Referrer:", "LinkedIn Attribution:", "MSCLKID:", "FBCLID:",
+  "UTM Term:", "UTM Content:", "Score Version:", "Score Flags:", "Score Gates:", "Score Breakdown:",
+  "Submitted At:", "Call By:", "UTM Medium:", "UTM Campaign:", "GCLID:", "UTM Source:",
+  "Page URL:", "Lead Type:", "Consent Text:", "Consent Given:", "Water Actively Entering: No",
+];
+export function fitNoteLines(lines: string[], limit = NOTE_LIMIT): string[] {
+  let out = [...lines];
+  const size = () => out.join("\n").length;
+  for (const prefix of LOW_PRIORITY_NOTE_LINES) {
+    if (size() <= limit) break;
+    out = out.filter((l) => !l.startsWith(prefix));
+  }
+  return out;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
