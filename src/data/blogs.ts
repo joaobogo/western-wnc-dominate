@@ -7031,6 +7031,7 @@ import { october22Posts } from "./blogs-october22";
 import { october28Posts } from "./blogs-october28";
 import { october31Posts } from "./blogs-october31";
 import { november2Posts } from "./blogs-november2";
+import { november4Posts } from "./blogs-november4";
 import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
 import { BLOG_COVERS } from "./blog-covers";
 for (const p of october21Posts) {
@@ -7046,6 +7047,9 @@ for (const p of october31Posts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of november2Posts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
+for (const p of november4Posts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of decisionGuidePosts) {
