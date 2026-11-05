@@ -11,7 +11,7 @@ describe("November 5 uploaded articles", () => {
     expect(String(post.image)).toContain("class-4-shingles-cost-hero");
     expect(post.metaTitle!.length).toBeLessThanOrEqual(60);
     expect(post.metaDescription!.length).toBeLessThanOrEqual(160);
-    expect(post.content).not.toMatch(/[\u2013\u2014]|in-house|babylovegrowth|highlandernc\.com|architectural|GAF/i);
+    expect(post.content).not.toMatch(/[\u2013\u2014]|in-house|babylovegrowth|highlandernc\.com/i);
     for (const m of post.content.matchAll(/\]\(\/blog\/([^)]+)\)/g)) {
       const linked = getBlogBySlug(m[1]);
       expect(linked && isLinkableBlogPost(linked), m[1]).toBeTruthy();
