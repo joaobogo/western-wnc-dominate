@@ -16,7 +16,7 @@ export const november4Posts: BlogPost[] = [
     image: masterSuiteAdditionHero,
     imageAlt: "Generated illustration of a timber and stone mountain home with a new single-story master suite addition, warm lit windows and a dimensional shingle roof tied into the original roofline at sunset over the Blue Ridge Mountains",
     metaTitle: "Master Suite Addition: Layout, Cost & Permits | Highlander",
-    metaDescription: "Planning a master suite addition in the mountains? See what a suite includes, workable sizes, what drives cost, permit steps and how to keep the budget in check.",
+    metaDescription: "Planning a master suite addition in the mountains? See what a suite includes, workable sizes, what drives cost, permit steps and how to keep budgets in check.",
     faqs: [
       { question: "What is the difference between a master bedroom and a master suite?", answer: "A master bedroom is the room alone. A master suite adds an attached private bathroom and typically a walk-in closet. Extras like a sitting area or office are optional upgrades rather than part of the definition." },
       { question: "How large should a master suite addition be?", answer: "Most fall between 300 and 500 square feet. A common bedroom size is 12 by 14 or 14 by 16 feet, with a bathroom from about 80 to 120 square feet in a compact design, or larger for a luxury layout. Your lot, roofline and budget set the practical limit." },
