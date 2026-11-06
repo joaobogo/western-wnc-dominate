@@ -146,6 +146,9 @@ If you have a porch, addition or flat section that needs repair or replacement, 
 - [NRCA guidelines for designing roof systems](https://www.nrca.net/roofingguidelines/pdf?id=169839&k=2014630)
 - [NRCA: building codes are the starting point for low-slope roof design](https://nrca.net/roofingguidelines/pdf?id=177285&k=2249009)
 - [North Carolina Building Code, Chapter 16 Structural Design (UpCodes)](https://up.codes/viewer/north_carolina/ibc-2021/chapter/16/structural-design)
-- [U.S. Department of Energy, Consumer Guide to Cool Roofs](https://www.energy.gov/sites/default/files/2021-08/ES-CoolRoofs_080921.pdf)`,
+- [U.S. Department of Energy, Consumer Guide to Cool Roofs](https://www.energy.gov/sites/default/files/2021-08/ES-CoolRoofs_080921.pdf)
+
+**Related reading:** [high altitude windows checklist](https://viewluxwindows.com/high-altitude-windows)
+`,
   },
 ];

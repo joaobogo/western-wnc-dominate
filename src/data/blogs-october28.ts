@@ -173,7 +173,10 @@ If you are planning a replacement, repair or storm-damage response in Western NC
 - [How to Determine a Roofing Project Timeline (Contractor Guide 2026)](https://www.ilroofinginstitute.com/blog/roofing-project-timeline-guide)
 - [Residential Permits (City of Asheville)](https://www.ashevillenc.gov/department/development-services/residential-permits-and-development/)
 - [11 Warning Signs You Need a New Roof (Angi)](https://www.angi.com/articles/7-warning-signs-you-need-new-roof.htm)
-- [How Long Does It Take To Replace a Roof? (Angi)](https://www.angi.com/articles/how-long-replace-roof.htm)`,
+- [How Long Does It Take To Replace a Roof? (Angi)](https://www.angi.com/articles/how-long-replace-roof.htm)
+
+**Related reading:** [drywall and storm damage repair](https://tampakitchenandbath.com/drywall-and-hurricane-damage-repair)
+`,
   },
   {
     slug: "rain-chains-vs-downspouts",
@@ -339,7 +342,10 @@ The best drainage still fails when it is neglected. A seasonal routine keeps bot
 - [Chapter 4 Foundations: North Carolina Residential Code (UpCodes)](https://up.codes/viewer/north_carolina/irc-2021/chapter/4/foundations)
 - [Rain chain guidance (University of Arizona Cooperative Extension)](https://cales.arizona.edu/backyards/sites/cals.arizona.edu.backyards/files/p11-12_0.pdf)
 - [Rainscaping Guide (Snohomish County)](https://snohomishcountywa.gov/DocumentCenter/View/102504/Rainscaping-Guide)
-- [Look for Missing Roof and Wall Flashing (Building America Solution Center)](https://basc.pnnl.gov/diy-guides/look-missing-roof-and-wall-flashing)`,
+- [Look for Missing Roof and Wall Flashing (Building America Solution Center)](https://basc.pnnl.gov/diy-guides/look-missing-roof-and-wall-flashing)
+
+**Related reading:** [matching gutters to metal panels](https://midatlanticmetalpanels.com/articles/gutter-attachment-metal-roof) · [this guide to landscape rock in storms](https://pave-n-turf.com/blog/landscape-rock-in-storms) · [fall maintenance checklist for homeowners](https://aubenrealty.com/blog/a-fall-maintenance-checklist-for-homeowners-by-our-property-management-company)
+`,
   },
   {
     slug: "aluminum-vs-vinyl-soffit",
@@ -499,7 +505,10 @@ If you are planning soffit, fascia or trim work, we handle it as part of our [ex
 - [Exploring Soffit Materials, Quality Edge](https://qualityedge.com/articles/exploring-soffit-materials-comparing-steel-aluminum-vinyl-fiber-cement-and-wood-composite/)
 - [How Much Does Soffit and Fascia Cost in 2026?, UseCalcPro](https://usecalcpro.com/blog/how-much-does-soffit-and-fascia-cost-2026/)
 - [Measure Guideline: Guide to Attic Air Sealing, U.S. Department of Energy](https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/measure_guideline_attic_airsealing.pdf)
-- [Guide to Durable Attics, U.S. Department of Energy](https://www.energy.gov/sites/prod/files/guide_to_durable_attics.pdf)`,
+- [Guide to Durable Attics, U.S. Department of Energy](https://www.energy.gov/sites/prod/files/guide_to_durable_attics.pdf)
+
+**Related reading:** [temporary fixes for a roof leak](https://workily.ie/blog/roof-leak-temporary-fix)
+`,
   },
   {
     slug: "metal-roof-colors",
@@ -653,7 +662,10 @@ If you are comparing colors for a repair, replacement, or new build in Franklin,
 - [Why Data Center Energy Management Starts on the Roof, Roofing Contractor](https://www.roofingcontractor.com/articles/102474-why-data-center-energy-management-starts-on-the-roof)
 - [Cool Roofs, U.S. Department of Energy](https://www1.eere.energy.gov/wip/pdfs/20110411_cool_roofs.pdf)
 - [Fluorescent Pigments for High-Performance Cool Roofing and Facades, U.S. Department of Energy](https://www.energy.gov/cmei/buildings/articles/fluorescent-pigments-high-performance-cool-roofing-and-facades)
-- [The True Cost of Metal Roofing, Roofing Contractor](https://www.roofingcontractor.com/articles/94958-the-true-cost-of-metal-roofing)`,
+- [The True Cost of Metal Roofing, Roofing Contractor](https://www.roofingcontractor.com/articles/94958-the-true-cost-of-metal-roofing)
+
+**Related reading:** [shading the AC unit](https://trucomfortaz.com/ac-unit-sun-exposure)
+`,
   },
   {
     slug: "roof-snow-load-requirements",
@@ -983,7 +995,10 @@ At Highlander Building Services, our roofing estimates are written and detailed,
 - [UL roof ratings, 15/32 plywood alternative](https://code-authorities.ul.com/wp-content/uploads/2015/05/Roof-Ratings-21.pdf)
 - [APA Rated Sheathing data sheet](https://apawood.org/Data/Sites/1/documents/product-support/rated-sheathing-datasheet.pdf)
 - [APA wood structural panel design handout](https://assets.apawood.org/asset/d10a3ad1-b274-448b-9ccd-4a5bfa169a5d/Handout-Mastering-WSP-Design-and-Specification.pdf)
-- [North Carolina Residential Code, Chapter 8](https://codes.iccsafe.org/content/NCRC2018/chapter-8-roof-ceiling-construction)`,
+- [North Carolina Residential Code, Chapter 8](https://codes.iccsafe.org/content/NCRC2018/chapter-8-roof-ceiling-construction)
+
+**Related reading:** [multifoil roof retrofits](https://blog.sprayfoamremovalhelp.co.uk/blog/multifoil-for-roof-retrofits)
+`,
   },
   {
     slug: "ice-and-water-shield",
