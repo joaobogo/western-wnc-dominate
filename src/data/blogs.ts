@@ -297,8 +297,6 @@ That is how we write our own estimates: a written scope, a clear price and one p
 ## Planning a Deck, Addition or Renovation?
 
 The foundation plan affects cost and timeline. Before you commit, read our guide to [structural feasibility for a second story in WNC](/construction/additions), then [request a written estimate](/request-inspection) from our Franklin or Sylva team.
-
-**Related reading:** For more, see this [how attic heat affects AC performance and efficiency](https://lahvaclc.com/blog/how-attic-heat-affects-ac-performance-and-efficiency).
 `,
   },
 {
@@ -786,12 +784,6 @@ If you suspect wind damage, request a [storm damage inspection](/roofing/storm-d
 
 ## Discuss Your Roof in Western North Carolina
 Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).
-
-**Related reading:** For more, see this [this home maintenance schedule](https://a-z.house/blog/home-maintenance-schedule).
-
-**Related reading:** For more, see this [outdoor living design](https://sgclandscape.com/design-build/outdoor-living).
-
-**Related reading:** For more, see this [temporary roof repair guide](https://exteriorgenie.com/blog/temporary-roof-repair-options-that-protect-your-home-fast).
 `,
   },
   {
