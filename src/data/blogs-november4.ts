@@ -161,8 +161,6 @@ If you are ready to move from ideas to a scope, we handle additions, kitchen and
 * [Master Suite Addition planning guide (Cedreo)](https://cedreo.com/blog/master-suite-addition/)
 * [Permit Process brochure (International Code Council)](https://iccsafe.org/wp-content/uploads/2024_BSM_Building_Permits_Brochure.pdf)
 * [Administration chapter (International Code Council)](https://shop.iccsafe.org/media/wysiwyg/material/7101S21-Sample.pdf)
-
-**Related reading:** For more, see [ideas to add bathroom space](https://giantfloor.com/blogs/creative-ideas-to-add-more-space-to-your-bathroom) and [bathroom remodel plumbing work](https://joco.plumbing/plumbing-contractor/bathroom-remodel).
 `,
   },
   {
@@ -340,8 +338,6 @@ If your roof has aging flashing, a leak near a wall, or a chimney that has never
 * [The Roof Flashing Installation Guide (IKO North America)](https://www.iko.com/na/blog/the-roof-flashing-installation-guide/)
 * [NRCA Guidelines for Metal Flashings](https://simon-products.com/srproducts/ibs/tech/codes%20and%20approvals/NRCA/NRCA%20Guidelines%20for%20Architectural%20Metal%20Flashings.pdf)
 * [DS 1-49 Perimeter Flashing (FM Global)](https://www.fm.com/FMAApi/data/ApprovalStandardsDownload?isGated=false&itemId=%7B226A10E4-E7EC-4746-893C-8898692505C5%7D)
-
-**Related reading:** For more, see this [avoid drilling through the roof covering](https://www.dmlidee.com/fotovoltaico-tetto-in-coppi).
 `,
   },
   {

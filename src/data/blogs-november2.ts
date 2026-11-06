@@ -159,8 +159,6 @@ For metal specifically, our [metal roofing cost page](/roofing/metal/cost) cover
 * [Synthetic Roofing Underlayments, Green Building Advisor](https://www.greenbuildingadvisor.com/app/uploads/sites/default/files/Synthetic-Roofing-Underlayments.pdf)
 * [Roof Covering Replacement Guidance (IBC/IRC 2021)](https://scpdc.org/wp-content/uploads/2024/01/Roof_Covering_Replacement-IBC-IRC-2021_12-22-2023.pdf)
 * [Felt Underlayment Bulletin, Cedar Shake & Shingle Bureau](http://www.cedarbureau.org/wp-content/uploads/2020/05/Felt-bulletin-2020.pdf)
-
-**Related reading:** For more, see this [bitumen flat roof assemblies](https://energysion.com/post/photovoltaik-befestigung-auf-bitumen-flachdach).
 `,
   },
 ];
