@@ -17,4 +17,14 @@ describe("November 5 uploaded articles", () => {
       expect(linked && isLinkableBlogPost(linked), m[1]).toBeTruthy();
     }
   });
+
+  it("publishes fascia-and-soffit-repair once with its cover and promised sandiegosolar backlink", () => {
+    const post = getBlogBySlug("fascia-and-soffit-repair");
+    expect(post).toBeDefined();
+    if (!post) return;
+    expect(blogPosts.filter((p) => p.slug === "fascia-and-soffit-repair")).toHaveLength(1);
+    expect(String(post.image)).toContain("fascia-and-soffit-repair-hero");
+    expect(post.content).toContain("](https://sandiegosolar.com/blog/why-staggered-installs-cause-roof-damage)");
+    expect(post.content).not.toMatch(/[\u2013\u2014]|in-house|highlandernc\.com/i);
+  });
 });
