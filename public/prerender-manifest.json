@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 202,
+    "sitemap": 203,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 332
+    "total": 333
   },
   "routes": [
     "/",
@@ -108,6 +108,7 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/fascia-and-soffit-repair",
     "/blog/class-4-shingles-cost",
     "/blog/master-suite-addition",
     "/blog/roof-flashing-types",
