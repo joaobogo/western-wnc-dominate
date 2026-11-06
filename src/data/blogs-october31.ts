@@ -346,6 +346,8 @@ If your roof is overdue for a bigger decision, a metal roof sheds needles and we
 * [Maintenance and Repair Guidelines, Malarkey Roofing Products](https://www.malarkeyroofing.com/app/uploads/2024/12/maintenance-repair-guidelines-shingle-warranties-malarkey.pdf)
 * [Tree growing close to house, Ask Extension](https://ask.extension.org/kb/faq.php?id=914920)
 * [How Often Should You Clean Your Gutters? Bob Vila](https://www.bobvila.com/articles/how-often-to-clean-gutters/)
+
+**Related reading:** For more, see this [code-compliant balcony repair](https://uni-cm.com/services/balcony-repair-sb721-compliance-los-angeles).
 `,
   },
   {

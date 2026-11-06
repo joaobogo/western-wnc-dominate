@@ -296,7 +296,14 @@ That is how we write our own estimates: a written scope, a clear price and one p
 
 ## Planning a Deck, Addition or Renovation?
 
-The foundation plan affects cost and timeline. Before you commit, read our guide to [structural feasibility for a second story in WNC](/construction/additions), then [request a written estimate](/request-inspection) from our Franklin or Sylva team.`,
+The foundation plan affects cost and timeline. Before you commit, read our guide to [structural feasibility for a second story in WNC](/construction/additions), then [request a written estimate](/request-inspection) from our Franklin or Sylva team.
+
+**Related reading:** For more, see this [foundation plumbing overview](https://txcomfortcrew.com/foundationplumbing).
+
+**Related reading:** For more, see this [how attic heat affects AC performance and efficiency](https://lahvaclc.com/blog/how-attic-heat-affects-ac-performance-and-efficiency).
+
+**Related reading:** For more, see [overview of energy-efficient window glazing options](https://viewluxwindows.com/energy-efficient-window-glazing-options-for-homes) and [guide to porch roofline and structure upgrades](https://capitalprolighting.com/blog/porch-roofline-lighting).
+`,
   },
 {
     slug: "energy-efficient-roofing",
@@ -782,7 +789,20 @@ Wind damage rarely waits for a convenient time, and having a professional crew w
 If you suspect wind damage, request a [storm damage inspection](/roofing/storm-damage) and have your storm date, any photos you have already taken, and your roof's approximate age ready when you call.
 
 ## Discuss Your Roof in Western North Carolina
-Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).`,
+Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).
+
+**Related reading:** For more, see this [proper slope away from the foundation](https://ivanslandscaping.com/downspout-drainage-options).
+
+**Related reading:** For more, see this [this home maintenance schedule](https://a-z.house/blog/home-maintenance-schedule).
+
+**Related reading:** For more, see this [partner resource on asphalt shingle installation](https://smartroofingpros.com/roofing/asphalt-shingle).
+
+**Related reading:** For more, see this [outdoor living design](https://sgclandscape.com/design-build/outdoor-living).
+
+**Related reading:** For more, see this [soffit intake options](https://blog.am-exteriors.com/blog/roof-ventilation-options).
+
+**Related reading:** For more, see this [temporary roof repair guide](https://exteriorgenie.com/blog/temporary-roof-repair-options-that-protect-your-home-fast).
+`,
   },
   {
     slug: "wind-driven-rain-leak_2",
@@ -906,7 +926,10 @@ Qualified crews handle the range of work that a wind-driven leak might require:
 Before you call, gather any photos you already have of the leak, the weather that day, and the roof's general condition. Then reach out through our [storm damage repair page](/roofing/storm-damage) or our [roof repair services](/roofing/roof-repair) to schedule an inspection.
 
 ## Discuss Your Roof in Western North Carolina
-Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).`,
+Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).
+
+**Related reading:** For more, see [homeowner hose test guide](https://star-ws.com/window-leaks-in-rain) and [weatherproofing guide for doors](https://ufiredoors.com/blog/door-weatherproofing-options).
+`,
   },
   {
     slug: "storm-damage-roof-inspection_1",
@@ -1009,7 +1032,10 @@ A documented checklist helps, but a trained eye catches what photos alone someti
 If you need a [roof repair](/roofing/roof-repair) assessed quickly or suspect the damage warrants a full [roof replacement](/roofing/roof-replacement), have your storm date, photos, and any insurer contact details ready when you call. Reach out through our [roofing services page](/roofing) to get an inspection scheduled.
 
 ## Discuss Your Roof in Western North Carolina
-Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).`,
+Highlander Building Services, Inc. can discuss your [storm damage concerns](/roofing/storm-damage), [roof repairs](/roofing/roof-repair) or [roof replacement](/roofing/roof-replacement). [Request an inspection](/request-inspection) and bring your storm date, photos and policy questions. See our [Franklin service area](/service-areas/franklin-nc) or [contact our team](/contact).
+
+**Related reading:** For more, see this [practical homeowner guide from Sabatalo Contracting](https://sabatalocontracting.com/how-to-spot-roof-damage-massachusetts-guide).
+`,
   },
   {
     slug: "tree-on-roof_2",
@@ -1125,7 +1151,10 @@ Mountain tree strikes combine roofing damage, difficult access and potential str
 Discuss the damage with Highlander Building Services, Inc. Have safe ground-level photos, any claim number and access notes ready. Explore [roof repair](/roofing/roof-repair) and [storm damage services](/roofing/storm-damage). Emergency services and utility crews, not a roofing appointment, are the first call for immediate danger.
 
 ## Discuss Your Mountain Home Project
-Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
+Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
+
+**Related reading:** For more, see [storm debris cleanup guide](https://villageprecisionpros.com/storm-debris-cleanup) and [how structural engineering works in your home](https://betterqualitybuilders.com/blog/how-structural-engineering-works-in-your-home).
+`, 
   },
   {
     slug: "under-deck-drainage",
@@ -1267,7 +1296,10 @@ Discuss your deck and drainage goals with Highlander Building Services, Inc. Exp
 For the wall connection, read our [deck ledger flashing guide](/blog/deck-ledger-flashing). Drainage should never hide unresolved structural rot.
 
 ## Discuss Your Mountain Home Project
-Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
+Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
+
+**Related reading:** For more, see this [runoff route across sloped ground](https://modernfence.com/2026/09/sloped-yard-fence-project).
+`, 
   },
   {
     slug: "deck-ledger-flashing",
@@ -1375,7 +1407,10 @@ Contact Highlander Building Services, Inc. to discuss your deck connection and e
 See [under-deck drainage planning](/blog/under-deck-drainage) before concealing framing with a ceiling or drainage system.
 
 ## Discuss Your Mountain Home Project
-Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
+Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
+
+**Related reading:** For more, see this [deck safety inspection guide](https://actionfenceanddeck.com/deck-safety-inspection).
+`, 
   },
   {
     slug: "acv-vs-rcv-roof",
@@ -1539,7 +1574,10 @@ Highlander Building Services, Inc. can discuss [storm damage](/roofing/storm-dam
 For urgent impact damage, read [what to do when a tree hits your roof](/blog/tree-on-roof_2). For tax records, see [roof replacement tax treatment](/blog/roof-replacement-tax-deductible_1).
 
 ## Discuss Your Mountain Home Project
-Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
+Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
+
+**Related reading:** For more, see this [inspection and recordkeeping guide](https://rentriq.io/blog/move-in-move-out-inspection-guide).
+`, 
   },
   {
     slug: "architectural-vs-3-tab",
@@ -1677,7 +1715,10 @@ These are the primary sources behind the wind, impact, and construction claims i
 - DOE/EERE's cool roof guidance covers how shingle reflectivity affects heating and cooling costs by climate zone.
 
 ## Discuss Your Mountain Home Project
-Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
+Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
+
+**Related reading:** For more, see this [bitumen roofing overview](https://dakcentralehollandbv.nl/bitumen-dak).
+`, 
   },
   {
     slug: "roof-replacement-tax-deductible_1",
@@ -1756,7 +1797,10 @@ For damage documentation, read [ACV versus RCV roof coverage](/blog/acv-vs-rcv-r
 - [IRS Energy Efficient Home Improvement Credit](https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit)
 
 ## Discuss Your Mountain Home Project
-Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.`, 
+Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
+
+**Related reading:** For more, see this [general background on solar tax credit changes](https://myfloridasolar.com/post/solar-tax-credit-changes-for-florida-homeowners).
+`, 
   },
   {
     slug: "high-elevation-roofing",
@@ -2215,7 +2259,10 @@ The written answers make competing proposals easier to compare. They also reveal
 
 Choose K-style when capacity, availability, color selection, and value lead the decision. Choose half-round when the home's traditional detailing or a premium metal finish justifies the added cost. In either case, require the gutter and downspout system to be sized for the actual roof and the way mountain rain reaches each eave.
 
-Highlander Building Services, Inc. evaluates roof planes, valleys, fascia condition, outlets, and discharge paths before recommending a profile. Review our [gutter and downspout services](/roofing/gutters), [request an inspection](/request-inspection), or call ${PHONE_DISPLAY} for a written scope for your Western North Carolina home.`,
+Highlander Building Services, Inc. evaluates roof planes, valleys, fascia condition, outlets, and discharge paths before recommending a profile. Review our [gutter and downspout services](/roofing/gutters), [request an inspection](/request-inspection), or call ${PHONE_DISPLAY} for a written scope for your Western North Carolina home.
+
+**Related reading:** For more, see this [gutter installation overview](https://upstateroofingpros.com/gutter-installation).
+`,
   },
   {
     slug: "chimney-flashing-repair",
@@ -2348,7 +2395,10 @@ If the surrounding roof is already brittle, worn across several planes, or diffi
 
 Chimney stains can also involve a cap, crown, porous masonry, condensation, or an uphill roof detail. The first task is to identify the water path. The second is to correct the layers that should carry water away.
 
-Highlander Building Services, Inc. inspects chimney flashing and surrounding roof conditions across Western North Carolina. We document visible findings and provide a written scope for the practical repair. [Request a roof inspection](/request-inspection) or call ${PHONE_DISPLAY}.`,
+Highlander Building Services, Inc. inspects chimney flashing and surrounding roof conditions across Western North Carolina. We document visible findings and provide a written scope for the practical repair. [Request a roof inspection](/request-inspection) or call ${PHONE_DISPLAY}.
+
+**Related reading:** For more, see this [AC leaking water guide](https://txcomfortcrew.com/post/ac-leaking-water).
+`,
   },
   {
     slug: "architectural-shingle-lifespan",
@@ -2630,7 +2680,10 @@ Call a licensed roofing professional when a leak repeats, the roof is steep or d
 
 Highlander Building Services, Inc. evaluates flashing leaks across Western North Carolina and provides documented findings with a written repair scope. The inspection can determine whether the practical next step is a targeted [roof repair](/roofing/roof-repair), work around a [skylight](/roofing/skylights), or a broader roofing correction.
 
-If water is actively entering the home, move belongings away from the area and contain the drip only where it is safe. Then [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. Avoid wet wiring, sagging ceilings, and compromised attic framing while you wait for help.`,
+If water is actively entering the home, move belongings away from the area and contain the drip only where it is safe. Then [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. Avoid wet wiring, sagging ceilings, and compromised attic framing while you wait for help.
+
+**Related reading:** For more, see this [guide to flat-roof solar ballast](https://dmlidee.com/zavorre-fotovoltaico-tetto-piano).
+`,
   },
   {
     slug: "hail-damage-roof",
@@ -2904,7 +2957,10 @@ If you see an active leak, move belongings away from the area, contain interior 
 ## Sources
 
 - [International Residential Code, Section R905.2.8.2: Valleys](https://codes.iccsafe.org/s/IRC2021P3/chapter-9-roof-assemblies/IRC2021P3-Pt03-Ch09-SecR905.2.8.2)
-- [HowStuffWorks: Repairing an Open Roof Valley](https://home.howstuffworks.com/home-improvement/repair/how-to-repair-a-leaky-roof4.htm)`,
+- [HowStuffWorks: Repairing an Open Roof Valley](https://home.howstuffworks.com/home-improvement/repair/how-to-repair-a-leaky-roof4.htm)
+
+**Related reading:** For more, see this [hidden impact damage from hail or falling debris](https://vectorclaimsolutions.com/why-hail-damage-causes-hidden-leaks-in-your-roof).
+`,
   },
   {
     slug: "roof-inspection-after-storm",
@@ -4209,7 +4265,10 @@ Call a qualified roofer when water returns after a previous patch, flashing appe
 
 Highlander Building Services, Inc. evaluates skylight leaks and surrounding roof systems throughout Western North Carolina. An inspection can document the likely entry point, roof and flashing condition, interior moisture path, and whether a targeted repair or [skylight replacement](/roofing/skylights) is the practical next step.
 
-If water is entering now, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. The goal is a clear written scope based on what failed, not another temporary surface patch.`,
+If water is entering now, [request an inspection](/request-inspection) or call ${PHONE_DISPLAY}. The goal is a clear written scope based on what failed, not another temporary surface patch.
+
+**Related reading:** For more, see this [drywall and hurricane damage repair resources](https://tampakitchenandbath.com/drywall-and-hurricane-damage-repair).
+`,
   },
   {
     slug: "standing-seam-vs-exposed-fastener",

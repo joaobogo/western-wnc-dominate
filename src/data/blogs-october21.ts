@@ -120,7 +120,10 @@ If your roof is due for a wind upgrade, we turn the checklist above into a docum
 - [IBHS FORTIFIED Home: Incentives](https://fortifiedhome.org/incentives/)
 - [FEMA P-804 Technical Advisory](https://www.fema.gov/sites/default/files/documents/fema_p-804-technical-advisory_072023.pdf)
 - [Building America Solution Center: Asphalt Shingle Roofs](https://basc.pnnl.gov/resource-guides/asphalt-shingle-roofs)
-- [Texas Department of Insurance: Questions to Ask Your Contractor Before Roofing](https://www.tdi.texas.gov/wind/faqroof.html)`,
+- [Texas Department of Insurance: Questions to Ask Your Contractor Before Roofing](https://www.tdi.texas.gov/wind/faqroof.html)
+
+**Related reading:** For more, see this [partner guide to residential roof ventilation](https://roofingandexteriorpros.com/residential-roof-ventilation-explained).
+`,
   },
   {
     slug: "shingle-blistering",
@@ -227,7 +230,10 @@ Our roof inspections map blistering, check attic ventilation and document deckin
 
 - [Inspectapedia: Asphalt Shingle Blister Rash](https://inspectapedia.com/roof/Asphalt_Shingle_Blister_Rash.php)
 - [Asphalt Roofing Manufacturers Association: Why Ventilation Is Important](https://www.asphaltroofing.org/wp-content/uploads/2023/02/Why-Ventilation-is-Important_20230201_11_FINAL.pdf)
-- [Florida Solar Energy Center: Shingle Temperature and Reflectance Report](https://publications.energyresearch.ucf.edu/wp-content/uploads/2018/06/FSEC-CR-1496-05.pdf)`,
+- [Florida Solar Energy Center: Shingle Temperature and Reflectance Report](https://publications.energyresearch.ucf.edu/wp-content/uploads/2018/06/FSEC-CR-1496-05.pdf)
+
+**Related reading:** For more, see this [asphalt shingle roofing](https://smartroofingpros.com/roofing/asphalt-shingle).
+`,
   },
   {
     slug: "roof-decking-replacement",
@@ -473,6 +479,9 @@ We install [metal roofing](/roofing/metal) for mountain homes across Franklin, H
 ## Sources
 
 - [This Old House: Copper Roof Cost](https://www.thisoldhouse.com/roofing/copper-roof-cost)
-- [U.S. Department of Energy: Guidelines for Selecting Cool Roofs](https://www1.eere.energy.gov/buildings/publications/pdfs/corporate/coolroofguide.pdf)`,
+- [U.S. Department of Energy: Guidelines for Selecting Cool Roofs](https://www1.eere.energy.gov/buildings/publications/pdfs/corporate/coolroofguide.pdf)
+
+**Related reading:** For more, see this [copper standing seam roof guide](https://sw-metalroofing.com/blog/copper-standing-seam-roof).
+`,
   },
 ];
