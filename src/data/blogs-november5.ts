@@ -258,7 +258,7 @@ A few more clues are worth checking on a dry day:
 
 Peeling paint does not always mean rot. A simple check helps separate the two. [Tapping the board, probing suspicious spots and sighting along soffit panels](https://www.thespruce.com/soffit-repair-8620298) can reveal a hollow sound or soft wood under paint that still looks intact. If a screwdriver sinks into the board, the wood has lost its strength and needs more than a coat of paint.
 
-Roof-edge problems also often trace back to the roof itself. Installation errors that leave seams or edges exposed can send water to exactly these boards. If you see damage along one stretch of the roofline, look at what sits above it. For homes in Macon County, check with the [Macon County Building Inspections office](https://www.maconnc.org/planning-building-inspections.html) about permit and inspection requirements before work that includes structural repairs. This is a local government resource, not a contractor endorsement.
+Roof-edge problems also often trace back to the roof itself. Installation errors that leave seams or edges exposed can send water to exactly these boards, a point explained in this piece on [how staggered installs cause roof damage](https://sandiegosolar.com/blog/why-staggered-installs-cause-roof-damage). If you see damage along one stretch of the roofline, look at what sits above it.
 
 We also keep a guide to [roof warning signs in Sylva](/service-areas/sylva-nc/roof-repair) that pairs well with a walk around your eaves.
 
