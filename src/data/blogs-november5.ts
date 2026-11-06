@@ -1,4 +1,5 @@
 import type { BlogPost } from "./blogs";
+import fasciaSoffitRepairHero from "@/assets/blog/fascia-and-soffit-repair-hero.jpg";
 import class4ShinglesCostHero from "@/assets/blog/class-4-shingles-cost-hero.jpg";
 
 /** Articles uploaded 5 Nov 2026. Slugs are the uploaded filenames without `.html`. */
@@ -179,6 +180,220 @@ We serve homeowners and property managers across Franklin, Highlands, Cashiers, 
 * [Fortified Homes and Mitigation Credits, NC DOI](https://www.ncdoi.gov/consumers/homeowners-insurance/fortified-homes-mitigation-credits)
 * [Coastal roof grant program announcement, NC DOI](https://www.ncdoi.gov/news/press-releases/2025/07/17/commissioner-causey-state-local-leaders-announce-20-million-grant-program-strengthen-coastal-roofs)
 * [FAQs About Homeowners Insurance, NC DOI](https://www.ncdoi.gov/consumers/homeowners-insurance/faqs-about-homeowners-insurance)
+`,
+  },
+  {
+    slug: "fascia-and-soffit-repair",
+    title: "Fascia and Soffit Repair: Signs, Costs and When to Replace",
+    excerpt: "How to tell whether fascia and soffit damage can be repaired or needs replacing, what rot at the roof edge means for your rafters, and typical per-foot costs.",
+    category: "Maintenance",
+    date: "2026-11-06",
+    town: "Sylva",
+    readTime: "9 min",
+    image: fasciaSoffitRepairHero,
+    imageAlt: "Generated illustration of a mountain home roof edge with peeling, rotted fascia above a vented soffit and misty Blue Ridge ridgelines behind",
+    metaTitle: "Fascia and Soffit Repair: Signs, Costs & Fixes | Highlander",
+    metaDescription: "Fascia and soffit repair or replacement? Learn the warning signs, causes of roof-edge rot, $7 to $40 per foot costs and what a good estimate covers.",
+    faqs: [
+      { question: "Can damaged fascia be repaired?", answer: "Often, yes, when the damage is limited to small areas and the board is still firmly attached to the rafters. If rot is spread across the board, near its ends or at the rafter connection, replacing the board is the lasting fix. An inspection of the rafter tails behind it tells you which applies." },
+      { question: "How much does it cost to replace soffit and fascia?", answer: "National averages put fascia at $7 to $40 per linear foot and soffit at $6 to $30 per linear foot. Material, home height and hidden damage drive the final figure. A written estimate for your specific roofline is the only way to get an accurate number." },
+      { question: "Can you replace soffit and fascia without replacing the roof?", answer: "Yes. The trim can be replaced independently as long as the roof edge itself is sound. The rafters behind the boards should be inspected and repaired first, and it is worth checking the drip edge and the first shingle courses so new trim is not exposed to the same leak." },
+      { question: "What causes fascia board rot?", answer: "Repeated moisture: overflowing gutters, failed flashing, ice dams, poor attic ventilation or unsealed wood. Rot is usually a sign of a water path that needs fixing, so the repair should address the source as well as the damaged board." },
+      { question: "How often should I check my fascia and soffit?", answer: "A walk around the house in spring and fall is a good habit. Look for peeling paint, stains, sagging panels, loose gutters and any signs of pests, and have a contractor check anything that feels soft." },
+    ],
+    relatedServices: [
+      { label: "Exterior Improvements", path: "/exterior-improvements" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Seamless Gutters", path: "/roofing/gutters" },
+    ],
+    content: `Fascia and soffit repair comes down to one question: is the damage limited to a few spots, or has water reached the board’s connection to the rafters? Small, isolated soft spots can often be repaired. Widespread rot, damaged rafter tails or repeated leaks mean replacing the affected sections, and sometimes the whole roofline. Typical replacement costs run from about $7 to $40 per linear foot for fascia and $6 to $30 for soffit, depending on material and access. Below, we explain how to tell which situation you have, what drives the price, and what a thorough estimate should include.
+
+## TL;DR
+
+- Soffit is the underside panel of your roof overhang and helps ventilate the attic. Fascia is the board along the roof edge that carries your gutters.
+
+- Warning signs include sagging, peeling paint, soft or hollow-sounding wood, missing panels, pest entry and attic moisture.
+
+- Fascia replacement averages $7 to $40 per linear foot and soffit $6 to $30, with wood the cheapest material and aluminum the costliest of the common choices.
+
+- Fascia and soffit can be replaced without replacing the roof, but the rafters behind them need to be inspected.
+
+- Fixing the water source (gutters, flashing, ventilation) matters as much as fixing the wood.
+
+## What fascia and soffit do
+
+Look up at the edge of your roof. The vertical board running along the bottom edge of the roof is the fascia. It gives gutters a solid surface to attach to and closes off the end of the rafters. The horizontal panel tucked under the overhang is the soffit, and [soffits help maintain attic ventilation](https://www.thisoldhouse.com/roofing/how-to-repair-a-rotted-soffit) while fascia provides that solid mounting surface.
+
+Together they form a barrier. Water, insects, birds and squirrels all look for a gap at the roof edge. When fascia or soffit fails, the problem rarely stays cosmetic: moisture gets into the rafter tails, the attic and eventually the wall below.
+
+## Signs your fascia or soffit is damaged
+
+Most homeowners notice paint first, but the early signals are easy to miss from the ground. [Common warning signs](https://www.thespruce.com/soffit-repair-8620298) include:
+
+- Sagging or bowing soffit panels
+
+- Cracking or splitting
+
+- Missing sections
+
+- Visible rot or soft wood
+
+- Leaks showing up in the attic
+
+- Pests getting in
+
+- Peeling or bubbling paint
+
+A few more clues are worth checking on a dry day:
+
+- Gutters pulling away. If the gutter is loose or the fasteners keep backing out, the fascia behind it may be soft.
+
+- Stains below the overhang. Dark streaks or water lines on the soffit point to a leak above, a clogged gutter or a flashing problem.
+
+- Daylight or birds. Gaps at the roof edge are an invitation for wasps, squirrels and nesting birds.
+
+- Musty attic air near the eaves. Blocked or damaged soffit vents can trap moisture in the attic.
+
+### Telling paint failure from hidden rot
+
+Peeling paint does not always mean rot. A simple check helps separate the two. [Tapping the board, probing suspicious spots and sighting along soffit panels](https://www.thespruce.com/soffit-repair-8620298) can reveal a hollow sound or soft wood under paint that still looks intact. If a screwdriver sinks into the board, the wood has lost its strength and needs more than a coat of paint.
+
+Roof-edge problems also often trace back to the roof itself. Installation errors that leave seams or edges exposed can send water to exactly these boards, a point explained in this piece on [how staggered installs cause roof damage](https://sandiegosolar.com/blog/why-staggered-installs-cause-roof-damage). If you see damage along one stretch of the roofline, look at what sits above it.
+
+We also keep a guide to [roof warning signs in Sylva](/service-areas/sylva-nc/roof-repair) that pairs well with a walk around your eaves.
+
+## What causes fascia board rot
+
+Wood rots when it stays wet. As the University of California’s Steve Quarles puts it in [This Old House’s guide to rotting wood](https://www.thisoldhouse.com/woodworking/identify-and-repair-rotting-wood), the rule is to “keep wood dry, don’t get wood wet and keep water away from wood.” At the roof edge, the usual sources of water are:
+
+- Overflowing or clogged gutters. Water spills behind the gutter and soaks the back of the fascia, which you cannot see from the ground.
+
+- Missing or failed drip edge or flashing. Rain runs under the shingles and into the board.
+
+- Ice dams and snowmelt. Water backs up at the eave and works its way into the wood.
+
+- Poor attic ventilation. Warm, moist air condenses in the eave area.
+
+- Unsealed or unpainted wood. Bare end grain and the back of the board absorb moisture.
+
+In the mountains, long damp seasons, heavy rain, freeze-thaw swings and wind-driven moisture add stress at the roof edge. That is why we look at the whole water path, not just the board that shows the damage.
+
+## Repair or replace: how to decide
+
+Can damaged fascia be repaired? Sometimes. The honest test is how far the damage goes and what it has done to the board’s hold on the rafters.
+
+- **Small, isolated soft spot, board still firmly attached:** Repair the spot and repaint with proper sealing
+- **Rot at the board’s ends or along a long run:** Replace the affected section
+- **Multiple rotted sections or rot at the rafter connection:** Replace the board, and inspect the rafter tails
+- **Soffit sagging, stained or pest-damaged:** Replace the panels and find the moisture source
+- **Rot or leaks returning every year:** Look past the trim to gutters, flashing and ventilation
+
+The key question is whether the board still attaches solidly to the rafters. A patch on a board that is no longer well anchored only postpones the replacement. A contractor who looks at the rafters behind the board, not just the surface, can give you an answer you can trust.
+
+### Why the rafters get inspected
+
+When rotted fascia comes off, [inspecting the exposed rafters and replacing damaged rafter sections](https://www.thisoldhouse.com/roofing/how-to-repair-a-rotted-soffit) comes before installing the new board. For soffit work, that same guidance is to look beyond the visibly rotted section, because water damage can extend into structural members. Skipping this step is how a new board ends up failing in a few years.
+
+## Can you replace fascia and soffit without replacing the roof?
+
+Yes. Fascia and soffit can be replaced on their own when the roof covering is in good shape. The work usually involves removing the damaged boards or panels, checking and repairing the rafter tails, then installing new fascia and soffit and reattaching gutters.
+
+There are two cases where it makes sense to coordinate with roof work:
+
+- The shingles at the edge are failing too. If the drip edge is missing or the first courses of roofing are worn, the new trim will face the same water.
+
+- You are about to replace the roof. Doing the trim first or at the same time avoids tearing up new roofing later.
+
+If you are not sure which applies, a roof inspection tells you. See our guide to [signs your Sylva home needs a roof inspection](/blog/roof-inspection-signs-sylva-nc).
+
+## Fascia and soffit repair cost
+
+The numbers below come from national averages, so treat them as a starting range. Mountain homes with steep pitches, multiple gables, tall eaves or limited access often cost more to work on than a simple one-story ranch.
+
+### Fascia
+
+[Fascia replacement typically costs $7 to $40 per linear foot](https://www.thisoldhouse.com/roofing/fascia-board-replacement-cost) for materials and labor combined. By material, wood fascia runs $1 to $3 per linear foot for the material and aluminum $8 to $20. An average single-story home has about 250 linear feet of fascia, which puts a full replacement between $1,750 and $10,000. Board length, labor, material and whether the soffit is being replaced at the same time all move the price.
+
+Small repairs on a few feet of board cost far less than a full run, but a repair price depends on access and the condition of what is behind the board, so it needs to be looked at in person.
+
+### Soffit
+
+[Soffit replacement typically costs $6 to $30 per linear foot](https://www.thisoldhouse.com/roofing/soffit-replacement-cost), averaging about $17, or around $4,250 for a typical one-story home. By material, aluminum runs $8 to $20 per linear foot, vinyl $5 to $9 and wood $1 to $3. Hidden rot or moisture damage can widen the scope once the old soffit is removed.
+
+That last point is worth planning for. A good estimate states what is included and how any additional rafter or sheathing repair would be handled before work starts.
+
+### What changes the price
+
+- Material. Wood, vinyl and aluminum differ in price, upkeep and how they handle weather. Our comparison of [aluminum vs vinyl soffit for mountain homes](/blog/aluminum-vs-vinyl-soffit) walks through the trade-offs.
+
+- Length and layout. More linear feet, more corners and more gables mean more labor.
+
+- Height and access. Steep terrain, tall walls and a second story add setup time.
+
+- Hidden damage. Rot in rafter tails or sheathing adds repair work.
+
+- Combined work. Gutters, paint and roof edge repairs are often cheaper to coordinate in one visit.
+
+## Perspective: what we see on mountain roof edges
+
+We repair a lot of fascia and soffit around Franklin, Highlands, Cashiers and Sylva, and the board that shows the damage is rarely the whole story. Elevation, wind exposure and moisture all work on the roof edge, and a patch that ignores the cause tends to come back.
+
+That is why we start with the water path. We look at the gutters, the drip edge and flashing, the attic ventilation and the rafter tails behind the board before we write a scope. Then we put what we found, what we recommend and the price in writing, so you can see exactly what you are paying for.
+
+You also deal with one point of contact from estimate to finish, and our own crews do the work. We think a roofline should be fixed once, with materials chosen for the way weather behaves on a mountain, rather than patched every spring.
+
+## How to keep the problem from coming back
+
+Once the rot is repaired, the job is to keep water away from the wood. [This Old House recommends](https://www.thisoldhouse.com/woodworking/identify-and-repair-rotting-wood):
+
+- Installing proper flashing around windows, doors and other openings
+
+- Maintaining gutters and downspouts so water is directed away from the house
+
+- Applying a water-repellent sealer to exposed wood every year, including the backs of fascia boards, window sills and trim
+
+In practice, a seasonal routine covers most of this:
+
+- Fall: clear gutters and check downspout discharge before the freeze. Our [gutter service page](/roofing/gutters) covers what to check.
+
+- Spring: look for winter damage along the eaves, loose gutter hangers and new stains. We have a [spring roof maintenance checklist for Western NC](/blog/spring-roof-maintenance-checklist-wnc).
+
+- Anytime: fix small problems early. Loose trim, a cracked caulk line or a stained soffit panel are cheap to fix now and costly after a season of water. Our article on [small exterior repairs that prevent major damage](/blog/exterior-maintenance-checklist-highlands-nc) explains why.
+
+Gutters deserve a special mention because they and the fascia work as a pair. See [how gutters protect your home in Western NC](/roofing/gutters) for how drainage and roof edge health connect.
+
+## What a good estimate looks like
+
+When you ask contractors to price fascia and soffit work, the written scope should answer these questions:
+
+- How many linear feet, and which sections? The estimate should name where work happens.
+
+- Which material and finish? Wood, aluminum or vinyl, plus paint or factory finish.
+
+- What happens to the rafters? It should say how rafter tail damage is assessed and handled if found.
+
+- Are gutters being detached and reinstalled, or replaced?
+
+- How are ventilation and flashing addressed? Soffit vents and drip edge are part of the system.
+
+- Who is the single point of contact, and who does the work?
+
+If any of these are missing, ask. A clear scope protects you from surprises mid-project.
+
+## Fascia and soffit work with Highlander
+
+We handle trim, fascia and soffit work as part of our [exterior improvements](/exterior-improvements), alongside siding, windows and structural exterior repairs. If the damage came from the roof, we can also take care of [roof repair](/roofing/roof-repair) and [seamless gutters](/roofing/gutters) in the same project, so one team handles the whole roofline.
+
+Our estimates are written, detailed and specific to your home. You get a single point of contact, and our own crews do the work in Franklin, Highlands, Cashiers, Sylva and surrounding Western NC communities.
+
+If you have soft boards, stained soffit or gutters pulling away, [contact Highlander Building Services](/request-inspection) to schedule an inspection and get a written estimate.
+
+## Sources
+- [Soffit Repair: Tips From a Pro, This Old House](https://www.thisoldhouse.com/roofing/how-to-repair-a-rotted-soffit)
+- [Soffit Repair: How to Repair Soffit and Fascia, The Spruce](https://www.thespruce.com/soffit-repair-8620298)
+- [How To Identify and Repair Rotting Wood, This Old House](https://www.thisoldhouse.com/woodworking/identify-and-repair-rotting-wood)
+- [How Much Does Fascia Board Replacement Cost?, This Old House](https://www.thisoldhouse.com/roofing/fascia-board-replacement-cost)
+- [How Much Does Soffit Replacement Cost?, This Old House](https://www.thisoldhouse.com/roofing/soffit-replacement-cost)
 `,
   },
 ];
