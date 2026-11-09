@@ -71,6 +71,9 @@ function humanizeLeadName(row: LeadRow): string {
     design_agreement: "Design Agreement Inquiry",
     gutters: "Gutter Inquiry",
     skylights: "Skylight Inquiry",
+    skylight: "Skylight Inquiry",
+    chimney: "Chimney Inquiry",
+    handyman: "Handyman Inquiry",
     outdoor_living: "Outdoor Living Inquiry",
     metal_roofing: "Metal Roofing Inquiry",
     synthetic_roofing: "Synthetic Roofing Inquiry",
@@ -565,6 +568,7 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     lines.push("*** POINT OF CONTACT — send all communication here ***");
     kv("Name", poc.name);
     kv("Phone", poc.phone);
+    kv("Second Phone", poc.phone2);
     kv("Email", poc.email);
   }
 
@@ -896,15 +900,19 @@ export function accountMatchesTown(
  * Front desk sheets store it as pocName / pocPhone / pocEmail; other forms may
  * send point_of_contact_* columns. Null when nothing was given.
  */
-export function pointOfContact(row: LeadRow): { name: string; phone: string | null; email: string | null } | null {
+export function pointOfContact(
+  row: LeadRow,
+): { name: string; phone: string | null; phone2?: string | null; email: string | null } | null {
   const meta: any = row.metadata ?? {};
   const r: any = row;
   const name = cleanName(r.point_of_contact_name ?? meta.pocName ?? meta.point_of_contact_name);
   const rawPhone = String(r.point_of_contact_phone ?? meta.pocPhone ?? meta.point_of_contact_phone ?? "").trim();
   const email = String(r.point_of_contact_email ?? meta.pocEmail ?? meta.point_of_contact_email ?? "").trim();
+  const rawPhone2 = String(r.point_of_contact_phone2 ?? meta.pocPhone2 ?? meta.point_of_contact_phone2 ?? "").trim();
   if (!name && !rawPhone && !email) return null;
   const phone = rawPhone ? toUsE164(rawPhone) : null;
-  return { name: name || "Point of contact", phone: phone || null, email: email || null };
+  const phone2 = rawPhone2 ? toUsE164(rawPhone2) : null;
+  return { name: name || "Point of contact", phone: phone || null, ...(phone2 ? { phone2 } : {}), email: email || null };
 }
 
 function buildContactPayload(row: LeadRow) {
@@ -920,7 +928,7 @@ function buildContactPayload(row: LeadRow) {
     last_name: last || null,
     phone: row.phone ?? null,
     secondary_phone:
-      (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
+      toUsE164((row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null),
     email: row.email ?? null,
     title:
       (row as any).contact_title ?? meta.contact_title ?? meta.title ?? meta.role ?? null,
@@ -946,9 +954,13 @@ export function buildLeadLabel(row: LeadRow): string {
   return humanizeLeadName(row);
 }
 
-/** Highlander's job naming: roof work is RFG, everything else is CON. */
-export function jobNamePrefix(row: LeadRow): "RFG" | "CON" {
-  return /roof|storm|leak|gutter|skylight/i.test(humanizeLeadName(row)) ? "RFG" : "CON";
+/**
+ * Every job the website or the front desk creates starts with LEAD. The office
+ * renames it (RFG, CON…) once someone has worked it, so a LEAD name is the
+ * signal that nobody has touched the job yet.
+ */
+export function jobNamePrefix(_row: LeadRow): "LEAD" {
+  return "LEAD";
 }
 
 /** Customer's last name: the parsed column, else the last word of the name (a lone first name stays). */
@@ -1436,6 +1448,9 @@ export function mapServiceArea(town: string | null | undefined, county?: string 
 function mapJobType(payload: any): string {
   const key = [payload?.project?.service_category, payload?.project?.project_type, payload?.source?.lead_type]
     .filter(Boolean).join(" ").toLowerCase();
+  if (/handyman/.test(key)) return "Small Projects";
+  if (/chimney/.test(key)) return "Repair";
+  if (/skylight/.test(key)) return "Roofing";
   if (/gutter/.test(key)) return "Gutters";
   if (/design|planning/.test(key) || payload?.project?.lead_classification === "design") return "Design";
   if (/construction|addition|renovation|remodel|outdoor|new_build|exterior/.test(key)) return "Construction";
@@ -1949,7 +1964,7 @@ export async function sendToPaveApi(
               accountId,
               name: poc.name,
               title: "Point of contact",
-              customFieldValues: buildContactCustomFieldValues({ phone: poc.phone, email: poc.email }),
+              customFieldValues: buildContactCustomFieldValues({ phone: poc.phone, secondary_phone: poc.phone2, email: poc.email }),
             },
             createdContact: { id: {} },
           },

@@ -134,12 +134,18 @@ export const JOB_TYPES: Option[] = [
     label: "Storm damage or insurance claim",
     points: 14,
   },
+  { id: "skylight", label: "Skylight repair or replacement", points: 18 },
+  { id: "chimney", label: "Chimney", points: 14 },
   { id: "new_build", label: "New home or custom build", points: 12 },
   { id: "inspection", label: "Inspection or not sure yet", points: 10 },
+  { id: "handyman", label: "Handyman services", points: 8 },
 ];
 
 /** Job types that get roof type, stories, pitch and leak spot near the top of the sheet. */
-export const ROOF_DETAIL_JOB_TYPES = ["roof_replacement", "roof_repair", "storm_insurance", "inspection", "gutters"];
+export const ROOF_DETAIL_JOB_TYPES = ["roof_replacement", "roof_repair", "storm_insurance", "inspection", "gutters", "skylight", "chimney"];
+
+/** Job types where "Where is it leaking?" is asked up top. */
+export const LEAK_JOB_TYPES = ["roof_repair", "storm_insurance", "skylight", "chimney"];
 
 export const TIMINGS: Option[] = [
   {
