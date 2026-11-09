@@ -12,6 +12,7 @@ const REQUIRED: Record<string, string[]> = {
   "copper-roof-cost": ["sw-metalroofing.com"],
   "deck-ledger-flashing": ["actionfenceanddeck.com"],
   "energy-efficient-roofing": ["smartroofingpros.com"],
+  "fascia-and-soffit-repair": ["sandiegosolar.com"],
   "half-round-vs-k-style-gutters": ["upstateroofingpros.com"],
   "helical-piers-vs-concrete-piers": ["txcomfortcrew.com"],
   "high-elevation-roofing": ["am-exteriors.com"],
