@@ -17,6 +17,7 @@ import {
   PREFERRED_CONTACT,
   PROPERTY_TYPES,
   RELATIONSHIPS,
+  LEAK_JOB_TYPES,
   ROOF_DETAIL_JOB_TYPES,
   ROOF_TYPES,
   SOURCES,
@@ -74,6 +75,7 @@ export default function IntakeSheet() {
   const [saved, setSaved] = useState<Saved | null>(null);
   const [showAppointment, setShowAppointment] = useState(false);
   const [showPoc, setShowPoc] = useState(false);
+  const [showPhone2, setShowPhone2] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const refs = {
@@ -124,6 +126,7 @@ export default function IntakeSheet() {
     setSaved(null);
     setShowAppointment(false);
     setShowPoc(false);
+    setShowPhone2(false);
     setCopied(false);
     window.scrollTo({ top: 0 });
   }
@@ -163,6 +166,7 @@ export default function IntakeSheet() {
       setMissing([]);
       setShowAppointment(false);
       setShowPoc(false);
+      setShowPhone2(false);
       setCopied(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
@@ -280,6 +284,25 @@ export default function IntakeSheet() {
                 invalid={has("contact")}
                 inputRef={refs.contact}
               />
+              {showPhone2 || lead.phone2 ? (
+                <div className="mt-3" data-testid="second-phone">
+                  <TextField
+                    label="Second phone"
+                    value={lead.phone2}
+                    onChange={(v) => set("phone2", formatPhone(v))}
+                    placeholder="828-555-0101"
+                    inputMode="tel"
+                  />
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  className="mt-2 text-[13px] underline underline-offset-2 opacity-75"
+                  onClick={() => setShowPhone2(true)}
+                >
+                  + Add another number
+                </button>
+              )}
             </Question>
 
             <Question label="Email" script="And an email for the estimate?">
@@ -299,13 +322,20 @@ export default function IntakeSheet() {
                     Point of contact{" "}
                     <span className="font-normal opacity-70">— all calls, texts and emails go to this person</span>
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <TextField label="PoC name" value={lead.pocName} onChange={(v) => set("pocName", v)} />
                     <TextField
                       label="Phone"
                       value={lead.pocPhone}
                       onChange={(v) => set("pocPhone", formatPhone(v))}
                       placeholder="828-555-0100"
+                      inputMode="tel"
+                    />
+                    <TextField
+                      label="Second phone"
+                      value={lead.pocPhone2}
+                      onChange={(v) => set("pocPhone2", formatPhone(v))}
+                      placeholder="828-555-0101"
                       inputMode="tel"
                     />
                     <TextField
@@ -320,7 +350,7 @@ export default function IntakeSheet() {
                     type="button"
                     className="mt-3 text-[13px] underline underline-offset-2 opacity-75"
                     onClick={() => {
-                      setLead((p) => ({ ...p, pocName: "", pocPhone: "", pocEmail: "" }));
+                      setLead((p) => ({ ...p, pocName: "", pocPhone: "", pocPhone2: "", pocEmail: "" }));
                       setShowPoc(false);
                     }}
                   >
@@ -487,7 +517,7 @@ export default function IntakeSheet() {
                     columns={3}
                   />
                 </Question>
-                {(lead.jobType === "roof_repair" || lead.jobType === "storm_insurance") && (
+                {!!lead.jobType && LEAK_JOB_TYPES.includes(lead.jobType) && (
                   <Question label="Where is it leaking?">
                     <TextField
                       value={lead.appointment.leakLocation ?? ""}

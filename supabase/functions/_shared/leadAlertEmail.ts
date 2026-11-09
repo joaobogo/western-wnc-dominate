@@ -71,6 +71,7 @@ export interface LeadAlertFields {
   isFrontDesk: boolean;
   name: string;
   phone: string;
+  phone2: string;
   email: string;
   address: string;
   town: string;
@@ -99,6 +100,7 @@ export function leadAlertFields(table: string, row: Row): LeadAlertFields {
     isFrontDesk,
     name,
     phone: pick(row.phone),
+    phone2: pick(row.secondary_phone, row.metadata?.phone2, row.payload?.phone2),
     email: pick(row.email),
     address: pick(row.property_address, row.address),
     town: pick(row.property_town, row.town),
@@ -127,6 +129,7 @@ export function leadAlertFields(table: string, row: Row): LeadAlertFields {
     pointOfContact: [
       pick(row.point_of_contact_name, row.metadata?.pocName, row.payload?.pocName),
       pick(row.point_of_contact_phone, row.metadata?.pocPhone, row.payload?.pocPhone),
+      pick(row.point_of_contact_phone2, row.metadata?.pocPhone2, row.payload?.pocPhone2),
       pick(row.point_of_contact_email, row.metadata?.pocEmail, row.payload?.pocEmail),
     ].filter(Boolean).join(" · "),
   };
@@ -162,6 +165,8 @@ export function buildLeadAlertHtml(f: LeadAlertFields, opts: LeadAlertOptions): 
   add("Point of contact (send all communication here)", f.pointOfContact);
   const tel = f.phone.replace(/[^\d+]/g, "");
   add("Phone", f.phone, `<a href="tel:${escapeHtml(tel)}">${escapeHtml(f.phone)}</a>`);
+  const tel2 = f.phone2.replace(/[^\d+]/g, "");
+  add("Second phone", f.phone2, `<a href="tel:${escapeHtml(tel2)}">${escapeHtml(f.phone2)}</a>`);
   add("Email", f.email, `<a href="mailto:${escapeHtml(f.email)}">${escapeHtml(f.email)}</a>`);
   add("Address / town", [f.address, f.town && !f.address.includes(f.town) ? f.town : ""].filter(Boolean).join(", "));
   add("Job type", f.jobType);

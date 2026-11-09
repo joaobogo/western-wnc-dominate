@@ -16,6 +16,10 @@ describe("front-desk scoring V1.1", () => {
       storm_insurance: 14,
       new_build: 12,
       inspection: 10,
+      // Added Nov 9 at the office's request; the eight above are unchanged.
+      skylight: 18,
+      chimney: 14,
+      handyman: 8,
     });
   });
 

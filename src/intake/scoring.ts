@@ -22,12 +22,15 @@ export type LeadDraft = {
   firstName: string;
   lastName: string;
   phone: string;
+  /** Optional second number for the caller. */
+  phone2: string;
   email: string;
   preferredContact: string | null;
   bestTime: string | null;
   /** Someone else every call, text and email should go to (e.g. a daughter). */
   pocName: string;
   pocPhone: string;
+  pocPhone2: string;
   pocEmail: string;
 
   address: string;
@@ -58,11 +61,13 @@ export const EMPTY_LEAD: LeadDraft = {
   firstName: "",
   lastName: "",
   phone: "",
+  phone2: "",
   email: "",
   preferredContact: null,
   bestTime: null,
   pocName: "",
   pocPhone: "",
+  pocPhone2: "",
   pocEmail: "",
   address: "",
   town: null,
@@ -347,9 +352,10 @@ export function leadSummary(lead: LeadDraft, result: ScoreResult, callBy: string
   const lines = [
     `${lead.firstName} ${lead.lastName}`.trim(),
     lead.phone && `Phone: ${lead.phone}`,
+    lead.phone2 && `Second phone: ${lead.phone2}`,
     lead.email && `Email: ${lead.email}`,
     (lead.pocName || lead.pocPhone || lead.pocEmail) &&
-      `Point of contact: ${[lead.pocName, lead.pocPhone, lead.pocEmail].filter(Boolean).join(" · ")}`,
+      `Point of contact: ${[lead.pocName, lead.pocPhone, lead.pocPhone2, lead.pocEmail].filter(Boolean).join(" · ")}`,
     townLabel(lead) && `Town: ${townLabel(lead)}`,
     lead.address && `Address: ${lead.address}`,
     `Job: ${label(JOB_TYPES, lead.jobType)}`,

@@ -58,14 +58,14 @@ describe("Customer / Account name rule", () => {
 });
 
 describe("Job name, Location, and Description", () => {
-  it("names jobs the way Highlander does: RFG/CON - Last name - street number", async () => {
+  it("names every new job LEAD - Last name - street number until the office renames it", async () => {
     const { buildJobName, buildLeadLabel } = await mod();
-    expect(buildJobName({ ...base, property_address: "53 Mountain Rd" })).toBe(`RFG - ${base.last_name} - 53`);
-    expect(buildJobName(base)).toBe(`RFG - ${base.last_name}`);
-    expect(buildJobName({ ...base, last_name: "", name: "Greg & Linda DaLay" })).toBe("RFG - DaLay");
-    expect(buildJobName({ ...base, last_name: "", first_name: "Robin", name: "Robin" })).toBe("RFG - Robin");
-    expect(buildJobName({ name: "Ann Lee", last_name: "Lee", service_category: "construction", project_type: "addition", property_address: "1204B Hwy 64" })).toBe("CON - Lee - 1204B");
-    expect(buildJobName({ ...base, last_name: "Montgomery-Fitzwilliams-Smythe", property_address: "12345 Long Rd" })).toBe("RFG - Montgomery-Fitzw - 12345");
+    expect(buildJobName({ ...base, property_address: "53 Mountain Rd" })).toBe(`LEAD - ${base.last_name} - 53`);
+    expect(buildJobName(base)).toBe(`LEAD - ${base.last_name}`);
+    expect(buildJobName({ ...base, last_name: "", name: "Greg & Linda DaLay" })).toBe("LEAD - DaLay");
+    expect(buildJobName({ ...base, last_name: "", first_name: "Robin", name: "Robin" })).toBe("LEAD - Robin");
+    expect(buildJobName({ name: "Ann Lee", last_name: "Lee", service_category: "construction", project_type: "addition", property_address: "1204B Hwy 64" })).toBe("LEAD - Lee - 1204B");
+    expect(buildJobName({ ...base, last_name: "Montgomery-Fitzwilliams-Smythe", property_address: "12345 Long Rd" })).toBe("LEAD - Montgomery-Fitz - 12345");
     expect(buildJobName({ ...base, last_name: "Montgomery-Fitzwilliams-Smythe", property_address: "12345 Long Rd" }).length).toBeLessThanOrEqual(30);
     // The readable service label still drives the job type.
     expect(buildLeadLabel(base)).toBe("Roofing Inquiry - Highlands - Jane");
