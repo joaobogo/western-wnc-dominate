@@ -28,3 +28,16 @@ describe("November 5 uploaded articles", () => {
     expect(post.content).not.toMatch(/[\u2013\u2014]|in-house|highlandernc\.com/i);
   });
 });
+
+describe("November 9 uploaded articles", () => {
+  const slugs = ["cedar-shake-maintenance", "gutter-hanger-types", "hidden-deck-fasteners-vs-screws"];
+  it.each(slugs)("publishes %s exactly once at its filename slug", (slug) => {
+    expect(blogPosts.filter((p) => p.slug === slug)).toHaveLength(1);
+    expect(getBlogBySlug(slug)?.date).toBe("2026-11-09");
+  });
+  it("keeps the uploaded outside source links", () => {
+    expect(getBlogBySlug("cedar-shake-maintenance")?.content).toContain("https://www.cedarbureau.org/literature-education/maintenance-faq/");
+    expect(getBlogBySlug("gutter-hanger-types")?.content).toContain("https://www.finehomebuilding.com/project-guides/roofing/gutter-hangers");
+    expect(getBlogBySlug("hidden-deck-fasteners-vs-screws")?.content).toContain("https://www.moistureshield.com/about/blog/hidden-fasteners-vs-deck-screws/");
+  });
+});

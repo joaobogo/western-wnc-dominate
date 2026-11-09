@@ -779,7 +779,7 @@ A clear estimate answers all six without hedging.
     readTime: "10 min",
     image: hiddenDeckFastenersHero,
     imageAlt: "Generated illustration of grooved composite deck boards held by hidden clips beside face-screwed boards on a mountain deck at sunset",
-    metaTitle: "Hidden Deck Fasteners vs. Screws: How to Choose | Highlander",
+    metaTitle: "Hidden Deck Fasteners vs Screws: Which to Use | Highlander",
     metaDescription: "Hidden deck fasteners or face screws? Compare looks, cost, strength, repairs and warranty rules, plus what mountain weather in Western NC means for your pick.",
     faqs: [
       { question: "Are hidden deck fasteners worth it?", answer: "They are worth it when appearance matters and your deck suits them: grooved composite or hardwood boards, enough height above grade and good airflow underneath. They cost more in hardware, with one estimate putting an 800 sq. ft. deck at $336 to $952 for edge-mount kits against $150 to $450 for screws. They are less worthwhile on low decks, treated lumber and stairs." },
