@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 203,
+    "sitemap": 206,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 333
+    "total": 336
   },
   "routes": [
     "/",
@@ -108,6 +108,9 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/cedar-shake-maintenance",
+    "/blog/gutter-hanger-types",
+    "/blog/hidden-deck-fasteners-vs-screws",
     "/blog/fascia-and-soffit-repair",
     "/blog/class-4-shingles-cost",
     "/blog/master-suite-addition",
