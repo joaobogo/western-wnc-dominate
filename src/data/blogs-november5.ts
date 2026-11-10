@@ -3,6 +3,7 @@ import fasciaSoffitRepairHero from "@/assets/blog/fascia-and-soffit-repair-hero.
 import cedarShakeMaintenanceHero from "@/assets/blog/cedar-shake-maintenance-hero.jpg";
 import gutterHangerTypesHero from "@/assets/blog/gutter-hanger-types-hero.jpg";
 import hiddenDeckFastenersHero from "@/assets/blog/hidden-deck-fasteners-vs-screws-hero.jpg";
+import roofVentilationRequirementsHero from "@/assets/blog/roof-ventilation-requirements-hero.jpg";
 import class4ShinglesCostHero from "@/assets/blog/class-4-shingles-cost-hero.jpg";
 
 /** Articles uploaded 5 Nov 2026. Slugs are the uploaded filenames without `.html`. */
@@ -938,6 +939,151 @@ See our [outdoor living and deck construction services](/construction) or start 
 - [2021 Trex Decking Installation Guide](https://norcrosssupply.com/wp-content/uploads/2021/02/TREX-Decking-Installation-Guide-2021.pdf)
 - [2026 Trex Decking Installation Guide](https://images.thdstatic.com/catalog/pdfImages/bd/bd0b6ac7-924e-452a-be97-a1d9ecc32864.pdf)
 - [Residential Wood Deck Construction Guide, City of Chesapeake](https://www.cityofchesapeake.net/DocumentCenter/View/1914/Residential-Wood-Deck-Construction-Guide-PDF)
+`,
+  },
+  {
+    slug: "roof-ventilation-requirements",
+    title: "Roof Ventilation Requirements: Code Rules and Attic Vent Math",
+    excerpt: "What the IRC requires for attic and roof ventilation, how to calculate net free vent area step by step, and how to split intake and exhaust on a mountain home.",
+    category: "Roofing",
+    date: "2026-11-10",
+    town: "Franklin",
+    readTime: "10 min",
+    image: roofVentilationRequirementsHero,
+    imageAlt: "Generated illustration of a mountain home gable with a ridge vent and soffit vents under a dimensional shingle roof, misty Blue Ridge ridges behind",
+    metaTitle: "Roof Ventilation Requirements & Attic Vent Math | Highlander",
+    metaDescription: "What the IRC requires for attic and roof ventilation, how to calculate net free vent area step by step, and how to split intake and exhaust on a mountain home.",
+    faqs: [
+      { question: "How much attic ventilation do I need?", answer: "The IRC baseline is 1 square foot of net free area per 150 square feet of attic floor. A 1,500 square foot attic therefore needs 10 square feet, or 1,440 square inches, split between intake and exhaust. The 1/300 ratio applies only when its vapor retarder, climate zone and vent placement conditions are all met." },
+      { question: "Is more ventilation always better?", answer: "No. Balance matters more than raw quantity. Intake should meet or slightly exceed exhaust, and the two need to be placed low and high respectively. Oversized exhaust without enough intake can pull air from the house or draw weather in through the vents." },
+      { question: "Do I need soffit vents if I have a ridge vent?", answer: "Yes. A ridge vent only exhausts air. Without low intake in each rafter bay, there is nothing to push air through the attic, and the ridge vent cannot do its job." },
+      { question: "Does a cathedral ceiling need ventilation?", answer: "It does unless it is built as a code-compliant unvented assembly. A vented cathedral roof needs at least a 1-inch channel above the insulation, kept open from eave to ridge. An unvented assembly needs the insulation and vapor control specified by the code for your climate zone." },
+      { question: "Can a power vent replace passive vents?", answer: "Sometimes. NRCA says a power vent moving 1.0 cubic foot per minute per square foot of attic floor is generally considered equivalent to a 1:150 ratio. A fan still needs adequate intake, so the intake area has to be sized for its airflow. Ask your local building department what it accepts." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Services", path: "/roofing" },
+    ],
+    content: `For a standard vented attic, the International Residential Code (IRC) sets the baseline at 1 square foot of net free ventilating area for every 150 square feet of attic floor. Divide your attic floor area by 150, convert to square inches, and split the result between low intake vents and high exhaust vents. A 1:300 ratio is allowed only under narrow conditions. This guide shows the rules, the math with worked examples, and what changes on a mountain home in Western North Carolina. [Explore roofing services](/roofing).
+
+## TL;DR
+
+- The [2021 IRC section R806.2](https://codes.iccsafe.org/s/IRC2021V3.0/chapter-8-roof-ceiling-construction/IRC2021V3.0-Pt03-Ch08-SecR806.2) requires net free ventilating area of at least 1/150 of the vented attic space. The 1/300 exception has conditions.
+- The formula: attic floor square feet ÷ 150 × 144 = total square inches of net free area (NFA). Half goes low (soffit), half goes high (ridge).
+- Use the manufacturer's NFA rating for each vent, not its physical size, and round the vent count up.
+- Cathedral ceilings need a ventilation channel of at least 1 inch above the insulation, or an unvented assembly designed to code.
+- Your local building department has the final word on which code edition applies.
+
+## What the code actually requires
+
+The model codes agree on a few points. Each separate enclosed attic or enclosed rafter space formed where ceilings are applied directly to the underside of roof framing needs cross ventilation. Openings must be protected against rain and snow. [Openings must also be covered with corrosion-resistant screening](https://up.codes/s/roof-ventilation) whose openings measure between 1/16 inch and 1/4 inch.
+
+The IRC then sets the amount. Under R806.2, enclosed attics and rafter spaces need a total net free ventilating area of not less than 1/150 of the area of the space ventilated. That is the number most roofers, inspectors and shingle manufacturers work from. The [National Roofing Contractors Association (NRCA) guidelines](https://nrca.net/roofingguidelines/pdf?id=145172&k=2386959) say the same for heating climates: a static, balanced system with 1 square foot of net free area per 150 square feet of attic space, with about half at or near the ridge and the rest low at the eaves.
+
+Two more details matter in the field:
+
+- Vent openings must be arranged so that blocking or bridging does not interfere with air movement.
+- [An airspace of at least 1 inch](https://up.codes/s/roof-ventilation) must be provided between the insulation and the roof sheathing.
+
+Blown-in insulation pushed into the eaves is the classic way a well-designed vent system gets choked. Baffles at every rafter bay prevent it.
+
+### The 1/300 exception
+
+The code lets you reduce the ratio to 1/300 only in specific cases. According to [IIBEC's summary of the 2018 IRC](https://iibec.org/publication-post/attic-ventilation-101/), the exception applies when a Class I or II vapor retarder is installed on the warm-in-winter side of the ceiling in Climate Zones 6, 7 and 8, and 40 to 50 percent of the ventilation is in the upper portion of the attic. The [2021 text](https://codes.iccsafe.org/s/IRC2021V3.0/chapter-8-roof-ceiling-construction/IRC2021V3.0-Pt03-Ch08-SecR806.2) adds that the upper vents must sit no more than 3 feet below the ridge or highest point, measured vertically, with the balance supplied by eave or cornice vents.
+
+The exception is tied to moisture control design, not just to airflow. [Insulation industry guidance](https://insulationinstitute.org/wp-content/uploads/2016/02/BI458.pdf) makes the same point: whether 1:150 or 1:300 is appropriate depends on whether a suitable vapor retarder is in place. Unless your inspector confirms the exception applies to your house, plan on 1:150. It is the safer number and the one the other published rules of thumb use.
+
+## How to calculate attic vent area
+
+The [Building America Solution Center](https://basc.pnnl.gov/information/calculating-attic-passive-ventilation) explains the method. Start with the area of the flat attic floor or ceiling that separates the attic from conditioned space. Divide by 150 (or 300 if the exception truly applies). The result is the total net free ventilating area required. Net free area is the clear open area through a vent after screens, louvers and slot geometry are taken into account.
+
+### Step by step
+
+1. **Measure the attic floor.** Length times width of the ceiling below the attic, for each separate attic space. A house with two wings may have two attics to calculate.
+2. **Divide by 150.** That gives square feet of NFA.
+3. **Multiply by 144.** That converts to square inches, which is how vents are rated.
+4. **Split in half.** Half is intake at the eaves, half is exhaust at or near the ridge.
+5. **Divide by each product's NFA rating** and round up to get the number of vents or feet of ridge vent.
+
+There is also a shortcut. The [Asphalt Roofing Manufacturers Association](https://www.asphaltroofing.org/wp-content/uploads/2015/09/Attic-Needs-Ventilation-but-How-Much-Exactly.pdf) notes that at 1/150 you can divide attic floor square footage by 2 to get the square inches of exhaust and of intake. Their example: a 2,200 square foot attic needs 1,100 square inches of each. The shortcut rounds slightly up, which is the right direction to err.
+
+### Worked example: a 2,000 square foot attic
+
+| Ratio | Total NFA | Intake (low) | Exhaust (high) |
+|---|---|---|---|
+| 1:150 | 1,920 sq in | 960 sq in | 960 sq in |
+| 1:300 (exception only) | 960 sq in | 480 sq in | 480 sq in |
+
+The 1:300 figures match the [Lomanco worked example](https://www.lomanco.com/ventilation-articles/how-many-vents/) of 6.67 square feet (960 square inches) split equally. If the local code requires 1:150, the same attic needs twice that.
+
+Now turn that into products. [Ridge vent is typically rated at 14 to 18 square inches per linear foot](https://www.finehomebuilding.com/project-guides/roofing/adequate-roof-venting). At 15 square inches per foot, 960 square inches of exhaust takes 64 feet of ridge vent. Many houses do not have that much ridge, which is why the exhaust side often needs a supplement, such as hip vents or additional high vents.
+
+On the intake side, divide by the NFA printed on the product. Lomanco's example: 480 square inches divided by 50 square inches per vent is 9.6, so you install ten. Always use the manufacturer's published rating, because the physical size of a vent says little about how much air it passes. Intake should meet or slightly exceed exhaust. If it does not, the fan effect pulls conditioned air from the house or draws air backward through the exhaust vents.
+
+### Steep roofs
+
+The code does not account for the volume of air under a tall roof. [Air Vent's guidance as quoted in Journal of Light Construction](https://www.jlconline.com/wp-content/uploads/sites/4/2015/011-012-jlc-feb15-q-a-tcm96-2189198.pdf) suggests adding 20 percent for pitches from 7:12 to 10:12, and 30 percent for anything steeper. This is a manufacturer recommendation, not a code requirement. Mountain homes with steep pitches built to shed snow often fall in this range, so it is worth discussing with your roofer.
+
+## Intake and exhaust: balance matters more than the total
+
+A large total NFA does not help if it sits in the wrong place. Air needs to enter low and leave high so it sweeps the underside of the sheathing.
+
+- The Building America Solution Center says [no more than 50 percent and no less than 40 percent of the ventilation should be high on the roof](https://basc.pnnl.gov/information/calculating-attic-passive-ventilation), with soffit or eave vents providing the lower openings and a lower vent in each rafter bay.
+- The same [IIBEC article](https://iibec.org/publication-post/attic-ventilation-101/) works a 1,000 square foot attic at 1:300: 480 square inches total, with 240 at the ridge and 120 at each of two soffits.
+- Mixing vent types in the same roof plane is a common mistake. A ridge vent plus box vents lower on the slope can short-circuit airflow, so the air never travels the full rafter bay.
+
+If you are choosing between exhaust styles, our comparison of a [ridge vent versus a box vent in Western NC](/blog/ridge-vent-vs-box-vent) goes through the tradeoffs on mountain roofs.
+
+## Cathedral ceilings and unvented assemblies
+
+Roofs with no attic, such as cathedral and vaulted ceilings, have two code-compliant paths.
+
+**Vented.** The [Insulation Institute](https://insulationinstitute.org/wp-content/uploads/2026/09/BI513-Vented-Roofs-Cathedralized-Attics-0926.pdf) says a minimum 1-inch space must be kept between roof sheathing and insulation to form a ventilation channel, with baffles or other means keeping it open from eave to ridge. Deep rafters with thick insulation need to be sized with that channel in mind.
+
+**Unvented.** The IRC [permits unvented attics and enclosed rafter assemblies](https://up.codes/s/unvented-attic-and-unvented-enclosed-rafter-assemblies) when the space is inside the thermal envelope, no interior Class I vapor retarder is on the ceiling side, and wood shingles or shakes have at least a 1/4-inch vented airspace above the sheathing. In Climate Zones 5 to 8, air-impermeable insulation must also be a Class II vapor retarder or have a Class II coating or covering in direct contact with its underside. The [APA](https://help.apawood.org/portal/en/kb/articles/unvented-roof) points out that success depends on design, builder attention to detail, climate and HVAC design, so these assemblies are not a casual swap.
+
+Note the cedar shake detail: if you are putting a shake roof on a home, the airspace requirement above the sheathing is part of the assembly, not an afterthought.
+
+## Why ventilation is a bigger deal in the mountains
+
+Cold nights, wind exposure and persistent moisture at elevation load the attic in ways a valley house never sees. Warm, moist air leaking from the living space condenses on cold sheathing. Snow sitting on a warm roof melts and refreezes at the eaves. NRCA's guideline notes that in heating climates, ventilation helps manage moisture and [reduces ice dam risk by enabling drying](https://nrca.net/roofingguidelines/pdf?id=145172&k=2386959).
+
+Moisture control follows the same logic in other parts of a house. Closed storage spaces trap damp air in the same way, and the principles behind [ventilating closed storage spaces](https://finestfurniturestudio.co.uk/wardrobe-ventilation) are the same: leave an air gap and give the moisture somewhere to go.
+
+Our own deeper reading on this is in [Mountain Roof Ventilation Science](/blog/mountain-roof-ventilation-science), [Roof Ventilation for Mountain Homes](/blog/understanding-roof-ventilation-mountain-homes) and [Attic Ventilation for Waynesville NC Homes in Winter](/blog/attic-ventilation-waynesville-nc-winter). Soffit material also affects intake, so [aluminum versus vinyl soffit](/blog/aluminum-vs-vinyl-soffit) is worth a look before a re-roof.
+
+## Our perspective
+
+We see the same pattern on mountain roofs again and again. The code number gets met on paper, but the air cannot move: insulation is stuffed into the eaves, soffit vents are painted over or blocked, and the ridge cut is too short to deliver the exhaust area the math calls for.
+
+That is why our estimates put the ventilation plan in writing alongside the roofing scope. We look at the intake path, the exhaust path and the insulation baffles before we talk about shingles or metal. A new roof with the wrong airflow behind it is a new roof that ages early.
+
+Elevation, wind exposure and moisture are the conditions we build for every day in Franklin, Highlands, Cashiers and Sylva. Our own crews handle the roof and the venting together, with one point of contact from the first inspection to the last nail, so the ventilation design is never left to a subcontractor's guess.
+
+*Highlander Building Services*
+
+## Get the ventilation right during a re-roof
+
+A replacement is the best moment to fix airflow, because the decking is exposed and every vent opening can be cut, sized and flashed correctly. If you are planning one, our [roof replacement for mountain homes](/roofing/roof-replacement) work includes a written scope and price, and ventilation is part of that conversation. For leaks and flashing trouble on an existing roof, see our [roof repair services](/roofing/roof-repair). Skylights, metal roofing and gutters also affect how a roof breathes and sheds water; the full list is on our [roofing page](/roofing).
+
+Want the numbers for your own attic? [Contact Highlander](/contact) for an inspection and a detailed written estimate. We will measure the attic floor, check existing intake and exhaust, and tell you what the roof needs.
+
+## Sources
+
+- [Digital Codes: 2021 IRC R806.2](https://codes.iccsafe.org/s/IRC2021V3.0/chapter-8-roof-ceiling-construction/IRC2021V3.0-Pt03-Ch08-SecR806.2)
+- [UpCodes: Roof Ventilation](https://up.codes/s/roof-ventilation)
+- [UpCodes: Unvented Attic and Unvented Enclosed Rafter Assemblies](https://up.codes/s/unvented-attic-and-unvented-enclosed-rafter-assemblies)
+- [IIBEC: Attic Ventilation 101](https://iibec.org/publication-post/attic-ventilation-101/)
+- [NRCA Residential Roofing Guidelines](https://nrca.net/roofingguidelines/pdf?id=145172&k=2386959)
+- [Building America Solution Center: Calculating Attic Passive Ventilation](https://basc.pnnl.gov/information/calculating-attic-passive-ventilation)
+- [Asphalt Roofing Manufacturers Association: The Attic Needs Ventilation, but How Much](https://www.asphaltroofing.org/wp-content/uploads/2015/09/Attic-Needs-Ventilation-but-How-Much-Exactly.pdf)
+- [Insulation Institute: Facts About Ventilation and Moisture Control](https://insulationinstitute.org/wp-content/uploads/2016/02/BI458.pdf)
+- [Insulation Institute: Vented Roofs for Cathedralized Attics](https://insulationinstitute.org/wp-content/uploads/2026/09/BI513-Vented-Roofs-Cathedralized-Attics-0926.pdf)
+- [APA: Unvented Roof](https://help.apawood.org/portal/en/kb/articles/unvented-roof)
+- [Lomanco: How Many Attic Vents Do I Need?](https://www.lomanco.com/ventilation-articles/how-many-vents/)
+- [Fine Homebuilding: Adequate Roof Venting](https://www.finehomebuilding.com/project-guides/roofing/adequate-roof-venting)
+- [Journal of Light Construction: Calculating Ventilation](https://www.jlconline.com/wp-content/uploads/sites/4/2015/011-012-jlc-feb15-q-a-tcm96-2189198.pdf)
 `,
   },
 ];
