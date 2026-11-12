@@ -1,4 +1,6 @@
 import type { BlogPost } from "./blogs";
+import metalShinglesVsStandingSeamHero from "@/assets/blog/metal-shingles-vs-standing-seam-hero.jpg";
+import homeAdditionPermitsHero from "@/assets/blog/home-addition-permits-hero.jpg";
 import fasciaSoffitRepairHero from "@/assets/blog/fascia-and-soffit-repair-hero.jpg";
 import cedarShakeMaintenanceHero from "@/assets/blog/cedar-shake-maintenance-hero.jpg";
 import gutterHangerTypesHero from "@/assets/blog/gutter-hanger-types-hero.jpg";
@@ -1084,6 +1086,340 @@ Want the numbers for your own attic? [Contact Highlander](/contact) for an inspe
 - [Lomanco: How Many Attic Vents Do I Need?](https://www.lomanco.com/ventilation-articles/how-many-vents/)
 - [Fine Homebuilding: Adequate Roof Venting](https://www.finehomebuilding.com/project-guides/roofing/adequate-roof-venting)
 - [Journal of Light Construction: Calculating Ventilation](https://www.jlconline.com/wp-content/uploads/sites/4/2015/011-012-jlc-feb15-q-a-tcm96-2189198.pdf)
+`,
+  },
+  {
+    slug: "metal-shingles-vs-standing-seam",
+    title: "Metal Shingles vs. Standing Seam: Which Roof Fits Your Home?",
+    excerpt: "Metal shingles vs. standing seam compared on slope, wind, snow, fasteners, lifespan, looks and cost, with guidance for mountain homes in Western NC.",
+    category: "Materials",
+    date: "2026-11-12",
+    town: "Franklin",
+    readTime: "10 min",
+    image: metalShinglesVsStandingSeamHero,
+    imageAlt: "Generated illustration of a mountain home with a standing seam metal roof beside a metal shingle roof, Blue Ridge ridgelines behind",
+    metaTitle: "Metal Shingles vs. Standing Seam Roofs | Highlander",
+    metaDescription: "Metal shingles vs. standing seam compared on slope, wind, snow, fasteners, lifespan, looks and cost, with guidance for mountain homes in Western NC.",
+    faqs: [
+      { question: "Are metal shingles cheaper than standing seam?", answer: "Not always. Metal shingles are often assumed to be the budget metal option, but their many small pieces, laps and flashing points add labor, especially on cut-up roofs. Standing seam can price higher on simple roofs and similar on complex ones. A written estimate for your specific roof is the only reliable comparison." },
+      { question: "Can standing seam go on a low-slope roof?", answer: "Yes. Building code guidance puts the minimum slope for standing seam systems at 1/4:12, or 2 percent, per the Building America Solution Center. Individual products have their own limits, so follow the manufacturer’s installation requirements and evaluation report." },
+      { question: "Which lasts longer, standing seam or metal shingles?", answer: "Published ranges from NRCIA are 40 to 70 years for standing seam and 40 to 60 years for metal shingles. Both depend on coating quality, installation and exposure, so treat them as typical ranges rather than guarantees." },
+      { question: "Is a standing seam roof loud in rain or hail?", answer: "Over a solid deck with underlayment, it is not noticeably louder than other roofing, and attic insulation reduces sound further. Impact resistance varies by panel. Look for a UL 2218 impact rating on the product you are considering." },
+      { question: "Do I need to replace my roof deck before going metal?", answer: "Often you need at least some deck repair. Standing seam typically requires a solid sheathed deck, and metal shingles go on solid, closely fitted decking. An inspection before you sign shows how much repair is needed." },
+    ],
+    relatedServices: [
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Metal Roofing Cost", path: "/roofing/metal/cost" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+    ],
+    content: `
+## TL;DR
+
+- **Standing seam** uses long panels with raised seams and concealed clips. It suits low and moderate slopes, high wind and snow shedding, and has the cleanest modern look.
+- **Metal shingles** (stamped panels) are small interlocking pieces that imitate shake, slate, tile or asphalt. They suit steeper roofs and traditional styling.
+- Standing seam is allowed on much lower slopes than lapped metal products, so check your roof pitch first.
+- Both need a solid, well-prepared deck and careful flashing. Installation quality matters as much as the product.
+- Ask for a written scope that names the system, gauge, underlayment and flashing details so two bids can be compared fairly.
+
+## What actually separates the two systems
+
+The names sound like marketing categories, but the difference is mechanical.
+
+The [Building America Solution Center](https://basc.pnnl.gov/resource-guides/metal-roofs), a U.S. Department of Energy program, describes standing seam panels as made to length, attached with concealed fasteners to clips, typically about 16 inches wide, and run as one continuous piece from ridge to eave. Metal roof shingles, by contrast, go onto solid, closely fitted roof decks, while metal panels can be applied over solid or spaced sheathing depending on the product.
+
+The [American Society of Home Inspectors](https://www.homeinspector.org/reporter-articles/inside-common-roofing-issues/) describes standing seam as a concealed-fastener panel system with vertical legs and a broad flat area, the pan, between them. Stamped metal shingles are smaller modular panels pressed to resemble shingles, shakes, tile or slate. They typically use a four-way interlocking system and are installed in staggered courses, much like conventional shingles.
+
+That gives you the core trade:
+
+- **Standing seam:** fewer joints, long runs, fasteners hidden under the panel.
+- **Metal shingles:** many small pieces, many overlaps, a patterned look.
+
+One point of confusion is worth clearing up. Some people use “steel shingles” to mean any metal roofing that looks like shingles. Others lump screw-down panels in with them. Screw-down (exposed-fastener) panels are a third category with visible fasteners. We cover that comparison separately in [standing seam vs. exposed-fastener metal](/blog/standing-seam-vs-exposed-fastener).
+
+## Side-by-side comparison
+
+| Factor | Standing seam | Metal shingles / stamped panels |
+| --- | --- | --- |
+| Look | Clean vertical lines, modern or farmhouse | Imitates slate, shake, tile or asphalt |
+| Panel size | Long continuous panels, often about 16 in. wide | Small modular pieces, interlocked |
+| Fasteners | Concealed clips | More exposed fasteners depending on profile |
+| Minimum slope (code) | As low as 1/4:12 for standing seam systems | Steeper minimum, check the product report |
+| Deck | Solid sheathing, typically required | Solid, closely fitted deck |
+| Typical service life cited | 40 to 70 years | 40 to 60 years |
+| Installation | Roll-forming, clip layout, custom flashing | Labor-intensive around valleys and penetrations |
+| Best for | Wind, snow, low slopes, simple roof planes | Steeper roofs, traditional or historic styling |
+
+The service-life ranges come from the [National Roofing Contractors Association’s roofing-industry affiliate, NRCIA](https://www.nrcia.org/blog/choosing-the-right-metal-roof-system-for-your-home), which also notes that standing seam performs well under high wind and snow load with low maintenance, while metal shingles and tiles carry more exposed fasteners and demand labor-intensive work around penetrations and valleys. Those are commonly cited ranges, not guarantees, and real life depends on installation, coating and exposure.
+
+## Start with your roof slope and deck
+
+Slope is the first filter, and it eliminates options faster than taste does.
+
+Per the [Building America Solution Center](https://basc.pnnl.gov/resource-guides/metal-roofs), the minimum slope for standing seam roof systems is 1/4 unit vertical in 12 horizontal, which is a 2 percent slope. Lapped, non-soldered-seam metal roofs without applied lap sealant need 3 in 12, or 25 percent. A [design document from the Florida Engineering and Fire Protection Association and the AIA](https://fefpa.org/wp-content/uploads/2023/10/AIA-DesignAppStandingSeam_04SS_0417-Read-Only.pdf) gives the same 1/4:12 minimum for standing seam.
+
+In practice: a low-slope porch roof, a shed dormer or a gently pitched addition can be standing seam. A metal shingle product on the same roof may not be approved at all. Individual products can also set their own limits. One published [code evaluation report](https://qai.org/wp-content/uploads/2025/06/03.-CERus-1037-EDCO-Products-Inc-Metal-Roofing-2024-IBC-2023-FBC-2022-CBC-17062025-1.pdf) for a 28-gauge steel panel, for example, specifies slopes of 4:12 or greater and direct-to-deck installation over plywood or OSB at least 15/32 inch thick. That is why the manufacturer’s ICC-ES evaluation report is the document to read. It spells out the material, installation requirements, fire classification, wind uplift resistance and impact rating for that specific product.
+
+Deck condition comes next. Standing seam panels typically must go on sheathed decks rather than over wood strapping or battens, according to the same Building America guidance. On an older mountain home with skip sheathing, plank decking or soft spots from years of trapped moisture, the real project often begins with deck repair. A good inspection finds that before a contract is signed, not after the old roof comes off.
+
+## Wind, snow and rain in the mountains
+
+Mountain roofs take a beating that valley roofs do not: gusts that wrap over a ridge, freeze-thaw cycles, wind-driven rain and snow that slides in sheets. Here is how the two systems handle it.
+
+**Wind.** Concealed clips hold standing seam panels along their full length, and there are no fastener heads sitting in the weather. A published product specification from [AEP Span](https://www.aepspan.com/products/design-span-hp-metal-roofing/) lists one standing seam panel as UL 580 Class 90 wind uplift rated, UL 790 Class A fire rated and UL 2218 Class 4 impact rated, with a minimum slope of 2:12. Ratings are product-specific and depend on the tested assembly, so treat them as an example of what to look for, not a promise about every panel. Metal shingles can also be rated, but with many small interlocking pieces the edges, ridge and rake details carry a lot of the load, and installation precision matters.
+
+**Snow.** Long smooth panels shed snow and ice readily, which is a benefit and a hazard. Sliding snow can land on a walkway, a deck or a lower roof, so snow guards or a planned layout are part of a standing seam design on steep roofs. Stamped shingles have a textured surface that holds snow a bit more, which some homeowners prefer above entries.
+
+**Rain and moisture.** Fewer seams mean fewer places for water to find its way in. On metal shingles, the many laps and fastener points demand good flashing at valleys, chimneys and skylights. On either system, underlayment and ventilation do the quiet work that keeps condensation off the deck in damp mountain climates.
+
+If you want to compare how local contractors would approach your roof, a service like [sealed contractor bids on roofing projects](https://bidwolf.io/projects/yneIjBSVJXTyeJ4BH3kM) lets you post a project and review scopes side by side. Whichever route you take, make every bidder price the same system, gauge and underlayment so the numbers mean something.
+
+## Thermal movement and fasteners
+
+Metal expands and contracts with temperature, and mountain temperature swings are large. This is the part of standing seam that separates a good install from a poor one.
+
+The ASHI article notes that clips let the metal move freely on the roof, but the metal still expands and contracts. Pinning a large sheet in place at more than one point along its length can bind the metal until it distorts. That is why standing seam layouts use a mix of fixed and floating clips matched to panel length. It is craft work: roll-forming on site, clip spacing, custom-bent flashing at transitions, and ridge and eave details that suit the seam profile.
+
+Metal shingles move less as a whole because each piece is small, but the many fasteners and laps add maintenance points over decades. Neither is better in the abstract. The question is whether the crew in front of you has installed that system on roofs like yours.
+
+## Lifespan, cost and long-term value
+
+Metal roofing generally costs more up front than asphalt or dimensional shingles and is meant to last much longer. The 40 to 70 year range for standing seam and 40 to 60 for metal shingles from NRCIA is the best published yardstick we found.
+
+We do not quote a single per-square-foot number here, and you should be wary of anyone who does without seeing your roof. Published installed-cost ranges for the two systems overlap, and they swing with region, roof complexity, number of valleys and penetrations, pitch, access, and the metal and coating chosen. A roof with many dormers, a steep pitch and a long haul up a mountain driveway costs differently than a simple gable near the road. Standing seam is often assumed to be the premium option, yet a complex stamped-shingle roof with lots of cuts can price close to it because of the labor.
+
+What decides long-term value:
+
+1. **Material and coating.** Steel gauge, aluminum thickness and finish quality. Sheffield Metals notes standing seam is typically 22- to 26-gauge, most often 24-gauge steel, in a [published comparison of standing seam and stamped shingle roofs](https://sheffieldmetals.com/learning-center/standing-seam-vs-stamped-metal-shingle-roofing/).
+2. **Installation detail.** Flashing, clips, underlayment and deck prep.
+3. **Warranty terms.** Read both the material warranty and the workmanship warranty, and who stands behind each.
+4. **What you would otherwise replace.** In harsh mountain exposure, asphalt shingle roofs often need replacing sooner than the metal alternatives. Our guide to [how long a mountain roof lasts in Western NC](/blog/roof-lifespan-mountain-home-wnc) goes into the local factors.
+
+Our own cost page for [standing seam, exposed-fastener and metal shingle options](/roofing/metal/cost) explains what drives each estimate for homes in our area.
+
+## Looks, noise and energy
+
+**Looks.** Consumer Reports, in its [lab-tested metal shingle roundup](https://www.consumerreports.org/home-garden/roofing/best-metal-roofing-shingles-of-the-year-a5041037877/), describes standing seam as having a distinct look, with metal sheets and battens covering the seams between panels. Metal shingles are made to mimic clay tile, cedar shake and traditional asphalt. Its testing also found that even the aluminum shingle it tested outperformed high-quality asphalt in the lab.
+
+That tells you where the choice usually lands. If your home is a timber-frame, a lodge-style build or a modern mountain design, standing seam reads as intentional. If it is a cottage, a traditional cabin or a house in a neighborhood with strict design guidelines, a shake or slate profile can be the better visual match. Check any HOA or design review rules before you fall in love with a color.
+
+**Noise.** The “loud metal roof” reputation comes mostly from barns and sheds with metal over open framing. Over a solid deck with proper underlayment, rain on a metal roof is not dramatically different from other roofing. Insulation and attic ventilation help further.
+
+**Energy.** Reflective coatings can cut cooling loads in hot climates. The Building America guidance points to solar reflectance index targets for cooling savings in hot regions. In the mountains, heating season matters more, so ventilation and insulation do more for comfort than the color of the panel.
+
+## Our perspective
+
+> We install and repair roofs on mountain homes every week, and the choice between metal shingles and standing seam rarely comes down to a spec sheet. It comes down to the roof in front of us: its pitch, its valleys, how much wind it sees, where the snow lands when it slides, and what the house is supposed to look like.
+>
+> Where the roof is simple enough and the homeowner wants long-term, low-maintenance performance, we lean toward standing seam, because concealed fasteners and long panels suit high-elevation wind and snow. Where the design calls for a slate, shake or traditional character, or where the pitch and cut-up geometry favor smaller pieces, stamped metal shingles and synthetic slate or shake are strong answers, and we install them.
+>
+> What we care about most is the written scope. We put the system, the underlayment, the flashing details and the price in writing, run the job with our own crews, and keep you with a single point of contact from estimate to final walkthrough. We are certified with CertainTeed, VELUX and James Hardie, which matters when your roof also includes skylights or siding.
+>
+> *Highlander Building Services*
+
+## How to choose: a short decision guide
+
+1. **Measure the pitch.** If any section is under 3:12, standing seam is likely your only metal option there.
+2. **Look at the deck.** Plan for sheathing repair or replacement where needed.
+3. **Decide on style.** Modern or clean lines point to standing seam. Shake, slate or tile character points to metal shingles or synthetic alternatives.
+4. **Think about exposure.** Ridge-top homes, long fetches of wind and heavy snow favor the system with fewer exposed fasteners and joints.
+5. **Count penetrations.** Skylights, chimneys, solar mounts and dormers raise labor on either system. Make sure flashing is itemized.
+6. **Compare scopes, not totals.** Same system, same gauge, same underlayment, same warranty terms.
+
+For a broader look at the metal-versus-asphalt question in our service area, see our comparisons for [Franklin, Highlands and Cashiers](/blog/metal-vs-shingle-roof-western-nc) and for [mountain homes weighing metal against dimensional shingles](/blog/metal-vs-dimensional-shingle-wnc-mountain-homes). If you already own a metal roof, our notes on [metal roof maintenance in Franklin](/roofing/metal) show what upkeep to expect.
+
+## Get a written estimate for your roof
+
+Highlander Building Services handles standing seam, exposed-fastener metal, metal shingles and stamped panels, and synthetic slate and shake for homes in Franklin, Highlands, Cashiers, Sylva and the surrounding mountains. Every estimate is a detailed written scope with a price, from a team that works with its own crews.
+
+See our [metal roofing options and what drives their cost](/roofing/metal/cost), or [talk to us about a roof replacement](/roofing/roof-replacement) and we will inspect your roof and walk you through the right system for it.
+
+## Sources
+
+- [Metal Roofs | Building America Solution Center](https://basc.pnnl.gov/resource-guides/metal-roofs)
+- [Inside Common Roofing Issues | American Society of Home Inspectors](https://www.homeinspector.org/reporter-articles/inside-common-roofing-issues/)
+- [3 Best Metal Roofing Shingles | Consumer Reports](https://www.consumerreports.org/home-garden/roofing/best-metal-roofing-shingles-of-the-year-a5041037877/)
+- [Choosing the Right Metal Roof System | NRCIA](https://www.nrcia.org/blog/choosing-the-right-metal-roof-system-for-your-home)
+- [Design Considerations for Standing Seam Metal Roofing | FEFPA/AIA](https://fefpa.org/wp-content/uploads/2023/10/AIA-DesignAppStandingSeam_04SS_0417-Read-Only.pdf)
+- [Code Evaluation Report, metal roofing panels | QAI](https://qai.org/wp-content/uploads/2025/06/03.-CERus-1037-EDCO-Products-Inc-Metal-Roofing-2024-IBC-2023-FBC-2022-CBC-17062025-1.pdf)
+- [Design Span hp standing seam specification | AEP Span](https://www.aepspan.com/products/design-span-hp-metal-roofing/)
+- [Standing Seam vs. Stamped Metal Shingle Roofs | Sheffield Metals](https://sheffieldmetals.com/learning-center/standing-seam-vs-stamped-metal-shingle-roofing/)
+`,
+  },
+  {
+    slug: "home-addition-permits",
+    title: "Home Addition Permits in North Carolina: What to Know",
+    excerpt: "When a North Carolina addition needs a building permit, which plans and trade permits apply, typical fees, inspections and the risks of skipping them.",
+    category: "Construction",
+    date: "2026-11-12",
+    town: "Sylva",
+    readTime: "11 min",
+    image: homeAdditionPermitsHero,
+    imageAlt: "Generated illustration of a homeowner and builder reviewing plans at a framed mountain home addition, Blue Ridge ridges behind",
+    metaTitle: "Home Addition Permits in North Carolina | Highlander",
+    metaDescription: "When a North Carolina addition needs a building permit, which plans and trade permits apply, typical fees, inspections and the risks of skipping them.",
+    faqs: [
+      { question: "Do I need a permit to add a sunroom or enclose a porch?", answer: "Usually yes. Johnston County lists sunrooms and three-season rooms among the additions that normally require permits, as well as enclosed garages and carports. Converting a porch changes the footprint or the enclosed space, so it triggers the same review. Check your county for the exact requirements. Our sunroom conversion case study shows how one project came together." },
+      { question: "Who pulls the permit, me or my contractor?", answer: "Either can, depending on the county and the setup. A licensed general contractor usually handles it and carries the required insurance paperwork. If you act as your own general contractor on a project costing $40,000 or more, Wake County, for example, asks for a notarized owner-contractor affidavit. Confirm who is responsible in your contract." },
+      { question: "Does adding a bedroom affect my septic permit?", answer: "It can. Wake and Onslow counties both require septic or Environmental Health review when an addition creates a bedroom on a septic system. Locate your existing septic records before finalizing the plans." },
+      { question: "Can I use the new room before the final inspection?", answer: "No. North Carolina requires a final inspection and certificate of compliance before an addition is occupied, though a temporary certificate may be issued. Occupying early is a Class 1 misdemeanor under G.S. 160D-1116." },
+      { question: "How much will the permit cost?", answer: "It depends on your county and the size of the addition. Johnston County, for instance, charges $200 for the first 400 square feet plus $0.30 per additional square foot, with separate trade permits. Check your county’s current fee schedule and ask us to include permit costs in your written estimate." },
+    ],
+    relatedServices: [
+      { label: "Home Additions", path: "/construction/additions" },
+      { label: "Construction Services", path: "/construction" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+    content: `
+## TL;DR
+
+- North Carolina’s permit statute, [G.S. 160D-1110](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-1110.html), generally requires a permit before building, altering, repairing or moving a structure. New living space almost always qualifies.
+- Expect more than one approval: zoning and setbacks, the building permit, separate electrical, plumbing and mechanical permits, and sometimes septic review.
+- Fees are set by each county. Johnston County, for example, publishes a square-footage-based schedule, so your county’s current fee sheet is the number that counts.
+- You cannot occupy the addition until the final inspection passes and a certificate of compliance is issued.
+- Building without a permit can mean double fees and tearing out finished work.
+
+## Does your addition need a building permit?
+
+In almost every case, yes. North Carolina’s statute requires a permit before constructing, reconstructing, altering, repairing, moving, removing or demolishing a building or structure. An addition is new construction attached to an existing building, so it sits squarely inside that rule.
+
+Counties spell out what that means in practice. [Johnston County](https://www.johnstonnc.gov/insp/content.cfm?pageid=137) says additions of new space, footprint expansions, enclosed garages or carports, sunrooms, three-season rooms and finished attics normally require permits. If you are converting a screened porch, adding a garage bay or building up a second story, assume the same.
+
+### The $40,000 exemption is narrower than it sounds
+
+The statute does allow some code-compliant work costing $40,000 or less at a single-family residence to skip certain permits. But the same section lists exceptions that still require permits: load-bearing work, changes to plumbing design, HVAC or electrical additions or changes, roofing additions, and Fire Code changes. A real addition touches nearly all of those. Treat the exemption as something that helps with small cosmetic jobs, not with adding rooms.
+
+## The permits and approvals an addition can involve
+
+The building permit is the centerpiece, but it is rarely the only approval. Here is what the research on North Carolina counties shows.
+
+| Approval | What it covers | When it applies |
+| --- | --- | --- |
+| Zoning or land-use review | Setbacks, lot coverage, use | Nearly every addition that changes the footprint |
+| Building permit | Structure, framing, foundation, energy code | All additions |
+| Electrical, plumbing, mechanical permits | New circuits, fixtures, heating and cooling | When the addition includes that work |
+| Septic or Environmental Health review | Wastewater capacity | When the addition adds a bedroom on a septic system |
+| Watershed or soil erosion approvals | Land disturbance and protected areas | Depends on your parcel and county |
+
+### Trade permits
+
+Electrical, plumbing and mechanical work tied to an addition may need its own permit. [Johnston County](https://www.johnstonnc.gov/insp/content.cfm?pageid=137) lists separate plumbing and electrical triggers, and these are typically pulled by the licensed trade contractor doing the work. Ask your builder who pulls each one so nothing is missed.
+
+### Extra approvals counties add
+
+Guilford County notes that [additional planning approvals](https://www.guilfordcountync.gov/government/departments-and-agencies/inspections/permit-guidance) may apply for zoning and setbacks, watershed protection and soil erosion, and that projects costing $40,000 or more require a lien-agent appointment. Rules differ by county, so confirm with your own inspections department before drawing anything final.
+
+## What to submit with your application
+
+Exact checklists vary, but the counties we reviewed ask for a similar package.
+
+- **Application:** Wake County uses an online [Permit Portal](https://www.wake.gov/departments-government/permits-and-inspections/permit-guidance/add-or-alter-my-home) application. Onslow County asks for a signed application.
+- **Building plans:** [Onslow County](https://www.onslowcountync.gov/DocumentCenter/View/6355/Addition-Permitting-Processing-Information) lists elevations, a floor plan, a foundation plan, a wall section and a footing detail.
+- **Site plan:** It shows the addition’s location and the distances to property lines. Wake County requires one when the footprint or the septic-served bedroom count increases.
+- **Contractor documentation:** Wake County asks for workers’ compensation documentation. If the owner acts as general contractor on a project costing $40,000 or more, it also asks for a notarized owner-contractor affidavit.
+
+The plans are the part that slows people down. If you are still at the sketch stage, our guide on [starting a home addition without plans](/construction/additions) explains how to get to a submittable set.
+
+## Zoning, setbacks and mountain lots
+
+Before the building department looks at your framing, the zoning side checks where the addition sits on the lot. This matters more in the mountains, where steep slopes, narrow building envelopes and shared drives leave little room.
+
+### Western NC example: Jackson County
+
+[Jackson County](https://www.jacksonnc.org/306/Zoning-Permit) requires a zoning permit for residential development, including additions and renovations, in regulated districts. Those districts include Sylva, Dillsboro, Webster, Cullowhee, Cashiers, the US 441 Corridor and Forest Hills. If your home is in one of those areas, a zoning permit comes before or alongside the building permit.
+
+If you live in Franklin, Highlands or elsewhere in the region, call your county or town planning office. Whether a parcel falls inside a zoned area changes the steps.
+
+### What a site plan should show
+
+Harnett County’s [2026 permit guide](https://www.harnett.org/permits/downloads/new-home-addition-modular-guide-2026.pdf) is a useful model of what reviewers want to see. Addition site plans show existing and proposed structures, driveways, walks, steps, porches, patios, decks, pools, wells, easements and distances to property lines. A setback survey may be required when the addition lands within 10% of the minimum setback.
+
+On a hillside lot, check these things early:
+
+- Where the property lines actually are. An old survey or a fence line is not a substitute.
+- Easements for utilities, access or drainage that cross your build area.
+- The location of your well and septic field relative to the new foundation.
+- Whether a deck, porch or stair that comes with the addition counts toward setback limits.
+
+Our [Western NC planning guide](/construction/additions) covers the design side of these constraints.
+
+## Septic and bedroom count
+
+If your home is on a septic system, adding a bedroom is a permitting event, not just a design choice. Wake County requires review when an addition [increases the bedroom count](https://www.wake.gov/departments-government/permits-and-inspections/permit-guidance/add-or-alter-my-home). Onslow County requires Environmental Health authorization and specific wastewater-capacity approval for additions that create a bedroom.
+
+In many rural mountain homes, septic capacity is tied to the number of bedrooms the system was designed for. So it is worth finding your septic permit or system records before you finalize a floor plan. A sunroom or family room may avoid that issue, while a bedroom suite will not.
+
+## What addition permits cost
+
+Permit fees are local, and they are usually modest compared with construction costs. Two North Carolina examples show how they are structured.
+
+- **Johnston County:** [$25 for land use and zoning, $200 for the first 400 square feet, $0.30 per square foot over 400](https://www.johnstonnc.gov/insp/content.cfm?pageid=137), and $75 for each needed electrical, plumbing or mechanical permit.
+- **Harnett County:** building-permit fees are based on square footage. The [2026 guide](https://www.harnett.org/permits/downloads/new-home-addition-modular-guide-2026.pdf) also lists a $25 land-use fee, a $25 plan-review fee and a $10 homeowner-recovery fee that may apply.
+
+As a worked example using Johnston’s published schedule, a 600-square-foot addition would carry $200 for the first 400 square feet plus $60 for the remaining 200 ($0.30 each), plus $25 for land use. With, say, electrical and mechanical permits at $75 each, the total comes to $435. Your county’s schedule will differ, so use this only to see how the pieces add up.
+
+Fees change, and some counties add plan-review or recovery charges. Always pull the current fee sheet from your county’s inspections page, and ask your contractor to build permit costs into the written estimate so they are not a surprise.
+
+## Timeline: when approvals happen
+
+Counties do not publish one standard review time, and it moves with workload and with how complete your plans are. The practical levers you control are the same everywhere:
+
+1. Submit complete plans on the first try, including the site plan with setbacks.
+2. Resolve zoning questions before you pay for full construction drawings.
+3. Settle septic or watershed questions early, since they can run on separate tracks.
+4. Answer reviewer comments quickly.
+
+Schedule construction around approvals. Starting site work before the permit is issued is where most addition problems begin.
+
+## Inspections and the certificate of compliance
+
+A permit is not a one-time stamp. Work is inspected at stages, and the project ends with a final inspection. Under [G.S. 160D-1116](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-1116.html), an addition or enlargement may not be occupied until a final inspection is done and a certificate of compliance is issued, subject to a temporary certificate of occupancy.
+
+That last point matters for scheduling. If your family, a tenant or a guest plans to use the new space for the holidays or a rental season, the final inspection date drives your real move-in date.
+
+## What happens if you build without a permit
+
+Skipping the permit tends to cost more than it saves. [Onslow County warns](https://www.onslowcountync.gov/DocumentCenter/View/6355/Addition-Permitting-Processing-Information) that starting an addition without permits can lead to double permit fees and possible removal of unauthorized work. And under G.S. 160D-1116, occupying a building or addition before the required certificate is issued is a [Class 1 misdemeanor](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-1116.html).
+
+Beyond the penalties, unpermitted space can complicate a future sale or an insurance claim, because there is no inspection record showing the work was done to code. If a previous owner built something without permits, talk to your county inspections office about how to bring it into compliance before you build on top of it.
+
+## A step-by-step path from idea to approval
+
+1. **Call your county or town.** Ask whether your parcel is in a zoning district, what the setbacks are and whether septic review applies.
+2. **Gather property records.** Survey, septic permit, easements, deed restrictions and any HOA rules.
+3. **Develop the plans.** Floor plan, elevations, foundation, wall section and site plan, as your county requires.
+4. **Confirm who pulls which permit.** Building, electrical, plumbing and mechanical.
+5. **Submit and respond.** Reply to reviewer comments quickly.
+6. **Build with inspections scheduled.** Keep the permit posted and call for each inspection before covering work.
+7. **Pass final inspection.** Get the certificate of compliance before occupying the space.
+
+If you are weighing several rooms over time, see how to [plan a multi-phase addition](/construction/additions) so permits and structure line up from the first phase.
+
+## Perspective: why permits are part of building well in the mountains
+
+> We see permits as part of the build, not a hurdle in front of it. A mountain home addition has to tie into a roof, a foundation and a site that deal with elevation, wind exposure and moisture. The permit and inspection process is one more set of eyes on those details.
+>
+> That is why we put scope and price in writing before work starts, and why you deal with one point of contact from the first walk-through to the final inspection. Our own crews know the local counties and what reviewers want to see, so plans go in complete.
+>
+> When an addition is planned with the roofline, flashing and drainage in mind from the start, permitting is smoother and the finished space holds up to mountain weather. We would rather spend time at the front end getting the plans right than redo work later.
+>
+> *Highlander Building Services*
+
+## Plan your addition with a local team
+
+If you are ready to move from questions to a scope, we handle home additions and suites, along with the roofing and exterior work that ties a new space into your house. We provide detailed written estimates for homeowners and builders across Franklin, Highlands, Cashiers, Sylva and the surrounding area. Start with our [home additions page](/construction/additions) or see the full range on our [construction services page](/construction).
+
+We are certified in CertainTeed, VELUX and James Hardie, so the roof, skylights and siding of your addition can be planned together under one contract. Ask for a written estimate and we will walk you through the permits your project is likely to need in your county.
+
+## Sources
+
+- [N.C. G.S. 160D-1110, building permits](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-1110.html)
+- [N.C. G.S. 160D-1116, inspections and certificates of compliance](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-1116.html)
+- [Johnston County, Additions, Alterations, and Remodels](https://www.johnstonnc.gov/insp/content.cfm?pageid=137)
+- [Wake County, Add to or Alter My Home](https://www.wake.gov/departments-government/permits-and-inspections/permit-guidance/add-or-alter-my-home)
+- [Onslow County, Addition Permitting Information](https://www.onslowcountync.gov/DocumentCenter/View/6355/Addition-Permitting-Processing-Information)
+- [Guilford County, Permit Guidance](https://www.guilfordcountync.gov/government/departments-and-agencies/inspections/permit-guidance)
+- [Jackson County, Zoning Permit](https://www.jacksonnc.org/306/Zoning-Permit)
+- [Harnett County, Residential Building Permit Guide 2026](https://www.harnett.org/permits/downloads/new-home-addition-modular-guide-2026.pdf)
 `,
   },
 ];

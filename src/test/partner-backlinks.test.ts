@@ -14,6 +14,7 @@ const REQUIRED: Record<string, string[]> = {
   "energy-efficient-roofing": ["smartroofingpros.com"],
   "fascia-and-soffit-repair": ["sandiegosolar.com"],
   "roof-ventilation-requirements": ["finestfurniturestudio.co.uk"],
+  "metal-shingles-vs-standing-seam": ["bidwolf.io"],
   "half-round-vs-k-style-gutters": ["upstateroofingpros.com"],
   "helical-piers-vs-concrete-piers": ["txcomfortcrew.com"],
   "high-elevation-roofing": ["am-exteriors.com"],
