@@ -1097,7 +1097,7 @@ Want the numbers for your own attic? [Contact Highlander](/contact) for an inspe
     town: "Franklin",
     readTime: "10 min",
     image: metalShinglesVsStandingSeamHero,
-    imageAlt: "Generated illustration of a mountain home with a standing seam metal roof beside a metal shingle roof, Blue Ridge ridgelines behind",
+    imageAlt: "Generated illustration of a mountain home with a standing seam metal roof beside a textured shingle roof section, Blue Ridge ridgelines behind",
     metaTitle: "Metal Shingles vs. Standing Seam Roofs | Highlander",
     metaDescription: "Metal shingles vs. standing seam compared on slope, wind, snow, fasteners, lifespan, looks and cost, with guidance for mountain homes in Western NC.",
     faqs: [
