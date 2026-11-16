@@ -1410,6 +1410,8 @@ If you are ready to move from questions to a scope, we handle home additions and
 
 We are certified in CertainTeed, VELUX and James Hardie, so the roof, skylights and siding of your addition can be planned together under one contract. Ask for a written estimate and we will walk you through the permits your project is likely to need in your county.
 
+For porch and sunroom planning, see our [sunroom conversion guide](/blog/screened-porch-vs-sunroom), as linked in the supplied article.
+
 ## Sources
 
 - [N.C. G.S. 160D-1110, building permits](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-1110.html)
