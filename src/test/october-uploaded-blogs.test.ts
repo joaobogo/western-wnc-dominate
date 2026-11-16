@@ -20,7 +20,10 @@ describe("October 8 uploaded articles", () => {
   const manifest = JSON.parse(readFileSync("public/prerender-manifest.json", "utf8"));
 
   for (const filename of uploadedFiles) {
-    const slug = filename.replace(/\.html$/, "");
+    const imageSlug = filename.replace(/\.html$/, "");
+    const slug = ["tree-on-roof_2", "roof-replacement-tax-deductible_1"].includes(imageSlug)
+      ? imageSlug.replace(/_[12]$/, "")
+      : imageSlug;
     it(`keeps ${filename} as an indexable canonical article with its own image`, () => {
       const post = getBlogBySlug(slug);
       expect(post).toBeDefined();
@@ -32,8 +35,8 @@ describe("October 8 uploaded articles", () => {
       expect(sitemap).toContain(`<loc>https://highlandernc.com/blog/${slug}</loc>`);
       expect(JSON.stringify(manifest)).toContain(`/blog/${slug}`);
       expect(post.date).toBe("2026-10-08");
-      expect(post.image).toContain(`${slug}-hero.jpg`);
-      expect(statSync(`src/assets/blog/${slug}-hero.jpg`).size).toBeLessThan(100_000);
+      expect(post.image).toContain(`${imageSlug}-hero.jpg`);
+      expect(statSync(`src/assets/blog/${imageSlug}-hero.jpg`).size).toBeLessThan(100_000);
       expect(post.imageAlt).toMatch(/^Generated illustration/);
       expect(post.faqs?.length).toBeGreaterThanOrEqual(4);
       expect(post.relatedServices?.some((s) => s.path === "/service-areas/franklin-nc")).toBe(true);
@@ -47,7 +50,7 @@ describe("October 8 uploaded articles", () => {
   }
 
   it("does not advertise the expired federal solar credit for new 2026 roofs", () => {
-    const post = getBlogBySlug("roof-replacement-tax-deductible_1");
+    const post = getBlogBySlug("roof-replacement-tax-deductible");
     expect(post?.title).not.toContain("30%");
     expect(post?.content).toContain("unavailable for property placed in service after December 31, 2025");
     expect(post?.content).toContain("https://www.irs.gov/credits-deductions/residential-clean-energy-credit");

@@ -1,3 +1,6 @@
+# BabyLoveGrowth URL corrections
+- [ ] Replace the three approved suffixed article URLs, preserve backlinks, redirect old URLs directly, regenerate search files and verify the pages.
+
 # JobTread form connection audit
 - [x] Implement missing-address property reuse/office fallback, distinct-person contacts, secondary phones, Design routing and specified defaults; 418 mocked website checks passed, live field/schema lookups and deployed preflights verified, all three delivery functions deployed without synthetic CRM writes. Occupied Secondary Phone needs office review; new CRM writes were not live-tested.
 - [x] Trace active landing, contact, inspection, intake, builder, tool, recovery, receptionist and legacy chatbot save paths; consultation detail rows must not create duplicate CRM jobs.

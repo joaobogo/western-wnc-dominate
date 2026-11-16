@@ -4,7 +4,7 @@ import roofUnderlaymentTypesHero from "@/assets/blog/roof-underlayment-types_1-h
 /** Articles uploaded 2 Nov 2026. Slugs are the uploaded filenames without `.html`. */
 export const november2Posts: BlogPost[] = [
   {
-    slug: "roof-underlayment-types_1",
+    slug: "roof-underlayment-types",
     title: "Roof Underlayment Types: Felt, Synthetic and Peel-and-Stick",
     excerpt: "Felt, synthetic and peel-and-stick underlayment each do a different job. Here is where each one fits, what goes under a metal roof, and how to choose for a mountain home.",
     category: "Materials",

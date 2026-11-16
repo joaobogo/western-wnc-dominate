@@ -1024,7 +1024,7 @@ Highlander Building Services, Inc. can discuss your [storm damage concerns](/roo
 `,
   },
   {
-    slug: "tree-on-roof_2",
+    slug: "tree-on-roof",
     title: "Tree on Your Roof in Western NC: Safety, Tarping and Repairs",
     excerpt: "What to do after a tree hits your Western NC roof: safe documentation, coordinated removal, temporary protection, insurance questions and written repair scopes.",
     category: "Storm",
@@ -1557,7 +1557,7 @@ Estimates built with attention to detail speed up the process homeowners care ab
 
 Highlander Building Services, Inc. can discuss [storm damage](/roofing/storm-damage), [repairs](/roofing/roof-repair) and [replacement](/roofing/roof-replacement). A written construction scope helps document damage and costs, but does not guarantee coverage or a payout. Policy interpretation and claim disputes belong with your insurer or an appropriately licensed advisor.
 
-For urgent impact damage, read [what to do when a tree hits your roof](/blog/tree-on-roof_2). For tax records, see [roof replacement tax treatment](/blog/roof-replacement-tax-deductible_1).
+For urgent impact damage, read [what to do when a tree hits your roof](/blog/tree-on-roof). For tax records, see [roof replacement tax treatment](/blog/roof-replacement-tax-deductible).
 
 ## Discuss Your Mountain Home Project
 Highlander Building Services, Inc. serves Western North Carolina homeowners. [Contact our team](/contact) or [request an inspection](/request-inspection) to discuss a written project scope. Call ${PHONE_DISPLAY}. Visit our [Franklin service area](/service-areas/franklin-nc) for local information.
@@ -1707,7 +1707,7 @@ Highlander Building Services, Inc. serves Western North Carolina homeowners. [Co
 `, 
   },
   {
-    slug: "roof-replacement-tax-deductible_1",
+    slug: "roof-replacement-tax-deductible",
     title: "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
     excerpt: "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",
     category: "Cost",
