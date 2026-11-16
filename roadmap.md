@@ -1,3 +1,7 @@
+# November 16 duplicate blog uploads
+- [x] Compare both uploads with existing articles and covers; restore the missing sunroom link and preserve the unsuffixed canonical URLs with direct duplicate-filename redirects.
+- [ ] Verify links, tests and sitemap, then publish and check the live articles.
+
 # BabyLoveGrowth URL corrections
 - [x] Replace the three approved suffixed article URLs, preserve all four partner backlinks, redirect old URLs directly, regenerate search files and verify the pages; 551 tests and all three preview page checks passed.
 - [ ] Publish the corrected URLs and confirm live redirects; waiting for an explicit publish request.
