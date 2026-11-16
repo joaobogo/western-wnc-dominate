@@ -1,5 +1,6 @@
 # BabyLoveGrowth URL corrections
-- [ ] Replace the three approved suffixed article URLs, preserve backlinks, redirect old URLs directly, regenerate search files and verify the pages.
+- [x] Replace the three approved suffixed article URLs, preserve all four partner backlinks, redirect old URLs directly, regenerate search files and verify the pages; 551 tests and all three preview page checks passed.
+- [ ] Publish the corrected URLs and confirm live redirects; waiting for an explicit publish request.
 
 # JobTread form connection audit
 - [x] Implement missing-address property reuse/office fallback, distinct-person contacts, secondary phones, Design routing and specified defaults; 418 mocked website checks passed, live field/schema lookups and deployed preflights verified, all three delivery functions deployed without synthetic CRM writes. Occupied Secondary Phone needs office review; new CRM writes were not live-tested.
