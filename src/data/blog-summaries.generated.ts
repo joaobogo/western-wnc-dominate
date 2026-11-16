@@ -103,8 +103,8 @@ export const blogSummaries: BlogSummary[] = [
     "readTime": "7 min"
   },
   {
-    "id": "roof-replacement-tax-deductible_1",
-    "slug": "roof-replacement-tax-deductible_1",
+    "id": "roof-replacement-tax-deductible",
+    "slug": "roof-replacement-tax-deductible",
     "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
     "excerpt": "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",
     "category": "Cost",

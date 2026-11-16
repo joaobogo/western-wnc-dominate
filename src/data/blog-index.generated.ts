@@ -94,7 +94,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": "Franklin"
   },
   {
-    "slug": "roof-replacement-tax-deductible_1",
+    "slug": "roof-replacement-tax-deductible",
     "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
     "excerpt": "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",
     "category": "Cost",
@@ -134,7 +134,7 @@ export const blogIndex: BlogIndexEntry[] = [
     "town": ""
   },
   {
-    "slug": "tree-on-roof_2",
+    "slug": "tree-on-roof",
     "title": "Tree on Your Roof in Western NC: Safety, Tarping and Repairs",
     "excerpt": "What to do after a tree hits your Western NC roof: safe documentation, coordinated removal, temporary protection, insurance questions and written repair scopes.",
     "category": "Storm",

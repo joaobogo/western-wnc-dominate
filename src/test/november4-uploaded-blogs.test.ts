@@ -23,6 +23,6 @@ describe("November 4 uploaded articles", () => {
   it("redirects the duplicate underlayment upload to the existing article", () => {
     expect(getBlogBySlug("roof-underlayment-types_2")).toBeUndefined();
     const r = readFileSync("public/_redirects", "utf8");
-    expect(r).toMatch(/\/blog\/roof-underlayment-types_2\s+\/blog\/roof-underlayment-types_1\s+301!/);
+    expect(r).toMatch(/\/blog\/roof-underlayment-types_2\s+\/blog\/roof-underlayment-types\s+301!/);
   });
 });
