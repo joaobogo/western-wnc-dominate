@@ -200,15 +200,18 @@ export const divisions: DivisionDropdown[] = [
 ];
 
 /**
- * Top-bar links beside the dropdowns. Blog and Contact moved to the menu panel
- * and footer in Nov 2026 when "Services" joined the bar: with all three the
- * desktop header overflowed and squeezed the logo below ~1600px.
+ * Top-bar links beside the dropdowns. Contact moved to the menu panel and
+ * footer in Nov 2026 when "Services" joined the bar (the header overflowed and
+ * squeezed the logo); Blog stays because posts go up daily.
  */
-export const secondaryLinks = [{ label: "Projects", href: "/recent-projects" }];
+export const secondaryLinks = [
+  { label: "Projects", href: "/recent-projects" },
+  // Blog stays in the top bar: new posts go up daily (John, 17 Nov 2026).
+  { label: "Blog", href: "/blog" },
+];
 
 /** Secondary destinations — footer + a single mobile "Resources" group, never top-level. */
 export const resourceLinks = [
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
   { label: "About Highlander", href: "/about" },
   { label: "Our Showrooms", href: "/locations" },

@@ -125,7 +125,7 @@ const Header = ({ onEstimateClick }: HeaderProps = {}) => {
             className={`w-auto hidden sm:block transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
                 ? "h-[44px] sm:h-[48px] md:h-[52px] 2xl:h-[56px]"
-                : "h-[52px] sm:h-[60px] md:h-[68px] xl:h-[64px] 2xl:h-[76px]"
+                : "h-[52px] sm:h-[60px] md:h-[68px] xl:h-[58px] 2xl:h-[76px]"
             }`}
             fetchPriority="high"
           />
