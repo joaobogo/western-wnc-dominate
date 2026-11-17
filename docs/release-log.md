@@ -110,3 +110,18 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   | `smoke:lp` | 12/12, no page errors |
   | Hydration errors on 6 changed pages | none |
   | Images | 0 broken |
+
+## Hotfix 2 — Nov 17, 2026 (PR #38)
+- **Reported by:** John ("this chat thing doesn't really work": the floating "Start a Conversation" button).
+- **Causes (all pre-existing):**
+  1. The sticky phone bar and the floating button appear only after mount but were not tagged `data-client-only`, so the prerender snapshot kept a lifeless copy of each next to the live one on about 59 pages. The dead floating button ignored clicks.
+  2. The live button opened its panel on mouse hover only (no click, tap or keyboard), and a gap between button and panel closed it before the mouse arrived.
+  3. On a first visit the cookie notice sat on top of the button.
+- **Fix:**
+  - both widgets are client-only (no dead copies);
+  - the button opens on click, tap and keyboard, closes on Escape or an outside click, and the hover area is continuous;
+  - the button sits above the cookie notice while it is showing;
+  - it is relabelled "Call or Get an Estimate" (it was never a chat) and the panel offers "Call Direct" and "Get My Written Estimate";
+  - `smoke:lp` now fails on any dead (non-React) link, button or form and covers three more pages.
+- **Rollback point:** `main` at `f065876` (Release 3).
+- **Gates:** tests 615/615 · build 346/346 · `seo:check` PASS · `smoke:lp` 15/15 · no dead controls on 16 pages at 390 and 1440 px · real-browser check of click, hover, tap and both links.

@@ -1,8 +1,8 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
-import { Phone, ArrowRight, FileText, MessageSquare } from "lucide-react";
+import { Phone, ArrowRight, FileText } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { trackPrimaryCtaClick } from "@/lib/gtm";
 import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
@@ -43,6 +43,46 @@ const StickyMobileCTA = () => {
   );
   const [scrolled, setScrolled] = useState(false);
   const [desktopHovered, setDesktopHovered] = useState(false);
+  // The floating trigger opens on click/tap/keyboard too (it used to react to
+  // mouse hover only, so a click did nothing and touch screens could not use it).
+  const [desktopOpen, setDesktopOpen] = useState(false);
+  const desktopPanelRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!desktopOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setDesktopOpen(false);
+    const onDown = (e: MouseEvent | TouchEvent) => {
+      if (desktopPanelRef.current && !desktopPanelRef.current.contains(e.target as Node)) setDesktopOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("touchstart", onDown);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("touchstart", onDown);
+    };
+  }, [desktopOpen]);
+  // Close it when the visitor moves to another page.
+  useEffect(() => setDesktopOpen(false), [pathname]);
+  // The cookie notice takes the bottom-right corner on a first visit and used
+  // to sit on top of this button, so it could not be clicked. While the notice
+  // is up, the button sits just above it.
+  const [consentLift, setConsentLift] = useState(0);
+  useEffect(() => {
+    const measure = () => {
+      const strip = document.querySelector<HTMLElement>(".consent-strip");
+      const lift = strip ? Math.max(0, Math.round(window.innerHeight - strip.getBoundingClientRect().top)) : 0;
+      setConsentLift((current) => (current === lift ? current : lift));
+    };
+    measure();
+    const observer = new MutationObserver(measure);
+    observer.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
   const [suppressed, setSuppressed] = useState(false);
   /** True while the visitor is typing in any field — the bar steps aside. */
   const [fieldFocused, setFieldFocused] = useState(false);
@@ -203,6 +243,9 @@ const StickyMobileCTA = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
+            // Appears only after mount: tagged so the prerender snapshot drops it.
+            // Untagged, a dead copy stayed in the page HTML next to the live bar.
+            data-client-only
             className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
           >
             {/* Gold top accent */}
@@ -278,42 +321,52 @@ const StickyMobileCTA = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
+            // Client-only for the same reason: the dead snapshot copy ignored clicks.
+            data-client-only
+            style={consentLift ? { bottom: consentLift + 12 } : undefined}
             className="fixed bottom-8 right-8 z-50 hidden md:block"
             onMouseEnter={() => setDesktopHovered(true)}
             onMouseLeave={() => setDesktopHovered(false)}
           >
-            <div className="relative">
+            <div className="relative" ref={desktopPanelRef}>
               {/* Expanded panel */}
               <AnimatePresence>
-                {desktopHovered && (
+                {(desktopHovered || desktopOpen) && (
                   <motion.div
                     initial={{ opacity: 0, y: 12, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 12, scale: 0.95 }}
                     transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
-                    className="absolute bottom-full right-0 mb-3 w-72 bg-card border border-border rounded-none shadow-floating overflow-hidden"
+                    id="desktop-contact-panel"
+                    className="absolute bottom-full right-0 w-72 pb-3"
                   >
+                  <div className="bg-card border border-border rounded-none shadow-floating overflow-hidden">
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
                     <div className="p-4 border-b border-border">
-                      <p className="text-sm font-heading font-bold text-foreground mb-0.5">Ready to start?</p>
-                      <p className="text-caption text-muted-foreground font-body">Begin a project conversation with our team.</p>
+                      <p className="text-sm font-heading font-bold text-foreground mb-0.5">Talk to Highlander</p>
+                      <p className="text-caption text-muted-foreground font-body">Call the Franklin office or send three details and we call you.</p>
                     </div>
                     <div className="p-2 space-y-0.5">
                       <Link
                         to="/request-inspection"
+                        onClick={() => setDesktopOpen(false)}
+                        data-gtm-cta="request_inspection"
+                        data-gtm-location="floating_desktop"
                         className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
                           <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-heading font-semibold text-foreground">Start a Project</p>
-                          <p className="text-caption text-muted-foreground font-body">No-obligation consultation</p>
+                          <p className="text-sm font-heading font-semibold text-foreground">Get My Written Estimate</p>
+                          <p className="text-caption text-muted-foreground font-body">Three fields, we call you back</p>
                         </div>
                         <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true" />
                       </Link>
                       <a
                         href={PHONE_TEL}
+                        data-cta="floating-desktop"
+                        onClick={() => setDesktopOpen(false)}
                         className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
@@ -326,18 +379,25 @@ const StickyMobileCTA = () => {
                         <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true" />
                       </a>
                     </div>
+                  </div>
                   </motion.div>
                 )}
               </AnimatePresence>
 
               {/* Trigger button */}
               <motion.button
+                type="button"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="group flex items-center gap-2.5 bg-primary text-primary-foreground pl-4 pr-5 py-3 rounded-none shadow-raised hover:shadow-floating transition-shadow duration-300"
+                onClick={() => setDesktopOpen((open) => !open)}
+                aria-expanded={desktopHovered || desktopOpen}
+                aria-controls="desktop-contact-panel"
+                data-gtm-cta="contact_options"
+                data-gtm-location="floating_desktop"
+                className="group flex min-h-12 items-center gap-2.5 bg-primary text-primary-foreground pl-4 pr-5 py-3 rounded-none shadow-raised hover:shadow-floating transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))]"
               >
-                <MessageSquare className="w-4 h-4" aria-hidden="true" />
-                <span className="text-sm font-body font-semibold">Start a Conversation</span>
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                <span className="text-sm font-body font-semibold">Call or Get an Estimate</span>
               </motion.button>
             </div>
           </motion.div>
