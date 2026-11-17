@@ -32,3 +32,4 @@ One entry per release. Record the rollback point **before** each release (B2.5).
 
 ## Decision — Nov 17, 2026
 John confirmed the release path: work on `claude/*` → PR into `main` → merge only after "approved, release", with Lovable idle during the merge. There are no `edit/**` branches.
+John (Nov 17): keep both branch changes: the shared honeypot on every form, and gutter leads routed to the Gutters division.
