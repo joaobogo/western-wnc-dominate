@@ -1,3 +1,5 @@
+Before any website work, read docs/HIGHLANDER_BUILD.md (sections B–E are binding), .lovable/memory/index.md, CLAIMS_AUDIT.md and docs/AUDIT_STATUS_2026-10.md.
+
 # Project Architecture Rules
 
 - Keep all form delivery through the shared JobTread mapper and validate its custom-field IDs/options against the live organization before changing mappings; CRM configuration changes can otherwise block every submission.
