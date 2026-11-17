@@ -111,3 +111,18 @@ describe("/construction/handyman", () => {
     expect(hit ? (document.body.textContent ?? "").slice(Math.max(0, hit.index! - 80), hit.index! + 40) : null).toBeNull();
   });
 });
+
+describe("/blogs (plural) reaches the blog", () => {
+  it("/blogs and /blogs/<post> 301 to /blog in one hop", async () => {
+    const m = await import("../../scripts/lib/redirect-rules.mjs");
+    const rules = m.loadRedirectRules();
+    expect(m.applyRule(rules, "/blogs")?.to).toBe("/blog");
+    expect(m.applyRule(rules, "/blogs/metal-roofing-cost-wnc")?.to).toBe("/blog/metal-roofing-cost-wnc");
+    expect(m.applyRule(rules, "/blog")).toBeNull();
+  });
+
+  it("Blog is a top-level header link (posts go up daily)", async () => {
+    const { secondaryLinks } = await import("@/components/header/nav-data");
+    expect(secondaryLinks.some((l) => l.href === "/blog")).toBe(true);
+  });
+});
