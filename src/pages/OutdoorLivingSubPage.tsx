@@ -16,7 +16,7 @@ import CTABlock from "@/components/CTABlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import NotFound from "@/pages/NotFound";
-import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
+import outdoorMobileHero from "@/assets/work/patio-cashiers-wide.webp";
 import { getOutdoorSubPage } from "@/data/outdoor-living-subpages";
 
 /**
@@ -66,7 +66,7 @@ const OutdoorLivingSubPage = ({ slug }: { slug: string }) => {
                 height={1067}
                 decoding="async"
                 src={outdoorMobileHero}
-                alt="Outdoor living space at a mountain home in Western North Carolina"
+                alt="Covered patio with a metal roof added by Highlander to a home in Cashiers, North Carolina"
                 className="w-full h-full object-cover object-center"
                 loading="eager"
               />

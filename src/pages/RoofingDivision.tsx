@@ -27,7 +27,7 @@ import roofingMobileHeroSet from "@/assets/heroes/roofing-mobile.webp?w=480;640;
 import roofingMobileHeroAvif from "@/assets/heroes/roofing-mobile.webp?w=480;640;828&format=avif&as=srcset";
 import metalRoofSet from "@/assets/gallery/metal-005.webp?w=1024;1600&format=webp&as=srcset";
 import metalRoofAvif from "@/assets/gallery/metal-005.webp?w=1024;1600&format=avif&as=srcset";
-import cedarRoof from "@/assets/gallery/cedar-005.webp";
+import cedarRoof from "@/assets/gallery/cedar-001.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import bravaGlenville from "@/assets/gallery/brava-glenville-aerial.webp";

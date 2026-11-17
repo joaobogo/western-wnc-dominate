@@ -3,7 +3,7 @@ import { smallSrc } from "@/lib/gallery-srcset";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Droplets, Shield, Wind, Home, ChevronRight } from "lucide-react";
-import guttersImg from "@/assets/gallery/gutters-002.jpg";
+import guttersImg from "@/assets/work/roof-gutter-guard-eave.webp";
 import gutterGuard from "@/assets/work/roof-gutter-guard-eave.webp";
 import gutterGuardSet from "@/assets/work/roof-gutter-guard-eave.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -86,7 +86,7 @@ const Gutters = () => {
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async"
               src={guttersImg}
-              alt="Seamless aluminum gutters on a Western North Carolina mountain home"
+              alt="Seamless gutter and downspout along the eave of a shingle roof with dormers, Highlander gutter work in Western North Carolina"
               className="w-full h-full object-cover object-center"
               loading="eager"
             />

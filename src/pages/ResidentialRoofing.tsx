@@ -23,7 +23,7 @@ import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-005.webp";
+import cedarRoof from "@/assets/gallery/cedar-001.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import bravaGlenville from "@/assets/gallery/brava-glenville-aerial.webp";
 import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";

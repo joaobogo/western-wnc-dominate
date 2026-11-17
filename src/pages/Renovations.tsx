@@ -25,7 +25,7 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import WorkGallery from "@/components/gallery/WorkGallery";
 
-const heroImg = "/media/d35d81a4-construction-project-highlands.webp";
+import heroImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -116,7 +116,7 @@ const Renovations = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Home renovation in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Interior finished by Highlander in Franklin, North Carolina: a stained wood vaulted ceiling over mountain-view windows" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
           </div>

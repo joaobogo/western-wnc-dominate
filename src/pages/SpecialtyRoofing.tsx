@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
-import heroImg from "@/assets/gallery/cedar-005.webp";
+import heroImg from "@/assets/gallery/cedar-001.webp";
 import cedar001 from "@/assets/gallery/cedar-001.webp";
 import cedar002 from "@/assets/gallery/cedar-002.webp";
 import metal009 from "@/assets/gallery/metal-010.webp";
@@ -126,7 +126,7 @@ const SpecialtyRoofing = () => {
         hero={
                   <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
                     <div className="absolute inset-0">
-                      <img width={1600} height={1067} decoding="async" src={heroImg} alt="Specialty cedar roof on a custom home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+                      <img width={1600} height={1067} decoding="async" src={heroImg} alt="Cedar shake roof on a wooded mountain home, from Highlander's roofing gallery" className="w-full h-full object-cover" loading="eager" />
                       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
                     </div>

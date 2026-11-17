@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
-import blueprintImg from "@/assets/division-design.webp";
+import blueprintImg from "@/assets/work/addition-franklin-window-wall.webp";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
@@ -193,7 +193,7 @@ const LayoutsPlanning = () => {
               <ScrollReveal variant="slide-right">
                 <div className="relative">
                   <div className="aspect-[4/5] relative z-10 overflow-hidden border border-border">
-                    <img width={1600} height={1067} loading="lazy" decoding="async" src={blueprintImg} alt="Technical drafting and planning" className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000" />
+                    <img width={1600} height={1067} loading="lazy" decoding="async" src={blueprintImg} alt="Wall of gable windows in a living room addition planned and built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000" />
                     <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                   </div>
                   {/* Tartan Accent Box */}

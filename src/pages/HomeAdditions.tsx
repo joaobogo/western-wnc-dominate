@@ -29,7 +29,6 @@ import heroImg from "@/assets/gallery/addition-franklin-room-tall.webp";
 import expansionContextImg from "@/assets/work/addition-franklin-exterior-windows.webp";
 import expansionContextSet from "@/assets/work/addition-franklin-exterior-windows.webp?w=800;1200;1600&format=webp&as=srcset";
 import WorkGallery from "@/components/gallery/WorkGallery";
-const structuralTieImg = "/media/wnc-construction-framing.webp";
 const mountainSiteImg = "/media/wnc-ridge-elevation-home.webp";
 
 import AnswerBlock from "@/components/seo/AnswerBlock";

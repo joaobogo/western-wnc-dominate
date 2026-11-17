@@ -38,16 +38,14 @@ import {
   DesignProgramPromo,
 } from "@/components/construction";
 
-import heroImg from "@/assets/division-construction-v2.webp";
-import heroImgAvif from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=avif&as=srcset";
-import heroImgWebp from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=webp&as=srcset";
+import heroImg from "@/assets/work/patio-cashiers-wide.webp";
+import heroImgAvif from "@/assets/work/patio-cashiers-wide.webp?w=640;1024;1500&format=avif&as=srcset";
+import heroImgWebp from "@/assets/work/patio-cashiers-wide.webp?w=640;1024;1500&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
 import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
-const divisionContextImg = "/media/d35d81a4-construction-project-highlands.webp";
 import WorkGallerySection from "@/components/gallery/WorkGallerySection";
-import planningFocusImg from "@/assets/division-design.webp";
+import planningFocusImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 const siteCoordinationImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
-const wncTerrainImg = "/media/wnc-mountain-home-exterior.webp";
 
 import RelatedLinks from "@/components/RelatedLinks";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -109,7 +107,7 @@ const ConstructionDivision = () => {
         {/* ═══ HERO — Cinematic construction hero with gold accents ═══ */}
         <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" />
+            <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Covered patio and deck added by Highlander to a home in Cashiers, North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -271,7 +269,7 @@ const ConstructionDivision = () => {
                       Design-first coordination, layout verification, and unified accountability — under one team.
                     </p>
                     <div className="mt-4 relative aspect-video overflow-hidden border border-border">
-                       <img width={1600} height={1067} loading="lazy" decoding="async" src={planningFocusImg} alt="Project scoping and planning" className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500" />
+                       <img width={1600} height={1067} loading="lazy" decoding="async" src={planningFocusImg} alt="Living room addition planned and built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                   </motion.div>
                 </motion.div>

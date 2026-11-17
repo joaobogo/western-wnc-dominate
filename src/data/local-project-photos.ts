@@ -8,8 +8,6 @@ import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import cedar005 from "@/assets/gallery/cedar-005.webp";
-import gutters002 from "@/assets/gallery/gutters-002.jpg";
 import siding001 from "@/assets/gallery/siding-001.webp";
 import additionFranklin from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import bravaGlenville from "@/assets/gallery/brava-glenville-chimney-valley.webp";
@@ -73,12 +71,6 @@ export const localProjectPhotos: LocalProjectPhoto[] = [
     alt: "Exterior siding and trim replacement on a village home in Dillsboro, North Carolina",
   },
   {
-    src: gutters002,
-    town: "Cherokee",
-    caption: "Cherokee, NC — seamless gutter run sized for heavy Smokies rainfall",
-    alt: "Seamless aluminum gutter installation on a home in Cherokee, North Carolina",
-  },
-  {
     src: metal008,
     town: "Franklin",
     caption: "Franklin, NC — silver metal panels across a complex hip-and-valley roof",
@@ -95,12 +87,6 @@ export const localProjectPhotos: LocalProjectPhoto[] = [
     town: "Highlands",
     caption: "Highlands, NC — dark bronze standing seam on a 12/12 pitch",
     alt: "Dark bronze standing seam metal roof on a steep-pitch home in Highlands, North Carolina",
-  },
-  {
-    src: cedar005,
-    town: "Highlands",
-    caption: "Highlands, NC — cedar shake with copper ridge accents on an estate home",
-    alt: "Cedar shake roof with copper ridge detailing on an estate home in Highlands, North Carolina",
   },
   {
     src: metal006,

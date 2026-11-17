@@ -23,9 +23,9 @@ import chimneyDetail from "@/assets/work/roof-chimney-flashing-detail.webp";
 import charcoalHip from "@/assets/work/roof-charcoal-hip-detail.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
-import guttersImg from "@/assets/gallery/gutters-002.jpg";
-import constructionImg from "@/assets/division-construction-v2.webp";
-import designImg from "@/assets/division-design.webp";
+import guttersImg from "@/assets/work/roof-gutter-guard-eave.webp";
+import constructionImg from "@/assets/work/patio-cashiers-wide.webp";
+import designImg from "@/assets/work/addition-franklin-window-wall.webp";
 
 const outdoorImg = "/media/9860ca9e-outdoor-living-cashiers-640.webp";
 

@@ -8,6 +8,8 @@ import additionRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import additionRoomSet from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=480;800;1200&format=webp&as=srcset";
 import dormerCabin from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
 import dormerCabinSet from "@/assets/gallery/shingle-dormer-cabin-aerial.webp?w=800;1280&format=webp&as=srcset";
+import additionWindowWall from "@/assets/work/addition-franklin-window-wall.webp";
+import additionWindowWallSet from "@/assets/work/addition-franklin-window-wall.webp?w=800;1280;1600&format=webp&as=srcset";
 import additionWindows from "@/assets/gallery/addition-franklin-gable-windows.webp";
 import additionWindowsSet from "@/assets/gallery/addition-franklin-gable-windows.webp?w=800;1200&format=webp&as=srcset";
 import stripCharcoal from "@/assets/work/roof-charcoal-garage-mountains.webp";
@@ -271,14 +273,7 @@ const heroSkyImage: LandingImage = {
  * the same photo twice: none of these appear in that page's proof cards or strip.
  */
 const dormerCabinBackdrop: LandingImage = { src: dormerCabin, srcSet: dormerCabinSet, alt: "", width: 1280, height: 720 };
-const mountainBuildBackdrop: LandingImage = {
-  src: "/media/d35d81a4-construction-project-highlands.webp",
-  srcSet:
-    "/media/d35d81a4-construction-project-highlands-640.webp 640w, /media/d35d81a4-construction-project-highlands-960.webp 960w, /media/d35d81a4-construction-project-highlands.webp 1600w",
-  alt: "",
-  width: 1600,
-  height: 900,
-};
+const mountainBuildBackdrop: LandingImage = { src: additionWindowWall, srcSet: additionWindowWallSet, alt: "", width: 1600, height: 1200 };
 const additionWindowsBackdrop: LandingImage = { src: additionWindows, srcSet: additionWindowsSet, alt: "", width: 1200, height: 1600 };
 
 const stripImage = (src: string, srcSet: string, alt: string, width: number, height: number): LandingImage => ({ src, srcSet, alt, width, height });

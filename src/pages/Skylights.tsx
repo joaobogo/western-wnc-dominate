@@ -18,7 +18,7 @@ import chimneySkylights from "@/assets/work/roof-chimney-flashing-skylights.webp
 import chimneySkylightsSet from "@/assets/work/roof-chimney-flashing-skylights.webp?w=640;960;1280&format=webp&as=srcset";
 import bravaSkylights from "@/assets/gallery/brava-glenville-aerial.webp";
 import bravaSkylightsSet from "@/assets/gallery/brava-glenville-aerial.webp?w=640;960;1280&format=webp&as=srcset";
-import skylightsMobileHero from "@/assets/heroes/skylights-mobile.webp";
+import skylightsMobileHero from "@/assets/work/roof-chimney-flashing-skylights.webp";
 import CTABlock from "@/components/CTABlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
@@ -97,7 +97,7 @@ const Skylights = () => {
             <div className="absolute inset-0">
               <picture>
                 <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />
-                <img width={1600} height={1067} decoding="async" src={skylightsMobileHero} alt="Interior mountain great room with VELUX skylights and warm sunlight in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
+                <img width={1600} height={1067} decoding="async" src={skylightsMobileHero} alt="Skylights beside a stone chimney with new metal flashing on a shingle roof in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
               </picture>
               <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.15)]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />

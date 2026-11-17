@@ -11,6 +11,8 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import sidingHero from "@/assets/work/addition-franklin-exterior-windows.webp";
+import sidingDetail from "@/assets/work/addition-cullowhee-roofline.webp";
 import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -62,8 +64,8 @@ const Siding = () => {
         <section className="relative min-h-[60vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src="/media/wnc-construction-framing.webp" 
-              alt="Mountain home with premium siding and exterior finishes"
+              src={sidingHero}
+              alt="Cedar shake siding and tall windows on a Highlander addition in Franklin, North Carolina"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent" />
@@ -134,7 +136,7 @@ const Siding = () => {
                   </div>
                 </div>
                 <div className="absolute right-0 bottom-0 w-1/2 h-1/2 opacity-[0.05] pointer-events-none grayscale translate-x-4 translate-y-4">
-                   <img width={1600} height={1067} loading="lazy" decoding="async" src="/media/wnc-mountain-home-exterior.webp" alt="Texture detail" className="w-full h-full object-cover" />
+                   <img width={1600} height={1067} loading="lazy" decoding="async" src={sidingDetail} alt="Lap siding and trim on a Highlander addition in Cullowhee, North Carolina" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

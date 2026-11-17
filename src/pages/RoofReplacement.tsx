@@ -28,7 +28,7 @@ import asphalt008Avif from "@/assets/gallery/asphalt-008.webp?w=640;960;1280;160
 import asphalt008Webp from "@/assets/gallery/asphalt-008.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-005.webp";
+import cedarRoof from "@/assets/gallery/cedar-001.webp";
 // Material cards use different photos from the project gallery so no image repeats on the page.
 import metalMaterial from "@/assets/gallery/metal-010.webp";
 import cedarMaterial from "@/assets/gallery/cedar-001.webp";

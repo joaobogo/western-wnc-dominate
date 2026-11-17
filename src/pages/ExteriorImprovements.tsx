@@ -21,10 +21,10 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
-const heroImg = "/media/wnc-mountain-home-exterior.webp";
+import heroImg from "@/assets/work/addition-cullowhee-roofline.webp";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
 import proj2 from "@/assets/gallery/metal-010.webp";
-import proj3 from "@/assets/gallery/cedar-005.webp";
+import proj3 from "@/assets/gallery/cedar-001.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -121,7 +121,7 @@ const ExteriorImprovements = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Exterior renovation project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Lap siding, trim and a tied-in roofline on a Highlander addition in Cullowhee, North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-transparent" />
           </div>

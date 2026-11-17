@@ -30,7 +30,8 @@ export const HERO_WIDTH = 1600;
 export const HERO_HEIGHT = 900;
 
 /** Single regional fallback (self-hosted). */
-export const REGIONAL_HERO_FALLBACK = "/media/wnc-mountain-home-exterior.webp";
+/** Real Highlander roof with a mountain view (was a stock/AI log-home image). */
+export const REGIONAL_HERO_FALLBACK = "/media/highlander-roof-charcoal-mountains.webp";
 export const REGIONAL_HERO_ALT = "Mountain home roofline in Western North Carolina";
 
 const CONSTRUCTION_SERVICES = new Set(["construction", "additions", "outdoor-living", "renovations", "siding", "design"]);

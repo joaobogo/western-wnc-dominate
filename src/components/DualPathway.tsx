@@ -15,11 +15,11 @@ import roofingImg from "@/assets/gallery/shingle-dormer-cabin-aerial.webp";
 import constructionImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 // NOTE: Temporary Design Division image. Client to provide final approved
 // Design Division image before launch.
-import designImg from "@/assets/division-design.webp";
+import designImg from "@/assets/work/addition-franklin-window-wall.webp";
 // P5.1: responsive renditions — the 800×500 card boxes were downloading the 1600px masters (190–240 KB each) on phones.
 import roofingImgSet from "@/assets/gallery/shingle-dormer-cabin-aerial.webp?w=480;800;1200&format=webp&as=srcset";
 import constructionImgSet from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=480;800;1200&format=webp&as=srcset";
-import designImgSet from "@/assets/division-design.webp?w=480;800;1200&format=webp&as=srcset";
+import designImgSet from "@/assets/work/addition-franklin-window-wall.webp?w=480;800;1200&format=webp&as=srcset";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

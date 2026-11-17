@@ -20,10 +20,10 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
-const heroImg = "/media/wnc-mountain-home-exterior.webp";
+import heroImg from "@/assets/work/addition-franklin-exterior-windows.webp";
 const specialtyContextImg = "/media/wnc-ridge-elevation-home.webp";
-const detailOversightImg = "/media/wnc-construction-framing.webp";
-const complexityImg = "/media/wnc-mountain-home-exterior.webp";
+import detailOversightImg from "@/assets/work/addition-cullowhee-roofline.webp";
+import complexityImg from "@/assets/work/patio-cashiers-wide.webp";
 
 import proj1 from "@/assets/gallery/metal-003.webp";
 import proj2 from "@/assets/gallery/asphalt-002.webp";
@@ -114,7 +114,7 @@ const CustomConstruction = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Cedar shake gable and tall windows on a Highlander addition in Franklin, North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

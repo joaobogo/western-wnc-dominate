@@ -1,5 +1,8 @@
 import { PHONE_DISPLAY, REVIEW_RATING } from "@/data/business";
 import { projectDetails } from "@/data/projects";
+import roofTanDormers from "@/assets/work/roof-tan-dormers-aerial.webp";
+import roofCharcoalHip from "@/assets/work/roof-charcoal-hip-detail.webp";
+import roofSlateGray from "@/assets/gallery/asphalt-006.webp";
 
 export interface TownStat {
   label: string;
@@ -263,7 +266,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Student-housing roof coordination",
         summary: "Cullowhee property owners often need roof work timed around tenant transitions, occupied units, and academic calendar pressure.",
         proof: "Fast estimating, tenant-aware scheduling, and property manager communication",
-        image: "/media/wnc-mountain-home-exterior.jpg",
+        image: roofTanDormers,
       },
       {
         title: "Budget-focused repair plans",
@@ -385,7 +388,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Historic downtown residential reroof",
         summary: "Traditional Hendersonville home design requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
         proof: "Oversized ridge vents and custom step-flashing detailing",
-        image: "/media/wnc-construction-framing.jpg",
+        image: roofCharcoalHip,
       },
       {
         title: "Age-in-place exterior modernization",
@@ -447,7 +450,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Hiwassee valley residential reroof",
         summary: "Reliable, team-led roof replacement for Murphy families who need a roofer who answers the phone and stands by the warranty.",
         proof: "CertainTeed dimensional systems and local Madison County crew support",
-        image: "/media/wnc-construction-framing.jpg",
+        image: roofSlateGray,
       },
       {
         title: "Far-west rental property maintenance",
