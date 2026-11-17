@@ -77,7 +77,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
           triggerRef.current?.focus();
         }
       }}
-      className={`relative text-body-sm font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+      className={`relative text-body-sm font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 2xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
         isActive(div.href)
           ? "text-heritage-charcoal bg-black/5"
           : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -134,7 +134,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                     div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                   }`} />
                 </div>
-                <span className="text-base font-heading font-bold text-foreground">{div.label} Division</span>
+                <span className="text-base font-heading font-bold text-foreground">{div.panelTitle ?? `${div.label} Division`}</span>
               </div>
               <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground ml-[38px]">
                 {div.tagline}
@@ -169,7 +169,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                       >
                         <span className="block min-w-0">
                           <span className="text-body-sm font-body font-bold block leading-tight">{item.label}</span>
-                          <span className="text-body-xs font-body text-muted-foreground leading-snug font-medium block">{item.desc}</span>
+                          {item.desc && <span className="text-body-xs font-body text-muted-foreground leading-snug font-medium block">{item.desc}</span>}
                         </span>
                         <ChevronRight className="w-4 h-4 mt-1 shrink-0 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" aria-hidden="true" />
                       </Link>
@@ -202,7 +202,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 <span className={`inline-flex items-center gap-1.5 text-body-xs font-body font-bold mt-4 ${
                   div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                 }`}>
-                  Get started
+                  {div.featured.cta ?? "See details"}
                   <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
                 </span>
               </Link>

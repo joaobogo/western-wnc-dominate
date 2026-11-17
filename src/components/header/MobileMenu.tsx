@@ -110,7 +110,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 top-[inherit] bg-[hsl(var(--heritage-charcoal)/0.3)] backdrop-blur-sm lg:hidden z-[-1]"
+          className="fixed inset-0 top-[inherit] bg-[hsl(var(--heritage-charcoal)/0.3)] backdrop-blur-sm xl:hidden z-[-1]"
           onClick={onClose}
         />
 
@@ -123,7 +123,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
-          className="lg:hidden bg-white border-t border-black/5 overflow-hidden"
+          className="xl:hidden bg-white border-t border-black/5 overflow-hidden"
         >
           {/* Persistent call button pinned to the top of the panel */}
           <a
@@ -200,7 +200,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                               <span className={`text-body-sm font-body block leading-tight ${
                                 isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/70"
                               }`}>{item.label}</span>
-                              <span className="text-caption font-body text-heritage-charcoal/45 leading-tight mt-0.5">{item.desc}</span>
+                              {item.desc && <span className="text-caption font-body text-heritage-charcoal/45 leading-tight mt-0.5">{item.desc}</span>}
                             </Link>
                           </motion.div>
                         ))}

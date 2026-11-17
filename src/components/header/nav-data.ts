@@ -1,4 +1,5 @@
-import { Hammer, Shield } from "lucide-react";
+import { Hammer, LayoutGrid, Shield } from "lucide-react";
+import { FAST_ESTIMATE_PAGES, TOP_SERVICES } from "@/data/services-hub";
 import { towns } from "@/data/towns";
 
 export interface DropdownItem {
@@ -17,6 +18,8 @@ export interface FeaturedItem {
   href: string;
   desc: string;
   eyebrow: string;
+  /** Link text under the card ("get started" is a banned CTA, CLAIMS_AUDIT / cta-config). */
+  cta?: string;
 }
 
 export interface DivisionDropdown {
@@ -28,6 +31,8 @@ export interface DivisionDropdown {
   icon: typeof Shield;
   tagline: string;
   accent: "green" | "gold";
+  /** Dropdown panel heading; defaults to "<label> Division". */
+  panelTitle?: string;
 }
 
 export interface TownEntry {
@@ -151,16 +156,54 @@ export const divisions: DivisionDropdown[] = [
     tagline: "Licensed General Contractor",
     accent: "gold",
   },
+  {
+    // Top 10 services + the fast-estimate (paid landing) pages, Nov 2026.
+    label: "Services",
+    href: "/services",
+    panelTitle: "Services",
+    // Names only: a scannable list, not a wall of text. Details live on /services.
+    items: [
+      ...TOP_SERVICES.map((s) => ({ label: s.name, href: s.href, desc: "" })),
+      ...FAST_ESTIMATE_PAGES.map((p) => ({ label: p.label, href: p.href, desc: "" })),
+    ],
+    columns: [
+      {
+        title: "Top roofing services",
+        items: TOP_SERVICES.filter((s) => s.division === "roofing").map((s) => ({ label: s.name, href: s.href, desc: "" })),
+      },
+      {
+        title: "Top construction services",
+        items: TOP_SERVICES.filter((s) => s.division === "construction").map((s) => ({ label: s.name, href: s.href, desc: "" })),
+      },
+      {
+        title: "Fast written estimate",
+        items: FAST_ESTIMATE_PAGES.map((p) => ({ label: p.label, href: p.href, desc: "" })),
+      },
+    ],
+    featured: {
+      eyebrow: "All services",
+      label: "Every Highlander service",
+      desc: "Roofing and construction in one place, with the 10 services homeowners ask for most.",
+      href: "/services",
+      cta: "See all services",
+    },
+    icon: LayoutGrid,
+    tagline: "Top 10 · fast estimates",
+    accent: "green",
+  },
 ];
 
-export const secondaryLinks = [
-  { label: "Projects", href: "/recent-projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
+/**
+ * Top-bar links beside the dropdowns. Blog and Contact moved to the menu panel
+ * and footer in Nov 2026 when "Services" joined the bar: with all three the
+ * desktop header overflowed and squeezed the logo below ~1600px.
+ */
+export const secondaryLinks = [{ label: "Projects", href: "/recent-projects" }];
 
 /** Secondary destinations — footer + a single mobile "Resources" group, never top-level. */
 export const resourceLinks = [
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
   { label: "About Highlander", href: "/about" },
   { label: "Our Showrooms", href: "/locations" },
   { label: "Reviews", href: "/reviews" },

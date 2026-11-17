@@ -108,7 +108,7 @@ const Header = ({ onEstimateClick }: HeaderProps = {}) => {
           scrolled ? "py-1.5 md:py-2" : "py-2 md:py-4"
         }`}
       >
-        <Link to="/" aria-label="Highlander Building Services — Home" className="flex items-center bg-transparent hover:bg-transparent">
+        <Link to="/" aria-label="Highlander Building Services — Home" className="flex shrink-0 items-center bg-transparent hover:bg-transparent">
           <img loading="eager" decoding="async"
             src={logo}
             alt="Highlander Building Services logo"
@@ -124,8 +124,8 @@ const Header = ({ onEstimateClick }: HeaderProps = {}) => {
             height={338}
             className={`w-auto hidden sm:block transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
-                ? "h-[44px] sm:h-[48px] md:h-[52px] lg:h-[56px]"
-                : "h-[52px] sm:h-[60px] md:h-[68px] lg:h-[76px]"
+                ? "h-[44px] sm:h-[48px] md:h-[52px] 2xl:h-[56px]"
+                : "h-[52px] sm:h-[60px] md:h-[68px] xl:h-[64px] 2xl:h-[76px]"
             }`}
             fetchPriority="high"
           />

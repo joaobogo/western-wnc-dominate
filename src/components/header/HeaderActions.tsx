@@ -12,10 +12,10 @@ interface Props {
   onEstimateClick?: () => void;
 }
 
-const ESTIMATE_CLASS = "hidden sm:inline-flex btn btn-secondary btn-sm sm:px-6 lg:max-xl:px-4 sm:py-4 sm:gap-2.5 whitespace-nowrap";
+const ESTIMATE_CLASS = "hidden sm:inline-flex btn btn-secondary btn-sm sm:px-4 2xl:px-6 sm:py-4 sm:gap-2.5 whitespace-nowrap";
 const EstimateLabel = () => (
   <>
-    <span className="relative z-10"><span className="lg:max-xl:hidden">Get My </span><span className="hidden sm:inline lg:max-2xl:hidden">Written </span>Estimate</span>
+    <span className="relative z-10"><span className="hidden min-[1680px]:inline">Get My Written </span>Estimate</span>
     <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
   </>
 );
@@ -27,11 +27,11 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef, onEsti
       href={PHONE_TEL}
       data-cta="header"
       aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
-      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-6 lg:max-xl:px-4 sm:py-4 sm:gap-2 whitespace-nowrap"
+      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-4 2xl:px-6 sm:py-4 sm:gap-2 whitespace-nowrap"
     >
       <Phone className="w-4 h-4" aria-hidden="true" />
       {/* lg–xl also shows the desktop nav, so the labels shorten to fit. */}
-      <span><span className="lg:max-xl:hidden">Call </span>{PHONE_DISPLAY}</span>
+      <span><span className="hidden 2xl:inline">Call </span>{PHONE_DISPLAY}</span>
     </a>
     {/* Phones showed an icon-only phone button, so the number was never on
         screen (mobile audit F7). It is now a pill with the number. The estimate
@@ -58,7 +58,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef, onEsti
     <button
       ref={menuButtonRef}
       onClick={() => setMobileOpen(!mobileOpen)}
-      className="lg:hidden flex items-center justify-center min-w-[44px] h-10 px-2 rounded-sm text-heritage-charcoal hover:bg-black/5 active:scale-90 transition-all duration-300"
+      className="xl:hidden flex items-center justify-center min-w-[44px] h-10 px-2 rounded-sm text-heritage-charcoal hover:bg-black/5 active:scale-90 transition-all duration-300"
       aria-label={mobileOpen ? "Close menu" : "Open menu"}
       aria-expanded={mobileOpen}
     >

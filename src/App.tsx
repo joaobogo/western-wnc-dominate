@@ -51,6 +51,7 @@ const RecentProjects = lazyPreload("RecentProjects", () => import("./pages/Recen
 const ReviewsPage = lazyPreload("ReviewsPage", () => import("./pages/ReviewsPage"));
 const ProjectDetail = lazyPreload("ProjectDetail", () => import("./pages/ProjectDetail"));
 const Financing = lazyPreload("Financing", () => import("./pages/Financing"));
+const ServicesHub = lazyPreload("ServicesHub", () => import("./pages/ServicesHub"));
 const Careers = lazyPreload("Careers", () => import("./pages/Careers"));
 const RequestInspection = lazyPreload("RequestInspection", () => import("./pages/RequestInspection"));
 const ThankYou = lazyPreload("ThankYou", () => import("./pages/ThankYou"));
@@ -221,6 +222,7 @@ const App = () => (
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/financing" element={<Financing />} />
+          <Route path="/services" element={<ServicesHub />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/request-inspection" element={<RequestInspection />} />
 

@@ -185,6 +185,7 @@ const reviewServiceLabel = (review: Review) => {
 
 /** v2 "Explore Highlander" links: below the fold, new tab, tracked as lp_explore. */
 const EXPLORE_LINKS = [
+  { label: "All services", href: "/services", text: "Roofing and construction, top 10" },
   { label: "Recent projects", href: "/recent-projects", text: "Documented jobs across Western NC" },
   { label: "Reviews", href: "/reviews", text: "What customers say" },
   { label: "Financing", href: "/financing", text: "Ways to pay for the work" },
@@ -926,7 +927,7 @@ function LandingBody() {
           <section aria-label="Explore Highlander" className="bg-[hsl(var(--muted))] !py-0">
             <div className="mx-auto max-w-[1200px] px-4 py-12 sm:px-5 md:px-8 md:py-14">
               {eyebrow("Explore Highlander")}
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {[...(config.divisionHub ? [{ ...config.divisionHub, text: "Every service in this division" }] : []), ...EXPLORE_LINKS].map((link) => (
                   <li key={link.href}>
                     <a

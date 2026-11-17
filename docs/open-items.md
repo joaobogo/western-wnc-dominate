@@ -18,6 +18,10 @@ Facts and decisions Highlander or John still has to supply. **Nothing marked `{{
 | 11 | Rollback point: live `build-info.json` commit + deployId | John | A2 | — |
 
 ## Suggestions (found outside the current scope)
+- **AI-generated photos are live as if they were real jobs.** Replace them with real photos:
+  - `/media/d35d81a4-construction-project-highlands.webp` (workers in vests at a framed house). It is the hero on `/construction/renovations` and the closing backdrop on `/lp/construction`.
+  - `src/assets/gallery/gutters-002.jpg` (stylised copper gutter on a log home). It is the `/roofing/gutters` hero.
+- **Robert's top-10 list:** the Services menu and `/services` use the brief's list plus Skylights (from Search Console). Send Robert's list and it is a one-file swap (`src/data/services-hub.ts`).
 - `/lp/roof-replacement`, `/lp/roof-repair` and `/lp/storm-damage` show internal wording to visitors: "Why people convert here", "Common objections, answered", "One page, one action — no hunting around", and the eyebrow "Storm damage landing page". `/lp/roof-repair` quotes a 2019 review. Fix when each page gets its v2 release (B13).
 - `/lp/roofing` H1 says "Franklin roofer"; v2 makes it region-wide (B5) on its own release.
 - `.lovable/memory/index.md` says "24h response", which conflicts with CLAIMS_AUDIT. Ask Lovable to remove it.
