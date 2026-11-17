@@ -148,3 +148,50 @@ Rule 7 (internal links) fails any link to a redirect source. The nav link to `/s
 2. OK to fix gutter routing so gutter leads land in the Gutters division in JobTread?
 3. The "Free estimate" wording on the roofing LP and FastLeadForm: Lovable memory bans it. Remove it, or is it approved?
 4. Can construction pages show project proof in place of reviews until construction reviews come in?
+
+---
+
+## 9. Scope tracker (IDs from John's master prompt, Nov 17)
+
+Status values: **done** · **on branch** (committed to `claude/laughing-wozniak-o1cheu`, not released) · **partial** · **blocked** · **not started**.
+
+| ID | Item | Status | Files expected |
+|---|---|---|---|
+| A1 | Baseline gates | done (`docs/release-log.md`) | — |
+| A2 | Rollback point from build-info.json | **blocked**: highlandernc.com isn't reachable from this container; John reads it | `docs/release-log.md` |
+| A3 | Playwright smoke tests (6 LPs, 4 `?landing=`, live ad URLs) | not started; needs `docs/live-ad-urls.txt` | `src/test/lp-smoke.test.ts`, `scripts/lp-smoke.mjs` |
+| A4 | Lead-flow map | partial (§1 above); `docs/lead-flow.md` still to write; FGV fallback capture not found in repo (see §10) | `docs/lead-flow.md` |
+| A5 | Build check: no `{{NEEDS_HIGHLANDER` in dist | not started | `scripts/check-placeholders.mjs`, `package.json` postbuild |
+| A6 | Build check: no unapproved AI images | not started | `scripts/check-generated-images.mjs` |
+| B1 | LandingTemplate v2 behind `layoutVersion` | not started | `landing/LandingTemplate.tsx`, `landing/config.ts` |
+| B2 | Calls first (header, hero, 70/30 sticky, "what happens when you call") | not started | same |
+| B3 | Office-status chip | not started | `src/lib/office-hours.ts`, new `OfficeStatusChip.tsx` |
+| B4 | Two CTAs from cta-config | not started | `cta-config.ts`, `LandingTemplate.tsx`, `LeadForm.tsx`, `config.ts` |
+| B5 | Region-wide H1 that mirrors the ad hook | not started | `config.ts` |
+| B6 | Meaningful alt text | not started (meaningful images already have alt; hero becomes meaningful in v2) | `config.ts` |
+| B7 | Division-matched reviews | not started; **no construction reviews exist** | `config.ts` |
+| B8 | Local project cards → /recent-projects | not started | `LandingTemplate.tsx` |
+| B9 | Cost context | not started | `LandingTemplate.tsx`, `config.ts` |
+| B10 | FAQ "What happens after…" first | not started | `config.ts` |
+| B11 | Explore Highlander strip | not started | new `landing/ExploreStrip.tsx` |
+| B12 | Same form/fields/tracking | **on branch**: shared honeypot added to FastLeadForm + InspectionForm (they had none); LeadForm trap label text removed, field now `website_url`. Needs John's OK (rule 4) | `forms/Honeypot.tsx`, 3 forms |
+| B13 | Rollout one LP per release | not started | — |
+| C1–C3 | New service LPs + message-match doc | not started | `config.ts`, `App.tsx`, `emit-landing-shells.mjs`, `generate-prerender-manifest.ts`, `seo-regression-check.mjs`, tests, `docs/lp-message-match.md` |
+| D1–D5 | /services hub, nav, homepage strip | not started | `_redirects` 99–100, `App.tsx`, new `ServicesHub.tsx`, `generate-sitemap.ts`, `nav-data.ts`, `Footer.tsx`, homepage |
+| E1 | Validate top 10 | partial; GSC export requested from Lovable → `data/gsc-*.csv` | `data/` |
+| E2–E6 | Service page upgrades | not started | see §7 |
+| F1–F3 | Construction hub, winter flag, add-a-project | not started | `ConstructionDivision.tsx`, `src/config/seasonal.ts`, `docs/add-a-project.md` |
+| G1–G5 | Assets | partial: Lovable is generating 7 **raw drafts** into `public/media/generated/raw/` (not referenced by any page) | `docs/asset-list.md`, `assets/manifest.json`, `docs/ai-image-prompts.md` |
+| H1–H4 | Measurement | not started | `docs/gtm-setup-needed.md` |
+| I1–I2 | Docs, screenshots | partial | `docs/*`, `qa-screenshots/` |
+| — | Gutter leads → Gutters division | **on branch**; changes the project_type sent to JobTread (`form-service-context.ts`); needs John's OK | `src/lib/form-service-context.ts`, `InspectionForm.tsx` |
+
+## 10. Lead safety net: what exists in the repo
+
+1. Every form writes the lead to the `leads` table **before** JobTread is touched, with status `pending`.
+2. `jobtread-retry` re-sends anything that didn't reach JobTread.
+3. An office alert email goes out from `jobtread-sync`.
+4. `teams-notify` is called fire-and-forget on every lead.
+5. `jobtread-sync` can also POST to `JOBTREAD_WEBHOOK_URL` if that secret is set.
+
+There is **no FGV-specific fallback capture in this repo**. If it exists, it lives outside the repo (GTM, Zapier, or a webhook secret). John: where is it?
