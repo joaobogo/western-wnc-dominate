@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import { RelatedArticles } from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import {
@@ -921,6 +922,9 @@ function LandingBody() {
             </div>
           </div>
         </section>
+
+        {/* v2: related reading, below the forms, new tab (keeps the ad visitor here). */}
+        {v2 && <RelatedArticles topic={config.key === "roofing" ? "roofing" : config.key === "construction" ? "construction" : "all"} newTab />}
 
         {/* ───────────── v2: Explore Highlander (below the fold, new tab) ───────────── */}
         {v2 && (

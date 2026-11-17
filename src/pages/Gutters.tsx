@@ -3,7 +3,9 @@ import { smallSrc } from "@/lib/gallery-srcset";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Droplets, Shield, Wind, Home, ChevronRight } from "lucide-react";
-import guttersImg from "@/assets/work/roof-gutter-guard-eave.webp";
+// Illustrative close-up (generated, Nov 2026); the gutter-guard photo further down is real Highlander work.
+const guttersImg = "/media/highlander-seamless-gutter-eave.webp";
+const guttersImgSet = "/media/highlander-seamless-gutter-eave-640.webp 640w, /media/highlander-seamless-gutter-eave-960.webp 960w, /media/highlander-seamless-gutter-eave.webp 1600w";
 import gutterGuard from "@/assets/work/roof-gutter-guard-eave.webp";
 import gutterGuardSet from "@/assets/work/roof-gutter-guard-eave.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -86,7 +88,9 @@ const Gutters = () => {
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async"
               src={guttersImg}
-              alt="Seamless gutter and downspout along the eave of a shingle roof with dormers, Highlander gutter work in Western North Carolina"
+              srcSet={guttersImgSet}
+              sizes="100vw"
+              alt="Seamless K-style gutter and downspout on the eave of a shingle roof, with Western North Carolina mountains behind"
               className="w-full h-full object-cover object-center"
               loading="eager"
             />

@@ -4,6 +4,8 @@ import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
+import InspectionForm from "@/components/InspectionForm";
 import Footer from "@/components/Footer";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { LICENSE_NUMBER, PHONE_DISPLAY, PHONE_TEL, PRIMARY_HOURS_LABEL, REVIEW_COUNT, REVIEW_RATING } from "@/data/business";
@@ -214,6 +216,11 @@ const ServicesHub = () => {
             </div>
           </div>
         </section>
+
+        <ProofKit topic="all" reviews articles />
+
+        {/* 3-field estimate form: no page without a way to convert. */}
+        <InspectionForm />
 
         {/* Closing CTA */}
         <section className="bg-primary text-primary-foreground">

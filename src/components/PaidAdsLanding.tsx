@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import OfficeStatusChip from "@/components/landing/OfficeStatusChip";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackPhoneClick } from "@/lib/gtm";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { CTA, CTA_SECONDARY } from "@/lib/cta-config";
@@ -82,6 +83,7 @@ const PaidAdsLanding = ({
     },
     ...faqs.filter((f) => !/^What happens after/i.test(f.question)),
   ];
+  const proofTopic = slug === "roof-replacement" ? "replacement" : slug === "roof-repair" ? "repair" : slug === "storm-damage" ? "storm" : "roofing";
   const scrollToForm = () => {
     const el = document.getElementById("fast-lead-form");
     if (!el) return;
@@ -324,6 +326,9 @@ const PaidAdsLanding = ({
             </Accordion>
           </div>
         </section>
+
+        {/* More proof before the last call to action: reviews and related reading (new tab). */}
+        <ProofKit topic={proofTopic} reviews articles newTab />
 
         <section className="bg-primary py-10 text-primary-foreground">
           <div className="container-tight flex flex-col gap-5 md:flex-row md:items-center md:justify-between">

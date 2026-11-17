@@ -6,6 +6,7 @@ import bravaHero from "@/assets/gallery/brava-glenville-chimney-valley.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -168,6 +169,7 @@ const SyntheticRoofing = () => {
         process={
           <>
             <SchedulingReality serviceLabel="synthetic roofing" />
+            <ProofKit topic="roofing" photos />
             <InspectionForm />
           </>
         }

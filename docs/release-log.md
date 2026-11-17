@@ -91,3 +91,22 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - `smoke:lp` now fails on any page error and also covers `/services` and `/construction/handyman`.
 - **Rollback point:** `main` at `23083b9` (Release 2).
 - **Gates:** tests 610/610 · build 346/346 · `seo:check` PASS · `smoke:lp` 12/12 (it failed 11/12 on the Release 2 build) · no hydration errors on 11 sampled site pages.
+
+## Release 3 — Nov 17, 2026 (PR #37)
+- **Approved by:** John ("approved").
+- **Rollback point:** `main` at `b462a12` (hotfix, confirmed live by the site health check at 17:37 UTC).
+- **Pages changed:**
+  - reviews, real photos and related articles added to every service page and landing page that lacked them (shared ProofKit);
+  - 3-field form on the Services hub and Service Areas;
+  - Service Areas rebuilt (hero, "Find your town", order of sections);
+  - four generated images in use, listed in `docs/asset-list.md` (Service Areas hero, Renovations hero + `/lp/construction` renovation card, Siding hero, Gutters hero). None is described as a Highlander job.
+- **Local gates before release:**
+
+  | Gate | Result |
+  |---|---|
+  | Tests | 613/613 |
+  | Build | 346/346 prerendered |
+  | `seo:check` | PASS |
+  | `smoke:lp` | 12/12, no page errors |
+  | Hydration errors on 6 changed pages | none |
+  | Images | 0 broken |

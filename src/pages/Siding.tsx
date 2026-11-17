@@ -10,8 +10,11 @@ import {
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
-import sidingHero from "@/assets/work/addition-franklin-exterior-windows.webp";
+// Illustrative exterior (generated, Nov 2026); the detail photo below is a documented Highlander job.
+const sidingHero = "/media/highlander-lap-siding-mountain-home.webp";
+const sidingHeroSet = "/media/highlander-lap-siding-mountain-home-640.webp 640w, /media/highlander-lap-siding-mountain-home-960.webp 960w, /media/highlander-lap-siding-mountain-home.webp 1600w";
 import sidingDetail from "@/assets/work/addition-cullowhee-roofline.webp";
 import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -65,7 +68,9 @@ const Siding = () => {
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={sidingHero}
-              alt="Cedar shake siding and tall windows on a Highlander addition in Franklin, North Carolina"
+              srcSet={sidingHeroSet}
+              sizes="100vw"
+              alt="Mountain home with gray lap siding, white trim and stone base in Western North Carolina"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent" />
@@ -191,6 +196,7 @@ const Siding = () => {
             </div>
           </div>
         </section>
+        <ProofKit topic="siding" photos reviews articles />
         {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
         <InspectionForm />
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" intent="consultation" />

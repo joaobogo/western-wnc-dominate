@@ -1,43 +1,27 @@
-import { PHONE_DISPLAY, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
+import { PHONE_TEL, PRIMARY_HOURS_LABEL, REVIEW_COUNT, REVIEW_RATING } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, ArrowRight, Phone, Shield, Award, Mountain, Compass, Users, Star, CloudLightning, Clock } from "lucide-react";
+import { MapPin, ArrowRight, Phone, Mountain, Compass, Users, CloudLightning, Clock } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
-import TartanBackground from "@/components/TartanBackground";
 
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { towns } from "@/data/towns";
+import { counties } from "@/data/counties";
+import ProofKit from "@/components/conversion/ProofKit";
+import InspectionForm from "@/components/InspectionForm";
+import { CTA, CTA_SECONDARY } from "@/lib/cta-config";
 import serviceAreasHeroAsset from "@/assets/service-areas-hero-smokies.jpg.asset.json";
-import serviceAreasHeroFallbackAsset from "@/assets/service-areas-hero.jpg.asset.json";
-const SERVICE_AREAS_HERO = serviceAreasHeroAsset.url;
-const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroFallbackAsset.url;
+// Illustrative regional photo (generated, Nov 2026): a mountain home above autumn
+// ridgelines. It makes no claim about a Highlander job; real jobs are in the proof strip.
+const SERVICE_AREAS_HERO = "/media/highlander-wnc-ridge-home-autumn.webp";
+const SERVICE_AREAS_HERO_SET = "/media/highlander-wnc-ridge-home-autumn-640.webp 640w, /media/highlander-wnc-ridge-home-autumn-960.webp 960w, /media/highlander-wnc-ridge-home-autumn.webp 1600w";
+const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroAsset.url;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
-
-const serviceStats = [
-  { value: REVIEW_STARS, label: "Google Rating", detail: "Verified reviews" },
-  { 
-    value: "10+", 
-    label: "Counties Served", 
-    detail: (
-      <span className="flex gap-1.5 flex-wrap">
-        <Link to="/service-areas/county/macon-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Macon</Link> · 
-        <Link to="/service-areas/county/jackson-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Jackson</Link> · 
-        <Link to="/service-areas/county/buncombe-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Buncombe</Link> · 
-        <Link to="/service-areas/county/henderson-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Henderson</Link> ·
-        <Link to="/service-areas/county/transylvania-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Transylvania</Link> ·
-        <Link to="/service-areas/county/madison-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Madison</Link>
-      </span>
-    )
-  },
-  { value: "2", label: "Showrooms", detail: "Franklin & Sylva" },
-  { value: REVIEW_STARS, label: "Average Rating", detail: REVIEW_COUNT_LABEL },
-];
 
 const whyLocal = [
   { icon: Mountain, title: "We Know the Terrain", detail: "Elevation, slope, soil composition, and microclimates affect every project. We've built across this region long enough to know what each town demands." },
@@ -46,8 +30,11 @@ const whyLocal = [
   { icon: Clock, title: "Two Local Points of Contact", detail: "Franklin and Sylva provide clear contact points for homeowners across Highlander's Western North Carolina service area." },
 ];
 
-const primaryTowns = towns.slice(0, 6);
-const secondaryTowns = towns.slice(6);
+// Markets Highlander dropped stay reachable but are not promoted here.
+const activeTowns = towns.filter((t) => t.indexable !== false);
+const primaryTowns = activeTowns.slice(0, 6);
+const secondaryTowns = activeTowns.slice(6);
+const activeCounties = counties.filter((c) => c.indexable !== false);
 
 const ServiceAreas = () => {
   return (
@@ -61,76 +48,89 @@ const ServiceAreas = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }]} />
       <main id="main-content">
-        <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0 section-dark">
+        {/* ═══ HERO: one photo, one headline, call first ═══ */}
+        <section className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))]">
+          <div className="absolute inset-0 -z-10">
             <img
               src={SERVICE_AREAS_HERO}
+              srcSet={SERVICE_AREAS_HERO_SET}
+              sizes="100vw"
               onError={(e) => {
                 const img = e.currentTarget;
-                if (img.src !== SERVICE_AREAS_HERO_FALLBACK) img.src = SERVICE_AREAS_HERO_FALLBACK;
+                if (!img.src.endsWith(SERVICE_AREAS_HERO_FALLBACK)) {
+                  img.removeAttribute("srcset");
+                  img.src = SERVICE_AREAS_HERO_FALLBACK;
+                }
               }}
-              alt="Sunlit Blue Ridge and Smoky Mountains over a Western North Carolina town at golden hour"
-              className="w-full h-full object-cover object-[60%_center]"
-              width={1920}
-              height={1080}
+              alt="Mountain home on a ridge above autumn Blue Ridge ridgelines in Western North Carolina"
+              className="h-full w-full object-cover object-[70%_center]"
+              width={1600}
+              height={900}
               loading="eager"
               fetchPriority="high"
             />
-            {/* Premium readability gradients — keeps the Smoky Mountains bright while
-                anchoring the lower-left text area with strong contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.85)] via-[hsl(var(--hero-overlay)/0.25)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.1)] to-transparent" />
-            <TartanBackground opacity={0.04} variant="dark" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.88)_0%,hsl(160_45%_6%/0.6)_48%,hsl(160_45%_6%/0.15)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[hsl(160_45%_6%/0.7)] to-transparent" />
           </div>
-
-          <MountainContours variant="dark" opacity={0.05} />
-          <div className="relative z-10 w-full hero-clears-header pb-24 md:pb-32 px-5 md:px-8 lg:px-16">
-            <div className="container-tight">
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-7"
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                    <span className="text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Service Areas · Western North Carolina</span>
-                  </div>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-display font-heading font-bold text-white mb-6 leading-[1.05] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)]">
-                    We serve Western North Carolina with crews who{" "}
-                    <span className="text-[hsl(var(--gold-ink))]">know these towns.</span>
-                  </h1>
-                  <p className="text-lg md:text-xl text-white max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
-                    Highlander is locally operated, with offices in Franklin and Sylva. Our crews know the roads, the building codes, the inspectors, and the weather patterns that shape every mountain home in this region.
-                  </p>
-                </motion.div>
-
-                {/* Right: quick stats */}
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.15, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-5"
-                >
-                  <div className="grid grid-cols-2 gap-3">
-                    {serviceStats.map((stat, i) => (
-                      <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
-                        className="rounded-sm border border-white/25 bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-xl p-4 md:p-5 shadow-floating"
-                      >
-                        <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none block mb-2">{stat.value}</span>
-                        <span className="text-body-xs font-heading font-bold text-white block uppercase tracking-[0.12em] mb-1.5">{stat.label}</span>
-                        <span className="text-body-xs text-white/95 font-body leading-snug block">{stat.detail}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
+          <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-8 md:py-24 lg:py-28">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: HIGHLAND_EASE }} className="max-w-3xl">
+              <p className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
+                <Compass className="h-4 w-4" aria-hidden="true" />
+                Service areas · Western North Carolina
+              </p>
+              <h1 className="font-heading text-4xl font-bold leading-[1.05] tracking-tight !text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
+                Roofing &amp; Construction Across Western North Carolina
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl">
+                From our Franklin and Sylva showrooms, Highlander crews work in {activeTowns.length} mountain communities. Find your town below, or call and we'll confirm we cover your address.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={PHONE_TEL} data-cta="service-areas-hero" data-gtm-location="hero" className="btn btn-primary btn-md w-full justify-center sm:w-auto sm:whitespace-nowrap">
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  {CTA_SECONDARY.callLabel}
+                </a>
+                <a href="#estimate-form" className="btn btn-secondary btn-md btn-on-dark w-full justify-center sm:w-auto sm:whitespace-nowrap">
+                  {CTA.mobileSticky}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
-            </div>
+              <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-white/90">
+                <li>{REVIEW_RATING}★ · {REVIEW_COUNT} Google reviews</li>
+                <li>Showrooms in Franklin &amp; Sylva</li>
+                <li>Office {PRIMARY_HOURS_LABEL}</li>
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ═══ FIND YOUR TOWN: every town one tap away ═══ */}
+        <section aria-labelledby="find-your-town" className="border-b border-border bg-card">
+          <div className="mx-auto max-w-[1200px] px-5 py-10 md:px-8 md:py-12">
+            <h2 id="find-your-town" className="font-heading text-2xl font-bold md:text-3xl">Find your town</h2>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {activeTowns.map((town) => (
+                <li key={town.slug}>
+                  <Link
+                    to={`/service-areas/${town.slug}`}
+                    className="inline-flex min-h-12 items-center gap-1.5 rounded-full border border-border bg-background px-4 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
+                    {town.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">By county: </span>
+              {activeCounties.map((county, i) => (
+                <span key={county.slug}>
+                  {i > 0 && " · "}
+                  <Link to={`/service-areas/county/${county.slug}`} className="underline underline-offset-4 hover:text-primary">
+                    {county.name}
+                  </Link>
+                </span>
+              ))}
+            </p>
           </div>
         </section>
 
@@ -195,41 +195,6 @@ const ServiceAreas = () => {
           </div>
         </section>
 
-        {/* ═══ WHY LOCAL MATTERS — Dark section ═══ */}
-        <section className="section-padding section-dark tartan-dark">
-          <div className="container-tight">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-14"
-            >
-              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Local Knowledge</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
-                Why &#8220;Local&#8221; Isn't Just<br /> a Marketing Claim.
-              </h2>
-              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
-            </motion.div>
-
-            <div className="grid sm:grid-cols-2 gap-5">
-              {whyLocal.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="bg-[hsl(var(--dark-section-foreground)/0.04)] border border-dark-section-border p-6"
-                >
-                  <item.icon className="w-6 h-6 text-[hsl(var(--highland-gold)/0.6)] mb-4" />
-                  <h3 className="font-heading font-bold text-lg text-[hsl(var(--dark-section-foreground))] mb-2">{item.title}</h3>
-                  <p className="text-dark-section-muted text-sm font-body leading-relaxed">{item.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ═══ SECONDARY TOWNS — Compact grid ═══ */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
@@ -276,6 +241,49 @@ const ServiceAreas = () => {
           </div>
         </section>
 
+        {/* ═══ WHY LOCAL MATTERS — Dark section ═══ */}
+        <section className="section-padding section-dark tartan-dark">
+          <div className="container-tight">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-14"
+            >
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Local Knowledge</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
+                Why &#8220;Local&#8221; Isn't Just<br /> a Marketing Claim.
+              </h2>
+              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              {whyLocal.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
+                  className="bg-[hsl(var(--dark-section-foreground)/0.04)] border border-dark-section-border p-6"
+                >
+                  <item.icon className="w-6 h-6 text-[hsl(var(--highland-gold)/0.6)] mb-4" />
+                  <h3 className="font-heading font-bold text-lg text-[hsl(var(--dark-section-foreground))] mb-2">{item.title}</h3>
+                  <p className="text-dark-section-muted text-sm font-body leading-relaxed">{item.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ PROOF: real work and reviews ═══ */}
+        <ProofKit topic="all" photos reviews articles />
+
+        {/* ═══ FORM: 3 fields ═══ */}
+        <div id="estimate-form">
+          <InspectionForm />
+        </div>
+
         {/* ═══ CLOSING CTA — Location-aware ═══ */}
         <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 tartan-dark opacity-30" />
@@ -292,22 +300,16 @@ const ServiceAreas = () => {
                 Serving Mountain Communities<br />
                 Across Western NC.
               </h2>
-              <p className="text-primary-foreground text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-body leading-relaxed font-bold drop-shadow-sm">
-                Tell us about your property and Highlander will confirm current service availability, the appropriate project contact, and the next step for your area.
+              <p className="text-primary-foreground/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body leading-relaxed">
+                Not sure we cover your address? Call the Franklin office and we'll tell you, then set up the next step.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link
-                  to="/request-inspection"
-                  className="btn btn-primary btn-lg group md:text-xl min-w-[320px]"
-                >
-                  <span className="relative z-10">See What My Property Needs</span>
+                <a href={PHONE_TEL} data-cta="service-areas-closing" data-gtm-location="closing" className="btn btn-primary btn-lg justify-center">
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {CTA_SECONDARY.callLabel}
+                </a>
+                <a href="#estimate-form" className="btn btn-secondary btn-lg btn-on-dark justify-center">
+                  <span className="relative z-10">{CTA.mobileSticky}</span>
                   <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
-                </Link>
-                <a
-                  href={PHONE_TEL}
-                  className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]"
-                >
-                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground text-sm font-bold uppercase tracking-wider">
