@@ -26,7 +26,9 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import WorkGallery from "@/components/gallery/WorkGallery";
 
-import heroImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+// Illustrative interior (generated, Nov 2026); documented Highlander jobs are in the gallery and proof sections below.
+const heroImg = "/media/highlander-renovated-kitchen-living.webp";
+const heroImgSet = "/media/highlander-renovated-kitchen-living-640.webp 640w, /media/highlander-renovated-kitchen-living-960.webp 960w, /media/highlander-renovated-kitchen-living.webp 1600w";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -117,7 +119,7 @@ const Renovations = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Interior finished by Highlander in Franklin, North Carolina: a stained wood vaulted ceiling over mountain-view windows" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={900} decoding="async" src={heroImg} srcSet={heroImgSet} sizes="100vw" alt="Renovated mountain-home kitchen and living area with wood beams, a stone fireplace and mountain-view windows" className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
           </div>

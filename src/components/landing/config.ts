@@ -655,8 +655,14 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
     {
       id: "renovation",
-      image: cardImg.patioWide,
-      imagePosition: "50% 70%",
+      // Illustrative interior (generated): no documented renovation interior is on file yet.
+      image: {
+        src: "/media/highlander-renovated-kitchen-living.webp",
+        srcSet: "/media/highlander-renovated-kitchen-living-640.webp 640w, /media/highlander-renovated-kitchen-living-960.webp 960w, /media/highlander-renovated-kitchen-living.webp 1600w",
+        alt: "Renovated mountain-home kitchen and living area with wood beams and a stone fireplace",
+        width: 1600,
+        height: 900,
+      },
       title: "Make the space you have work better.",
       label: "Renovation",
       projectType: "renovation",

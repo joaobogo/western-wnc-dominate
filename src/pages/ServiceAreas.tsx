@@ -14,9 +14,11 @@ import ProofKit from "@/components/conversion/ProofKit";
 import InspectionForm from "@/components/InspectionForm";
 import { CTA, CTA_SECONDARY } from "@/lib/cta-config";
 import serviceAreasHeroAsset from "@/assets/service-areas-hero-smokies.jpg.asset.json";
-import serviceAreasHeroFallbackAsset from "@/assets/service-areas-hero.jpg.asset.json";
-const SERVICE_AREAS_HERO = serviceAreasHeroAsset.url;
-const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroFallbackAsset.url;
+// Illustrative regional photo (generated, Nov 2026): a mountain home above autumn
+// ridgelines. It makes no claim about a Highlander job; real jobs are in the proof strip.
+const SERVICE_AREAS_HERO = "/media/highlander-wnc-ridge-home-autumn.webp";
+const SERVICE_AREAS_HERO_SET = "/media/highlander-wnc-ridge-home-autumn-640.webp 640w, /media/highlander-wnc-ridge-home-autumn-960.webp 960w, /media/highlander-wnc-ridge-home-autumn.webp 1600w";
+const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroAsset.url;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -51,14 +53,19 @@ const ServiceAreas = () => {
           <div className="absolute inset-0 -z-10">
             <img
               src={SERVICE_AREAS_HERO}
+              srcSet={SERVICE_AREAS_HERO_SET}
+              sizes="100vw"
               onError={(e) => {
                 const img = e.currentTarget;
-                if (img.src !== SERVICE_AREAS_HERO_FALLBACK) img.src = SERVICE_AREAS_HERO_FALLBACK;
+                if (!img.src.endsWith(SERVICE_AREAS_HERO_FALLBACK)) {
+                  img.removeAttribute("srcset");
+                  img.src = SERVICE_AREAS_HERO_FALLBACK;
+                }
               }}
-              alt="Blue Ridge mountain ridgelines at sunrise above a wooded Western North Carolina hillside"
-              className="h-full w-full object-cover object-[60%_center]"
-              width={1920}
-              height={1080}
+              alt="Mountain home on a ridge above autumn Blue Ridge ridgelines in Western North Carolina"
+              className="h-full w-full object-cover object-[70%_center]"
+              width={1600}
+              height={900}
               loading="eager"
               fetchPriority="high"
             />
@@ -270,7 +277,7 @@ const ServiceAreas = () => {
         </section>
 
         {/* ═══ PROOF: real work and reviews ═══ */}
-        <ProofKit topic="all" photos reviews />
+        <ProofKit topic="all" photos reviews articles />
 
         {/* ═══ FORM: 3 fields ═══ */}
         <div id="estimate-form">
