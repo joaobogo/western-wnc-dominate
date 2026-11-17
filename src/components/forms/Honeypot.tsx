@@ -1,5 +1,3 @@
-import { useCallback, useState } from "react";
-
 /**
  * Shared anti-spam trap for every lead form.
  *
@@ -9,12 +7,6 @@ import { useCallback, useState } from "react";
  * Bots that fill every input fill it. When it has a value the form shows its
  * normal success state but stores nothing and fires no conversion events.
  */
-export function useHoneypot() {
-  const [value, setValue] = useState("");
-  const tripped = useCallback(() => value.trim().length > 0, [value]);
-  return { value, setValue, tripped };
-}
-
 export default function Honeypot({
   id,
   value,

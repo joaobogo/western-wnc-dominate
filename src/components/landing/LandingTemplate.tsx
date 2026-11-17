@@ -44,6 +44,9 @@ import { LandingFormProvider, useLandingForm } from "./LandingFormContext";
 import LeadForm, { trackCall } from "./LeadForm";
 import Lightbox from "./Lightbox";
 import { openConsentPreferences } from "@/lib/consent";
+import { LP_CTA } from "@/lib/cta-config";
+import OfficeStatusChip from "./OfficeStatusChip";
+import type { Review } from "@/data/reviews";
 
 /* ───────────────────────── motion + small helpers ───────────────────────── */
 
@@ -165,6 +168,29 @@ const highlightH1 = (text: string): ReactNode => {
   );
 };
 
+const SERVICE_NAMES: Record<string, string> = {
+  "roof-replacement": "Roof replacement",
+  "roof-repair": "Roof repair",
+  "metal-roofing": "Metal roofing",
+  "storm-damage": "Storm damage",
+  gutters: "Gutters",
+  general: "General service",
+};
+/** "Roof replacement & gutters": the work the review was written about. */
+const reviewServiceLabel = (review: Review) => {
+  const names = (review.service ?? []).map((tag) => SERVICE_NAMES[tag] ?? tag).filter(Boolean);
+  if (!names.length) return "";
+  return names.map((n, i) => (i === 0 ? n : n.toLowerCase())).join(" & ");
+};
+
+/** v2 "Explore Highlander" links: below the fold, new tab, tracked as lp_explore. */
+const EXPLORE_LINKS = [
+  { label: "Recent projects", href: "/recent-projects", text: "Documented jobs across Western NC" },
+  { label: "Reviews", href: "/reviews", text: "What customers say" },
+  { label: "Financing", href: "/financing", text: "Ways to pay for the work" },
+  { label: "Certifications", href: "/certifications", text: "Licenses and manufacturer credentials" },
+];
+
 /* ───────────────────────────── page body ───────────────────────────── */
 
 function LandingBody() {
@@ -275,6 +301,9 @@ function LandingBody() {
   const emphasis = config.intents.find((card) => card.id === intent)?.emphasis;
   const hero = config.hero;
   const officeOpen = useOfficeOpen();
+  const v2 = config.layoutVersion === 2;
+  /** Call-button label: v2 always uses LP_CTA.call ("Call Direct: " + number, from cta-config). */
+  const callLabel = v2 ? LP_CTA.call : `Call ${PHONE_DISPLAY}`;
 
   /**
    * Every call button. `cta` names the placement (data-cta, plus the GTM
@@ -345,18 +374,47 @@ function LandingBody() {
           <div ref={progressBar} className="h-full origin-left bg-[hsl(var(--highland-gold))]" style={{ transform: "scaleX(0)", transition: "transform .12s linear" }} />
         </div>
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-2.5 sm:px-5 md:px-8 md:py-3">
-          <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto shrink-0 sm:h-12" loading="eager" decoding="sync" />
+          {v2 ? (
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener"
+              data-gtm-cta="lp_explore"
+              data-gtm-location="header_logo"
+              aria-label="Highlander Building Services home page (opens in a new tab)"
+              className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto sm:h-12" loading="eager" decoding="sync" />
+            </a>
+          ) : (
+            <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto shrink-0 sm:h-12" loading="eager" decoding="sync" />
+          )}
           <div className="flex items-center gap-4">
             <span className="hidden flex-col items-end text-sm leading-tight lg:flex">
               <span className="font-semibold text-foreground">{config.headerTagline}</span>
-              {officeOpen && (
+              {v2 && <OfficeStatusChip className="mt-1" />}
+              {!v2 && officeOpen && (
                 <span data-client-only className="mt-0.5 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                   <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[hsl(142_70%_40%)] shadow-[0_0_0_3px_hsl(142_70%_40%/0.2)]" />
                   Office open now · call
                 </span>
               )}
             </span>
-            {callLink(`Call ${PHONE_DISPLAY}`, "header", "btn btn-primary min-h-11 shrink-0 px-3.5 text-[0.8rem] font-bold sm:min-h-12 sm:px-5 sm:text-sm")}
+            {v2 ? (
+              <a
+                href={PHONE_TEL}
+                data-cta="header"
+                onClick={() => trackCall(`lp_${config.key}_header`)}
+                className="btn btn-primary min-h-12 shrink-0 px-3.5 text-[0.85rem] font-bold sm:px-5 sm:text-sm"
+                aria-label={`${LP_CTA.call}: call Highlander`}
+              >
+                <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+                <span className="sm:hidden">{PHONE_DISPLAY}</span>
+                <span className="hidden sm:inline">{LP_CTA.call}</span>
+              </a>
+            ) : (
+              callLink(`Call ${PHONE_DISPLAY}`, "header", "btn btn-primary min-h-11 shrink-0 px-3.5 text-[0.8rem] font-bold sm:min-h-12 sm:px-5 sm:text-sm")
+            )}
           </div>
         </div>
       </header>
@@ -364,9 +422,9 @@ function LandingBody() {
       <main id="main-content">
         {/* ───────────── Hero: full-bleed photography ───────────── */}
         <section ref={heroSection} className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-white !py-0">
-          <div aria-hidden="true" className="lp-par-near absolute inset-0 -z-10">
+          <div aria-hidden={v2 ? undefined : "true"} className="lp-par-near absolute inset-0 -z-10">
             <Img
-              image={{ ...hero.backdrop, alt: "" }}
+              image={v2 ? hero.backdrop : { ...hero.backdrop, alt: "" }}
               eager
               sizes="100vw"
               className="lp-kb absolute inset-0 h-full w-full object-cover"
@@ -389,6 +447,7 @@ function LandingBody() {
           <div className="relative mx-auto grid max-w-[1200px] gap-9 px-4 py-10 sm:px-5 md:px-8 md:py-16 lg:min-h-[720px] lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14 lg:py-20">
             <div className="order-1">
               <Reveal>
+                {v2 && <OfficeStatusChip tone="dark" className="mb-4 lg:hidden" />}
                 {eyebrow(config.eyebrow, true)}
                 <h1 className="max-w-3xl font-heading text-[2.25rem] font-bold leading-[1.04] tracking-tight text-white [text-shadow:0_2px_24px_hsl(160_45%_4%/0.5)] sm:text-5xl lg:text-[3.6rem]">
                   {highlightH1(config.h1)}
@@ -456,7 +515,7 @@ function LandingBody() {
                   <strong className="font-heading text-lg">{config.urgentStrip.heading}</strong> {config.urgentStrip.body}
                 </span>
               </p>
-              {callLink(`Call ${PHONE_DISPLAY}`, "leak-strip", "btn btn-primary min-h-12 shrink-0 justify-center px-6")}
+              {callLink(callLabel, "leak-strip", "btn btn-primary min-h-12 shrink-0 justify-center px-6")}
             </div>
           </section>
         )}
@@ -547,9 +606,22 @@ function LandingBody() {
                 );
               })}
             </div>
-            <Reveal className="mt-9 flex flex-col gap-3 sm:flex-row">
-              {callLink(`Call ${PHONE_DISPLAY}`, "proof", "btn btn-primary btn-lg min-h-14 justify-center")}
+            <Reveal className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              {callLink(callLabel, "proof", "btn btn-primary btn-lg min-h-14 justify-center")}
               {formCta()}
+              {v2 && (
+                <a
+                  href="/recent-projects"
+                  target="_blank"
+                  rel="noopener"
+                  data-gtm-cta="lp_explore"
+                  data-gtm-location="proof_projects"
+                  className="inline-flex min-h-12 items-center gap-1.5 font-bold text-primary underline-offset-4 hover:underline sm:ml-2"
+                >
+                  {LP_CTA.seeProjects}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
             </Reveal>
 
             {config.callTopics && (
@@ -565,7 +637,7 @@ function LandingBody() {
                     ))}
                   </ul>
                 </div>
-                {callLink(`Call ${PHONE_DISPLAY}`, "call-topics", "btn btn-primary btn-lg min-h-14 justify-center")}
+                {callLink(callLabel, "call-topics", "btn btn-primary btn-lg min-h-14 justify-center")}
               </Reveal>
             )}
           </div>
@@ -618,7 +690,7 @@ function LandingBody() {
                           aria-pressed={active}
                           className="inline-flex min-h-12 items-center gap-1.5 text-sm font-bold text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                         >
-                          Send details
+                          {v2 ? LP_CTA.estimate : "Send details"}
                           <ArrowRight className="h-4 w-4" aria-hidden="true" />
                         </button>
                       </div>
@@ -655,7 +727,7 @@ function LandingBody() {
             <Reveal delay={100}>
               <div className="relative h-full overflow-hidden rounded-sm bg-primary p-7 text-primary-foreground md:p-9">
                 <div aria-hidden="true" className="lp-tartan absolute inset-y-0 left-0 w-1.5" />
-                {eyebrow("The process", true)}
+                {eyebrow(v2 ? "What happens when you call" : "The process", true)}
                 <ol className="relative mt-4 space-y-8">
                   <span aria-hidden="true" className="lp-line absolute bottom-3 left-[1.15rem] top-3 w-px bg-primary-foreground/30" />
                   {config.steps.map((step, i) => (
@@ -670,10 +742,57 @@ function LandingBody() {
                     </li>
                   ))}
                 </ol>
+                {v2 && (
+                  <p className="relative mt-8 flex items-start gap-2 border-t border-primary-foreground/20 pt-5 text-sm leading-relaxed text-primary-foreground/85">
+                    <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
+                    <span>
+                      The Franklin office answers {PRIMARY_HOURS_LABEL}, Eastern Time. Outside those hours, leave your details and the team sees your request as soon as the office opens.
+                    </span>
+                  </p>
+                )}
               </div>
             </Reveal>
           </div>
         </section>
+
+        {/* ───────────── v2: what drives the price (no numbers) ───────────── */}
+        {v2 && config.cost && (
+          <section aria-label={config.cost.heading} className="!py-0">
+            <div className="mx-auto grid max-w-[1200px] gap-8 px-4 pb-16 sm:px-5 md:px-8 md:pb-24 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+              <Reveal>
+                {eyebrow(config.cost.eyebrow)}
+                <h2 className="font-heading text-3xl font-bold leading-tight md:text-4xl">{config.cost.heading}</h2>
+                <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{config.cost.intro}</p>
+                <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                  {config.cost.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener"
+                      data-gtm-cta="lp_explore"
+                      data-gtm-location="cost_context"
+                      className="inline-flex min-h-12 items-center gap-1.5 font-bold text-primary underline-offset-4 hover:underline"
+                    >
+                      {link.label}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
+              </Reveal>
+              <Reveal delay={80}>
+                <ul className="grid gap-3 rounded-sm border border-border bg-card p-6 shadow-sm md:p-8">
+                  {config.cost.drivers.map((driver) => (
+                    <li key={driver} className="flex items-start gap-3 text-[1rem] leading-relaxed">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                      {driver}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </section>
+        )}
 
         {/* ───────────── The team ───────────── */}
         <section aria-label="The Highlander team" className="bg-[hsl(var(--dark-section))] text-white !py-0">
@@ -734,13 +853,26 @@ function LandingBody() {
                         <footer className="mt-auto pt-4 text-sm text-muted-foreground">
                           <span className="font-bold text-foreground">{review.name}</span>
                           {date ? ` · ${date}` : ""} · {review.source} review
-                          {config.key === "combined" ? " · Roofing" : ""}
+                          {v2 ? (reviewServiceLabel(review) ? ` · ${reviewServiceLabel(review)}` : "") : config.key === "combined" ? " · Roofing" : ""}
                         </footer>
                       </blockquote>
                     </Reveal>
                   );
                 })}
               </div>
+              {v2 && (
+                <a
+                  href="/reviews"
+                  target="_blank"
+                  rel="noopener"
+                  data-gtm-cta="lp_explore"
+                  data-gtm-location="reviews"
+                  className="mt-8 inline-flex min-h-12 items-center gap-1.5 font-bold text-primary underline-offset-4 hover:underline"
+                >
+                  {LP_CTA.readReviews}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
             </div>
           </section>
         )}
@@ -800,7 +932,7 @@ function LandingBody() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                {callLink(`Call ${PHONE_DISPLAY}`, "showroom", "btn btn-primary btn-lg min-h-14 justify-center")}
+                {callLink(callLabel, "showroom", "btn btn-primary btn-lg min-h-14 justify-center")}
                 <a
                   href={directionsUrl(FRANKLIN)}
                   target="_blank"
@@ -832,7 +964,7 @@ function LandingBody() {
               <h2 className="font-heading text-3xl font-bold leading-tight [text-shadow:0_2px_24px_hsl(160_45%_4%/0.5)] md:text-5xl">{config.finalHeading}</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/90">{config.finalBody}</p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                {callLink(`Call ${PHONE_DISPLAY}`, "final", "btn btn-primary lp-shine btn-lg min-h-14 justify-center")}
+                {callLink(callLabel, "final", "btn btn-primary lp-shine btn-lg min-h-14 justify-center")}
                 <button
                   type="button"
                   onClick={scrollToNearestForm}
@@ -851,6 +983,36 @@ function LandingBody() {
             </div>
           </div>
         </section>
+
+        {/* ───────────── v2: Explore Highlander (below the fold, new tab) ───────────── */}
+        {v2 && (
+          <section aria-label="Explore Highlander" className="bg-[hsl(var(--muted))] !py-0">
+            <div className="mx-auto max-w-[1200px] px-4 py-12 sm:px-5 md:px-8 md:py-14">
+              {eyebrow("Explore Highlander")}
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                {[...(config.divisionHub ? [{ ...config.divisionHub, text: "Every service in this division" }] : []), ...EXPLORE_LINKS].map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener"
+                      data-gtm-cta="lp_explore"
+                      data-gtm-location="explore_strip"
+                      className="group flex h-full min-h-16 flex-col justify-center rounded-sm border border-border bg-card px-4 py-3 transition-colors hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    >
+                      <span className="inline-flex items-center gap-1.5 font-heading text-lg font-bold text-foreground">
+                        {link.label}
+                        <ArrowRight className="h-4 w-4 text-primary transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
+                      </span>
+                      <span className="text-sm text-muted-foreground">{link.text}</span>
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
       </main>
 
       {/* ───────────── Footer: complete, but no site navigation ───────────── */}
@@ -929,9 +1091,13 @@ function LandingBody() {
           }`}
         >
           <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-6">
-            <div className="flex items-baseline gap-4">
+            <div className="flex items-center gap-4">
               <span className="font-heading text-3xl font-bold text-foreground">{PHONE_DISPLAY}</span>
-              <span className="text-sm font-semibold text-muted-foreground">Free estimate · local Franklin team</span>
+              {v2 ? (
+                <OfficeStatusChip />
+              ) : (
+                <span className="text-sm font-semibold text-muted-foreground">Free estimate · local Franklin team</span>
+              )}
             </div>
             <div className="flex items-center gap-5">
               <button
@@ -939,9 +1105,9 @@ function LandingBody() {
                 onClick={scrollToNearestForm}
                 className="min-h-11 text-sm font-semibold text-primary underline underline-offset-4 hover:text-foreground"
               >
-                or request a callback
+                {v2 ? LP_CTA.estimate : "or request a callback"}
               </button>
-              {callLink("Call now", "sticky-desktop", "btn btn-primary lp-shine min-h-12 justify-center px-8", `Call Highlander at ${PHONE_DISPLAY}`)}
+              {callLink(v2 ? LP_CTA.call : "Call now", "sticky-desktop", "btn btn-primary lp-shine min-h-12 justify-center px-8", `Call Highlander at ${PHONE_DISPLAY}`)}
             </div>
           </div>
         </div>
@@ -954,8 +1120,17 @@ function LandingBody() {
           className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-[7fr_3fr] gap-2 border-t border-border bg-card p-3 shadow-[0_-18px_40px_-24px_hsl(var(--foreground)/0.45)] backdrop-blur xl:hidden"
           style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
         >
-          {callLink("Call now · Franklin team", "sticky-mobile", "btn btn-primary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.85rem] sm:text-sm", `Call Highlander at ${PHONE_DISPLAY}`)}
-          <button type="button" onClick={scrollToNearestForm} className="btn btn-secondary min-h-12 w-full justify-center whitespace-nowrap px-2 text-[0.8rem] sm:text-sm">
+          {callLink(
+            v2 ? LP_CTA.call : "Call now · Franklin team",
+            "sticky-mobile",
+            `btn btn-primary min-h-12 w-full justify-center whitespace-nowrap px-2 sm:text-sm ${v2 ? "gap-1.5 text-[0.8rem] normal-case tracking-normal" : "text-[0.85rem]"}`,
+            `Call Highlander at ${PHONE_DISPLAY}`,
+          )}
+          <button
+            type="button"
+            onClick={scrollToNearestForm}
+            className={`btn btn-secondary min-h-12 w-full justify-center px-2 sm:text-sm ${v2 ? "whitespace-normal text-center text-[0.78rem] normal-case leading-tight tracking-normal" : "whitespace-nowrap text-[0.8rem]"}`}
+          >
             {config.mobileCta}
           </button>
         </div>

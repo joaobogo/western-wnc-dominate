@@ -105,3 +105,14 @@ export function useOfficeStatus(): OfficeStatus | null {
   }, []);
   return status;
 }
+
+/** "Mon–Fri · 8 AM–5 PM ET", built from business.ts so it can never drift. */
+export function officeHoursShort(): string {
+  const block = FRANKLIN.hours[0];
+  if (!block) return "";
+  const first = block.days[0]?.slice(0, 3);
+  const last = block.days[block.days.length - 1]?.slice(0, 3);
+  const days = first === last ? first : `${first}–${last}`;
+  return `${days} · ${formatHour(block.opens)}–${formatHour(block.closes)} ET`;
+}
+

@@ -3,14 +3,17 @@ import { render, fireEvent } from "@testing-library/react";
 import LandingTemplate from "@/components/landing/LandingTemplate";
 import { CONSTRUCTION_CONFIG, ROOFING_CONFIG } from "@/components/landing/config";
 import { installGtmGlobalListeners } from "@/lib/gtm";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 
-const phoneClicks = () => ((window as any).dataLayer as any[]).filter((e) => e.event === "phone_click");
+type DataLayerEvent = { event?: string; click_location?: string };
+const dl = window as unknown as { dataLayer: DataLayerEvent[] };
+const phoneClicks = () => dl.dataLayer.filter((e) => e.event === "phone_click");
 
 describe("one call tap = one phone_click (no double conversions in GA4 / Meta / TikTok)", () => {
   it.each([CONSTRUCTION_CONFIG, ROOFING_CONFIG])("$path hero call button", (config) => {
     vi.useFakeTimers();
     installGtmGlobalListeners();
-    (window as any).dataLayer = [];
+    dl.dataLayer = [];
     render(<LandingTemplate config={config} />);
     const a = document.querySelector('a[data-cta="hero"]')!;
     a.addEventListener("click", (e) => e.preventDefault());
@@ -31,10 +34,10 @@ describe("one call tap = one phone_click (no double conversions in GA4 / Meta / 
     vi.useFakeTimers();
     vi.advanceTimersByTime(5000);
     installGtmGlobalListeners();
-    (window as any).dataLayer = [];
+    dl.dataLayer = [];
     const a = document.createElement("a");
-    a.href = "tel:+18285247773";
-    a.textContent = "(828) 524-7773";
+    a.href = PHONE_TEL;
+    a.textContent = PHONE_DISPLAY;
     a.addEventListener("click", (e) => e.preventDefault());
     document.body.appendChild(a);
     fireEvent.click(a);

@@ -4,6 +4,7 @@ import { trackPhoneClick } from "@/lib/gtm";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { useLandingForm } from "./LandingFormContext";
 import Honeypot from "@/components/forms/Honeypot";
+import { LP_CTA } from "@/lib/cta-config";
 import type { IntentId } from "./config";
 
 export type FormInstance = "hero" | "final";
@@ -258,7 +259,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           aria-busy={submitting || undefined}
           className="btn btn-primary btn-lg lp-shine btn-block min-h-14 text-base"
         >
-          {submitting ? "Sending your request..." : "Call Me Back"}
+          {submitting ? "Sending your request..." : config.layoutVersion === 2 ? LP_CTA.estimate : "Call Me Back"}
           {!submitting && <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />}
         </button>
       </div>

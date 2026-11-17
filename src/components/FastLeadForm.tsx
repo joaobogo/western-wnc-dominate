@@ -13,7 +13,8 @@ import { useFormAutosave } from "@/hooks/use-form-autosave";
 import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
 import { trackFormError, trackFormStart, trackPhoneClick } from "@/lib/gtm";
-import Honeypot, { useHoneypot } from "@/components/forms/Honeypot";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 interface FastLeadFormProps {
   ctaLabel: string;

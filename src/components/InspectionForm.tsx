@@ -15,7 +15,8 @@ import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import FormSavedNote from "@/components/forms/FormSavedNote";
 import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
-import Honeypot, { useHoneypot } from "@/components/forms/Honeypot";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const FORM_ID = "inspection-form-main";

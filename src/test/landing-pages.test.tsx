@@ -36,8 +36,24 @@ describe.each(pages)("landing page $path", (config) => {
     const hrefs = Array.from(document.querySelectorAll("a[href]")).map((a) => a.getAttribute("href"));
     // Directions to the Franklin showroom open Google Maps; they never lead to another page of the site.
     const allowed = new Set([PHONE_TEL, "#main-content", "/privacy-policy", "/accessibility", directionsUrl(FRANKLIN)]);
-    expect(hrefs.filter((h) => !allowed.has(h!))).toEqual([]);
     expect(document.querySelector("nav")).toBeNull();
+    if (config.layoutVersion !== 2) {
+      expect(hrefs.filter((h) => !allowed.has(h!))).toEqual([]);
+      return;
+    }
+    // v2 (Build Brief C4.11): a fixed set of site links, every one in a new tab and
+    // tracked as lp_explore, so the ad visitor never leaves the landing page.
+    const siteLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("a[href]")).filter((a) => !allowed.has(a.getAttribute("href")!));
+    const v2Allowed = new Set(["/", "/recent-projects", "/reviews", "/financing", "/certifications", ...(config.cost?.links ?? []).map((l) => l.href), config.divisionHub?.href]);
+    expect(siteLinks.length).toBeGreaterThan(0);
+    for (const a of siteLinks) {
+      expect(v2Allowed.has(a.getAttribute("href")!)).toBe(true);
+      expect(a.target).toBe("_blank");
+      expect(a.dataset.gtmCta).toBe("lp_explore");
+    }
+    // None of them sit above the fold: the hero holds only the call and the form.
+    const hero = document.querySelector("main section")!;
+    expect(Array.from(hero.querySelectorAll("a[href]")).filter((a) => !allowed.has(a.getAttribute("href")!))).toEqual([]);
   });
 
   it("shows validation and does not claim success without a stored lead", () => {
@@ -53,8 +69,17 @@ describe.each(pages)("landing page $path", (config) => {
     mount();
     const heroActions = screen.getByRole("heading", { level: 1 }).parentElement!.querySelectorAll("a[href], button");
     expect(heroActions[0].getAttribute("href")).toBe(PHONE_TEL);
-    expect(heroActions[0].textContent).toContain(PHONE_DISPLAY);
-    expect(screen.getAllByRole("button", { name: /Call Me Back/ }).length).toBe(2);
+    // The number stays readable in the hero call button (the forwarding-number swap
+    // needs it). v2 shows it as "Call Direct: 828-524-7773" from cta-config.
+    expect(heroActions[0].textContent!.replace(/\D/g, "")).toContain(PHONE_DISPLAY.replace(/\D/g, ""));
+    // v1: forms promise a call back. v2 (Build Brief B6): the form button is the second
+    // of exactly two actions, "Get My Written Estimate", and no off-system labels remain.
+    const submitName = config.layoutVersion === 2 ? /Get My Written Estimate/ : /Call Me Back/;
+    expect(screen.getAllByRole("button", { name: submitName }).filter((b) => b.getAttribute("type") === "submit").length).toBe(2);
+    if (config.layoutVersion === 2) {
+      expect(document.body.textContent).not.toMatch(/Call now|Call Me Back|Send My Details|Send details|Request My Estimate/);
+      expect(heroActions[0].textContent).toContain("Call Direct:");
+    }
     // Every call button is tagged by placement for GTM, and the number stays in the tel: link.
     const calls = Array.from(document.querySelectorAll<HTMLAnchorElement>(`a[href="${PHONE_TEL}"]`));
     expect(calls.length).toBeGreaterThan(5);
@@ -85,9 +110,17 @@ describe.each(pages)("landing page $path", (config) => {
   it("uses photography, not illustration: decorative backdrops are hidden from assistive tech", () => {
     mount();
     const hero = document.querySelector("main section");
-    const backdrops = Array.from(hero!.querySelectorAll("img")).filter((img) => img.closest('[aria-hidden="true"]'));
-    expect(backdrops.length).toBeGreaterThan(0);
-    backdrops.forEach((img) => expect(img.getAttribute("alt")).toBe(""));
+    if (config.layoutVersion === 2) {
+      // v2 (B6): the hero is a real, documented Highlander photo with descriptive alt text.
+      const heroImg = hero!.querySelector("img")!;
+      expect(heroImg.closest('[aria-hidden="true"]')).toBeNull();
+      expect((heroImg.getAttribute("alt") ?? "").length).toBeGreaterThan(40);
+      expect(heroImg.getAttribute("fetchpriority")).toBe("high");
+    } else {
+      const backdrops = Array.from(hero!.querySelectorAll("img")).filter((img) => img.closest('[aria-hidden="true"]'));
+      expect(backdrops.length).toBeGreaterThan(0);
+      backdrops.forEach((img) => expect(img.getAttribute("alt")).toBe(""));
+    }
     expect(document.querySelector("svg[viewBox='0 0 1440 560']")).toBeNull();
   });
 
@@ -99,7 +132,14 @@ describe.each(pages)("landing page $path", (config) => {
 
   it("has an H1 plus a meaningful FAQ set in server-renderable markup", () => {
     mount();
-    expect(config.faqs).toHaveLength(5);
+    if (config.layoutVersion === 2) {
+      // v2 (B10): 4–6 FAQs, and the first answers "what happens after I call or send?".
+      expect(config.faqs.length).toBeGreaterThanOrEqual(4);
+      expect(config.faqs.length).toBeLessThanOrEqual(6);
+      expect(config.faqs[0].question).toMatch(/^What happens after I call/);
+    } else {
+      expect(config.faqs).toHaveLength(5);
+    }
     expect(document.querySelectorAll("h1")).toHaveLength(1);
   });
 });
