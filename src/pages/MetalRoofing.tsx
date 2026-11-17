@@ -6,6 +6,7 @@ import metalImg from "@/assets/gallery/metal-005.webp";
 import metalMobileHero from "@/assets/heroes/metal-mobile.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -206,6 +207,7 @@ const MetalRoofing = () => {
         process={
           <>
             <SchedulingReality serviceLabel="metal roofing" />
+            <ProofKit topic="metal" photos />
             <InspectionForm />
           </>
         }

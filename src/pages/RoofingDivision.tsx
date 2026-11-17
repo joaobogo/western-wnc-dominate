@@ -16,6 +16,7 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -552,6 +553,7 @@ const RoofingDivision = () => {
           className="section-padding bg-background border-t border-border/60"
         />
 
+        <ProofKit topic="roofing" reviews articles />
         <InspectionForm />
 
         {/* ─── CLOSING CTA ─── */}

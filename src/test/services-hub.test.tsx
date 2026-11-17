@@ -126,3 +126,32 @@ describe("/blogs (plural) reaches the blog", () => {
     expect(secondaryLinks.some((l) => l.href === "/blog")).toBe(true);
   });
 });
+
+describe("proof kit (reviews, photos, articles on every page)", () => {
+  it("picks service-matched reviews first, newest first, and only published reviews", async () => {
+    const { pickReviews } = await import("@/lib/proof-kit");
+    const { REVIEWS } = await import("@/data/reviews");
+    const metal = pickReviews("metal");
+    expect(metal).toHaveLength(3);
+    expect(metal[0].service).toContain("metal-roofing");
+    for (const r of pickReviews("construction")) expect(REVIEWS).toContain(r);
+    // Company-wide fallback is newest first, so 2019 reviews never lead.
+    expect(pickReviews("construction")[0].date >= "2024").toBe(true);
+  });
+
+  it("picks three live articles on the topic", async () => {
+    const { pickArticles } = await import("@/lib/proof-kit");
+    const posts = pickArticles("gutters");
+    expect(posts).toHaveLength(3);
+    expect(posts.every((p) => !p.canonicalTo)).toBe(true);
+    expect(posts[0].title + posts[0].slug + posts[0].category).toMatch(/gutter|downspout|drainage|fascia/i);
+  });
+
+  it("is on every page that lacked reviews, and the hubs have a form", () => {
+    for (const page of ["RoofingDivision", "CommercialRoofing", "ConstructionDivision", "HomeAdditions", "Renovations", "OutdoorLiving", "OutdoorLivingSubPage", "Siding", "ConstructionDesign", "Handyman", "ServicesHub", "ServiceAreas"]) {
+      expect(readFileSync(`src/pages/${page}.tsx`, "utf8")).toMatch(/<ProofKit\b[^>]*\breviews\b/);
+    }
+    for (const page of ["ServicesHub", "ServiceAreas"]) expect(readFileSync(`src/pages/${page}.tsx`, "utf8")).toMatch(/<InspectionForm\b/);
+    expect(readFileSync("src/components/PaidAdsLanding.tsx", "utf8")).toMatch(/<ProofKit\b[^>]*\bnewTab\b/);
+  });
+});

@@ -10,6 +10,7 @@ import {
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import sidingHero from "@/assets/work/addition-franklin-exterior-windows.webp";
 import sidingDetail from "@/assets/work/addition-cullowhee-roofline.webp";
@@ -191,6 +192,7 @@ const Siding = () => {
             </div>
           </div>
         </section>
+        <ProofKit topic="siding" photos reviews articles />
         {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
         <InspectionForm />
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" intent="consultation" />

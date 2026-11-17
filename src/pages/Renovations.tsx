@@ -14,6 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -450,6 +451,7 @@ const Renovations = () => {
 
         <CostContextBlock serviceLabel="renovation" variant="construction" />
         <CommonConcerns concerns={constructionConcerns} />
+        <ProofKit topic="renovations" reviews />
         {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
         <InspectionForm />
         <ConstructionClosingCTA

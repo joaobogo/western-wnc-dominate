@@ -4,6 +4,7 @@ import { ArrowRight, Bug, CheckCircle2, ChevronDown, ClipboardList, DoorOpen, Dr
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -313,6 +314,8 @@ const Handyman = () => {
             </ul>
           </div>
         </section>
+
+        <ProofKit topic="handyman" reviews articles />
 
         {/* Form: 3 fields, routed to the JobTread Small Projects division */}
         <div id="estimate-form">

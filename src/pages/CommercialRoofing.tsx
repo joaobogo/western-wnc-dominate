@@ -15,6 +15,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import PageContext from "@/components/PageContext";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -510,7 +511,12 @@ const CommercialRoofing = () => {
                     </div>
                   </section>
         }
-        afterCta={<InspectionForm />}
+        afterCta={
+          <>
+            <ProofKit topic="commercial" reviews />
+            <InspectionForm />
+          </>
+        }
       />
       <Footer />
       <StickyMobileCTA />

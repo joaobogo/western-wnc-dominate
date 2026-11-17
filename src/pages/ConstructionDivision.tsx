@@ -15,6 +15,7 @@ import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
+import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -456,6 +457,7 @@ const ConstructionDivision = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="construction projects" />
 
+        <ProofKit topic="construction" reviews />
         <InspectionForm />
 
         <ConstructionClosingCTA
