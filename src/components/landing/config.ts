@@ -254,7 +254,7 @@ const roofWaynesville: LandingImage = {
 const heroSkyImage: LandingImage = {
   src: heroSky,
   srcSet: heroSkySet,
-  alt: "",
+  alt: "Dimensional shingle roof with a standing seam metal entry roof on a wood and stone mountain home, from Highlander's roofing gallery",
   width: 1800,
   height: 1477,
 };
@@ -312,6 +312,11 @@ const constructionSecondary: LandingImage = {
 
 const roofingFaqs = [
   {
+    question: "What happens after I call or send the form?",
+    answer:
+      "The Franklin office answers Monday to Friday, 8 AM to 5 PM Eastern. We ask what you're seeing and set up a visit to look at the roof. You get the scope and price in writing before any work starts. Calling is the fastest way onto the schedule.",
+  },
+  {
     question: "Do I need a repair or a new roof?",
     answer:
       "That depends on the condition and extent of the damage. Highlander can assess the roof and explain the appropriate options before you decide.",
@@ -329,11 +334,6 @@ const roofingFaqs = [
   {
     question: "What if my roof is leaking now?",
     answer: `Call ${PHONE_DISPLAY} and tell us what is happening. Put a bucket under the drip and stay off the roof: never climb onto a wet or damaged roof.`,
-  },
-  {
-    question: "What happens after I send the form?",
-    answer:
-      "A Highlander team member calls you back to talk about the property and book a free on-site look. Calling is the fastest way to get on the schedule.",
   },
 ];
 
@@ -372,6 +372,11 @@ const constructionFaqs = [
 
 const combinedFaqs = [
   {
+    question: "What happens after I call or send my details?",
+    answer:
+      "The Franklin office answers Monday to Friday, 8 AM to 5 PM Eastern. We ask what's going on at the house, route it to the roofing team, the construction team or both, and set up the visit. You get the scope and price in writing before any work starts.",
+  },
+  {
     question: "Do I need to choose roofing or construction first?",
     answer:
       "No. That is exactly what the call is for: tell us what is going on and we'll tell you whether it is roofing, construction or both.",
@@ -391,15 +396,11 @@ const combinedFaqs = [
     answer:
       "A reliable price depends on the property and the scope. Call and we'll tell you what we need to see and book the visit.",
   },
-  {
-    question: "What happens after I send my details?",
-    answer:
-      "A Highlander team member calls you back to talk about the property and set up the next step with the right team. Calling is the fastest way.",
-  },
 ];
 
 export const ROOFING_CONFIG: LandingConfig = {
   key: "roofing",
+  layoutVersion: 2,
   path: "/lp/roofing",
   formId: "landing-roofing",
   defaultCategory: "roofing",
@@ -413,15 +414,15 @@ export const ROOFING_CONFIG: LandingConfig = {
   breadcrumbName: "Roofing Estimate",
 
   eyebrow: "Highlander Building Services | Western North Carolina",
-  h1: "Roof leaking or wearing out? Talk to a Franklin roofer today.",
+  h1: "Roof leaking or wearing out? Talk to a Western NC roofer today.",
   support:
-    "Call and describe what you're seeing. We'll tell you if it sounds like a repair or a replacement and book a free on-site look, with the price in writing before any work.",
+    "Call and describe what you're seeing. We'll tell you if it sounds like a repair or a replacement and set up a visit, with the price in writing before any work.",
   serviceLine: "Roof repair. Roof replacement. Metal roofing.",
-  primaryCta: "Request My Estimate",
-  mobileCta: "Estimate",
-  heroCallLabel: `Call ${PHONE_DISPLAY} · Free estimate`,
+  primaryCta: CTA.mobileSticky,
+  mobileCta: CTA.mobileSticky,
+  heroCallLabel: `${CTA_SECONDARY.callLabel} · Free estimate`,
   callReason:
-    "A 5-minute call: tell us what you're seeing, we'll tell you the likely next step and book your free on-site look.",
+    "A 5-minute call: tell us what you're seeing, we'll tell you the likely next step and set up a visit to see the roof.",
   headerTagline: "Talk to a local roofer",
   urgentStrip: {
     heading: "Leak right now?",
@@ -526,12 +527,31 @@ export const ROOFING_CONFIG: LandingConfig = {
   reviews: {
     eyebrow: "Roofing experiences",
     heading: "What happened when customers called Highlander.",
-    ids: ["willard-armes-2024", "jh-dillsboro-2019", "david-christopher-2026", "zary-m-2024"],
+    ids: ["david-christopher-2026", "zary-m-2024", "willard-armes-2024", "jerry-brooks-2023"],
   },
 
   faqEyebrow: "Roofing questions",
   faqHeading: "Useful answers before you reach out.",
   faqs: roofingFaqs,
+  cost: {
+    eyebrow: "What drives the price",
+    heading: "Your roof is priced from its own written scope.",
+    intro:
+      "No two mountain roofs cost the same. These are the things that move the number, and every one of them is in writing before any work starts.",
+    drivers: [
+      "Roof size, pitch and how many planes and valleys it has",
+      "Tear-off: how many old layers come off and the condition of the decking",
+      "The material: dimensional shingle, standing seam metal or synthetic shake",
+      "Chimneys, skylights, flashing and ventilation details",
+      "Access, slope and the season the work is done in",
+    ],
+    links: [
+      { label: "Roofing cost in Western NC", href: "/roofing-cost-western-nc" },
+      { label: "Metal roof cost", href: "/roofing/metal/cost" },
+      { label: "Financing options", href: "/financing" },
+    ],
+  },
+  divisionHub: { label: "Roofing services", href: "/roofing" },
 
   finalHeading: "A roof question should not become a guessing game.",
   finalBody:
@@ -716,6 +736,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
 
 export const COMBINED_CONFIG: LandingConfig = {
   key: "combined",
+  layoutVersion: 2,
   path: "/lp/roofing-construction",
   formId: "landing-combined",
   defaultCategory: "general",
@@ -732,10 +753,10 @@ export const COMBINED_CONFIG: LandingConfig = {
   h1: "Roof, addition or both? One call to Highlander sorts it out.",
   support:
     "Fix the roof. Add the space. Improve the way home feels. Call and tell us what is going on; one local team handles roofing, additions, renovations and outdoor living.",
-  serviceLine: "Roofing. Construction. One call to get started.",
-  primaryCta: "Send My Details",
-  mobileCta: "Details",
-  heroCallLabel: `Call ${PHONE_DISPLAY} · One call, one team`,
+  serviceLine: "Roofing. Construction. One local team.",
+  primaryCta: CTA.mobileSticky,
+  mobileCta: CTA.mobileSticky,
+  heroCallLabel: `${CTA_SECONDARY.callLabel} · One call, one team`,
   callReason:
     "A 5-minute call: tell us what you're seeing or planning, and we'll tell you which team you need and book the next step.",
   headerTagline: "Talk to a local roofer or builder",
@@ -748,7 +769,7 @@ export const COMBINED_CONFIG: LandingConfig = {
   hero: {
     backdrop: heroSkyImage,
     position: "40% 22%",
-    secondary: { ...constructionPrimary, alt: "" },
+    secondary: constructionPrimary,
     secondaryPosition: "60% 55%",
   },
   finalBackdrop: { image: additionWindowsBackdrop, position: "50% 60%" },
@@ -857,14 +878,33 @@ export const COMBINED_CONFIG: LandingConfig = {
   ],
 
   reviews: {
-    eyebrow: "Roofing experiences",
+    eyebrow: "Recent reviews",
     heading: "What happened when customers called Highlander.",
-    ids: ["willard-armes-2024", "jh-dillsboro-2019", "lorrie-contino-2024"],
+    ids: ["david-christopher-2026", "claire-proctor-2026", "willard-armes-2024"],
+    note: "Each review shows the work it was for.",
   },
 
   faqEyebrow: "Common questions",
   faqHeading: "Useful answers before you reach out.",
   faqs: combinedFaqs,
+  cost: {
+    eyebrow: "What drives the price",
+    heading: "Roof or room, it's priced from a written scope.",
+    intro:
+      "Roofing and construction prices both come from the property, not a menu. These are the things that move the number, in writing before any work starts.",
+    drivers: [
+      "The size and condition of the roof, or the size of the new or changed space",
+      "Materials and finishes you choose",
+      "Structure: decking, framing, foundation and how new work ties into the house",
+      "Site access, slope and utilities on a mountain lot",
+      "Design, engineering and permit needs for the scope",
+    ],
+    links: [
+      { label: "Roofing cost in Western NC", href: "/roofing-cost-western-nc" },
+      { label: "Home additions", href: "/construction/additions" },
+      { label: "Financing options", href: "/financing" },
+    ],
+  },
 
   finalHeading: "One home. A clear next step.",
   finalBody:
