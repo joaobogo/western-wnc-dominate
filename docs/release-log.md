@@ -33,3 +33,27 @@ One entry per release. Record the rollback point **before** each release (B2.5).
 ## Decision — Nov 17, 2026
 John confirmed the release path: work on `claude/*` → PR into `main` → merge only after "approved, release", with Lovable idle during the merge. There are no `edit/**` branches.
 John (Nov 17): keep both branch changes: the shared honeypot on every form, and gutter leads routed to the Gutters division.
+
+## Release 1 — Nov 17, 2026 (PR #34): Phase 2 + Phase 3
+- **Approved by:** John ("publish").
+- **Rollback point:** `main` at `420e253` before the merge. The production deployId could not be read from this container; Netlify → Deploys keeps the previous deploy. To roll back: GitHub Actions → Emergency rollback (`revert_head`), or republish that deploy in Netlify.
+- **Pages changed:**
+  - all six `/lp/*` pages and `?landing=` (site menu); v2 layout on `/lp/construction` only;
+  - new `/services`;
+  - site header everywhere (Services dropdown; desktop menu from 1280px; Blog and Contact moved to the menu panel and footer);
+  - `/roofing/gutters` lead routing;
+  - honeypot on every form;
+  - phone_click de-duplication.
+- **Local gates before release:**
+
+  | Gate | Result |
+  |---|---|
+  | Tests | 587/587 |
+  | Build | 345/345 prerendered |
+  | `seo:check` | PASS |
+  | `smoke:lp` | 10/10 |
+  | Images | 0 broken |
+  | Lighthouse | unchanged from baseline |
+
+  Preview: https://deploy-preview-34--highlandernc.netlify.app
+- **For Andrew:** see `docs/gtm-setup-needed.md` (phone_click halves on LPs: de-duplication, not lost calls).
