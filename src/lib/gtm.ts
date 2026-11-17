@@ -326,6 +326,16 @@ export function trackTownFaqConversionIntent(opts: {
 
 /* ---------- Phone / email ---------- */
 
+/**
+ * One tap = one phone_click. Components that tag a call button themselves
+ * (landing pages, forms) run their React onClick first; the global tel:
+ * listener then sees the same tap. Without this guard every landing-page call
+ * tap reached GA4 and the Meta/TikTok pixels twice. The first, most specific
+ * placement wins.
+ */
+let lastPhoneClick = { at: 0, url: "" };
+const PHONE_DEDUPE_MS = 800;
+
 export function trackPhoneClick(opts: {
   phone_number: string;
   link_url: string;
@@ -333,6 +343,11 @@ export function trackPhoneClick(opts: {
   town?: string | null;
   page_type?: string | null;
 }) {
+  const now = Date.now();
+  const url = (opts.link_url || "").replace(/[^0-9+]/g, "");
+  const since = now - lastPhoneClick.at;
+  if (url && url === lastPhoneClick.url && since >= 0 && since < PHONE_DEDUPE_MS) return;
+  lastPhoneClick = { at: now, url };
   push({
     event: "phone_click",
     town: opts.town ?? getTownSlugFromPath(currentPath()),
@@ -863,13 +878,17 @@ export function installGtmGlobalListeners() {
             cta_viewport_pct: phonePos.cta_viewport_pct,
           });
         }
-        trackPhoneClick({
+        // Deferred one tick: this capture listener runs before the button's own
+        // onClick. A component that tags the tap itself (with its precise
+        // placement) records it first; trackPhoneClick then drops this repeat.
+        const phonePayload = {
           phone_number: display,
           link_url: href,
           click_location: phoneLoc,
           town: phoneTown ?? getTownSlugFromPath(currentPath()),
           page_type: getAnalyticsPageType(currentPath()),
-        });
+        };
+        window.setTimeout(() => trackPhoneClick(phonePayload), 0);
         if (phoneLoc === "town_faq" && phoneTown) {
           trackTownFaqConversionIntent({
             town: phoneTown,
