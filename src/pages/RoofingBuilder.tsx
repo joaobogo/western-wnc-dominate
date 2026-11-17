@@ -20,7 +20,7 @@ import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
 import asphalt from "@/assets/gallery/asphalt-hero.webp";
 import metal from "@/assets/gallery/metal-010.webp";
-import cedar from "@/assets/gallery/cedar-005.webp";
+import cedar from "@/assets/gallery/cedar-001.webp";
 import synthetic from "@/assets/gallery/cedar-002.webp";
 import asphaltDark from "@/assets/gallery/asphalt-004.webp";
 import metalAlt from "@/assets/gallery/metal-005.webp";

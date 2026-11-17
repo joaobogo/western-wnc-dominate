@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 214,
+    "sitemap": 215,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 344
+    "total": 345
   },
   "routes": [
     "/",
@@ -23,6 +23,7 @@
     "/roofing/metal/cost",
     "/financing",
     "/services",
+    "/construction/handyman",
     "/contact",
     "/request-inspection",
     "/roofing",

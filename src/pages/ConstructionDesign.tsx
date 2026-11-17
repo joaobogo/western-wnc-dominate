@@ -12,6 +12,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import GoldLine from "@/components/motion/GoldLine";
@@ -30,7 +31,7 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
  * amounts, "starting at", or "typical fee range" copy on this page.
  */
 
-const heroImg = "/media/wnc-construction-framing.webp";
+import heroImg from "@/assets/work/addition-franklin-window-wall.webp";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
@@ -167,7 +168,7 @@ const ConstructionDesign = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[62vh] md:min-h-[74vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Design drawings and 3D views for a Western North Carolina construction project" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Wall of gable windows in a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.55)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -579,6 +580,8 @@ const ConstructionDesign = () => {
             { label: "Get My Questions Answered", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <ServiceInternalLinks title="Design & Planning" slug="design" intent="consultation" />
       </main>
 

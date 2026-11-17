@@ -9,8 +9,8 @@ const StormDamageAds = () => (
     path="/lp/storm-damage"
     serviceName="Storm Damage"
     heroImage={heroImg}
-    heroAlt="Storm-damaged roof inspection in Western North Carolina"
-    eyebrow="Storm damage landing page"
+    heroAlt="Aerial view of a dimensional shingle roof on a wooded Western North Carolina lot in autumn, from Highlander's roofing gallery"
+    eyebrow="Storm damage · Western North Carolina"
     headline="Storm hit your roof? Start with a clear damage assessment request."
     subheadline="Clear documentation and straight answers for Western North Carolina homeowners dealing with wind, hail, leaks, or fallen debris."
     ctaLabel="Get My Storm Damage Assessed"

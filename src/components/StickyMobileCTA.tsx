@@ -225,7 +225,7 @@ const StickyMobileCTA = () => {
                     >
                       <Phone className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">
-                        Call now
+                        Call Direct
                       </span>
                     </a>
                     <Link

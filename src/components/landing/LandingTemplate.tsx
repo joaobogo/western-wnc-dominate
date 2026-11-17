@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import {
   BUSINESS,
   FRANKLIN,
@@ -36,14 +38,12 @@ import {
   directionsUrl,
 } from "@/data/business";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
-import logo from "@/assets/logo.svg";
 import teamPhoto from "@/assets/team-photo.webp";
 import teamPhotoSet from "@/assets/team-photo.webp?w=640;1000;1440&format=webp&as=srcset";
 import type { IntentId, LandingConfig, LandingImage } from "./config";
 import { LandingFormProvider, useLandingForm } from "./LandingFormContext";
 import LeadForm, { trackCall } from "./LeadForm";
 import Lightbox from "./Lightbox";
-import { openConsentPreferences } from "@/lib/consent";
 import { LP_CTA } from "@/lib/cta-config";
 import OfficeStatusChip from "./OfficeStatusChip";
 import type { Review } from "@/data/reviews";
@@ -199,7 +199,7 @@ function LandingBody() {
   const rootRef = useReveal();
   const heroFormWrap = useRef<HTMLDivElement>(null);
   const finalFormWrap = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const [heroVisible, setHeroVisible] = useState(true);
   const [finalVisible, setFinalVisible] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -355,7 +355,7 @@ function LandingBody() {
           The estimate buttons scroll to this page's form, so ad leads keep
           their landing-page form, attribution and tracking. */}
       <Header onEstimateClick={scrollToNearestForm} />
-      <div aria-hidden="true" className="h-[var(--header-h)] md:h-[var(--header-h-md)]" />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }, { name: config.breadcrumbName, url: config.path }]} />
 
       <main id="main-content">
         {/* ───────────── Hero: full-bleed photography ───────────── */}
@@ -371,7 +371,7 @@ function LandingBody() {
             {hero.secondary && (
               <div className="absolute inset-0 [clip-path:polygon(46%_0,100%_0,100%_100%,58%_100%)] max-md:hidden">
                 <Img
-                  image={{ ...hero.secondary, alt: "" }}
+                  image={v2 ? hero.secondary : { ...hero.secondary, alt: "" }}
                   eager
                   sizes="60vw"
                   className="lp-kb absolute inset-0 h-full w-full object-cover"
@@ -953,67 +953,11 @@ function LandingBody() {
         )}
       </main>
 
-      {/* ───────────── Footer: complete, but no site navigation ───────────── */}
-      <footer ref={footerRef} className="relative bg-[hsl(var(--dark-section))] text-[hsl(var(--dark-section-foreground))]">
-        <div aria-hidden="true" className="lp-tartan h-1.5 w-full" />
-        <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-12 sm:px-5 md:grid-cols-[1.3fr_1fr_1fr] md:px-8 md:py-16">
-          <div>
-            <span className="inline-block rounded-sm bg-background px-4 py-2.5 shadow-lg">
-              <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-10 w-auto" loading="lazy" decoding="async" />
-            </span>
-            <p className="mt-5 max-w-sm font-heading text-xl leading-snug text-[hsl(var(--dark-section-foreground))]">
-              Roofing and construction for Western North Carolina homes.
-            </p>
-            <p className="mt-3 inline-flex items-center gap-2 text-sm text-[hsl(var(--dark-section-muted))]">
-              <Stars />
-              <span>{REVIEW_RATING}/5 on Google</span>
-            </p>
-          </div>
-
-          <address className="not-italic">
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Franklin showroom</h2>
-            <div className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-[hsl(var(--dark-section-muted))]">
-              <div className="font-semibold text-[hsl(var(--dark-section-foreground))]">{BUSINESS.legalName}</div>
-              <div className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />{FRANKLIN_NAP}</div>
-              <div className="flex gap-2"><Clock className="mt-1 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />{PRIMARY_HOURS_LABEL}, Eastern Time</div>
-            </div>
-          </address>
-
-          <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Talk to the team</h2>
-            <a
-              href={PHONE_TEL}
-              data-cta="footer"
-              onClick={() => trackCall(`lp_${config.key}_footer`)}
-              className="mt-4 inline-flex min-h-12 items-center gap-2.5 rounded-sm bg-[hsl(var(--highland-gold))] px-5 font-bold text-foreground shadow-lg transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--dark-section))]"
-              aria-label={`Call Highlander at ${PHONE_DISPLAY}`}
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              {PHONE_DISPLAY}
-            </a>
-            <p className="mt-4 flex gap-2 text-sm leading-relaxed text-[hsl(var(--dark-section-muted))]">
-              <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
-              North Carolina licensed general contractor, {BUSINESS.licenseNumber.replace(/^NC GC\s*/, "license ")}
-            </p>
-          </div>
-        </div>
-        <div className="border-t border-[hsl(var(--dark-section-border))]">
-          <div className="mx-auto flex max-w-[1200px] flex-col gap-3 px-4 py-5 pb-28 text-sm text-[hsl(var(--dark-section-muted))] sm:px-5 md:flex-row md:items-center md:justify-between md:px-8 xl:pb-32">
-            <span>© {new Date().getFullYear()} {BUSINESS.legalName} All rights reserved.</span>
-            <span className="flex flex-wrap gap-x-6 gap-y-1">
-              <a href="/privacy-policy" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
-                Privacy policy
-              </a>
-              <a href="/accessibility" target="_blank" rel="noopener" className="min-h-11 content-center underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
-                Accessibility
-              </a>
-              <button type="button" onClick={openConsentPreferences} className="min-h-11 underline underline-offset-4 hover:text-[hsl(var(--dark-section-foreground))]">
-                Cookie preferences
-              </button>
-            </span>
-          </div>
-        </div>
-      </footer>
+      {/* Site footer, as on every other page (John, 17 Nov 2026). Its estimate
+          button scrolls to this page's form. The ref hides the sticky bars. */}
+      <div ref={footerRef}>
+        <Footer onEstimateClick={scrollToNearestForm} />
+      </div>
 
       <Lightbox items={config.proof} index={lightbox} onIndexChange={setLightbox} onClose={() => setLightbox(null)} />
 
@@ -1090,6 +1034,7 @@ export default function LandingTemplate({ config }: { config: LandingConfig }) {
           serviceSchema({ name: config.schemaName, description: config.seoDescription, url: config.path }),
           breadcrumbSchema([
             { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
             { name: config.breadcrumbName, url: config.path },
           ]),
         ]}

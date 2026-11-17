@@ -16,6 +16,8 @@ describe("gutter leads reach the JobTread Gutters division", () => {
     expect(projectTypeFromPage("/roofing/gutters/franklin-nc", "")).toBe("gutters");
     expect(projectTypeFromPage("/roofing/skylights", "")).toBe("roof-replacement");
     expect(projectTypeFromPage("/roofing/roof-repair", "")).toBe("roof-repair");
+    expect(projectTypeFromPage("/construction/design", "")).toBe("design");
+    expect(projectTypeFromPage("/construction/renovations", "")).toBe("addition");
   });
 
   it("the JobTread mapper still routes gutters to the Gutters division", () => {
@@ -64,5 +66,16 @@ describe("honeypot on every lead form", () => {
     fireEvent.submit(container.querySelector("form")!);
     expect(await screen.findByText("Request received.")).toBeTruthy();
     expect(submitLead).not.toHaveBeenCalled();
+  });
+});
+
+describe("every service page has a lead form (Nov 2026)", () => {
+  const pages = [
+    "HomeAdditions", "Renovations", "OutdoorLiving", "OutdoorLivingSubPage", "Siding", "ConstructionDesign",
+    "Skylights", "SpecialtyRoofing", "RoofReplacement", "RoofRepair", "StormDamage", "MetalRoofing",
+    "Gutters", "SyntheticRoofing", "ResidentialRoofing", "CommercialRoofing", "RoofingDivision", "ConstructionDivision",
+  ];
+  it.each(pages)("%s renders InspectionForm or FastLeadForm", (name) => {
+    expect(readFileSync(`src/pages/${name}.tsx`, "utf8")).toMatch(/<(InspectionForm|FastLeadForm)\b/);
   });
 });

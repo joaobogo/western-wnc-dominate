@@ -212,7 +212,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Smoky Mountain log and timber styles emphasizing durability and natural finishes.",
     notableNeighborhoods: ["Alarka", "Deep Creek", "Lands Creek", "Fontana Lake area"],
     marketAuthorityAngle: "We understand that in Bryson City, your home is often your business. We complete major projects in the tight windows between guest stays.",
-    heroImage: "/media/wnc-mountain-home-exterior.jpg"
+    heroImage: "/media/highlander-roof-green-log-home.jpg"
   },
   {
     slug: "waynesville-nc",
@@ -232,7 +232,7 @@ export const towns: TownData[] = [
     styleTendency: "Elegant historic home design (Queen Anne, Colonial) transitioning into contemporary mountain modern styles.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek", "Lake Junaluska"],
     marketAuthorityAngle: "Haywood County projects require a balance of technical modernization and visual sensitivity. We protect Waynesville's historic integrity.",
-    heroImage: "/media/wnc-forest-cabin-roof.jpg"
+    heroImage: "/media/highlander-roof-charcoal-mountains.jpg"
   },
   {
     slug: "cullowhee-nc",
@@ -424,7 +424,7 @@ export const towns: TownData[] = [
     styleTendency: "Traditional Appalachian farmhouse and craftsman styles with asphalt or metal roofing suited to valley conditions.",
     notableNeighborhoods: ["Coweeta", "Tessentee", "Otto Community", "US-441 corridor"],
     marketAuthorityAngle: `Otto is close to our Franklin showroom at ${FRANKLIN_STREET}, giving Macon County homeowners a nearby place to meet the Highlander team.`,
-    heroImage: "/media/wnc-mountain-home-exterior.jpg"
+    heroImage: "/media/highlander-roof-green-log-home.jpg"
   },
   {
     slug: "lake-glenville-nc",
@@ -444,7 +444,7 @@ export const towns: TownData[] = [
     styleTendency: "Elevated rustic and timber-frame lake homes with metal or synthetic shake roofs and heavy stone accents.",
     notableNeighborhoods: ["Trillium", "Norton", "Pines at Lake Glenville", "Highway 107 corridor"],
     marketAuthorityAngle: "At 3,500 feet on the highest major lake east of the Mississippi, roofing and gutter design are moisture-management problems first. We build every Lake Glenville project accordingly.",
-    heroImage: "/media/wnc-forest-cabin-roof.jpg"
+    heroImage: "/media/highlander-roof-charcoal-mountains.jpg"
   },
   {
     slug: "lake-toxaway-nc",

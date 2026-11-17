@@ -57,3 +57,27 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 
   Preview: https://deploy-preview-34--highlandernc.netlify.app
 - **For Andrew:** see `docs/gtm-setup-needed.md` (phone_click halves on LPs: de-duplication, not lost calls).
+
+## Release 2 — Nov 17, 2026 (PR #35)
+- **Approved by:** John ("approved").
+- **Rollback point:** `main` at `f1d6987` (Release 1). Netlify → Deploys keeps that deploy; or GitHub Actions → Emergency rollback.
+- **Pages changed:**
+  - a lead form on every service page (10 had none);
+  - all six `/lp/*` pages on the upgraded layout with the site footer and breadcrumbs;
+  - new `/construction/handyman`;
+  - Blog back in the header; `/blogs` → `/blog`;
+  - AI and stock images replaced with real Highlander photos on about 20 pages;
+  - sticky mobile bar "Call now" → "Call Direct";
+  - handyman leads → Small Projects, design leads → Design.
+- **Local gates before release:**
+
+  | Gate | Result |
+  |---|---|
+  | Tests | 609/609 |
+  | Build | 346/346 prerendered |
+  | `seo:check` | PASS |
+  | `smoke:lp` | 10/10 |
+  | Images | 0 broken |
+  | Blog link | visible in the header at 1280–2560 px and in the phone menu |
+
+  Preview: https://deploy-preview-35--highlandernc.netlify.app

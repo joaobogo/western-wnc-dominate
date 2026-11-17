@@ -34,6 +34,7 @@ const constructionLinks = [
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
   { label: "Design & Planning", href: "/construction/design" },
   { label: "Siding & Exterior", href: "/construction/siding" },
+  { label: "Handyman & Small Repairs", href: "/construction/handyman" },
   { label: "Exterior Improvements", href: "/exterior-improvements" },
   { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_footer&type=construction" },
   { label: "Build Your Project", href: "/construction-builder" },
@@ -142,7 +143,17 @@ const FooterGroup = ({
   );
 };
 
-const Footer = () => {
+interface FooterProps {
+  /**
+   * Paid landing pages: the footer's estimate button scrolls to the page's own
+   * form (keeps the landing-page form_name and attribution) instead of leaving
+   * for /request-inspection.
+   */
+  onEstimateClick?: () => void;
+}
+
+const Footer = ({ onEstimateClick }: FooterProps = {}) => {
+  const constructionNav = onEstimateClick ? constructionLinks.filter((l) => !l.href.startsWith("/request-inspection")) : constructionLinks;
   // pb on phones clears the 72px sticky call bar + the iOS home indicator, so
   // the last footer links are never hidden behind it (mobile audit F11).
   return (
@@ -189,16 +200,30 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/request-inspection"
-                className="btn btn-primary btn-md group relative whitespace-nowrap"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Get My Written Estimate</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
+              {onEstimateClick ? (
+                <button
+                  type="button"
+                  onClick={onEstimateClick}
+                  data-gtm-cta="lp_estimate"
+                  data-gtm-location="footer_cta"
+                  className="btn btn-primary btn-md group relative whitespace-nowrap"
+                >
+                  <span className="relative">Get My Written Estimate</span>
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </button>
+              ) : (
+                <Link
+                  to="/request-inspection"
+                  className="btn btn-primary btn-md group relative whitespace-nowrap"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <span className="relative">Get My Written Estimate</span>
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </Link>
+              )}
               <a
                 href={PHONE_TEL}
+                data-cta="footer-cta"
                 className="btn btn-secondary btn-md whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -240,6 +265,7 @@ const Footer = () => {
               </div>
               <a
                 href={PHONE_TEL}
+                data-cta="footer"
                 className="flex items-center gap-3 min-h-[44px] font-heading font-bold text-body-lg text-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> {PHONE_DISPLAY}
@@ -272,7 +298,7 @@ const Footer = () => {
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </FooterGroup>
             <FooterGroup title="Construction" label="Construction links" className="md:mt-8">
-              {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
+              {constructionNav.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </FooterGroup>
           </div>
 
@@ -375,7 +401,7 @@ const Footer = () => {
               {BUSINESS.licenseNumber}
             </a>{" "}
             · Est. {BUSINESS.foundingYear} ·{" "}
-            <a href={PHONE_TEL} className="inline-flex items-center min-h-[44px] md:min-h-0 hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
+            <a href={PHONE_TEL} data-cta="footer-bottom" className="inline-flex items-center min-h-[44px] md:min-h-0 hover:text-foreground transition-colors">{PHONE_DISPLAY}</a>
           </p>
         </div>
       </div>

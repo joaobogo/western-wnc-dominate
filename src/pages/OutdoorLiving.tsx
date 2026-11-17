@@ -15,15 +15,16 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
-import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
+import outdoorMobileHero from "@/assets/work/patio-cashiers-screened-porch.webp";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
-const heroImg = "/media/wnc-forest-cabin-roof.webp";
+import heroImg from "@/assets/work/patio-cashiers-screened-porch.webp";
 import porchContextImg from "@/assets/work/patio-cashiers-wide.webp";
 import porchContextSet from "@/assets/work/patio-cashiers-wide.webp?w=800;1200;1500&format=webp&as=srcset";
 import WorkGallery from "@/components/gallery/WorkGallery";
@@ -129,7 +130,7 @@ const OutdoorLiving = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={outdoorMobileHero} />
-              <img width={1600} height={1067} decoding="async" src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
+              <img width={1600} height={1067} decoding="async" src={heroImg} alt="Screened porch with a stained wood ceiling and stone fireplace built by Highlander in Cashiers, North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
@@ -529,6 +530,8 @@ const OutdoorLiving = () => {
 
         <CostContextBlock serviceLabel="outdoor living" variant="construction" />
         <CommonConcerns concerns={constructionConcerns} />
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <ConstructionClosingCTA
           headline={"The Best Room in Your\nHouse Doesn't Need Walls."}
           subheadline="Whether it's a covered porch for morning coffee, a screened room for summer evenings, or an outdoor kitchen for gathering — let's design the space you've been imagining."

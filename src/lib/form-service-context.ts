@@ -13,6 +13,8 @@ export type ProjectTypeValue =
   | "gutters"
   | "addition"
   | "outdoor-living"
+  | "design"
+  | "handyman"
   | "commercial"
   | "not-sure";
 
@@ -28,6 +30,10 @@ const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
   [/^\/roofing\/gutters/, "gutters"],
   [/^\/roofing\/(brava-synthetic|specialty|residential|skylights)/, "roof-replacement"],
   [/^\/roofing/, "roof-repair"],
+  // Design & Planning leads go to the JobTread Design division.
+  [/^\/construction\/design/, "design"],
+  // Handyman / small repairs go to the JobTread Small Projects division.
+  [/^\/construction\/handyman/, "handyman"],
   [/^\/construction\/(additions|renovations|siding)/, "addition"],
   [/^\/construction\/outdoor-living/, "outdoor-living"],
   [/^\/construction/, "addition"],
@@ -35,7 +41,7 @@ const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
 
 const VALID = new Set<string>([
   "roof-repair", "roof-replacement", "metal-roofing", "storm-damage", "gutters",
-  "addition", "outdoor-living", "commercial", "not-sure",
+  "addition", "outdoor-living", "design", "handyman", "commercial", "not-sure",
 ]);
 
 /** Resolve the project type implied by the page the form is rendered on. */
@@ -66,6 +72,8 @@ export const PROJECT_TYPE_LABELS: Record<ProjectTypeValue, string> = {
   gutters: "Seamless Gutters",
   addition: "Addition or Remodel",
   "outdoor-living": "Deck, Porch, Outdoor",
+  design: "Design & Planning",
+  handyman: "Handyman & Small Repairs",
   commercial: "Commercial Property",
   "not-sure": "Not Sure Yet",
 };

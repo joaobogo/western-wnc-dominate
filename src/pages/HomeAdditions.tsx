@@ -17,6 +17,7 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
@@ -28,7 +29,6 @@ import heroImg from "@/assets/gallery/addition-franklin-room-tall.webp";
 import expansionContextImg from "@/assets/work/addition-franklin-exterior-windows.webp";
 import expansionContextSet from "@/assets/work/addition-franklin-exterior-windows.webp?w=800;1200;1600&format=webp&as=srcset";
 import WorkGallery from "@/components/gallery/WorkGallery";
-const structuralTieImg = "/media/wnc-construction-framing.webp";
 const mountainSiteImg = "/media/wnc-ridge-elevation-home.webp";
 
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -563,6 +563,8 @@ const HomeAdditions = () => {
 
         <CostContextBlock serviceLabel="home addition" variant="construction" />
         <CommonConcerns concerns={constructionConcerns} />
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}
           subheadline="Whether you want to add a guest suite, renovate around a main-level master, or build a room you haven't even named yet — let's talk about what your home could become."

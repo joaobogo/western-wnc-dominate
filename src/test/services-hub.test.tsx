@@ -77,3 +77,52 @@ describe("/services redirects", () => {
     }
   });
 });
+
+describe("/construction/handyman", () => {
+  it("is routed, in the sitemap, in the menus, and routes leads to Small Projects", async () => {
+    expect(readFileSync("src/App.tsx", "utf8")).toMatch(/path="\/construction\/handyman" element=\{<Handyman \/>\}/);
+    expect(readFileSync("scripts/generate-sitemap.ts", "utf8")).toMatch(/\{ path: "\/construction\/handyman" \}/);
+    const services = divisions.find((d) => d.label === "Services")!;
+    expect(services.items.some((i) => i.href === "/construction/handyman")).toBe(true);
+    const construction = divisions.find((d) => d.label === "Construction")!;
+    expect(construction.items.some((i) => i.href === "/construction/handyman")).toBe(true);
+    const { projectTypeFromPage } = await import("@/lib/form-service-context");
+    expect(projectTypeFromPage("/construction/handyman", "")).toBe("handyman");
+    // JobTread mapper: /handyman/ → Small Projects (checked first).
+    expect(readFileSync("supabase/functions/jobtread-sync/index.ts", "utf8")).toMatch(/handyman/);
+  });
+
+  it("renders a call-first page with real photos, a form and an FAQ", async () => {
+    const { default: Handyman } = await import("@/pages/Handyman");
+    render(
+      <MemoryRouter initialEntries={["/construction/handyman"]}>
+        <Handyman />
+      </MemoryRouter>,
+    );
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    const main = document.querySelector("main")!;
+    const firstLink = main.querySelector("section a[href]")!;
+    expect(firstLink.getAttribute("href")).toMatch(/^tel:/);
+    main.querySelectorAll("img").forEach((img) => expect((img.getAttribute("alt") ?? "").length).toBeGreaterThan(20));
+    expect(main.querySelectorAll("img").length).toBeGreaterThanOrEqual(5);
+    expect(main.querySelector('form[data-gtm-form-name="estimate_request"]')).not.toBeNull();
+    const banned = new RegExp(["24" + "/7", "get started", "call now", "free " + "inspection", "book " + "now"].join("|"), "i");
+    const hit = (document.body.textContent ?? "").match(banned);
+    expect(hit ? (document.body.textContent ?? "").slice(Math.max(0, hit.index! - 80), hit.index! + 40) : null).toBeNull();
+  });
+});
+
+describe("/blogs (plural) reaches the blog", () => {
+  it("/blogs and /blogs/<post> 301 to /blog in one hop", async () => {
+    const m = await import("../../scripts/lib/redirect-rules.mjs");
+    const rules = m.loadRedirectRules();
+    expect(m.applyRule(rules, "/blogs")?.to).toBe("/blog");
+    expect(m.applyRule(rules, "/blogs/metal-roofing-cost-wnc")?.to).toBe("/blog/metal-roofing-cost-wnc");
+    expect(m.applyRule(rules, "/blog")).toBeNull();
+  });
+
+  it("Blog is a top-level header link (posts go up daily)", async () => {
+    const { secondaryLinks } = await import("@/components/header/nav-data");
+    expect(secondaryLinks.some((l) => l.href === "/blog")).toBe(true);
+  });
+});

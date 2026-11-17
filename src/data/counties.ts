@@ -130,7 +130,7 @@ export const counties: CountyData[] = [
     towns: ["Asheville"],
     metaTitle: "Buncombe County, NC Roofing | Highlander Building Services",
     metaDescription: "Roofing and construction availability in Buncombe County, NC. Asheville projects are accepted based on current service-area capacity.",
-    heroImage: "/media/wnc-mountain-home-exterior.jpg",
+    heroImage: "/media/highlander-roof-green-log-home.jpg",
     facts: [
       { label: "Coverage", value: "Asheville Region" },
       { label: "Specialty", value: "Historic + Modern" },
@@ -155,7 +155,7 @@ export const counties: CountyData[] = [
     towns: ["Hendersonville", "Fletcher", "Mills River"],
     metaTitle: "Henderson County, NC Roofing | Highlander Building Services",
     metaDescription: "Roofing and construction availability for Henderson County, NC, including Hendersonville, Fletcher, and Mills River, based on current scheduling capacity.",
-    heroImage: "/media/wnc-forest-cabin-roof.jpg",
+    heroImage: "/media/highlander-roof-charcoal-mountains.jpg",
     facts: [
       { label: "Regional Center", value: "Hendersonville" },
       { label: "Service", value: "Dual Division" },

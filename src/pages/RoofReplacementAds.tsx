@@ -9,7 +9,7 @@ const RoofReplacementAds = () => (
     path="/lp/roof-replacement"
     serviceName="Roof Replacement"
     heroImage={heroImg}
-    heroAlt="Roof replacement in progress on a mountain home in Western North Carolina"
+    heroAlt="Aerial view of a brown dimensional shingle roof with several gables on a Western North Carolina home, from Highlander's roofing gallery"
     eyebrow="Roof replacement · Western North Carolina"
     headline="Roof Replacement in Western NC: Get a Written Scope, Not a Sales Pitch"
     subheadline="We help Western North Carolina homeowners understand scope, material fit, and project considerations so replacement decisions feel informed instead of rushed."

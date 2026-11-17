@@ -18,6 +18,7 @@ Facts and decisions Highlander or John still has to supply. **Nothing marked `{{
 | 11 | Rollback point: live `build-info.json` commit + deployId | John | A2 | — |
 
 ## Suggestions (found outside the current scope)
+- **Possible double phone_click on service pages (for Andrew).** The site-wide sticky mobile bar's call button calls `trackEvent("phone_click")`, which sends `gtag("event","phone_click")` directly. The global `tel:` listener also pushes `phone_click` to the dataLayer. If GA4 receives both gtag and GTM hits, each sticky-bar tap counts twice. Check in GA4 DebugView before changing (the rule is not to weaken pixels).
 - **AI-generated photos are live as if they were real jobs.** Replace them with real photos:
   - `/media/d35d81a4-construction-project-highlands.webp` (workers in vests at a framed house). It is the hero on `/construction/renovations` and the closing backdrop on `/lp/construction`.
   - `src/assets/gallery/gutters-002.jpg` (stylised copper gutter on a log home). It is the `/roofing/gutters` hero.

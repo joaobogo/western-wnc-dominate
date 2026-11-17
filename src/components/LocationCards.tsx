@@ -28,6 +28,7 @@ const LocationCards = ({ className = "", dark = false }: { className?: string; d
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true" />
               <a
                 href={telHref(loc.phoneE164)}
+                data-cta={`showroom-${loc.name.toLowerCase().replace(/[^a-z]+/g, "-")}`}
                 className={`font-heading font-semibold ${strong} hover:text-primary transition-colors`}
                 aria-label={`Call the ${loc.name} at ${formatPhoneDisplay(loc.phoneE164)}`}
               >

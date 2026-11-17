@@ -140,6 +140,7 @@ export const ALL_SERVICE_LINKS: Record<ServiceDivision, Array<{ label: string; h
     { label: "Renovations", href: "/construction/renovations" },
     { label: "Outdoor Living", href: "/construction/outdoor-living" },
     { label: "Siding & Exterior", href: "/construction/siding" },
+    { label: "Handyman & Small Repairs", href: "/construction/handyman" },
     { label: "Design & Planning", href: "/construction/design" },
   ],
 };

@@ -66,6 +66,7 @@ function categoryFor(projectType: string | null | undefined) {
   }
   if (
     value.includes("construction") ||
+    value.includes("handyman") ||
     value.includes("addition") ||
     value.includes("renov") ||
     value.includes("outdoor") ||

@@ -6,6 +6,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
@@ -15,7 +16,7 @@ import CTABlock from "@/components/CTABlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import NotFound from "@/pages/NotFound";
-import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
+import outdoorMobileHero from "@/assets/work/patio-cashiers-wide.webp";
 import { getOutdoorSubPage } from "@/data/outdoor-living-subpages";
 
 /**
@@ -65,7 +66,7 @@ const OutdoorLivingSubPage = ({ slug }: { slug: string }) => {
                 height={1067}
                 decoding="async"
                 src={outdoorMobileHero}
-                alt="Outdoor living space at a mountain home in Western North Carolina"
+                alt="Covered patio with a metal roof added by Highlander to a home in Cashiers, North Carolina"
                 className="w-full h-full object-cover object-center"
                 loading="eager"
               />
@@ -176,6 +177,8 @@ const OutdoorLivingSubPage = ({ slug }: { slug: string }) => {
         cta={
           <>
             <CommonConcerns concerns={constructionConcerns} />
+            {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+            <InspectionForm />
             <CTABlock />
           </>
         }
