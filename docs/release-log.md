@@ -29,3 +29,6 @@ One entry per release. Record the rollback point **before** each release (B2.5).
 
 ### Notes for later phases
 - `.lovable/memory/index.md` "Voice" line says "24h response". That conflicts with B3 (no response-time promises). Flag it before reusing that memory.
+
+## Decision — Nov 17, 2026
+John confirmed the release path: work on `claude/*` → PR into `main` → merge only after "approved, release", with Lovable idle during the merge. There are no `edit/**` branches.
