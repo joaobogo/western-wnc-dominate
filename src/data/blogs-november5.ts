@@ -1145,7 +1145,7 @@ One point of confusion is worth clearing up. Some people use â€œsteel shinglesâ€
 | Factor | Standing seam | Metal shingles / stamped panels |
 | --- | --- | --- |
 | Look | Clean vertical lines, modern or farmhouse | Imitates slate, shake, tile or asphalt |
-| Panel size | Long continuous panels, often about 16 in. wide | Small modular pieces, interlocked |
+| Panel size | Long continuous panels, often about 16 inches wide | Small modular pieces, interlocked |
 | Fasteners | Concealed clips | More exposed fasteners depending on profile |
 | Minimum slope (code) | As low as 1/4:12 for standing seam systems | Steeper minimum, check the product report |
 | Deck | Solid sheathing, typically required | Solid, closely fitted deck |
