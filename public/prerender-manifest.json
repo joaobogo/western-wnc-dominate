@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 209,
+    "sitemap": 213,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 339
+    "total": 343
   },
   "routes": [
     "/",
@@ -108,6 +108,10 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/dark-vs-light-roof",
+    "/blog/brown-ceiling-stains",
+    "/blog/storm-chaser-roofing",
+    "/blog/copper-roof-lifespan",
     "/blog/metal-shingles-vs-standing-seam",
     "/blog/home-addition-permits",
     "/blog/roof-ventilation-requirements",

@@ -1,3 +1,7 @@
+# November 17 uploaded blogs
+- [ ] Publish four new articles with exact filename slugs and matching covers; preserve all supplied links and verify the two duplicate uploads without republishing them.
+- [ ] Regenerate sitemap/search files, run article checks, publish and verify live pages.
+
 # November 16 duplicate blog uploads
 - [x] Compare both uploads with existing articles and covers; restore the missing sunroom link and preserve the unsuffixed canonical URLs with direct duplicate-filename redirects.
 - [x] Verify all 29 uploaded link destinations, existing covers, canonical URLs and internal pages; 49 focused tests passed and sitemap contains 209 pages; publication requested.
