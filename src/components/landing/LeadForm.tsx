@@ -3,6 +3,8 @@ import { ArrowRight, CheckCircle2, Phone, ShieldCheck, X } from "lucide-react";
 import { trackPhoneClick } from "@/lib/gtm";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { useLandingForm } from "./LandingFormContext";
+import Honeypot from "@/components/forms/Honeypot";
+import { LP_CTA } from "@/lib/cta-config";
 import type { IntentId } from "./config";
 
 export type FormInstance = "hero" | "final";
@@ -228,19 +230,8 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
         </div>
       )}
 
-      {/* Honeypot: invisible to people, tempting to bots. */}
-      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
-        <label htmlFor={`${prefix}-website`}>Website</label>
-        <input
-          id={`${prefix}-website`}
-          name="website"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          value={form.honeypot}
-          onChange={(event) => form.setHoneypot(event.target.value)}
-        />
-      </div>
+      {/* Honeypot: invisible to people, tempting to bots (shared component). */}
+      <Honeypot id={`${prefix}-website`} value={form.honeypot} onChange={form.setHoneypot} />
 
       <div className="space-y-4">
         {field("firstName", "Full name", {
@@ -268,7 +259,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
           aria-busy={submitting || undefined}
           className="btn btn-primary btn-lg lp-shine btn-block min-h-14 text-base"
         >
-          {submitting ? "Sending your request..." : "Call Me Back"}
+          {submitting ? "Sending your request..." : config.layoutVersion === 2 ? LP_CTA.estimate : "Call Me Back"}
           {!submitting && <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />}
         </button>
       </div>

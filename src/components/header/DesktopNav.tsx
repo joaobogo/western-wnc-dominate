@@ -20,7 +20,7 @@ interface Props {
 
 export const DesktopNav = forwardRef<HTMLElement, Props>(
   ({ openDropdown, onEnter, onLeave, onOpen, onClose, isActive, onViewAllClick, serviceAreasTriggerRef, serviceAreasPanelRef }, _ref) => (
-    <nav aria-label="Primary" className="hidden lg:flex items-center gap-0 whitespace-nowrap">
+    <nav aria-label="Primary" className="hidden xl:flex items-center gap-0 whitespace-nowrap">
       {divisions.map((div) => (
         <DivisionDropdown
           key={div.label}
@@ -59,7 +59,7 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
           key={link.label}
           to={link.href}
           {...preloadHandlers(link.href)}
-          className={`relative text-body-sm font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+          className={`relative text-body-sm font-bold transition-all duration-300 px-2.5 2xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
             isActive(link.href)
               ? "text-heritage-charcoal bg-black/5"
               : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"

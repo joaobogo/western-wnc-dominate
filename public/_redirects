@@ -96,8 +96,8 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /gutters/downspouts                                          /roofing/gutters                                   301!
 /gutters/copper                                              /roofing/gutters                                   301!
 /gutters/aluminum                                            /roofing/gutters                                   301!
-/services                                                    /roofing                                           301!
-/services/*                                                  /roofing                                           301!
+/services/:slug                                              /services                                          301!
+/services/:slug/*                                            /services                                          301!
 /commercial-roofing                                          /roofing/commercial                                301!
 /commercial-maintenance                                      /roofing/commercial                                301!
 /gutters                                                     /roofing/gutters                                   301!

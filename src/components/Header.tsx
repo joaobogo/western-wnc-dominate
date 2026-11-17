@@ -8,7 +8,16 @@ import { HeaderActions } from "./header/HeaderActions";
 import { MobileMenu } from "./header/MobileMenu";
 import SkipToContent from "./a11y/SkipToContent";
 
-const Header = () => {
+interface HeaderProps {
+  /**
+   * Paid landing pages: the "Get My Written Estimate" buttons scroll to the
+   * page's own form instead of leaving for /request-inspection, so ad leads
+   * keep their landing-page form_name, attribution and tracking.
+   */
+  onEstimateClick?: () => void;
+}
+
+const Header = ({ onEstimateClick }: HeaderProps = {}) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -99,7 +108,7 @@ const Header = () => {
           scrolled ? "py-1.5 md:py-2" : "py-2 md:py-4"
         }`}
       >
-        <Link to="/" aria-label="Highlander Building Services — Home" className="flex items-center bg-transparent hover:bg-transparent">
+        <Link to="/" aria-label="Highlander Building Services — Home" className="flex shrink-0 items-center bg-transparent hover:bg-transparent">
           <img loading="eager" decoding="async"
             src={logo}
             alt="Highlander Building Services logo"
@@ -115,8 +124,8 @@ const Header = () => {
             height={338}
             className={`w-auto hidden sm:block transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
-                ? "h-[44px] sm:h-[48px] md:h-[52px] lg:h-[56px]"
-                : "h-[52px] sm:h-[60px] md:h-[68px] lg:h-[76px]"
+                ? "h-[44px] sm:h-[48px] md:h-[52px] 2xl:h-[56px]"
+                : "h-[52px] sm:h-[60px] md:h-[68px] xl:h-[64px] 2xl:h-[76px]"
             }`}
             fetchPriority="high"
           />
@@ -134,7 +143,7 @@ const Header = () => {
           serviceAreasPanelRef={serviceAreasPanelRef}
         />
 
-        <HeaderActions mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} menuButtonRef={mobileMenuBtnRef} />
+        <HeaderActions mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} menuButtonRef={mobileMenuBtnRef} onEstimateClick={onEstimateClick} />
       </div>
 
       <MobileMenu
@@ -146,6 +155,7 @@ const Header = () => {
         onViewAllClick={handleViewAllClick}
         serviceAreasBtnRef={mobileServiceAreasBtnRef}
         triggerRef={mobileMenuBtnRef}
+        onEstimateClick={onEstimateClick}
       />
     </motion.header>
   );

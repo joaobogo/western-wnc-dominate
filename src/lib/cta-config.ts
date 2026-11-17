@@ -79,6 +79,19 @@ export const CTA_SECONDARY = {
   callLabel: `Call Direct: ${PHONE_PLAIN}`,
 } as const;
 
+/**
+ * Paid landing pages (Build Brief v2, B6/C4): exactly two actions everywhere,
+ * the phone and the written estimate. The number stays in the call label so
+ * Google's forwarding-number swap still replaces it for ad visitors.
+ */
+export const LP_CTA = {
+  call: CTA_SECONDARY.callLabel,
+  callShort: "Call Direct",
+  estimate: CTA.mobileSticky,
+  readReviews: "Read all reviews",
+  seeProjects: "See recent projects",
+} as const;
+
 /* ─── SUPPORTING COPY — Page-specific ─── */
 export const CTA_SUBTEXT = {
   /** Roofing pages */

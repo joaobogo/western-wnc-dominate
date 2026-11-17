@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 213,
+    "sitemap": 214,
     "coverageNoindex": 100,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 13,
-    "total": 343
+    "total": 344
   },
   "routes": [
     "/",
@@ -22,6 +22,7 @@
     "/roofing-cost-western-nc",
     "/roofing/metal/cost",
     "/financing",
+    "/services",
     "/contact",
     "/request-inspection",
     "/roofing",

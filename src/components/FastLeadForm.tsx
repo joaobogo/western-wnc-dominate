@@ -13,6 +13,8 @@ import { useFormAutosave } from "@/hooks/use-form-autosave";
 import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
 import { trackFormError, trackFormStart, trackPhoneClick } from "@/lib/gtm";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -26,6 +28,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
   const { submitting, submit } = useLeadSubmit();
+  const honeypot = useHoneypot();
   const [formData, setFormData] = useState({
     firstName: "",
     email: "",
@@ -80,19 +83,19 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
     <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
       <div className="mb-5">
         <div className="text-caption font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
-          Request a Free Estimate
+          Free estimate · written scope
         </div>
         <h2 className="font-heading text-2xl font-bold text-foreground">
           Get help with {serviceLabel.toLowerCase()}.
         </h2>
         <p className="mt-2 text-sm text-muted-foreground font-body leading-relaxed">
-          Three quick fields. We will discuss the property and project details with you after the request is stored.
+          Three quick fields. We'll call you to talk through the property and book the next step.
         </p>
       </div>
 
       <form
         noValidate
-        className="space-y-4"
+        className="relative space-y-4"
         data-hide-sticky
         data-gtm-form-name="fast_lead_form"
         data-gtm-form-id={formId}
@@ -113,6 +116,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
           }
           setSubmitError(null);
           setIssues([]);
+          // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+          if (honeypot.tripped()) {
+            setSubmitted(true);
+            return;
+          }
           const result = await submit({
             source: "fast_lead_form",
             lead_type: serviceCategory,
@@ -148,6 +156,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
         }}
       >
         <FormErrorSummary message={submitError} issues={issues} className="mt-0" />
+        <Honeypot id={`${formId}-website`} value={honeypot.value} onChange={honeypot.setValue} />
 
         <p className="text-sm font-body text-muted-foreground">
           Prefer to talk?{" "}

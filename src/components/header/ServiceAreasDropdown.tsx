@@ -46,7 +46,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
             onClose();
           }
         }}
-        className={`relative text-body-sm font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+        className={`relative text-body-sm font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 2xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
           isActive("/service-areas")
             ? "text-heritage-charcoal bg-black/5"
             : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"

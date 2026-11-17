@@ -8,20 +8,30 @@ interface Props {
   mobileOpen: boolean;
   setMobileOpen: (v: boolean) => void;
   menuButtonRef?: React.RefObject<HTMLButtonElement>;
+  /** Paid landing pages: scroll to the on-page form instead of navigating. */
+  onEstimateClick?: () => void;
 }
 
-export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Props) => (
+const ESTIMATE_CLASS = "hidden sm:inline-flex btn btn-secondary btn-sm sm:px-4 2xl:px-6 sm:py-4 sm:gap-2.5 whitespace-nowrap";
+const EstimateLabel = () => (
+  <>
+    <span className="relative z-10"><span className="hidden min-[1680px]:inline">Get My Written </span>Estimate</span>
+    <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
+  </>
+);
+
+export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef, onEstimateClick }: Props) => (
   <div className="flex items-center gap-3">
     {/* Call is the filled button and the estimate the outline one, site-wide (call plan, 28 Oct 2026). */}
     <a
       href={PHONE_TEL}
       data-cta="header"
       aria-label={`Call Highlander Building Services at ${PHONE_DISPLAY}`}
-      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-6 lg:max-xl:px-4 sm:py-4 sm:gap-2 whitespace-nowrap"
+      className="hidden sm:inline-flex btn btn-primary btn-sm sm:px-4 2xl:px-6 sm:py-4 sm:gap-2 whitespace-nowrap"
     >
       <Phone className="w-4 h-4" aria-hidden="true" />
       {/* lg–xl also shows the desktop nav, so the labels shorten to fit. */}
-      <span><span className="lg:max-xl:hidden">Call </span>{PHONE_DISPLAY}</span>
+      <span><span className="hidden 2xl:inline">Call </span>{PHONE_DISPLAY}</span>
     </a>
     {/* Phones showed an icon-only phone button, so the number was never on
         screen (mobile audit F7). It is now a pill with the number. The estimate
@@ -29,25 +39,26 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen, menuButtonRef }: Prop
         one tap away in the menu and in the sticky call bar. */}
     <a
       href={PHONE_TEL}
+      data-cta="header-mobile"
       aria-label={`Call ${PHONE_DISPLAY}`}
       className="sm:hidden inline-flex items-center gap-1.5 min-h-[44px] px-3 rounded-sm bg-primary text-primary-foreground font-body font-bold text-sm whitespace-nowrap active:scale-95 transition-transform"
     >
       <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
       <span>{PHONE_DISPLAY}</span>
     </a>
-    <Link
-      to="/request-inspection"
-      data-gtm-cta="request_inspection"
-      data-gtm-location="header"
-      className="hidden sm:inline-flex btn btn-secondary btn-sm sm:px-6 lg:max-xl:px-4 sm:py-4 sm:gap-2.5 whitespace-nowrap"
-    >
-      <span className="relative z-10"><span className="lg:max-xl:hidden">Get My </span><span className="hidden sm:inline lg:max-2xl:hidden">Written </span>Estimate</span>
-      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
-    </Link>
+    {onEstimateClick ? (
+      <button type="button" onClick={onEstimateClick} data-gtm-cta="lp_estimate" data-gtm-location="header" className={ESTIMATE_CLASS}>
+        <EstimateLabel />
+      </button>
+    ) : (
+      <Link to="/request-inspection" data-gtm-cta="request_inspection" data-gtm-location="header" className={ESTIMATE_CLASS}>
+        <EstimateLabel />
+      </Link>
+    )}
     <button
       ref={menuButtonRef}
       onClick={() => setMobileOpen(!mobileOpen)}
-      className="lg:hidden flex items-center justify-center min-w-[44px] h-10 px-2 rounded-sm text-heritage-charcoal hover:bg-black/5 active:scale-90 transition-all duration-300"
+      className="xl:hidden flex items-center justify-center min-w-[44px] h-10 px-2 rounded-sm text-heritage-charcoal hover:bg-black/5 active:scale-90 transition-all duration-300"
       aria-label={mobileOpen ? "Close menu" : "Open menu"}
       aria-expanded={mobileOpen}
     >

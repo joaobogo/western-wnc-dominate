@@ -10,6 +10,7 @@ export type ProjectTypeValue =
   | "roof-replacement"
   | "metal-roofing"
   | "storm-damage"
+  | "gutters"
   | "addition"
   | "outdoor-living"
   | "commercial"
@@ -23,7 +24,9 @@ const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
   [/^\/storm/, "storm-damage"],
   [/^\/roofing\/commercial/, "commercial"],
   [/^\/commercial/, "commercial"],
-  [/^\/roofing\/(brava-synthetic|specialty|residential|skylights|gutters)/, "roof-replacement"],
+  // Gutter leads go to the JobTread Gutters division, not Roofing.
+  [/^\/roofing\/gutters/, "gutters"],
+  [/^\/roofing\/(brava-synthetic|specialty|residential|skylights)/, "roof-replacement"],
   [/^\/roofing/, "roof-repair"],
   [/^\/construction\/(additions|renovations|siding)/, "addition"],
   [/^\/construction\/outdoor-living/, "outdoor-living"],
@@ -31,7 +34,7 @@ const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
 ];
 
 const VALID = new Set<string>([
-  "roof-repair", "roof-replacement", "metal-roofing", "storm-damage",
+  "roof-repair", "roof-replacement", "metal-roofing", "storm-damage", "gutters",
   "addition", "outdoor-living", "commercial", "not-sure",
 ]);
 
@@ -60,6 +63,7 @@ export const PROJECT_TYPE_LABELS: Record<ProjectTypeValue, string> = {
   "roof-replacement": "Roof Replacement",
   "metal-roofing": "Metal Roofing",
   "storm-damage": "Storm or Insurance",
+  gutters: "Seamless Gutters",
   addition: "Addition or Remodel",
   "outdoor-living": "Deck, Porch, Outdoor",
   commercial: "Commercial Property",

@@ -3,7 +3,7 @@
 Owner: John Kasprzak (FGV) · Site: highlandernc.com · Lovable project "Mountain Peak Performance" (`9823f5a2-c45d-4654-9600-3f72579ed692`)
 Written against the real repo at commit `953d4d3` (Lovable HEAD, Nov 17, 2026). Live build at the time: `604b578` on `main`.
 
-> **Phase 0 correction (Nov 17, 2026), see `docs/release-log.md`:** there are **no `edit/**` branches** on GitHub. Lovable (`gpt-engineer-app[bot]`) commits **directly to `main`**, so the edit-branch sync workflow has nothing to do. Until John confirms otherwise, the release flow in B2.2–B2.4 is replaced by: work on a `claude/*` branch → open a PR to `main` → John approves → merge (merge commit, no force-push). Lovable must be idle while that happens (A3 golden rule). Every other rule in B2 still applies.
+> **Phase 0 correction (Nov 17, 2026), see `docs/release-log.md`:** there are **no `edit/**` branches** on GitHub. Lovable (`gpt-engineer-app[bot]`) commits **directly to `main`**, so the edit-branch sync workflow has nothing to do. **Confirmed by John (Nov 17):** the release flow in B2.2–B2.4 is replaced by: work on a `claude/*` branch → open a PR to `main` → John approves → merge (merge commit, no force-push). Lovable must be idle while that happens (A3 golden rule). Every other rule in B2 still applies.
 
 ---
 

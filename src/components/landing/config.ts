@@ -39,6 +39,7 @@ import proofBravaSet from "@/assets/gallery/brava-glenville-chimney-valley.webp?
 import proofDeck from "@/assets/gallery/deck-sylva-doors-wide.webp";
 import proofDeckSet from "@/assets/gallery/deck-sylva-doors-wide.webp?w=480;800;1200&format=webp&as=srcset";
 import { PHONE_DISPLAY } from "@/data/business";
+import { CTA, CTA_SECONDARY } from "@/lib/cta-config";
 
 /**
  * Copy and proof for the three paid landing pages. All public text comes from
@@ -104,6 +105,21 @@ export interface IntentCard {
 
 export interface LandingConfig {
   key: LandingKey;
+  /**
+   * Build Brief v2 (C4): each landing page switches to the v2 layout on its
+   * own, one release at a time, so a change in calls can be traced to one page.
+   */
+  layoutVersion?: 1 | 2;
+  /** v2: what drives the price, with links to the cost guides. Never a number. */
+  cost?: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    drivers: string[];
+    links: Array<{ label: string; href: string }>;
+  };
+  /** v2: the division hub linked from the "Explore Highlander" strip. */
+  divisionHub?: { label: string; href: string };
   path: string;
   formId: string;
   /** lead.service_category / lead_type default. */
@@ -323,6 +339,11 @@ const roofingFaqs = [
 
 const constructionFaqs = [
   {
+    question: "What happens after I call or send my details?",
+    answer:
+      "The Franklin office answers Monday to Friday, 8 AM to 5 PM Eastern. We ask what you want the space to do, the rough size and your timing, then set up an on-site visit or a design meeting. You get the scope and price in writing before anything is built.",
+  },
+  {
     question: "Do I need finished plans before I contact you?",
     answer:
       "No. Start with the idea and what you want to change. Highlander can discuss design guidance and planning needs. Detailed planning services and their scope are agreed separately.",
@@ -520,6 +541,7 @@ export const ROOFING_CONFIG: LandingConfig = {
 
 export const CONSTRUCTION_CONFIG: LandingConfig = {
   key: "construction",
+  layoutVersion: 2,
   path: "/lp/construction",
   formId: "landing-construction",
   defaultCategory: "construction",
@@ -537,9 +559,9 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
   support:
     "More room. Better flow. More time outside. Call for a 10-minute talk with our construction team about your idea. No plans needed.",
   serviceLine: "Home additions. Renovations. Decks and porches.",
-  primaryCta: "Send My Details",
-  mobileCta: "Details",
-  heroCallLabel: `Talk Through My Project · ${PHONE_DISPLAY}`,
+  primaryCta: CTA.mobileSticky,
+  mobileCta: CTA.mobileSticky,
+  heroCallLabel: `${CTA_SECONDARY.callLabel} · Talk through your project`,
   callReason:
     "A 10-minute call: tell us what you want the space to do, and we'll tell you the next step, an on-site visit or a design meeting.",
   headerTagline: "Talk to our construction team",
@@ -561,7 +583,13 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     "Thank you. Highlander will call you to talk through your project and the next step. Want to talk now? Call {phone}.",
   // The proof cards already show the Franklin room, so the hero uses the separate
   // gable-window photo and the closing band a different mountain-home image.
-  hero: { backdrop: additionWindowsBackdrop, position: "50% 45%" },
+  hero: {
+    backdrop: {
+      ...additionWindowsBackdrop,
+      alt: "Inside a living room addition built by Highlander in Franklin, North Carolina: a stained wood vaulted ceiling over a wall of tall gable windows",
+    },
+    position: "50% 45%",
+  },
   finalBackdrop: { image: mountainBuildBackdrop, position: "50% 50%" },
 
   proofHeading: "See the work. Understand the standard.",
@@ -638,7 +666,7 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
   ],
   steps: [
-    { title: "Call and tell us the idea.", text: "A 10-minute conversation. You don't need finished drawings to get started." },
+    { title: "Call and tell us the idea.", text: "A 10-minute conversation with the Franklin office. You don't need finished drawings to make the call." },
     {
       title: "Review the home and the scope.",
       text: "Discuss the existing space, site conditions and planning needs with Highlander.",
@@ -649,17 +677,36 @@ export const CONSTRUCTION_CONFIG: LandingConfig = {
     },
   ],
 
-  // No construction reviews on file yet (ask Luke for 2–3); the three
-  // documented project stories above carry the proof until then.
+  // No construction reviews on file yet. John (17 Nov 2026): show company-wide
+  // reviews, each labelled with the service it was for, newest first.
   reviews: {
-    eyebrow: "Company reputation",
-    heading: "What customers say about Highlander.",
-    ids: [],
+    eyebrow: "Company-wide reviews",
+    heading: "What customers say about working with Highlander.",
+    ids: ["david-christopher-2026", "candy-wood-2025", "zary-m-2024"],
+    note: "Reviews from Highlander customers across the company. Each one shows the work it was for.",
   },
 
   faqEyebrow: "Construction questions",
   faqHeading: "Useful answers before you reach out.",
   faqs: constructionFaqs,
+  cost: {
+    eyebrow: "What drives the price",
+    heading: "Every project is priced from its own written scope.",
+    intro:
+      "There is no honest per-square-foot number for a mountain addition or renovation. These are the things that move the price, and you see each one in writing before any work starts.",
+    drivers: [
+      "The size and layout of the new or changed space",
+      "Foundation, framing and how the roof ties into the existing home",
+      "Site access, slope and utilities on a mountain lot",
+      "Windows, finishes and materials you choose",
+      "Design, engineering and permit requirements for the scope",
+    ],
+    links: [
+      { label: "Home additions in Western NC", href: "/construction/additions" },
+      { label: "Financing options", href: "/financing" },
+    ],
+  },
+  divisionHub: { label: "Construction services", href: "/construction" },
 
   finalHeading: "Keep the home you love. Make it work better.",
   finalBody:

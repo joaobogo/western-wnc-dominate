@@ -1,15 +1,15 @@
 import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
-import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
+import { PHONE_PLAIN, PHONE_TEL } from "@/data/business";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
+import Header from "@/components/Header";
+import OfficeStatusChip from "@/components/landing/OfficeStatusChip";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackPhoneClick } from "@/lib/gtm";
-// The hero sits on a dark scrim, so the cream mark is the legible one.
-import logo from "@/assets/logo-cream.svg";
 
 interface PaidAdsLandingProps {
   title: string;
@@ -64,6 +64,12 @@ const PaidAdsLanding = ({
   const headline = variant?.headline ?? defaultHeadline;
   const subheadline = variant?.subheadline ?? defaultSubheadline;
   const ctaLabel = variant?.ctaLabel ?? defaultCtaLabel;
+  const scrollToForm = () => {
+    const el = document.getElementById("fast-lead-form");
+    if (!el) return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  };
 
   return (
     <>
@@ -71,7 +77,9 @@ const PaidAdsLanding = ({
         title={title}
         description={description}
         path={path}
-        noindex={true}
+        // Paid pages stay out of the index but pass link equity, matching the
+        // prerendered shell from emit-landing-shells (noindex,follow).
+        noindex="follow"
         jsonLd={[
           serviceSchema({ name: serviceName, description, url: path }),
           breadcrumbSchema([
@@ -81,6 +89,11 @@ const PaidAdsLanding = ({
           faqSchema(faqs),
         ]}
       />
+
+      {/* Full site header and menu (John, 17 Nov 2026). The estimate buttons
+          scroll to this page's form so ad leads keep their form and tracking. */}
+      <Header onEstimateClick={scrollToForm} />
+      <div aria-hidden="true" className="h-[var(--header-h)] md:h-[var(--header-h-md)]" />
 
       <main id="main-content" className="bg-background">
         <section className="relative overflow-hidden section-dark">
@@ -96,19 +109,7 @@ const PaidAdsLanding = ({
           </div>
 
           <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
-            <div className="flex items-center justify-between border-b border-dark-section-border pb-3">
-              <Link
-                to="/"
-                className="inline-flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))]"
-                aria-label="Highlander Building Services, Inc. — home"
-              >
-                <img src={logo} alt="Highlander Building Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
-              </Link>
-              <a href={PHONE_TEL} className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-primary-foreground transition-colors">
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                {PHONE_DISPLAY}
-              </a>
-            </div>
+            <OfficeStatusChip tone="dark" />
 
             <div className="grid gap-6 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-x-10 lg:gap-y-8 lg:pt-12">
               <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-1">
