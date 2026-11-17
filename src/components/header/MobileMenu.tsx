@@ -17,9 +17,11 @@ interface Props {
   serviceAreasBtnRef: React.RefObject<HTMLButtonElement>;
   /** The hamburger button — focus returns here when the drawer closes. */
   triggerRef?: React.RefObject<HTMLButtonElement>;
+  /** Paid landing pages: scroll to the on-page form instead of navigating. */
+  onEstimateClick?: () => void;
 }
 
-export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onViewAllClick, serviceAreasBtnRef, triggerRef }: Props) => {
+export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onViewAllClick, serviceAreasBtnRef, triggerRef, onEstimateClick }: Props) => {
   const panelRef = useRef<HTMLDivElement>(null);
 
   // Everything behind the dialog is made inert so keyboard users cannot tab
@@ -126,6 +128,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
           {/* Persistent call button pinned to the top of the panel */}
           <a
             href={PHONE_TEL}
+            data-cta="mobile-menu"
             className="flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold font-body text-body-xs uppercase tracking-[0.08em] min-h-[52px] px-4 active:scale-[0.99] transition-transform"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
@@ -274,16 +277,32 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
 
           {/* Primary CTA pinned to the bottom of the panel */}
           <div className="border-t border-black/10 bg-white px-4 py-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
-            <Link
-              to="/request-inspection"
-              data-gtm-cta="request_inspection"
-              data-gtm-location="mobile_menu"
-              onClick={onClose}
-              className="btn btn-primary btn-md"
-            >
-              <span className="relative z-10">Get My Written Estimate</span>
-              <ArrowRight className="w-4 h-4 relative z-10" aria-hidden="true" />
-            </Link>
+            {onEstimateClick ? (
+              <button
+                type="button"
+                data-gtm-cta="lp_estimate"
+                data-gtm-location="mobile_menu"
+                onClick={() => {
+                  onClose();
+                  window.setTimeout(onEstimateClick, 320);
+                }}
+                className="btn btn-primary btn-md w-full"
+              >
+                <span className="relative z-10">Get My Written Estimate</span>
+                <ArrowRight className="w-4 h-4 relative z-10" aria-hidden="true" />
+              </button>
+            ) : (
+              <Link
+                to="/request-inspection"
+                data-gtm-cta="request_inspection"
+                data-gtm-location="mobile_menu"
+                onClick={onClose}
+                className="btn btn-primary btn-md"
+              >
+                <span className="relative z-10">Get My Written Estimate</span>
+                <ArrowRight className="w-4 h-4 relative z-10" aria-hidden="true" />
+              </Link>
+            )}
           </div>
         </motion.div>
       </>

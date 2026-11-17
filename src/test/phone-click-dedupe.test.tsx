@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import LandingTemplate from "@/components/landing/LandingTemplate";
 import { CONSTRUCTION_CONFIG, ROOFING_CONFIG } from "@/components/landing/config";
 import { installGtmGlobalListeners } from "@/lib/gtm";
@@ -14,7 +15,11 @@ describe("one call tap = one phone_click (no double conversions in GA4 / Meta / 
     vi.useFakeTimers();
     installGtmGlobalListeners();
     dl.dataLayer = [];
-    render(<LandingTemplate config={config} />);
+    render(
+      <MemoryRouter initialEntries={[config.path]}>
+        <LandingTemplate config={config} />
+      </MemoryRouter>,
+    );
     const a = document.querySelector('a[data-cta="hero"]')!;
     a.addEventListener("click", (e) => e.preventDefault());
     fireEvent.click(a);

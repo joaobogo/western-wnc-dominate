@@ -22,6 +22,7 @@ import {
   Droplets,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
+import Header from "@/components/Header";
 import {
   BUSINESS,
   FRANKLIN,
@@ -34,7 +35,6 @@ import {
   REVIEW_RATING,
   directionsUrl,
 } from "@/data/business";
-import { useOfficeOpen } from "@/lib/office-hours";
 import { REVIEWS, reviewDateLabel } from "@/data/reviews";
 import logo from "@/assets/logo.svg";
 import teamPhoto from "@/assets/team-photo.webp";
@@ -203,9 +203,7 @@ function LandingBody() {
   const [finalVisible, setFinalVisible] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const heroSection = useRef<HTMLElement>(null);
-  const progressBar = useRef<HTMLDivElement>(null);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [expandedReview, setExpandedReview] = useState<string | null>(null);
@@ -237,9 +235,6 @@ function LandingBody() {
     const update = () => {
       frame = 0;
       const y = window.scrollY;
-      setScrolled((current) => (current === y > 8 ? current : y > 8));
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (progressBar.current && max > 0) progressBar.current.style.transform = `scaleX(${Math.min(1, y / max)})`;
       if (!reduce && heroSection.current) {
         const h = heroSection.current.offsetHeight || 1;
         heroSection.current.style.setProperty("--lp-py", String(Math.max(0, Math.min(1, y / h))));
@@ -300,7 +295,6 @@ function LandingBody() {
   const barVisible = railVisible && !keyboardOpen;
   const emphasis = config.intents.find((card) => card.id === intent)?.emphasis;
   const hero = config.hero;
-  const officeOpen = useOfficeOpen();
   const v2 = config.layoutVersion === 2;
   /** Call-button label: v2 always uses LP_CTA.call ("Call Direct: " + number, from cta-config). */
   const callLabel = v2 ? LP_CTA.call : `Call ${PHONE_DISPLAY}`;
@@ -356,68 +350,11 @@ function LandingBody() {
   return (
     <div ref={rootRef} className="min-h-screen bg-background text-foreground">
       <style>{LANDING_CSS}</style>
-      <a
-        href="#main-content"
-        className="sr-only z-[100] rounded-sm bg-background px-4 py-3 text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:outline-none focus:ring-2 focus:ring-primary"
-      >
-        Skip to main content
-      </a>
-
-      {/* Header: non-linked logo + call. No navigation by design. */}
-      <header
-        className={`sticky top-0 z-40 border-b bg-background/95 backdrop-blur transition-shadow duration-200 ${
-          scrolled ? "border-border shadow-[0_10px_30px_-20px_hsl(var(--foreground)/0.4)]" : "border-transparent"
-        }`}
-      >
-        <div aria-hidden="true" className="lp-tartan h-1.5 w-full bg-primary" />
-        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-transparent">
-          <div ref={progressBar} className="h-full origin-left bg-[hsl(var(--highland-gold))]" style={{ transform: "scaleX(0)", transition: "transform .12s linear" }} />
-        </div>
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-2.5 sm:px-5 md:px-8 md:py-3">
-          {v2 ? (
-            <a
-              href="/"
-              target="_blank"
-              rel="noopener"
-              data-gtm-cta="lp_explore"
-              data-gtm-location="header_logo"
-              aria-label="Highlander Building Services home page (opens in a new tab)"
-              className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            >
-              <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto sm:h-12" loading="eager" decoding="sync" />
-            </a>
-          ) : (
-            <img src={logo} alt="Highlander Building Services" width={176} height={54} className="h-9 w-auto shrink-0 sm:h-12" loading="eager" decoding="sync" />
-          )}
-          <div className="flex items-center gap-4">
-            <span className="hidden flex-col items-end text-sm leading-tight lg:flex">
-              <span className="font-semibold text-foreground">{config.headerTagline}</span>
-              {v2 && <OfficeStatusChip className="mt-1" />}
-              {!v2 && officeOpen && (
-                <span data-client-only className="mt-0.5 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[hsl(142_70%_40%)] shadow-[0_0_0_3px_hsl(142_70%_40%/0.2)]" />
-                  Office open now · call
-                </span>
-              )}
-            </span>
-            {v2 ? (
-              <a
-                href={PHONE_TEL}
-                data-cta="header"
-                onClick={() => trackCall(`lp_${config.key}_header`)}
-                className="btn btn-primary min-h-12 shrink-0 px-3.5 text-[0.85rem] font-bold sm:px-5 sm:text-sm"
-                aria-label={`${LP_CTA.call}: call Highlander`}
-              >
-                <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-                <span className="sm:hidden">{PHONE_DISPLAY}</span>
-                <span className="hidden sm:inline">{LP_CTA.call}</span>
-              </a>
-            ) : (
-              callLink(`Call ${PHONE_DISPLAY}`, "header", "btn btn-primary min-h-11 shrink-0 px-3.5 text-[0.8rem] font-bold sm:min-h-12 sm:px-5 sm:text-sm")
-            )}
-          </div>
-        </div>
-      </header>
+      {/* Full site header and menu on every landing page (John, 17 Nov 2026).
+          The estimate buttons scroll to this page's form, so ad leads keep
+          their landing-page form, attribution and tracking. */}
+      <Header onEstimateClick={scrollToNearestForm} />
+      <div aria-hidden="true" className="h-[var(--header-h)] md:h-[var(--header-h-md)]" />
 
       <main id="main-content">
         {/* ───────────── Hero: full-bleed photography ───────────── */}
@@ -447,7 +384,7 @@ function LandingBody() {
           <div className="relative mx-auto grid max-w-[1200px] gap-9 px-4 py-10 sm:px-5 md:px-8 md:py-16 lg:min-h-[720px] lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14 lg:py-20">
             <div className="order-1">
               <Reveal>
-                {v2 && <OfficeStatusChip tone="dark" className="mb-4 lg:hidden" />}
+                {v2 && <OfficeStatusChip tone="dark" className="mb-4" />}
                 {eyebrow(config.eyebrow, true)}
                 <h1 className="max-w-3xl font-heading text-[2.25rem] font-bold leading-[1.04] tracking-tight text-white [text-shadow:0_2px_24px_hsl(160_45%_4%/0.5)] sm:text-5xl lg:text-[3.6rem]">
                   {highlightH1(config.h1)}

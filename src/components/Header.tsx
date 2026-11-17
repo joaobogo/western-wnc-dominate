@@ -8,7 +8,16 @@ import { HeaderActions } from "./header/HeaderActions";
 import { MobileMenu } from "./header/MobileMenu";
 import SkipToContent from "./a11y/SkipToContent";
 
-const Header = () => {
+interface HeaderProps {
+  /**
+   * Paid landing pages: the "Get My Written Estimate" buttons scroll to the
+   * page's own form instead of leaving for /request-inspection, so ad leads
+   * keep their landing-page form_name, attribution and tracking.
+   */
+  onEstimateClick?: () => void;
+}
+
+const Header = ({ onEstimateClick }: HeaderProps = {}) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -134,7 +143,7 @@ const Header = () => {
           serviceAreasPanelRef={serviceAreasPanelRef}
         />
 
-        <HeaderActions mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} menuButtonRef={mobileMenuBtnRef} />
+        <HeaderActions mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} menuButtonRef={mobileMenuBtnRef} onEstimateClick={onEstimateClick} />
       </div>
 
       <MobileMenu
@@ -146,6 +155,7 @@ const Header = () => {
         onViewAllClick={handleViewAllClick}
         serviceAreasBtnRef={mobileServiceAreasBtnRef}
         triggerRef={mobileMenuBtnRef}
+        onEstimateClick={onEstimateClick}
       />
     </motion.header>
   );

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { fireEvent, render, screen, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import LandingTemplate from "@/components/landing/LandingTemplate";
 import { COMBINED_CONFIG, CONSTRUCTION_CONFIG, ROOFING_CONFIG } from "@/components/landing/config";
 import { FRANKLIN, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, directionsUrl } from "@/data/business";
@@ -12,7 +13,12 @@ import { FRANKLIN, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, directionsUrl } from 
 const pages = [ROOFING_CONFIG, CONSTRUCTION_CONFIG, COMBINED_CONFIG];
 
 describe.each(pages)("landing page $path", (config) => {
-  const mount = () => render(<LandingTemplate config={config} />);
+  const mount = () =>
+    render(
+      <MemoryRouter initialEntries={[config.path]}>
+        <LandingTemplate config={config} />
+      </MemoryRouter>,
+    );
 
   it("renders the approved H1 and CTA wording", () => {
     mount();
@@ -31,29 +37,32 @@ describe.each(pages)("landing page $path", (config) => {
     expect(within(hero).getByLabelText("Email")).toBeInTheDocument();
   });
 
-  it("offers only the page form or the phone: no navigation or cross-links", () => {
+  it("is part of the website: full site menu, but ad leads stay on this page's form", () => {
+    // John, 17 Nov 2026: every landing page shows the full site header and menu.
+    // (Replaces the Oct rule "no navigation"; chatbot/exit-intent stay suppressed
+    // by PaidLandingGate, and the page stays noindex,follow.)
     mount();
-    const hrefs = Array.from(document.querySelectorAll("a[href]")).map((a) => a.getAttribute("href"));
-    // Directions to the Franklin showroom open Google Maps; they never lead to another page of the site.
+    const header = document.querySelector("header")!;
+    expect(header.querySelector("nav")).not.toBeNull();
+    expect(header.querySelector('a[href="/"]')).not.toBeNull();
+    // Estimate buttons scroll to this page's form: nothing on a landing page may
+    // send the ad visitor to another estimate form (it would change form_name).
+    expect(document.querySelector('a[href^="/request-inspection"]')).toBeNull();
+    expect(header.querySelectorAll('button[data-gtm-cta="lp_estimate"]').length).toBeGreaterThan(0);
+    // The hero still holds only the call, the form and the privacy link.
     const allowed = new Set([PHONE_TEL, "#main-content", "/privacy-policy", "/accessibility", directionsUrl(FRANKLIN)]);
-    expect(document.querySelector("nav")).toBeNull();
-    if (config.layoutVersion !== 2) {
-      expect(hrefs.filter((h) => !allowed.has(h!))).toEqual([]);
-      return;
-    }
-    // v2 (Build Brief C4.11): a fixed set of site links, every one in a new tab and
-    // tracked as lp_explore, so the ad visitor never leaves the landing page.
-    const siteLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("a[href]")).filter((a) => !allowed.has(a.getAttribute("href")!));
-    const v2Allowed = new Set(["/", "/recent-projects", "/reviews", "/financing", "/certifications", ...(config.cost?.links ?? []).map((l) => l.href), config.divisionHub?.href]);
-    expect(siteLinks.length).toBeGreaterThan(0);
-    for (const a of siteLinks) {
-      expect(v2Allowed.has(a.getAttribute("href")!)).toBe(true);
-      expect(a.target).toBe("_blank");
-      expect(a.dataset.gtmCta).toBe("lp_explore");
-    }
-    // None of them sit above the fold: the hero holds only the call and the form.
     const hero = document.querySelector("main section")!;
     expect(Array.from(hero.querySelectorAll("a[href]")).filter((a) => !allowed.has(a.getAttribute("href")!))).toEqual([]);
+    if (config.layoutVersion === 2) {
+      // v2 in-page links into the site open in a new tab and are tracked as lp_explore.
+      const main = document.querySelector("main")!;
+      const siteLinks = Array.from(main.querySelectorAll<HTMLAnchorElement>("a[href]")).filter((a) => !allowed.has(a.getAttribute("href")!));
+      expect(siteLinks.length).toBeGreaterThan(0);
+      for (const a of siteLinks) {
+        expect(a.target).toBe("_blank");
+        expect(a.dataset.gtmCta).toBe("lp_explore");
+      }
+    }
   });
 
   it("shows validation and does not claim success without a stored lead", () => {
