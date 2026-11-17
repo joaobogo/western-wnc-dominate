@@ -15,6 +15,7 @@ import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import FormSavedNote from "@/components/forms/FormSavedNote";
 import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import CTAProofPoints from "@/components/trust/CTAProofPoints";
+import Honeypot, { useHoneypot } from "@/components/forms/Honeypot";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const FORM_ID = "inspection-form-main";
@@ -57,6 +58,7 @@ function categoryFor(projectType: string | null | undefined) {
     value.includes("roof") ||
     value.includes("storm") ||
     value.includes("metal") ||
+    value.includes("gutter") ||
     value.includes("commercial")
   ) {
     return "roofing" as const;
@@ -104,6 +106,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
   const { submitting, submit } = useLeadSubmit();
+  const honeypot = useHoneypot();
 
   const autosave = useFormAutosave("inspection-form", formData, {
     enabled: !submitted,
@@ -143,6 +146,12 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
 
     setSubmitError(null);
     setIssues([]);
+
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) {
+      setSubmitted(true);
+      return;
+    }
 
     const result = await submit({
       source: "inspection_form",
@@ -296,8 +305,9 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
                 data-gtm-form-name="estimate_request"
                 data-gtm-form-id={FORM_ID}
                 data-gtm-service-category={category}
-                className="border border-white/15 bg-white/[0.04] p-4 md:p-8"
+                className="relative border border-white/15 bg-white/[0.04] p-4 md:p-8"
               >
+                <Honeypot id={`${FORM_ID}-website`} value={honeypot.value} onChange={honeypot.setValue} />
                 <div className="mb-6">
                   <p className="text-caption font-body font-bold uppercase tracking-[0.16em] text-[hsl(var(--gold-ink))]">
                     Three fields · one step
