@@ -1,6 +1,7 @@
 # November 17 uploaded blogs
-- [ ] Publish four new articles with exact filename slugs and matching covers; preserve all supplied links and verify the two duplicate uploads without republishing them.
-- [ ] Regenerate sitemap/search files, run article checks, publish and verify live pages.
+- [x] Add four new articles with exact filename slugs and matching covers; preserve all supplied link destinations and redirect both identical -2 uploads directly to their existing articles.
+- [x] Regenerate sitemap/search files (213 pages), pass all 565 tests, verify all six covers/canonical pages and uploaded links in the preview, and request publication.
+- [ ] Confirm live pages after hosting completes publication. Fourteen external source destinations block automated access or timed out; their original URLs are preserved.
 
 # November 16 duplicate blog uploads
 - [x] Compare both uploads with existing articles and covers; restore the missing sunroom link and preserve the unsuffixed canonical URLs with direct duplicate-filename redirects.
