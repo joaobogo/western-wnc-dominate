@@ -8,7 +8,7 @@ const RoofRepairAds = () => (
     path="/lp/roof-repair"
     serviceName="Roof Repair"
     heroImage={heroImg}
-    heroAlt="Roof repair work on a residential home in Western North Carolina"
+    heroAlt="Aerial view of a gray dimensional shingle roof with a chimney among the trees, from Highlander's roofing gallery"
     eyebrow="Roof repair · Western North Carolina"
     headline="Roof Repair in Western NC: Clear Leak Assessment & Next Steps"
     subheadline="We diagnose the source, explain whether repair makes sense, and give you a clear next step based on the roof condition."
@@ -48,7 +48,7 @@ const RoofRepairAds = () => (
       "Licensed North Carolina General Contractor",
       "Written scopes so you know exactly what is included",
     ]}
-    reviewId="jh-dillsboro-2019"
+    reviewId="willard-armes-2024"
     faqs={[
       {
         question: "Can you fix a leak without replacing the whole roof?",

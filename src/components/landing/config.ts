@@ -202,6 +202,13 @@ export interface LandingConfig {
   serviceLocalLine: string;
 }
 
+/** Documented Highlander roofing jobs, reused as the project strip on the ad pages. */
+export const ROOF_PROJECT_PHOTOS = (): Array<{ town: string; title: string; image: LandingImage }> => [
+  { town: "Highlands, NC", title: "Standing seam metal roof", image: roofHighlands },
+  { town: "Waynesville, NC", title: "Dimensional shingle replacement", image: roofWaynesville },
+  { town: "Lake Glenville, NC", title: "Brava synthetic shake re-roof", image: roofGlenville },
+];
+
 export const SERVICE_LOCAL_LINE =
   "Serving Franklin, Highlands, Cashiers, Sylva and surrounding Western North Carolina communities.";
 
