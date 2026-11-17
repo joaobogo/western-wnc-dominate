@@ -69,3 +69,18 @@ describe("lazyPreload", () => {
     expect(snapshotMatchesLocation()).toBe(true);
   });
 });
+
+describe("office status chip is hydration-safe", () => {
+  it("renders nothing time-dependent on the first render and tags the live chip client-only", async () => {
+    const { renderToString } = await import("react-dom/server");
+    const { default: OfficeStatusChip } = await import("@/components/landing/OfficeStatusChip");
+    // First (server-equivalent) render: an empty slot, no status text.
+    const html = renderToString(<OfficeStatusChip />);
+    expect(html).toContain("data-office-status-slot");
+    expect(html).not.toMatch(/Office open|Office opens|data-client-only/);
+    // After mount the chip appears, tagged so the prerender snapshot drops it.
+    const { container } = render(<OfficeStatusChip />);
+    await waitFor(() => expect(container.querySelector("[data-office-status]")).not.toBeNull());
+    expect(container.querySelector("[data-office-status]")!.hasAttribute("data-client-only")).toBe(true);
+  });
+});

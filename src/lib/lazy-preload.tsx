@@ -121,5 +121,9 @@ export function snapshotMatchesLocation(): boolean {
   const tag = typeof document !== "undefined" ? document.getElementById(RECORD_ID) : null;
   const recorded = tag?.getAttribute("data-path");
   if (!recorded) return false;
+  // "/?landing=roofing" (old ad links) is served the homepage snapshot but
+  // renders a landing page. Hydrating it threw #418/#423 and re-rendered the
+  // page on load, so render it fresh instead.
+  if (normalizePath(window.location.pathname) === "/" && new URLSearchParams(window.location.search).has("landing")) return false;
   return recorded === "/__404" || recorded === normalizePath(window.location.pathname);
 }
