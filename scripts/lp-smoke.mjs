@@ -53,6 +53,23 @@ const extra = existsSync("docs/live-ad-urls.txt")
   : [];
 
 const targets = [...new Set([...LP_PATHS, ...extra])];
+
+/**
+ * Dead controls: links, buttons or forms inside #root that React does not own.
+ * They come from the prerender snapshot when a widget that only appears after
+ * mount is not tagged data-client-only: a lifeless copy stays in the HTML next
+ * to the live one (Nov 2026: the floating contact button ignored clicks).
+ */
+const deadControls = async (page) => {
+  await page.mouse.wheel(0, 1600);
+  await page.waitForTimeout(900);
+  return page.evaluate(() => {
+    const owned = (el) => Object.keys(el).some((k) => k.startsWith("__react"));
+    return [...document.querySelectorAll("#root a, #root button, #root form")]
+      .filter((el) => !owned(el))
+      .map((el) => `${el.tagName.toLowerCase()} "${(el.textContent || "").trim().slice(0, 24)}"`);
+  });
+};
 const launch = process.env.PRERENDER_CHROMIUM ? { executablePath: process.env.PRERENDER_CHROMIUM } : {};
 const browser = await chromium.launch(launch);
 const failures = [];
@@ -99,6 +116,8 @@ for (const path of targets) {
 
     await page.waitForTimeout(600);
     if (pageErrors.length) problems.push(`page errors: ${[...new Set(pageErrors)].join(", ")}`);
+    const dead = await deadControls(page);
+    if (dead.length) problems.push(`dead controls: ${dead.slice(0, 3).join(", ")}`);
     const text = await page.evaluate(() => document.body.innerText);
     if (text.includes("{{NEEDS_HIGHLANDER")) problems.push("placeholder text on the page");
   } catch (error) {
@@ -110,7 +129,7 @@ for (const path of targets) {
 }
 
 // New site pages added with the landing-page work: must load without errors.
-const SITE_PAGES = ["/services", "/construction/handyman"];
+const SITE_PAGES = ["/services", "/construction/handyman", "/service-areas", "/roofing/gutters", "/construction/additions"];
 for (const path of SITE_PAGES) {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   const errors = [];
@@ -119,6 +138,8 @@ for (const path of SITE_PAGES) {
   try {
     status = (await page.goto(base + path, { waitUntil: "networkidle", timeout: 45000 }))?.status() ?? 0;
     await page.waitForTimeout(600);
+    const dead = await deadControls(page);
+    if (dead.length) errors.push(`dead controls: ${dead.slice(0, 3).join(", ")}`);
   } catch (error) {
     errors.push(String(error).slice(0, 120));
   }
