@@ -26,6 +26,21 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Self-hosted fonts. These two files never change under the same name.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Site photos and the tartan texture. File names here are descriptive, not
+# hashed, so the cache is 30 days, not a year: a photo replaced under the same
+# name reaches returning visitors within a month. Give a replacement photo a
+# new file name to show it at once.
+/media/*
+  Cache-Control: public, max-age=2592000
+/tartan.webp
+  Cache-Control: public, max-age=2592000
+/tartan.png
+  Cache-Control: public, max-age=2592000
+
 # Deployment fingerprint — must never be cached, the drift monitor reads it live
 /build-info.json
   Cache-Control: no-store, max-age=0

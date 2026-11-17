@@ -76,6 +76,10 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // lucide-react repeats its licence comment once per icon (138 copies, 24 KB
+  // in the icon chunk). Drop inline legal comments from the bundles; the
+  // notices ship once in public/THIRD-PARTY-LICENSES.txt.
+  esbuild: { legalComments: "none" },
   build: {
     // P5.1 — the HTML entry (src/main.tsx, ~8 KB) must be the only script the
     // browser fetches before first paint. Vite otherwise emits a
@@ -113,7 +117,18 @@ export default defineConfig(({ mode }) => ({
           // one shared chunk, so every page downloaded it up front.
           if (/\/src\/data\/(service-town-content|service-town-generated|service-town-slugs|town-faqs-generated)\.ts$/.test(p)) return "service-town-data";
           if (/\/src\/data\/blogs(-[a-z-]+)?\.ts$/.test(p)) return "blogs-data";
-          if (/\/src\/data\/(towns|counties|business)\.ts$/.test(p)) return "towns-data";
+          // The town/county/blog link helpers read the full blog library, so they
+          // live with it. Left on their own they formed a ~12 KB chunk, and the
+          // small-chunk merge folded helpers shared by the service pages into
+          // it: /construction and 20 service pages then downloaded the whole
+          // blog library (1.2 MB) without using it.
+          if (/\/src\/(lib\/local-link-graph|data\/content-support)\.ts$/.test(p)) return "blogs-data";
+          // A manual chunk also takes in every dependency that has no chunk of
+          // its own. These three are dependencies of the link helpers above and
+          // are used on every page, so they need their own home or every page
+          // would import the blog library to reach them.
+          if (/\/src\/(data\/projects|data\/blog-index\.generated|lib\/internal-links)\.ts$/.test(p)) return "site-data";
+          if (/\/src\/data\/(towns|counties|business|town-neighbors)\.ts$/.test(p)) return "towns-data";
           return undefined;
         },
       },

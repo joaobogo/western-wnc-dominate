@@ -22,6 +22,10 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
 import heroImg from "@/assets/work/addition-cullowhee-roofline.webp";
+// The original is a 402 KB file. Serve AVIF/WebP at the width the screen needs.
+import heroImgAvif from "@/assets/work/addition-cullowhee-roofline.webp?w=640;1024;1125&format=avif&as=srcset";
+import heroImgWebp from "@/assets/work/addition-cullowhee-roofline.webp?w=640;1024;1125&format=webp&as=srcset";
+import HeroImage from "@/components/media/HeroImage";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
 import proj2 from "@/assets/gallery/metal-010.webp";
 import proj3 from "@/assets/gallery/cedar-001.webp";
@@ -121,7 +125,7 @@ const ExteriorImprovements = () => {
             {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Lap siding, trim and a tied-in roofline on a Highlander addition in Cullowhee, North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Lap siding, trim and a tied-in roofline on a Highlander addition in Cullowhee, North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-transparent" />
           </div>

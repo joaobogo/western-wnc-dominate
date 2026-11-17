@@ -41,6 +41,15 @@ interface WorkGalleryProps {
   columns?: 2 | 3;
 }
 
+/**
+ * Source width a three-across tile needs on desktop. The tile is never wider
+ * than 352 px (three columns in the 1152 px page container). In the grid it is
+ * a 4:3 crop, 264 px tall: a photo wider than 4:3 is scaled to that height, so
+ * it needs proportionally more pixels to stay sharp.
+ */
+const tileSourceWidth = (ph: WorkPhoto, grid: boolean) =>
+  grid ? Math.round(Math.max(352, (264 * ph.width) / ph.height)) : 352;
+
 const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [], layout = "masonry", ids, columns = 3 }: WorkGalleryProps) => {
   const [filter, setFilter] = useState<Filter>(initialFilter);
   const [open, setOpen] = useState<number | null>(null);
@@ -96,7 +105,11 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
               <img
                 src={smallSrc(ph.src)}
                 srcSet={ph.srcSet}
-                sizes={columns === 2 ? "(max-width: 640px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
+                sizes={
+                  columns === 2
+                    ? "(max-width: 640px) 100vw, 50vw"
+                    : `(max-width: 640px) 100vw, (max-width: 1024px) 50vw, ${tileSourceWidth(ph, grid)}px`
+                }
                 width={ph.width}
                 height={ph.height}
                 alt={ph.alt}

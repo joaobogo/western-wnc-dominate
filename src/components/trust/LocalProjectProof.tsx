@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import { projectDetails, type ProjectDetail } from "@/data/projects";
-import { getNeighborTowns } from "@/lib/local-link-graph";
+import { getNeighborTowns } from "@/data/town-neighbors";
 
 interface Picked {
   project: ProjectDetail;

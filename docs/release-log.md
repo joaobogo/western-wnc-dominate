@@ -125,3 +125,36 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - `smoke:lp` now fails on any dead (non-React) link, button or form and covers three more pages.
 - **Rollback point:** `main` at `f065876` (Release 3).
 - **Gates:** tests 615/615 · build 346/346 · `seo:check` PASS · `smoke:lp` 15/15 · no dead controls on 16 pages at 390 and 1440 px · real-browser check of click, hover, tap and both links.
+
+## Speed pass — Nov 17, 2026 (PR pending approval)
+- **Asked by:** John (SEO audit: desktop PageSpeed 65–79 on 10 pages, target 80).
+- **Finding:** with Google Tag Manager, Facebook and TikTok unreachable (as in this build container), the same 10 pages scored 87–99 on desktop Lighthouse with 0–30 ms of blocking time. The audit's 500–900 ms of blocking time is those three scripts. Their loading was **not** changed (standing rule: nothing may weaken the pixels). The decision is in `docs/open-items.md`.
+- **Changed (first-party only; no wording, layout, form or tracking change):**
+  - **Hidden-on-arrival content.** 274 of 345 pages were delivered with some content at `opacity: 0` until JavaScript ran, 17 of them in the first screen: the whole `/about` hero, and hero labels on the homepage, `/roofing`, `/construction` and `/exterior-improvements`. The page-generation step (`scripts/prerender.mjs`) now writes entrance animations in their finished state. Result: 0 pages.
+  - **Blog library.** The full blog library (1.2 MB of article text) no longer downloads on `/construction` and 20 service pages, or in the background on every other page. It loads only on blog, town, county and project pages, which use it.
+  - **Icon file** 57 KB → 35 KB (138 repeated licence comments removed; notices kept in `/THIRD-PARTY-LICENSES.txt`).
+  - **Images:**
+    - `/certifications`: the two badge images, 85 KB → 16 KB;
+    - `/construction`: a 104 KB photo shown as a thumbnail is now a 400 px file, and work-gallery photos load at the size of their tile (also on the homepage and Recent Projects);
+    - `/exterior-improvements`: the hero was one 402 KB file, now AVIF/WebP at the width the screen needs;
+    - `/financing`: the hero now has phone-sized versions (28 KB and 51 KB instead of 136 KB on small screens).
+  - **Cache rules:** fonts one year; `/media/*` photos and the tartan texture 30 days (they had none). A photo replaced under the same file name reaches returning visitors within 30 days. Give a replacement photo a new file name to show it at once.
+- **Measured here, before → after** (desktop Lighthouse, trackers unreachable, one run each; ±3 points is noise):
+
+  | Page | Score | Largest paint |
+  |---|---|---|
+  | `/about` | 90 → 98 | 2.1 s → 1.1 s |
+  | `/construction` | 87 → 91 | 2.1 s → 1.7 s |
+  | `/careers` | 93 → 99 | 1.6 s → 0.9 s |
+  | `/contact` | 93 → 96 | 1.6 s → 1.3 s |
+  | `/exterior-improvements` | 88 → 90 | 2.0 s → 1.9 s |
+  | `/roofing` | 90 → 91 | 1.8 s → 1.8 s |
+  | `/certifications` | 99 → 99 | 1.0 s → 1.0 s |
+  | `/community` | 92 → 92 | 1.7 s → 1.6 s |
+  | `/financing` | 92 → 92 | 1.7 s → 1.7 s |
+  | `/` | not measurable in this container (no largest-paint reading, same as the Phase 0 baseline) | |
+
+  `/construction` page weight: 3.9 MB → 2.5 MB (uncompressed).
+- **Guards added:** `smoke:lp` now fails if a tested page requests the blog library or delivers a hidden heading, and covers six more pages (21 in total); `src/test/bundle-boundaries.test.ts`.
+- **Gates:** tests 622/622 · build 346/346 · `seo:check` PASS · `smoke:lp` 21/21 · all 345 pages loaded in a browser: 343 clean, 2 with a hydration error that is also present on `main` (see `docs/open-items.md`).
+- **Rollback point:** `main` at `c1cf42e` (hotfix 2).
