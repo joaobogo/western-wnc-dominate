@@ -34,6 +34,7 @@ const constructionLinks = [
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
   { label: "Design & Planning", href: "/construction/design" },
   { label: "Siding & Exterior", href: "/construction/siding" },
+  { label: "Handyman & Small Repairs", href: "/construction/handyman" },
   { label: "Exterior Improvements", href: "/exterior-improvements" },
   { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_footer&type=construction" },
   { label: "Build Your Project", href: "/construction-builder" },

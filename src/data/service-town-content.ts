@@ -677,7 +677,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     localContext:
       "The repairs we see most often on the plateau: exterior wood rot at trim and beam ends, water intrusion at deck ledgers, chimney chase leaks, failed skylight seals, and interior damage remediation after a roof event. On second homes we frequently pair the repair with a broader condition report so nothing else is missed.",
     whoItsFor:
-      "Full-time residents catching small problems early, second-home owners who need coordinated repairs handled between visits, and buyers with a home-inspection punch list that needs a real contractor — not a handyman.",
+      "Full-time residents catching small problems early, second-home owners who need coordinated repairs handled between visits, and buyers with a home-inspection punch list they want handled by one licensed contractor.",
     proofNote:
       "One point of contact, one written scope, one crew. You don't have to chase five trades to get one repair done right.",
     metaTitle: "Home Repair Services in Highlands, NC | Highlander",
@@ -730,7 +730,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Coordinated home repairs in Franklin, NC. Exterior, envelope, and interior damage remediation from a licensed general contractor.",
     faqs: [
-      { q: "Do you do handyman-scale work?", a: "Highlander focuses on roofing and construction scopes that fit its licensed-contractor services rather than general handyman tasks. The team can tell you whether a specific repair is a fit." },
+      { q: "Do you do handyman-scale work?", a: "Yes. Highlander handles small repairs around the house, from deck boards and gutters to trim, flashing and home-inspection punch lists. See the handyman and small repairs page, or call with your list." },
       { q: "Can you handle interior work after a roof leak?", a: "Yes. Drying, drywall, paint, and finish repairs are inside our scope so you're not managing multiple companies." },
       { q: "How quickly can I get a repair estimate in Franklin?", a: "Scheduling depends on the roof condition, weather, access, and current workload. Call during staffed business hours or send a request so the team can confirm the next available step." },
     ],

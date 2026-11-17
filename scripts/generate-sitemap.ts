@@ -49,6 +49,7 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/roofing/metal/cost" },
   { path: "/financing" },
   { path: "/services" }, // services hub (Nov 2026); /services/* 301s here
+  { path: "/construction/handyman" }, // handyman & small repairs (Nov 2026)
   { path: "/contact" },
   { path: "/request-inspection" },
 

@@ -63,6 +63,7 @@ export const constructionItems: DropdownItem[] = [
   { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
   { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
+  { label: "Handyman & Small Repairs", href: "/construction/handyman", desc: "Decks, gutters, trim & punch lists" },
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
   { label: "Design & Planning", href: "/construction/design", desc: "In-house design for additions & remodels" },
@@ -112,6 +113,7 @@ export const constructionColumns: DropdownColumn[] = [
     items: [
       { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
       { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
+      { label: "Handyman & Small Repairs", href: "/construction/handyman", desc: "Decks, gutters, trim & punch lists" },
       { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
     ],
   },
@@ -164,6 +166,7 @@ export const divisions: DivisionDropdown[] = [
     // Names only: a scannable list, not a wall of text. Details live on /services.
     items: [
       ...TOP_SERVICES.map((s) => ({ label: s.name, href: s.href, desc: "" })),
+      { label: "Handyman & Small Repairs", href: "/construction/handyman", desc: "" },
       ...FAST_ESTIMATE_PAGES.map((p) => ({ label: p.label, href: p.href, desc: "" })),
     ],
     columns: [
@@ -173,7 +176,10 @@ export const divisions: DivisionDropdown[] = [
       },
       {
         title: "Top construction services",
-        items: TOP_SERVICES.filter((s) => s.division === "construction").map((s) => ({ label: s.name, href: s.href, desc: "" })),
+        items: [
+          ...TOP_SERVICES.filter((s) => s.division === "construction").map((s) => ({ label: s.name, href: s.href, desc: "" })),
+          { label: "Handyman & Small Repairs", href: "/construction/handyman", desc: "" },
+        ],
       },
       {
         title: "Fast written estimate",
