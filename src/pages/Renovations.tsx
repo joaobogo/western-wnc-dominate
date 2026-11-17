@@ -15,6 +15,7 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
@@ -449,6 +450,8 @@ const Renovations = () => {
 
         <CostContextBlock serviceLabel="renovation" variant="construction" />
         <CommonConcerns concerns={constructionConcerns} />
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."

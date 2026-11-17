@@ -12,6 +12,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import GoldLine from "@/components/motion/GoldLine";
@@ -579,6 +580,8 @@ const ConstructionDesign = () => {
             { label: "Get My Questions Answered", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <ServiceInternalLinks title="Design & Planning" slug="design" intent="consultation" />
       </main>
 

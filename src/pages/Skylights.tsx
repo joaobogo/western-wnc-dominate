@@ -7,6 +7,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -279,6 +280,8 @@ const Skylights = () => {
         }
         cta={<>
         <CommonConcerns />
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <CTABlock />
         </>}
         afterCta={<VeluxWidget />}

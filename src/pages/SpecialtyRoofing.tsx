@@ -13,6 +13,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import heroImg from "@/assets/gallery/cedar-005.webp";
@@ -412,6 +413,8 @@ const SpecialtyRoofing = () => {
         cta={
           <>
           <CommonConcerns />
+          {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+          <InspectionForm />
                   <section className="section-dark tartan-dark relative overflow-hidden">
                     <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
                     <div className="section-padding">

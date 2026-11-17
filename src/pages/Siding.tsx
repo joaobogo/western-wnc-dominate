@@ -11,6 +11,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import InspectionForm from "@/components/InspectionForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns, { constructionConcerns } from "@/components/conversion/CommonConcerns";
@@ -188,6 +189,8 @@ const Siding = () => {
             </div>
           </div>
         </section>
+        {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
+        <InspectionForm />
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" intent="consultation" />
       </main>
       <CostContextBlock serviceLabel="siding" variant="exterior" />
