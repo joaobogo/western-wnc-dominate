@@ -71,7 +71,9 @@ const PaidAdsLanding = ({
         title={title}
         description={description}
         path={path}
-        noindex={true}
+        // Paid pages stay out of the index but pass link equity, matching the
+        // prerendered shell from emit-landing-shells (noindex,follow).
+        noindex="follow"
         jsonLd={[
           serviceSchema({ name: serviceName, description, url: path }),
           breadcrumbSchema([
