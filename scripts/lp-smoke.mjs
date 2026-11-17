@@ -60,6 +60,10 @@ const failures = [];
 for (const path of targets) {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   const problems = [];
+  // Hydration errors (React #418/#423/#425) make the page re-render itself on
+  // load; uncaught errors break it. Either fails the page.
+  const pageErrors = [];
+  page.on("pageerror", (e) => pageErrors.push((e.message.match(/Minified React error #\d+/) || [e.message.slice(0, 80)])[0]));
   try {
     const res = await page.goto(base + path, { waitUntil: "networkidle", timeout: 45000 });
     if (!res || res.status() !== 200) problems.push(`HTTP ${res?.status()}`);
@@ -93,6 +97,8 @@ for (const path of targets) {
       if (onScreen || tab !== "-1") problems.push("honeypot is visible or tabbable");
     }
 
+    await page.waitForTimeout(600);
+    if (pageErrors.length) problems.push(`page errors: ${[...new Set(pageErrors)].join(", ")}`);
     const text = await page.evaluate(() => document.body.innerText);
     if (text.includes("{{NEEDS_HIGHLANDER")) problems.push("placeholder text on the page");
   } catch (error) {
@@ -102,6 +108,27 @@ for (const path of targets) {
   console.log(`${problems.length ? "FAIL" : "PASS"}  ${path}${problems.length ? `  — ${problems.join("; ")}` : ""}`);
   if (problems.length) failures.push(path);
 }
+
+// New site pages added with the landing-page work: must load without errors.
+const SITE_PAGES = ["/services", "/construction/handyman"];
+for (const path of SITE_PAGES) {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  const errors = [];
+  page.on("pageerror", (e) => errors.push((e.message.match(/Minified React error #\d+/) || [e.message.slice(0, 80)])[0]));
+  let status = 0;
+  try {
+    status = (await page.goto(base + path, { waitUntil: "networkidle", timeout: 45000 }))?.status() ?? 0;
+    await page.waitForTimeout(600);
+  } catch (error) {
+    errors.push(String(error).slice(0, 120));
+  }
+  const h1 = await page.locator("h1").count().catch(() => 0);
+  const bad = status !== 200 || errors.length || h1 !== 1;
+  console.log(`${bad ? "FAIL" : "PASS"}  ${path}${bad ? `  — HTTP ${status}; h1=${h1}; ${[...new Set(errors)].join(", ")}` : ""}`);
+  if (bad) failures.push(path);
+  await page.close();
+}
+targets.push(...SITE_PAGES);
 
 await browser.close();
 console.log(`\nlp-smoke: ${targets.length - failures.length}/${targets.length} passed against ${base}`);

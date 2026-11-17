@@ -81,3 +81,13 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   | Blog link | visible in the header at 1280–2560 px and in the phone menu |
 
   Preview: https://deploy-preview-35--highlandernc.netlify.app
+
+## Hotfix — Nov 17, 2026 (PR #36)
+- **Reported by:** John ("the handyman page is broken").
+- **Cause:** the office-status chip changed its text after mount without the `data-client-only` tag. The prerender snapshot kept the live text, so React hit #425/#418/#423 and re-rendered the whole page on load. Affected the six `/lp/*` pages (since Release 1) and `/construction/handyman` (Release 2).
+- **Fix:**
+  - the chip now renders an empty, height-reserving slot first and adds the live chip client-only;
+  - the old `/?landing=` links (a pre-existing mismatch: homepage snapshot, landing page render) now render fresh and no longer hydrate the wrong HTML;
+  - `smoke:lp` now fails on any page error and also covers `/services` and `/construction/handyman`.
+- **Rollback point:** `main` at `23083b9` (Release 2).
+- **Gates:** tests 610/610 · build 346/346 · `seo:check` PASS · `smoke:lp` 12/12 (it failed 11/12 on the Release 2 build) · no hydration errors on 11 sampled site pages.
