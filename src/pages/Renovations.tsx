@@ -117,7 +117,7 @@ const Renovations = () => {
         hero={
           <>
             {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={900} decoding="async" src={heroImg} srcSet={heroImgSet} sizes="100vw" alt="Renovated mountain-home kitchen and living area with wood beams, a stone fireplace and mountain-view windows" className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />

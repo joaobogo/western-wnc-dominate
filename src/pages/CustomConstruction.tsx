@@ -112,7 +112,7 @@ const CustomConstruction = () => {
         hero={
           <>
             {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImg} alt="Cedar shake gable and tall windows on a Highlander addition in Franklin, North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
@@ -391,7 +391,7 @@ const CustomConstruction = () => {
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
                   <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
                     <p className="text-white/85 text-xs font-body">{img.location}</p>

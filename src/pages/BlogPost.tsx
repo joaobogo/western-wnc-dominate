@@ -388,7 +388,7 @@ const BlogPostPage = () => {
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className={`text-caption md:text-caption font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm ${getCategoryColor(post.category)}`}>
+                <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm bg-white/15 text-white ring-1 ring-white/25">
                   {post.category}
                 </span>
                 <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">

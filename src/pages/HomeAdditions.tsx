@@ -133,7 +133,7 @@ const HomeAdditions = () => {
         hero={
           <>
             {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <GalleryImage width={1500} height={1500} decoding="async" src={heroImg} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained tongue-and-groove vaulted ceiling and a wall of mountain-view windows" className="w-full h-full object-cover object-[50%_88%]" loading="eager" sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
@@ -231,7 +231,7 @@ const HomeAdditions = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="lg:col-span-4">
                 <div className="border border-[hsl(var(--highland-gold)/0.15)] rounded-sm p-6 bg-secondary/30">
-                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold)/0.6)] mb-4">Addition Types We Build</h3>
+                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-4">Addition Types We Build</h3>
                   {["Guest Suites & In-Law Apartments", "Expanded Living Areas", "Main-Level Master Suites", "Garage Additions", "Sunrooms & Four-Season Rooms", "Second-Story Additions"].map((item) => (
                     <div key={item} className="flex items-center gap-2.5 py-2 border-b border-border/50 last:border-0">
                       <div className="w-1 h-1 rounded-full bg-[hsl(var(--highland-gold)/0.4)]" />

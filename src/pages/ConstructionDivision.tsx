@@ -107,7 +107,7 @@ const ConstructionDivision = () => {
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }]} />
       <main id="main-content" className="md:pt-0">
         {/* ═══ HERO — Cinematic construction hero with gold accents ═══ */}
-        <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Covered patio and deck added by Highlander to a home in Cashiers, North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
@@ -265,7 +265,7 @@ const ConstructionDivision = () => {
                   <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-border">
                     <GalleryImage width={1500} height={844} decoding="async" src={additionFranklinRoom} alt="Living room addition by Highlander in Franklin, North Carolina, with a stained vaulted wood ceiling and mountain-view windows" className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 1024px) 100vw, 50vw" />
                   </div>
-                  <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-raised max-w-[240px]">
+                  <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="relative mt-4 md:mt-0 md:absolute md:-bottom-5 md:-left-6 bg-card border border-border rounded-none p-5 shadow-raised md:max-w-[240px]">
                     <span className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
                     <p className="text-muted-foreground text-sm font-body leading-snug">
                       Design-first coordination, layout verification, and unified accountability — under one team.

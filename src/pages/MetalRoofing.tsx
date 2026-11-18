@@ -87,7 +87,7 @@ const MetalRoofing = () => {
           />
         }
         hero={
-          <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+          <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
             <div className="absolute inset-0">
               <picture>
                 <source media="(max-width: 767px)" srcSet={metalMobileHero} />

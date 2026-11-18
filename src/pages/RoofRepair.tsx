@@ -142,7 +142,7 @@ const RoofRepair = () => {
           alternateSurfaces={false}
           hero={
             <>
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <HeroImage src={asphalt003} avifSrcSet={asphalt003Avif} webpSrcSet={asphalt003Webp} alt="Roof repair on a residential home in Western North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />

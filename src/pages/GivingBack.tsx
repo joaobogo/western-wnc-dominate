@@ -54,7 +54,7 @@ const GivingBack = () => {
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Community", url: "/community" }]} />
       <main id="main-content">
         {/* ── HERO ── */}
-        <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal">
+        <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async"
               src="/media/wnc-town-overlook.webp"

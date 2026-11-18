@@ -18,6 +18,8 @@ Facts and decisions Highlander or John still has to supply. **Nothing marked `{{
 | 11 | Rollback point: live `build-info.json` commit + deployId | John | A2 | — |
 
 ## Suggestions (found outside the current scope)
+- **About 100 colour classes do nothing.** Classes such as `bg-primary/6`, `bg-primary/8` and `bg-primary/12` use opacity steps Tailwind does not generate (it makes 5, 10, 15 …), so the faint tints they were meant to add are missing. No effect on readability. Cleaning them up would change the look slightly (tints would appear), so it needs a decision.
+- `/construction/renovations` hero shows "Avg. ROI: 60–80% at resale". Check it against `CLAIMS_AUDIT.md` (it reads as a promise).
 - **Page speed is capped by the tracking scripts (decision for John + Andrew).** Without Google Tag Manager, Facebook and TikTok the audited pages score 95–99 on desktop. With them, 65–79. Options, smallest first:
   1. Load the Facebook and TikTok pixels on the visitor's first scroll, click or key press, or after 5 seconds, whichever comes first (today: as soon as the page finishes loading). Google Tag Manager, GA4 and Google Ads stay immediate. Cost: a visitor who leaves within 5 seconds without touching the page is not counted by Meta or TikTok (still counted in GA4).
   2. Andrew trims the GTM container (it transfers about 512 KB and uses about 0.5 s of processing per page): remove unused tags, fire non-essential tags on "Window Loaded".

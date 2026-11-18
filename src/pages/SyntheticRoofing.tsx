@@ -68,7 +68,7 @@ const SyntheticRoofing = () => {
           <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Brava Synthetic Roofing", url: "/roofing/brava-synthetic" }]} />
         }
         hero={
-          <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+          <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
             <div className="absolute inset-0">
               <img width={1280} height={960} decoding="async" src={bravaHero} alt="Brava synthetic cedar shake in New Cedar with a stone chimney and brown metal valley, installed by Highlander near Lake Glenville, North Carolina" className="w-full h-full object-cover object-[50%_40%]" loading="eager" />
               <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.2)]" />

@@ -184,7 +184,7 @@ const StormDamage = () => {
           hero={
             <>
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Storm damage roof assessment in Western North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
@@ -400,7 +400,7 @@ const StormDamage = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/roofing/roof-repair" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary mt-5 hover:opacity-80 transition-opacity font-body">
+                    <Link to="/roofing/roof-repair" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] mt-5 hover:opacity-80 transition-opacity font-body">
                       Learn About Roof Repair <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </div>

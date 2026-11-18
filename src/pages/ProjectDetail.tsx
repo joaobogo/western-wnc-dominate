@@ -93,11 +93,11 @@ const ProjectDetailPage = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.55)] to-transparent" />
+            <div className="dark-surface absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
               <div className="container-tight">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
+                  <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--heritage-charcoal)/0.75)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
                   </span>
                   <span className="text-white/95 text-sm font-body flex items-center gap-1.5 font-medium">

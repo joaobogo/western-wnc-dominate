@@ -12,7 +12,7 @@ const FormConsent = ({ className = "" }: { className?: string }) => (
     about this project by phone or email. See our{" "}
     <Link
       to="/privacy-policy"
-      className="text-primary [.section-dark_&]:text-[hsl(var(--gold-ink))] [.dark-surface_&]:text-[hsl(var(--gold-ink))] underline hover:no-underline"
+      className="text-[hsl(var(--gold-ink))] underline hover:no-underline"
     >
       Privacy Policy
     </Link>

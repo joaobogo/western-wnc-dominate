@@ -124,7 +124,7 @@ const SpecialtyRoofing = () => {
         }
         alternateSurfaces={false}
         hero={
-                  <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
+                  <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden hero-legible">
                     <div className="absolute inset-0">
                       <img width={1600} height={1067} decoding="async" src={heroImg} alt="Cedar shake roof on a wooded mountain home, from Highlander's roofing gallery" className="w-full h-full object-cover" loading="eager" />
                       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
@@ -356,7 +356,7 @@ const SpecialtyRoofing = () => {
                           {galleryImages.map((img, i) => (
                             <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
                               <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                               <div className="absolute bottom-0 left-0 right-0 p-5">
                                 <p className="text-white text-xs font-body font-medium tracking-wide">{img.label}</p>
                               </div>

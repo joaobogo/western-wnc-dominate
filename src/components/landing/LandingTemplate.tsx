@@ -342,7 +342,7 @@ function LandingBody() {
   ];
 
   const eyebrow = (text: string, light = false) => (
-    <div className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${light ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`}>
+    <div className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${light ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`}>
       <Mountain aria-hidden="true" className="h-4 w-4 text-[hsl(var(--highland-gold))]" strokeWidth={2.2} />
       <span aria-hidden="true" className="h-px w-6 bg-current opacity-60" />
       {text}
@@ -912,7 +912,7 @@ function LandingBody() {
                   {config.primaryCta}
                 </button>
               </div>
-              <p className="mt-6 flex items-start gap-2 text-sm text-primary-foreground/80">
+              <p className="mt-6 flex items-start gap-2 text-sm text-primary-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
                 {config.serviceLocalLine}
               </p>

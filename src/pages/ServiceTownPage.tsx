@@ -153,7 +153,7 @@ const ServiceTownPage = ({
       />
       <main id="main-content">
         {/* Hero */}
-        <section className="dark-surface relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
+        <section className="dark-surface relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48 hero-panel-room hero-legible hero-legible-even">
           <div className="absolute inset-0">
             <img
               width={hero.width}

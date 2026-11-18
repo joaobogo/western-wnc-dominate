@@ -105,7 +105,7 @@ const ReviewsPage = () => {
                   <p className="text-[hsl(var(--dark-section-foreground))] text-base font-body italic leading-relaxed">
                     "{PULL_QUOTE.text}"
                   </p>
-                  <p className="text-sm text-[hsl(var(--highland-gold)/0.7)] font-body font-bold mt-2">
+                  <p className="text-sm text-[hsl(var(--highland-gold))] font-body font-bold mt-2">
                     — {PULL_QUOTE.name}, via {PULL_QUOTE.source}
                   </p>
                 </div>

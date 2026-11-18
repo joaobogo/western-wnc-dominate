@@ -93,7 +93,7 @@ const Skylights = () => {
           />
         }
         hero={
-          <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden hero-clears-header pb-24 md:pb-32">
+          <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden hero-clears-header pb-24 md:pb-32 hero-legible">
             <div className="absolute inset-0">
               <picture>
                 <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />

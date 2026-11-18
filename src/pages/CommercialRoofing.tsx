@@ -149,7 +149,7 @@ const CommercialRoofing = () => {
       <ServicePageTemplate
         alternateSurfaces={false}
         hero={
-                  <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+                  <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
                     <div className="absolute inset-0">
                       <img width={1600} height={1067} decoding="async" src={heroImg} alt="Commercial roofing project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
                       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />

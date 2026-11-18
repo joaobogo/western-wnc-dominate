@@ -159,3 +159,20 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Guards added:** `smoke:lp` now fails if a tested page requests the blog library or delivers a hidden heading, and covers six more pages (21 in total); `src/test/bundle-boundaries.test.ts`.
 - **Gates:** tests 622/622 · build 346/346 · `seo:check` PASS · `smoke:lp` 21/21 · all 345 pages loaded in a browser: 343 clean, 2 with a hydration error that is also present on `main` (see `docs/open-items.md`).
 - **Rollback point:** `main` at `c1cf42e` (hotfix 2).
+
+## Readability pass — Nov 18, 2026 (PR pending approval)
+- **Asked by:** John, with a phone screenshot of `/construction/renovations`: "Make sure we can always read the letters easily."
+- **How it was checked:** a new tool, `npm run contrast:check`, records every line of text on a page, hides the text, photographs what is behind it and compares the two. One page per template (73 pages), phone and desktop. Before: 147 distinct lines under the AA threshold. After: 13 (see Gates).
+- **Causes found, and the fix for each:**
+  - **Photo heroes.** Each hero darkened its photo by a different amount (0.2 to 0.88) and its gold text was the dark gold meant for white pages. Gold text failed on 45 hero templates, white text on 25. All 28 photo heroes now share one treatment (`.hero-legible`): one dark layer that keeps white text at 4.5:1 even over a white pixel, a lighter gold, and a soft text shadow. On phones the layer is even; on wide screens the right side of the photo stays clearer.
+  - **Gold text and outline buttons did not know what they sat on.** Three dark surface types were not recognised (photo heroes, the charcoal sections on Team, FAQ and the cost guides, the green gradient). Outline and text-only buttons were dark green everywhere unless each one was marked by hand: About's "Community Impact", the closing link on three landing pages and the Services closing button were dark green on dark. Both now take their colour from the surface. A white card inside a dark area goes back to dark ink (the form's "Privacy Policy" link was gold on white).
+  - **Dark gold on tinted backgrounds.** `--gold-ink` went from 30% to 24% lightness so small gold labels reach 4.5:1 on the cream section backgrounds too.
+  - **Single spots:** blog article category label (dark on dark), Storm Damage "Learn About Roof Repair" link (dark on dark), a paragraph on Design Services (dark on dark), gold labels on light cards on Construction and Home Additions, photo captions on gallery cards (five templates), the homepage division cards (white stats on a photo that faded to white), the breadcrumb's current page, newsletter small print.
+- **Phone layout problems found on the way, and fixed:**
+  - the sticky phone bar was see-through (its background class did not exist), so "Estimate" disappeared over dark photos;
+  - county pages: a stats panel covered both hero buttons ("Start a … Project" and the phone number); town-service pages: it covered the trust lines;
+  - Careers and Free Tools: the first line of the hero sat under the header;
+  - Construction: the "One Company Advantage" card covered two stat boxes.
+- **Gates:** tests 632/632 · build 346/346 · `seo:check` PASS · `smoke:lp` 21/21 · all 345 pages loaded in a browser (the same 2 older hydration errors as before, see `docs/open-items.md`) · contrast audit: 147 → 13 distinct lines under the AA threshold. Of the 13, five are homepage project cards photographed before their images paint (checked by eye: readable) and eight are small labels between 3.5:1 and 4.5:1.
+- **Not changed:** the large faint step numerals ("01"–"06"), which are decoration; dimmed disabled buttons; wording; forms; tracking; URLs.
+- **Rollback point:** `main` at `c0dc760` (speed pass, confirmed live by the site health check).

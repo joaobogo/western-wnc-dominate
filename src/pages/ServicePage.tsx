@@ -91,7 +91,7 @@ const ServicePage = () => {
         {/* Division accent line */}
         <div className={`h-[3px] w-full ${theme.heroAccentLine}`} />
 
-        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0 section-dark">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" src="/media/wnc-dimensional-shingle-roof.webp" alt={service.title} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />

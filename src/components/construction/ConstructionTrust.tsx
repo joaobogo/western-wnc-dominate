@@ -178,7 +178,7 @@ const ConstructionTrust = ({
           {pillars.map((pillar, i) => (
             <motion.div key={pillar.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
               {showObjections && pillar.overcomes && (
-                <p className="text-[hsl(var(--highland-gold)/0.85)] text-caption italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <p className="text-[hsl(var(--gold-ink))] text-caption italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
               )}
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
                 <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
@@ -233,7 +233,7 @@ export const ConstructionObjectionBuster = ({
           >
             <div className="grid md:grid-cols-5 gap-5 md:gap-8 items-start">
               <div className="md:col-span-2">
-                <p className="text-[hsl(var(--highland-gold)/0.9)] text-body-xs italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <p className="text-[hsl(var(--gold-ink))] text-body-xs italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors flex-shrink-0">
                     <pillar.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />

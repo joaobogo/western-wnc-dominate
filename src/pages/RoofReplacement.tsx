@@ -190,7 +190,7 @@ const RoofReplacement = () => {
           alternateSurfaces={false}
           hero={
             <>
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={replacementMobileHero} />
@@ -499,7 +499,7 @@ const RoofReplacement = () => {
                 <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
                   {item.href && <Link to={item.href} className="absolute inset-0 z-10" aria-label={`See the project: ${item.title}`} />}
                   <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.3)] to-transparent" />
                   <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">{item.category}</div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3 className="font-heading font-semibold text-white text-sm">{item.title}</h3>

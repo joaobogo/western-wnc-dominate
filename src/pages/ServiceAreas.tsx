@@ -49,7 +49,7 @@ const ServiceAreas = () => {
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }]} />
       <main id="main-content">
         {/* ═══ HERO: one photo, one headline, call first ═══ */}
-        <section className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))]">
+        <section className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))] hero-legible">
           <div className="absolute inset-0 -z-10">
             <img
               src={SERVICE_AREAS_HERO}

@@ -44,7 +44,7 @@ const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
               <Fragment key={`${c.url}-${i}`}>
                 <BreadcrumbItem>
                   {isLast ? (
-                    <BreadcrumbPage className="truncate max-w-[60vw] sm:max-w-none text-muted-foreground/70">
+                    <BreadcrumbPage className="truncate max-w-[60vw] sm:max-w-none text-muted-foreground">
                       {c.name}
                     </BreadcrumbPage>
                   ) : (
