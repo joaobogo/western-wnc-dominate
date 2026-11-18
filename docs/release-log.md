@@ -203,7 +203,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · all 346 pages loaded in a browser (the same 2 older hydration errors, see `docs/open-items.md`) · no hidden content in delivered HTML · homepage width equals the screen at 375 and 1,425 px · two untouched visits to `/request-inspection` show no "saved your answers" note.
 - **Decisions waiting:** `docs/open-items.md`, "From the Nov 18 conversion audit".
 
-## Local SEO, pages 21–50 — Nov 18, 2026 (PR pending approval)
+## Local SEO, top 20 and pages 21–50 — Nov 18, 2026 (PR #43)
+- **Approved by:** John ("approved", Nov 18). Merged as `e1776a3` with Lovable idle (last Lovable activity 11:20 UTC).
 - **Asked by:** John ("Highlander local SEO analysis and top 50 pages"). John is doing the top 20 pages himself; this covers 21–50 where real material exists.
 - **Rollback point:** `main` at `0558765` (conversion audit fixes, confirmed live by the site health check at 12:22 UTC).
 - **Changed:**
@@ -228,3 +229,20 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - **Sylva:** `/service-areas/sylva-nc` is the main Sylva page. `/locations/sylva-nc` is retitled "Sylva Showroom & Office: Address, Hours, Directions" (no longer chasing "roofing Sylva") and links to "Roofers in Sylva, NC".
 - **Checked, no change needed:** `/roofing/skylights` (#10) already links its towns; there is no documented VELUX job to show. `/service-areas/lake-glenville-nc` (#13) already shows the Lake Glenville Brava job. PR 42's title changes were not touched.
 - **URLs:** none added, changed or removed. Two pages joined the sitemap.
+
+## Project pages: hero and layout — Nov 18, 2026 (PR pending approval)
+- **Asked by:** John ("when I click on a project, the hero and those pages are a little weird. Fix the hero in all of the pages and make sure those pages are better, well put together").
+- **Rollback point:** `main` at `e1776a3` (local SEO top 20, confirmed live by the site health check at 15:52 UTC).
+- **Found:**
+  - an empty band of about 170 px between the breadcrumbs and the photo: a site-wide header-spacing rule padded the hero a second time;
+  - the photo was a darkened, cropped full-width strip (the Highlands metal roof showed as a dark patch);
+  - the same facts appeared three times (hero, an "at a glance" table, the sidebar);
+  - two "local page" boxes, three similar call-to-action bands, and the photos sat near the bottom, after the blog links.
+- **Changed (all six `/projects/*` pages):**
+  - new hero: the whole photo in a frame beside the title, a one-line highlight, four fact tiles (scope, duration, elevation, county) and the estimate and phone buttons. Photo, title and buttons now fit in the first screen on desktop;
+  - page order: outcome → before/after → project photos → the write-up (summary, challenge, work performed, materials, steps) with a sticky details panel → one local next-step box → related jobs → related articles → closing call to action;
+  - removed the duplicate table, the second local box and the extra call-to-action band; tidied heading sizes on cards;
+  - every fact still comes from `src/data/projects.ts`. No copy was added beyond section headings.
+- `/recent-projects` hero: same framed-photo layout (the photo was washed out behind a white haze, with header space doubled) and a one-sentence intro.
+- The town link on project pages reads "Roofing & construction in {town}, NC" (it said "Roofing" on construction jobs too).
+- **Gates:** tests 663/663 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · the 7 changed pages: no page errors, no sideways scroll · contrast audit, phone and desktop: 0 lines under the AA threshold · lint clean on changed files.

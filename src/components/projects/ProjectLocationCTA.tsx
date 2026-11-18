@@ -93,7 +93,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
               to={townPath}
               className="btn btn-ghost btn-sm btn-on-dark"
             >
-              Roofing in {town}, NC <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Roofing & construction in {town}, NC <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           )}
         </div>
