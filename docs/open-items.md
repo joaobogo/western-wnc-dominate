@@ -18,6 +18,17 @@ Facts and decisions Highlander or John still has to supply. **Nothing marked `{{
 | 11 | Rollback point: live `build-info.json` commit + deployId | John | A2 | — |
 
 ## Suggestions (found outside the current scope)
+- **Page speed is capped by the tracking scripts (decision for John + Andrew).** Without Google Tag Manager, Facebook and TikTok the audited pages score 95–99 on desktop. With them, 65–79. Options, smallest first:
+  1. Load the Facebook and TikTok pixels on the visitor's first scroll, click or key press, or after 5 seconds, whichever comes first (today: as soon as the page finishes loading). Google Tag Manager, GA4 and Google Ads stay immediate. Cost: a visitor who leaves within 5 seconds without touching the page is not counted by Meta or TikTok (still counted in GA4).
+  2. Andrew trims the GTM container (it transfers about 512 KB and uses about 0.5 s of processing per page): remove unused tags, fire non-essential tags on "Window Loaded".
+  3. Leave as is and accept scores in the 70s. Rankings use real-visitor data (Core Web Vitals), not this lab score.
+- **Related-article lists ignore the newer blog posts.** `scripts/generate-blog-summaries.mjs` scans only `src/data/blogs.ts`. Posts in the nine `blogs-*.ts` files (36 of 128) never appear in "related articles" on service and landing pages. Fix: scan all blog files. It changes which articles those blocks show, so it needs its own approval.
+- Town pages download the sign-in/database library (215 KB) through a shared chunk. Not in this audit; worth a separate look.
+- **Two pages re-render themselves on load** (hydration error, also on `main` before the speed pass):
+  - `/locations`: cause not traced yet (most likely the showroom map, which appears after load);
+  - `/blog/pre-fall-gutter-maintenance-checklist-mountain-homeowners`: the article markup puts a paragraph inside a paragraph.
+  Both still display correctly. They load slower than they should.
+- The homepage gives no "largest paint" reading in headless Lighthouse (score shows as 0 locally). PageSpeed Insights does score it (78), so this is a measuring gap here, not a visitor problem.
 - **Possible double phone_click on service pages (for Andrew).** The site-wide sticky mobile bar's call button calls `trackEvent("phone_click")`, which sends `gtag("event","phone_click")` directly. The global `tel:` listener also pushes `phone_click` to the dataLayer. If GA4 receives both gtag and GTM hits, each sticky-bar tap counts twice. Check in GA4 DebugView before changing (the rule is not to weaken pixels).
 - **AI-generated photos are live as if they were real jobs.** Replace them with real photos:
   - `/media/d35d81a4-construction-project-highlands.webp` (workers in vests at a framed house). It is the hero on `/construction/renovations` and the closing backdrop on `/lp/construction`.

@@ -45,7 +45,8 @@ import heroImgWebp from "@/assets/work/patio-cashiers-wide.webp?w=640;1024;1500&
 import HeroImage from "@/components/media/HeroImage";
 import additionFranklinRoom from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 import WorkGallerySection from "@/components/gallery/WorkGallerySection";
-import planningFocusImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
+// Shown as a small inset (about 200 px wide): a 400 px file, not the 1500 px original.
+import planningFocusImg from "@/assets/gallery/addition-franklin-vaulted-room.webp?w=400&format=webp";
 const siteCoordinationImg = "/media/9860ca9e-outdoor-living-cashiers.webp";
 
 import RelatedLinks from "@/components/RelatedLinks";

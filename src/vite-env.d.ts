@@ -10,6 +10,11 @@ declare module "*?format=webp" {
   const src: string;
   export default src;
 }
+// Resized single file: `import x from "./a.png?w=280&format=webp"`
+declare module "*&format=webp" {
+  const src: string;
+  export default src;
+}
 
 // Responsive srcset transforms: `import x from "./a.webp?w=640;1024&format=avif&as=srcset"`
 declare module "*&as=srcset" {

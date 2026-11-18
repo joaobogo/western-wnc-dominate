@@ -329,7 +329,66 @@ async function renderRoute(context, route, staticHead) {
         }
       }
     });
-    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    // Entrance animations caught before they finished. The snapshot is taken as
+    // soon as the page is ready, so a framer-motion element that fades in on
+    // mount (after a delay) or on scroll (not yet in view) was written out at
+    // its starting state: `opacity: 0`. A visitor then saw blank space where
+    // the content is until JavaScript ran: the whole /about hero, and the hero
+    // labels on the homepage, /roofing and /construction (Nov 2026 speed audit:
+    // /about's largest paint waited 2 s on it). The rule below (opacity 0 +
+    // translate) only covered slide-up reveals.
+    //
+    // Read each hidden element's own motion props from React and write the
+    // state the animation ends in. Only a real entrance is touched: it starts
+    // at opacity 0 and its `animate` / `whileInView` target is visible.
+    // Anything hidden by state (closed accordion, inactive tab, toggled icon)
+    // has a hidden target and is left alone. Settling and reading the HTML
+    // happen in one call, so no animation frame can undo it in between.
+    const html = await page.evaluate(() => {
+      const root = document.getElementById("root");
+      const fiberOf = (el) => {
+        const key = Object.keys(el).find((k) => k.startsWith("__reactFiber$"));
+        return key ? el[key] : null;
+      };
+      // The motion component is the closest non-DOM ancestor of the element.
+      const motionProps = (el) => {
+        let fiber = fiberOf(el)?.return;
+        for (let i = 0; fiber && i < 8 && typeof fiber.type !== "string"; i += 1, fiber = fiber.return) {
+          const props = fiber.memoizedProps;
+          if (props && typeof props === "object" && ("initial" in props || "animate" in props || "whileInView" in props)) return props;
+        }
+        return null;
+      };
+      const asState = (value, variants) => {
+        const v = typeof value === "string" ? variants?.[value] : value;
+        return v && typeof v === "object" && !Array.isArray(v) ? v : null;
+      };
+      const last = (v) => (Array.isArray(v) ? v[v.length - 1] : v);
+      const identity = { x: 0, y: 0, scale: 1, scaleX: 1, scaleY: 1, rotate: 0 };
+      const isIdentity = (key, v) => v === undefined || parseFloat(v) === identity[key];
+      for (const el of root ? root.querySelectorAll("[style*='opacity']") : []) {
+        const shown = parseFloat(el.style.opacity);
+        if (!(shown < 1)) continue;
+        const props = motionProps(el);
+        if (!props) continue;
+        const from = asState(props.initial, props.variants);
+        const to = asState(props.animate, props.variants) ?? asState(props.whileInView, props.variants);
+        if (!from || !to || last(from.opacity) !== 0) continue;
+        const target = last(to.opacity);
+        if (typeof target !== "number" || target <= shown) continue;
+        el.style.opacity = String(target);
+        if (el.style.transform && Object.keys(identity).every((k) => isIdentity(k, last(to[k])))) {
+          el.style.transform = "none";
+        }
+        // Other animated CSS properties (letter-spacing, filter…) with a plain end value.
+        for (const [key, value] of Object.entries(to)) {
+          const end = last(value);
+          if (key in identity || key === "opacity" || key === "transition" || key === "transitionEnd") continue;
+          if (typeof end === "string" && key in el.style && el.style[key]) el.style[key] = end;
+        }
+      }
+      return document.documentElement.outerHTML;
+    });
 
     // Post-check: a non-home snapshot that still carries the shell's title was
     // captured before SEOHead ran. Never ship it — mark and let main() fail.

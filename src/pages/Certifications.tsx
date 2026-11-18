@@ -4,9 +4,11 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
-import badgeVelux from "@/assets/logo-velux.png";
+// Sized for display (badges render at most 140 px wide): WebP at 2x, not the
+// 1181 px PNG original.
+import badgeVelux from "@/assets/logo-velux.png?w=280&format=webp";
 // Same official artwork the shared Premier badge uses (the .asset.json URL only resolves inside Lovable).
-import certainteedPremier from "@/assets/certainteed-shinglemaster-premier-transparent.png";
+import certainteedPremier from "@/assets/certainteed-shinglemaster-premier-transparent.png?w=256&format=webp";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

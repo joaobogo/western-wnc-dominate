@@ -8,6 +8,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import { mediaSrcSet, HERO_SIZES } from "@/lib/media-srcset";
 
 const benefits = [
   { icon: MessageSquare, title: "Ask Us About Financing", description: "We can walk you through the financing options available for your project — including who to apply with and what to expect." },
@@ -42,7 +43,9 @@ const Financing = () => {
         <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src="/media/wnc-metal-standing-seam.webp" 
+              src="/media/wnc-metal-standing-seam.webp"
+              srcSet={mediaSrcSet("/media/wnc-metal-standing-seam.webp")}
+              sizes={HERO_SIZES}
               alt="Beautiful mountain home with premium roofing"
               className="w-full h-full object-cover"
             />

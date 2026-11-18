@@ -70,6 +70,28 @@ const deadControls = async (page) => {
       .map((el) => `${el.tagName.toLowerCase()} "${(el.textContent || "").trim().slice(0, 24)}"`);
   });
 };
+/**
+ * The full blog library (about 1.2 MB of article text) belongs on /blog pages
+ * and the town pages that list articles. Nov 2026: the build's small-chunk
+ * merge attached it to /construction and 20 service pages, which downloaded it
+ * without using it. No page tested here may request it.
+ */
+const watchBlogLibrary = (page) => {
+  const hits = [];
+  page.on("request", (r) => {
+    if (/\/assets\/blogs-data-/.test(r.url())) hits.push(r.url());
+  });
+  return hits;
+};
+/**
+ * The page as delivered (before any script runs) must not hide its headings.
+ * Nov 2026: entrance animations were frozen at `opacity: 0` in the prerendered
+ * HTML, so /about arrived with a blank hero until JavaScript ran.
+ */
+const hiddenHeading = async (page, url) => {
+  const raw = await (await page.request.get(url)).text();
+  return /<h[12]\b[^>]*style="[^"]*opacity:\s*0(?![.\d])/.test(raw);
+};
 const launch = process.env.PRERENDER_CHROMIUM ? { executablePath: process.env.PRERENDER_CHROMIUM } : {};
 const browser = await chromium.launch(launch);
 const failures = [];
@@ -79,6 +101,7 @@ for (const path of targets) {
   const problems = [];
   // Hydration errors (React #418/#423/#425) make the page re-render itself on
   // load; uncaught errors break it. Either fails the page.
+  const blogLibrary = watchBlogLibrary(page);
   const pageErrors = [];
   page.on("pageerror", (e) => pageErrors.push((e.message.match(/Minified React error #\d+/) || [e.message.slice(0, 80)])[0]));
   try {
@@ -118,6 +141,8 @@ for (const path of targets) {
     if (pageErrors.length) problems.push(`page errors: ${[...new Set(pageErrors)].join(", ")}`);
     const dead = await deadControls(page);
     if (dead.length) problems.push(`dead controls: ${dead.slice(0, 3).join(", ")}`);
+    if (blogLibrary.length) problems.push("downloads the full blog library");
+    if (await hiddenHeading(page, base + path)) problems.push("a heading is hidden in the delivered HTML");
     const text = await page.evaluate(() => document.body.innerText);
     if (text.includes("{{NEEDS_HIGHLANDER")) problems.push("placeholder text on the page");
   } catch (error) {
@@ -129,10 +154,11 @@ for (const path of targets) {
 }
 
 // New site pages added with the landing-page work: must load without errors.
-const SITE_PAGES = ["/services", "/construction/handyman", "/service-areas", "/roofing/gutters", "/construction/additions"];
+const SITE_PAGES = ["/services", "/construction/handyman", "/service-areas", "/roofing/gutters", "/construction/additions", "/construction", "/roofing", "/certifications", "/about", "/exterior-improvements", "/financing"];
 for (const path of SITE_PAGES) {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   const errors = [];
+  const blogLibrary = watchBlogLibrary(page);
   page.on("pageerror", (e) => errors.push((e.message.match(/Minified React error #\d+/) || [e.message.slice(0, 80)])[0]));
   let status = 0;
   try {
@@ -140,6 +166,10 @@ for (const path of SITE_PAGES) {
     await page.waitForTimeout(600);
     const dead = await deadControls(page);
     if (dead.length) errors.push(`dead controls: ${dead.slice(0, 3).join(", ")}`);
+    // Long enough for the idle warm-up of /roofing and /construction to run.
+    await page.waitForTimeout(4500);
+    if (blogLibrary.length) errors.push("downloads the full blog library");
+    if (await hiddenHeading(page, base + path)) errors.push("a heading is hidden in the delivered HTML");
   } catch (error) {
     errors.push(String(error).slice(0, 120));
   }
