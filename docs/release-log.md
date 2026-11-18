@@ -126,7 +126,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Rollback point:** `main` at `f065876` (Release 3).
 - **Gates:** tests 615/615 · build 346/346 · `seo:check` PASS · `smoke:lp` 15/15 · no dead controls on 16 pages at 390 and 1440 px · real-browser check of click, hover, tap and both links.
 
-## Speed pass — Nov 17, 2026 (PR pending approval)
+## Speed pass — Nov 17, 2026 (PR #39)
+- **Approved by:** John ("Publish it", Nov 18).
 - **Asked by:** John (SEO audit: desktop PageSpeed 65–79 on 10 pages, target 80).
 - **Finding:** with Google Tag Manager, Facebook and TikTok unreachable (as in this build container), the same 10 pages scored 87–99 on desktop Lighthouse with 0–30 ms of blocking time. The audit's 500–900 ms of blocking time is those three scripts. Their loading was **not** changed (standing rule: nothing may weaken the pixels). The decision is in `docs/open-items.md`.
 - **Changed (first-party only; no wording, layout, form or tracking change):**
