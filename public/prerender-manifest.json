@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 218,
+    "sitemap": 221,
     "coverageNoindex": 98,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
-    "noindexFunnels": 13,
-    "total": 346
+    "noindexFunnels": 15,
+    "total": 351
   },
   "routes": [
     "/",
@@ -24,6 +24,9 @@
     "/financing",
     "/services",
     "/construction/handyman",
+    "/construction/kitchen-remodeling",
+    "/construction/bathroom-remodeling",
+    "/roofing/property-managers",
     "/contact",
     "/request-inspection",
     "/roofing",
@@ -352,6 +355,8 @@
     "/construction/consultation",
     "/lp/roof-replacement",
     "/lp/roof-repair",
+    "/lp/handyman",
+    "/lp/gutters",
     "/lp/storm-damage",
     "/lp/roofing",
     "/lp/construction",

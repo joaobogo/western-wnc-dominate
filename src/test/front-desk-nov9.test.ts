@@ -43,6 +43,7 @@ describe("front desk requests (Nov 9)", () => {
     ["skylight", "Roofing"],
     ["chimney", "Repair"],
     ["handyman", "Small Projects"],
+    ["design", "Design"],
   ])("sends %s to JobTread's %s division", async (jobType, division) => {
     const { buildPayload, buildJobCustomFieldValues } = await mod();
     const payload = buildPayload(call({ service_category: jobType, project_type: jobType }), "lead");

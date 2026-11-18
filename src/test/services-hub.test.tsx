@@ -54,7 +54,7 @@ describe("/services hub", () => {
     mount();
     for (const page of FAST_ESTIMATE_PAGES) expect(document.querySelector(`a[href="${page.href}"]`)).not.toBeNull();
     expect(FAST_ESTIMATE_PAGES.map((p) => p.href).sort()).toEqual(
-      ["/lp/construction", "/lp/roof-repair", "/lp/roof-replacement", "/lp/roofing", "/lp/roofing-construction", "/lp/storm-damage"].sort(),
+      ["/lp/construction", "/lp/gutters", "/lp/handyman", "/lp/roof-repair", "/lp/roof-replacement", "/lp/roofing", "/lp/roofing-construction", "/lp/storm-damage"].sort(),
     );
   });
 

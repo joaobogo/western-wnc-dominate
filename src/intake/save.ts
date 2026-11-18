@@ -2,7 +2,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { getGbpTouch } from "@/lib/attribution";
 import { trackGbpLeadRecorded } from "@/lib/gtm";
-import { locationTier, townLabel, type LeadDraft, type ScoreResult } from "./scoring";
+import { locationTier, otherJobLabels, townLabel, type LeadDraft, type ScoreResult } from "./scoring";
 
 /** "Franklin showroom" / "sylva" → the canonical listing id used in GA4. */
 function normalizeShowroom(detail: string | null | undefined): string | null {
@@ -89,7 +89,8 @@ export function toRow(lead: LeadDraft, result: ScoreResult) {
     owner_contact: lead.ownerContact.trim() || null,
     property_type: lead.propertyType,
     job_type: lead.jobType,
-    details: lead.details.trim() || null,
+    // Extra job types travel in the notes, so the JobTread job type and division stay single-valued.
+    details: [lead.details.trim(), otherJobLabels(lead).length ? `Also needs: ${otherJobLabels(lead).join(", ")}` : ""].filter(Boolean).join("\n") || null,
     timing: lead.timing,
     budget_range: lead.budget,
     source: lead.source,
