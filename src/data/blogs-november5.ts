@@ -1,3 +1,4 @@
+import chimneyCricketRequirementsHero from "@/assets/blog/chimney-cricket-requirements-hero.jpg";
 import november17Hero0 from "@/assets/blog/dark-vs-light-roof-hero.jpg";
 import november17Hero1 from "@/assets/blog/brown-ceiling-stains-hero.jpg";
 import november17Hero2 from "@/assets/blog/storm-chaser-roofing-hero.jpg";
@@ -2053,5 +2054,174 @@ If the roof already has a leak, a lifted panel or a damaged flashing, our [roof 
 - [Copper Roof Cost for Mountain Homes](/blog/copper-roof-cost)
 - [Metal vs Shingle Roof for WNC Homes](/blog/metal-vs-shingle-roof-western-nc)
 - [Metal Roof Colors for Mountain Homes](/blog/metal-roof-colors)`,
+  },
+  {
+    slug: "chimney-cricket-requirements",
+    title: "Chimney Cricket Requirements in Western NC: The 30-Inch Rule",
+    excerpt: "A chimney cricket is required when the chimney is wider than 30 inches parallel to the ridge. See how to measure, what applies in Western NC and what to do on metal roofs.",
+    category: "Maintenance",
+    date: "2026-11-18",
+    town: "Franklin",
+    readTime: "10 min",
+    imageAlt: "Generated illustration of a stone fireplace chimney with metal flashing on a dimensional shingle roof in the Blue Ridge Mountains",
+    metaTitle: "Chimney Cricket Requirements: 30-Inch Rule | Highlander",
+    metaDescription: "A chimney cricket is required when the chimney is wider than 30 inches parallel to the ridge. See how to measure, what applies in Western NC and what to do on metal roofs.",
+    faqs: [{"question": "What size chimney requires a cricket?", "answer": "Under the 2024 North Carolina Residential Code, a chimney wider than 30 inches (762 mm) measured parallel to the ridge needs a cricket, as long as it does not intersect the ridge. Measure the full outside width of the stack, including any stone or brick veneer. Your local inspections department confirms the edition it enforces."}, {"question": "Is a chimney cricket required on a metal roof?", "answer": "The same trigger applies to metal roofs: over 30 inches parallel to the ridge and not on the ridge. The cricket-to-chimney joint must be flashed and counterflashed. The cricket is built and covered to suit the metal system, following the manufacturer’s instructions and the approved plans."}, {"question": "Does a chimney on the ridge need a cricket?", "answer": "No. A chimney that intersects the ridge has roof slopes falling away on both sides, so water does not run straight at it from above. The code exempts it from the cricket requirement, though it still needs proper flashing."}, {"question": "Which code edition applies in Western North Carolina?", "answer": "It depends on what your inspector is enforcing when you apply for a permit. The effective date of the 2024 code has been postponed more than once, according to a [state licensing board update](https://nclicensing.org/wp-content/uploads/2026/05/2026-06-01-Code-Update.pdf), so call your county or town inspections office before you plan the work."}, {"question": "Can I add a cricket to an existing chimney?", "answer": "Yes. A cricket can be framed, covered and flashed against an existing chimney, and it is easiest during a re-roof or flashing repair when the joint is already open. Our [roof repair team](/roofing/roof-repair) can look at the chimney and put the detail in a written estimate."}],
+    relatedServices: [{"label": "Roof Repair", "path": "/roofing/roof-repair"}, {"label": "Metal Roofing", "path": "/roofing/metal"}, {"label": "Local Service Area", "path": "/service-areas/franklin-nc"}],
+    image: chimneyCricketRequirementsHero,
+    content: `A chimney needs a cricket when it is wider than 30 inches measured parallel to the roof ridge and does not run into the ridge itself. That is the rule in [Section R1003.20 of the 2024 North Carolina Residential Code](https://codes.iccsafe.org/content/NCRC2024V1.0/chapter-10-chimneys-and-fireplaces). A cricket, also called a saddle, is a small peaked section of roof built on the uphill side of the chimney. It splits the water and snow running down the roof and sends it around the chimney instead of into it. On mountain homes in Franklin, Highlands, Cashiers and Sylva, where snow, ice and wind-driven rain all land on the same roof, we treat a cricket as part of a sound chimney detail, and we build and flash them as part of our roof repair and replacement work.
+
+## TL;DR
+
+- The code trigger: a chimney wider than 30 inches (762 mm) parallel to the ridge, and not intersecting the ridge, needs a cricket.
+- Measure the chimney’s width across the slope, along the direction the ridge runs. Then check where the chimney sits relative to the ridge.
+- The cricket and chimney joint must be flashed and counterflashed like any other roof-to-chimney joint.
+- On a metal roof the cricket is built and flashed to suit the panel system. Your inspections department confirms the edition and details enforced where you live.
+- Chimneys under 30 inches can still leak at the back. A cricket is often worth adding on a re-roof even when the code does not demand it.
+
+## What a chimney cricket is and what it does
+
+Picture a chimney rising through a sloped roof. Water running down the slope hits the uphill face of the chimney and stops. Without anything to guide it, the water banks up against the masonry, and snow, leaves and pine needles pile up behind it. Every roof has a seam where the chimney meets the shingles or panels, and that seam is the weakest point in the roof. A flat wall of the chimney facing uphill puts the most load on it.
+
+A cricket fixes this with geometry. It is a small framed roof with two sloping faces and a short ridge, built against the uphill side of the chimney. The ridge of the cricket points up the roof. Water reaching it divides left and right and runs down to the main roof on either side of the chimney. The cricket is framed in wood, sheathed, then covered with flashing metal or the roofing material, and tied into the roof covering around it.
+
+There are two ideas worth keeping apart:
+
+- **The cricket** is the sloped structure that diverts water.
+- **The flashing** is the metal that seals every edge where the cricket, chimney and roof meet.
+
+A cricket without good flashing still leaks. Flashing without a cricket on a wide chimney is under constant pressure from ponding water and snow. For more on how the pieces fit together, see our guide to [roof flashing types and where each goes](/blog/roof-flashing-types).
+
+## The code requirement: the 30-inch rule
+
+The residential code covers one- and two-family homes. In North Carolina its chimney chapter says a chimney needs a cricket when two conditions are both true:
+
+1. The chimney dimension parallel to the ridge is greater than 30 inches (762 mm).
+2. The chimney does not intersect the ridge.
+
+The same section requires the junction between cricket and chimney to be flashed and counterflashed the way a normal roof-chimney intersection is. You can read the wording yourself in [Chapter 10 of the 2024 North Carolina Residential Code](https://codes.iccsafe.org/content/NCRC2024V1.0/chapter-10-chimneys-and-fireplaces).
+
+### What “parallel to the ridge” means
+
+This is where homeowners most often misread the rule. The ridge is the horizontal line at the top of the roof. Stand where you can see the chimney against the roof and picture a line running along the ridge. The width that counts is the chimney’s measurement along that direction, not its depth up and down the slope.
+
+A chimney that is 36 inches wide and 24 inches deep can be turned two ways on a roof. If its 36-inch side runs along the ridge direction, the rule applies. If the 24-inch side runs along it, the measurement is under 30 inches and the code trigger is not met, even though the chimney is the same size.
+
+### What “does not intersect the ridge” means
+
+Some chimneys come up right through the ridge line, with roof slopes falling away on both sides. Water never runs straight at them from above, because there is no uphill side. These chimneys are exempt from the cricket requirement. Most chimneys on mountain homes do not sit on the ridge. They rise from the side of the house, from a fireplace on an exterior wall, or through the middle of a slope, and those are the ones that need a cricket when wide enough.
+
+### A quick worked example
+
+Say your stone fireplace chimney measures 42 inches across the face and sits two-thirds of the way down a slope. The 42-inch side runs along the ridge direction. It is greater than 30 inches and it does not touch the ridge. Under the code language, it needs a cricket. Now take a brick flue stack that is 20 inches by 20 inches in the same spot. It is under the 30-inch line, so the code does not require a cricket there.
+
+The code sets a minimum. It does not say that narrower chimneys are immune to water pooling.
+
+## Which code applies in Western North Carolina
+
+This is the part that trips people up, because the state’s code editions have been shifting. The 2024 North Carolina Residential Code is based on the 2021 International Residential Code with state amendments. Its effective date, though, has moved. A [licensing board update dated June 1, 2026](https://nclicensing.org/wp-content/uploads/2026/05/2026-06-01-Code-Update.pdf) says the effective date of the 2024 building code has been postponed several times by the Governor and the General Assembly, and that it will take effect at least one year after a legislative step involving the Residential Code Commission. The Building Code Council’s own [September 2024 minutes](https://www.ncosfm.gov/september-10-2024-bcc-minutes-final/open) discussed a transition from the 2018 to the 2024 editions, and the dates on that schedule have since changed.
+
+What this means for you: the edition your local inspector enforces on the day you pull a permit is the one that governs your job. We did not find a chimney-cricket-specific state amendment or a Western North Carolina local change in the sources we reviewed, so the 30-inch trigger above is the rule to plan around. Call the building inspections department for your county or town and ask three things:
+
+- Which code edition is being enforced for residential permits right now?
+- Does the jurisdiction add any local amendment to the chimney or roofing sections?
+- Does a re-roof or chimney flashing job need a permit and an inspection?
+
+Permits are handled by the inspections department with jurisdiction over the property. The [Town of Cary’s official FAQ](https://www.carync.gov/services-publications/residential-permits-inspections/faq) says as much and points readers to the North Carolina Department of Insurance’s code resources, which is a good starting point for the state texts. Local checklists also call out crickets by name. [Durham’s residential inspections checklist](https://www.durhamnc.gov/DocumentCenter/View/37468/Residential-Inspections-Checklist-PDF) lists “chimney correct height, cricket” among its chimney items. That is Durham, not the mountains, but it shows crickets are a checked item at inspection, not an afterthought.
+
+## How to check whether your chimney needs a cricket
+
+You can do the first pass in about ten minutes with a tape measure and a camera.
+
+1. **Find the ridge direction.** Look at your roof from the yard and note the line of the top ridge.
+2. **Measure the chimney width along that direction.** On a masonry chimney, include the full outside width of the stack, not just the flue. If you cannot reach the roof, measure the same chimney where it passes through the attic or where it leaves the house wall, and add any stone veneer.
+3. **Check the position.** Does the chimney come up through the ridge, or sit on a slope with roof area above it?
+4. **Compare.** Over 30 inches and not on the ridge means a cricket is required. Under 30 inches means the code trigger is not met.
+5. **Look for signs.** Staining on the ceiling or wall next to the chimney, rusted flashing along the uphill side, moss or debris piled behind the stack, and sealant smeared over old metal are all signs the uphill joint is working too hard.
+6. **Confirm with your inspections department** before you plan work.
+
+Stay off a steep, wet or frosty mountain roof to do this. Take measurements from the ground, the attic or a stable ladder position, and photograph the chimney with a zoom lens.
+
+If the measurement is close to 30 inches, or the chimney is oddly shaped with a wide stone base, have it measured on the roof. A half inch can change the answer, and nobody wants to find that out at final inspection.
+
+## Why mountain roofs make crickets matter more
+
+The code rule is the same in Franklin as in Raleigh, but the weather is not. Mountain homes see steeper pitches, heavy rain events, wet snow that sits, freeze-thaw cycles, and wind that drives water sideways and uphill under flashing edges. A chimney in that setting is a wide obstacle in the middle of a roof slope where all of this lands.
+
+We see the cricket as a way to shorten the path water takes past the chimney. Fewer seconds of water pressing on the flashing means fewer chances for a leak. It also keeps leaves, needles and slow-melting snow from stacking up against the stack. Our article on [why roofs fail early in Western NC](/blog/common-roofing-problems-western-nc) covers the other recurring failure points on mountain homes, and chimney joints show up on that list often.
+
+Because many mountain chimneys are large stone fireplaces on the gable end or the side of the house, they tend to exceed 30 inches comfortably. For those homes the question is rarely whether a cricket is needed. It is how to build one that suits the roof material and the stonework.
+
+## Chimney crickets on metal roofs
+
+Metal roofing is common in the mountains, and a cricket on a metal roof needs more coordination than one on asphalt shingles. The code section is the same: a chimney over 30 inches that does not intersect the ridge needs a cricket, and the cricket-to-chimney junction needs flashing and counterflashing. What changes is how the pieces are built and tied in.
+
+Here is what we plan for on a metal roof:
+
+- **Panel layout.** Standing seam panels run from eave to ridge. The cricket and the chimney interrupt that run, so the panels around the chimney are cut and fitted to a pan or curb detail that suits the system.
+- **Material match.** The cricket covering is typically sheet metal or metal matched to the roof. The finish should match the roof so the cricket does not corrode or stain next to dissimilar metals.
+- **Movement.** Metal expands and contracts with temperature swings. Flashing details need to allow for that without opening a gap at the masonry.
+- **Fasteners and seams.** Seams, clips and fasteners follow the metal-roof manufacturer’s instructions. The sources we reviewed give no universal seam or fastening specification for crickets, so the adopted code, the approved plans and the manufacturer’s instructions are what the inspector will look at.
+- **Counterflashing in the masonry.** The upper edge of the flashing is set into a mortar joint cut in the chimney, or into a surface-mounted reglet, so water running down the stone cannot get behind it.
+
+If you are planning a new roof, it is much easier to build the cricket into the metal system from the start than to retrofit one later. Our [metal roofing page](/roofing/metal) covers the systems we install, from standing seam to exposed-fastener panels and metal shingles, and our [metal roof repair page](/roofing/metal) covers work on an existing metal roof.
+
+## What a good cricket build includes
+
+Whatever the roof covering, a well-built cricket has the same bones:
+
+1. **Framing.** Two sloped faces that meet in a short ridge, tied into the roof framing and the chimney side.
+2. **Sheathing.** Solid decking over the framing so the covering has a flat, rigid base.
+3. **Underlayment.** Water-resistive underlayment under the covering, lapped so water always sheds over the layer below.
+4. **Covering.** Metal flashing or roofing material, shaped over the cricket with the ridge of the cricket running up the slope.
+5. **Step flashing and counterflashing.** Step flashing along the sides of the chimney where it meets the main roof, and counterflashing set into the masonry above it.
+6. **Clean transitions.** Valleys between the cricket and the main roof that drain freely, with no pockets where debris can sit.
+
+The code asks for flashing and counterflashing at the cricket-chimney junction. In practice, how neatly the valleys, laps and edges are finished decides whether the cricket works or becomes one more place for water to hide. More detail on the repair side is in our [chimney flashing repair guide for Western NC](/blog/chimney-flashing-repair).
+
+## When a cricket is worth adding even if the code doesn’t require one
+
+The 30-inch trigger is a floor. A narrower chimney can still pool water, especially on a low-slope section, in a heavy snow zone, or under trees that drop debris. On a re-roof, the old flashing comes off and the chimney joint is open anyway, so adding a small cricket costs less in labor than coming back later.
+
+Situations where we would raise the question:
+
+- The chimney is close to 30 inches wide and sits mid-slope.
+- Past leaks or ceiling stains next to the chimney.
+- Debris or snow regularly stacks behind the stack.
+- A new metal roof is going on and the flashing will be redone anyway.
+- An addition or remodel is changing roof slopes near the chimney.
+
+A written estimate should show the cricket as its own line, so you see what is being built and how it is flashed.
+
+## Where we build crickets
+
+We handle roof repair, roof replacement and storm damage work for homes in Franklin, Highlands, Cashiers and Sylva, and crickets and chimney flashing are part of that work. If you have a chimney that is leaking, a roof going on that has one, or a wide stone chimney you want assessed, start with our [roof repair and replacement services](/roofing). Our estimates are written and detailed, with a single point of contact from the first visit to the last, so the chimney detail is described before work starts. If your chimney joint is already leaking, our [chimney flashing repair page](/roofing/roof-repair) explains how we approach it.
+
+We work with certified materials from CertainTeed, and we use our own crews, so the people who frame and flash your cricket are the same ones who answer for it. To have a chimney measured and priced, [reach out through our site](/).
+
+## Our perspective
+
+Most chimney leaks we are called to are not mystery leaks. They are a wide chimney with no way for water to get around it, or flashing that was done fast and sealed with caulk.
+
+On a mountain home the roof works harder than on a flat valley lot: more rain in a single storm, snow that hangs on, wind pushing water where it should not go. We think a cricket is one of the cheapest ways to take pressure off the most vulnerable joint on the roof. We prefer to build it properly once, with real flashing and counterflashing, than to patch around it every few winters.
+
+That is why our estimates describe the chimney detail in writing, and why we keep one person accountable for the job from start to finish. You should know what is being built behind your chimney before the first panel comes off.
+
+*Highlander Building Services*
+
+## Sources
+
+- [2024 North Carolina Residential Code, Chapter 10: Chimneys and Fireplaces (ICC)](https://codes.iccsafe.org/content/NCRC2024V1.0/chapter-10-chimneys-and-fireplaces)
+- [Update on new North Carolina State Building Code effective dates (NC licensing board, June 2026)](https://nclicensing.org/wp-content/uploads/2026/05/2026-06-01-Code-Update.pdf)
+- [North Carolina Building Code Council minutes, September 10, 2024](https://www.ncosfm.gov/september-10-2024-bcc-minutes-final/open)
+- [Residential permits and inspections FAQ (Town of Cary)](https://www.carync.gov/services-publications/residential-permits-inspections/faq)
+- [Residential Inspections Checklist (City of Durham, February 2026)](https://www.durhamnc.gov/DocumentCenter/View/37468/Residential-Inspections-Checklist-PDF)
+
+## Recommended
+
+- [Mountain Roof Ventilation Science](/blog/mountain-roof-ventilation-science)
+- [Why Roofs Fail Early in Western NC](/blog/common-roofing-problems-western-nc)
+- [Roof Ventilation Requirements & Attic Vent Math](/blog/roof-ventilation-requirements)
+- [Spring Roof Maintenance Checklist for WNC](/blog/spring-roof-maintenance-checklist-wnc)`,
   },
 ];
