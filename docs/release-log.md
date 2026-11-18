@@ -185,7 +185,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Not changed:** dimmed disabled buttons ("Continue", "Back", "Get drive time") stay dimmed until they can be used; wording; forms; tracking; URLs.
 - **Rollback point:** `main` at `c0dc760` (speed pass, confirmed live by the site health check).
 
-## Conversion and UX audit fixes — Nov 18, 2026 (PR pending approval)
+## Conversion and UX audit fixes — Nov 18, 2026 (PR #41)
+- **Approved by:** John ("aprove", Nov 18).
 - **Asked by:** John (shared "Highlander website: conversion and UX audit", Nov 18).
 - **Rollback point:** `main` at `a04a576` (Lovable's chimney-cricket article, on top of the readability pass `77c283f`, which the site health check showed live at 11:07 UTC).
 - **Fixed (no decision needed):**
