@@ -574,7 +574,9 @@ const ConstructionDesign = () => {
           columns={2}
           links={[
             { label: "Construction Division", href: "/construction", description: "Additions, renovations, and full builds" },
-            { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
+            { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },            { label: "Home Additions", href: "/construction/additions", description: "Planning and building more room on a mountain home" },
+            { label: "Home Renovations", href: "/construction/renovations", description: "Reworking the rooms you already have" },
+
             { label: "Construction & Renovation FAQ", href: "/faq", description: "Answers to common planning questions" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
             { label: "Discuss a Construction Project", href: "/request-inspection?context=design_related&type=construction", description: "Start with the short first-contact form" },

@@ -36,6 +36,7 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import ServiceSubtopics from "@/components/service/ServiceSubtopics";
 import { specialtySubtopics } from "@/data/service-subtopics";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -412,6 +413,10 @@ const SpecialtyRoofing = () => {
         }
         cta={
           <>
+          <ProjectSpotlight
+            slugs={["cedar-shake-estate-highlands"]}
+            heading="A Recent Specialty Roof: Cedar Shake in Highlands."
+          />
           <CommonConcerns />
           {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
           <InspectionForm />

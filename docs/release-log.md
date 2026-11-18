@@ -202,3 +202,14 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - "no next step on /reviews, /about, /certifications": all three already have call and estimate buttons in the page body.
 - **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · all 346 pages loaded in a browser (the same 2 older hydration errors, see `docs/open-items.md`) · no hidden content in delivered HTML · homepage width equals the screen at 375 and 1,425 px · two untouched visits to `/request-inspection` show no "saved your answers" note.
 - **Decisions waiting:** `docs/open-items.md`, "From the Nov 18 conversion audit".
+
+## Local SEO, pages 21–50 — Nov 18, 2026 (PR pending approval)
+- **Asked by:** John ("Highlander local SEO analysis and top 50 pages"). John is doing the top 20 pages himself; this covers 21–50 where real material exists.
+- **Rollback point:** `main` at `0558765` (conversion audit fixes, confirmed live by the site health check at 12:22 UTC).
+- **Changed:**
+  - real documented jobs on the service pages they belong to (new `ProjectSpotlight`; every fact comes from `src/data/projects.ts`): cedar shake in Highlands on `/roofing/specialty` (#24); the Lake Glenville Brava re-roof on `/roofing/brava-synthetic` (#48); standing seam in Highlands on `/roofing/metal` (#43) and `/roofing/metal/cost` (#30); the Franklin addition on `/construction/additions` (#33); the Waynesville shingle replacement and the Highlands metal roof on `/roofing/residential` (#25);
+  - town links (new `TownServiceLinks`, only pages in the sitemap): metal roofing by town on `/roofing/metal/cost` (#30); roof replacement by town on `/roofing-cost-western-nc` (#47);
+  - `/construction/design` links to additions and renovations (#46).
+- **Checked, no change needed:** town pages 21–44 already run about 2,000 words with roof-repair sections, local FAQs, their county hub and the nearest real project; `/roofing/metal` already links to cost and the town metal pages; `/contact` and `/request-inspection` left as they are ("protect").
+- **Not done (needs material or a decision):** see `docs/open-items.md`, "Local SEO analysis".
+- **Gates:** tests 652/652 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · no page errors on the 8 changed pages · contrast audit on the 8 pages, phone and desktop: 0 lines under the AA threshold.

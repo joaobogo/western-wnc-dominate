@@ -30,6 +30,7 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import ServiceSubtopics from "@/components/service/ServiceSubtopics";
 import { metalSubtopics } from "@/data/service-subtopics";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
 
 const faqs = [
   { q: "How long does a metal roof last in Western NC?", a: "A properly installed metal roof can last 40 years or more when it is a correctly specified standing seam system. When that lifespan gets cut short in the field, the cause is almost always workmanship at flashings and terminations — not panel failures." },
@@ -207,6 +208,10 @@ const MetalRoofing = () => {
         process={
           <>
             <SchedulingReality serviceLabel="metal roofing" />
+            <ProjectSpotlight
+              slugs={["standing-seam-metal-dark-bronze-highlands"]}
+              heading="A Recent Standing Seam Roof in Highlands."
+            />
             <ProofKit topic="metal" photos />
             <InspectionForm />
           </>
