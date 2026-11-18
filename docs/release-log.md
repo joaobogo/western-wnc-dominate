@@ -203,7 +203,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · all 346 pages loaded in a browser (the same 2 older hydration errors, see `docs/open-items.md`) · no hidden content in delivered HTML · homepage width equals the screen at 375 and 1,425 px · two untouched visits to `/request-inspection` show no "saved your answers" note.
 - **Decisions waiting:** `docs/open-items.md`, "From the Nov 18 conversion audit".
 
-## Local SEO, pages 21–50 — Nov 18, 2026 (PR pending approval)
+## Local SEO, top 20 and pages 21–50 — Nov 18, 2026 (PR #43)
+- **Approved by:** John ("approved", Nov 18). Merged as `e1776a3` with Lovable idle (last Lovable activity 11:20 UTC).
 - **Asked by:** John ("Highlander local SEO analysis and top 50 pages"). John is doing the top 20 pages himself; this covers 21–50 where real material exists.
 - **Rollback point:** `main` at `0558765` (conversion audit fixes, confirmed live by the site health check at 12:22 UTC).
 - **Changed:**
