@@ -31,9 +31,14 @@ describe("new landing page routing", () => {
 
 describe("what JobTread receives (mocked, nothing is sent)", () => {
   beforeAll(() => {
-    (globalThis as any).Deno = { env: { get: () => "test" }, serve: () => undefined };
+    (globalThis as unknown as { Deno: unknown }).Deno = { env: { get: () => "test" }, serve: () => undefined };
   });
-  const mod = async () => (await import("@jobtread-sync")) as any;
+  type Mapper = {
+    normalizeIntakeLead: (row: object) => object;
+    buildPayload: (row: object, kind: "lead") => { project: { service_category: string; project_description: string } };
+    buildLeadLabel: (row: object) => string;
+  };
+  const mod = async () => (await import("@jobtread-sync")) as unknown as Mapper;
   const person = { name: "Margaret Hill", first_name: "Margaret", last_name: "Hill", phone: "+18285550100" };
 
   it("keeps the main job and puts extra work in the job notes", async () => {
