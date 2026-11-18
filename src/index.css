@@ -675,7 +675,7 @@ img {
   .bg-foreground {
     /* Lighter than the brand gold (48%): small gold labels reach 4.5:1 on the
        dark green and on darkened photos. Backgrounds keep --highland-gold. */
-    --gold-ink: 38 96% 58%;
+    --gold-ink: 38 96% 64%;
     /* Outline and text-only buttons read as light on a dark surface without
        each one needing `btn-on-dark` (About's hero button, the landing pages'
        closing link and the Services closing link were dark green on dark). */

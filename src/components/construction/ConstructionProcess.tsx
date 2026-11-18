@@ -104,7 +104,7 @@ const ConstructionProcess = ({
               transition={{ delay: i * 0.06 }}
               className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
             >
-              <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">
+              <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-muted-foreground/75 select-none group-hover:text-primary/70 transition-colors">
                 {step.number}
               </span>
               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">

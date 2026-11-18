@@ -162,7 +162,7 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 
 ## Readability pass — Nov 18, 2026 (PR pending approval)
 - **Asked by:** John, with a phone screenshot of `/construction/renovations`: "Make sure we can always read the letters easily."
-- **How it was checked:** a new tool, `npm run contrast:check`, records every line of text on a page, hides the text, photographs what is behind it and compares the two. One page per template (73 pages), phone and desktop. Before: 147 distinct lines under the AA threshold. After: 13 (see Gates).
+- **How it was checked:** a new tool, `npm run contrast:check`, records every line of text on a page, hides the text, photographs what is behind it and compares the two. One page per template (73 pages), phone and desktop. Before: 147 distinct lines under the AA threshold on the sample. After: see Gates.
 - **Causes found, and the fix for each:**
   - **Photo heroes.** Each hero darkened its photo by a different amount (0.2 to 0.88) and its gold text was the dark gold meant for white pages. Gold text failed on 45 hero templates, white text on 25. All 28 photo heroes now share one treatment (`.hero-legible`): one dark layer that keeps white text at 4.5:1 even over a white pixel, a lighter gold, and a soft text shadow. On phones the layer is even; on wide screens the right side of the photo stays clearer.
   - **Gold text and outline buttons did not know what they sat on.** Three dark surface types were not recognised (photo heroes, the charcoal sections on Team, FAQ and the cost guides, the green gradient). Outline and text-only buttons were dark green everywhere unless each one was marked by hand: About's "Community Impact", the closing link on three landing pages and the Services closing button were dark green on dark. Both now take their colour from the surface. A white card inside a dark area goes back to dark ink (the form's "Privacy Policy" link was gold on white).
@@ -173,6 +173,13 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - county pages: a stats panel covered both hero buttons ("Start a … Project" and the phone number); town-service pages: it covered the trust lines;
   - Careers and Free Tools: the first line of the hero sat under the header;
   - Construction: the "One Company Advantage" card covered two stat boxes.
-- **Gates:** tests 632/632 · build 346/346 · `seo:check` PASS · `smoke:lp` 21/21 · all 345 pages loaded in a browser (the same 2 older hydration errors as before, see `docs/open-items.md`) · contrast audit: 147 → 13 distinct lines under the AA threshold. Of the 13, five are homepage project cards photographed before their images paint (checked by eye: readable) and eight are small labels between 3.5:1 and 4.5:1.
-- **Not changed:** the large faint step numerals ("01"–"06"), which are decoration; dimmed disabled buttons; wording; forms; tracking; URLs.
+- **Gates (final build):** tests 635/635 · build 346/346 · `seo:check` PASS · `smoke:lp` 21/21 · all 345 pages loaded in a browser (the same 2 older hydration errors as before, see `docs/open-items.md`) · contrast audit: 147 distinct lines under the AA threshold on the first sample of 73 pages; the run on all 345 pages (phone and desktop) ended with 6, two of them under 3:1 (homepage project cards); those were fixed and the affected pages re-measured with none under 3:1. Three dimmed disabled buttons are ignored on purpose.
+- **Second round, same day ("Anywhere in the website"):** the measurement was repeated on all 345 pages, phone and desktop (690 page loads), and on the open phone menu, the desktop dropdowns and open FAQ answers. Added fixes:
+  - breadcrumbs were hidden under the header on phones on every page that has them (a spacing class cancelled the header offset); they now show below it;
+  - phone menu: the small grey descriptions and section labels were 2.4–2.9:1, now above 7:1;
+  - the faint step numerals ("01"–"06") on ten templates were 1.2:1 and faded further on hover, now 3.6:1;
+  - small print at 20–45% opacity (blog dates and read time in the dark "insights" block, lightbox counter and captions, review-card labels, Storm Center note) raised to 65–85%;
+  - last borderline labels: lighter gold on dark surfaces (64% lightness), blog article meta in full white, darker photo fades on the homepage division cards, the landing-page closing band, project heroes and Exterior Improvements cards.
+  - found by the all-pages load check: the FAQ page was delivered showing "91 Google Reviews" instead of 158. The page snapshot had caught the count-up animation mid-count. Count-up numbers now carry their real value and the snapshot writes it, on every page.
+- **Not changed:** dimmed disabled buttons ("Continue", "Back", "Get drive time") stay dimmed until they can be used; wording; forms; tracking; URLs.
 - **Rollback point:** `main` at `c0dc760` (speed pass, confirmed live by the site health check).

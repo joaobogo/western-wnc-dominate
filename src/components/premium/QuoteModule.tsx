@@ -92,7 +92,7 @@ export const QuoteModule = ({
             <span
               className={cn(
                 "font-body text-caption uppercase tracking-[0.12em]",
-                isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground",
+                isDark ? "text-[hsl(var(--dark-section-foreground)/0.75)]" : "text-muted-foreground",
               )}
             >
               {subtitle}

@@ -164,11 +164,11 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                     </div>
                     <div className="text-left">
                       <span className="text-body-sm md:text-body font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
-                      <span className="text-caption md:text-body-xs font-body text-heritage-charcoal/55 uppercase tracking-[0.1em] leading-tight">{div.tagline}</span>
+                      <span className="text-caption md:text-body-xs font-body text-heritage-charcoal/75 uppercase tracking-[0.1em] leading-tight">{div.tagline}</span>
                     </div>
                   </div>
                   <motion.div animate={{ rotate: expanded === div.label ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }}>
-                    <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" aria-hidden="true" />
+                    <ChevronDown className="w-4 h-4 text-heritage-charcoal/75" aria-hidden="true" />
                   </motion.div>
                 </button>
 
@@ -198,9 +198,9 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                               }`}
                             >
                               <span className={`text-body-sm font-body block leading-tight ${
-                                isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/70"
+                                isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/90"
                               }`}>{item.label}</span>
-                              {item.desc && <span className="text-caption font-body text-heritage-charcoal/45 leading-tight mt-0.5">{item.desc}</span>}
+                              {item.desc && <span className="text-caption font-body text-heritage-charcoal/75 leading-tight mt-0.5">{item.desc}</span>}
                             </Link>
                           </motion.div>
                         ))}
@@ -231,7 +231,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
               <div className="flex-1 h-px bg-black/10" />
-              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">More</span>
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/75">More</span>
               <div className="flex-1 h-px bg-black/10" />
             </motion.div>
 
@@ -253,7 +253,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.24, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
               <div className="flex-1 h-px bg-black/10" />
-              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Resources</span>
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/75">Resources</span>
               <div className="flex-1 h-px bg-black/10" />
             </motion.div>
 
@@ -265,7 +265,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                   {...preloadHandlers(link.href)}
                   onClick={onClose}
                   className={`py-2.5 px-2.5 text-body-sm font-body rounded-sm transition-all flex items-center min-h-[44px] ${
-                    isActive(link.href) ? "text-heritage-charcoal bg-black/5 font-bold" : "text-heritage-charcoal/70 hover:bg-black/5"
+                    isActive(link.href) ? "text-heritage-charcoal bg-black/5 font-bold" : "text-heritage-charcoal/90 hover:bg-black/5"
                   }`}
                 >
                   {link.label}

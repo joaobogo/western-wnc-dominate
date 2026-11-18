@@ -158,7 +158,7 @@ const DivisionCard = ({ data, accent, index }: {
         />
         {/* Cinematic overlay — refined for clarity */}
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.55)] to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.3)] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.6)] via-transparent to-transparent" />
         <div className={`absolute inset-0 mix-blend-multiply opacity-15 ${
           isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
         }`} />

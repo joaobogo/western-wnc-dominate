@@ -93,7 +93,7 @@ const ProjectDetailPage = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.55)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.78)] to-[hsl(var(--heritage-charcoal)/0.3)]" />
             <div className="dark-surface absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
               <div className="container-tight">
                 <div className="flex items-center gap-3 mb-3">

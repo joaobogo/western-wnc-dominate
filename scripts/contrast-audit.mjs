@@ -17,11 +17,8 @@
  * when a tenth of it or more sits on a patch that is too close in tone.
  * Thresholds are WCAG AA: 4.5:1, or 3:1 for large text (24 px, or 18.66 px bold).
  *
- * Known limits (these show up as failures and are not):
- *   - breadcrumbs on phones sit under the fixed header at the top of the page;
- *   - the faint decorative numerals "01"–"10" beside steps are decorative;
- *   - disabled buttons ("Continue", "Back", "Get drive time") are dimmed on purpose;
- *   - cards that animate in may be photographed before their image paints.
+ * Ignored on purpose:
+ *   - disabled buttons ("Continue", "Back", "Get drive time") are dimmed on purpose.
  * Where the installed Chromium does not match the project's Playwright version,
  * set PRERENDER_CHROMIUM to the browser's path (same variable as the prerender).
  * It only loads pages. It never submits a form.
@@ -148,7 +145,9 @@ const auditPage = async (context, path, viewport) => {
       window.scrollTo(0, 0);
       await new Promise((r) => setTimeout(r, 900));
     });
-    await page.addStyleTag({ content: "[data-client-only]{display:none!important} *{transition:none!important;animation:none!important}" });
+    // `.perf-skip` sections use content-visibility:auto and are not painted
+    // while off screen, so a full-page photograph showed them blank.
+    await page.addStyleTag({ content: "[data-client-only]{display:none!important} *{transition:none!important;animation:none!important;content-visibility:visible!important}" });
     // A bar fixed to the bottom of the window lands mid-page in a full-page capture and covers real content.
     await page.evaluate(() => {
       for (const el of document.querySelectorAll("body *")) {
@@ -212,7 +211,7 @@ await Promise.all(
 );
 await browser.close();
 
-const expected = (f) => (f.where === "nav" && f.y < 140) || /^(0[1-9]|10|Continue|Back|Get drive time)$/.test(f.text);
+const expected = (f) => /^(Continue|Back|Get drive time)$/.test(f.text);
 const real = failures.filter((f) => !expected(f));
 const groups = new Map();
 for (const f of real) {

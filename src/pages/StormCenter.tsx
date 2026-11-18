@@ -134,7 +134,7 @@ const StormCenter = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}
                 </a>
               </div>
-              <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-xs mt-3 font-body">
+              <p className="text-[hsl(var(--dark-section-foreground)/0.75)] text-xs mt-3 font-body">
                 Storm damage moves fast — calling reaches a real person who can prioritize your assessment and start the insurance documentation today.
               </p>
             </motion.div>

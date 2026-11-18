@@ -50,7 +50,7 @@ describe("gold text and quiet buttons follow the surface", () => {
     for (const selector of [".hero-legible", ".bg-heritage-charcoal", ".section-dark", ".bg-primary"]) {
       expect(darkRule).toContain(selector);
     }
-    expect(darkRule).toContain("--gold-ink: 38 96% 58%");
+    expect(darkRule).toContain("--gold-ink: 38 96% 64%");
     expect(darkRule).toContain("--quiet-btn-fg");
   });
 
@@ -87,5 +87,28 @@ describe("heroes with a panel pinned to the bottom", () => {
       expect(read(file)).toContain("hero-panel-room");
     }
     expect(css).toMatch(/main > section\.hero-panel-room\s*\{\s*padding-bottom: 15rem !important;/);
+  });
+});
+
+describe("small print, menus and step numbers", () => {
+  it("breadcrumbs keep their header offset on phones (py-2 cancelled it and the row sat under the header)", () => {
+    const crumbs = read("src/components/PageBreadcrumbs.tsx");
+    expect(crumbs).not.toMatch(/cn\("py-2 /);
+    expect(crumbs).toContain('cn("pb-2 border-b');
+  });
+
+  it("no faint step numerals or faint phone-menu text remain", () => {
+    const offenders = [...pages, ...walk("src/components")].filter((file) => {
+      const source = read(file);
+      return /text-border\/60/.test(source) || (file.includes("/header/") && /text-heritage-charcoal\/(3[5-9]|4\d|5\d|6\d)\b/.test(source));
+    });
+    expect(offenders).toEqual([]);
+  });
+});
+
+describe("count-up numbers", () => {
+  it("carry their real value so the prerender never ships a number caught mid-count", () => {
+    expect(read("src/components/motion/AnimatedCounter.tsx")).toContain("data-final={value}");
+    expect(readFileSync("scripts/prerender.mjs", "utf8")).toMatch(/querySelectorAll\("\[data-final\]"\)/);
   });
 });

@@ -30,7 +30,7 @@ const badgeVariants = {
   dark: {
     wrapper: "flex items-center gap-2",
     icon: "w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.85)]",
-    text: "text-[hsl(var(--dark-section-foreground)/0.25)] text-xs font-body font-medium",
+    text: "text-[hsl(var(--dark-section-foreground)/0.75)] text-xs font-body font-medium",
   },
 };
 

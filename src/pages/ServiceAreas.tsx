@@ -74,7 +74,7 @@ const ServiceAreas = () => {
           </div>
           <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-8 md:py-24 lg:py-28">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: HIGHLAND_EASE }} className="max-w-3xl">
-              <p className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
+              <p className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
                 <Compass className="h-4 w-4" aria-hidden="true" />
                 Service areas · Western North Carolina
               </p>

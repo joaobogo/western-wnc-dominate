@@ -70,7 +70,7 @@ const ProjectCard = ({ project, index }: { project: (typeof projects)[number]; i
             style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
           />
 
-          <div aria-hidden="true" className="absolute inset-0 bg-scrim-bottom opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.55)] to-[hsl(var(--heritage-charcoal)/0.1)]" />
           <div
             className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20"
             style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
@@ -91,7 +91,7 @@ const ProjectCard = ({ project, index }: { project: (typeof projects)[number]; i
           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
             <div className="flex items-center gap-1.5 mb-2.5">
               <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {project.location}
               </span>
             </div>

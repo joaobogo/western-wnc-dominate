@@ -380,7 +380,7 @@ function LandingBody() {
                 />
               </div>
             )}
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.86)_0%,hsl(160_45%_6%/0.62)_36%,hsl(160_45%_6%/0.12)_70%,hsl(160_45%_6%/0)_100%)] max-lg:bg-[linear-gradient(180deg,hsl(160_45%_6%/0.82)_0%,hsl(160_45%_6%/0.6)_55%,hsl(160_45%_6%/0.42)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.88)_0%,hsl(160_45%_6%/0.74)_40%,hsl(160_45%_6%/0.2)_72%,hsl(160_45%_6%/0)_100%)] max-lg:bg-[linear-gradient(180deg,hsl(160_45%_6%/0.84)_0%,hsl(160_45%_6%/0.72)_55%,hsl(160_45%_6%/0.62)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[hsl(160_45%_5%/0.7)] to-transparent" />
           </div>
           <div className="relative mx-auto grid max-w-[1200px] gap-9 px-4 py-10 sm:px-5 md:px-8 md:py-16 lg:min-h-[720px] lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14 lg:py-20">
@@ -895,7 +895,7 @@ function LandingBody() {
               className="absolute inset-0 h-full w-full object-cover"
               style={{ objectPosition: config.finalBackdrop.position ?? "50% 50%" }}
             />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.82)_0%,hsl(160_45%_6%/0.58)_50%,hsl(160_45%_6%/0.4)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.86)_0%,hsl(160_45%_6%/0.72)_50%,hsl(160_45%_6%/0.6)_100%)]" />
           </div>
           <div aria-hidden="true" className="lp-tartan h-1 w-full" />
           <div className="relative z-[2] mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-5 md:px-8 md:py-24 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">

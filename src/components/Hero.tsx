@@ -218,13 +218,13 @@ const Hero = () => {
             <div className="w-7 h-7 rounded-none border border-dark-section-border flex items-center justify-center">
               <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
             </div>
-            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground [writing-mode:vertical-lr] rotate-180">
+            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground [writing-mode:vertical-lr] rotate-180 bg-[hsl(var(--hero-overlay)/0.6)] px-1 py-2">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground [writing-mode:vertical-lr] rotate-180">
+            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground [writing-mode:vertical-lr] rotate-180 bg-[hsl(var(--hero-overlay)/0.6)] px-1 py-2">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">

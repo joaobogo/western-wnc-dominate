@@ -148,7 +148,7 @@ const Blog = () => {
                   </p>
                   {/* Search */}
                   <div className="relative max-w-md">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" aria-hidden="true" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.6)]" aria-hidden="true" />
                     <input
                       aria-label="Search articles"
                       {...fieldAttrs.search}

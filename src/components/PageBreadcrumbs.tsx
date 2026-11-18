@@ -35,8 +35,8 @@ interface PageBreadcrumbsProps {
 
 const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
   return (
-    <HeaderOffset spacing="tight" className={cn("py-2 border-b border-border/40 bg-background/50 backdrop-blur-sm", className)}>
-      <Breadcrumb aria-label="Breadcrumb">
+    <HeaderOffset spacing="tight" className={cn("pb-2 border-b border-border/40 bg-background/50 backdrop-blur-sm", className)}>
+      <Breadcrumb aria-label="Breadcrumb" className="pt-2">
         <BreadcrumbList className="text-[11px] sm:text-xs tracking-wide uppercase font-medium">
           {items.map((c, i) => {
             const isLast = i === items.length - 1;

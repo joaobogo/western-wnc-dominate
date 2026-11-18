@@ -223,7 +223,7 @@ const RoofingDivision = () => {
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                   <div className="flex flex-col">
                     <span className="text-body-xs font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-caption font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
+                    <span className="text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

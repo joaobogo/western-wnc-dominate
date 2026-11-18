@@ -336,7 +336,7 @@ const StormDamage = () => {
               {afterStormSteps.map((step, i) => (
                 <motion.div key={step.number} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className={`group relative bg-card border rounded-sm p-5 md:p-6 card-lift ${i === 4 ? 'border-destructive/15 bg-destructive/[0.02]' : 'border-border hover:border-primary/15'}`}>
                   <div className="flex items-start gap-4 md:gap-5">
-                    <span className="text-3xl font-heading font-bold text-border/60 select-none flex-shrink-0 w-8 group-hover:text-primary/15 transition-colors">{step.number}</span>
+                    <span className="text-3xl font-heading font-bold text-muted-foreground/75 select-none flex-shrink-0 w-8 group-hover:text-primary/70 transition-colors">{step.number}</span>
                     <div>
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{step.title}</h3>
                       <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>

@@ -391,15 +391,15 @@ const BlogPostPage = () => {
                 <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm bg-white/15 text-white ring-1 ring-white/25">
                   {post.category}
                 </span>
-                <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
+                <span className="text-white text-body-xs font-body font-bold flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" aria-hidden="true" /> {formattedDate}
                   {formattedUpdated && <span className="ml-2 font-normal text-white/70">· Updated {formattedUpdated}</span>}
                 </span>
-                <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
+                <span className="text-white text-body-xs font-body font-bold flex items-center gap-1.5">
                   <Clock className="w-4 h-4" aria-hidden="true" /> {readMinutes} min read
                 </span>
                 {post.town && (
-                  <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
+                  <span className="text-white text-body-xs font-body font-bold flex items-center gap-1.5">
                     <MapPin className="w-4 h-4" aria-hidden="true" /> {post.town}, NC
                   </span>
                 )}

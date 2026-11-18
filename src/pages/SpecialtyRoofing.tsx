@@ -334,7 +334,7 @@ const SpecialtyRoofing = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                         {processSteps.map((step, i) => (
                           <motion.div key={step.number} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
-                            <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
+                            <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-muted-foreground/75 select-none group-hover:text-primary/70 transition-colors">{step.number}</span>
                             <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
                             <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                           </motion.div>

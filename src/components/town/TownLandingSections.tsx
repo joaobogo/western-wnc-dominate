@@ -324,7 +324,7 @@ const TownFAQAnswerLinks = ({
 
   return (
     <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-body-xs">
-      <span className="uppercase tracking-widest text-foreground/50 font-heading text-caption">
+      <span className="uppercase tracking-widest text-foreground/75 font-heading text-caption">
         Related
       </span>
       <Link

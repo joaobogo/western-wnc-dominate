@@ -249,7 +249,7 @@ const SecondaryCard = ({ post, index }: { post: PostWithCategory; index: number 
             <span className={`text-caption font-body font-bold uppercase tracking-[0.14em] px-2 py-0.5 ${accent.bg} ${accent.text}`}>
               {post.editorialCategory}
             </span>
-            <span className="text-dark-section-foreground/20 text-caption font-body">
+            <span className="text-dark-section-foreground/75 text-caption font-body">
               {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
             </span>
           </div>
@@ -263,7 +263,7 @@ const SecondaryCard = ({ post, index }: { post: PostWithCategory; index: number 
           </p>
 
           <div className="flex items-center justify-between mt-auto pt-3 border-t border-dark-section-foreground/[0.05]">
-            <span className="text-dark-section-foreground/20 text-caption font-body">{post.readTime}</span>
+            <span className="text-dark-section-foreground/75 text-caption font-body">{post.readTime}</span>
             <ArrowRight className="w-4 h-4 text-dark-section-foreground/15 group-hover:text-[hsl(var(--highland-gold)/0.6)] group-hover:translate-x-0.5 transition-all duration-300" aria-hidden="true" />
           </div>
         </div>
@@ -292,7 +292,7 @@ const CompactCard = ({ post, index }: { post: PostWithCategory; index: number })
         <h4 className="text-sm font-heading font-bold text-dark-section-foreground leading-snug mb-2 group-hover:text-dark-section-foreground transition-colors line-clamp-2 tracking-tight">
           {post.title}
         </h4>
-        <div className="flex items-center gap-2 text-dark-section-foreground/20 text-caption font-body">
+        <div className="flex items-center gap-2 text-dark-section-foreground/75 text-caption font-body">
           <span>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })}</span>
           <span>·</span>
           <span>{post.readTime}</span>
