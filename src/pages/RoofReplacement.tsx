@@ -190,7 +190,7 @@ const RoofReplacement = () => {
           alternateSurfaces={false}
           hero={
             <>
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={replacementMobileHero} />
@@ -451,7 +451,7 @@ const RoofReplacement = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {timelineSteps.map((step, i) => (
                 <motion.div key={step.number} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
+                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-muted-foreground/75 select-none group-hover:text-primary/70 transition-colors">{step.number}</span>
                   <span className="inline-block text-caption font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2 py-0.5 rounded-sm mb-4">{step.duration}</span>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
                   <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
@@ -499,7 +499,7 @@ const RoofReplacement = () => {
                 <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
                   {item.href && <Link to={item.href} className="absolute inset-0 z-10" aria-label={`See the project: ${item.title}`} />}
                   <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.3)] to-transparent" />
                   <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">{item.category}</div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3 className="font-heading font-semibold text-white text-sm">{item.title}</h3>

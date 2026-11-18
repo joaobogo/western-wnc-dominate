@@ -99,7 +99,7 @@ export const TestimonialCard = ({
             isDark ? "bg-[hsl(var(--dark-section-foreground)/0.04)]" : "bg-secondary/50",
           )}
         >
-          <p className={cn("text-caption font-body font-semibold uppercase tracking-[0.1em] mb-1", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
+          <p className={cn("text-caption font-body font-semibold uppercase tracking-[0.1em] mb-1", isDark ? "text-[hsl(var(--dark-section-foreground)/0.75)]" : "text-muted-foreground")}>
             Project Outcome
           </p>
           <p className={cn("text-sm font-body font-medium", isDark ? "text-dark-section-muted" : "text-foreground/80")}>
@@ -137,7 +137,7 @@ export const TestimonialCard = ({
           </div>
         </div>
         {project && !isCompact && (
-          <span className={cn("text-caption font-body font-medium max-w-[140px] text-right leading-tight", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
+          <span className={cn("text-caption font-body font-medium max-w-[140px] text-right leading-tight", isDark ? "text-[hsl(var(--dark-section-foreground)/0.75)]" : "text-muted-foreground")}>
             {project}
           </span>
         )}

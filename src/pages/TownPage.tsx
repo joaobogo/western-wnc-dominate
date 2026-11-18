@@ -111,7 +111,7 @@ const TownPage = () => {
       />
       <main id="main-content">
         {/* 1. Premium Hero */}
-        <section className="dark-surface relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
+        <section className="dark-surface relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48 hero-legible hero-legible-even">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async"
               src={mediaWebp(town.heroImage)}
@@ -212,7 +212,7 @@ const TownPage = () => {
                 transition={{ duration: 0.4, delay: 0.15 }}
                 className="mb-6 md:mb-10 max-w-2xl line-clamp-3 md:line-clamp-none border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
               >
-                <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
+                <span className="font-bold text-[hsl(var(--highland-gold-light))]">{town.name} reality: </span>
                 {town.climateExposure}
               </motion.p>
               

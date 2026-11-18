@@ -146,7 +146,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
             <div className="grid grid-cols-[repeat(3,minmax(0,1fr))_240px] gap-x-5 py-3 px-4 whitespace-normal">
               {div.columns.map((col, ci) => (
                 <div key={col.title}>
-                  <p className="px-3 pb-1.5 text-caption font-body font-bold uppercase tracking-[0.12em] text-muted-foreground/80">
+                  <p className="px-3 pb-1.5 text-caption font-body font-bold uppercase tracking-[0.12em] text-muted-foreground">
                     {col.title}
                   </p>
                   {col.items.map((item, i) => (

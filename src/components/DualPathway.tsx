@@ -144,7 +144,7 @@ const DivisionCard = ({ data, accent, index }: {
       className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-500"
     >
       {/* === IMAGE HEADER with curtain reveal === */}
-      <div className="relative h-48 md:h-56 overflow-hidden">
+      <div className="dark-surface relative h-48 md:h-56 overflow-hidden">
         <img
           src={data.imageSrcSet ? smallSrc(data.image) : data.image}
           srcSet={data.imageSrcSet}
@@ -157,8 +157,8 @@ const DivisionCard = ({ data, accent, index }: {
           height={500}
         />
         {/* Cinematic overlay — refined for clarity */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.3)] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.55)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.6)] via-transparent to-transparent" />
         <div className={`absolute inset-0 mix-blend-multiply opacity-15 ${
           isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
         }`} />

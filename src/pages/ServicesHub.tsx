@@ -237,7 +237,7 @@ const ServicesHub = () => {
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 {CTA_SECONDARY.callLabel}
               </a>
-              <Link to="/request-inspection" data-gtm-cta="request_inspection" data-gtm-location="services_closing" className="btn btn-ghost btn-md justify-center">
+              <Link to="/request-inspection" data-gtm-cta="request_inspection" data-gtm-location="services_closing" className="btn btn-ghost btn-on-dark btn-md justify-center">
                 {CTA.mobileSticky}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>

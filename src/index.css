@@ -227,7 +227,7 @@ img {
      * so text defaults to a deeper gold that clears WCAG AA (5.17:1 on white).
      * Dark surfaces re-declare this token below and get the bright brand gold.
      */
-    --gold-ink: 38 100% 30%;
+    --gold-ink: 38 100% 24%; /* 24% (was 30%): small gold labels reach 4.5:1 on the tinted section backgrounds too, not only on white */
     --tartan-line: 158 30% 28%;
     --tartan-accent: 0 45% 35%;
     --warm-stone: 34 20% 92%;
@@ -667,9 +667,22 @@ img {
   [class*="--heritage-charcoal"],
   [class*="--heritage-green"],
   [class*="--hero-overlay"],
+  .hero-legible,
+  .bg-heritage-charcoal,
+  .bg-heritage-green,
+  .bg-dark-section,
   .bg-primary,
   .bg-foreground {
-    --gold-ink: var(--highland-gold);
+    /* Lighter than the brand gold (48%): small gold labels reach 4.5:1 on the
+       dark green and on darkened photos. Backgrounds keep --highland-gold. */
+    --gold-ink: 38 96% 64%;
+    /* Outline and text-only buttons read as light on a dark surface without
+       each one needing `btn-on-dark` (About's hero button, the landing pages'
+       closing link and the Services closing link were dark green on dark). */
+    --quiet-btn-fg: var(--dark-section-foreground);
+    --quiet-btn-border: hsl(var(--dark-section-foreground) / 0.45);
+    --quiet-btn-hover-bg: hsl(var(--dark-section-foreground) / 0.08);
+    --quiet-btn-hover-border: hsl(var(--highland-gold) / 0.5);
     /* Dark painted surfaces use the dark elevation ramp so cards on top
        of them keep visible separation and AA contrast. */
     --elevation-flat: 0 1px 2px -1px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 100% / 0.04);
@@ -677,6 +690,103 @@ img {
     --elevation-floating: 0 24px 56px -20px hsl(0 0% 0% / 0.75), 0 0 0 1px hsl(0 0% 100% / 0.08);
     --border-hairline: hsl(0 0% 100% / 0.14);
     --border-accent: hsl(var(--highland-gold) / 0.55);
+  }
+
+  /*
+   * A light panel inside a dark surface (a white form card in a dark hero, a
+   * white info card over a photo) goes back to the dark ink gold. Without
+   * this it inherited the bright gold and showed gold on white.
+   */
+  :root:not(.dark) :is(
+      .bg-card,
+      .bg-background,
+      .bg-white,
+      .bg-secondary,
+      .bg-muted,
+      .card-premium,
+      [class*="bg-card/9"],
+      [class*="bg-background/9"],
+      [class*="bg-white/9"]
+    ) {
+    --gold-ink: 38 100% 24%;
+    --quiet-btn-fg: initial;
+    --quiet-btn-border: initial;
+    --quiet-btn-hover-bg: initial;
+    --quiet-btn-hover-border: initial;
+  }
+
+  /*
+   * Text on a photo (page heroes). `.hero-legible` goes on the hero <section>
+   * whose first child is the absolutely-positioned photo wrapper.
+   *
+   * 1. Gold text. A hero's dark overlay is a sibling of the text, not its
+   *    parent, so the dark-surface rule never reached it: hero text kept the
+   *    dark "ink" gold meant for white pages and vanished into the photo.
+   *    `.hero-legible` is in the dark-surface list above.
+   * 2. A floor under the per-page gradients. Each hero sets its own overlay
+   *    strength (0.2 to 0.88); the weak ones left white text on bright sky and
+   *    windows. This layer keeps white text at 4.5:1 and bright gold headings
+   *    at 3:1 even over a pure-white pixel. On phones the text spans the whole
+   *    photo, so the layer is even; from 1024 px the text sits on the left and
+   *    the right side of the photo stays clear.
+   * 3. A soft shadow, for the edges of letters over busy detail.
+   */
+  /* The per-page gradients are replaced by the one layer below. */
+  .hero-legible > .absolute:first-child > div:is(
+      [class*="--hero-overlay"],
+      [class*="bg-gradient"],
+      [class*="linear-gradient"],
+      [class*="scrim"],
+      [class*="bg-black"]
+    ) {
+    display: none;
+  }
+
+  .hero-legible > .absolute:first-child::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      hsl(var(--hero-overlay) / 0.84) 0%,
+      hsl(var(--hero-overlay) / 0.76) 55%,
+      hsl(var(--hero-overlay) / 0.74) 100%
+    );
+  }
+
+  /* Left-aligned hero text on a wide screen: headline ends near 62% of the
+     width, the paragraph near 47%. `.hero-legible-even` keeps the even layer
+     for heroes whose text is centred. */
+  @media (min-width: 1280px) {
+    .hero-legible:not(.hero-legible-even) > .absolute:first-child::after {
+      background: linear-gradient(
+        to right,
+        hsl(var(--hero-overlay) / 0.78) 0%,
+        hsl(var(--hero-overlay) / 0.7) 48%,
+        hsl(var(--hero-overlay) / 0.52) 64%,
+        hsl(var(--hero-overlay) / 0.14) 100%
+      );
+    }
+  }
+
+  /* County and town-service heroes pin a stats panel to their bottom edge.
+     On phones the section-spacing rules cut the hero's bottom padding to
+     about 36 px, so the panel (190-220 px tall) covered the call buttons and
+     the trust lines above it. */
+  @media (max-width: 767px) {
+    main > section.hero-panel-room {
+      padding-bottom: 15rem !important;
+    }
+  }
+
+  .hero-legible :is(h1, h2, p, li) {
+    text-shadow: 0 1px 2px hsl(var(--hero-overlay) / 0.6), 0 2px 16px hsl(var(--hero-overlay) / 0.4);
+  }
+
+  .hero-legible .btn,
+  .hero-legible .btn * {
+    text-shadow: none;
   }
 
   /* ──────────────────────────────────────
@@ -820,6 +930,23 @@ img {
   }
   .btn-ghost.btn-on-dark:hover {
     background: hsl(var(--dark-section-foreground) / 0.1);
+  }
+
+  /* Outline and text-only buttons take their colours from the surface they
+     sit on (see the dark-surface rule): dark green on light, light on dark. */
+  .btn-secondary:not(.btn-on-dark),
+  .btn-ghost:not(.btn-on-dark) {
+    color: hsl(var(--quiet-btn-fg, var(--primary)));
+  }
+  .btn-secondary:not(.btn-on-dark) {
+    border-color: var(--quiet-btn-border, hsl(var(--primary) / 0.35));
+  }
+  .btn-secondary:not(.btn-on-dark):hover {
+    background: var(--quiet-btn-hover-bg, hsl(var(--primary) / 0.06));
+    border-color: var(--quiet-btn-hover-border, hsl(var(--primary) / 0.7));
+  }
+  .btn-ghost:not(.btn-on-dark):hover {
+    background: var(--quiet-btn-hover-bg, hsl(var(--primary) / 0.07));
   }
 
   /* Destructive — irreversible actions only. */
@@ -2186,6 +2313,14 @@ div[style*="Edit with Lovable"],
   .section-default {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+  }
+
+  /* …but a hero still has to clear the fixed header. The rule above was
+     winning over .hero-clears-header, so the first line of the Careers and
+     Free Tools heroes sat underneath the header on phones. */
+  .section-padding.hero-clears-header,
+  .section-default.hero-clears-header {
+    padding-top: calc(var(--header-h) + 1.5rem) !important;
   }
 
   .section-compact {

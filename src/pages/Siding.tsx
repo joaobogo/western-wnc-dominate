@@ -64,7 +64,7 @@ const Siding = () => {
         ]}
       />
       <main id="main-content">
-        <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={sidingHero}

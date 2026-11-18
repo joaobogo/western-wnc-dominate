@@ -16,7 +16,8 @@
     "perf:check": "node scripts/lhci-gate.mjs",
     "smoke:lp": "node scripts/lp-smoke.mjs",
     "seo:check": "node scripts/seo-check.mjs",
-    "postbuild": "node scripts/prerender.mjs && node scripts/emit-landing-shells.mjs && bun scripts/generate-og-images.ts && node scripts/generate-llms-full.mjs && node scripts/check-placeholders.mjs && node scripts/indexnow-notify.mjs && node scripts/seo-check-postbuild.mjs"
+    "postbuild": "node scripts/prerender.mjs && node scripts/emit-landing-shells.mjs && bun scripts/generate-og-images.ts && node scripts/generate-llms-full.mjs && node scripts/check-placeholders.mjs && node scripts/indexnow-notify.mjs && node scripts/seo-check-postbuild.mjs",
+    "contrast:check": "node scripts/contrast-audit.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

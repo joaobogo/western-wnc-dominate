@@ -127,7 +127,7 @@ const OutdoorLiving = () => {
         hero={
           <>
             {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={outdoorMobileHero} />
@@ -351,7 +351,7 @@ const OutdoorLiving = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {processSteps.map((step, i) => (
                 <motion.div key={step.number} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
+                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-muted-foreground/75 select-none group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.number}</span>
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
                     <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>

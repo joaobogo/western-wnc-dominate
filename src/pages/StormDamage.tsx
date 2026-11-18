@@ -184,7 +184,7 @@ const StormDamage = () => {
           hero={
             <>
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Storm damage roof assessment in Western North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
@@ -336,7 +336,7 @@ const StormDamage = () => {
               {afterStormSteps.map((step, i) => (
                 <motion.div key={step.number} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className={`group relative bg-card border rounded-sm p-5 md:p-6 card-lift ${i === 4 ? 'border-destructive/15 bg-destructive/[0.02]' : 'border-border hover:border-primary/15'}`}>
                   <div className="flex items-start gap-4 md:gap-5">
-                    <span className="text-3xl font-heading font-bold text-border/60 select-none flex-shrink-0 w-8 group-hover:text-primary/15 transition-colors">{step.number}</span>
+                    <span className="text-3xl font-heading font-bold text-muted-foreground/75 select-none flex-shrink-0 w-8 group-hover:text-primary/70 transition-colors">{step.number}</span>
                     <div>
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{step.title}</h3>
                       <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
@@ -400,7 +400,7 @@ const StormDamage = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/roofing/roof-repair" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary mt-5 hover:opacity-80 transition-opacity font-body">
+                    <Link to="/roofing/roof-repair" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] mt-5 hover:opacity-80 transition-opacity font-body">
                       Learn About Roof Repair <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </div>

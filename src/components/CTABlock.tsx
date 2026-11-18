@@ -50,7 +50,7 @@ const CTABlock = () => {
             <div className="max-w-3xl mx-auto text-center">
               {/* Eyebrow */}
               <ScrollReveal variant="fade">
-                <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-6 block">
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-6 block">
                   The Next Step
                 </span>
               </ScrollReveal>
@@ -124,7 +124,7 @@ const CTABlock = () => {
                 transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="max-w-md mx-auto mb-12 md:mb-14"
               >
-                <p className="text-caption font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/20 mb-5 text-center">
+                <p className="text-caption font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/75 mb-5 text-center">
                   Our Promise to You
                 </p>
                 <div className="space-y-3">

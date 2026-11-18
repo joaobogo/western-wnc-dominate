@@ -387,6 +387,11 @@ async function renderRoute(context, route, staticHead) {
           if (typeof end === "string" && key in el.style && el.style[key]) el.style[key] = end;
         }
       }
+      // Count-up numbers (AnimatedCounter) caught mid-count: write the real value.
+      for (const el of root ? root.querySelectorAll("[data-final]") : []) {
+        const final = el.getAttribute("data-final");
+        if (final !== null && el.textContent !== final) el.textContent = final;
+      }
       return document.documentElement.outerHTML;
     });
 

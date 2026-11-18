@@ -167,7 +167,7 @@ const ConstructionDesign = () => {
       />
       <main id="main-content">
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[62vh] md:min-h-[74vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[62vh] md:min-h-[74vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImg} alt="Wall of gable windows in a living room addition built by Highlander in Franklin, North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.55)] to-transparent" />
@@ -378,7 +378,7 @@ const ConstructionDesign = () => {
                     Commercial Terms Come From the Signed Agreement.
                   </h2>
                   <div className="max-w-2xl mx-auto space-y-5 text-dark-section-foreground text-base md:text-lg font-body leading-relaxed">
-                    <p>
+                    <p className="text-dark-section-foreground">
                       Paid design and construction are separate commitments. A construction credit, if offered for a specific project, is not automatic and must be stated in the signed Design & Consultation Agreement.
                     </p>
                     <p className="text-dark-section-foreground text-body-xs italic">

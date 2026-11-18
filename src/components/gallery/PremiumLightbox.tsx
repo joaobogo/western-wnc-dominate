@@ -139,7 +139,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
             onClick={e => e.stopPropagation()}
           >
             {/* Counter */}
-            <span className="text-white/40 text-sm font-body font-medium tabular-nums">
+            <span className="text-white/85 text-sm font-body font-medium tabular-nums">
               {(currentIndex! + 1).toString().padStart(2, "0")} / {projects.length.toString().padStart(2, "0")}
             </span>
 
@@ -255,7 +255,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   {project.description && (
                     <p className="text-white/85 text-sm leading-relaxed font-body mb-5">{project.description}</p>
                   )}
-                  <div className="space-y-2.5 text-sm text-white/45 font-body">
+                  <div className="space-y-2.5 text-sm text-white/85 font-body">
                     {project.location && (
                       <p className="flex items-center gap-2"><MapPin className="w-4 h-4" aria-hidden="true" /> {project.location}</p>
                     )}
@@ -280,7 +280,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.4 }}
-              className="absolute bottom-4 left-0 right-0 text-center text-white/20 text-caption font-body tracking-wider uppercase"
+              className="absolute bottom-4 left-0 right-0 text-center text-white/65 text-caption font-body tracking-wider uppercase"
             >
               Swipe to navigate · Pull down to close
             </motion.p>

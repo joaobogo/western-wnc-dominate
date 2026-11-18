@@ -78,7 +78,7 @@ const CountyPage = () => {
       />
       <main id="main-content">
         {/* 1. County Hero — Premium Mountain Visual */}
-        <section className="dark-surface relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48">
+        <section className="dark-surface relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden hero-clears-header pb-32 md:pb-48 hero-panel-room hero-legible hero-legible-even">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={county.heroImage} 

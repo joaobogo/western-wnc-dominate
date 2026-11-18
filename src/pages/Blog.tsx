@@ -148,7 +148,7 @@ const Blog = () => {
                   </p>
                   {/* Search */}
                   <div className="relative max-w-md">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" aria-hidden="true" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.6)]" aria-hidden="true" />
                     <input
                       aria-label="Search articles"
                       {...fieldAttrs.search}
@@ -239,14 +239,14 @@ const Blog = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.4)] to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 lg:p-12">
+                      <div className="dark-surface absolute bottom-0 left-0 right-0 p-8 md:p-10 lg:p-12">
                         <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
                           {heroFeatured.category}
                         </span>
                         <h2 className="font-heading font-bold text-[hsl(var(--dark-section-foreground))] text-2xl md:text-3xl mb-4 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
                           {heroFeatured.title}
                         </h2>
-                        <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-lg">
+                        <p className="text-[hsl(var(--dark-section-muted))] text-base leading-relaxed mb-6 max-w-lg">
                           {heroFeatured.excerpt}
                         </p>
                         <div className="flex items-center gap-5 text-sm text-white/90 font-bold mb-6">
@@ -254,7 +254,7 @@ const Blog = () => {
                           <span className="flex items-center gap-1"><Calendar className="w-4 h-4" aria-hidden="true" /> {heroFeatured.date}</span>
                           {heroFeatured.town && <span className="flex items-center gap-1"><Mountain className="w-4 h-4" aria-hidden="true" /> {heroFeatured.town}</span>}
                         </div>
-                        <span className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm group-hover:gap-3 transition-all">
+                        <span className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-sm group-hover:gap-3 transition-all">
                           Read Full Article <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </span>
                       </div>
@@ -651,7 +651,7 @@ const Blog = () => {
                   Subscribe
                 </button>
               </form>
-              <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-caption mt-3 font-body">Unsubscribe anytime. We respect your inbox.</p>
+              <p className="text-[hsl(var(--dark-section-foreground)/0.75)] text-caption mt-3 font-body">Unsubscribe anytime. We respect your inbox.</p>
             </motion.div>
           </div>
         </section>

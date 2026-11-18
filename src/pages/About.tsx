@@ -138,7 +138,7 @@ const About = () => {
       <Header />
       <main id="main-content">
         {/* ── HERO — Warm editorial fade (unique to About — no text-reveal, no gold line) ── */}
-        <section className="relative min-h-[55vh] md:min-h-[75vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[55vh] md:min-h-[75vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={storyImg} 
@@ -413,7 +413,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Our Horizon — Western North Carolina</span>
+                <span className="bg-background/90 px-3 py-1 text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-foreground">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>

@@ -179,7 +179,7 @@ const RoofingDivision = () => {
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }]} />
       <main id="main-content" className="md:pt-0">
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden hero-legible">
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" type="image/avif" srcSet={roofingMobileHeroAvif} sizes="100vw" />
@@ -223,7 +223,7 @@ const RoofingDivision = () => {
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                   <div className="flex flex-col">
                     <span className="text-body-xs font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-caption font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
+                    <span className="text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -343,7 +343,7 @@ const RoofingDivision = () => {
               className="group relative aspect-[4/3] lg:aspect-auto lg:row-span-2 rounded-none overflow-hidden"
             >
               <GalleryImage width={1600} height={1067} decoding="async" sizes="(max-width: 1024px) 100vw, 50vw" src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.3)] to-transparent" />
               <div className="absolute top-4 left-4 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 mb-1 block">{galleryItems[0].category}</span>
@@ -363,7 +363,7 @@ const RoofingDivision = () => {
                   className="group relative aspect-[4/3] rounded-none overflow-hidden"
                 >
                   <GalleryImage width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" sizes="(max-width: 1024px) 50vw, 25vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.92)] via-[hsl(var(--heritage-charcoal)/0.3)] to-transparent" />
                   <div className="absolute top-2 left-2 text-caption font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
                   <div className="absolute bottom-0 left-0 right-0 p-3">
                     <h3 className="font-heading font-semibold text-white text-xs">{item.title}</h3>

@@ -113,7 +113,7 @@ const DisciplinesBridge = ({
               <div className="flex items-center gap-1.5 mb-3 flex-wrap">
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.08em] text-muted-foreground bg-muted px-2 py-0.5 rounded-sm">{d.roofing}</span>
                 <ArrowRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" aria-hidden="true" />
-                <span className="text-caption font-body font-semibold uppercase tracking-[0.08em] text-[hsl(var(--highland-gold)/0.7)] bg-[hsl(var(--highland-gold)/0.06)] px-2 py-0.5 rounded-sm">{d.construction}</span>
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.08em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.1)] px-2 py-0.5 rounded-sm">{d.construction}</span>
               </div>
 
               <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{d.detail}</p>

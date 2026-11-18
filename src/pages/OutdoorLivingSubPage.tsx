@@ -60,7 +60,7 @@ const OutdoorLivingSubPage = ({ slug }: { slug: string }) => {
         alternateSurfaces={false}
         beforeHero={<PageBreadcrumbs items={crumbs} />}
         hero={
-          <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden hero-clears-header pb-20 md:pb-28">
+          <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden hero-clears-header pb-20 md:pb-28 hero-legible">
             <div className="absolute inset-0">
               <img
                 width={1600}

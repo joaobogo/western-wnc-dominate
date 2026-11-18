@@ -145,7 +145,7 @@ const RoofingGallery = ({
                   {projects[lightboxIdx].title}
                 </h3>
                 {projects[lightboxIdx].summary && (
-                  <p className="text-white/40 text-sm font-body mt-1 max-w-xl mx-auto">
+                  <p className="text-white/85 text-sm font-body mt-1 max-w-xl mx-auto">
                     {projects[lightboxIdx].summary}
                   </p>
                 )}

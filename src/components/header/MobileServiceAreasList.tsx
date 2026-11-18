@@ -38,7 +38,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
       >
         <span className="text-body-sm font-bold font-body">Service Areas</span>
         <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }} aria-hidden="true">
-          <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" aria-hidden="true" />
+          <ChevronDown className="w-4 h-4 text-heritage-charcoal/75" aria-hidden="true" />
         </motion.div>
       </button>
       <AnimatePresence>
@@ -61,7 +61,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
           >
             <div className="ml-3.5 pl-3 pb-2 border-l-2 border-[hsl(var(--highland-gold)/0.15)]">
               <div className="relative mt-1.5 mb-2 mr-1">
-                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-heritage-charcoal/40 pointer-events-none" aria-hidden="true" />
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-heritage-charcoal/75 pointer-events-none" aria-hidden="true" />
                 <input
                   aria-label="Search town or county"
             type="search"
@@ -70,14 +70,14 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                   placeholder="Search town or county…"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full min-h-[44px] rounded-sm border border-black/10 bg-white pl-8 pr-8 py-2 text-body-sm font-body text-heritage-charcoal placeholder:text-heritage-charcoal/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.4)] focus:border-[hsl(var(--highland-gold)/0.5)]"
+                  className="w-full min-h-[44px] rounded-sm border border-black/10 bg-white pl-8 pr-8 py-2 text-body-sm font-body text-heritage-charcoal placeholder:text-heritage-charcoal/75 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.4)] focus:border-[hsl(var(--highland-gold)/0.5)]"
                 />
                 {search && (
                   <button
                     type="button"
                     onClick={() => setSearch("")}
                     aria-label="Clear search"
-                    className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-heritage-charcoal/40 hover:text-heritage-charcoal active:scale-90 transition"
+                    className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-heritage-charcoal/75 hover:text-heritage-charcoal active:scale-90 transition"
                   >
                     <X className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -85,7 +85,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
               </div>
 
               {filtered.length === 0 ? (
-                <p className="px-2.5 py-4 text-body-xs font-body text-heritage-charcoal/50 italic">
+                <p className="px-2.5 py-4 text-body-xs font-body text-heritage-charcoal/75 italic">
                   No matching towns. Try a different search.
                 </p>
               ) : (
@@ -93,8 +93,8 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                   <div key={group.county} className="mb-2 last:mb-0">
                     <div className="flex items-center gap-1.5 px-2 pt-2 pb-1">
                       <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                      <span className="text-caption font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/55">{group.county}</span>
-                      <span className="text-caption font-body text-heritage-charcoal/35 ml-auto">{group.towns.length}</span>
+                      <span className="text-caption font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/75">{group.county}</span>
+                      <span className="text-caption font-body text-heritage-charcoal/75 ml-auto">{group.towns.length}</span>
                     </div>
                     <ul className="flex flex-col">
                       {group.towns.map((item) => (

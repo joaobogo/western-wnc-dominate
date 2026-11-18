@@ -84,7 +84,7 @@ const Gutters = () => {
         }
         hero={<>
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-clears-header pb-32 md:pb-48">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden hero-clears-header pb-32 md:pb-48 hero-legible">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async"
               src={guttersImg}
