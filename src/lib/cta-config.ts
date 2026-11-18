@@ -88,6 +88,9 @@ export const LP_CTA = {
   call: CTA_SECONDARY.callLabel,
   callShort: "Call Direct",
   estimate: CTA.mobileSticky,
+  /** Phone bottom bar: the 30% button is ~110 px wide, where the full label
+      wrapped onto three lines (Nov 2026 audit). Same word as the site bar. */
+  estimateShort: "Estimate",
   readReviews: "Read all reviews",
   seeProjects: "See recent projects",
 } as const;

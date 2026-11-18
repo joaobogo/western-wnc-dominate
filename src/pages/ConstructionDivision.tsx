@@ -27,7 +27,6 @@ import GoldLine from "@/components/motion/GoldLine";
 
 import {
   ConstructionServiceGrid,
-  ConstructionObjectionBuster,
   ConstructionMidCTA,
   ConstructionClosingCTA,
   ConstructionCredentialStrip,
@@ -420,11 +419,9 @@ const ConstructionDivision = () => {
           </div>
         </Section>
 
-        {/* ═══ OBJECTION BUSTER — Concern → Response pairs ═══ */}
-        <ConstructionObjectionBuster
-          heading={"We Know What\nHolds You Back."}
-          subheading="Every homeowner has concerns before a major construction project. Here's how we address each one — with systems, not promises."
-        />
+        {/* The objection cards appear once, in the dark trust ("construction
+            Standard" section below (showObjections). A second copy here repeated all
+            eight (Nov 2026 audit). */}
 
         {/* ═══ PROCESS — 6-step compact ═══ */}
         <ConstructionProcess

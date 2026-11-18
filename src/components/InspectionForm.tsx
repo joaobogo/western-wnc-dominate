@@ -263,7 +263,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
 
               <div className="space-y-3 text-white">
                 {[
-                  "First name, email and phone are required",
+                  "Name, email and phone are required",
                   "No budget, address, timeline, or project description required",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">

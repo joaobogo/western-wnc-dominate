@@ -224,7 +224,7 @@ const RoofRepair = () => {
               <span className="eyebrow mb-3 block">Not an Emergency?</span>
               <h2 className="section-heading mb-3">Send It Over and We'll Call You Back.</h2>
               <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
-                If the leak isn't active right now, four quick fields are all we need to get a free estimate on the schedule.
+                If the leak isn't active right now, three quick fields are all we need to get a free estimate on the schedule.
               </p>
             </div>
             <FastLeadForm

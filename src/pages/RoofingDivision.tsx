@@ -37,7 +37,6 @@ import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import RoofingPathFinder from "@/components/roofing/RoofingPathFinder";
-import RoofingIntentRouter from "@/components/roofing/RoofingIntentRouter";
 import HeroTrustLine from "@/components/hero/HeroTrustLine";
 import { towns } from "@/data/towns";
 
@@ -375,7 +374,9 @@ const RoofingDivision = () => {
         </Section>
 
         {/* ─── INTENT ROUTER ─── */}
-        <RoofingIntentRouter />
+        {/* One "what's going on with your roof" picker per page: RoofingPathFinder
+            below (five paths plus the phone). A second, shorter picker here
+            repeated it (Nov 2026 audit). */}
 
         {/* ─── TRUST STRIP ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">

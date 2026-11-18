@@ -27,6 +27,17 @@ interface TieredOfferProps {
  * Tiered offer band: one dominant action for ready-now visitors, plus two
  * lighter paths for researchers and early-stage planners.
  */
+/** Construction pages get construction wording, not "someone on the roof this week". */
+const CONSTRUCTION_CONTEXTS = new Set([
+  "construction-division",
+  "custom-construction",
+  "exterior-improvements",
+  "home-additions",
+  "outdoor-living",
+  "renovations",
+  "siding",
+]);
+
 const TieredOffer = ({
   primaryLabel = "Get My Roof Assessed",
   primaryTo = "/request-inspection",
@@ -53,7 +64,9 @@ const TieredOffer = ({
         <span className="eyebrow mb-3 block">Where You Are Right Now</span>
         <h2 className="section-heading mb-3">Pick the next step that fits</h2>
         <p className="text-muted-foreground font-body">
-          Some people need someone on the roof this week. Others are six months out and still {isRepair ? "looking for roofing answers" : "gathering information"}.
+          {isRepair || !CONSTRUCTION_CONTEXTS.has(context)
+            ? "Some people need someone on the roof this week. Others are six months out and still looking for roofing answers."
+            : "Some people are ready to plan a project now. Others are a season or two out and still gathering information."}
           Both are welcome — start wherever you actually are.
         </p>
       </div>

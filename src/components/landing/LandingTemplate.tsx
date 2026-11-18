@@ -1015,9 +1015,10 @@ function LandingBody() {
           <button
             type="button"
             onClick={scrollToNearestForm}
+            aria-label={config.mobileCta}
             className={`btn btn-secondary min-h-12 w-full justify-center px-2 sm:text-sm ${v2 ? "whitespace-normal text-center text-[0.78rem] normal-case leading-tight tracking-normal" : "whitespace-nowrap text-[0.8rem]"}`}
           >
-            {config.mobileCta}
+            {LP_CTA.estimateShort}
           </button>
         </div>
       )}

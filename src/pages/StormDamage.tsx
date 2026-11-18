@@ -258,7 +258,7 @@ const StormDamage = () => {
               <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
               <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
               <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
-                If nothing is leaking right now, send four quick fields and we&apos;ll schedule an
+                If nothing is leaking right now, send three quick fields and we&apos;ll schedule an
                 inspection with photo documentation for your records or your claim.
               </p>
             </div>
