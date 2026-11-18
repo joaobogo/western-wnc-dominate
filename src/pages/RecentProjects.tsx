@@ -83,38 +83,38 @@ const RecentProjects = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Recent Projects", url: "/recent-projects" }]} />
       <main id="main-content">
-        {/* Hero */}
-        <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
-          <div className="absolute inset-0">
-            <GalleryImage width={1600} height={900} loading="eager" decoding="async" sizes="100vw"
-              src={heroImg}
-              alt="Charcoal dimensional shingle roof with dormers by Highlander Building Services, overlooking the Western North Carolina mountains"
-              fetchPriority="high"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/75 to-secondary/40" />
-            <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-secondary/60" />
-          </div>
-          <div className="container-tight relative hero-clears-header pb-14 md:pb-20 pt-8 md:pt-12">
-            <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
-              Project Activity · Western North Carolina
-            </p>
-            <h1 className="text-display-md md:text-display-lg font-heading font-bold text-[hsl(var(--heritage-green))] mb-6 leading-[1.05] tracking-tightest">
-              Recent Projects
-            </h1>
-            <p className="text-body-lg md:text-body-xl text-foreground/85 max-w-3xl leading-relaxed font-medium mb-6">
-              See how Highlander Building Services helps homeowners and property owners across
-              Franklin, Highlands, Cashiers, Sylva, and Western North Carolina protect, improve,
-              and plan their properties through roofing, construction, gutters, outdoor living,
-              and design-led construction support.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 mt-2">
-              <Link to="/request-inspection" className="btn btn-primary btn-md">
-                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </Link>
-              <Link to="/roofing" className="btn btn-secondary btn-md">
-                Explore Our Services
-              </Link>
+        {/* Hero (Nov 18 2026): same layout as the project pages. The photo is
+            shown in a frame instead of washed out behind the text, and the
+            section no longer adds header space the breadcrumbs already give. */}
+        <section className="no-header-pad pt-0 bg-secondary/40 border-b border-border/60" aria-labelledby="recent-projects-title">
+          <div className="max-w-7xl mx-auto px-5 md:px-10 py-6 md:py-12 grid gap-6 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center">
+            <figure className="lg:order-2 relative aspect-[4/3] overflow-hidden rounded-sm border border-border bg-muted shadow-flat">
+              <GalleryImage width={1600} height={1200} loading="eager" decoding="async" sizes="(max-width: 1024px) 100vw, 55vw"
+                src={heroImg}
+                alt="Charcoal dimensional shingle roof with dormers by Highlander Building Services, overlooking the Western North Carolina mountains"
+                fetchPriority="high"
+                className="w-full h-full object-cover"
+              />
+            </figure>
+            <div className="lg:order-1">
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+                Project Activity · Western North Carolina
+              </p>
+              <h1 id="recent-projects-title" className="text-4xl md:text-5xl font-heading font-bold text-[hsl(var(--heritage-green))] mb-5 leading-[1.05]">
+                Recent Projects
+              </h1>
+              <p className="text-body md:text-body-lg text-foreground/85 max-w-xl leading-relaxed font-medium mb-7">
+                Documented roofing and construction jobs across Franklin, Highlands, Cashiers, Sylva
+                and Western North Carolina, each with its location, scope and photos.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3 max-w-xl">
+                <Link to="/request-inspection" className="btn btn-primary btn-sm w-full whitespace-nowrap">
+                  Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/roofing" className="btn btn-secondary btn-sm w-full whitespace-nowrap">
+                  Explore Our Services
+                </Link>
+              </div>
             </div>
           </div>
         </section>
