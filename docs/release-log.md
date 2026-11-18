@@ -160,7 +160,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Gates:** tests 622/622 · build 346/346 · `seo:check` PASS · `smoke:lp` 21/21 · all 345 pages loaded in a browser: 343 clean, 2 with a hydration error that is also present on `main` (see `docs/open-items.md`).
 - **Rollback point:** `main` at `c1cf42e` (hotfix 2).
 
-## Readability pass — Nov 18, 2026 (PR pending approval)
+## Readability pass — Nov 18, 2026 (PR #40)
+- **Approved by:** John ("Aprove", Nov 18).
 - **Asked by:** John, with a phone screenshot of `/construction/renovations`: "Make sure we can always read the letters easily."
 - **How it was checked:** a new tool, `npm run contrast:check`, records every line of text on a page, hides the text, photographs what is behind it and compares the two. One page per template (73 pages), phone and desktop. Before: 147 distinct lines under the AA threshold on the sample. After: see Gates.
 - **Causes found, and the fix for each:**
