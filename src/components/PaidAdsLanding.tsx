@@ -13,7 +13,7 @@ import { trackPhoneClick } from "@/lib/gtm";
 import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
-import { CTA, CTA_SECONDARY } from "@/lib/cta-config";
+import { CTA, CTA_SECONDARY, LP_CTA } from "@/lib/cta-config";
 import { ROOF_PROJECT_PHOTOS } from "@/components/landing/config";
 import { smallSrc } from "@/lib/gallery-srcset";
 
@@ -370,9 +370,10 @@ const PaidAdsLanding = ({
           <button
             type="button"
             onClick={scrollToForm}
+            aria-label={CTA.mobileSticky}
             className="flex min-h-12 w-full items-center justify-center border border-border bg-card px-1 text-center text-[0.75rem] font-semibold leading-tight text-foreground"
           >
-            {CTA.mobileSticky}
+            {LP_CTA.estimateShort}
           </button>
         </div>
       </main>

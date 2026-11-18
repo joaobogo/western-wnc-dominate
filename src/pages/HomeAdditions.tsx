@@ -19,6 +19,8 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import ProofKit from "@/components/conversion/ProofKit";
 import Footer from "@/components/Footer";
 import InspectionForm from "@/components/InspectionForm";
+import FastLeadForm from "@/components/FastLeadForm";
+import { CTA } from "@/lib/cta-config";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
@@ -206,6 +208,20 @@ const HomeAdditions = () => {
         }
         whatWeDo={
           <>
+        {/* Short form in the first quarter of the page (Nov 2026 audit: on this
+            high-value page the only form sat about 89% of the way down). */}
+        <section className="section-padding bg-background" aria-labelledby="quick-form-heading">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">Planning an Addition?</span>
+              <h2 id="quick-form-heading" className="section-heading mb-3">Tell Us About It and We'll Call You Back.</h2>
+              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
+                Three quick fields. The Franklin office calls you back during business hours, Mon–Fri 8 AM–5 PM Eastern, to talk through the project.
+              </p>
+            </div>
+            <FastLeadForm ctaLabel={CTA.constructionHero} serviceLabel="Home Addition Construction" />
+          </div>
+        </section>
             {/* ─── OPENING — Design editorial with scope sidebar ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">

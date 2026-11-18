@@ -127,7 +127,7 @@ const ReviewsCarousel = ({
         ref={trackRef}
         tabIndex={0}
         aria-label={`${sorted.length} published customer reviews, scrollable`}
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 -mx-1 px-1 scroll-smooth [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))]"
+        className="relative flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 -mx-1 px-1 scroll-smooth [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))]"
       >
         {sorted.map((r) => (
           <li

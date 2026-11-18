@@ -184,3 +184,21 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - found by the all-pages load check: the FAQ page was delivered showing "91 Google Reviews" instead of 158. The page snapshot had caught the count-up animation mid-count. Count-up numbers now carry their real value and the snapshot writes it, on every page.
 - **Not changed:** dimmed disabled buttons ("Continue", "Back", "Get drive time") stay dimmed until they can be used; wording; forms; tracking; URLs.
 - **Rollback point:** `main` at `c0dc760` (speed pass, confirmed live by the site health check).
+
+## Conversion and UX audit fixes — Nov 18, 2026 (PR #41)
+- **Approved by:** John ("aprove", Nov 18).
+- **Asked by:** John (shared "Highlander website: conversion and UX audit", Nov 18).
+- **Rollback point:** `main` at `a04a576` (Lovable's chimney-cricket article, on top of the readability pass `77c283f`, which the site health check showed live at 11:07 UTC).
+- **Fixed (no decision needed):**
+  - homepage scrolled sideways (page 4,102 px wide on desktop, 2,876 px on a phone): hidden "(opens in a new tab)" labels in the reviews carousel escaped it. The carousel now contains them;
+  - "We saved your answers from earlier" appeared over empty fields: every form saved a draft even when nothing was typed. Drafts now save only once the visitor enters something, a blank draft is dropped, and the note shows only when answers were actually put back (all eight forms that use the shared draft helper);
+  - form copy matched to the fields: "Name, email and phone are required" (the field is "Full name"); Roof Repair and Storm Damage said "four quick fields" for a three-field form;
+  - `/construction`: the eight objection cards appeared twice (kept once, in "The Highlander Construction Standard"); step numbers ran 01, 02, 04, 06, 07, 10 (now 1–6; the same fix applies to every shortened step list on roofing and construction pages); "Some people need someone on the roof this week" replaced on construction pages with construction wording;
+  - `/roofing`: two similar "what's going on with your roof" pickers; kept the one with five paths and the phone link;
+  - a short 3-field form near the top of `/roofing/roof-replacement` and `/construction/additions` (their only form sat 88–89% of the way down). It reuses the existing form and the existing button names;
+  - landing-page phone bar: "Get My Written Estimate" wrapped onto three lines; it now reads "Estimate", like the rest of the site.
+- **Checked and not changed:**
+  - "email is optional on the standard forms": it is not. Every form requires email (the check is in the form's validation, not the field's `required` attribute). Making it optional on the landing pages is a decision (below).
+  - "no next step on /reviews, /about, /certifications": all three already have call and estimate buttons in the page body.
+- **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · all 346 pages loaded in a browser (the same 2 older hydration errors, see `docs/open-items.md`) · no hidden content in delivered HTML · homepage width equals the screen at 375 and 1,425 px · two untouched visits to `/request-inspection` show no "saved your answers" note.
+- **Decisions waiting:** `docs/open-items.md`, "From the Nov 18 conversion audit".

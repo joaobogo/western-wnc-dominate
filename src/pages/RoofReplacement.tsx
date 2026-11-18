@@ -17,6 +17,8 @@ import PageContext from "@/components/PageContext";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import FastLeadForm from "@/components/FastLeadForm";
+import { CTA } from "@/lib/cta-config";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
@@ -269,6 +271,20 @@ const RoofReplacement = () => {
           }
           whatWeDo={
             <>
+        {/* Short form in the first quarter of the page (Nov 2026 audit: on this
+            high-value page the only form sat about 89% of the way down). */}
+        <section className="section-padding bg-background" aria-labelledby="quick-form-heading">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">Ready When You Are</span>
+              <h2 id="quick-form-heading" className="section-heading mb-3">Send It Over and We'll Call You Back.</h2>
+              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
+                Three quick fields. The Franklin office calls you back during business hours, Mon–Fri 8 AM–5 PM Eastern, to set up a visit.
+              </p>
+            </div>
+            <FastLeadForm ctaLabel={CTA.roofingHero} serviceLabel="Roof Replacement" />
+          </div>
+        </section>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-center">

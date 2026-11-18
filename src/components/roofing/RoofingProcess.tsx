@@ -97,7 +97,9 @@ const RoofingProcess = ({
               className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
             >
               <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-muted-foreground/75 select-none group-hover:text-primary/70 transition-colors">
-                {step.number}
+                {/* Numbered by position: shortened step lists pick steps out of the
+                    full process, and showed 01, 02, 04, 06… (Nov 2026 audit). */}
+                {String(i + 1).padStart(2, "0")}
               </span>
               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                 <step.icon className="w-5 h-5 text-primary" />
