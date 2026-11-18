@@ -54,6 +54,8 @@ import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import FinancingTeaser from "@/components/conversion/FinancingTeaser";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import HeroTrustLine from "@/components/hero/HeroTrustLine";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -455,6 +457,18 @@ const ConstructionDivision = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="construction projects" />
 
+        <ProjectSpotlight
+          slugs={["living-room-addition-franklin", "deck-railing-rebuild-sylva"]}
+          eyebrow="Recent Builds"
+          heading="Two documented construction projects"
+          intro="A living room addition in Franklin and a deck rebuild in Sylva. Tap either one for the full scope, photos and timeline."
+        />
+        <TownServiceLinks
+          service="construction"
+          label="construction"
+          heading="Construction by town"
+          intro="Each page covers local building conditions, permitting notes and the showroom that serves the town."
+        />
         <ProofKit topic="construction" reviews />
         <InspectionForm />
 

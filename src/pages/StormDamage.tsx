@@ -38,6 +38,7 @@ import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
 import InsuranceDocHelp from "@/components/emergency/InsuranceDocHelp";
 import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
 import FastLeadForm from "@/components/FastLeadForm";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -569,6 +570,12 @@ const StormDamage = () => {
           <AttributedReviews services={["storm-damage"]} heading="What homeowners say about our storm damage work" />
         </div>
       </section>
+      <TownServiceLinks
+        service="roof-repair"
+        label="roof repair"
+        heading="Storm and leak repair in your town"
+        intro="After a storm, start with the town page closest to you. Each one covers local roof conditions and the showroom that serves the town."
+      />
       <ConversionTrustBlock variant="band" category="storm" />
             </>
           }

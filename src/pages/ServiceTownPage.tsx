@@ -34,6 +34,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
+import type { ProjectDetail } from "@/data/projects";
 import RelatedLinks, { type RelatedLinkItem } from "@/components/RelatedLinks";
 
 const ROOF_COST: RelatedLinkItem = {
@@ -71,6 +72,27 @@ interface ServiceTownPageProps {
   townSlug?: string;
   serviceSlug?: string;
 }
+
+
+/**
+ * Which real jobs a town × service page shows first (Nov 2026 local SEO
+ * analysis: metal pages showed shingle and deck jobs, construction pages
+ * showed roofs). Construction services show construction jobs; a page's own
+ * service (metal, Brava, additions, outdoor living) leads when one exists.
+ */
+const CONSTRUCTION_SERVICES = new Set(["construction", "additions", "renovations", "outdoor-living", "home-repairs", "design"]);
+const projectCategoryForService = (service: string): ProjectDetail["category"] =>
+  CONSTRUCTION_SERVICES.has(service) ? "construction" : "roofing";
+const SERVICE_MATCH: Record<string, RegExp> = {
+  "metal-roofing": /metal|standing seam/i,
+  "synthetic-brava": /synthetic|brava/i,
+  additions: /addition/i,
+  "outdoor-living": /deck|porch|patio|outdoor/i,
+};
+const projectMatchForService = (service: string) => {
+  const re = SERVICE_MATCH[service];
+  return re ? (p: ProjectDetail) => re.test(`${p.type} ${p.title}`) : undefined;
+};
 
 const ServiceTownPage = ({
   townSlug: propTownSlug,
@@ -310,10 +332,13 @@ const ServiceTownPage = ({
           <div className="mt-16 md:mt-20 space-y-14">
             <LocalProjectProof
               town={{ name: town.name, slug: town.slug, county: town.county }}
-              category="roofing"
+              category={projectCategoryForService(serviceSlug)}
+              prefer={projectMatchForService(serviceSlug)}
               limit={3}
               heading={`Recent work near ${town.name}`}
-              excludeImages={[hero.src]}
+              // When the hero is a project's photo, that project is the best local
+              // proof on the page: list it anyway (its card links to the full job).
+              excludeImages={hero.projectSlug ? [] : [hero.src]}
             />
             <AttributedReviews town={town.name} />
           </div>

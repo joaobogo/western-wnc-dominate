@@ -460,7 +460,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
   // ─────────── WAYNESVILLE ───────────
   E({
     townSlug: "waynesville-nc",
-    indexable: false, // outside the map-pack radius — noindex,follow, not in the sitemap (P3.1, GSC 90-day data)
+    // Indexable again (John, Nov 18 2026): Waynesville is one of the region's biggest markets.
     serviceSlug: "roof-replacement",
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Waynesville, NC",
@@ -471,7 +471,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Homeowners in historic Main Street areas, hillside residents in Haywood County, and families looking for a high-performance roof that respects their home's character.",
     proofNote:
-      "Documented successful projects across Haywood County, featuring historic-district material matching and modern ventilation upgrades.",
+      "A documented Waynesville job: a 4,100 sq ft CertainTeed Landmark replacement in Weathered Wood on a multi-level home, completed in 4 days, with decking repair and upgraded attic ventilation.",
     metaTitle: "Roof Replacement in Waynesville, NC | Highlander Building Services",
     metaDescription:
       "Premium roof replacement for Waynesville homes. Specialized in historic district care and mountain-grade performance. Licensed & Insured.",
@@ -500,6 +500,58 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "Can you match the siding on an older Waynesville home?", a: "Yes. We source high-quality matches for historic cedar, stone, and traditional lap siding common in Waynesville." },
       { q: "Do you manage the full Haywood County permit process?", a: "Yes. We handle all design coordination and county inspections." },
+    ],
+  }),
+  E({
+    // Hand-written so visitors get real local content, but left out of search:
+    // the Waynesville town page ("Waynesville, NC Roofing & Roof Repair") owns
+    // the "roofing Waynesville" searches. Two pages chasing the same search
+    // split it; Franklin's roofing page was folded into its town page for the
+    // same reason. Flip to indexable only if the town page is retitled.
+    townSlug: "waynesville-nc",
+    indexable: false, // the town page owns "roofing Waynesville" (see note above)
+    serviceSlug: "roofing",
+    serviceLabel: "Roofing",
+    h1: "Roofing in Waynesville, NC",
+    intro:
+      "Waynesville sits at about 2,750 ft in Haywood County, where regular freeze-thaw cycles and winter snow test attic ventilation and older roof decks. Highlander repairs, replaces and installs metal roofs on Waynesville homes, from the historic districts to newer hillside builds.",
+    localContext:
+      "Much of Waynesville's housing is older, and older roofs here often fail at the deck and the attic before the surface looks worn. We check decking, flashing and ventilation on every inspection, because a new surface over a tired deck or a poorly vented attic does not last through Haywood County winters.",
+    whoItsFor:
+      "Owners of older homes in and around the Main Street Historic District, Frog Level and Lake Junaluska, families in Haywood County's hillside neighborhoods, and anyone weighing repair against replacement.",
+    proofNote:
+      "Recent Waynesville work includes a 4,100 sq ft CertainTeed Landmark shingle replacement completed in 4 days, with 12 sheets of damaged decking replaced and the ridge vent upgraded.",
+    metaTitle: "Roofing in Waynesville, NC: Repair, Replacement & Metal | Highlander",
+    metaDescription:
+      "Roof repair, roof replacement and metal roofing for Waynesville, NC homes. Deck, flashing and ventilation checked on every job. Licensed & Insured.",
+    faqs: [
+      { q: "Do you work in Waynesville and the rest of Haywood County?", a: "Yes. Waynesville is part of our regular service area, along with Lake Junaluska and the surrounding Haywood County communities." },
+      { q: "My Waynesville roof is old but not leaking. Repair or replace?", a: "It depends on the deck and the attic, not just the shingles. We inspect decking, flashing and ventilation and give you a written recommendation either way." },
+      { q: "Why does ventilation matter so much on Waynesville roofs?", a: "Freeze-thaw cycles and winter snow turn poor attic ventilation into ice damming and moisture in the deck. Correcting ventilation is often part of doing the roof properly here." },
+      { q: "Can you match the look of an older home in the historic district?", a: "We help you choose shingle colors, profiles and details that suit the home's style, and we confirm any district or HOA requirements before work starts." },
+    ],
+  }),
+  E({
+    townSlug: "waynesville-nc",
+    serviceSlug: "metal-roofing",
+    serviceLabel: "Metal Roofing",
+    h1: "Metal Roofing in Waynesville, NC",
+    intro:
+      "Standing seam metal is one of the most-asked-about systems in Waynesville, where homes see regular freeze-thaw cycles and winter snow at around 2,750 ft. Metal sheds snow and ice well, but only when it is designed for the house: snow guards, underlayment and the details at valleys and walls matter as much as the panel.",
+    localContext:
+      "On Waynesville homes we plan snow retention over entries, porches and walkways, run ice-and-water protection beyond code minimums at eaves and valleys, and fix ventilation before the panels go on. Metal over an unvented or damaged deck traps the same problems underneath it.",
+    whoItsFor:
+      "Owners replacing an aging shingle roof who want a longer-lasting system, owners of hillside homes with steep, snow-loaded roofs, and anyone pairing a new porch or addition with a matching metal roof.",
+    proofNote:
+      "Our metal work across Western North Carolina includes a dark bronze standing seam roof in Highlands. Every metal job is specified in writing: panel, gauge, underlayment, snow retention and trim.",
+    metaTitle: "Metal Roofing in Waynesville, NC: Standing Seam | Highlander",
+    metaDescription:
+      "Standing seam metal roofing for Waynesville, NC homes, designed for snow, ice and freeze-thaw. Written specification on every job. Licensed & Insured.",
+    faqs: [
+      { q: "Is metal a good choice for a Waynesville home?", a: "Often, yes. Metal sheds snow and handles freeze-thaw cycles well. It is a bigger upfront investment than shingles, so we compare both in writing for your house." },
+      { q: "Will snow slide off onto my porch or walkway?", a: "It can, which is why we plan snow retention over entries, porches and walkways as part of the design rather than adding it later." },
+      { q: "Can metal go over my existing shingles?", a: "Sometimes, but we usually recommend a tear-off so we can check the deck and install proper underlayment. Older Waynesville roofs often have deck damage that only shows once the shingles are off." },
+      { q: "How long does a metal roof installation take?", a: "It depends on the size and complexity of the roof. We give you a written scope and schedule before work starts." },
     ],
   }),
   // ─────────── BREVARD ───────────

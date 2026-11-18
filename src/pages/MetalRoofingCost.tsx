@@ -11,6 +11,8 @@ import InspectionForm from "@/components/InspectionForm";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL } from "@/data/business";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 import {
   metalSystems,
   metalCostFactors,
@@ -196,6 +198,18 @@ const MetalRoofingCost = () => (
           </div>
         </div>
       </section>
+
+      <ProjectSpotlight
+        slugs={["standing-seam-metal-dark-bronze-highlands"]}
+        eyebrow="A Real Metal Roof"
+        heading="What a Finished Standing Seam Job Looks Like."
+      />
+      <TownServiceLinks
+        service="metal-roofing"
+        label="metal roofing"
+        heading="Metal Roofing by Town."
+        intro="Elevation, snow load and exposure change what a metal roof needs. Each town page covers the local conditions."
+      />
 
       {/* FAQ */}
       <section className="section-padding bg-background">

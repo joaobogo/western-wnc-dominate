@@ -24,6 +24,7 @@ import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
 
 const faqs = [
   { q: "How does Brava compare to real cedar shake?", a: "Brava holds color and profile dramatically longer than cedar in mountain climates. Real cedar cups, splits, and grows moss in the moisture and UV conditions across Highlands and Cashiers." },
@@ -169,7 +170,12 @@ const SyntheticRoofing = () => {
         process={
           <>
             <SchedulingReality serviceLabel="synthetic roofing" />
+            <ProjectSpotlight
+              slugs={["brava-synthetic-shake-glenville"]}
+              heading="A Recent Brava Re-Roof Near Cashiers: Lake Glenville."
+            />
             <ProofKit topic="roofing" photos />
+
             <InspectionForm />
           </>
         }

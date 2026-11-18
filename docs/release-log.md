@@ -202,3 +202,29 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - "no next step on /reviews, /about, /certifications": all three already have call and estimate buttons in the page body.
 - **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · all 346 pages loaded in a browser (the same 2 older hydration errors, see `docs/open-items.md`) · no hidden content in delivered HTML · homepage width equals the screen at 375 and 1,425 px · two untouched visits to `/request-inspection` show no "saved your answers" note.
 - **Decisions waiting:** `docs/open-items.md`, "From the Nov 18 conversion audit".
+
+## Local SEO, pages 21–50 — Nov 18, 2026 (PR pending approval)
+- **Asked by:** John ("Highlander local SEO analysis and top 50 pages"). John is doing the top 20 pages himself; this covers 21–50 where real material exists.
+- **Rollback point:** `main` at `0558765` (conversion audit fixes, confirmed live by the site health check at 12:22 UTC).
+- **Changed:**
+  - real documented jobs on the service pages they belong to (new `ProjectSpotlight`; every fact comes from `src/data/projects.ts`): cedar shake in Highlands on `/roofing/specialty` (#24); the Lake Glenville Brava re-roof on `/roofing/brava-synthetic` (#48); standing seam in Highlands on `/roofing/metal` (#43) and `/roofing/metal/cost` (#30); the Franklin addition on `/construction/additions` (#33); the Waynesville shingle replacement and the Highlands metal roof on `/roofing/residential` (#25);
+  - town links (new `TownServiceLinks`, only pages in the sitemap): metal roofing by town on `/roofing/metal/cost` (#30); roof replacement by town on `/roofing-cost-western-nc` (#47);
+  - `/construction/design` links to additions and renovations (#46).
+- **Checked, no change needed:** town pages 21–44 already run about 2,000 words with roof-repair sections, local FAQs, their county hub and the nearest real project; `/roofing/metal` already links to cost and the town metal pages; `/contact` and `/request-inspection` left as they are ("protect").
+- **Not done (needs material or a decision):** see `docs/open-items.md`, "Local SEO analysis".
+- **Gates:** tests 652/652 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · no page errors on the 8 changed pages · contrast audit on the 8 pages, phone and desktop: 0 lines under the AA threshold.
+
+### Top 20 pages — Nov 18, 2026 (same PR)
+- **Asked by:** John ("go ahead and do all top 20 pages. For Sylva, let's have the Sylva town page being the main one … we need to have a good Waynesville presence").
+- **Changed:**
+  - homepage (#1): the hero buttons now sit inside the first screen on laptops (at 1240 × 800 they were below it). The desktop sub-line is one sentence; the H1 wording is unchanged. New "Most requested" row under the proof band links Franklin, roofing, roof repair, roof replacement, gutters and construction;
+  - `/roofing/gutters` (#2): gutter work by town, linking eight town pages (there are no gutter town pages);
+  - `/service-areas/franklin-nc` (#3): "Recent work in and near Franklin" (the Franklin addition plus the Highlands jobs, each labelled with its real town) and a link to the Macon County page. Every town page now links its county page (Asheville / Buncombe left out of scope);
+  - `/roofing` (#4) and `/roofing/roof-replacement` (#8): the Waynesville shingle replacement and the Highlands metal roof, plus roof replacement by town; `/roofing/roof-repair` (#5) and `/roofing/storm-damage` (#12): roof repair by town;
+  - `/construction/outdoor-living` (#7): the Sylva deck project and outdoor living by town; `/construction/renovations` (#9) and `/construction/siding` (#15): construction by town; `/construction` (#20): the Franklin addition and Sylva deck, plus construction by town;
+  - `/service-areas/county/macon-county` (#14): one roofing and one construction job from the county (every county page gets the same, from `projects.ts`);
+  - town × service pages (#6, #11, #17, #18, #19): the job list now leads with the matching real job (metal on metal pages, builds on construction pages), and no longer hides the job whose photo is the page's main image. Highlands metal now shows the Highlands standing seam roof first; Franklin construction shows the Franklin addition first;
+  - **Waynesville (John: "one of the biggest markets in the region"):** `/service-areas/waynesville-nc/roof-replacement` and `/service-areas/waynesville-nc/metal-roofing` are now in Google's index and the sitemap, with hand-written local copy (Haywood County, 2,753 ft, freeze-thaw, the Main Street historic district, Frog Level, Lake Junaluska). The Waynesville job leads the project list. `/service-areas/waynesville-nc/roofing` has new hand-written copy but stays out of the index, because the Waynesville town page ("Waynesville, NC Roofing & Roof Repair") targets the same search; the same rule folded Franklin's roofing page into its town page. Waynesville is now a fifth "core town" in the test that limits which town × service pages can be indexed;
+  - **Sylva:** `/service-areas/sylva-nc` is the main Sylva page. `/locations/sylva-nc` is retitled "Sylva Showroom & Office: Address, Hours, Directions" (no longer chasing "roofing Sylva") and links to "Roofers in Sylva, NC".
+- **Checked, no change needed:** `/roofing/skylights` (#10) already links its towns; there is no documented VELUX job to show. `/service-areas/lake-glenville-nc` (#13) already shows the Lake Glenville Brava job. PR 42's title changes were not touched.
+- **URLs:** none added, changed or removed. Two pages joined the sitemap.

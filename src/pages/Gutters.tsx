@@ -30,6 +30,7 @@ import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 const faqs = [
   { q: "What size gutters do mountain homes need?", a: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
@@ -247,6 +248,13 @@ const Gutters = () => {
         </section>
         </>}
         coverage={<>
+      <TownServiceLinks
+        service="gutters"
+        label="roofing & gutters"
+        heading="Gutter work by town"
+        intro="Rainfall, leaf load and snow change what a gutter system has to handle. Each town page covers local conditions and the showroom that serves it."
+        townPages={["franklin-nc", "waynesville-nc", "highlands-nc", "cashiers-nc", "sylva-nc", "lake-glenville-nc", "bryson-city-nc", "otto-nc"]}
+      />
       <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"

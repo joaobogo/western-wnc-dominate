@@ -35,6 +35,7 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -453,6 +454,12 @@ const Renovations = () => {
 
         <CostContextBlock serviceLabel="renovation" variant="construction" />
         <CommonConcerns concerns={constructionConcerns} />
+        <TownServiceLinks
+          service="construction"
+          label="construction & renovations"
+          heading="Renovation and construction by town"
+          intro="Highlands, Cashiers and Franklin each have their own page covering local building conditions, permitting notes and the showroom that serves the town."
+        />
         <ProofKit topic="renovations" reviews />
         {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
         <InspectionForm />

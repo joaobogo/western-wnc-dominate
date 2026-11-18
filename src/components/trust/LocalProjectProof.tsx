@@ -18,6 +18,8 @@ export const pickLocalProjects = (
   town: { name: string; slug: string; county: string },
   category?: ProjectDetail["category"],
   limit = 2,
+  /** Jobs that match the page's service (e.g. metal roofs on a metal page) go first, nearest first. */
+  prefer?: (p: ProjectDetail) => boolean,
 ): Picked[] => {
   const neighborNames = getNeighborTowns(town.slug).map((t) => t.name);
   const inTown = (p: ProjectDetail) => p.location.startsWith(`${town.name},`);
@@ -31,7 +33,7 @@ export const pickLocalProjects = (
       ]
     : [...projectDetails];
 
-  const ranked = [
+  const byDistance = [
     ...pool.filter(inTown),
     ...pool.filter((p) => !inTown(p) && isNeighbor(p)),
     ...pool.filter((p) => !inTown(p) && !isNeighbor(p) && p.county === town.county),
@@ -39,6 +41,14 @@ export const pickLocalProjects = (
       (p) => !inTown(p) && !isNeighbor(p) && p.county !== town.county,
     ),
   ];
+  // Service match first, then the page's division, then everything else, each
+  // nearest first (a Sylva deck should not outrank a roof on a roofing page).
+  const tiers = [
+    prefer ? byDistance.filter(prefer) : [],
+    category ? byDistance.filter((p) => p.category === category) : [],
+    byDistance,
+  ];
+  const ranked = tiers.flat();
 
   const seen = new Set<string>();
   return ranked
@@ -69,8 +79,12 @@ interface LocalProjectProofProps {
    * line instead of work from other towns or stock imagery.
    */
   strictTown?: boolean;
-  /** Photos already on the page (e.g. the hero); projects that would repeat one are skipped. */
+  /** Photos already on the page (e.g. the hero). A project whose photo is one of
+   *  them shows another of its own photos instead; it is skipped only when it
+   *  has no other photo. */
   excludeImages?: string[];
+  /** Service match, passed to pickLocalProjects. */
+  prefer?: (p: ProjectDetail) => boolean;
 }
 
 /** Copy shown when a town has fewer real projects than the block can hold. */
@@ -84,11 +98,16 @@ const LocalProjectProof = ({
   className = "",
   strictTown = false,
   excludeImages = [],
+  prefer,
 }: LocalProjectProofProps) => {
-  const shows = (p: ProjectDetail) =>
-    p.beforeAfter ? [p.beforeAfter.before, p.beforeAfter.after] : [p.heroImage];
-  const all = pickLocalProjects(town, category, strictTown ? 50 : limit + excludeImages.length)
-    .filter(({ project }) => !shows(project).some((img) => excludeImages.includes(img)))
+  const repeats = (img: string) => excludeImages.includes(img);
+  /** The photo to show: the hero, or another of the project's own photos when the hero is already on the page. */
+  const photoFor = (p: ProjectDetail) =>
+    [p.heroImage, p.cardImage, ...p.galleryImages].find((img): img is string => !!img && !repeats(img));
+  const usable = (p: ProjectDetail) =>
+    p.beforeAfter ? ![p.beforeAfter.before, p.beforeAfter.after].some(repeats) : !!photoFor(p);
+  const all = pickLocalProjects(town, category, strictTown ? 50 : limit + excludeImages.length + 3, prefer)
+    .filter(({ project }) => usable(project))
     .slice(0, strictTown ? 50 : limit);
   const picks = strictTown ? all.filter((p) => p.proximity === `In ${town.name}`).slice(0, limit) : all;
   const short = strictTown && picks.length < limit;
@@ -147,7 +166,7 @@ const LocalProjectProof = ({
                 </div>
               ) : (
                 <img
-                  src={project.heroImage}
+                  src={photoFor(project)}
                   alt={`${project.title} — ${project.location}`}
                   width={1200}
                   height={800}

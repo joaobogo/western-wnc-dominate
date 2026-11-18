@@ -41,6 +41,7 @@ import InsuranceDocHelp from "@/components/emergency/InsuranceDocHelp";
 import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
 import FastLeadForm from "@/components/FastLeadForm";
 import HeroTrustLine from "@/components/hero/HeroTrustLine";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -544,6 +545,12 @@ const RoofRepair = () => {
           }
           coverage={
             <>
+        <TownServiceLinks
+          service="roof-repair"
+          label="roof repair"
+          heading="Roof repair in your town"
+          intro="Leak patterns change with elevation and rainfall. These pages cover what we see on roofs in each town and the nearest Highlander showroom."
+        />
         <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related roofing solutions and helpful pages"

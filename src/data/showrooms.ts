@@ -165,8 +165,11 @@ export const showrooms: Showroom[] = [
     location: SYLVA,
     county: "Jackson County",
     cardLabel: "Sylva Showroom",
-    h1: "Roofing & Construction Showroom in Sylva, NC",
-    metaTitle: "Roofing & Construction Showroom in Sylva, NC | Highlander",
+    // John (Nov 18 2026): the Sylva town page (/service-areas/sylva-nc) is the
+    // main page for "roofing Sylva" searches. This page is the visit page:
+    // address, hours, directions. Its title no longer competes for roofing.
+    h1: "Highlander's Sylva Showroom & Office",
+    metaTitle: "Sylva Showroom & Office: Address, Hours, Directions | Highlander",
     metaDescription: `Visit our Sylva roofing and construction showroom at ${napLine(SYLVA)}. Compare materials in person. Call ${formatPhoneDisplay(SYLVA.phoneE164)}.`,
     answer: `The Highlander Building Services showroom in Sylva is at ${napLine(SYLVA)}, open Monday through Friday, 8:00 AM to 5:00 PM. It is our Jackson County base for Sylva, Dillsboro, Cullowhee, Bryson City, Cherokee, and Waynesville, with metal panels, shingle boards, Brava composite samples, and VELUX skylights on display.`,
     intro: [

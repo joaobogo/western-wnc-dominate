@@ -39,6 +39,8 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import { OUTDOOR_SUBPAGES } from "@/data/outdoor-living-subpages";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -507,6 +509,17 @@ const OutdoorLiving = () => {
             { label: "Discuss an Outdoor Project", href: "/request-inspection?context=outdoor_related&type=construction-outdoor-living", description: "Start with the short first-contact form" },
             { label: "Get My Questions Answered", href: "/contact", description: "Reach a construction advisor" }
           ]}
+        />
+        <ProjectSpotlight
+          slugs={["deck-railing-rebuild-sylva"]}
+          eyebrow="Recent Outdoor Project"
+          heading="A documented deck project in Sylva"
+          intro="Tap through for the full scope, photos and timeline."
+        />
+        <TownServiceLinks
+          service="outdoor-living"
+          label="outdoor living"
+          heading="Outdoor living by town"
         />
         <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" intent="consultation" />
           </>

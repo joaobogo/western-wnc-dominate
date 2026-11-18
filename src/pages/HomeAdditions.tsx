@@ -40,6 +40,7 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -580,6 +581,10 @@ const HomeAdditions = () => {
 
         <CostContextBlock serviceLabel="home addition" variant="construction" />
         <CommonConcerns concerns={constructionConcerns} />
+        <ProjectSpotlight
+          slugs={["living-room-addition-franklin"]}
+          heading="A Recent Addition in Franklin."
+        />
         <ProofKit topic="additions" reviews />
         {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
         <InspectionForm />

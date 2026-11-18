@@ -39,6 +39,7 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ServicePageTemplate from "@/components/service/ServicePageTemplate";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -900,6 +901,11 @@ const ResidentialRoofing = () => {
                       ]}
                     />
 
+                    <ProjectSpotlight
+                      slugs={["certainteed-landmark-weathered-wood-waynesville", "standing-seam-metal-dark-bronze-highlands"]}
+                      eyebrow="Recent Residential Roofs"
+                      heading="Two Recent Homes: Shingles in Waynesville, Metal in Highlands."
+                    />
                     <ServiceInternalLinks title="Residential Roofing" slug="residential-roofing" />
           </>
         }

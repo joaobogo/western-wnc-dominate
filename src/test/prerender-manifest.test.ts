@@ -41,8 +41,10 @@ describe.skipIf(!generated)("sitemap vs prerender manifest", () => {
     expect(coverage.filter((p) => !manifest.has(p))).toEqual([]);
   });
 
-  it("only the four core towns keep indexable service×town pages", () => {
-    const core = new Set(["franklin-nc", "highlands-nc", "cashiers-nc", "sylva-nc"]);
+  it("only the core towns keep indexable service×town pages", () => {
+    // Waynesville added as a fifth core town (John, Nov 18 2026: "one of the
+    // biggest markets in the region"). Every other town stays noindex.
+    const core = new Set(["franklin-nc", "highlands-nc", "cashiers-nc", "sylva-nc", "waynesville-nc"]);
     const offenders = indexableServiceTownPairs().filter((p) => !core.has(p.townSlug));
     expect(offenders).toEqual([]);
   });

@@ -39,6 +39,8 @@ import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import RoofingPathFinder from "@/components/roofing/RoofingPathFinder";
 import HeroTrustLine from "@/components/hero/HeroTrustLine";
 import { towns } from "@/data/towns";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -554,6 +556,17 @@ const RoofingDivision = () => {
           className="section-padding bg-background border-t border-border/60"
         />
 
+        <ProjectSpotlight
+          slugs={["certainteed-landmark-weathered-wood-waynesville", "standing-seam-metal-dark-bronze-highlands"]}
+          eyebrow="Recent Roofs"
+          heading="Two documented Highlander roofs"
+          intro="A shingle replacement in Waynesville and a standing seam metal roof in Highlands. Tap either one for the full scope, photos and timeline."
+        />
+        <TownServiceLinks
+          service="roof-replacement"
+          label="roof replacement"
+          heading="Roof replacement by town"
+        />
         <ProofKit topic="roofing" reviews articles />
         <InspectionForm />
 

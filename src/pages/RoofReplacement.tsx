@@ -53,6 +53,8 @@ import ConsultationCTA from "@/components/replacement/ConsultationCTA";
 import MaterialComparison from "@/components/replacement/MaterialComparison";
 import WrittenScopeIncludes from "@/components/replacement/WrittenScopeIncludes";
 import HeroTrustLine from "@/components/hero/HeroTrustLine";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -569,6 +571,18 @@ const RoofReplacement = () => {
           }
           coverage={
             <>
+      <ProjectSpotlight
+        slugs={["certainteed-landmark-weathered-wood-waynesville", "standing-seam-metal-dark-bronze-highlands"]}
+        eyebrow="Recent Replacements"
+        heading="Two documented roof replacements"
+        intro="A shingle replacement in Waynesville and a standing seam metal roof in Highlands. Tap either one for the full scope, photos and timeline."
+      />
+      <TownServiceLinks
+        service="roof-replacement"
+        label="roof replacement"
+        heading="Roof replacement in your town"
+        intro="Each page covers local roof conditions, material choices for that elevation, and the showroom that serves the town."
+      />
       <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"

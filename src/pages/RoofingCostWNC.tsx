@@ -24,6 +24,7 @@ import AnswerBlock from "@/components/seo/AnswerBlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { metalSystems, metalCostAnswer, METAL_COST_YEAR } from "@/data/metal-roof-cost";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 // T13 (15 Sep 2026 SEO spec): the ranges carry a visible review date. Bump this
 // whenever the figures in src/data/metal-roof-cost.ts are re-checked — quarterly.
@@ -490,6 +491,13 @@ const RoofingCostWNC = () => {
             </Link>
           </div>
         </section>
+
+        <TownServiceLinks
+          service="roof-replacement"
+          label="roof replacement"
+          heading="Roof Replacement by Town."
+          intro="Access, elevation and permitting move the price from town to town. Each page covers one town's conditions."
+        />
 
         {/* FAQ */}
         <section className="section-padding bg-secondary">
