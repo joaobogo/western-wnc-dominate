@@ -101,7 +101,7 @@ const Renovations = () => {
   return (
     <>
       <SEOHead
-        title="Home Renovations in Western NC: Kitchens, Baths"
+        title="Home Renovations in Western NC | Highlander"
         description="Renovations for Western NC homes: kitchen remodels, bathroom updates, basement finishing, and whole-home work by in-house Highlander crews."
         path="/construction/renovations"
         jsonLd={[

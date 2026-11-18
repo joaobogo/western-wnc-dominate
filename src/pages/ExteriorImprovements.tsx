@@ -101,7 +101,7 @@ const ExteriorImprovements = () => {
   return (
     <>
       <SEOHead
-        title="Exterior Improvements in WNC | Siding & Windows"
+        title="Exterior Home Upgrades in Western NC | Highlander"
         description="Protect and enhance your Western NC home with roofing, siding, window, gutter, trim, and entry upgrades. Explore exterior improvements by Highlander."
         path="/exterior-improvements"
         jsonLd={[

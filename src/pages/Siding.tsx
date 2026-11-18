@@ -36,7 +36,7 @@ const Siding = () => {
   return (
     <>
       <SEOHead
-        title="Siding Installation in Western NC | Fiber Cement & Cedar"
+        title="Siding Installation in Franklin & WNC | Highlander"
         description="Mountain-grade siding installation across Highlands, Franklin, and Sylva. James Hardie fiber cement, natural cedar, and premium moisture-proof trim."
         path="/construction/siding"
         jsonLd={buildPageSchema({

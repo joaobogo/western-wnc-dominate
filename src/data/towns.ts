@@ -222,7 +222,7 @@ export const towns: TownData[] = [
     elevation: "2,753 ft",
     description: "Serving Waynesville's historic districts and established Haywood County neighborhoods with expert roofing modernization and whole-home additions.",
     features: ["Historic district care", "Whole-home renovations", "Haywood County authority", "Structural modernization"],
-    metaTitle: "Waynesville, NC Roofing & Roof Repair | Highlander Building Services",
+    metaTitle: "Roofers in Waynesville, NC: Roofing & Repair | Highlander",
     metaDescription: "Roofing, roof repair, replacement, metal roofing, gutters and construction for Waynesville, NC homes. Franklin-based crews serving Haywood County.",
     housingProfile: "Historic district estates, mid-century residential neighborhoods, and newer hillside builds in Haywood County.",
     climateExposure: "Regular freeze-thaw cycles and winter snow accumulation that test attic ventilation and older roof deck integrity.",

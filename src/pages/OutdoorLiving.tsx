@@ -111,7 +111,7 @@ const OutdoorLiving = () => {
   return (
     <>
       <SEOHead
-        title="Deck, Porch & Patio Builders in Western NC"
+        title="Deck, Porch & Patio Builders in Franklin, NC | Highlander"
         description="Patio, deck and porch builders for Western NC, from our Franklin and Sylva showrooms: covered patios, screened porches, decks and outdoor kitchens."
         path="/construction/outdoor-living"
         jsonLd={[
