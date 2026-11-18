@@ -176,8 +176,8 @@ const RoofReplacement = () => {
   return (
     <>
       <SEOHead
-        title="Roof Replacement in Western NC: Mountain Homes"
-        description="Roof replacement for Western North Carolina homes: site-specific material specification, certified installation, and transparent written proposals."
+        title="Roof Replacement in Franklin & Western NC | Highlander"
+        description="Roof replacement for homes in Franklin, Highlands, Cashiers, Sylva and Western NC, with materials matched to your site and a written proposal."
         path="/roofing/roof-replacement"
         jsonLd={[
           serviceSchema({ name: "Roof Replacement", description: "Full roof replacement for mountain homes across Western North Carolina.", url: "/roofing/roof-replacement" }),

@@ -119,7 +119,7 @@ const CommercialRoofing = () => {
   return (
     <>
       <SEOHead
-        title="Commercial Roofing in WNC | TPO, EPDM & Metal"
+        title="Commercial Roofing in Macon County & WNC | Highlander"
         description="Commercial roofing for Western North Carolina property owners and managers: installation, replacement, maintenance, and leak or storm repair support."
         path="/roofing/commercial"
         jsonLd={buildPageSchema({

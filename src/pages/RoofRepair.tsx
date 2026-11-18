@@ -119,8 +119,8 @@ const RoofRepair = () => {
   return (
     <>
       <SEOHead
-        title="Roof Repair in Western NC: Leaks and Flashing"
-        description="Targeted roof repairs across Western North Carolina. We diagnose the real cause, complete the fix correctly, and document the work with photos."
+        title="Roof Repair in Western NC: Leaks & Flashing | Highlander"
+        description="Roof repair in Franklin, Highlands, Cashiers, Sylva and across Western NC. We find the real cause of the leak and document the fix with photos."
         path="/roofing/roof-repair"
         jsonLd={[
           serviceSchema({ name: "Roof Repair", description: "Expert roof leak diagnosis and permanent repair for Western North Carolina homes.", url: "/roofing/roof-repair" }),

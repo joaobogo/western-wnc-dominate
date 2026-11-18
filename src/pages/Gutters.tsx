@@ -44,8 +44,8 @@ const Gutters = () => {
   return (
     <>
       <SEOHead
-        title="Seamless Gutters & Gutter Guards in Western NC | Highlander"
-        description="Seamless 5-inch and 6-inch gutters, micro-mesh guards, copper and repairs across Western NC. Sized for plateau rainfall, not a catalogue average."
+        title="Seamless Gutters in Franklin & Western NC | Highlander"
+        description="Seamless gutters, gutter guards and gutter repair in Franklin, Highlands, Cashiers, Sylva and Waynesville, sized for heavy mountain rainfall."
         path="/roofing/gutters"
         jsonLd={buildPageSchema({
           type: "service",

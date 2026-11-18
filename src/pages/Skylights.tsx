@@ -61,7 +61,7 @@ const Skylights = () => {
   return (
     <>
       <SEOHead
-        title="VELUX Skylight Installation in Western NC"
+        title="Skylight Installation in Franklin & WNC | Highlander"
         description="VELUX Certified Installer for Franklin, Highlands, Cashiers, and Sylva — skylight installation, replacement, leak repair, and Sun Tunnels."
         path="/roofing/skylights"
         jsonLd={buildPageSchema({

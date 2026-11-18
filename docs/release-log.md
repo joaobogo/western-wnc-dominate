@@ -202,3 +202,10 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - "no next step on /reviews, /about, /certifications": all three already have call and estimate buttons in the page body.
 - **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · all 346 pages loaded in a browser (the same 2 older hydration errors, see `docs/open-items.md`) · no hidden content in delivered HTML · homepage width equals the screen at 375 and 1,425 px · two untouched visits to `/request-inspection` show no "saved your answers" note.
 - **Decisions waiting:** `docs/open-items.md`, "From the Nov 18 conversion audit".
+
+## 18 Nov 2026: search-backed titles for money pages
+
+- **Why:** Search Console (last 3 months) showed these pages getting local impressions on pages 2 and 3 with almost no clicks.
+- **Changed:** titles on 11 pages and descriptions on 3. No body copy, URLs, forms, redirects or indexing rules changed.
+- **Gates:** tests 646/646 · build 347/347 prerendered · `seo:check` PASS.
+- **Rollback:** `main` at `0558765`.
