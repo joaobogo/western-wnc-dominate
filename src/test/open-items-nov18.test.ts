@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import { JOB_TYPES } from "@/intake/config";
 import { EMPTY_LEAD, otherJobLabels, scoreLead } from "@/intake/scoring";
 import { toRow } from "@/intake/save";
@@ -26,5 +26,30 @@ describe("front desk job types", () => {
 describe("new landing page routing", () => {
   it.each([["/lp/handyman", "handyman"], ["/lp/gutters", "gutters"], ["/roofing/property-managers", "commercial"], ["/construction/kitchen-remodeling", "addition"]])("%s preselects %s", (path, type) => {
     expect(projectTypeFromPage(path, "")).toBe(type);
+  });
+});
+
+describe("what JobTread receives (mocked, nothing is sent)", () => {
+  beforeAll(() => {
+    (globalThis as any).Deno = { env: { get: () => "test" }, serve: () => undefined };
+  });
+  const mod = async () => (await import("@jobtread-sync")) as any;
+  const person = { name: "Margaret Hill", first_name: "Margaret", last_name: "Hill", phone: "+18285550100" };
+
+  it("keeps the main job and puts extra work in the job notes", async () => {
+    const m = await mod();
+    const lead = { ...EMPTY_LEAD, jobType: "roof_repair", otherJobTypes: ["gutters", "roof_replacement"] };
+    const row = m.normalizeIntakeLead({ ...person, ...toRow(lead, scoreLead(lead)) });
+    const payload = m.buildPayload(row, "lead");
+    expect(payload.project.service_category).toBe("roof_repair");
+    expect(payload.project.project_description).toContain("Also needs: Gutters only, Roof replacement or new roof");
+  });
+
+  it.each([
+    ["handyman", "Handyman & Small Repairs", "Handyman Inquiry"],
+    ["gutters", "Seamless Gutters", "Gutter Inquiry"],
+  ])("labels %s landing page leads correctly", async (category, type, label) => {
+    const m = await mod();
+    expect(m.buildLeadLabel({ ...person, source: "fast_lead_form", lead_type: category, service_category: category, project_type: type })).toContain(label);
   });
 });

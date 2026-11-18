@@ -47,8 +47,8 @@ const renovationGoals = [
 ];
 
 const renovationTypes = [
-  { icon: UtensilsCrossed, title: "Kitchen Remodels", detail: "Complete kitchen transformations — a new layout, cabinetry, countertops, plumbing, electrical, and finish work. Designed for functionality — how you actually cook and live — not just how it photographs." },
-  { icon: Bath, title: "Bathroom Renovations", detail: "Master bath retreats, guest baths, and powder rooms — tile work, vanities, plumbing relocation, ventilation upgrades, the small amenities that make it pleasant to use, and waterproofing that prevents the hidden moisture damage we see constantly in WNC homes." },
+  { icon: UtensilsCrossed, href: "/construction/kitchen-remodeling", title: "Kitchen Remodels", detail: "Complete kitchen transformations — a new layout, cabinetry, countertops, plumbing, electrical, and finish work. Designed for functionality — how you actually cook and live — not just how it photographs." },
+  { icon: Bath, href: "/construction/bathroom-remodeling", title: "Bathroom Renovations", detail: "Master bath retreats, guest baths, and powder rooms — tile work, vanities, plumbing relocation, ventilation upgrades, the small amenities that make it pleasant to use, and waterproofing that prevents the hidden moisture damage we see constantly in WNC homes." },
   { icon: Sofa, title: "Living Space Transformations", detail: "Open-concept living room conversions, room reconfigurations, new door openings, built-in cabinetry, and interior upgrades that change how your home flows and functions without adding square footage." },
   { icon: DoorOpen, title: "Basement Finishing", detail: "Converting unfinished basements into functional indoor living space — framing, insulation, moisture management, electrical, plumbing, ceilings, and finish work. Critical in WNC where basement moisture is a constant consideration." },
   { icon: Wrench, title: "Structural Modifications & Repairs", detail: "Load-bearing wall removal, floor leveling, foundation repairs, and structural reinforcement. We bring in a structural engineer as the specialist on every modification that touches the home's skeleton." },
@@ -283,6 +283,11 @@ const Renovations = () => {
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{type.title}</h3>
                   <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{type.detail}</p>
+                  {"href" in type && type.href && (
+                    <Link to={type.href} className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4">
+                      See {type.title.toLowerCase()}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>

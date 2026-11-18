@@ -10,7 +10,8 @@ const KitchenRemodeling = () => (
     eyebrow="Kitchen remodeling · Western North Carolina"
     h1="Kitchen Remodeling in Western NC"
     intro="A kitchen that fits how you cook and gather, planned around the house you already have and built by a licensed local contractor."
-    image={{ src: "/media/highlander-renovated-kitchen-living.webp", srcSet: "/media/highlander-renovated-kitchen-living-640.webp 640w, /media/highlander-renovated-kitchen-living-960.webp 960w, /media/highlander-renovated-kitchen-living.webp 1600w", alt: "Renovated mountain-home kitchen and living area with wood beams and a stone fireplace", width: 1600, height: 900 }}
+    image={{ src: "/media/highlander-renovated-kitchen-living.webp", srcSet: "/media/highlander-renovated-kitchen-living-640.webp 640w, /media/highlander-renovated-kitchen-living-960.webp 960w, /media/highlander-renovated-kitchen-living.webp 1600w", alt: "Mountain-home kitchen and living area with wood beams and a stone fireplace", width: 1600, height: 900 }}
+    showReviews={false}
     quick={{ question: "What does a Highlander kitchen remodel include?", answer: "A kitchen remodel can cover a new layout, cabinetry, countertops, plumbing, electrical and finish work. Highlander is a licensed general contractor in Western North Carolina, so the scope, selections and price are set out in writing before work begins." }}
     scopeEyebrow="What we build"
     scopeHeading="The whole kitchen, not just the cabinets"

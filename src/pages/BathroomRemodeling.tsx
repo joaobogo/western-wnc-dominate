@@ -1,5 +1,4 @@
 import FocusedServicePage from "@/components/service/FocusedServicePage";
-import roomImg from "@/assets/gallery/addition-franklin-vaulted-room.webp";
 
 const BathroomRemodeling = () => (
   <FocusedServicePage
@@ -11,7 +10,7 @@ const BathroomRemodeling = () => (
     eyebrow="Bathroom remodeling · Western North Carolina"
     h1="Bathroom Remodeling in Western NC"
     intro="Primary baths, guest baths and powder rooms rebuilt to work better, with the moisture and ventilation details done right behind the finishes."
-    image={{ src: roomImg, alt: "Finished vaulted room inside a Highlander home project in Franklin, North Carolina", width: 1500, height: 844 }}
+    showReviews={false}
     quick={{ question: "What does a Highlander bathroom remodel include?", answer: "A bathroom remodel can cover tile work, vanities, plumbing relocation and ventilation upgrades, for primary baths, guest baths and powder rooms. Highlander is a licensed general contractor, and the scope and price are set out in writing before work begins." }}
     scopeEyebrow="What we rebuild"
     scopeHeading="A better bathroom starts behind the tile"

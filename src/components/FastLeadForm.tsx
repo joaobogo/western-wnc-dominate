@@ -21,9 +21,11 @@ interface FastLeadFormProps {
   serviceLabel: string;
   /** Kept for caller compatibility. Qualification happens after first contact. */
   urgencyOptions?: string[];
+  /** Routes the lead when the service is neither roofing nor construction. */
+  serviceCategory?: "handyman" | "gutters";
 }
 
-const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
+const FastLeadForm = ({ ctaLabel, serviceLabel, serviceCategory: categoryOverride }: FastLeadFormProps) => {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
@@ -36,7 +38,9 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
   });
 
   const serviceCategory =
-    serviceLabel.toLowerCase().includes("construction") ? "construction" : "roofing";
+    categoryOverride ?? (serviceLabel.toLowerCase().includes("construction") ? "construction" : "roofing");
+  const confirmationCategory =
+    serviceCategory === "handyman" ? "general" : serviceCategory === "gutters" ? "roofing" : serviceCategory;
   const formId = `fast-lead-${serviceCategory}`;
 
   const autosave = useFormAutosave(`fast-lead-${serviceLabel}`, formData, {
@@ -68,7 +72,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel }: FastLeadFormProps) => {
       <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
         <LeadConfirmationPanel
           heading="Request received."
-          category={serviceCategory}
+          category={confirmationCategory}
           summary={[
             { label: "Service", value: serviceLabel },
             { label: "Name", value: formData.firstName },

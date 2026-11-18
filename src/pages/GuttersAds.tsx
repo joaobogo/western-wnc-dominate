@@ -7,6 +7,9 @@ const GuttersAds = () => (
     description="Seamless gutters, downspouts and gutter repairs for Western North Carolina homes. Call Highlander or send a short request about your home."
     path="/lp/gutters"
     serviceName="Seamless Gutters"
+    serviceCategory="gutters"
+    reviewLabel="What a customer said"
+    recentWork={{ heading: "Recent Highlander work across Western NC." }}
     heroImage={heroImg}
     heroAlt="Highlander gutter work: a seamless gutter and downspout along the eave of a shingle roof"
     eyebrow="Seamless gutters · Western North Carolina"

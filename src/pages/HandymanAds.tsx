@@ -1,5 +1,10 @@
 import PaidAdsLanding from "@/components/PaidAdsLanding";
 import heroImg from "@/assets/gallery/deck-sylva-doors-wide.webp";
+import deckSet from "@/assets/gallery/deck-sylva-doors-wide.webp?w=640;960;1280&format=webp&as=srcset";
+import flashingImg from "@/assets/work/roof-chimney-flashing-detail.webp";
+import flashingSet from "@/assets/work/roof-chimney-flashing-detail.webp?w=480;800&format=webp&as=srcset";
+import trimImg from "@/assets/work/addition-cullowhee-roofline.webp";
+import trimSet from "@/assets/work/addition-cullowhee-roofline.webp?w=480;800&format=webp&as=srcset";
 
 const HandymanAds = () => (
   <PaidAdsLanding
@@ -7,6 +12,16 @@ const HandymanAds = () => (
     description="Deck boards, railings, gutter fixes, trim and punch lists in Western North Carolina. Call Highlander or send a short request with your list."
     path="/lp/handyman"
     serviceName="Handyman & Small Repairs"
+    serviceCategory="handyman"
+    reviewLabel="What a customer said"
+    recentWork={{
+      heading: "The kind of work on the list.",
+      items: [
+        { town: "Sylva, NC", title: "Deck boards and railings", image: { src: heroImg, srcSet: deckSet, alt: "Rebuilt elevated deck with new boards and railing by Highlander in Sylva, North Carolina", width: 1125, height: 633 } },
+        { town: "Western NC", title: "Flashing and small leaks", image: { src: flashingImg, srcSet: flashingSet, alt: "Stone chimney with new black metal counter-flashing on a shingle roof", width: 1600, height: 1200 } },
+        { town: "Cullowhee, NC", title: "Siding and trim", image: { src: trimImg, srcSet: trimSet, alt: "Lap siding and trim on a Highlander addition in Cullowhee, North Carolina", width: 1125, height: 1500 } },
+      ],
+    }}
     heroImage={heroImg}
     heroAlt="Rebuilt elevated deck with new boards and railing by Highlander in Sylva, North Carolina"
     eyebrow="Handyman and small repairs · Western North Carolina"
@@ -15,7 +30,7 @@ const HandymanAds = () => (
     ctaLabel="Send My Repair List"
     urgencyOptions={["Something needs attention now", "Need help soon", "This month", "Just planning"]}
     trustStats={[
-      { value: "One", label: "Call for the list", detail: "One item or ten, start with what you have" },
+      { value: "One call", label: "For the whole list", detail: "One item or ten, start with what you have" },
       { value: "Written", label: "Scope and price", detail: "In writing before work starts" },
       { value: "NC GC", label: "Licensed contractor", detail: "North Carolina General Contractor" },
       { value: "2017", label: "Serving WNC", detail: "Family-owned and locally run" },

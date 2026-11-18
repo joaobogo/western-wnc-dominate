@@ -23,7 +23,10 @@ export interface FocusedServicePageProps {
   eyebrow: string;
   h1: string;
   intro: string;
-  image: { src: string; srcSet?: string; alt: string; width: number; height: number };
+  /** Leave out until a real, matching photo exists: the hero then uses the blueprint background. */
+  image?: { src: string; srcSet?: string; alt: string; width: number; height: number };
+  /** Off where the review library has nothing about this kind of work. */
+  showReviews?: boolean;
   quick: { question: string; answer: string };
   scopeEyebrow: string;
   scopeHeading: string;
@@ -39,7 +42,7 @@ export interface FocusedServicePageProps {
 }
 
 /** One focused service, in the same call-first order as the handyman page. */
-export default function FocusedServicePage(p: FocusedServicePageProps) {
+export default function FocusedServicePage({ showReviews = true, ...p }: FocusedServicePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const crumbs = [{ name: "Home", url: "/" }, p.parent, { name: p.name, url: p.path }];
   return (
@@ -53,11 +56,13 @@ export default function FocusedServicePage(p: FocusedServicePageProps) {
       <Header />
       <PageBreadcrumbs items={crumbs} />
       <main id="main-content" className="bg-background">
-        <section className="relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-white">
-          <div className="absolute inset-0 -z-10">
-            <img src={p.image.src} srcSet={p.image.srcSet} sizes="100vw" alt={p.image.alt} width={p.image.width} height={p.image.height} loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.9)_0%,hsl(160_45%_6%/0.72)_50%,hsl(160_45%_6%/0.35)_100%)]" />
-          </div>
+        <section className={`relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-white ${p.image ? "" : "blueprint-dark"}`}>
+          {p.image && (
+            <div className="absolute inset-0 -z-10">
+              <img src={p.image.src} srcSet={p.image.srcSet} sizes="100vw" alt={p.image.alt} width={p.image.width} height={p.image.height} loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(160_45%_6%/0.9)_0%,hsl(160_45%_6%/0.72)_50%,hsl(160_45%_6%/0.35)_100%)]" />
+            </div>
+          )}
           <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-8 md:py-24">
             <OfficeStatusChip tone="dark" className="mb-5" />
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">{p.eyebrow}</p>
@@ -161,7 +166,7 @@ export default function FocusedServicePage(p: FocusedServicePageProps) {
           </div>
         </section>
 
-        <ProofKit topic={p.topic} reviews articles />
+        <ProofKit topic={p.topic} reviews={showReviews} articles />
         <div id="estimate-form"><InspectionForm /></div>
 
         <section className="bg-[hsl(var(--dark-section))] text-white">
