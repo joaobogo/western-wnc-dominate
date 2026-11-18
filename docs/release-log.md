@@ -230,7 +230,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Checked, no change needed:** `/roofing/skylights` (#10) already links its towns; there is no documented VELUX job to show. `/service-areas/lake-glenville-nc` (#13) already shows the Lake Glenville Brava job. PR 42's title changes were not touched.
 - **URLs:** none added, changed or removed. Two pages joined the sitemap.
 
-## Project pages: hero and layout — Nov 18, 2026 (PR pending approval)
+## Project pages: hero and layout — Nov 18, 2026 (PR #44)
+- **Approved by:** John ("It's approved", Nov 18). Merged as `c6080da` with Lovable idle (last Lovable activity 11:20 UTC).
 - **Asked by:** John ("when I click on a project, the hero and those pages are a little weird. Fix the hero in all of the pages and make sure those pages are better, well put together").
 - **Rollback point:** `main` at `e1776a3` (local SEO top 20, confirmed live by the site health check at 15:52 UTC).
 - **Found:**
