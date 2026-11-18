@@ -19,11 +19,11 @@ Facts and decisions Highlander or John still has to supply. **Nothing marked `{{
 
 ## Suggestions (found outside the current scope)
 - **From the Nov 18 conversion audit.** John decided (Nov 18): email stays required (no change); construction pages keep showing the company's regular reviews, roofing included (current behaviour); county count, no action; after-hours call mode, not now. Still open: price/budget anchors and "what is free" on construction (Luke); one call-to-action name (conflicts with the "free estimate" rule); top menu on paid pages (kept, John asked for it on Nov 17); homepage headline; fresh dated reviews (need new reviews).
-- **Local SEO analysis (Nov 18), top 20 pages: John is doing these himself.** Claude did pages 21–50 where real material exists (see release log). The rest of 21–50 needs material the site does not have:
+- **Local SEO analysis (Nov 18).** Claude did the top 20 and pages 21–50 where real material exists (see release log). Still open: the Waynesville roofing page stays out of the index unless the Waynesville town page is retitled (one-line flip in `service-town-content.ts`). The rest of 21–50 needs material the site does not have:
   - real jobs or photos by town: Murphy, Lake Toxaway, Hayesville, Brevard, Scaly Mountain, Otto, Cullowhee, Cashiers, Sapphire, Bryson City (the town pages already show the nearest real project, labelled with its true town);
   - outdoor kitchens and fireplaces (#32), Sylva metal (#39), Highlands and Cashiers Brava (#48), Highlands leak and ice work (#50), Franklin roof replacements (#35);
   - weekly jobs for `/recent-projects` (#45);
-  - decisions: how `/locations/sylva-nc` and `/service-areas/sylva-nc` split the work (#41); whether to open the hidden Waynesville roofing and metal pages (one real Waynesville job exists: the CertainTeed Landmark replacement).
+  - decided Nov 18: the Sylva town page is the main Sylva page (#41); Waynesville metal and roof replacement pages are open.
 
 - **About 100 colour classes do nothing.** Classes such as `bg-primary/6`, `bg-primary/8` and `bg-primary/12` use opacity steps Tailwind does not generate (it makes 5, 10, 15 …), so the faint tints they were meant to add are missing. No effect on readability. Cleaning them up would change the look slightly (tints would appear), so it needs a decision.
 - `/construction/renovations` hero shows "Avg. ROI: 60–80% at resale". Check it against `CLAIMS_AUDIT.md` (it reads as a promise).

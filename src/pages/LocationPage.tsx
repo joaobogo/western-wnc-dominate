@@ -77,6 +77,16 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
             <p className="mb-8 max-w-2xl font-body text-base leading-relaxed text-dark-section-muted md:text-lg">
               {showroom.intro[0]}
             </p>
+            {showroom.slug === "sylva-nc" && (
+              // The Sylva town page is the main page for roofing in Sylva (John, Nov 18 2026).
+              <p className="mb-8 max-w-2xl font-body text-base text-dark-section-foreground">
+                Looking for roofing or construction in Sylva?{" "}
+                <Link to="/service-areas/sylva-nc" className="font-semibold text-[hsl(var(--gold-ink))] underline underline-offset-4 hover:no-underline">
+                  See Roofers in Sylva, NC
+                </Link>
+                .
+              </p>
+            )}
             <div className="flex flex-wrap gap-3">
               <Link to="/request-inspection" className="btn btn-primary">
                 <span>Get My Written Estimate</span>

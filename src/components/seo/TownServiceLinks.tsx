@@ -11,6 +11,12 @@ interface TownServiceLinksProps {
   heading: string;
   intro?: string;
   className?: string;
+  /**
+   * For a service with no town × service pages (e.g. gutters): link these
+   * towns' main pages instead, which cover the service. Defaults to the
+   * indexable town × service pages for `service`.
+   */
+  townPages?: string[];
 }
 
 /**
@@ -18,8 +24,8 @@ interface TownServiceLinksProps {
  * its own indexable page (Nov 2026 local SEO analysis). Only pages in the
  * sitemap are linked; hidden (noindex) town pages are not.
  */
-const TownServiceLinks = ({ service, label, heading, intro, className = "" }: TownServiceLinksProps) => {
-  const townSlugs = INDEXABLE_TOWN_SERVICES[service] ?? [];
+const TownServiceLinks = ({ service, label, heading, intro, className = "", townPages }: TownServiceLinksProps) => {
+  const townSlugs = townPages ?? INDEXABLE_TOWN_SERVICES[service] ?? [];
   const items = townSlugs
     .map((slug) => towns.find((t) => t.slug === slug))
     .filter((t): t is (typeof towns)[number] => !!t);
@@ -39,7 +45,7 @@ const TownServiceLinks = ({ service, label, heading, intro, className = "" }: To
           {items.map((t) => (
             <li key={t.slug}>
               <Link
-                to={`/service-areas/${t.slug}/${service}`}
+                to={townPages ? `/service-areas/${t.slug}` : `/service-areas/${t.slug}/${service}`}
                 className="group flex h-full items-start justify-between gap-3 border border-border bg-card px-5 py-4 rounded-sm hover:border-primary/40 transition-colors"
               >
                 <span>

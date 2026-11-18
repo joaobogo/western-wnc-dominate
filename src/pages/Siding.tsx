@@ -24,6 +24,7 @@ import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 
 const Siding = () => {
   const faqs = [
@@ -196,6 +197,11 @@ const Siding = () => {
             </div>
           </div>
         </section>
+        <TownServiceLinks
+          service="construction"
+          label="construction & exteriors"
+          heading="Exterior and construction work by town"
+        />
         <ProofKit topic="siding" photos reviews articles />
         {/* Every service page ends with the 3-field estimate form (Nov 2026). */}
         <InspectionForm />

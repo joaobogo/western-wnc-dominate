@@ -8,9 +8,9 @@
  * change to make here.
  */
 export const INDEXABLE_TOWN_SERVICES: Record<string, string[]> = {
-  "roof-replacement": ["cashiers-nc", "franklin-nc", "highlands-nc", "sylva-nc"],
+  "roof-replacement": ["cashiers-nc", "franklin-nc", "highlands-nc", "sylva-nc", "waynesville-nc"],
   "roof-repair": ["cashiers-nc", "franklin-nc", "highlands-nc", "sylva-nc"],
-  "metal-roofing": ["cashiers-nc", "franklin-nc", "highlands-nc", "sylva-nc"],
+  "metal-roofing": ["cashiers-nc", "franklin-nc", "highlands-nc", "sylva-nc", "waynesville-nc"],
   "synthetic-brava": ["cashiers-nc", "highlands-nc"],
   roofing: ["cashiers-nc", "highlands-nc"],
   construction: ["cashiers-nc", "franklin-nc", "highlands-nc"],

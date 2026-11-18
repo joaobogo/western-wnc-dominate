@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CredibilityStrip from "@/components/home/CredibilityStrip";
 import PriorityLocalLinks from "@/components/home/PriorityLocalLinks";
+import MostRequestedLinks from "@/components/home/MostRequestedLinks";
 import TartanBackground from "@/components/TartanBackground";
 
 import ThreeDivisionPathway from "@/components/DualPathway";
@@ -70,6 +71,7 @@ const Index = () => {
 
         {/* 2. Tight three-item proof band */}
         <CredibilityStrip />
+        <MostRequestedLinks />
 
         {/* 2b. Real work first: photo gallery, then project stories */}
         <LazyFallback fallback={<SectionFallback h={2400} />}>

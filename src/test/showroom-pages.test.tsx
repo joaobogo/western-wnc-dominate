@@ -30,9 +30,16 @@ describe("showroom (location) pages", () => {
     });
 
     it(`${showroom.slug} meta title follows the showroom pattern`, () => {
-      expect(showroom.metaTitle).toBe(
-        `Roofing & Construction Showroom in ${showroom.location.locality}, ${showroom.location.region} | Highlander`,
-      );
+      if (showroom.slug === "sylva-nc") {
+        // John, Nov 18 2026: the Sylva town page leads for roofing searches;
+        // the showroom page is titled for a visit, not for "roofing Sylva".
+        expect(showroom.metaTitle).toBe("Sylva Showroom & Office: Address, Hours, Directions | Highlander");
+        expect(showroom.metaTitle).not.toMatch(/roofing/i);
+      } else {
+        expect(showroom.metaTitle).toBe(
+          `Roofing & Construction Showroom in ${showroom.location.locality}, ${showroom.location.region} | Highlander`,
+        );
+      }
       expect(showroom.metaDescription.length).toBeLessThanOrEqual(160);
     });
   }

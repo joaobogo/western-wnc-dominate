@@ -39,6 +39,7 @@ import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getTownLinkWeb } from "@/lib/local-link-graph";
 import ShowroomCommute from "@/components/locations/ShowroomCommute";
 import ShowroomVisitBlock from "@/components/locations/ShowroomVisitBlock";
+import { counties } from "@/data/counties";
 
 
 const TownPage = () => {
@@ -71,6 +72,8 @@ const TownPage = () => {
   // Franklin is our home market and the homepage owns "roofing company franklin
   // nc" — this page covers Franklin neighborhoods and links up to the homepage.
   const isPrimaryTownPage = town.slug === "franklin-nc";
+  // County hub link (Asheville / Buncombe stays out of this pass).
+  const countyPage = counties.find((c) => c.towns.includes(town.name) && c.slug !== "buncombe-county");
 
   const leadParagraph = isPrimaryTownPage
     ? `Highlander Building Services is a ${town.name}, NC roofing contractor with its headquarters and showroom in town. This page covers the neighborhoods and roofing needs we serve from here, from residential to commercial roofing.`
@@ -361,7 +364,20 @@ const TownPage = () => {
 
         {/* 5. TWO LOCAL PROOF POINTS — local work, then local voices */}
         {townProof ? (
-          <TownProofBlock town={town} content={townProof} />
+          <>
+            <TownProofBlock town={town} content={townProof} />
+            {/* Nov 2026 local SEO plan: the Franklin page (strongest town page)
+                now also shows documented jobs in and near Franklin. */}
+            {isPrimaryTownPage && (
+              <div className="container-rhythm max-w-7xl pt-8 md:pt-12">
+                <LocalProjectProof
+                  town={{ name: town.name, slug: town.slug, county: town.county }}
+                  limit={3}
+                  heading={`Recent work in and near ${town.name}`}
+                />
+              </div>
+            )}
+          </>
         ) : (
           <div className="container-rhythm max-w-7xl pt-8 md:pt-12">
             <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" strictTown limit={3} />
@@ -371,6 +387,16 @@ const TownPage = () => {
         <div className="container-rhythm max-w-7xl pt-8 md:pt-12">
           <AttributedReviews town={town.name} />
         </div>
+
+        {countyPage && (
+          <p className="container-rhythm max-w-7xl pt-6 font-body text-body text-foreground">
+            {town.name} is one of the {countyPage.name} towns we serve.{" "}
+            <Link to={`/service-areas/county/${countyPage.slug}`} className="text-primary font-semibold underline underline-offset-4 hover:no-underline">
+              See roofing and construction across {countyPage.name}
+            </Link>
+            .
+          </p>
+        )}
 
         {/* 6. TOWN-SPECIFIC FAQ */}
         <TownFAQ town={town} faqs={townFaqs} />

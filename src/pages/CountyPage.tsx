@@ -19,11 +19,13 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import { getCountyBySlug } from "@/data/counties";
 import { towns } from "@/data/towns";
+import { projectDetails } from "@/data/projects";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import logo from "@/assets/logo.svg";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getCountyLinkWeb } from "@/lib/local-link-graph";
+import ProjectSpotlight from "@/components/conversion/ProjectSpotlight";
 
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -43,6 +45,11 @@ const CountyPage = () => {
   }
 
   const countyTowns = towns.filter(t => county.towns.includes(t.name));
+  // One roofing and one construction job from this county, when we have them.
+  const countyProjects = projectDetails.filter((p) => p.county === county.name);
+  const countyProjectSlugs = (["roofing", "construction"] as const)
+    .map((c) => countyProjects.find((p) => p.category === c)?.slug)
+    .filter((s): s is string => !!s);
   const relevantBlogs = getRelevantBlogsForTown(countyTowns[0]?.name || "Highlands");
 
   return (
@@ -235,6 +242,13 @@ const CountyPage = () => {
           </div>
         </section>
 
+        {/* Nov 2026 local SEO plan: documented jobs from this county (projects.ts). */}
+        <ProjectSpotlight
+          slugs={countyProjectSlugs}
+          eyebrow={`Recent ${county.name} Projects`}
+          heading={`Documented Highlander work in ${county.name}`}
+          intro="Every card is a real Highlander job in this county. Tap one for the full scope, photos and timeline."
+        />
         <SectionDivider variant="diamond" />
 
         {/* 3. Division Callouts */}
