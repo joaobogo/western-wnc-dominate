@@ -5,7 +5,7 @@
  * module only exposes them under the names the work order asked for.
  *
  * Never type a rating or review count into a component. Render with
- * `REVIEW_LINE` ("4.8★ · 158 Google reviews") or the helpers below.
+ * `REVIEW_LINE` ("4.8★ · 178 Google reviews") or the helpers below.
  */
 import {
   BUSINESS,
@@ -34,7 +34,7 @@ export const FRANKLIN_REVIEWS = FRANKLIN.googleReviewCount ?? GOOGLE_REVIEW_COUN
 export const SYLVA_RATING = SYLVA.googleRating ?? GOOGLE_RATING;
 export const SYLVA_REVIEWS = SYLVA.googleReviewCount ?? GOOGLE_REVIEW_COUNT;
 
-/** "4.8 · 158 Google reviews" — never a bare number. */
+/** "4.8 · 178 Google reviews" — never a bare number. */
 export const ratingLine = (rating: number = GOOGLE_RATING, count: number = GOOGLE_REVIEW_COUNT) =>
   `${rating.toFixed(1)} · ${count} Google reviews`;
 

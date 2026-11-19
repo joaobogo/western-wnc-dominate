@@ -59,7 +59,7 @@ const AnimatedCounter = ({ value, className = "", duration = 1500 }: AnimatedCou
   return (
     // data-final: the prerender writes this value into the snapshot, so a page
     // is never delivered with a number caught mid-count (FAQ shipped "91"
-    // Google reviews for 158) and the first client render matches it.
+    // Google reviews for 178) and the first client render matches it.
     <span ref={ref as React.RefObject<HTMLSpanElement>} data-final={value} className={`tabular-nums ${className}`}>
       {displayValue}
     </span>

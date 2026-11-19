@@ -183,12 +183,14 @@ export const BUSINESS: BusinessIdentity = {
   priceRange: "$$", // set per the 7 Sep 2026 work order (Task 6)
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
-    // Owner-confirmed 2026-09-04 (João): Google shows 4.8.
+    // Owner-confirmed 2026-09-04 (João): Google shows 4.8. Count refreshed
+    // 2026-11-19 from the public Franklin Google Business Profile listing
+    // (4.8, 178 reviews), per John's 404 fix guide (HL-063).
     ratingValue: 4.8,
-    reviewCount: 158,
+    reviewCount: 178,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-09-04",
+    lastVerified: "2026-11-19",
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [
@@ -266,7 +268,7 @@ export const BUSINESS: BusinessIdentity = {
       gbpCid: FRANKLIN_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
       googleRating: 4.8,
-      googleReviewCount: 158,
+      googleReviewCount: 178,
       hours: STANDARD_HOURS,
       primary: true,
     },
@@ -282,7 +284,7 @@ export const BUSINESS: BusinessIdentity = {
       gbpCid: SYLVA_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzRXuBmttWYgR8QpnoWftXl8",
       googleRating: 5.0,
-      googleReviewCount: 26,
+      googleReviewCount: 30,
       hours: STANDARD_HOURS,
     },
   ],
@@ -415,17 +417,17 @@ export const REVIEW_RATING_VALUE = BUSINESS.reviewSummary.ratingValue;
 export const REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
 /** "4.8\u2605" */
 export const REVIEW_STARS = `${REVIEW_RATING}\u2605`;
-/** 158 */
+/** 178 */
 export const REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
-/** "158 Google reviews" */
+/** "178 Google reviews" */
 export const REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
-/** "as of September 2026" — always shown next to a rating. */
+/** "as of November 2026" — always shown next to a rating. */
 export const REVIEW_AS_OF = `as of ${new Date(
   `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`,
 ).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
-/** "4.8\u2605 \u00b7 158 Google reviews" */
+/** "4.8\u2605 \u00b7 178 Google reviews" */
 export const REVIEW_LINE = `${REVIEW_STARS} \u00b7 ${REVIEW_COUNT_LABEL}`;
-/** "4.8\u2605 \u00b7 158 Google reviews (as of September 2026)" */
+/** "4.8\u2605 \u00b7 178 Google reviews (as of November 2026)" */
 export const REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
 /** null until the owner confirms a real lifetime project count. */
 export const PROJECTS_STAT = BUSINESS.projectsCompleted
