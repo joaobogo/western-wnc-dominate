@@ -102,7 +102,7 @@ describe.each(pages)("landing page $path", (config) => {
     const text = document.body.textContent ?? "";
     expect(text).not.toMatch(/authorize work|instant quote|during office hours|Outside office hours|Discuss this/i);
     expect(text).toContain("Free estimate. No obligation.");
-    expect(text).toContain("158 Google reviews");
+    expect(text).toContain("178 Google reviews");
   });
 
   it("keeps the owner-locked facts and avoids banned claims", () => {

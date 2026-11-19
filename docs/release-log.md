@@ -267,3 +267,9 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
   - no new form fields (number of properties, "what do you want to add?"): forms stay as they are; the visitor can say it in the message;
   - `/locations/sylva-nc` stays in the sitemap: it is the Google Business Profile URL and a legacy redirect target, the site's checks require every indexable page in the sitemap, and its Nov 18 retitle ("Sylva Showroom & Office: Address, Hours, Directions") already stops it competing with the Sylva town page;
   - the image without alt text that the audit found is not in the site's own HTML; it is added in the browser by a third-party script (tracking pixel or widget), which stays untouched.
+
+## Google review count — Nov 19, 2026 (PR pending approval)
+- **Asked by:** John's 404 fix guide (HL-063: "replace 158 with the current Google number everywhere").
+- **Source:** the public Google Business Profile listings, read on Nov 19: Franklin 4.8 from 178 reviews, Sylva 5.0 from 30 reviews.
+- **Changed:** `src/data/business.ts` (the one place the figure is stored): 178 reviews, verified 2026-11-19; Sylva location 30. The static page shell (`index.html`) and `llms.txt` follow. Every badge, the JSON-LD rating and the "as of" label (now "November 2026") read the shared value.
+- **Gates:** tests 683/683 · build 395/395 prerendered · `seo:check` PASS · `smoke:lp` 25/25 · no "158" left in the built site.
