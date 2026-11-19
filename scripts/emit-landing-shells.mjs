@@ -22,6 +22,18 @@ const ORIGIN = "https://highlandernc.com";
 /** Keep in sync with src/components/landing/config.ts and src/pages/*Ads.tsx. */
 const PAGES = [
   {
+    path: "/lp/handyman",
+    title: "Handyman & Small Repairs in Western NC | Highlander",
+    description:
+      "Deck boards, railings, gutter fixes, trim and punch lists in Western North Carolina. Call Highlander or send a short request with your list.",
+  },
+  {
+    path: "/lp/gutters",
+    title: "Seamless Gutters in Western NC | Highlander",
+    description:
+      "Seamless gutters, downspouts and gutter repairs for Western North Carolina homes. Call Highlander or send a short request about your home.",
+  },
+  {
     path: "/lp/roof-repair",
     title: "Roof Repair in Western NC | Highlander",
     description:

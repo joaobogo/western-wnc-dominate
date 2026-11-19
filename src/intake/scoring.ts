@@ -42,6 +42,8 @@ export type LeadDraft = {
   propertyType: string | null;
 
   jobType: string | null;
+  /** Other work mentioned on the call. The main job type alone drives the score and JobTread division. */
+  otherJobTypes?: string[];
   details: string;
   timing: string | null;
   budget: string | null;
@@ -77,6 +79,7 @@ export const EMPTY_LEAD: LeadDraft = {
   ownerContact: "",
   propertyType: null,
   jobType: null,
+  otherJobTypes: [],
   details: "",
   timing: null,
   budget: null,
@@ -359,6 +362,7 @@ export function leadSummary(lead: LeadDraft, result: ScoreResult, callBy: string
     townLabel(lead) && `Town: ${townLabel(lead)}`,
     lead.address && `Address: ${lead.address}`,
     `Job: ${label(JOB_TYPES, lead.jobType)}`,
+    otherJobLabels(lead).length > 0 && `Also needs: ${otherJobLabels(lead).join(", ")}`,
     `Timing: ${label(TIMINGS, lead.timing)}`,
     `Relationship: ${label(RELATIONSHIPS, lead.relationship)}`,
     lead.details && `Notes: ${lead.details}`,
@@ -372,3 +376,11 @@ export function leadSummary(lead: LeadDraft, result: ScoreResult, callBy: string
 }
 
 export const BUDGET_VISIBLE_FOR = BUDGET_JOB_TYPES;
+
+/** Labels of the extra work picked on the call, without the main job type. */
+export function otherJobLabels(lead: Pick<LeadDraft, "jobType" | "otherJobTypes">): string[] {
+  return (lead.otherJobTypes ?? [])
+    .filter((id) => id !== lead.jobType)
+    .map((id) => JOB_TYPES.find((o) => o.id === id)?.label)
+    .filter((l): l is string => Boolean(l));
+}

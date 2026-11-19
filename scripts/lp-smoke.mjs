@@ -29,6 +29,8 @@ const LP_PATHS = [
   "/lp/roofing-construction",
   "/lp/roof-replacement",
   "/lp/roof-repair",
+  "/lp/handyman",
+  "/lp/gutters",
   "/lp/storm-damage",
   "/?landing=roofing",
   "/?landing=construction",

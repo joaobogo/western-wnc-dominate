@@ -95,7 +95,7 @@ const ConstructionDivision = () => {
   return (
     <>
       <SEOHead
-        title="General Contractor in Western NC | Additions & Building"
+        title="Construction & General Contractor in Western NC | Highlander"
         description="Construction in Western North Carolina: home additions, renovations, outdoor living, and structural upgrades from a licensed general contractor."
         path="/construction"
         jsonLd={[

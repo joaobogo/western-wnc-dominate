@@ -111,7 +111,8 @@ export const constructionColumns: DropdownColumn[] = [
   {
     title: "Renovate & Repair",
     items: [
-      { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
+      { label: "Kitchen Remodeling", href: "/construction/kitchen-remodeling", desc: "Layouts, cabinets & finishes" },
+      { label: "Bathroom Remodeling", href: "/construction/bathroom-remodeling", desc: "Tile, vanities & ventilation" },
       { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
       { label: "Handyman & Small Repairs", href: "/construction/handyman", desc: "Decks, gutters, trim & punch lists" },
       { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },

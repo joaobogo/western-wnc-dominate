@@ -19,6 +19,12 @@ export type ProjectTypeValue =
   | "not-sure";
 
 const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
+  // Paid landing pages and town pages that name the service in the URL.
+  [/^\/lp\/handyman/, "handyman"],
+  [/^\/lp\/gutters/, "gutters"],
+  [/^\/service-areas\/[^/]+\/handyman/, "handyman"],
+  [/^\/service-areas\/[^/]+\/gutters/, "gutters"],
+  [/^\/roofing\/property-managers/, "commercial"],
   [/^\/roofing\/(roof-)?repair/, "roof-repair"],
   [/^\/roofing\/(roof-)?replacement/, "roof-replacement"],
   [/^\/roofing\/(metal|standing-seam)/, "metal-roofing"],
