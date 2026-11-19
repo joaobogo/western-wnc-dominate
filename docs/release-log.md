@@ -276,7 +276,9 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Changed:** `src/data/business.ts` (the one place the figure is stored): 178 reviews, verified 2026-11-19; Sylva location 30. The static page shell (`index.html`) and `llms.txt` follow. Every badge, the JSON-LD rating and the "as of" label (now "November 2026") read the shared value.
 - **Gates:** tests 683/683 · build 395/395 prerendered · `seo:check` PASS · `smoke:lp` 25/25 · no "158" left in the built site.
 
-## Roof check landing page — Nov 19, 2026 (PR pending approval)
+## Roof check landing page — Nov 19, 2026 (PR #48)
+- **Approved by:** John (his Nov 19 decisions, plus "don't stop until it's all concluded"). Merged as `56760c8`; `main` had not moved since `f86aaf2`, so Lovable was idle.
+- **Rollback point:** `main` at `f86aaf2`.
 - **Asked by:** John (Nov 19): "remove the roof care plans, the roof check isn't free, no on the Christmas design and no on the kitchen and baths".
 - **Built:** `/lp/roof-check` (noindex, not in the sitemap): "Away for the Winter? We'll Check Your Roof and Send You Photos". A paid visit; no price on the page, the office gives it on the call. Checks the roof surface, flashing, gutters, signs of leaks and storm damage; photos sent to the owner; a written scope and price before any repair. Form preselects roof repair; leads route as roofing.
 - **Dropped (not built):** `/roofing/roof-care-plans`, `/lp/design-gift`, `/lp/kitchens-baths`. Nothing on the site linked to them, so no redirects are needed.
