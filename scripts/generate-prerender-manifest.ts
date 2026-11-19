@@ -49,6 +49,7 @@ export const NOINDEX_ROUTES = [
   "/lp/gutters",
   "/lp/additions",
   "/lp/renovations",
+  "/lp/roof-check",
   "/lp/storm-damage",
   "/lp/roofing",
   "/lp/construction",

@@ -34,6 +34,12 @@ const PAGES = [
       "Add a bedroom, suite, sunroom or garage to your Western NC home. Highlander designs, permits and builds it, with the scope and price in writing first.",
   },
   {
+    path: "/lp/roof-check",
+    title: "Roof Check for Second Homes | Highlander",
+    description:
+      "Away for the winter? Highlander checks the roof and gutters on your Western NC home and sends you photos. A paid visit, priced on the call.",
+  },
+  {
     path: "/lp/renovations",
     title: "Home Renovations in Western NC | Highlander",
     description:

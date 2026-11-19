@@ -23,6 +23,7 @@ const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
   [/^\/lp\/handyman/, "handyman"],
   [/^\/lp\/gutters/, "gutters"],
   [/^\/lp\/(additions|renovations)/, "addition"],
+  [/^\/lp\/roof-check/, "roof-repair"],
   [/^\/service-areas\/[^/]+\/handyman/, "handyman"],
   [/^\/service-areas\/[^/]+\/gutters/, "gutters"],
   [/^\/roofing\/property-managers/, "commercial"],

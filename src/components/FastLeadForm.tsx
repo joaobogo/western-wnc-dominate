@@ -23,9 +23,12 @@ interface FastLeadFormProps {
   urgencyOptions?: string[];
   /** Routes the lead when the service is neither roofing nor construction. */
   serviceCategory?: "handyman" | "gutters" | "construction";
+  /** Copy-only overrides for the form header (fields and submission unchanged). */
+  eyebrow?: string;
+  heading?: string;
 }
 
-const FastLeadForm = ({ ctaLabel, serviceLabel, serviceCategory: categoryOverride }: FastLeadFormProps) => {
+const FastLeadForm = ({ ctaLabel, serviceLabel, serviceCategory: categoryOverride, eyebrow, heading }: FastLeadFormProps) => {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
@@ -87,10 +90,10 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, serviceCategory: categoryOverrid
     <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
       <div className="mb-5">
         <div className="text-caption font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
-          Free estimate · written scope
+          {eyebrow ?? "Free estimate · written scope"}
         </div>
         <h2 className="font-heading text-2xl font-bold text-foreground">
-          Get help with {serviceLabel.toLowerCase()}.
+          {heading ?? `Get help with ${serviceLabel.toLowerCase()}.`}
         </h2>
         <p className="mt-2 text-sm text-muted-foreground font-body leading-relaxed">
           Three quick fields. We'll call you to talk through the property and book the next step.

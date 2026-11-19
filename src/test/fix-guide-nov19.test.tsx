@@ -22,6 +22,7 @@ describe("404 fix guide pages", () => {
       "/lp/gutters",
       "/lp/additions",
       "/lp/renovations",
+      "/lp/roof-check",
     ]) {
       expect(app, path).toContain(`path="${path}"`);
     }
@@ -71,6 +72,18 @@ describe("404 fix guide pages", () => {
 
   it("the Sylva showroom stays in the sitemap, titled for a visit (not for roofing searches)", () => {
     expect(read("scripts/generate-sitemap.ts")).toContain('{ path: "/locations/sylva-nc" }');
+  });
+
+  it("the roof check is a paid visit (John, Nov 19) and the dropped pages stay unbuilt", () => {
+    const page = read("src/pages/RoofCheckAds.tsx");
+    expect(page).toContain("paid visit");
+    // The shared form header says "Free estimate"; this page overrides it.
+    expect(page).toContain('formEyebrow="Paid visit · photos sent to you"');
+    expect(page).not.toMatch(/free (roof )?(check|inspection)\b(?!\?)/i);
+    expect(projectTypeFromPage("/lp/roof-check", "")).toBe("roof-repair");
+    for (const dropped of ["/roofing/roof-care-plans", "/lp/design-gift", "/lp/kitchens-baths"]) {
+      expect(app, dropped).not.toContain(`path="${dropped}"`);
+    }
   });
 
   it("Otto's title is full length", () => {
