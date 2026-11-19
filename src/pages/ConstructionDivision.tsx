@@ -95,7 +95,7 @@ const ConstructionDivision = () => {
   return (
     <>
       <SEOHead
-        title="General Contractor in Western NC | Additions & Building"
+        title="Construction & General Contractor in Western NC | Highlander"
         description="Construction in Western North Carolina: home additions, renovations, outdoor living, and structural upgrades from a licensed general contractor."
         path="/construction"
         jsonLd={[
@@ -484,6 +484,8 @@ const ConstructionDivision = () => {
           columns={2}
           links={[
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
+            { label: "Kitchen Remodeling", href: "/construction/kitchen-remodeling", description: "Layouts, cabinets, counters and finishes" },
+            { label: "Bathroom Remodeling", href: "/construction/bathroom-remodeling", description: "Showers, tile, vanities and accessibility" },
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
             { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_related&type=construction", description: "Start with the short first-contact form" },

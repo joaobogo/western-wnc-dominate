@@ -218,8 +218,16 @@ export const showroomById = (id: BusinessLocation["id"]) => showrooms.find((s) =
 export const showroomForTown = (townSlug: string) =>
   showrooms.find((s) => s.towns.some((t) => t.slug === townSlug));
 
+/**
+ * Towns served from Sylva that are not listed on the showroom page (no drive
+ * time recorded yet). Added Nov 19 2026 with the new Haywood and Jackson
+ * County town pages.
+ */
+const SYLVA_AREA_TOWNS = new Set(["maggie-valley-nc", "clyde-nc", "canton-nc", "whittier-nc", "tuckasegee-nc"]);
+
 /** Nearest showroom for any town — Franklin is the fallback (main office). */
-export const nearestShowroom = (townSlug: string) => showroomForTown(townSlug) ?? showroomById("franklin");
+export const nearestShowroom = (townSlug: string) =>
+  showroomForTown(townSlug) ?? (SYLVA_AREA_TOWNS.has(townSlug) ? showroomById("sylva") : undefined) ?? showroomById("franklin");
 
 export const LOCATIONS_HUB_PATH = "/locations";
 

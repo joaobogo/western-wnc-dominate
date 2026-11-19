@@ -576,6 +576,8 @@ const ConstructionDesign = () => {
             { label: "Construction Division", href: "/construction", description: "Additions, renovations, and full builds" },
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },            { label: "Home Additions", href: "/construction/additions", description: "Planning and building more room on a mountain home" },
             { label: "Home Renovations", href: "/construction/renovations", description: "Reworking the rooms you already have" },
+            { label: "Kitchen Remodeling", href: "/construction/kitchen-remodeling", description: "Layouts, cabinets, counters and finishes" },
+            { label: "Bathroom Remodeling", href: "/construction/bathroom-remodeling", description: "Showers, tile, vanities and accessibility" },
 
             { label: "Construction & Renovation FAQ", href: "/faq", description: "Answers to common planning questions" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },

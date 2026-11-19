@@ -42,6 +42,15 @@ interface PaidAdsLandingProps {
   /** id of a published review in src/data/reviews.ts. Never free text. */
   reviewId: string;
   faqs: Array<{ question: string; answer: string }>;
+  /** Lead routing for services that are neither roofing nor construction. */
+  serviceCategory?: "handyman" | "gutters" | "construction";
+  /** Label above the customer review. */
+  reviewLabel?: string;
+  /** Heading and photos for the "Recent work" section. Defaults to roofs. */
+  recentWork?: {
+    heading: string;
+    items?: Array<{ town: string; title: string; image: { src: string; srcSet?: string; alt: string; width: number; height: number } }>;
+  };
 }
 
 const PaidAdsLanding = ({
@@ -63,6 +72,9 @@ const PaidAdsLanding = ({
   trustBullets,
   reviewId,
   faqs,
+  serviceCategory,
+  reviewLabel = "Trust Snapshot",
+  recentWork,
 }: PaidAdsLandingProps) => {
   const review = REVIEWS.find((r) => r.id === reviewId) ?? REVIEWS[0];
   const [searchParams] = useSearchParams();
@@ -175,7 +187,7 @@ const PaidAdsLanding = ({
 
               <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1" id="fast-lead-form">
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.4 }}>
-                  <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
+                  <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} serviceCategory={serviceCategory} />
                 </motion.div>
                 <p className="mt-4 text-sm font-body leading-relaxed text-primary-foreground md:hidden">
                   {subheadline}
@@ -209,7 +221,7 @@ const PaidAdsLanding = ({
                 <div className="border border-border bg-secondary/50 px-6 py-6 rounded-sm">
                   <div className="mb-4 flex items-center gap-2 text-primary">
                     <Star className="h-4 w-4" aria-hidden="true" />
-                    <span className="text-caption font-body font-semibold uppercase tracking-[0.2em]">Trust Snapshot</span>
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.2em]">{reviewLabel}</span>
                   </div>
                   {/* Real published review, clamped in CSS only. */}
                   <blockquote className="font-heading text-xl font-semibold leading-snug text-foreground line-clamp-6">
@@ -247,7 +259,7 @@ const PaidAdsLanding = ({
             <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
                 <div className="eyebrow mb-3 block">Recent work</div>
-                <h2 id="recent-roofs" className="section-heading">Highlander roofs across Western NC.</h2>
+                <h2 id="recent-roofs" className="section-heading">{recentWork?.heading ?? "Highlander roofs across Western NC."}</h2>
               </div>
               <a
                 href="/recent-projects"
@@ -262,8 +274,8 @@ const PaidAdsLanding = ({
               </a>
             </div>
             <ul className="grid gap-5 md:grid-cols-3">
-              {ROOF_PROJECT_PHOTOS().map((project) => (
-                <li key={project.town} className="overflow-hidden rounded-sm border border-border bg-card shadow-sm">
+              {(recentWork?.items ?? ROOF_PROJECT_PHOTOS()).map((project) => (
+                <li key={project.title} className="overflow-hidden rounded-sm border border-border bg-card shadow-sm">
                   <div className="relative">
                     <img
                       src={project.image.srcSet ? smallSrc(project.image.src) : project.image.src}

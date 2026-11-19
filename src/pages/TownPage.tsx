@@ -32,6 +32,7 @@ import {
 import { getTownBySlug, getLocalRelevance, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { getTownFAQs } from "@/data/town-faqs-generated";
+import { AUTHORED_TOWN_FAQS } from "@/data/town-faqs-authored";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
@@ -63,7 +64,7 @@ const TownPage = () => {
   // Authored FAQs first, then generated ones — capped at six so the town page
   // stays inside its 1,500–2,200-word budget (P3.4). The FAQPage schema below
   // uses the same list, so visible questions and markup always match.
-  const townFaqs = getTownFAQs(town.slug, townProof?.faqs).slice(0, 6);
+  const townFaqs = getTownFAQs(town.slug, townProof?.faqs ?? AUTHORED_TOWN_FAQS[town.slug]).slice(0, 6);
   const localRelevance = getLocalRelevance(town.slug);
   // The showroom this town is actually served from — Sylva for the Jackson,
   // Swain, and Haywood County markets; Franklin for everything else.
@@ -380,7 +381,13 @@ const TownPage = () => {
           </>
         ) : (
           <div className="container-rhythm max-w-7xl pt-8 md:pt-12">
-            <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" strictTown limit={3} />
+            {AUTHORED_TOWN_FAQS[town.slug] ? (
+              // Towns added Nov 19 2026 have no Highlander job yet: show the
+              // nearest real jobs, each labelled with the town it was done in.
+              <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} limit={3} heading={`Recent work near ${town.name}`} />
+            ) : (
+              <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" strictTown limit={3} />
+            )}
           </div>
         )}
 

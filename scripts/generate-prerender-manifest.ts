@@ -45,6 +45,10 @@ export const NOINDEX_ROUTES = [
   // route HTML for direct ad clicks, refreshes and crawlers reading noindex.
   "/lp/roof-replacement",
   "/lp/roof-repair",
+  "/lp/handyman",
+  "/lp/gutters",
+  "/lp/additions",
+  "/lp/renovations",
   "/lp/storm-damage",
   "/lp/roofing",
   "/lp/construction",

@@ -74,8 +74,10 @@ Founded: 2017
 - https://highlandernc.com/community
 - https://highlandernc.com/construction
 - https://highlandernc.com/construction/additions
+- https://highlandernc.com/construction/bathroom-remodeling
 - https://highlandernc.com/construction/design
 - https://highlandernc.com/construction/handyman
+- https://highlandernc.com/construction/kitchen-remodeling
 - https://highlandernc.com/construction/outdoor-living
 - https://highlandernc.com/construction/outdoor-living/hardscape
 - https://highlandernc.com/construction/outdoor-living/outdoor-kitchens
@@ -97,6 +99,7 @@ Founded: 2017
 - https://highlandernc.com/roofing/gutters
 - https://highlandernc.com/roofing/metal
 - https://highlandernc.com/roofing/metal/cost
+- https://highlandernc.com/roofing/property-managers
 - https://highlandernc.com/roofing/residential
 - https://highlandernc.com/roofing/roof-repair
 - https://highlandernc.com/roofing/roof-replacement
@@ -118,8 +121,10 @@ Founded: 2017
 - https://highlandernc.com/service-areas
 - https://highlandernc.com/service-areas/brevard-nc
 - https://highlandernc.com/service-areas/bryson-city-nc
+- https://highlandernc.com/service-areas/canton-nc
 - https://highlandernc.com/service-areas/cashiers-nc
 - https://highlandernc.com/service-areas/cashiers-nc/construction
+- https://highlandernc.com/service-areas/cashiers-nc/gutters
 - https://highlandernc.com/service-areas/cashiers-nc/home-repairs
 - https://highlandernc.com/service-areas/cashiers-nc/metal-roofing
 - https://highlandernc.com/service-areas/cashiers-nc/roof-repair
@@ -127,6 +132,7 @@ Founded: 2017
 - https://highlandernc.com/service-areas/cashiers-nc/roofing
 - https://highlandernc.com/service-areas/cashiers-nc/synthetic-brava
 - https://highlandernc.com/service-areas/cherokee-nc
+- https://highlandernc.com/service-areas/clyde-nc
 - https://highlandernc.com/service-areas/county/cherokee-county
 - https://highlandernc.com/service-areas/county/clay-county
 - https://highlandernc.com/service-areas/county/haywood-county
@@ -139,6 +145,7 @@ Founded: 2017
 - https://highlandernc.com/service-areas/dillsboro-nc
 - https://highlandernc.com/service-areas/franklin-nc
 - https://highlandernc.com/service-areas/franklin-nc/construction
+- https://highlandernc.com/service-areas/franklin-nc/gutters
 - https://highlandernc.com/service-areas/franklin-nc/home-repairs
 - https://highlandernc.com/service-areas/franklin-nc/metal-roofing
 - https://highlandernc.com/service-areas/franklin-nc/roof-repair
@@ -147,6 +154,7 @@ Founded: 2017
 - https://highlandernc.com/service-areas/highlands-nc
 - https://highlandernc.com/service-areas/highlands-nc/additions
 - https://highlandernc.com/service-areas/highlands-nc/construction
+- https://highlandernc.com/service-areas/highlands-nc/gutters
 - https://highlandernc.com/service-areas/highlands-nc/home-repairs
 - https://highlandernc.com/service-areas/highlands-nc/metal-roofing
 - https://highlandernc.com/service-areas/highlands-nc/outdoor-living
@@ -156,6 +164,7 @@ Founded: 2017
 - https://highlandernc.com/service-areas/highlands-nc/synthetic-brava
 - https://highlandernc.com/service-areas/lake-glenville-nc
 - https://highlandernc.com/service-areas/lake-toxaway-nc
+- https://highlandernc.com/service-areas/maggie-valley-nc
 - https://highlandernc.com/service-areas/murphy-nc
 - https://highlandernc.com/service-areas/otto-nc
 - https://highlandernc.com/service-areas/sapphire-nc
@@ -165,9 +174,15 @@ Founded: 2017
 - https://highlandernc.com/service-areas/sylva-nc/roof-repair
 - https://highlandernc.com/service-areas/sylva-nc/roof-replacement
 - https://highlandernc.com/service-areas/sylva-nc/roofing-construction
+- https://highlandernc.com/service-areas/tuckasegee-nc
 - https://highlandernc.com/service-areas/waynesville-nc
+- https://highlandernc.com/service-areas/waynesville-nc/gutters
+- https://highlandernc.com/service-areas/waynesville-nc/handyman
 - https://highlandernc.com/service-areas/waynesville-nc/metal-roofing
+- https://highlandernc.com/service-areas/waynesville-nc/roof-repair
 - https://highlandernc.com/service-areas/waynesville-nc/roof-replacement
+- https://highlandernc.com/service-areas/waynesville-nc/roofing
+- https://highlandernc.com/service-areas/whittier-nc
 
 ### Project case studies
 

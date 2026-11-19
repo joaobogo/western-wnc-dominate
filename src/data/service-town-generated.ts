@@ -47,8 +47,14 @@ const SERVICE_PARENT_PATH: Record<CoreService, string> = {
   "metal-roofing": "/roofing/metal",
 };
 
+/** Parent pages for hand-written services outside the core set. */
+const EXTRA_PARENT_PATH: Record<string, string> = {
+  gutters: "/roofing/gutters",
+  handyman: "/construction/handyman",
+};
+
 export const getServiceParentPath = (serviceSlug: string) =>
-  SERVICE_PARENT_PATH[serviceSlug as CoreService] ?? "/roofing";
+  SERVICE_PARENT_PATH[serviceSlug as CoreService] ?? EXTRA_PARENT_PATH[serviceSlug] ?? "/roofing";
 
 const elevationFt = (t: TownData) => parseInt(t.elevation.replace(/[^0-9]/g, ""), 10) || 0;
 

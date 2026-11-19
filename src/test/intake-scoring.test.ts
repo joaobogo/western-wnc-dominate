@@ -20,6 +20,7 @@ describe("front-desk scoring V1.1", () => {
       skylight: 18,
       chimney: 14,
       handyman: 8,
+      design: 12,
     });
   });
 

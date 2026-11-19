@@ -489,6 +489,33 @@ export default function IntakeSheet() {
                   invalid={has("jobType")}
                 />
               </Question>
+              {!!lead.jobType && (
+                <Question label="Anything else they need?" script="Is there anything else you'd like us to look at while we're there?">
+                  <div className="hl-choicegroup grid gap-2 grid-cols-1 sm:grid-cols-2" data-testid="other-job-types">
+                    {JOB_TYPES.filter((o) => o.id !== lead.jobType).map((o) => {
+                      const selected = (lead.otherJobTypes ?? []).includes(o.id);
+                      return (
+                        <button
+                          key={o.id}
+                          type="button"
+                          className="hl-choice"
+                          aria-pressed={selected}
+                          onClick={() =>
+                            set(
+                              "otherJobTypes",
+                              selected
+                                ? (lead.otherJobTypes ?? []).filter((id) => id !== o.id)
+                                : [...(lead.otherJobTypes ?? []), o.id],
+                            )
+                          }
+                        >
+                          {o.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </Question>
+              )}
             </div>
 
             {showRoofDetails && (

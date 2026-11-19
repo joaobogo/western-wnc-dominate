@@ -34,7 +34,7 @@ export const HERO_HEIGHT = 900;
 export const REGIONAL_HERO_FALLBACK = "/media/highlander-roof-charcoal-mountains.webp";
 export const REGIONAL_HERO_ALT = "Mountain home roofline in Western North Carolina";
 
-const CONSTRUCTION_SERVICES = new Set(["construction", "additions", "outdoor-living", "renovations", "siding", "design"]);
+const CONSTRUCTION_SERVICES = new Set(["construction", "additions", "outdoor-living", "renovations", "siding", "design", "handyman"]);
 
 /** Division a service slug belongs to, for matching project.category. */
 export const categoryForService = (serviceSlug: string): ProjectDetail["category"] =>

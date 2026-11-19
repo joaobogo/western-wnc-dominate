@@ -5,6 +5,7 @@ import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/component
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import ProofKit from "@/components/conversion/ProofKit";
+import TownServiceLinks from "@/components/seo/TownServiceLinks";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -315,6 +316,12 @@ const Handyman = () => {
           </div>
         </section>
 
+        <TownServiceLinks
+          service="handyman"
+          label="handyman services"
+          heading="Handyman services by town"
+          intro="Waynesville has its own page for small jobs and rental repairs. The handyman team also works from the Franklin and Sylva showrooms across the rest of the region."
+        />
         <ProofKit topic="handyman" reviews articles />
 
         {/* Form: 3 fields, routed to the JobTread Small Projects division */}

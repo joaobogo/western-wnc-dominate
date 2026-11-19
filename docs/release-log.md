@@ -230,7 +230,8 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Checked, no change needed:** `/roofing/skylights` (#10) already links its towns; there is no documented VELUX job to show. `/service-areas/lake-glenville-nc` (#13) already shows the Lake Glenville Brava job. PR 42's title changes were not touched.
 - **URLs:** none added, changed or removed. Two pages joined the sitemap.
 
-## Project pages: hero and layout — Nov 18, 2026 (PR pending approval)
+## Project pages: hero and layout — Nov 18, 2026 (PR #44)
+- **Approved by:** John ("It's approved", Nov 18). Merged as `c6080da` with Lovable idle (last Lovable activity 11:20 UTC).
 - **Asked by:** John ("when I click on a project, the hero and those pages are a little weird. Fix the hero in all of the pages and make sure those pages are better, well put together").
 - **Rollback point:** `main` at `e1776a3` (local SEO top 20, confirmed live by the site health check at 15:52 UTC).
 - **Found:**
@@ -246,3 +247,22 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - `/recent-projects` hero: same framed-photo layout (the photo was washed out behind a white haze, with header space doubled) and a one-sentence intro.
 - The town link on project pages reads "Roofing & construction in {town}, NC" (it said "Roofing" on construction jobs too).
 - **Gates:** tests 663/663 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · the 7 changed pages: no page errors, no sideways scroll · contrast audit, phone and desktop: 0 lines under the AA threshold · lint clean on changed files.
+
+## 404 fix guide — Nov 19, 2026 (PR pending approval)
+- **Asked by:** John (shared "Highlander website: how to fix the Page Not Found pages", 22 missing pages, audit of 19 Nov).
+- **Rollback point:** `main` at `c6080da` (project pages, confirmed live by the site health check at 16:52 UTC on Nov 18).
+- **Includes draft PR #45** (another Claude session): merged into this branch and checked against the guide's Part 2. Its front-desk changes (design option, "Anything else they need?") come along unchanged.
+- **Built (15 of 22 addresses):**
+  - Group A: `/construction/kitchen-remodeling`, `/construction/bathroom-remodeling`, `/roofing/property-managers` (indexable), `/lp/handyman`, `/lp/gutters` (noindex). Fixed against the spec: titles, H1s, descriptions and the 5 FAQs on each page; a "mountain homes" section and "Where we work" town links; the kitchen page's unconfirmed "6 to 10 weeks" timeline removed; company reviews shown on kitchen and bath (John, Nov 18: regular reviews are fine on construction). Linked from `/construction`, `/construction/design`, `/roofing` and `/roofing/commercial`.
+  - Group C: `/lp/additions` and `/lp/renovations` (noindex, form first, leads routed as construction, real Franklin addition and interior photos, site footer).
+  - Group D: `/service-areas/maggie-valley-nc`, `whittier-nc`, `tuckasegee-nc`, `clyde-nc`, `canton-nc`. Elevations and geography from public sources (Wikipedia / USGS). 5 hand-written FAQs each. No Highlander job is claimed in these towns; each shows the nearest real jobs labelled with their true town. Added to the Haywood and Jackson County pages, the nearby-town links, and the Sylva showroom as nearest office.
+  - Group E: `/service-areas/waynesville-nc/gutters`, `/waynesville-nc/handyman`, `/franklin-nc/gutters`, `/highlands-nc/gutters`, `/cashiers-nc/gutters` (hand-written, indexable). Linked from their town pages, `/roofing/gutters` and `/construction/handyman`.
+- **Part 7:** `/service-areas/waynesville-nc/roof-repair` (new hand-written page) and `/service-areas/waynesville-nc/roofing` are now indexable and in the sitemap; `/locations/sylva-nc` kept in the sitemap (see below); Otto title "Roofing & Construction in Otto, NC | Highlander"; handyman sections on the Waynesville, Sylva and Bryson City town pages.
+- **Not built (waiting on facts):** `/roofing/roof-care-plans` and `/lp/roof-check` (Luke: plan details, prices, whether the check is free), `/lp/design-gift` (Luke: whether the offer runs), `/lp/kitchens-baths` (no real kitchen or bath photos yet). See `docs/open-items.md`.
+- **Differences from the guide, and why:**
+  - descriptions say "written estimate" instead of "free inspection / free consultation / free estimate" (site rule: no "free inspection"; "free estimate" only where already approved);
+  - the 5 new town pages use the standard town headline ("<Town>, NC Roofing Contractor & Builder"), because a test keeps custom headlines to the core towns;
+  - the Franklin gutters page is titled "Gutter Installation & Guards in Franklin, NC | Highlander" (the guide's title duplicated an existing blog post title);
+  - no new form fields (number of properties, "what do you want to add?"): forms stay as they are; the visitor can say it in the message;
+  - `/locations/sylva-nc` stays in the sitemap: it is the Google Business Profile URL and a legacy redirect target, the site's checks require every indexable page in the sitemap, and its Nov 18 retitle ("Sylva Showroom & Office: Address, Hours, Directions") already stops it competing with the Sylva town page;
+  - the image without alt text that the audit found is not in the site's own HTML; it is added in the browser by a third-party script (tracking pixel or widget), which stays untouched.

@@ -22,6 +22,30 @@ const ORIGIN = "https://highlandernc.com";
 /** Keep in sync with src/components/landing/config.ts and src/pages/*Ads.tsx. */
 const PAGES = [
   {
+    path: "/lp/handyman",
+    title: "Handyman Services in Western NC | Highlander",
+    description:
+      "Small repairs and odd jobs for Western NC homes, done by Highlander's handyman team. Tell us what you need and the office will call you back.",
+  },
+  {
+    path: "/lp/additions",
+    title: "Home Additions in Western NC | Highlander",
+    description:
+      "Add a bedroom, suite, sunroom or garage to your Western NC home. Highlander designs, permits and builds it, with the scope and price in writing first.",
+  },
+  {
+    path: "/lp/renovations",
+    title: "Home Renovations in Western NC | Highlander",
+    description:
+      "Renovate your Western NC home: open layouts, kitchens, baths and full remodels by one local design-build team, with the scope and price in writing first.",
+  },
+  {
+    path: "/lp/gutters",
+    title: "Seamless Gutters in Western NC | Highlander",
+    description:
+      "Seamless gutters, downspouts and gutter repairs for Western North Carolina homes. Call Highlander or send a short request about your home.",
+  },
+  {
     path: "/lp/roof-repair",
     title: "Roof Repair in Western NC | Highlander",
     description:
