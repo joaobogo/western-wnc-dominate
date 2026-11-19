@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 233,
+    "sitemap": 234,
     "coverageNoindex": 126,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 17,
-    "total": 393
+    "total": 394
   },
   "routes": [
     "/",
@@ -127,6 +127,7 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/moss-on-roof-removal",
     "/blog/chimney-cricket-requirements",
     "/blog/dark-vs-light-roof",
     "/blog/brown-ceiling-stains",
