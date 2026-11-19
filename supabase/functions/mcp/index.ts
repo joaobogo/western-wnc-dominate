@@ -278,7 +278,12 @@ var towns = [
   { slug: "lake-glenville-nc", name: "Lake Glenville", county: "Jackson" },
   { slug: "lake-toxaway-nc", name: "Lake Toxaway", county: "Transylvania" },
   { slug: "sapphire-nc", name: "Sapphire", county: "Jackson" },
-  { slug: "cherokee-nc", name: "Cherokee", county: "Swain" }
+  { slug: "cherokee-nc", name: "Cherokee", county: "Swain" },
+  { slug: "maggie-valley-nc", name: "Maggie Valley", county: "Haywood" },
+  { slug: "clyde-nc", name: "Clyde", county: "Haywood" },
+  { slug: "canton-nc", name: "Canton", county: "Haywood" },
+  { slug: "whittier-nc", name: "Whittier", county: "Jackson" },
+  { slug: "tuckasegee-nc", name: "Tuckasegee", county: "Jackson" }
 ];
 var list_service_areas_default = defineTool3({
   name: "list_service_areas",
