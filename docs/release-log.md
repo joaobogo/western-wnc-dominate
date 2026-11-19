@@ -248,9 +248,10 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - The town link on project pages reads "Roofing & construction in {town}, NC" (it said "Roofing" on construction jobs too).
 - **Gates:** tests 663/663 · build 347/347 prerendered · `seo:check` PASS · `smoke:lp` 21/21 · the 7 changed pages: no page errors, no sideways scroll · contrast audit, phone and desktop: 0 lines under the AA threshold · lint clean on changed files.
 
-## 404 fix guide — Nov 19, 2026 (PR pending approval)
+## 404 fix guide — Nov 19, 2026 (PR #46)
+- **Approved by:** John ("approvws", Nov 19). Merged as `1699dd5` with Lovable idle (last Lovable activity 15:23 UTC, the moss article, merged into this branch first).
 - **Asked by:** John (shared "Highlander website: how to fix the Page Not Found pages", 22 missing pages, audit of 19 Nov).
-- **Rollback point:** `main` at `c6080da` (project pages, confirmed live by the site health check at 16:52 UTC on Nov 18).
+- **Rollback point:** `main` at `73fef61` (Lovable's moss article on top of the project pages release).
 - **Includes draft PR #45** (another Claude session): merged into this branch and checked against the guide's Part 2. Its front-desk changes (design option, "Anything else they need?") come along unchanged.
 - **Built (15 of 22 addresses):**
   - Group A: `/construction/kitchen-remodeling`, `/construction/bathroom-remodeling`, `/roofing/property-managers` (indexable), `/lp/handyman`, `/lp/gutters` (noindex). Fixed against the spec: titles, H1s, descriptions and the 5 FAQs on each page; a "mountain homes" section and "Where we work" town links; the kitchen page's unconfirmed "6 to 10 weeks" timeline removed; company reviews shown on kitchen and bath (John, Nov 18: regular reviews are fine on construction). Linked from `/construction`, `/construction/design`, `/roofing` and `/roofing/commercial`.
