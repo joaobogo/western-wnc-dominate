@@ -43,7 +43,7 @@ interface PaidAdsLandingProps {
   reviewId: string;
   faqs: Array<{ question: string; answer: string }>;
   /** Lead routing for services that are neither roofing nor construction. */
-  serviceCategory?: "handyman" | "gutters";
+  serviceCategory?: "handyman" | "gutters" | "construction";
   /** Label above the customer review. */
   reviewLabel?: string;
   /** Heading and photos for the "Recent work" section. Defaults to roofs. */

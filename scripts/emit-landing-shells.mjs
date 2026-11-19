@@ -23,9 +23,21 @@ const ORIGIN = "https://highlandernc.com";
 const PAGES = [
   {
     path: "/lp/handyman",
-    title: "Handyman & Small Repairs in Western NC | Highlander",
+    title: "Handyman Services in Western NC | Highlander",
     description:
-      "Deck boards, railings, gutter fixes, trim and punch lists in Western North Carolina. Call Highlander or send a short request with your list.",
+      "Small repairs and odd jobs for Western NC homes, done by Highlander's handyman team. Tell us what you need and the office will call you back.",
+  },
+  {
+    path: "/lp/additions",
+    title: "Home Additions in Western NC | Highlander",
+    description:
+      "Add a bedroom, suite, sunroom or garage to your Western NC home. Highlander designs, permits and builds it, with the scope and price in writing first.",
+  },
+  {
+    path: "/lp/renovations",
+    title: "Home Renovations in Western NC | Highlander",
+    description:
+      "Renovate your Western NC home: open layouts, kitchens, baths and full remodels by one local design-build team, with the scope and price in writing first.",
   },
   {
     path: "/lp/gutters",

@@ -86,6 +86,11 @@ const staticRoutes: SitemapEntry[] = [
   // Physical showroom (location) pages
   { path: "/locations" },
   { path: "/locations/franklin-nc" },
+  // Kept in the sitemap (HL-060 asked to remove it): it is the Google Business
+  // Profile URL, a legacy redirect target, and indexable; the site's checks
+  // require every indexable page to be listed. Its title was changed on
+  // Nov 18 to "Sylva Showroom & Office" so it no longer competes with
+  // /service-areas/sylva-nc, the main Sylva page.
   { path: "/locations/sylva-nc" },
 
   // Service Areas hub + blog hub

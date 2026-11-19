@@ -464,7 +464,16 @@ const CommercialRoofing = () => {
                   </section>
         }
         coverage={
+                  <>
+                  <p className="container-tight pt-8 font-body text-body text-foreground">
+                    Managing an HOA, condos or vacation rentals?{" "}
+                    <Link to="/roofing/property-managers" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">
+                      See roofing for property managers and HOAs
+                    </Link>
+                    .
+                  </p>
                   <ServiceInternalLinks title="Commercial Roofing" slug="commercial-roofing" />
+                  </>
         }
         cta={
                   <section className="section-dark tartan-dark relative overflow-hidden">

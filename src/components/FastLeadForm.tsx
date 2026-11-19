@@ -22,7 +22,7 @@ interface FastLeadFormProps {
   /** Kept for caller compatibility. Qualification happens after first contact. */
   urgencyOptions?: string[];
   /** Routes the lead when the service is neither roofing nor construction. */
-  serviceCategory?: "handyman" | "gutters";
+  serviceCategory?: "handyman" | "gutters" | "construction";
 }
 
 const FastLeadForm = ({ ctaLabel, serviceLabel, serviceCategory: categoryOverride }: FastLeadFormProps) => {

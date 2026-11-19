@@ -209,6 +209,8 @@ const REQUIRED_NOINDEX_HTML_ROUTES = [
   "/lp/roof-repair",
   "/lp/handyman",
   "/lp/gutters",
+  "/lp/additions",
+  "/lp/renovations",
   "/lp/storm-damage",
   "/lp/roofing",
   "/lp/construction",

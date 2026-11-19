@@ -68,6 +68,8 @@ const RoofReplacementAds = lazyPreload("RoofReplacementAds", () => import("./pag
 const RoofRepairAds = lazyPreload("RoofRepairAds", () => import("./pages/RoofRepairAds"));
 const HandymanAds = lazyPreload("HandymanAds", () => import("./pages/HandymanAds"));
 const GuttersAds = lazyPreload("GuttersAds", () => import("./pages/GuttersAds"));
+const AdditionsAds = lazyPreload("AdditionsAds", () => import("./pages/AdditionsAds"));
+const RenovationsAds = lazyPreload("RenovationsAds", () => import("./pages/RenovationsAds"));
 const KitchenRemodeling = lazyPreload("KitchenRemodeling", () => import("./pages/KitchenRemodeling"));
 const BathroomRemodeling = lazyPreload("BathroomRemodeling", () => import("./pages/BathroomRemodeling"));
 const PropertyManagers = lazyPreload("PropertyManagers", () => import("./pages/PropertyManagers"));
@@ -174,6 +176,8 @@ const App = () => (
           <Route path="/lp/roof-repair" element={<RoofRepairAds />} />
           <Route path="/lp/handyman" element={<HandymanAds />} />
           <Route path="/lp/gutters" element={<GuttersAds />} />
+          <Route path="/lp/additions" element={<AdditionsAds />} />
+          <Route path="/lp/renovations" element={<RenovationsAds />} />
           <Route path="/lp/storm-damage" element={<StormDamageAds />} />
           <Route path="/lp/roofing" element={<RoofingLanding />} />
           <Route path="/lp/construction" element={<ConstructionLanding />} />

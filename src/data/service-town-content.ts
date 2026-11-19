@@ -503,13 +503,11 @@ export const serviceTownContent: ServiceTownEntry[] = [
     ],
   }),
   E({
-    // Hand-written so visitors get real local content, but left out of search:
-    // the Waynesville town page ("Waynesville, NC Roofing & Roof Repair") owns
-    // the "roofing Waynesville" searches. Two pages chasing the same search
-    // split it; Franklin's roofing page was folded into its town page for the
-    // same reason. Flip to indexable only if the town page is retitled.
+    // Indexable (John's 404 fix guide, Nov 19 2026, HL-037). Note: the
+    // Waynesville town page is titled "Waynesville, NC Roofing & Roof Repair",
+    // so both pages compete for "roofing Waynesville"; watch both in Search
+    // Console and retitle one if they trade places.
     townSlug: "waynesville-nc",
-    indexable: false, // the town page owns "roofing Waynesville" (see note above)
     serviceSlug: "roofing",
     serviceLabel: "Roofing",
     h1: "Roofing in Waynesville, NC",
@@ -521,7 +519,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Owners of older homes in and around the Main Street Historic District, Frog Level and Lake Junaluska, families in Haywood County's hillside neighborhoods, and anyone weighing repair against replacement.",
     proofNote:
       "Recent Waynesville work includes a 4,100 sq ft CertainTeed Landmark shingle replacement completed in 4 days, with 12 sheets of damaged decking replaced and the ridge vent upgraded.",
-    metaTitle: "Roofing in Waynesville, NC: Repair, Replacement & Metal | Highlander",
+    metaTitle: "Roofing in Waynesville, NC: Repair & Metal | Highlander",
     metaDescription:
       "Roof repair, roof replacement and metal roofing for Waynesville, NC homes. Deck, flashing and ventilation checked on every job. Licensed & Insured.",
     faqs: [
@@ -552,6 +550,150 @@ export const serviceTownContent: ServiceTownEntry[] = [
       { q: "Will snow slide off onto my porch or walkway?", a: "It can, which is why we plan snow retention over entries, porches and walkways as part of the design rather than adding it later." },
       { q: "Can metal go over my existing shingles?", a: "Sometimes, but we usually recommend a tear-off so we can check the deck and install proper underlayment. Older Waynesville roofs often have deck damage that only shows once the shingles are off." },
       { q: "How long does a metal roof installation take?", a: "It depends on the size and complexity of the roof. We give you a written scope and schedule before work starts." },
+    ],
+  }),
+  E({
+    // Hand-written for John's 404 fix guide (Nov 19 2026, HL-037).
+    townSlug: "waynesville-nc",
+    serviceSlug: "roof-repair",
+    serviceLabel: "Roof Repair",
+    h1: "Roof Repair in Waynesville, NC",
+    intro:
+      "Most Waynesville leak calls trace back to the same few places: flashing at chimneys and walls, worn pipe boots, and attics that trap moisture through freeze-thaw winters at around 2,750 ft. Highlander finds where the water is actually getting in and gives you a written repair scope before any work starts.",
+    localContext:
+      "Haywood County winters bring snow and repeated freeze-thaw, and that is when small openings grow. Ice that backs up at the eaves, sealant that splits at penetrations and decking softened by a slow leak are the patterns we look for. On older homes in the historic districts we also check whether the repair is worth making, or whether the deck underneath says the roof is near the end of its life. You get that recommendation in writing either way.",
+    whoItsFor:
+      "Owners with an active leak or a stain on the ceiling, older homes around the Main Street Historic District, Frog Level and Lake Junaluska, and owners who want to know whether a repair will hold or a replacement is the better spend.",
+    proofNote: "A documented Waynesville job: a 4,100 sq ft CertainTeed Landmark replacement in Weathered Wood on a multi-level home, completed in 4 days, with decking repair and upgraded attic ventilation.",
+    metaTitle: "Roof Repair in Waynesville, NC | Highlander",
+    metaDescription:
+      "Roof leak and flashing repair for Waynesville, NC homes. We find where water gets in and give you a written repair scope first. Licensed & Insured.",
+    faqs: [
+      { q: "Do you repair roofs in Waynesville and the rest of Haywood County?", a: "Yes. Waynesville is part of our regular service area, along with Lake Junaluska and the surrounding Haywood County communities." },
+      { q: "Where do most Waynesville roof leaks start?", a: "Usually at flashing around chimneys and walls, at worn pipe boots, and at the eaves where ice backs up in winter. We trace the water to its source rather than patching the stain." },
+      { q: "Is my roof worth repairing, or should I replace it?", a: "It depends on the deck and the attic, not just the surface. We check decking, flashing and ventilation and give you a written recommendation either way." },
+      { q: "Can you help with storm damage?", a: "Yes. We inspect, document what we find with photos and give you a written scope you can use in the conversation with your insurer. See storm damage response for how that works." },
+    ],
+  }),
+  E({
+    // Hand-written for John's 404 fix guide (Nov 19 2026, HL-046).
+    townSlug: "waynesville-nc",
+    serviceSlug: "gutters",
+    serviceLabel: "Gutter Installation",
+    h1: "Gutter Installation in Waynesville, NC",
+    intro:
+      "Gutters on a Waynesville home have two jobs: carry heavy mountain rain away from the foundation, and keep doing it through snow and freeze-thaw winters at around 2,750 ft. Highlander installs seamless aluminum gutters rolled on site, sized for the roof they serve, with guards where trees overhang.",
+    localContext:
+      "Steep hillside roofs send water to the gutters fast, so size matters: most mountain homes are better served by 6-inch gutters with oversized 3x4 downspouts than by standard 5-inch runs. In winter, gutters that hold water and debris freeze, add weight at the eaves and feed ice dams, so we pay attention to pitch, hanger spacing and where each downspout discharges. On older homes in the historic districts we also check the fascia behind the gutter before hanging anything new on it.",
+    whoItsFor:
+      "Owners with overflowing or sagging gutters, homes with water near the foundation or a damp basement, wooded lots where leaves and needles clog the runs, and anyone replacing a roof who wants the gutters planned with it.",
+    proofNote:
+      "Every gutter job is measured on site and quoted in writing: gutter size, downspout count and placement, and guards if you choose them. When we replace a roof, the eaves, drip edge and gutters are planned as one system.",
+    metaTitle: "Gutter Installation in Waynesville, NC | Highlander",
+    metaDescription:
+      "Seamless gutters, guards and downspouts for Waynesville homes, sized for steep mountain roofs and heavy rain. Measured on site, priced in writing.",
+    faqs: [
+      { q: "What size gutters does a Waynesville home need?", a: "Most homes here are better served by 6-inch gutters with 3x4 downspouts, because steep roofs and heavy rain overwhelm standard 5-inch runs. We measure the roof and confirm the size in your written estimate." },
+      { q: "Do you install gutter guards?", a: "Yes. We install micro-mesh and reverse-curve guards, which matter most on wooded lots where leaves and needles clog the gutters." },
+      { q: "Can gutters help with water in my basement?", a: "Often. Many wet basements start with downspouts that dump water against the foundation. We place downspouts and extensions to move water away from the house." },
+      { q: "Can you do the gutters with a new roof?", a: "Yes. When we replace a roof, we plan the eaves, drip edge and gutter attachment together so the transition does not leak." },
+    ],
+  }),
+  E({
+    // Hand-written for John's 404 fix guide (Nov 19 2026, HL-046).
+    townSlug: "waynesville-nc",
+    serviceSlug: "handyman",
+    serviceLabel: "Handyman Services",
+    h1: "Handyman Services in Waynesville, NC",
+    intro:
+      "Small repairs on a Waynesville home or rental: worn deck boards and railings, gutter seams, rotted fascia and trim, and the punch list from a home inspection. Call Highlander with your list and you get the scope and price in writing before work is scheduled.",
+    localContext:
+      "Freeze-thaw winters and wet springs at around 2,750 ft are hard on exterior wood. The repairs that come up most on Haywood County homes are deck boards and railings that have gone soft, fascia and trim where water has been getting behind the gutters, and siding boards split by weather. Because Highlander is also a roofing company and a licensed general contractor, a small fix that turns out to be a bigger problem is caught, not covered over.",
+    whoItsFor:
+      "Homeowners with a list of small jobs, owners of rentals and second homes who need repairs handled while they are away, and buyers or sellers with a home-inspection punch list.",
+    proofNote:
+      "One call covers the whole list. You see the scope and price in writing before anything is scheduled, and the same office handles the roof, gutters and exterior if the list turns up something bigger.",
+    metaTitle: "Handyman Services in Waynesville, NC | Highlander",
+    metaDescription:
+      "Small repairs and odd jobs for Waynesville homes and rentals from Highlander's handyman team. Tell us what you need for a callback and a written price.",
+    faqs: [
+      { q: "What kind of jobs does your handyman team take in Waynesville?", a: "Deck boards and railings, gutter seams and sagging runs, rotted fascia, soffit and trim, damaged siding boards, and home-inspection punch lists. Call with your list and the office will tell you whether it is a fit." },
+      { q: "Can you handle repairs at my rental or second home while I'm away?", a: "Yes, for many exterior repairs. Tell us how to reach the property and what you have noticed, and we will report back with what we found and what we did." },
+      { q: "Is any job too small?", a: "Call and tell us what is on the list. Several small items on one property are often easiest to handle together in one visit." },
+      { q: "How is handyman work priced?", a: "From a written scope for your list: what needs doing, materials and access. You see the price before the work is scheduled." },
+    ],
+  }),
+  E({
+    // Hand-written for John's 404 fix guide (Nov 19 2026, HL-058).
+    townSlug: "franklin-nc",
+    serviceSlug: "gutters",
+    serviceLabel: "Gutter Installation",
+    h1: "Gutter Installation in Franklin, NC",
+    intro:
+      "Franklin is Highlander's home market, and gutters here have to handle heavy rain and the wind that funnels through the Little Tennessee River Valley. We install seamless aluminum gutters rolled on site to the length of each run, sized for the roof they drain, with guards where trees overhang.",
+    localContext:
+      "Across Macon County's valley farmhouses and ridgetop homes, the gutter problems we see most are runs that are too small for the roof above them, seams that leak on older sectional gutters, and downspouts that empty right next to the foundation. Most homes here are better served by 6-inch gutters with oversized 3x4 downspouts than by standard 5-inch runs, and wooded lots in Cartoogechaye, Iotla and Burningtown usually need guards to stay clear.",
+    whoItsFor:
+      "Franklin homeowners with overflowing, sagging or leaking gutters, homes with water pooling near the foundation, wooded lots that clog every fall, and anyone replacing a roof who wants the gutters planned with it.",
+    proofNote:
+      "Franklin is where Highlander began, and the gutter crew works from the same Franklin office. Every job is measured on site and quoted in writing: gutter size, downspout count and placement, and guards if you choose them.",
+    metaTitle: "Gutter Installation & Guards in Franklin, NC | Highlander",
+    metaDescription:
+      "Seamless gutters, guards and gutter repair for Franklin and Macon County homes, built for heavy mountain rain. Measured on site, priced in writing.",
+    faqs: [
+      { q: "What size gutters do Franklin homes need?", a: "Most are better served by 6-inch gutters with 3x4 downspouts, because heavy rain and steep roofs overwhelm standard 5-inch runs. We measure the roof and confirm the size in your written estimate." },
+      { q: "Do you install gutter guards?", a: "Yes. We install micro-mesh and reverse-curve guards that keep leaves, pine needles and debris out of the gutters." },
+      { q: "Can you repair my gutters instead of replacing them?", a: "Often, yes. We repair leaking seams, rehang sagging sections and replace damaged pieces, and we recommend repair or replacement based on the age and condition of the system." },
+      { q: "Do you serve all of Macon County?", a: "Yes. Franklin is our home base, and we work across Macon County, including Otto, Highlands and Scaly Mountain." },
+    ],
+  }),
+  E({
+    // Hand-written for John's 404 fix guide (Nov 19 2026, HL-058). "Heavy
+    // mountain rain" rather than a rainiest-town claim, per the guide.
+    townSlug: "highlands-nc",
+    serviceSlug: "gutters",
+    serviceLabel: "Gutter Installation",
+    h1: "Gutter Installation in Highlands, NC",
+    intro:
+      "At over 4,100 feet, Highlands homes get heavy mountain rain, ice at the eaves and long stretches when the house sits empty. Highlander installs seamless gutters sized for the plateau, including copper where the home calls for it, with guards and repairs too.",
+    localContext:
+      "Plateau roofs are often steep and complex, so they deliver a lot of water to a few corners fast. We size gutters and downspouts for that volume, set hangers closer where ice and snow load the eaves, and route downspouts away from stone foundations and walkways. On estate homes and historic summer cottages, the gutter is part of the look as well as the drainage, which is why copper is an option alongside seamless aluminum.",
+    whoItsFor:
+      "Owners of estate homes and summer cottages on the plateau, second-home owners who need gutters that work while they are away, homes under heavy tree cover, and anyone replacing a roof who wants the gutters done with it.",
+    proofNote:
+      "Our Highlands work includes a standing seam metal roof and a cedar shake estate roof. Every gutter job is measured on site and quoted in writing: material, size, downspouts and guards.",
+    metaTitle: "Gutter Installation in Highlands, NC | Highlander",
+    metaDescription:
+      "Seamless and copper gutters for Highlands homes, sized for heavy plateau rain and winter ice. Guards and repairs too. Measured on site, priced in writing.",
+    faqs: [
+      { q: "Do you install copper gutters in Highlands?", a: "Yes. Copper is an option alongside seamless aluminum, often chosen for estate homes and historic cottages where the gutter is part of the look." },
+      { q: "How do gutters handle snow and ice at this elevation?", a: "We set hangers closer together where snow and ice load the eaves and plan the gutters with the roof's ice-and-water protection, so the eave edge stays watertight." },
+      { q: "Do you install gutter guards?", a: "Yes. We install micro-mesh and reverse-curve guards that keep leaves, pine needles and debris out of the gutters." },
+      { q: "Can you look after the gutters while I'm away?", a: "Tell us how to reach the property. We can inspect, report back with photos and handle repairs between your visits." },
+    ],
+  }),
+  E({
+    // Hand-written for John's 404 fix guide (Nov 19 2026, HL-058).
+    townSlug: "cashiers-nc",
+    serviceSlug: "gutters",
+    serviceLabel: "Gutter Installation",
+    h1: "Gutter Installation in Cashiers, NC",
+    intro:
+      "Cashiers sits around 3,480 feet on a plateau known for persistent moisture and fog, so gutters here are a water-management job first. Highlander installs seamless gutters, guards and downspouts sized for steep mountain roofs, for full-time homes and seasonal estates alike.",
+    localContext:
+      "Moisture is the theme in Cashiers. Gutters that overflow keep siding, decks and foundations wet, and in fog and shade they rarely dry out between storms. We size gutters and downspouts for the roof's actual drainage, add guards on wooded lots around High Hampton, Cedar Creek and Lonesome Valley, and route water well away from the house.",
+    whoItsFor:
+      "Owners of seasonal estates and second homes, homes with wet siding or decks under overflowing gutters, wooded lots that clog every fall, and anyone replacing a roof who wants the gutters planned with it.",
+    proofNote:
+      "Every gutter job is measured on site and quoted in writing: gutter size, downspout count and placement, and guards if you choose them. When we replace a roof, the eaves, drip edge and gutters are planned as one system.",
+    metaTitle: "Gutter Installation in Cashiers, NC | Highlander",
+    metaDescription:
+      "Gutters, guards and downspouts for Cashiers mountain homes and second homes. Seamless installs sized for steep roofs. Measured on site, priced in writing.",
+    faqs: [
+      { q: "What size gutters does a Cashiers home need?", a: "Steep plateau roofs usually need 6-inch gutters with 3x4 downspouts to keep up with heavy rain. We measure the roof and confirm the size in your written estimate." },
+      { q: "Do you install gutter guards?", a: "Yes. We install micro-mesh and reverse-curve guards that keep leaves, pine needles and debris out of the gutters." },
+      { q: "Can gutters help keep my deck and siding dry?", a: "Yes. Overflowing gutters dump water onto decks and walls. Correctly sized gutters and downspouts routed away from the house keep that water off them." },
+      { q: "Do you work on seasonal homes while the owners are away?", a: "Yes. Tell us how to reach the property and how you want updates, and we will report back with photos." },
     ],
   }),
   // ─────────── BREVARD ───────────
@@ -1071,6 +1213,7 @@ export const DIVISION_PAGE_FOR_SERVICE: Record<string, string> = {
   "outdoor-living": "/construction/outdoor-living",
   renovations: "/construction/renovations",
   siding: "/construction/siding",
+  handyman: "/construction/handyman",
 };
 
 /**

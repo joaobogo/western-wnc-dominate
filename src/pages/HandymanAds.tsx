@@ -8,8 +8,8 @@ import trimSet from "@/assets/work/addition-cullowhee-roofline.webp?w=480;800&fo
 
 const HandymanAds = () => (
   <PaidAdsLanding
-    title="Handyman & Small Repairs in Western NC | Highlander"
-    description="Deck boards, railings, gutter fixes, trim and punch lists in Western North Carolina. Call Highlander or send a short request with your list."
+    title="Handyman Services in Western NC | Highlander"
+    description="Small repairs and odd jobs for Western NC homes, done by Highlander's handyman team. Tell us what you need and the office will call you back."
     path="/lp/handyman"
     serviceName="Handyman & Small Repairs"
     serviceCategory="handyman"
@@ -25,7 +25,7 @@ const HandymanAds = () => (
     heroImage={heroImg}
     heroAlt="Rebuilt elevated deck with new boards and railing by Highlander in Sylva, North Carolina"
     eyebrow="Handyman and small repairs · Western North Carolina"
-    headline="Handyman & Small Home Repairs in Western NC"
+    headline="Handyman Services for Your Western NC Home"
     subheadline="Call with your list. A licensed local contractor looks at the work and gives you the scope and price in writing before anything starts."
     ctaLabel="Send My Repair List"
     urgencyOptions={["Something needs attention now", "Need help soon", "This month", "Just planning"]}

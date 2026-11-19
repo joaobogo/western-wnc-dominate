@@ -39,10 +39,26 @@ export interface FocusedServicePageProps {
   closingHeading: string;
   topic: ProofTopic;
   ctaId: string;
+  /** Optional local-context section ("Kitchens in mountain homes"): heading + short paragraphs. */
+  local?: { heading: string; paragraphs: string[] };
+  /** Show "Where we work" with links to the main town pages. */
+  showTowns?: boolean;
 }
 
+/** Main town pages linked from "Where we work" (all indexable). */
+const WHERE_WE_WORK = [
+  { name: "Franklin", slug: "franklin-nc" },
+  { name: "Highlands", slug: "highlands-nc" },
+  { name: "Cashiers", slug: "cashiers-nc" },
+  { name: "Sylva", slug: "sylva-nc" },
+  { name: "Waynesville", slug: "waynesville-nc" },
+  { name: "Lake Glenville", slug: "lake-glenville-nc" },
+  { name: "Bryson City", slug: "bryson-city-nc" },
+  { name: "Otto", slug: "otto-nc" },
+];
+
 /** One focused service, in the same call-first order as the handyman page. */
-export default function FocusedServicePage({ showReviews = true, ...p }: FocusedServicePageProps) {
+export default function FocusedServicePage({ showReviews = true, showTowns = false, ...p }: FocusedServicePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const crumbs = [{ name: "Home", url: "/" }, p.parent, { name: p.name, url: p.path }];
   return (
@@ -56,7 +72,7 @@ export default function FocusedServicePage({ showReviews = true, ...p }: Focused
       <Header />
       <PageBreadcrumbs items={crumbs} />
       <main id="main-content" className="bg-background">
-        <section className={`relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-white ${p.image ? "" : "blueprint-dark"}`}>
+        <section className={`relative isolate overflow-hidden bg-[hsl(var(--dark-section))] text-white ${p.image ? "hero-legible" : "blueprint-dark"}`}>
           {p.image && (
             <div className="absolute inset-0 -z-10">
               <img src={p.image.src} srcSet={p.image.srcSet} sizes="100vw" alt={p.image.alt} width={p.image.width} height={p.image.height} loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
@@ -65,7 +81,7 @@ export default function FocusedServicePage({ showReviews = true, ...p }: Focused
           )}
           <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-8 md:py-24">
             <OfficeStatusChip tone="dark" className="mb-5" />
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">{p.eyebrow}</p>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">{p.eyebrow}</p>
             <h1 className="max-w-3xl font-heading text-4xl font-bold leading-[1.05] !text-white md:text-6xl">{p.h1}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/90">{p.intro}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -115,6 +131,19 @@ export default function FocusedServicePage({ showReviews = true, ...p }: Focused
             </ul>
           </div>
         </section>
+
+        {p.local && (
+          <section aria-labelledby={`${p.ctaId}-local`} className="section-padding">
+            <div className="mx-auto max-w-3xl px-5 md:px-8">
+              <h2 id={`${p.ctaId}-local`} className="section-heading mb-6">{p.local.heading}</h2>
+              <div className="space-y-4">
+                {p.local.paragraphs.map((para) => (
+                  <p key={para} className="text-[1.05rem] leading-relaxed text-foreground/90">{para}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section aria-labelledby={`${p.ctaId}-steps`} className="section-padding">
           <div className="mx-auto max-w-[1200px] px-5 md:px-8">
@@ -167,6 +196,24 @@ export default function FocusedServicePage({ showReviews = true, ...p }: Focused
         </section>
 
         <ProofKit topic={p.topic} reviews={showReviews} articles />
+        {showTowns && (
+          <section aria-labelledby={`${p.ctaId}-towns`} className="section-padding bg-secondary/40">
+            <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+              <h2 id={`${p.ctaId}-towns`} className="section-heading mb-3">Where we work</h2>
+              <p className="mb-6 max-w-2xl text-muted-foreground">Highlander works from its Franklin and Sylva showrooms across Western North Carolina. Each town page covers local conditions and the showroom that serves it.</p>
+              <ul className="flex flex-wrap gap-3">
+                {WHERE_WE_WORK.map((t) => (
+                  <li key={t.slug}>
+                    <Link to={`/service-areas/${t.slug}`} className="inline-flex min-h-12 items-center gap-1.5 rounded-full border border-border bg-card px-4 font-semibold hover:border-primary">
+                      {t.name}, NC
+                      <ArrowRight className="h-4 w-4 text-primary" aria-hidden="true" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
         <div id="estimate-form"><InspectionForm /></div>
 
         <section className="bg-[hsl(var(--dark-section))] text-white">

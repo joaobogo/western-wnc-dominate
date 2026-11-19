@@ -80,7 +80,7 @@ interface ServiceTownPageProps {
  * showed roofs). Construction services show construction jobs; a page's own
  * service (metal, Brava, additions, outdoor living) leads when one exists.
  */
-const CONSTRUCTION_SERVICES = new Set(["construction", "additions", "renovations", "outdoor-living", "home-repairs", "design"]);
+const CONSTRUCTION_SERVICES = new Set(["construction", "additions", "renovations", "outdoor-living", "home-repairs", "design", "handyman"]);
 const projectCategoryForService = (service: string): ProjectDetail["category"] =>
   CONSTRUCTION_SERVICES.has(service) ? "construction" : "roofing";
 const SERVICE_MATCH: Record<string, RegExp> = {

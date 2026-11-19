@@ -22,6 +22,7 @@ const PATH_RULES: Array<[RegExp, ProjectTypeValue]> = [
   // Paid landing pages and town pages that name the service in the URL.
   [/^\/lp\/handyman/, "handyman"],
   [/^\/lp\/gutters/, "gutters"],
+  [/^\/lp\/(additions|renovations)/, "addition"],
   [/^\/service-areas\/[^/]+\/handyman/, "handyman"],
   [/^\/service-areas\/[^/]+\/gutters/, "gutters"],
   [/^\/roofing\/property-managers/, "commercial"],

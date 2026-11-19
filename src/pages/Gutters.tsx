@@ -250,10 +250,16 @@ const Gutters = () => {
         coverage={<>
       <TownServiceLinks
         service="gutters"
+        label="gutter installation"
+        heading="Gutter installation by town"
+        intro="Rainfall, leaf load and snow change what a gutter system has to handle. Each page covers local conditions and the showroom that serves the town."
+      />
+      <TownServiceLinks
+        service="gutters-towns"
         label="roofing & gutters"
-        heading="Gutter work by town"
-        intro="Rainfall, leaf load and snow change what a gutter system has to handle. Each town page covers local conditions and the showroom that serves it."
-        townPages={["franklin-nc", "waynesville-nc", "highlands-nc", "cashiers-nc", "sylva-nc", "lake-glenville-nc", "bryson-city-nc", "otto-nc"]}
+        heading="More towns we serve"
+        townPages={["sylva-nc", "lake-glenville-nc", "bryson-city-nc", "otto-nc"]}
+        className="pt-0"
       />
       <RelatedLinks
           eyebrow="Keep Exploring"

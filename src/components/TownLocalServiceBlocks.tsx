@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Home, Wrench, Layers, CloudRain, Sun, Hammer, Compass, Trees, Mountain } from "lucide-react";
 import type { TownData } from "@/data/towns";
-import { serviceTownHref } from "@/data/service-town-content";
+import { isServiceTownIndexable, serviceTownHref } from "@/data/service-town-content";
 
 /** "Scaly Mountain mountain homes" reads badly — towns whose name already ends in Mountain get plain "homes". */
+/** Towns whose page carries a handyman section (John's 404 fix guide, HL-045). */
+const HANDYMAN_TOWNS = new Set(["waynesville-nc", "sylva-nc", "bryson-city-nc"]);
+
 const homesIn = (name: string) => (/mountain$/i.test(name.trim()) ? `${name} homes` : `${name} mountain homes`);
 
 interface Props {
@@ -56,7 +59,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
     {
       title: `Gutter installation in ${t}, NC`,
       body: `Gutters and downspouts sized for the rainfall ${t} homes actually get.`,
-      href: "/roofing/gutters",
+      href: serviceTownHref(town.slug, "gutters"),
       icon: CloudRain,
     },
     {
@@ -108,6 +111,12 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
               <Link to={serviceTownHref(town.slug, "roof-repair")} className="text-primary underline underline-offset-4 hover:no-underline">roof repair in {t}</Link>,{" "}
               <Link to={serviceTownHref(town.slug, "metal-roofing")} className="text-primary underline underline-offset-4 hover:no-underline">metal roofing in {t}</Link>, or{" "}
               <Link to={serviceTownHref(town.slug, "storm-damage")} className="text-primary underline underline-offset-4 hover:no-underline">storm damage roofing in {t}</Link>.
+              {isServiceTownIndexable(town.slug, "roofing") && (
+                <>
+                  {" "}Or see everything on one page:{" "}
+                  <Link to={`/service-areas/${town.slug}/roofing`} className="text-primary underline underline-offset-4 hover:no-underline">roofing in {t}, NC</Link>.
+                </>
+              )}
             </p>
           </div>
         </div>
@@ -166,6 +175,40 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
             ))}
           </div>
         </div>
+
+        {/* Handyman services (404 fix guide, HL-045): towns where the handyman
+            team takes small jobs and rental turnovers. */}
+        {HANDYMAN_TOWNS.has(town.slug) && (
+          <div>
+            <div className="max-w-3xl">
+              <span className="eyebrow mb-3 block">Small Jobs</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
+                Handyman services in {t}
+              </h2>
+              <div className="space-y-4 text-lg text-muted-foreground font-body leading-relaxed">
+                <p>
+                  Not every job is a new roof. Highlander's handyman team takes the smaller work on {t} homes and rentals:
+                  worn deck boards and railings, gutter seams, rotted fascia and trim, and home-inspection punch lists.
+                </p>
+                <p>
+                  Call with your list and you get the scope and price in writing before anything is scheduled. See{" "}
+                  <Link to="/construction/handyman" className="text-primary underline underline-offset-4 hover:no-underline">
+                    handyman and small repairs
+                  </Link>
+                  {isServiceTownIndexable(town.slug, "handyman") && (
+                    <>
+                      {" "}or{" "}
+                      <Link to={`/service-areas/${town.slug}/handyman`} className="text-primary underline underline-offset-4 hover:no-underline">
+                        handyman services in {t}, NC
+                      </Link>
+                    </>
+                  )}
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Section 5 — Why mountain homes here need the right roof and exterior system */}
         <div className="bg-card border border-border/70 p-8 md:p-12 relative overflow-hidden">
