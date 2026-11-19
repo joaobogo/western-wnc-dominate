@@ -44,6 +44,9 @@ interface PaidAdsLandingProps {
   faqs: Array<{ question: string; answer: string }>;
   /** Lead routing for services that are neither roofing nor construction. */
   serviceCategory?: "handyman" | "gutters" | "construction";
+  /** Copy-only overrides for the lead form's header. */
+  formEyebrow?: string;
+  formHeading?: string;
   /** Label above the customer review. */
   reviewLabel?: string;
   /** Heading and photos for the "Recent work" section. Defaults to roofs. */
@@ -73,6 +76,8 @@ const PaidAdsLanding = ({
   reviewId,
   faqs,
   serviceCategory,
+  formEyebrow,
+  formHeading,
   reviewLabel = "Trust Snapshot",
   recentWork,
 }: PaidAdsLandingProps) => {
@@ -187,7 +192,7 @@ const PaidAdsLanding = ({
 
               <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1" id="fast-lead-form">
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.4 }}>
-                  <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} serviceCategory={serviceCategory} />
+                  <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} serviceCategory={serviceCategory} eyebrow={formEyebrow} heading={formHeading} />
                 </motion.div>
                 <p className="mt-4 text-sm font-body leading-relaxed text-primary-foreground md:hidden">
                   {subheadline}

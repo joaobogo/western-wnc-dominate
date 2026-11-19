@@ -6,8 +6,8 @@
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
-    "noindexFunnels": 17,
-    "total": 394
+    "noindexFunnels": 18,
+    "total": 395
   },
   "routes": [
     "/",
@@ -400,6 +400,7 @@
     "/lp/gutters",
     "/lp/additions",
     "/lp/renovations",
+    "/lp/roof-check",
     "/lp/storm-damage",
     "/lp/roofing",
     "/lp/construction",

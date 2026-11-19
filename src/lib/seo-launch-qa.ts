@@ -76,6 +76,7 @@ const staticRoutes: AuditRoute[] = [
   { path: "/lp/gutters", label: "Paid Ads: Gutters", pageType: "landing" },
   { path: "/lp/additions", label: "Paid Ads: Additions", pageType: "landing" },
   { path: "/lp/renovations", label: "Paid Ads: Renovations", pageType: "landing" },
+  { path: "/lp/roof-check", label: "Paid Ads: Roof Check", pageType: "landing" },
   { path: "/lp/roof-replacement", label: "Paid Ads: Roof Replacement", pageType: "landing" },
   { path: "/lp/storm-damage", label: "Paid Ads: Storm Damage", pageType: "landing" },
   { path: "/lp/roofing", label: "Paid Ads: Roofing", pageType: "landing" },
