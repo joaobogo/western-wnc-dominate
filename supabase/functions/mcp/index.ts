@@ -45,12 +45,14 @@ var BUSINESS = {
   // set per the 7 Sep 2026 work order (Task 6)
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
-    // Owner-confirmed 2026-09-04 (João): Google shows 4.8.
+    // Owner-confirmed 2026-09-04 (João): Google shows 4.8. Count refreshed
+    // 2026-11-19 from the public Franklin Google Business Profile listing
+    // (4.8, 178 reviews), per John's 404 fix guide (HL-063).
     ratingValue: 4.8,
-    reviewCount: 158,
+    reviewCount: 178,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-09-04"
+    lastVerified: "2026-11-19"
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [
@@ -125,7 +127,7 @@ var BUSINESS = {
       gbpCid: FRANKLIN_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
       googleRating: 4.8,
-      googleReviewCount: 158,
+      googleReviewCount: 178,
       hours: STANDARD_HOURS,
       primary: true
     },
@@ -141,7 +143,7 @@ var BUSINESS = {
       gbpCid: SYLVA_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzRXuBmttWYgR8QpnoWftXl8",
       googleRating: 5,
-      googleReviewCount: 26,
+      googleReviewCount: 30,
       hours: STANDARD_HOURS
     }
   ],
