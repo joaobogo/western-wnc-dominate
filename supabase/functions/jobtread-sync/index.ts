@@ -499,6 +499,10 @@ export async function resolveAttachments(
 }
 
 function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
+  return fitLeadNotes(buildHumanNoteLines(row, attachments)).text;
+}
+
+function buildHumanNoteLines(row: LeadRow, attachments?: AttachmentInfo): string[] {
   const lines: string[] = [];
   const NP = "Not provided";
   const val = (v: any): string => {
@@ -641,10 +645,21 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   kv("Where It's Leaking", appt.leakLocation);
   kv("Gutters", label(appt.gutters));
   kv("Chimney", label(appt.chimney));
-  const customerMessage = (row.project_description ?? "").toString().trim();
+  // Front desk staff often paste the caller's phone and email into the job
+  // details and repeat the details in the appointment notes. Those copies
+  // filled JobTread's 1,000-character field, so they are said once.
+  const isFrontDesk = has(meta.receptionist);
+  const customerMessage = isFrontDesk
+    ? dropRepeatedContactLines((row.project_description ?? "").toString(), [row.phone, poc?.phone, poc?.phone2], [row.email, poc?.email])
+    : (row.project_description ?? "").toString().trim();
   lines.push(`Customer Message: ${customerMessage || NP}`);
-  const officeNotes = String(appt.notes ?? "").trim();
-  if (officeNotes && officeNotes !== customerMessage) lines.push(`Office Notes: ${officeNotes}`);
+  const officeNotes = dropLinesAlreadySaid(
+    isFrontDesk
+      ? dropRepeatedContactLines(String(appt.notes ?? ""), [row.phone, poc?.phone, poc?.phone2], [row.email, poc?.email])
+      : String(appt.notes ?? "").trim(),
+    customerMessage,
+  );
+  if (officeNotes) lines.push(`Office Notes: ${officeNotes}`);
   if (isChatbotLead) {
     const summaryText = String(row.chat_summary ?? row.summary ?? "").trim();
     lines.push(`Chat Summary: ${summaryText || NP}`);
@@ -689,7 +704,8 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
 
   section("Timeline/Urgency");
   kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
-  kv("Timeline", timelineValue);
+  // Front desk calls carry one timing answer in both fields; say it once.
+  if (!(isFrontDesk && humanizeValue(timelineValue) === humanizeValue(row.urgency))) kv("Timeline", timelineValue);
   if (has(appt.state) || has(appt.dateTime)) {
     kv("Appointment", [label(appt.state), humanizeValue(appt.dateTime)].filter(Boolean).join(" — "));
   }
@@ -738,7 +754,7 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     resolved.failures.forEach((f) => lines.push(`  • ${f.name} — ${f.reason}`));
   }
 
-  return fitNoteLines(lines).join("\n");
+  return lines;
 }
 
 /**
@@ -761,6 +777,110 @@ export function fitNoteLines(lines: string[], limit = NOTE_LIMIT): string[] {
     out = out.filter((l) => !l.startsWith(prefix));
   }
   return out;
+}
+
+/** Name of the pinned JobTread comment that holds notes too long for the field. */
+export const FULL_NOTES_COMMENT_NAME = "Full lead notes";
+export const FULL_NOTES_POINTER = `*** Too long for this field: full notes in the pinned "${FULL_NOTES_COMMENT_NAME}" comment ***`;
+const TRIMMABLE_NOTE_PREFIXES = ["Office Notes: ", "Customer Message: ", "Chat Summary: "];
+const TRIM_SUFFIX = " … (rest in pinned comment)";
+const MIN_TRIMMED_TEXT = 40;
+const SECONDARY_NOTE_LINES = [
+  "Lead Source: Website", "Form:", "Lead Score:", "Lead Grade:", "Taken By:",
+  "Property Type:", "Preferred Contact Method:", "Service Category:",
+];
+
+/**
+ * Fits the Lead Notes into JobTread's field (limit 1,024; we keep 1,000).
+ * 1. Tracking and scoring lines go first (they stay on the lead record).
+ * 2. If it is still too long, only the typed paragraphs (Office Notes,
+ *    Customer Message, Chat Summary) are shortened. Appointment, contact,
+ *    property and access lines are never cut. A pointer line at the top
+ *    sends the team to the pinned comment that carries the full notes.
+ * `trimmed` is true when anything beyond tracking lines was shortened:
+ * that is when the full notes must be posted as a comment.
+ */
+export function fitLeadNotes(lines: string[], limit = NOTE_LIMIT): { text: string; trimmed: boolean } {
+  const out = fitNoteLines(lines, limit);
+  const size = () => out.join("\n").length;
+  if (size() <= limit) return { text: out.join("\n"), trimmed: false };
+
+  const header = out.findIndex((l) => l.startsWith("=== "));
+  out.splice(header + 1, 0, FULL_NOTES_POINTER);
+  for (;;) {
+    const excess = size() - limit;
+    if (excess <= 0) break;
+    // Shorten the longest typed paragraph that still has room to give.
+    let pick = -1;
+    let pickLen = 0;
+    out.forEach((l, i) => {
+      const prefix = TRIMMABLE_NOTE_PREFIXES.find((p) => l.startsWith(p));
+      if (!prefix) return;
+      const len = l.length - prefix.length - (l.endsWith(TRIM_SUFFIX) ? TRIM_SUFFIX.length : 0);
+      if (len > MIN_TRIMMED_TEXT && len > pickLen) { pick = i; pickLen = len; }
+    });
+    if (pick === -1) break;
+    const line = out[pick];
+    const prefix = TRIMMABLE_NOTE_PREFIXES.find((p) => line.startsWith(p))!;
+    const done = line.endsWith(TRIM_SUFFIX);
+    const body = line.slice(prefix.length, done ? line.length - TRIM_SUFFIX.length : undefined);
+    const keep = Math.max(MIN_TRIMMED_TEXT, body.length - excess - (done ? 0 : TRIM_SUFFIX.length));
+    let cut = body.slice(0, keep);
+    const space = cut.search(/\s\S*$/);
+    if (space > MIN_TRIMMED_TEXT / 2) cut = cut.slice(0, space);
+    out[pick] = `${prefix}${cut.trimEnd()}${TRIM_SUFFIX}`;
+  }
+  // Still too long: drop blank spacer lines, then the lines that matter
+  // least to the crew (all still in the pinned comment), then reduce the
+  // typed paragraphs to a pointer. Only as a last resort is the note cut.
+  if (size() > limit) {
+    for (let i = out.length - 1; i > 0; i--) if (out[i] === "" && size() > limit) out.splice(i, 1);
+  }
+  for (const prefix of SECONDARY_NOTE_LINES) {
+    if (size() <= limit) break;
+    const i = out.findIndex((l) => l.startsWith(prefix));
+    if (i > -1) out.splice(i, 1);
+  }
+  for (let i = 0; i < out.length && size() > limit; i++) {
+    const prefix = TRIMMABLE_NOTE_PREFIXES.find((p) => out[i].startsWith(p));
+    if (prefix) out[i] = `${prefix}(in the pinned comment)`;
+  }
+  let text = out.join("\n");
+  if (text.length > limit) text = truncateNotePreservingFiles(text, limit);
+  return { text, trimmed: true };
+}
+
+/** Lines that are only the lead's own phone number or email, already listed under Contact Info. */
+export function dropRepeatedContactLines(text: string, phones: unknown[], emails: unknown[]): string {
+  const ten = (v: unknown) => String(v ?? "").replace(/\D/g, "").slice(-10);
+  const phoneSet = new Set(phones.map(ten).filter((d) => d.length === 10));
+  const emailSet = new Set(emails.map((e) => String(e ?? "").trim().toLowerCase()).filter(Boolean));
+  return text
+    .split("\n")
+    .filter((l) => {
+      const t = l.trim();
+      if (!t) return true;
+      if (emailSet.has(t.toLowerCase())) return false;
+      if (/^[\d\s().+-]+$/.test(t) && phoneSet.has(ten(t))) return false;
+      return true;
+    })
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/** Office Notes minus the lines the Customer Message already says (same words, any spacing or case). */
+export function dropLinesAlreadySaid(notes: string, already: string): string {
+  const norm = (s: string) => s.replace(/\s+/g, " ").trim().toLowerCase();
+  const said = new Set(already.split("\n").map(norm).filter(Boolean));
+  const whole = norm(already);
+  if (!notes.trim() || norm(notes) === whole) return "";
+  return notes
+    .split("\n")
+    .filter((l) => !norm(l) || !said.has(norm(l)))
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -998,6 +1118,11 @@ export function buildLeadNotes(row: LeadRow, attachments?: AttachmentInfo): stri
   return buildHumanNote(row, attachments);
 }
 
+/** Every line of the Lead Notes, nothing dropped or shortened (for the pinned comment). */
+export function buildFullLeadNotes(row: LeadRow, attachments?: AttachmentInfo): string {
+  return buildHumanNoteLines(row, attachments).join("\n");
+}
+
 /**
  * SINGLE-WRITE RULE — the Lead Notes summary is written to exactly ONE
  * JobTread field: Job → JT_CF.job.lead_notes. It must never be copied into
@@ -1023,13 +1148,75 @@ export function buildAccountCustomFieldValues(town?: string | null, county?: str
   };
 }
 
-export function buildJobCustomFieldValues(payload: any, noteShort: string): Record<string, unknown> {
+export function buildJobCustomFieldValues(
+  payload: any,
+  noteShort: string,
+  extraNotes: Record<string, string> = {},
+): Record<string, unknown> {
   return {
     [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
     [JT_CF.job.divisions]: [mapJobType(payload)],
     [JT_CF.job.job_notes]: noteShort,
+    ...extraNotes,
     ...(payload?.structured?.job ?? {}),
   };
+}
+
+/**
+ * More room for long notes: JobTread caps every text field at 1,024
+ * characters, so Highlander adds extra Job text fields named "Job Notes 2",
+ * "Job Notes 3", … in JobTread settings. Long notes are spread across them,
+ * whole and in order. Fields that don't exist are simply not used.
+ */
+export const JOB_NOTES_FIELD_NAME = "Job Notes";
+export const EXTRA_NOTES_FIELD_RE = /^(?:job|lead)\s+notes\s*(?:#\s*)?([2-9])$/i;
+export function pickExtraNoteFields(fields: Array<{ id?: string; name?: string }>): Array<{ id: string; name: string }> {
+  return fields
+    .filter((f) => f?.id && f?.name && EXTRA_NOTES_FIELD_RE.test(f.name.trim()))
+    .map((f) => ({ id: f.id!, name: f.name!.trim(), n: Number(f.name!.trim().match(EXTRA_NOTES_FIELD_RE)![1]) }))
+    .sort((a, b) => a.n - b.n)
+    .filter((f, i, all) => i === 0 || all[i - 1].n !== f.n)
+    .map(({ id, name }) => ({ id, name }));
+}
+
+/**
+ * Splits the complete notes across the named fields, each within `limit`,
+ * breaking between lines (or between words inside a very long line). Every
+ * part but the last ends with "(continued in <next field>)". Returns null
+ * when the notes don't fit in all the fields.
+ */
+export function splitNoteAcrossFields(note: string, fieldNames: string[], limit = NOTE_LIMIT): string[] | null {
+  const tail = (i: number) => `\n(continued in ${fieldNames[i + 1]})`;
+  const head = (i: number) => `(continued from ${fieldNames[i - 1]})\n`;
+  const pieces: string[] = [];
+  for (const line of note.split("\n")) {
+    let rest = line;
+    const room = limit - 80;
+    while (rest.length > room) {
+      let cut = rest.lastIndexOf(" ", room);
+      if (cut < room / 2) cut = room;
+      pieces.push(rest.slice(0, cut));
+      rest = rest.slice(cut).replace(/^ /, "");
+    }
+    pieces.push(rest);
+  }
+  const parts: string[] = [];
+  let current: string[] = [];
+  const size = (i: number, lines: string[]) =>
+    (i > 0 ? head(i).length : 0) + lines.join("\n").length + (i < fieldNames.length - 1 ? tail(i).length : 0);
+  for (const piece of pieces) {
+    const i = parts.length;
+    if (current.length && size(i, [...current, piece]) > limit) {
+      if (i + 1 >= fieldNames.length) return null;
+      parts.push(current.join("\n"));
+      current = [];
+    }
+    current.push(piece);
+  }
+  parts.push(current.join("\n"));
+  if (parts.length > fieldNames.length) return null;
+  const out = parts.map((p, i) => (i > 0 ? head(i) : "") + p.replace(/^\n+|\n+$/g, "") + (i < parts.length - 1 ? tail(i) : ""));
+  return out.every((p) => p.length <= limit) ? out : null;
 }
 
 /**
@@ -1333,6 +1520,11 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
     note: buildLeadNotes(row, resolvedAttachments),
+    // Complete notes, set only when the field copy had to be shortened. It is
+    // posted as a pinned comment on the job so nothing typed is lost.
+    note_full: fitLeadNotes(buildHumanNoteLines(row, resolvedAttachments)).trimmed
+      ? buildFullLeadNotes(row, resolvedAttachments)
+      : null,
     structured: buildStructuredFields(row),
   };
 }
@@ -1604,7 +1796,7 @@ export function truncateNotePreservingFiles(note: string, max = 1000): string {
  * retry reuses them and redoes only the step that failed (an account made by an
  * earlier try of the same lead IS that lead's account).
  */
-export type JobTreadProgress = { accountId?: string; contactId?: string; pocContactId?: string; locationId?: string; jobId?: string };
+export type JobTreadProgress = { accountId?: string; contactId?: string; pocContactId?: string; locationId?: string; jobId?: string; fullNotesCommentId?: string; notesSpread?: boolean };
 
 export type PaveSendOptions = {
   progress?: JobTreadProgress | null;
@@ -1626,6 +1818,8 @@ export const PAVE_LIMITS = {
   lookupMatches: 6,
   /** Contacts read from one customer account. */
   accountContacts: 25,
+  /** Job custom fields read when looking for the extra "Job Notes 2…" fields. */
+  jobFields: 50,
 } as const;
 
 const contactSelection = {
@@ -1726,7 +1920,7 @@ export function shortJobName(full: string): string {
 export async function sendToPaveApi(
   payload: any,
   opts: PaveSendOptions = {},
-): Promise<{ ok: boolean; id?: string; error?: string; progress?: JobTreadProgress }> {
+): Promise<{ ok: boolean; id?: string; error?: string; warning?: string; progress?: JobTreadProgress }> {
   const progress: JobTreadProgress = { ...(opts.progress ?? {}) };
   const save = async () => {
     try {
@@ -1771,7 +1965,10 @@ export async function sendToPaveApi(
         }
         await save();
       }
-      return { ok: true, id: progress.jobId, progress: { ...progress } };
+      const warning = progress.notesSpread
+        ? undefined
+        : await ensureFullNotesComment(progress.jobId, payload.note_full, progress, save);
+      return { ok: true, id: progress.jobId, progress: { ...progress }, ...(warning ? { warning } : {}) };
     }
 
     const contactName = payload.contact?.name || "Website Lead";
@@ -2031,6 +2228,23 @@ export async function sendToPaveApi(
     // hard slice so we never leave a truncated word (e.g. "... - Q") in the
     // title. Try full name → first initial → drop name entirely.
     const jobNameShort = shortJobName(payload.job_name);
+    // Long notes: spread them, whole, across "Job Notes 2", "Job Notes 3", …
+    // when Highlander has added those fields; otherwise (or if even they run
+    // out) the pinned full-notes comment carries them.
+    let jobNotes = noteShort;
+    const extraNotes: Record<string, string> = {};
+    let spread = false;
+    if (payload.note_full) {
+      const extra = await findExtraNoteFields(orgId);
+      const parts = extra.length
+        ? splitNoteAcrossFields(payload.note_full, [JOB_NOTES_FIELD_NAME, ...extra.map((f) => f.name)])
+        : null;
+      if (parts) {
+        jobNotes = parts[0];
+        parts.slice(1).forEach((part, i) => { extraNotes[extra[i].id] = part; });
+        spread = true;
+      }
+    }
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
@@ -2040,7 +2254,7 @@ export async function sendToPaveApi(
           // Description intentionally OMITTED from the payload — Highlander
           // uses JobTread Description for internal scope, not for the
           // website intake summary. Full summary goes into Lead Notes only.
-          customFieldValues: buildJobCustomFieldValues(payload, noteShort),
+          customFieldValues: buildJobCustomFieldValues(payload, jobNotes, extraNotes),
         }),
         createdJob: { id: {}, name: {} },
       },
@@ -2050,10 +2264,84 @@ export async function sendToPaveApi(
     const jobId: string | undefined = jobRes?.createJob?.createdJob?.id;
     if (!jobId) return fail(`createJob returned no id`);
     progress.jobId = jobId;
+    if (spread) progress.notesSpread = true;
     await save();
-    return { ok: true, id: jobId, progress: { ...progress } };
+    // Step 5 — notes too long for the Job Notes field go, complete, into a
+    // pinned team-only comment on the job. The job is already made, so a
+    // failure here never fails the lead: it is reported as a sync note.
+    const warning = progress.notesSpread
+      ? undefined
+      : await ensureFullNotesComment(jobId, payload.note_full, progress, save);
+    return { ok: true, id: jobId, progress: { ...progress }, ...(warning ? { warning } : {}) };
   } catch (e) {
     return fail(`Pave error: ${(e as Error).message}`);
+  }
+}
+
+/** The organization's extra Job notes fields ("Job Notes 2", …). Never throws: none found means none used. */
+async function findExtraNoteFields(orgId: string): Promise<Array<{ id: string; name: string }>> {
+  try {
+    const res = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      organization: {
+        $: { id: orgId },
+        customFields: {
+          $: { where: [["targetType"], "=", "job"], size: PAVE_LIMITS.jobFields },
+          nodes: { id: {}, name: {} },
+        },
+      },
+    });
+    return pickExtraNoteFields(res?.organization?.customFields?.nodes ?? []);
+  } catch (e) {
+    console.warn("extra Job Notes fields lookup failed (non-fatal):", (e as Error).message);
+    return [];
+  }
+}
+
+/**
+ * The pinned "Full lead notes" comment for notes that did not fit the Job
+ * Notes field. Team-only (never customers or vendors), posted once per lead:
+ * its id is saved in the lead's progress so a retry does not post it twice.
+ * Returns a short warning when it could not be posted.
+ */
+export function buildFullNotesCommentQuery(jobId: string, fullNote: string) {
+  return {
+    $: { grantKey: JOBTREAD_API_KEY, notify: false },
+    createComment: {
+      $: {
+        targetType: "job",
+        targetId: jobId,
+        name: FULL_NOTES_COMMENT_NAME,
+        message: fullNote,
+        isPinned: true,
+        isVisibleToAll: false,
+        isVisibleToInternalRoles: true,
+        isVisibleToCustomerRoles: false,
+        isVisibleToVendorRoles: false,
+      },
+      createdComment: { id: {} },
+    },
+  };
+}
+
+async function ensureFullNotesComment(
+  jobId: string,
+  fullNote: string | null | undefined,
+  progress: JobTreadProgress,
+  save: () => Promise<void>,
+): Promise<string | undefined> {
+  if (!fullNote || progress.fullNotesCommentId) return undefined;
+  try {
+    const res = await paveFetch(buildFullNotesCommentQuery(jobId, fullNote));
+    const apiErr = res?.error?.message || res?.error;
+    if (apiErr) return `Job made, but the full notes comment was not posted: ${String(apiErr).slice(0, 300)}`;
+    const id = res?.createComment?.createdComment?.id;
+    if (!id) return "Job made, but the full notes comment returned no id.";
+    progress.fullNotesCommentId = id;
+    await save();
+    return undefined;
+  } catch (e) {
+    return `Job made, but the full notes comment was not posted: ${(e as Error).message.slice(0, 300)}`;
   }
 }
 
@@ -2530,7 +2818,10 @@ Deno.serve(async (req) => {
       jobtread_sync_status: "success",
       jobtread_id: result.id ?? null,
       jobtread_last_attempt_at: nowIso,
-      jobtread_error_message: null,
+      // A made job whose full-notes comment failed shows as a sync note.
+      jobtread_error_message: (result as { warning?: string }).warning
+        ? sanitizeError((result as { warning?: string }).warning)
+        : null,
       jobtread_next_retry_at: null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
