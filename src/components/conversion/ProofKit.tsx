@@ -65,13 +65,15 @@ const ROOF_TOPICS: ProofTopic[] = ["roofing", "replacement", "repair", "metal", 
 const isRoofTopic = (topic: ProofTopic) => ROOF_TOPICS.includes(topic);
 
 const reviewWork = (review: Review) => {
+  // Imported reviews only have guessed tags: never state which job they were for.
+  if (review.serviceInferred) return "";
   const names = review.service.map((tag) => SERVICE_LABELS[tag] ?? tag);
   return names.map((n, i) => (i === 0 ? n : n.toLowerCase())).join(" & ");
 };
 
-const Stars = () => (
+const Stars = ({ count = 5 }: { count?: number }) => (
   <span className="inline-flex" aria-hidden="true">
-    {[0, 1, 2, 3, 4].map((i) => (
+    {Array.from({ length: count }, (_, i) => i).map((i) => (
       <Star key={i} className="h-4 w-4 fill-[hsl(var(--highland-gold))] text-[hsl(var(--highland-gold))]" />
     ))}
   </span>
@@ -150,7 +152,8 @@ export function ReviewStrip({ topic, newTab, heading }: { topic: ProofTopic; new
         </h2>
         <p className="mt-3 inline-flex flex-wrap items-center gap-2 text-sm font-semibold text-muted-foreground">
           <Stars />
-          {REVIEW_RATING}/5 from {REVIEW_COUNT} Google reviews. Each review below shows the work it was for.
+          {REVIEW_RATING}/5 from {REVIEW_COUNT} Google reviews.
+          {reviews.every((r) => !r.serviceInferred) ? " Each review below shows the work it was for." : ""}
         </p>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
           {reviews.map((review) => {
@@ -158,11 +161,11 @@ export function ReviewStrip({ topic, newTab, heading }: { topic: ProofTopic; new
             return (
               <blockquote key={review.id} className="relative flex h-full flex-col rounded-sm border border-border bg-card p-6 shadow-sm">
                 <Quote aria-hidden="true" className="absolute right-5 top-5 h-8 w-8 text-[hsl(var(--highland-gold))]/50" />
-                <Stars />
+                <Stars count={review.rating} />
                 <p className="mt-3 line-clamp-6 text-[1.02rem] leading-relaxed text-foreground">“{review.text}”</p>
                 <footer className="mt-auto pt-4 text-sm text-muted-foreground">
                   <span className="font-bold text-foreground">{review.name}</span>
-                  {date ? ` · ${date}` : ""} · {review.source} review · {reviewWork(review)}
+                  {date ? ` · ${date}` : ""} · {review.source} review{reviewWork(review) ? ` · ${reviewWork(review)}` : ""}
                 </footer>
               </blockquote>
             );

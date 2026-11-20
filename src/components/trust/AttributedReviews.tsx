@@ -3,6 +3,7 @@ import {
   REVIEWS,
   reviewsForService,
   reviewsForTown,
+  rotateReviews,
   type Review,
   type ServiceTag,
 } from "@/data/reviews";
@@ -44,8 +45,9 @@ export const pickReviews = ({
   // construction, and must NOT fall through to the newest-reviews default.
   if (services !== undefined) return reviewsForService(services).slice(0, limit);
 
-  // Unscoped (homepage): the newest published reviews.
-  return [...REVIEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, limit);
+  // Unscoped (homepage): today's rotation of every published review, led by
+  // one of the newest.
+  return rotateReviews(REVIEWS, "all").slice(0, limit);
 };
 
 const AttributedReviews = ({

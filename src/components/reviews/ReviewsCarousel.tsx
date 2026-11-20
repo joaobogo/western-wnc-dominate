@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReviewCard from "@/components/reviews/ReviewCard";
-import { REVIEWS, type Review, type ServiceTag } from "@/data/reviews";
+import { REVIEWS, type Review, type ServiceTag, rotateReviews } from "@/data/reviews";
 
 /**
  * Horizontal carousel of published reviews.
@@ -19,6 +19,8 @@ interface ReviewsCarouselProps {
   className?: string;
 }
 
+const CAROUSEL_LIMIT = 12;
+
 const ReviewsCarousel = ({
   services,
   heading,
@@ -34,7 +36,8 @@ const ReviewsCarousel = ({
     ? REVIEWS.filter((r) => r.service.some((s) => services.includes(s)))
     : REVIEWS;
 
-  const sorted = [...reviews].sort((a, b) => b.date.localeCompare(a.date));
+  // Today's rotation, capped so the strip stays short as the import grows.
+  const sorted = rotateReviews(reviews, `carousel:${(services ?? []).join(",")}`).slice(0, CAROUSEL_LIMIT);
 
   const syncArrows = useCallback(() => {
     const el = trackRef.current;
