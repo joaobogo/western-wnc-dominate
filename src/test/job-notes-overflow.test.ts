@@ -6,11 +6,15 @@ import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 // and the complete notes go into a pinned, team-only comment on the job.
 // Mocked delivery only: nothing is sent to JobTread.
 
+// Pave queries and the Deno module are untyped JSON in these mocks.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Loose = any;
+
 beforeAll(() => {
-  (globalThis as any).Deno = { env: { get: () => "test" }, serve: () => undefined };
+  (globalThis as Loose).Deno = { env: { get: () => "test" }, serve: () => undefined };
 });
 afterEach(() => vi.unstubAllGlobals());
-const mod = async () => (await import("@jobtread-sync")) as any;
+const mod = async () => (await import("@jobtread-sync")) as Loose;
 
 const DETAILS = [
   "828-555-0142",
@@ -128,10 +132,10 @@ describe("Job Notes field never loses what the front desk typed", () => {
 
 describe("Pinned full-notes comment on the JobTread job (mocked)", () => {
   function fakePave({ commentFails = false } = {}) {
-    const queries: any[] = [];
+    const queries: Loose[] = [];
     vi.stubGlobal("fetch", vi.fn(async (_url, init) => {
       const q = JSON.parse(init.body).query; queries.push(q);
-      let r: any = {};
+      let r: Loose = {};
       if (q.customField) r = { customField: { customFieldValues: { nodes: [] } } };
       else if (q.createAccount) r = { createAccount: { createdAccount: { id: "acct" } } };
       else if (q.createContact) r = { createContact: { createdContact: { id: "contact" } } };
