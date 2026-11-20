@@ -89,7 +89,11 @@ Deno.test("note truncation always preserves the FILES block", async () => {
   assert(short.length <= 1000, `length ${short.length}`);
   assert(short.includes("https://storage.test/signed/roof.jpg?token=xyz"));
   assert(short.includes("plans.pdf — Upload failed"));
-  assert(short.includes("[truncated]"));
+  // Nov 20: the typed text is shortened (never the files block) and the
+  // complete notes travel in note_full for the pinned JobTread comment.
+  assert(short.includes("(rest in pinned comment)"));
+  assert(payload.note_full.includes("x".repeat(4000)));
+  assert(payload.note_full.includes("https://storage.test/signed/roof.jpg?token=xyz"));
 });
 
 Deno.test("short notes are returned untouched", () => {
