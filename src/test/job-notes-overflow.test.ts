@@ -130,23 +130,25 @@ describe("Job Notes field never loses what the front desk typed", () => {
   });
 });
 
+function fakePave({ commentFails = false, extraFields = [] as Array<{ id: string; name: string }> } = {}) {
+  const queries: Loose[] = [];
+  vi.stubGlobal("fetch", vi.fn(async (_url, init) => {
+    const q = JSON.parse(init.body).query; queries.push(q);
+    let r: Loose = {};
+    if (q.customField) r = { customField: { customFieldValues: { nodes: [] } } };
+    else if (q.createAccount) r = { createAccount: { createdAccount: { id: "acct" } } };
+    else if (q.createContact) r = { createContact: { createdContact: { id: "contact" } } };
+    else if (q.createLocation) r = { createLocation: { createdLocation: { id: "loc" } } };
+    else if (q.createJob) r = { createJob: { createdJob: { id: "job1", name: "x" } } };
+    else if (q.createComment) r = commentFails ? { error: { message: "comment rejected" } } : { createComment: { createdComment: { id: "comment1" } } };
+    else if (q.organization?.customFields) r = { organization: { customFields: { nodes: [{ id: "22PYx7PBhE56", name: "Job Notes" }, { id: "status", name: "Status" }, ...extraFields] } } };
+    else if (q.organization || q.account) r = { organization: { accounts: { nodes: [] } }, account: { contacts: { nodes: [] }, locations: { nodes: [] } } };
+    return new Response(JSON.stringify(r));
+  }));
+  return queries;
+}
+
 describe("Pinned full-notes comment on the JobTread job (mocked)", () => {
-  function fakePave({ commentFails = false } = {}) {
-    const queries: Loose[] = [];
-    vi.stubGlobal("fetch", vi.fn(async (_url, init) => {
-      const q = JSON.parse(init.body).query; queries.push(q);
-      let r: Loose = {};
-      if (q.customField) r = { customField: { customFieldValues: { nodes: [] } } };
-      else if (q.createAccount) r = { createAccount: { createdAccount: { id: "acct" } } };
-      else if (q.createContact) r = { createContact: { createdContact: { id: "contact" } } };
-      else if (q.createLocation) r = { createLocation: { createdLocation: { id: "loc" } } };
-      else if (q.createJob) r = { createJob: { createdJob: { id: "job1", name: "x" } } };
-      else if (q.createComment) r = commentFails ? { error: { message: "comment rejected" } } : { createComment: { createdComment: { id: "comment1" } } };
-      else if (q.organization || q.account) r = { organization: { accounts: { nodes: [] } }, account: { contacts: { nodes: [] }, locations: { nodes: [] } } };
-      return new Response(JSON.stringify(r));
-    }));
-    return queries;
-  }
 
   it("posts the complete notes once, pinned and team-only, after the job is made", async () => {
     const { buildPayload, normalizeIntakeLead, sendToPaveApi, FULL_NOTES_COMMENT_NAME } = await mod();
@@ -203,5 +205,70 @@ describe("Pinned full-notes comment on the JobTread job (mocked)", () => {
     const q = fakePave();
     await sendToPaveApi(buildPayload(normalizeIntakeLead(longCall({ details: "Short note.", appointment: {} })), "lead"));
     expect(q.filter((x) => x.createComment)).toHaveLength(0);
+  });
+});
+
+describe("More room: extra Job Notes fields in JobTread", () => {
+  const NOTES = "22PYx7PBhE56";
+
+  it("finds Job Notes 2, 3, … by name, in order, and ignores other fields", async () => {
+    const { pickExtraNoteFields } = await mod();
+    expect(pickExtraNoteFields([
+      { id: "c", name: "Job Notes 3" }, { id: "x", name: "Job Notes" }, { id: "b", name: "job notes 2" },
+      { id: "y", name: "Sales Notes 2" }, { id: "z", name: "Lead Notes #4" },
+    ])).toEqual([{ id: "b", name: "job notes 2" }, { id: "c", name: "Job Notes 3" }, { id: "z", name: "Lead Notes #4" }]);
+  });
+
+  it("splits long notes whole, in order, each part within the field, between lines", async () => {
+    const { splitNoteAcrossFields } = await mod();
+    const note = Array.from({ length: 60 }, (_, i) => `Line ${i + 1}: ${"detail ".repeat(5)}`).join("\n");
+    const parts: string[] = splitNoteAcrossFields(note, ["Job Notes", "Job Notes 2", "Job Notes 3"]);
+    expect(parts.length).toBeGreaterThan(1);
+    parts.forEach((p) => expect(p.length).toBeLessThanOrEqual(1000));
+    expect(parts[0]).toMatch(/\(continued in Job Notes 2\)$/);
+    expect(parts[1]).toMatch(/^\(continued from Job Notes\)/);
+    const joined = parts.join("\n");
+    for (let i = 1; i <= 60; i++) expect(joined).toContain(`Line ${i}: `);
+    expect(splitNoteAcrossFields("x ".repeat(5000), ["Job Notes", "Job Notes 2"])).toBeNull();
+  });
+
+  it("fills Job Notes, Job Notes 2, … with the complete notes and posts no comment", async () => {
+    const { buildPayload, normalizeIntakeLead, sendToPaveApi } = await mod();
+    const q = fakePave({ extraFields: [{ id: "notes3", name: "Job Notes 3" }, { id: "notes2", name: "Job Notes 2" }] });
+    const payload = buildPayload(normalizeIntakeLead(longCall()), "lead");
+    const res = await sendToPaveApi(payload);
+    expect(res.ok).toBe(true);
+    expect(q.filter((x) => x.createComment)).toHaveLength(0);
+    const cf = q.find((x) => x.createJob).createJob.$.customFieldValues;
+    expect(cf[NOTES]).toMatch(/\(continued in Job Notes 2\)$/);
+    expect(cf.notes2).toMatch(/^\(continued from Job Notes\)/);
+    const all = [cf[NOTES], cf.notes2, cf.notes3].filter(Boolean);
+    all.forEach((v: string) => expect(v.length).toBeLessThanOrEqual(1000));
+    const joined = all.join("\n");
+    for (const line of DETAILS.split("\n").slice(2)) expect(joined).toContain(line);
+    expect(joined).toContain("Access Notes: Gate code 4321");
+    expect(joined).not.toContain("(rest in pinned comment)");
+    expect(res.progress.notesSpread).toBe(true);
+
+    // A retry of the same lead never adds a comment afterwards.
+    await sendToPaveApi(payload, { progress: res.progress });
+    expect(q.filter((x) => x.createComment)).toHaveLength(0);
+  });
+
+  it("notes longer than every field together still go whole into the pinned comment", async () => {
+    const { buildPayload, normalizeIntakeLead, sendToPaveApi } = await mod();
+    const q = fakePave({ extraFields: [{ id: "notes2", name: "Job Notes 2" }] });
+    const payload = buildPayload(normalizeIntakeLead(longCall({ details: "A long story. ".repeat(400) })), "lead");
+    await sendToPaveApi(payload);
+    expect(q.find((x) => x.createComment).createComment.$.message).toBe(payload.note_full);
+    expect(q.find((x) => x.createJob).createJob.$.customFieldValues.notes2).toBeUndefined();
+  });
+
+  it("short notes never touch the extra fields", async () => {
+    const { buildPayload, normalizeIntakeLead, sendToPaveApi } = await mod();
+    const q = fakePave({ extraFields: [{ id: "notes2", name: "Job Notes 2" }] });
+    await sendToPaveApi(buildPayload(normalizeIntakeLead(longCall({ details: "Short note.", appointment: {} })), "lead"));
+    expect(q.filter((x) => x.organization?.customFields)).toHaveLength(0);
+    expect(q.find((x) => x.createJob).createJob.$.customFieldValues.notes2).toBeUndefined();
   });
 });

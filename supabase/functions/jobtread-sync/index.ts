@@ -1148,13 +1148,75 @@ export function buildAccountCustomFieldValues(town?: string | null, county?: str
   };
 }
 
-export function buildJobCustomFieldValues(payload: any, noteShort: string): Record<string, unknown> {
+export function buildJobCustomFieldValues(
+  payload: any,
+  noteShort: string,
+  extraNotes: Record<string, string> = {},
+): Record<string, unknown> {
   return {
     [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
     [JT_CF.job.divisions]: [mapJobType(payload)],
     [JT_CF.job.job_notes]: noteShort,
+    ...extraNotes,
     ...(payload?.structured?.job ?? {}),
   };
+}
+
+/**
+ * More room for long notes: JobTread caps every text field at 1,024
+ * characters, so Highlander adds extra Job text fields named "Job Notes 2",
+ * "Job Notes 3", … in JobTread settings. Long notes are spread across them,
+ * whole and in order. Fields that don't exist are simply not used.
+ */
+export const JOB_NOTES_FIELD_NAME = "Job Notes";
+export const EXTRA_NOTES_FIELD_RE = /^(?:job|lead)\s+notes\s*(?:#\s*)?([2-9])$/i;
+export function pickExtraNoteFields(fields: Array<{ id?: string; name?: string }>): Array<{ id: string; name: string }> {
+  return fields
+    .filter((f) => f?.id && f?.name && EXTRA_NOTES_FIELD_RE.test(f.name.trim()))
+    .map((f) => ({ id: f.id!, name: f.name!.trim(), n: Number(f.name!.trim().match(EXTRA_NOTES_FIELD_RE)![1]) }))
+    .sort((a, b) => a.n - b.n)
+    .filter((f, i, all) => i === 0 || all[i - 1].n !== f.n)
+    .map(({ id, name }) => ({ id, name }));
+}
+
+/**
+ * Splits the complete notes across the named fields, each within `limit`,
+ * breaking between lines (or between words inside a very long line). Every
+ * part but the last ends with "(continued in <next field>)". Returns null
+ * when the notes don't fit in all the fields.
+ */
+export function splitNoteAcrossFields(note: string, fieldNames: string[], limit = NOTE_LIMIT): string[] | null {
+  const tail = (i: number) => `\n(continued in ${fieldNames[i + 1]})`;
+  const head = (i: number) => `(continued from ${fieldNames[i - 1]})\n`;
+  const pieces: string[] = [];
+  for (const line of note.split("\n")) {
+    let rest = line;
+    const room = limit - 80;
+    while (rest.length > room) {
+      let cut = rest.lastIndexOf(" ", room);
+      if (cut < room / 2) cut = room;
+      pieces.push(rest.slice(0, cut));
+      rest = rest.slice(cut).replace(/^ /, "");
+    }
+    pieces.push(rest);
+  }
+  const parts: string[] = [];
+  let current: string[] = [];
+  const size = (i: number, lines: string[]) =>
+    (i > 0 ? head(i).length : 0) + lines.join("\n").length + (i < fieldNames.length - 1 ? tail(i).length : 0);
+  for (const piece of pieces) {
+    const i = parts.length;
+    if (current.length && size(i, [...current, piece]) > limit) {
+      if (i + 1 >= fieldNames.length) return null;
+      parts.push(current.join("\n"));
+      current = [];
+    }
+    current.push(piece);
+  }
+  parts.push(current.join("\n"));
+  if (parts.length > fieldNames.length) return null;
+  const out = parts.map((p, i) => (i > 0 ? head(i) : "") + p.replace(/^\n+|\n+$/g, "") + (i < parts.length - 1 ? tail(i) : ""));
+  return out.every((p) => p.length <= limit) ? out : null;
 }
 
 /**
@@ -1734,7 +1796,7 @@ export function truncateNotePreservingFiles(note: string, max = 1000): string {
  * retry reuses them and redoes only the step that failed (an account made by an
  * earlier try of the same lead IS that lead's account).
  */
-export type JobTreadProgress = { accountId?: string; contactId?: string; pocContactId?: string; locationId?: string; jobId?: string; fullNotesCommentId?: string };
+export type JobTreadProgress = { accountId?: string; contactId?: string; pocContactId?: string; locationId?: string; jobId?: string; fullNotesCommentId?: string; notesSpread?: boolean };
 
 export type PaveSendOptions = {
   progress?: JobTreadProgress | null;
@@ -1756,6 +1818,8 @@ export const PAVE_LIMITS = {
   lookupMatches: 6,
   /** Contacts read from one customer account. */
   accountContacts: 25,
+  /** Job custom fields read when looking for the extra "Job Notes 2…" fields. */
+  jobFields: 50,
 } as const;
 
 const contactSelection = {
@@ -1901,7 +1965,9 @@ export async function sendToPaveApi(
         }
         await save();
       }
-      const warning = await ensureFullNotesComment(progress.jobId, payload.note_full, progress, save);
+      const warning = progress.notesSpread
+        ? undefined
+        : await ensureFullNotesComment(progress.jobId, payload.note_full, progress, save);
       return { ok: true, id: progress.jobId, progress: { ...progress }, ...(warning ? { warning } : {}) };
     }
 
@@ -2162,6 +2228,23 @@ export async function sendToPaveApi(
     // hard slice so we never leave a truncated word (e.g. "... - Q") in the
     // title. Try full name → first initial → drop name entirely.
     const jobNameShort = shortJobName(payload.job_name);
+    // Long notes: spread them, whole, across "Job Notes 2", "Job Notes 3", …
+    // when Highlander has added those fields; otherwise (or if even they run
+    // out) the pinned full-notes comment carries them.
+    let jobNotes = noteShort;
+    const extraNotes: Record<string, string> = {};
+    let spread = false;
+    if (payload.note_full) {
+      const extra = await findExtraNoteFields(orgId);
+      const parts = extra.length
+        ? splitNoteAcrossFields(payload.note_full, [JOB_NOTES_FIELD_NAME, ...extra.map((f) => f.name)])
+        : null;
+      if (parts) {
+        jobNotes = parts[0];
+        parts.slice(1).forEach((part, i) => { extraNotes[extra[i].id] = part; });
+        spread = true;
+      }
+    }
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
@@ -2171,7 +2254,7 @@ export async function sendToPaveApi(
           // Description intentionally OMITTED from the payload — Highlander
           // uses JobTread Description for internal scope, not for the
           // website intake summary. Full summary goes into Lead Notes only.
-          customFieldValues: buildJobCustomFieldValues(payload, noteShort),
+          customFieldValues: buildJobCustomFieldValues(payload, jobNotes, extraNotes),
         }),
         createdJob: { id: {}, name: {} },
       },
@@ -2181,14 +2264,37 @@ export async function sendToPaveApi(
     const jobId: string | undefined = jobRes?.createJob?.createdJob?.id;
     if (!jobId) return fail(`createJob returned no id`);
     progress.jobId = jobId;
+    if (spread) progress.notesSpread = true;
     await save();
     // Step 5 — notes too long for the Job Notes field go, complete, into a
     // pinned team-only comment on the job. The job is already made, so a
     // failure here never fails the lead: it is reported as a sync note.
-    const warning = await ensureFullNotesComment(jobId, payload.note_full, progress, save);
+    const warning = progress.notesSpread
+      ? undefined
+      : await ensureFullNotesComment(jobId, payload.note_full, progress, save);
     return { ok: true, id: jobId, progress: { ...progress }, ...(warning ? { warning } : {}) };
   } catch (e) {
     return fail(`Pave error: ${(e as Error).message}`);
+  }
+}
+
+/** The organization's extra Job notes fields ("Job Notes 2", …). Never throws: none found means none used. */
+async function findExtraNoteFields(orgId: string): Promise<Array<{ id: string; name: string }>> {
+  try {
+    const res = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      organization: {
+        $: { id: orgId },
+        customFields: {
+          $: { where: [["targetType"], "=", "job"], size: PAVE_LIMITS.jobFields },
+          nodes: { id: {}, name: {} },
+        },
+      },
+    });
+    return pickExtraNoteFields(res?.organization?.customFields?.nodes ?? []);
+  } catch (e) {
+    console.warn("extra Job Notes fields lookup failed (non-fatal):", (e as Error).message);
+    return [];
   }
 }
 
