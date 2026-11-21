@@ -168,12 +168,15 @@ const RecoveryPrompt = () => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-end sm:items-center justify-center bg-foreground/50 px-4 pb-4 sm:pb-0" role="presentation" onClick={dismiss}>
+    // Centred on every screen size (John, Nov 21: on phones it sat at the
+    // bottom of the screen). Tall content scrolls inside the card instead of
+    // running off a short phone screen.
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-foreground/50 p-4" role="presentation" onClick={dismiss}>
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="recovery-prompt-title"
-        className="relative w-full max-w-md rounded-sm bg-background border border-border shadow-floating p-6 sm:p-8"
+        className="relative w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-sm bg-background border border-border shadow-floating p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button

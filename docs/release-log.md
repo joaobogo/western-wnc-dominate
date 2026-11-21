@@ -282,3 +282,17 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Asked by:** John (Nov 19): "remove the roof care plans, the roof check isn't free, no on the Christmas design and no on the kitchen and baths".
 - **Built:** `/lp/roof-check` (noindex, not in the sitemap): "Away for the Winter? We'll Check Your Roof and Send You Photos". A paid visit; no price on the page, the office gives it on the call. Checks the roof surface, flashing, gutters, signs of leaks and storm damage; photos sent to the owner; a written scope and price before any repair. Form preselects roof repair; leads route as roofing.
 - **Dropped (not built):** `/roofing/roof-care-plans`, `/lp/design-gift`, `/lp/kitchens-baths`. Nothing on the site linked to them, so no redirects are needed.
+
+## Front desk → JobTread notes: more room — Nov 20, 2026 (PR #49)
+- **Approved by:** John ("Approved", Nov 20). Merged as `7d7b974` with Lovable idle (last Lovable activity 14:08 UTC; `main` unchanged at `af8ba1a`).
+- **Rollback point:** `main` at `af8ba1a`.
+- **Asked by:** John (Nov 20): JobTread's Job Notes field holds 1,024 characters and the front desk was losing what they typed; "it needs to have more space".
+- **What was wrong:** the sync cut the notes to 1,000 characters from the bottom, so the appointment, address and access lines were the first to go. 14 of the 28 real front-desk leads (Nov 3–18) had lost text.
+- **Changed (only `supabase/functions/jobtread-sync`):**
+  - Long notes are written whole, in order, across **Job Notes → Job Notes 2 → Job Notes 3 …** (extra Job text fields found by name in JobTread). Each part ends "(continued in …)".
+  - Fallback when those fields don't exist or run out: Job Notes keeps every appointment, contact, property, access and attachment line; only typed paragraphs are shortened. The complete notes go in a pinned, team-only "Full lead notes" comment on the job. If the comment fails, the lead still syncs and a SYNC NOTE says why.
+  - Front-desk calls say repeated text once: the caller's own phone/email pasted into the details, appointment notes that repeat the details, timing listed twice.
+  - Unchanged: Job Description never written (QuickBooks), short notes as before, form fields, matching, job names.
+- **Needed in JobTread (Highlander admin):** add Job custom fields, type Text, named "Job Notes 2" and "Job Notes 3".
+- **Gates:** tests 698/698 · Deno function tests: no new failures (same 8 pre-existing) · `deno check` and `tsc` clean · build · `seo:check` PASS · `smoke:lp` 26/26.
+- **To verify after release:** on the first long front-desk lead, `jobtread_progress` should show `notesSpread` (extra fields used) or `fullNotesCommentId` (comment posted), and `jobtread_error_message` should be empty.

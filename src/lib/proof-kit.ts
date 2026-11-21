@@ -1,4 +1,4 @@
-import { REVIEWS, type Review, type ServiceTag } from "@/data/reviews";
+import { REVIEWS, rotateReviews, type Review, type ServiceTag } from "@/data/reviews";
 import { blogIndex, type BlogIndexEntry } from "@/data/blog-index.generated";
 
 /** Selection logic for components/conversion/ProofKit (kept here so the component file only exports components). */
@@ -52,8 +52,9 @@ const byNewest = <T extends { date: string }>(a: T, b: T) => (a.date < b.date ? 
 /** Service-matched reviews first, then the rest of the company's reviews, newest first. */
 export function pickReviews(topic: ProofTopic, limit = 3): Review[] {
   const tags = REVIEW_TAGS[topic] ?? [];
-  const matched = REVIEWS.filter((r) => r.service.some((s) => tags.includes(s))).sort(byNewest);
-  const rest = REVIEWS.filter((r) => !matched.includes(r)).sort(byNewest);
+  // Today's rotation: service-matched first, then the rest of the company's reviews.
+  const matched = rotateReviews(REVIEWS.filter((r) => r.service.some((s) => tags.includes(s))), `proof:${topic}`);
+  const rest = rotateReviews(REVIEWS.filter((r) => !matched.includes(r)), `proof-rest:${topic}`);
   return [...matched, ...rest].slice(0, limit);
 }
 

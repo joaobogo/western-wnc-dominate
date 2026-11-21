@@ -486,6 +486,8 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
  * Every field comes straight from src/data/reviews.ts, so the markup can never
  * describe a review the page does not show. `itemReviewed` points at the
  * existing #business node rather than creating a second business entity.
+ * No datePublished: the site shows no review dates (John, Nov 21 2026), and
+ * most dates are Google's approximate "3 weeks ago" labels.
  */
 export const reviewNodes = () =>
   REVIEWS.map((r) => ({
@@ -495,7 +497,6 @@ export const reviewNodes = () =>
     itemReviewed: { "@id": `${BASE_URL}/#business` },
     author: { "@type": "Person", name: r.name },
     reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-    datePublished: r.date,
     reviewBody: r.text,
     publisher: { "@type": "Organization", name: r.source },
   }));
