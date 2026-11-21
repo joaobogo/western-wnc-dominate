@@ -254,3 +254,23 @@ describe("public 5-star Google reviews supplied by Highlander (20 Nov 2026)", ()
     expect(towns.sort()).toEqual(["Beth Schumacher: Franklin", "Palmira Snape: Fines Creek", "Tom Scott: Lake Toxaway"]);
   });
 });
+
+describe("no review dates anywhere on the site (John, Nov 21 2026)", () => {
+  it("every review, hand-copied or imported, has an empty display date", async () => {
+    const { REVIEWS, reviewDateLabel } = await import("@/data/reviews");
+    for (const r of REVIEWS) expect(reviewDateLabel(r)).toBe("");
+  });
+
+  it("a review card shows the name but no month or year", () => {
+    const hand = HAND_COPIED_REVIEWS.find((r) => r.id === "jerry-brooks-2023")!;
+    const { container } = render(<ReviewCard review={hand} />);
+    expect(container.textContent).toContain("Jerry Brooks");
+    expect(container.textContent).not.toMatch(/\b(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b/);
+    expect(container.textContent).not.toMatch(/\bago\b/);
+  });
+
+  it("the review structured data carries no publish date", async () => {
+    const { reviewNodes } = await import("@/components/SEOHead");
+    for (const node of reviewNodes()) expect(node).not.toHaveProperty("datePublished");
+  });
+});

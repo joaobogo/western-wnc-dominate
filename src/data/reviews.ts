@@ -394,11 +394,10 @@ export const availableTowns = (): string[] =>
   [...new Set(REVIEWS.map((r) => r.town).filter((t): t is string => !!t))].sort();
 
 /**
- * Human-facing date. When the source only supplied a relative date, omit the
- * date entirely rather than presenting a derived month as if it were exact.
+ * Human-facing date: none. John (Nov 21 2026): "I don't want to have the dates
+ * in any of the reviews in the website." Every review card, strip and quote
+ * reads this, so returning "" removes dates sitewide. `date` stays on each
+ * review only to order and rotate them (newest first), never to show.
  */
-export const reviewDateLabel = (r: Review): string => {
-  if (r.dateApprox) return "";
-  const d = new Date(`${r.date}T00:00:00Z`);
-  return d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const reviewDateLabel = (_r: Review): string => "";
