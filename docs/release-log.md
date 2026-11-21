@@ -296,3 +296,13 @@ John (Nov 17): keep both branch changes: the shared honeypot on every form, and 
 - **Needed in JobTread (Highlander admin):** add Job custom fields, type Text, named "Job Notes 2" and "Job Notes 3".
 - **Gates:** tests 698/698 · Deno function tests: no new failures (same 8 pre-existing) · `deno check` and `tsc` clean · build · `seo:check` PASS · `smoke:lp` 26/26.
 - **To verify after release:** on the first long front-desk lead, `jobtread_progress` should show `notesSpread` (extra fields used) or `fullNotesCommentId` (comment posted), and `jobtread_error_message` should be empty.
+
+## Reviews, review dates, breadcrumbs, callback popup — Nov 21, 2026 (PR #50)
+- **Approved by:** John ("Do it", Nov 21, in reply to the release request). Merged as `0a0567b` with Lovable idle (last Lovable activity 17:13 UTC Nov 20; `main` unchanged at `7d7b974`).
+- **Rollback point:** `main` at `7d7b974`.
+- **Asked by:** John (Nov 20–21): reviews rotating and up to date ("just the public reviews and good ones"), no dates on reviews, breadcrumbs broken on phones, callback popup at the bottom of the phone screen.
+- **Reviews:** 116 public 5-star Google reviews from Highlander's Nov 20 list added verbatim (`src/data/google-reviews-public.json`); 117 on the site. Left off: 8 flagged, 3 with emoji lost in the PDF, 1 warranty-style claim, duplicates, texts ≤20 characters. Rotated daily per page; no dates shown anywhere; Review JSON-LD has no `datePublished`. Count fallback 179 (2026-11-20).
+- **Dormant daily Google import:** `google-reviews-sync` edge function + migration `20261120180000_google_reviews.sql` (tables, daily cron). Answers "Not connected" until Google secrets are added (`docs/google-reviews-setup.md`).
+- **Mobile:** breadcrumbs hidden on phones (BreadcrumbList JSON-LD unchanged), one line on tablet/desktop; 112px tablet gap closed (empty notifications region no longer padded); callback popup centred on every screen; cookie notice stacks and fits above the call bar, under popups.
+- **Gates:** tests 725/725 · build 397/397 prerendered · `seo:check` PASS · `smoke:lp` 26/26.
+- **To verify after release:** Lovable pulls `0a0567b`; `site_health_checks.build_commit` = `0a0567b`; tables `google_reviews` / `google_review_summary` exist (migration applied).
