@@ -884,7 +884,10 @@ img {
   @media (max-width: 767px) {
     .consent-strip {
       bottom: calc(72px + 8px + env(safe-area-inset-bottom, 0px));
-      max-height: 96px;
+      /* Height follows the text (no cap): a 96px cap let the words spill
+         behind the call bar once phone text rendered at 15px. */
+      max-height: calc(100dvh - 72px - 24px);
+      overflow-y: auto;
     }
     body[data-sticky-bar="hidden"] .consent-strip {
       bottom: calc(8px + env(safe-area-inset-bottom, 0px));
