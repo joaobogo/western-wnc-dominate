@@ -5,6 +5,22 @@
 // src/lib/mcp/index.ts
 import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.26.2";
 
+// src/data/generated/google-reviews.json
+var google_reviews_default = {
+  generatedOn: "2026-11-21",
+  fetchedAt: null,
+  summary: {},
+  reviews: []
+};
+
+// src/data/google-reviews-snapshot.ts
+var data = google_reviews_default;
+var SNAPSHOT_DAY = data.generatedOn ?? "";
+var liveSummary = (profile) => {
+  const s = data.summary?.[profile];
+  return s && s.count > 0 && s.rating > 0 ? s : null;
+};
+
 // src/data/business.ts
 var STANDARD_HOURS = [
   {
@@ -17,6 +33,9 @@ var STANDARD_HOURS = [
 var GBP_MAP_URL = (cid) => `https://www.google.com/maps?cid=${cid}`;
 var FRANKLIN_CID = "1442261483869937048";
 var SYLVA_CID = "1690022713833215904";
+var LIVE_FRANKLIN = liveSummary("franklin");
+var LIVE_SYLVA = liveSummary("sylva");
+var oneDecimal = (n) => Math.round(n * 10) / 10;
 var BUSINESS = {
   brandName: "Highlander Building Services",
   legalName: "Highlander Building Services, Inc.",
@@ -46,13 +65,13 @@ var BUSINESS = {
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
     // Owner-confirmed 2026-09-04 (João): Google shows 4.8. Count refreshed
-    // 2026-11-19 from the public Franklin Google Business Profile listing
-    // (4.8, 178 reviews), per John's 404 fix guide (HL-063).
-    ratingValue: 4.8,
-    reviewCount: 178,
+    // 2026-11-20 from the public Franklin Google listing (4.8, 179 reviews), as
+    // read by Highlander for the review list (Highlander_5-Star_Google_Reviews).
+    ratingValue: LIVE_FRANKLIN ? oneDecimal(LIVE_FRANKLIN.rating) : 4.8,
+    reviewCount: LIVE_FRANKLIN?.count ?? 179,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-11-19"
+    lastVerified: LIVE_FRANKLIN?.fetchedAt.slice(0, 10) ?? "2026-11-20"
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [
@@ -126,8 +145,8 @@ var BUSINESS = {
       geo: { lat: 35.1759293, lng: -83.3738888 },
       gbpCid: FRANKLIN_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
-      googleRating: 4.8,
-      googleReviewCount: 178,
+      googleRating: LIVE_FRANKLIN ? oneDecimal(LIVE_FRANKLIN.rating) : 4.8,
+      googleReviewCount: LIVE_FRANKLIN?.count ?? 179,
       hours: STANDARD_HOURS,
       primary: true
     },
@@ -142,8 +161,8 @@ var BUSINESS = {
       geo: { lat: 35.3585, lng: -83.1812 },
       gbpCid: SYLVA_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzRXuBmttWYgR8QpnoWftXl8",
-      googleRating: 5,
-      googleReviewCount: 30,
+      googleRating: LIVE_SYLVA ? oneDecimal(LIVE_SYLVA.rating) : 5,
+      googleReviewCount: LIVE_SYLVA?.count ?? 30,
       hours: STANDARD_HOURS
     }
   ],
