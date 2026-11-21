@@ -7,8 +7,7 @@ import {
   formatPhoneDisplay,
   napLine,
   telHref,
-  type BusinessLocation,
-} from "@/data/business";
+  type BusinessLocation, callPhoneE164 } from "@/data/business";
 
 /**
  * Physical showroom block for the town page that actually has a showroom.
@@ -44,10 +43,10 @@ const ShowroomVisitBlock = ({ location }: { location: BusinessLocation }) => {
           <div className="flex items-start gap-3 mb-5">
             <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
             <a
-              href={telHref(location.phoneE164)}
+              href={telHref(callPhoneE164(location))}
               className="text-body-sm font-body font-semibold text-foreground hover:text-primary transition-colors"
             >
-              {formatPhoneDisplay(location.phoneE164)}
+              {formatPhoneDisplay(callPhoneE164(location))}
             </a>
           </div>
 

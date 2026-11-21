@@ -121,3 +121,19 @@ describe("call_click and form_submit tracking", () => {
     expect(layer().some((e) => e.event === "form_submit_success")).toBe(true);
   });
 });
+
+describe("callback wording (John, 21 Nov 2026)", () => {
+  const FILES = [
+    "src/components/forms/WhatHappensNext.tsx",
+    "src/components/forms/LeadConfirmationPanel.tsx",
+    "src/pages/ThankYou.tsx",
+    "src/components/recovery/RecoveryPrompt.tsx",
+  ];
+  it("promises a call back as soon as possible during business hours, never a fixed time", () => {
+    for (const f of FILES) {
+      const src = readFileSync(f, "utf8");
+      expect(src, f).toMatch(/as soon as possible[\s\S]{0,40}during business hours/);
+      expect(src, f).not.toMatch(/within (1|one|an) (business )?hour|within \d+ minutes|same[- ]day/i);
+    }
+  });
+});

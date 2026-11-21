@@ -1,4 +1,5 @@
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
+import { officeHoursShort } from "@/lib/office-hours";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -27,7 +28,7 @@ export default function ThankYou() {
                 Thank you. Your project conversation is underway.
               </h1>
               <p className="mt-5 font-body text-base md:text-lg leading-relaxed text-muted-foreground">
-                Your information has been sent to Highlander Building Services. A team member will review the request and contact you during business hours to confirm the next step.
+                Your information has been sent to Highlander Building Services. A team member will review the request and call you back as soon as possible during business hours ({officeHoursShort()}) to confirm the next step.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-3">

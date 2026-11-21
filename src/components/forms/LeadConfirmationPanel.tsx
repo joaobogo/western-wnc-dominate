@@ -1,4 +1,5 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import { officeHoursShort } from "@/lib/office-hours";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Phone, ArrowRight, Clock, Shield } from "lucide-react";
@@ -82,14 +83,15 @@ const LeadConfirmationPanel = ({
           Next step
         </p>
         <p className={`font-body text-body-sm leading-relaxed ${text}`}>
-          A Highlander team member reviews your request and contacts you during staffed business
-          hours to discuss the property, the scope, and the appropriate next step. Your request does
+          A Highlander team member reviews your request and calls you back as soon as possible
+          during business hours ({officeHoursShort()}) to discuss the property, the scope, and the
+          appropriate next step. Your request does
           not reserve an appointment or authorize work.
         </p>
         <div className={`mt-4 flex flex-col gap-2 font-body text-body-xs ${muted}`}>
           <span className="flex items-center gap-2">
             <Clock className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />
-            Follow-up during staffed business hours
+            Quick return calls during business hours
           </span>
           <span className="flex items-center gap-2">
             <Shield className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />

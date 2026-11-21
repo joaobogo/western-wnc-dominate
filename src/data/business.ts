@@ -332,6 +332,15 @@ export const formatPhonePlain = (e164: string) => e164.replace(/^\+1-/, "");
 export const telHref = (e164: string) => `tel:+${e164.replace(/\D/g, "")}`;
 
 /** "40 Depot Street, Franklin, NC 28734" — exact confirmed NAP line. */
+/**
+ * The number a visitor should call for a showroom. John (21 Nov 2026): the
+ * Sylva line forwards to Franklin, and the Franklin number is the one key
+ * number everywhere, so every showroom shows and dials the main number. The
+ * Sylva showroom keeps its own number only in its structured data, where it
+ * must match its Google Business Profile until that listing is updated.
+ */
+export const callPhoneE164 = (_loc: BusinessLocation) => BUSINESS.primaryPhoneE164;
+
 export const napLine = (loc: BusinessLocation) =>
   `${loc.streetAddress}, ${loc.locality}, ${loc.region} ${loc.postalCode}`;
 

@@ -1,4 +1,5 @@
 import { Phone } from "lucide-react";
+import { officeHoursShort } from "@/lib/office-hours";
 
 /**
  * Sets the expectation directly above a submit button: who calls, roughly
@@ -29,8 +30,8 @@ const WhatHappensNext = ({
       <span>
         <strong className="font-semibold">What happens next:</strong>{" "}
         {variant === "email"
-          ? "a Highlander advisor from our Franklin office reviews your message and replies personally during business hours."
-          : "a Highlander advisor from our Franklin office calls you at the number you provide during business hours."}{" "}
+          ? `a Highlander advisor from our Franklin office reviews your message and replies personally, as soon as possible during business hours (${officeHoursShort()}).`
+          : `a Highlander advisor from our Franklin office calls you back at the number you provide, as soon as possible during business hours (${officeHoursShort()}).`}{" "}
         It's a conversation about your project — no obligation and no sales pressure.
       </span>
     </p>

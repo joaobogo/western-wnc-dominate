@@ -10,7 +10,7 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ShowroomMap from "@/components/locations/ShowroomMap";
-import { formatPhoneDisplay, napLine, telHref } from "@/data/business";
+import { formatPhoneDisplay, napLine, telHref, callPhoneE164 } from "@/data/business";
 import { showrooms } from "@/data/showrooms";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -90,8 +90,8 @@ const Locations = () => {
                       </li>
                       <li className="flex gap-2 font-body text-body-sm text-foreground">
                         <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                        <a href={telHref(loc.phoneE164)} className="underline underline-offset-4">
-                          {formatPhoneDisplay(loc.phoneE164)}
+                        <a href={telHref(callPhoneE164(loc))} className="underline underline-offset-4">
+                          {formatPhoneDisplay(callPhoneE164(loc))}
                         </a>
                       </li>
                       <li className="flex gap-2 font-body text-body-sm text-foreground">

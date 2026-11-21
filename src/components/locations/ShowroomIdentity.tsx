@@ -1,5 +1,5 @@
 import { Phone, MapPin, Clock, Car } from "lucide-react";
-import { formatPhoneDisplay, napLine, telHref } from "@/data/business";
+import { formatPhoneDisplay, napLine, telHref, callPhoneE164 } from "@/data/business";
 import type { Showroom } from "@/data/showrooms";
 
 /**
@@ -10,7 +10,7 @@ import type { Showroom } from "@/data/showrooms";
 const ShowroomIdentity = ({ showroom }: { showroom: Showroom }) => {
   const loc = showroom.location;
   const address = napLine(loc);
-  const phone = formatPhoneDisplay(loc.phoneE164);
+  const phone = formatPhoneDisplay(callPhoneE164(loc));
 
   return (
     <div className="grid gap-4 sm:grid-cols-2">
@@ -24,9 +24,9 @@ const ShowroomIdentity = ({ showroom }: { showroom: Showroom }) => {
       <div className="flex gap-3">
         <Phone className="mt-0.5 h-5 w-5 shrink-0 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
         <div>
-          <p className="eyebrow mb-1 text-muted-foreground">{showroom.cardLabel} phone</p>
+          <p className="eyebrow mb-1 text-muted-foreground">Phone</p>
           <a
-            href={telHref(loc.phoneE164)}
+            href={telHref(callPhoneE164(loc))}
             className="font-body text-body font-semibold text-foreground underline decoration-[hsl(var(--gold-ink))] decoration-2 underline-offset-4"
           >
             {phone}

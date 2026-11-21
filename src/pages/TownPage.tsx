@@ -1,5 +1,5 @@
 import { HERO_SIZES, mediaSrcSet, mediaWebp } from "@/lib/media-srcset";
-import { formatPhoneDisplay, napLine, PHONE_PLAIN, telHref } from "@/data/business";
+import { formatPhoneDisplay, napLine, PHONE_PLAIN, telHref, callPhoneE164 } from "@/data/business";
 import { nearestShowroom } from "@/data/showrooms";
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -201,8 +201,8 @@ const TownPage = () => {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="mb-6 md:mb-0 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6"
               >
-                <a href={telHref(showroom.location.phoneE164)} data-cta="town-hero" className="hero-cta-call btn btn-primary btn-lg w-full sm:w-auto md:text-body-sm sm:min-w-[240px]">
-                  <Phone className="w-4 h-4" aria-hidden="true" /> Call {formatPhoneDisplay(showroom.location.phoneE164)}
+                <a href={telHref(callPhoneE164(showroom.location))} data-cta="town-hero" className="hero-cta-call btn btn-primary btn-lg w-full sm:w-auto md:text-body-sm sm:min-w-[240px]">
+                  <Phone className="w-4 h-4" aria-hidden="true" /> Call {formatPhoneDisplay(callPhoneE164(showroom.location))}
                 </a>
                 <Link to="/request-inspection" className="hero-cta-estimate btn btn-secondary btn-lg btn-on-dark w-full sm:w-auto md:text-body-sm sm:min-w-[300px]">
                   Request an Inspection <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

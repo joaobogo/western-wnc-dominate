@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import ShowroomIdentity from "@/components/locations/ShowroomIdentity";
 import { showrooms, showroomBySlug, nearestShowroom } from "@/data/showrooms";
-import { FRANKLIN, SYLVA, formatPhoneDisplay, napLine, telHref } from "@/data/business";
+import { BUSINESS, FRANKLIN, SYLVA, callPhoneE164, formatPhoneDisplay, napLine, telHref } from "@/data/business";
 
 describe("showroom (location) pages", () => {
   it("has exactly the two real showrooms", () => {
@@ -19,8 +19,11 @@ describe("showroom (location) pages", () => {
       );
       const loc = showroom.location;
       expect(screen.getByText(napLine(loc))).toBeInTheDocument();
-      const phoneLink = screen.getByRole("link", { name: formatPhoneDisplay(loc.phoneE164) });
-      expect(phoneLink).toHaveAttribute("href", telHref(loc.phoneE164));
+      // John (21 Nov 2026): the Sylva line forwards to Franklin; every showroom
+      // shows and dials the main (Franklin) number.
+      const phoneLink = screen.getByRole("link", { name: formatPhoneDisplay(callPhoneE164(loc)) });
+      expect(phoneLink).toHaveAttribute("href", telHref(callPhoneE164(loc)));
+      expect(callPhoneE164(loc)).toBe(BUSINESS.primaryPhoneE164);
       expect(screen.getByText(loc.hours[0].label)).toBeInTheDocument();
     });
 

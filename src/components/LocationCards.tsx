@@ -1,5 +1,5 @@
 import { MapPin, Phone, Clock, ArrowUpRight } from "lucide-react";
-import { BUSINESS, directionsUrl, formatPhoneDisplay, napLine, telHref } from "@/data/business";
+import { BUSINESS, directionsUrl, formatPhoneDisplay, napLine, telHref, callPhoneE164 } from "@/data/business";
 
 /**
  * Both showrooms rendered in the exact NAP format used on Google Business
@@ -27,12 +27,12 @@ const LocationCards = ({ className = "", dark = false }: { className?: string; d
             <span className="flex items-start gap-2">
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true" />
               <a
-                href={telHref(loc.phoneE164)}
+                href={telHref(callPhoneE164(loc))}
                 data-cta={`showroom-${loc.name.toLowerCase().replace(/[^a-z]+/g, "-")}`}
                 className={`font-heading font-semibold ${strong} hover:text-primary transition-colors`}
-                aria-label={`Call the ${loc.name} at ${formatPhoneDisplay(loc.phoneE164)}`}
+                aria-label={`Call the ${loc.name} at ${formatPhoneDisplay(callPhoneE164(loc))}`}
               >
-                {formatPhoneDisplay(loc.phoneE164)}
+                {formatPhoneDisplay(callPhoneE164(loc))}
               </a>
             </span>
             <span className="flex items-start gap-2">

@@ -14,7 +14,7 @@ import ShowroomIdentity from "@/components/locations/ShowroomIdentity";
 import ShowroomMap from "@/components/locations/ShowroomMap";
 import ShowroomCommute from "@/components/locations/ShowroomCommute";
 import LeaveReviewLink from "@/components/trust/LeaveReviewLink";
-import { formatPhoneDisplay, telHref } from "@/data/business";
+import { formatPhoneDisplay, telHref, callPhoneE164 } from "@/data/business";
 import { showroomBySlug, showrooms } from "@/data/showrooms";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -33,7 +33,7 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
   if (!showroom) return <Navigate to="/locations" replace />;
 
   const loc = showroom.location;
-  const phone = formatPhoneDisplay(loc.phoneE164);
+  const phone = formatPhoneDisplay(callPhoneE164(loc));
   const other = showrooms.find((s) => s.id !== showroom.id);
   const breadcrumbs = [
     { name: "Home", url: "/" },
@@ -92,7 +92,7 @@ const LocationPage = ({ slug: slugProp }: { slug?: string }) => {
                 <span>Get My Written Estimate</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <a href={telHref(loc.phoneE164)} className="btn btn-secondary-dark">
+              <a href={telHref(callPhoneE164(loc))} className="btn btn-secondary-dark">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 <span>Call {phone}</span>
               </a>
