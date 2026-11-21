@@ -111,7 +111,9 @@
 /* Slightly smaller-scale tablet ease (641–820) */
 @media (min-width: 641px) and (max-width: 820px) {
   h1 { font-size: clamp(2.6rem, 6vw, 3.25rem) !important; line-height: 1.1 !important; }
-  section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  /* Not the empty, invisible notifications region (Sonner's <section
+     aria-live>): padding it opened a 112px gap above the header on tablets. */
+  section:not(:empty):not([aria-live]) { padding-top: 3.5rem; padding-bottom: 3.5rem; }
 }
 
 /* ── Global scroll-performance pass ──

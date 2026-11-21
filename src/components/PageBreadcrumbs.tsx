@@ -35,8 +35,13 @@ interface PageBreadcrumbsProps {
 
 const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
   return (
-    <HeaderOffset spacing="tight" className={cn("pb-2 border-b border-border/40 bg-background/50 backdrop-blur-sm", className)}>
-      <Breadcrumb aria-label="Breadcrumb" className="pt-2">
+    // Phones (under 768px): the visible trail is hidden (John, Nov 21: it wrapped
+    // and looked broken above the hero, and phones have the menu and back
+    // button). The wrapper still reserves the fixed header's height, and the
+    // BreadcrumbList JSON-LD from SEOHead is unchanged, so search results keep
+    // the trail. Tablets and desktops keep it on one tidy line.
+    <HeaderOffset spacing="tight" className={cn("pb-2 border-b border-border/40 bg-background/50 backdrop-blur-sm max-md:pb-0 max-md:border-b-0 max-md:bg-transparent max-md:backdrop-blur-none", className)}>
+      <Breadcrumb aria-label="Breadcrumb" className="pt-2 max-md:hidden">
         <BreadcrumbList className="text-[11px] sm:text-xs tracking-wide uppercase font-medium">
           {items.map((c, i) => {
             const isLast = i === items.length - 1;
@@ -49,7 +54,10 @@ const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
                     </BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink asChild>
-                      <Link to={c.url} className="hover:text-[hsl(var(--heritage-green))] transition-colors">
+                      {/* inline-flex centres the text inside the 44px touch
+                          target the global CSS gives links, so every crumb
+                          sits on the same line. */}
+                      <Link to={c.url} className="inline-flex items-center hover:text-[hsl(var(--heritage-green))] transition-colors">
                         {c.name}
                       </Link>
                     </BreadcrumbLink>
