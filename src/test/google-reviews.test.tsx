@@ -218,3 +218,39 @@ describe("google-reviews-sync", () => {
     expect(matchProfile({ storefrontAddress: { locality: "Highlands" } })).toBeNull();
   });
 });
+
+describe("public 5-star Google reviews supplied by Highlander (20 Nov 2026)", () => {
+  const publicOnes = () => import("@/data/reviews").then((m) => m.REVIEWS.filter((r) => r.id.startsWith("google-public-")));
+
+  it("are on the site word for word, from the Franklin listing, labelled as Google", async () => {
+    const list = await publicOnes();
+    expect(list.length).toBeGreaterThan(100);
+    const capita = list.find((r) => r.name === "Joseph Capita")!;
+    expect(capita.text).toBe("Our roof suffered wind damage.\nHighlander repaired the roof on time and within the budget estimate.\nWe cannot recommend Highlander highly enough.");
+    for (const r of list) {
+      expect(r.rating).toBe(5);
+      expect(r.source).toBe("Google");
+      expect(r.sourceUrl).toContain("1442261483869937048");
+      expect(r.serviceInferred).toBe(true);
+    }
+  });
+
+  it("leave out the flagged reviews, the ones the PDF could not copy exactly, and the warranty-style one", async () => {
+    const names = (await publicOnes()).map((r) => r.name);
+    for (const n of ["Christian Brogger", "Suzanne Dickinson", "Sal Tartamella", "Doris Weaver", "Faith Groce", "Wild Iris", "Sheron Mayhorn", "J C"]) {
+      expect(names).not.toContain(n);
+    }
+  });
+
+  it("never repeat a review already on the site, and never show Google's relative dates as exact", async () => {
+    const { REVIEWS, reviewDateLabel } = await import("@/data/reviews");
+    const key = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 80);
+    expect(new Set(REVIEWS.map((r) => key(r.text))).size).toBe(REVIEWS.length);
+    for (const r of await publicOnes()) expect(reviewDateLabel(r)).toBe("");
+  });
+
+  it("only name a town where the reviewer did", async () => {
+    const towns = (await publicOnes()).filter((r) => r.town).map((r) => `${r.name}: ${r.town}`);
+    expect(towns.sort()).toEqual(["Beth Schumacher: Franklin", "Palmira Snape: Fines Creek", "Tom Scott: Lake Toxaway"]);
+  });
+});

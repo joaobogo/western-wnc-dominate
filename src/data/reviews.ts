@@ -1,5 +1,6 @@
 import { REVIEW_SUMMARY, REVIEW_RATING_VALUE, FRANKLIN, SYLVA, GBP_MAP_URL } from "@/data/business";
 import { SNAPSHOT_DAY, snapshotReviews, type SnapshotReview } from "@/data/google-reviews-snapshot";
+import PUBLIC_LIST from "@/data/google-reviews-public.json";
 
 /**
  * Published customer reviews — every entry is REAL and VERBATIM.
@@ -263,7 +264,7 @@ export const importedReviews = (rows: SnapshotReview[], handCopied: Review[] = H
     const date = (row.created_at_google ?? "").slice(0, 10);
     const key = textKey(text);
     if (CLAIM_RISK_TEXT.test(text)) continue;
-    if (row.rating < 4 || text.trim().length < 20 || !/^\d{4}-\d{2}-\d{2}$/.test(date) || date > today) continue;
+    if (row.rating < 4 || text.trim().length <= 20 || !/^\d{4}-\d{2}-\d{2}$/.test(date) || date > today) continue;
     if (known.has(key) || seen.has(key)) continue;
     seen.add(key);
     out.push({
@@ -283,8 +284,59 @@ export const importedReviews = (rows: SnapshotReview[], handCopied: Review[] = H
   return out;
 };
 
-/** Every published review: hand-copied plus the daily Google import. */
-export const REVIEWS: Review[] = [...HAND_COPIED_REVIEWS, ...importedReviews(snapshotReviews())];
+export interface PublicListRow {
+  n: number;
+  name: string;
+  rating: number;
+  /** Google's relative label on the day the list was read ("3 weeks ago"). */
+  dateLabel: string;
+  /** Derived from that label, so approximate. */
+  date: string;
+  /** Only where the reviewer named a place in the review itself. */
+  town: string | null;
+  text: string;
+}
+
+/**
+ * Highlander's public 5-star Google reviews from the Franklin listing, read on
+ * 20 Nov 2026 and supplied by Highlander (src/data/google-reviews-public.json).
+ * Text is verbatim. Dates are Google's relative labels, so they are approximate
+ * and never shown. The same filters as the import apply.
+ */
+export const publicListReviews = (rows: PublicListRow[], handCopied: Review[] = HAND_COPIED_REVIEWS): Review[] => {
+  const known = new Set(handCopied.map((r) => textKey(r.text)));
+  const out: Review[] = [];
+  for (const row of rows) {
+    const key = textKey(row.text);
+    if (row.rating < 4 || row.text.trim().length <= 20 || CLAIM_RISK_TEXT.test(row.text) || known.has(key)) continue;
+    known.add(key);
+    out.push({
+      id: `google-public-${row.n}`,
+      name: row.name,
+      rating: row.rating,
+      date: row.date,
+      dateLabel: row.dateLabel,
+      dateApprox: true,
+      text: row.text,
+      service: inferServiceTags(row.text),
+      serviceInferred: true,
+      ...(row.town ? { town: row.town } : {}),
+      profile: "franklin",
+      source: "Google",
+      sourceUrl: GOOGLE_FRANKLIN,
+    });
+  }
+  return out;
+};
+
+const PUBLIC_REVIEWS = publicListReviews((PUBLIC_LIST as { reviews: PublicListRow[] }).reviews);
+
+/** Every published review: hand-copied, the public Google list, and the daily import. */
+export const REVIEWS: Review[] = [
+  ...HAND_COPIED_REVIEWS,
+  ...PUBLIC_REVIEWS,
+  ...importedReviews(snapshotReviews(), [...HAND_COPIED_REVIEWS, ...PUBLIC_REVIEWS]),
+];
 
 // ── Daily rotation ─────────────────────────────────────────────────────────
 // Pages show a different mix of real reviews each day. The seed is the build

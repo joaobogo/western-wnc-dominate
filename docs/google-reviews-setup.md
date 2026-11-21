@@ -4,7 +4,7 @@
 
 - Each website build puts those on the pages: new 4- and 5-star reviews with written text join the hand-copied ones.
 - Every page that shows reviews shows a different mix each day, matched to its service.
-- The "4.8★ · 178 Google reviews" figures update by themselves.
+- The "4.8★ · 179 Google reviews" figures update by themselves.
 
 **What it never does:**
 - edits a review;
@@ -12,7 +12,9 @@
 - shows one that mentions warranties, guarantees, "free inspection/estimate", 24/7 or brand names the site doesn't use; those are left off, not changed;
 - labels an imported review with a job type, because nobody checked which job it was for.
 
-Until the connection below is made, the site keeps the 10 hand-copied reviews and the last figures (4.8, 178). Rotation works either way.
+Until the connection below is made, the site uses the reviews it already has: the 10 hand-copied ones plus the public 5-star Google reviews Highlander supplied on 20 Nov 2026 (116 usable; 8 were already on the site, and a few very short ones are left off) (`src/data/google-reviews-public.json`). It also keeps the last figures (4.8, 179). Rotation works either way.
+
+**Refreshing by hand instead:** send Claude a new list of public reviews (the same PDF/JSON format) and it replaces `google-reviews-public.json`, keeping the text word for word.
 
 ## One-time setup (Highlander, about 30 minutes + Google's approval wait)
 
