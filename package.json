@@ -12,7 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "predev": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts && bun scripts/generate-prerender-manifest.ts && bun scripts/generate-llms-txt.ts && bun scripts/generate-org-jsonld.ts",
-    "prebuild": "node scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts && bun scripts/generate-prerender-manifest.ts && bun scripts/generate-llms-txt.ts && bun scripts/generate-org-jsonld.ts && node scripts/check-future-dates.mjs && bun scripts/check-reviews.ts && node scripts/check-tracking.mjs",
+    "prebuild": "node scripts/fetch-google-reviews.mjs && node scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts && bun scripts/generate-prerender-manifest.ts && bun scripts/generate-llms-txt.ts && bun scripts/generate-org-jsonld.ts && node scripts/check-future-dates.mjs && bun scripts/check-reviews.ts && node scripts/check-tracking.mjs",
     "perf:check": "node scripts/lhci-gate.mjs",
     "smoke:lp": "node scripts/lp-smoke.mjs",
     "seo:check": "node scripts/seo-check.mjs",

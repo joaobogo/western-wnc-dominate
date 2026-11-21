@@ -1,3 +1,4 @@
+import { liveSummary } from "@/data/google-reviews-snapshot";
 /**
  * SINGLE SOURCE OF TRUTH for the business identity (NAP, profiles, hours).
  *
@@ -155,6 +156,13 @@ export const GBP_MAP_URL = (cid: string) => `https://www.google.com/maps?cid=${c
 const FRANKLIN_CID = "1442261483869937048";
 const SYLVA_CID = "1690022713833215904";
 
+// Google's rating and review count, imported daily from both Business
+// Profiles (google-reviews-sync → scripts/fetch-google-reviews.mjs). Until the
+// import is connected, the figures read from the public listings are used.
+const LIVE_FRANKLIN = liveSummary("franklin");
+const LIVE_SYLVA = liveSummary("sylva");
+const oneDecimal = (n: number) => Math.round(n * 10) / 10;
+
 export const BUSINESS: BusinessIdentity = {
   brandName: "Highlander Building Services",
   legalName: "Highlander Building Services, Inc.",
@@ -184,13 +192,13 @@ export const BUSINESS: BusinessIdentity = {
   reviewSummary: {
     // Single source of truth for every rating badge and JSON-LD node.
     // Owner-confirmed 2026-09-04 (João): Google shows 4.8. Count refreshed
-    // 2026-11-19 from the public Franklin Google Business Profile listing
-    // (4.8, 178 reviews), per John's 404 fix guide (HL-063).
-    ratingValue: 4.8,
-    reviewCount: 178,
+    // 2026-11-20 from the public Franklin Google listing (4.8, 179 reviews), as
+    // read by Highlander for the review list (Highlander_5-Star_Google_Reviews).
+    ratingValue: LIVE_FRANKLIN ? oneDecimal(LIVE_FRANKLIN.rating) : 4.8,
+    reviewCount: LIVE_FRANKLIN?.count ?? 179,
     source: "Google Business Profile",
     sourceUrl: GBP_MAP_URL(FRANKLIN_CID),
-    lastVerified: "2026-11-19",
+    lastVerified: LIVE_FRANKLIN?.fetchedAt.slice(0, 10) ?? "2026-11-20",
   },
   // projectsCompleted intentionally omitted — awaiting a verifiable count.
   credentials: [
@@ -267,8 +275,8 @@ export const BUSINESS: BusinessIdentity = {
       geo: { lat: 35.1759293, lng: -83.3738888 },
       gbpCid: FRANKLIN_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJcZElgY0kWYgRhfHuUQ2IrBw",
-      googleRating: 4.8,
-      googleReviewCount: 178,
+      googleRating: LIVE_FRANKLIN ? oneDecimal(LIVE_FRANKLIN.rating) : 4.8,
+      googleReviewCount: LIVE_FRANKLIN?.count ?? 179,
       hours: STANDARD_HOURS,
       primary: true,
     },
@@ -283,8 +291,8 @@ export const BUSINESS: BusinessIdentity = {
       geo: { lat: 35.3585, lng: -83.1812 },
       gbpCid: SYLVA_CID,
       reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzRXuBmttWYgR8QpnoWftXl8",
-      googleRating: 5.0,
-      googleReviewCount: 30,
+      googleRating: LIVE_SYLVA ? oneDecimal(LIVE_SYLVA.rating) : 5.0,
+      googleReviewCount: LIVE_SYLVA?.count ?? 30,
       hours: STANDARD_HOURS,
     },
   ],
@@ -417,17 +425,17 @@ export const REVIEW_RATING_VALUE = BUSINESS.reviewSummary.ratingValue;
 export const REVIEW_RATING = REVIEW_RATING_VALUE.toFixed(1);
 /** "4.8\u2605" */
 export const REVIEW_STARS = `${REVIEW_RATING}\u2605`;
-/** 178 */
+/** 179 */
 export const REVIEW_COUNT = BUSINESS.reviewSummary.reviewCount;
-/** "178 Google reviews" */
+/** "179 Google reviews" */
 export const REVIEW_COUNT_LABEL = `${REVIEW_COUNT} Google reviews`;
 /** "as of November 2026" — always shown next to a rating. */
 export const REVIEW_AS_OF = `as of ${new Date(
   `${BUSINESS.reviewSummary.lastVerified}T12:00:00Z`,
 ).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}`;
-/** "4.8\u2605 \u00b7 178 Google reviews" */
+/** "4.8\u2605 \u00b7 179 Google reviews" */
 export const REVIEW_LINE = `${REVIEW_STARS} \u00b7 ${REVIEW_COUNT_LABEL}`;
-/** "4.8\u2605 \u00b7 178 Google reviews (as of November 2026)" */
+/** "4.8\u2605 \u00b7 179 Google reviews (as of November 2026)" */
 export const REVIEW_LINE_AS_OF = `${REVIEW_LINE} (${REVIEW_AS_OF})`;
 /** null until the owner confirms a real lifetime project count. */
 export const PROJECTS_STAT = BUSINESS.projectsCompleted

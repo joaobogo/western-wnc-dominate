@@ -77,7 +77,7 @@ const ReviewCard = ({ review, tone = "light" }: ReviewCardProps) => {
         </span>
 
         <span className="mt-3 flex flex-wrap items-center gap-1.5">
-          {review.service
+          {(review.serviceInferred ? [] : review.service)
             .filter((s) => s !== "general")
             .map((s) => (
               <span

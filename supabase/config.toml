@@ -10,3 +10,6 @@ verify_jwt = false
 
 [functions.front-desk-daily-summary]
 verify_jwt = false
+
+[functions.google-reviews-sync]
+verify_jwt = false

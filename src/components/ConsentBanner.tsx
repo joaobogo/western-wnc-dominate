@@ -34,27 +34,31 @@ const ConsentBanner = () => {
   if (!visible) return null;
 
   return (
-    // On phones this is a compact strip that sits ABOVE the sticky call bar
+    // On phones this is a compact card that sits ABOVE the sticky call bar
     // (see .consent-strip in index.css), so CALL stays tappable on a first
     // visit. It used to be a 249px sheet covering the bar (mobile re-audit H-1).
+    // Nov 21: text above, buttons below, height fits the text (it was capped at
+    // 96px while the site's 15px phone text needed ~150px, so the words ran
+    // behind the call bar). z-[60] keeps it above the call bar (z-50) but under
+    // popups such as the callback prompt (z-[70]).
     <div
       role="dialog"
       data-client-only
       aria-label="Cookie preferences"
-      className="consent-strip fixed inset-x-2 z-[70] md:inset-x-auto md:right-5 md:bottom-5 md:max-w-md rounded-md md:rounded-lg border border-border bg-card text-card-foreground shadow-floating p-3 md:p-5"
+      className="consent-strip fixed inset-x-2 z-[60] md:inset-x-auto md:right-5 md:bottom-5 md:max-w-md rounded-md md:rounded-lg border border-border bg-card text-card-foreground shadow-floating p-3 md:p-5"
     >
       <p className="hidden md:block font-heading text-base font-semibold mb-1.5">
         We use a few cookies
       </p>
-      <div className="flex items-center gap-3 md:block">
-        <p className="text-[13px] leading-snug md:text-sm text-muted-foreground md:mb-4 flex-1 min-w-0">
+      <div className="flex flex-col gap-2.5 md:block">
+        <p className="text-[13px] leading-snug md:text-sm text-muted-foreground md:mb-4 min-w-0">
           We use cookies to measure how the site is used and to improve our advertising. You
           can opt out any time.{" "}
           <Link to="/privacy-policy" className="underline underline-offset-2 whitespace-nowrap">
             Privacy policy
           </Link>
         </p>
-        <div className="flex flex-shrink-0 gap-2">
+        <div className="flex justify-end gap-2">
           <button
             type="button"
             onClick={() => {

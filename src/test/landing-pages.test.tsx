@@ -3,7 +3,7 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import LandingTemplate from "@/components/landing/LandingTemplate";
 import { COMBINED_CONFIG, CONSTRUCTION_CONFIG, ROOFING_CONFIG } from "@/components/landing/config";
-import { FRANKLIN, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, directionsUrl } from "@/data/business";
+import { FRANKLIN, FRANKLIN_NAP, PHONE_DISPLAY, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_RATING, directionsUrl } from "@/data/business";
 
 /**
  * Rules from the 5 Oct 2026 landing prompts that must never regress:
@@ -102,13 +102,14 @@ describe.each(pages)("landing page $path", (config) => {
     const text = document.body.textContent ?? "";
     expect(text).not.toMatch(/authorize work|instant quote|during office hours|Outside office hours|Discuss this/i);
     expect(text).toContain("Free estimate. No obligation.");
-    expect(text).toContain("178 Google reviews");
+    // The count is imported daily from Google (Nov 20); it was 178 by hand.
+    expect(text).toContain(REVIEW_COUNT_LABEL);
   });
 
   it("keeps the owner-locked facts and avoids banned claims", () => {
     mount();
     const text = document.body.textContent ?? "";
-    expect(text).toContain("4.8/5 on Google");
+    expect(text).toContain(`${REVIEW_RATING}/5 on Google`);
     expect(text).toContain(FRANKLIN_NAP);
     expect(text).toContain("40 Depot Street");
     expect(text).not.toContain("1511 Highlands");
