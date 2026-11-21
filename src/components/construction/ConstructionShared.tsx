@@ -55,7 +55,7 @@ export const ConstructionClosingCTA = ({
   headline = "Let's Talk About\nYour Project.",
   subheadline = "Whether you're planning an addition, a renovation, an outdoor space, or a custom build — we're here to help you think it through.",
   eyebrow = "Start Planning",
-  ctaText = "Discuss My Project",
+  ctaText = "Get My Written Scope",
   ctaLink = "/request-inspection?context=construction&type=construction",
 }: ConstructionCTAProps) => {
   // Construction money pages keep phone access prominent while the short estimate form remains the shared form path.
@@ -131,8 +131,8 @@ export const ConstructionTrustSidebar = ({ items = defaultItems }: { items?: Tru
       </div>
     ))}
     <div className="pt-3 border-t border-border">
-      <Link to="/request-inspection" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Get My Project Scoped <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+      <Link to="/request-inspection?context=construction&type=construction" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+        Get My Written Scope <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
   </div>
@@ -166,7 +166,7 @@ export const PlanningCallout = ({
   headline = "Not sure where to start?",
   body = "We offer complimentary project consultations. Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.",
   ctaText = "Get My Questions Answered",
-  ctaLink = "/request-inspection",
+  ctaLink = "/request-inspection?context=construction&type=construction",
 }: {
   headline?: string;
   body?: string;

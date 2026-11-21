@@ -126,7 +126,7 @@ export const constructionCategories: ConstructionCategory[] = [
   {
     icon: HardHat,
     title: "Structural & Framing",
-    slug: "/construction#structural",
+    slug: "/construction/renovations",
     description: "Load-bearing wall removal, floor leveling, foundation repairs, and structural reinforcement to correct or adapt your home's skeleton.",
     outcomes: [
       "Safe open-concept floor plans",

@@ -168,7 +168,7 @@ const DesignProgramPromo = ({
               to="/request-inspection?context=design_program&type=construction-design"
               className="btn btn-secondary btn-md"
             >
-              Discuss My Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

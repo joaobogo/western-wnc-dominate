@@ -100,7 +100,7 @@ const LeadConfirmationPanel = ({
           href={PHONE_TEL}
           onClick={() =>
             trackPhoneClick({
-              phone_number: "+18285247773",
+              phone_number: PHONE_TEL.replace(/^tel:/, ""),
               link_url: PHONE_TEL,
               click_location: "confirmation_panel",
             })

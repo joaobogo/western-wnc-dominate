@@ -78,7 +78,7 @@ const TimelineExpectations = ({
           className="btn btn-primary btn-md"
           data-gtm-location="timeline_expectations"
         >
-          Discuss My Project
+          Get My Written Scope
         </Link>
         <a
           href={PHONE_TEL}

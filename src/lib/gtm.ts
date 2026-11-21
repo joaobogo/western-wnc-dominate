@@ -26,6 +26,10 @@ export const GTM_EVENTS = {
   PAGE_VIEW: "page_view",
   // Contact intent
   PHONE_CLICK: "phone_click",
+  // Construction plan (21 Nov 2026): one call event with page, service and
+  // button position, sent alongside phone_click (which existing GA4 / Ads
+  // conversions use, so it stays unchanged).
+  CALL_CLICK: "call_click",
   EMAIL_CLICK: "email_click",
   CTA_CLICK: "cta_click",
   REQUEST_QUOTE_CLICK: "request_quote_click",
@@ -35,6 +39,9 @@ export const GTM_EVENTS = {
   FORM_START: "form_start",
   FORM_STEP_COMPLETE: "form_step_complete",
   FORM_SUCCESS: "form_success",
+  // Sent with form_submit_success: the service and the lead type
+  // (construction / roofing / other) as two flat parameters.
+  FORM_SUBMIT: "form_submit",
   FORM_ERROR: "form_error",
   GENERATE_LEAD: "generate_lead",
   // Content engagement
@@ -336,6 +343,42 @@ export function trackTownFaqConversionIntent(opts: {
 let lastPhoneClick = { at: 0, url: "" };
 const PHONE_DEDUPE_MS = 800;
 
+/**
+ * The service a page is about, for call_click / form_submit:
+ * /construction/additions → "additions", /construction → "construction",
+ * /service-areas/franklin-nc/construction → "construction",
+ * /roofing/roof-repair → "roof-repair", /lp/decks → "decks", else the page type.
+ */
+export function serviceFromPath(path: string): string {
+  const parts = path.split(/[?#]/)[0].split("/").filter(Boolean);
+  if (!parts.length) return "home";
+  const [first, second, third] = parts;
+  if (first === "construction" || first === "roofing") return second ?? first;
+  if (first === "service-areas") return third ?? "town";
+  if (first === "lp") return second ?? "landing";
+  if (first === "projects") return "project";
+  return first;
+}
+
+/** construction / roofing / other, from the service and the page. */
+export function leadTypeFor(service: string | null | undefined, path: string): "construction" | "roofing" | "other" {
+  const blob = `${service ?? ""} ${path}`.toLowerCase();
+  if (/construction|addition|porch|deck|outdoor|patio|kitchen|bath|remodel|renovat|basement|design|siding|handyman|garage|sunroom/.test(blob)) return "construction";
+  if (/roof|gutter|skylight|storm|leak|metal|shingle/.test(blob)) return "roofing";
+  return "other";
+}
+
+/** Where on the page a call button sat: hero / sticky / band / header / footer / body. */
+export function callPosition(clickLocation: string): string {
+  const loc = (clickLocation || "").toLowerCase();
+  if (loc.includes("sticky")) return "sticky";
+  if (loc.includes("hero")) return "hero";
+  if (loc === "header" || loc.startsWith("header") || loc.includes("nav")) return "header";
+  if (loc.includes("footer")) return "footer";
+  if (/band|final|closing|cta/.test(loc)) return "band";
+  return "body";
+}
+
 export function trackPhoneClick(opts: {
   phone_number: string;
   link_url: string;
@@ -357,6 +400,13 @@ export function trackPhoneClick(opts: {
     link_url: opts.link_url,
     page_path: pagePath(),
     page_title: pageTitle(),
+    click_location: opts.click_location,
+  });
+  push({
+    event: GTM_EVENTS.CALL_CLICK,
+    page_path: pagePath(),
+    service: serviceFromPath(currentPath()),
+    position: callPosition(opts.click_location),
     click_location: opts.click_location,
   });
   // Meta / TikTok are loaded outside GTM — hand them the call intent directly.
@@ -488,6 +538,14 @@ export function trackFormSuccess(opts: {
   if (formSuccessFired.has(opts.lead_id)) return;
   formSuccessFired.add(opts.lead_id);
   const source = getCtaSource();
+  const service = opts.service_intent || opts.service_category || serviceFromPath(currentPath());
+  push({
+    event: GTM_EVENTS.FORM_SUBMIT,
+    service,
+    type: leadTypeFor(`${opts.service_category ?? ""} ${service}`, currentPath()),
+    form_name: opts.form_name,
+    page_path: pagePath(),
+  });
   push({
     event: "form_submit_success",
     source_context: source?.context ?? null,

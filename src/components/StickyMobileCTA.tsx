@@ -268,7 +268,7 @@ const StickyMobileCTA = () => {
                     >
                       <Phone className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">
-                        Call Direct
+                        {action.stickyCall ?? "Call Direct"}
                       </span>
                     </a>
                     <Link
@@ -278,7 +278,7 @@ const StickyMobileCTA = () => {
                       className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                     >
                       <FileText className="w-4 h-4" aria-hidden="true" />
-                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Estimate</span>
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">{action.stickySecondary ?? "Estimate"}</span>
                     </Link>
                   </>
                 ) : (

@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_COUNT, REVIEW_STARS } from "@/data/business";
+import { LICENSE_NUMBER, PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_COUNT, REVIEW_STARS } from "@/data/business";
 import GalleryImage from "@/components/media/GalleryImage";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
@@ -72,7 +72,7 @@ const philosophy = [
 ];
 
 const whyHighlander = [
-  { icon: Shield, title: "Licensed General Contractor, Established in Franklin", detail: "Highlander is a licensed North Carolina General Contractor — NC GC #87668, which you can verify with the North Carolina Licensing Board for General Contractors — founded in Franklin in 2017, with showrooms in Franklin and Sylva." },
+  { icon: Shield, title: "Licensed General Contractor, Established in Franklin", detail: `Highlander is a licensed North Carolina General Contractor — ${LICENSE_NUMBER}, which you can verify with the North Carolina Licensing Board for General Contractors — founded in Franklin in 2017, with showrooms in Franklin and Sylva.` },
   { icon: Users, title: "Project Team Accountability", detail: "Each project is tied to a written scope and Highlander contact so responsibility for decisions, communication, and follow-up is clear." },
   { icon: Mountain, title: "Built for WNC", detail: "We've worked across the region's unique terrain, microclimates, and building conditions for years. We don't learn on your project — we bring institutional knowledge of mountain construction." },
   { icon: BadgeCheck, title: "Roofing + Construction", detail: "Because Highlander offers both roofing and construction, roof-to-structure transitions, flashing, drainage, and exterior-envelope details can be discussed within one turn-key project scope." },
@@ -150,9 +150,9 @@ const ConstructionDivision = () => {
 
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/request-inspection" className="btn btn-primary btn-lg group relative">
+                <Link to="/request-inspection?context=construction_hub&type=construction" className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Get My Project Scoped</span>
+                  <span className="relative">Get My Written Scope</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark group">
@@ -390,7 +390,7 @@ const ConstructionDivision = () => {
         <ConstructionMidCTA
           headline="Have a project in mind?"
           subheadline="Let's discuss scope, timeline, and whether Highlander is the right fit."
-          ctaText="Get My Project Scoped"
+          ctaText="Get My Written Scope"
         />
 
         {/* ═══ DESIGN PROGRAM PROMO ═══ */}
@@ -475,7 +475,7 @@ const ConstructionDivision = () => {
         <ConstructionClosingCTA
           headline={"Your Home Deserves a Builder\nWho Treats It Like Their Own."}
           subheadline="Whether you're planning an addition, considering a renovation, or have custom construction needs in mind — let's have a straightforward conversation about what's possible."
-          ctaText="Get My Project Scoped"
+          ctaText="Get My Written Scope"
           eyebrow="Start the Conversation"
         />
       <RelatedLinks
@@ -493,7 +493,7 @@ const ConstructionDivision = () => {
           ]}
         />
         <ServiceInternalLinks title="Construction Services" slug="construction" intent="consultation" />
-        <TieredOffer context="construction-division" primaryLabel="Get My Build Planned" primaryTo="/construction-intake" primaryDescription="A working session on scope, feasibility, and budget range — then a written project scope." />
+        <TieredOffer context="construction-division" primaryLabel="Get My Written Scope" primaryTo="/request-inspection?context=construction_hub&type=construction" primaryDescription="A working session on scope, feasibility, and budget range — then a written project scope." />
       </main>
 
       <ConversionTrustBlock variant="band" category="construction" />

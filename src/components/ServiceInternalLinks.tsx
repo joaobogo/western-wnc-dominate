@@ -69,7 +69,7 @@ const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInter
       },
       intent === "consultation"
         ? {
-            label: "Discuss My Project",
+            label: "Get My Written Scope",
             href: "/request-inspection?context=construction_internal&type=construction",
             description: `Start with the short contact form or call ${PHONE_PLAIN}; scope and qualification follow after contact.`,
           }
