@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 const pageMetadata = [
   ["src/pages/Certifications.tsx", "Roofing Certifications in Franklin, NC | Highlander"],
   ["src/pages/RoofingDivision.tsx", "Roofing Contractor in Western NC | Highlander"],
-  ["src/pages/ConstructionDivision.tsx", "Construction & General Contractor in Western NC | Highlander"],
+  ["src/content/construction/hub.ts", "General Contractor in Franklin, NC | Highlander"],
   ["src/pages/Legal.tsx", "Accessibility Statement | Western North Carolina Support"],
 ] as const;
 

@@ -13,6 +13,8 @@ interface WorkGallerySectionProps {
   /** Photos already shown elsewhere on the page — skipped so nothing repeats. */
   excludeImages?: string[];
   className?: string;
+  /** Two photos per row on phones. */
+  mobileTwoUp?: boolean;
 }
 
 /** A short, even-grid teaser of real work photos that links to the full gallery. */
@@ -24,6 +26,7 @@ const WorkGallerySection = ({
   limit = 6,
   excludeImages,
   className = "bg-secondary/40",
+  mobileTwoUp,
 }: WorkGallerySectionProps) => (
   <section className={`py-16 md:py-24 border-t border-border/60 ${className}`} aria-labelledby="work-gallery-teaser-heading">
     <div className="container-tight">
@@ -40,6 +43,7 @@ const WorkGallerySection = ({
         initialFilter={division ?? "all"}
         showFilters={!division}
         excludeImages={excludeImages}
+        mobileTwoUp={mobileTwoUp}
       />
       <Link
         to="/recent-projects"

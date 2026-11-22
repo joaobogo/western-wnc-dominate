@@ -72,10 +72,11 @@ describe("page fixes", () => {
     }
   });
 
-  it("/construction shows the objection cards once and no roofing line", () => {
+  it("/construction has no objection-card block and no roofing line", () => {
+    // John's construction plan, Phase 2 (22 Nov 2026): the 8 objection cards ("Construction Standard") are removed from the hub.
     const page = read("src/pages/ConstructionDivision.tsx");
     expect(page).not.toContain("<ConstructionObjectionBuster");
-    expect(page).toContain("showObjections");
+    expect(page).not.toMatch(/<ConstructionTrust\b|showObjections/);
     expect(read("src/components/conversion/TieredOffer.tsx")).toMatch(/CONSTRUCTION_CONTEXTS = new Set\(\[[^\]]*"construction-division"/);
   });
 

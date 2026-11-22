@@ -595,6 +595,8 @@ export const serviceSchema = (service: {
   url: string;
   areaServed?: string;
   areaServedCity?: { name: string; region?: string };
+  /** Only the towns with real projects for this service (construction plan §3.5). */
+  areaServedCities?: string[];
 }) => ({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -604,7 +606,9 @@ export const serviceSchema = (service: {
   description: service.description,
   url: `${BASE_URL}${service.url}`,
   provider: { "@id": `${BASE_URL}/#business` },
-  areaServed: service.areaServedCity
+  areaServed: service.areaServedCities?.length
+    ? service.areaServedCities.map((name) => cityNode(name))
+    : service.areaServedCity
     ? cityNode(service.areaServedCity.name, service.areaServedCity.region || "NC")
     : service.areaServed
       ? (/north carolina|wnc|region|county/i.test(service.areaServed)

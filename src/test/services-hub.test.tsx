@@ -149,7 +149,9 @@ describe("proof kit (reviews, photos, articles on every page)", () => {
 
   it("is on every page that lacked reviews, and the hubs have a form", () => {
     for (const page of ["RoofingDivision", "CommercialRoofing", "ConstructionDivision", "HomeAdditions", "Renovations", "OutdoorLiving", "OutdoorLivingSubPage", "Siding", "ConstructionDesign", "Handyman", "ServicesHub", "ServiceAreas"]) {
-      expect(readFileSync(`src/pages/${page}.tsx`, "utf8")).toMatch(/<ProofKit\b[^>]*\breviews\b/);
+      // The construction hub shows construction-only reviews (John's plan, Phase 2: never padded with roofing reviews).
+      const reviewsBlock = page === "ConstructionDivision" ? /<ConstructionReviews\b/ : /<ProofKit\b[^>]*\breviews\b/;
+      expect(readFileSync(`src/pages/${page}.tsx`, "utf8")).toMatch(reviewsBlock);
     }
     for (const page of ["ServicesHub", "ServiceAreas"]) expect(readFileSync(`src/pages/${page}.tsx`, "utf8")).toMatch(/<InspectionForm\b/);
     expect(readFileSync("src/components/PaidAdsLanding.tsx", "utf8")).toMatch(/<ProofKit\b[^>]*\bnewTab\b/);
