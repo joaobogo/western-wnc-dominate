@@ -64,7 +64,7 @@ export const constructionItems: DropdownItem[] = [
   { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
   { label: "Handyman & Small Repairs", href: "/construction/handyman", desc: "Decks, gutters, trim & punch lists" },
-  { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
+  { label: "Basements & Bonus", href: "/construction/basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction/renovations", desc: "Framing & load-bearing work" },
   { label: "Design & Planning", href: "/construction/design", desc: "In-house design for additions & remodels" },
   { label: "Layout & Design Planning", href: "/construction/design", desc: "Floor plans, layouts & feasibility" },
@@ -107,7 +107,8 @@ export const constructionColumns: DropdownColumn[] = [
       { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Porches, decks & patios" },
       { label: "Screened Porches", href: "/construction/screened-porches", desc: "Porches & enclosures" },
       { label: "Decks", href: "/construction/decks", desc: "New decks & rebuilds" },
-      { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
+      { label: "Basements & Bonus", href: "/construction/basements", desc: "Finish your lower level" },
+      { label: "Roof + Addition", href: "/construction/roof-and-addition", desc: "One contractor for both" },
     ],
   },
   {

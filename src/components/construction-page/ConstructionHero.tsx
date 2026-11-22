@@ -26,6 +26,7 @@ const ConstructionHero = ({ hero }: { hero: HeroContent }) => (
         width={hero.image.width}
         height={hero.image.height}
         alt={hero.image.alt}
+        objectPosition={hero.image.position}
         className="h-full w-full object-cover"
       />
       {hero.image.example && (

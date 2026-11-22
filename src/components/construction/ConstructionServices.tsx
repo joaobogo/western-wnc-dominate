@@ -109,7 +109,7 @@ export const constructionCategories: ConstructionCategory[] = [
   {
     icon: Layers,
     title: "Basements & Bonus Rooms",
-    slug: "/construction/renovations#basements",
+    slug: "/construction/basements",
     description: "Converting unfinished lower levels or attic spaces into functional, climate-controlled living areas.",
     outcomes: [
       "Maximized square footage",

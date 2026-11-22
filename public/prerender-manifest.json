@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 237,
+    "sitemap": 239,
     "coverageNoindex": 126,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 18,
-    "total": 398
+    "total": 400
   },
   "routes": [
     "/",
@@ -28,6 +28,8 @@
     "/construction/bathroom-remodeling",
     "/construction/screened-porches",
     "/construction/decks",
+    "/construction/basements",
+    "/construction/roof-and-addition",
     "/roofing/property-managers",
     "/contact",
     "/request-inspection",

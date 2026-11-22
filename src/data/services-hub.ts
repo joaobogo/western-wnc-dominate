@@ -141,6 +141,8 @@ export const ALL_SERVICE_LINKS: Record<ServiceDivision, Array<{ label: string; h
     { label: "Renovations", href: "/construction/renovations" },
     { label: "Kitchen Remodeling", href: "/construction/kitchen-remodeling" },
     { label: "Bathroom Remodeling", href: "/construction/bathroom-remodeling" },
+    { label: "Basement Finishing", href: "/construction/basements" },
+    { label: "Roof + Addition", href: "/construction/roof-and-addition" },
     { label: "Outdoor Living", href: "/construction/outdoor-living" },
     { label: "Screened Porches", href: "/construction/screened-porches" },
     { label: "Decks", href: "/construction/decks" },
