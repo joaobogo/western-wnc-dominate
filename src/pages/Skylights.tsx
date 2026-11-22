@@ -1,4 +1,5 @@
 import { COUNTY_COUNT, PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import RoofAdditionLine from "@/components/construction-page/RoofAdditionLine";
 import { smallSrc } from "@/lib/gallery-srcset";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -286,6 +287,7 @@ const Skylights = () => {
         </>}
         afterCta={<VeluxWidget />}
       />
+      <RoofAdditionLine />
       <Footer />
       <StickyMobileCTA />
     </>

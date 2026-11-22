@@ -31,12 +31,17 @@ const roofingLinks = [
 const constructionLinks = [
   { label: "Construction Division", href: "/construction" },
   { label: "Home Additions", href: "/construction/additions" },
+  { label: "Screened Porches", href: "/construction/screened-porches" },
+  { label: "Decks", href: "/construction/decks" },
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
+  { label: "Kitchen & Bath Remodeling", href: "/construction/kitchen-remodeling" },
+  { label: "Basement Finishing", href: "/construction/basements" },
+  { label: "Roof + Addition", href: "/construction/roof-and-addition" },
   { label: "Design & Planning", href: "/construction/design" },
   { label: "Siding & Exterior", href: "/construction/siding" },
   { label: "Handyman & Small Repairs", href: "/construction/handyman" },
   { label: "Exterior Improvements", href: "/exterior-improvements" },
-  { label: "Discuss a Construction Project", href: "/request-inspection?context=construction_footer&type=construction" },
+  { label: "Get My Written Scope", href: "/request-inspection?context=construction_footer&type=construction" },
   { label: "Build Your Project", href: "/construction-builder" },
 ];
 

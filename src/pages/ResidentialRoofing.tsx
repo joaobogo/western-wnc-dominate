@@ -1,4 +1,5 @@
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
+import RoofAdditionLine from "@/components/construction-page/RoofAdditionLine";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -981,6 +982,7 @@ const ResidentialRoofing = () => {
         }
         afterCta={<InspectionForm />}
       />
+      <RoofAdditionLine />
       <Footer />
       <StickyMobileCTA />
     </>

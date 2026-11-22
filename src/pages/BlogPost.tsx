@@ -20,6 +20,7 @@ import BlogInternalLinksBlock from "@/components/blog/BlogInternalLinksBlock";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getBlogLocalLinkWeb } from "@/lib/local-link-graph";
 import { getBlogCta } from "@/lib/blog-cta";
+import { BLOG_SERVICE_LINKS } from "@/data/blog-service-links";
 import BlogMidArticleCTA from "@/components/blog/BlogMidArticleCTA";
 import BlogClosingCTA from "@/components/blog/BlogClosingCTA";
 import BlogSidebarCTA from "@/components/blog/BlogSidebarCTA";
@@ -454,6 +455,12 @@ const BlogPostPage = () => {
                   transition={{ delay: 0.2 }}
                   className="article-prose"
                 >
+                  {BLOG_SERVICE_LINKS[post.slug] && (
+                    <p data-service-link>
+                      This guide comes from Highlander's construction team in Franklin. If you're planning one, see our{" "}
+                      <Link to={BLOG_SERVICE_LINKS[post.slug].href}>{BLOG_SERVICE_LINKS[post.slug].anchor}</Link>.
+                    </p>
+                  )}
                   {renderContent(contentTop)}
                 </motion.div>
 
