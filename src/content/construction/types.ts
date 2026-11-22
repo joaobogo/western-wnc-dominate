@@ -75,7 +75,12 @@ export interface ConstructionPageContent {
   breadcrumbs: { name: string; url: string }[];
   hero: HeroContent;
   quickAnswer: { question: string; answer: string };
-  gallery?: { heading: string; body?: string; limit?: number };
+  /** Real job photos (work-photos ids), or omitted when the page has none. */
+  gallery?: { heading: string; body?: string; limit?: number; ids?: string[] };
+  /** Labelled generated design examples, for services with no real photos yet. */
+  examples?: { heading: string; body?: string; images: ContentImage[] };
+  /** One short page-specific angle (plan, page notes): 1–3 short paragraphs and optional links. */
+  angle?: { eyebrow?: string; heading: string; paragraphs: string[]; links?: { label: string; href: string }[] };
   serviceCards?: { heading: string; intro?: string; cards: ServiceCard[] };
   included?: { eyebrow?: string; heading: string; cards: IconCard[] };
   featuredProjects?: { heading: string; slugs: string[] };

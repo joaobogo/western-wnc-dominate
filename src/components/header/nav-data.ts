@@ -104,7 +104,9 @@ export const constructionColumns: DropdownColumn[] = [
     title: "Build & Expand",
     items: [
       { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
-      { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
+      { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Porches, decks & patios" },
+      { label: "Screened Porches", href: "/construction/screened-porches", desc: "Porches & enclosures" },
+      { label: "Decks", href: "/construction/decks", desc: "New decks & rebuilds" },
       { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
     ],
   },

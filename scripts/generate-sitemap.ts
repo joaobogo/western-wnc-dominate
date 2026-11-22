@@ -52,6 +52,8 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/construction/handyman" }, // handyman & small repairs (Nov 2026)
   { path: "/construction/kitchen-remodeling" },
   { path: "/construction/bathroom-remodeling" },
+  { path: "/construction/screened-porches" }, // construction plan Phase 3 (Nov 2026)
+  { path: "/construction/decks" },
   { path: "/roofing/property-managers" },
   { path: "/contact" },
   { path: "/request-inspection" },

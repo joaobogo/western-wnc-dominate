@@ -28,6 +28,11 @@ const ConstructionHero = ({ hero }: { hero: HeroContent }) => (
         alt={hero.image.alt}
         className="h-full w-full object-cover"
       />
+      {hero.image.example && (
+        <span className="absolute right-3 top-3 z-10 bg-[hsl(var(--heritage-charcoal)/0.85)] px-2 py-0.5 font-body text-[0.68rem] font-bold uppercase tracking-[0.12em] text-white">
+          Design example
+        </span>
+      )}
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.92)] via-[hsl(var(--hero-overlay)/0.55)] to-[hsl(var(--hero-overlay)/0.15)]" />
     </div>
     <div className="container-tight w-full pb-10 pt-28 md:pb-16">
