@@ -54,6 +54,8 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/construction/bathroom-remodeling" },
   { path: "/construction/screened-porches" }, // construction plan Phase 3 (Nov 2026)
   { path: "/construction/decks" },
+  { path: "/construction/basements" }, // construction plan Phase 4 (Nov 2026)
+  { path: "/construction/roof-and-addition" },
   { path: "/roofing/property-managers" },
   { path: "/contact" },
   { path: "/request-inspection" },

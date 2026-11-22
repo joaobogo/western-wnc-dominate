@@ -83,7 +83,8 @@ describe("internal links from the analysis", () => {
   it("cost pages link to the town pages; design links to additions and renovations", () => {
     expect(read("src/pages/MetalRoofingCost.tsx")).toContain('service="metal-roofing"');
     expect(read("src/pages/RoofingCostWNC.tsx")).toContain('service="roof-replacement"');
-    const design = read("src/pages/ConstructionDesign.tsx");
+    // Construction plan Phase 4: the design page's words live in its content file.
+    const design = read("src/content/construction/design.ts");
     expect(design).toContain('href: "/construction/additions"');
     expect(design).toContain('href: "/construction/renovations"');
   });

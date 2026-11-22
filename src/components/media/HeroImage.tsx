@@ -10,6 +10,8 @@ interface HeroImageProps {
   sizes?: string;
   width?: number;
   height?: number;
+  /** CSS object-position for tall photos cropped into a wide hero. */
+  objectPosition?: string;
 }
 
 /**
@@ -28,6 +30,7 @@ const HeroImage = ({
   sizes = "100vw",
   width = 1600,
   height = 1067,
+  objectPosition,
 }: HeroImageProps) => (
   <picture>
     {avifSrcSet ? <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} /> : null}
@@ -42,6 +45,7 @@ const HeroImage = ({
       fetchPriority="high"
       decoding="async"
       className={className}
+      style={objectPosition ? { objectPosition } : undefined}
     />
   </picture>
 );

@@ -19,11 +19,15 @@ import kitchenImg from "@/assets/construction-examples/kitchen-example-1.webp?w=
 import kitchenSet from "@/assets/construction-examples/kitchen-example-1.webp?w=480;800&format=webp&as=srcset";
 import bathImg from "@/assets/construction-examples/bath-example-1.webp?w=480&format=webp";
 import bathSet from "@/assets/construction-examples/bath-example-1.webp?w=480;800&format=webp&as=srcset";
+import basementImg from "@/assets/construction-examples/basement-example-1.webp?w=480&format=webp";
+import basementSet from "@/assets/construction-examples/basement-example-1.webp?w=480;800&format=webp&as=srcset";
+import roofTieImg from "@/assets/work/addition-cullowhee-roofline.webp";
+import roofTieSet from "@/assets/work/addition-cullowhee-roofline.webp?w=480;800&format=webp&as=srcset";
 
 /**
  * /construction hub (plan §4 row 1 and the hub note): about a third of the
  * old page. Service cards list only pages that exist today; screened
- * porches, decks, basements and roof + addition join as Phases 3–4 add them.
+ * porches, decks, basements and roof + addition were added in Phases 3–4.
  */
 export const hubContent: ConstructionPageContent = {
   path: "/construction",
@@ -107,6 +111,18 @@ export const hubContent: ConstructionPageContent = {
           alt: "Design example of a renovated kitchen and living room (illustration, not a Highlander project)",
           example: true,
         },
+      },
+      {
+        title: "Basement finishing",
+        line: "Family rooms, guest space and bonus rooms.",
+        href: "/construction/basements",
+        image: { src: basementImg, srcSet: basementSet, alt: "Design example of a finished basement (illustration, not a Highlander project)", example: true },
+      },
+      {
+        title: "Roof + addition",
+        line: "One contractor for the addition and the roof over it.",
+        href: "/construction/roof-and-addition",
+        image: { src: roofTieImg, srcSet: roofTieSet, alt: "Laundry room addition tied into the roofline by Highlander in Cullowhee, NC" },
       },
       {
         title: "Design & planning",
