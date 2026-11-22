@@ -321,6 +321,43 @@ const checkLinkedIn = async () => {
   }
 };
 
+const BUSINESS_TYPES = ["HomeAndConstructionBusiness", "GeneralContractor", "RoofingContractor"];
+const BUSINESS_FIELDS = ["name", "url", "telephone", "address", "geo", "openingHoursSpecification", "hasCredential", "sameAs", "location"];
+
+const validateRequiredFields = async () => {
+  const home = htmlPathFor("/");
+  if (existsSync(home)) {
+    const biz = extractJsonLd(await readFile(home, "utf8"), "homepage").find((n) => n["@id"] === BUSINESS_ID);
+    if (!biz) errors.push("homepage: no #business node.");
+    else {
+      const types = typesOf(biz);
+      for (const t of BUSINESS_TYPES) if (!types.includes(t)) errors.push(`homepage #business: @type is missing ${t}.`);
+      for (const f of BUSINESS_FIELDS) {
+        const v = biz[f];
+        if (v === undefined || v === null || v === "" || (Array.isArray(v) && v.length === 0)) errors.push(`homepage #business: missing ${f}.`);
+      }
+    }
+  }
+  const constructionRoutes = [];
+  const walk = (dir) => {
+    for (const name of readdirSync(dir)) {
+      const full = path.join(dir, name);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (name.endsWith(".html")) {
+        const route = "/" + path.relative(DIST, full).replace(/\\/g, "/").replace(/\.html$/, "");
+        if (route === "/construction" || route.startsWith("/construction/") || /^\/service-areas\/[^/]+\/construction$/.test(route)) constructionRoutes.push({ route, full });
+      }
+    }
+  };
+  walk(DIST);
+  for (const { route, full } of constructionRoutes) {
+    const nodes = extractJsonLd(await readFile(full, "utf8"), route);
+    if (!nodes.some((n) => typesOf(n).includes("BreadcrumbList"))) errors.push(`${route}: construction page without a BreadcrumbList.`);
+  }
+  constructionChecked = constructionRoutes.length;
+};
+let constructionChecked = 0;
+
 const main = async () => {
   if (!existsSync(DIST)) {
     console.error("validate-schema: dist/ not found — run the build (and prerender) first.");
@@ -341,6 +378,13 @@ const main = async () => {
     validatePage(page.label, page.route, extractJsonLd(html, `${page.label} (${page.route})`), page.expectRating);
   }
 
+  // Pass C (construction plan, 21 Nov 2026): required fields.
+  //  - the #business node on the home page carries the three business types
+  //    and the fields the plan lists;
+  //  - every construction page (/construction*, /service-areas/*/construction)
+  //    carries a BreadcrumbList.
+  await validateRequiredFields();
+
   await checkLinkedIn();
 
   for (const w of warnings) console.warn(`warn  ${w}`);
@@ -354,6 +398,7 @@ const main = async () => {
   console.log(
     `validate-schema: OK — ${pageCount} pages scanned (no rating/review markup outside ${[...RATING_ALLOWED_ROUTES].join(", ")}, all JSON-LD parses, showroom addresses only), ${PAGES.length} pages deep-validated, single #business graph intact.`,
   );
+  console.log(`validate-schema: #business carries ${BUSINESS_TYPES.join(" + ")} and every required field; ${constructionChecked} construction page(s) carry a BreadcrumbList.`);
   console.log(
     `validate-schema: FAQPage on ${faqStats.pages} page(s) — ${faqStats.questions} question(s) all visible in page text.`,
   );

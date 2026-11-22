@@ -24,14 +24,15 @@ export const CTA = {
   roofingMid: "Get My Roof Questions Answered",
   roofingClosing: "Get My Roof Protected",
 
-  /** Construction division pages — build & project language */
-  constructionConsult: "Get My Build Planned",
-  constructionHero: "Get My Build Planned",
-  constructionMid: "Get My Project Scoped",
+  /** Construction division pages: one wording everywhere (construction plan,
+   *  21 Nov 2026): "Call" + the main phone number, and "Get My Written Scope". */
+  constructionConsult: "Get My Written Scope",
+  constructionHero: "Get My Written Scope",
+  constructionMid: "Get My Written Scope",
   constructionClosing: "Your Home Deserves a Real Builder",
 
   /** Construction primary CTA — used across construction pages */
-  constructionPlan: "Get My Project Scoped",
+  constructionPlan: "Get My Written Scope",
 
   /** Design & Consultation Agreement — paid design program */
   designAgreement: "Get My Plans Drawn",

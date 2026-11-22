@@ -40,9 +40,11 @@ const BuilderPromoBlock = ({
         eyebrow: "Optional · Advanced Builder",
         title: "Start Your Project Plan",
         body: "An optional, guided way to organize an addition, layout, floor plan, or outdoor living project before our first call. Plan Before You Build — a sharper starting point for a real conversation.",
-        ctaLabel: "Start Planning Your Project",
-        secondaryHref: "/construction-intake",
-        secondaryLabel: "Prefer the short intake form",
+        // One intake path (construction plan, 21 Nov 2026): the short form is
+        // the way in; the planner stays an optional tool, named as one.
+        ctaLabel: "Open the Optional Project Planner",
+        secondaryHref: "/request-inspection?context=builder_promo&type=construction",
+        secondaryLabel: "Or get my written scope with the short form",
         steps: [
           { n: "01", t: "Choose a project type" },
           { n: "02", t: "Define scope & integration" },

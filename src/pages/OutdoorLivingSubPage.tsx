@@ -82,8 +82,8 @@ const OutdoorLivingSubPage = ({ slug }: { slug: string }) => {
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance">{page.h1}</h1>
                 <p className="text-white/90 max-w-2xl text-base md:text-lg mb-8">{page.lead}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/request-inspection" className="btn btn-primary btn-md">
-                    Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  <Link to="/request-inspection?context=outdoor_living&type=construction-outdoor-living&service=outdoor-living" className="btn btn-primary btn-md">
+                    Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
                     <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE_DISPLAY}

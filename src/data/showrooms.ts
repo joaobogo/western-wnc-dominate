@@ -1,4 +1,4 @@
-import { BUSINESS, BusinessLocation, FRANKLIN, SYLVA, formatPhoneDisplay, napLine } from "./business";
+import { BUSINESS, BusinessLocation, FRANKLIN, SYLVA, callPhoneE164, formatPhoneDisplay, napLine } from "./business";
 import { photosForTowns, type LocalProjectPhoto } from "./local-project-photos";
 
 /**
@@ -170,7 +170,7 @@ export const showrooms: Showroom[] = [
     // address, hours, directions. Its title no longer competes for roofing.
     h1: "Highlander's Sylva Showroom & Office",
     metaTitle: "Sylva Showroom & Office: Address, Hours, Directions | Highlander",
-    metaDescription: `Visit our Sylva roofing and construction showroom at ${napLine(SYLVA)}. Compare materials in person. Call ${formatPhoneDisplay(SYLVA.phoneE164)}.`,
+    metaDescription: `Visit our Sylva roofing and construction showroom at ${napLine(SYLVA)}. Compare materials in person. Call ${formatPhoneDisplay(callPhoneE164(SYLVA))}.`,
     answer: `The Highlander Building Services showroom in Sylva is at ${napLine(SYLVA)}, open Monday through Friday, 8:00 AM to 5:00 PM. It is our Jackson County base for Sylva, Dillsboro, Cullowhee, Bryson City, Cherokee, and Waynesville, with metal panels, shingle boards, Brava composite samples, and VELUX skylights on display.`,
     intro: [
       "The Sylva showroom put a full materials display inside Jackson County, so homeowners in Sylva, Dillsboro, Cullowhee, and Bryson City no longer have to drive over to Franklin to see what they are buying.",

@@ -298,8 +298,8 @@ export const ConstructionTrustSidebarDetailed = ({
       </div>
     ))}
     <div className="pt-3 border-t border-border">
-      <Link to="/request-inspection" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Get My Project Scoped <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+      <Link to="/request-inspection?context=construction&type=construction" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+        Get My Written Scope <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
   </div>

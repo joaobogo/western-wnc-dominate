@@ -34,8 +34,11 @@ const AnimatedCounter = ({ value, className = "", duration = 1500 }: AnimatedCou
     const startTime = performance.now();
 
     const animate = (now: number) => {
+      // rAF can hand back a frame timestamp from just before startTime. A
+      // negative elapsed made the eased value negative: the home page showed
+      // "-16.3★ Google Rating" (John's construction plan, 21 Nov). Clamp to 0–1.
       const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min(Math.max(elapsed / duration, 0), 1);
       // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = eased * target;

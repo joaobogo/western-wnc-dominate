@@ -211,7 +211,7 @@ const ConstructionDesign = () => {
                   to="/request-inspection?context=construction_design&type=construction-design"
                   className="btn btn-primary btn-md"
                 >
-                  Discuss My Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="#design-phases"
@@ -388,10 +388,10 @@ const ConstructionDesign = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
-                    to="/construction-intake"
+                    to="/request-inspection?context=construction_design&type=construction&service=design"
                     className="btn btn-primary btn-md"
                   >
-                    Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -512,7 +512,7 @@ const ConstructionDesign = () => {
         <ConstructionMidCTA
           headline="Ready to define your project the right way?"
           subheadline="Start with a conversation. If paid design is the right next step, Highlander will explain the phase, deliverables, price, and agreement before you commit."
-          ctaText="Discuss My Project"
+          ctaText="Get My Written Scope"
         />
 
         {/* ─── SECTION 8: FAQs ─── */}
@@ -552,7 +552,7 @@ const ConstructionDesign = () => {
                   to="/request-inspection?context=construction_design&type=construction-design"
                   className="btn btn-primary btn-md"
                 >
-                  Discuss My Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="#design-phases"

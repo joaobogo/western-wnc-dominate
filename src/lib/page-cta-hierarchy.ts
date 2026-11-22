@@ -22,7 +22,28 @@ export interface PagePrimaryAction {
   primaryHref: string;
   secondaryLabel: string;
   secondaryHref: string;
+  /** Phone-bar wording; defaults "Call Direct" / "Estimate". */
+  stickyCall?: string;
+  stickySecondary?: string;
 }
+
+/** /construction/* and /service-areas/{town}/construction pages. */
+export const isConstructionPath = (path: string) =>
+  path === "/construction" || path.startsWith("/construction/") || /^\/service-areas\/[^/]+\/construction$/.test(path);
+
+/** Construction plan (21 Nov 2026): one wording on every construction page:
+ *  "Call" + the main phone number / "Get My Written Scope", one intake path (the short
+ *  form, tagged type=construction), and a sticky "Call Highlander" bar. */
+const constructionAction = (path: string): PagePrimaryAction => ({
+  pageKey: "construction",
+  intent: "call",
+  primaryLabel: "Call Highlander",
+  primaryHref: PHONE_HREF,
+  secondaryLabel: "Get My Written Scope",
+  secondaryHref: `/request-inspection?context=construction_sticky&type=construction${path.includes("/additions") ? "&service=addition" : path.includes("/outdoor-living") ? "&service=outdoor-living" : path.includes("/design") ? "&service=design" : ""}`,
+  stickyCall: "Call Highlander",
+  stickySecondary: "Scope",
+});
 
 const PHONE_HREF = PHONE_TEL;
 
@@ -88,6 +109,8 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
     return formFirst("construction_detail_intake", "Send Project Details", "/construction/consultation");
   }
 
+  if (isConstructionPath(path)) return constructionAction(path);
+
   // Money pages lead with the phone (João, 2026-09-08: calls are where the
   // conversions come from). The estimate request stays as the secondary action
   // on every one of them, so the high-intent form path is never removed.
@@ -96,7 +119,6 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   if (/^\/[a-z0-9-]+-(roofing|roof-repair|roof-replacement|metal-roofing)-[a-z0-9-]+$/.test(path)) {
     return callFirst("town_service");
   }
-  if (path.startsWith("/construction")) return callFirst("construction", "Call Direct", ESTIMATE_FORM);
   if (path.startsWith("/roofing")) return callFirst("roofing");
   if (path.startsWith("/blog")) return formFirst("blog", "Get My Questions Answered");
   if (path.startsWith("/projects") || path.startsWith("/recent-projects") || path.startsWith("/gallery")) {

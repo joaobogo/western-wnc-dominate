@@ -157,9 +157,9 @@ const Renovations = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3">
-                <Link to="/request-inspection" className="btn btn-primary btn-md group relative">
+                <Link to="/request-inspection?context=renovations&type=construction-renovation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Get My Project Scoped</span>
+                  <span className="relative">Get My Written Scope</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href={PHONE_TEL} className="btn btn-secondary btn-lg btn-on-dark group">
@@ -363,9 +363,9 @@ const Renovations = () => {
                 <p className="text-primary-foreground text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
-                <Link to="/request-inspection" className="btn btn-primary btn-md group relative">
+                <Link to="/request-inspection?context=renovations&type=construction-renovation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Get My Project Scoped</span>
+                  <span className="relative">Get My Written Scope</span>
                   <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                 </Link>
                 <a href={PHONE_TEL} className="btn btn-secondary btn-md btn-on-dark">
