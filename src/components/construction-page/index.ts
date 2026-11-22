@@ -11,3 +11,7 @@ export { default as CostSection } from "./CostSection";
 export { default as ConstructionReviews } from "./ConstructionReviews";
 export { default as FaqAccordion } from "./FaqAccordion";
 export { default as FinalCtaBand } from "./FinalCtaBand";
+export { default as AngleBlock } from "./AngleBlock";
+export { default as ExampleGallery } from "./ExampleGallery";
+export { default as ConstructionPageShell } from "./ConstructionPageShell";
+export { default as ConstructionServicePage } from "./ConstructionServicePage";

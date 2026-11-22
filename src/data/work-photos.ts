@@ -47,6 +47,10 @@ import cullowheeRoofline from "@/assets/work/addition-cullowhee-roofline.webp";
 import cullowheeRooflineSet from "@/assets/work/addition-cullowhee-roofline.webp?w=360;480;800;1125&format=webp&as=srcset";
 import deckDoors from "@/assets/gallery/deck-sylva-doors-wide.webp";
 import deckDoorsSet from "@/assets/gallery/deck-sylva-doors-wide.webp?w=360;480;800;1125&format=webp&as=srcset";
+import deckRun from "@/assets/gallery/deck-sylva-run.webp";
+import deckRunSet from "@/assets/gallery/deck-sylva-run.webp?w=360;480;800&format=webp&as=srcset";
+import deckJoists from "@/assets/gallery/deck-sylva-new-joists.webp";
+import deckJoistsSet from "@/assets/gallery/deck-sylva-new-joists.webp?w=360;480;800;1125&format=webp&as=srcset";
 
 export type WorkDivision = "roofing" | "construction";
 
@@ -95,6 +99,9 @@ export const workPhotos: WorkPhoto[] = [
   p({ id: "addition-windows-ext", division: "construction", src: additionWindowsExt, srcSet: additionWindowsExtSet, width: 1600, height: 1200, title: "Cedar shake gable with custom glass", town: "Franklin", href: "/projects/living-room-addition-franklin", alt: "Cedar shake siding and tall windows with custom gable glass on a living room addition in Franklin, North Carolina" }),
   p({ id: "patio-deck-view", division: "construction", src: patioDeckView, srcSet: patioDeckViewSet, width: 1600, height: 1200, title: "From the porch to the new deck", town: "Cashiers", alt: "View from a screened porch onto a new wood deck with metal balusters in Cashiers, North Carolina" }),
   p({ id: "patio-cover", position: "50% 65%", division: "construction", src: patioCover, srcSet: patioCoverSet, width: 1125, height: 1500, title: "Patio cover and awning", town: "Cashiers", alt: "Covered patio and awning extension with a metal roof on a gray mountain home in Cashiers, North Carolina" }),
+  // Two more photos from the documented Sylva deck job (project record), for the decks page.
+  p({ id: "deck-run", position: "50% 60%", division: "construction", src: deckRun, srcSet: deckRunSet, width: 935, height: 1247, title: "New boards and 42-inch balusters", town: "Sylva", href: "/projects/deck-railing-rebuild-sylva", alt: "Length of a rebuilt elevated deck with new boards and balusters in Sylva, North Carolina" }),
+  p({ id: "deck-joists", division: "construction", src: deckJoists, srcSet: deckJoistsSet, width: 1125, height: 1500, title: "Rotten joists replaced first", town: "Sylva", href: "/projects/deck-railing-rebuild-sylva", alt: "New joists under an elevated deck before the boards went down in Sylva, North Carolina" }),
 ];
 
 export const workPhotosBy = (division: WorkDivision) => workPhotos.filter((ph) => ph.division === division);

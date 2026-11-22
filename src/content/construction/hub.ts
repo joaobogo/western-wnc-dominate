@@ -8,6 +8,10 @@ import heroWebp from "@/assets/work/patio-cashiers-wide.webp?w=640;960;1280&form
 import additionImg from "@/assets/work/addition-franklin-exterior-windows.webp";
 import additionSet from "@/assets/work/addition-franklin-exterior-windows.webp?w=480;800&format=webp&as=srcset";
 import porchImg from "@/assets/work/patio-cashiers-screened-porch.webp";
+import patioImg from "@/assets/work/patio-cashiers-cover.webp";
+import patioSet from "@/assets/work/patio-cashiers-cover.webp?w=480;800&format=webp&as=srcset";
+import deckImg from "@/assets/gallery/deck-sylva-doors-wide.webp";
+import deckSet from "@/assets/gallery/deck-sylva-doors-wide.webp?w=480;800&format=webp&as=srcset";
 import porchSet from "@/assets/work/patio-cashiers-screened-porch.webp?w=480;800&format=webp&as=srcset";
 import designImg from "@/assets/work/addition-franklin-window-wall.webp";
 import designSet from "@/assets/work/addition-franklin-window-wall.webp?w=480;800&format=webp&as=srcset";
@@ -64,10 +68,22 @@ export const hubContent: ConstructionPageContent = {
         image: { src: additionImg, srcSet: additionSet, alt: "Living room addition built by Highlander in Franklin, NC" },
       },
       {
-        title: "Porches, decks & patios",
-        line: "Screened porches, decks and covered patios built for mountain weather.",
-        href: "/construction/outdoor-living",
+        title: "Screened porches",
+        line: "Porches and porch enclosures, roofed and flashed by roofers.",
+        href: "/construction/screened-porches",
         image: { src: porchImg, srcSet: porchSet, alt: "Screened porch built by Highlander in Cashiers, NC" },
+      },
+      {
+        title: "Deck builders",
+        line: "New decks and full rebuilds for sloped mountain lots.",
+        href: "/construction/decks",
+        image: { src: deckImg, srcSet: deckSet, alt: "Rebuilt elevated deck by Highlander in Sylva, NC" },
+      },
+      {
+        title: "Outdoor living & patios",
+        line: "Covered patios and every porch and deck option in one place.",
+        href: "/construction/outdoor-living",
+        image: { src: patioImg, srcSet: patioSet, alt: "Covered patio with metal roof built by Highlander in Cashiers, NC" },
       },
       {
         title: "Kitchen remodeling",

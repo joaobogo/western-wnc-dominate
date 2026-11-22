@@ -78,12 +78,11 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /construction/garage                                         /construction/additions                            301!
 /construction/in-law-suite                                   /construction/additions                            301!
 /construction/guest-suite                                    /construction/additions                            301!
-/construction/porches                                        /construction/outdoor-living                       301!
-/construction/screened-porch                                 /construction/outdoor-living                       301!
+/construction/porches                                        /construction/screened-porches                       301!
+/construction/screened-porch                                 /construction/screened-porches                       301!
 /construction/sunrooms                                       /construction/additions                            301!
 /construction/sunroom                                        /construction/additions                            301!
 /construction/two-story-addition                             /construction/additions                            301!
-/construction/decks                                          /construction/outdoor-living                       301!
 /construction/deck                                           /construction/outdoor-living                       301!
 /construction/patios                                         /construction/outdoor-living/patios                301!
 /construction/patio                                          /construction/outdoor-living/patios                301!
@@ -193,7 +192,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /kitchen-remodeling                                          /construction/renovations                          301!
 /bathroom-remodeling                                         /construction/renovations                          301!
 /decks-and-patios                                            /construction/outdoor-living                       301!
-/screened-porches                                            /construction/outdoor-living                       301!
+/screened-porches                                            /construction/screened-porches                       301!
 /contact-us                                                  /contact                                           301!
 /contact-us_em                                               /contact                                           301!
 /about-us                                                    /about                                             301!
@@ -219,7 +218,7 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /roof-tear-off                                               /roofing/roof-replacement                          301!
 /roof-deck-installation                                      /roofing/roof-replacement                          301!
 /gutter-guard-installation                                   /roofing/gutters                                   301!
-/screened-and-covered-porches                                /construction/outdoor-living                       301!
+/screened-and-covered-porches                                /construction/screened-porches                       301!
 /retaining-walls                                             /construction/outdoor-living/hardscape             301!
 /custom-outdoor-living-design                                /construction/outdoor-living                       301!
 

@@ -87,12 +87,15 @@ describe("page fixes", () => {
   });
 
   it("roof replacement and additions have a short form near the top", () => {
-    for (const f of ["src/pages/RoofReplacement.tsx", "src/pages/HomeAdditions.tsx"]) {
-      const s = read(f);
-      const quick = s.indexOf("<FastLeadForm");
-      expect(quick).toBeGreaterThan(-1);
-      expect(quick).toBeLessThan(s.indexOf("<InspectionForm"));
-    }
+    const s = read("src/pages/RoofReplacement.tsx");
+    const quick = s.indexOf("<FastLeadForm");
+    expect(quick).toBeGreaterThan(-1);
+    expect(quick).toBeLessThan(s.indexOf("<InspectionForm"));
+    // Additions (construction plan Phase 3): one intake path, the 3-field form, reached from the hero's
+    // "Get My Written Scope" button; no long form on the page.
+    const additions = read("src/pages/HomeAdditions.tsx");
+    expect(additions).toContain("<FastLeadForm");
+    expect(additions).not.toContain("<InspectionForm");
   });
 
   it("landing-page phone bars use the short estimate label", () => {

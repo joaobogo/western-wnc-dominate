@@ -15,6 +15,8 @@ interface WorkGallerySectionProps {
   className?: string;
   /** Two photos per row on phones. */
   mobileTwoUp?: boolean;
+  /** Show only these photos, in this order (one service's jobs). */
+  ids?: string[];
 }
 
 /** A short, even-grid teaser of real work photos that links to the full gallery. */
@@ -27,6 +29,7 @@ const WorkGallerySection = ({
   excludeImages,
   className = "bg-secondary/40",
   mobileTwoUp,
+  ids,
 }: WorkGallerySectionProps) => (
   <section className={`py-16 md:py-24 border-t border-border/60 ${className}`} aria-labelledby="work-gallery-teaser-heading">
     <div className="container-tight">
@@ -44,6 +47,7 @@ const WorkGallerySection = ({
         showFilters={!division}
         excludeImages={excludeImages}
         mobileTwoUp={mobileTwoUp}
+        ids={ids}
       />
       <Link
         to="/recent-projects"
