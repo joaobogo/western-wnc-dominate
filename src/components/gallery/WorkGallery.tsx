@@ -39,6 +39,8 @@ interface WorkGalleryProps {
   ids?: string[];
   /** Columns at desktop width for the grid layout. */
   columns?: 2 | 3;
+  /** Two photos per row on phones (construction template: "a 2-column grid on mobile"). */
+  mobileTwoUp?: boolean;
 }
 
 /**
@@ -50,7 +52,7 @@ interface WorkGalleryProps {
 const tileSourceWidth = (ph: WorkPhoto, grid: boolean) =>
   grid ? Math.round(Math.max(352, (264 * ph.width) / ph.height)) : 352;
 
-const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [], layout = "masonry", ids, columns = 3 }: WorkGalleryProps) => {
+const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, excludeImages = [], layout = "masonry", ids, columns = 3, mobileTwoUp = false }: WorkGalleryProps) => {
   const [filter, setFilter] = useState<Filter>(initialFilter);
   const [open, setOpen] = useState<number | null>(null);
 
@@ -93,7 +95,7 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
       )}
 
       {/* Masonry keeps every photo's own shape; grid crops to an even 4:3 for short teasers. */}
-      <div className={grid ? `grid grid-cols-1 sm:grid-cols-2 gap-4 ${columns === 3 ? "lg:grid-cols-3" : ""}` : "columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]"}>
+      <div className={grid ? `grid ${mobileTwoUp ? "grid-cols-2 gap-2.5 sm:gap-4" : "grid-cols-1 gap-4"} sm:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""}` : "columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]"}>
         {photos.map((ph, i) => (
           <figure key={ph.id} className={grid ? "m-0" : "mb-4 break-inside-avoid"}>
             <button
@@ -107,8 +109,8 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
                 srcSet={ph.srcSet}
                 sizes={
                   columns === 2
-                    ? "(max-width: 640px) 100vw, 50vw"
-                    : `(max-width: 640px) 100vw, (max-width: 1024px) 50vw, ${tileSourceWidth(ph, grid)}px`
+                    ? `(max-width: 640px) ${mobileTwoUp ? "50vw" : "100vw"}, 50vw`
+                    : `(max-width: 640px) ${mobileTwoUp ? "50vw" : "100vw"}, (max-width: 1024px) 50vw, ${tileSourceWidth(ph, grid)}px`
                 }
                 width={ph.width}
                 height={ph.height}
@@ -119,13 +121,13 @@ const WorkGallery = ({ initialFilter = "all", showFilters = true, limit, exclude
                 className={`block w-full transition-transform ${grid ? "aspect-[4/3] object-cover" : "h-auto"} duration-700 ease-out group-hover:scale-[1.04]`}
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-              <span className="absolute top-3 left-3 bg-[hsl(var(--heritage-charcoal)/0.8)] backdrop-blur-sm px-2.5 py-1 text-caption font-body font-bold uppercase tracking-[0.15em] text-white">
+              <span className={`absolute top-3 left-3 ${mobileTwoUp ? "max-sm:hidden " : ""}bg-[hsl(var(--heritage-charcoal)/0.8)] backdrop-blur-sm px-2.5 py-1 text-caption font-body font-bold uppercase tracking-[0.15em] text-white`}>
                 {ph.division === "roofing" ? "Roofing" : "Construction"}
               </span>
               <span aria-hidden="true" className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center bg-black/40 text-white opacity-0 transition-opacity group-hover:opacity-100">
                 <Expand className="h-4 w-4" />
               </span>
-              <figcaption className="absolute bottom-0 left-0 right-0 p-4">
+              <figcaption className={`absolute bottom-0 left-0 right-0 ${mobileTwoUp ? "p-2.5 sm:p-4" : "p-4"}`}>
                 <p className="font-heading font-semibold text-white text-body-sm leading-snug drop-shadow">{ph.title}</p>
                 {ph.town && (
                   <p className="mt-1 flex items-center gap-1 text-caption font-body uppercase tracking-[0.12em] text-white/85">
