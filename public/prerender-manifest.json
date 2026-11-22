@@ -1,8 +1,8 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 239,
-    "coverageNoindex": 126,
+    "sitemap": 240,
+    "coverageNoindex": 125,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
@@ -124,6 +124,7 @@
     "/service-areas/cashiers-nc/roof-repair",
     "/service-areas/cashiers-nc/construction",
     "/service-areas/cashiers-nc/home-repairs",
+    "/service-areas/sylva-nc/construction",
     "/service-areas/sylva-nc/roofing-construction",
     "/projects/standing-seam-metal-dark-bronze-highlands",
     "/projects/certainteed-landmark-weathered-wood-waynesville",
@@ -264,7 +265,6 @@
     "/service-areas/franklin-nc/storm-damage",
     "/service-areas/sylva-nc/roofing",
     "/service-areas/sylva-nc/storm-damage",
-    "/service-areas/sylva-nc/construction",
     "/service-areas/bryson-city-nc/roofing",
     "/service-areas/bryson-city-nc/roof-repair",
     "/service-areas/bryson-city-nc/roof-replacement",

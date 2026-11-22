@@ -15,7 +15,7 @@ export const INDEXABLE_TOWN_SERVICES: Record<string, string[]> = {
   roofing: ["cashiers-nc", "highlands-nc", "waynesville-nc"],
   gutters: ["cashiers-nc", "franklin-nc", "highlands-nc", "waynesville-nc"],
   handyman: ["waynesville-nc"],
-  construction: ["cashiers-nc", "franklin-nc", "highlands-nc"],
+  construction: ["cashiers-nc", "franklin-nc", "highlands-nc", "sylva-nc"],
   "home-repairs": ["cashiers-nc", "franklin-nc", "highlands-nc"],
   additions: ["highlands-nc"],
   "outdoor-living": ["highlands-nc"],

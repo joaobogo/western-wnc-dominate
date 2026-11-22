@@ -1036,6 +1036,23 @@ export type Tier1FlatEntry = FlatSlugEntry;
 // ─────────────────────────────────────────────────────────────
 
 serviceTownContent.push(
+  // Construction plan Phase 5 (22 Nov 2026): Sylva gets its own construction page. It renders on the
+  // construction template (src/pages/TownConstruction.tsx, words in src/content/construction/towns.ts);
+  // this entry only makes it indexable, so the sitemap and the "Construction by town" links include it.
+  E({
+    townSlug: "sylva-nc",
+    serviceSlug: "construction",
+    serviceLabel: "Construction",
+    h1: "Construction & Remodeling in Sylva, NC",
+    intro: "Decks, porches, additions and remodels in Sylva from the licensed contractor with a showroom in Sylva.",
+    localContext: "Many Sylva homes sit on steep hillside lots where decks stand high off the ground.",
+    whoItsFor: "Sylva and Jackson County homeowners planning a deck, porch, addition or remodel.",
+    proofNote: "Documented Sylva job: an elevated deck rebuilt from new joists up.",
+    metaTitle: "Contractor in Sylva, NC | Highlander",
+    metaDescription: "Construction and remodeling in Sylva, NC: decks, porches, additions and remodels from the licensed contractor with a showroom in Sylva.",
+    faqs: [{ q: "Who issues permits in Sylva?", a: "Jackson County Permitting and Code Enforcement, in Sylva." }],
+    handwritten: true,
+  }),
   E({
     townSlug: "sylva-nc",
     serviceSlug: "roofing-construction",

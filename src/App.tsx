@@ -77,6 +77,7 @@ const ScreenedPorches = lazyPreload("ScreenedPorches", () => import("./pages/Scr
 const Decks = lazyPreload("Decks", () => import("./pages/Decks"));
 const Basements = lazyPreload("Basements", () => import("./pages/Basements"));
 const RoofAndAddition = lazyPreload("RoofAndAddition", () => import("./pages/RoofAndAddition"));
+const TownConstruction = lazyPreload("TownConstruction", () => import("./pages/TownConstruction"));
 const PropertyManagers = lazyPreload("PropertyManagers", () => import("./pages/PropertyManagers"));
 const StormDamageAds = lazyPreload("StormDamageAds", () => import("./pages/StormDamageAds"));
 const RoofingLanding = lazyPreload("RoofingLanding", () => import("./pages/RoofingLanding"));
@@ -219,6 +220,11 @@ const App = () => (
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
           <Route path="/service-areas/county/:slug" element={<CountyPage />} />
+          {/* Construction plan Phase 5: the four town construction pages use the construction template. */}
+          <Route path="/service-areas/franklin-nc/construction" element={<TownConstruction slug="franklin-nc" />} />
+          <Route path="/service-areas/highlands-nc/construction" element={<TownConstruction slug="highlands-nc" />} />
+          <Route path="/service-areas/cashiers-nc/construction" element={<TownConstruction slug="cashiers-nc" />} />
+          <Route path="/service-areas/sylva-nc/construction" element={<TownConstruction slug="sylva-nc" />} />
           <Route path="/service-areas/:townSlug/:serviceSlug" element={<ServiceTownPage />} />
 
           {/* Legacy flat service×town slugs (/roofing-highlands-nc, /roof-repair-sylva-nc, …)

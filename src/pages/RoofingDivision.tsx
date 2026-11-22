@@ -1,4 +1,5 @@
 import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
+import RoofAdditionLine from "@/components/construction-page/RoofAdditionLine";
 import GalleryImage from "@/components/media/GalleryImage";
 import { PHONE_DISPLAY, PHONE_PLAIN, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import AnswerBlock from "@/components/seo/AnswerBlock";
@@ -656,6 +657,7 @@ const RoofingDivision = () => {
         />
       </main>
       <ConversionTrustBlock variant="band" category="roofing" />
+      <RoofAdditionLine />
       <Footer />
       <StickyMobileCTA />
     </>

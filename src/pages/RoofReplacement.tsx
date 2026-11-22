@@ -1,4 +1,5 @@
 import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
+import RoofAdditionLine from "@/components/construction-page/RoofAdditionLine";
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -651,6 +652,7 @@ const RoofReplacement = () => {
         />
       </main>
 
+      <RoofAdditionLine />
       <Footer />
       <StickyMobileCTA />
     </>
