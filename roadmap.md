@@ -1,3 +1,8 @@
+# November 23 uploaded blogs
+- [x] Add synthetic-slate-roofing, hillside-deck-foundation and roof-leaks-in-rain once, with exact filename slugs, matching covers and all 53 supplied article-link destinations retained.
+- [x] Verify articles, links and search metadata; regenerate sitemap (243 URLs). All 793 tests passed; three desktop/mobile article checks passed. Eight external sources block automated access or timed out; original URLs remain intact.
+- [ ] Confirm live articles after the publication request completes; waiting on hosting deployment.
+
 # November 17 uploaded blogs
 - [x] Add four new articles with exact filename slugs and matching covers; preserve all supplied link destinations and redirect both identical -2 uploads directly to their existing articles.
 - [x] Regenerate sitemap/search files (213 pages), pass all 565 tests, verify all six covers/canonical pages and uploaded links in the preview, and request publication.

@@ -9,6 +9,7 @@ Before any website work, read docs/HIGHLANDER_BUILD.md (sections B–E are bindi
 - Preserve replaced public blog URLs with direct one-hop redirects to their canonical slug; this protects previously shared links and search signals.
 - Treat `src/data/business.ts` as the canonical business identity; generate public identity metadata from it and route Franklin maps by its full postal address while its external profile catches up.
 - Derive blog sitemap lastmod from the recorded substantive revision date, falling back to publication; never stamp build time because it misrepresents page changes.
+- Bundle generated blog covers through the existing image imports so both Lovable and the external production host serve them; platform-relative asset endpoints are not served by the external host.
 - Render CertainTeed credential artwork through the shared Premier badge using the supplied asset without color filters or cropping; keep manufacturer product names distinct from Highlander's contractor credential.
 - Match returning JobTread customers only by exact contact phone (+1XXXXXXXXXX), then email; never by name, and keep new customer names plain. Name-only matching merged or suffixed different people.
 - Resolve people independently from account matches, allowing only Secondary Phone edits on existing contacts; preserve identity and primary phone to avoid corrupting shared-contact records.

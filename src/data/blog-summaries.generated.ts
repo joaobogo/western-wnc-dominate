@@ -13,6 +13,33 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "roof-leaks-in-rain",
+    "slug": "roof-leaks-in-rain",
+    "title": "Roof Leaks in Rain: What to Do and Where Water Gets In",
+    "excerpt": "Roof leaking in heavy rain? Learn safe steps to contain water, trace flashing and vent problems, and plan a lasting repair for your Western NC home.",
+    "category": "Repairs",
+    "date": "2026-11-23",
+    "readTime": "11 min"
+  },
+  {
+    "id": "hillside-deck-foundation",
+    "slug": "hillside-deck-foundation",
+    "title": "Hillside Deck Foundations: Piers, Footings and Slope Basics",
+    "excerpt": "Plan a hillside deck foundation in Western NC with guidance on concrete footings, helical piers, drainage, slope stability and local permits.",
+    "category": "Outdoor Living",
+    "date": "2026-11-23",
+    "readTime": "12 min"
+  },
+  {
+    "id": "synthetic-slate-roofing",
+    "slug": "synthetic-slate-roofing",
+    "title": "Synthetic Slate Roofing: Cost, Wind Rating and Mountain Installation",
+    "excerpt": "Compare synthetic slate roofing costs, product ratings and installation details for Western NC homes. Learn what to check before choosing a roof.",
+    "category": "Materials",
+    "date": "2026-11-23",
+    "readTime": "10 min"
+  },
+  {
     "id": "screened-porch-vs-sunroom",
     "slug": "screened-porch-vs-sunroom",
     "title": "Screened Porch vs. Sunroom: Which Fits a Mountain Home?",
@@ -92,32 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Materials",
     "date": "2026-10-12",
     "readTime": "7 min"
-  },
-  {
-    "id": "skylight-replacement-cost_1",
-    "slug": "skylight-replacement-cost_1",
-    "title": "Skylight Replacement Costs in Western NC: 2026 Guide",
-    "excerpt": "Compare skylight types, flashing repairs and mountain-roof cost factors. Learn why the expired federal credit does not apply to new 2026 installations.",
-    "category": "Cost",
-    "date": "2026-10-12",
-    "readTime": "7 min"
-  },
-  {
-    "id": "roof-replacement-tax-deductible",
-    "slug": "roof-replacement-tax-deductible",
-    "title": "Is Roof Replacement Tax Deductible? A 2026 Homeowner Guide",
-    "excerpt": "Learn how roof replacement affects home basis, rental depreciation and disaster-loss records, plus why the federal residential solar credit ended after 2025.",
-    "category": "Cost",
-    "date": "2026-10-08",
-    "readTime": "5 min"
-  },
-  {
-    "id": "architectural-vs-3-tab",
-    "slug": "architectural-vs-3-tab",
-    "title": "Dimensional vs 3-Tab Shingles for Western NC Roofs",
-    "excerpt": "Compare dimensional and 3-tab shingles for Western NC homes: construction, wind and impact ratings, installation details, cost factors and contractor questions.",
-    "category": "Materials",
-    "date": "2026-10-08",
-    "readTime": "11 min"
   }
 ];

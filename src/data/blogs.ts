@@ -1,3 +1,7 @@
+import november23Hero0 from "@/assets/blog/synthetic-slate-roofing-hero.webp";
+import november23Hero1 from "@/assets/blog/hillside-deck-foundation-hero.webp";
+import november23Hero2 from "@/assets/blog/roof-leaks-in-rain-hero.webp";
+import { BUSINESS } from "@/data/business";
 import screenedPorchSunroomHero from "@/assets/blog/screened-porch-vs-sunroom-hero.jpg";
 import hipGableHero from "@/assets/blog/hip-roof-vs-gable-roof-hero.jpg";
 import helicalPiersHero from "@/assets/blog/helical-piers-vs-concrete-piers-hero.jpg";
@@ -97,6 +101,523 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "synthetic-slate-roofing",
+    title: "Synthetic Slate Roofing: Cost, Wind Rating and Mountain Installation",
+    excerpt: "Compare synthetic slate roofing costs, product ratings and installation details for Western NC homes. Learn what to check before choosing a roof.",
+    category: "Materials",
+    date: "2026-11-23",
+    town: "Highlands",
+    readTime: "10 min",
+    metaTitle: "Synthetic Slate Roofing for Mountain Homes | Highlander",
+    metaDescription: "Compare synthetic slate roofing costs, product ratings and installation details for Western NC homes. Learn what to check before choosing a roof.",
+    imageAlt: "Charcoal synthetic slate roof with straight staggered courses on a stone and timber mountain cottage",
+    faqs: [{"question": "Are synthetic slate, composite slate and faux slate the same thing?", "answer": "Yes. These are different names for molded slate-look tiles made from polymers, rubber or similar blends. The formulas and specifications differ by manufacturer, so the product name and installation spec on your estimate are what to compare."}, {"question": "Does synthetic slate need extra roof framing?", "answer": "Usually not. Composite slate is much lighter than natural slate, and InterNACHI notes it generally fits standard framing. We still inspect the deck and rafters during the walk-through, because rot or past water damage is repaired before new roofing goes on."}, {"question": "What slope does synthetic slate need in North Carolina?", "answer": "The cited natural-slate code provisions use a minimum 4:12 slope. Synthetic slate products can have different approved slopes, so check the selected product listing, manufacturer instructions and locally enforced code with your building department."}, {"question": "How much does a synthetic slate roof cost?", "answer": "Published national ranges run from about $9 to $12 per square foot to $12 to $18 per square foot, depending on product and source. Your price depends on roof size, pitch, complexity and access, so a written scope for your roof is the reliable number."}],
+    relatedServices: [{"label": "Synthetic Roofing", "path": "/roofing/brava-synthetic"}, {"label": "Highlands Service Area", "path": "/service-areas/highlands-nc"}],
+    image: november23Hero0,
+    content: `Synthetic slate gives a mountain home the look of a stone roof at a fraction of the weight, and on most houses that means the existing framing can carry it. Whether it performs for decades in Western North Carolina depends less on the shingle than on the installation: underlayment, flashing, ventilation and fastening. We install synthetic slate and shake on mountain homes, and this guide covers what the material is, what it costs, what the code requires and how to compare bids.
+
+[Explore Highlander services](https://highlandernc.com/)
+
+## TL;DR
+
+- Synthetic slate (also sold as composite slate, faux slate or composite slate roofing) is a molded tile made from polymers, rubber or similar blends that reproduces the profile and color of natural slate.
+- It is much lighter than natural slate, so it usually fits standard roof framing. Published installed-cost ranges run from about $9 to $18 per square foot, depending on the product and the source.
+- Natural-slate code provisions and synthetic-slate product approvals are not interchangeable. Confirm sheathing, permitted slope, underlayment, overlaps and fastening against the selected product listing and locally enforced code.
+- On a mountain roof, the details around the tile (ice barrier, valleys, penetrations, ridge) decide how well the roof ages.
+- A written, itemized estimate lets you compare synthetic slate bids line by line.
+
+## What synthetic slate roofing is
+
+Synthetic slate goes by several names: composite slate, faux slate, composite slate roofing and synthetic slate shingles. They all describe the same category. The tiles are molded, often from casts of real stone, so the surface carries the texture and edge profile of split slate. According to an [InterNACHI composite slate guide](https://hinarratives.com/composite-slate/), the material is typically a blend of recycled plastics, rubber and polymers, sometimes with asphalt or fiberglass.
+
+Because each manufacturer uses its own formula, products within the category differ in weight, impact rating, wind rating and fastening method. That is why the product name and the installation specification on your estimate matter more than the generic label “synthetic slate.”
+
+### Why homeowners choose it
+
+Three reasons come up again and again:
+
+- **Look.** A slate-style roof suits stone, timber and shingle-sided mountain homes in Highlands, Cashiers and around Franklin and Sylva.
+- **Weight.** Natural slate is heavy enough that many roofs need structural reinforcement. InterNACHI notes that composite slate [weighs much less than real slate](https://hinarratives.com/composite-slate/) and so usually fits standard framing. RoofingCalc puts [synthetic slate at 3 to 5 pounds per square foot](https://www.roofingcalc.com/average-cost-to-tear-off-replace-a-roof-of-any-size-in-the-us/).
+- **Impact resistance.** InterNACHI’s roof inspection guidance says [composite slate tiles carry Class 4 impact ratings](https://www.nachi.org/slate-roofs-part13-132.htm), the highest rating in the standard hail-impact test. That matters on exposed ridgelines where branches and hail both land on the roof.
+
+## What synthetic slate costs
+
+Published figures vary because products and tear-off conditions vary. Today’s Homeowner’s 2026 cost guide cites roughly [$9 to $12 per square foot](https://todayshomeowner.com/roofing/cost/slate-roof-cost/) for the most common synthetic slate. RoofingCalc lists [synthetic slate and shakes at $12 to $18 per square foot](https://www.roofingcalc.com/average-cost-to-tear-off-replace-a-roof-of-any-size-in-the-us/), with wind ratings of 130 to 150 mph and a Class 4 hail rating.
+
+Those are national figures, not quotes. Here is what they mean on a sample roof:
+
+| Roof surface area | At $9 per sq ft | At $12 per sq ft | At $18 per sq ft |
+| --- | --- | --- | --- |
+| 2,500 sq ft | $22,500 | $30,000 | $45,000 |
+
+Roof surface is not floor area. Steep pitches, dormers, valleys and hips add surface, and mountain roofs usually have all four. Access matters too: long driveways, steep lots and winter weather change labor time. Our synthetic slate and shake pricing is covered on our [Western NC roofing cost page](https://highlandernc.com/roofing-cost-western-nc), and we price each job from a written scope rather than a per-square-foot guess.
+
+## What the North Carolina code requires
+
+The slate provisions summarized below describe natural slate; synthetic products may instead be governed by their approved listing and manufacturer instructions. Confirm the currently enforced code, permitted roof slope and fastening schedule with the local building department. A blanket natural-slate specification is not a substitute for the selected synthetic product’s requirements.
+
+The North Carolina Residential Code follows the International Residential Code for roof assemblies. For slate and slate-type shingles, [Chapter 9 of the code](https://up.codes/viewer/north_carolina/irc-2021/chapter/9/roof-assemblies) sets these requirements:
+
+- Solid sheathing under the roof covering.
+- A minimum slope of 4:12 (4 inches of rise for every 12 inches of run).
+- Underlayment meeting ASTM D226 Type I or ASTM D4869 Type I through IV where ultimate design wind speed is under 130 mph.
+- Minimum headlap (the overlap between courses) of 4 inches on slopes under 8:12, 3 inches from 8:12 to 20:12, and 2 inches at 20:12 or steeper.
+- Two fasteners per slate.
+- Valley flashing at least 15 inches wide, in 0.0179-inch G90 zinc-coated metal.
+- In areas with ultimate design wind speeds of 130 mph or higher, design per AWC WFCM, ICC 600 or ASCE 7.
+
+The local building department confirms which wind speed applies at your address, and permits and inspections run through that office. Manufacturers often specify more than the code minimum. InterNACHI’s guidance cites a [minimum 3-inch headlap and sidelaps of at least 1.5 inches](https://www.nachi.org/slate-roofs-part13-132.htm) for composite slate, and the manufacturer’s installation sheet governs on your roof.
+
+## Why mountain roofs need more than the tile
+
+Elevation, wind exposure and moisture are the three conditions that separate a mountain roof from one in the Piedmont. Rain is heavy, freeze and thaw cycles lift water under laps, and open ridgelines catch gusts that valley homes never see. Our write-up on [how mountain weather affects roofs in Highlands](https://highlandernc.com/service-areas/highlands-nc/roofing) goes through each of those forces.
+
+The tile sheds water. The assembly underneath keeps it out. On a synthetic slate roof, we look at these parts of the job closely:
+
+1. **Underlayment and ice barrier.** The eaves, valleys and every penetration are where meltwater backs up. Self-adhered ice-and-water membrane in those zones is a standard part of a cold-climate roof.
+2. **Flashing.** Chimneys, skylights, sidewalls and valleys fail more often than open field tile. Metal flashing is cut and set to each detail.
+3. **Ventilation.** Balanced intake and exhaust keep the deck dry and reduce ice dams.
+4. **Fastening.** Fastener type, count, placement and depth follow the product’s specification. Over-driven or under-driven nails weaken a wind rating.
+5. **Headlap.** Correct overlap keeps wind-driven rain out. InterNACHI lists [leaks from inadequate headlap](https://www.nachi.org/slate-roofs-part13-132.htm) among the common causes of composite slate callbacks, so we treat it as a measured dimension, not an eyeball.
+
+A roof that has all five handled is a roof you stop thinking about.
+
+## Synthetic slate next to other mountain roofing
+
+Synthetic slate is one of several good choices for a mountain home, and the right pick follows the house and how you use it.
+
+| Material | Best fit | Where to read more |
+| --- | --- | --- |
+| Synthetic slate | Stone-and-timber homes where a slate profile suits the home style | [Our Brava synthetic roofing page](https://highlandernc.com/service-areas/highlands-nc/synthetic-brava) |
+| Synthetic cedar shake | Rustic cabins and lodges wanting a wood look | [Brava vs. cedar shake vs. slate](https://highlandernc.com/blog/brava-synthetic-vs-cedar-shake-vs-slate-wnc) |
+| Standing seam metal | Heavy snow shedding and long service on simple roof shapes | [Metal roofing benefits in Highlands](https://highlandernc.com/roofing/metal) |
+| Dimensional asphalt shingles | Budget-conscious replacements | [Metal vs. shingles in Highlands](https://highlandernc.com/blog/metal-vs-shingle-roof-western-nc) |
+
+If the roof has many valleys, dormers and penetrations, synthetic slate handles those details well because the tiles are cut and fitted piece by piece. A long, simple gable may suit metal. We walk through both on site.
+
+## Warranties: what to read before you sign
+
+InterNACHI reports that composite slates [typically carry 50-year limited warranties](https://www.nachi.org/slate-roofs-part13-132.htm). “Limited” is the word that matters, and the specifics sit in the document: how many years of full material replacement apply, how many years are prorated, what wind speed is covered, and whether labor is included. Two documents protect you, the manufacturer’s material warranty and the installer’s workmanship warranty. Ask for both in writing, and for the installer’s certification with that manufacturer, since many manufacturers tie their warranty terms to correct installation.
+
+Ask which product documentation, installation requirements and warranty terms apply to your chosen roof system.
+
+## How to compare synthetic slate estimates
+
+Two bids for “synthetic slate roof, 2,500 sq ft” can differ by tens of thousands of dollars and still describe different roofs. Check that each estimate states:
+
+- The exact product, line and color.
+- Tear-off, deck repair and disposal, listed separately from new material.
+- Underlayment type and where ice-and-water membrane goes.
+- Flashing material at valleys, chimneys, walls and skylights.
+- Ridge and ventilation details.
+- Fastener type and the wind rating the installation is specified to meet.
+- Permit handling, cleanup, and who the one point of contact is.
+- Warranty documents for both material and workmanship.
+
+Our estimates are written scopes with prices, and you deal with one point of contact from walk-through to final inspection. That makes line-by-line comparison simple.
+
+## Storm damage and insurance
+
+A fallen limb or a wind event can crack tiles or lift flashing. Photograph the damage, protect the opening to prevent more water entry, and call your insurer to open a claim. We handle storm damage repairs and work through the insurance process with homeowners; see our [Western NC roofing page](https://highlandernc.com/roofing). If the roof is also due for replacement, our [roof replacement planning guide for Highlands](https://highlandernc.com/service-areas/highlands-nc/roof-replacement) explains the sequence and timing.
+
+## Our perspective
+
+> We build roofs for homes that sit at elevation, take the wind on open ridges and see water in every season. In that setting, a synthetic slate roof earns its place when three things line up: a lightweight tile that fits the existing structure, an assembly designed for mountain moisture, and an installer who has done the flashing details many times.
+
+> That is why we put so much into the estimate. We write the scope in full, name the product and the underlayment, and keep one person responsible from the first walk-through to the last inspection. The written scope should identify who is responsible for installation and quality checks.
+
+> Synthetic slate suits a mountain home well when it is specified and installed for the mountain. That is the roof we design.
+
+> ${BUSINESS.legalName}
+
+## Get a written synthetic slate estimate
+
+If you are considering synthetic slate or shake for a home in Franklin, Highlands, Cashiers, Sylva or the surrounding area, we will walk the roof, check the deck and flashing conditions, and give you a written scope with prices. Start on our [synthetic slate and shake page](https://highlandernc.com/roofing-cost-western-nc), or see the full list of [roofing repair and replacement services](https://highlandernc.com/roofing).
+
+Builders planning a custom home can bring roofing into the same conversation as the rest of the [construction scope](https://highlandernc.com/construction), so the roof design, framing and exterior finishes are coordinated from the start.
+
+## FAQ
+
+### Are synthetic slate, composite slate and faux slate the same thing?
+
+Yes. These are different names for molded slate-look tiles made from polymers, rubber or similar blends. The formulas and specifications differ by manufacturer, so the product name and installation spec on your estimate are what to compare.
+
+### Does synthetic slate need extra roof framing?
+
+Usually not. Composite slate is much lighter than natural slate, and [InterNACHI notes it generally fits standard framing](https://hinarratives.com/composite-slate/). We still inspect the deck and rafters during the walk-through, because rot or past water damage is repaired before new roofing goes on.
+
+### What slope does synthetic slate need in North Carolina?
+
+The cited natural-slate provisions describe a [minimum 4:12 slope for slate and slate-type shingles](https://up.codes/viewer/north_carolina/irc-2021/chapter/9/roof-assemblies), along with solid sheathing and specified underlayment. Synthetic products may have different approved slopes. Confirm the selected product’s listing, installation instructions and local permit requirements.
+
+### How much does a synthetic slate roof cost?
+
+Published national ranges run from about [$9 to $12 per square foot](https://todayshomeowner.com/roofing/cost/slate-roof-cost/) to [$12 to $18 per square foot](https://www.roofingcalc.com/average-cost-to-tear-off-replace-a-roof-of-any-size-in-the-us/), depending on product and source. Your price depends on roof size, pitch, complexity and access, so a written scope for your roof is the reliable number.
+
+## Sources
+
+- [Composite Slate, InterNACHI Inspection Narrative Library](https://hinarratives.com/composite-slate/)
+- [Mastering Roof Inspections: Slate Roofs, Part 13, InterNACHI](https://www.nachi.org/slate-roofs-part13-132.htm)
+- [How Much Does a Slate Roof Cost? (2026), Today’s Homeowner](https://todayshomeowner.com/roofing/cost/slate-roof-cost/)
+- [Average Cost to Tear Off &amp; Replace a Roof, RoofingCalc](https://www.roofingcalc.com/average-cost-to-tear-off-replace-a-roof-of-any-size-in-the-us/)
+- [Chapter 9 Roof Assemblies, North Carolina Residential Code](https://up.codes/viewer/north_carolina/irc-2021/chapter/9/roof-assemblies)
+
+## Recommended
+
+- [Brava vs Cedar Shake vs Slate Roofing](https://highlandernc.com/blog/brava-synthetic-vs-cedar-shake-vs-slate-wnc)
+- [How Long Does a WNC Mountain Roof Last?](https://highlandernc.com/blog/roof-lifespan-mountain-home-wnc)
+- [Metal Roof vs Shingles in Highlands, NC](https://highlandernc.com/blog/metal-vs-shingle-roof-western-nc)
+- [High-Elevation Roofing for Mountain Homes](https://highlandernc.com/blog/high-elevation-roofing)`,
+  },
+  {
+    slug: "hillside-deck-foundation",
+    title: "Hillside Deck Foundations: Piers, Footings and Slope Basics",
+    excerpt: "Plan a hillside deck foundation in Western NC with guidance on concrete footings, helical piers, drainage, slope stability and local permits.",
+    category: "Outdoor Living",
+    date: "2026-11-23",
+    town: "Franklin",
+    readTime: "12 min",
+    metaTitle: "Hillside Deck Foundations: Piers and Footings | Highlander",
+    metaDescription: "Plan a hillside deck foundation in Western NC with guidance on concrete footings, helical piers, drainage, slope stability and local permits.",
+    imageAlt: "Timber hillside deck with braced wood posts centered on concrete piers on a wooded sloping lot",
+    faqs: [{"question": "Are helical piers good for a deck on a steep slope?", "answer": "They are one of the engineered options for steep slopes, problem soils and sites with difficult access, according to the JLC decks field guide. They carry loads through bearing and friction, and the design has to account for slope stability. Whether they or concrete piers are the better fit depends on your soil and your lot."}, {"question": "How deep should deck footings be on a hillside?", "answer": "The general rule is below the local frost line, or at least 12 inches below grade, and at the same depth as the house foundation when the footing is within 5 feet of it. On a slope, depth is measured from the lowest grade beside the footing. Your county building department sets the frost depth that applies."}, {"question": "Do I need a permit to build a deck on a slope?", "answer": "In most cases yes, particularly when the deck attaches to the house or stands high above the ground. Sloped lots can also require additional documentation. Ask your local building department what it needs for footings before work begins."}, {"question": "Does a hillside deck need a retaining wall?", "answer": "Not always. If the slope is steep or the soil is loose near the footings, a retaining wall can give the deck a stable base and control runoff. It is worth deciding at the planning stage, along with drainage, because it affects where the footings go."}, {"question": "Can I build the deck foundation first and add the railings later?", "answer": "Plan the railings with the foundation. Current code treats guards as part of the deck’s load path, so their connection to the frame has to be designed in from the start."}],
+    relatedServices: [{"label": "Outdoor Living", "path": "/construction/outdoor-living"}, {"label": "Franklin Service Area", "path": "/service-areas/franklin-nc"}],
+    image: november23Hero1,
+    content: `A deck on a hillside is only as good as what carries it into the ground. On a slope, the foundation has to deal with soil that can creep, water that runs downhill, and posts that are often much taller than on a flat lot. The right choice is usually concrete footings with piers, or engineered deep piers such as helical piers, sized for your soil, your slope and the loads the deck will carry. For mountain homes in Western North Carolina, that decision is best made on the site, with a written scope and price in hand. We build decks and outdoor living spaces across Franklin, Highlands, Cashiers and Sylva, and the foundation is where we start every one.
+
+[Explore Highlander services](https://highlandernc.com/)
+
+## TL;DR
+
+- Slope, soil, post height, drainage and deck loads decide the foundation. Footing design should account for all of them, not just the deck’s size.
+- Concrete footings with piers suit many sites. Helical piers and precast pin footings are engineered alternatives for steep slopes, problem soils and tight access.
+- Footings near a house foundation, or on ground that could move, need extra depth or width. Check with your local building department before you dig.
+- Water is the quiet threat: route it around and away from the footings, and keep it away from the slope above the deck.
+- Guards (railings) and stairs are part of the load path. Plan them with the foundation, not after it.
+
+## What a hillside changes about a deck foundation
+
+On level ground, a deck footing carries a mostly downward load. On a slope, three things change.
+
+**The ground may move.** Guidance for deck foundations in sloping terrain says that [foundations near sloping ground must account for potential slope instability and often need greater depth or width](https://www.bchousing.org/publications/IG-Building-Safe-Durable-Decks-Balconies.pdf). That guide comes from British Columbia, so treat it as engineering background rather than U.S. code, but the principle holds on any steep lot: a footing sitting in soil that creeps downhill is not really anchored.
+
+**The posts get taller.** On the downhill side, posts can run many feet before they meet grade. Tall posts catch more wind, flex more, and need bracing. In the mountains, where wind exposure is a regular feature of ridge and hillside lots, that matters more than on a valley lot.
+
+**Water has somewhere to go, and it takes soil with it.** Runoff from the roof, the driveway and the slope above can scour soil from around a footing. We cover drainage in its own section below.
+
+A footing design should account for the slope, deck height and size, how the deck attaches to the house, the intended loads and the soil type. If a contractor quotes you a footing without asking about at least those, the quote is incomplete.
+
+## Foundation options for a deck on a slope
+
+The Journal of Light Construction’s 2023 decks field guide [describes wood posts on concrete footings, piers, or a combination as the common deck supports](https://www.jlconline.com/how-to/exteriors/decks/decks-field-guide/). It also lists helical piles and precast pin footings as engineered alternatives where soils are problematic, slopes are steep, access is difficult or excavation is unsuitable. That gives you a practical menu:
+
+| Option | How it works | Where it fits on a slope |
+| --- | --- | --- |
+| Poured concrete footing with pier | A hole is dug to the required depth, reinforced and filled with concrete; the post lands on a pier above it | Moderate slopes with workable soil, and decks that are large, tall or heavy |
+| Helical pier | A steel shaft with helical plates is screwed into the ground to a measured depth and resistance | Steep slopes, soft or variable soil, limited equipment access, sites where heavy excavation would disturb the hillside |
+| Precast pin footing | A prefabricated footing set in place and pinned | Difficult access, or where digging and pouring is impractical |
+| Combination | Concrete on the stable upper part of the lot, deep piers on the steeper lower part | Lots where conditions change across the footprint of the deck |
+
+One industry guide describes poured concrete footings as an option for decks that combine heavy components, large size, second-story height, soft soil or steep slopes, and calls them the costliest route. In practice, cost is only one side: a footing that holds for decades on a hillside is worth more than one that was cheap to pour.
+
+### How helical piers carry a hillside deck
+
+Helical piers are deep foundations. They transfer deck loads into the surrounding soil or rock through bearing and friction, and [the BC Housing guide notes that slope instability must be considered in their design](https://www.bchousing.org/publications/IG-Building-Safe-Durable-Decks-Balconies.pdf). Because a pier is driven rather than dug, it disturbs far less of the hillside, and it can be installed with smaller equipment where a truck cannot reach. That is a real advantage on steep mountain driveways and wooded lots.
+
+Two things matter to you as the owner:
+
+- **Capacity is verified, not guessed.** Installers typically read the torque needed to drive each pier and use it to verify the load it can carry. The soil that the pier bears on drives the result.
+- **Code treatment varies by jurisdiction.** Helical piles are accepted for decks in many places, but with conditions. Connecticut’s Office of the State Building Inspector has issued [a formal interpretation on helical piles for decks under the International Residential Code](https://portal.ct.gov/das/-/media/das/office-of-state-building-inspector/interpretations/interpretations-2016-2024/irc/i-24-03-irc-helical-piles-for-decks.pdf?hash=B2C74A3144EEE7862F0077BE9742E672&rev=f157107284704bc3a40594da8cc95ed8). Frederick County, Maryland accepts helical-pier footings for decks but requires an installer’s licensed professional engineer completion letter before final inspection. Those are other states’ rules, but they show what an inspector may ask for. In Western North Carolina, confirm the paperwork your county wants before the work starts.
+
+We have laid out the trade-offs for mountain lots in more detail in our comparison of [helical piers versus concrete piers in Western NC](https://highlandernc.com/blog/helical-piers-vs-concrete-piers).
+
+## Depth, size and reinforcement
+
+Footing depth is where many hillside decks go wrong, because “below the frost line” is not the same on the uphill and downhill sides of a house.
+
+The JLC field guide says footings closer than 5 feet to a house foundation [should be set at the same depth as that foundation](https://www.jlconline.com/how-to/exteriors/decks/decks-field-guide/). Otherwise, they go below the frost line or at least 12 inches below grade. Frost depth is local. One Illinois county handout, for example, [lists a 36-inch frost line and requires footings to go deeper than it](https://tazewell-il.gov/wp-content/uploads/2024/05/Handout-Decks.pdf). Your Western NC county building department sets the number that applies to you, and mountain elevation can change it.
+
+On a slope, measure depth from the lowest finished grade around the footing, not from the high side. A footing that is 12 inches deep on paper but sits at the edge of a cut bank may have very little soil on its downhill face.
+
+Sizing follows load. Under the 2021 International Residential Code (IRC), deck design uses live and snow loads, and [footing sizing tables rely on the tributary area](https://www.phila.gov/media/20250606082044/PB_031_FAQ_2021-IRC-Significant-Changes-FAQ.pdf), meaning the share of the deck each post carries. Larger spans, hot tubs, heavy stone or snow-prone sites all push the footing size up. Mountain snow load is a real design input in the higher parts of our service area.
+
+Two details worth getting right:
+
+- **Center the post on the footing.** The JLC guide recommends [centering piers or posts on footings](https://www.jlconline.com/how-to/exteriors/decks/decks-field-guide/). Offset loads twist the footing over time.
+- **Reinforce the concrete.** The same guide recommends steel reinforcement to reduce cracking from point-load forces.
+
+## Water: the part people skip
+
+A hillside deck sits in the path of runoff. Water that pools around a footing softens the soil that holds it, and water running across the slope can carve out the ground downhill. Good planning does three things:
+
+1. Diverts surface water from above the deck around the structure, not through the footing area.
+2. Handles roof water with gutters and downspouts piped well past the footings.
+3. Keeps the ground under the deck graded and stable, with the right surface or hardscape so it does not wash out.
+
+Cities with steep terrain write this into code. Los Angeles, for example, [requires drainage devices to route stormwater around buildings when the building is less than 5 feet from the top of a slope](https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-178311), and requires that drainage be maintained during and after construction. Western NC has its own rules, but the logic transfers: water control is part of the foundation.
+
+Our guides on [mountain home drainage planning](https://highlandernc.com/blog/designing-for-drainage-foundation-safety) and [under-deck drainage for WNC homes](https://highlandernc.com/blog/under-deck-drainage) go through the details. Where a steep bank needs holding back before a deck can go in, a properly built [retaining wall](https://highlandernc.com/construction/outdoor-living/hardscape) can create the stable bench the footings need.
+
+## Posts, bracing, stairs and guards
+
+The foundation is the start of a load path that runs through posts, beams, joists, decking and finally the guards. Philadelphia’s building department points out that the 2021 IRC added R507.10 provisions on exterior guards, [reinforcing the load path from guard and rail into joists, beams or blocking](https://www.phila.gov/media/20250606082044/PB_031_FAQ_2021-IRC-Significant-Changes-FAQ.pdf). The point for a hillside owner: on a tall deck, a railing that loads sideways is a structural element, so it gets designed with the frame, not bolted on at the end.
+
+For a sloped site, plan these together from the start:
+
+- **Post height and bracing.** Taller posts on the downhill side need bracing against sway.
+- **Stairs.** A slope often means long runs of stairs. Their landings need their own footings, sized like the rest.
+- **The house connection.** Many decks attach to the house at a ledger. The attachment point has to land on sound framing, with proper flashing so water does not get into the wall.
+- **Access during construction.** Steep lots limit equipment. That favors methods that need less excavation and fewer concrete trucks.
+
+## Permits and inspections
+
+A deck that attaches to a house, or stands high above grade, generally needs a permit and inspections in North Carolina, and the rules come from the state residential code with local additions. Hillside sites can bring extra review. Los Angeles shows how strict it can get: it [generally bars structures on slopes steeper than 1:2](https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-178311), with an exception only where soils-engineer and geologist reports show stability with a factor of safety of at least 1.5. That is a California city, not your county, but it tells you that steep ground can mean engineered reports.
+
+Meanwhile, county guides such as Frederick County’s revised 2021 deck guide say their prescriptive rules cover standard exterior wood-framed decks under IRC Section R507, and that other decks fall under other provisions. Unusual hillside decks often land in that second group, which is why the footing plan should be settled with your building department before you order materials.
+
+## What a good hillside deck estimate should say
+
+When you collect estimates for a hillside deck, compare scope rather than just the total. A useful written estimate names:
+
+- The foundation type for each post location, and why.
+- Footing depth, size and reinforcement.
+- How water will be routed away from the footings and the slope.
+- Who pulls the permit and schedules inspections.
+- Whether a retaining wall, grading or hardscape is included.
+- Stairs, guards and house attachment details.
+
+This is how we write ours: a detailed, transparent written scope and price, with one point of contact from start to finish.
+
+## How we approach it at Highlander
+
+> We build for mountain conditions: elevation, wind exposure and moisture. On a hillside deck, that means we start with the ground, not the decking. How steep is the slope, what is the soil like, where does the water go, and how will the deck be reached by crews and equipment?
+
+> Our answer depends on the lot. Concrete piers suit some sites. Helical piers suit others, especially where digging would disturb a steep slope. We would rather explain the choice in a written scope than hand you a single number with no reasoning behind it.
+
+> The written scope identifies the project responsibilities and planned inspections. Foundations, drainage, retaining walls and the deck itself are planned together, because on a hillside they depend on each other.
+
+> ${BUSINESS.legalName}
+
+## Planning a deck on your slope
+
+If you are weighing a deck on a sloped lot in Franklin, Highlands, Cashiers, Sylva or nearby, our [outdoor living and decks work](https://highlandernc.com/construction) is where to begin. We design and build decks, and our crews handle the foundation, framing, stairs and railings as one project. You can see how we approach rebuilds on a real property in our [deck and railing rebuild in Sylva](https://highlandernc.com/projects/deck-railing-rebuild-sylva), and read how we think about [decks and porches for mountain weather](https://highlandernc.com/construction/outdoor-living).
+
+If you want a written scope and price for your hillside, start from the [construction page](https://highlandernc.com/construction), where our deck, addition and outdoor living services are laid out. We also offer a design and consultation agreement for projects that need planning before building.
+
+## FAQ
+
+### Are helical piers good for a deck on a steep slope?
+
+They are one of the engineered options for steep slopes, problem soils and sites with difficult access, according to the [JLC decks field guide](https://www.jlconline.com/how-to/exteriors/decks/decks-field-guide/). They carry loads through bearing and friction, and the design has to account for slope stability. Whether they or concrete piers are the better fit depends on your soil and your lot.
+
+### How deep should deck footings be on a hillside?
+
+The general rule is below the local frost line, or at least 12 inches below grade, and at the same depth as the house foundation when the footing is within 5 feet of it. On a slope, depth is measured from the lowest grade beside the footing. Your county building department sets the frost depth that applies.
+
+### Do I need a permit to build a deck on a slope?
+
+In most cases yes, particularly when the deck attaches to the house or stands high above the ground. Sloped lots can also require additional documentation. Ask your local building department what it needs for footings before work begins.
+
+### Does a hillside deck need a retaining wall?
+
+Not always. If the slope is steep or the soil is loose near the footings, a retaining wall can give the deck a stable base and control runoff. It is worth deciding at the planning stage, along with drainage, because it affects where the footings go.
+
+### Can I build the deck foundation first and add the railings later?
+
+Plan the railings with the foundation. Current code treats guards as part of the deck’s load path, so their connection to the frame has to be designed in from the start.
+
+## Sources
+
+- [BC Housing: Building Safe and Durable Wood Decks and Balconies](https://www.bchousing.org/publications/IG-Building-Safe-Durable-Decks-Balconies.pdf)
+- [Journal of Light Construction: Decks Field Guide](https://www.jlconline.com/how-to/exteriors/decks/decks-field-guide/)
+- [Connecticut Office of the State Building Inspector: Interpretation I-24-03](https://portal.ct.gov/das/-/media/das/office-of-state-building-inspector/interpretations/interpretations-2016-2024/irc/i-24-03-irc-helical-piles-for-decks.pdf?hash=B2C74A3144EEE7862F0077BE9742E672&rev=f157107284704bc3a40594da8cc95ed8)
+- [City of Philadelphia: 2021 IRC Significant Changes FAQ](https://www.phila.gov/media/20250606082044/PB_031_FAQ_2021-IRC-Significant-Changes-FAQ.pdf)
+- [Tazewell County, Illinois: Deck handout](https://tazewell-il.gov/wp-content/uploads/2024/05/Handout-Decks.pdf)
+- [Los Angeles Municipal Code, Sec. 91.7014](https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-178311)
+
+## Recommended
+
+- [Helical Piers vs Concrete Piers in Western NC](https://highlandernc.com/blog/helical-piers-vs-concrete-piers)
+- [Mountain Home Drainage Planning](https://highlandernc.com/blog/designing-for-drainage-foundation-safety)
+- [Sloped Lot Floor Plan Planning WNC](https://highlandernc.com/construction/additions)
+- [Under Deck Drainage for WNC Homes](https://highlandernc.com/blog/under-deck-drainage)`,
+  },
+  {
+    slug: "roof-leaks-in-rain",
+    title: "Roof Leaks in Rain: What to Do and Where Water Gets In",
+    excerpt: "Roof leaking in heavy rain? Learn safe steps to contain water, trace flashing and vent problems, and plan a lasting repair for your Western NC home.",
+    category: "Repairs",
+    date: "2026-11-23",
+    town: "Franklin",
+    readTime: "11 min",
+    metaTitle: "Roof Leaks in Rain: Causes and Next Steps | Highlander",
+    metaDescription: "Roof leaking in heavy rain? Learn safe steps to contain water, trace flashing and vent problems, and plan a lasting repair for your Western NC home.",
+    imageAlt: "Water dripping from a small ceiling stain into a metal bucket in a mountain home during rain",
+    faqs: [{"question": "Why does my roof only leak in heavy rain?", "answer": "Heavy or wind-driven rain finds weak points that light rain does not, such as an aging pipe boot, a lifted flashing edge or a gap near a vent. Roofs that leak in only some storms usually have a compromised flashing point rather than a large hole. Tell your roofer which kind of weather triggers it, since that helps narrow the source."}, {"question": "Why is my roof leaking after a storm when it never leaked before?", "answer": "Wind can loosen shingles and roof edges a little at a time, and each gust makes the damage worse, according to the NRCA. Water can also enter through vents, soffits and flashing during wind-driven rain. A professional inspection after the storm finds the cause before the next one hits."}, {"question": "What should I do about a roof leak around a vent?", "answer": "Contain the water inside, photograph the stain and any visible damage, and have a roofer inspect the vent. Failed pipe boots and damaged flashing are common causes, and fixing them properly often involves the surrounding shingles. Our roof repair service handles leaks and flashing in Western NC."}, {"question": "Can I stop a roof leak myself with sealant?", "answer": "Sealant needs dry weather and cure time, and the NRCA warns that patching can hide evidence a roofer needs. The reliable short-term steps are containing water inside and having a roofer tarp or dry-in the roof. A permanent repair then targets the real source."}, {"question": "Should I call a roofer or my insurer first?", "answer": "Do both quickly, starting with photos and stopping further damage. Call a roofer to inspect and make temporary protection, and contact your insurer about the claim process under your own policy. Our storm damage work includes help with the insurance side of the job."}],
+    relatedServices: [{"label": "Roof Repair", "path": "/roofing/roof-repair"}, {"label": "Franklin Service Area", "path": "/service-areas/franklin-nc"}],
+    image: november23Hero2,
+    content: `When a roof leaks in the rain, do three things in order: contain the water, document it, and get the roof looked at by a qualified roofer before you patch anything. The stain on your ceiling is rarely under the hole, and a quick fix over the wrong spot can hide the evidence a roofer needs. For Western North Carolina homes, where wind-driven rain, elevation and moisture test every seam, the fastest route to a dry house is an accurate diagnosis and a written scope of work. If you want a roofer who will provide both, [Highlander’s roof repair team](https://highlandernc.com/roofing/roof-repair) covers leaks, flashing and storm damage across Franklin, Highlands, Cashiers and Sylva.
+
+[Explore Highlander services](https://highlandernc.com/)
+
+## TL;DR
+
+- Contain the water, move belongings, and photograph the leak. Check the attic only if it is safe to reach.
+- The wet spot on your ceiling is usually not directly below the entry point, because water travels along sheathing, rafters and drywall.
+- Leaks that appear only in some storms often point to flashing, a vent boot or wind damage, not a big hole.
+- Skip sealant and mastic until a roofer has seen the problem, since patching can hide what they need to diagnose it.
+- Ask for a written scope and price before work starts.
+
+## What to do while it is still raining
+
+The goal tonight is to limit damage, not to fix the roof. Following guidance from the [Colorado Roofing Association](https://www.coloradoroofing.org/news/my-roof-is-leakingnow-what-a-colorado-homeowners-guide-for-rainy-months), the sequence is simple:
+
+1. **Move belongings out of the drip zone.** Furniture, rugs and electronics first.
+2. **Catch the water.** Put a bucket or large container under the drip. A towel in the bottom stops splashing.
+3. **Check the attic only if it is safe.** Step only on framing you can see, and use a flashlight. The National Weather Service says to [use a flashlight rather than open flames](https://www.weather.gov/media/hgx/tropicalwp/WhattoDo.pdf) when inspecting storm damage.
+4. **Photograph everything.** Take clear pictures of the ceiling stain, any attic drip trail and visible exterior damage, with the date and time.
+5. **Note when it happens.** Roofers diagnose faster when you can say whether the leak showed up with wind, heavy rain, or after weeks of wet weather, which is exactly what the Colorado Roofing Association advises passing along.
+
+A ceiling that bulges with water is a different problem from a slow drip. If a ceiling is sagging, stay out from under it, and if water is near light fixtures or outlets, turn off power to that area at the breaker only if you can reach the panel without standing in water.
+
+Stay off the roof itself. The National Roofing Contractors Association says not to [climb a ladder to assess roof damage in the dark](https://nrcawebstorage.blob.core.windows.net/files/nrca_website/documents/technical/Roof-Repair-After-Strong-Winds.pdf), and a wet roof on a mountain pitch is no place for a homeowner. The Weather Service also warns that standing water after a storm [may be electrically charged](https://www.weather.gov/media/hgx/tropicalwp/WhattoDo.pdf) by downed or underground power lines, so stay on firm ground outside.
+
+If the roof is open to the weather, call for emergency help. Highlander’s page on [emergency roof repair in Western NC](https://highlandernc.com/blog/emergency-roof-repair-wnc) explains how a temporary dry-in works.
+
+## Why the stain is not where the leak is
+
+Most people look straight up from the stain and assume the hole is right there. It usually is not. The University of Wisconsin Extension notes that [leaks are rarely directly above the ceiling spot](https://kenosha.extension.wisc.edu/files/2010/06/Leaky_roofs.pdf), and a Florida state disaster publication explains that [water can travel sideways along sheathing or rafters and across drywall](https://apps.floridadisaster.org/hrg/downloads/after_a_storm.pdf) before it shows up inside.
+
+In practice that means:
+
+- A stain in a bedroom corner may come from a vent several feet up the slope.
+- A drip in the attic may run down a rafter and appear at a light fixture two rooms away.
+- Several stains can share one source.
+
+This is why diagnosis comes before repair. A roofer who traces the water uphill, finds the entry point and confirms it by looking at the attic and the roof surface gives you a repair that holds. Guessing at the spot gives you a second leak in the next storm.
+
+## Common reasons a roof leaks in heavy rain
+
+The University of Wisconsin Extension lists [defective flashing, clogged downspouts or eaves, deteriorated roofing, and holes or missing shingles](https://kenosha.extension.wisc.edu/files/2010/06/Leaky_roofs.pdf) among the common causes, along with storm damage, defective materials and faulty construction. Here is how that looks on a house.
+
+### Flashing
+
+Flashing is the thin metal that seals the joints where the roof meets a chimney, a wall, a valley or a skylight. When it bends, lifts or loses its seal, rain gets behind it. Chimneys are a frequent culprit on mountain homes with big stone or masonry stacks. Highlander’s article on [chimney flashing repair](https://highlandernc.com/blog/chimney-flashing-repair) covers what a proper fix involves.
+
+### Roof leak around a vent
+
+Every plumbing vent, exhaust fan and attic vent is a hole through your roof with a seal around it. Manufacturer guidance recommends checking penetrations including pipes, chimneys and skylights, and [confirming that vents are not clogged and flashing is not damaged](https://www.gaf.com/en-us/plan-design/homeowner-education/roof-damage) or leaving joints uncovered. A cracked or aged pipe boot (the rubber or neoprene collar around a vent pipe) is a classic reason a roof leaks only in certain storms: water enters when rain comes from a particular direction or is heavy enough to run down the pipe.
+
+The University of Wisconsin Extension says repair methods depend on roof type and on the nature and extent of the leak, and it advises [hiring a professional unless you are experienced](https://kenosha.extension.wisc.edu/files/2010/06/Leaky_roofs.pdf). A vent repair that looks small often needs the surrounding shingles lifted and re-sealed, which is why it goes best in a roofer’s hands.
+
+### Damaged or missing shingles
+
+Manufacturer guidance notes that attic leaks after severe weather can point to [damaged shingles, failed underlayment or deteriorated flashing](https://www.gaf.com/en-us/plan-design/homeowner-education/roof-damage). Wind is a big factor in the mountains. The NRCA explains that strong winds can loosen roof edges a little at a time, and that suction and pressure can [lift roofing and expose the assembly to rain and further wind damage](https://nrcawebstorage.blob.core.windows.net/files/nrca_website/documents/technical/Roof-Repair-After-Strong-Winds.pdf). Damage can worsen with each gust, so a roof that looked fine after one storm can leak after the next. See our guide to [wind-damaged shingles in Western NC](https://highlandernc.com/blog/wind-damaged-shingles) for what to look for.
+
+### Clogged gutters and drainage
+
+Windblown debris can clog roof drains and downspouts, according to the [NRCA](https://nrcawebstorage.blob.core.windows.net/files/nrca_website/documents/technical/Roof-Repair-After-Strong-Winds.pdf). Water that cannot leave the roof backs up under shingles and at the eaves. With heavy leaf fall around mountain homes, gutters deserve a look every time you assess a leak.
+
+### Wind-driven rain
+
+Not every wet ceiling means a failed roof covering. The Florida disaster publication stresses that wind-driven rain can enter through [vents, soffits, sidewalls and flashing details](https://apps.floridadisaster.org/hrg/downloads/after_a_storm.pdf). It also says losing shingles does not always cause an immediate leak if the area is outside the living space or the underlayment (the waterproof layer under the shingles) is intact. So a roof can be damaged for weeks before water shows inside, and a leak can come from somewhere other than the roof surface.
+
+## Why mountain homes leak differently
+
+Homes around Highlands, Cashiers, Franklin and Sylva deal with elevation, wind exposure and near-constant moisture. Our work is built around those conditions, which is why we look at the whole system when we trace a leak: flashing, penetrations, edges, underlayment and drainage, not only the one stain you can see. Long-term moisture also means that a small gap you ignore this fall can mean wet decking by spring.
+
+## Temporary fixes: tarps, sealant and Flex Seal
+
+A common question is whether a can of liquid sealant will stop a roof leak. The Home Depot listing for Flex Seal Liquid White says roofing applications take [2 to 3 coats, should be applied at least 24 hours before heavy rain, and cure in 24 to 48 hours](https://www.homedepot.com/p/FLEX-SEAL-FAMILY-OF-PRODUCTS-Flex-Seal-Liquid-White-32-Oz-Liquid-Rubber-Sealant-Coating-LFSWHTR32/301711550). That timeline alone shows why it cannot help while water is coming in tonight, and it is not a substitute for finding the source.
+
+The NRCA goes further. It advises against most homeowner roof repairs because [patching or applying mastic can conceal evidence a roofing contractor needs](https://nrcawebstorage.blob.core.windows.net/files/nrca_website/documents/technical/Roof-Repair-After-Strong-Winds.pdf) to diagnose the problem. Its guidance recommends tarpaulins to temporarily cover openings, and the manufacturer’s storm guide suggests having a professional [remove roof debris and tarp the roof](https://www.gaf.com/en-us/plan-design/homeowner-education/storm-damage).
+
+The safe approach: contain the water inside, photograph the damage, and let a roofer place a proper tarp or temporary dry-in and then make the permanent repair.
+
+## What to check after a storm
+
+If the leak showed up after a storm, a systematic check gives your roofer a head start. the manufacturer’s storm guidance lays out what to look at:
+
+- **From the attic:** look for daylight coming through the roof, sagging, and damp or stained wood.
+- **On ceilings:** note stains, bubbling paint and soft spots.
+- **From the ground:** look for [missing, cracked or curled shingles, debris, and bent or detached flashing](https://www.gaf.com/en-us/plan-design/homeowner-education/storm-damage). Binoculars help.
+- **At the gutters:** look for debris and downspouts that are blocked or pulled loose.
+
+If you use a ladder at all, Manufacturer guidance says to do so only if you are comfortable and to use fall protection. On a steep, wet mountain roof, staying on the ground is the better call.
+
+Dry wet interior areas with fans and remove standing water carefully, per [the manufacturer’s storm guide](https://www.gaf.com/en-us/plan-design/homeowner-education/storm-damage). Wet insulation and drywall that stay damp invite mold, so move quickly. For a local version of this walk-around, see our [storm damage roof checklist for Western NC](https://highlandernc.com/blog/storm-damage-checklist-western-nc) and our guide to a [storm damage roof inspection](https://highlandernc.com/blog/storm-damage-roof-inspection_1).
+
+## Repair or replace: how the decision gets made
+
+There is no honest flat price for “fixing a leaky roof,” because the answer depends on what the leak turns out to be. The U.S. Department of Energy-hosted housing guide says to [assess structural soundness first](https://www1.eere.energy.gov/buildings/publications/pdfs/corporate/repairing_roofs_ceilings.pdf), then decide among patching, replacing the roofing, addressing multiple leak points, or replacing a soaked ceiling, and to consult a professional engineer if structural integrity is compromised.
+
+In practice, three things drive the scope and the price:
+
+- **Source and spread.** One failed vent boot is a small job. Water that has run through decking and insulation adds work.
+- **Roof age and condition.** If the shingles are worn throughout, repeated repairs may cost more than a new roof. Our page on [roof replacement for mountain homes](https://highlandernc.com/roofing/roof-replacement) explains what a replacement involves.
+- **Roof type.** Asphalt, metal, synthetic slate and cedar shake each repair differently.
+
+Whatever the answer, get it in writing. A scope that names the cause, the area, the materials and the price lets you compare and decide without surprises.
+
+## Getting the leak fixed in Western NC
+
+${BUSINESS.legalName} handles roof repair, roof replacement, metal roofing, specialty roofing and storm damage response for homeowners in Franklin, Highlands, Cashiers, Sylva and surrounding mountain communities. We provide detailed written estimates, assign a single point of contact for the project, and explain the materials and installation details that apply when the leak involves shingles or a skylight. For storm-related leaks, we also work through the damage and insurance side of the job.
+
+To start, send photos of the stain and the roof area, and tell us when it leaks. Start at our [roof repair page](https://highlandernc.com/roofing/roof-repair) or reach us through [${BUSINESS.legalName}](https://highlandernc.com).
+
+## Our perspective
+
+> Most leak calls we hear start with “I think it’s the shingles.” Often it is a vent boot, a flashing joint or an edge that the wind has been working on for a season. The stain you see is the end of a trail, and our job is to walk that trail back to its start.
+
+> On mountain homes that trail is longer. Wind pushes rain sideways, elevation brings heavier weather, and constant moisture finds any weak point. That is why we write down the cause, the scope and the price before we start, and why you deal with one point of contact from the first call to the last nail.
+
+> A clear inspection and written repair scope keep the project focused on the cause. If you have a leak, don’t wait for the next storm to tell you more about it. Tell us what you saw, and we will tell you what it takes to fix it right.
+
+> ${BUSINESS.legalName}
+
+## FAQ
+
+### Why does my roof only leak in heavy rain?
+
+Heavy or wind-driven rain finds weak points that light rain does not, such as an aging pipe boot, a lifted flashing edge or a gap near a vent. Roofs that leak in only some storms usually have a compromised flashing point rather than a large hole. Tell your roofer which kind of weather triggers it, since that helps narrow the source.
+
+### Why is my roof leaking after a storm when it never leaked before?
+
+Wind can loosen shingles and roof edges a little at a time, and each gust makes the damage worse, according to the [NRCA](https://nrcawebstorage.blob.core.windows.net/files/nrca_website/documents/technical/Roof-Repair-After-Strong-Winds.pdf). Water can also enter through vents, soffits and flashing during wind-driven rain. A professional inspection after the storm finds the cause before the next one hits.
+
+### What should I do about a roof leak around a vent?
+
+Contain the water inside, photograph the stain and any visible damage, and have a roofer inspect the vent. Failed pipe boots and damaged flashing are common causes, and fixing them properly often involves the surrounding shingles. Our [roof repair service](https://highlandernc.com/roofing/roof-repair) handles leaks and flashing in Western NC.
+
+### Can I stop a roof leak myself with sealant?
+
+Sealant needs dry weather and cure time, and the NRCA warns that patching can hide evidence a roofer needs. The reliable short-term steps are containing water inside and having a roofer tarp or dry-in the roof. A permanent repair then targets the real source.
+
+### Should I call a roofer or my insurer first?
+
+Do both quickly, starting with photos and stopping further damage. Call a roofer to inspect and make temporary protection, and contact your insurer about the claim process under your own policy. Our storm damage work includes help with the insurance side of the job.
+
+## Sources
+
+- [My Roof Is Leaking—Now What? Colorado Roofing Association](https://www.coloradoroofing.org/news/my-roof-is-leakingnow-what-a-colorado-homeowners-guide-for-rainy-months)
+- [Assessing and Repairing Leaky Roofs, University of Wisconsin Extension](https://kenosha.extension.wisc.edu/files/2010/06/Leaky_roofs.pdf)
+- [After a Storm, Florida Division of Emergency Management](https://apps.floridadisaster.org/hrg/downloads/after_a_storm.pdf)
+- [Roof Repair After Strong Winds, National Roofing Contractors Association](https://nrcawebstorage.blob.core.windows.net/files/nrca_website/documents/technical/Roof-Repair-After-Strong-Winds.pdf)
+- [How to Identify Roof Damage, the manufacturer](https://www.gaf.com/en-us/plan-design/homeowner-education/roof-damage)
+- [Storm Damage Roof Repairs: Resources Guide, the manufacturer](https://www.gaf.com/en-us/plan-design/homeowner-education/storm-damage)
+- [What to Do Before, During and After the Storm, National Weather Service](https://www.weather.gov/media/hgx/tropicalwp/WhattoDo.pdf)
+- [Flex Seal Liquid White 32 oz, The Home Depot](https://www.homedepot.com/p/FLEX-SEAL-FAMILY-OF-PRODUCTS-Flex-Seal-Liquid-White-32-Oz-Liquid-Rubber-Sealant-Coating-LFSWHTR32/301711550)
+- [Repairing Roofs and Ceilings, U.S. Department of Energy](https://www1.eere.energy.gov/buildings/publications/pdfs/corporate/repairing_roofs_ceilings.pdf)
+
+## Recommended
+
+- [Wind-Driven Rain Leaks in Western NC](https://highlandernc.com/blog/wind-driven-rain-leak_2)
+- [Common Roof Leak Locations in Highlands, NC Homes](https://highlandernc.com/service-areas/highlands-nc/roof-repair)
+- [Water Coming Through Ceiling? What to Do](https://highlandernc.com/roofing/roof-repair)
+- [Roof Flashing Leak Repair in Western NC](https://highlandernc.com/blog/roof-flashing-leak)`,
+  },
+
 {
     slug: "screened-porch-vs-sunroom",
     title: "Screened Porch vs. Sunroom: Which Fits a Mountain Home?",

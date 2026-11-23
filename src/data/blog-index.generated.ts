@@ -14,6 +14,30 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "roof-leaks-in-rain",
+    "title": "Roof Leaks in Rain: What to Do and Where Water Gets In",
+    "excerpt": "Roof leaking in heavy rain? Learn safe steps to contain water, trace flashing and vent problems, and plan a lasting repair for your Western NC home.",
+    "category": "Repairs",
+    "date": "2026-11-23",
+    "town": "Franklin"
+  },
+  {
+    "slug": "hillside-deck-foundation",
+    "title": "Hillside Deck Foundations: Piers, Footings and Slope Basics",
+    "excerpt": "Plan a hillside deck foundation in Western NC with guidance on concrete footings, helical piers, drainage, slope stability and local permits.",
+    "category": "Outdoor Living",
+    "date": "2026-11-23",
+    "town": "Franklin"
+  },
+  {
+    "slug": "synthetic-slate-roofing",
+    "title": "Synthetic Slate Roofing: Cost, Wind Rating and Mountain Installation",
+    "excerpt": "Compare synthetic slate roofing costs, product ratings and installation details for Western NC homes. Learn what to check before choosing a roof.",
+    "category": "Materials",
+    "date": "2026-11-23",
+    "town": "Highlands"
+  },
+  {
     "slug": "screened-porch-vs-sunroom",
     "title": "Screened Porch vs. Sunroom: Which Fits a Mountain Home?",
     "excerpt": "Compare screened porches, three-season rooms and four-season sunrooms on cost, comfort, permits and resale value for Western North Carolina mountain homes.",
