@@ -1,4 +1,6 @@
 import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
+import RelatedGuides from "@/components/seo/RelatedGuides";
+import { SERVICE_RELATED_GUIDES } from "@/data/guide-links";
 import { PHONE_DISPLAY, PHONE_TEL, REVIEW_COUNT_LABEL, REVIEW_STARS } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -621,6 +623,7 @@ const RoofRepair = () => {
         />
       </main>
 
+      <RelatedGuides links={SERVICE_RELATED_GUIDES["/roofing/roof-repair"]} />
       <Footer />
       <StickyMobileCTA />
     </>

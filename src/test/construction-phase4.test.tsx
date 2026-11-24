@@ -5,6 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 import type { ComponentType } from "react";
 import type { ConstructionPageContent } from "@/content/construction/types";
 import { workPhotos } from "@/data/work-photos";
+import { blogPosts } from "@/data/blogs";
 import { hubContent } from "@/content/construction/hub";
 import { additionsContent } from "@/content/construction/additions";
 import { screenedPorchesContent } from "@/content/construction/screened-porches";
@@ -53,7 +54,7 @@ describe("Phase 4 content", () => {
       expect(c.related).toHaveLength(3);
       for (const l of [...c.related, ...(c.serviceCards?.cards ?? []), ...(c.angle?.links ?? [])]) {
         const href = l.href.split("#")[0];
-        if (href.startsWith("/blog/")) expect(readFileSync("src/data/blog-index.generated.ts", "utf8"), href).toContain(`"${href.slice(6)}"`);
+        if (href.startsWith("/blog/")) expect(blogPosts.some((b) => b.slug === href.slice(6) && !b.canonicalTo), href).toBe(true);
         else expect(routes, href).toContain(`path="${href}"`);
       }
       for (const id of c.gallery?.ids ?? []) expect(workPhotos.some((p) => p.id === id), id).toBe(true);

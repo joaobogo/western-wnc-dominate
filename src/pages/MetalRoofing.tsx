@@ -1,4 +1,6 @@
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
+import RelatedGuides from "@/components/seo/RelatedGuides";
+import { SERVICE_RELATED_GUIDES } from "@/data/guide-links";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Shield, Wind, Snowflake, Home, ChevronRight } from "lucide-react";
@@ -299,6 +301,7 @@ const MetalRoofing = () => {
         <CommonConcerns />
         <CTABlock /></>}
       />
+      <RelatedGuides links={SERVICE_RELATED_GUIDES["/roofing/metal"]} />
       <Footer />
       <StickyMobileCTA />
     </>

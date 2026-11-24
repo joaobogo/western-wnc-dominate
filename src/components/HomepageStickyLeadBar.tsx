@@ -7,6 +7,8 @@ import { trackFormError } from "@/lib/gtm";
 import FormConsent from "@/components/FormConsent";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 /**
  * Homepage-only, low-friction lead bar requested after the Oct 2026 CRO audit.
@@ -25,6 +27,7 @@ export default function HomepageStickyLeadBar() {
   const [dismissed, setDismissed] = useState(false);
   const [blocked, setBlocked] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const honeypot = useHoneypot();
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
 
@@ -103,6 +106,8 @@ export default function HomepageStickyLeadBar() {
       return;
     }
 
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) { setSubmitted(true); return; }
     setSubmitError(null);
     setIssues([]);
     const result = await submit({
@@ -167,7 +172,8 @@ export default function HomepageStickyLeadBar() {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} noValidate data-home-sticky-lead="true">
+            <form method="post" onSubmit={handleSubmit} noValidate data-home-sticky-lead="true">
+              <Honeypot id="home-sticky-website" value={honeypot.value} onChange={honeypot.setValue} />
               <FormErrorSummary message={submitError} issues={issues} className="mb-2 mt-0" />
               <div className="grid grid-cols-[1fr_1.15fr_1fr_auto] gap-2">
                 <div>

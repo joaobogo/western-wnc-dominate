@@ -10,6 +10,8 @@ import { requireStoredLead } from "@/lib/leads";
 import FormConsent from "@/components/FormConsent";
 import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -84,6 +86,7 @@ const RoofAssessmentQuiz = () => {
   const [direction, setDirection] = useState(1);
   const { submitting, submit } = useLeadSubmit();
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const honeypot = useHoneypot();
 
   const totalScore = answers.reduce((sum, s) => sum + s, 0);
   const result = getResult(totalScore);
@@ -109,6 +112,8 @@ const RoofAssessmentQuiz = () => {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (contact.name && contact.email && !submitting) {
+      // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+      if (honeypot.tripped()) { goTo("result"); return; }
       setSubmitError(null);
       try {
       requireStoredLead(await submit({
@@ -232,7 +237,8 @@ const RoofAssessmentQuiz = () => {
                 <div>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-1">Your Results Are Ready</h3>
                   <p className="text-sm text-muted-foreground mb-6 font-body">Enter your info to see your personalized assessment and next steps.</p>
-                  <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <form method="post" onSubmit={handleContactSubmit} className="space-y-4">
+                    <Honeypot id="quiz-website" value={honeypot.value} onChange={honeypot.setValue} />
                     <div>
                       <label className={labelClass} htmlFor="f-your-name">Your Name</label>
                       <input id="f-your-name" {...fieldAttrs.name} value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="e.g. John and Mary Davidson" />

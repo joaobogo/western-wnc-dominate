@@ -133,7 +133,7 @@ function MissedCallForm({ onSave, onClose }: { onSave: (phone: string, note: str
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   return (
-    <form
+    <form method="post"
       className="mt-4 rounded-md border p-3"
       style={{ borderColor: "var(--hl-border)", background: "#fffdf6" }}
       onSubmit={async (e) => {

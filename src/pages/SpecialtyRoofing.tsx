@@ -1,4 +1,6 @@
 import CertainTeedPremierBadge from "@/components/trust/CertainTeedPremierBadge";
+import RelatedGuides from "@/components/seo/RelatedGuides";
+import { SERVICE_RELATED_GUIDES } from "@/data/guide-links";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/data/business";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -466,6 +468,7 @@ const SpecialtyRoofing = () => {
           </>
         }
       />
+      <RelatedGuides links={SERVICE_RELATED_GUIDES["/roofing/specialty"]} />
       <Footer />
       <StickyMobileCTA />
     </>

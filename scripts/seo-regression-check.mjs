@@ -42,8 +42,14 @@ if (!existsSync(redirectsPath)) {
     .filter(line => line && !line.startsWith("#"))
     .map(line => line.split(/\s+/).join(" "));
 
+  // Fix list Nov 23, 2026 (Task 1): a www request for a known old URL may go straight to its
+  // final page in one hop. Those exact-path www rules (no splat, apex destination) sit above the
+  // canonical host rules; the host rules must still come first among everything else.
+  const isWwwOneHop = (rule) =>
+    /^https:\/\/www\.highlandernc\.com\/[^\s*]+ https:\/\/highlandernc\.com\/\S* 301!$/.test(rule);
+  const hostCheckRules = activeRedirectRules.filter((rule, i) => !(isWwwOneHop(rule) && activeRedirectRules.slice(0, i).every(isWwwOneHop)));
   requiredHostRedirects.forEach((requiredRule, index) => {
-    if (activeRedirectRules[index] !== requiredRule) {
+    if (hostCheckRules[index] !== requiredRule) {
       fail(`Canonical host redirect rule ${index + 1} must be the ${index + 1}${index === 0 ? "st" : index === 1 ? "nd" : "rd"} active rule in public/_redirects: ${requiredRule}`);
     }
   });

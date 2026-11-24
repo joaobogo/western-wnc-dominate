@@ -179,7 +179,8 @@ export const hubContent: ConstructionPageContent = {
   ],
   related: [
     { label: "Siding replacement", href: "/construction/siding", description: "Fiber cement siding for mountain homes" },
-    { label: "Handyman services", href: "/construction/handyman", description: "Small home repairs around the house" },
+    { label: "Handyman services in Western NC", href: "/construction/handyman", description: "Small home repairs around the house" },
+    { label: "Hardscape: walls, steps and paths", href: "/construction/outdoor-living/hardscape", description: "Retaining walls, steps and walkways" },
     { label: "Recent construction projects", href: "/recent-projects", description: "Photos and write-ups of finished jobs" },
   ],
 };

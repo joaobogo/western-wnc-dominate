@@ -40,12 +40,14 @@ const constructionLinks = [
   { label: "Design & Planning", href: "/construction/design" },
   { label: "Siding & Exterior", href: "/construction/siding" },
   { label: "Handyman & Small Repairs", href: "/construction/handyman" },
+  { label: "Hardscape", href: "/construction/outdoor-living/hardscape" },
   { label: "Exterior Improvements", href: "/exterior-improvements" },
   { label: "Get My Written Scope", href: "/request-inspection?context=construction_footer&type=construction" },
   { label: "Build Your Project", href: "/construction-builder" },
 ];
 
 const resourceLinks = [
+  { label: "All Services", href: "/services" },
   { label: "Recent Projects", href: "/recent-projects" },
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },

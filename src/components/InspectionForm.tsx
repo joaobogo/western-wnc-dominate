@@ -300,7 +300,7 @@ const InspectionForm = ({ variant = "section", townName, county }: InspectionFor
               transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
               className={`lg:col-span-3 ${isPage ? "order-1 lg:order-2" : ""}`}
             >
-              <form
+              <form method="post"
                 noValidate
                 onSubmit={handleSubmit}
                 data-hide-sticky

@@ -21,6 +21,7 @@ import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getBlogLocalLinkWeb } from "@/lib/local-link-graph";
 import { getBlogCta } from "@/lib/blog-cta";
 import { BLOG_SERVICE_LINKS } from "@/data/blog-service-links";
+import { BLOG_RELATED_GUIDES } from "@/data/guide-links";
 import BlogMidArticleCTA from "@/components/blog/BlogMidArticleCTA";
 import BlogClosingCTA from "@/components/blog/BlogClosingCTA";
 import BlogSidebarCTA from "@/components/blog/BlogSidebarCTA";
@@ -459,6 +460,15 @@ const BlogPostPage = () => {
                     <p data-service-link>
                       This guide comes from Highlander's construction team in Franklin. If you're planning one, see our{" "}
                       <Link to={BLOG_SERVICE_LINKS[post.slug].href}>{BLOG_SERVICE_LINKS[post.slug].anchor}</Link>.
+                    </p>
+                  )}
+                  {BLOG_RELATED_GUIDES[post.slug] && (
+                    <p data-related-guides>
+                      Related guide:{" "}
+                      {BLOG_RELATED_GUIDES[post.slug].map((g, i) => (
+                        <span key={g.href}>{i > 0 && " · "}<Link to={g.href}>{g.anchor}</Link></span>
+                      ))}
+                      .
                     </p>
                   )}
                   {renderContent(contentTop)}

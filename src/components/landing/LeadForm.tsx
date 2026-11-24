@@ -118,7 +118,7 @@ export default function LeadForm({ instance }: { instance: FormInstance }) {
   };
 
   return (
-    <form
+    <form method="post"
       noValidate
       data-landing-form={instance}
       data-gtm-form-name="highlander_landing_page"

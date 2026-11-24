@@ -8,6 +8,8 @@
  */
 
 type FieldAttrs = {
+  /** Fixed field name, so every lead form sends the same names (fix list Nov 23, 2026). */
+  name?: string;
   type?: string;
   inputMode?: "text" | "tel" | "email" | "numeric" | "decimal" | "search" | "url" | "none";
   autoComplete?: string;
@@ -31,6 +33,7 @@ export const fieldAttrs = {
   },
   /** US phone number */
   phone: {
+    name: "phone",
     type: "tel",
     inputMode: "tel",
     autoComplete: "tel",
@@ -39,6 +42,7 @@ export const fieldAttrs = {
   },
   /** Phone as the last field in a form */
   phoneLast: {
+    name: "phone",
     type: "tel",
     inputMode: "tel",
     autoComplete: "tel",
@@ -46,6 +50,7 @@ export const fieldAttrs = {
     ...noAutoText,
   },
   email: {
+    name: "email",
     type: "email",
     inputMode: "email",
     autoComplete: "email",
@@ -53,6 +58,7 @@ export const fieldAttrs = {
     ...noAutoText,
   },
   emailLast: {
+    name: "email",
     type: "email",
     inputMode: "email",
     autoComplete: "email",

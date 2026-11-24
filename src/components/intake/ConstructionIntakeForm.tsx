@@ -18,6 +18,8 @@ import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { actionableError } from "@/lib/microcopy";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 type Step = number;
 
@@ -78,6 +80,7 @@ const ConstructionIntakeForm = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const honeypot = useHoneypot();
   const [error, setError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
 
@@ -127,6 +130,8 @@ const ConstructionIntakeForm = () => {
       setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
       return;
     }
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) { setSubmitted(true); return; }
     setIssues([]);
     setSubmitting(true);
     setError(null);
@@ -280,7 +285,8 @@ const ConstructionIntakeForm = () => {
   }
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); step < 3 ? next() : void submit(); }} noValidate>
+    <form method="post" onSubmit={(e) => { e.preventDefault(); step < 3 ? next() : void submit(); }} noValidate>
+      <Honeypot id="construction-intake-website" value={honeypot.value} onChange={honeypot.setValue} />
       <div className="flex items-center justify-between mb-7">
         <div>
           <p className="text-caption font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">

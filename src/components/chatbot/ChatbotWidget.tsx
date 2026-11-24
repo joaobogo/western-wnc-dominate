@@ -532,7 +532,7 @@ export default function ChatbotWidget() {
 
             {/* Footer: input + phone CTA */}
             <div className="shrink-0 border-t border-border bg-card">
-              <form onSubmit={handleSubmit} className="flex items-center gap-2 px-3 py-2">
+              <form method="post" onSubmit={handleSubmit} className="flex items-center gap-2 px-3 py-2">
                 <input
                   aria-label="Describe your project"
                   {...fieldAttrs.chat}

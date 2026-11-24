@@ -626,3 +626,39 @@ https://highlandernc.com/xmlrpc.php
 
 # --- Source C: URLs quoted in the P1.1 brief ---
 https://highlandernc.com/contact/seamless-gutters-service-area/cashiers-nc
+# Fix list Nov 23, 2026 (Search Console audit): old URLs that returned 404.
+https://highlandernc.com/home
+https://www.highlandernc.com/home
+https://highlandernc.com/residential-maintenance-programs
+https://www.highlandernc.com/residential-maintenance-programs
+https://highlandernc.com/wood-shake-repair
+https://www.highlandernc.com/wood-shake-repair
+https://highlandernc.com/valley-repair
+https://www.highlandernc.com/valley-repair
+https://highlandernc.com/why-timely-roofing-repair-is-essential-for-your-home
+https://www.highlandernc.com/why-timely-roofing-repair-is-essential-for-your-home
+https://highlandernc.com/how-a-roofing-company-can-increase-your-home-s-value
+https://www.highlandernc.com/how-a-roofing-company-can-increase-your-home-s-value
+https://highlandernc.com/roofing/replacement
+https://www.highlandernc.com/roofing/replacement
+https://highlandernc.com/downspout-installation
+https://www.highlandernc.com/downspout-installation
+https://highlandernc.com/soffit-installation
+https://www.highlandernc.com/soffit-installation
+https://highlandernc.com/outdoor-living-services
+https://www.highlandernc.com/outdoor-living-services
+https://highlandernc.com/serving-area
+https://www.highlandernc.com/serving-area
+https://highlandernc.com/service-areas/sylva-nc/additions
+https://www.highlandernc.com/service-areas/sylva-nc/additions
+https://highlandernc.com/service-areas/cashiers-nc/additions
+https://www.highlandernc.com/service-areas/cashiers-nc/additions
+https://highlandernc.com/service-areas/murphy-nc/additions
+https://www.highlandernc.com/service-areas/murphy-nc/additions
+https://highlandernc.com/service-areas/cherokee-nc/additions
+https://www.highlandernc.com/service-areas/cherokee-nc/additions
+https://highlandernc.com/service-areas/scaly-mountain-nc/additions
+https://www.highlandernc.com/service-areas/scaly-mountain-nc/additions
+https://highlandernc.com/contact/hardscape-contractor-service-area/
+https://www.highlandernc.com/contact/hardscape-contractor-service-area/
+https://highlandernc.com/service-areas/franklin-nc/additions

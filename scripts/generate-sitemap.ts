@@ -15,6 +15,8 @@ import { towns } from "../src/data/towns";
 import { counties } from "../src/data/counties";
 import { indexableServiceTownPairs } from "../src/data/service-town-content";
 import { projectDetails } from "../src/data/projects";
+import pageLastmod from "../src/data/generated/page-lastmod.json";
+import { TASK2_LINKED_ON, TASK2_PAGES } from "../src/data/sitemap-lastmod-overrides";
 
 // The canonical host. The domain is pointed at this build; never the Lovable
 // preview host — Search Console cannot use a sitemap on another origin.
@@ -160,6 +162,18 @@ const blogRoutes: SitemapEntry[] = blogPosts
 // If there are slugs in the public sitemap that ARE NOT in blogPosts, they must
 // be removed. The generator already handles this by only sourcing from blogPosts.
 
+// Real last-edit dates (git history of each page's source files), written by
+// scripts/compute-page-lastmod.mjs. Fix list Nov 23, 2026, Task 2: every URL
+// gets an accurate <lastmod>. Blog posts keep their own updated/date.
+const PAGE_LASTMOD = pageLastmod as Record<string, string>;
+
+const withLastmod = (e: SitemapEntry): SitemapEntry => {
+  if (TASK2_PAGES.has(e.path)) return { ...e, lastmod: TASK2_LINKED_ON };
+  if (e.lastmod) return e;
+  const date = PAGE_LASTMOD[e.path];
+  return date ? { ...e, lastmod: date } : e;
+};
+
 // De-duplicate by path (first wins) to guarantee no duplicate <url> entries.
 const seen = new Set<string>();
 const entries: SitemapEntry[] = [
@@ -174,7 +188,7 @@ const entries: SitemapEntry[] = [
   if (seen.has(e.path)) return false;
   seen.add(e.path);
   return true;
-});
+}).map(withLastmod);
 
 // One URL shape sitewide: NO trailing slash (the homepage is always "/").
 // Internal links, UrlNormalizer, the canonical tag, og:url and the prerendered

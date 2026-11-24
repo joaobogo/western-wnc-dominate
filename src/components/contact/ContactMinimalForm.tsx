@@ -14,6 +14,8 @@ import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import FormConsent from "@/components/FormConsent";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 import { microcopy } from "@/lib/microcopy";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as const;
 const FORM_ID = "contact-minimal-form";
@@ -33,6 +35,7 @@ const ContactMinimalForm = () => {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const honeypot = useHoneypot();
 
   const contact = useContactValidation({
     name: form.firstName,
@@ -78,6 +81,11 @@ const ContactMinimalForm = () => {
 
     setSubmitError(null);
     setIssues([]);
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) {
+      setSubmitted(true);
+      return;
+    }
     inFlight.current = true;
     setIsSubmitting(true);
 
@@ -159,7 +167,7 @@ const ContactMinimalForm = () => {
   const labelClasses = "field-label";
 
   return (
-    <form
+    <form method="post"
       noValidate
       onSubmit={handleSubmit}
       className="space-y-5"
@@ -168,6 +176,7 @@ const ContactMinimalForm = () => {
       data-gtm-form-id={FORM_ID}
       data-gtm-service-category="general"
     >
+      <Honeypot id={`${FORM_ID}-website`} value={honeypot.value} onChange={honeypot.setValue} />
       <FormErrorSummary message={submitError} issues={issues} className="mt-0 mb-2" />
       <FormSavedNote show={autosave.restored} className="mb-2" />
 

@@ -396,7 +396,7 @@ function PeopleManager({ people, onChanged }: { people: ListedPerson[]; onChange
           </li>
         ))}
       </ul>
-      <form
+      <form method="post"
         className="mt-4 flex flex-wrap items-end gap-3"
         onSubmit={async (e) => {
           e.preventDefault();
@@ -488,7 +488,7 @@ function TeamLogins({ members, onChange }: { members: ManagedMember[]; onChange:
         {members.length === 0 && <li className="text-[14px] opacity-70">Nobody added yet.</li>}
       </ul>
 
-      <form onSubmit={add} className="mt-5 grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+      <form method="post" onSubmit={add} className="mt-5 grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
         <label className="block">
           <span className="block text-[13px] font-semibold mb-1">Login email</span>
           <input className="hl-input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
