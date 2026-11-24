@@ -11,4 +11,5 @@ export const MOST_REQUESTED_LINKS: { label: string; to: string }[] = [
   { label: "Roof replacement", to: "/roofing/roof-replacement" },
   { label: "Gutters & gutter guards", to: "/roofing/gutters" },
   { label: "Construction & additions", to: "/construction" },
+  { label: "All services", to: "/services" },
 ];

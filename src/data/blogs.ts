@@ -538,7 +538,7 @@ The safe approach: contain the water inside, photograph the damage, and let a ro
 
 ## What to check after a storm
 
-If the leak showed up after a storm, a systematic check gives your roofer a head start. the manufacturer’s storm guidance lays out what to look at:
+If the leak showed up after a storm, a systematic check gives your roofer a head start. The manufacturer’s storm guidance lays out what to look at:
 
 - **From the attic:** look for daylight coming through the roof, sagging, and damp or stained wood.
 - **On ceilings:** note stains, bubbling paint and soft spots.

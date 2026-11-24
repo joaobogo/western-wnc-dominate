@@ -34,7 +34,7 @@ export default function AdminLogin() {
     <>
     <SEOHead title="Admin Sign In | Highlander" description="Highlander admin sign-in." path="/admin/login" noindex />
     <div role="main" id="main-content" className="min-h-dvh flex items-center justify-center p-6 bg-background">
-      <form onSubmit={submit} className="w-full max-w-sm space-y-4 border border-border rounded-md p-6">
+      <form method="post" onSubmit={submit} className="w-full max-w-sm space-y-4 border border-border rounded-md p-6">
         <div>
           <h1 className="text-lg font-heading font-bold">Internal sign in</h1>
           <p className="text-xs text-muted-foreground">Highlander team only. Leads dashboard access.</p>

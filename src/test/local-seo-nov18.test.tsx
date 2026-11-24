@@ -127,6 +127,8 @@ describe("top-20 pages (Nov 18 plan)", () => {
       "/roofing/roof-replacement",
       "/roofing/gutters",
       "/construction",
+      // Fix list Nov 23, 2026 (Task 2): the services hub is linked from the homepage strip.
+      "/services",
     ]);
     expect(read("src/pages/Index.tsx")).toContain("<MostRequestedLinks />");
   });

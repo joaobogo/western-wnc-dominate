@@ -96,7 +96,7 @@ export function PersonPicker({ people, onChoose }: { people: ListedPerson[]; onC
         </button>
       </div>
       {otherOpen && (
-        <form
+        <form method="post"
           className="mt-4 flex flex-wrap items-end gap-2"
           onSubmit={(e) => {
             e.preventDefault();

@@ -639,7 +639,7 @@ const Blog = () => {
                 Seasonal maintenance reminders, storm updates, and mountain building insights —
                 delivered a few times per year. No spam, no sales pitches.
               </p>
-              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <form method="post" onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   aria-label="Email address for the newsletter"
                   {...fieldAttrs.emailLast}

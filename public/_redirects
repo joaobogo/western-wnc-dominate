@@ -1,3 +1,26 @@
+# ============================================================
+# Fix list Nov 23, 2026 (Task 1 + Task 4): www requests for these old URLs go
+# straight to the final page in ONE hop (the generic www rule below would add
+# a second hop).
+# ============================================================
+https://www.highlandernc.com/home                              https://highlandernc.com/                      301!
+https://www.highlandernc.com/residential-maintenance-programs  https://highlandernc.com/roofing/residential   301!
+https://www.highlandernc.com/wood-shake-repair                 https://highlandernc.com/roofing/specialty     301!
+https://www.highlandernc.com/valley-repair                     https://highlandernc.com/roofing/roof-repair   301!
+https://www.highlandernc.com/why-timely-roofing-repair-is-essential-for-your-home https://highlandernc.com/roofing/roof-repair   301!
+https://www.highlandernc.com/how-a-roofing-company-can-increase-your-home-s-value https://highlandernc.com/roofing/roof-replacement 301!
+https://www.highlandernc.com/roofing/replacement               https://highlandernc.com/roofing/roof-replacement 301!
+https://www.highlandernc.com/downspout-installation            https://highlandernc.com/roofing/gutters       301!
+https://www.highlandernc.com/soffit-installation               https://highlandernc.com/exterior-improvements 301!
+https://www.highlandernc.com/outdoor-living-services           https://highlandernc.com/construction/outdoor-living 301!
+https://www.highlandernc.com/serving-area                      https://highlandernc.com/service-areas         301!
+https://www.highlandernc.com/service-areas/sylva-nc/additions  https://highlandernc.com/service-areas/sylva-nc/construction 301!
+https://www.highlandernc.com/service-areas/cashiers-nc/additions https://highlandernc.com/service-areas/cashiers-nc/construction 301!
+https://www.highlandernc.com/service-areas/murphy-nc/additions https://highlandernc.com/service-areas/murphy-nc 301!
+https://www.highlandernc.com/service-areas/cherokee-nc/additions https://highlandernc.com/service-areas/cherokee-nc 301!
+https://www.highlandernc.com/service-areas/scaly-mountain-nc/additions https://highlandernc.com/service-areas/scaly-mountain-nc 301!
+https://www.highlandernc.com/contact/hardscape-contractor-service-area https://highlandernc.com/construction/outdoor-living/hardscape 301!
+
 http://highlandernc.com/*        https://highlandernc.com/:splat      301!
 http://www.highlandernc.com/*    https://highlandernc.com/:splat      301!
 https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
@@ -654,6 +677,30 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /contact/:segment/stecoah                                    /service-areas                                    301!
 /contact/:segment/walhalla-sc                                /service-areas                                    301!
 
+# Fix list Nov 23, 2026, Task 1: the hardscape directory page goes to the hardscape
+# page, and any other town that has a page of its own goes to that town page
+# instead of the /service-areas hub (earlier rules for specific towns still win).
+# Asheville and Hendersonville are left out: their town pages are noindex.
+/contact/hardscape-contractor-service-area                     /construction/outdoor-living/hardscape 301!
+/contact/:segment/brevard-nc                                       /service-areas/brevard-nc 301!
+/contact/:segment/bryson-city-nc                                   /service-areas/bryson-city-nc 301!
+/contact/:segment/cashiers-nc                                      /service-areas/cashiers-nc 301!
+/contact/:segment/cherokee-nc                                      /service-areas/cherokee-nc 301!
+/contact/:segment/cullowhee-nc                                     /service-areas/cullowhee-nc 301!
+/contact/:segment/dillsboro-nc                                     /service-areas/dillsboro-nc 301!
+/contact/:segment/franklin-nc                                      /service-areas/franklin-nc 301!
+/contact/:segment/hayesville-nc                                    /service-areas/hayesville-nc 301!
+/contact/:segment/highlands-nc                                     /service-areas/highlands-nc 301!
+/contact/:segment/lake-glenville-nc                                /service-areas/lake-glenville-nc 301!
+/contact/:segment/lake-toxaway-nc                                  /service-areas/lake-toxaway-nc 301!
+/contact/:segment/murphy-nc                                        /service-areas/murphy-nc 301!
+/contact/:segment/otto-nc                                          /service-areas/otto-nc 301!
+/contact/:segment/sapphire-nc                                      /service-areas/sapphire-nc 301!
+/contact/:segment/scaly-mountain-nc                                /service-areas/scaly-mountain-nc 301!
+/contact/:segment/sylva-nc                                         /service-areas/sylva-nc 301!
+/contact/:segment/tuckasegee-nc                                    /service-areas/tuckasegee-nc 301!
+/contact/:segment/waynesville-nc                                   /service-areas/waynesville-nc 301!
+
 /contact/:segment                                            /service-areas                                     301!
 /contact/:segment/*                                          /service-areas                                     301!
 
@@ -933,6 +980,56 @@ https://www.highlandernc.com/*   https://highlandernc.com/:splat      301!
 /blog/choosing-roofing-contractor-wnc                              /roofing                                                     301!
 /blog/why-hire-one-company-roof-and-construction                   /about                                                       301!
 /blog/metal-roof-maintenance-franklin-nc                           /roofing/metal                                               301!
+
+# ============================================================
+# Fix list Nov 23, 2026, Task 4: one sitemap address only. The temporary
+# migration sitemap (Sep 2026) has been retired.
+# ============================================================
+/sitemap-legacy.xml                                            /sitemap.xml                                  301!
+
+# ============================================================
+# Fix list Nov 23, 2026, Task 1: old-site URLs that returned 404 in Search
+# Console. One permanent hop each to a live page.
+# ============================================================
+/home                                                          /                                              301!
+/residential-maintenance-programs                              /roofing/residential                           301!
+/wood-shake-repair                                             /roofing/specialty                             301!
+/valley-repair                                                 /roofing/roof-repair                           301!
+/why-timely-roofing-repair-is-essential-for-your-home          /roofing/roof-repair                           301!
+/how-a-roofing-company-can-increase-your-home-s-value          /roofing/roof-replacement                      301!
+/roofing/replacement                                           /roofing/roof-replacement                      301!
+/downspout-installation                                        /roofing/gutters                               301!
+/soffit-installation                                           /exterior-improvements                         301!
+/outdoor-living-services                                       /construction/outdoor-living                   301!
+/serving-area                                                  /service-areas                                 301!
+/service-areas/sylva-nc/additions                              /service-areas/sylva-nc/construction           301!
+/service-areas/cashiers-nc/additions                           /service-areas/cashiers-nc/construction        301!
+/service-areas/murphy-nc/additions                             /service-areas/murphy-nc                       301!
+/service-areas/cherokee-nc/additions                           /service-areas/cherokee-nc                     301!
+/service-areas/scaly-mountain-nc/additions                     /service-areas/scaly-mountain-nc               301!
+
+# Catch-alls (Task 1 safety rules). Not forced (no '!'): they only fire when no
+# real page exists at that address, so live pages are never redirected.
+# /service-areas/:town/additions -> town construction page (indexable ones),
+# else the town page, else /construction/additions (also for Hendersonville,
+# whose town page is noindex; Asheville has its own additions page).
+/service-areas/brevard-nc/additions                            /service-areas/brevard-nc                      301
+/service-areas/bryson-city-nc/additions                        /service-areas/bryson-city-nc                  301
+/service-areas/canton-nc/additions                             /service-areas/canton-nc                       301
+/service-areas/clyde-nc/additions                              /service-areas/clyde-nc                        301
+/service-areas/cullowhee-nc/additions                          /service-areas/cullowhee-nc                    301
+/service-areas/dillsboro-nc/additions                          /service-areas/dillsboro-nc                    301
+/service-areas/franklin-nc/additions                           /service-areas/franklin-nc/construction        301
+/service-areas/hayesville-nc/additions                         /service-areas/hayesville-nc                   301
+/service-areas/hendersonville-nc/additions                     /construction/additions               301
+/service-areas/lake-glenville-nc/additions                     /service-areas/lake-glenville-nc               301
+/service-areas/lake-toxaway-nc/additions                       /service-areas/lake-toxaway-nc                 301
+/service-areas/maggie-valley-nc/additions                      /service-areas/maggie-valley-nc                301
+/service-areas/otto-nc/additions                               /service-areas/otto-nc                         301
+/service-areas/sapphire-nc/additions                           /service-areas/sapphire-nc                     301
+/service-areas/tuckasegee-nc/additions                         /service-areas/tuckasegee-nc                   301
+/service-areas/whittier-nc/additions                           /service-areas/whittier-nc                     301
+/service-areas/:town/additions                                 /construction/additions                        301
 
 # ============================================================
 # App-only rewrites — public/noindex funnels are prerendered as real files.

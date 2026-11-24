@@ -24,7 +24,7 @@ export function SignIn() {
 
   return (
     <main className="min-h-[80dvh] flex items-center justify-center px-4 py-10">
-      <form onSubmit={submit} className="hl-card w-full max-w-[420px] p-6 sm:p-8" noValidate>
+      <form method="post" onSubmit={submit} className="hl-card w-full max-w-[420px] p-6 sm:p-8" noValidate>
         <p className="hl-label">{COMPANY.name}</p>
         <h1 className="hl-slab text-2xl mt-1">Front desk sign-in</h1>
         <p className="text-[15px] mt-2 opacity-80">Sign in with your front desk email and password.</p>

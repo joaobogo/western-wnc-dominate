@@ -12,6 +12,8 @@ import { normalizePhoneE164 } from "@/lib/lead-validation";
 import { getAnalyticsPageType, getTownSlugFromPath } from "@/lib/urgent-intent";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/microcopy";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 const SESSION_KEY = "hl_recovery_prompt_seen";
 /** Set once a lead is submitted — recovery never interrupts after that. */
@@ -60,6 +62,7 @@ const RecoveryPrompt = () => {
   const [error, setError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
   const inFlight = useRef(false);
+  const honeypot = useHoneypot();
   const [done, setDone] = useState(false);
   const shownRef = useRef(false);
   const mountedAt = useRef(Date.now());
@@ -126,6 +129,8 @@ const RecoveryPrompt = () => {
     if (cleanName.length < 2) { setError("Please add your name so we know who to ask for."); return; }
     const p = normalizePhoneE164(phone);
     if (p.ok !== true) { setError(p.error); return; }
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) { setDone(true); return; }
     setError(null);
     inFlight.current = true;
     setSending(true);
@@ -207,7 +212,8 @@ const RecoveryPrompt = () => {
             <p className="mt-2 font-body text-body-sm text-muted-foreground">
               Two fields. A Highlander team member calls you back as soon as possible during business hours — no forms to finish, no pressure.
             </p>
-            <form onSubmit={submit} className="mt-5 space-y-3" noValidate>
+            <form method="post" onSubmit={submit} className="mt-5 space-y-3" noValidate>
+              <Honeypot id="recovery-website" value={honeypot.value} onChange={honeypot.setValue} />
               <div>
                 <label htmlFor="recovery-name" className="sr-only">Your name</label>
                 <input

@@ -155,7 +155,7 @@ const Careers = () => {
                       
                       <h3 className="text-2xl font-heading font-bold mb-8">Direct Application</h3>
                       
-                      <form onSubmit={handleSubmit} className="space-y-6">
+                      <form method="post" onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>

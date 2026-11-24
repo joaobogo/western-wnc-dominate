@@ -24,6 +24,8 @@ import heroRenov from "@/assets/gallery/asphalt-005.webp";
 import heroOutdoor from "@/assets/work/patio-cashiers-wide.webp";
 import heroFlatwork from "@/assets/gallery/asphalt-006.webp";
 import { actionableError } from "@/lib/microcopy";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 const PROJECT_TYPES: VisualChoice[] = [
   { value: "addition", label: "Addition / Extension", sub: "Expand the footprint of your home", image: heroAddition },
@@ -116,6 +118,7 @@ const ConstructionBuilder = () => {
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const honeypot = useHoneypot();
   const [files, setFiles] = useState<File[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -175,6 +178,8 @@ const ConstructionBuilder = () => {
       setStep((s) => s + 1);
       return;
     }
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) { setSubmitted(true); return; }
     setSubmitting(true);
     setError(null);
     try {
@@ -352,7 +357,8 @@ const ConstructionBuilder = () => {
           switchLabel="Switch to roofing builder"
           summary={<ScopeSummary rows={summaryRows} />}
         >
-          <form onSubmit={(e) => { e.preventDefault(); void next(); }} noValidate>
+          <form method="post" onSubmit={(e) => { e.preventDefault(); void next(); }} noValidate>
+            <Honeypot id="construction-builder-website" value={honeypot.value} onChange={honeypot.setValue} />
             <AnimatePresence mode="wait">
             <motion.div
               key={step}

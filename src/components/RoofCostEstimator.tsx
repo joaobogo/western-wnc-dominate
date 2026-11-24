@@ -9,6 +9,8 @@ import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import FormConsent from "@/components/FormConsent";
 import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -53,6 +55,7 @@ const stepOrder: Step[] = ["size", "material", "condition", "contact", "result"]
 const RoofCostEstimator = () => {
   const [step, setStep] = useState<Step>("size");
   const [direction, setDirection] = useState(1);
+  const honeypot = useHoneypot();
   const { submitting, submit } = useLeadSubmit();
   const [data, setData] = useState<EstimateData>({
     size: "", material: "", condition: "", name: "", email: "", phone: "", town: "",
@@ -79,6 +82,8 @@ const RoofCostEstimator = () => {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (data.name && data.email && data.phone && !submitting) {
+      // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+      if (honeypot.tripped()) { goTo("result"); return; }
       const est = getEstimate();
       await submit({
         source: "roof_cost_estimator",
@@ -231,7 +236,8 @@ const RoofCostEstimator = () => {
                 <div>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-1">Your Estimate Is Ready</h3>
                   <p className="text-sm text-muted-foreground mb-6 font-body">Enter your info to see your personalized range and receive a detailed breakdown.</p>
-                  <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <form method="post" onSubmit={handleContactSubmit} className="space-y-4">
+                    <Honeypot id="estimator-website" value={honeypot.value} onChange={honeypot.setValue} />
                     <div>
                       <label className={labelClass} htmlFor="f-your-name">Your Name</label>
                       <input id="f-your-name" {...fieldAttrs.name} value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} required className={inputClass} placeholder="e.g. John and Mary Davidson" />

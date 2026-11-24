@@ -100,7 +100,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, serviceCategory: categoryOverrid
         </p>
       </div>
 
-      <form
+      <form method="post"
         noValidate
         className="relative space-y-4"
         data-hide-sticky

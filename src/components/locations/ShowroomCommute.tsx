@@ -71,7 +71,7 @@ const ShowroomCommute = ({
         {napLine(location)}.
       </p>
 
-      <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row">
+      <form method="post" onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row">
         <label htmlFor={`commute-${showroomSlug}`} className="sr-only">
           Your address, town or ZIP code
         </label>

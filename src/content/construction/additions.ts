@@ -55,7 +55,10 @@ export const additionsContent: ConstructionPageContent = {
       "The joint between the new roof and the existing one takes the most water on a mountain home. We are a roofing company too, so that valley, the flashing and the drip edges are done by our own roofers under the same scope.",
       "Most additions also need drawings first. Our design and planning service can produce them before you build.",
     ],
-    links: [{ label: "Plan before you build: design & planning", href: "/construction/design" }],
+    links: [
+      { label: "Plan before you build: design & planning", href: "/construction/design" },
+      { label: "Home addition permits in North Carolina", href: "/blog/home-addition-permits" },
+    ],
   },
   featuredProjects: { heading: "A Franklin addition, start to finish", slugs: ["living-room-addition-franklin"] },
   cost: {

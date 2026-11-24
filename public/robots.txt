@@ -37,6 +37,3 @@ Disallow: /intake/
 # the private-path Disallow rules.
 
 Sitemap: https://highlandernc.com/sitemap.xml
-# Temporary migration sitemap. Remove this line and public/sitemap-legacy.xml
-# after 27 Oct 2026 once the migration recrawl window has passed.
-Sitemap: https://highlandernc.com/sitemap-legacy.xml
