@@ -46,6 +46,8 @@ describe("Task 3: every form sends the same field names, safely", () => {
       "src/components/intake/ConstructionIntakeForm.tsx",
       "src/pages/RoofingBuilder.tsx",
       "src/pages/ConstructionBuilder.tsx",
+      // Follow-up Nov 24: John asked for the trap on the careers application too.
+      "src/pages/Careers.tsx",
     ];
     for (const f of leadForms) {
       const s = readFileSync(f, "utf8");
@@ -65,6 +67,13 @@ describe("Task 3: every form sends the same field names, safely", () => {
     const names = [...form.querySelectorAll("input")].map((i) => i.getAttribute("name"));
     expect(names).toEqual(expect.arrayContaining(["first_name", "email", "phone", "website_url"]));
     expect(form.querySelector('input[name="phone"]')!.getAttribute("type")).toBe("tel");
+  });
+});
+
+describe("Follow-up Nov 24: no dead newsletter form", () => {
+  it("the blog page has no Subscribe box (it never sent the address anywhere)", () => {
+    const blog = readFileSync("src/pages/Blog.tsx", "utf8");
+    expect(blog).not.toMatch(/newsletter|Subscribe/i);
   });
 });
 

@@ -10,6 +10,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leads";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import Honeypot from "@/components/forms/Honeypot";
+import { useHoneypot } from "@/hooks/use-honeypot";
 
 const benefits = [
   { title: "Competitive Pay", desc: "Industry-leading wages based on skill and local mountain experience.", icon: ShieldCheck },
@@ -31,10 +33,16 @@ const Careers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", role: openRoles[0], experience: "" });
+  const honeypot = useHoneypot();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
+    // Honeypot: bots fill hidden fields. Behave as if it worked, store nothing.
+    if (honeypot.tripped()) {
+      setIsSubmitted(true);
+      return;
+    }
     setIsSubmitting(true);
     try {
       const result = await submitLead({
@@ -156,6 +164,7 @@ const Careers = () => {
                       <h3 className="text-2xl font-heading font-bold mb-8">Direct Application</h3>
                       
                       <form method="post" onSubmit={handleSubmit} className="space-y-6">
+                        <Honeypot id="careers-website" value={honeypot.value} onChange={honeypot.setValue} />
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>

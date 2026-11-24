@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight, Clock, Search, BookOpen, Zap, Mountain,
-  Shield, Wrench, Home, CloudLightning, DollarSign, Newspaper,
+  Shield, Wrench, Home, CloudLightning, DollarSign,
   Calendar, TrendingUp, ChevronRight, Leaf, Snowflake, Sun, Wind,
 } from "lucide-react";
 import EmptyState from "@/components/states/EmptyState";
@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
-import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
+import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { linkableBlogPosts } from "@/data/blogs";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
@@ -616,43 +616,6 @@ const Blog = () => {
                 secondaryAction={{ label: "Talk to Highlander", to: "/contact" }}
               />
             )}
-          </div>
-        </section>
-
-        {/* ═══ NEWSLETTER ═══ */}
-        <section className="section-padding section-dark tartan-dark relative overflow-hidden">
-          <TextureOverlay opacity={0.02} />
-          <div className="container-tight relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-xl mx-auto text-center"
-            >
-              <div className="w-12 h-12 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mx-auto mb-4">
-                <Newspaper className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-2">
-                Stay Informed
-              </h3>
-              <p className="text-dark-section-muted text-sm mb-6 max-w-md mx-auto">
-                Seasonal maintenance reminders, storm updates, and mountain building insights —
-                delivered a few times per year. No spam, no sales pitches.
-              </p>
-              <form method="post" onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  aria-label="Email address for the newsletter"
-                  {...fieldAttrs.emailLast}
-                  enterKeyHint="send"
-                  placeholder="your@email.com"
-                  className="flex-1 px-4 py-3 rounded-sm bg-[hsl(var(--dark-section-foreground)/0.06)] border border-dark-section-border text-[hsl(var(--dark-section-foreground))] text-sm font-body placeholder:text-dark-section-muted focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
-                />
-                <button type="submit" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
-                  Subscribe
-                </button>
-              </form>
-              <p className="text-[hsl(var(--dark-section-foreground)/0.75)] text-caption mt-3 font-body">Unsubscribe anytime. We respect your inbox.</p>
-            </motion.div>
           </div>
         </section>
 
