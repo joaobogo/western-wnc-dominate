@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "skylights-on-metal-roofs",
+    "title": "Skylights on Metal Roofs: How They Are Installed and Flashed",
+    "excerpt": "Yes, a skylight fits a metal roof. Learn how curbs, flashing and panel type decide whether it stays dry, and what to expect in Western NC.",
+    "category": "Roofing",
+    "date": "2026-11-24",
+    "town": "Franklin"
+  },
+  {
     "slug": "roof-leaks-in-rain",
     "title": "Roof Leaks in Rain: What to Do and Where Water Gets In",
     "excerpt": "Roof leaking in heavy rain? Learn safe steps to contain water, trace flashing and vent problems, and plan a lasting repair for your Western NC home.",
