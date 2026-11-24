@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "skylights-on-metal-roofs",
+    "slug": "skylights-on-metal-roofs",
+    "title": "Skylights on Metal Roofs: How They Are Installed and Flashed",
+    "excerpt": "Yes, a skylight fits a metal roof. Learn how curbs, flashing and panel type decide whether it stays dry, and what to expect in Western NC.",
+    "category": "Roofing",
+    "date": "2026-11-24",
+    "readTime": "12 min"
+  },
+  {
     "id": "roof-leaks-in-rain",
     "slug": "roof-leaks-in-rain",
     "title": "Roof Leaks in Rain: What to Do and Where Water Gets In",
@@ -108,15 +117,6 @@ export const blogSummaries: BlogSummary[] = [
     "title": "Copper Gutters Cost: Per-Foot Budgets and Estimate Extras",
     "excerpt": "Compare illustrative copper gutter budgets, profiles and material weights. Check downspouts, soldered joints, fascia repairs and estimate exclusions.",
     "category": "Cost",
-    "date": "2026-10-12",
-    "readTime": "7 min"
-  },
-  {
-    "id": "drip-edge-vs-gutter-apron",
-    "slug": "drip-edge-vs-gutter-apron",
-    "title": "Drip Edge vs. Gutter Apron on Mountain Roofs",
-    "excerpt": "Understand drip edge, gutter aprons and roof-edge drainage. Check flashing sequence, fascia condition and gutter fit on Western North Carolina homes.",
-    "category": "Materials",
     "date": "2026-10-12",
     "readTime": "7 min"
   }

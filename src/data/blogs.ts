@@ -1,6 +1,7 @@
 import november23Hero0 from "@/assets/blog/synthetic-slate-roofing-hero.webp";
 import november23Hero1 from "@/assets/blog/hillside-deck-foundation-hero.webp";
 import november23Hero2 from "@/assets/blog/roof-leaks-in-rain-hero.webp";
+import november24Hero0 from "@/assets/blog/skylights-on-metal-roofs-hero.webp";
 import { BUSINESS } from "@/data/business";
 import screenedPorchSunroomHero from "@/assets/blog/screened-porch-vs-sunroom-hero.jpg";
 import hipGableHero from "@/assets/blog/hip-roof-vs-gable-roof-hero.jpg";
@@ -616,6 +617,177 @@ Do both quickly, starting with photos and stopping further damage. Call a roofer
 - [Common Roof Leak Locations in Highlands, NC Homes](https://highlandernc.com/service-areas/highlands-nc/roof-repair)
 - [Water Coming Through Ceiling? What to Do](https://highlandernc.com/roofing/roof-repair)
 - [Roof Flashing Leak Repair in Western NC](https://highlandernc.com/blog/roof-flashing-leak)`,
+  },
+  {
+    slug: "skylights-on-metal-roofs",
+    title: "Skylights on Metal Roofs: How They Are Installed and Flashed",
+    excerpt: "Yes, a skylight fits a metal roof. Learn how curbs, flashing and panel type decide whether it stays dry, and what to expect in Western NC.",
+    category: "Roofing",
+    date: "2026-11-24",
+    town: "Franklin",
+    readTime: "12 min",
+    metaTitle: "Skylights on Metal Roofs: Install and Flashing | Highlander",
+    metaDescription: "Yes, a skylight fits a metal roof. Learn how curbs, flashing and panel type decide whether it stays dry, and what to expect in Western NC.",
+    imageAlt: "Curb-mounted skylight with metal flashing on a standing seam metal roof of a Western NC mountain home",
+    faqs: [{"question": "Can you install a skylight in a metal roof?", "answer": "Yes. VELUX states that both deck-mounted and curb-mounted skylights can go on metal roofs. The key is selecting flashing that matches the panel profile and confirming that the structure under the roof can support the opening."}, {"question": "Do skylights leak more on metal roofs?", "answer": "Not when the flashing is correct. Leaks come from mismatched flashing, missing underlayment or sealant used in place of proper layering. Matching the kit to the panel and checking the work with a water test helps keep the opening dry."}, {"question": "Is a curb required for a skylight on a metal roof?", "answer": "On low slopes, yes. North Carolina's residential code calls for a curb at least 4 inches high when the roof pitch is flatter than 3:12. Many installers also curb skylights on steeper metal roofs because the curb gives the flashing a clean shape to wrap."}, {"question": "Should I add a skylight when I replace my roof?", "answer": "It is usually the best time. The opening is framed before the panels go down, the curb and underlayment are built in, and you avoid cutting through finished metal later. Any older skylight on the roof can be replaced in the same visit."}],
+    relatedServices: [{"label": "Skylights", "path": "/roofing/skylights"}, {"label": "Metal Roofing", "path": "/roofing/metal"}, {"label": "Franklin Service Area", "path": "/service-areas/franklin-nc"}],
+    image: november24Hero0,
+    content: `Yes, you can put a skylight in a metal roof, and it can stay dry for decades. The result depends on three things: matching the flashing to your exact panel profile, curbing the skylight so water has somewhere to go, and having one crew handle the roof and the opening together. In the mountains, where wind-driven rain and freeze-thaw cycles test every seam, we think the best time to do this is with the roof itself.
+
+[Explore Highlander services](https://highlandernc.com/)
+
+## TL;DR
+
+- Both deck-mounted and curb-mounted skylights can be installed on metal roofs, [according to VELUX](https://www.veluxusa.com/inspiration/blog/can-you-install-a-skylight-on-a-metal-roof), as long as the flashing matches the panel type.
+- Identify your panel first: exposed-fastener, standing seam, or a high corrugated profile. Each calls for different flashing.
+- Flashing layers go on bottom-up so every upper layer overlaps the lower one and water always sheds outward.
+- Pairing a new skylight with a new metal roof avoids cutting into finished panels and lets one crew build one watertight system.
+- Ask for water testing before interior finishes go back up, so any leak is found while it is easy to trace.
+
+## Why a skylight is the riskiest detail on a metal roof
+
+A metal roof sheds water well because it has few joints and a lot of slope. A skylight interrupts that. The U.S. Department of Energy's Building Science Education Center describes skylights as [penetrations through the roof's water-control layer and a weak spot for leaks](https://bsesc.energy.gov/energy-basics/flashing-around-skylight-roof-removal). Water has to be steered around the opening, over the flashing and back onto the panels below.
+
+Metal adds its own demands. Panels expand and contract with temperature, ribs and seams create channels that water can follow, and the panel profile determines what shape of flashing can sit flat against it. That is why a skylight that works well on an asphalt shingle roof cannot simply be dropped into a metal one with the same flashing kit.
+
+On a mountain home the stakes are higher. Wind exposure at elevation pushes rain sideways and uphill, and moisture sits longer on shaded north-facing slopes. A flashing detail that survives a mild valley winter may not survive a ridge-top storm season in Highlands or Cashiers.
+
+## Step one: identify your panel type
+
+Everything starts with the panel. VELUX sorts metal roofing into three groups for choosing flashing: exposed-fastener and concealed-fastener panels with profiles of 1½ inches or less use its type EDM metal roof flashing, while continuous corrugated profiles with no flat area between seams use type EDW high-profile flashing, [per its published guidance](https://www.veluxusa.com/inspiration/blog/can-you-install-a-skylight-on-a-metal-roof).
+
+In plain terms:
+
+- **Standing seam:** flat panels joined by raised seams that hide the fasteners. Skylights are usually set on a curb, and the seams that run under the flashing are handled specifically. See our comparison of [standing seam and exposed-fastener metal roofing](https://highlandernc.com/blog/standing-seam-vs-exposed-fastener) if you are still choosing a system.
+- **Exposed-fastener (screw-down):** panels held by visible screws with rubber washers. These are common on barns, outbuildings and cabins. Flashing has to work with ribs that are spaced close together.
+- **Corrugated or high-rib profiles:** tall, continuous waves with little flat area. These need high-profile flashing and careful rib closure.
+
+If you do not know which one you have, a quick roof inspection answers it in minutes. Guessing here is how mismatched flashing ends up on a roof.
+
+## Deck-mounted or curb-mounted
+
+The two common ways to set a skylight differ in how the unit sits on the roof.
+
+**Deck-mounted** units attach directly to the roof deck, the plywood or boards under the metal. VELUX notes you should confirm a solid deck is actually present before choosing this style, since some metal roofs sit on purlins with open framing instead.
+
+**Curb-mounted** units sit on a raised frame built around the opening. The curb lifts the glass above the plane of the roof so water runs around it rather than pooling against it. North Carolina's residential code requires it on low slopes: [unit skylights on roofs flatter than 3:12 must sit on a curb at least 4 inches high](https://codes.iccsafe.org/content/NCRC2018/chapter-3-building-planning), unless the manufacturer specifies otherwise. Check which edition of the code your county has adopted, and ask for the permit requirements before the work is scheduled.
+
+On steeper mountain roofs a curb is not always required by code, but on metal it is often the cleaner answer because it gives the flashing a defined shape to wrap. The manufacturer's instructions for your specific model decide the final call.
+
+## How the flashing goes on
+
+Flashing is the sheet metal and membrane that carry water around the opening. The sequence matters more than any single material, and it follows one rule: lower layers go on first, upper layers overlap them.
+
+The Department of Energy's guide for the layering around a skylight runs like this: [underlayment around the bottom and sides of the curb, self-adhered membrane over it at the bottom and sides, membrane directly to the wood deck at the top, then roofing underlayment over the top of the flashing](https://bsesc.energy.gov/energy-basics/flashing-around-skylight-roof-removal). The result is a shingled system where gravity does the work.
+
+Manufacturer instructions get more specific. For the VELUX FCM curb-mounted model, the [installation instructions](https://www.floridabuilding.org/upload/PR_Instl_Docs/FL13303_R11_II_FCM%20Installation%20Instructions.pdf) say:
+
+- The unit is designed for roof pitches from 0:12 up to 21:12.
+- The No Leak warranty applies only when VELUX flashing ECL is used on pitches of 10° to 60°, or flashing ECW on pitches of 14° to 60°.
+- The curb must be completely wrapped in VELUX adhesive underlayment, 9 inches wide, before the flashing goes on.
+
+That last point is what separates a lasting installation from a quick one. Sealant alone is not a flashing system. As Glenn Ferris writes in Roofing Magazine, [improper use of sealants to dam up water pathways usually aggravates leaks](https://roofingmagazine.com/a-roofers-guide-to-installation-best-practices/). Good skylight design lets water collect and drain through the frame to the outside.
+
+VELUX also states that engineered flashing kits are designed to shed water without relying on sealants that break down over time, and that a VELUX flashing kit must be used to qualify for its 10-year No-Leak warranty. Highlander installs VELUX skylights with the matching kit for the panel type on your roof.
+
+### What changes on standing seam
+
+On narrow-profile standing seam roofs, the industry standard referenced in Roofing Magazine (AAMA 1607-14) [describes fastening the wood curb to the roof deck, with metal panels placed about an inch from the lower curb edge](https://roofingmagazine.com/a-roofers-guide-to-installation-best-practices/). Standing seams that fall under the sill flashing flange are rolled and flattened. Two generous beads of sealant go between the flange and the panel, panels run over and around the head flashing, and the skylight frame is fastened on top of the curb.
+
+The detail to respect is thermal movement. Panels must be allowed to slide, so fasteners and clips that pin a panel in the wrong spot can cause trouble years later. This is a reason to have the flashing designed around your roof, not around a generic kit.
+
+### What changes on exposed-fastener and corrugated
+
+Here the ribs are the problem. The curb has to be positioned so ribs do not interfere with the flashing, and the ribs on each side of the opening need to be closed off so water cannot run inside them. Where a skylight interrupts a panel, VELUX advises ordering extra panel length so that the cut panel still runs the full distance. That is a detail that must be planned before panels are ordered, which is another argument for coordinating skylight and roof together.
+
+## New roof or existing roof
+
+We get this question often: should the skylight go in during a new metal roof installation, or can it be added to a roof that is already finished?
+
+It can be added, but cutting into finished panels means working around fastener lines, seams and trim that were laid without that opening in mind. During a new installation, the opening is framed first, the curb and underlayment are built into the roof, and the panels are cut to fit. There is no retrofit patch, and the flashing and roof carry the same warranty conversation.
+
+If you are replacing an old roof anyway, the existing skylights deserve a decision at the same time. A skylight that is already aging when the new metal goes on is a leak waiting to happen on a roof built to last. Pairing a new roof with new skylight units means one set of tear-off, one set of flashing and no second visit to disturb the finished panels.
+
+If your roof is already metal and you are adding light to a dark room, the same principles apply, with more careful cutting and panel work. Our [skylight installation](https://highlandernc.com/roofing/skylights) page explains how we approach it.
+
+## Which skylight type fits
+
+Metal roofing is not limited to one skylight style. Two basic options exist: curb-mounted units, which are what most homeowners picture, and light-transmitting panels formed to match the roof profile, which are common on barns and outbuildings. For living spaces, a curb-mounted unit with proper flashing gives the best control over water, insulation and appearance.
+
+Some points worth settling before ordering:
+
+- **Placement:** Think about where snow slides off. A skylight directly below a high roof section can see heavy snow and ice loads in winter.
+- **Framing:** The opening cuts through rafters or trusses. [Temporary support may be needed](https://roofingmagazine.com/a-roofers-guide-to-installation-best-practices/) while a rafter is cut and the opening is headed off.
+- **Efficiency:** Energy codes set limits on skylight U-factor and solar heat gain. Your local building department can tell you what applies for your climate zone and code edition.
+- **Interior:** Check what runs below the opening: ducts, plumbing vents, wiring and insulation.
+
+## Testing, then maintenance
+
+A skylight can look perfect and still leak. The point of testing is to find out before the drywall goes up. Roofing Magazine recommends [water testing per AAMA 501.2 and AAMA 503](https://roofingmagazine.com/a-roofers-guide-to-installation-best-practices/) when skylights sit above critical areas, done as soon as possible after installation and before interior finishes so the source of any water can be traced.
+
+After the first season, a short checklist keeps things in order:
+
+1. Look at the ceiling and the light shaft after the first heavy rain and again after the first thaw.
+2. Clear leaves, needles and debris from above the curb so water is not dammed.
+3. Check for condensation on the glass in cold weather. That is moisture control, not a roof leak, but it can leave a stain that looks like one.
+4. Watch for rust streaks or loose fasteners along the flashing.
+
+If a stain does appear, the first question is whether the leak comes from the skylight, the flashing or the roof. This guide on [whether to call a plumber or a roofer first for a ceiling leak](https://blog.usaplumbingseptic.com/blog/ceiling-leak-plumber-or-roofer) helps sort out the source. For a roof or skylight source, our page on [skylight leaks and whether it is the roof or the unit](https://highlandernc.com/blog/skylight-leaks-roof-or-skylight-wnc) goes through what we look at.
+
+## Safety on the roof
+
+A skylight is a hole in a working surface. Roofers treat unprotected openings and glazing as fall hazards, and so should anyone who goes onto a roof. Guard against fall-through with railings, nets or other protection while work is under way, and never step or lean on a skylight. Professional crews carry the fall protection and equipment for this. Lowe's guidance says skylight installation is [a job for a professional or a very advanced DIYer](https://www.lowes.com/n/how-to/how-to-install-a-skylight), and that a permit or inspection may be required for structural changes.
+
+> ## Our perspective
+>
+> We build and repair roofs on mountain homes in Franklin, Highlands, Cashiers and Sylva, and we see the skylight as part of the roof system, not an accessory. That is why we treat it as one job.
+>
+> The first thing we do is identify the panel and the deck, then choose the flashing and curb to suit. Our crews are in-house, and the project has a single point of contact, so the person who measured the opening is the person you can call afterward.
+>
+> The estimate we write spells out the scope in writing, so you can see what goes into the opening: curb, underlayment, flashing and panel work. Mountain weather rewards detail, and that is where we put our time.
+>
+> *Highlander Building Services*
+
+## Plan the skylight with your metal roof
+
+If you are replacing a roof, adding a room or opening up a dark space, the efficient moment to add a skylight is when the roof is open. Highlander installs VELUX skylights and metal roofing across Western North Carolina, including standing seam, exposed-fastener and metal shingle systems, and we write the scope and price down before work starts.
+
+See our [VELUX skylight installation](https://highlandernc.com/roofing/skylights) page, look at [metal roofing options](https://highlandernc.com/roofing/metal), or [contact Highlander](https://highlandernc.com) to ask for a detailed estimate. If an existing skylight is already leaking, our [roof repair](https://highlandernc.com/roofing/roof-repair) team can look at the flashing and the roof together.
+
+## FAQ
+
+### Can you install a skylight in a metal roof?
+
+Yes. VELUX states that both deck-mounted and curb-mounted skylights can go on metal roofs. The key is selecting flashing that matches the panel profile and confirming that the structure under the roof can support the opening.
+
+### Do skylights leak more on metal roofs?
+
+Not when the flashing is correct. Leaks come from mismatched flashing, missing underlayment or sealant used in place of proper layering. Matching the kit to the panel and checking the work with a water test helps keep the opening dry.
+
+### Is a curb required for a skylight on a metal roof?
+
+On low slopes, yes. North Carolina's residential code calls for a curb at least 4 inches high when the roof pitch is flatter than 3:12. Many installers also curb skylights on steeper metal roofs because the curb gives the flashing a clean shape to wrap.
+
+### Should I add a skylight when I replace my roof?
+
+It is usually the best time. The opening is framed before the panels go down, the curb and underlayment are built in, and you avoid cutting through finished metal later. Any older skylight on the roof can be replaced in the same visit.
+
+## Sources
+
+- [VELUX USA: Installing a Skylight on Your Metal Roof](https://www.veluxusa.com/inspiration/blog/can-you-install-a-skylight-on-a-metal-roof)
+- [VELUX FCM Curb Mounted Skylight Installation Instructions](https://www.floridabuilding.org/upload/PR_Instl_Docs/FL13303_R11_II_FCM%20Installation%20Instructions.pdf)
+- [U.S. Department of Energy: Flashing around a Skylight with Roof Removal](https://bsesc.energy.gov/energy-basics/flashing-around-skylight-roof-removal)
+- [Roofing Magazine: Installing Skylights, A Roofer's Guide](https://roofingmagazine.com/a-roofers-guide-to-installation-best-practices/)
+- [2018 North Carolina Residential Code, Chapter 3](https://codes.iccsafe.org/content/NCRC2018/chapter-3-building-planning)
+- [Lowe's: How to Install a Skylight](https://www.lowes.com/n/how-to/how-to-install-a-skylight)
+- [Ceiling Leak: Call a Plumber or a Roofer First?](https://blog.usaplumbingseptic.com/blog/ceiling-leak-plumber-or-roofer)
+
+## Recommended
+
+- [Skylight Installation in Western NC](https://highlandernc.com/blog/skylight-installation-western-nc)
+- [Skylight Replacement in Western NC](https://highlandernc.com/roofing/skylights)
+- [Skylight Leaks: Roof or Skylight Problem?](https://highlandernc.com/blog/skylight-leaks-roof-or-skylight-wnc)
+- [Skylight Placement for Mountain Homes](https://highlandernc.com/blog/skylight-placement)`,
   },
 
 {
