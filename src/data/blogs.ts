@@ -1,6 +1,7 @@
 import november23Hero0 from "@/assets/blog/synthetic-slate-roofing-hero.webp";
 import november23Hero1 from "@/assets/blog/hillside-deck-foundation-hero.webp";
 import november23Hero2 from "@/assets/blog/roof-leaks-in-rain-hero.webp";
+import november25Hero0 from "@/assets/blog/shingle-nail-pops_1-hero.webp";
 import november24Hero0 from "@/assets/blog/skylights-on-metal-roofs-hero.webp";
 import { BUSINESS } from "@/data/business";
 import screenedPorchSunroomHero from "@/assets/blog/screened-porch-vs-sunroom-hero.jpg";
@@ -617,6 +618,200 @@ Do both quickly, starting with photos and stopping further damage. Call a roofer
 - [Common Roof Leak Locations in Highlands, NC Homes](https://highlandernc.com/service-areas/highlands-nc/roof-repair)
 - [Water Coming Through Ceiling? What to Do](https://highlandernc.com/roofing/roof-repair)
 - [Roof Flashing Leak Repair in Western NC](https://highlandernc.com/blog/roof-flashing-leak)`,
+  },
+  {
+    slug: "shingle-nail-pops_1",
+    title: "Shingle Nail Pops: Causes, Risks and the Right Repair",
+    excerpt: "Shingle nail pops lift shingles and open the door to leaks. Learn how to spot them, what causes them and what a lasting repair looks like on a mountain roof.",
+    category: "Roofing",
+    date: "2026-11-25",
+    town: "Franklin",
+    readTime: "11 min",
+    metaTitle: "Shingle Nail Pops: Causes and Repair | Highlander",
+    metaDescription: "Shingle nail pops lift shingles and invite leaks. Learn how to spot them, what causes them and what a lasting repair looks like on a mountain roof.",
+    imageAlt: "Raised roofing nail lifting an asphalt dimensional shingle on a Western NC mountain home roof",
+    faqs: [{"question": "Are shingle nail pops an emergency?", "answer": "Not usually on their own, but they should not wait for long. A raised nail can break the shingle’s seal, corrode and let water in over time. If you also see a ceiling stain, an active drip or the roof just took a major storm, call for an inspection right away."}, {"question": "Can I just hammer the nail back down or cover it with roof cement?", "answer": "Tapping an under-driven nail flush is one repair ARMA lists, but a nail that has already backed out of the wood is better removed and replaced nearby with the hole sealed. Roof cement or caulk over the head alone is generally considered a temporary measure, which is why a roofer typically replaces the fastening or shingle. Because of the steep pitch and slick surfaces on mountain roofs, we suggest having a professional do it."}, {"question": "How many nails should each shingle have?", "answer": "ARMA requires at least four nails per full-size strip shingle. In high-wind areas, the Building America Solution Center recommends six nails per strip. They should be corrosion-resistant, driven straight and flush, and placed below the sealant strip."}, {"question": "Do nail pops mean I need a new roof?", "answer": "Not necessarily. A few isolated pops can be repaired. Many pops across several slopes, combined with curling shingles, granule loss or interior stains, is a reason to get a replacement estimate alongside the repair one."}],
+    relatedServices: [{"label": "Roof Repair", "path": "/roofing/roof-repair"}, {"label": "Roof Replacement", "path": "/roofing/roof-replacement"}, {"label": "Franklin Service Area", "path": "/service-areas/franklin-nc"}],
+    image: november25Hero0,
+    content: `A nail pop is a roofing nail that has worked its way up through or under an asphalt shingle, leaving a small bump or a bright, exposed nail head on the roof. It looks minor, but it is a fastener that has stopped doing its job, and the lasting fix is to replace the faulty fastening or shingle, not to smear caulk over the head. On mountain homes around Franklin, Highlands, Cashiers and Sylva, where temperature swings, moisture and wind work on a roof all year, we treat every popped nail as a sign worth tracing back to its cause.
+
+[Explore Highlander services](https://highlandernc.com/)
+
+## TL;DR
+
+- A nail pop is a shingle nail that has backed out or was never driven flush, so it lifts the shingle or pokes through the one above it.
+- Common causes are under-driven nails, nails that are too short or smooth-shanked, and a deck that swells and shrinks with moisture.
+- Left alone, a popped nail can corrode, enlarge its hole, break the shingle’s seal and let water in.
+- Shingle makers and trade groups call for removing and replacing the bad fastening or the shingle. Caulk over the head is a temporary measure at best.
+- A written inspection and estimate tells you whether you have one stray nail or a pattern across the roof.
+
+## What a nail pop looks like on your roof
+
+Asphalt shingles are held down by nails and by a strip of factory sealant that bonds each shingle to the one below it after the sun warms it. When a nail is not seated properly, or when it slowly backs out of the deck, the head rises. That pushes up the shingle layer above it, and you see a small round bump, often with a crack or a worn spot in the granule surface. In more advanced cases the head breaks through the shingle and you see bare metal, sometimes with rust streaks.
+
+Here is what to look for from the ground or from a window, without climbing anywhere:
+
+- Small, evenly round bumps in the shingle surface, usually in rows where nails line up.
+- Shiny or rusty dots on the roof surface.
+- Shingle tabs that sit slightly proud or look lifted along an edge.
+- Dark streaks or stains on a ceiling or attic sheathing below the same area, which suggest water is already finding the nail hole.
+- Loose granules collecting near the bump or in the gutters below.
+
+Binoculars from the yard cover a lot of ground. Stay off the roof: steep mountain pitches, wet moss and frost make a fall far more costly than any shingle.
+
+## What causes nails to pop
+
+Nail pops rarely happen for one reason. Most trace back to how the nail went in, what it went into, or how the deck moves over time.
+
+**Under-driven nails.** A nail left standing above the shingle surface never seated. As the deck moves, it keeps working upward, and it can wear a hole in the shingle that sits above it.
+
+**Nails that are too short or the wrong type.** The Asphalt Roofing Manufacturers Association (ARMA), the trade group for shingle makers, specifies [corrosion-resistant nails with at least a 12-gauge shank and a 3/8-inch head, long enough to penetrate 3/4 inch into the deck or go through it by 1/8 inch if the deck is thinner](https://www.asphaltroofing.org/wp-content/uploads/2017/05/Nail-Application-of-Asphalt-Shingles-_20240717_FINAL.pdf). A nail that falls short of that has little to hold it when the wood moves.
+
+**Overdriven or crooked nails.** A nail driven by a misadjusted nail gun can cut into the shingle or sit at an angle. The Building America Solution Center, a U.S. Department of Energy resource, lists [improper nailing, including high, low, overdriven, underdriven, angled or too few nails, as a common installation error](https://basc.pnnl.gov/resource-guides/asphalt-shingle-roofs), and says pneumatic guns should be tested and adjusted until nails sit in line with the shingle surface.
+
+**A deck that moves.** Roof sheathing takes on moisture and dries out, season after season. Wood that swells and shrinks loosens its grip on a smooth nail. Thin sheathing, soft or damaged wood and nails that land in a seam between boards all give a fastener less to hold.
+
+**Wind and vibration.** Wind can contribute, particularly where the deck is not well supported, but it is a less frequent cause than the fastening itself.
+
+Mountain homes put extra load on every one of these. Elevation, wind exposure and moisture are the conditions we build and repair for in Western North Carolina, and a roof that is nailed marginally can show it within a few seasons.
+
+## Why a popped nail is more than a cosmetic problem
+
+A raised nail head looks harmless. The trouble is what it sets in motion.
+
+1. **The seal breaks.** The bump lifts the shingle off its sealant strip. A shingle that is no longer bonded down is easier for wind to catch.
+2. **The shingle above gets punctured.** The nail head can wear or push through the overlying shingle, creating an open hole in the roof surface.
+3. **The nail corrodes.** Exposed steel rusts. NACHI, the International Association of Certified Home Inspectors, notes that [exposed nails corrode over time and that expansion and contraction can enlarge the nail hole enough to allow leakage](https://www.nachi.org/asphalt-comp-shingles-part26-80.htm).
+4. **Water follows the nail.** Water running down a roof can track along a nail shank into the sheathing and insulation, where it does damage long before a stain shows on the ceiling.
+
+One popped nail on a ten-year-old roof is a small repair. Dozens in the same slope suggest a deck, nail or installation issue that spot repairs will not solve. That is why the first question is how many there are and where, not whether to patch one.
+
+Roof penetrations such as vents are another place where fasteners and flashing meet the weather. If you are tracking down a leak near one, this overview of [dryer vent roof problems](https://blog.airanddryerventcleaningavondale.com/blog/dryer-vent-roof-problems) shows how small gaps around a roof opening let water in.
+
+## How a nail pop should be repaired
+
+Shingle makers agree on the principle: an exposed or raised fastener is corrected at the fastener, not covered up.
+
+ARMA’s technical bulletin says incorrectly applied nails should be repaired immediately. An under-driven nail can be tapped down. An overdriven or crooked nail is removed, its hole is repaired with asphalt roof cement that meets the ASTM D4586 standard, and another nail goes in nearby. If that is not practical, the whole shingle is replaced. NACHI makes the same point from the inspection side: [manufacturers recommend replacing shingles with exposed fasteners, and caulking the nail head is only a temporary repair](https://www.nachi.org/asphalt-comp-shingles-part26-80.htm).
+
+In practice, a sound repair looks like this:
+
+- **The shingle layers are lifted carefully** so the shingle and its sealant strip are not torn. Cold shingles crack, which matters in a Western NC winter.
+- **The faulty nail is removed**, not hammered back into the same enlarged hole, where it is likely to work loose again.
+- **A correct fastener goes into fresh wood** nearby, long enough to reach the deck properly.
+- **The old hole is sealed** with the right asphalt roof cement, and the shingle is hand-sealed back down.
+- **Damaged shingles are replaced** where the head has already worn through.
+- **The surrounding area is checked** for more raised nails, soft decking and loose shingles.
+
+That last step is the one that separates a repair from a patch. A roofer who finds one pop should look at the rows around it and the same slope for the same pattern.
+
+### What a proper nailing standard looks like
+
+For a repair or a new roof, these are the numbers to hold a contractor to:
+
+| Item | ARMA standard |
+| --- | --- |
+| Nail material | Corrosion-resistant: galvanized steel, stainless steel, aluminum or copper |
+| Shank and head | At least 12-gauge shank, at least 3/8-inch head |
+| Penetration | At least 3/4 inch into the deck, or through it plus 1/8 inch if the deck is thinner |
+| Nails per full-size strip shingle | At least four |
+| Placement | Below the sealant strip, driven straight and flush |
+
+In high-wind areas, the Building America Solution Center guidance calls for [six nails per shingle strip, driven properly and with no staples](https://basc.pnnl.gov/resource-guides/asphalt-shingle-roofs). Exposed Western NC ridges and gaps are the kind of place where that extra fastening makes sense.
+
+## Why the repair is worth leaving to a roofer
+
+Two reasons make this a job for a crew, not a weekend.
+
+The first is safety. Mountain roofs are steep, often shaded, and slick with moss, dew or frost. Walking them to find and fix a few nails is a poor trade.
+
+The second is what the repair actually involves. Lifting shingles without breaking them, spotting early signs of water getting in, and judging whether the deck underneath is sound are skills that come with doing it daily. Owens Corning’s inspection guidance makes a similar point, noting that for insurance claims, warranty claims or a real estate transaction, only an inspection by a professional is accepted. Your shingle warranty may also depend on how any repair is done, so a documented repair by a licensed contractor protects you.
+
+You should schedule a professional look rather than waiting when:
+
+- You see more than a handful of raised nails, or they appear across a whole slope.
+- A ceiling, attic or wall shows a water stain.
+- The roof has been through a major wind, hail or snow event. This Old House [recommends an inspection once a year and after significant weather events](https://www.thisoldhouse.com/roofing/what-is-a-roof-inspection), and immediately if there is an active leak.
+- Granules are collecting in your gutters.
+- You are buying or selling the home.
+
+We have written about what to look for after weather events in [wind-damaged shingles in Western NC](https://highlandernc.com/blog/wind-damaged-shingles) and about the right timing in our [storm damage roof inspection guide](https://highlandernc.com/blog/storm-damage-roof-inspection_1). If you are in Sylva or nearby, [signs your home needs a roof inspection](https://highlandernc.com/blog/roof-inspection-signs-sylva-nc) lists what to watch for.
+
+## How to tell a repair from a replacement
+
+Nail pops raise a fair question: is this a repair or the first sign the roof is finished? A few facts help sort it out.
+
+| What you see | What it usually points to |
+| --- | --- |
+| One or a few isolated pops, shingles otherwise flat and sealed | A spot repair of the fastenings and affected shingles |
+| Pops in a row along one course or one slope | A nailing or deck problem localized to that area; repair that area and inspect the sheathing |
+| Pops across much of the roof, with curling, cracking or granule loss | An aging or poorly installed roof; get a replacement estimate to compare with repair |
+| Pops plus stains inside the house | Water is already getting through; arrange an inspection promptly |
+
+A roof that is deep into its service life and showing several of these signs is often better served by replacement than by repeated repairs. Our guide to [signs your roof needs replacement on mountain homes](https://highlandernc.com/blog/roof-lifespan-mountain-home-wnc) walks through that decision, and for smaller issues [Sylva roof warning signs and when repair is needed](https://highlandernc.com/service-areas/sylva-nc/roof-repair) covers what repair can handle.
+
+When a new roof is the answer, correct fastening is part of the job from the first shingle: the right nails, the right length, driven flush at the right spot. That is the standard in the table above.
+
+## Getting the estimate right
+
+The reason to ask for a written estimate on a nail pop job is that the scope can vary widely. Replacing a few shingles and refastening a small area is a very different project from refastening a slope or replacing damaged decking. A good estimate states:
+
+- Which slopes and how many shingles are being repaired or replaced.
+- The nail type and length that will be used.
+- What happens if soft or damaged decking is found once shingles are lifted.
+- Who you will deal with from first visit to final walk-through.
+
+Those are the points we put in writing at Highlander, so you know the scope before work starts.
+
+> ## Our view: fix the cause, not the bump
+>
+> We work on mountain homes in Franklin, Highlands, Cashiers and Sylva, and we see a nail pop as a message from the roof. It tells you a fastener failed, and the job is to find out why before deciding how much to fix.
+>
+> That is why we start with a thorough inspection of the whole roof, not just the shingle you pointed at. Elevation, wind exposure and moisture shape how a roof ages in Western North Carolina, and our work is designed around those conditions.
+>
+> We put the scope and price in writing, our own in-house crews do the work, and you have a single point of contact from the first walk-around to the last cleanup.
+>
+> The aim is a roof that stays sealed and tight through the next storm season, not a patch that has to be revisited.
+>
+> *Highlander Building Services*
+
+## Have us look at your roof
+
+If you have spotted raised nails, lifted shingles or a stain you cannot explain, our [roof repair service in Western NC](https://highlandernc.com/roofing/roof-repair) starts with an inspection and a detailed written estimate. If the inspection shows an aging roof, we can also quote a full [roof replacement for mountain homes](https://highlandernc.com/roofing/roof-replacement), so you can compare both options on paper.
+
+We serve homeowners and property managers in Franklin, Highlands, Cashiers, Sylva and the surrounding area. For the full list of roofing services, visit [Highlander Building Services](https://highlandernc.com/roofing).
+
+## FAQ
+
+### Are shingle nail pops an emergency?
+
+Not usually on their own, but they should not wait for long. A raised nail can break the shingle’s seal, corrode and let water in over time. If you also see a ceiling stain, an active drip or the roof just took a major storm, call for an inspection right away.
+
+### Can I just hammer the nail back down or cover it with roof cement?
+
+Tapping an under-driven nail flush is one repair ARMA lists, but a nail that has already backed out of the wood is better removed and replaced nearby with the hole sealed. Roof cement or caulk over the head alone is generally considered a temporary measure, which is why a roofer typically replaces the fastening or shingle. Because of the steep pitch and slick surfaces on mountain roofs, we suggest having a professional do it.
+
+### How many nails should each shingle have?
+
+ARMA requires at least four nails per full-size strip shingle. In high-wind areas, the Building America Solution Center recommends six nails per strip. They should be corrosion-resistant, driven straight and flush, and placed below the sealant strip.
+
+### Do nail pops mean I need a new roof?
+
+Not necessarily. A few isolated pops can be repaired. Many pops across several slopes, combined with curling shingles, granule loss or interior stains, is a reason to get a replacement estimate alongside the repair one.
+
+## Sources
+
+- [ARMA technical bulletin: Nail Application of Asphalt Shingles (revised July 2024)](https://www.asphaltroofing.org/wp-content/uploads/2017/05/Nail-Application-of-Asphalt-Shingles-_20240717_FINAL.pdf)
+- [Building America Solution Center: Asphalt Shingle Roofs](https://basc.pnnl.gov/resource-guides/asphalt-shingle-roofs)
+- [NACHI: Mastering Roof Inspections, Asphalt Composition Shingles](https://www.nachi.org/asphalt-comp-shingles-part26-80.htm)
+- [This Old House: Guide to Roof Inspections](https://www.thisoldhouse.com/roofing/what-is-a-roof-inspection)
+
+## Recommended
+
+- [Shingle Blistering: Causes, Stages and Fixes](https://highlandernc.com/blog/shingle-blistering)
+- [Wind-Damaged Shingles in Western NC](https://highlandernc.com/blog/wind-damaged-shingles)
+- [Roof Leak Repair in Western NC](https://highlandernc.com/blog/roof-leak-repair-western-nc)
+- [Franklin, NC Roof Repair: Before Problems Grow](https://highlandernc.com/service-areas/franklin-nc/roof-repair)`,
   },
   {
     slug: "skylights-on-metal-roofs",

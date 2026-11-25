@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "shingle-nail-pops_1",
+    "title": "Shingle Nail Pops: Causes, Risks and the Right Repair",
+    "excerpt": "Shingle nail pops lift shingles and open the door to leaks. Learn how to spot them, what causes them and what a lasting repair looks like on a mountain roof.",
+    "category": "Roofing",
+    "date": "2026-11-25",
+    "town": "Franklin"
+  },
+  {
     "slug": "skylights-on-metal-roofs",
     "title": "Skylights on Metal Roofs: How They Are Installed and Flashed",
     "excerpt": "Yes, a skylight fits a metal roof. Learn how curbs, flashing and panel type decide whether it stays dry, and what to expect in Western NC.",

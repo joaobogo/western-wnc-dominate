@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "shingle-nail-pops_1",
+    "slug": "shingle-nail-pops_1",
+    "title": "Shingle Nail Pops: Causes, Risks and the Right Repair",
+    "excerpt": "Shingle nail pops lift shingles and open the door to leaks. Learn how to spot them, what causes them and what a lasting repair looks like on a mountain roof.",
+    "category": "Roofing",
+    "date": "2026-11-25",
+    "readTime": "11 min"
+  },
+  {
     "id": "skylights-on-metal-roofs",
     "slug": "skylights-on-metal-roofs",
     "title": "Skylights on Metal Roofs: How They Are Installed and Flashed",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Materials",
     "date": "2026-10-12",
     "readTime": "6 min"
-  },
-  {
-    "id": "copper-gutters-cost",
-    "slug": "copper-gutters-cost",
-    "title": "Copper Gutters Cost: Per-Foot Budgets and Estimate Extras",
-    "excerpt": "Compare illustrative copper gutter budgets, profiles and material weights. Check downspouts, soldered joints, fascia repairs and estimate exclusions.",
-    "category": "Cost",
-    "date": "2026-10-12",
-    "readTime": "7 min"
   }
 ];

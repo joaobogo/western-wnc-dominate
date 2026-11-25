@@ -1,13 +1,13 @@
 {
   "source": "scripts/generate-prerender-manifest.ts",
   "counts": {
-    "sitemap": 244,
+    "sitemap": 245,
     "coverageNoindex": 125,
     "counties": 2,
     "noindexTowns": 2,
     "noindexBlogPosts": 13,
     "noindexFunnels": 18,
-    "total": 404
+    "total": 405
   },
   "routes": [
     "/",
@@ -132,6 +132,7 @@
     "/projects/brava-synthetic-shake-glenville",
     "/projects/living-room-addition-franklin",
     "/projects/deck-railing-rebuild-sylva",
+    "/blog/shingle-nail-pops_1",
     "/blog/skylights-on-metal-roofs",
     "/blog/synthetic-slate-roofing",
     "/blog/hillside-deck-foundation",
