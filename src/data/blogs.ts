@@ -1,6 +1,7 @@
 import november23Hero0 from "@/assets/blog/synthetic-slate-roofing-hero.webp";
 import november23Hero1 from "@/assets/blog/hillside-deck-foundation-hero.webp";
 import november23Hero2 from "@/assets/blog/roof-leaks-in-rain-hero.webp";
+import november26Hero0 from "@/assets/blog/cedar-shake-roofing-hero.webp";
 import november25Hero0 from "@/assets/blog/shingle-nail-pops_1-hero.webp";
 import november24Hero0 from "@/assets/blog/skylights-on-metal-roofs-hero.webp";
 import { BUSINESS } from "@/data/business";
@@ -618,6 +619,172 @@ Do both quickly, starting with photos and stopping further damage. Call a roofer
 - [Common Roof Leak Locations in Highlands, NC Homes](https://highlandernc.com/service-areas/highlands-nc/roof-repair)
 - [Water Coming Through Ceiling? What to Do](https://highlandernc.com/roofing/roof-repair)
 - [Roof Flashing Leak Repair in Western NC](https://highlandernc.com/blog/roof-flashing-leak)`,
+  },
+  {
+    slug: "cedar-shake-roofing",
+    title: "Cedar Shake Roofing in the Mountains: Lifespan and Care",
+    excerpt: "What a cedar shake roof costs, how long it lasts and how to maintain it in Western North Carolina's wet, windy mountain climate, plus when to repair or replace.",
+    category: "Roofing",
+    date: "2026-11-26",
+    town: "Highlands",
+    readTime: "10 min",
+    metaTitle: "Cedar Shake Roofing: Lifespan and Care | Highlander",
+    metaDescription: "What a cedar shake roof costs, how long it lasts and how to maintain it in Western NC's wet, windy mountain climate, plus when to repair or replace.",
+    imageAlt: "Weathered cedar shake roof on a Western NC mountain home surrounded by forest",
+    faqs: [{"question": "How many years does a cedar shake roof last?", "answer": "The Cedar Shake & Shingle Bureau puts the average at about 30 to 40 years. The range depends on grade, installation, climate, exposure and maintenance. In humid, shaded mountain settings, treated shakes and regular cleaning help the roof reach the upper end."}, {"question": "Is a cedar shake roof more expensive than asphalt?", "answer": "Yes. This Old House reports cedar material at nearly twice the cost of asphalt shingles, and Consumer Reports lists cedar at $600 to $1,600 per square. Labor, pitch and roof complexity move the total, so get an itemized written estimate for your specific roof."}, {"question": "What is the difference between cedar shakes and cedar shingles?", "answer": "Shingles are sawn on both sides, thinner and more uniform. Shakes are split on one or both faces and are thicker, with a more rustic, textured look. Both are made from cedar and both weather to a silver grey."}, {"question": "How do I take care of a cedar shake roof?", "answer": "Keep it clear of debris, moss and overhanging branches, clean gutters in spring and fall, and keep ventilation open all year. Use gentle cleaning methods rather than aggressive power washing, and have damaged shakes replaced promptly. Roof work is best done by a roofer."}, {"question": "Is cedar allowed on my home?", "answer": "Check with your municipality and homeowners insurer before you buy. Consumer Reports advises confirming both, since some insurers require extra coverage for cedar roofs and treatment affects fire resistance."}],
+    relatedServices: [{"label": "Specialty Roofing", "path": "/roofing"}, {"label": "Roof Repair", "path": "/roofing/roof-repair"}, {"label": "Highlands Service Area", "path": "/service-areas/highlands-nc"}],
+    image: november26Hero0,
+    content: `A cedar shake roof can serve a mountain home for 30 to 40 years, but only if it is installed with airflow in mind and looked after through every freeze, storm and wet spring. In Western North Carolina, where elevation, wind and constant moisture all work on the wood, the roofer’s mountain experience matters as much as the cedar itself. At Highlander Building Services we install and repair specialty roofing, including cedar shake, for homes in Franklin, Highlands, Cashiers and Sylva. This guide covers what you are buying, what it costs, how long it lasts and how to keep it healthy.
+
+[Explore Highlander services](https://highlandernc.com/)
+
+## TL;DR
+
+- Cedar shakes are thicker and more rugged than cedar shingles. Both are real wood and both weather to a silvery grey.
+- The Cedar Shake & Shingle Bureau puts the average cedar roof life at roughly 30 to 40 years, depending on grade, installation, climate and maintenance.
+- In wet, shaded mountain settings the enemy is trapped moisture: moss, debris, overhanging branches and poor ventilation. Spring and fall cleaning does most of the work.
+- Cedar costs well above asphalt. National guides put it at roughly $600 to $1,600 per square, so a written, itemized estimate matters.
+- After a storm, have the roof inspected on the roof itself, not from the ground, before deciding between repair and replacement.
+
+## Shakes versus shingles: what you are choosing between
+
+People use “cedar shake” for any wooden roof, but the two products differ. According to the [Cedar Shake & Shingle Bureau](https://www.cedarbureau.org/literature-education/product-faq/) (CSSB, the standards and certification body for the industry), a shingle is sawn on both sides and is thinner at the butt, while a shake is typically split on one or both sides. Medium shakes measure a nominal half inch at the butt and heavy shakes three quarters of an inch.
+
+The CSSB’s [shakes versus shingles explainer](https://www.cedarbureau.org/the-shingle-news/shakes-vs-shingles-for-your-roof/) describes the practical result. Shingles give a smooth, uniform, tailored look. Shakes follow the grain of the block and have a heavier, more textured profile. Both can reach the top grade, which means 100% edge grain, a clear face and no defects, and both weather naturally to a silvery patina unless you stain or treat them.
+
+Oregon State University Extension notes that the most common roofing species is [western redcedar](https://extension.oregonstate.edu/catalog/pnw-733-care-maintenance-wood-shingle-shake-roofs), whose heartwood contains natural extractives that resist moisture and decay. That natural resistance is why cedar has roofed homes for generations.
+
+### Which one suits a mountain home
+
+Shakes suit rustic lodges, cabins and estate homes where deep shadow lines and texture are the point. Shingles suit cottages and more formal elevations. On a steep, high-wind site, the heavier shake profile gives the roof visible depth, and a steeper pitch also helps water and snow shed quickly. If you like the look but want a different material, our comparison of [Brava synthetic, cedar shake and slate for WNC homes](https://highlandernc.com/blog/brava-synthetic-vs-cedar-shake-vs-slate-wnc) lays out the choices side by side.
+
+## What a cedar shake roof costs
+
+Cedar is a premium roof, and prices vary widely with pitch, roof complexity and location. Consumer Reports’ [roofing buying guide](https://www.consumerreports.org/home-garden/roofing/buying-guide/) prices cedar at $600 to $1,600 per square (a square is 100 square feet of roof). It cites figures of $18,000 to $30,000 for a 3,000-square-foot cedar shingle roof and $24,000 to $48,000 for cedar shakes.
+
+This Old House’s [2026 cost guide](https://www.thisoldhouse.com/roofing/cedar-shake-roof-cost) reports about $725 per square for the material, nearly twice asphalt shingles, with labor averaging $60 per hour or $2 to $5 per square foot depending on pitch, size, location and complexity.
+
+Those are national averages, and mountain roofs are rarely average. Steep pitches, dormers, valleys, hips and tricky access all add labor. Material prices also move, so treat any figure as a starting point and not a quote.
+
+This is why we put every project in a detailed written scope with prices. You should be able to see what is being spent on tear-off, underlayment, flashing, ventilation and the shakes themselves, and you should deal with one point of contact from estimate to final walkthrough. Our [roofing cost page for Western NC](https://highlandernc.com/roofing-cost-western-nc) explains how we approach pricing for synthetic slate and shake and other specialty roofs.
+
+## How long a cedar shake roof lasts
+
+The CSSB states that the average cedar roof lasts [approximately 30 to 40 years](https://www.cedarbureau.org/literature-education/product-faq/), depending on product grade, installation quality, climate, salt-water proximity, exposure and maintenance. It adds that pressure-impregnated Certi-Last products generally last longer, especially in high-humidity areas.
+
+The range is wide because the variables are large. USDA Forest Service research by Mark Knaebe finds that preservative-treated or naturally durable shingles should give a [roof free of decay for 25 to 30 years](https://research.fs.usda.gov/download/treesearch/32444.pdf). The same paper warns that decay can show up in under 10 years in warm, humid, shaded conditions where moss and lichens hold moisture against the wood.
+
+For a Western NC homeowner, that second finding is the one to remember. A north-facing slope under hemlocks and rhododendron in Highlands or Cashiers stays damp far longer than a sunny, breezy ridge. Two roofs of the same age on the same street can be in very different shape. For a broader view of how mountain conditions age every roof type, see [how long a WNC mountain roof lasts](https://highlandernc.com/blog/roof-lifespan-mountain-home-wnc).
+
+### What shortens or extends the life
+
+- **Installation.** Nail placement, spacing between shakes, the underlayment and the airflow beneath the roof all determine how the wood dries.
+- **Grade and treatment.** Higher grades with tight edge grain perform better, and pressure-treated Certi-Last shakes are made for high humidity.
+- **Shade and debris.** Needles, leaves and moss keep the surface wet.
+- **Ventilation.** A roof that cannot breathe cooks and condenses from below.
+- **Maintenance.** Small repairs and cleaning, done on schedule, cost far less than a replacement years early.
+
+## Built for the mountains: installation details that matter
+
+The CSSB’s [roof manual](https://www.cedarbureau.org/wp-content/uploads/2025/05/RoofManual_DIGITAL.pdf) gives guidance for mountain and heavy-snow regions that fits our climate closely. It recommends a vented “cold roof” system with free airflow from eave to ridge, steeper roof pitches, chimneys placed at the ridge or gable ends, and for high humidity, Certi-Last preservative-treated shakes. It also lists optional zinc or copper strips at the ridge to help control moss.
+
+In practice, that means a cedar roof is a system and not just a layer of wood. The shakes, the underlayment, the flashing, the vents and the roof structure all have to cooperate so that moisture escapes instead of sitting. Our write-up on [mountain roof ventilation science](https://highlandernc.com/blog/mountain-roof-ventilation-science) explains why airflow is so central at elevation.
+
+Before you commit, check two things the Consumer Reports guide flags: whether your municipality or community permits cedar roofing, and what your homeowners insurer says. Consumer Reports notes that newer-growth cedar lacks the fire-resistant resins of older-growth wood, so cedar needs proper treatment for fire resistance, and that some homeowners need extra coverage or a different insurer. Ask your insurer in writing before you sign, and bring their answer to your estimate meeting.
+
+We work with manufacturer-approved materials and inspect thoroughly, and our crews are in-house, so the people who estimate your roof are accountable for it afterward. Detail like this is exactly what a [specialty roofing estimate](https://highlandernc.com/roofing) should spell out.
+
+## Cedar shake roof maintenance: a seasonal routine
+
+OSU Extension’s guide says that shakes and shingles [provide long, reliable service](https://extension.oregonstate.edu/catalog/pnw-733-care-maintenance-wood-shingle-shake-roofs) when properly installed and maintained. Maintenance for cedar comes down to one idea: keep the roof dry, clean and able to breathe.
+
+### Spring
+
+- Clear winter debris from the roof surface and valleys.
+- Clean gutters. The CSSB manual calls for gutter cleaning in both spring and fall.
+- Look for split, cupped or missing shakes after freeze-thaw cycles and heavy winds.
+- Check flashing around chimneys, skylights and vents.
+
+### Summer
+
+- Trim back any overhanging branches. The USDA Forest Products Laboratory guidance cited in the CSSB manual advises removing branches that trap moisture and encourage decay.
+- Confirm that soffit and ridge vents are clear. Ventilation should stay open year-round.
+- Watch shaded slopes for early moss and algae.
+
+### Fall
+
+- Clean gutters again once the leaves are down.
+- Clear needles and leaf litter from valleys and where the roof meets walls.
+- Have loose or damaged pieces replaced before winter weather arrives.
+
+### Winter
+
+- Keep eaves and ventilation clear, since a cold, vented roof depends on air moving from eave to ridge.
+- After a heavy snow or ice event, look from the ground for sagging, shifted shakes or ice backing up at the eaves, and have anything suspicious inspected.
+
+We lay out the same rhythm in more detail in our [seasonal cedar shake maintenance guide](https://highlandernc.com/blog/cedar-shake-maintenance).
+
+### Cleaning and moss
+
+Moss holds water against wood, which is the condition that drives early decay. The USDA Forest Products Laboratory guidance summarized in the CSSB manual recommends cleaning with the weakest effective bleach or oxygen-bleach solution, applied by sprayer or soft brush, and avoiding aggressive power washing. Wood fibers are easily damaged by force. The same principle runs through this advice on [safe pressure washing for cedar](https://abcbins.com/pressure-washing-cedar-fence): keep the pressure low and the technique gentle.
+
+If your cedar was pressure-treated, the manual says to check with the treatment company about which finishes or cleaning solutions are allowed. Roof surfaces are also slippery, steep and high, so moss treatment is best left to a roofer. We cover what works in [our moss removal guide](https://highlandernc.com/blog/moss-on-roof-removal), and our crews handle [roof moss removal](https://highlandernc.com/roofing/roof-repair) for Western NC homes.
+
+### Preservation and finish
+
+Left alone, cedar turns silvery grey. Many owners like that look. If you prefer to keep the original warm tone, you will need stains or preservatives, which require reapplication and should be matched to your product and treatment. Decide this when you choose the roof, because the answer shapes the maintenance calendar for decades.
+
+## After a storm: repair or replace
+
+High winds and falling limbs are part of mountain life. The Insurance Institute for Business and Home Safety (IBHS) [cedar roof guide](https://ibhs.org/guidance/ricowi-roof-guide-cedar-shingles-and-shakes/) says a thorough inspection has to be done on the roof, not from the ground, covering all areas including fasteners and flashings. It also separates normal weathering, such as some splitting, cupping and curling, from storm damage.
+
+IBHS explains that excessive cupping and curling usually points to improperly placed nails, poor ventilation, non-permeable underlayment over the full sheathing, or lower-grade product. That is useful when you are deciding what went wrong and what must be fixed so it doesn’t happen again.
+
+### Signs worth a call
+
+- Missing, cracked or lifted shakes after wind.
+- Daylight or staining visible in the attic.
+- Damaged flashing around chimneys, valleys or skylights.
+- Persistent dark, damp patches or thick moss.
+- Granule-free hail marks or impact bruising after a hail storm.
+
+### How the decision works
+
+IBHS suggests considering replacement when repair costs reach 80% of replacement cost, counting hips, ridges, valleys, re-decking and tear-off. The CSSB’s [hail guide for adjusters](https://www.cedarbureau.org/cms-assets/documents/24826-485192.cssb-adjusters-guide-to-hail.pdf) notes that cedar can rebound from minor cosmetic hail impact and often doesn’t need full replacement. It uses the Marshall and Herzog repair cost formula, where repair cost equals damage factor times unit cost times difficulty times area, to compare options. In its worked example, repairing 20 squares of lightly damaged cedar comes to $3,000, far below a tear-off.
+
+A repaired section also blends in. IBHS reports that new cedar weathers to match the surrounding roof within six to nine months on average, so a good repair need not look like a patch for long.
+
+If your insurer is involved, a written scope with line-item pricing makes the claim conversation simpler. Our [roof repair vs replacement guide](https://highlandernc.com/blog/roof-lifespan-mountain-home-wnc) walks through the decision, and our [roof repair work](https://highlandernc.com/roofing/roof-repair) covers leaks, flashing and storm damage across Western NC.
+
+## Our perspective on cedar in the mountains
+
+> We build and repair for mountain homes, and we hold that the best roof is the one matched to the site: elevation, wind exposure, moisture and how much shade the slope gets. Cedar shake is a beautiful answer when the home, the budget and the maintenance plan are all ready for it. Our approach starts with a detailed, written scope and price, because a roof this significant should never be a guess. You get one point of contact, in-house crews and direct owner oversight, so the person who walked your roof is accountable for the result. We use manufacturer-approved materials and installation methods. If you love the look of cedar but want less upkeep, we also install synthetic slate and shake, copper, and standing seam metal. We would rather help you choose the right roof for your home than the most expensive one. *Highlander Building Services*
+
+## Ready to plan a cedar or specialty roof?
+
+If you are weighing cedar shake, or you already have a cedar roof that needs attention, we will inspect your home and give you a detailed written estimate. We serve Franklin, Highlands, Cashiers, Sylva and the surrounding mountain communities, with repair, replacement and specialty roofing, including synthetic slate and shake and metal roofing.
+
+Start on our [roofing page](https://highlandernc.com/roofing) to see the services, or look at our [cedar shake estate project in Highlands](https://highlandernc.com/projects/cedar-shake-estate-highlands) for an example of what we build.
+
+## Sources
+
+- [Shake & Shingle Product FAQ, Cedar Shake & Shingle Bureau](https://www.cedarbureau.org/literature-education/product-faq/)
+- [Shakes vs. Shingles for Your Roof, Cedar Shake & Shingle Bureau](https://www.cedarbureau.org/the-shingle-news/shakes-vs-shingles-for-your-roof/)
+- [The Care and Maintenance of Wood Shingle and Shake Roofs, OSU Extension](https://extension.oregonstate.edu/catalog/pnw-733-care-maintenance-wood-shingle-shake-roofs)
+- [Roofing Buying Guide, Consumer Reports](https://www.consumerreports.org/home-garden/roofing/buying-guide/)
+- [Cedar Shake Roof Cost (2026 Guide), This Old House](https://www.thisoldhouse.com/roofing/cedar-shake-roof-cost)
+- [Wood Shakes and Shingles for Roof Applications, USDA Forest Service](https://research.fs.usda.gov/download/treesearch/32444.pdf)
+- [New Roof manual, Cedar Shake & Shingle Bureau](https://www.cedarbureau.org/wp-content/uploads/2025/05/RoofManual_DIGITAL.pdf)
+- [Cedar Shingles and Shakes, IBHS](https://ibhs.org/guidance/ricowi-roof-guide-cedar-shingles-and-shakes/)
+- [Adjuster’s guide to hail, Cedar Shake & Shingle Bureau](https://www.cedarbureau.org/cms-assets/documents/24826-485192.cssb-adjusters-guide-to-hail.pdf)
+- [Pressure Washing a Cedar Fence: Safe PSI and Steps](https://abcbins.com/pressure-washing-cedar-fence)
+
+## Recommended
+
+- [Cedar Shake Maintenance: Seasonal Guide](https://highlandernc.com/blog/cedar-shake-maintenance)
+- [How Long Does a WNC Mountain Roof Last?](https://highlandernc.com/blog/roof-lifespan-mountain-home-wnc)
+- [Brava vs Cedar Shake vs Slate Roofing](https://highlandernc.com/blog/brava-synthetic-vs-cedar-shake-vs-slate-wnc)
+- [Roof Lifespan in Western NC by Material](https://highlandernc.com/blog/roof-lifespan-western-nc-by-material)`,
   },
   {
     slug: "shingle-nail-pops_1",

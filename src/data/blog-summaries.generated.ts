@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "cedar-shake-roofing",
+    "slug": "cedar-shake-roofing",
+    "title": "Cedar Shake Roofing in the Mountains: Lifespan and Care",
+    "excerpt": "What a cedar shake roof costs, how long it lasts and how to maintain it in Western North Carolina's wet, windy mountain climate, plus when to repair or replace.",
+    "category": "Roofing",
+    "date": "2026-11-26",
+    "readTime": "10 min"
+  },
+  {
     "id": "shingle-nail-pops_1",
     "slug": "shingle-nail-pops_1",
     "title": "Shingle Nail Pops: Causes, Risks and the Right Repair",
@@ -107,15 +116,6 @@ export const blogSummaries: BlogSummary[] = [
     "slug": "metal-roof-noise",
     "title": "Metal Roof Noise: What the Assembly Changes and How to Fix It",
     "excerpt": "Learn how decking, insulation and panel installation affect metal roof rain noise. Compare inspection points and compatible fixes for mountain homes.",
-    "category": "Materials",
-    "date": "2026-10-12",
-    "readTime": "6 min"
-  },
-  {
-    "id": "5-inch-vs-6-inch-gutters",
-    "slug": "5-inch-vs-6-inch-gutters",
-    "title": "5-Inch vs. 6-Inch Gutters: Size Each Roof Run",
-    "excerpt": "Compare 5-inch and 6-inch gutters using roof drainage area, local rainfall, outlets and downspout placement for Western North Carolina mountain homes.",
     "category": "Materials",
     "date": "2026-10-12",
     "readTime": "6 min"

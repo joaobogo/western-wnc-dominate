@@ -14,6 +14,14 @@ export interface BlogIndexEntry {
 
 export const blogIndex: BlogIndexEntry[] = [
   {
+    "slug": "cedar-shake-roofing",
+    "title": "Cedar Shake Roofing in the Mountains: Lifespan and Care",
+    "excerpt": "What a cedar shake roof costs, how long it lasts and how to maintain it in Western North Carolina's wet, windy mountain climate, plus when to repair or replace.",
+    "category": "Roofing",
+    "date": "2026-11-26",
+    "town": "Highlands"
+  },
+  {
     "slug": "shingle-nail-pops_1",
     "title": "Shingle Nail Pops: Causes, Risks and the Right Repair",
     "excerpt": "Shingle nail pops lift shingles and open the door to leaks. Learn how to spot them, what causes them and what a lasting repair looks like on a mountain roof.",
